@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Advanced ML · Week 5 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Advanced ML</span>
+      <span class="brand-title">Week 5</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html" selected>Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Review of Machine Learning, Learning Types, and Linear Regression
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Classification, Logistic Regression, Maximum Likelihood and K-Means…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Bias–Variance, Error Analysis, Learning Curves, and Model Selection
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Recommendation Systems and Collaborative Filtering
+      </a>
+      <a class="is-active" href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Content-Based Filtering, Cosine Similarity, UV Decomposition, and…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Bias–Variance Trade-off, Underfitting, Overfitting,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Association Rule Mining, Apriori, and PCY
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Dimensionality Reduction, PCA, Eigen-Decomposition, and SVD
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Text Processing, Bag of Words, TF–IDF, Vector-Space Retrieval, and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Web Advertising, Online Matching, AdWords, and Balance
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        High-Dimensional Clustering, Subspaces, CLIQUE, PROCLUS, and…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Independent Component Analysis, Blind Source Separation, FastICA,…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Social Networks, Graph Laplacians, and Spectral Clustering
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Graph Partitioning, Flow Centrality, Edge Betweenness, and Girvan–Newman
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        ML Life Cycle, Hybrid and Music Recommenders, and Evaluation
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Advanced ML · Week 5</p>
+        <h1 class="page-title">Content-Based Filtering, Cosine Similarity, UV Decomposition, and Recommender-System Demo</h1>
+        <p class="page-meta">Week 5 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#learning-objectives">Learning objectives</a></li>
+      <li><a href="#1-recommender-system-overview">1. Recommender-system overview</a></li>
+      <li><a href="#2-content-based-filtering">2. Content-based filtering</a></li>
+      <li><a href="#3-vector-foundations">3. Vector foundations</a></li>
+      <li><a href="#4-cosine-similarity">4. Cosine similarity</a></li>
+      <li><a href="#5-cosine-similarity-in-collaborative-filtering">5. Cosine similarity in collaborative filtering</a></li>
+      <li><a href="#6-mean-centering-normalization">6. Mean-centering/normalization</a></li>
+      <li><a href="#7-uv-decomposition-matrix-factorization">7. UV decomposition / matrix factorization</a></li>
+      <li><a href="#8-python-collaborative-filtering-demonstration">8. Python collaborative-filtering demonstration</a></li>
+      <li><a href="#9-techwave-solutions-case-study-cosine-similarity-for-customer-segmentation">9. TechWave Solutions case study: cosine similarity for customer segmentation</a></li>
+      <li><a href="#10-exam-focused-comparisons-and-traps">10. Exam-focused comparisons and traps</a></li>
+      <li><a href="#11-formula-sheet">11. Formula sheet</a></li>
+      <li><a href="#12-recall-questions-with-answer-cues">12. Recall questions with answer cues</a></li>
+      <li><a href="#13-qa-supplement-transcript-and-quiz-details">13. QA supplement — transcript and quiz details</a></li>
+      <li><a href="#17-review-week-augmentation-factorization-and-implementation">17. Review-week augmentation: factorization and implementation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="learning-objectives">Learning objectives</h2>
+<p>After this week, you should be able to:</p>
+<ul>
+<li>explain content-based recommendation using item features and user profiles;</li>
+<li>contrast content-based, collaborative, and hybrid recommenders;</li>
+<li>distinguish explicit and implicit feedback;</li>
+<li>construct and interpret feature and utility matrices;</li>
+<li>compute dot products, vector norms, cosine similarity, and similarity-weighted predictions;</li>
+<li>explain why mean-centering can reverse a user-similarity conclusion;</li>
+<li>describe UV matrix factorization, its dimensions, objective, coordinate-descent workflow, and relationship to SVD;</li>
+<li>explain the Python demonstration from data loading through final movie recommendation;</li>
+<li>apply cosine similarity and threshold selection to the TechWave customer-segmentation case.</li>
+</ul>
+<hr>
+<h2 id="1-recommender-system-overview">1. Recommender-system overview</h2>
+<p>Two major filtering approaches emphasized in the course are:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Main evidence</th>
+<th>Core question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content-based filtering</td>
+<td>Features of items and the target user&rsquo;s own profile/behavior</td>
+<td>“Which items resemble what this user likes?”</td>
+</tr>
+<tr>
+<td>Collaborative filtering</td>
+<td>Ratings/interactions of multiple users</td>
+<td>“Which users behave similarly, and what did similar users like?”</td>
+</tr>
+</tbody>
+</table></div>
+<p>Real applications often use <strong>hybrid recommendation systems</strong>, combining multiple approaches rather than relying on only content-based or only collaborative filtering.</p>
+<h3 id="utility-matrix-recap">Utility matrix recap</h3>
+<p>A utility matrix records the degree to which each user likes/dislikes each item, commonly as a 1–5 star scale (the live session also mentioned 1–10). Rows typically represent users, columns represent items, and a cell is the user&rsquo;s rating for that item.</p>
+<p>An empty cell means <strong>not rated/unknown</strong>, not a true rating of zero. Large utility matrices are normally <strong>sparse</strong>: most user–item combinations are blank. A recommendation system aims to predict useful blank cells, especially those likely to receive high ratings, and recommend the corresponding items.</p>
+<hr>
+<h2 id="2-content-based-filtering">2. Content-based filtering</h2>
+<h3 id="inputs-and-mechanism">Inputs and mechanism</h3>
+<p>Content-based filtering combines two main forms of information:</p>
+<ol>
+<li><strong>Item/product features</strong> — e.g., category, subject, size, color, genre, education, science, health care, casual.</li>
+<li><strong>User representation and context</strong> — profile, declared likes/dislikes, ratings, and observed behavior.</li>
+</ol>
+<p>Each item and user is encoded as a vector in a common feature space. A matching/similarity score between the user vector and item vector is used to rank items.</p>
+<h3 id="play-store-example-and-feature-matrix">Play Store example and feature matrix</h3>
+<p>For Play Store apps, each row can represent an app and each column a feature. Features may overlap: one app can be educational and science-related; another can be health/health-care; a fourth may combine education, science, and health care.</p>
+<p>A binary feature matrix uses:</p>
+<ul>
+<li>1: feature is present/relevant;</li>
+<li>0: feature is absent/not relevant.</li>
+</ul>
+<p>The recorded lecture consistently explains <strong>rows as apps and columns as features</strong>. A brief live-session description reversed the orientation before correcting itself; orientation is a convention, but matrix multiplication must use it consistently.</p>
+<p>Example:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>App</th>
+<th style="text-align: right;">Education</th>
+<th style="text-align: right;">Science</th>
+<th style="text-align: right;">Health</th>
+<th style="text-align: right;">Casual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>App A</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>App B</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>App C</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>App D</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="explicit-and-implicit-feedback">Explicit and implicit feedback</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feedback</th>
+<th>Source</th>
+<th>Example</th>
+<th>Strength/caveat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Explicit</td>
+<td>User deliberately states a preference</td>
+<td>Canva asks whether use is business, education, or personal; user selects entertainment; user rates an item</td>
+<td>Direct signal, generally clearer, though users can still be inconsistent</td>
+</tr>
+<tr>
+<td>Implicit</td>
+<td>System infers preference from behavior</td>
+<td>Previously installed apps, watched videos, clicks, time spent, purchases</td>
+<td>Abundant but ambiguous and potentially biased/noisy</td>
+</tr>
+</tbody>
+</table></div>
+<p>The live session called explicit feedback relatively trustworthy and implicit feedback less trustworthy because behavior may not equal preference. Bias/noise should be handled by normalization, regularization, validation, or other modeling safeguards rather than treating every interaction as certain liking.</p>
+<h3 id="user-and-item-embeddings-dot-product-score">User and item embeddings; dot-product score</h3>
+<ul>
+<li><strong>User embedding/profile vector</strong>: what the user likes or dislikes, learned from explicit and implicit signals.</li>
+<li><strong>App/item/feature embedding</strong>: features associated with the app/item.</li>
+</ul>
+<p>For equal-dimensional vectors \(x\) and \(y\), a basic score is the dot product:</p>
+<p>\[
+x\cdot y=\sum_{i=1}^{d}x_i y_i
+\]</p>
+<p>It is coordinate-wise multiplication followed by addition. For binary vectors, a coordinate contributes 1 only when both vectors contain 1 there, so the dot product counts shared active features.</p>
+<h3 id="strengths">Strengths</h3>
+<ul>
+<li>Does not require data about other users.</li>
+<li>Can scale to many users without user-to-user comparison becoming the central bottleneck.</li>
+<li>Directly incorporates a particular user&rsquo;s interests.</li>
+<li>Supports strong personalization, including niche/specific interests.</li>
+<li>Can recommend an item from its attributes even when other users have not rated it, provided its features are available.</li>
+</ul>
+<h3 id="limitations">Limitations</h3>
+<ul>
+<li>Item features are often manually/hand engineered.</li>
+<li>Good feature design requires substantial domain knowledge.</li>
+<li>Only items with adequate representations/features can be matched reliably.</li>
+<li>Recommendations are driven by the user&rsquo;s existing profile and past interests, creating <strong>over-specialization</strong>: little novelty or serendipity.</li>
+<li>Personalization is therefore both an advantage and a disadvantage.</li>
+</ul>
+<h3 id="content-based-versus-collaborative-filtering">Content-based versus collaborative filtering</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Content-based</th>
+<th>Collaborative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Needs other users&rsquo; data</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Basis</td>
+<td>Item attributes + target user&rsquo;s profile</td>
+<td>Similar users/items from collective behavior</td>
+</tr>
+<tr>
+<td>Main feature challenge</td>
+<td>Manual/domain-specific content representation</td>
+<td>Sparse user–item interactions and cold start</td>
+</tr>
+<tr>
+<td>Diversity risk</td>
+<td>May repeat known interests</td>
+<td>Can expose new categories via peers</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="3-vector-foundations">3. Vector foundations</h2>
+<h3 id="equal-dimensionality">Equal dimensionality</h3>
+<p>Vectors can be compared coordinate by coordinate only if they use the <strong>same features in the same order</strong>. Unequal dimensionality or mismatched feature order makes the dot product/cosine comparison invalid.</p>
+<h3 id="dot-product">Dot product</h3>
+<p>For \(A=[a_1,\ldots,a_d]\) and \(B=[b_1,\ldots,b_d]\):</p>
+<p>\[
+A\cdot B=\sum_{i=1}^{d}a_i b_i
+\]</p>
+<p>Live worked example:</p>
+<p>\[
+A=[1,2,3],\qquad B=[4,5,6]
+\]</p>
+<p>\[
+A\cdot B=(1)(4)+(2)(5)+(3)(6)=32
+\]</p>
+<h3 id="l2-norm-magnitude">L2 norm/magnitude</h3>
+<p>\[
+\|A\|_2=\sqrt{\sum_{i=1}^{d}a_i^2}
+\]</p>
+<p>For the above vectors:</p>
+<p>\[
+\|A\|=\sqrt{1^2+2^2+3^2}=\sqrt{14}
+\]</p>
+<p>\[
+\|B\|=\sqrt{4^2+5^2+6^2}=\sqrt{77}
+\]</p>
+<p>Instructor warning: calculate the two square roots <strong>separately</strong>, then multiply \(\|A\|\|B\|\). Do not accidentally place all terms inside one incorrect combined root. In an exam, show the computation and interpret the resulting degree of similarity, not just the number.</p>
+<hr>
+<h2 id="4-cosine-similarity">4. Cosine similarity</h2>
+<h3 id="definition">Definition</h3>
+<p>Cosine similarity compares the <strong>direction/orientation</strong> of two nonzero vectors:</p>
+<p>\[
+\operatorname{cosim}(A,B)
+=\cos\theta
+=\frac{A\cdot B}{\|A\|_2\|B\|_2}
+=\frac{\sum_i a_i b_i}
+{\sqrt{\sum_i a_i^2}\sqrt{\sum_i b_i^2}}
+\]</p>
+<p>A vector can be viewed geometrically as an arrow from the origin. A small angle means similar direction; an angle near \(90^\circ\) means orthogonality/no directional similarity.</p>
+<h3 id="range-and-interpretation">Range and interpretation</h3>
+<p>For nonnegative/binary/rating vectors used in the lecture, cosine similarity lies between 0 and 1:</p>
+<ul>
+<li>1: same direction, maximum similarity;</li>
+<li>0: orthogonal/completely dissimilar in this feature space;</li>
+<li>intermediate values: relative similarity.</li>
+</ul>
+<p>After mean-centering, negative coordinates and negative cosine values can occur:</p>
+<ul>
+<li>positive: similar above/below-average preference patterns;</li>
+<li>near zero: weak relationship;</li>
+<li>negative: opposing preference patterns.</li>
+</ul>
+<p>In general real-valued spaces, cosine ranges from \(-1\) to \(1\), not always 0 to 1.</p>
+<h3 id="why-normalize-the-dot-product">Why normalize the dot product?</h3>
+<p>The raw dot product increases with both alignment and vector magnitude. Cosine divides by both lengths, emphasizing direction and making comparisons less sensitive to absolute activity/intensity.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>Focus</th>
+<th style="text-align: right;">Sensitive to magnitude?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dot product</td>
+<td>Shared weighted components</td>
+<td style="text-align: right;">Yes</td>
+</tr>
+<tr>
+<td>Cosine similarity</td>
+<td>Angle/direction</td>
+<td style="text-align: right;">Largely no</td>
+</tr>
+<tr>
+<td>Euclidean distance \(\sqrt{\sum(a_i-b_i)^2}\)</td>
+<td>Straight-line closeness</td>
+<td style="text-align: right;">Yes</td>
+</tr>
+</tbody>
+</table></div>
+<p>Cosine is useful when preference <strong>pattern</strong> matters more than total activity. A “power user” and a less active customer can appear similar if their vectors point in the same direction; this can be useful or misleading depending on campaign goals.</p>
+<h3 id="recorded-binary-vector-examples">Recorded binary-vector examples</h3>
+<p>The first recorded example used two 0/1 vectors, described as having norms \(\sqrt5\) and \(\sqrt4\). Binary values were chosen only for convenience; vectors can contain any real values.</p>
+<p>A second displayed example produced:</p>
+<p>\[
+\frac{5}{\sqrt6\sqrt6}=0.833
+\]</p>
+<p>which was interpreted as high similarity. The transcript does not retain every displayed coordinate cleanly, so use the displayed formula/result as the course example while applying the general formula carefully.</p>
+<p>For the live example \([1,2,3]\) and \([4,5,6]\):</p>
+<p>\[
+\cos\theta=\frac{32}{\sqrt{14}\sqrt{77}}\approx0.975
+\]</p>
+<p>The vectors therefore point in very similar directions.</p>
+<hr>
+<h2 id="5-cosine-similarity-in-collaborative-filtering">5. Cosine similarity in collaborative filtering</h2>
+<h3 id="movie-utility-matrix">Movie utility matrix</h3>
+<p>The course example uses four users—Hyun/Haiyun, Eric, Chundru, and “You”—and seven movies: watched-movie columns WM1–WM4 and new/not-watched columns NM1–NM3. Ratings are generally on a 1–5 scale, and blanks mean not rated.</p>
+<p>Examples stated in the transcript:</p>
+<ul>
+<li>Hyun rated several movies including WM1=5, WM3=3, WM4=2, NM1=1, NM2=4, and NM3=3; WM2 is blank.</li>
+<li>Eric has WM1 blank, WM2=4, WM3 blank, WM4=5, NM1 blank, NM2=2, and NM3=5.</li>
+</ul>
+<p>The initial method converts blanks to zero for computation. This is convenient but conceptually dangerous because “not observed” is not “disliked.” UV decomposition later avoids this assumption.</p>
+<h3 id="user-user-similarity">User–user similarity</h3>
+<p>Each user row is a rating vector. The lecture&rsquo;s uncentered calculations give:</p>
+<p>\[
+\operatorname{cosim}(\text{Hyun},\text{Eric})=0.493
+\]</p>
+<p>The numerator uses their common/nonzero components:</p>
+<p>\[
+(2)(5)+(4)(2)+(3)(5)
+\]</p>
+<p>with the corresponding full vector norms in the denominator.</p>
+<p>Likewise:</p>
+<p>\[
+\operatorname{cosim}(\text{Hyun},\text{Chundru})=0.597
+\]</p>
+<p>Because \(0.597>0.493\), unnormalized/raw cosine says Chundru is closer to Hyun than Eric is.</p>
+<p>The recorded video treats missing entries as zero when forming full vectors. The live explanation instead emphasizes using only co-rated/common observed items. These are distinct implementation choices; state the convention used because results may differ.</p>
+<h3 id="predict-a-missing-rating-using-a-weighted-average">Predict a missing rating using a weighted average</h3>
+<p>If user 1 has not rated an item and users 2 and 3 have, predict:</p>
+<p>\[
+\hat R_1=
+\frac{R_2S_{12}+R_3S_{13}}{S_{12}+S_{13}}
+\]</p>
+<p>where \(S_{1k}\) is user 1&rsquo;s similarity to user \(k\), and \(R_k\) is user \(k\)&rsquo;s rating for the target item.</p>
+<p>In general, over neighbors who actually rated item \(i\):</p>
+<p>\[
+\hat r_{ui}=
+\frac{\sum_{v\in N_i(u)}s(u,v)r_{vi}}
+{\sum_{v\in N_i(u)}s(u,v)}
+\]</p>
+<p>This is a similarity-weighted average. <strong>Omit missing neighbor ratings</strong> rather than inserting them into the numerator/denominator as observations. High-similarity users influence the prediction more.</p>
+<p>Practical safeguards: define behavior when the denominator is zero, consider using only positive/top-\(k\) similarities, and—if signed similarities are used—consider \(\sum|s|\) in the denominator or another explicitly chosen convention.</p>
+<hr>
+<h2 id="6-mean-centering-normalization">6. Mean-centering/normalization</h2>
+<h3 id="why-raw-ratings-are-biased">Why raw ratings are biased</h3>
+<p>Users employ rating scales differently. A strict user may rarely give 5, while a generous user may award 5 to mediocre items. Raw cosine can mistake rating generosity for preference similarity.</p>
+<p>For each user \(u\), compute the average over that user&rsquo;s <strong>observed</strong> ratings:</p>
+<p>\[
+\bar r_u=\frac{1}{|I_u|}\sum_{i\in I_u}r_{ui}
+\]</p>
+<p>Then center each observed rating:</p>
+<p>\[
+r'_{ui}=r_{ui}-\bar r_u
+\]</p>
+<ul>
+<li>positive centered value: above that user&rsquo;s average;</li>
+<li>zero: equal to the user&rsquo;s average;</li>
+<li>negative: below that user&rsquo;s average;</li>
+<li>opposite signs for an item suggest contrasting opinions.</li>
+</ul>
+<p>Example from the lecture: if Hyun&rsquo;s mean is 3, a raw 5 becomes \(+2\), a raw 3 becomes 0, and a raw 2 becomes \(-1\). On WM4, Hyun has \(-1\) while Eric has \(+1\), indicating contrasting normalized preference.</p>
+<h3 id="effect-on-the-movie-example">Effect on the movie example</h3>
+<p>After mean-centering:</p>
+<p>\[
+\operatorname{cosim}(\text{Hyun},\text{Eric})=-0.387
+\]</p>
+<p>\[
+\operatorname{cosim}(\text{Hyun},\text{Chundru})=-0.51
+\]</p>
+<p>Although both are negatively related, \(-0.387>-0.51\), so centered cosine considers Eric closer to Hyun than Chundru—the reverse of the raw result.</p>
+<p>This reversal is the instructor&rsquo;s key point: normalization can materially change neighbors and predictions by removing user-specific baseline ratings. In practice, after predicting a centered deviation, add the target user&rsquo;s mean back to return to the original rating scale.</p>
+<hr>
+<h2 id="7-uv-decomposition-matrix-factorization">7. UV decomposition / matrix factorization</h2>
+<h3 id="motivation">Motivation</h3>
+<p>Cosine-based computation often turns blanks into zero, losing the crucial distinction between “unrated” and “rated zero.” UV decomposition predicts missing values without requiring every blank to be treated as an observed zero.</p>
+<p>The lecture presents UV decomposition as a special/simplified case related to <strong>singular value decomposition (SVD)</strong>. SVD factorizes a matrix into three matrices; UV factorization approximates a utility matrix with two lower-dimensional matrices:</p>
+<p>\[
+M\approx UV
+\]</p>
+<h3 id="dimensions">Dimensions</h3>
+<p>For a utility matrix \(M\in\mathbb R^{m\times n}\) and latent dimension \(d\):</p>
+<p>\[
+U\in\mathbb R^{m\times d},\qquad
+V\in\mathbb R^{d\times n}
+\]</p>
+<p>so:</p>
+<p>\[
+(m\times d)(d\times n)=m\times n
+\]</p>
+<p>In the movie example:</p>
+<ul>
+<li>4 users, 7 movies: \(M\) is \(4\times7\);</li>
+<li>choose \(d=2\);</li>
+<li>\(U\) is \(4\times2\);</li>
+<li>\(V\) is \(2\times7\);</li>
+<li>\(UV\) returns a \(4\times7\) completed prediction matrix.</li>
+</ul>
+<p>Interpretation: rows of \(U\) are user latent-factor vectors; columns of \(V\) are item latent-factor vectors. Their dot product predicts a user–item rating. The latent dimensions need not have explicit labels, though they may capture patterns such as genre affinity.</p>
+<h3 id="objective-fit-only-observed-entries">Objective: fit only observed entries</h3>
+<p>Let \(\Omega\) be the set of observed/nonblank cells. Optimize the factors using only those cells:</p>
+<p>\[
+\operatorname{RMSE}_{\Omega}=
+\sqrt{\frac{1}{|\Omega|}
+\sum_{(i,j)\in\Omega}\left(M_{ij}-(UV)_{ij}\right)^2}
+\]</p>
+<p>The transcript sometimes loosely describes “difference, square, sum, square root” without always stating division by the number of observed entries. The quiz/review correctly emphasizes <strong>root mean squared error</strong>, so the mean factor belongs in the formal RMSE. Minimizing SSE or MSE gives the same minimizer for a fixed observed set; RMSE changes scale, not the optimum.</p>
+<p>Only observed entries belong in the loss. Including blanks as zeros would train the system to reproduce invented dislikes and undermine the reason for factorization.</p>
+<h3 id="coordinate-descent-demonstration">Coordinate-descent demonstration</h3>
+<p>The lecture uses an intuitive coordinate-wise optimization:</p>
+<ol>
+<li>Initialize every entry of \(U\) and \(V\) to 1.</li>
+<li>Then every cell of \(UV\) initially equals 2 when \(d=2\).</li>
+<li>Select one factor entry, e.g. \(U_{11}\), replace it by variable \(x\), and hold all other factor entries fixed.</li>
+<li>The first predicted row becomes \(x+1\) because the other latent component remains 1.</li>
+<li>For each observed first-row rating, form residuals such as \(5-(x+1)\), \(3-(x+1)\), etc.; do not invent residuals for blank cells.</li>
+<li>Square and sum the residuals to obtain a quadratic function of \(x\).</li>
+<li>Differentiate, set the derivative to zero, and solve the one-variable minimum. The demonstration obtains \(x=2\) for the first update.</li>
+<li>Substitute the updated value, select another coordinate (e.g. \(V_{11}\)), and repeat.</li>
+<li>Cycle across the entries of \(U\) and \(V\), reducing RMSE until values stabilize/converge or improvement becomes negligible.</li>
+<li>Multiply the final factors. \(UV\) contains estimates for originally blank cells as well as fitted values for observed cells.</li>
+</ol>
+<p>This is <strong>coordinate descent</strong>: optimize one variable/coordinate at a time while holding the others fixed. It reduces the objective iteratively but is not guaranteed to find the global optimum because factorization is jointly non-convex. Initialization, latent dimension, stopping criteria, and regularization can affect the result.</p>
+<h3 id="regularization-and-generalization">Regularization and generalization</h3>
+<p>The live session linked regularization/normalization to bias control. In matrix factorization, a standard regularized objective is:</p>
+<p>\[
+\sum_{(i,j)\in\Omega}(M_{ij}-u_i^Tv_j)^2
++\lambda(\|U\|_F^2+\|V\|_F^2)
+\]</p>
+<p>The penalty discourages excessively large factors and overfitting. This formula is a practical augmentation; the core transcript demonstration minimizes observed-entry reconstruction error without explicitly deriving the penalty.</p>
+<hr>
+<h2 id="8-python-collaborative-filtering-demonstration">8. Python collaborative-filtering demonstration</h2>
+<p>The demonstrated code was originally in R and converted to Python. It used <strong>pandas</strong>, <strong>NumPy</strong>, and a cosine-similarity facility from scikit-learn, while also defining a manual cosine function.</p>
+<h3 id="step-1-load-data">Step 1: load data</h3>
+<ol>
+<li>Import pandas and NumPy.</li>
+<li>Create a <code>movie_ratings</code> DataFrame.</li>
+<li>Use users Hyun, Eric, Chundru, and You as the index.</li>
+<li>Use four watched-movie and three non-watched/new-movie columns.</li>
+<li>Enter blanks as <code>None</code>; pandas displays these numeric missing values as <code>NaN</code> (“not a number”), which is not zero.</li>
+</ol>
+<h3 id="step-2-manual-cosine-similarity-function">Step 2: manual cosine-similarity function</h3>
+<p>The function takes two vectors and:</p>
+<ol>
+<li>converts <code>NaN</code> to numeric values for computation;</li>
+<li>computes each norm as the square root of the sum of squared elements;</li>
+<li>creates coordinate-wise products and sums them to obtain the dot-product numerator;</li>
+<li>returns numerator divided by the product of norms.</li>
+</ol>
+<p>A function definition alone produces no result until called with vectors.</p>
+<h3 id="step-3-prepare-vectors-and-compute-similarities">Step 3: prepare vectors and compute similarities</h3>
+<p>The later code fills missing values with a very small value, <code>0.0001</code> (\(10^{-4}\)), as a near-zero computational placeholder. It extracts each user&rsquo;s row as a flattened NumPy array and computes the similarities between “You” and each friend.</p>
+<p>Reported values:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pair</th>
+<th style="text-align: right;">Cosine similarity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>You–Hyun</td>
+<td style="text-align: right;">0.66</td>
+</tr>
+<tr>
+<td>You–Eric</td>
+<td style="text-align: right;">0.53</td>
+</tr>
+<tr>
+<td>You–Chundru</td>
+<td style="text-align: right;">0.59</td>
+</tr>
+</tbody>
+</table></div>
+<p>The similarity DataFrame is transposed so names become accessible keys for the weighted-average function. The instructor stressed that this transpose is an indexing/layout adjustment; it does not change similarity values or underlying data.</p>
+<h3 id="step-4-weighted-average-function">Step 4: weighted-average function</h3>
+<p>For a target new movie:</p>
+<ul>
+<li>initialize numerator and denominator;</li>
+<li>iterate through friend names;</li>
+<li>retrieve the friend&rsquo;s similarity and rating;</li>
+<li>if the friend&rsquo;s target rating is missing, continue/skip it;</li>
+<li>otherwise add <code>similarity × rating</code> to the numerator and similarity to the denominator;</li>
+<li>return numerator/denominator.</li>
+</ul>
+<p>Conceptual pseudocode:</p>
+<pre><code class="language-python">def weighted_rating(movie, friends, ratings, similarities):
+    numerator = 0.0
+    denominator = 0.0
+    for friend in friends:
+        rating = ratings.loc[friend, movie]
+        if pd.isna(rating):
+            continue
+        sim = similarities.loc[friend]
+        numerator += sim * rating
+        denominator += sim
+    return numerator / denominator
+</code></pre>
+<h3 id="step-5-predict-new-movies">Step 5: predict new movies</h3>
+<ol>
+<li>Set friend names to Hyun, Eric, and Chundru.</li>
+<li>Set new movies to NM1, NM2, and NM3.</li>
+<li>Transpose ratings as required to align rows/columns in the code.</li>
+<li>Loop through each new movie.</li>
+<li>Call the weighted-average function.</li>
+<li>Append movie and predicted rating to a results DataFrame.</li>
+</ol>
+<p>Reported predictions for “You”:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Movie</th>
+<th style="text-align: right;">Predicted rating</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NM1</td>
+<td style="text-align: right;">2.3066</td>
+</tr>
+<tr>
+<td>NM2</td>
+<td style="text-align: right;">2.07</td>
+</tr>
+<tr>
+<td>NM3</td>
+<td style="text-align: right;">3.59</td>
+</tr>
+</tbody>
+</table></div>
+<p>NM3 has the highest predicted rating and should be recommended first. NM1 and NM2 are relatively close and lower.</p>
+<h3 id="important-implementation-caveats">Important implementation caveats</h3>
+<ul>
+<li><code>NaN</code> is missing, not zero; replacing it by <code>0.0001</code> is only a computational workaround and can still influence similarity.</li>
+<li>Guard against zero norms and zero weighted-average denominators.</li>
+<li>Modern pandas may prefer accumulating rows and constructing a DataFrame or using <code>concat</code> rather than repeated deprecated <code>DataFrame.append</code> calls.</li>
+<li>A robust production system should validate on held-out ratings, not judge quality only from internally generated scores.</li>
+</ul>
+<hr>
+<h2 id="9-techwave-solutions-case-study-cosine-similarity-for-customer-segmentation">9. TechWave Solutions case study: cosine similarity for customer segmentation</h2>
+<h3 id="business-setting-and-stakeholders">Business setting and stakeholders</h3>
+<p>TechWave Solutions represents each customer&rsquo;s purchase behavior/preferences as a binary feature vector and wants meaningful marketing segments under a limited budget.</p>
+<p>Stakeholder concerns reflected in the review:</p>
+<ul>
+<li>marketing: useful groups and personalization;</li>
+<li>data/analytics: mathematically valid similarity and thresholds;</li>
+<li>finance/management: campaign return on investment (ROI), adequate group sizes, and efficient budget allocation.</li>
+</ul>
+<h3 id="meaning-of-binary-customer-vectors">Meaning of binary customer vectors</h3>
+<p>Each coordinate is a shared behavioral feature:</p>
+<ul>
+<li>1: customer has that preference/behavior;</li>
+<li>0: customer does not.</li>
+</ul>
+<p>Customers must have the same dimensionality and feature ordering. For binary vectors, the dot product counts shared 1s, while the norm normalizes for total active features.</p>
+<h3 id="course-case-examples">Course case examples</h3>
+<p>The supplied case notes list:</p>
+<p>\[
+F_1=[1,1,1,1,0,0,0],\quad
+F_2=[0,0,1,1,0,1,1]
+\]</p>
+<p>and report:</p>
+<p>\[
+\cos(F_1,F_2)\approx0.447
+\]</p>
+<p>interpreted as low similarity.</p>
+<p>They also list:</p>
+<p>\[
+G_1=[1,1,1,1,1,0],\quad
+G_2=[1,1,0,1,1,1]
+\]</p>
+<p>and report:</p>
+<p>\[
+\cos(G_1,G_2)\approx0.833
+\]</p>
+<p>interpreted as high similarity.</p>
+<blockquote>
+<p><strong>Data-integrity warning:</strong> the transcribed vectors, stated norms, dot products, and reported answers are not fully arithmetically consistent. As written, \(F_1\) has four ones (norm 2), so its displayed vectors yield \(2/(2\cdot2)=0.5\), not 0.447. As written, \(G_1\) and \(G_2\) share four ones and each has five ones, yielding \(4/5=0.8\), not 0.833. Preserve <strong>0.447 and 0.833 as the quiz/case&rsquo;s intended reported values</strong>, but in a calculation question recompute from the exact vectors printed on the exam and show every step.</p>
+</blockquote>
+<h3 id="threshold-strategies">Threshold strategies</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Similarity band</th>
+<th>Segment interpretation</th>
+<th>Marketing treatment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\(s\ge0.8\)</td>
+<td>Highly similar, narrow/high-confidence segment</td>
+<td>Premium personalization, loyalty, cross-sell, tightly targeted offers</td>
+</tr>
+<tr>
+<td>\(0.5\le s<0.8\)</td>
+<td>Moderately similar, broader segment</td>
+<td>General promotions, awareness, seasonal offers</td>
+</tr>
+<tr>
+<td>\(s<0.5\)</td>
+<td>Weakly similar</td>
+<td>Avoid treating them as one tightly targeted group</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Single threshold 0.5:</strong> larger segments and wider reach but weaker cohesion, less precise personalization, and possible wasted spend.</p>
+<p><strong>Single threshold 0.8:</strong> smaller, more homogeneous, high-confidence groups but reduced coverage and possible exclusion of useful customers.</p>
+<p><strong>Dual-threshold strategy:</strong> use both bands and vary campaign intensity. The quiz/review recommends this as the best balance of segment precision, usable size, personalization, limited budget, and ROI.</p>
+<h3 id="power-user-issue">Power-user issue</h3>
+<p>Cosine removes magnitude. A power user with many active features and a regular customer with fewer can still point in a similar direction and receive high cosine similarity. Whether they should be in the same business segment depends on objectives. Binary features also discard purchase frequency, value, recency, and intensity.</p>
+<p>Practical solution: combine cosine-based preference direction with variables such as spend, frequency, recency, customer lifetime value, or activity tier. Segmentation can be hierarchical: preference cluster first, power-user tier second.</p>
+<h3 id="validate-thresholds-empirically">Validate thresholds empirically</h3>
+<p>Do not accept 0.5, 0.8, or dual thresholds only because they sound reasonable. Compare strategies using:</p>
+<ul>
+<li>segment size and stability;</li>
+<li>within-segment similarity/cohesion;</li>
+<li>campaign click/conversion and uplift against a control group;</li>
+<li>revenue, margin, and cost;</li>
+<li>ROI and coverage;</li>
+<li>A/B tests or pilots.</li>
+</ul>
+<p>The best threshold is the one that achieves the business objective on real outcomes, not merely the largest cosine value.</p>
+<hr>
+<h2 id="10-exam-focused-comparisons-and-traps">10. Exam-focused comparisons and traps</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Correct exam statement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blank rating</td>
+<td>Unknown/unobserved; not automatically zero</td>
+</tr>
+<tr>
+<td>Dot product</td>
+<td>Coordinate-wise products summed; magnitude-sensitive</td>
+</tr>
+<tr>
+<td>Cosine similarity</td>
+<td>Dot product divided by both L2 norms; direction-sensitive</td>
+</tr>
+<tr>
+<td>Raw cosine</td>
+<td>Can be biased by rating scale/generosity</td>
+</tr>
+<tr>
+<td>Mean-centering</td>
+<td>Subtract each user&rsquo;s own observed-rating mean</td>
+</tr>
+<tr>
+<td>Weighted prediction</td>
+<td>Similar neighbors&rsquo; observed ratings contribute in proportion to similarity</td>
+</tr>
+<tr>
+<td>UV factorization</td>
+<td>Approximate \(M\) by lower-rank \(UV\) and predict missing cells</td>
+</tr>
+<tr>
+<td>UV loss</td>
+<td>Computed over observed entries only</td>
+</tr>
+<tr>
+<td>Coordinate descent</td>
+<td>Optimize one factor entry at a time, repeat to convergence</td>
+</tr>
+<tr>
+<td>RMSE</td>
+<td>Square root of mean squared observed-entry residuals</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="common-errors">Common errors</h3>
+<ul>
+<li>Comparing vectors with different feature meanings/order.</li>
+<li>Forgetting one of the two norms in cosine similarity.</li>
+<li>Combining the norm roots incorrectly.</li>
+<li>Assuming cosine is always in \([0,1]\); centered/real vectors can produce negatives.</li>
+<li>Calling a blank a negative preference or zero rating.</li>
+<li>Including blank entries as zeros in matrix-factorization loss.</li>
+<li>Averaging neighbor ratings without similarity weights.</li>
+<li>Including a missing neighbor rating in the weighted average.</li>
+<li>Reading \(-0.51\) as “closer” than \(-0.387\); numerically, \(-0.387\) is greater and less opposed.</li>
+<li>Assuming a high cosine guarantees business profitability.</li>
+<li>Treating quiz vectors/results as infallible when their displayed arithmetic conflicts; recompute from the actual question.</li>
+</ul>
+<hr>
+<h2 id="11-formula-sheet">11. Formula sheet</h2>
+<h3 id="dot-product-and-norm">Dot product and norm</h3>
+<p>\[
+A\cdot B=\sum_i a_i b_i,qquad
+\|A\|_2=\sqrt{\sum_i a_i^2}
+\]</p>
+<h3 id="cosine-similarity">Cosine similarity</h3>
+<p>\[
+\operatorname{cosim}(A,B)=\frac{A\cdot B}{\|A\|_2\|B\|_2}
+\]</p>
+<h3 id="mean-centering">Mean-centering</h3>
+<p>\[
+r'_{ui}=r_{ui}-\bar r_u
+\]</p>
+<h3 id="similarity-weighted-prediction">Similarity-weighted prediction</h3>
+<p>\[
+\hat r_{ui}=
+\frac{\sum_{v\in N_i(u)}s(u,v)r_{vi}}
+{\sum_{v\in N_i(u)}s(u,v)}
+\]</p>
+<h3 id="uv-factorization">UV factorization</h3>
+<p>\[
+M_{m\times n}\approx
+U_{m\times d}V_{d\times n}
+\]</p>
+<h3 id="observed-entry-rmse">Observed-entry RMSE</h3>
+<p>\[
+\operatorname{RMSE}_{\Omega}=
+\sqrt{\frac1{|\Omega|}
+\sum_{(i,j)\in\Omega}(M_{ij}-(UV)_{ij})^2}
+\]</p>
+<hr>
+<h2 id="12-recall-questions-with-answer-cues">12. Recall questions with answer cues</h2>
+<ol>
+<li><strong>What are the two inputs to content-based filtering?</strong> Item features and a target user&rsquo;s profile/context/feedback.</li>
+<li><strong>Why can content-based filtering scale across users?</strong> It does not require all other users&rsquo; data for each target user&rsquo;s recommendation.</li>
+<li><strong>What is over-specialization?</strong> Recommending only items similar to established interests, reducing novelty.</li>
+<li><strong>What does a binary dot product count?</strong> Features active in both vectors.</li>
+<li><strong>Why divide the dot product by norms?</strong> To compare direction rather than raw magnitude.</li>
+<li><strong>Why is a utility matrix sparse?</strong> Most users interact with/rate only a small fraction of all items.</li>
+<li><strong>How is a missing rating predicted from neighbors?</strong> Similarity-weighted average over neighbors who rated the item.</li>
+<li><strong>Why mean-center?</strong> Remove user rating-scale bias and compare relative preferences.</li>
+<li><strong>What happened after centering the movie example?</strong> The closer neighbor changed from Chundru to Eric.</li>
+<li><strong>Why use UV instead of simply filling blanks with zero?</strong> It learns from observed entries and estimates unknown cells without calling them observed dislikes.</li>
+<li><strong>What are the UV dimensions for four users, seven movies, and two factors?</strong> \(U:4\times2\), \(V:2\times7\), product \(4\times7\).</li>
+<li><strong>What is coordinate descent here?</strong> Optimize one entry of \(U\) or \(V\) at a time while holding all others fixed.</li>
+<li><strong>Which demo movie is recommended?</strong> NM3, predicted at about 3.59.</li>
+<li><strong>What does threshold 0.5 do in TechWave?</strong> Broad reach and larger but less cohesive segments.</li>
+<li><strong>What does threshold 0.8 do?</strong> Narrow, highly similar, more personalized segments.</li>
+<li><strong>Why prefer the dual threshold in the case?</strong> It assigns different campaigns to high- and moderate-similarity bands, balancing reach, precision, and ROI.</li>
+</ol>
+<h3 id="final-one-minute-revision">Final one-minute revision</h3>
+<ul>
+<li>Content-based = item features + the same user&rsquo;s profile; collaborative = behavior of multiple users.</li>
+<li>Explicit feedback is declared; implicit feedback is inferred and more ambiguous.</li>
+<li>A blank utility entry is unknown, not zero.</li>
+<li>Cosine = dot product divided by both norms; greater cosine means closer direction.</li>
+<li>Mean-centering subtracts each user&rsquo;s average and can reverse neighbor rankings.</li>
+<li>Similarity-weighted averages predict missing ratings using only neighbors with observed target-item ratings.</li>
+<li>UV learns low-dimensional user/item factors by minimizing observed-entry reconstruction error, then multiplies them to predict blanks.</li>
+<li>Demo: similarities You–Hyun 0.66, You–Eric 0.53, You–Chundru 0.59; NM3 is highest at 3.59.</li>
+<li>TechWave review: 0.5 broad, 0.8 precise, dual threshold balances marketing ROI—but validate with actual campaign outcomes.</li>
+<li>Practice basic cosine calculations by hand, show all norms separately, and interpret the result as the instructor emphasized.</li>
+</ul>
+<h2 id="13-qa-supplement-transcript-and-quiz-details">13. QA supplement — transcript and quiz details</h2>
+<h3 id="similarity-measures-answer-different-questions">Similarity measures answer different questions</h3>
+<ul>
+<li>Dot product combines alignment and magnitude.</li>
+<li>Cosine measures angle/direction after normalization.</li>
+<li>Euclidean distance measures absolute separation.</li>
+</ul>
+<p>For binary behavior vectors, cosine emphasizes overlap relative to activity volume. It can group similarly patterned customers despite very different activity, creating the TechWave power-user caveat.</p>
+<h3 id="range-and-centering-caveats">Range and centering caveats</h3>
+<p>General cosine lies in $[-1,1]$; nonnegative/binary vectors give $[0,1]$. Negative similarity becomes possible after mean-centering. After centering, $UV^T$ models deviations from user baseline; add the baseline back for a raw-rating prediction.</p>
+<h3 id="coordinate-descent-mechanics">Coordinate-descent mechanics</h3>
+<p>Alternate updates of $U$ and $V$ while holding the other fixed, using observed set $\Omega$:</p>
+<p>$$\min_{U,V}\sum_{(i,j)\in\Omega}(R_{ij}-u_i^Tv_j)^2+\lambda(\|U\|_F^2+\|V\|_F^2).$$</p>
+<p>Stop on negligible objective/RMSE improvement or a maximum iteration. The lecture&rsquo;s unregularized demo is educational; production needs regularization, validation, and controlled initialization.</p>
+<h3 id="demo-safety-checks">Demo safety checks</h3>
+<ul>
+<li>Align vectors to identical item order and dimension.</li>
+<li>Do not treat unknown ratings as true zero unless zero has that meaning.</li>
+<li>Guard against zero norms and zero total neighbor similarity.</li>
+<li>Exclude the target itself from neighbors where applicable.</li>
+<li>Fit thresholds/hyperparameters only on development data.</li>
+</ul>
+<h3 id="techwave-threshold-decision">TechWave threshold decision</h3>
+<p>The case compares broad 0.5 and strict 0.8 thresholds. A dual strategy can form high-confidence ($\ge0.8$), experimental (0.5–0.8), and low-similarity segments. Validate segment size, conversion lift, cost, ROI, stability, and fairness rather than choosing the highest cutoff automatically.</p>
+<h2 id="17-review-week-augmentation-factorization-and-implementation">17. Review-week augmentation: factorization and implementation</h2>
+<p>The review week adds a production-oriented bias-aware prediction formula to the basic $UV^T$ treatment:</p>
+<p>$$\hat r_{ui}=\mu+b_u+b_i+p_u^Tq_i,$$</p>
+<p>where $\mu$ is the global mean, $b_u$ captures a user&rsquo;s generous/strict rating tendency, $b_i$ captures an item&rsquo;s general popularity or quality effect, and $p_u^Tq_i$ captures latent user–item compatibility. The regularized observed-entry objective is</p>
+<p>$$\min \sum_{(u,i)\in\Omega}(r_{ui}-\hat r_{ui})^2+\lambda\left(b_u^2+b_i^2+\|p_u\|_2^2+\|q_i\|_2^2\right).$$</p>
+<p>This separates baseline effects from interaction structure and helps prevent large latent vectors from fitting noise. Select factor count and $\lambda$ on validation data, not on the test set.</p>
+<p>Implementation roles emphasized in review:</p>
+<ul>
+<li><code>pandas</code>: ingest, clean, aggregate, pivot, and map external IDs.</li>
+<li><code>csr_matrix</code>: store sparse user–item data without allocating the full dense matrix.</li>
+<li>scikit-learn <code>NearestNeighbors</code>: retrieve neighbours; remember it returns distances and row indices, and convert cosine distance $d$ to similarity $1-d$ when appropriate.</li>
+</ul>
+<p>Serving safeguards include minimum-overlap/significance weighting, excluding already-consumed items, zero-norm and zero-denominator checks, clipping rating predictions to the legal scale, availability filters, and fallbacks when neighbourhood evidence is weak.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-4.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 4: Recommendation Systems and Collaborative…</span>
+      </a>
+      <a href="week-6.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 6: Bias–Variance Trade-off, Underfitting,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

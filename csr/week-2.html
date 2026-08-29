@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>CSR · Week 2 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">CSR</span>
+      <span class="brand-title">Week 2</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html" selected>CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Corporate Social Responsibility (CSR) and Sustainability
+      </a>
+      <a class="is-active" href="week-2.html">
+        <span class="week-num">Week 2</span>
+        History, Evolution, Practice and Future of CSR
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Ethics of CSR, Corporate Citizenship, Philanthropy, Government,…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Globalization, International CSR, Triple Bottom Line and CSR in Finance
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        CSR: Scope, Benefits, Importance, Stakeholders, Indian Initiatives…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        CSR in Sectors, Drivers, Corporate Initiatives and Governance
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        CSR, Sustainable Operations, Logistics, Sustainability, ESG and…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Environment, Natural Resources, SDGs, Environmental Protection, EIA…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Global Warming, Climate Change, Carbon Management and Environmental…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        CSR and Sustainability
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Environmental and Energy Management
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Water Management, Waste Management, Sustainable Packaging and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Renewable Energy
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Solar PV, Renewable-Energy Companies, Pollution, and Social…
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        CSR and Sustainability
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">CSR · Week 2</p>
+        <h1 class="page-title">History, Evolution, Practice and Future of CSR</h1>
+        <p class="page-meta">Week 2 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#how-to-use-these-notes">How to use these notes</a></li>
+      <li><a href="#1-the-central-idea-of-csr">1. The central idea of CSR</a></li>
+      <li><a href="#2-history-and-evolution-of-csr">2. History and evolution of CSR</a></li>
+      <li><a href="#3-carroll-s-pyramid-and-the-types-of-responsibility">3. Carroll’s pyramid and the types of responsibility</a></li>
+      <li><a href="#4-internal-and-external-elements-of-csr">4. Internal and external elements of CSR</a></li>
+      <li><a href="#5-best-practices-for-planning-and-implementing-csr">5. Best practices for planning and implementing CSR</a></li>
+      <li><a href="#6-csr-practices-of-major-companies">6. CSR practices of major companies</a></li>
+      <li><a href="#7-future-of-csr">7. Future of CSR</a></li>
+      <li><a href="#8-corporate-governance-and-its-relationship-with-csr">8. Corporate governance and its relationship with CSR</a></li>
+      <li><a href="#9-tesla-and-the-limits-of-one-dimensional-sustainability">9. Tesla and the limits of one-dimensional sustainability</a></li>
+      <li><a href="#10-strategic-csr-and-rational-sustainability">10. Strategic CSR and rational sustainability</a></li>
+      <li><a href="#11-glossary-of-week-2-terms">11. Glossary of Week 2 terms</a></li>
+      <li><a href="#12-greenco-manufacturing-case">12. GreenCo Manufacturing case</a></li>
+      <li><a href="#13-exam-preparation">13. Exam preparation</a></li>
+      <li><a href="#14-one-page-memory-framework">14. One-page memory framework</a></li>
+      <li><a href="#review-week-augmentation">Review Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="how-to-use-these-notes">How to use these notes</h2>
+<p>These notes consolidate all six recorded lessons, the live class, quiz material, the Tesla discussion, and the GreenCo case. They remove player/UI text, timestamps, greetings, and empty repetition, while retaining substantive definitions, arguments, examples, questions, qualifications, and instructor emphasis.</p>
+<blockquote>
+<p><strong>Transcript caution:</strong> A few proper names and target years were mistranscribed. Where the intended fact is uncertain, the notes say <strong>“transcript states”</strong> rather than silently correcting it. In an exam, prioritize the concept and use the dates/names in the official slides or textbook if they differ.</p>
+</blockquote>
+<hr>
+<h2 id="1-the-central-idea-of-csr">1. The central idea of CSR</h2>
+<p>Corporate Social Responsibility (CSR) is the responsibility of a business to operate ethically and to contribute positively to society and the environment while remaining economically viable. The week repeatedly summarizes CSR through three linked concerns:</p>
+<ul>
+<li><strong>Ethics:</strong> doing what is right; honest, fair, non-cheating conduct.</li>
+<li><strong>Society:</strong> welfare of employees, customers, communities and other stakeholders.</li>
+<li><strong>Environment/sustainability:</strong> conserving resources, preventing pollution, using renewable energy, and protecting present and future generations.</li>
+</ul>
+<p>CSR also includes economics, philanthropy, global concerns and governance. It is not merely charity. Modern CSR is a <strong>stakeholder-management or stakeholder-satisfaction mechanism</strong>: it manages the relationship between a corporation and everyone affected by or interested in it.</p>
+<h3 id="shareholders-versus-stakeholders">Shareholders versus stakeholders</h3>
+<ul>
+<li><strong>Shareholders/investors</strong> provide capital and expect returns, protection of their interests, information, and grievance resolution.</li>
+<li><strong>Stakeholders</strong> are broader. Internal stakeholders include the board, CEO, managers, supervisors and employees (the transcript sometimes also groups shareholders internally). External stakeholders include customers, clients, suppliers, government, competitors, NGOs and communities. The environment and future generations are also relevant interests in modern sustainability thinking.</li>
+<li>A responsible company balances these interests rather than treating shareholder profit as its only duty.</li>
+</ul>
+<h3 id="why-csr-matters-to-a-company">Why CSR matters to a company</h3>
+<p>CSR can produce both social value and business value:</p>
+<ul>
+<li>stronger brand reputation, goodwill, credibility and customer trust;</li>
+<li>attraction and retention of talented employees who want to work for a values-led company;</li>
+<li>improved employee morale and satisfaction;</li>
+<li>better stakeholder and government relationships;</li>
+<li>improved risk and supply-chain management;</li>
+<li>efficiency-driven cost savings and potentially greater revenue;</li>
+<li>easier attraction of investors and capital;</li>
+<li>legitimacy or a “social licence” to operate.</li>
+</ul>
+<p>The instructor repeatedly used the phrase <strong>“cultivating relationships.”</strong> Helping society can build durable, mutually beneficial stakeholder relationships. However, CSR must be genuine and inclusive; activity done only for appearance risks becoming greenwashing.</p>
+<hr>
+<h2 id="2-history-and-evolution-of-csr">2. History and evolution of CSR</h2>
+<h3 id="a-mid-to-late-1800s-responsible-organizations-and-philanthropy">A. Mid-to-late 1800s: responsible organizations and philanthropy</h3>
+<ul>
+<li>CSR has roots spanning roughly two centuries.</li>
+<li>The Industrial Revolution and emerging factory system attracted criticism over working conditions, poverty, labour practices, and the treatment of women and children, particularly in the United States.</li>
+<li>Industrial employment created social problems, making employee welfare and ethical labour practices early responsibility issues.</li>
+<li>Corporate philanthropy rose in the late 1800s. An industrialist referred to in the transcript as <strong>Andrew</strong> made a fortune in steel and donated large portions to education and scientific research (the intended reference appears to be Andrew Carnegie). Another philanthropist referred to as <strong>John</strong> donated more than half a billion dollars to religious, educational and scientific causes (apparently John D. Rockefeller).</li>
+<li>Early CSR therefore had a narrow emphasis: charity, donations, social welfare and reducing harsh working hours/conditions.</li>
+</ul>
+<h3 id="b-1953-the-modern-term">B. 1953: the modern term</h3>
+<ul>
+<li>American economist <strong>Howard Bowen</strong> officially coined/established the modern CSR concept in 1953 and is described as the <strong>father of CSR</strong>.</li>
+<li>This marked a move from scattered philanthropy toward an articulated responsibility of business to society.</li>
+</ul>
+<h3 id="c-1960s-response-to-modern-social-problems">C. 1960s: response to modern social problems</h3>
+<ul>
+<li>Scholars increasingly treated CSR as a business response to the emerging problems of modern society.</li>
+<li>CSR moved beyond giving money toward responsibility for the consequences of business activity.</li>
+</ul>
+<h3 id="d-1971-social-contract">D. 1971: social contract</h3>
+<ul>
+<li>The <strong>Committee for Economic Development</strong> introduced the idea of a social contract between business and society.</li>
+<li>A social contract means that every organization has obligations to society and should function in response to societal needs. A company exists with society’s support and therefore owes duties in return.</li>
+</ul>
+<h3 id="e-1970s-1980s-self-regulation-and-stakeholder-responsiveness">E. 1970s–1980s: self-regulation and stakeholder responsiveness</h3>
+<ul>
+<li>Adoption and study of CSR continued through the 1970s.</li>
+<li>Greater deregulation in the 1980s meant companies had to exercise more self-regulation and accept responsibility for the social effects of their operations.</li>
+<li>CSR at this stage was still concentrated mainly on human and labour rights, pollution, and waste management.</li>
+<li>Organizations became more responsive to stakeholders rather than viewing responsibility only as voluntary charity.</li>
+</ul>
+<h3 id="f-1990s-widespread-acceptance-and-globalization">F. 1990s: widespread acceptance and globalization</h3>
+<ul>
+<li>The 1990s marked widespread approval of CSR.</li>
+<li>In 1991, <strong>Donna G. Wood</strong> of the University of Pittsburgh published <em>Corporate Social Performance Revisited</em>. It extended earlier CSR models by giving a framework for assessing the <strong>impacts and outcomes</strong> of CSR programs—important because good intentions alone are insufficient.</li>
+<li>Globalization widened CSR’s scope. Multinational corporations faced scrutiny across countries and had to consider their worldwide social and environmental impact.</li>
+<li>International developments mentioned include <strong>Agenda 21</strong>, UN climate-conference processes (transcribed as “UNFCC Conference of Parties”), and the <strong>Kyoto Protocol</strong>. These brought environmental responsibility into global corporate debate.</li>
+</ul>
+<h3 id="g-after-2000-strategic-integrated-and-measurable-csr">G. After 2000: strategic, integrated and measurable CSR</h3>
+<ul>
+<li>CSR gained major popularity after the millennium; corporations such as Coca-Cola and Walt Disney invested substantially in CSR.</li>
+<li>Environmental responsibility and sustainable practices became central alongside ethics and society.</li>
+<li>Globalization, internet/social media visibility, environmental awareness, labour concerns, investor expectations, sustainability reporting, and pressure from governments/international organizations increased corporate scrutiny.</li>
+<li>CSR expanded from occasional charity to cleaner operations, employee welfare, governance, transparent reporting, stakeholder engagement, diversity/equity/inclusion, and measurable outcomes.</li>
+<li>Companies increasingly align CSR programs with the <strong>17 UN Sustainable Development Goals (SDGs)</strong>, including gender equality, protection of ocean life, and wider sustainable-development priorities.</li>
+</ul>
+<h3 id="h-csr-today-and-tomorrow">H. CSR today and tomorrow</h3>
+<p>CSR is now an integral way of doing business and influences consumer and employee choice. Technology, automation and digital platforms increase transparency and scrutiny, creating stronger incentives for responsible conduct. It will continue evolving in response to pollution, carbon footprints, climate change, renewable energy, social expectations, and governance demands.</p>
+<h3 id="evolution-at-a-glance">Evolution at a glance</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Earlier CSR</th>
+<th>Modern CSR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Charity and donations</td>
+<td>Integrated business strategy</td>
+</tr>
+<tr>
+<td>Philanthropy separated from operations</td>
+<td>Responsibility embedded in daily decisions</td>
+</tr>
+<tr>
+<td>Narrow, short-term and reactive</td>
+<td>Broad, long-term and proactive</td>
+</tr>
+<tr>
+<td>Image-oriented</td>
+<td>Performance- and impact-oriented</td>
+</tr>
+<tr>
+<td>Limited transparency</td>
+<td>Standardized public reporting</td>
+</tr>
+<tr>
+<td>Primarily local community focus</td>
+<td>Global consistency with local adaptation</td>
+</tr>
+<tr>
+<td>Qualitative claims</td>
+<td>KPIs, baselines, analytics and audits</td>
+</tr>
+<tr>
+<td>Shareholder-centred</td>
+<td>Multi-stakeholder orientation</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Instructor’s connective summary:</strong> CSR began as corporate donations; it evolved through strategic CSR into an inclusive stakeholder mechanism. Sustainability is broader, and CSR is one way of operationalizing it.</p>
+</blockquote>
+<hr>
+<h2 id="3-carroll-s-pyramid-and-the-types-of-responsibility">3. Carroll’s pyramid and the types of responsibility</h2>
+<p>The live class connects the major types of CSR to <strong>Carroll’s CSR Pyramid</strong>. The four responsibilities build a complete view of the firm:</p>
+<ol>
+<li><strong>Economic responsibility — be profitable.</strong> A firm must be economically healthy before it can sustainably help others. The instructor’s analogy: a person must first be healthy to help someone else.</li>
+<li><strong>Legal responsibility — obey the law.</strong> Business must comply with laws, regulations and formal requirements.</li>
+<li><strong>Ethical responsibility — do what is right.</strong> Fairness, honesty and moral conduct can demand more than minimum legal compliance.</li>
+<li><strong>Philanthropic responsibility — help society.</strong> Voluntary community contributions, donations, education, healthcare and development support.</li>
+</ol>
+<p>The transcript briefly mentions an additional/extended responsibility but the wording is unclear. The examinable core is the four-layer economic–legal–ethical–philanthropic structure.</p>
+<p><strong>Key distinction:</strong> Profit is not the enemy of CSR. Economic viability is a foundation for sustained responsibility. Equally, profit alone is insufficient: a responsible firm must obey law, act ethically, and contribute to society.</p>
+<hr>
+<h2 id="4-internal-and-external-elements-of-csr">4. Internal and external elements of CSR</h2>
+<h3 id="internal-elements">Internal elements</h3>
+<ul>
+<li>a clear CSR strategy linked to corporate vision, mission, objectives and products;</li>
+<li>reporting systems and standards, including the Global Reporting Initiative, sustainability standards and India’s BRSR (the transcript also contains an unclear reference to another reporting initiative);</li>
+<li>employee involvement and ownership;</li>
+<li>ethical conduct and fair working conditions;</li>
+<li>strong governance, policies, controls, measurement and audit;</li>
+<li>cross-functional, interdepartmental execution teams;</li>
+<li>committed leadership and top-down support.</li>
+</ul>
+<p>Employees may participate directly in projects or assist social-development work. The instructor framed this through a <strong>principal–agent idea</strong>: the company (principal) directs and enables employees (agents) to translate CSR into action. The prior Salesforce case was recalled as an example of employee participation in CSR.</p>
+<h3 id="external-elements">External elements</h3>
+<ul>
+<li>community interaction;</li>
+<li>NGO collaboration;</li>
+<li>partnerships with government, academic institutions and private-sector bodies;</li>
+<li>customer and supplier engagement;</li>
+<li>public reporting and accountability;</li>
+<li>sensitivity to local law, culture and needs.</li>
+</ul>
+<h3 id="leadership-as-the-translation-mechanism">Leadership as the translation mechanism</h3>
+<p>Strategy is not enough. Successful translation depends on leadership commitment. Leaders must create ethical culture, allocate resources, hear diverse voices, establish accountability, and attend to every material CSR/ESG dimension. Infosys, Tata (transcribed once as “Data”) and Mahindra were cited as familiar examples where leadership is associated with CSR.</p>
+<hr>
+<h2 id="5-best-practices-for-planning-and-implementing-csr">5. Best practices for planning and implementing CSR</h2>
+<h3 id="1-identify-the-purpose-and-align-it">1. Identify the purpose and align it</h3>
+<ul>
+<li>Define why the initiative exists and which stakeholder/environmental need it addresses.</li>
+<li>Align CSR with vision, mission, objectives, overall strategy and core capabilities.</li>
+<li>Seek value for both organization and community.</li>
+<li>Misalignment makes employees and customers feel that CSR is disconnected or performative.</li>
+<li>Use a clear agenda, planning process and implementation strategy.</li>
+</ul>
+<h3 id="2-build-a-strong-team">2. Build a strong team</h3>
+<ul>
+<li>Employees are a company’s most important execution resource and internal stakeholders.</li>
+<li>Form a capable, supportive, cross-functional and interdepartmental group that represents the company well.</li>
+<li>Give employees ownership, tools, agency and space to propose and execute projects; many of the best execution ideas come from the workforce.</li>
+<li>Strong morale and team capability improve implementation.</li>
+</ul>
+<h3 id="3-make-sustainability-an-organization-wide-priority">3. Make sustainability an organization-wide priority</h3>
+<ul>
+<li>Sustainability cannot remain a standalone CSR objective or one department’s project.</li>
+<li>Embed sustainable development, environmental protection, conservation, renewables (solar/wind), energy-efficient technology, energy management and climate awareness throughout the organization.</li>
+<li>Assess environmental impact and the life cycle of goods and services.</li>
+</ul>
+<h3 id="4-set-measurable-goals">4. Set measurable goals</h3>
+<ul>
+<li>Connect corporate goals with CSR goals.</li>
+<li>Define intended outcomes, indicators, baselines, targets, timelines and reporting cycles.</li>
+<li>Examples: emissions, waste, water use, injury rates, employee satisfaction, diversity, beneficiaries, ethics training, compliance events and audit findings.</li>
+<li>A <strong>baseline</strong> is the starting measurement before intervention; without it, improvement and return on effort cannot be judged.</li>
+</ul>
+<h3 id="5-engage-stakeholders">5. Engage stakeholders</h3>
+<ul>
+<li>Include internal and external stakeholders in design, implementation and feedback.</li>
+<li>Treat engagement as an opportunity to build trust, not merely an obligation.</li>
+<li>Balance stakeholder interests and manage conflicts.</li>
+</ul>
+<h3 id="6-map-sustainability-opportunities">6. Map sustainability opportunities</h3>
+<ul>
+<li>Search across the organization for pollution prevention, energy savings, waste reduction, water conservation, renewable energy, sustainable sourcing and safer production.</li>
+<li>Use environmental-impact assessment and life-cycle thinking to locate the largest impacts.</li>
+</ul>
+<h3 id="7-report-regularly">7. Report regularly</h3>
+<ul>
+<li>Communicate environmental performance, employee welfare, social initiatives, community investment, governance and future goals.</li>
+<li>Good reporting is regular, standardized, comparable, accurate, public, transparent and improvement-oriented.</li>
+<li>Reporting reveals implementation and compliance rather than merely announcing intentions.</li>
+</ul>
+<h3 id="8-benchmark-internally-and-externally">8. Benchmark internally and externally</h3>
+<ul>
+<li><strong>Internal benchmarking:</strong> compare departments, units, plants or processes within the same organization.</li>
+<li><strong>External benchmarking:</strong> compare with a reference company or best-in-class performer.</li>
+<li>Benchmarking reveals gaps and spreads better practices.</li>
+</ul>
+<h3 id="9-build-partnerships-and-networks">9. Build partnerships and networks</h3>
+<ul>
+<li>Combine the resources, expertise and networks of government, NGOs, academic institutions, companies and communities.</li>
+<li>Collaboration allows wider reach and more efficient achievement of common goals.</li>
+</ul>
+<h3 id="10-celebrate-achievements-and-share-knowledge">10. Celebrate achievements and share knowledge</h3>
+<ul>
+<li>Recognize progress, communicate lessons and disseminate successful practice.</li>
+<li>Celebration supports morale and continued stakeholder participation, but claims should remain evidence-based.</li>
+</ul>
+<h3 id="outcome-based-evaluation-sequence">Outcome-based evaluation sequence</h3>
+<ol>
+<li>Define the intended outcome.</li>
+<li>Select measurable indicators.</li>
+<li>record the baseline.</li>
+<li>Collect the same data consistently.</li>
+<li>Compare results with the baseline and target.</li>
+<li>Use evidence to improve funding, design and future decisions.</li>
+</ol>
+<hr>
+<h2 id="6-csr-practices-of-major-companies">6. CSR practices of major companies</h2>
+<p>The examples are illustrations of different CSR dimensions, not endorsements or current fact-checks.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Company</th>
+<th>CSR practices highlighted</th>
+<th>Concept illustrated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Google</strong></td>
+<td>Racial equity, disability inclusion, gender equality, inclusion inside the firm and in society</td>
+<td>Social/people dimension and inclusion</td>
+</tr>
+<tr>
+<td><strong>Coca-Cola</strong></td>
+<td>Climate, packaging, agriculture and product quality; “World Without Waste”; collect/recycle every bottle; 100% recyclable packaging; reduce plastic harm to people and marine life; reduce carbon footprint by 25% (target year transcribed as <strong>2013</strong>, likely erroneous)</td>
+<td>Circular economy; reduce–reuse–recycle; climate and waste management</td>
+</tr>
+<tr>
+<td><strong>Ford</strong></td>
+<td>Carbon neutrality, pay equity, investment in electric vehicles/electrification; vehicles carbon-neutral by 2050; mission of a better world where everyone is free to move</td>
+<td>Transport emissions, air pollution, climate strategy and social equity</td>
+</tr>
+<tr>
+<td><strong>Microsoft</strong></td>
+<td>Racial equity, employee volunteering, support for people, digital literacy, zero waste, water-positive ambitions, fundamental/employee rights, carbon-negative ambition (target year transcribed as <strong>2013</strong>)</td>
+<td>Integrated ethics–society–environment goals; carbon negative goes beyond neutral</td>
+</tr>
+<tr>
+<td><strong>Starbucks</strong></td>
+<td>Carbon neutrality, water conservation/management, worker rights, supply-chain transparency, lower agrochemical use; Coffee and Farmer Equity program with ethical sourcing standards; transparent, profitable and sustainable farming; biodiversity protection</td>
+<td>Ethical supply chains, farmer welfare, agriculture and water</td>
+</tr>
+<tr>
+<td><strong>Netflix</strong></td>
+<td>Racial equity, women’s empowerment, Fund for Creative Equity; new opportunities; accessibility for users with hearing, sight or mobility limitations</td>
+<td>Equity, inclusion, accessibility and customer welfare</td>
+</tr>
+<tr>
+<td><strong>Apple</strong></td>
+<td>Energy efficiency, gender equality, women’s empowerment, education, skill development, disaster relief; high social-responsibility standards across global supply chain; 2022 environmental report; 100% carbon-neutral products by 2030 and renewable/recycled materials</td>
+<td>Global supply-chain responsibility and integrated environmental/social CSR</td>
+</tr>
+</tbody>
+</table></div>
+<p>Common pattern: companies increasingly pursue carbon neutrality, conservation, renewable energy, energy-efficient technology, ethical supply chains and people welfare. Vehicle and industrial emissions matter because pollutants harm humans, animals and birds and contribute to air pollution, global warming and climate change.</p>
+<hr>
+<h2 id="7-future-of-csr">7. Future of CSR</h2>
+<p>The recorded lesson identifies four major future directions.</p>
+<h3 id="a-technology-and-innovation">A. Technology and innovation</h3>
+<ul>
+<li>Digitalization, computer-controlled operations and Industry 4.0 are reshaping business.</li>
+<li>Innovation creates new products and new ways to solve environmental and social problems while producing shared value.</li>
+<li>Big data and analytics allow companies to collect and analyze large volumes of CSR information, identify trends, measure interventions and allocate resources better.</li>
+<li>Future developments noted in the quiz material include digital reporting, artificial intelligence for sustainability monitoring, science-based targets and real-time measurement.</li>
+</ul>
+<h3 id="b-collaboration-and-inclusion">B. Collaboration and inclusion</h3>
+<ul>
+<li>Complex problems require government agencies, NGOs, academic institutions and private companies to work together.</li>
+<li>Inclusion gives all stakeholders a voice and equal opportunity for input.</li>
+<li>Diverse groups offer different perspectives; combined resources, expertise and networks improve reach and efficiency.</li>
+</ul>
+<h3 id="c-enhanced-stakeholder-engagement">C. Enhanced stakeholder engagement</h3>
+<ul>
+<li>Feedback on sustainability performance and social impact helps a business understand stakeholder needs and expectations.</li>
+<li>Social media and digital platforms permit direct, transparent communication.</li>
+<li>Storytelling, multimedia and interactive campaigns can raise awareness, inspire action and mobilize support.</li>
+<li>Trust requires good communication, accountability, relationship building and honest disclosure—not promotional messaging alone.</li>
+</ul>
+<h3 id="d-a-more-responsible-and-sustainable-future">D. A more responsible and sustainable future</h3>
+<ul>
+<li>Align CSR initiatives with global goals such as the UN SDGs.</li>
+<li>Address greenhouse-gas emissions, rising temperatures, melting polar ice/glaciers, sea-level rise, habitat loss, pollution and resource depletion.</li>
+<li>Promote renewables, conservation and climate mitigation.</li>
+<li>Preserve the planet for people, plants, animals, birds and all living creatures, including future generations.</li>
+</ul>
+<h3 id="standardization-in-global-csr">Standardization in global CSR</h3>
+<p>Multinationals operate under different laws, labour standards, environmental rules, cultures and expectations. They therefore need a common CSR policy, consistent ethics, standard metrics and comparable reporting, while adapting implementation to local legal and cultural realities. Standardization improves governance, investor confidence, reputation and cross-country comparison.</p>
+<hr>
+<h2 id="8-corporate-governance-and-its-relationship-with-csr">8. Corporate governance and its relationship with CSR</h2>
+<h3 id="definition">Definition</h3>
+<p>Corporate governance is the system or process by which a company is directed and controlled. It consists of policies, principles, guidelines and codes of conduct that govern the board and top management. It balances economic and social goals and individual and communal goals, promotes efficient resource use, and requires accountability for stewardship.</p>
+<p>The board of directors is the highest governing authority and is answerable to stakeholders. Governance should prevent the board from becoming a “playing field” dominated by a few persons.</p>
+<h3 id="core-principles">Core principles</h3>
+<ol>
+<li><strong>Transparency:</strong> accurate, timely and concise disclosure of financial position, structure, administration, performance and governance. Transparency is described as the foundation of governance.</li>
+<li><strong>Accountability:</strong> directors and senior officials must answer for use of funds/resources and for decisions affecting investors and other stakeholders.</li>
+<li><strong>Fairness:</strong> protect shareholder and stakeholder interests, give explanations, and resolve grievances when interests are at risk.</li>
+<li><strong>Independence:</strong> top management and the board must be capable of making crucial decisions in the company’s and stakeholders’ best interests without improper dominance.</li>
+</ol>
+<p>The live class adds board independence, minority voice, women directors and a diverse board. Each voice should receive due consideration.</p>
+<h3 id="importance">Importance</h3>
+<ul>
+<li>attracts capital and foreign institutional investment;</li>
+<li>supports efficient performance and sound management;</li>
+<li>protects investors from poor management, weak financial reporting and inadequate accountability;</li>
+<li>improves reputation, customer confidence, public trust and long-term organizational performance;</li>
+<li>enables monitoring even after investment.</li>
+</ul>
+<h3 id="csr-governance-relationship">CSR–governance relationship</h3>
+<p>CSR began as philanthropy but is increasingly fused into corporate governance. Both stress ethical practice, responsiveness to stakeholders and responsibility for the environment. Governance embeds CSR through board oversight, policies, defined roles, internal controls, targets, audits, public reporting and possibly executive performance evaluation/compensation tied to safety, environmental, ethical and community outcomes.</p>
+<p>Shared outcomes include rebuilding public trust through transparency, strengthening brand reputation, improving stakeholder relationships, contributing to regional/societal development, and balancing stakeholder concerns.</p>
+<hr>
+<h2 id="9-tesla-and-the-limits-of-one-dimensional-sustainability">9. Tesla and the limits of one-dimensional sustainability</h2>
+<h3 id="case-background">Case background</h3>
+<ul>
+<li>Tesla is known for electric vehicles, sustainable-transport innovation and strong strategic capabilities.</li>
+<li>In 2022, S&amp;P Dow Jones removed Tesla from an ESG index. This was striking because a prominent “green” company appeared to fail a sustainability criterion while some fossil-fuel companies remained.</li>
+<li>Elon Musk characterized ESG in highly critical/scam-like terms; the case provoked the question: <strong>Does ESG truly measure sustainability?</strong></li>
+<li>The instructor recommended John McNeill’s book <em>The Algorithm</em> (name/title as spoken) for insight into Tesla’s rise and Musk’s operating approach.</li>
+</ul>
+<h3 id="why-the-case-matters">Why the case matters</h3>
+<p>Sustainability is not only environmental performance. CSR/sustainability must integrate:</p>
+<ul>
+<li><strong>Environmental:</strong> emissions, pollution, resource use and climate impact.</li>
+<li><strong>Social:</strong> employees, customers, community, human rights, workplace safety and product quality.</li>
+<li><strong>Governance:</strong> board independence, diverse voices, minority interests, accountability and responsible control.</li>
+</ul>
+<p>Tesla’s electric vehicles address an environmental problem, but the instructor says inadequate attention to employees/workplace safety and governance/board-independence issues contributed to the index problem. Overemphasis on the environmental pillar cannot compensate automatically for weakness in social or governance pillars.</p>
+<h3 id="classroom-debate">Classroom debate</h3>
+<p>Question: <strong>Should Tesla still be considered sustainable despite removal from the ESG index?</strong></p>
+<ul>
+<li>A student initially argued yes: removal of one index element need not materially weaken the overall model; assess long-term impact, resilience, control and viability rather than an isolated rating.</li>
+<li>The instructor pressed the inclusive interpretation: can sustainability be reduced to environment alone?</li>
+<li>After considering social and governance dimensions, the student revised the view and said Tesla might not qualify as sustainable under a comprehensive assessment.</li>
+</ul>
+<h3 id="exam-conclusion">Exam conclusion</h3>
+<p>Index inclusion/exclusion is not identical to real-world impact, and an ESG rating does not guarantee superior financial performance. Nevertheless, the central lesson is that <strong>operationalizing sustainability requires committed leadership and attention to every material stakeholder and ESG dimension</strong>. A company must verify that its intervention actually solves the problem and act as a responsible corporate citizen. Selective, short-term or purely promotional action can amount to greenwashing.</p>
+<blockquote>
+<p><strong>Instructor caveat:</strong> The case is an analytical illustration, not a declaration that Tesla—or any company—is wholly good or bad. Corporate strategies may have changed since the event.</p>
+</blockquote>
+<hr>
+<h2 id="10-strategic-csr-and-rational-sustainability">10. Strategic CSR and rational sustainability</h2>
+<p>CSR’s development can be seen as:</p>
+<p><strong>Philanthropy → strategic CSR → rational sustainability / integrated stakeholder value</strong></p>
+<ul>
+<li><strong>Philanthropy:</strong> voluntary donation or direct help.</li>
+<li><strong>Strategic CSR:</strong> align social action with the business and cultivate relationships that produce mutual benefit.</li>
+<li><strong>Rational sustainability:</strong> undertake sustainable/CSR choices with a long-term economic rationale, ethical basis and alignment with corporate strategy, products and stakeholders.</li>
+</ul>
+<p>The instructor’s example is using CSR funds to install solar panels. This can address energy insecurity, help a beneficiary/community, reduce environmental impact and build a durable relationship with the company.</p>
+<p>Rational sustainability does not mean choosing profit instead of ethics. It means social action must be economically sustainable enough to continue and must create real impact rather than becoming an insincere one-off. Features emphasized:</p>
+<ul>
+<li>long-term economic rationale;</li>
+<li>value-driven decision-making;</li>
+<li>ethical balance;</li>
+<li>alignment of all stakeholders;</li>
+<li>fit with corporate strategy, capabilities and products;</li>
+<li>durable social impact and relationship cultivation.</li>
+</ul>
+<hr>
+<h2 id="11-glossary-of-week-2-terms">11. Glossary of Week 2 terms</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Exam-ready meaning and use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Benchmarking</strong></td>
+<td>Comparing practices/performance with a reference or best-in-class standard. Internal = across units of the same firm; external = against another/reference firm. Used to improve operations.</td>
+</tr>
+<tr>
+<td><strong>Carbon footprint</strong></td>
+<td>Amount/tonnage of carbon-dioxide or equivalent emissions released by an activity, product, company or system (the lecture simplifies it as tonnes of CO₂ emitted).</td>
+</tr>
+<tr>
+<td><strong>Carbon neutral</strong></td>
+<td>Net carbon emissions are reduced and balanced to zero.</td>
+</tr>
+<tr>
+<td><strong>Carbon negative</strong></td>
+<td>The organization removes/offsets more carbon than it emits; more ambitious than neutrality.</td>
+</tr>
+<tr>
+<td><strong>Carbon offsetting</strong></td>
+<td>Funding an activity outside the organization that reduces emissions elsewhere by an amount equivalent to emissions being offset. Examples: renewable/hybrid energy, efficiency, conservation, auditing, waste handling, land-use/forest projects and afforestation. Offsets seek to mitigate climate impact but do not erase the need to reduce one’s own emissions.</td>
+</tr>
+<tr>
+<td><strong>Corporate governance (CG)</strong></td>
+<td>The framework for directing and controlling a corporation, balancing economic/social and individual/communal goals, improving resource efficiency and ensuring accountable stewardship.</td>
+</tr>
+<tr>
+<td><strong>Corporate social investment (CSI)</strong></td>
+<td>Company investment in social-development projects, especially in emerging markets, whether or not directly related to core business; an element of CSR.</td>
+</tr>
+<tr>
+<td><strong>Corporate sustainability</strong></td>
+<td>A multi-stakeholder approach to social, economic, environmental, financial and governance issues, aimed at enduring organizational and societal value.</td>
+</tr>
+<tr>
+<td><strong>Eco-labelling</strong></td>
+<td>Voluntary environmental-performance certification/label identifying proven environmental preference within a product/service category. It links environmental performance, CSR and marketing; credible eco-friendly credentials can improve reputation.</td>
+</tr>
+<tr>
+<td><strong>Ethics</strong></td>
+<td>The science/practice of moral human conduct—doing what is right and good, even when not legally required; no cheating.</td>
+</tr>
+<tr>
+<td><strong>Environmental Impact Assessment (EIA)</strong></td>
+<td>Assessment of the likely environmental effects of a business/project, used to reduce negative and increase positive impacts. Introduced here and developed in later weeks.</td>
+</tr>
+<tr>
+<td><strong>ESG</strong></td>
+<td>Environmental, Social and Governance criteria used to assess corporate sustainability/responsibility performance.</td>
+</tr>
+<tr>
+<td><strong>KPI (Key Performance Indicator)</strong></td>
+<td>A metric or measure showing a critical aspect of process, program or overall business performance.</td>
+</tr>
+<tr>
+<td><strong>Philanthropy</strong></td>
+<td>Voluntary contributions to society’s welfare/goodwill, such as education, healthcare, science, religion or infrastructure. Important, but only one part of CSR.</td>
+</tr>
+<tr>
+<td><strong>PPP (Public–Private Partnership)</strong></td>
+<td>Joint arrangement between public bodies and private companies to perform projects/programs for public good. Operations may be private, governance public, or mixed; airports were cited as an example.</td>
+</tr>
+<tr>
+<td><strong>Social contract</strong></td>
+<td>The implied obligation of business to respond to society’s needs because its existence and legitimacy depend on society.</td>
+</tr>
+<tr>
+<td><strong>Social reporting</strong></td>
+<td>Reporting of non-financial information such as community/economic development, stakeholder participation, volunteerism and environmental performance.</td>
+</tr>
+<tr>
+<td><strong>Socially Responsible Investment (SRI)</strong></td>
+<td>Investment—often through a fund—in activities or businesses selected for social responsibility.</td>
+</tr>
+<tr>
+<td><strong>Stakeholder engagement</strong></td>
+<td>Meaningful inclusion, dialogue and feedback with those affected by/interested in the firm, used to understand expectations and build trust.</td>
+</tr>
+<tr>
+<td><strong>Sustainable development</strong></td>
+<td>Meeting present needs without compromising future generations’ ability to meet their own needs. Requires conservation and concern for all living beings, not humans alone.</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="12-greenco-manufacturing-case">12. GreenCo Manufacturing case</h2>
+<h3 id="facts">Facts</h3>
+<p>GreenCo is a regional factory with a small CSR team led by Maya. It needs a realistic CSR plan suited to its size and budget. Planning lasts six months, with one year for initial results. Globalization and post-2000 expectations create pressure for structured and measurable CSR.</p>
+<h3 id="options">Options</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Main action</th>
+<th>Success indicator</th>
+<th>Strength</th>
+<th>Limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A: Environmental program</strong></td>
+<td>Pollution control, waste management and resource conservation</td>
+<td>Measurable pollution/waste reduction</td>
+<td>Strong fit with manufacturing’s material impacts; can create operational savings</td>
+<td>Must still consider people and governance</td>
+</tr>
+<tr>
+<td><strong>B: Community initiative</strong></td>
+<td>Education, healthcare and infrastructure</td>
+<td>Improvement in community wellbeing/beneficiaries</td>
+<td>Strongest direct philanthropy and community contribution</td>
+<td>Full social effects may take longer than one year; weaker direct operational fit</td>
+</tr>
+<tr>
+<td><strong>C: Ethical internal practices</strong></td>
+<td>Fair employee treatment, honest customer communication, transparent financial practice</td>
+<td>Higher employee satisfaction and stakeholder trust</td>
+<td>Strongest ethics/governance impact</td>
+<td>Less direct environmental/community impact</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="concepts-tested">Concepts tested</h3>
+<ul>
+<li>CSR is broader than philanthropy.</li>
+<li><strong>Materiality</strong> means prioritizing issues most significant to the firm’s operations and stakeholders.</li>
+<li><strong>Strategic fit</strong> means aligning CSR with core competencies and capabilities.</li>
+<li><strong>Economic balance</strong> means affordability, efficient resource use and long-term viability—not abandoning responsibility for profit.</li>
+<li>Different projects mature over different timelines; common one-year evaluation can disadvantage education, health or infrastructure projects.</li>
+</ul>
+<h3 id="recommended-reasoning">Recommended reasoning</h3>
+<p>If forced to choose one option for a regional manufacturer, <strong>Option A</strong> is usually the strongest strategic starting point because pollution, waste and resource use are material operational impacts; reductions are measurable within the stated period and can improve efficiency/economic sustainability. A strong answer should acknowledge that Option B is the strongest philanthropic choice and Option C the strongest ethical-governance choice. In real practice, mature CSR would eventually integrate all three.</p>
+<hr>
+<h2 id="13-exam-preparation">13. Exam preparation</h2>
+<h3 id="likely-short-answer-questions">Likely short-answer questions</h3>
+<ol>
+<li>
+<p><strong>Define CSR.</strong>
+   - Ethical, social, environmental and economic responsibility.
+   - Goes beyond philanthropy.
+   - Stakeholder-oriented and integrated into business.</p>
+</li>
+<li>
+<p><strong>Who is the father of CSR?</strong>
+   - Howard Bowen; modern CSR concept associated with 1953.</p>
+</li>
+<li>
+<p><strong>Define sustainable development.</strong>
+   - Present needs without compromising future generations’ ability to meet theirs.</p>
+</li>
+<li>
+<p><strong>Differentiate internal and external benchmarking.</strong>
+   - Internal: units in the same organization; external: reference/best-in-class organization.</p>
+</li>
+<li>
+<p><strong>State the principles of corporate governance.</strong>
+   - Transparency, accountability, fairness and independence.</p>
+</li>
+<li>
+<p><strong>What is a KPI/baseline?</strong>
+   - KPI is a key performance metric; baseline is the pre-intervention starting value.</p>
+</li>
+<li>
+<p><strong>Differentiate carbon neutral and carbon negative.</strong>
+   - Neutral balances net emissions to zero; negative removes/offsets more than emitted.</p>
+</li>
+</ol>
+<h3 id="likely-long-answer-questions-and-model-points">Likely long-answer questions and model points</h3>
+<h4 id="1-trace-the-evolution-of-csr">1. Trace the evolution of CSR.</h4>
+<ul>
+<li>Industrial Revolution: factory conditions, women/child labour and poverty.</li>
+<li>Late-1800s philanthropy: education, science, religion and welfare.</li>
+<li>1953 Howard Bowen.</li>
+<li>1960s response to modern social problems.</li>
+<li>1971 social contract.</li>
+<li>1970s–80s self-regulation, human/labour rights, pollution and waste.</li>
+<li>1990s global acceptance; Donna Wood; globalization; Agenda 21/Kyoto.</li>
+<li>Post-2000 strategic, environmental, governance, reporting and SDG alignment.</li>
+<li>Current/future: technology, analytics, inclusion, partnerships and measurable impact.</li>
+</ul>
+<h4 id="2-explain-carroll-s-pyramid">2. Explain Carroll’s Pyramid.</h4>
+<ul>
+<li>Economic: be profitable and viable.</li>
+<li>Legal: obey law.</li>
+<li>Ethical: do right beyond law.</li>
+<li>Philanthropic: voluntarily contribute to society.</li>
+<li>Explain that all four—not philanthropy alone—constitute comprehensive responsibility.</li>
+</ul>
+<h4 id="3-discuss-csr-best-practices">3. Discuss CSR best practices.</h4>
+<ul>
+<li>Purpose and strategic alignment.</li>
+<li>Cross-functional employee team and ownership.</li>
+<li>Organization-wide sustainability.</li>
+<li>Measurable goals, KPIs and baselines.</li>
+<li>Stakeholder engagement.</li>
+<li>Opportunity mapping, EIA and life-cycle thinking.</li>
+<li>Regular transparent reporting.</li>
+<li>Internal/external benchmarking.</li>
+<li>Partnerships, leadership commitment, celebration and knowledge sharing.</li>
+</ul>
+<h4 id="4-explain-the-future-of-csr">4. Explain the future of CSR.</h4>
+<ul>
+<li>Technology, innovation, big data and AI.</li>
+<li>Collaboration across government–NGO–academia–business.</li>
+<li>Inclusion and stakeholder voice.</li>
+<li>Digital engagement, multimedia and direct communication.</li>
+<li>SDG alignment, science-based targets and climate mitigation.</li>
+<li>Integrated, real-time, evidence-based management rather than periodic publicity.</li>
+</ul>
+<h4 id="5-explain-corporate-governance-and-its-connection-with-csr">5. Explain corporate governance and its connection with CSR.</h4>
+<ul>
+<li>Define direction/control and board responsibility.</li>
+<li>Explain transparency, accountability, fairness and independence.</li>
+<li>Show how governance embeds CSR via policy, oversight, audit, reporting and incentives.</li>
+<li>Benefits: investor protection, capital attraction, trust, performance and balanced stakeholder interests.</li>
+</ul>
+<h4 id="6-analyze-the-tesla-case">6. Analyze the Tesla case.</h4>
+<ul>
+<li>2022 ESG-index removal despite EV/environmental leadership.</li>
+<li>ESG is multidimensional; environmental strength does not erase social/governance weakness.</li>
+<li>Discuss employees, workplace safety, board independence/diversity and stakeholder inclusion.</li>
+<li>Acknowledge paradox of fossil-fuel firms remaining and limits of ratings.</li>
+<li>Conclude that genuine sustainability requires inclusive, committed leadership and verified impact; avoid simplistic “good/bad company” claims.</li>
+</ul>
+<h4 id="7-recommend-an-option-in-greenco">7. Recommend an option in GreenCo.</h4>
+<ul>
+<li>State decision criteria: materiality, strategic fit, budget, timeline, measurability and stakeholder impact.</li>
+<li>Recommend A for manufacturing under a one-year-results constraint.</li>
+<li>Compare B’s philanthropy and C’s governance strengths.</li>
+<li>Conclude that full CSR ultimately integrates environmental, social and ethical/economic dimensions.</li>
+</ul>
+<h3 id="possible-assertion-reason-discussion-questions">Possible assertion–reason / discussion questions</h3>
+<ul>
+<li><strong>Assertion:</strong> Global companies need standardized CSR reporting. <strong>Reason:</strong> They operate across differing laws, regulations and stakeholder expectations. The reason correctly explains the assertion, while local implementation still needs adaptation.</li>
+<li>Does an ESG rating always equal real sustainability impact? No; ratings are tools with methodologies and limitations.</li>
+<li>Does ESG investment guarantee better financial performance? No guarantee; evaluate risk, impact and economics separately.</li>
+<li>Is philanthropy sufficient for CSR? No; responsible operations, employees, environment, ethics and governance are essential.</li>
+<li>Can CSR be mutually beneficial? Yes; strategic CSR can create shared value and stakeholder relationships, provided it remains ethical and genuine.</li>
+</ul>
+<h3 id="common-confusions-to-avoid">Common confusions to avoid</h3>
+<ul>
+<li><strong>CSR ≠ charity alone.</strong> Philanthropy is one component.</li>
+<li><strong>CSR and sustainability are related but not identical.</strong> The instructor sometimes uses them interchangeably for teaching connectivity, but also states CSR is part of the broader sustainability framework.</li>
+<li><strong>Stakeholder ≠ shareholder.</strong> Shareholders are one stakeholder group.</li>
+<li><strong>Legal ≠ ethical.</strong> Conduct can be legal yet ethically inadequate.</li>
+<li><strong>Reporting ≠ performance.</strong> Reports must be backed by outcomes, baselines, KPIs and audits.</li>
+<li><strong>Environmental success ≠ complete ESG success.</strong> Social and governance pillars matter.</li>
+<li><strong>Carbon offset ≠ permission to keep emitting.</strong> Reduction at source remains important.</li>
+<li><strong>Eco-label ≠ generic green advertising.</strong> It is described as voluntary certification identifying proven relative environmental preference.</li>
+<li><strong>Economic responsibility ≠ profit maximization at any cost.</strong> Viability supports sustained responsibility within legal and ethical limits.</li>
+<li><strong>A short evaluation horizon can bias decisions.</strong> Community transformation may take longer than operational improvements.</li>
+</ul>
+<h3 id="rapid-revision-key-terms">Rapid-revision key terms</h3>
+<p>CSR; stakeholder; shareholder; social contract; philanthropy; strategic CSR; rational sustainability; Carroll’s Pyramid; ESG; governance; transparency; accountability; fairness; independence; benchmarking; KPI; baseline; outcome; materiality; EIA; life-cycle assessment; social reporting; SRI; CSI; PPP; eco-label; carbon footprint; carbon neutral; carbon negative; carbon offset; sustainable development; SDGs; inclusion; greenwashing; BRSR; GRI.</p>
+<hr>
+<h2 id="14-one-page-memory-framework">14. One-page memory framework</h2>
+<p>Use <strong>HISTORY → PYRAMID → PRACTICE → PROOF → FUTURE</strong>:</p>
+<ul>
+<li><strong>History:</strong> factory problems → philanthropy → Bowen/social contract → stakeholders/globalization → strategic sustainability.</li>
+<li><strong>Pyramid:</strong> economic → legal → ethical → philanthropic.</li>
+<li><strong>Practice:</strong> align purpose → build team → embed sustainability → engage stakeholders → partner/report/benchmark.</li>
+<li><strong>Proof:</strong> outcomes → KPIs → baseline → regular data → comparison → improvement.</li>
+<li><strong>Future:</strong> technology + analytics + inclusion + collaboration + SDGs + accountable governance.</li>
+</ul>
+<p>The week’s overarching answer is: <strong>CSR becomes credible when an economically viable firm, led by committed and accountable governance, integrates ethical, social and environmental responsibility into strategy; includes all material stakeholders; and proves impact through transparent measurement.</strong></p>
+<h2 id="review-week-augmentation">Review Week Augmentation</h2>
+<ul>
+<li>Reporting creates transparency; it does not itself create better performance. Credibility requires measurable action, controls, evidence and follow-through.</li>
+<li>Governance is not merely a board or written policy. It includes implementation, enforcement, monitoring, internal controls, ethics, compliance, documentation, supplier oversight, audits and accountability.</li>
+<li>Standard disclosure evidence includes: <strong>E</strong>—energy, emissions, water/wastewater, waste/recycling and renewables; <strong>S</strong>—safety, labour, training and diversity; <strong>G</strong>—oversight, controls, supplier management, ethics, compliance and risk.</li>
+<li>GreenWave application: inconsistent worker-safety records and weak supplier monitoring are governance failures because they signal weak controls, evidence and accountability, even if formal policies exist.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-1.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 1: Corporate Social Responsibility (CSR) and…</span>
+      </a>
+      <a href="week-3.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 3: Ethics of CSR, Corporate Citizenship,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

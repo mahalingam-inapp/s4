@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Deep Learning · Week 9 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Deep Learning</span>
+      <span class="brand-title">Week 9</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html" selected>Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Neural Networks and Deep Learning
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Neural Networks, Backpropagation, Model Tuning, and Evaluation
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Convolutional Neural Networks, Transfer Learning and Computer-Vision…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        RNNs, GRU, LSTM, NLP, Word Embeddings, Transfer Learning and Attention
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        RBMs, Deep Belief Networks, Autoencoders, and Contrastive Divergence
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Reinforcement Learning, Policy Networks, Target Networks and DQN
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Generative Adversarial Networks (GANs)
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Data Augmentation, Hyperparameter Tuning, Transfer Learning and…
+      </a>
+      <a class="is-active" href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Feed-Forward Neural Networks, Perceptrons, Loss, Backpropagation and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Python Programming Fundamentals
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Machine Learning, Classification, and Naive Bayes
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Logistic Regression as a Neural Network, MNIST, and K-Means
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        PCA and Bag-of-Words
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Autoencoders and Representation Learning
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Exhaustive Exam-Oriented Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Deep Learning · Week 9</p>
+        <h1 class="page-title">Feed-Forward Neural Networks, Perceptrons, Loss, Backpropagation and Training Stability</h1>
+        <p class="page-meta">Week 9 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#scope-and-learning-outcomes">Scope and learning outcomes</a></li>
+      <li><a href="#1-feed-forward-neural-networks-ffnns">1. Feed-forward neural networks (FFNNs)</a></li>
+      <li><a href="#2-the-perceptron-foundational-building-block">2. The perceptron: foundational building block</a></li>
+      <li><a href="#3-loss-functions-learning-from-error">3. Loss functions: learning from error</a></li>
+      <li><a href="#4-derivatives-chain-rule-and-backpropagation">4. Derivatives, chain rule and backpropagation</a></li>
+      <li><a href="#5-gradient-based-optimization">5. Gradient-based optimization</a></li>
+      <li><a href="#6-matrix-representation-and-neural-network-programming">6. Matrix representation and neural-network programming</a></li>
+      <li><a href="#7-week-9-numpy-implementation-xor-binary-classifier">7. Week 9 NumPy implementation: XOR binary classifier</a></li>
+      <li><a href="#8-optishop-fraud-detection-case-study">8. OptiShop fraud-detection case study</a></li>
+      <li><a href="#9-three-major-failure-modes-and-targeted-fixes">9. Three major failure modes and targeted fixes</a></li>
+      <li><a href="#10-optishop-intervention-decision">10. OptiShop intervention decision</a></li>
+      <li><a href="#11-practical-examples-and-use-cases">11. Practical examples and use cases</a></li>
+      <li><a href="#12-instructor-student-q-a-and-emphases">12. Instructor/student Q&amp;amp;A and emphases</a></li>
+      <li><a href="#13-common-exam-traps-and-corrections">13. Common exam traps and corrections</a></li>
+      <li><a href="#14-likely-exam-questions-with-answer-points">14. Likely exam questions with answer points</a></li>
+      <li><a href="#15-rapid-revision-sheet">15. Rapid revision sheet</a></li>
+      <li><a href="#16-final-conceptual-map">16. Final conceptual map</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="scope-and-learning-outcomes">Scope and learning outcomes</h2>
+<p>Week 9 builds the feed-forward neural-network pipeline from first principles: perceptrons and multilayer perceptrons (MLPs), forward propagation, classification losses, derivatives and the chain rule, gradient descent/SGD, matrix representation, a NumPy implementation for XOR, and practical diagnosis of overfitting, exploding gradients and vanishing gradients. The instructor repeatedly emphasizes that the feed-forward network is the simplest foundational neural architecture and that information travels <strong>in one direction only</strong> during inference.</p>
+<p>After revision, you should be able to:</p>
+<ul>
+<li>distinguish a single-layer perceptron from an MLP;</li>
+<li>choose the output layer and loss for regression, binary classification and multiclass classification;</li>
+<li>derive forward- and backward-propagation equations;</li>
+<li>compare batch, stochastic and mini-batch gradient descent;</li>
+<li>express a dense network as matrix operations and explain why vectorization matters;</li>
+<li>describe the complete NumPy/XOR training loop; and</li>
+<li>diagnose overfitting, exploding gradients/NaN loss and vanishing gradients, then choose a targeted intervention.</li>
+</ul>
+<hr>
+<h2 id="1-feed-forward-neural-networks-ffnns">1. Feed-forward neural networks (FFNNs)</h2>
+<h3 id="1-1-definition-and-defining-property">1.1 Definition and defining property</h3>
+<p>A feed-forward neural network is the simplest type of artificial neural network. Information flows sequentially from the input layer, through zero or more hidden layers, to the output layer, with <strong>no feedback loop or cycle</strong>. It is widely used for supervised classification and regression and can also learn useful feature representations.</p>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> “Feed-forward” describes the direction of information flow. Do not confuse this with training: forward propagation produces a prediction, while backpropagation sends gradients backward to learn parameters.</p>
+</blockquote>
+<p>FFNNs are simple and broadly useful, but plain FFNNs do not naturally retain memory. Consequently, they struggle with sequential/time-series problems in which earlier observations matter. Deep versions may also suffer from vanishing or exploding gradients. They nevertheless form a conceptual backbone for more advanced architectures such as CNNs and RNNs.</p>
+<h3 id="1-2-layers-and-parameters">1.2 Layers and parameters</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Function</th>
+<th>Key exam detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input layer</td>
+<td>Receives features/observations</td>
+<td>One input neuron normally corresponds to one feature; it forwards data and performs no learned computation.</td>
+</tr>
+<tr>
+<td>Hidden layer(s)</td>
+<td>Transform inputs and extract patterns/representations</td>
+<td>Each neuron applies weights, a bias and an activation. Number of layers/neurons is a hyperparameter chosen according to problem complexity.</td>
+</tr>
+<tr>
+<td>Output layer</td>
+<td>Produces the final prediction</td>
+<td>Its size and activation depend on the task.</td>
+</tr>
+<tr>
+<td>Weights</td>
+<td>Represent connection strength/feature importance</td>
+<td>Learned during training.</td>
+</tr>
+<tr>
+<td>Biases</td>
+<td>Shift the activation/decision boundary</td>
+<td>Increase flexibility; not merely another feature weight.</td>
+</tr>
+<tr>
+<td>Activation function</td>
+<td>Introduces nonlinearity</td>
+<td>Without nonlinear activations, stacked dense layers collapse to one linear transformation.</td>
+</tr>
+</tbody>
+</table></div>
+<p>In a dense or fully connected network, every neuron in one layer connects to every neuron in the next.</p>
+<p>For layer \(l\):</p>
+<p>\[
+z^{[l]}=W^{[l]}a^{[l-1]}+b^{[l]}, \qquad
+a^{[l]}=f^{[l]}\!\left(z^{[l]}\right), \qquad a^{[0]}=x
+\]</p>
+<p>Here \(W\) is the weight matrix, \(b\) the bias vector, \(z\) the pre-activation/weighted sum and \(a\) the post-activation output.</p>
+<h3 id="1-3-output-design-by-task">1.3 Output design by task</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Task</th>
+<th style="text-align: right;">Typical output</th>
+<th>Typical activation</th>
+<th>Typical loss</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regression</td>
+<td style="text-align: right;">One (or one per target)</td>
+<td>Linear</td>
+<td>MSE/MAE</td>
+</tr>
+<tr>
+<td>Binary classification</td>
+<td style="text-align: right;">One</td>
+<td>Sigmoid</td>
+<td>Binary cross-entropy</td>
+</tr>
+<tr>
+<td>Multiclass, single-label</td>
+<td style="text-align: right;">One neuron per class</td>
+<td>Softmax</td>
+<td>Categorical cross-entropy</td>
+</tr>
+</tbody>
+</table></div>
+<p>The transcript sometimes says “a single neuron is used for regression”; that is the common single-target case, not a universal restriction.</p>
+<h3 id="1-4-how-an-ffnn-learns">1.4 How an FFNN learns</h3>
+<ol>
+<li><strong>Forward propagation:</strong> pass features through every layer to obtain \(\hat y\).</li>
+<li><strong>Loss computation:</strong> compare \(\hat y\) with the true target \(y\).</li>
+<li><strong>Backpropagation:</strong> use derivatives and the chain rule to compute how each weight and bias contributed to the loss.</li>
+<li><strong>Optimization:</strong> update parameters, commonly by gradient descent, SGD or Adam.</li>
+<li>Repeat over many epochs until the loss and validation behavior are satisfactory.</li>
+</ol>
+<hr>
+<h2 id="2-the-perceptron-foundational-building-block">2. The perceptron: foundational building block</h2>
+<p>Frank Rosenblatt introduced the perceptron in 1958 as a computational model inspired by a biological neuron. It is a single-layer binary classifier that learns a linear decision boundary.</p>
+<p>Given \(n\) inputs:</p>
+<p>\[
+z=\sum_{i=1}^{n}w_i x_i+b=w^Tx+b,
+\qquad
+\hat y=\begin{cases}1,&z\ge 0\\0,&z<0\end{cases}
+\]</p>
+<p>Workflow: receive features → multiply each by its weight → add the weighted values and bias → apply a step/threshold activation → emit class 0 or 1. Weights indicate input importance; the bias shifts the boundary/threshold.</p>
+<p>A common perceptron learning rule is:</p>
+<p>\[
+w \leftarrow w+\eta(y-\hat y)x, \qquad
+b \leftarrow b+\eta(y-\hat y)
+\]</p>
+<p>where \(\eta\) is the learning rate.</p>
+<h3 id="2-1-strengths-and-limitations">2.1 Strengths and limitations</h3>
+<ul>
+<li>Simple, interpretable and effective for <strong>linearly separable</strong> binary data.</li>
+<li>Has no hidden layer and normally produces a binary output.</li>
+<li>Can draw only a linear decision boundary (a line in 2-D, plane in 3-D, hyperplane in higher dimensions).</li>
+<li>Cannot solve a nonlinearly separable problem such as XOR with one layer.</li>
+<li>Therefore cannot learn the complex boundaries needed for many real-world tasks.</li>
+</ul>
+<h3 id="2-2-why-xor-matters">2.2 Why XOR matters</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: right;">\(x_1\)</th>
+<th style="text-align: right;">\(x_2\)</th>
+<th style="text-align: right;">XOR target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table></div>
+<p>No single straight line separates the two 1-points from the two 0-points. This is the classic demonstration of the single perceptron’s limitation.</p>
+<h3 id="2-3-advancement-to-the-mlp">2.3 Advancement to the MLP</h3>
+<p>An MLP adds one or more hidden layers and nonlinear activation functions. Each layer performs a weighted sum followed by activation, permitting hierarchical feature learning and nonlinear decision boundaries. MLPs are trained with backpropagation plus a gradient-based optimizer and can solve XOR.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Single-layer perceptron</th>
+<th>MLP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hidden layers</td>
+<td>None</td>
+<td>One or more</td>
+</tr>
+<tr>
+<td>Boundary</td>
+<td>Linear</td>
+<td>Potentially nonlinear</td>
+</tr>
+<tr>
+<td>XOR</td>
+<td>Cannot solve</td>
+<td>Can solve</td>
+</tr>
+<tr>
+<td>Learning</td>
+<td>Perceptron rule</td>
+<td>Backpropagation + optimizer</td>
+</tr>
+<tr>
+<td>Capacity</td>
+<td>Limited</td>
+<td>Greater, but can overfit and face gradient problems</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Instructor perspective:</strong> perceptrons and MLPs are early/foundational stages in the evolution of AI. MLPs overcome nonlinearity but still have drawbacks; later architectures such as CNNs and RNNs address other needs.</p>
+</blockquote>
+<h3 id="2-4-historical-case-study-when-a-single-line-nearly-ended-a-neural-network">2.4 Historical case study: “when a single line nearly ended a neural network”</h3>
+<p>The live session adds a historical narrative. Rosenblatt presented the 1958 perceptron very optimistically—as a machine capable of learning/“thinking.” It was impressive for its time because it could make simple rule-like yes/no decisions such as approve/reject. In 1969, Marvin Minsky and Seymour Papert’s analysis highlighted fundamental limits of single-layer perceptrons, particularly their inability to represent XOR. Enthusiasm and research funding then fell sharply; the instructor describes roughly a decade of reduced neural-network progress. Later multilayer networks, hidden units, nonlinear activations and backpropagation revived the field by overcoming the linear-separability barrier.</p>
+<p>The instructor’s takeaway is methodological: identifying a limitation can trigger the next stage of innovation. The perceptron’s failure was not merely a dead end; it motivated MLPs and, through later stages, today’s more advanced networks.</p>
+<blockquote>
+<p><strong>Historical caveat:</strong> The lecture’s story is a simplified account of the AI/neural-network funding slowdown. For an exam, retain the sequence emphasized in class: 1958 perceptron → 1969 limitation/XOR critique → decline in enthusiasm/funding → MLPs with hidden layers, nonlinear activations and backpropagation.</p>
+</blockquote>
+<hr>
+<h2 id="3-loss-functions-learning-from-error">3. Loss functions: learning from error</h2>
+<p>A loss function is a mathematical measure of the discrepancy between a model’s prediction and the true target. It converts prediction error into a scalar learning signal. Smaller loss generally means predictions align better with targets.</p>
+<p>During training: compute prediction → compute loss → calculate loss gradients with respect to parameters → update parameters to reduce loss.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Common loss</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regression</td>
+<td>Mean squared error (MSE), mean absolute error (MAE), Huber loss</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Cross-entropy; hinge loss in margin-based models</td>
+</tr>
+</tbody>
+</table></div>
+<p>The lecture distinguishes a loss for a sample or batch from an objective/cost over the complete dataset (often also including regularization). Terminology varies across textbooks, so state the convention used.</p>
+<h3 id="3-1-cross-entropy">3.1 Cross-entropy</h3>
+<p>Cross-entropy compares a predicted probability distribution with the true label distribution. It is suited to classification, differentiable, and heavily penalizes a <strong>confident but wrong</strong> prediction.</p>
+<p>Binary cross-entropy (BCE):</p>
+<p>\[
+L=-\frac{1}{m}\sum_{i=1}^{m}\left[y_i\log(\hat y_i)+(1-y_i)\log(1-\hat y_i)\right]
+\]</p>
+<p>Categorical cross-entropy for \(K\) classes:</p>
+<p>\[
+L=-\sum_{k=1}^{K} y_k\log(\hat y_k)
+\]</p>
+<p>With one-hot \(y\), only the probability assigned to the true class contributes directly: \(L=-\log(\hat y_{\text{true}})\). If that probability is close to 1, loss is low; if close to 0, loss is very high.</p>
+<p><strong>Corrected numerical interpretation:</strong> for a true label of 1 and prediction 0.1, \(L=-\log(0.1)\approx2.303\), which is high—not low. The transcript’s spoken interpretation at this point is inconsistent with the formula.</p>
+<p>Applications mentioned: spam/not-spam, image recognition across multiple classes, churn misclassification, incorrect fraud flags and wrong customer targeting. In business terms, loss represents how costly a wrong decision is and guides the model to avoid repeating it.</p>
+<h3 id="3-2-loss-is-not-the-optimizer">3.2 Loss is not the optimizer</h3>
+<p>The loss <strong>measures</strong> error; it does not itself modify weights. Backpropagation computes gradients, and the optimizer uses those gradients to update parameters.</p>
+<hr>
+<h2 id="4-derivatives-chain-rule-and-backpropagation">4. Derivatives, chain rule and backpropagation</h2>
+<p>Derivatives measure how a small change in one quantity changes another. Neural-network learning needs \(\partial L/\partial W\) and \(\partial L/\partial b\).</p>
+<p>For a composition \(f(g(x))\), the chain rule is:</p>
+<p>\[
+\frac{df}{dx}=\frac{df}{dg}\frac{dg}{dx}
+\]</p>
+<p>Backpropagation applies this rule layer by layer from output to input, connecting local derivatives to the global loss. It identifies each parameter’s contribution to the error and supplies proportional corrections. The instructor’s analogy is a manager tracing a team’s mistake step-by-step, then correcting each responsible stage.</p>
+<p>For sigmoid \(\sigma(z)=1/(1+e^{-z})\):</p>
+<p>\[
+\sigma'(z)=\sigma(z)[1-\sigma(z)]
+\]</p>
+<p>If code receives the already activated value \(a=\sigma(z)\), it may implement the derivative as <code>a * (1 - a)</code>; it is inaccurate to pass an arbitrary raw \(z\) into that expression without first applying sigmoid.</p>
+<p>For ReLU:</p>
+<p>\[
+\operatorname{ReLU}(z)=\max(0,z), \qquad
+\operatorname{ReLU}'(z)=\begin{cases}1,&z>0\\0,&z<0\end{cases}
+\]</p>
+<h3 id="4-1-what-must-be-cached">4.1 What must be cached</h3>
+<p>During the forward pass, retain \(z^{[l]}\) and/or \(a^{[l]}\) needed for activation derivatives and gradients. Each next layer must receive the preceding layer’s <strong>activation</strong> \(a\), not merely its pre-activation \(z\). Passing \(z\) bypasses the nonlinearity and changes the model.</p>
+<p>Typical dense-layer gradients for a batch of \(m\) samples are:</p>
+<p>\[
+dW^{[l]}=\frac1m dZ^{[l]}(A^{[l-1]})^T,
+\quad db^{[l]}=\frac1m\sum dZ^{[l]},
+\quad dA^{[l-1]}=(W^{[l]})^TdZ^{[l]}
+\]</p>
+<p>For sigmoid output plus BCE, the useful simplification is \(dZ^{[L]}=A^{[L]}-Y\).</p>
+<p>Frameworks such as TensorFlow and PyTorch perform automatic differentiation, but the mathematical logic remains the chain rule.</p>
+<hr>
+<h2 id="5-gradient-based-optimization">5. Gradient-based optimization</h2>
+<p>Basic gradient descent update:</p>
+<p>\[
+W\leftarrow W-\eta\frac{\partial L}{\partial W}, \qquad
+b\leftarrow b-\eta\frac{\partial L}{\partial b}
+\]</p>
+<p>The minus sign moves parameters down the loss surface. \(\eta\) is the learning rate.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Data used per update</th>
+<th>Advantages</th>
+<th>Drawbacks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Batch gradient descent</td>
+<td>Entire training set</td>
+<td>Stable, exact dataset gradient</td>
+<td>Slow/memory-heavy on large data; one update per epoch</td>
+</tr>
+<tr>
+<td>SGD</td>
+<td>One sample</td>
+<td>Frequent, fast, memory-efficient updates; noise may escape shallow local minima and improve generalization</td>
+<td>Noisy path and fluctuating loss; sensitive to learning rate</td>
+</tr>
+<tr>
+<td>Mini-batch GD</td>
+<td>Small batch</td>
+<td>Efficient vectorization plus less noise than pure SGD</td>
+<td>Batch size is another hyperparameter</td>
+</tr>
+</tbody>
+</table></div>
+<p>An <strong>epoch</strong> is one pass through the training set. More epochs provide more learning opportunities but do not guarantee better generalization; too many can overfit.</p>
+<h3 id="5-1-learning-rate">5.1 Learning rate</h3>
+<ul>
+<li>Too high: overshooting, oscillation, divergence, exploding values or NaN loss.</li>
+<li>Too low: stable but very slow convergence; may appear stuck.</li>
+<li>A schedule can start larger and reduce \(\eta\) as training approaches a minimum.</li>
+</ul>
+<p>SGD loss plotted against iterations usually has a noisy but downward overall trend. Each point corresponds to an update. Fluctuation is expected due to stochastic sampling; the long-term trend matters.</p>
+<p>Variants mentioned: momentum, adaptive learning rates and Adam. Adam combines momentum-like running averages with adaptive per-parameter learning rates. It is often convenient and fast, but it does not automatically cure overfitting, bad data, unsuitable architecture or every instability.</p>
+<hr>
+<h2 id="6-matrix-representation-and-neural-network-programming">6. Matrix representation and neural-network programming</h2>
+<p>Writing a neural-network program involves architecture definition, parameter initialization, forward propagation, loss calculation, backpropagation, optimization and evaluation. Python is distinct from the neural-network concept: Python supplies the language, while NumPy/TensorFlow/PyTorch supply efficient array and learning operations.</p>
+<h3 id="6-1-why-matrices-matter">6.1 Why matrices matter</h3>
+<p>For \(m\) examples arranged as columns, \(X\in\mathbb{R}^{n_x\times m}\):</p>
+<p>\[
+Z^{[1]}=W^{[1]}X+b^{[1]},\quad
+A^{[1]}=f(Z^{[1]})
+\]</p>
+<p>If layer \(l-1\) has \(n_{l-1}\) units and layer \(l\) has \(n_l\):</p>
+<p>\[
+W^{[l]}\in\mathbb{R}^{n_l\times n_{l-1}},\quad
+b^{[l]}\in\mathbb{R}^{n_l\times1},\quad
+A^{[l]}\in\mathbb{R}^{n_l\times m}
+\]</p>
+<p>Bias broadcasting adds the same bias column to each example. Some libraries instead store examples as rows; either convention works if dimensions remain consistent.</p>
+<p>Vectorization replaces explicit sample-by-sample loops with optimized matrix multiplication, making computation faster, clearer and hardware-friendly. <strong>Vectorization is a computational technique, not backpropagation:</strong> it can accelerate both forward and backward passes.</p>
+<h3 id="6-2-programming-workflow-and-debugging">6.2 Programming workflow and debugging</h3>
+<ol>
+<li>Import libraries (NumPy for arrays/matrix operations, Matplotlib for plots; TensorFlow/PyTorch for higher-level models).</li>
+<li>Prepare and, where appropriate, standardize data.</li>
+<li>Define architecture and activations.</li>
+<li>Initialize weights and biases.</li>
+<li>Implement forward propagation.</li>
+<li>Compute an appropriate loss.</li>
+<li>Implement/back-end backpropagation.</li>
+<li>Update parameters with an optimizer.</li>
+<li>Repeat for epochs; monitor training and validation metrics.</li>
+<li>Inspect predictions, decision boundary and loss curve.</li>
+</ol>
+<p>Common debugging targets mentioned: shape mismatches, incorrect matrix orientation, passing \(z\) instead of \(a\), incorrect activation derivatives, numerical log overflow, overfitting and vanishing gradients.</p>
+<hr>
+<h2 id="7-week-9-numpy-implementation-xor-binary-classifier">7. Week 9 NumPy implementation: XOR binary classifier</h2>
+<p>The implementation is demonstrated in Google Colab: sign in with Gmail, create/rename a notebook (e.g., Week 9), use <strong>+ Text</strong> for explanations and <strong>+ Code</strong> for executable cells. The model is a small FFNN trained from scratch with NumPy and visualized with Matplotlib.</p>
+<h3 id="7-1-data-and-network">7.1 Data and network</h3>
+<p>\[
+X=\begin{bmatrix}0&0\\0&1\\1&0\\1&1\end{bmatrix}, \qquad
+Y=\begin{bmatrix}0\\1\\1\\0\end{bmatrix}
+\]</p>
+<p>A suitable network is \(2\rightarrow2\rightarrow1\): two inputs, two hidden sigmoid neurons and one sigmoid output. A hidden layer is essential because XOR is not linearly separable.</p>
+<p>Parameters can be initialized reproducibly with random seed 42. Shapes under the row-sample convention are typically \(W_1:(2,2)\), \(b_1:(1,2)\), \(W_2:(2,1)\), \(b_2:(1,1)\). The lecture uses learning rate about 0.1, a loss list, and many epochs (the narration mentions both 1,000 and 10,000; treat the exact count as configurable).</p>
+<h3 id="7-2-numerically-safe-core-functions">7.2 Numerically safe core functions</h3>
+<pre><code class="language-python">def sigmoid(z):
+    return 1 / (1 + np.exp(-z))
+
+def sigmoid_derivative(a):
+    return a * (1 - a)       # a is already sigmoid(z)
+
+def binary_cross_entropy(y, y_hat, eps=1e-12):
+    y_hat = np.clip(y_hat, eps, 1 - eps)
+    return -np.mean(y*np.log(y_hat) + (1-y)*np.log(1-y_hat))
+</code></pre>
+<p>Clipping prevents \(\log(0)\), which would yield infinity/NaN.</p>
+<h3 id="7-3-training-loop-logic">7.3 Training loop logic</h3>
+<p>Forward pass:</p>
+<p>\[
+Z_1=XW_1+b_1,\ A_1=\sigma(Z_1),\quad
+Z_2=A_1W_2+b_2,\ \hat Y=A_2=\sigma(Z_2)
+\]</p>
+<p>Then compute BCE, append it to <code>losses</code>, backpropagate the output error and hidden error, calculate gradients, and update both layers’ weights and biases with the learning rate. Print loss periodically (the demonstration refers to periodic reporting) and plot loss against epoch.</p>
+<p>Finally:</p>
+<ul>
+<li>plot the learned decision boundary over a feature grid;</li>
+<li>overlay the four XOR data points;</li>
+<li>label axes as feature 1 and feature 2; and</li>
+<li>print final probabilities/predictions.</li>
+</ul>
+<p>The demonstrated loss falls from roughly 0.7756 initially toward about 0.06 late in training. A decreasing curve indicates optimization on the training set, but by itself does not prove generalization. The nonlinear decision regions demonstrate why the hidden layer solves XOR.</p>
+<p>Practical binary-classification use cases named in the lecture: default/non-default, spam/not-spam, true/false, pass/fail and approve/reject, across finance, healthcare and NLP.</p>
+<hr>
+<h2 id="8-optishop-fraud-detection-case-study">8. OptiShop fraud-detection case study</h2>
+<h3 id="8-1-context-and-baseline-architecture">8.1 Context and baseline architecture</h3>
+<p>OptiShop uses a feed-forward network to classify online transactions as fraudulent or legitimate. Inputs may include transaction amount, time/frequency, device or location indicators and customer behavior. The baseline pipeline is:</p>
+<p>\[
+\text{features}\rightarrow\text{standardization}\rightarrow
+\text{hidden dense layer(s) + ReLU}\rightarrow
+\text{sigmoid output}\rightarrow P(\text{fraud})
+\]</p>
+<p>Sigmoid maps the final logit to \((0,1)\), suitable as a binary-class probability. A threshold such as 0.5 converts it to a class, but the operational threshold should reflect fraud costs, false positives and class imbalance. Sigmoid at the output is not the same as using sigmoid in every hidden layer.</p>
+<h3 id="8-2-input-standardization">8.2 Input standardization</h3>
+<p>For feature \(x\):</p>
+<p>\[
+x'=\frac{x-\mu}{\sigma}
+\]</p>
+<p>Standardization centers features near zero with unit standard deviation. It prevents large-scale features from dominating gradients, improves conditioning, and usually speeds/stabilizes optimization. Fit \(\mu,\sigma\) on the training set only and reuse them for validation/test/inference to avoid leakage.</p>
+<p>Standardization does <strong>not</strong> itself solve overfitting, exploding gradients or vanishing gradients; it is a strong baseline preprocessing step.</p>
+<hr>
+<h2 id="9-three-major-failure-modes-and-targeted-fixes">9. Three major failure modes and targeted fixes</h2>
+<h3 id="9-1-overfitting">9.1 Overfitting</h3>
+<p><strong>Definition:</strong> very low training loss/high training accuracy but materially worse validation/test performance. The network has memorized training-specific patterns or noise instead of learning generalizable structure.</p>
+<p>Causes include excessive capacity, small/biased/noisy data, too many epochs and insufficient regularization.</p>
+<h4 id="dropout">Dropout</h4>
+<p>During training, randomly set a fraction of activations to zero. This prevents co-adaptation, makes the network rely on distributed representations and behaves like averaging many subnetworks. During inference, dropout is disabled; frameworks handle the appropriate scaling.</p>
+<ul>
+<li>Benefit: often reduces overfitting.</li>
+<li>Trade-off: noisier/slower convergence; too much dropout causes underfitting.</li>
+</ul>
+<h4 id="l2-regularization-weight-decay">L2 regularization/weight decay</h4>
+<p>Add a penalty:</p>
+<p>\[
+J=L+\frac{\lambda}{2m}\sum_l\left\|W^{[l]}\right\|_F^2
+\]</p>
+<p>This discourages excessively large weights and encourages smoother, less sensitive functions. Larger \(\lambda\) means stronger regularization; too large causes underfitting. Biases are commonly not regularized.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dropout</th>
+<th>L2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Randomly removes activations during training</td>
+<td>Continuously penalizes large weights</td>
+</tr>
+<tr>
+<td>Stochastic, increases training noise</td>
+<td>Deterministic penalty</td>
+</tr>
+<tr>
+<td>Often useful in larger networks</td>
+<td>Simple and computationally cheap</td>
+</tr>
+<tr>
+<td>Disabled at inference</td>
+<td>Penalty only affects training objective</td>
+</tr>
+</tbody>
+</table></div>
+<p>Other useful controls: early stopping, more/better data, data augmentation where appropriate, and reducing unnecessary model capacity.</p>
+<h3 id="9-2-exploding-gradients-and-nan-loss">9.2 Exploding gradients and NaN loss</h3>
+<p>Exploding gradients are excessively large derivatives that produce huge parameter updates. Symptoms include rapidly increasing/oscillating loss, enormous weights/activations, <code>inf</code> or <code>NaN</code>, and unstable predictions. NaN means a numerical operation has become undefined; it is a symptom, not a diagnosis.</p>
+<p>Potential causes: high learning rate, unstable initialization, deep multiplicative chains, unscaled inputs and unsafe operations such as \(\log(0)\).</p>
+<p>Targeted responses:</p>
+<ul>
+<li>reduce the learning rate;</li>
+<li>standardize inputs;</li>
+<li>use suitable initialization;</li>
+<li>apply gradient clipping, e.g. global-norm clipping
+  \[
+  g\leftarrow g\cdot\min\left(1,\frac{c}{\|g\|}\right);
+  \]</li>
+<li>clip probabilities before logarithms;</li>
+<li>inspect activations/gradients layer-by-layer; and</li>
+<li>consider Adam for adaptive step sizes.</li>
+</ul>
+<p>Gradient clipping limits update magnitude and stabilizes training but does not remove the root cause. Adam is useful, not a guarantee against divergence.</p>
+<h3 id="9-3-vanishing-gradients">9.3 Vanishing gradients</h3>
+<p>Vanishing gradients become extremely small as backpropagation crosses many layers. Early layers then learn very slowly or stop learning. Training can plateau despite many epochs.</p>
+<p>The sigmoid derivative is at most 0.25 and approaches zero when sigmoid saturates near 0 or 1. Multiplying many such derivatives shrinks the gradient exponentially. Tanh can also saturate.</p>
+<h4 id="relu-hidden-activations">ReLU hidden activations</h4>
+<p>For positive inputs ReLU’s derivative is 1, supporting stronger gradient flow and cheap computation. It therefore usually outperforms hidden sigmoid in deeper FFNNs. However, negative inputs have zero gradient, so “dead ReLUs” are possible.</p>
+<h4 id="batch-normalization">Batch normalization</h4>
+<p>For a mini-batch:</p>
+<p>\[
+\hat x=\frac{x-\mu_B}{\sqrt{\sigma_B^2+\epsilon}},\qquad
+y=\gamma\hat x+\beta
+\]</p>
+<p>Batch normalization stabilizes intermediate activation distributions, often permits larger learning rates and can improve gradient flow. It uses mini-batch statistics during training and running statistics during inference. It adds implementation/state complexity and is not primarily an overfitting cure.</p>
+<p>ReLU and batch normalization are complementary: normalization keeps values in trainable ranges; ReLU preserves stronger positive-side gradients.</p>
+<h3 id="9-4-comparison-and-diagnosis">9.4 Comparison and diagnosis</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Primary evidence</th>
+<th>First targeted response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Overfitting</td>
+<td>Training good, validation poor</td>
+<td>Dropout/L2, early stopping, data/capacity review</td>
+</tr>
+<tr>
+<td>Exploding gradient</td>
+<td>Huge gradients/weights, divergence, inf/NaN</td>
+<td>Lower learning rate; clipping and numeric safeguards</td>
+</tr>
+<tr>
+<td>Vanishing gradient</td>
+<td>Near-zero early-layer gradients, stalled learning</td>
+<td>ReLU hidden layers, initialization, batch norm</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Exam trap:</strong> The interventions are not interchangeable. Diagnose from evidence before choosing a fashionable technique.</p>
+</blockquote>
+<hr>
+<h2 id="10-optishop-intervention-decision">10. OptiShop intervention decision</h2>
+<p>The extended discussion compares:</p>
+<ul>
+<li><strong>Option A — Dropout + L2:</strong> directly targets the reported generalization gap/overfitting; relatively simple in a NumPy implementation.</li>
+<li><strong>Option B — Replace hidden sigmoid with ReLU + batch normalization:</strong> strongest when vanishing gradients or unstable internal distributions are evidenced; batch norm requires extra training/inference logic and cached statistics.</li>
+<li><strong>Option C — Adam + gradient clipping:</strong> targets unstable/exploding updates and NaN loss; it can stabilize optimization but does not directly solve overfitting.</li>
+</ul>
+<p>For the stated OptiShop evidence, <strong>Option A is the best initial intervention</strong> because overfitting is the clearest diagnosed problem. Option C alone may be short-sighted: it can stop numerical failure while validation performance remains poor. Option B is not the first step unless hidden-sigmoid saturation/vanishing gradients are actually observed.</p>
+<p>Resource-efficient sequence:</p>
+<ol>
+<li>establish baseline training/validation loss, accuracy and confusion matrix;</li>
+<li>standardize inputs and ensure numerically safe BCE;</li>
+<li>add modest L2 and/or dropout; tune with validation data;</li>
+<li>monitor gradient norms and NaN/inf values;</li>
+<li>lower learning rate and clip gradients if instability appears;</li>
+<li>adopt ReLU and, if justified, batch normalization for gradient-flow issues;</li>
+<li>evaluate fraud-specific precision, recall, false-positive cost and threshold—not accuracy alone.</li>
+</ol>
+<p>Project decision criteria stressed in the notes: model robustness/generalization, training stability, implementation complexity and compute constraints. Apply one controlled change at a time where possible, compare against the same validation protocol, and retain the simplest intervention that resolves the diagnosed failure.</p>
+<hr>
+<h2 id="11-practical-examples-and-use-cases">11. Practical examples and use cases</h2>
+<h3 id="example-1-loan-approval">Example 1 — Loan approval</h3>
+<p>Inputs: income, debt ratio, credit history and employment duration. A hidden ReLU layer learns interactions; a sigmoid emits approval/default probability. Standardize numeric features, train with BCE, use validation data to tune regularization, and select the decision threshold based on the relative costs of wrongful approval and rejection.</p>
+<h3 id="example-2-email-classification">Example 2 — Email classification</h3>
+<p>For spam/not-spam, use one sigmoid output and BCE. For mutually exclusive categories such as primary/social/promotions/spam, use one softmax output per class and categorical cross-entropy.</p>
+<h3 id="example-3-detecting-failure-mode-from-curves">Example 3 — Detecting failure mode from curves</h3>
+<ul>
+<li>Training and validation loss both fall: learning normally.</li>
+<li>Training falls while validation rises: overfitting → regularize/early-stop.</li>
+<li>Both oscillate violently and become NaN: investigate learning rate, scaling, logs and gradient norms.</li>
+<li>Both plateau and early-layer gradients are tiny: investigate saturation/vanishing gradients.</li>
+</ul>
+<h3 id="example-4-why-probability-quality-matters-in-fraud">Example 4 — Why probability quality matters in fraud</h3>
+<p>Predictions of 0.51 and 0.99 may produce the same class at threshold 0.5, but BCE treats a confidently wrong 0.99 much more severely. Calibrated probabilities also support cost-sensitive thresholding and transaction review queues.</p>
+<hr>
+<h2 id="12-instructor-student-q-a-and-emphases">12. Instructor/student Q&amp;A and emphases</h2>
+<ul>
+<li><strong>Are perceptrons available in Python libraries?</strong> Yes. Libraries provide implementations and pretrained models/components for single- and multilayer networks, though the precise API depends on the platform/library. The conceptual operations remain weighted sums, bias, activation and learning.</li>
+<li><strong>Where can students obtain datasets for simple ML implementations?</strong> The instructor recommends free/open datasets from Kaggle. First decide the problem, algorithm and development platform (e.g., VS Code or Jupyter), install/import the needed libraries/dependencies, then train a suitable model on the selected dataset.</li>
+<li><strong>Why study the perceptron if it is limited?</strong> It is foundational: its inability to represent XOR motivates hidden layers and nonlinear activations, illustrating how neural architectures evolved.</li>
+<li><strong>Why discuss loss before backpropagation?</strong> Loss tells the network that it is wrong and turns error into a learning signal; backpropagation traces that signal backward to adjust parameters.</li>
+<li><strong>Course reminder:</strong> keep up with the videos/course eligibility requirements rather than leaving them until the end.</li>
+</ul>
+<hr>
+<h2 id="13-common-exam-traps-and-corrections">13. Common exam traps and corrections</h2>
+<ol>
+<li><strong>“Feed-forward means gradients never move backward.”</strong> False. Activations flow forward; gradients flow backward during training.</li>
+<li><strong>“Every FFNN is fully connected by definition.”</strong> The lecture presents dense FFNNs. Feed-forward describes acyclic direction; architectures can be sparse/convolutional.</li>
+<li><strong>“A perceptron can solve XOR after enough epochs.”</strong> False. Training time cannot overcome inadequate representational capacity.</li>
+<li><strong>“Multiple linear layers create nonlinearity.”</strong> False. Without nonlinear activations, their product remains linear.</li>
+<li><strong>“Cross-entropy updates weights.”</strong> False. It supplies the scalar objective; backpropagation and an optimizer perform learning.</li>
+<li><strong>“For true class 1, prediction 0.1 gives low loss.”</strong> False: \(-\log 0.1\approx2.303\).</li>
+<li><strong>“More epochs always improve the model.”</strong> False. Training loss may improve while validation performance worsens.</li>
+<li><strong>“A decreasing training-loss plot proves success.”</strong> It proves optimization on training data, not generalization.</li>
+<li><strong>“The sigmoid derivative is always <code>x*(1-x)</code>.”</strong> Only when <code>x</code> denotes sigmoid’s already activated output.</li>
+<li><strong>“Vectorization is backpropagation.”</strong> False. Vectorization is an efficient computation style usable in both passes.</li>
+<li><strong>“Standardization fixes overfitting.”</strong> False. It improves optimization conditioning, not model capacity/generalization by itself.</li>
+<li><strong>“Dropout remains active at inference.”</strong> False.</li>
+<li><strong>“NaN loss proves exploding gradients.”</strong> Not necessarily; inspect learning rate, gradients, overflow/division and \(\log(0)\).</li>
+<li><strong>“Adam eliminates the need to tune or diagnose.”</strong> False.</li>
+<li><strong>“Batch normalization and dropout solve the same problem.”</strong> False; their primary mechanisms and purposes differ.</li>
+</ol>
+<hr>
+<h2 id="14-likely-exam-questions-with-answer-points">14. Likely exam questions with answer points</h2>
+<h3 id="short-answers">Short answers</h3>
+<p><strong>1. Define an FFNN.</strong> An acyclic neural network in which information passes from input through hidden layers to output with no feedback loop.</p>
+<p><strong>2. What is the role of bias?</strong> It shifts a neuron’s activation/decision boundary, allowing a nonzero output threshold and greater flexibility.</p>
+<p><strong>3. Why are activation functions required?</strong> They introduce nonlinearity; otherwise stacked affine layers reduce to one affine mapping.</p>
+<p><strong>4. Why can’t a single perceptron solve XOR?</strong> XOR is not linearly separable, whereas a single perceptron learns only one hyperplane.</p>
+<p><strong>5. What does cross-entropy penalize most?</strong> Confident wrong probability assignments.</p>
+<p><strong>6. State the gradient-descent update.</strong> \(\theta\leftarrow\theta-\eta\nabla_\theta L\).</p>
+<p><strong>7. Main advantage and drawback of SGD?</strong> Frequent low-memory updates and possible useful noise; but a noisy, learning-rate-sensitive optimization path.</p>
+<p><strong>8. Why standardize features?</strong> To put features on comparable scales, improve conditioning and stabilize/faster gradient optimization.</p>
+<h3 id="long-answer-skeletons">Long-answer skeletons</h3>
+<p><strong>Explain perceptron vs MLP.</strong> Define both → equations → architecture comparison → linear separability → XOR table/diagram explanation → hidden nonlinearity → backpropagation → applications/limitations.</p>
+<p><strong>Explain training of an FFNN.</strong> Architecture/initialization → vectorized forward equations → output and loss selection → chain rule/backprop gradients → optimizer update → epochs → training/validation monitoring → numerical/generalization caveats.</p>
+<p><strong>Compare batch GD, SGD and mini-batch GD.</strong> Define update granularity → memory/speed → gradient noise → convergence behavior → use cases → learning-rate tuning.</p>
+<p><strong>Diagnose OptiShop’s network.</strong> Identify evidence → separate overfitting/exploding/vanishing → propose targeted solution → justify Option A first for generalization gap → state when B/C become appropriate → evaluation metrics and implementation constraints.</p>
+<p><strong>Describe XOR NumPy implementation.</strong> Dataset → 2–2–1 architecture → sigmoid and BCE → initialization/seed → vectorized forward pass → backprop → updates → epochs/loss plot → decision boundary and final predictions → numerical safeguards.</p>
+<hr>
+<h2 id="15-rapid-revision-sheet">15. Rapid revision sheet</h2>
+<ul>
+<li><strong>FFNN:</strong> input → hidden layer(s) → output; no cycles.</li>
+<li><strong>Neuron:</strong> \(z=w^Tx+b\), \(a=f(z)\).</li>
+<li><strong>Dense layer:</strong> \(Z=WA+b\), then \(A=f(Z)\).</li>
+<li><strong>Perceptron:</strong> single linear binary classifier; Rosenblatt, 1958; cannot solve XOR.</li>
+<li><strong>MLP:</strong> hidden layers + nonlinear activations; can model nonlinear boundaries.</li>
+<li><strong>Regression output:</strong> linear; <strong>binary:</strong> sigmoid; <strong>multiclass:</strong> softmax.</li>
+<li><strong>BCE:</strong> \(-[y\log\hat y+(1-y)\log(1-\hat y)]\).</li>
+<li><strong>Categorical CE:</strong> \(-\sum_k y_k\log\hat y_k\).</li>
+<li><strong>Backprop:</strong> chain rule from loss backward; cache needed activations/pre-activations.</li>
+<li><strong>Sigmoid derivative:</strong> \(a(1-a)\); saturation causes small gradients.</li>
+<li><strong>Update:</strong> \(W\leftarrow W-\eta dW\).</li>
+<li><strong>Batch GD:</strong> stable/full data; <strong>SGD:</strong> noisy/one sample; <strong>mini-batch:</strong> practical compromise.</li>
+<li><strong>Too-high \(\eta\):</strong> divergence/NaN; <strong>too-low \(\eta\):</strong> slow.</li>
+<li><strong>Overfitting:</strong> training good, validation poor → dropout/L2/early stopping/data.</li>
+<li><strong>Exploding:</strong> huge gradients/NaN → reduce LR, clip gradients, safe numerics.</li>
+<li><strong>Vanishing:</strong> tiny early gradients → ReLU, initialization, batch norm.</li>
+<li><strong>Standardization:</strong> \((x-\mu)/\sigma\); fit statistics on training data only.</li>
+<li><strong>XOR demo:</strong> \(2\to2\to1\), sigmoid, BCE, seed 42, many epochs, falling loss and nonlinear boundary.</li>
+<li><strong>OptiShop first choice:</strong> Option A (dropout + L2) when the observed issue is overfitting; B for vanishing/internal normalization, C for instability/exploding gradients.</li>
+</ul>
+<hr>
+<h2 id="16-final-conceptual-map">16. Final conceptual map</h2>
+<p>\[
+\boxed{X}
+\xrightarrow{W,b,f}
+\boxed{\hat Y}
+\xrightarrow{\text{loss vs. }Y}
+\boxed{L}
+\xrightarrow{\text{chain rule/backprop}}
+\boxed{\nabla W,\nabla b}
+\xrightarrow{\text{optimizer}}
+\boxed{W',b'}
+\]</p>
+<p>The complete Week 9 message is that neural learning is a closed training loop built around an acyclic forward model: represent inputs through weighted nonlinear transformations, quantify error with a task-appropriate loss, trace responsibility backward with derivatives, update parameters efficiently with matrix-based optimization, and diagnose failures using evidence rather than applying remedies indiscriminately.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-8.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 8: Data Augmentation, Hyperparameter Tuning,…</span>
+      </a>
+      <a href="week-10.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 10: Python Programming Fundamentals</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

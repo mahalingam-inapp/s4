@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>CSR · Week 6 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">CSR</span>
+      <span class="brand-title">Week 6</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html" selected>CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Corporate Social Responsibility (CSR) and Sustainability
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        History, Evolution, Practice and Future of CSR
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Ethics of CSR, Corporate Citizenship, Philanthropy, Government,…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Globalization, International CSR, Triple Bottom Line and CSR in Finance
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        CSR: Scope, Benefits, Importance, Stakeholders, Indian Initiatives…
+      </a>
+      <a class="is-active" href="week-6.html">
+        <span class="week-num">Week 6</span>
+        CSR in Sectors, Drivers, Corporate Initiatives and Governance
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        CSR, Sustainable Operations, Logistics, Sustainability, ESG and…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Environment, Natural Resources, SDGs, Environmental Protection, EIA…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Global Warming, Climate Change, Carbon Management and Environmental…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        CSR and Sustainability
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Environmental and Energy Management
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Water Management, Waste Management, Sustainable Packaging and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Renewable Energy
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Solar PV, Renewable-Energy Companies, Pollution, and Social…
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        CSR and Sustainability
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">CSR · Week 6</p>
+        <h1 class="page-title">CSR in Sectors, Drivers, Corporate Initiatives and Governance</h1>
+        <p class="page-meta">Week 6 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#week-at-a-glance">Week at a glance</a></li>
+      <li><a href="#1-strategic-csr-the-integrating-idea">1. Strategic CSR: the integrating idea</a></li>
+      <li><a href="#2-csr-in-healthcare">2. CSR in healthcare</a></li>
+      <li><a href="#3-csr-in-education">3. CSR in education</a></li>
+      <li><a href="#4-drivers-of-csr">4. Drivers of CSR</a></li>
+      <li><a href="#5-public-and-private-sector-company-initiatives">5. Public- and private-sector company initiatives</a></li>
+      <li><a href="#6-corporate-governance-and-csr">6. Corporate governance and CSR</a></li>
+      <li><a href="#7-csr-in-manufacturing-and-technology-live-session-extension">7. CSR in manufacturing and technology (live-session extension)</a></li>
+      <li><a href="#8-glossary-and-key-distinctions">8. Glossary and key distinctions</a></li>
+      <li><a href="#9-greenweave-textiles-case-study">9. GreenWeave Textiles case study</a></li>
+      <li><a href="#10-indian-csr-law-and-receiving-csr-funds-classroom-q-a">10. Indian CSR law and receiving CSR funds: classroom Q&amp;amp;A</a></li>
+      <li><a href="#11-connecting-csr-with-national-development-and-sdgs">11. Connecting CSR with national development and SDGs</a></li>
+      <li><a href="#12-exam-preparation">12. Exam preparation</a></li>
+      <li><a href="#review-week-augmentation">Review Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="week-at-a-glance">Week at a glance</h2>
+<p>Week 6 connects CSR with healthcare, education, manufacturing, IT/technology, public- and private-sector practice, and corporate governance. Its central argument is that modern CSR should not be an isolated donation or publicity exercise: it should be integrated with strategy, operations, ethics, stakeholder management and long-term sustainability.</p>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> CSR is an integrated approach connecting <strong>society, ethics and the environment</strong>. A responsible company creates social value, reduces environmental harm and sustains the business by earning stakeholder confidence.</p>
+</blockquote>
+<hr>
+<h2 id="1-strategic-csr-the-integrating-idea">1. Strategic CSR: the integrating idea</h2>
+<h3 id="meaning">Meaning</h3>
+<p><strong>Corporate Social Responsibility (CSR)</strong> is the integration of social, environmental, ethical and economic responsibilities into an organisation’s strategy and operations so that it creates long-term value for both business and society.</p>
+<p><strong>Strategic CSR</strong> embeds responsibility in the organisation’s:</p>
+<ul>
+<li>mission, vision and core values;</li>
+<li>business strategy and daily operations;</li>
+<li>product, investment, hiring and procurement decisions;</li>
+<li>governance and decision-making processes;</li>
+<li>measurement, review and reporting systems.</li>
+</ul>
+<p>It uses the organisation’s technology, people, infrastructure, expertise and partnerships to address stakeholder and community needs.</p>
+<h3 id="traditional-csr-versus-strategic-csr">Traditional CSR versus strategic CSR</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Traditional/stand-alone CSR</th>
+<th>Strategic CSR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One-time donation or charity</td>
+<td>Long-term programme and capacity building</td>
+</tr>
+<tr>
+<td>Separate from operations</td>
+<td>Embedded in strategy and operations</td>
+</tr>
+<tr>
+<td>Reactive and often publicity-oriented</td>
+<td>Proactive and linked to stakeholder needs</td>
+</tr>
+<tr>
+<td>Limited measurement</td>
+<td>Measurable outcomes, review and reporting</td>
+</tr>
+<tr>
+<td>Short-term goodwill</td>
+<td>Sustainable shared value and resilience</td>
+</tr>
+<tr>
+<td>CSR department acts alone</td>
+<td>Responsibility shared across functions and governed by the board</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="sequence-for-building-a-strategic-csr-programme">Sequence for building a strategic CSR programme</h3>
+<ol>
+<li><strong>Select a focus area</strong> aligned with company values, expertise, stakeholder expectations and real community needs (e.g., education, health, environment or skills).</li>
+<li><strong>Design a long-term programme</strong> that leverages organisational capabilities, employees, technology, infrastructure and partnerships.</li>
+<li><strong>Review and report impact</strong> across social, environmental and business outcomes. Reporting creates transparency and accountability and permits continuous improvement.</li>
+</ol>
+<h3 id="why-integration-matters">Why integration matters</h3>
+<p>CSR should influence products, investments, recruitment, procurement, operations and strategic planning. Merely spending a budget, housing CSR in a separate department or making unrelated donations does not alter harmful business practices. Integration can reduce social and environmental risks, build trust, improve access to capital and create sustainable value.</p>
+<hr>
+<h2 id="2-csr-in-healthcare">2. CSR in healthcare</h2>
+<h3 id="why-healthcare-requires-csr">Why healthcare requires CSR</h3>
+<ul>
+<li>Global health problems are increasing and becoming more complex; COVID-19 was the instructor’s central example.</li>
+<li>Health needs permanent attention, but health resources are finite. The objective is to improve quality of life and create a sustainable healthcare system.</li>
+<li>Poor and underprivileged people may lack money or access even for basic medical facilities, treatment or surgery.</li>
+<li>Healthcare is a service directly linked with society; therefore corporate action in this field has immediate social value.</li>
+<li>CSR may originate <strong>inside the healthcare sector</strong> or from an unrelated outside company such as a manufacturer, software company or MNC.</li>
+</ul>
+<p>Healthcare-related corporate actors include hospitals, pharmaceutical firms, manufacturers of health products and health-insurance companies. Medical insurance is important alongside life insurance because illness, surgery and treatment can impose heavy costs.</p>
+<p><strong>COVID-era illustration:</strong> demand expanded for vaccines, medicines, masks, sanitisers and personal protective equipment (PPE). This demonstrated both the sector’s importance and the need for research, innovation and resilient infrastructure.</p>
+<h3 id="social-determinants-of-health">Social determinants of health</h3>
+<p>CSR can address the <strong>places and conditions in which people are born, live, grow, work and age</strong>. It therefore goes beyond treatment to resource allocation, safe living and working conditions, occupational safety, prevention and community well-being.</p>
+<h3 id="scope-and-opportunities">Scope and opportunities</h3>
+<ul>
+<li>Health-promotion and preventive-health activities.</li>
+<li>Health protection through safe products and compliance with occupational safety and health requirements.</li>
+<li>Industrial safety and personal protective equipment—not only COVID PPE, but safety goods generally.</li>
+<li>Medical research and innovation: medicines, vaccines and solutions for COVID-19 and other diseases.</li>
+<li>Policy support, global cooperation, finance, work effort and donations to health charities.</li>
+<li>Financial and technological support that improves affordability and reduces barriers to access.</li>
+<li>Integrated healthcare delivery rather than a narrow technical/clinical response.</li>
+<li>Matching demand and supply in public-health infrastructure.</li>
+<li>Community partnerships tailored to different local health problems.</li>
+<li>Deep study of the community and its specific problems before designing an intervention.</li>
+<li>Fundraising for people unable to afford medical care.</li>
+<li>Employee volunteering, blood-donation drives, health campaigns and health camps.</li>
+<li>Basic health camps where doctors check blood pressure, blood sugar and other indicators.</li>
+<li>Collaboration and coordination with health institutions.</li>
+<li>Low-cost/subsidised medicines, drugs, chemicals and vaccines.</li>
+</ul>
+<h3 id="capacity-building-approach">Capacity-building approach</h3>
+<p>The strongest healthcare CSR builds durable capacity through equipment, diagnostics, infrastructure, staff training, community health workers, local clinics and mobile medical units. Mobile clinics bring preventive care and early diagnosis to rural/underserved populations and reduce their travel burden.</p>
+<p>During an emergency, companies may fund beds, equipment, mobile clinics and extra service capacity when public systems are overloaded. They <strong>complement rather than permanently replace government healthcare</strong>. The desired chain is:</p>
+<p><strong>support communities → strengthen local capacity → close service gaps → improve long-term health outcomes.</strong></p>
+<h3 id="benefits-to-the-company-and-stakeholders">Benefits to the company and stakeholders</h3>
+<ul>
+<li>Social acceptance and stronger stakeholder relationships.</li>
+<li>Reputation and goodwill.</li>
+<li>Patient trust and loyalty.</li>
+<li>Attraction and retention of employees.</li>
+<li>Attraction of investors and other stakeholders.</li>
+<li>Government recognition and a higher competitive benchmark.</li>
+<li>Innovation and employee enthusiasm.</li>
+<li>Positive societal impact and responsible-corporate-citizen status.</li>
+</ul>
+<p>Hospitals integrating CSR into strategy can meet legal obligations, improve community trust, reduce environmental risk, strengthen stakeholder and investor confidence and improve long-term sustainability.</p>
+<h3 id="company-illustrations">Company illustrations</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Organisation</th>
+<th>Healthcare-related initiative in the transcript</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ONGC</strong></td>
+<td>Contributed <strong>₹100 crore</strong> to the PM Citizens’ Assistance and Relief in Emergency Situations fund to support government healthcare infrastructure, especially for COVID-19 and influenza.</td>
+</tr>
+<tr>
+<td><strong>BPCL</strong></td>
+<td>Signed an MoU with Tata Memorial Centre to support Homi Bhabha Cancer Hospital and Research Centre in Punjab; illustrates a petroleum company partnering on cancer care.</td>
+</tr>
+<tr>
+<td><strong>SBI + NSDL</strong></td>
+<td>Worked to address high disease incidence in Mumbai slums through free doorstep care using mobile medical units.</td>
+</tr>
+<tr>
+<td><strong>Doctors For You</strong></td>
+<td>Non-profit programme/partner working to improve access to quality healthcare in India.</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="3-csr-in-education">3. CSR in education</h2>
+<h3 id="need-and-rationale">Need and rationale</h3>
+<p>Many children and adults lack access to primary or continuing education because of poverty and other barriers. Education creates enlightenment, human capability and national prosperity. Businesses can contribute management expertise, social innovation and social entrepreneurship, but must deliver high-quality educational products and services to the right beneficiaries.</p>
+<p>The post-COVID shift to online learning intensified the digital divide. Providing laptops and computers to poor students was cited as a direct CSR response; digital access is now part of educational access.</p>
+<h3 id="philanthropy-and-employee-involvement">Philanthropy and employee involvement</h3>
+<p><strong>Philanthropy</strong> means action for human welfare. It may include donating funds, but active delivery of educational goods and services can create more value because implementation and beneficiary reach determine whether the initiative has meaning. Employee volunteering with charities and non-profits aligned to company values also builds community relationships.</p>
+<h3 id="major-areas-of-educational-csr">Major areas of educational CSR</h3>
+<ul>
+<li>Primary and higher education; higher education for skill building.</li>
+<li>Improving the overall quality of education.</li>
+<li>Special education and employment-oriented learning for children, women, elderly people and differently abled persons.</li>
+<li>Lifelong learning across gender and age groups; the instructor cited news of elderly people passing Class 10 as an example of education’s empowering effect.</li>
+<li>Livelihood-enhancement projects.</li>
+<li>School/institution infrastructure, especially in under-resourced government schools.</li>
+<li>Classrooms, buildings, libraries, laboratories, projectors, computers and smart classrooms.</li>
+<li>Digital classrooms, internet connectivity, devices, smart boards, educational software and digital literacy.</li>
+<li>Vocational and technical training, soft skills, career guidance and employability/digital competencies.</li>
+<li>Scholarships and other education support.</li>
+</ul>
+<h3 id="learning-hubs-and-system-level-impact">Learning hubs and system-level impact</h3>
+<p>A <strong>learning hub</strong> is a comprehensive intervention combining classroom expansion, connectivity, devices, digital literacy and employability training. This is stronger than an isolated device or scholarship because it removes several barriers and builds community-wide capacity.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Individual/short-term assistance</th>
+<th>System-level investment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scholarship or one-off device assists selected students</td>
+<td>Infrastructure and learning hubs benefit cohorts and communities</td>
+</tr>
+<tr>
+<td>Immediate relief</td>
+<td>Long-term educational capacity</td>
+</tr>
+<tr>
+<td>Limited spillover</td>
+<td>Better access, quality, employability and local development</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Instructor’s question:</strong> “What changes a village more—a donation or a school?” The preferred reasoning is that a donation helps for a moment, whereas a school can change a generation. This does not make donations inherently bad; it shows why long-term, 360-degree capacity building normally has greater impact.</p>
+</blockquote>
+<h3 id="examples-and-anecdotes">Examples and anecdotes</h3>
+<ul>
+<li><strong>Classmate notebooks:</strong> ₹1 from the purchase of a notebook was described as supporting children’s education.</li>
+<li><strong>P&amp;G:</strong> initiatives included facilities/schools in remote locations and digital-school support.</li>
+<li>Other companies named as active in education included NTPC, Wipro, Tata Steel, HPCL, HDFC Bank, TCS and P&amp;G.</li>
+<li><strong>Vidyanjali:</strong> cited as a Government of India platform/initiative that brings private participants, CSR volunteers and community resources into improving village schools. A pooled/platform approach can support poor and vulnerable groups and equip them for better futures.</li>
+</ul>
+<h3 id="practical-design-checklist">Practical design checklist</h3>
+<ol>
+<li>Diagnose access, quality, infrastructure, digital and employability gaps.</li>
+<li>Choose a solution that aligns with company capability.</li>
+<li>Combine infrastructure with teachers/training, content and maintenance.</li>
+<li>Include disadvantaged ages, genders and differently abled groups.</li>
+<li>Measure enrolment, attendance, learning, digital competence, employability and community reach—not just money spent or devices distributed.</li>
+</ol>
+<hr>
+<h2 id="4-drivers-of-csr">4. Drivers of CSR</h2>
+<p>A <strong>driver</strong> is an antecedent or underlying cause that moves a company to adopt CSR. Drivers differ across organisations and sectors.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Driver</th>
+<th>Explanation and resulting value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Customer interest</strong></td>
+<td>B2B buyers and consumers increasingly apply social criteria. Responsible conduct builds satisfaction, trust and brand loyalty.</td>
+</tr>
+<tr>
+<td><strong>Competitive labour market</strong></td>
+<td>Skilled and professional employees look beyond salary for employers whose philosophy and operating practices match their beliefs. Ethical CSR aids attraction, engagement and retention.</td>
+</tr>
+<tr>
+<td><strong>Stakeholder expectations</strong></td>
+<td>Internal and external stakeholders have different interests: shareholders seek return, customers seek good products/services, employees seek fair work, and communities seek responsible impacts. CSR balances these expectations.</td>
+</tr>
+<tr>
+<td><strong>Risk management and sustainability</strong></td>
+<td>Addressing ESG issues proactively can limit regulatory penalties, pollution, carbon emissions, excessive water use, community conflict, poor labour practices, opposition and reputational damage.</td>
+</tr>
+<tr>
+<td><strong>Reputation and brand enhancement</strong></td>
+<td>A positive public perception strengthens customer trust, loyalty and goodwill and raises the competitive standard.</td>
+</tr>
+<tr>
+<td><strong>Access to capital and investment</strong></td>
+<td>Investors and financial institutions increasingly consider CSR/ESG and governance quality; strong performance may improve investor confidence and financing access.</td>
+</tr>
+<tr>
+<td><strong>Community relations</strong></td>
+<td>Investment in local development, education, health and environmental protection builds a constructive relationship with host communities.</td>
+</tr>
+<tr>
+<td><strong>Government legislation</strong></td>
+<td>Rules and guidelines require particular conduct and, in India, statutory CSR from qualifying companies. Compliance is a baseline/cushion, not the full strategic rationale.</td>
+</tr>
+<tr>
+<td><strong>Competitive advantage</strong></td>
+<td>Responsible behaviour differentiates the company; benchmarking against recognised leaders can improve image and practice.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Outcomes highlighted in the live session:</strong> business growth, stronger brand, stakeholder confidence, financial performance and a sustainable future. In short: <strong>responsible today → sustainable tomorrow</strong>.</p>
+<h3 id="public-versus-private-sector-driver-pattern">Public versus private-sector driver pattern</h3>
+<ul>
+<li><strong>Public-sector enterprises (PSEs):</strong> generally have stronger allegiance to government policy and national/community priorities—health, education, water, sanitation, rural infrastructure and welfare. Policy is often the strongest driver.</li>
+<li><strong>Private-sector firms:</strong> generally combine compliance with strategic, long-term value creation through digital learning, skill building, innovation, brand, competitiveness and sustainability.</li>
+<li>This is a broad pattern, not an absolute divide. Public companies can be highly competitive and private philanthropy may be genuine, not merely branding.</li>
+</ul>
+<h3 id="live-session-debate-and-caveat">Live-session debate and caveat</h3>
+<p>A participant suggested that private companies mainly use CSR for brand improvement while PSEs act because they have no option. The instructor treated this as a useful but incomplete generalisation. He cited a current discussion involving Noel Tata/Tata Trusts and a concern that stock-market listing could restrict philanthropic activity, using it to question the claim that private CSR is <em>only</em> branding. The factual dispute itself was not the lesson; the lesson was to evaluate mixed motivations and context.</p>
+<p>In a <strong>VUCA</strong> environment—<strong>volatile, uncertain, complex and ambiguous</strong>—laws, markets and geopolitics change rapidly. Stakeholder confidence helps organisations endure. CSR and sustainability can therefore support long-term existence and efficient business, beyond legal compulsion. Media attention may overemphasise negative cases even while practices improve; exceptions and different observations remain possible.</p>
+<h3 id="csr-and-factors-of-production">CSR and factors of production</h3>
+<p>The live session linked strategic CSR to <strong>land, labour, capital and the organising/entrepreneurial human element</strong>:</p>
+<ul>
+<li>digital learning and skills improve labour quality;</li>
+<li>innovation and technology strengthen capital/productive capability;</li>
+<li>environmental action protects land and the surrounding ecosystem;</li>
+<li>better factors of production can return value to the company, showing the “give-and-take” character of strategic CSR.</li>
+</ul>
+<hr>
+<h2 id="5-public-and-private-sector-company-initiatives">5. Public- and private-sector company initiatives</h2>
+<h3 id="public-sector-enterprises">Public-sector enterprises</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Company</th>
+<th style="text-align: right;">FY 2021–22 CSR spend stated in transcript</th>
+<th>Main initiatives/emphasis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>State Bank of India (SBI)</strong></td>
+<td style="text-align: right;"><strong>₹204 crore</strong></td>
+<td>“Service beyond banking”; socioeconomic uplift of economically, physically and socially challenged communities. SBI Foundation programmes included COVID response, healthcare flagships, Youth for India Fellowship, Gram Seva, a centre of excellence for persons with disabilities and education.</td>
+</tr>
+<tr>
+<td><strong>ONGC</strong></td>
+<td style="text-align: right;"><strong>₹436 crore</strong></td>
+<td>Education, healthcare, nutrition and drinking water; cancer institute at Nagpur, support for visually impaired persons and upgrading medical infrastructure in Kerala.</td>
+</tr>
+<tr>
+<td><strong>NTPC</strong></td>
+<td style="text-align: right;"><strong>₹356 crore</strong></td>
+<td>Community development in remote areas; tree plantation/afforestation, rooftop solar PV on public buildings/schools, vermicomposting, biomethanation and paper recycling; health, sanitation, safe water and education at corporate, regional and station levels.</td>
+</tr>
+<tr>
+<td><strong>Power Grid Corporation of India</strong></td>
+<td style="text-align: right;">Not stated</td>
+<td>Maharatna PSE aligned with <strong>15 of 17 UN SDGs</strong>; uses a “360-degree” project approach to CSR implementation.</td>
+</tr>
+<tr>
+<td><strong>Coal India Limited</strong></td>
+<td style="text-align: right;"><strong>₹459 crore</strong></td>
+<td>Environmental sustainability, community health, women’s empowerment, drinking water, sustainable livelihoods, education, sanitation, skill development, sports and games.</td>
+</tr>
+<tr>
+<td><strong>SBI Life</strong></td>
+<td style="text-align: right;"><strong>₹25 crore</strong></td>
+<td>Education, healthcare, women, children and marginalised groups. It began as a joint venture between SBI and BNP Paribas Cardif.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="private-sector-companies">Private-sector companies</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Company</th>
+<th style="text-align: right;">FY 2021–22 CSR spend stated in transcript</th>
+<th>Main initiatives/emphasis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reliance Industries</strong></td>
+<td style="text-align: right;"><strong>₹1,186 crore</strong></td>
+<td>Rural transformation, education, disaster response, healthcare, sports for development, culture and heritage. Mission COVID Suraksha included masks/PPE; education included Jio Institute, scholarships and school-improvement support; rural work included livelihoods, public infrastructure and grassroots innovation.</td>
+</tr>
+<tr>
+<td><strong>TCS</strong></td>
+<td style="text-align: right;"><strong>₹727 crore</strong></td>
+<td>Education, healthcare, rural development, water and sanitation, skill development and participation in the digital economy.</td>
+</tr>
+<tr>
+<td><strong>Infosys</strong></td>
+<td style="text-align: right;"><strong>₹344 crore</strong></td>
+<td>Most projects through Infosys Foundation (founded 1996); Infosys Science Foundation and sustainability were also highlighted.</td>
+</tr>
+<tr>
+<td><strong>Hindustan Unilever (HUL)</strong></td>
+<td style="text-align: right;"><strong>₹157 crore</strong></td>
+<td>Health and hydration, environmental sustainability, water conservation, eco-model villages, rural/skill/entrepreneurship development and education. Entrepreneurship can help people start small firms that later grow.</td>
+</tr>
+<tr>
+<td><strong>Bharti Airtel</strong></td>
+<td style="text-align: right;">Not stated</td>
+<td>Satya Bharti School Programme and Satya Bharti Quality Support Programme; contributions to Sarva Shiksha Abhiyan, Beti Bachao Beti Padhao and the National Nutrition Mission.</td>
+</tr>
+<tr>
+<td><strong>Adani Green Energy</strong></td>
+<td style="text-align: right;"><strong>₹2.78 crore</strong></td>
+<td>Skill development, specialised equipment, safety education/training for students, sustainable livelihoods and quality-of-life improvement. A live-session anecdote said an Adani official described “adopting” villages entered for projects; the instructor explicitly left verification of the claim outside the discussion.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="cross-company-conclusions">Cross-company conclusions</h3>
+<ul>
+<li>Both sectors spend large sums and work across health, education, rural development, women’s empowerment, poverty reduction, water, sanitation, skills, sport, culture and the environment.</li>
+<li>Renewable energy, recycling, water conservation and sustainable livelihoods reflect the environmental/sustainability pillar.</li>
+<li>Some firms create foundations or dedicated arms to implement CSR.</li>
+<li>Expenditure is an input, not proof of impact; social value arises when programmes reach people, solve actual problems and build capacity.</li>
+</ul>
+<hr>
+<h2 id="6-corporate-governance-and-csr">6. Corporate governance and CSR</h2>
+<h3 id="definition-and-scope">Definition and scope</h3>
+<p><strong>Corporate governance</strong> is the system of rules, practices and processes by which a firm is directed and controlled. It balances stakeholder interests and creates the framework for achieving the company’s objectives.</p>
+<p>It covers:</p>
+<ul>
+<li>board composition and the role of directors;</li>
+<li>the roles of the chairperson and CEO;</li>
+<li>risk-management strategies and control mechanisms;</li>
+<li>action and implementation plans;</li>
+<li>responsible decision making, accountability and disclosure.</li>
+</ul>
+<p>The primary purpose is safeguarding and balancing stakeholder interests while reducing conflict. Stakeholders include directors, senior management, shareholders, employees, customers, suppliers, government, banks, communities and wider society.</p>
+<h3 id="importance-in-india">Importance in India</h3>
+<p>India’s varied corporate landscape includes family-run businesses and MNCs. Governance safeguards against fraud, risk and mismanagement, gives investors confidence and enables business to thrive under clear rules and policies.</p>
+<h3 id="core-principles">Core principles</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Exam-ready meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Transparency</strong></td>
+<td>Crystal-clear, unbiased and complete disclosure of what should be reported; openness in operations and decisions.</td>
+</tr>
+<tr>
+<td><strong>Accountability</strong></td>
+<td>Answerability for decisions, conduct and results.</td>
+</tr>
+<tr>
+<td><strong>Fairness</strong></td>
+<td>Equitable treatment of stakeholders.</td>
+</tr>
+<tr>
+<td><strong>Responsibility/ethics</strong></td>
+<td>Honest, lawful and socially responsible conduct.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The live-session logic was:</p>
+<p><strong>rules/processes/direction/control → transparency + accountability + fairness → responsible conduct/CSR → balanced stakeholder interests → sustainable future.</strong></p>
+<p>Good governance is the platform through which CSR is translated from intention into action. Board oversight should monitor objectives and ESG/social/environmental performance; managers should be accountable for both financial and CSR results; incentives may include sustainability and social targets; reporting creates trust and continuous improvement.</p>
+<h3 id="indian-role-models">Indian role models</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Distinctive emphasis in the material</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tata model</strong></td>
+<td>Long record of ethical practice, social responsibility, trust, nation building, stakeholder focus and long-term sustainability.</td>
+</tr>
+<tr>
+<td><strong>Mahindra model</strong></td>
+<td>Nurturing and empowering people, inclusivity, openness, transparency and innovation; links people development with organisational success.</td>
+</tr>
+<tr>
+<td><strong>Infosys model</strong></td>
+<td>Sound policies, professional management, disclosure, transparency, accountability and a strong governance reputation.</td>
+</tr>
+</tbody>
+</table></div>
+<p>All three converge on ethics, transparency, accountability, stakeholder trust and long-term responsibility.</p>
+<h3 id="benefits-of-effective-governance">Benefits of effective governance</h3>
+<ul>
+<li>Builds stakeholder trust—the foundation of successful business.</li>
+<li>Improves operational efficiency and financial performance.</li>
+<li>Minimises risk, raises profitability and enhances shareholder value/ROI.</li>
+<li>Supports sustainable growth and long-term survival.</li>
+<li>Enables agility as markets and customer demands change.</li>
+<li>Improves identification of risks, opportunities and strategic choices.</li>
+<li>Creates an employee-friendly culture of fairness, openness, honesty, respect and ethics; this improves engagement, morale, motivation, satisfaction and loyalty.</li>
+<li>Makes the firm a responsible corporate citizen that engages communities, supports social causes and creates positive societal impact.</li>
+</ul>
+<hr>
+<h2 id="7-csr-in-manufacturing-and-technology-live-session-extension">7. CSR in manufacturing and technology (live-session extension)</h2>
+<h3 id="manufacturing">Manufacturing</h3>
+<p>Traditional manufacturing CSR focused on waste reduction, pollution control and community help. With stronger sustainability awareness (the instructor referenced the Paris Agreement), the focus expands to sustainable production and energy/resource efficiency.</p>
+<ul>
+<li>Apply the <strong>3Rs: reduce, reuse and recycle</strong>.</li>
+<li>Waste reduction creates a cleaner planet, reduces expense and enables resource mobilisation.</li>
+<li><strong>Circular economy:</strong> minimise waste by converting used material into resources that re-enter production.</li>
+<li>Improve processes and use less/raw material with lower environmental impact.</li>
+<li>“Green steel” was used cautiously: steel cannot be literally emission-free, but better processes and lower material/emission intensity can make production more sustainable.</li>
+<li>Energy efficiency includes not only electricity but water conservation.</li>
+<li>CSR funds can support pollution control, cleaner technology, recycling, resource efficiency and sustainable production.</li>
+</ul>
+<h3 id="it-and-technology">IT and technology</h3>
+<ul>
+<li>Social impact: TCS, Infosys Foundation and Reliance Foundation were cited in relation to digital learning and rural-community improvement.</li>
+<li>Sustainable innovation: manage e-waste and reduce the resource intensity of technology.</li>
+<li>AI/data centres operate continuously and demand substantial electricity and water; scarcity makes efficient technologies essential.</li>
+<li>Ethical sourcing requires fair labour practices and avoiding inputs extracted or produced using child labour.</li>
+<li>Sector classifications overlap: e-waste and energy efficiency concern both technology and manufacturing.</li>
+<li>Green/sustainable buildings were mentioned as a later-week topic, not developed in Week 6.</li>
+</ul>
+<hr>
+<h2 id="8-glossary-and-key-distinctions">8. Glossary and key distinctions</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition / distinction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Business ethics</strong></td>
+<td>Standards of business behaviour that promote human welfare and the good; deciding and doing what is right rather than wrong.</td>
+</tr>
+<tr>
+<td><strong>Corporate Community Involvement (CCI)</strong></td>
+<td>Investing in and improving the wider community through social programmes in which employees may volunteer. It directly connects companies and communities.</td>
+</tr>
+<tr>
+<td><strong>Corporate philanthropy</strong></td>
+<td>Donation of company resources toward a social group or public welfare. It is narrower than integrated strategic CSR.</td>
+</tr>
+<tr>
+<td><strong>Corporate social investing</strong></td>
+<td>Use of business money or resources for projects that improve the world around the firm.</td>
+</tr>
+<tr>
+<td><strong>CSR positioning</strong></td>
+<td>The extent to which a company uses CSR to position itself against competitors in customers’ minds.</td>
+</tr>
+<tr>
+<td><strong>Employee matching</strong></td>
+<td>The employer contributes the same amount that an employee gives to a charity chosen by the employee.</td>
+</tr>
+<tr>
+<td><strong>Focused strategy</strong></td>
+<td>Linking CSR directly to the core business and long-term planning.</td>
+</tr>
+<tr>
+<td><strong>Corporate foundation</strong></td>
+<td>An independent legal non-profit entity created by a company, supported through structured contributions/endowments, to pursue a public-benefit mission.</td>
+</tr>
+<tr>
+<td><strong>Corporate sustainability management</strong></td>
+<td>Integration of economic, environmental and social aspects into business management; closely related to CSR and an integrated/comprehensive view.</td>
+</tr>
+<tr>
+<td><strong>Social entrepreneurship / intrapreneurship</strong></td>
+<td>Developing a profitable product, service or business model that creates social value. Intrapreneurship occurs inside an existing company, where employees propose and pilot innovations.</td>
+</tr>
+<tr>
+<td><strong>Stakeholder theory</strong></td>
+<td>A view of capitalism stressing interconnected relationships among business, customers, employees, shareholders and other affected parties. Capitalism here means private persons/businesses owning capital goods.</td>
+</tr>
+<tr>
+<td><strong>ESG</strong></td>
+<td>Environmental, Social and Governance factors used to assess responsibility, risk and sustainability.</td>
+</tr>
+<tr>
+<td><strong>Benchmarking</strong></td>
+<td>Comparing one company’s practices/performance with another or with a reference standard.</td>
+</tr>
+<tr>
+<td><strong>VUCA</strong></td>
+<td>Volatile, uncertain, complex and ambiguous conditions affecting organisations.</td>
+</tr>
+<tr>
+<td><strong>Circular economy</strong></td>
+<td>Reduce resource use and waste by recycling/converting outputs into usable inputs.</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="9-greenweave-textiles-case-study">9. GreenWeave Textiles case study</h2>
+<h3 id="case-facts-and-problem">Case facts and problem</h3>
+<p>GreenWeave Textiles is a family-run factory on the edge of a town. After a modest expansion, residents raised concerns about dust and water use. Newly appointed CSR manager <strong>Rina</strong> briefs operations head <strong>Arjun</strong>. The core problem is to integrate CSR into daily decisions while reducing environmental impact and keeping workers and residents satisfied.</p>
+<p>Primary priorities are environmental responsibility, clear business ethics and stakeholder-oriented management.</p>
+<h3 id="three-proposed-csr-drivers-actions">Three proposed CSR drivers/actions</h3>
+<ol>
+<li><strong>Strengthen corporate governance</strong> using lessons from Tata, Mahindra and Infosys: integrity, accountability, transparency and long-term vision.</li>
+<li><strong>Launch CCI programmes</strong> combining employee volunteering with local needs, such as river clean-ups and health camps.</li>
+<li><strong>Encourage social intrapreneurship:</strong> invite employees to suggest small water-saving or pollution-reduction innovations and give promising ideas modest seed funding.</li>
+</ol>
+<h3 id="environmental-responses">Environmental responses</h3>
+<ul>
+<li>Dust: collection/filtration systems, process improvement, housekeeping and green buffers.</li>
+<li>Water: efficient equipment, recycling, rainwater harvesting, leak prevention and process optimisation.</li>
+<li>Wider measures: pollution control, resource efficiency, waste reduction and sustainable production.</li>
+</ul>
+<h3 id="agreed-implementation-and-measures">Agreed implementation and measures</h3>
+<ul>
+<li>Adopt clearer governance steps.</li>
+<li>Conduct <strong>two CCI activities within three months</strong>.</li>
+<li>Run <strong>one production-line social-intrapreneurship pilot</strong>.</li>
+<li>Judge success through fewer community complaints, visible environmental improvement and documented ethical/stakeholder-oriented practices.</li>
+</ul>
+<p>Useful measurement categories:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Environmental</th>
+<th>Community/social</th>
+<th>Governance/process</th>
+<th>Business/innovation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dust level, water use, waste, recycling</td>
+<td>Complaints, participation, health-camp reach</td>
+<td>Disclosures, decisions recorded, responsibility assigned</td>
+<td>Pilot savings, feasibility, scale-up and employee ideas</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="key-distinctions-from-the-case">Key distinctions from the case</h3>
+<ul>
+<li><strong>Governance</strong> sets top-down rules, accountability and oversight.</li>
+<li><strong>CCI</strong> connects employees and the community through service activities.</li>
+<li><strong>Social intrapreneurship</strong> is bottom-up innovation by employees inside the company.</li>
+<li><strong>Seed funding</strong> enables a promising idea to become a limited pilot before full-scale investment.</li>
+<li><strong>Pilot projects</strong> reduce risk, generate evidence and permit improvement before scaling.</li>
+</ul>
+<p>The case favours social intrapreneurship for operational environmental problems because employees closest to production may identify practical solutions. It does not replace governance or CCI; all three reinforce one another.</p>
+<hr>
+<h2 id="10-indian-csr-law-and-receiving-csr-funds-classroom-q-a">10. Indian CSR law and receiving CSR funds: classroom Q&amp;A</h2>
+<p>The instructor referred to <strong>Section 135 of the Companies Act, 2013</strong> and stated that qualifying companies must spend <strong>2% of profits</strong> on CSR and report the spending. The quiz material stresses that mandatory expenditure alone is insufficient: effective CSR must influence strategy, operations, risk and stakeholder trust.</p>
+<p>In response to a student asking how a service provider can <em>receive</em> CSR funds:</p>
+<ul>
+<li>the law mandates eligible companies’ spending, but companies generally retain discretion over where/how they invest within the applicable framework;</li>
+<li>a prospective implementing/service organisation should approach suitable companies;</li>
+<li>the Government of India CSR portal and companies’ annual/CSR reports can show sectoral spending and help identify potential funders;</li>
+<li>Ministry of Corporate Affairs CSR rules/regulations should be checked for the legal/eligibility details.</li>
+</ul>
+<blockquote>
+<p><strong>Caveat:</strong> This section records the instructor’s classroom explanation, including his express qualification that he was not fully familiar with every recipient-side regulation. Treat it as an exam note, not current legal advice.</p>
+</blockquote>
+<hr>
+<h2 id="11-connecting-csr-with-national-development-and-sdgs">11. Connecting CSR with national development and SDGs</h2>
+<p>PSE CSR often supports nation building through rural roads/infrastructure, schools, water, sanitation, electrification, public services, economic development and social inclusion. It aligns organisational resources with government priorities.</p>
+<p>Aligning CSR with the <strong>Sustainable Development Goals (SDGs)</strong> gives programmes a wider purpose, connects them with global priorities and encourages measurable outcomes. Power Grid’s alignment with 15 of 17 SDGs was the specific corporate example. The full set of 17 SDGs was reserved for a later session.</p>
+<hr>
+<h2 id="12-exam-preparation">12. Exam preparation</h2>
+<h3 id="likely-long-answer-questions-and-model-answer-points">Likely long-answer questions and model-answer points</h3>
+<h4 id="1-explain-the-need-scope-and-benefits-of-csr-in-healthcare">1. Explain the need, scope and benefits of CSR in healthcare.</h4>
+<ul>
+<li>Define healthcare CSR and distinguish internal-sector and outside-company participation.</li>
+<li>Need: global complexity, finite resources, unequal access, affordability and sustainable systems.</li>
+<li>Scope: prevention, occupational safety, social determinants, research, technology, finance, camps, mobile clinics, partnerships, low-cost medicines and infrastructure.</li>
+<li>Capacity-building versus emergency relief; complement government rather than replace it.</li>
+<li>Benefits: health outcomes, access, trust, patient loyalty, employees, investors, goodwill and innovation.</li>
+<li>Add ONGC, BPCL and SBI/NSDL examples.</li>
+</ul>
+<h4 id="2-discuss-csr-in-education-and-explain-why-system-level-investment-is-strategic">2. Discuss CSR in education and explain why system-level investment is strategic.</h4>
+<ul>
+<li>Barriers: poverty, lack of primary access and the post-COVID digital divide.</li>
+<li>Areas: infrastructure, special/lifelong education, digital learning, vocational skills and employability.</li>
+<li>Contrast scholarships/devices with learning hubs and institution-wide capacity.</li>
+<li>Use the “donation versus school” argument, Vidyanjali, Classmate and P&amp;G examples.</li>
+<li>Conclude with measurable, long-term community transformation.</li>
+</ul>
+<h4 id="3-what-are-the-main-drivers-of-csr">3. What are the main drivers of CSR?</h4>
+<ul>
+<li>Define drivers as antecedents/causes.</li>
+<li>Explain customer interest, labour market, stakeholder expectations, risk/ESG, reputation, capital, community relations, legislation and competitive advantage.</li>
+<li>Show outcomes: growth, brand, confidence, financial performance, resilience.</li>
+<li>Add public-policy versus private compliance-plus-strategy distinction and note it is not absolute.</li>
+</ul>
+<h4 id="4-compare-public-and-private-sector-csr-in-india">4. Compare public- and private-sector CSR in India.</h4>
+<ul>
+<li>PSEs: policy alignment, welfare and nation building.</li>
+<li>Private sector: strategic value, skills, digital learning, innovation, sustainability and brand.</li>
+<li>Provide at least three accurate examples from each sector and stated spend figures where useful.</li>
+<li>Avoid claiming motives are purely compulsory or purely promotional.</li>
+</ul>
+<h4 id="5-define-corporate-governance-and-explain-its-relationship-with-csr">5. Define corporate governance and explain its relationship with CSR.</h4>
+<ul>
+<li>Definition: rules, practices and processes directing/controlling the firm.</li>
+<li>Scope: board, chair/CEO, controls, risk, action plans and stakeholders.</li>
+<li>Principles: transparency, accountability, fairness and responsibility.</li>
+<li>Governance turns CSR intention into accountable strategy and operations.</li>
+<li>Benefits: trust, efficiency, financial performance, risk reduction, agility, employee culture and social impact.</li>
+<li>Compare Tata, Mahindra and Infosys models.</li>
+</ul>
+<h4 id="6-analyse-the-greenweave-textiles-case">6. Analyse the GreenWeave Textiles case.</h4>
+<ul>
+<li>State dust/water problem and stakeholder conflict.</li>
+<li>Propose governance, CCI and social-intrapreneurship actions.</li>
+<li>Give dust and water operational solutions.</li>
+<li>State three-month/two-CCI/one-pilot plan.</li>
+<li>Use balanced environmental, community, governance and business metrics.</li>
+<li>Explain why the three approaches are complementary.</li>
+</ul>
+<h4 id="7-explain-csr-in-manufacturing-and-it-technology">7. Explain CSR in manufacturing and IT/technology.</h4>
+<ul>
+<li>Manufacturing: waste/pollution, 3Rs, circular economy, resource mobilisation, process improvement, energy/water efficiency and cleaner production.</li>
+<li>Technology: digital inclusion, rural impact, e-waste, data-centre electricity/water use, sustainable innovation and ethical sourcing/no child labour.</li>
+<li>Note sectoral overlap.</li>
+</ul>
+<h4 id="8-distinguish-philanthropy-from-strategic-csr">8. Distinguish philanthropy from strategic CSR.</h4>
+<ul>
+<li>Philanthropy donates resources for welfare; strategic CSR integrates responsibility with core strategy and operations.</li>
+<li>Compare duration, measurement, capacity, business linkage and shared value.</li>
+<li>A donation is not bad, but isolated giving normally has less systemic effect than a school, learning hub or health-capacity programme.</li>
+</ul>
+<h3 id="short-note-questions">Short-note questions</h3>
+<ul>
+<li>Social determinants of health.</li>
+<li>Mobile clinics and healthcare service gaps.</li>
+<li>Learning hubs and the digital divide.</li>
+<li>CSR positioning and employee matching.</li>
+<li>Corporate foundation and corporate sustainability management.</li>
+<li>Stakeholder theory.</li>
+<li>ESG and access to capital.</li>
+<li>VUCA and stakeholder confidence.</li>
+<li>Circular economy and the 3Rs.</li>
+<li>CCI versus social intrapreneurship.</li>
+<li>Nation-building role of PSEs.</li>
+<li>Section 135 classroom explanation.</li>
+</ul>
+<h3 id="high-value-key-terms">High-value key terms</h3>
+<p>Strategic CSR; stakeholder theory; stakeholder trust; ESG; social determinants of health; integrated healthcare; capacity building; philanthropy; learning hub; digital literacy; employability; CSR driver/antecedent; nation building; corporate governance; transparency; accountability; fairness; CSR positioning; corporate foundation; sustainability management; social entrepreneurship; social intrapreneurship; CCI; seed funding; pilot; benchmarking; VUCA; circular economy; ethical sourcing; SDG alignment.</p>
+<h3 id="common-confusions-to-avoid">Common confusions to avoid</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Confusion</th>
+<th>Correct understanding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CSR = charity</td>
+<td>Charity is one tool; strategic CSR also changes governance, operations, products, risk and stakeholder relationships.</td>
+</tr>
+<tr>
+<td>Spending = impact</td>
+<td>Spend is an input. Outcomes, reach, capacity and lasting change establish impact.</td>
+</tr>
+<tr>
+<td>Governance = CSR</td>
+<td>Governance is the direction/control framework; it makes CSR accountable and embedded.</td>
+</tr>
+<tr>
+<td>ESG = CSR</td>
+<td>They overlap, but ESG is a performance/risk lens while CSR is the organisation’s responsibility approach and action.</td>
+</tr>
+<tr>
+<td>Shareholder = stakeholder</td>
+<td>Shareholders own/invest; stakeholders include all parties affected by or interested in the company.</td>
+</tr>
+<tr>
+<td>Philanthropy = social intrapreneurship</td>
+<td>Philanthropy donates resources; intrapreneurship creates and pilots internal innovations with social value.</td>
+</tr>
+<tr>
+<td>CCI = intrapreneurship</td>
+<td>CCI is community-facing involvement/volunteering; intrapreneurship is employee-led internal innovation.</td>
+</tr>
+<tr>
+<td>Public CSR is only compulsory; private CSR is only branding</td>
+<td>Policy and reputation matter, but motivations are mixed; both sectors may pursue strategic and genuine social value.</td>
+</tr>
+<tr>
+<td>Emergency healthcare CSR should replace government</td>
+<td>It should fill gaps and strengthen capacity while complementing public systems.</td>
+</tr>
+<tr>
+<td>“Green” production means zero emissions</td>
+<td>It often means lower impact through better processes, efficiency and materials; the steel example explicitly acknowledged unavoidable emissions.</td>
+</tr>
+<tr>
+<td>A one-off scholarship/device always beats infrastructure</td>
+<td>Individual aid is useful, but learning hubs and schools usually build broader, longer-lasting capacity.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="fast-revision-framework">Fast revision framework</h3>
+<p>For any sectoral CSR answer, use <strong>N-S-A-I-M</strong>:</p>
+<ol>
+<li><strong>Need</strong> — What social/environmental gap exists?</li>
+<li><strong>Stakeholders</strong> — Who causes, experiences or can solve it?</li>
+<li><strong>Action</strong> — What programme, partnership or operational change is proposed?</li>
+<li><strong>Integration</strong> — How is it linked to core capability, governance and long-term strategy?</li>
+<li><strong>Measurement</strong> — What social, environmental and business outcomes prove impact?</li>
+</ol>
+<h3 id="one-paragraph-synthesis">One-paragraph synthesis</h3>
+<p>Week 6 presents CSR as a strategic, stakeholder-oriented and governance-supported route to sustainable development. Healthcare and education demonstrate the movement from temporary relief to long-term capacity; company cases show public-sector policy/nation-building priorities and private-sector strategic innovation; the drivers explain why responsible conduct supports customers, employees, investors, communities and risk management; corporate governance supplies transparency, accountability and fairness; and the manufacturing, technology and GreenWeave examples show how CSR becomes operational through cleaner production, ethical sourcing, community involvement and employee innovation.</p>
+<h2 id="review-week-augmentation">Review Week Augmentation</h2>
+<ul>
+<li>Governance is the execution foundation of ESG: oversight, controls and accountability turn policies into environmental and social performance. Without it, policies remain on paper, controls weaken and ethical failure becomes more likely.</li>
+<li>Board and executive responsibility extends beyond internal policy to supplier monitoring, audit evidence, compliance, documentation and corrective action across the value chain.</li>
+<li>GreenWave&rsquo;s board should approve the phased strategy, assign owners, set budgets and milestones, monitor water/carbon/safety/supplier indicators and require transparent progress reporting. Governance often becomes investors&rsquo; strongest signal of whether ESG commitments are credible, though it is not an absolute guarantee.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-5.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 5: CSR: Scope, Benefits, Importance,…</span>
+      </a>
+      <a href="week-7.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 7: CSR, Sustainable Operations, Logistics,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Advanced ML · Week 13 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Advanced ML</span>
+      <span class="brand-title">Week 13</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html" selected>Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Review of Machine Learning, Learning Types, and Linear Regression
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Classification, Logistic Regression, Maximum Likelihood and K-Means…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Bias–Variance, Error Analysis, Learning Curves, and Model Selection
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Recommendation Systems and Collaborative Filtering
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Content-Based Filtering, Cosine Similarity, UV Decomposition, and…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Bias–Variance Trade-off, Underfitting, Overfitting,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Association Rule Mining, Apriori, and PCY
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Dimensionality Reduction, PCA, Eigen-Decomposition, and SVD
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Text Processing, Bag of Words, TF–IDF, Vector-Space Retrieval, and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Web Advertising, Online Matching, AdWords, and Balance
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        High-Dimensional Clustering, Subspaces, CLIQUE, PROCLUS, and…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Independent Component Analysis, Blind Source Separation, FastICA,…
+      </a>
+      <a class="is-active" href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Social Networks, Graph Laplacians, and Spectral Clustering
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Graph Partitioning, Flow Centrality, Edge Betweenness, and Girvan–Newman
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        ML Life Cycle, Hybrid and Music Recommenders, and Evaluation
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Advanced ML · Week 13</p>
+        <h1 class="page-title">Social Networks, Graph Laplacians, and Spectral Clustering</h1>
+        <p class="page-meta">Week 13 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#exam-scope-and-learning-outcomes">Exam scope and learning outcomes</a></li>
+      <li><a href="#1-social-networks">1. Social networks</a></li>
+      <li><a href="#2-social-network-intuitions-and-user-behavior">2. Social-network intuitions and user behavior</a></li>
+      <li><a href="#3-centrality-measures">3. Centrality measures</a></li>
+      <li><a href="#4-graph-matrices">4. Graph matrices</a></li>
+      <li><a href="#5-laplacian-spectrum">5. Laplacian spectrum</a></li>
+      <li><a href="#6-rayleigh-quotient-and-algebraic-connectivity">6. Rayleigh quotient and algebraic connectivity</a></li>
+      <li><a href="#7-spectral-graph-clustering">7. Spectral graph clustering</a></li>
+      <li><a href="#8-python-networkx-scikit-learn-demonstration">8. Python/NetworkX/scikit-learn demonstration</a></li>
+      <li><a href="#9-vertextech-collaboration-network-case">9. VertexTech collaboration-network case</a></li>
+      <li><a href="#10-exam-focused-revision">10. Exam-focused revision</a></li>
+      <li><a href="#11-live-session-additions-and-instructor-emphasis">11. Live-session additions and instructor emphasis</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="exam-scope-and-learning-outcomes">Exam scope and learning outcomes</h2>
+<p>Week 13 represents social relationships as graphs and uses Laplacian eigenstructure to measure connectivity and discover communities. You should be able to:</p>
+<ul>
+<li>define social networks, sites, actors, ties, affiliations, and content/network layers;</li>
+<li>explain behavioral user types, strong ties, Ramsey’s theorem, Dunbar-style relationship limits, and Metcalfe’s law;</li>
+<li>calculate degree, betweenness, and closeness centrality;</li>
+<li>construct adjacency, degree, and combinatorial Laplacian matrices;</li>
+<li>state Laplacian spectral properties and infer connected components;</li>
+<li>derive/interprete the Rayleigh quotient, Fiedler value, and Fiedler vector;</li>
+<li>carry out two-way and multiway spectral clustering;</li>
+<li>reproduce the NetworkX/NumPy/scikit-learn workflow;</li>
+<li>apply the methods critically to the VertexTech collaboration case.</li>
+</ul>
+<hr>
+<h2 id="1-social-networks">1. Social networks</h2>
+<h3 id="1-1-definition">1.1 Definition</h3>
+<p>A <strong>social network</strong> describes a social structure whose <strong>actors</strong> may be individuals, households, teams, organizations, states, or other entities. Actors are connected through one or more forms of interdependence/familiarity:</p>
+<ul>
+<li>friendship or kinship;</li>
+<li>professional relationships or collaboration;</li>
+<li>financial exchange;</li>
+<li>likes/dislikes, beliefs/non-beliefs;</li>
+<li>knowledge, prestige, trust, or support;</li>
+<li>organizational/team affiliation.</li>
+</ul>
+<p>In graph language:</p>
+<ul>
+<li>actor/entity → <strong>node/vertex</strong>;</li>
+<li>relationship/tie → <strong>edge/link</strong>;</li>
+<li>attributes may describe nodes or edges;</li>
+<li>the analytical goal is to study patterns of relationships, influence, flow, communities, and vulnerabilities.</li>
+</ul>
+<p>An <strong>affiliation</strong> connects different entity types, e.g. a person works for IBM, belongs to ACM, or plays on a football team. Such data can be modeled directly as bipartite networks or projected into person–person connections.</p>
+<h3 id="1-2-social-network-sites-sns">1.2 Social-network sites (SNS)</h3>
+<p>SNS let users present profiles, articulate relationships, and establish/maintain/traverse connections. Platforms are oriented toward different goals:</p>
+<ul>
+<li>Facebook: personal/symmetric friendship and originally student networking;</li>
+<li>LinkedIn: professional connection/following, including organization pages;</li>
+<li>X/Twitter: directed follow network plus a separate content layer of posts/tweets;</li>
+<li>ResearchGate: research interests and professional exchange;</li>
+<li>Friendster: originally romantic connections;</li>
+<li>Myspace, Orkut, Cyworld: personal networking;</li>
+<li>Last.fm: music; Flixster: movies; Flickr: photos; X/Twitter: microblogging.</li>
+</ul>
+<p><strong>Network layer vs content layer:</strong> “who follows/connects to whom” is network structure; posts, messages, images, comments, and deletions are content. In the quiz’s protected-account example, approving a follow request changes the network layer; deleting an old post changes content.</p>
+<h3 id="1-3-relationship-direction">1.3 Relationship direction</h3>
+<ul>
+<li>Facebook friendship is generally <strong>symmetric/undirected</strong>: if A is B’s friend, B is A’s friend.</li>
+<li>X/Instagram/LinkedIn following can be <strong>directed/asymmetric</strong>: A may follow B without B following A.</li>
+<li>Mutual friends/follow suggestions exploit triadic likelihood: A–B and B–C make A–C more plausible, but do not guarantee it.</li>
+</ul>
+<h3 id="1-4-strong-and-weak-ties">1.4 Strong and weak ties</h3>
+<p><strong>Strong ties</strong> involve frequent interaction, trust, emotional closeness, and support—e.g. close friends/family. <strong>Weak ties</strong> are acquaintances; though less intimate, they can bridge communities and expose a person to novel information/opportunities.</p>
+<hr>
+<h2 id="2-social-network-intuitions-and-user-behavior">2. Social-network intuitions and user behavior</h2>
+<h3 id="2-1-ramsey-theorem">2.1 Ramsey theorem</h3>
+<p>The classical result (R(3,3)=6): among any six people there must be either:</p>
+<ul>
+<li>three pairwise mutual acquaintances, or</li>
+<li>three pairwise mutual strangers.</li>
+</ul>
+<p>Graph proof intuition: color every edge of (K_6) according to acquaintance/stranger. From any person, at least three of the five incident edges share a color; the triangle among those vertices forces a monochromatic triangle of one type.</p>
+<h3 id="2-2-dunbar-style-relationship-limitation">2.2 Dunbar-style relationship limitation</h3>
+<p>The lectures emphasize that people may have thousands of acquaintances but actively maintain only roughly 10–20 close relationships. The live session calls this Dunbar’s number/intuition and describes strong versus loose connections. Treat 10–20 as the course’s close-tie illustration; broader Dunbar-number literature often uses other tier sizes.</p>
+<h3 id="2-3-metcalfe-s-law">2.3 Metcalfe’s law</h3>
+<p>The value of a network grows approximately with the square of participants:</p>
+<p>\[
+V\propto n^2,
+\]</p>
+<p>because potential pairwise connections grow as \(\binom n2\). The transcript says “Medcore/Medca”; the standard name is <strong>Metcalfe’s law</strong>. It is a heuristic, not a guarantee that every added user contributes equal value.</p>
+<h3 id="2-4-behavioral-user-classification">2.4 Behavioral user classification</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Characteristic behavior</th>
+<th>Practical example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alpha socializers</td>
+<td>Short bursts of activity to flirt, meet people, get help, or be entertained</td>
+<td>Briefly contacts an expert for help, then tie weakens</td>
+</tr>
+<tr>
+<td>Attention seekers</td>
+<td>Seek comments/likes/visibility; post photos/videos/messages</td>
+<td>Frequent Instagram posting for reactions</td>
+</tr>
+<tr>
+<td>Followers</td>
+<td>Mainly observe what others do; little original contribution</td>
+<td>Follows experts to acquire information</td>
+</tr>
+<tr>
+<td>Faithfuls</td>
+<td>Rekindle/maintain longstanding school/university/family relationships</td>
+<td>Keeps an old friendship despite infrequent contact</td>
+</tr>
+<tr>
+<td>Functionals</td>
+<td>Use a site single-mindedly for a practical purpose</td>
+<td>LinkedIn networking or Facebook business promotion</td>
+</tr>
+</tbody>
+</table></div>
+<p>Individuals can display several types depending on the relationship/platform.</p>
+<p>The lecture cited an Ofcom-style age comparison: Instagram/Snapchat/TikTok skewed younger; Facebook much older; X/Twitter more broadly distributed. Specific percentages (e.g. Instagram 30% age 16–24 and 4% age 65+, Facebook 12% young and 83% older) were presented as illustrative/older survey values and should not be treated as current timeless facts.</p>
+<hr>
+<h2 id="3-centrality-measures">3. Centrality measures</h2>
+<h3 id="3-1-degree-centrality">3.1 Degree centrality</h3>
+<p>Counts direct neighbors:</p>
+<p>\[
+C_D(v)=\deg(v),
+\qquad
+C_D^{norm}(v)=\frac{\deg(v)}{n-1}.
+\]</p>
+<p>High degree means locally well-connected/popular, but not necessarily strategically positioned across communities.</p>
+<h3 id="3-2-betweenness-centrality-flow-centrality">3.2 Betweenness centrality (flow centrality)</h3>
+<p>\[
+C_B(v)=\sum_{\substack{s\ne v\ne t}}
+\frac{\sigma_{st}(v)}{\sigma_{st}},
+\]</p>
+<p>where \(\sigma_{st}\) is the number of shortest paths from (s) to (t), and \(\sigma_{st}(v)\) those passing through (v).</p>
+<p>A bridge node between communities may have low degree but high betweenness, acting as broker, gatekeeper, bottleneck, or single point of failure. It is important in transportation/information-flow networks.</p>
+<h3 id="3-3-closeness-centrality">3.3 Closeness centrality</h3>
+<p>\[
+C_C(v)=\frac{n-1}{\sum_{u\ne v}d(v,u)}
+\]</p>
+<p>for a connected graph. It measures how quickly a node can reach all others via shortest paths. A node may have few direct connections yet high closeness if strategically near the whole network.</p>
+<blockquote>
+<p><strong>Distinction:</strong> degree = local reach; betweenness = lies between others’ routes; closeness = globally short average distance. Eigenvector centrality, mentioned in the quiz comparison, rewards links to influential nodes but was not a main lecture topic.</p>
+</blockquote>
+<hr>
+<h2 id="4-graph-matrices">4. Graph matrices</h2>
+<h3 id="4-1-adjacency-matrix">4.1 Adjacency matrix</h3>
+<p>For an unweighted undirected graph with (n) nodes:</p>
+<p>\[
+A_{ij}=\begin{cases}
+1,&\{i,j\}\in E,\\
+0,&\text{otherwise}.
+\end{cases}
+\]</p>
+<p>Properties for a simple undirected graph:</p>
+<ul>
+<li>(A\in\mathbb R^{n\times n});</li>
+<li>symmetric: (A=A^T);</li>
+<li>diagonal zero if there are no self-loops;</li>
+<li>each undirected edge creates two symmetric ones.</li>
+</ul>
+<p>Weighted graphs place connection weights rather than 1.</p>
+<h3 id="4-2-degree-matrix">4.2 Degree matrix</h3>
+<p>\[
+d_i=\sum_j A_{ij},
+\qquad
+D=\operatorname{diag}(d_1,\ldots,d_n).
+\]</p>
+<p>Only diagonal entries are nonzero.</p>
+<h3 id="4-3-combinatorial-graph-laplacian">4.3 Combinatorial graph Laplacian</h3>
+<p>\[
+\boxed{L=D-A.}
+\]</p>
+<p>Thus:</p>
+<p>\[
+L_{ij}=\begin{cases}
+d_i,&i=j,\\
+-1,&i\ne j\text{ and }\{i,j\}\in E,\\
+0,&\text{otherwise}
+\end{cases}
+\]</p>
+<p>for an unweighted graph. Each row sums to zero.</p>
+<p><strong>Three-node path (1-2-3):</strong></p>
+<p>\[
+A=\begin{bmatrix}0&1&0\\1&0&1\\0&1&0\end{bmatrix},
+D=\begin{bmatrix}1&0&0\\0&2&0\\0&0&1\end{bmatrix},
+L=\begin{bmatrix}1&-1&0\\-1&2&-1\\0&-1&1\end{bmatrix}.
+\]</p>
+<h3 id="4-4-block-structure-and-unions">4.4 Block structure and unions</h3>
+<p>For disjoint components (G,H), after ordering vertices by component:</p>
+<p>\[
+L_{G\cup H}=
+\begin{bmatrix}L_G&0\\0&L_H\end{bmatrix}.
+\]</p>
+<p>An isolated vertex yields an all-zero row and column. Adding a bridge between components creates corresponding symmetric (-1) entries and increases the two incident degrees. For graphs on the same vertex set, Laplacians of weighted edge unions add when edge weights add.</p>
+<hr>
+<h2 id="5-laplacian-spectrum">5. Laplacian spectrum</h2>
+<h3 id="5-1-terminology">5.1 Terminology</h3>
+<p>The <strong>spectrum</strong> is the multiset of eigenvalues (often studied together with their eigenvectors), ordered conventionally:</p>
+<p>\[
+0=\lambda_1\le\lambda_2\le\cdots\le\lambda_n.
+\]</p>
+<p>The transcript loosely defines spectrum as eigenvectors and sometimes prints descending software output. For spectral clustering, explicitly sort eigenvalues ascending and retain aligned eigenvectors.</p>
+<h3 id="5-2-fundamental-properties">5.2 Fundamental properties</h3>
+<p>For an undirected combinatorial Laplacian:</p>
+<ul>
+<li>(L) is real symmetric and positive semidefinite;</li>
+<li>all eigenvalues are real and nonnegative;</li>
+<li>eigenvectors can be chosen real and orthonormal;</li>
+<li>(L\mathbf1=0), so 0 is always an eigenvalue and the constant vector is a trivial eigenvector;</li>
+<li>the multiplicity of eigenvalue 0 equals the number of connected components.</li>
+</ul>
+<p>For two isomorphic disconnected components with component spectrum \(\{0,a,b\}\), the whole spectrum is \(\{0,0,a,a,b,b\}\). Repetition results from block structure/isomorphism; regularity is not what merges or determines zero multiplicity.</p>
+<h3 id="5-3-examples">5.3 Examples</h3>
+<p>For the three-node path above:</p>
+<p>\[
+\lambda=\{0,1,3\}.
+\]</p>
+<p>Possible eigenvectors:</p>
+<p>\[
+v_1\propto(1,1,1)^T,
+\quad v_2\propto(-1,0,1)^T,
+\quad v_3\propto(1,-2,1)^T.
+\]</p>
+<p>For complete graph (K_4), the Laplacian has spectrum \(\{0,4,4,4\}\). The nonzero eigenvalue repeats three times. Numerical output such as \(-3\times10^{-17}\) should be treated as zero floating-point error.</p>
+<blockquote>
+<p><strong>Case inconsistency:</strong> the VertexTech text supplies \([0,0.5858,2.4142]\) for the displayed three-node path matrix. Direct calculation gives \([0,1,3]\). If asked “according to the supplied case list,” 0.5858 is its second value; if asked to compute from the matrix, use 1.</p>
+</blockquote>
+<hr>
+<h2 id="6-rayleigh-quotient-and-algebraic-connectivity">6. Rayleigh quotient and algebraic connectivity</h2>
+<h3 id="6-1-quadratic-form">6.1 Quadratic form</h3>
+<p>For undirected weighted graph:</p>
+<p>\[
+x^TLx=\sum_{\{i,j\}\in E}w_{ij}(x_i-x_j)^2\ge0.
+\]</p>
+<p>It is small when connected nodes receive similar coordinates.</p>
+<p>The Rayleigh quotient is:</p>
+<p>\[
+R(x)=\frac{x^TLx}{x^Tx}.
+\]</p>
+<p>Unconstrained minimization returns 0 and a constant vector. To expose the next direction, exclude the nullspace:</p>
+<p>\[
+\boxed{\lambda_2=\min_{x\ne0,\ x^T\mathbf1=0}\frac{x^TLx}{x^Tx}.}
+\]</p>
+<p>Equivalently impose (x^T\mathbf1=0) and (x^Tx=1). Orthogonality means \(\sum_i x_i=0\).</p>
+<h3 id="6-2-fiedler-value-vector">6.2 Fiedler value/vector</h3>
+<p>For a connected graph:</p>
+<ul>
+<li>\(\lambda_2>0\) is the <strong>Fiedler value/algebraic connectivity</strong>;</li>
+<li>an associated eigenvector (v_2) is a <strong>Fiedler vector</strong>.</li>
+</ul>
+<p>Small positive \(\lambda_2\) suggests a weak bridge/bottleneck and natural division. Larger \(\lambda_2\) generally indicates stronger connectivity/resistance to fragmentation. Adding bridge edges tends to increase \(\lambda_2\); if two communities remain internally much denser, the Fiedler sign pattern may still separate them.</p>
+<blockquote>
+<p><strong>Caveats:</strong> the transcript says Fiedler-value multiplicity is always one; this is false for symmetric/highly structured graphs—\(\lambda_2\) can repeat. Also, on a disconnected graph several zeros exist; the “first nonzero eigenvalue” is not necessarily \(\lambda_2\). Algebraic connectivity is specifically the second-smallest eigenvalue, which is 0 when disconnected.</p>
+</blockquote>
+<hr>
+<h2 id="7-spectral-graph-clustering">7. Spectral graph clustering</h2>
+<h3 id="7-1-two-way-clustering">7.1 Two-way clustering</h3>
+<ol>
+<li>Construct (L=D-A).</li>
+<li>Compute eigenpairs and sort eigenvalues ascending.</li>
+<li>Select (v_2), the eigenvector for \(\lambda_2\).</li>
+<li>Partition by sign/threshold:</li>
+</ol>
+<p>\[
+   C_-=\{i:v_{2i}<t\},\qquad C_+=\{i:v_{2i}\ge t\}.
+   \]</p>
+<p>Often (t=0), though a sweep over thresholds can better optimize cut weight, ratio cut, normalized cut, or conductance.</p>
+<p>Eigenvector sign is arbitrary: (v_2) and (-v_2) give the same partition with labels swapped. A zero/near-zero coordinate needs a stated tie-break (lower cut, smaller cluster, workload, sweep threshold, or k-means).</p>
+<h3 id="7-2-eight-node-lecture-examples">7.2 Eight-node lecture examples</h3>
+<p>Two dense four-node groups are joined through edge (1-8). The Laplacian has two near-blocks with symmetric bridge (-1) entries. Reported:</p>
+<p>\[
+\lambda_2\approx0.354.
+\]</p>
+<p>The Fiedler vector has negative components for nodes 1–4 and positive for nodes 5–8 (or globally reversed), with transition across bridge (1-8); cut there to produce two clusters.</p>
+<p>Adding a second bridge (4-5) increases reported \(\lambda_2\) to about 0.764, reflecting stronger inter-group connectivity. The block tendency remains, but the cut is less pronounced.</p>
+<h3 id="7-3-multiway-spectral-clustering">7.3 Multiway spectral clustering</h3>
+<p>For (k&gt;2), do not merely threshold “the next eigenvalue”—eigenvalues are scalars. Use several eigenvectors to embed node (i), e.g.:</p>
+<p>\[
+z_i=(v_{2i},v_{3i},\ldots,v_{(k+1)i}),
+\]</p>
+<p>then run k-means or another clustering algorithm on \(z_i\). Some formulations use the first (k) eigenvectors including the trivial one; conventions depend on normalized/unnormalized Laplacian and implementation.</p>
+<p>K-means minimizes within-cluster Euclidean variation in spectral space:</p>
+<p>\[
+\sum_{r=1}^{k}\sum_{z_i\in C_r}\|z_i-\mu_r\|^2,
+\]</p>
+<p>not the original Rayleigh quotient directly. The eigenvectors first create a graph-aware geometry.</p>
+<h3 id="7-4-normalized-alternatives">7.4 Normalized alternatives</h3>
+<p>For strongly unequal degrees, normalized Laplacians can be more meaningful:</p>
+<p>\[
+L_{sym}=I-D^{-1/2}AD^{-1/2},
+\qquad
+L_{rw}=I-D^{-1}A.
+\]</p>
+<p>Choice changes eigenvectors and clusters; document which formulation is used.</p>
+<hr>
+<h2 id="8-python-networkx-scikit-learn-demonstration">8. Python/NetworkX/scikit-learn demonstration</h2>
+<h3 id="8-1-core-libraries-and-matrix-workflow">8.1 Core libraries and matrix workflow</h3>
+<ul>
+<li><code>networkx</code>: create graphs, <code>laplacian_matrix</code>, <code>laplacian_spectrum</code>, <code>fiedler_vector</code>, <code>algebraic_connectivity</code>, karate-club graph;</li>
+<li>NumPy <code>linalg</code>: eigenvalues/eigenvectors;</li>
+<li>Matplotlib: plotting;</li>
+<li>scikit-learn <code>SpectralClustering</code>: packaged multiway method.</li>
+</ul>
+<p>For symmetric (L), prefer <code>numpy.linalg.eigh</code> (guarantees real ordered-compatible eigenpairs more naturally) over general <code>eig</code>.</p>
+<pre><code class="language-python">G = nx.Graph([(1, 2), (2, 3)])
+L = nx.laplacian_matrix(G).toarray()
+evals, evecs = np.linalg.eigh(L)      # ascending for symmetric matrix
+v2 = evecs[:, 1]
+labels = (v2 &gt;= 0).astype(int)
+</code></pre>
+<p>The path output is approximately eigenvalues 0, 1, 3; tiny values such as \(-5.1\times10^{-17}\) are numerical zero.</p>
+<h3 id="8-2-direct-fiedler-method">8.2 Direct Fiedler method</h3>
+<p>Create an 11×11 zero adjacency matrix, set symmetric edges within two groups and a thin bridge, convert via <code>nx.from_numpy_array</code>, obtain <code>nx.fiedler_vector(G)</code>, and label 0 if component &lt;0 else 1. The demonstration colors the two graph halves.</p>
+<p>The same result can be obtained manually by sorting Laplacian eigenpairs and selecting the vector for the second-smallest eigenvalue. If manual and NetworkX signs are opposite, only cluster label names differ.</p>
+<h3 id="8-3-karate-club-demo">8.3 Karate Club demo</h3>
+<ol>
+<li>Load <code>nx.karate_club_graph()</code>.</li>
+<li>Extract ground-truth club membership (<code>Mr. Hi</code> versus the other club).</li>
+<li>Obtain adjacency matrix as NumPy array.</li>
+<li>Run <code>SpectralClustering(n_clusters=2, affinity='precomputed', ...)</code>.</li>
+<li>Fit the adjacency affinity, inspect labels, and align/invert labels only for comparison because cluster names are arbitrary.</li>
+<li>Plot nodes colored by predicted labels.</li>
+</ol>
+<p>The lecture reported roughly 88% agreement with ground truth. This is label agreement for one run/setting, not a universal accuracy guarantee.</p>
+<hr>
+<h2 id="9-vertextech-collaboration-network-case">9. VertexTech collaboration-network case</h2>
+<h3 id="9-1-scenario">9.1 Scenario</h3>
+<p>VertexTech models developers as nodes and collaboration as edges (possibly weighted by review/message/commit frequency). Alice wants algebraic connectivity; Bruno focuses on Rayleigh minimization; Carla needs workable team load and module cohesion.</p>
+<h3 id="9-2-options">9.2 Options</h3>
+<ul>
+<li><strong>Two-way Fiedler cut:</strong> most direct relaxed \(\lambda_2\) partition; interpretable and suitable if one dominant bottleneck exists, but does not guarantee balanced team size/workload.</li>
+<li><strong>Three-way spectral clustering:</strong> use several smallest relevant eigenvectors, embed developers, run (k=3) k-means; can isolate a graphics subgroup but may create small/uneven teams and depends on (k)/initialization.</li>
+<li><strong>Connectivity diagnosis only:</strong> use \(\lambda_2\) and (v_2) to locate weak interfaces and improve collaboration rather than force reorganization.</li>
+</ul>
+<h3 id="9-3-recommended-goal-aware-pipeline">9.3 Recommended goal-aware pipeline</h3>
+<ol>
+<li>Build a reliable weighted, possibly time-aware graph.</li>
+<li>Check directionality, connected components, degree variation, and data quality.</li>
+<li>Choose combinatorial or normalized Laplacian.</li>
+<li>Inspect smallest eigenvalues/eigengaps and partition stability.</li>
+<li>Generate two-cluster Fiedler and three-cluster spectral-embedding candidates.</li>
+<li>Evaluate cut weight/conductance, internal density, team size, workload variance, skill coverage, module ownership, and cross-team dependencies.</li>
+<li>Use a workload-aware threshold/constrained cut if two balanced review teams are required.</li>
+<li>Review results with developers; do not treat an eigenvector as an automatic personnel decision.</li>
+</ol>
+<p>Conceptually combine objectives:</p>
+<p>\[
+\text{cut cost}+\alpha(\text{workload imbalance})+\beta(\text{skill-coverage penalty}).
+\]</p>
+<p>Spectral evidence reveals network structure; organizational judgment decides the team design.</p>
+<hr>
+<h2 id="10-exam-focused-revision">10. Exam-focused revision</h2>
+<h3 id="essential-formulas">Essential formulas</h3>
+<p>\[
+A_{ij}=1\text{ if edge};\quad D_{ii}=\sum_jA_{ij};\quad L=D-A
+\]</p>
+<p>\[
+x^TLx=\sum_{\{i,j\}\in E}w_{ij}(x_i-x_j)^2
+\]</p>
+<p>\[
+\lambda_2=\min_{x\ne0,\ x^T\mathbf1=0}\frac{x^TLx}{x^Tx}
+\]</p>
+<p>\[
+\#\{\lambda_i=0\}=\#\text{ connected components}
+\]</p>
+<p>\[
+C_B(v)=\sum_{s\ne v\ne t}\frac{\sigma_{st}(v)}{\sigma_{st}},
+\qquad
+C_C(v)=\frac{n-1}{\sum_{u\ne v}d(v,u)}
+\]</p>
+<h3 id="one-line-recall">One-line recall</h3>
+<ul>
+<li>Nodes are actors; edges are social ties; posts are content rather than network structure.</li>
+<li>(R(3,3)=6): three mutual acquaintances or three mutual strangers.</li>
+<li>Metcalfe’s heuristic says network value scales approximately as (n^2).</li>
+<li>Degree counts neighbors; betweenness finds bridges; closeness measures rapid reach.</li>
+<li>Laplacian diagonal = degree; edge off-diagonal = (-1); nonedge = 0.</li>
+<li>A connected graph has one zero eigenvalue; (c) components give (c) zeros.</li>
+<li>\(\lambda_2\) is algebraic connectivity; (v_2) is a Fiedler vector.</li>
+<li>More bridges generally increase \(\lambda_2\).</li>
+<li>Sign of an eigenvector can reverse globally without changing clusters.</li>
+<li>Use multiple eigenvectors plus k-means for (k&gt;2).</li>
+</ul>
+<h3 id="likely-exam-prompts">Likely exam prompts</h3>
+<ol>
+<li><strong>Build (A,D,L)</strong> from a small graph and state symmetry/row-sum properties.</li>
+<li><strong>Infer components</strong> from zero-eigenvalue multiplicity/block-diagonal Laplacian.</li>
+<li><strong>Derive \(\lambda_2\)</strong> using Rayleigh quotient and explain the orthogonality constraint.</li>
+<li><strong>Partition an eight-node graph</strong> by sorting (v_2) components and finding a sign/threshold cut.</li>
+<li><strong>Explain effect of another bridge:</strong> stronger connectivity, generally larger \(\lambda_2\), perhaps same sign groups if community structure remains.</li>
+<li><strong>Match manual and NetworkX results:</strong> choose eigenvector for second-smallest eigenvalue; ignore global sign swap.</li>
+<li><strong>Advise VertexTech:</strong> compare two-way cut and multi-eigenvector k-means, then add workload/skill constraints.</li>
+</ol>
+<h3 id="common-traps">Common traps</h3>
+<ul>
+<li>Spectrum means eigenvalues, not merely eigenvectors.</li>
+<li>Do not select the constant \(\lambda_1=0\) eigenvector for clustering.</li>
+<li>“First nonzero eigenvalue” is safe only after handling disconnected graphs; Fiedler value is \(\lambda_2\).</li>
+<li>Fiedler eigenvalue need not be simple.</li>
+<li>A sign cut does not guarantee balanced clusters or globally optimal discrete cut.</li>
+<li>Zero Fiedler components need an assignment rule.</li>
+<li>Do not interpret (-1) in (L) as hostility; it encodes an edge.</li>
+<li>The displayed path matrix has eigenvalues 0,1,3—not the inconsistent case list.</li>
+</ul>
+<hr>
+<h2 id="11-live-session-additions-and-instructor-emphasis">11. Live-session additions and instructor emphasis</h2>
+<p>The live session reinforced the social-network definition, Ramsey/Dunbar/Metcalfe intuitions, symmetric friendship, behavioral user types, and the three centralities with everyday examples. It did not proceed through the full Laplacian mathematics, which the recorded lectures supply.</p>
+<p>It also recapped Week 12 ICA: an unsupervised statistical method for blind-source separation of mixed multivariate signals, with the cocktail-party example (separating voice, guitar, violin, etc.) and non-Gaussian independence intuition. Administrative reminders covered completing LMS videos, assessments, and live-session requirements for exam eligibility. These remarks are retained for transcript completeness but are not part of the Week 13 spectral derivation.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-12.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 12: Independent Component Analysis, Blind Source…</span>
+      </a>
+      <a href="week-14.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 14: Graph Partitioning, Flow Centrality, Edge…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Deep Learning · Week 8 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Deep Learning</span>
+      <span class="brand-title">Week 8</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html" selected>Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Neural Networks and Deep Learning
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Neural Networks, Backpropagation, Model Tuning, and Evaluation
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Convolutional Neural Networks, Transfer Learning and Computer-Vision…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        RNNs, GRU, LSTM, NLP, Word Embeddings, Transfer Learning and Attention
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        RBMs, Deep Belief Networks, Autoencoders, and Contrastive Divergence
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Reinforcement Learning, Policy Networks, Target Networks and DQN
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Generative Adversarial Networks (GANs)
+      </a>
+      <a class="is-active" href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Data Augmentation, Hyperparameter Tuning, Transfer Learning and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Feed-Forward Neural Networks, Perceptrons, Loss, Backpropagation and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Python Programming Fundamentals
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Machine Learning, Classification, and Naive Bayes
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Logistic Regression as a Neural Network, MNIST, and K-Means
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        PCA and Bag-of-Words
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Autoencoders and Representation Learning
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Exhaustive Exam-Oriented Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Deep Learning · Week 8</p>
+        <h1 class="page-title">Data Augmentation, Hyperparameter Tuning, Transfer Learning and Deployment</h1>
+        <p class="page-meta">Week 8 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-week-overview-and-learning-objectives">1. Week overview and learning objectives</a></li>
+      <li><a href="#2-definition">2. Definition</a></li>
+      <li><a href="#3-why-data-augmentation-is-needed">3. Why data augmentation is needed</a></li>
+      <li><a href="#4-how-augmentation-improves-generalization">4. How augmentation improves generalization</a></li>
+      <li><a href="#5-techniques-by-data-type">5. Techniques by data type</a></li>
+      <li><a href="#6-static-versus-dynamic-augmentation">6. Static versus dynamic augmentation</a></li>
+      <li><a href="#7-training-versus-validation-test-augmentation">7. Training versus validation/test augmentation</a></li>
+      <li><a href="#8-benefits-and-limitations">8. Benefits and limitations</a></li>
+      <li><a href="#9-implementation-in-tensorflow-keras">9. Implementation in TensorFlow/Keras</a></li>
+      <li><a href="#10-practical-pytorch-demonstration">10. Practical PyTorch demonstration</a></li>
+      <li><a href="#11-real-world-applications-emphasized">11. Real-world applications emphasized</a></li>
+      <li><a href="#12-definition-model-parameters-versus-hyperparameters">12. Definition: model parameters versus hyperparameters</a></li>
+      <li><a href="#13-main-hyperparameters">13. Main hyperparameters</a></li>
+      <li><a href="#14-why-tuning-matters">14. Why tuning matters</a></li>
+      <li><a href="#15-hyperparameter-tuning-methods">15. Hyperparameter-tuning methods</a></li>
+      <li><a href="#16-correct-tuning-workflow">16. Correct tuning workflow</a></li>
+      <li><a href="#17-challenges">17. Challenges</a></li>
+      <li><a href="#18-live-session-business-perspective">18. Live-session business perspective</a></li>
+      <li><a href="#19-definition">19. Definition</a></li>
+      <li><a href="#20-benefits">20. Benefits</a></li>
+      <li><a href="#21-main-strategies">21. Main strategies</a></li>
+      <li><a href="#22-popular-pretrained-models">22. Popular pretrained models</a></li>
+      <li><a href="#23-tensorflow-transfer-learning-procedure">23. TensorFlow transfer-learning procedure</a></li>
+      <li><a href="#24-resnet50-case-study-ecoagro-plant-disease-detection">24. ResNet50 case study: EcoAgro plant-disease detection</a></li>
+      <li><a href="#25-globalaveragepooling2d">25. GlobalAveragePooling2D</a></li>
+      <li><a href="#26-softmax-classifier">26. Softmax classifier</a></li>
+      <li><a href="#27-compilation-and-loss">27. Compilation and loss</a></li>
+      <li><a href="#28-fine-tuning-procedure-and-risks">28. Fine-tuning procedure and risks</a></li>
+      <li><a href="#29-transfer-learning-applications-mentioned">29. Transfer-learning applications mentioned</a></li>
+      <li><a href="#30-deployment-meaning">30. Deployment meaning</a></li>
+      <li><a href="#31-quantization">31. Quantization</a></li>
+      <li><a href="#32-pruning">32. Pruning</a></li>
+      <li><a href="#33-quantization-versus-pruning">33. Quantization versus pruning</a></li>
+      <li><a href="#34-tensorflow-savedmodel">34. TensorFlow SavedModel</a></li>
+      <li><a href="#35-tensorflow-serving">35. TensorFlow Serving</a></li>
+      <li><a href="#36-tensorflow-lite">36. TensorFlow Lite</a></li>
+      <li><a href="#37-serving-versus-lite">37. Serving versus Lite</a></li>
+      <li><a href="#38-hybrid-deployment">38. Hybrid deployment</a></li>
+      <li><a href="#39-deployment-decision-factors">39. Deployment decision factors</a></li>
+      <li><a href="#40-why-models-fail-in-the-real-world">40. Why models fail in the real world</a></li>
+      <li><a href="#41-integrated-example-robust-plant-disease-classifier">41. Integrated example: robust plant-disease classifier</a></li>
+      <li><a href="#42-common-misconceptions-and-corrections">42. Common misconceptions and corrections</a></li>
+      <li><a href="#43-exam-traps">43. Exam traps</a></li>
+      <li><a href="#44-short-answer-questions">44. Short-answer questions</a></li>
+      <li><a href="#45-long-answer-frameworks">45. Long-answer frameworks</a></li>
+      <li><a href="#46-one-page-memory-map">46. One-page memory map</a></li>
+      <li><a href="#47-final-high-yield-statements">47. Final high-yield statements</a></li>
+      <li><a href="#48-source-mentioned-further-reading">48. Source-mentioned further reading</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-week-overview-and-learning-objectives">1. Week overview and learning objectives</h2>
+<p>Week 8 connects deep-learning theory to the problems encountered while building and deploying models in the real world. The three central ideas are:</p>
+<ol>
+<li><strong>Data augmentation</strong> — enlarge and diversify limited training data without collecting an entirely new dataset.</li>
+<li><strong>Hyperparameter tuning</strong> — control how a model learns and find settings that produce accurate, stable and generalizable performance.</li>
+<li><strong>Transfer learning and deployment</strong> — reuse knowledge learned by a pretrained model, adapt it to a related task, optimize it and deploy it through an appropriate serving mechanism.</li>
+</ol>
+<p>The instructor repeatedly emphasized that a theoretically powerful architecture does not automatically perform perfectly in production. Real-world performance is affected by limited or biased data, changing data schemas, overfitting/underfitting, poor hyperparameter choices, computational cost, latency, connectivity, privacy and deployment constraints.</p>
+<h3 id="end-to-end-model-development-view">End-to-end model-development view</h3>
+<p>$$
+\text{Problem definition} \rightarrow \text{Data preparation/augmentation} \rightarrow
+\text{Model or pretrained base} \rightarrow \text{Hyperparameter tuning} \rightarrow
+\text{Validation} \rightarrow \text{Optimization} \rightarrow \text{Deployment} \rightarrow \text{Monitoring}
+$$</p>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> Skipping even one important step can cause retraining, data loss, wasted compute and substantial business cost. Cost-effective delivery depends on the problem, data and model; there is no single fixed cost-cutting recipe.</p>
+</blockquote>
+<hr>
+<h1 id="part-i-data-augmentation">Part I — Data Augmentation</h1>
+<h2 id="2-definition">2. Definition</h2>
+<p><strong>Data augmentation</strong> is the process of artificially expanding the size and diversity of a training dataset by applying valid transformations to existing examples or by generating synthetic examples. Typical image transformations include rotation, flipping, scaling, translation, cropping, colour adjustment and noise addition.</p>
+<p>The new samples are called <strong>augmented data</strong> because they retain the essential meaning or label of the source sample while varying properties that should not determine the prediction.</p>
+<h3 id="core-idea">Core idea</h3>
+<p>Given an original example-label pair $(x,y)$ and a label-preserving transformation $T$:</p>
+<p>$$
+(x,y) \mapsto (T(x),y)
+$$</p>
+<p>The model is trained on multiple plausible versions of $x$, encouraging it to learn stable patterns rather than memorize superficial details.</p>
+<h3 id="conceptual-pipeline-described-in-the-lecture">Conceptual pipeline described in the lecture</h3>
+<p>$$
+\text{Source data} \rightarrow \text{data generation/transformations} \rightarrow
+\text{augmented data} \rightarrow \text{training of prediction model}
+$$</p>
+<p>The lecture also referred to generative and physical models for producing target data; the essential point is that original and generated/augmented data can jointly train the prediction model.</p>
+<h2 id="3-why-data-augmentation-is-needed">3. Why data augmentation is needed</h2>
+<p>Deep models usually perform better when exposed to large, varied datasets, but collecting and labelling real data may be expensive, slow, impractical or privacy-sensitive. This is especially true in medical imaging, financial fraud, autonomous driving and other domains in which rare or sensitive events are difficult to obtain.</p>
+<p>Data augmentation aims to:</p>
+<ul>
+<li>increase the effective amount of training data;</li>
+<li>expose the model to diverse but realistic conditions;</li>
+<li>improve generalization to unseen data;</li>
+<li>reduce overfitting and memorization;</li>
+<li>improve robustness to noise, lighting changes, spelling variations, domain shifts and sometimes adversarial perturbations;</li>
+<li>reduce dependence on very large labelled datasets;</li>
+<li>lower data-collection and annotation cost;</li>
+<li>address class imbalance by augmenting under-represented classes;</li>
+<li>support privacy by using synthetic rather than identifiable real records where appropriate.</li>
+</ul>
+<blockquote>
+<p><strong>Important qualification:</strong> More samples are useful only when the transformations are valid and diverse. Repeating near-identical or unrealistic examples does not guarantee a better model.</p>
+</blockquote>
+<h2 id="4-how-augmentation-improves-generalization">4. How augmentation improves generalization</h2>
+<p>Without augmentation, a model may learn accidental features of the training set: a particular orientation, background, illumination, wording or noise pattern. Random valid transformations force it to learn features that remain useful across those variations.</p>
+<p>For empirical risk minimization, ordinary training minimizes:</p>
+<p>$$
+\hat R(\theta)=\frac{1}{n}\sum_{i=1}^{n} L(f_\theta(x_i),y_i)
+$$</p>
+<p>With augmentation distribution $q(T)$, the objective becomes approximately:</p>
+<p>$$
+\hat R_{aug}(\theta)=\frac{1}{n}\sum_{i=1}^{n}
+\mathbb E_{T\sim q}\left[L(f_\theta(T(x_i)),y_i)\right]
+$$</p>
+<p>Thus, the learner is rewarded for producing the correct answer over a neighbourhood of plausible variants rather than at only one observed point.</p>
+<h3 id="overfitting-link">Overfitting link</h3>
+<ul>
+<li><strong>Overfitting:</strong> model memorizes training data/noise and performs poorly on unseen data.</li>
+<li><strong>Augmentation response:</strong> add realistic variability so memorization is harder and invariant, robust features become more useful.</li>
+<li><strong>Expected result:</strong> smaller train–validation gap and better performance in new environments.</li>
+</ul>
+<h2 id="5-techniques-by-data-type">5. Techniques by data type</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Data type</th>
+<th>Techniques mentioned</th>
+<th>Purpose / example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Images</td>
+<td>rotation, horizontal/vertical flip, translation, scaling, random crop, resize, brightness/contrast/saturation/hue adjustment, Gaussian noise, blur</td>
+<td>Make recognition less dependent on pose, position, scale, lighting or sensor noise</td>
+</tr>
+<tr>
+<td>Text/NLP</td>
+<td>synonym replacement, back-translation, word or sentence shuffling, spelling-noise injection, sentence paraphrasing</td>
+<td>Improve robustness in sentiment analysis and text classification</td>
+</tr>
+<tr>
+<td>Graphs</td>
+<td>node-feature perturbation, edge manipulation, subgraph sampling, graph mixup</td>
+<td>Produce structural/feature variants for graph neural networks</td>
+</tr>
+<tr>
+<td>Time series</td>
+<td>time warping, jittering, window slicing, permutation, synthetic generation</td>
+<td>Useful in finance, IoT and healthcare analytics</td>
+</tr>
+<tr>
+<td>Synthetic data</td>
+<td>GANs or autoencoders; other generative/physical models</td>
+<td>Create plausible examples when real records are scarce or difficult to collect</td>
+</tr>
+<tr>
+<td>Tabular/class imbalance</td>
+<td>oversampling, synthetic minority generation (e.g., SMOTE)</td>
+<td>Increase representation of minority classes and reduce classification bias</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="image-transformations-in-detail">Image transformations in detail</h3>
+<ul>
+<li><strong>Rotation:</strong> changes orientation by an angle, such as up to $30^\circ$.</li>
+<li><strong>Horizontal/vertical flip:</strong> reflects an image with a chosen probability such as $p=0.5$.</li>
+<li><strong>Translation:</strong> shifts the object in the frame.</li>
+<li><strong>Scaling/zoom:</strong> changes apparent object size.</li>
+<li><strong>Random resized crop:</strong> selects a region and resizes it to the required model input shape.</li>
+<li><strong>Colour jitter:</strong> varies brightness, contrast, saturation and hue.</li>
+<li><strong>Noise injection/blur:</strong> simulates sensor or acquisition imperfections.</li>
+</ul>
+<h3 id="label-preservation-rule">Label-preservation rule</h3>
+<p>Every augmentation must be plausible for the problem and preserve the target. Examples:</p>
+<ul>
+<li>A small rotation may preserve the label “leaf disease,” but rotating a handwritten <code>6</code> by $180^\circ$ may turn it into a <code>9</code>.</li>
+<li>Horizontal flipping may be safe for many natural objects but unsafe for text, traffic signs, medical laterality or asymmetric anatomy.</li>
+<li>Synonym replacement can preserve sentiment, but an unsuitable synonym or reordering can reverse meaning.</li>
+</ul>
+<blockquote>
+<p><strong>Exam trap:</strong> Augmentation is not arbitrary corruption. A transformation that changes the semantic class creates label noise.</p>
+</blockquote>
+<h2 id="6-static-versus-dynamic-augmentation">6. Static versus dynamic augmentation</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Static augmentation</th>
+<th>Dynamic/on-the-fly augmentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>When created</td>
+<td>Before training</td>
+<td>During each training pass</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>Augmented copies are stored</td>
+<td>Usually no permanent copy</td>
+</tr>
+<tr>
+<td>Diversity</td>
+<td>Fixed set</td>
+<td>Potentially different variant each epoch</td>
+</tr>
+<tr>
+<td>Compute</td>
+<td>More preprocessing/storage; less runtime transform work</td>
+<td>Lower storage; runtime computation required</td>
+</tr>
+<tr>
+<td>Reproducibility</td>
+<td>Straightforward</td>
+<td>Requires controlled random seeds/configuration</td>
+</tr>
+</tbody>
+</table></div>
+<p>If 500 originals each produce 6 stored variants, the resulting count is:</p>
+<p>$$500\times 6=3000\text{ images}$$</p>
+<p>The instructor corrected an initial verbal arithmetic slip and confirmed <strong>3,000</strong>, not 30,000.</p>
+<p>In on-the-fly augmentation, “dataset size” is better understood as an effective distribution of possible samples rather than a fixed multiplied count.</p>
+<h2 id="7-training-versus-validation-test-augmentation">7. Training versus validation/test augmentation</h2>
+<h3 id="training-set">Training set</h3>
+<p>Apply random augmentation to create variety and regularize learning.</p>
+<h3 id="validation-and-test-sets">Validation and test sets</h3>
+<p>Do <strong>not</strong> ordinarily apply random augmentation. Validation/test data should represent the stable real-world evaluation distribution. Standard deterministic preprocessing—resize, normalization and required input formatting—is appropriate.</p>
+<p>Why random validation augmentation is problematic:</p>
+<ul>
+<li>the validation target changes from epoch to epoch;</li>
+<li>metrics become noisy and less comparable;</li>
+<li>model selection and early stopping become unreliable;</li>
+<li>evaluation no longer measures performance on a fixed held-out distribution.</li>
+</ul>
+<p><strong>Exception:</strong> Test-time augmentation is a deliberate advanced technique in which predictions over controlled transformed versions are aggregated. It must be explicitly designed and is not the same as casually randomizing validation data.</p>
+<h2 id="8-benefits-and-limitations">8. Benefits and limitations</h2>
+<h3 id="benefits">Benefits</h3>
+<ol>
+<li><strong>Increased effective dataset size</strong> without collecting every sample anew.</li>
+<li><strong>Better generalization</strong> through exposure to varied scenarios.</li>
+<li><strong>Reduced overfitting</strong> because memorization becomes less effective.</li>
+<li><strong>Greater robustness</strong> to noise, lighting, spelling differences and domain variations.</li>
+<li><strong>Lower data acquisition cost</strong>, important when labels require specialists.</li>
+<li><strong>Class-balance support</strong> by focusing augmentation on minority classes.</li>
+<li><strong>Potential privacy protection</strong> through carefully generated synthetic data.</li>
+</ol>
+<h3 id="limitations-and-caveats">Limitations and caveats</h3>
+<ul>
+<li>Invalid transformations may change labels.</li>
+<li>Augmentation cannot fully replace genuinely diverse source data.</li>
+<li>It may reproduce the bias of the originals.</li>
+<li>Excessively aggressive transformation may make examples unrealistic.</li>
+<li>Oversampling/augmentation can still overfit if it merely repeats or slightly modifies a tiny minority set.</li>
+<li>More data/variants increase training compute.</li>
+<li>Synthetic data must be checked for quality, bias, leakage and realism.</li>
+</ul>
+<h2 id="9-implementation-in-tensorflow-keras">9. Implementation in TensorFlow/Keras</h2>
+<p>The lecture used <code>ImageDataGenerator</code> with rotation, zoom and horizontal flip:</p>
+<pre><code class="language-python">import tensorflow as tf
+
+data_gen = tf.keras.preprocessing.image.ImageDataGenerator(
+    rotation_range=30,
+    zoom_range=0.2,
+    horizontal_flip=True
+)
+</code></pre>
+<ul>
+<li><code>rotation_range=30</code>: random rotation within the configured angular range.</li>
+<li><code>zoom_range=0.2</code>: random zoom variation.</li>
+<li><code>horizontal_flip=True</code>: randomly flip samples horizontally.</li>
+<li><code>tf</code> is the conventional alias for TensorFlow.</li>
+</ul>
+<p>The larger lesson is that TensorFlow/Keras provides built-in utilities for applying augmentation during training.</p>
+<h2 id="10-practical-pytorch-demonstration">10. Practical PyTorch demonstration</h2>
+<p>The practical video used a local image named <code>Lena.png</code>, PyTorch/TorchVision transformations, PIL image loading and Matplotlib visualization.</p>
+<h3 id="library-roles">Library roles</h3>
+<ul>
+<li><strong>PyTorch (<code>torch</code>)</strong>: open-source framework for tensors, neural networks and automatic differentiation; tensors are comparable to NumPy arrays but can use GPU acceleration.</li>
+<li><strong>TorchVision transforms</strong>: image transformation/augmentation utilities.</li>
+<li><strong>PIL</strong>: opens and manipulates the source image.</li>
+<li><strong>Matplotlib</strong>: displays the original and transformed images.</li>
+</ul>
+<p>If the image is in the notebook’s current directory, its filename is sufficient. If it is inside a folder, use the correct path. The filename in code must match the uploaded/renamed file.</p>
+<pre><code class="language-python">from PIL import Image
+import matplotlib.pyplot as plt
+from torchvision import transforms
+
+img = Image.open(&quot;Lena.png&quot;)
+
+augmentation = transforms.Compose([
+    transforms.RandomHorizontalFlip(p=0.5),
+    transforms.RandomVerticalFlip(p=0.5),
+    transforms.RandomRotation(30),
+    transforms.ColorJitter(
+        brightness=0.2,
+        contrast=0.2,
+        saturation=0.2,
+        hue=0.1
+    ),
+    transforms.RandomResizedCrop(size=(224, 224)),
+    transforms.ToTensor()
+])
+</code></pre>
+<p><code>Compose</code> chains operations into a pipeline. Here, each flip has 50% probability; rotation is randomized up to the configured degree range; colour jitter changes image appearance; random resized crop changes the viewed region/scale; <code>ToTensor()</code> converts the result for computation/visualization.</p>
+<p>The demonstration plotted an original plus multiple generated transformations using subplots, a loop, titles, hidden axes and <code>plt.tight_layout()</code>. Reapplying random transforms produces different outputs. The visible results included flips, cropping/scale changes and colour changes.</p>
+<h3 id="practical-use-case">Practical use case</h3>
+<p>For autonomous-driving images, train with plausible brightness changes, mild blur and sensor noise to make the model less fragile across daylight, rain and cameras. Do not introduce impossible road geometry or transformations that reverse a sign’s meaning.</p>
+<h2 id="11-real-world-applications-emphasized">11. Real-world applications emphasized</h2>
+<ul>
+<li><strong>Medical imaging:</strong> rotate/flip limited scans where medically valid to improve disease detection; labelled data are scarce and costly.</li>
+<li><strong>Autonomous driving:</strong> vary noise and lighting to prepare models for different environmental conditions.</li>
+<li><strong>NLP:</strong> synonym replacement and paraphrasing can improve sentiment analysis/text classification, provided meaning is preserved.</li>
+<li><strong>Fraud detection:</strong> use augmentation/synthetic data because genuine fraud examples are rare and financial data are sensitive.</li>
+<li><strong>Healthcare, IoT and finance time series:</strong> use jittering, time warping, window slicing and synthetic sequences.</li>
+</ul>
+<hr>
+<h1 id="part-ii-hyperparameters-and-tuning">Part II — Hyperparameters and Tuning</h1>
+<h2 id="12-definition-model-parameters-versus-hyperparameters">12. Definition: model parameters versus hyperparameters</h2>
+<p><strong>Model parameters</strong> are learned from data during training, such as weights and biases.</p>
+<p><strong>Hyperparameters</strong> are settings chosen by the developer before or around training that control the learning process, model capacity, regularization and optimization behaviour. They are not ordinarily learned by gradient descent as part of the model’s weights.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Model parameters</th>
+<th>Hyperparameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Weights, biases</td>
+<td>Learning rate, batch size, epochs, optimizer, architecture, dropout, regularization strength</td>
+</tr>
+<tr>
+<td>Learned from training data</td>
+<td>Selected/configured by developer or tuning algorithm</td>
+</tr>
+<tr>
+<td>Updated by backpropagation/optimizer</td>
+<td>Evaluated through experiments on validation data</td>
+</tr>
+<tr>
+<td>Represent what the model has learned</td>
+<td>Shape how and how much the model learns</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> Hyperparameters are not the model’s “intelligence”; they shape its learning behaviour. A fixed architecture can produce very different results under different hyperparameter settings.</p>
+</blockquote>
+<h2 id="13-main-hyperparameters">13. Main hyperparameters</h2>
+<h3 id="13-1-learning-rate">13.1 Learning rate</h3>
+<p>The learning rate $\eta$ controls the optimizer’s step size:</p>
+<p>$$
+\theta_{t+1}=\theta_t-\eta\nabla_\theta L(\theta_t)
+$$</p>
+<ul>
+<li>Too high: updates may overshoot minima, oscillate or become unstable/diverge.</li>
+<li>Too low: training converges slowly and may require many epochs.</li>
+<li>A schedule can reduce the learning rate as training progresses.</li>
+</ul>
+<h3 id="13-2-batch-size">13.2 Batch size</h3>
+<p>The number of examples used for one parameter update. Common lecture examples were <strong>32, 64 and 128</strong>.</p>
+<ul>
+<li>Small batches: noisier gradients, sometimes useful regularization, lower memory per step.</li>
+<li>Large batches: smoother estimates and efficient hardware use, but require more memory and may change generalization; the live lecture associated an excessively large batch with slow convergence.</li>
+</ul>
+<h3 id="13-3-number-of-epochs">13.3 Number of epochs</h3>
+<p>An epoch is one complete pass through the training dataset.</p>
+<ul>
+<li>Too few epochs → underfitting.</li>
+<li>Too many epochs → overfitting, especially without regularization/early stopping.</li>
+</ul>
+<h3 id="13-4-optimizer">13.4 Optimizer</h3>
+<p>The optimizer controls how parameter updates are performed. Examples: <strong>SGD</strong> and <strong>Adam</strong>. Momentum can accelerate convergence by incorporating past gradients.</p>
+<h3 id="13-5-architecture-choices">13.5 Architecture choices</h3>
+<ul>
+<li>Number of layers controls depth, representational capacity and computational complexity.</li>
+<li>Neurons/units per layer affect feature capacity.</li>
+<li>Number of convolution filters affects the number of feature maps learned.</li>
+<li>Activation functions such as ReLU, sigmoid and tanh affect signal propagation and optimization.</li>
+</ul>
+<h3 id="13-6-dropout">13.6 Dropout</h3>
+<p>During training, dropout randomly removes a fraction of activations. If the dropout rate is $p$:</p>
+<p>$$
+m_i\sim \mathrm{Bernoulli}(1-p),\qquad \tilde h_i=m_i h_i
+$$</p>
+<p>This discourages co-adaptation and helps reduce overfitting. A dropout rate that is too low may provide insufficient regularization; one that is too high may cause underfitting.</p>
+<h3 id="13-7-l1-l2-regularization">13.7 L1/L2 regularization</h3>
+<p>Penalize large weights:</p>
+<p>$$
+L_{L1}=L+\lambda\sum_j|w_j|
+$$</p>
+<p>$$
+L_{L2}=L+\lambda\sum_jw_j^2
+$$</p>
+<p>L1 encourages sparsity; L2 discourages very large weights and is commonly used for smooth shrinkage.</p>
+<h3 id="13-8-weight-initialization">13.8 Weight initialization</h3>
+<p>Methods such as <strong>Xavier/Glorot</strong> and <strong>He initialization</strong> help stabilize signal and gradient magnitudes. He initialization is commonly paired with ReLU-family activations.</p>
+<h3 id="13-9-early-stopping">13.9 Early stopping</h3>
+<p>Stop when validation performance no longer improves for a chosen patience period. This limits wasted compute and helps avoid overfitting.</p>
+<h2 id="14-why-tuning-matters">14. Why tuning matters</h2>
+<p>Proper tuning affects:</p>
+<ul>
+<li>accuracy and task effectiveness;</li>
+<li>convergence speed and stability;</li>
+<li>training cost;</li>
+<li>model capacity;</li>
+<li>overfitting/underfitting balance;</li>
+<li>generalization to unseen data.</li>
+</ul>
+<p>The lecture’s illustrative CNN case reported accuracy increasing from <strong>85% to 91%</strong> after tuning learning rate, dropout and convolution-filter count. Elsewhere the instructor used the broad example of moving from roughly 83–85% to 90%+ to stress the business value of tuning; these figures are illustrative, not a universal guarantee.</p>
+<h2 id="15-hyperparameter-tuning-methods">15. Hyperparameter-tuning methods</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>How it works</th>
+<th>Strength</th>
+<th>Limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grid search</td>
+<td>Exhaustively evaluates every combination in a predefined grid</td>
+<td>Simple, systematic and reproducible</td>
+<td>Expensive; scales poorly with dimensions</td>
+</tr>
+<tr>
+<td>Random search</td>
+<td>Samples combinations from specified distributions/ranges</td>
+<td>Often explores more useful values for the same budget</td>
+<td>Can miss promising areas by chance</td>
+</tr>
+<tr>
+<td>Bayesian optimization</td>
+<td>Uses past trials to build a probabilistic model and select promising next trials</td>
+<td>Sample-efficient for costly evaluations</td>
+<td>More complex; surrogate assumptions matter</td>
+</tr>
+<tr>
+<td>Hyperband</td>
+<td>Allocates resources adaptively and stops weak configurations early</td>
+<td>Efficient resource allocation</td>
+<td>Requires meaningful partial-training performance</td>
+</tr>
+</tbody>
+</table></div>
+<p>The instructor particularly favoured <strong>Bayesian optimization</strong> because it uses past evaluations to reduce the number of required trials. Tools mentioned were <strong>Keras Tuner</strong> and <strong>Optuna</strong>, which automate and streamline tuning.</p>
+<h3 id="grid-search-count">Grid-search count</h3>
+<p>If a search contains $a$ learning rates, $b$ batch sizes and $c$ dropout rates:</p>
+<p>$$
+N_{trials}=a\times b\times c
+$$</p>
+<p>This multiplication explains why exhaustive search becomes infeasible in a high-dimensional search space.</p>
+<h2 id="16-correct-tuning-workflow">16. Correct tuning workflow</h2>
+<ol>
+<li>Define a search space based on domain knowledge.</li>
+<li>Train each candidate only on the training set.</li>
+<li>Evaluate candidates on a validation set.</li>
+<li>Choose the best configuration using the validation metric and practical constraints.</li>
+<li>Retrain/finalize as appropriate.</li>
+<li>Evaluate once on the untouched test set.</li>
+</ol>
+<h3 id="avoid-validation-overfitting">Avoid validation overfitting</h3>
+<p>Repeatedly selecting choices based on the same validation set can overfit decisions to that set. Mitigations include cross-validation where suitable, nested validation, a final untouched test set, and limiting manual peeking.</p>
+<h2 id="17-challenges">17. Challenges</h2>
+<ul>
+<li><strong>High dimensionality:</strong> combinations grow rapidly as more hyperparameters are introduced.</li>
+<li><strong>Non-convex search space:</strong> many local optima and interactions exist.</li>
+<li><strong>Cost:</strong> every trial consumes compute, time and sometimes paid infrastructure.</li>
+<li><strong>Validation overfitting:</strong> extensive searching can tailor the configuration to one validation set.</li>
+<li><strong>Interpretability:</strong> it may be difficult to explain why one combination works.</li>
+<li><strong>Algorithm choice:</strong> grid, random, Bayesian and Hyperband have different trade-offs.</li>
+<li><strong>Data imbalance/schema problems:</strong> tuning cannot compensate for invalid inputs or mismatched schemas.</li>
+<li><strong>Reproducibility:</strong> randomized trials require seeds, logs and recorded environments.</li>
+</ul>
+<h2 id="18-live-session-business-perspective">18. Live-session business perspective</h2>
+<p>A participant described a real project in which development and SIT/UAT data schemas differed. The model then selected incorrect table information, produced errors and achieved roughly 85–90% rather than the 95% target. The discussion linked data-quality/schema problems to downstream bias, fitting problems, rework and cost.</p>
+<p>Key lessons:</p>
+<ul>
+<li>Treat data contracts and schema validation as production requirements.</li>
+<li>A model cannot learn correctly from structurally inconsistent input.</li>
+<li>Augmentation is useful for limited variation; it is not a substitute for fixing broken schemas.</li>
+<li>Poor hyperparameters can make training slow/unstable or overfit.</li>
+<li>Retraining after a preventable error consumes data, compute and developer time.</li>
+<li>Cost management is problem-specific: medical data, financial data and ordinary public data have different acquisition and processing costs.</li>
+</ul>
+<p>Applications mentioned for hyperparameter tuning included fraud detection, advertisement bidding optimization and NLP classification.</p>
+<hr>
+<h1 id="part-iii-transfer-learning">Part III — Transfer Learning</h1>
+<h2 id="19-definition">19. Definition</h2>
+<p><strong>Transfer learning</strong> reuses knowledge learned by a model on a source task as the starting point for a different but related target task.</p>
+<p>Instead of initializing all weights randomly and training from scratch, the learner starts with pretrained weights:</p>
+<p>$$
+\theta_{target}^{(0)}\leftarrow\theta_{source}^{*}
+$$</p>
+<p>A <strong>pretrained model</strong> is a machine/deep-learning model already trained on a large dataset and optimized for a task. It can be reused, used as a fixed feature extractor or fine-tuned.</p>
+<h3 id="why-it-works">Why it works</h3>
+<p>Early and middle layers often learn transferable representations:</p>
+<ul>
+<li>vision: edges, corners, textures, shapes and object parts;</li>
+<li>text: syntax, word relationships and contextual representations;</li>
+<li>audio: frequencies, local acoustic patterns and phonetic structure.</li>
+</ul>
+<p>This is especially valuable when labelled target data are limited.</p>
+<h2 id="20-benefits">20. Benefits</h2>
+<ul>
+<li>Reduced training time.</li>
+<li>Lower data requirement.</li>
+<li>Lower computational cost and development effort.</li>
+<li>Access to high-quality/state-of-the-art learned representations.</li>
+<li>Faster convergence.</li>
+<li>Often better performance under resource constraints.</li>
+<li>Reusability across related tasks.</li>
+</ul>
+<p>The target problem must be sufficiently related to the source domain. Severe domain mismatch can cause <strong>negative transfer</strong>.</p>
+<h2 id="21-main-strategies">21. Main strategies</h2>
+<h3 id="21-1-feature-extraction">21.1 Feature extraction</h3>
+<p>Freeze the pretrained base and train only a new task-specific head. The pretrained features are reused with minimal changes.</p>
+<h3 id="21-2-fine-tuning">21.2 Fine-tuning</h3>
+<p>After training the new head, unfreeze some or all pretrained layers and continue training—normally with a smaller learning rate—to specialize the representation.</p>
+<h3 id="21-3-partial-freezing">21.3 Partial freezing</h3>
+<p>Keep early generic layers frozen and fine-tune later, task-specific layers.</p>
+<h3 id="21-4-domain-adaptation">21.4 Domain adaptation</h3>
+<p>Explicitly reduce the difference between source and target distributions when the tasks are related but domains differ.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Trainable components</th>
+<th>Best suited to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fixed feature extractor</td>
+<td>New head only</td>
+<td>Small target data; similar source/target domains</td>
+</tr>
+<tr>
+<td>Partial fine-tuning</td>
+<td>Head + later base layers</td>
+<td>Moderate target data/domain shift</td>
+</tr>
+<tr>
+<td>Full fine-tuning</td>
+<td>Entire network</td>
+<td>Larger target data; substantial shift; enough compute</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="22-popular-pretrained-models">22. Popular pretrained models</h2>
+<h3 id="vgg16-vgg19">VGG16/VGG19</h3>
+<ul>
+<li>Developed by Oxford’s Visual Geometry Group.</li>
+<li>Simple, uniform deep architecture using small convolution filters.</li>
+<li>16- or 19-layer variants.</li>
+<li>Used for image classification, feature extraction and transfer learning.</li>
+<li>Deep and relatively parameter-heavy compared with newer architectures.</li>
+</ul>
+<h3 id="resnet">ResNet</h3>
+<ul>
+<li>Associated with Microsoft Research.</li>
+<li>Introduces residual/skip connections.</li>
+<li>Residual block:</li>
+</ul>
+<p>$$
+y=F(x)+x
+$$</p>
+<ul>
+<li>Skip connections improve gradient flow and make very deep networks trainable, reducing the vanishing-gradient/degradation problem.</li>
+<li>Used for image classification, feature extraction and object detection.</li>
+</ul>
+<h3 id="bert">BERT</h3>
+<ul>
+<li><strong>Bidirectional Encoder Representations from Transformers</strong>, developed by Google AI.</li>
+<li>Transformer-based encoder designed to use left and right context simultaneously.</li>
+<li>Used in sentiment analysis, text classification, question answering and named-entity recognition.</li>
+</ul>
+<h3 id="gpt">GPT</h3>
+<ul>
+<li><strong>Generative Pre-trained Transformer</strong>.</li>
+<li>Transformer-based pretrained family used for language generation and analysis.</li>
+<li>The transcript loosely grouped GPT with BERT, but they are distinct pretrained transformer architectures.</li>
+</ul>
+<blockquote>
+<p><strong>Exam trap:</strong> BERT is not a vision model and ResNet is not an NLP transformer. Also, GPT does not “use BERT”; both use transformer ideas but differ in architecture and training objectives.</p>
+</blockquote>
+<h2 id="23-tensorflow-transfer-learning-procedure">23. TensorFlow transfer-learning procedure</h2>
+<ol>
+<li>Import the required TensorFlow/Keras libraries.</li>
+<li>Load and preprocess target data to match the pretrained model’s expected size and normalization.</li>
+<li>Load the pretrained base with learned weights, usually without its original classifier.</li>
+<li>Freeze the base layers initially.</li>
+<li>Add a custom task-specific classification head.</li>
+<li>Compile with optimizer, loss and evaluation metrics.</li>
+<li>Train the new head on target data.</li>
+<li>Optionally unfreeze selected upper layers and fine-tune with a small learning rate.</li>
+<li>Validate, optimize and export.</li>
+</ol>
+<h2 id="24-resnet50-case-study-ecoagro-plant-disease-detection">24. ResNet50 case study: EcoAgro plant-disease detection</h2>
+<h3 id="business-problem">Business problem</h3>
+<p>EcoAgro Solutions needs to identify plant diseases from leaf images, but has limited labelled data. Training a large CNN from scratch risks overfitting and high compute cost.</p>
+<h3 id="base-model">Base model</h3>
+<pre><code class="language-python">base_model = tf.keras.applications.ResNet50(
+    weights=&quot;imagenet&quot;,
+    include_top=False,
+    input_shape=(224, 224, 3)
+)
+</code></pre>
+<h4 id="weights-imagenet"><code>weights="imagenet"</code></h4>
+<p>Loads feature weights learned from the large ImageNet dataset instead of random initialization.</p>
+<h4 id="include-top-false"><code>include_top=False</code></h4>
+<p>Removes/excludes ResNet50’s original ImageNet classification head. It does <strong>not</strong>:</p>
+<ul>
+<li>remove convolution layers;</li>
+<li>freeze the model automatically;</li>
+<li>change the input size by itself;</li>
+<li>train the network;</li>
+<li>add a new classifier.</li>
+</ul>
+<p>It exposes the pretrained convolutional feature extractor so a custom head can be attached.</p>
+<h3 id="freezing">Freezing</h3>
+<pre><code class="language-python">base_model.trainable = False
+</code></pre>
+<p>Reasons:</p>
+<ul>
+<li>preserve useful pretrained features;</li>
+<li>prevent a small target dataset from rapidly overwriting them;</li>
+<li>reduce trainable parameters and compute;</li>
+<li>reduce overfitting risk during initial head training.</li>
+</ul>
+<h3 id="custom-head">Custom head</h3>
+<pre><code class="language-python">inputs = tf.keras.Input(shape=(224, 224, 3))
+x = base_model(inputs, training=False)
+x = tf.keras.layers.GlobalAveragePooling2D()(x)
+outputs = tf.keras.layers.Dense(num_classes, activation=&quot;softmax&quot;)(x)
+model = tf.keras.Model(inputs, outputs)
+</code></pre>
+<p>Architecture:</p>
+<p>$$
+\text{Image}\rightarrow\text{ResNet50 feature maps}\rightarrow
+\text{GlobalAveragePooling2D}\rightarrow\text{Dense softmax}\rightarrow\text{class probabilities}
+$$</p>
+<h2 id="25-globalaveragepooling2d">25. GlobalAveragePooling2D</h2>
+<p>For feature map $X\in\mathbb R^{H\times W\times C}$, global average pooling produces one number per channel:</p>
+<p>$$
+z_c=\frac{1}{HW}\sum_{i=1}^{H}\sum_{j=1}^{W}X_{ijc}
+$$</p>
+<p>Thus:</p>
+<p>$$
+H\times W\times C\rightarrow C
+$$</p>
+<p>Advantages:</p>
+<ul>
+<li>drastically fewer parameters than flattening a large feature map;</li>
+<li>lower overfitting risk;</li>
+<li>efficient computation;</li>
+<li>summarizes whether each learned feature occurs across the image;</li>
+<li>provides some spatial invariance.</li>
+</ul>
+<h2 id="26-softmax-classifier">26. Softmax classifier</h2>
+<p>For logits $z_1,\dots,z_K$:</p>
+<p>$$
+P(y=k\mid x)=\frac{e^{z_k}}{\sum_{j=1}^{K}e^{z_j}}
+$$</p>
+<p>Properties:</p>
+<ul>
+<li>each output is in $[0,1]$;</li>
+<li>probabilities sum to 1;</li>
+<li>appropriate for mutually exclusive multi-class classification.</li>
+</ul>
+<h2 id="27-compilation-and-loss">27. Compilation and loss</h2>
+<pre><code class="language-python">model.compile(
+    optimizer=tf.keras.optimizers.Adam(),
+    loss=&quot;categorical_crossentropy&quot;,
+    metrics=[&quot;accuracy&quot;]
+)
+</code></pre>
+<h3 id="adam">Adam</h3>
+<p>Combines adaptive per-parameter learning rates with momentum-like moving averages. It is a common practical default, not guaranteed to be universally optimal.</p>
+<h3 id="categorical-cross-entropy">Categorical cross-entropy</h3>
+<p>For one-hot label $y$ and predicted probabilities $\hat y$:</p>
+<p>$$
+L=-\sum_{k=1}^{K}y_k\log(\hat y_k)
+$$</p>
+<ul>
+<li>Use <strong>categorical cross-entropy</strong> for one-hot multi-class labels.</li>
+<li>Use <strong>sparse categorical cross-entropy</strong> for integer class indices.</li>
+<li>Use <strong>binary cross-entropy</strong> for binary or independent multi-label outputs.</li>
+<li>Mean squared error is generally not the preferred loss for probabilistic classification.</li>
+</ul>
+<h2 id="28-fine-tuning-procedure-and-risks">28. Fine-tuning procedure and risks</h2>
+<p>After the head has learned:</p>
+<ol>
+<li>Unfreeze selected top ResNet layers.</li>
+<li>Recompile the model (trainable status changed).</li>
+<li>Use a much smaller learning rate.</li>
+<li>Continue training with early stopping and validation monitoring.</li>
+</ol>
+<p>Trade-offs:</p>
+<ul>
+<li>Can improve target-domain accuracy.</li>
+<li>Requires more computation.</li>
+<li>Can overfit small target data.</li>
+<li>A large learning rate can destroy pretrained knowledge (<strong>catastrophic forgetting</strong>).</li>
+<li>Batch-normalization behaviour requires care; <code>training=False</code> for the base is often used while initially frozen.</li>
+</ul>
+<blockquote>
+<p><strong>Exam trap:</strong> Transfer learning does not mean using a pretrained model unchanged. A target-specific head and/or fine-tuning is normally required.</p>
+</blockquote>
+<h2 id="29-transfer-learning-applications-mentioned">29. Transfer-learning applications mentioned</h2>
+<ul>
+<li>Computer vision and product-image classification.</li>
+<li>NLP: customer feedback, sentiment, query analysis and document classification.</li>
+<li>Speech recognition.</li>
+<li>Healthcare: CT scans, face recognition and medical diagnosis.</li>
+<li>Reinforcement-learning contexts.</li>
+<li>E-commerce personalization.</li>
+</ul>
+<p>The live-session instructor noted that pretrained models may be freely accessible or may involve licensing/payment; availability must be checked for the intended use.</p>
+<hr>
+<h1 id="part-iv-model-optimization-and-deployment">Part IV — Model Optimization and Deployment</h1>
+<h2 id="30-deployment-meaning">30. Deployment meaning</h2>
+<p>Deployment makes a trained model available to real users or systems for inference. A production solution must consider more than accuracy:</p>
+<ul>
+<li>latency and throughput;</li>
+<li>memory, storage and compute;</li>
+<li>scalability and concurrent requests;</li>
+<li>connectivity/offline requirements;</li>
+<li>privacy and security;</li>
+<li>model versioning, monitoring and maintenance;</li>
+<li>hardware constraints;</li>
+<li>cost.</li>
+</ul>
+<h2 id="31-quantization">31. Quantization</h2>
+<p><strong>Quantization</strong> converts model weights and sometimes activations from high-precision representation (often 32-bit floating point) to lower precision such as 16-bit float or 8-bit integer.</p>
+<p>Approximate mapping:</p>
+<p>$$
+q=\operatorname{round}\left(\frac{x}{s}\right)+z
+$$</p>
+<p>where $s$ is the scale and $z$ is the zero-point.</p>
+<p>Benefits:</p>
+<ul>
+<li>smaller model file;</li>
+<li>lower memory consumption;</li>
+<li>faster inference on supported hardware;</li>
+<li>reduced power usage;</li>
+<li>well suited to mobile and edge deployment.</li>
+</ul>
+<p>Trade-off: reduced precision can lower accuracy. Validate the quantized model against the original.</p>
+<h2 id="32-pruning">32. Pruning</h2>
+<p><strong>Pruning</strong> removes or zeros weights/connections judged to contribute little. A simple unstructured rule is:</p>
+<p>$$
+w_i'=\begin{cases}
+0,&|w_i|<\tau\\
+w_i,&\text{otherwise}
+\end{cases}
+$$</p>
+<p>Benefits:</p>
+<ul>
+<li>sparsity;</li>
+<li>potential reductions in storage and computation;</li>
+<li>possible faster inference with compatible sparse hardware/software.</li>
+</ul>
+<p>Trade-offs:</p>
+<ul>
+<li>aggressive pruning can reduce accuracy;</li>
+<li>unstructured sparsity does not always translate into actual wall-clock speedups;</li>
+<li>retraining/fine-tuning may be required.</li>
+</ul>
+<h2 id="33-quantization-versus-pruning">33. Quantization versus pruning</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Quantization</th>
+<th>Pruning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Main change</td>
+<td>Numerical precision</td>
+<td>Number/structure of effective weights</td>
+</tr>
+<tr>
+<td>Primary benefit</td>
+<td>Smaller memory and faster arithmetic</td>
+<td>Sparsity and fewer useful operations</td>
+</tr>
+<tr>
+<td>Main risk</td>
+<td>Precision/accuracy loss</td>
+<td>Capacity/accuracy loss</td>
+</tr>
+<tr>
+<td>Edge suitability</td>
+<td>Very common</td>
+<td>Useful when runtime supports sparsity</td>
+</tr>
+</tbody>
+</table></div>
+<p>They can be combined, but the combined model must be benchmarked for accuracy, size and latency on target hardware.</p>
+<h2 id="34-tensorflow-savedmodel">34. TensorFlow SavedModel</h2>
+<p>SavedModel is TensorFlow’s standard export format. It packages the computation graph, variables/weights and serving signatures needed for inference. It is a deployment artifact, not itself a server or a mobile runtime.</p>
+<pre><code class="language-python">model.export(&quot;exported_model&quot;)
+</code></pre>
+<h2 id="35-tensorflow-serving">35. TensorFlow Serving</h2>
+<p><strong>TensorFlow Serving</strong> is designed for scalable server/cloud inference.</p>
+<p>Characteristics:</p>
+<ul>
+<li>exposes models through service APIs such as REST/gRPC;</li>
+<li>supports centralized deployment and version management;</li>
+<li>suited to high-throughput, concurrent requests;</li>
+<li>hardware and updates are managed centrally;</li>
+<li>requires network access for remote clients;</li>
+<li>introduces network latency and server/infrastructure cost;</li>
+<li>centralization may raise privacy concerns for sensitive inputs.</li>
+</ul>
+<p>Typical fit: a web application sends a leaf image to a cloud endpoint and receives a disease prediction.</p>
+<h2 id="36-tensorflow-lite">36. TensorFlow Lite</h2>
+<p><strong>TensorFlow Lite (TFLite)</strong> targets mobile, embedded and edge devices.</p>
+<p>Characteristics:</p>
+<ul>
+<li>lightweight, optimized model format/runtime;</li>
+<li>enables local, offline inference;</li>
+<li>low latency because data need not travel to a server;</li>
+<li>improved privacy because raw input can remain on the device;</li>
+<li>constrained by device compute, memory, battery and storage;</li>
+<li>model updates must be distributed to devices;</li>
+<li>may require quantization or other optimization.</li>
+</ul>
+<p>Typical fit: a farmer photographs a leaf and receives a local diagnosis even without connectivity.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> TensorFlow Serving and TensorFlow Lite are not interchangeable names. Serving is primarily server-side; Lite is primarily device/edge-side.</p>
+</blockquote>
+<h2 id="37-serving-versus-lite">37. Serving versus Lite</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>TensorFlow Serving</th>
+<th>TensorFlow Lite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Location</td>
+<td>Server/cloud</td>
+<td>Mobile/embedded/edge</td>
+</tr>
+<tr>
+<td>Connectivity</td>
+<td>Usually required</td>
+<td>Can work offline</td>
+</tr>
+<tr>
+<td>Latency</td>
+<td>Includes network round trip</td>
+<td>Often low local latency</td>
+</tr>
+<tr>
+<td>Compute</td>
+<td>Scalable server hardware</td>
+<td>Device-constrained</td>
+</tr>
+<tr>
+<td>Privacy</td>
+<td>Input may leave device</td>
+<td>Input can remain local</td>
+</tr>
+<tr>
+<td>Updates</td>
+<td>Centralized/easier</td>
+<td>Must distribute model updates</td>
+</tr>
+<tr>
+<td>Typical use</td>
+<td>APIs, web services, centralized inference</td>
+<td>Phones, sensors, cameras, IoT</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="38-hybrid-deployment">38. Hybrid deployment</h2>
+<p>A hybrid design uses TFLite for common, immediate or offline predictions and TensorFlow Serving for difficult cases, heavy computation, centralized analytics or updates.</p>
+<p>$$
+\text{Input}\rightarrow\text{Edge model}\rightarrow
+\begin{cases}
+\text{confident result: return locally}\\
+\text{uncertain/complex case: send to server}
+\end{cases}
+$$</p>
+<p>Benefits:</p>
+<ul>
+<li>low latency for routine decisions;</li>
+<li>continued operation with intermittent connectivity;</li>
+<li>reduced bandwidth;</li>
+<li>server scalability for complex cases;</li>
+<li>privacy improvement when most data stay local.</li>
+</ul>
+<p>The confidence threshold and fallback path must be validated so that uncertain high-risk cases are not accepted merely for speed.</p>
+<h2 id="39-deployment-decision-factors">39. Deployment decision factors</h2>
+<ol>
+<li><strong>Latency:</strong> Is an immediate local response required?</li>
+<li><strong>Connectivity:</strong> Must the system work offline or with weak networks?</li>
+<li><strong>Scalability:</strong> How many users or requests must be handled?</li>
+<li><strong>Privacy:</strong> Can raw data leave the device?</li>
+<li><strong>Maintenance:</strong> How quickly must models be updated and rolled back?</li>
+<li><strong>Hardware:</strong> What memory, accelerator and battery constraints exist?</li>
+<li><strong>Cost:</strong> Compare device cost, cloud inference cost, bandwidth and operational staffing.</li>
+</ol>
+<h3 id="recommended-ecoagro-flow">Recommended EcoAgro flow</h3>
+<ol>
+<li>Start with ImageNet-pretrained ResNet50.</li>
+<li>Remove the original top, freeze the feature extractor and add a plant-disease head.</li>
+<li>Train the head; cautiously fine-tune upper layers.</li>
+<li>Apply augmentation and monitor validation performance.</li>
+<li>Optimize with quantization and/or pruning if needed.</li>
+<li>Export a server version and convert an optimized copy to TFLite.</li>
+<li>Deploy locally for field use, with optional cloud fallback for uncertain cases.</li>
+</ol>
+<hr>
+<h1 id="part-v-integrated-practical-and-exam-perspective">Part V — Integrated Practical and Exam Perspective</h1>
+<h2 id="40-why-models-fail-in-the-real-world">40. Why models fail in the real world</h2>
+<p>The live session framed the week around the gap between theoretical capability and practical reliability. Common reasons include:</p>
+<ul>
+<li>training data are limited, biased or unrepresentative;</li>
+<li>production data distribution differs from training data;</li>
+<li>schema/data-contract changes break preprocessing;</li>
+<li>labels are noisy or imbalanced;</li>
+<li>the model overfits training examples;</li>
+<li>hyperparameters cause unstable or slow learning;</li>
+<li>deployment hardware cannot support the original model;</li>
+<li>network, privacy or latency assumptions are wrong;</li>
+<li>developers skip validation, optimization or monitoring steps;</li>
+<li>cost grows when a failed pipeline has to be rebuilt and retrained.</li>
+</ul>
+<h3 id="live-session-example-bank-model-before-and-after-covid-19">Live-session example: bank model before and after COVID-19</h3>
+<p>The instructor described a bank customer-risk/churn model trained on roughly 5–10 years of historical data. At development time it could report about 96–98% accuracy because the historical market conditions were comparatively stable. Deploying the same model around or after the COVID-19 disruption could produce poor predictions because customer behaviour, market conditions and business circumstances had changed.</p>
+<p>This illustrates <strong>distribution/concept drift</strong>:</p>
+<p>$$
+P_{train}(X,Y)\neq P_{production}(X,Y)
+$$</p>
+<p>High historical accuracy therefore does not guarantee present-day reliability. The response may require new representative data, augmentation that models realistic variations, recalibration/retraining, careful tuning and ongoing monitoring. Rebuilding entirely from scratch may be slow and expensive, but augmentation alone is not a complete cure if the underlying relationship has genuinely changed.</p>
+<h3 id="live-session-example-shoe-images">Live-session example: shoe images</h3>
+<p>Starting with about 1,000 shoe images, the instructor suggested flips, rotations, magnification/zoom and crops (including edges and upper portions) to create several perspectives—illustratively increasing the set to around 5,000. The label remains “shoe,” but the model sees enough viewpoints to recognize an upside-down, cropped or differently scaled shoe in practice.</p>
+<p>The pedagogical point was to give the learner a detailed view of each label and its underlying patterns. The exact multiplication factor is a design choice, not a guaranteed requirement.</p>
+<h3 id="live-session-example-misleading-accuracy-under-class-imbalance">Live-session example: misleading accuracy under class imbalance</h3>
+<p>For disease prediction, suppose 98% of records represent common/non-rare diseases and only 2% represent rare diseases. A model that predicts only the majority class can appear to have 98% accuracy while failing every rare-disease patient:</p>
+<p>$$
+\text{Accuracy}=\frac{98\text{ correct majority predictions}}{100}=98\%
+$$</p>
+<p>This is <strong>class imbalance</strong>, not genuine clinical excellence. Augmenting or synthetically generating plausible minority-class examples may help, but evaluation should also use recall/sensitivity, precision, F1-score, confusion matrix and class-wise metrics. In high-stakes applications, failure on the rare class can be the most serious error.</p>
+<blockquote>
+<p><strong>Instructor advice:</strong> Implement small models in Google Colab, Visual Studio or another available platform. Practical experiments with limited data reveal problems—imbalance, overfitting, tuning instability and schema mismatch—that are easy to miss in theory.</p>
+</blockquote>
+<h2 id="41-integrated-example-robust-plant-disease-classifier">41. Integrated example: robust plant-disease classifier</h2>
+<h3 id="problem">Problem</h3>
+<p>Only a small set of labelled leaf images is available, captured under limited lighting conditions. Farmers need quick diagnoses in areas with intermittent connectivity.</p>
+<h3 id="solution-mapping">Solution mapping</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Technique</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Limited images</td>
+<td>Data augmentation</td>
+<td>Generate valid variations in lighting, crop, scale and orientation</td>
+</tr>
+<tr>
+<td>Risk of overfitting</td>
+<td>Augmentation, dropout, L2, early stopping</td>
+<td>Encourage generalizable features</td>
+</tr>
+<tr>
+<td>Expensive training from scratch</td>
+<td>Transfer learning</td>
+<td>Reuse ImageNet visual features</td>
+</tr>
+<tr>
+<td>Task-specific classes</td>
+<td>Custom softmax head</td>
+<td>Map features to plant-disease categories</td>
+</tr>
+<tr>
+<td>Accuracy improvement</td>
+<td>Controlled fine-tuning</td>
+<td>Adapt upper-level features to leaf patterns</td>
+</tr>
+<tr>
+<td>Phone constraints</td>
+<td>Quantization/TFLite</td>
+<td>Reduce size and latency</td>
+</tr>
+<tr>
+<td>Difficult cases</td>
+<td>Cloud fallback/Serving</td>
+<td>Use stronger centralized inference or review</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="42-common-misconceptions-and-corrections">42. Common misconceptions and corrections</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Misconception</th>
+<th>Correction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Augmentation creates genuinely independent observations</td>
+<td>It creates transformed/synthetic samples correlated with originals</td>
+</tr>
+<tr>
+<td>Any transformation is helpful</td>
+<td>Only realistic, label-preserving transformations are valid</td>
+</tr>
+<tr>
+<td>Validation should receive the same random augmentation as training</td>
+<td>Validation should normally remain fixed except deterministic preprocessing</td>
+</tr>
+<tr>
+<td>Hyperparameters are learned weights</td>
+<td>Weights are parameters; hyperparameters govern training/model design</td>
+</tr>
+<tr>
+<td>A lower learning rate is always better</td>
+<td>Too low is slow; too high is unstable; tune it</td>
+</tr>
+<tr>
+<td>More epochs are always better</td>
+<td>Excessive epochs can overfit</td>
+</tr>
+<tr>
+<td>Grid search is always best because it is exhaustive</td>
+<td>It can waste most of the budget in high dimensions</td>
+</tr>
+<tr>
+<td>Transfer learning means no training is required</td>
+<td>The new head must be trained; fine-tuning may also be necessary</td>
+</tr>
+<tr>
+<td><code>include_top=False</code> freezes ResNet</td>
+<td>It removes the original classifier only</td>
+</tr>
+<tr>
+<td>Freezing deletes layers</td>
+<td>It retains layers but prevents their weights from updating</td>
+</tr>
+<tr>
+<td>Softmax is appropriate for every classification task</td>
+<td>It suits mutually exclusive multiclass problems; multilabel tasks differ</td>
+</tr>
+<tr>
+<td>Quantization/pruning always improve accuracy</td>
+<td>They target efficiency and may reduce accuracy</td>
+</tr>
+<tr>
+<td>SavedModel is the same as TensorFlow Serving</td>
+<td>SavedModel is an export format; Serving is a server system</td>
+</tr>
+<tr>
+<td>TensorFlow Lite is just a smaller server</td>
+<td>It is a device/edge runtime and model format</td>
+</tr>
+<tr>
+<td>A powerful architecture guarantees production success</td>
+<td>Data, tuning, constraints, deployment and monitoring decide real performance</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="43-exam-traps">43. Exam traps</h2>
+<ol>
+<li>State <strong>“artificially expands the training dataset”</strong>, not “collects entirely new real data.”</li>
+<li>Link augmentation to <strong>diversity, reduced overfitting, robustness and generalization</strong>.</li>
+<li>Explicitly distinguish model parameters from hyperparameters.</li>
+<li>For learning rate: high → instability/overshoot; low → slow convergence.</li>
+<li>Grid search is exhaustive; random search samples; Bayesian optimization learns from past trials; Hyperband allocates resources adaptively.</li>
+<li>Transfer must be between <strong>related</strong> tasks/domains; otherwise negative transfer is possible.</li>
+<li>Feature extraction freezes the base; fine-tuning updates selected pretrained weights.</li>
+<li><code>weights="imagenet"</code> loads pretrained weights; <code>include_top=False</code> removes the ImageNet classifier.</li>
+<li><code>GlobalAveragePooling2D</code> averages each feature map, reducing $H\times W\times C$ to $C$.</li>
+<li>Softmax outputs a probability distribution over mutually exclusive classes.</li>
+<li>Quantization lowers precision; pruning removes/zeros low-importance connections.</li>
+<li>Serving = cloud/server; Lite = edge/mobile.</li>
+<li>The correct augmentation arithmetic in the demonstration is $500\times6=3000$.</li>
+<li>Do not present the instructor’s illustrative accuracy increase as a guaranteed result.</li>
+<li>Data augmentation cannot repair a broken production schema; validate data contracts separately.</li>
+</ol>
+<hr>
+<h1 id="part-vi-likely-exam-questions-with-model-answers">Part VI — Likely Exam Questions with Model Answers</h1>
+<h2 id="44-short-answer-questions">44. Short-answer questions</h2>
+<h3 id="q1-define-data-augmentation">Q1. Define data augmentation.</h3>
+<p>Data augmentation is the artificial expansion and diversification of a training dataset through valid, usually label-preserving transformations or synthetic generation. It reduces overfitting and improves robustness and generalization, especially when labelled data are limited.</p>
+<h3 id="q2-give-four-image-augmentation-techniques">Q2. Give four image-augmentation techniques.</h3>
+<p>Rotation, flipping, random cropping/scaling and colour jitter. Noise injection, translation and blur are additional examples.</p>
+<h3 id="q3-why-should-random-augmentation-usually-not-be-applied-to-validation-data">Q3. Why should random augmentation usually not be applied to validation data?</h3>
+<p>It makes the evaluation distribution change across runs/epochs, causing noisy, incomparable metrics and unreliable model selection. Validation should remain a fixed estimate of unseen performance.</p>
+<h3 id="q4-differentiate-parameters-and-hyperparameters">Q4. Differentiate parameters and hyperparameters.</h3>
+<p>Parameters such as weights and biases are learned from data during training. Hyperparameters such as learning rate, batch size, epochs, dropout and architecture are chosen before/around training and control learning.</p>
+<h3 id="q5-what-happens-if-learning-rate-is-too-high-or-too-low">Q5. What happens if learning rate is too high or too low?</h3>
+<p>Too high may overshoot minima and produce oscillation or divergence. Too low makes convergence very slow and may waste compute.</p>
+<h3 id="q6-compare-grid-search-and-bayesian-optimization">Q6. Compare grid search and Bayesian optimization.</h3>
+<p>Grid search evaluates every predefined combination and becomes expensive in large spaces. Bayesian optimization uses previous trial results to model the objective and select promising subsequent trials, often requiring fewer evaluations.</p>
+<h3 id="q7-define-transfer-learning">Q7. Define transfer learning.</h3>
+<p>Transfer learning adapts knowledge/weights learned on a source task to a related target task, reducing data and compute requirements compared with training from scratch.</p>
+<h3 id="q8-differentiate-feature-extraction-and-fine-tuning">Q8. Differentiate feature extraction and fine-tuning.</h3>
+<p>Feature extraction freezes the pretrained base and trains only a new head. Fine-tuning unfreezes selected pretrained layers and updates them on target data, normally with a small learning rate.</p>
+<h3 id="q9-what-does-include-top-false-mean">Q9. What does <code>include_top=False</code> mean?</h3>
+<p>It excludes the pretrained model’s original classification head while retaining its convolutional feature extractor, enabling attachment of a custom target-task head.</p>
+<h3 id="q10-why-is-global-average-pooling-used">Q10. Why is global average pooling used?</h3>
+<p>It averages each feature map into one value, sharply reducing parameters compared with flattening, lowering overfitting and computation while preserving channel-level evidence.</p>
+<h3 id="q11-define-quantization-and-pruning">Q11. Define quantization and pruning.</h3>
+<p>Quantization lowers numerical precision of weights/activations; pruning removes or zeros low-importance weights/connections. Both aim to reduce deployment cost but can reduce accuracy.</p>
+<h3 id="q12-compare-tensorflow-serving-and-tensorflow-lite">Q12. Compare TensorFlow Serving and TensorFlow Lite.</h3>
+<p>TensorFlow Serving supports scalable server/cloud inference and centralized updates. TensorFlow Lite supports optimized inference on mobile and edge devices, including offline, low-latency and privacy-sensitive use.</p>
+<h2 id="45-long-answer-frameworks">45. Long-answer frameworks</h2>
+<h3 id="q13-explain-data-augmentation-its-techniques-benefits-and-risks">Q13. Explain data augmentation, its techniques, benefits and risks.</h3>
+<p>Answer structure:</p>
+<ol>
+<li>Define artificial, label-preserving expansion.</li>
+<li>Explain why limited data and overfitting motivate it.</li>
+<li>Classify techniques by images, text, graphs and time series.</li>
+<li>Explain generalization using invariance/expected augmented risk.</li>
+<li>Give medical, autonomous-driving and NLP examples.</li>
+<li>State benefits: size, robustness, cost and imbalance.</li>
+<li>State risks: semantic drift, unrealistic samples, bias and compute.</li>
+<li>Conclude with training-only random augmentation and fixed validation.</li>
+</ol>
+<h3 id="q14-discuss-hyperparameter-tuning-methods-and-challenges">Q14. Discuss hyperparameter tuning methods and challenges.</h3>
+<p>Answer structure:</p>
+<ol>
+<li>Distinguish parameters and hyperparameters.</li>
+<li>Explain learning rate, batch size, epochs, optimizer, dropout and architecture.</li>
+<li>Compare grid, random, Bayesian and Hyperband.</li>
+<li>Describe train/validation/test workflow.</li>
+<li>Discuss dimensionality, non-convexity, compute and validation overfitting.</li>
+<li>Relate tuning to accuracy, convergence and cost.</li>
+</ol>
+<h3 id="q15-explain-resnet50-transfer-learning-for-a-plant-disease-classifier">Q15. Explain ResNet50 transfer learning for a plant-disease classifier.</h3>
+<p>Answer structure:</p>
+<ol>
+<li>State limited-data problem.</li>
+<li>Load ImageNet weights with <code>include_top=False</code>.</li>
+<li>Freeze base layers.</li>
+<li>Add global average pooling and softmax head.</li>
+<li>Compile using Adam and appropriate cross-entropy.</li>
+<li>Train head, then cautiously fine-tune top layers.</li>
+<li>Use augmentation and validation monitoring.</li>
+<li>Optimize and deploy via TFLite/Serving or hybrid approach.</li>
+</ol>
+<h3 id="q16-design-a-deployment-strategy-for-an-application-with-poor-connectivity">Q16. Design a deployment strategy for an application with poor connectivity.</h3>
+<p>Use a quantized TFLite model on device for low-latency offline inference. Keep sensitive inputs local where possible. Add a server fallback for uncertain or computation-heavy cases if connectivity becomes available. Version the model, monitor accuracy/latency, and validate updates on target hardware.</p>
+<hr>
+<h1 id="part-vii-rapid-revision">Part VII — Rapid Revision</h1>
+<h2 id="46-one-page-memory-map">46. One-page memory map</h2>
+<h3 id="data-augmentation">Data augmentation</h3>
+<ul>
+<li>Artificial, valid expansion of training data.</li>
+<li>Images: rotate, flip, crop, scale, colour jitter, noise.</li>
+<li>Text: synonyms, back-translation, paraphrase, spelling noise.</li>
+<li>Graphs: node/edge perturbation, subgraphs, mixup.</li>
+<li>Time series: jitter, warp, slice, permute.</li>
+<li>Benefits: more diversity, less overfitting, robustness, lower collection cost, class balance.</li>
+<li>Golden rule: preserve label/meaning; randomize training, keep validation stable.</li>
+</ul>
+<h3 id="hyperparameters">Hyperparameters</h3>
+<ul>
+<li>Chosen around training; parameters are learned.</li>
+<li>Learning rate: too high unstable, too low slow.</li>
+<li>Batch size: memory, gradient noise and convergence trade-off.</li>
+<li>Epochs: too few underfit, too many overfit.</li>
+<li>Dropout/L1/L2/early stopping: regularization.</li>
+<li>Search: grid = exhaustive; random = sampled; Bayesian = past-informed; Hyperband = adaptive resources.</li>
+</ul>
+<h3 id="transfer-learning">Transfer learning</h3>
+<ul>
+<li>Reuse pretrained knowledge for a related task.</li>
+<li>Feature extraction = freeze base.</li>
+<li>Fine-tuning = unfreeze selected layers at low learning rate.</li>
+<li>Vision: VGG/ResNet; NLP: BERT/GPT.</li>
+<li>ResNet residual relation: $y=F(x)+x$.</li>
+<li><code>weights="imagenet"</code> loads learned weights.</li>
+<li><code>include_top=False</code> removes original classifier only.</li>
+</ul>
+<h3 id="resnet50-custom-head">ResNet50 custom head</h3>
+<p>$$
+\text{ResNet50}\rightarrow\text{GAP}\rightarrow\text{Dense softmax}
+$$</p>
+<ul>
+<li>GAP: $H\times W\times C\rightarrow C$.</li>
+<li>Softmax: mutually exclusive class probabilities.</li>
+<li>Categorical CE: one-hot labels; sparse CE: integer labels.</li>
+</ul>
+<h3 id="optimization-and-deployment">Optimization and deployment</h3>
+<ul>
+<li>Quantization = lower precision.</li>
+<li>Pruning = remove/zero low-value weights.</li>
+<li>SavedModel = export artifact.</li>
+<li>Serving = centralized server/cloud APIs.</li>
+<li>TFLite = mobile/edge/offline.</li>
+<li>Hybrid = local routine inference + server fallback.</li>
+</ul>
+<h2 id="47-final-high-yield-statements">47. Final high-yield statements</h2>
+<ol>
+<li>Augmentation teaches invariance; it does not magically create independent real-world evidence.</li>
+<li>Hyperparameters govern learning behaviour, not learned knowledge itself.</li>
+<li>Tuning must use validation data while preserving an untouched final test set.</li>
+<li>Transfer learning is most valuable when target data are limited and the source task is related.</li>
+<li>Freeze first, train the custom head, then fine-tune cautiously.</li>
+<li><code>include_top=False</code> and <code>trainable=False</code> perform different jobs.</li>
+<li>Production choice is a business/engineering trade-off among accuracy, latency, privacy, connectivity, maintenance and cost.</li>
+<li>A theoretically strong model can still fail because of data/schema drift, poor tuning or inappropriate deployment.</li>
+</ol>
+<h2 id="48-source-mentioned-further-reading">48. Source-mentioned further reading</h2>
+<ul>
+<li>A survey of image data augmentation for deep learning in the <em>Journal of Big Data</em> was recommended by the instructor.</li>
+<li>The ImageNet deep convolutional-network paper from <em>Advances in Neural Information Processing Systems</em> was also recommended for deeper study.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-7.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 7: Generative Adversarial Networks (GANs)</span>
+      </a>
+      <a href="week-9.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 9: Feed-Forward Neural Networks, Perceptrons,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

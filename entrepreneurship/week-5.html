@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Entrepreneurship · Week 5 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Entrepreneurship</span>
+      <span class="brand-title">Week 5</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html" selected>Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Entrepreneurship and Innovation — Week 1 Exam Notes
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Entrepreneurship, Innovation, Creativity, Service Innovation and…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Innovation Foundations, Process and Product Innovation, Design…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Entrepreneurial Journey, Execution, Creativity, Innovation and…
+      </a>
+      <a class="is-active" href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Entrepreneurial Opportunities, Evaluation, Competition and Failure
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Entrepreneurial Problem Solving, Lean Processes and Revenue Models
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Entrepreneurial Storytelling, Vision, Mission, Pitching, IP and the…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Entrepreneurial Marketing, Sales, Research, Branding and Market Sizing
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        User Research, Entrepreneurial Finance, Accounting and Financial…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Managing Growth, Lean Execution, Failure, Adaptation, and Business…
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Business Planning, Feasibility Analysis and the Business Model Canvas
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Networks, Entrepreneurial Teams, Startup Operations and Readiness
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Resource Planning, Venture Launch, Learning and Execution
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Financial Assessment, Funding, Growth and Exit
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Comprehensive Exam-Preparation Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Entrepreneurship · Week 5</p>
+        <h1 class="page-title">Entrepreneurial Opportunities, Evaluation, Competition and Failure</h1>
+        <p class="page-meta">Week 5 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-the-week-s-central-argument">1. The week’s central argument</a></li>
+      <li><a href="#2-entrepreneurial-mindset">2. Entrepreneurial mindset</a></li>
+      <li><a href="#3-from-an-idea-to-an-entrepreneurial-opportunity">3. From an idea to an entrepreneurial opportunity</a></li>
+      <li><a href="#4-where-opportunities-come-from">4. Where opportunities come from</a></li>
+      <li><a href="#5-researching-and-screening-opportunities">5. Researching and screening opportunities</a></li>
+      <li><a href="#6-business-model-canvas-bmc-and-supporting-frameworks">6. Business Model Canvas (BMC) and supporting frameworks</a></li>
+      <li><a href="#7-integrated-t-shirt-startup-exercise">7. Integrated T-shirt startup exercise</a></li>
+      <li><a href="#8-financial-viability-and-calculations">8. Financial viability and calculations</a></li>
+      <li><a href="#9-validation-early-adopters-and-scaling">9. Validation, early adopters and scaling</a></li>
+      <li><a href="#10-competition-and-positioning">10. Competition and positioning</a></li>
+      <li><a href="#11-ten-reasons-small-businesses-fail">11. Ten reasons small businesses fail</a></li>
+      <li><a href="#12-greenloop-case-reusable-delivery-boxes">12. GreenLoop case: reusable delivery boxes</a></li>
+      <li><a href="#13-high-value-distinctions-for-exams">13. High-value distinctions for exams</a></li>
+      <li><a href="#14-likely-exam-angles-and-answer-frames">14. Likely exam angles and answer frames</a></li>
+      <li><a href="#15-rapid-revision-sheet">15. Rapid revision sheet</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-the-week-s-central-argument">1. The week’s central argument</h2>
+<p>Entrepreneurship is not about finding an attractive product in isolation. A business is an integrated system: a clearly understood customer, a valuable offering, an economically reachable market, dependable operations and partners, suitable channels and customer relationships, and a financial model that can make sustainable profit. Marketing, operations, finance, technology and people must work together.</p>
+<p>The instructor’s repeated priority was <strong>“customer, customer, customer—first, second and third.”</strong> Start with a real human problem and a value customers recognize; then ask whether the team can deliver the solution and earn an attractive return.</p>
+<p>There is no way to guarantee entrepreneurial success. Famous entrepreneurs also fail repeatedly. Judgment, homework, timing, a capable team, testing and adaptation only improve the probability. The lecture illustrated this informally as moving from perhaps one chance in a million, to one in 1,000 or 100 through preparation, to roughly one in 10 (possibly two or three in 10) through excellent execution; credible professional investors may improve the odds further, but never to 100%.</p>
+<p>Small firms are especially vulnerable because they usually bet on one business area; building two independent businesses is expensive and often unwise. Large firms can temporarily withstand shocks through diverse products, customers, knowledge and brand recognition. Therefore, a startup must learn and pivot quickly when conditions change—for example, a pandemic or the Indian government’s push toward a cashless economy.</p>
+<h3 id="instructor-s-study-advice">Instructor’s study advice</h3>
+<ul>
+<li>Use a dedicated notebook, time and place; switch off the phone and work with the concentration expected in a meeting with a manager.</li>
+<li>Learn concepts so that they can be applied, rather than merely naming frameworks such as SWOT or PEST.</li>
+<li>Worksheets have little value unless judgment, intuition, evidence and available knowledge produce a sound decision.</li>
+</ul>
+<hr>
+<h2 id="2-entrepreneurial-mindset">2. Entrepreneurial mindset</h2>
+<p>Two entrepreneurs can face the same opportunity, resources and environment yet obtain different results because their mindsets differ.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Mindset quality</th>
+<th>Meaning</th>
+<th>Illustration / implication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Comfort with uncertainty</strong></td>
+<td>Entrepreneurs rarely enjoy the predictability of a secure month-end salary. They act without certainty about customer trust, partner acceptance or whether the model will work.</td>
+<td>OYO saw inconsistent hygiene/service in budget accommodation. It could not know whether hotels would join or customers would trust a standardized budget platform, but moved forward and learned.</td>
+</tr>
+<tr>
+<td><strong>Intrinsic motivation</strong></td>
+<td>Motivation comes from the problem and internal purpose, not only pay, praise or a boss’s approval. The entrepreneur must keep directing effort toward growth and success.</td>
+<td>A young founder cannot wait for someone else to provide encouragement.</td>
+</tr>
+<tr>
+<td><strong>Learning orientation</strong></td>
+<td>Ask “What can I learn from this?” rather than “Why did this happen to me?” Markets, customers and technology do not stand still; survival requires adaptation.</td>
+<td>Treat failure as information, not personal victimhood.</td>
+</tr>
+<tr>
+<td><strong>Bias toward action</strong></td>
+<td>Research and planning matter, but some lessons exist only in the market. Start, learn and improve instead of waiting indefinitely for a perfect moment.</td>
+<td>Naukri launched in the late 1990s when internet access was limited and recruitment/job search still relied on newspaper classifieds. It did not wait for universal adoption; the platform evolved as users came online.</td>
+</tr>
+<tr>
+<td><strong>Empathy for others</strong></td>
+<td>Understand the people whose problems the venture solves. Entrepreneurship should not be reduced to self-interest; businesses grow by improving other people’s lives.</td>
+<td>Empathy supports meaningful customer value and better product decisions.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Balance:</strong> bias toward action is not a license to gamble all resources on an intuition. It means combining disciplined analysis with small, evidence-producing action.</p>
+<hr>
+<h2 id="3-from-an-idea-to-an-entrepreneurial-opportunity">3. From an idea to an entrepreneurial opportunity</h2>
+<h3 id="3-1-idea-innovation-and-opportunity-are-different">3.1 Idea, innovation and opportunity are different</h3>
+<ul>
+<li><strong>Idea:</strong> a thought or possible solution; it need not have buyers, feasibility or profit.</li>
+<li><strong>Potential innovation:</strong> a novel product, process, channel, customer approach or business arrangement.</li>
+<li><strong>Innovation:</strong> novelty that gains real acceptance and use; merely proposing an unusual feature is not enough.</li>
+<li><strong>Entrepreneurial opportunity:</strong> an underdeveloped/unserved area, usually addressed through innovation plus all the business changes required to create customer value and financial benefit.</li>
+</ul>
+<p>The instructor’s practical formulation: an opportunity is a set of values offered to a <strong>very precisely understood consumer group</strong>, at a price that feels small relative to the benefit, in a sufficiently large market, through a business model the venture can afford and execute.</p>
+<p>An opportunity should pass four foundational tests:</p>
+<ol>
+<li><strong>Solve a real problem / create customer value.</strong></li>
+<li><strong>Have a definable and sufficiently attractive market.</strong></li>
+<li><strong>Be executable with obtainable resources, skills, partners and infrastructure.</strong></li>
+<li><strong>Generate sustainable profit.</strong></li>
+</ol>
+<p>The live class expressed a closely related five-characteristic test: <strong>customer value, market demand, feasibility, profitability and competitive advantage.</strong> Customer value may save time, reduce effort, relieve frustration or improve life.</p>
+<h3 id="3-2-product-market-fit-is-a-joint-adjustment">3.2 Product–market fit is a joint adjustment</h3>
+<p>Never examine the product or customer alone. Continually adjust both until a specific customer’s needs match an offering the venture can deliver unusually well.</p>
+<ul>
+<li>Segment <strong>psychographically and behaviorally</strong>, not only statistically. Age, income and city help locate buyers but rarely reveal what to build.</li>
+<li>Try to “become” the customer through design-thinking-style empathy.</li>
+<li>Example: “middle-income household, city X, baby aged 3–6 months” says where to sell. “First-time parent anxious about shampoo harming the baby or causing tears and not knowing how to respond” reveals the job, fear and value proposition.</li>
+<li>A professional cricketer may deeply understand cricket users; a highly regarded cook may understand food customers. Founder–market knowledge can be a real capability advantage.</li>
+</ul>
+<h3 id="3-3-value-and-willingness-to-pay">3.3 Value and willingness to pay</h3>
+<p>Customer value is not the entrepreneur’s ethical value or the manufacturing cost. It is the customer’s perceived benefit: “You ask ₹20; I would willingly have paid ₹50.” Customers buy what is needed, enjoyable or emotionally important—not automatically whatever is cheaper.</p>
+<p>Pricing therefore begins with willingness to pay and comparable substitutes, then checks whether the resulting price covers the complete cost. Cost-plus pricing alone (“it costs ₹200, so charge ₹300”) can leave value uncaptured or produce a price customers reject.</p>
+<h3 id="3-4-where-in-the-value-chain-will-the-venture-participate">3.4 Where in the value chain will the venture participate?</h3>
+<p>An identified industry contains multiple opportunities: design, manufacture, brand, retail, distribution, customer support, customization and special occasions. In jewellery, for example, a venture may make jewellery, brand and sell it, design it, support customers or specialize in event jewellery. Tanishq illustrates that a low-price branded jewellery proposition did not automatically work; consumers’ real needs and trust mattered. Selecting one’s position in the chain is part of opportunity definition.</p>
+<hr>
+<h2 id="4-where-opportunities-come-from">4. Where opportunities come from</h2>
+<h3 id="4-1-major-triggers-in-the-live-lecture">4.1 Major triggers in the live lecture</h3>
+<ol>
+<li><strong>Technological change:</strong> new technology opens markets and makes older models obsolete. Smartphones, GPS and mobile internet enabled app-based cabs, food delivery and many other services.</li>
+<li><strong>Social and behavioral shifts:</strong> changed habits and expectations reveal new demand. The pandemic accelerated home exercise, virtual coaching, fitness apps, online yoga and acceptance of online education/MBA classes.</li>
+<li><strong>Policy and regulation:</strong> reforms can open entire ecosystems. India’s digital-payment/UPI policy environment helped move even tea shops and auto-rickshaw drivers from cash to digital payments, reduced ATM dependence and expanded fintech.</li>
+<li><strong>Customer frustrations and unmet jobs:</strong> delay, damaged food, missing deliveries or weak support are not only complaints; they are opportunity signals.</li>
+<li><strong>Industry and international observation:</strong> examine how live customers in other countries solve similar problems. Differences in culture and wealth require adaptation, but broader choice elsewhere can reveal possibilities not yet common in India.</li>
+</ol>
+<h3 id="4-2-schumpeter-s-contribution">4.2 Schumpeter’s contribution</h3>
+<p>Joseph Schumpeter helped establish entrepreneurship as a field of study. His practical significance in the lectures had two dimensions:</p>
+<ul>
+<li>Entrepreneurship supports <strong>self-actualization</strong>: founders and early employees can create, decide and execute whole plans without the subdivision and bureaucracy of large organizations.</li>
+<li>Small firms become continuous generators of innovation because innovation is a survival requirement. They create employment, income and wider economic prosperity.</li>
+</ul>
+<h3 id="4-3-creative-destruction">4.3 Creative destruction</h3>
+<p>Schumpeter’s <strong>creative destruction</strong> means that entrepreneurs reform or revolutionize production by creating new value systems that disrupt and replace older ways. It need not mean that the old industry disappears completely, and it is not identical to inventing a wholly unfamiliar object.</p>
+<ul>
+<li><strong>Music:</strong> cassette tapes → CDs → MP3 downloads → streaming, subscriptions, recommendation algorithms, podcasts and new monetization ecosystems.</li>
+<li><strong>Media:</strong> cameras/CDs/DVDs and older distribution were challenged by mobile devices and Netflix/OTT systems.</li>
+<li><strong>Audio:</strong> wired earphones were challenged by Bluetooth devices, although old formats can persist or regain preference.</li>
+<li><strong>Paper Boat:</strong> commercialized familiar regional/traditional drinks in modern packaging. Its nostalgia-led advertising evoked childhood, summer vacations, grandparents and homemade mango drinks—selling emotion, not just juice. It differentiated from carbonated drinks, created mainstream space for regional beverages and a “healthier” perception (not necessarily completely healthy). The instructor noted the small quantity and relatively high price. The innovation was presentation, branding and a new ecosystem around something familiar.</li>
+</ul>
+<hr>
+<h2 id="5-researching-and-screening-opportunities">5. Researching and screening opportunities</h2>
+<h3 id="5-1-generate-alternatives-before-committing">5.1 Generate alternatives before committing</h3>
+<p>Research an area in which the team sees a plausible product–market fit and generate several possible opportunities—five, ten or more. If none is credible, move to another area. “I personally like the product” is not a screening criterion and does not establish survival or growth.</p>
+<p>Screening is inevitably probabilistic because future sales have not happened. Elections, policy, financial-market shocks, gold prices, technology and other events can overturn forecasts. Use the best parameters plus judgment; do not claim certainty.</p>
+<h3 id="5-2-research-sources-and-method">5.2 Research sources and method</h3>
+<ul>
+<li>Government data, including the Ministry of Statistics and state equivalents.</li>
+<li>Industry sources, internet research and evidence from other countries.</li>
+<li>Existing/substitute market data: when forecasting an unfamiliar product, study what it replaces.</li>
+<li>Direct observation and deep interviews with current users and early adopters.</li>
+<li>Prototypes and real purchase behavior: observe customers encountering the product, price, label, store and buying decision.</li>
+</ul>
+<p>Market research forms can record opinions, but customers often cannot predict what they will want in two years—or even two days. Stated interest is not purchase. A customer may say a <em>Back to the Future</em>-style hoverboard sounds interesting without ever buying it. The closer research gets to real behavior and payment, the stronger the evidence.</p>
+<h3 id="5-3-replacement-market-example-cleaning-robot">5.3 Replacement-market example: cleaning robot</h3>
+<p>To evaluate an automated cleaner, research how many people/households clean, present methods, household size and which homes have a problem large enough to replace a ₹100–₹200 broom with automation. Segment geography: Bengaluru only, nationwide, villages or urban markets? Use the current cleaning market to estimate the possible new market over the next five years.</p>
+<h3 id="5-4-probe-for-the-underlying-job">5.4 Probe for the underlying job</h3>
+<p>Do not accept the first answer. A bicycle buyer may initially say that riding is pleasant family time. Continued probing may reveal several jobs: running is boring or difficult, cycling provides scenery, brings the family together, builds appetite and supports enjoyment of food. Build a composite across multiple consumers.</p>
+<h3 id="5-5-three-broad-opportunity-conditions-textbook-figure">5.5 Three broad opportunity conditions (textbook figure)</h3>
+<ol>
+<li><strong>Significant market demand:</strong> a continuing, important problem that customers actively try to solve. Forecast reports are inputs, not truth; the instructor cautioned that past confident market predictions (including examples around 1978) failed.</li>
+<li><strong>Significant market structure and size:</strong> skilled employees, knowledgeable partners, stores, warehouses and distribution must exist or be realistically created. A startup usually cannot afford to educate an entire ecosystem. Retailers stock a new product when related/predecessor products provide evidence it will sell.</li>
+<li><strong>Significant margins and resources:</strong> price must exceed all reasonable product and operating costs by enough to justify risk and investment. Luxury brands such as Coach and YSL charge far above material cost because brand value supports willingness to pay.</li>
+</ol>
+<p>Overall market data establishes scope and possible adjacent segments, but should not dictate every small decision. A startup begins with a narrow target because it cannot fund everything; a large surrounding market gives room to pivot to an adjacent niche if the first target is wrong.</p>
+<hr>
+<h2 id="6-business-model-canvas-bmc-and-supporting-frameworks">6. Business Model Canvas (BMC) and supporting frameworks</h2>
+<h3 id="6-1-purpose-and-nine-blocks">6.1 Purpose and nine blocks</h3>
+<p>The BMC is the most useful first approximation of an opportunity: a nine-part sketch of the whole business.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>BMC block</th>
+<th>Core exam question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Customer segments</td>
+<td>Whom exactly do we serve, psychologically and behaviorally?</td>
+</tr>
+<tr>
+<td>Value propositions</td>
+<td>What real problem/job do we solve, and why is it worth the price?</td>
+</tr>
+<tr>
+<td>Channels</td>
+<td>Where/how do customers discover, buy and receive it?</td>
+</tr>
+<tr>
+<td>Customer relationships</td>
+<td>How will we acquire, support and retain customers rather than repeatedly paying to replace them?</td>
+</tr>
+<tr>
+<td>Revenue streams</td>
+<td>Who pays, for what, how much, how often and when?</td>
+</tr>
+<tr>
+<td>Key activities</td>
+<td>What must be done exceptionally well?</td>
+</tr>
+<tr>
+<td>Key resources</td>
+<td>Which people, knowledge, technology, equipment, inventory and cash are required?</td>
+</tr>
+<tr>
+<td>Key partners</td>
+<td>What will suppliers, manufacturers, distributors or subcontractors provide?</td>
+</tr>
+<tr>
+<td>Cost structure</td>
+<td>What are COGS and operating costs, and do unit costs stay level or decline with scale?</td>
+</tr>
+</tbody>
+</table></div>
+<p>The “canvas” metaphor matters: an artist first sketches, inspects and revises rather than completing the Mona Lisa from the top-left corner. Likewise, founders change blocks cheaply on paper before committing major capital. A change in customer, value, price or channel often forces changes in activities, partners, resources, costs and revenues. The BMC is dynamic, not a one-time form.</p>
+<h3 id="6-2-complementary-tools">6.2 Complementary tools</h3>
+<ul>
+<li><strong>SWOT:</strong> Strengths and Weaknesses are internal; Opportunities and Threats are external. Strengths include a patent, 15 years of blockchain expertise, a capable team or strong access to the first ten customers. Weaknesses include missing expertise or cash. External opportunities allow diversification if the firm has resources; threats include competitors and environmental shifts.</li>
+<li><strong>PEST:</strong> examines Political/legal, Economic, Social and Technological macro conditions. Questions include government stability, trade/labour law, corruption/enforcement, interest rates and borrowing costs, health care/lifestyle/pollution, and the country’s technological capacity. Compare potential locations—for example, India versus the US or Taiwan for high technology/semiconductors, or near-zero-cost borrowing in Japan. The instructor used Mexico/US/Europe work-hour differences and India’s pollution/enforcement challenge as illustrations.</li>
+<li><strong>Porter’s Five Forces:</strong> useful for how industry competition and bargaining conditions may evolve.</li>
+</ul>
+<p>Frameworks should test and refine the BMC at low cost, then lead to prototypes and observed behavior. Completing a template without customer-grounded reasoning is “academic” rather than useful.</p>
+<h3 id="6-3-multiple-people-in-a-buying-decision">6.3 Multiple people in a buying decision</h3>
+<p>The user, recommender/influencer, purchaser and payer may differ. Economic theory stresses the payer, but in baby shampoo the baby’s experience and mother’s confidence may matter more than the person handing over money. Competitive attributes must reflect how these actual participants decide.</p>
+<hr>
+<h2 id="7-integrated-t-shirt-startup-exercise">7. Integrated T-shirt startup exercise</h2>
+<p>The exercise demonstrates how to move from possible innovation to an evidence-based business model.</p>
+<h3 id="7-1-possible-innovation-loci">7.1 Possible innovation loci</h3>
+<ul>
+<li><strong>Product:</strong> comfortable indoor wear; lightweight/cooling fabric; germ-repelling coating; scan/X-ray shielding; health protection.</li>
+<li><strong>Customer/approach:</strong> serve a precisely defined user in a novel way.</li>
+<li><strong>Production/process:</strong> customization, special colour mixtures, 3D printing, China/volume production or other manufacturing innovation.</li>
+<li><strong>Modularity:</strong> zipper-based additions that transform a casual T-shirt into a collared/work shirt and back.</li>
+<li><strong>Channel:</strong> internet, evening street shop/dukaan, fashion or sports store, school, company store with employee branding, college store or another exclusive location.</li>
+</ul>
+<p>These are only potential innovations. They become innovations when customers accept and buy them in meaningful quantities.</p>
+<h3 id="7-2-health-protective-shirt-concept">7.2 Health-protective shirt concept</h3>
+<p>The team—not merely friends—should include makers, sellers, designers and other relevant colleagues in choosing a theme. One proposed theme was a disease-protective shirt using filter/coating technology associated in the transcript with COVID and “N96” filtration. The important business questions are:</p>
+<ol>
+<li><strong>Value and price:</strong> do not simply add a markup to ₹200 cost. Compare the premium on a heat-reducing shirt and ask how much more the target user values disease protection. Then verify that customer-led price still produces profit.</li>
+<li><strong>Channel and positioning:</strong> a street stall may signal “cheap copycat” and destroy a prestige price. A hospital gift store frames the purchase as health—for example, a visitor concerned after seeing a relative with COVID. Reliance/department stores, neighborhood stores and online sales have different cost, reach and brand implications.</li>
+<li><strong>Demand build-up:</strong> decide whether salespeople, agents, intermediaries, e-commerce, own stores, promotions or Google ads will drive volume. Plan year-two expansion (another Tier-1 city, international markets, greater e-commerce), rather than inserting an unsupported “80% growth” assumption in Excel.</li>
+<li><strong>Resources:</strong> filtration knowledge, manufacturing integration, contracts and supplier-market knowledge; fashion/comfort expertise; marketers and merchandisers; owned machines or agreements with machinery owners; customer-acquisition effort; R&D; managers/directors/administration; inventory and working capital.</li>
+<li><strong>Asset-light option:</strong> subcontracting manufacture and sales can limit initial investment to items such as office space and communications, but partner reliability and economics must still be validated.</li>
+</ol>
+<p>Investors test whether projections flow from explicit actions and assumptions. A reasoned estimate earns respect; invented spreadsheet growth signals that the founder does not understand the business.</p>
+<hr>
+<h2 id="8-financial-viability-and-calculations">8. Financial viability and calculations</h2>
+<h3 id="8-1-core-profit-chain">8.1 Core profit chain</h3>
+<pre><code class="language-text">Revenue − Cost of Goods Sold (COGS) = Gross Profit (GP)
+Gross Margin (GM) = Gross Profit ÷ Revenue × 100
+Gross Profit − Selling − General − Administrative − R&amp;D expenses
+             = Operating Income (simplified lecture formulation)
+</code></pre>
+<p>The transcript grouped selling, general and administrative costs (and then R&amp;D) under the spoken shorthand “SGA/R&amp;D.” Use the absolute gross-profit amount—not the percentage—when subtracting operating expenses.</p>
+<h3 id="8-2-projection-logic">8.2 Projection logic</h3>
+<ul>
+<li>Estimate price, number of buyers, purchase frequency/quantity, channel deductions and revenue.</li>
+<li>Include full COGS, customer acquisition, selling, administration, R&amp;D, inventory, returns, logistics and capacity costs.</li>
+<li>Project this year and successive years. A loss in year one can be acceptable if later evidence-based sales and margins create strong operating profit and return.</li>
+<li>Compare the venture’s risk-adjusted return with alternatives such as a 6–8% bank return. The lecture’s hypothetical 500% return illustrated an exceptionally attractive forecast, not a guaranteed benchmark.</li>
+<li>Ask whether money is made now or later and whether the customer buys one unit or, on average, ten.</li>
+<li>Positive sales alone are insufficient. The business needs positive unit economics, enough gross margin and a path to sustainable operating profit.</li>
+</ul>
+<hr>
+<h2 id="9-validation-early-adopters-and-scaling">9. Validation, early adopters and scaling</h2>
+<h3 id="9-1-early-adopters">9.1 Early adopters</h3>
+<p>Early adopters are the first customers willing to try a new or imperfect product. They are open to experimentation and risk, often tolerate bugs/missing features, recognize potential and provide unusually valuable feedback. To a startup they are “gold” because they try what mainstream customers will not.</p>
+<p>The live-session loop was:</p>
+<pre><code class="language-text">Launch to early adopters → Collect feedback → Analyse insights
+→ Refine → Relaunch → repeat
+</code></pre>
+<p>The instructor used early ChatGPT versions as an illustration: early users explored a limited, imperfect product and their feedback supported subsequent models and features. (The transcript’s casual discussion of the then-“latest” version should be treated as the classroom anecdote, not a durable product fact.)</p>
+<h3 id="9-2-test-locally-before-scaling">9.2 Test locally before scaling</h3>
+<p>A new food-delivery app should not launch across India immediately. Pilot in a small Cochin area; test delivery speed, app experience and payments; correct problems; then expand. Successful ventures rarely get everything right on attempt one.</p>
+<p>Validation has three inseparable dimensions:</p>
+<ul>
+<li><strong>Customer validation:</strong> do people use, pay, repeat and recommend—rather than merely say yes to a survey?</li>
+<li><strong>Operational validation:</strong> can quality, inventory, supply, logistics, support and returns work reliably at the promised volume?</li>
+<li><strong>Financial validation:</strong> after every real cost, does each sale contribute enough and can the model become sustainably profitable?</li>
+</ul>
+<p>Scaling demand before fulfillment capability is dangerous. Plan both downside contingencies and upside capacity: suppliers, inventory, warehouses, people, service and cash. Learning should precede aggressive scaling.</p>
+<hr>
+<h2 id="10-competition-and-positioning">10. Competition and positioning</h2>
+<h3 id="10-1-competition-can-help">10.1 Competition can help</h3>
+<p>Zero competitors is usually not ideal. It may indicate no market or force the startup to educate customers entirely at its own expense. Competitors advertise the category, create habits, normalize consumption and prove demand. Online grocery ordering became familiar as multiple players such as BigBasket/Instamart entered.</p>
+<p>Competition applies even to social entrepreneurship; doing social good does not remove customer and channel choices:</p>
+<ul>
+<li>An authentic organic-honey venture still competes for consumers and shelf space. The lecture linked its social purpose to bees’ importance for agriculture and described honey—used at room temperature rather than frozen or boiled—as a carrier combined with other ingredients, but stressed that beneficial purpose cannot bypass commercial analysis.</li>
+<li>Reclaimed truck/shipping containers can be repaired into very inexpensive homes (the lecture cited about <strong>$10,000**, contrasted with government/city housing around **$500,000</strong>). The model can create ownership, pride and accomplishment for residents, yet still competes with private builders and alternative housing solutions.</li>
+</ul>
+<p>The better question is not “Is competition present?” but <strong>“What can we offer differently within this market?”</strong> Too many competitors—especially irrational price competitors—are also dangerous; seek an intelligible competitive structure.</p>
+<h3 id="10-2-profile-competitors-against-one-s-own-capabilities">10.2 Profile competitors against one’s own capabilities</h3>
+<p>Competitors also employ smart people and reveal possible future directions. Compare relevant assets, location, science/technology talent, product, channel and customer access. A team with five AI scientists may sensibly emphasize AI. Compare Bengaluru, Gurgaon, France or Silicon Valley only on factors that affect the opportunity.</p>
+<p>Plan for a future in which today’s small rivals all become visible, and for large firms (Google, Microsoft, Amazon) entering after startups prove the market. Amazon’s initial focus on books—while other internet sellers chose leftover household goods or office supplies—illustrates how competitive analysis sharpens entry focus.</p>
+<h3 id="10-3-customer-defined-comparison-criteria">10.3 Customer-defined comparison criteria</h3>
+<p>A competitive grid should use attributes customers actually employ. For bicycles, the instructor proposed:</p>
+<ul>
+<li>price point;</li>
+<li>purpose/type (gravel, racing, street, electric);</li>
+<li>weight and portability;</li>
+<li>short- and long-distance ergonomics/feel;</li>
+<li>purchase, setup, repair and lifelong maintenance relationship.</li>
+</ul>
+<p>Generic “quality” categories may miss the real decision.</p>
+<h3 id="10-4-market-positioning">10.4 Market positioning</h3>
+<p>Positioning is the clear, distinctive place a brand occupies in the customer’s mind. Three gyms in one area can serve different markets through <strong>budget</strong>, <strong>luxury</strong> and <strong>women-focused fitness</strong> positions. They sell the same broad category but attract different target segments. Distinct identity, not sameness, supports survival.</p>
+<p>Food-delivery weaknesses—late/damaged/missing delivery and weak support—are openings for a competitor that removes frustration.</p>
+<h3 id="10-5-pricing-under-competition">10.5 Pricing under competition</h3>
+<p>Competition reveals reference prices and customer expectations. A ₹500 water bottle needs a value/position that explains the price. A difference based only on being ₹200 cheaper is fragile because an incumbent can lower its price.</p>
+<p>Large rivals may price aggressively to exhaust a startup. The T-shirt example: if the startup sells at ₹500 with roughly ₹350 cost, a large rival able to make it near ₹200 may temporarily price at ₹200, leaving the startup unable to match without running out of cash. Predatory conduct can be illegal in some circumstances (the lecture mentioned dumping), but aggressive price response is broadly foreseeable. Sustainable differentiation must go beyond a temporary price gap.</p>
+<h3 id="10-6-channel-retailer-logic">10.6 Channel/retailer logic</h3>
+<p>Retailers and distributors care about their own profit, demand evidence, inventory turnover, dependable supply, returns/support and the product’s fit with their customers. Product differentiation explains why an end customer chooses; channel strategy explains why an intermediary stocks and promotes.</p>
+<hr>
+<h2 id="11-ten-reasons-small-businesses-fail">11. Ten reasons small businesses fail</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: right;">#</th>
+<th>Failure reason</th>
+<th>Mechanism and preventive lesson</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td><strong>Insufficient capital</strong></td>
+<td>Self-funding only from profits can be too slow, especially when an innovation window is short. Raise enough to reach the next demonstrable milestone. Too little causes cash failure; too much equity funding over-dilutes ownership and motivation. Family/friends and professional investors exchange money for an agreed ownership share.</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td><strong>Low sales / overestimated demand</strong></td>
+<td>Friendly survey respondents often say yes but do not pay. Sales exist only when money changes hands. Larger firms require stores, agents and commissioned salespeople, not just the founder doing everything. Do not gamble all cash on a heartfelt forecast.</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td><strong>Lack of experience</strong></td>
+<td>Watching a relative run a store is not necessarily operating competence, especially for a new industry. Mentors also make judgments, not guarantees. Pilot small; hire people with analogous experience and consider sharing ownership to build a stronger team.</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td><strong>Poor location</strong></td>
+<td>A pleasant hill station may not attract employees; metros offer talent but high rent. E-commerce still needs warehouses, internet, support and fast forward/reverse logistics. Locate near the actual market and linguistic/cultural knowledge; be willing to shift from Hyderabad/south to the north if evidence demands it.</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td><strong>Poor inventory management</strong></td>
+<td>Too little stock loses an urgent order (e.g., ten shirts tomorrow); too much traps scarce cash. Customers may demand delayed payment or returns after use, further increasing working capital. Storage limits and monsoon/water damage create spoilage risk. Fund inventory explicitly.</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td><strong>Overinvestment in fixed assets</strong></td>
+<td>A large new factory or equipment consumes cash before demand is proven. Begin incrementally, consider used/smaller equipment or subcontracting and preserve cash for inventory and learning.</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td><strong>Poor credit arrangements</strong></td>
+<td>Build a banking relationship early, explaining future growth. Secure a line of credit and favorable terms—not merely credit cards—so timing gaps between expenses and receipts do not end the venture.</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td><strong>Personal use of business funds / excessive founder pay</strong></td>
+<td>Matching a former Infosys salary of ₹20 lakh can starve the venture. Founders may need to reduce lifestyle/compensation and reinvest cash in growth.</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td><strong>Unexpected/unmanaged growth</strong></td>
+<td>Success can cause failure: orders exceed factory capacity, service deteriorates, customers expect big-company supply and never return after rejection. Plan upside contingencies, scalable capacity and experienced hiring/training as well as downside risk.</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td><strong>Underestimating competition</strong></td>
+<td>Rivals may copy, cut prices, use scale, or enter after the market is proven. A large Google/Amazon-type entrant can overwhelm a small firm. Scenario-plan responses, cash needs and differentiation.</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="12-greenloop-case-reusable-delivery-boxes">12. GreenLoop case: reusable delivery boxes</h2>
+<h3 id="facts">Facts</h3>
+<ul>
+<li>Maya leads a three-person local startup producing reusable delivery boxes.</li>
+<li>The team launched quickly because the product idea appeared strong; operations are simple and the pilot covers one neighborhood.</li>
+<li>Customers soon reported needs different from those assumed.</li>
+<li>A new city recycling rule changed pickup schedules.</li>
+<li>A competitor introduced a cheaper plastic alternative after a technology change.</li>
+</ul>
+<h3 id="diagnosis">Diagnosis</h3>
+<p>GreenLoop faces customer, regulatory, competitive, technological and market uncertainty simultaneously. Sales focus without learning would preserve untested assumptions and could scale both product and delivery errors.</p>
+<h3 id="recommended-process">Recommended process</h3>
+<ol>
+<li>Pause broad selling long enough to interview/observe pilot customers and identify the real job, acceptable box design, pickup experience and willingness to pay.</li>
+<li>Map the regulation’s effect on timing, logistics, partners, costs and customer promise.</li>
+<li>Compare the plastic substitute on customer-defined value—not price alone—and decide whether durability, sustainability, convenience or another benefit can justify differentiation.</li>
+<li>Revise the value proposition, operations, channels, costs/revenues and delivery plan in the BMC.</li>
+<li>Relaunch to the neighborhood pilot, measure payment, repeat use, returns, box loss/damage, pickup reliability and unit economics.</li>
+<li>Scale only when the four success criteria—real problem, definable market, executability and sustainable profit—are evidenced.</li>
+</ol>
+<p>The case demonstrates lean startup thinking: <strong>assumption → small test → evidence → adaptation → retest</strong>, with resilience expressed as intelligent adaptation rather than stubborn adherence to the original plan.</p>
+<hr>
+<h2 id="13-high-value-distinctions-for-exams">13. High-value distinctions for exams</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Distinction</th>
+<th>Side A</th>
+<th>Side B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Idea vs opportunity</td>
+<td>Interesting thought</td>
+<td>Validated customer value + market + feasibility + profit</td>
+</tr>
+<tr>
+<td>Invention vs innovation</td>
+<td>Something newly created</td>
+<td>Novelty adopted and used commercially/socially</td>
+</tr>
+<tr>
+<td>Demographic vs psychographic segmentation</td>
+<td>Identifies who/where statistically</td>
+<td>Reveals fears, motives, jobs and what to build</td>
+</tr>
+<tr>
+<td>Stated interest vs validated demand</td>
+<td>“I would buy”</td>
+<td>Actual payment/use/repeat behavior</td>
+</tr>
+<tr>
+<td>Product vs business</td>
+<td>The object/service</td>
+<td>The entire value-delivery and profit system</td>
+</tr>
+<tr>
+<td>Customer value vs low cost</td>
+<td>Benefit perceived by buyer/user</td>
+<td>Internal cost or cheap price; not automatically valuable</td>
+</tr>
+<tr>
+<td>Customer vs operational validation</td>
+<td>Will people buy/use?</td>
+<td>Can the firm deliver reliably?</td>
+</tr>
+<tr>
+<td>Validation vs scaling</td>
+<td>Learn cheaply with a pilot</td>
+<td>Replicate only after key uncertainties fall</td>
+</tr>
+<tr>
+<td>Product differentiation vs channel strategy</td>
+<td>Why the user chooses it</td>
+<td>Why stores/distributors stock and promote it</td>
+</tr>
+<tr>
+<td>Persistence vs adaptation</td>
+<td>Continue pursuing the problem/purpose</td>
+<td>Change product, channel, operations or model when evidence contradicts assumptions</td>
+</tr>
+<tr>
+<td>Internal vs external SWOT</td>
+<td>Strengths/weaknesses under the firm’s control</td>
+<td>Opportunities/threats in the environment</td>
+</tr>
+<tr>
+<td>Competition as threat vs resource</td>
+<td>Price attack/copying/entry</td>
+<td>Category education, habit formation and market proof</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="14-likely-exam-angles-and-answer-frames">14. Likely exam angles and answer frames</h2>
+<h3 id="what-makes-an-entrepreneurial-opportunity-attractive">“What makes an entrepreneurial opportunity attractive?”</h3>
+<p>Define opportunity; explain customer value, market demand/structure, feasibility/resources, margins/profitability and competitive advantage; add uncertainty and continuous validation; illustrate with baby shampoo, bicycles or GreenLoop.</p>
+<h3 id="explain-the-role-of-the-business-model-canvas">“Explain the role of the Business Model Canvas.”</h3>
+<p>Name all nine blocks; explain the canvas/sketch metaphor; show block interdependence; add SWOT/PEST/Five Forces as assumption tests; conclude with prototype and real customer evidence.</p>
+<h3 id="why-are-early-adopters-critical">“Why are early adopters critical?”</h3>
+<p>Define them; note risk tolerance and willingness to try imperfect solutions; reproduce launch–feedback–analyse–refine–relaunch; explain local pilot before nationwide scaling; use ChatGPT or Cochin food delivery.</p>
+<h3 id="is-competition-always-harmful">“Is competition always harmful?”</h3>
+<p>No. Explain category education, habit normalization and demand proof; then cover customer-defined competitor analysis, positioning and pricing risk. Use grocery apps, three gyms and the T-shirt price-war example.</p>
+<h3 id="explain-creative-destruction">“Explain creative destruction.”</h3>
+<p>Give Schumpeter’s idea of reforming/revolutionizing production; clarify that old systems need not vanish and the innovation need not be a wholly new invention; trace music formats or analyze Paper Boat’s nostalgic packaging and new beverage ecosystem.</p>
+<h3 id="analyze-why-small-firms-fail">“Analyze why small firms fail.”</h3>
+<p>Use the ten-part table. Organize into finance (capital, credit, personal funds), demand (sales), capability (experience/location), operations (inventory/fixed assets), growth and competition. Show that both shortage and excess—capital, stock, assets or growth—can be dangerous.</p>
+<h3 id="evaluate-greenloop-another-short-case">“Evaluate GreenLoop / another short case.”</h3>
+<p>Use: problem and psychographic customer → five opportunity criteria → BMC effects → customer/operational/financial validation → external uncertainty/PEST → competitor response → pilot metrics → adapt or pivot → scale gate.</p>
+<hr>
+<h2 id="15-rapid-revision-sheet">15. Rapid revision sheet</h2>
+<h3 id="one-minute-core">One-minute core</h3>
+<ul>
+<li>A business is <strong>not just a product</strong>; it is an integrated customer-value, delivery and profit system.</li>
+<li>Opportunity = <strong>real problem + definable demand + executability + sustainable profit + defensible advantage</strong>.</li>
+<li>Understand the customer psychologically; demographic data says <strong>where</strong>, deep needs say <strong>what</strong>.</li>
+<li>Value is what the customer believes the benefit is worth, not cost-plus price.</li>
+<li>Research substitutes, statistics, other countries and—most importantly—real behavior.</li>
+<li>BMC = <strong>CS, VP, CH, CR, RS, KA, KR, KP, C$</strong> (customer segments, value proposition, channels, relationships, revenue streams, activities, resources, partners, cost structure).</li>
+<li>SWOT: <strong>S/W inside; O/T outside</strong>. PEST: <strong>Political, Economic, Social, Technological</strong>.</li>
+<li>Profit chain: <strong>Revenue − COGS = GP; GP/Revenue = GM; GP − operating expenses = operating income</strong>.</li>
+<li>Early-adopter loop: <strong>launch → feedback → insights → refine → relaunch</strong>.</li>
+<li>Zero competition can be bad; competitors educate the market. Differentiate on real customer criteria.</li>
+<li>Scale only after <strong>customer, operational and financial</strong> validation.</li>
+<li>Mindset: <strong>uncertainty, intrinsic motivation, learning, action, empathy</strong>.</li>
+<li>Schumpeter: entrepreneurship produces innovation, employment and <strong>creative destruction</strong>.</li>
+</ul>
+<h3 id="ten-failure-triggers-mnemonic-checklist">Ten failure triggers mnemonic checklist</h3>
+<p><strong>Capital – Sales – Experience – Location – Inventory – Fixed assets – Credit – Personal funds – Growth – Competition.</strong></p>
+<h3 id="final-instructor-emphasis">Final instructor emphasis</h3>
+<p>Do not fall in love with the first idea, a survey response, a framework worksheet or an unsupported spreadsheet. Focus on the customer repeatedly, construct the whole business, test with minimal expense, watch actual purchase and fulfillment behavior, learn continuously and change the model when evidence or the environment changes.</p>
+<h1 id="review-week-augmentation">Review Week Augmentation</h1>
+<ul>
+<li>Under uncertainty, identify assumptions, test them, gather evidence, learn, revise and retest; do not wait to eliminate uncertainty.</li>
+<li>Demographics explain <strong>who</strong>, while motivations, routines, emotional needs, behavior and context explain <strong>why</strong> and reveal more actionable opportunities.</li>
+<li>FreshLoop&rsquo;s opportunity is the observed inefficiency linking edible surplus with unmet affordable-food demand; technology enables the match but is not itself the opportunity.</li>
+<li>For a multi-sided platform, evaluate each side&rsquo;s value proposition, seed the chicken-and-egg market, test supplier reliability and validate actual behavior in dense local pilots.</li>
+<li>Defensibility may come from supplier/NGO relationships, brand trust, specialized logistics, data, loyalty, network effects, local knowledge and accumulated operating capability—not merely first-mover status.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-4.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 4: Entrepreneurial Journey, Execution,…</span>
+      </a>
+      <a href="week-6.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 6: Entrepreneurial Problem Solving, Lean…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

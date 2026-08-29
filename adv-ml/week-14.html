@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Advanced ML · Week 14 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Advanced ML</span>
+      <span class="brand-title">Week 14</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html" selected>Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Review of Machine Learning, Learning Types, and Linear Regression
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Classification, Logistic Regression, Maximum Likelihood and K-Means…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Bias–Variance, Error Analysis, Learning Curves, and Model Selection
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Recommendation Systems and Collaborative Filtering
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Content-Based Filtering, Cosine Similarity, UV Decomposition, and…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Bias–Variance Trade-off, Underfitting, Overfitting,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Association Rule Mining, Apriori, and PCY
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Dimensionality Reduction, PCA, Eigen-Decomposition, and SVD
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Text Processing, Bag of Words, TF–IDF, Vector-Space Retrieval, and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Web Advertising, Online Matching, AdWords, and Balance
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        High-Dimensional Clustering, Subspaces, CLIQUE, PROCLUS, and…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Independent Component Analysis, Blind Source Separation, FastICA,…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Social Networks, Graph Laplacians, and Spectral Clustering
+      </a>
+      <a class="is-active" href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Graph Partitioning, Flow Centrality, Edge Betweenness, and Girvan–Newman
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        ML Life Cycle, Hybrid and Music Recommenders, and Evaluation
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Advanced ML · Week 14</p>
+        <h1 class="page-title">Graph Partitioning, Flow Centrality, Edge Betweenness, and Girvan–Newman</h1>
+        <p class="page-meta">Week 14 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#week-overview">Week overview</a></li>
+      <li><a href="#1-graph-basics-and-partitioning-objective">1. Graph basics and partitioning objective</a></li>
+      <li><a href="#2-applications">2. Applications</a></li>
+      <li><a href="#3-partitioning-approaches">3. Partitioning approaches</a></li>
+      <li><a href="#4-cuts-and-balance">4. Cuts and balance</a></li>
+      <li><a href="#5-betweenness-centrality">5. Betweenness centrality</a></li>
+      <li><a href="#6-lecture-flow-calculations-on-the-14-node-graph">6. Lecture flow calculations on the 14-node graph</a></li>
+      <li><a href="#7-efficient-edge-betweenness-computation-with-bfs">7. Efficient edge-betweenness computation with BFS</a></li>
+      <li><a href="#8-girvan-newman-algorithm">8. Girvan–Newman algorithm</a></li>
+      <li><a href="#9-six-node-manual-example">9. Six-node manual example</a></li>
+      <li><a href="#10-networkx-implementation">10. NetworkX implementation</a></li>
+      <li><a href="#11-ecogen-protein-network-case-study">11. EcoGen protein-network case study</a></li>
+      <li><a href="#12-practical-use-cases">12. Practical use cases</a></li>
+      <li><a href="#13-common-misconceptions">13. Common misconceptions</a></li>
+      <li><a href="#14-formula-sheet">14. Formula sheet</a></li>
+      <li><a href="#15-likely-exam-questions">15. Likely exam questions</a></li>
+      <li><a href="#16-rapid-recall-checklist">16. Rapid-recall checklist</a></li>
+      <li><a href="#17-final-takeaways">17. Final takeaways</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="week-overview">Week overview</h2>
+<p>Week 14 studies how a network can be divided into densely connected regions with relatively sparse connections between them. It covers:</p>
+<ul>
+<li>graph-partitioning purposes and approaches;</li>
+<li>node/edge betweenness as shortest-path flow measures;</li>
+<li>efficient computation with BFS;</li>
+<li>the divisive Girvan–Newman community-detection algorithm;</li>
+<li>manual and NetworkX demonstrations;</li>
+<li>the EcoGen protein-network case study, which contrasts community preservation with balanced parallel computation.</li>
+</ul>
+<hr>
+<h2 id="1-graph-basics-and-partitioning-objective">1. Graph basics and partitioning objective</h2>
+<p>A graph is $G=(V,E)$, where $V$ is the node/vertex set and $E$ is the link/edge set. Graphs may be:</p>
+<ul>
+<li>directed or undirected;</li>
+<li>weighted or unweighted;</li>
+<li>simple or multi-edge;</li>
+<li>static or changing over time.</li>
+</ul>
+<p><strong>Graph partitioning</strong> divides $V$ into disjoint groups $V_1,\dots,V_k$ such that:</p>
+<ul>
+<li>connections within groups are relatively dense;</li>
+<li>connections between groups are relatively sparse;</li>
+<li>application-specific balance or capacity constraints may also hold.</li>
+</ul>
+<p>The “thickly connected regions joined by thin wires” image captures natural communities. In distributed computing, however, a useful partition may prioritize equal workload and low communication rather than purely natural communities.</p>
+<hr>
+<h2 id="2-applications">2. Applications</h2>
+<h3 id="divide-and-conquer-parallel-computing">Divide and conquer / parallel computing</h3>
+<p>Break a massive graph into smaller subgraphs, process them on separate processors, and combine partial results. Fewer crossing edges generally mean less communication/synchronization.</p>
+<h3 id="circuit-layout">Circuit layout</h3>
+<p>Place components into chip regions while minimizing connections crossing regions, reducing wiring length and cost.</p>
+<h3 id="bioinformatics">Bioinformatics</h3>
+<p>Identify protein complexes, pathways, gene modules, and functional groups in biological interaction networks.</p>
+<h3 id="social-community-analysis">Social/community analysis</h3>
+<ul>
+<li>Predict factions after a dispute, as in Zachary&rsquo;s karate-club network.</li>
+<li>Discover communities in social or email networks.</li>
+<li>Identify potential/cohesive co-authorship groups.</li>
+</ul>
+<h3 id="large-web-advertising-networks">Large web/advertising networks</h3>
+<ul>
+<li>partition web graphs for localized search;</li>
+<li>community/hotspot/target discovery;</li>
+<li>trust analysis and link-spam combat;</li>
+<li>identify submarkets (real estate, hotels, gambling, etc.) in advertiser/user bidding graphs.</li>
+</ul>
+<h3 id="declustering-load-distribution">Declustering/load distribution</h3>
+<p>Deliberately distribute expensive or high-degree nodes to avoid one processor becoming a bottleneck. This may conflict with preserving natural communities.</p>
+<hr>
+<h2 id="3-partitioning-approaches">3. Partitioning approaches</h2>
+<h3 id="3-1-divisive-top-down">3.1 Divisive (top-down)</h3>
+<p>Begin with the full connected graph and successively remove important inter-community edges. Each removal may split a component into smaller components.</p>
+<p>Example: in the 14-node lecture graph, removing edge $(7,8)$ separates two seven-node halves.</p>
+<p>Girvan–Newman is divisive.</p>
+<h3 id="3-2-agglomerative-bottom-up">3.2 Agglomerative (bottom-up)</h3>
+<p>Begin with individual nodes/small groups and repeatedly merge those likely to belong to the same region. This creates a hierarchy from fine to coarse.</p>
+<h3 id="3-3-community-detection-versus-balanced-partitioning">3.3 Community detection versus balanced partitioning</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Community detection</th>
+<th>Balanced partitioning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reveals naturally dense modules</td>
+<td>Produces similar load/capacity groups</td>
+</tr>
+<tr>
+<td>Group sizes may be uneven</td>
+<td>Balance constraints are explicit</td>
+</tr>
+<tr>
+<td>Often evaluated by modularity/cohesion</td>
+<td>Often evaluated by cut cost + imbalance</td>
+</tr>
+<tr>
+<td>Girvan–Newman fits this goal</td>
+<td>Min-cut/balanced graph partitioners fit this goal</td>
+</tr>
+</tbody>
+</table></div>
+<p>Girvan–Newman does not directly guarantee equal-size partitions or minimum communication under balance constraints.</p>
+<hr>
+<h2 id="4-cuts-and-balance">4. Cuts and balance</h2>
+<p>For partition $P=(V_1,\dots,V_k)$, the cut edges are:</p>
+<p>$$\delta(P)=\{(u,v)\in E:u\in V_i,v\in V_j,i\ne j\}.$$</p>
+<p>Unweighted cut size:</p>
+<p>$$\operatorname{cut}(P)=|\delta(P)|.$$</p>
+<p>Weighted cut cost:</p>
+<p>$$\operatorname{cut}_w(P)=\sum_{(u,v)\in\delta(P)}w_{uv}.$$</p>
+<p>For distributed systems, weights may represent communication frequency, data volume, latency, or interaction importance.</p>
+<p>Balance should ideally concern workload, not only node count. If $c(v)$ is computational cost:</p>
+<p>$$L_i=\sum_{v\in V_i}c(v).$$</p>
+<p>A multi-objective partition trades off cut cost, load imbalance, and domain/module quality.</p>
+<p>The quiz&rsquo;s balanced-partition rule is: first satisfy the balance constraint, then choose the feasible partition with fewer/lower-weight cut edges (for example, among exact 50/50 splits, prefer 12 crossings over a larger cut).</p>
+<hr>
+<h2 id="5-betweenness-centrality">5. Betweenness centrality</h2>
+<p>Shortest-path betweenness models one unit of flow between each pair of nodes. If multiple shortest paths exist, flow is divided equally among them.</p>
+<p>Let $\sigma_{st}$ be the number of shortest paths from $s$ to $t$.</p>
+<h3 id="5-1-node-betweenness">5.1 Node betweenness</h3>
+<p>If $\sigma_{st}(v)$ counts shortest paths through node $v$:</p>
+<p>$$C_B(v)=\sum_{s\ne v\ne t}\frac{\sigma_{st}(v)}{\sigma_{st}}.$$</p>
+<p>It measures how much a node brokers shortest-path communication.</p>
+<h3 id="5-2-edge-betweenness">5.2 Edge betweenness</h3>
+<p>If $\sigma_{st}(e)$ counts shortest paths using edge $e$:</p>
+<p>$$C_B(e)=\sum_{s<t}\frac{\sigma_{st}(e)}{\sigma_{st}}$$</p>
+<p>for an undirected graph using unordered pairs. It measures total fractional shortest-path flow carried by the edge.</p>
+<p>If a pair has $K$ equal shortest paths, each receives $1/K$ unit; an edge receives the sum of shares for paths containing it.</p>
+<h3 id="5-3-bridge-intuition">5.3 Bridge intuition</h3>
+<p>An edge joining two dense communities lies on many cross-community shortest paths and often has high edge betweenness.</p>
+<p>For two sides of sizes $a$ and $b$ connected by a single bridge, every cross-side pair uses it, contributing:</p>
+<p>$$a\times b.$$</p>
+<p>In the lecture&rsquo;s two seven-node halves, edge $(7,8)$ carries $7\times7=49$ units.</p>
+<h3 id="5-4-high-betweenness-versus-graph-theoretic-bridge">5.4 High betweenness versus graph-theoretic bridge</h3>
+<ul>
+<li>A <strong>bridge</strong> is an edge whose removal increases connected components.</li>
+<li>A high-betweenness edge lies on many shortest paths.</li>
+</ul>
+<p>An edge can have high betweenness without being a strict bridge if alternative longer paths remain. A bridge isolating one peripheral node may have less betweenness than a central non-bridge. Girvan–Newman ranks edge betweenness, not a binary bridge test.</p>
+<h3 id="5-5-node-versus-edge-choice">5.5 Node versus edge choice</h3>
+<p>Use edge betweenness when selecting links to remove while preserving nodes. A high-betweenness node may have both internal and external incident links; deleting all its edges is excessive and is not Girvan–Newman.</p>
+<hr>
+<h2 id="6-lecture-flow-calculations-on-the-14-node-graph">6. Lecture flow calculations on the 14-node graph</h2>
+<p>The graph contains nodes 1–14 and two seven-node regions linked through $(7,8)$.</p>
+<h3 id="edge-7-8">Edge $(7,8)$</h3>
+<p>Every node on the left communicates with every node on the right through that edge:</p>
+<p>$$C_B(7,8)=7\times7=49.$$</p>
+<h3 id="edge-3-7">Edge $(3,7)$</h3>
+<p>Removing it conceptually separates three nodes on one side and eleven on the other in the tree-like structure used:</p>
+<p>$$C_B(3,7)=3\times11=33.$$</p>
+<p>Symmetric edges such as $(6,7)$ and counterparts on the right carry the same value in the symmetric graph.</p>
+<h3 id="edge-1-3">Edge $(1,3)$</h3>
+<p>Traffic from node 1 to the other 12 relevant nodes passes through it, while the local pair excluded by the structure does not. The important method is to enumerate unordered endpoint pairs whose shortest paths use the edge and split fractions for ties.</p>
+<p>These simple products work when a single tree/bridge separates sides. General graphs require explicit shortest-path fractions.</p>
+<hr>
+<h2 id="7-efficient-edge-betweenness-computation-with-bfs">7. Efficient edge-betweenness computation with BFS</h2>
+<p>Naively enumerate all shortest paths is costly. For an unweighted graph, use a BFS rooted at each source (the Brandes/Girvan–Newman style accumulation).</p>
+<p>For each source $s$:</p>
+<ol>
+<li>BFS to compute distance from $s$.</li>
+<li>Count shortest paths $\sigma_s(v)$ to each node.</li>
+<li>Record predecessors $P_s(v)$ lying on shortest paths.</li>
+<li>Give every node one unit of credit.</li>
+<li>Process nodes from farthest back toward $s$.</li>
+<li>Split a node&rsquo;s accumulated credit among predecessors in proportion to their shortest-path counts.</li>
+<li>Add each share to the corresponding edge.</li>
+<li>Repeat for every source.</li>
+<li>For an undirected graph, divide accumulated scores by 2 because paths are counted once from each endpoint/root direction.</li>
+</ol>
+<p>Dependency share from child $w$ to predecessor $v$ is conceptually:</p>
+<p>$$\frac{\sigma_s(v)}{\sigma_s(w)}(1+\delta_s(w)).$$</p>
+<p>For weighted graphs with nonnegative edge lengths, use Dijkstra rather than ordinary BFS.</p>
+<p>Dividing every undirected score by 2 does not change their ranking, which is why the lecture notes Girvan–Newman can still choose the same edge without normalization. It matters for reporting conventional values.</p>
+<hr>
+<h2 id="8-girvan-newman-algorithm">8. Girvan–Newman algorithm</h2>
+<p>Girvan–Newman (2002) is a divisive community-detection algorithm based on edge betweenness.</p>
+<h3 id="8-1-algorithm">8.1 Algorithm</h3>
+<ol>
+<li>Compute edge betweenness for every current edge.</li>
+<li>Find the maximum score.</li>
+<li>Remove one maximum edge or the whole tied maximum set, according to the specified tie policy.</li>
+<li>Recompute betweenness on the modified graph.</li>
+<li>Record the new connected-component partition.</li>
+<li>Continue until the desired level/stopping criterion is reached.</li>
+</ol>
+<h3 id="8-2-why-recomputation-is-essential">8.2 Why recomputation is essential</h3>
+<p>Removing an edge changes shortest paths and redirects flow. The next most important bridge may have had a modest original score but become central after removal. Repeatedly deleting from one initial ranking is not the standard algorithm.</p>
+<h3 id="8-3-tie-handling">8.3 Tie handling</h3>
+<p>Valid specified variants include:</p>
+<ul>
+<li>remove all tied maximum edges, then recompute;</li>
+<li>remove one tied edge, immediately recompute, then choose again.</li>
+</ul>
+<p>These can yield different intermediate dendrograms. State the policy in an exam solution.</p>
+<h3 id="8-4-stopping-partition-selection">8.4 Stopping/partition selection</h3>
+<p>Possible criteria:</p>
+<ul>
+<li>target number of communities;</li>
+<li>domain-required groups;</li>
+<li>best modularity among intermediate partitions;</li>
+<li>acceptable component size/balance;</li>
+<li>diminishing practical value.</li>
+</ul>
+<p>Continuing to singleton nodes is mathematically possible but usually meaningless.</p>
+<h3 id="8-5-modularity">8.5 Modularity</h3>
+<p>Modularity compares observed within-community connections with a degree-preserving null-model expectation:</p>
+<p>$$Q=\frac1{2m}\sum_{ij}\left(A_{ij}-\frac{k_ik_j}{2m}\right)\mathbf1[c_i=c_j].$$</p>
+<p>Generate intermediate Girvan–Newman partitions and select a useful/high-$Q$ stage rather than assuming a specified number of groups is optimal.</p>
+<h3 id="8-6-complexity-caveat">8.6 Complexity caveat</h3>
+<p>Repeated all-edge betweenness recomputation is expensive on very large graphs. Girvan–Newman is best for small/medium exploratory networks; scalable systems often use Louvain/Leiden, label propagation, spectral/multilevel partitioning, or approximate betweenness.</p>
+<hr>
+<h2 id="9-six-node-manual-example">9. Six-node manual example</h2>
+<p>Nodes are $A,B,C,D,E,F$ with edges described in the lesson: triangle-like $A,B,C$, links from $B$ to $D,E$, and $D,E$ to $F$.</p>
+<h3 id="9-1-bfs-rooted-at-a">9.1 BFS rooted at $A$</h3>
+<ul>
+<li>One shortest path from $A$ to $B$ and $C$.</li>
+<li>One shortest path from $A$ through $B$ to $D$ and $E$.</li>
+<li>Two shortest paths to $F$: $A-B-D-F$ and $A-B-E-F$.</li>
+</ul>
+<p>Back-propagation:</p>
+<ul>
+<li>$F$ keeps one unit and splits it equally: $0.5$ to $D$ and $0.5$ to $E$.</li>
+<li>Each of $D,E$ has its own unit plus $0.5$, sending $1.5$ toward $B$.</li>
+<li>$B$ sends $1.5+1.5+1=4$ toward $A$.</li>
+<li>$C$ gets its own unit through $(A,C)$; edge $(B,C)$ gets zero for this root because it is not on an $A$-rooted shortest path.</li>
+</ul>
+<h3 id="9-2-bfs-rooted-at-f">9.2 BFS rooted at $F$</h3>
+<ul>
+<li>One path from $F$ to $D$ and $E$.</li>
+<li>Two paths to $B$.</li>
+<li>Two paths onward to $A$ and $C$ through $B$.</li>
+<li>Credits split equally through $D,E$.</li>
+</ul>
+<h3 id="9-3-aggregate-edge-betweenness">9.3 Aggregate edge betweenness</h3>
+<p>After all six roots and divide-by-two normalization, the reported values are:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Edge</th>
+<th style="text-align: right;">Betweenness</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$AB$</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>$BC$</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>$AC$</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>$BD$</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td>$BE$</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td>$DF$</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>$EF$</td>
+<td style="text-align: right;">3</td>
+</tr>
+</tbody>
+</table></div>
+<p>The transcript sometimes renders $BE$ as “B”; context identifies the missing endpoint as $E$.</p>
+<h3 id="9-4-partition-sequence">9.4 Partition sequence</h3>
+<ol>
+<li>Remove tied maximum edges $BD$ and $BE$ (score 5): components <code>{A,B,C}</code> and <code>{D,E,F}</code>.</li>
+<li>If continuing, recompute scores. The lecture&rsquo;s simplified displayed ranking next removes score-4 edges and later score-3/score-1 edges until singletons.</li>
+</ol>
+<p>Strict Girvan–Newman requires recomputation after the first removal batch; do not blindly use stale original scores in a formal solution.</p>
+<hr>
+<h2 id="10-networkx-implementation">10. NetworkX implementation</h2>
+<p>Build and draw an undirected graph:</p>
+<pre><code class="language-python">import networkx as nx
+import matplotlib.pyplot as plt
+
+G = nx.Graph()
+G.add_edges_from([...])
+nx.draw(G, with_labels=True)
+</code></pre>
+<p>Run Girvan–Newman:</p>
+<pre><code class="language-python">from networkx.algorithms.community import girvan_newman
+
+community_generator = girvan_newman(G)
+first_level = tuple(sorted(c) for c in next(community_generator))
+second_level = tuple(sorted(c) for c in next(community_generator))
+</code></pre>
+<p>The result is a <strong>generator</strong>: each <code>next(...)</code> returns the next, generally finer partition without storing all levels at once.</p>
+<p>For the 14-node example:</p>
+<ul>
+<li>first split: <code>{1,…,7}</code> and <code>{8,…,14}</code> after high-betweenness $(7,8)$ is removed;</li>
+<li>later calls create three, four, five, etc. progressively finer communities.</li>
+</ul>
+<p>Exact community order is not meaningful; sets may print in different order. Select a stage by criteria rather than consuming the generator to arbitrary depth.</p>
+<hr>
+<h2 id="11-ecogen-protein-network-case-study">11. EcoGen protein-network case study</h2>
+<p>EcoGen has thousands of proteins (nodes) and interactions (edges), too large for efficient single-server analysis. It wants parallel speed and biologically meaningful functional modules.</p>
+<h3 id="11-1-graph-representation">11.1 Graph representation</h3>
+<p>For weighted interactions:</p>
+<p>$$A_{ij}=\begin{cases}w_{ij},&\text{protein }i\text{ interacts with }j\\0,&\text{otherwise.}\end{cases}$$</p>
+<p>Weights can express experimental confidence, interaction strength/frequency, biological relevance, or communication volume.</p>
+<h3 id="11-2-stakeholder-priorities">11.2 Stakeholder priorities</h3>
+<ul>
+<li><strong>Dr. Rivera (bioinformatics):</strong> preserve functional modules/pathways/complexes.</li>
+<li><strong>Alex (systems):</strong> minimize crossing edges, analogous to circuit-layout wiring/inter-processor communication.</li>
+<li><strong>Priya (IT):</strong> spread high-degree/computationally expensive hubs so one processor is not overloaded.</li>
+</ul>
+<h3 id="11-3-three-options">11.3 Three options</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Main goal</th>
+<th>Benefit</th>
+<th>Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A: four balanced subgraphs</td>
+<td>load balance</td>
+<td>predictable parallel utilization</td>
+<td>may split biological modules; node count may not equal work</td>
+</tr>
+<tr>
+<td>B: three uneven functional modules</td>
+<td>scientific coherence</td>
+<td>interpretable pathways, high within-module density</td>
+<td>processor imbalance and bottlenecks</td>
+</tr>
+<tr>
+<td>C: five hub-distributed/declustered partitions</td>
+<td>spread expensive hubs</td>
+<td>mitigates hub bottlenecks</td>
+<td>breaks locality/modules and increases crossing communication</td>
+</tr>
+</tbody>
+</table></div>
+<p>No option is universally optimal because this is multi-objective optimization.</p>
+<h3 id="11-4-hub-proteins">11.4 Hub proteins</h3>
+<p>Degree:</p>
+<p>$$\deg(v)=|\{u:(u,v)\in E\}|.$$</p>
+<p>Hubs can cause heavy computation and communication. Equal node counts can still be badly imbalanced if one partition contains several hubs.</p>
+<p>Distributing hubs spreads compute but may separate each hub from many neighbors, increasing boundary traffic. Alternatives:</p>
+<ul>
+<li>weighted node balance using estimated $c(v)$;</li>
+<li>keep hubs with most neighbors and balance elsewhere;</li>
+<li>replicate boundary/hub data where consistency and memory allow;</li>
+<li>vertex-cut frameworks that split/replicate vertices across edge partitions.</li>
+</ul>
+<h3 id="11-5-edge-cut-versus-vertex-cut">11.5 Edge cut versus vertex cut</h3>
+<ul>
+<li><strong>Edge-cut partition:</strong> each vertex belongs to one partition; crossing edges communicate.</li>
+<li><strong>Vertex-cut partition:</strong> edges are partitioned and high-degree vertices may be replicated across partitions.</li>
+</ul>
+<p>Hub-heavy power-law networks may benefit from vertex cuts, but replication adds memory and synchronization overhead.</p>
+<h3 id="11-6-hybrid-multi-constraint-strategy">11.6 Hybrid multi-constraint strategy</h3>
+<p>Recommended workflow:</p>
+<ol>
+<li>Clean/validate network and attach node/edge weights.</li>
+<li>Detect candidate biological modules.</li>
+<li>Estimate per-protein and per-module computation.</li>
+<li>Preserve strong/confident functional interactions where possible.</li>
+<li>Subdivide oversized modules cautiously.</li>
+<li>distribute/replicate hubs based on measured cost.</li>
+<li>minimize weighted boundary interactions.</li>
+<li>enforce processor memory/load tolerances.</li>
+<li>retain cross-partition metadata so biological modules can be reconstructed.</li>
+<li>benchmark options with computing and scientific metrics.</li>
+</ol>
+<p>The computational partition need not be identical to the final scientific module assignment if cross-boundary information is preserved.</p>
+<h3 id="11-7-evaluation-metrics">11.7 Evaluation metrics</h3>
+<p>Computing:</p>
+<ul>
+<li>maximum/average load and imbalance ratio;</li>
+<li>weighted cut/communication volume;</li>
+<li>runtime, speed-up, efficiency;</li>
+<li>memory and replication overhead;</li>
+<li>synchronization/latency.</li>
+</ul>
+<p>Biological/community:</p>
+<ul>
+<li>modularity;</li>
+<li>within-module interaction density;</li>
+<li>pathway/complex enrichment;</li>
+<li>conductance/cut ratio;</li>
+<li>stability across runs/data versions;</li>
+<li>domain-expert interpretability.</li>
+</ul>
+<p>If forced to choose one unmodified option, the case review generally favors a hybrid compromise over optimizing only size or modules. Option B best serves pure biological interpretation; A best serves simple computational balance; C best addresses hub load but has strong locality risks.</p>
+<hr>
+<h2 id="12-practical-use-cases">12. Practical use cases</h2>
+<h3 id="cybersecurity">Cybersecurity</h3>
+<p>Nodes are accounts/devices and edges are communications. High-betweenness links may connect otherwise separate groups, helping expose pivot channels—though legitimate gateways can also have high values.</p>
+<h3 id="co-authorship">Co-authorship</h3>
+<p>Dense communities represent research groups; high-betweenness collaborations bridge fields. Removing a bridge analytically reveals disciplines, not a recommendation to end collaboration.</p>
+<h3 id="web-advertising">Web advertising</h3>
+<p>Partition advertiser–keyword/user bidding networks into submarkets for parallel auction/search processing while minimizing cross-partition queries.</p>
+<h3 id="supply-chain">Supply chain</h3>
+<p>Communities reveal tightly interacting suppliers/facilities; high-betweenness routes expose critical cross-region dependencies and resilience risks.</p>
+<hr>
+<h2 id="13-common-misconceptions">13. Common misconceptions</h2>
+<ul>
+<li>Girvan–Newman removes <strong>largest</strong>, not smallest, edge betweenness.</li>
+<li>Betweenness counts only shortest paths, not all possible routes.</li>
+<li>Multiple shortest paths split one unit fractionally.</li>
+<li>High betweenness does not guarantee graph-theoretic bridge status.</li>
+<li>Endpoint degree alone does not determine edge betweenness.</li>
+<li>Node betweenness does not identify the exact incident edge to cut.</li>
+<li>Scores must be recomputed after removal.</li>
+<li>Tied edges are not universally removed simultaneously; follow specification.</li>
+<li>Later generator outputs are finer/more fragmented, not merged.</li>
+<li>More partitions are not automatically better.</li>
+<li>Equal numbers of nodes do not imply equal work.</li>
+<li>Fewer cut edges alone do not guarantee functional modules or balanced workload.</li>
+<li>All protein interactions need not carry equal weight/confidence.</li>
+<li>Parallel processing does not eliminate the need to preserve/analyze boundary edges.</li>
+</ul>
+<hr>
+<h2 id="14-formula-sheet">14. Formula sheet</h2>
+<p>$$C_B(e)=\sum_{s<t}\frac{\sigma_{st}(e)}{\sigma_{st}}$$</p>
+<p>$$C_B(v)=\sum_{s\ne v\ne t}\frac{\sigma_{st}(v)}{\sigma_{st}}$$</p>
+<p>$$\text{single bridge flow}=|V_L||V_R|$$</p>
+<p>$$\operatorname{cut}_w(P)=\sum_{(u,v)\in\delta(P)}w_{uv}$$</p>
+<p>$$L_i=\sum_{v\in V_i}c(v)$$</p>
+<p>$$Q=\frac1{2m}\sum_{ij}\left(A_{ij}-\frac{k_ik_j}{2m}\right)\mathbf1[c_i=c_j]$$</p>
+<hr>
+<h2 id="15-likely-exam-questions">15. Likely exam questions</h2>
+<h3 id="q1-define-graph-partitioning-and-give-applications">Q1. Define graph partitioning and give applications.</h3>
+<p>Dense within/sparse between; discuss parallel computing, circuits, bioinformatics, karate club, co-authorship, web/advertising.</p>
+<h3 id="q2-compare-divisive-and-agglomerative-methods">Q2. Compare divisive and agglomerative methods.</h3>
+<p>Full graph and edge removal versus singleton/small groups and merging; Girvan–Newman is divisive.</p>
+<h3 id="q3-define-edge-and-node-betweenness">Q3. Define edge and node betweenness.</h3>
+<p>Give formulas, flow interpretation, multiple-shortest-path fractions, and appropriate uses.</p>
+<h3 id="q4-calculate-a-bridge-edge-score">Q4. Calculate a bridge edge score.</h3>
+<p>If it uniquely joins groups of sizes $a,b$, answer $ab$ unordered pair contributions; explain why.</p>
+<h3 id="q5-explain-bfs-betweenness-computation">Q5. Explain BFS betweenness computation.</h3>
+<p>Distances, path counts, predecessor DAG, bottom-up credits, all roots, divide by 2 for undirected.</p>
+<h3 id="q6-state-girvan-newman-algorithm">Q6. State Girvan–Newman algorithm.</h3>
+<p>Compute all edge scores, remove maximum/ties per policy, recompute, record components, select useful stage.</p>
+<h3 id="q7-why-recompute">Q7. Why recompute?</h3>
+<p>Removal changes shortest paths and reroutes traffic, so original scores become stale.</p>
+<h3 id="q8-reproduce-the-six-node-example">Q8. Reproduce the six-node example.</h3>
+<p>Explain two shortest paths to $F$, half-credit split, aggregate reported values, remove tied $BD,BE$, form <code>{A,B,C}</code> and <code>{D,E,F}</code>.</p>
+<h3 id="q9-explain-networkx-generator-behavior">Q9. Explain NetworkX generator behavior.</h3>
+<p>Each <code>next()</code> gives a finer partition; evaluate levels rather than expecting one final answer.</p>
+<h3 id="q10-recommend-ecogen-s-partition-strategy">Q10. Recommend EcoGen&rsquo;s partition strategy.</h3>
+<p>Use weighted multi-constraint hybrid: biological modules, computational node weights, weighted cuts, hub placement/replication, load tolerance, and dual evaluation.</p>
+<hr>
+<h2 id="16-rapid-recall-checklist">16. Rapid-recall checklist</h2>
+<ul>
+<li>[ ] Good community: dense inside, sparse between.</li>
+<li>[ ] Divisive removes edges; agglomerative merges nodes/groups.</li>
+<li>[ ] Edge betweenness = total fractional shortest-path flow through an edge.</li>
+<li>[ ] Node betweenness and edge betweenness answer different questions.</li>
+<li>[ ] $K$ shortest paths split one unit as $1/K$ each.</li>
+<li>[ ] Unique bridge between sizes $a,b$ has cross-flow $ab$.</li>
+<li>[ ] Edge $(7,8)$ in the lecture has 49.</li>
+<li>[ ] BFS for unweighted; Dijkstra for weighted nonnegative lengths.</li>
+<li>[ ] Divide undirected all-source accumulation by 2 for conventional scores.</li>
+<li>[ ] Girvan–Newman removes maximum-betweenness edges.</li>
+<li>[ ] Recompute after every removal step/tied batch.</li>
+<li>[ ] Tie policy must be stated.</li>
+<li>[ ] Use modularity/domain needs to select a dendrogram level.</li>
+<li>[ ] Six-node maximum edges are $BD,BE$ with score 5.</li>
+<li>[ ] NetworkX returns progressive partitions through a generator.</li>
+<li>[ ] Community detection is not identical to balanced min-cut.</li>
+<li>[ ] EcoGen must balance load, weighted communication, and biology.</li>
+<li>[ ] Equal node counts do not ensure equal computational cost.</li>
+<li>[ ] Hub distribution may worsen communication/locality.</li>
+</ul>
+<h2 id="17-final-takeaways">17. Final takeaways</h2>
+<ol>
+<li>Graph partitioning supports both discovery of communities and decomposition for scalable computation, but these objectives are not identical.</li>
+<li>Edge betweenness quantifies how strongly a link brokers shortest-path traffic between regions.</li>
+<li>Girvan–Newman reveals hierarchical community structure by removing maximum-betweenness edges and recomputing after every change.</li>
+<li>BFS credit propagation efficiently handles unweighted graphs; weighted graphs require shortest-path algorithms such as Dijkstra.</li>
+<li>Practical selection requires a meaningful stopping metric, not division to singletons.</li>
+<li>EcoGen&rsquo;s strongest solution is multi-objective: preserve biological modules where possible, balance weighted compute, minimize weighted communication, and manage hubs explicitly.</li>
+</ol>
+        </div>
+    <nav class="week-pager">
+      <a href="week-13.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 13: Social Networks, Graph Laplacians, and…</span>
+      </a>
+      <a href="week-15.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 15: ML Life Cycle, Hybrid and Music…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

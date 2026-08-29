@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Advanced ML · Week 11 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Advanced ML</span>
+      <span class="brand-title">Week 11</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html" selected>Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Review of Machine Learning, Learning Types, and Linear Regression
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Classification, Logistic Regression, Maximum Likelihood and K-Means…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Bias–Variance, Error Analysis, Learning Curves, and Model Selection
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Recommendation Systems and Collaborative Filtering
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Content-Based Filtering, Cosine Similarity, UV Decomposition, and…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Bias–Variance Trade-off, Underfitting, Overfitting,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Association Rule Mining, Apriori, and PCY
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Dimensionality Reduction, PCA, Eigen-Decomposition, and SVD
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Text Processing, Bag of Words, TF–IDF, Vector-Space Retrieval, and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Web Advertising, Online Matching, AdWords, and Balance
+      </a>
+      <a class="is-active" href="week-11.html">
+        <span class="week-num">Week 11</span>
+        High-Dimensional Clustering, Subspaces, CLIQUE, PROCLUS, and…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Independent Component Analysis, Blind Source Separation, FastICA,…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Social Networks, Graph Laplacians, and Spectral Clustering
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Graph Partitioning, Flow Centrality, Edge Betweenness, and Girvan–Newman
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        ML Life Cycle, Hybrid and Music Recommenders, and Evaluation
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Advanced ML · Week 11</p>
+        <h1 class="page-title">High-Dimensional Clustering, Subspaces, CLIQUE, PROCLUS, and Projected Clustering</h1>
+        <p class="page-meta">Week 11 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#week-overview">Week overview</a></li>
+      <li><a href="#1-high-dimensional-data">1. High-dimensional data</a></li>
+      <li><a href="#2-curse-of-dimensionality-and-distance-concentration">2. Curse of dimensionality and distance concentration</a></li>
+      <li><a href="#3-general-responses-to-high-dimensionality">3. General responses to high dimensionality</a></li>
+      <li><a href="#4-clustering-recap">4. Clustering recap</a></li>
+      <li><a href="#5-subspace-and-projected-clustering">5. Subspace and projected clustering</a></li>
+      <li><a href="#6-clique-algorithm">6. CLIQUE algorithm</a></li>
+      <li><a href="#7-proclus-algorithm">7. PROCLUS algorithm</a></li>
+      <li><a href="#8-effects-of-proclus-parameters-k-and-l">8. Effects of PROCLUS parameters $K$ and $L$</a></li>
+      <li><a href="#9-clique-versus-proclus">9. CLIQUE versus PROCLUS</a></li>
+      <li><a href="#10-pca-k-means-versus-proclus">10. PCA + K-means versus PROCLUS</a></li>
+      <li><a href="#11-projected-clustering-python-demonstration">11. Projected-clustering Python demonstration</a></li>
+      <li><a href="#12-datavista-quiz-case-study">12. DataVista quiz case study</a></li>
+      <li><a href="#13-practical-customer-segmentation-example">13. Practical customer-segmentation example</a></li>
+      <li><a href="#14-common-misconceptions-and-corrections">14. Common misconceptions and corrections</a></li>
+      <li><a href="#15-formula-definition-sheet">15. Formula/definition sheet</a></li>
+      <li><a href="#16-likely-exam-questions">16. Likely exam questions</a></li>
+      <li><a href="#17-rapid-recall-checklist">17. Rapid-recall checklist</a></li>
+      <li><a href="#18-final-takeaways">18. Final takeaways</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="week-overview">Week overview</h2>
+<p>Week 11 studies why ordinary clustering becomes unreliable in high dimensions and develops two subspace/projected solutions:</p>
+<ul>
+<li><strong>CLIQUE:</strong> bottom-up, grid-based, density-based subspace clustering;</li>
+<li><strong>PROCLUS:</strong> top-down, medoid-based projected clustering with cluster-specific dimensions.</li>
+</ul>
+<p>The practical demonstration also uses a global projection pipeline: preprocessing → PCA → K-means. Quiz and case-study material adds parameter selection, convergence, business interpretation, and deployment trade-offs.</p>
+<hr>
+<h2 id="1-high-dimensional-data">1. High-dimensional data</h2>
+<p>A dataset&rsquo;s dimensions are its features/columns. Rows are observations/records.</p>
+<p>Example student dataset columns: name, roll number, age, height, weight, and income. With six fields and 20,000 students, it has six dimensions and 20,000 records.</p>
+<ul>
+<li><strong>Width:</strong> number of features/columns.</li>
+<li><strong>Height:</strong> number of observations/rows.</li>
+<li>A dataset is high-dimensional when it has many features; the especially difficult $p\gg n$ case has more features than observations.</li>
+<li>High-dimensional data can also be “big data” if both width and height are large, but the concepts are not identical.</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>genomics: thousands of gene measurements;</li>
+<li>healthcare: many biomarkers, tests, diagnoses, and signals;</li>
+<li>finance: trading, price, risk, and market features;</li>
+<li>face images/eigenfaces: each pixel may be a feature;</li>
+<li>marketing/clickstream data: many behavioral variables.</li>
+</ul>
+<h3 id="1-1-challenges">1.1 Challenges</h3>
+<ul>
+<li>high computation and memory requirements;</li>
+<li>visualization beyond 3D is difficult/impossible directly;</li>
+<li>relationships are hard to interpret;</li>
+<li>noise and irrelevant features can dominate;</li>
+<li>conventional models may fail to generalize;</li>
+<li>distance-based algorithms become unreliable;</li>
+<li>too few observations relative to dimensions increase overfitting risk.</li>
+</ul>
+<hr>
+<h2 id="2-curse-of-dimensionality-and-distance-concentration">2. Curse of dimensionality and distance concentration</h2>
+<p>As dimensionality rises, the volume of feature space grows rapidly and observations become sparse. More data are required to achieve the same coverage.</p>
+<p>For distance-based clustering, an important effect is <strong>distance concentration</strong>: nearest and farthest distances become increasingly similar relative to their magnitude. Euclidean distance can stop providing strong evidence that one observation is meaningfully nearer than another.</p>
+<p>Consequences for K-means:</p>
+<ul>
+<li>irrelevant dimensions add noise to every distance;</li>
+<li>true clusters may exist only on different feature subsets;</li>
+<li>global full-space centroids blur useful structure;</li>
+<li>clusters can be masked by unrelated features;</li>
+<li>assignments become unstable or arbitrary.</li>
+</ul>
+<p>This motivates searching for clusters in lower-dimensional <strong>subspaces</strong> rather than assuming every feature defines every cluster.</p>
+<hr>
+<h2 id="3-general-responses-to-high-dimensionality">3. General responses to high dimensionality</h2>
+<h3 id="3-1-remove-select-features">3.1 Remove/select features</h3>
+<ul>
+<li>Drop columns with excessive missing data.</li>
+<li>Remove nearly constant/low-variance columns.</li>
+<li>Remove irrelevant or redundant variables.</li>
+<li>In supervised tasks, use association/correlation with the response carefully.</li>
+</ul>
+<p>Low variance does not automatically mean useless, and low marginal correlation can miss nonlinear/interacting predictive effects; selection must be validated.</p>
+<h3 id="3-2-feature-extraction">3.2 Feature extraction</h3>
+<p>PCA creates lower-dimensional orthogonal combinations retaining maximum global variance. Principal-component regression uses these scores in regression.</p>
+<h3 id="3-3-regularization">3.3 Regularization</h3>
+<p>Ridge and lasso constrain coefficients and can improve high-dimensional supervised models. PCA is primarily dimensionality reduction rather than coefficient regularization, although both can control effective complexity.</p>
+<h3 id="3-4-cluster-in-relevant-subspaces">3.4 Cluster in relevant subspaces</h3>
+<p>Discover groups using only locally relevant dimensions. This is necessary when different groups are visible in different feature subsets.</p>
+<hr>
+<h2 id="4-clustering-recap">4. Clustering recap</h2>
+<p>Clustering discovers groups of objects with similar properties without known labels. Similarity is commonly measured through distance.</p>
+<p>Applications mentioned:</p>
+<ul>
+<li>biology: grouping species/genes;</li>
+<li>psychology/medicine: grouping patients, conditions, or medicines;</li>
+<li>business: customer segmentation;</li>
+<li>networks: patterns/communities;</li>
+<li>software/data analysis: grouping programs or records.</li>
+</ul>
+<p>Families include centroid, density, spectral, and hierarchical clustering. Full-space clustering assumes all dimensions matter equally to all clusters—often false in high-dimensional data.</p>
+<hr>
+<h2 id="5-subspace-and-projected-clustering">5. Subspace and projected clustering</h2>
+<h3 id="5-1-subspace-clustering">5.1 Subspace clustering</h3>
+<p>Search for clusters that exist in subsets of the original dimensions. A point/group may participate in multiple clusters in different subspaces, depending on the method.</p>
+<h3 id="5-2-projected-clustering">5.2 Projected clustering</h3>
+<p>Partitions observations into clusters and assigns each cluster its own relevant feature subset. Each observation generally belongs to one cluster, but clusters may use different dimensions.</p>
+<p>Example:</p>
+<ul>
+<li>price-sensitive customers cluster on discount and basket value;</li>
+<li>engagement-driven customers cluster on sessions and clicks;</li>
+<li>service-sensitive customers cluster on complaints and response time.</li>
+</ul>
+<p>Using every marketing feature globally could conceal all three patterns.</p>
+<h3 id="5-3-bottom-up-versus-top-down">5.3 Bottom-up versus top-down</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Starts with</th>
+<th>Operation</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bottom-up</td>
+<td>Dense low-dimensional units</td>
+<td>Combine/grow into higher-dimensional subspaces</td>
+<td>CLIQUE</td>
+</tr>
+<tr>
+<td>Top-down</td>
+<td>Candidate full-space clusters/representatives</td>
+<td>Select/weight relevant dimensions per cluster</td>
+<td>PROCLUS</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="6-clique-algorithm">6. CLIQUE algorithm</h2>
+<p>CLIQUE (CLustering In QUEst) is a <strong>grid-based, density-based, bottom-up subspace clustering</strong> algorithm.</p>
+<h3 id="6-1-core-concepts">6.1 Core concepts</h3>
+<ul>
+<li>Divide each feature range into intervals.</li>
+<li>Their Cartesian products form rectangular grid units/cells.</li>
+<li>Count observations in each unit.</li>
+<li>A unit is dense if its point fraction/count exceeds a density threshold.</li>
+<li>A cluster is a maximal connected set of dense units in a subspace.</li>
+</ul>
+<p>Typical inputs:</p>
+<ul>
+<li>data matrix;</li>
+<li>grid resolution/number of intervals;</li>
+<li>density threshold.</li>
+</ul>
+<h3 id="6-2-apriori-downward-closure-principle">6.2 Apriori/downward-closure principle</h3>
+<p>If a $k$-dimensional unit is dense, all of its lower-dimensional projections must also be dense. Therefore, only combinations of dense $(k-1)$-dimensional candidates need to be tested at dimension $k$.</p>
+<p>Correct direction matters: dense high-dimensional unit ⇒ dense projections. A dense low-dimensional unit does <strong>not</strong> guarantee every higher-dimensional extension is dense.</p>
+<h3 id="6-3-workflow">6.3 Workflow</h3>
+<ol>
+<li>Normalize/scale features if grid intervals require comparability.</li>
+<li>Partition every dimension into equal-width intervals.</li>
+<li>Find dense one-dimensional units.</li>
+<li>Generate candidate two-dimensional units from dense lower-dimensional units.</li>
+<li>Count points and prune non-dense candidates.</li>
+<li>Repeat for higher dimensions.</li>
+<li>Join adjacent dense units into maximal clusters.</li>
+<li>Produce compact descriptions, often axis-parallel region rules.</li>
+</ol>
+<h3 id="6-4-strengths">6.4 Strengths</h3>
+<ul>
+<li>Finds clusters in subspaces without enumerating all cells naively.</li>
+<li>Scales reasonably to many observations/dimensions through Apriori pruning.</li>
+<li>Grid counting makes order of input less important.</li>
+<li>Produces interpretable axis-parallel cluster descriptions.</li>
+<li>Can discover clusters of varying shapes as connected dense cells.</li>
+</ul>
+<h3 id="6-5-limitations">6.5 Limitations</h3>
+<ul>
+<li>Sensitive to grid resolution and density threshold.</li>
+<li>Boundary effects: a natural cluster may be split across cells.</li>
+<li>Axis-aligned grids struggle with rotated/diagonal patterns.</li>
+<li>Too coarse a grid merges structure; too fine a grid makes cells sparse.</li>
+<li>Candidate subspaces can still grow rapidly.</li>
+<li>Density varies across subspaces, making one threshold imperfect.</li>
+</ul>
+<h3 id="6-6-practical-example">6.6 Practical example</h3>
+<p>For customer features age, income, spend, visits, and complaints, CLIQUE may find dense connected units in <code>(income, spend)</code> and a different cluster in <code>(visits, complaints)</code> without demanding a single common feature set.</p>
+<hr>
+<h2 id="7-proclus-algorithm">7. PROCLUS algorithm</h2>
+<p>PROCLUS (PROjected CLUStering) is a top-down, partitioning, medoid-based projected clustering algorithm. It is related to k-medoid reasoning but chooses cluster-specific relevant dimensions.</p>
+<h3 id="7-1-inputs-and-output">7.1 Inputs and output</h3>
+<p>Main inputs:</p>
+<ul>
+<li>$K$: desired number of clusters;</li>
+<li>$L$: average number of relevant dimensions per cluster.</li>
+</ul>
+<p>Output:</p>
+<ul>
+<li>$K$ medoid-centered clusters;</li>
+<li>dimension set $D_i$ for each cluster $C_i$;</li>
+<li>assignment of observations (and sometimes outliers).</li>
+</ul>
+<h3 id="7-2-why-medoids">7.2 Why medoids?</h3>
+<p>A medoid is an actual observation chosen as a representative. Unlike a mean centroid, it is less distorted by extreme values and remains interpretable as a real case/customer.</p>
+<h3 id="7-3-cluster-specific-distance">7.3 Cluster-specific distance</h3>
+<p>If cluster $i$ uses dimensions $D_i$, a segmental Manhattan distance can be written:</p>
+<p>$$d_{D_i}(x,m_i)=\frac{1}{|D_i|}\sum_{j\in D_i}|x_j-m_{ij}|.$$</p>
+<p>The averaging prevents clusters with more selected dimensions from automatically having larger distances.</p>
+<h3 id="7-4-high-level-workflow">7.4 High-level workflow</h3>
+<p>PROCLUS is commonly described in three phases.</p>
+<h4 id="phase-1-initialization">Phase 1 — Initialization</h4>
+<ol>
+<li>Draw a candidate medoid sample.</li>
+<li>Greedily choose well-separated representatives to cover the data.</li>
+<li>Select $K$ initial medoids.</li>
+</ol>
+<p>Good separation avoids initializing multiple medoids in the same region.</p>
+<h4 id="phase-2-iteration">Phase 2 — Iteration</h4>
+<ol>
+<li>For each medoid, identify a locality/neighborhood, often relative to nearby medoids.</li>
+<li>Calculate per-dimension spread around the medoid, such as average absolute deviation.</li>
+<li>Standardize/rank dimensions by compactness.</li>
+<li>Select low-spread dimensions for that cluster, subject to the average $L$ budget and minimum-dimension requirement.</li>
+<li>Assign each point to the nearest medoid using that medoid&rsquo;s selected dimensions.</li>
+<li>Evaluate objective quality; identify weak clusters/bad medoids.</li>
+<li>Replace poor medoids and repeat.</li>
+</ol>
+<h4 id="phase-3-refinement">Phase 3 — Refinement</h4>
+<ol>
+<li>Recompute relevant dimensions using final cluster memberships.</li>
+<li>Reassign observations with refined dimension sets.</li>
+<li>Remove/flag outliers and return final clusters.</li>
+</ol>
+<h3 id="7-5-selecting-relevant-dimensions">7.5 Selecting relevant dimensions</h3>
+<p>A dimension with small within-locality deviation is useful because the cluster is compact there. Dimensions are scored relative to the medoid and often standardized across dimensions to make their deviations comparable.</p>
+<p>PROCLUS distributes roughly $K\times L$ dimension assignments across clusters. This is an average budget, not necessarily exactly $L$ dimensions for each cluster. Some clusters may receive more and others fewer, subject to a minimum (commonly at least two in the discussed material).</p>
+<h3 id="7-6-convergence">7.6 Convergence</h3>
+<p>Stop when one or more conditions are met:</p>
+<ul>
+<li>medoids no longer change materially;</li>
+<li>point assignments stabilize;</li>
+<li>dimension sets stabilize;</li>
+<li>objective improvement falls below a tolerance;</li>
+<li>maximum iterations reached.</li>
+</ul>
+<p>A maximum-iteration cap is a safety/computation constraint, not the ideal definition of convergence.</p>
+<h3 id="7-7-strengths">7.7 Strengths</h3>
+<ul>
+<li>Finds different dimensions for different clusters.</li>
+<li>Uses robust, interpretable medoids.</li>
+<li>Avoids irrelevant-feature dilution in full-space distance.</li>
+<li>Well suited to high-dimensional segmentation.</li>
+<li>Can expose which variables define each discovered group.</li>
+</ul>
+<h3 id="7-8-limitations">7.8 Limitations</h3>
+<ul>
+<li>Requires $K$ and $L$ in advance.</li>
+<li>Sensitive to medoid initialization/sampling.</li>
+<li>Local optimum and stochastic variation are possible.</li>
+<li>Axis-aligned relevant dimensions; rotated structure can be difficult.</li>
+<li>Parameter search and repeated runs can be expensive.</li>
+<li>Cluster-specific dimension sets complicate global visualization/comparison.</li>
+</ul>
+<hr>
+<h2 id="8-effects-of-proclus-parameters-k-and-l">8. Effects of PROCLUS parameters $K$ and $L$</h2>
+<h3 id="8-1-increasing-k">8.1 Increasing $K$</h3>
+<ul>
+<li>more, smaller clusters;</li>
+<li>potentially finer market segmentation;</li>
+<li>risk of fragmentation, unstable tiny groups, and reduced business actionability;</li>
+<li>higher computation and larger total dimension-assignment budget $K\times L$.</li>
+</ul>
+<h3 id="8-2-increasing-l">8.2 Increasing $L$</h3>
+<ul>
+<li>more dimensions characterize each cluster;</li>
+<li>potentially richer profiles and better coverage of relevant signals;</li>
+<li>may reintroduce noisy/irrelevant features and weaken distance contrast;</li>
+<li>reduces sparsity/interpretability of cluster explanations.</li>
+</ul>
+<h3 id="8-3-joint-trade-off">8.3 Joint trade-off</h3>
+<p>The pair $(K,L)$ should be tuned jointly. Increasing one changes the effective model capacity and $K\times L$ allocation. Use stability, internal quality, external/business utility, minimum cluster size, interpretability, and held-out/repeated-run evidence.</p>
+<h3 id="8-4-choosing-between-nearby-k-values">8.4 Choosing between nearby $K$ values</h3>
+<p>Do not automatically select $K=5$ over $K=4$ because an apparent score is slightly higher. Ask:</p>
+<ul>
+<li>Is the improvement reproducible across seeds/samples?</li>
+<li>Are all clusters stable and sufficiently large?</li>
+<li>Do the extra segments have distinct relevant dimensions?</li>
+<li>Can the business act differently on them?</li>
+<li>Does complexity justify the marginal gain?</li>
+</ul>
+<hr>
+<h2 id="9-clique-versus-proclus">9. CLIQUE versus PROCLUS</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>CLIQUE</th>
+<th>PROCLUS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Search direction</td>
+<td>Bottom-up</td>
+<td>Top-down</td>
+</tr>
+<tr>
+<td>Mechanism</td>
+<td>Grid/density</td>
+<td>Medoids/partitioning</td>
+</tr>
+<tr>
+<td>Cluster representation</td>
+<td>Connected dense units in subspaces</td>
+<td>Point partition + dimension set per cluster</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>Grid resolution, density threshold</td>
+<td>$K$, average dimensions $L$, sampling/tolerance</td>
+</tr>
+<tr>
+<td>Shape</td>
+<td>Axis-parallel connected cell regions</td>
+<td>Medoid-centered projected groups</td>
+</tr>
+<tr>
+<td>Overlap</td>
+<td>Can discover multiple subspace structures</td>
+<td>Generally partitions points</td>
+</tr>
+<tr>
+<td>Main sensitivity</td>
+<td>Grid and density settings</td>
+<td>Initialization, $K$, $L$</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="10-pca-k-means-versus-proclus">10. PCA + K-means versus PROCLUS</h2>
+<h3 id="pca-k-means">PCA + K-means</h3>
+<ol>
+<li>Preprocess data.</li>
+<li>Apply one global linear projection.</li>
+<li>Cluster every observation in the same principal-component space.</li>
+</ol>
+<p>Advantages:</p>
+<ul>
+<li>simple, widely available, fast;</li>
+<li>good visualization;</li>
+<li>useful if one common low-dimensional structure explains all groups.</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li>PCA preserves global variance, not cluster separation;</li>
+<li>all clusters share the same transformed dimensions;</li>
+<li>components mix original variables and reduce direct interpretability;</li>
+<li>cluster-specific low-variance signals may disappear.</li>
+</ul>
+<h3 id="proclus">PROCLUS</h3>
+<p>Uses different original dimensions for different clusters. It can therefore be strategically better when customer segments are defined by different behavioral drivers. PCA + K-means remains a strong baseline, not a universal inferior method.</p>
+<hr>
+<h2 id="11-projected-clustering-python-demonstration">11. Projected-clustering Python demonstration</h2>
+<p>The lecture demonstrates a practical global projection rather than implementing PROCLUS directly.</p>
+<h3 id="11-1-pipeline">11.1 Pipeline</h3>
+<ol>
+<li><strong>Preprocess:</strong> fill missing values, standardize numeric features, encode categorical columns.</li>
+<li><strong>PCA:</strong> project data to fewer principal components.</li>
+<li><strong>K-means:</strong> cluster in projected space.</li>
+<li><strong>Evaluate:</strong> inspect labels, centroids, overlap/outliers, and whether assignments are meaningful.</li>
+</ol>
+<p>K-means steps revisited:</p>
+<ol>
+<li>choose $K$;</li>
+<li>initialize centroids;</li>
+<li>assign each point to nearest centroid using Euclidean/Manhattan-style distance;</li>
+<li>recompute centroid as the arithmetic mean of members;</li>
+<li>repeat until assignments/centroids stabilize.</li>
+</ol>
+<blockquote>
+<p>Standard K-means conventionally uses squared Euclidean distance and arithmetic means. Taking a “square root of the average,” as one spoken line suggests, is not the centroid update.</p>
+</blockquote>
+<p>PCA uses covariance eigenvectors; the eigenvector for the largest eigenvalue is PC1 and captures maximum variance. Use more PCs if one dimension is insufficient.</p>
+<h3 id="11-2-libraries">11.2 Libraries</h3>
+<ul>
+<li><code>PCA</code> from <code>sklearn.decomposition</code>;</li>
+<li><code>KMeans</code> from <code>sklearn.cluster</code>;</li>
+<li>NumPy for data generation;</li>
+<li>Matplotlib for plots;</li>
+<li>an auxiliary ARFF-reader notebook for <code>.arff</code> datasets.</li>
+</ul>
+<h3 id="11-3-datasets-and-observations">11.3 Datasets and observations</h3>
+<p><strong>Random data</strong></p>
+<ul>
+<li>NumPy random seed;</li>
+<li>1,000 samples, 20 dimensions;</li>
+<li>PCA to 2 components;</li>
+<li>K-means with 3 clusters, then 4;</li>
+<li>because data are random, visible clusters/overlap should not be overinterpreted.</li>
+</ul>
+<p><strong>Simple ARFF data</strong></p>
+<ul>
+<li>already 2D with three evident groups;</li>
+<li>PCA still set to 2 components;</li>
+<li>$K=3$ recovers the natural groups;</li>
+<li>forcing $K=2$ or $K=4$ merges/splits structure “for name&rsquo;s sake,” illustrating that K-means always returns the requested $K$ even if it is not natural.</li>
+</ul>
+<p><strong>High-dimensional ARFF data</strong></p>
+<ul>
+<li>four original dimensions projected to two;</li>
+<li>tested with 3 and 2 K-means clusters;</li>
+<li>clusters contain outliers/points outside clean boundaries;</li>
+<li>lecture connects this to the approximate 95% result in the PROCLUS example.</li>
+</ul>
+<p><strong>Stream ARFF data</strong></p>
+<ul>
+<li>four dimensions projected to two;</li>
+<li>tried $K=3$, $4$, and $2$;</li>
+<li>some groups overlap;</li>
+<li>four groups are visually suggested in one view, while two larger groups may be sufficient depending on interpretation.</li>
+</ul>
+<p>Accuracy language is delicate in unsupervised clustering: unless ground-truth labels exist and cluster IDs are optimally matched, “95% accuracy” is not an intrinsic clustering metric. Use silhouette, cohesion/separation, stability, known-label external metrics, and business validation as appropriate.</p>
+<hr>
+<h2 id="12-datavista-quiz-case-study">12. DataVista quiz case study</h2>
+<p>DataVista uses PROCLUS for high-dimensional customer segmentation. The case includes simple, high-dimensional marketing, and streaming clickstream experiments.</p>
+<h3 id="12-1-experiment-interpretation">12.1 Experiment interpretation</h3>
+<ul>
+<li>Simple low-dimensional data can be perfectly/easily clustered; PROCLUS may be unnecessary overhead.</li>
+<li>High-dimensional marketing data reports about 95% apparent performance: encouraging, but not proof of universal superiority or production readiness.</li>
+<li>Streaming data demonstrates useful clusters but raises drift, changing distributions, and retraining concerns.</li>
+</ul>
+<h3 id="12-2-stakeholder-concerns">12.2 Stakeholder concerns</h3>
+<p><strong>Tom&rsquo;s concern about larger $K$:</strong> finer segments may improve fit but increase fragmentation, instability, communication burden, and campaign complexity.</p>
+<p><strong>CFO&rsquo;s request to limit iterations:</strong> an iteration cap controls cost and latency, but stopping too early can leave poor medoids/dimensions. Combine cap with convergence tolerance and quality monitoring.</p>
+<p><strong>Argument for larger $L$:</strong> more dimensions may give richer/actionable profiles, but only if the added features are stable and genuinely relevant. Otherwise they reintroduce noise.</p>
+<h3 id="12-3-recommended-experimental-strategy">12.3 Recommended experimental strategy</h3>
+<ol>
+<li>Clean, impute, encode, and scale data.</li>
+<li>Remove clearly unusable/constant features.</li>
+<li>Define plausible grids of $K$ and $L$.</li>
+<li>Run multiple seeds/medoid samples per setting.</li>
+<li>Track objective value, convergence, cluster size, dimension sets, internal metrics, stability, and runtime.</li>
+<li>Interpret clusters with domain experts.</li>
+<li>Compare against K-means and PCA + K-means baselines.</li>
+<li>Validate external/business outcomes (campaign lift, retention, conversion).</li>
+<li>Select the simplest stable/actionable configuration.</li>
+<li>Deploy with drift monitoring and periodic/reflexive retraining.</li>
+</ol>
+<h3 id="12-4-convergence-strategy">12.4 Convergence strategy</h3>
+<p>Use a moderate tolerance plus maximum iterations. Tight tolerance alone can waste computation for negligible changes; a hard cap alone may stop prematurely. Also monitor cluster/dimension stability and objective improvement.</p>
+<hr>
+<h2 id="13-practical-customer-segmentation-example">13. Practical customer-segmentation example</h2>
+<p>Suppose columns are:</p>
+<ul>
+<li>age, income, purchase frequency, average basket value;</li>
+<li>discount use, app sessions, email clicks;</li>
+<li>complaints, support time, returns;</li>
+<li>location and channel variables.</li>
+</ul>
+<p>PROCLUS might discover:</p>
+<ul>
+<li>Cluster A on <code>{discount use, basket value, purchase frequency}</code>: bargain-driven repeat buyers;</li>
+<li>Cluster B on <code>{app sessions, clicks}</code>: digitally engaged browsers;</li>
+<li>Cluster C on <code>{complaints, response time, returns}</code>: service-risk customers;</li>
+<li>Cluster D on <code>{income, premium-category spend}</code>: premium customers.</li>
+</ul>
+<p>Campaigns can then be cluster-specific. Record selected dimensions, medoids, membership stability, and segment size so the result is auditable and actionable.</p>
+<hr>
+<h2 id="14-common-misconceptions-and-corrections">14. Common misconceptions and corrections</h2>
+<ul>
+<li><strong>“High-dimensional” means many rows.</strong> No; dimensions are columns. Many rows concern data volume.</li>
+<li><strong>Every feature should be used in every cluster.</strong> Subspace methods exist because this is often false.</li>
+<li><strong>PCA selects original variables.</strong> It creates global linear combinations.</li>
+<li><strong>PROCLUS selects exactly $L$ features per cluster.</strong> $L$ is an average target/budget; allocations can differ.</li>
+<li><strong>Dense 1D unit guarantees dense higher-dimensional units.</strong> No; only dense high-dimensional units guarantee dense projections.</li>
+<li><strong>More clusters always improve segmentation.</strong> They can fragment patterns and reduce actionability.</li>
+<li><strong>More dimensions always improve PROCLUS.</strong> They can restore noise and distance concentration.</li>
+<li><strong>Maximum iterations is convergence.</strong> It is a safeguard; stabilization/improvement criteria define convergence.</li>
+<li><strong>95% proves superiority.</strong> It depends on metric, labels, split, seed, baseline, and stability.</li>
+<li><strong>Removing irrelevant features and PCA are identical.</strong> One selects original columns; the other constructs new axes.</li>
+</ul>
+<hr>
+<h2 id="15-formula-definition-sheet">15. Formula/definition sheet</h2>
+<h3 id="euclidean-distance">Euclidean distance</h3>
+<p>$$d(x,y)=\sqrt{\sum_{j=1}^p(x_j-y_j)^2}.$$</p>
+<h3 id="cluster-specific-projected-distance">Cluster-specific projected distance</h3>
+<p>$$d_{D_i}(x,m_i)=\frac1{|D_i|}\sum_{j\in D_i}|x_j-m_{ij}|.$$</p>
+<h3 id="clique-density">CLIQUE density</h3>
+<p>For unit $u$ and $n$ observations:</p>
+<p>$$\operatorname{density}(u)=\frac{|\{x:x\in u\}|}{n}.$$</p>
+<p>Dense when density exceeds the user threshold.</p>
+<h3 id="proclus-dimension-budget">PROCLUS dimension budget</h3>
+<p>$$\sum_{i=1}^K|D_i|\approx K L,$$</p>
+<p>subject to minimum dimension rules.</p>
+<h3 id="pca-projection-used-by-demo">PCA projection used by demo</h3>
+<p>$$Z=X_cV_q,$$</p>
+<p>then run K-means on $Z$.</p>
+<hr>
+<h2 id="16-likely-exam-questions">16. Likely exam questions</h2>
+<h3 id="q1-why-does-k-means-struggle-in-high-dimensions">Q1. Why does K-means struggle in high dimensions?</h3>
+<p>Discuss irrelevant dimensions, distance concentration, sparsity, noise, and cluster-specific subspaces.</p>
+<h3 id="q2-define-subspace-and-projected-clustering">Q2. Define subspace and projected clustering.</h3>
+<p>Subspace methods find clusters in subsets of dimensions; projected methods partition points and attach a relevant dimension set to each cluster.</p>
+<h3 id="q3-explain-clique">Q3. Explain CLIQUE.</h3>
+<p>State bottom-up/grid/density nature, unit partition, threshold, Apriori property, candidate growth, dense connected units, advantages and limitations.</p>
+<h3 id="q4-explain-proclus-phases">Q4. Explain PROCLUS phases.</h3>
+<p>Initialization with candidate medoids, iterative local dimension selection and assignment, bad-medoid replacement, then refinement/outlier handling.</p>
+<h3 id="q5-what-do-k-and-l-mean">Q5. What do $K$ and $L$ mean?</h3>
+<p>$K$ is cluster count; $L$ is average relevant dimensions per cluster. Explain joint $K\times L$ capacity and trade-offs.</p>
+<h3 id="q6-compare-clique-and-proclus">Q6. Compare CLIQUE and PROCLUS.</h3>
+<p>Use search direction, representation, parameters, overlap/partition, and sensitivity.</p>
+<h3 id="q7-compare-pca-k-means-and-proclus">Q7. Compare PCA + K-means and PROCLUS.</h3>
+<p>Global transformed space shared by all clusters versus cluster-specific original dimensions; give conditions favoring each.</p>
+<h3 id="q8-how-should-convergence-be-decided">Q8. How should convergence be decided?</h3>
+<p>Use stable medoids/assignments/dimensions or small objective improvement plus maximum-iteration safeguard.</p>
+<h3 id="q9-interpret-the-projected-clustering-demo">Q9. Interpret the projected-clustering demo.</h3>
+<p>Describe preprocessing, PCA to two PCs, K-means, four datasets, effects of forcing $K$, overlap/outliers, and clustering-evaluation caveat.</p>
+<h3 id="q10-recommend-a-datavista-strategy">Q10. Recommend a DataVista strategy.</h3>
+<p>Jointly tune $K,L$ over repeated seeds, evaluate stability/actionability/runtime against baselines, use convergence tolerance + cap, and monitor streaming drift.</p>
+<hr>
+<h2 id="17-rapid-recall-checklist">17. Rapid-recall checklist</h2>
+<ul>
+<li>[ ] Dimensions are features/columns; observations are rows.</li>
+<li>[ ] High-dimensional distance can concentrate and become uninformative.</li>
+<li>[ ] Different clusters may exist in different feature subsets.</li>
+<li>[ ] CLIQUE = bottom-up + grid + density.</li>
+<li>[ ] CLIQUE cluster = maximal connected dense units.</li>
+<li>[ ] Dense high-dimensional unit implies dense projections, not vice versa.</li>
+<li>[ ] PROCLUS = top-down + medoid + projected dimensions.</li>
+<li>[ ] Medoid is an actual observation.</li>
+<li>[ ] $K$ = number of clusters; $L$ = average relevant dimensions.</li>
+<li>[ ] PROCLUS dimensions are cluster-specific.</li>
+<li>[ ] Initialization, iteration, refinement are the three broad phases.</li>
+<li>[ ] Convergence needs stabilization/tolerance plus a max-iteration safeguard.</li>
+<li>[ ] Larger $K$ can fragment; larger $L$ can add noise.</li>
+<li>[ ] PCA + K-means uses one global projected feature space.</li>
+<li>[ ] PROCLUS retains interpretable original dimensions per cluster.</li>
+<li>[ ] K-means always returns requested $K$ even if unnatural.</li>
+<li>[ ] “Clustering accuracy” requires labels/matching; otherwise use appropriate internal/stability/business measures.</li>
+<li>[ ] Streaming deployment requires drift monitoring.</li>
+</ul>
+<h2 id="18-final-takeaways">18. Final takeaways</h2>
+<ol>
+<li>Full-space clustering often fails in high dimensions because irrelevant features and distance concentration hide local structure.</li>
+<li>CLIQUE discovers connected dense grid regions bottom-up across subspaces.</li>
+<li>PROCLUS builds medoid-centered clusters and selects a different relevant feature subset for each cluster.</li>
+<li>$K$ and $L$ jointly control PROCLUS complexity; neither should be maximized blindly.</li>
+<li>PCA + K-means is a useful global-projection baseline, while PROCLUS is preferable when groups depend on different original dimensions.</li>
+<li>Stable, interpretable, actionable clusters across repeated runs and business outcomes matter more than a single apparent accuracy value.</li>
+</ol>
+        </div>
+    <nav class="week-pager">
+      <a href="week-10.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 10: Web Advertising, Online Matching, AdWords,…</span>
+      </a>
+      <a href="week-12.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 12: Independent Component Analysis, Blind Source…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

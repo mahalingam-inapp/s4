@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Deep Learning · Week 15 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Deep Learning</span>
+      <span class="brand-title">Week 15</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html" selected>Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Neural Networks and Deep Learning
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Neural Networks, Backpropagation, Model Tuning, and Evaluation
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Convolutional Neural Networks, Transfer Learning and Computer-Vision…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        RNNs, GRU, LSTM, NLP, Word Embeddings, Transfer Learning and Attention
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        RBMs, Deep Belief Networks, Autoencoders, and Contrastive Divergence
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Reinforcement Learning, Policy Networks, Target Networks and DQN
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Generative Adversarial Networks (GANs)
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Data Augmentation, Hyperparameter Tuning, Transfer Learning and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Feed-Forward Neural Networks, Perceptrons, Loss, Backpropagation and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Python Programming Fundamentals
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Machine Learning, Classification, and Naive Bayes
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Logistic Regression as a Neural Network, MNIST, and K-Means
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        PCA and Bag-of-Words
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Autoencoders and Representation Learning
+      </a>
+      <a class="is-active" href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Exhaustive Exam-Oriented Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Deep Learning · Week 15</p>
+        <h1 class="page-title">Exhaustive Exam-Oriented Study Notes</h1>
+        <p class="page-meta">Week 15 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#scope-and-instructor-emphasis">Scope and instructor emphasis</a></li>
+      <li><a href="#1-natural-neural-language-models">1. Natural/neural language models</a></li>
+      <li><a href="#2-word-embeddings">2. Word embeddings</a></li>
+      <li><a href="#3-word-analogies">3. Word analogies</a></li>
+      <li><a href="#4-word2vec">4. Word2Vec</a></li>
+      <li><a href="#5-continuous-bag-of-words-cbow">5. Continuous Bag of Words (CBOW)</a></li>
+      <li><a href="#6-skip-gram">6. Skip-gram</a></li>
+      <li><a href="#7-efficient-word2vec-training">7. Efficient Word2Vec training</a></li>
+      <li><a href="#8-python-gensim-implementation-logic">8. Python/Gensim implementation logic</a></li>
+      <li><a href="#9-applications-of-embeddings">9. Applications of embeddings</a></li>
+      <li><a href="#10-evolution-and-overview">10. Evolution and overview</a></li>
+      <li><a href="#11-feed-forward-neural-network-fnn-mlp">11. Feed-forward neural network (FNN/MLP)</a></li>
+      <li><a href="#12-convolutional-neural-network-cnn">12. Convolutional neural network (CNN)</a></li>
+      <li><a href="#13-recurrent-neural-network-rnn">13. Recurrent neural network (RNN)</a></li>
+      <li><a href="#14-vanishing-gradients-and-long-term-dependencies">14. Vanishing gradients and long-term dependencies</a></li>
+      <li><a href="#15-lstm">15. LSTM</a></li>
+      <li><a href="#16-gru">16. GRU</a></li>
+      <li><a href="#17-other-architectures-named">17. Other architectures named</a></li>
+      <li><a href="#18-high-yield-architecture-comparison">18. High-yield architecture comparison</a></li>
+      <li><a href="#19-energy-based-models-ebms">19. Energy-based models (EBMs)</a></li>
+      <li><a href="#20-restricted-boltzmann-machine-rbm">20. Restricted Boltzmann machine (RBM)</a></li>
+      <li><a href="#21-gan-discriminator-as-energy-like">21. GAN discriminator as “energy-like”</a></li>
+      <li><a href="#22-memory-based-models">22. Memory-based models</a></li>
+      <li><a href="#23-k-nearest-neighbours-knn">23. k-nearest neighbours (kNN)</a></li>
+      <li><a href="#24-prototype-based-methods">24. Prototype-based methods</a></li>
+      <li><a href="#25-hopfield-networks">25. Hopfield networks</a></li>
+      <li><a href="#26-memory-augmented-neural-networks">26. Memory-augmented neural networks</a></li>
+      <li><a href="#27-energy-based-vs-memory-based">27. Energy-based vs memory-based</a></li>
+      <li><a href="#28-definition-and-purpose">28. Definition and purpose</a></li>
+      <li><a href="#29-composition-and-reasoning-skills">29. Composition and reasoning skills</a></li>
+      <li><a href="#30-structure-of-a-babi-item">30. Structure of a bAbI item</a></li>
+      <li><a href="#31-connections-to-neural-architectures">31. Connections to neural architectures</a></li>
+      <li><a href="#32-performance-metrics">32. Performance metrics</a></li>
+      <li><a href="#33-applications-and-research-value">33. Applications and research value</a></li>
+      <li><a href="#34-challenges">34. Challenges</a></li>
+      <li><a href="#35-future-prospects">35. Future prospects</a></li>
+      <li><a href="#36-scenario-and-stakeholder-requirements">36. Scenario and stakeholder requirements</a></li>
+      <li><a href="#37-why-unsupervised-learning-fits">37. Why unsupervised learning fits</a></li>
+      <li><a href="#38-rbm-role-discover-and-compress">38. RBM role: discover and compress</a></li>
+      <li><a href="#39-hopfield-role-remember-and-recall">39. Hopfield role: remember and recall</a></li>
+      <li><a href="#40-three-options">40. Three options</a></li>
+      <li><a href="#41-known-vs-novel-anomalies">41. Known vs novel anomalies</a></li>
+      <li><a href="#42-stepwise-training-and-validation">42. Stepwise training and validation</a></li>
+      <li><a href="#43-offline-vs-online-cost">43. Offline vs online cost</a></li>
+      <li><a href="#44-strategic-recommendation">44. Strategic recommendation</a></li>
+      <li><a href="#45-short-answer-questions">45. Short-answer questions</a></li>
+      <li><a href="#46-scenario-case-study-answer-method">46. Scenario/case-study answer method</a></li>
+      <li><a href="#47-one-line-memory-anchors">47. One-line memory anchors</a></li>
+      <li><a href="#48-formula-sheet">48. Formula sheet</a></li>
+      <li><a href="#49-final-mental-model">49. Final mental model</a></li>
+      <li><a href="#review-week-augmentation-consolidated-architecture-exam-cues">Review Week augmentation: consolidated architecture exam cues</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="scope-and-instructor-emphasis">Scope and instructor emphasis</h2>
+<p>Week 15 closes the Deep Learning module and connects four themes:</p>
+<ol>
+<li>neural language models, word embeddings, Word2Vec, CBOW, Skip-gram, and word analogies;</li>
+<li>a comparative overview of neural-network architectures;</li>
+<li>energy-based and memory-based models;</li>
+<li>the <strong>bAbI dataset</strong> as a controlled benchmark for reasoning, memory, natural-language understanding, and question answering.</li>
+</ol>
+<p>The live-session instructor explicitly said that students need <strong>familiarity with energy-based terminology rather than a very deep mathematical treatment</strong>. The examination consists of MCQs and <strong>two scenario/case-study questions</strong>, similar to weekly assessments; answers should be based on the scenario and conceptual understanding. Therefore, focus on distinctions, model selection, limitations, and the ability to justify an architecture.</p>
+<blockquote>
+<p><strong>Central selection principle:</strong> There is no universally “best” neural architecture. Choose the model whose inductive bias matches the dataset and task: FNN for simple structured inputs, CNN for spatial/grid data, and RNN/LSTM/GRU for sequential or temporal data.</p>
+</blockquote>
+<hr>
+<h1 id="part-i-neural-language-models-and-word-embeddings">Part I — Neural Language Models and Word Embeddings</h1>
+<h2 id="1-natural-neural-language-models">1. Natural/neural language models</h2>
+<p>A <strong>language model</strong> assigns probabilities to word sequences. A neural language model (NLM) uses neural networks and dense representations to learn these probabilities, understand context, and generate meaningful language.</p>
+<p>For a sequence $w_1,\ldots,w_T$, the chain rule gives:</p>
+<p>$$
+P(w_1,\ldots,w_T)=\prod_{t=1}^{T}P(w_t\mid w_1,\ldots,w_{t-1}).
+$$</p>
+<p>Thus, a language model predicts the next word conditional on the preceding context. Common architectures include RNNs and Transformers.</p>
+<h3 id="objectives-and-significance">Objectives and significance</h3>
+<ul>
+<li>represent human language numerically for computation;</li>
+<li>predict and generate coherent sequences;</li>
+<li>learn context, grammar, and linguistic structure;</li>
+<li>capture semantic and syntactic relationships in continuous vector space;</li>
+<li>support sentiment analysis, translation, question answering, summarization, information retrieval, speech applications, and chatbots;</li>
+<li>improve machine understanding beyond traditional sparse representations and fixed $n$-gram counts.</li>
+</ul>
+<p>Traditional $n$-grams depend heavily on observed local counts and suffer from sparsity. Neural models learn distributed representations and can share statistical strength across semantically related words and contexts.</p>
+<h2 id="2-word-embeddings">2. Word embeddings</h2>
+<p>A <strong>word embedding</strong> is a dense, low-dimensional vector representation of a word. Words used in similar contexts tend to receive similar vectors.</p>
+<h3 id="one-hot-encoding-vs-embeddings">One-hot encoding vs embeddings</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>One-hot encoding</th>
+<th>Word embedding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Representation</td>
+<td>Sparse vector</td>
+<td>Dense vector</td>
+</tr>
+<tr>
+<td>Dimension</td>
+<td>Vocabulary size</td>
+<td>Chosen lower dimension</td>
+</tr>
+<tr>
+<td>Similarity information</td>
+<td>None inherently; different words are orthogonal</td>
+<td>Similar words can be nearby</td>
+</tr>
+<tr>
+<td>Semantics/syntax</td>
+<td>Not captured directly</td>
+<td>Can encode semantic and syntactic relations</td>
+</tr>
+<tr>
+<td>General usefulness</td>
+<td>Identity/indexing</td>
+<td>Downstream NLP features and transfer</td>
+</tr>
+</tbody>
+</table></div>
+<p>Embedding methods named in the lecture are <strong>Word2Vec, GloVe, and FastText</strong>. FastText uses subword information and is therefore useful for rare or previously unseen words.</p>
+<h3 id="what-embeddings-capture">What embeddings capture</h3>
+<ul>
+<li>synonyms and semantic similarity;</li>
+<li>syntactic patterns such as tense;</li>
+<li>relational directions such as gender or country–capital relations;</li>
+<li>word-level semantics that improve classification, translation, sentiment analysis, retrieval, recommendation, and dialogue.</li>
+</ul>
+<blockquote>
+<p><strong>Exam trap:</strong> An embedding is a representation, not by itself a sequence probability model. Cosine similarity between vectors does not equal $P(w_1,\ldots,w_T)$.</p>
+</blockquote>
+<h2 id="3-word-analogies">3. Word analogies</h2>
+<p>Embeddings may encode relationships as approximately consistent vector offsets. The lecture’s standard example is:</p>
+<p>$$
+\mathbf v_{king}-\mathbf v_{man}+\mathbf v_{woman}\approx\mathbf v_{queen}.
+$$</p>
+<p>Equivalently, the difference $\mathbf v_{king}-\mathbf v_{man}$ should resemble $\mathbf v_{queen}-\mathbf v_{woman}$. This illustrates how multidimensional embeddings can preserve relational patterns such as gender or tense. Analogy solving supports semantic reasoning, translation, and knowledge-oriented tasks.</p>
+<h3 id="practical-analogy-procedure">Practical analogy procedure</h3>
+<ol>
+<li>Compute the relation vector, e.g. $\mathbf r=\mathbf v_{king}-\mathbf v_{man}$.</li>
+<li>Add it to the new base word, $\mathbf q=\mathbf r+\mathbf v_{woman}$.</li>
+<li>Retrieve the vocabulary word whose embedding is most similar to $\mathbf q$ (often by cosine similarity).</li>
+</ol>
+<p><strong>Caveat:</strong> Analogy behavior is empirical and depends on the corpus, training objective, preprocessing, and learned geometry. It is not a logical guarantee.</p>
+<h2 id="4-word2vec">4. Word2Vec</h2>
+<p><strong>Word2Vec</strong> is a shallow neural framework, introduced by Mikolov and colleagues, for learning dense word representations in a continuous space. Its goal is to learn a vector for each vocabulary item so that semantic and syntactic relationships are reflected in vector geometry.</p>
+<p>Its two principal architectures are:</p>
+<ul>
+<li><strong>CBOW:</strong> context $\rightarrow$ target word;</li>
+<li><strong>Skip-gram:</strong> target word $\rightarrow$ surrounding context words.</li>
+</ul>
+<p>The lecture describes an input layer, projection/embedding layer, hidden computation, and output layer. Training uses context–target prediction; useful word vectors emerge as learned parameters.</p>
+<h2 id="5-continuous-bag-of-words-cbow">5. Continuous Bag of Words (CBOW)</h2>
+<p>CBOW predicts a center/target word from a fixed-size window of surrounding context words. It ignores the order within that context—hence “bag of words”—and commonly combines/averages the context embeddings before prediction.</p>
+<p>For context $C=\{w_{t-c},\ldots,w_{t-1},w_{t+1},\ldots,w_{t+c}\}$, a simplified context representation is:</p>
+<p>$$
+\mathbf h=\frac{1}{|C|}\sum_{w\in C}\mathbf v_w,
+$$</p>
+<p>followed by a softmax prediction:</p>
+<p>$$
+P(w_t\mid C)=\operatorname{softmax}(W_o\mathbf h+b_o).
+$$</p>
+<h3 id="cbow-workflow">CBOW workflow</h3>
+<ol>
+<li>choose the target word and surrounding context window;</li>
+<li>encode each context word as a one-hot vector/index and look up its embedding;</li>
+<li>average or combine the context vectors;</li>
+<li>pass the result to the output layer;</li>
+<li>use softmax (or an efficient approximation) to predict the target;</li>
+<li>update parameters so the correct target becomes more likely.</li>
+</ol>
+<p><strong>Lecture example:</strong> In “the cat sat on the mat,” surrounding words are used to predict a selected center word. The transcript’s wording is noisy, but the required direction is unambiguous: <strong>context predicts center/target</strong>.</p>
+<h3 id="cbow-objectives">CBOW objectives</h3>
+<ul>
+<li>learn word embeddings;</li>
+<li>predict a word from context;</li>
+<li>capture semantic relationships;</li>
+<li>support analogy solving, sentiment analysis, and machine translation.</li>
+</ul>
+<h2 id="6-skip-gram">6. Skip-gram</h2>
+<p>Skip-gram performs the inverse task: given a center/target word, predict its surrounding context words.</p>
+<p>$$
+\max \sum_t\sum_{-c\le j\le c,\,j\ne0}\log P(w_{t+j}\mid w_t).
+$$</p>
+<p>It is often advantageous for less frequent words because each center word generates several context-prediction pairs, though it can be slower than CBOW.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>CBOW</th>
+<th>Skip-gram</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input</td>
+<td>Surrounding context</td>
+<td>Center/target word</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>Center/target word</td>
+<td>Surrounding context words</td>
+</tr>
+<tr>
+<td>Typical tendency</td>
+<td>Faster, strong for common words</td>
+<td>Better representation of rare words; more training pairs</td>
+</tr>
+<tr>
+<td>Memory phrase</td>
+<td>“Context predicts target”</td>
+<td>“Target predicts context”</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Exam traps:</strong> CBOW does not predict context from target. Skip-gram does not predict target from context.</p>
+</blockquote>
+<h2 id="7-efficient-word2vec-training">7. Efficient Word2Vec training</h2>
+<p>A full vocabulary softmax is computationally expensive. The lecture names two common optimizations:</p>
+<ul>
+<li><strong>Hierarchical softmax:</strong> organizes output prediction hierarchically to reduce computation.</li>
+<li><strong>Negative sampling:</strong> trains the model to distinguish observed word-context pairs from sampled negative pairs rather than normalizing over the full vocabulary.</li>
+</ul>
+<h2 id="8-python-gensim-implementation-logic">8. Python/Gensim implementation logic</h2>
+<p>The demonstrated workflow is:</p>
+<ol>
+<li>install/import the required library (<code>gensim</code>);</li>
+<li>optionally use NLTK’s word tokenizer;</li>
+<li>create a corpus, e.g. “the quick brown fox jumps over the lazy dog” and “I love machine learning”;</li>
+<li>lowercase and tokenize each sentence;</li>
+<li>train <code>Word2Vec</code> with tokenized sentences, a selected vector size, and <code>min_count=1</code> for the tiny demonstration corpus;</li>
+<li>save and reuse the model/vectors.</li>
+</ol>
+<p>Illustrative modern Gensim code:</p>
+<pre><code class="language-python">from gensim.models import Word2Vec
+from nltk.tokenize import word_tokenize
+
+corpus = [
+    &quot;The quick brown fox jumps over the lazy dog&quot;,
+    &quot;I love machine learning&quot;,
+]
+sentences = [word_tokenize(s.lower()) for s in corpus]
+
+model = Word2Vec(
+    sentences=sentences,
+    vector_size=100,
+    window=5,
+    min_count=1,
+    workers=4,
+    sg=0,          # 0 = CBOW; 1 = Skip-gram
+)
+model.save(&quot;word2vec.model&quot;)
+</code></pre>
+<h3 id="important-implementation-caveats">Important implementation caveats</h3>
+<ul>
+<li>A toy corpus demonstrates syntax but cannot produce robust semantic generalization.</li>
+<li>Saving a model only preserves learned parameters; it does not improve generalization.</li>
+<li>Lowercasing reduces vocabulary fragmentation but is not a substitute for more representative training data.</li>
+<li>Raising <code>min_count</code> removes rare words and may reduce noise, but it does not fix inadequate coverage; an excessively high value can discard important vocabulary.</li>
+<li>Generalization improves through adequate, diverse training data, suitable architecture/hyperparameters, and proper evaluation—not merely serialization or preprocessing.</li>
+</ul>
+<h2 id="9-applications-of-embeddings">9. Applications of embeddings</h2>
+<ul>
+<li><strong>Machine translation:</strong> align/capture semantic meaning across languages.</li>
+<li><strong>Sentiment analysis:</strong> represent words and phrases that signal emotional tone.</li>
+<li><strong>Information retrieval/search:</strong> improve relevance by matching meaning and query context rather than exact tokens alone.</li>
+<li><strong>Recommendations:</strong> embed products/content and user preferences.</li>
+<li><strong>Chatbots:</strong> support more natural, contextually appropriate responses.</li>
+<li><strong>Classification and reasoning:</strong> provide rich word-level features.</li>
+</ul>
+<h3 id="retrieval-vs-language-modelling">Retrieval vs language modelling</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Main question</th>
+<th>Typical score/output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Embedding similarity</td>
+<td>“How close in meaning are these items?”</td>
+<td>Cosine/distance</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>“Which label applies?”</td>
+<td>Class probability/score</td>
+</tr>
+<tr>
+<td>Retrieval</td>
+<td>“Which stored item is most relevant?”</td>
+<td>Ranked similarity</td>
+</tr>
+<tr>
+<td>Language model</td>
+<td>“How probable is this token/sequence in context?”</td>
+<td>Conditional/joint probability</td>
+</tr>
+</tbody>
+</table></div>
+<p>Softmax can normalize arbitrary scores, but that alone does not make them a correctly trained language model. The scores must be tied to a valid predictive objective and context representation.</p>
+<hr>
+<h1 id="part-ii-comparative-neural-network-architectures">Part II — Comparative Neural-Network Architectures</h1>
+<h2 id="10-evolution-and-overview">10. Evolution and overview</h2>
+<p>Neural networks evolved from single-layer perceptrons to complex specialized models. The progression addressed nonlinear data, spatial structure, sequential dependence, long-term memory, and increasingly complex tasks. Progress was driven by theory, GPUs/hardware, and applications in NLP, computer vision, and reinforcement learning.</p>
+<p>Lecture timeline (as presented): perceptron (1950s), multilayer perceptron/RNN developments (1980s), radial-basis-function networks (around 1990), SVM (1995), LSTM (1997), deep belief networks/deep-learning resurgence (2000s), CNN breakthrough era (2012), GANs and sequence-to-sequence models (2014), residual networks (2015), Transformers (2017), graph neural networks in the modern era (2018), and Vision Transformers (2020).</p>
+<p>Architectures mentioned across the week include FNN/MLP, CNN, RNN, LSTM, GRU, Transformers, autoencoders, GANs, graph neural networks, energy-based models, and memory-augmented models.</p>
+<h2 id="11-feed-forward-neural-network-fnn-mlp">11. Feed-forward neural network (FNN/MLP)</h2>
+<p>An FNN is the simplest architecture: information moves one way from input to output with no feedback loop. With multiple hidden layers, it is commonly called a multilayer perceptron.</p>
+<h3 id="components">Components</h3>
+<ul>
+<li><strong>Input layer:</strong> one neuron/input component per feature.</li>
+<li><strong>Hidden layer(s):</strong> apply weights, biases, and nonlinear activations.</li>
+<li><strong>Output layer:</strong> produces a value for regression or scores/probabilities for classification.</li>
+</ul>
+<p>A layer computes:</p>
+<p>$$
+\mathbf y=f(W\mathbf x+\mathbf b),
+$$</p>
+<p>where $\mathbf x$ is the input, $W$ the weight matrix, $\mathbf b$ the bias, and $f$ an activation such as ReLU, sigmoid, or $\tanh$.</p>
+<h3 id="training">Training</h3>
+<ol>
+<li>forward propagation produces a prediction;</li>
+<li>a loss such as mean-squared error or cross-entropy compares prediction with truth;</li>
+<li>backpropagation computes gradients;</li>
+<li>gradient descent updates weights and biases.</li>
+</ol>
+<h3 id="uses-strengths-limitations">Uses, strengths, limitations</h3>
+<ul>
+<li>Uses: structured-data classification, regression, basic prediction/forecasting, and simple image-recognition settings.</li>
+<li>Strengths: simple, flexible, easy to implement, effective on structured data, and capable of nonlinear function approximation.</li>
+<li>Limitations: does not naturally model sequence order, temporal dependence, or spatial locality; fully connected layers can have high computational/parameter cost.</li>
+</ul>
+<blockquote>
+<p><strong>Transcript correction for exam use:</strong> One live-session sentence appears to say FNN “can capture” sequential/spatial dependencies, but the recorded lecture and comparison consistently state the opposite: it <strong>cannot naturally capture</strong> them.</p>
+</blockquote>
+<h2 id="12-convolutional-neural-network-cnn">12. Convolutional neural network (CNN)</h2>
+<p>A CNN is specialized for structured grid-like/spatial data, especially images. It learns local patterns such as edges, shapes, textures, and higher-level objects.</p>
+<h3 id="typical-pipeline">Typical pipeline</h3>
+<ol>
+<li>convolution filters/kernels produce feature maps;</li>
+<li>nonlinearities transform them;</li>
+<li>pooling/subsampling reduces spatial dimension;</li>
+<li>fully connected or task-specific heads perform classification/detection/segmentation.</li>
+</ol>
+<p>A simplified 2-D convolutional unit is:</p>
+<p>$$
+y_{i,j}=f\!\left(\sum_{u,v}K_{u,v}X_{i+u,j+v}+b\right),
+$$</p>
+<p>where $X$ is the input, $K$ the learned kernel/filter, $b$ the bias, and the output is a feature map.</p>
+<h3 id="uses-strengths-limitations-2">Uses, strengths, limitations</h3>
+<ul>
+<li>Uses: image classification, object detection, image segmentation, feature extraction, grayscale/image transformations, computer vision, and autonomous systems.</li>
+<li>Strength: spatial feature learning through local filters and parameter sharing.</li>
+<li>Limitation: a standard CNN is not naturally suited to temporal or sequential dependence.</li>
+</ul>
+<h2 id="13-recurrent-neural-network-rnn">13. Recurrent neural network (RNN)</h2>
+<p>An RNN processes ordered/sequential data using recurrent connections. It retains a hidden state carrying information from previous time steps.</p>
+<p>$$
+\mathbf h_t=f(W_{xh}\mathbf x_t+W_{hh}\mathbf h_{t-1}+\mathbf b_h),
+$$</p>
+<p>$$
+\mathbf y_t=g(W_{hy}\mathbf h_t+\mathbf b_y).
+$$</p>
+<p>The current output/hidden state depends on the current input and previous hidden state. RNNs are trained using backpropagation through time (BPTT).</p>
+<h3 id="sequence-mappings">Sequence mappings</h3>
+<ul>
+<li>one-to-one: ordinary fixed input to fixed output;</li>
+<li>one-to-many: one input generates a sequence;</li>
+<li>many-to-one: a sequence produces one output, e.g. sentiment classification;</li>
+<li>many-to-many: sequence input to sequence output, e.g. translation.</li>
+</ul>
+<h3 id="uses-and-limitations">Uses and limitations</h3>
+<ul>
+<li>Uses: time-series analysis, speech recognition, text generation, translation, video analysis, stock-price prediction, and other tasks where order/context matters.</li>
+<li>Strength: internal state represents temporal context.</li>
+<li>Limitations: computationally expensive sequential processing; difficulty with long-term dependencies; vanishing/exploding gradients.</li>
+</ul>
+<h2 id="14-vanishing-gradients-and-long-term-dependencies">14. Vanishing gradients and long-term dependencies</h2>
+<p>During BPTT, gradients are repeatedly multiplied through many time steps. If the relevant derivatives are mostly below one, the product shrinks toward zero:</p>
+<p>$$
+\frac{\partial L}{\partial \mathbf h_{t-k}}
+=
+\frac{\partial L}{\partial \mathbf h_t}
+\prod_{j=t-k+1}^{t}\frac{\partial \mathbf h_j}{\partial \mathbf h_{j-1}}.
+$$</p>
+<p>Consequently, early states receive almost no learning signal, and a vanilla RNN struggles to learn distant dependencies. If products grow instead, exploding gradients occur.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> A feed-forward network does not “solve” long-term dependency/vanishing-gradient issues in sequential data; it simply lacks recurrent temporal memory.</p>
+</blockquote>
+<h2 id="15-lstm">15. LSTM</h2>
+<p>An LSTM is an RNN variant designed to mitigate vanishing gradients and preserve long-term dependencies through a cell state and gates (input, forget, and output). The cell state provides a more direct information/gradient path than a vanilla RNN.</p>
+<p>Use LSTM when long-range sequence context is important, accepting higher parameter and computational cost.</p>
+<h2 id="16-gru">16. GRU</h2>
+<p>A GRU is a simplified gated RNN with fewer gates/parameters than an LSTM. It combines memory control into:</p>
+<ul>
+<li><strong>update gate:</strong> determines how much previous information to retain and how much new information to write;</li>
+<li><strong>reset gate:</strong> determines how much previous state to ignore while forming the new candidate state.</li>
+</ul>
+<p>A common formulation is:</p>
+<p>$$
+\mathbf z_t=\sigma(W_z\mathbf x_t+U_z\mathbf h_{t-1}),
+$$
+$$
+\mathbf r_t=\sigma(W_r\mathbf x_t+U_r\mathbf h_{t-1}),
+$$
+$$
+\tilde{\mathbf h}_t=\tanh(W_h\mathbf x_t+U_h(\mathbf r_t\odot\mathbf h_{t-1})),
+$$
+$$
+\mathbf h_t=(1-\mathbf z_t)\odot\mathbf h_{t-1}+\mathbf z_t\odot\tilde{\mathbf h}_t.
+$$</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>LSTM</th>
+<th>GRU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gates</td>
+<td>Input, forget, output</td>
+<td>Update, reset</td>
+</tr>
+<tr>
+<td>Separate cell state</td>
+<td>Yes</td>
+<td>No LSTM-style separate cell state</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>More</td>
+<td>Fewer</td>
+</tr>
+<tr>
+<td>Typical benefit</td>
+<td>Fine-grained memory control</td>
+<td>Simpler/faster computation</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Exam trap:</strong> A GRU does not have an LSTM-style separate cell state.</p>
+</blockquote>
+<h2 id="17-other-architectures-named">17. Other architectures named</h2>
+<ul>
+<li><strong>Transformer:</strong> uses attention/self-attention; handles long dependencies and parallel computation well; used in NLP and increasingly vision.</li>
+<li><strong>Autoencoder:</strong> learns compressed representations/reconstruction; useful for dimensionality reduction and representation learning.</li>
+<li><strong>GAN:</strong> generator creates samples and discriminator distinguishes real/fake; used for data generation.</li>
+<li><strong>Graph neural network:</strong> processes nodes/edges and relational structure.</li>
+</ul>
+<h2 id="18-high-yield-architecture-comparison">18. High-yield architecture comparison</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Architecture</th>
+<th>Best-matched data/task</th>
+<th>Key mechanism</th>
+<th>Main limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FNN/MLP</td>
+<td>Structured data; basic classification/regression</td>
+<td>One-way fully connected transformations</td>
+<td>No natural temporal/spatial structure</td>
+</tr>
+<tr>
+<td>CNN</td>
+<td>Images and spatial/grid data</td>
+<td>Convolution, local receptive fields, pooling</td>
+<td>Not naturally temporal/sequential</td>
+</tr>
+<tr>
+<td>Vanilla RNN</td>
+<td>Short/medium sequential dependencies</td>
+<td>Recurrent hidden state</td>
+<td>Vanishing gradients; sequential cost</td>
+</tr>
+<tr>
+<td>LSTM</td>
+<td>Long-range sequences</td>
+<td>Cell state + three gates</td>
+<td>More parameters/computation</td>
+</tr>
+<tr>
+<td>GRU</td>
+<td>Long-range sequences with simpler gating</td>
+<td>Update + reset gates</td>
+<td>Less explicit memory control than LSTM</td>
+</tr>
+<tr>
+<td>Transformer</td>
+<td>Long dependencies, language, multitask learning</td>
+<td>Self-attention</td>
+<td>Compute/memory can be large</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="part-iii-energy-based-and-memory-based-models">Part III — Energy-Based and Memory-Based Models</h1>
+<h2 id="19-energy-based-models-ebms">19. Energy-based models (EBMs)</h2>
+<p>An EBM assigns a scalar energy to a configuration. Let</p>
+<p>$$
+E_\theta(x,y)
+$$</p>
+<p>score the compatibility of input $x$ and output/label $y$ under parameters $\theta$.</p>
+<ul>
+<li>low energy $\Rightarrow$ compatible, valid, plausible, or observed configuration;</li>
+<li>high energy $\Rightarrow$ incompatible, invalid, implausible, or unobserved/incorrect configuration.</li>
+</ul>
+<p>The learning objective is broadly to lower energy for desired/observed configurations and raise it for undesired/incorrect ones. Inference seeks a minimum-energy configuration:</p>
+<p>$$
+y^*=\arg\min_y E_\theta(x,y).
+$$</p>
+<h3 id="probability-interpretation">Probability interpretation</h3>
+<p>Energy can be converted to a Boltzmann-style distribution:</p>
+<p>$$
+p_\theta(x)=\frac{e^{-E_\theta(x)}}{Z_\theta},
+\qquad
+Z_\theta=\sum_x e^{-E_\theta(x)}
+$$</p>
+<p>(or an integral for continuous variables). Lower energy corresponds to higher probability, but the partition function $Z_\theta$ may be difficult to compute.</p>
+<blockquote>
+<p><strong>Critical distinction:</strong> Energy is a learned compatibility score, not automatically a probability. Probability requires normalization. Likewise, not every scalar loss is meaningfully an energy function.</p>
+</blockquote>
+<h3 id="training-and-inference-concepts">Training and inference concepts</h3>
+<ul>
+<li><strong>Energy function:</strong> maps a configuration to a scalar.</li>
+<li><strong>Training:</strong> lowers observed-data energy and raises incorrect/unobserved energy.</li>
+<li><strong>Inference/sampling:</strong> searches for or samples low-energy configurations.</li>
+<li><strong>Contrastive divergence:</strong> a popular approximate-gradient method for training RBMs.</li>
+<li><strong>Gibbs sampling:</strong> alternates sampling variables/units; convergence and mixing may be slow.</li>
+</ul>
+<h3 id="examples-and-applications">Examples and applications</h3>
+<ul>
+<li>Restricted Boltzmann machine (RBM);</li>
+<li>deep Boltzmann machine;</li>
+<li>Hopfield network (also associative memory);</li>
+<li>deep energy models parameterized by neural networks;</li>
+<li>the GAN discriminator can be interpreted as energy-like, but a standard GAN objective is not identical to an explicit normalized EBM.</li>
+</ul>
+<p>Applications named include dimensionality reduction, feature extraction, generative modelling, collaborative-filtering recommendations, image recognition/generation/denoising, speech synthesis, NLP, representation learning, optimization, anomaly detection, and reinforcement learning.</p>
+<h2 id="20-restricted-boltzmann-machine-rbm">20. Restricted Boltzmann machine (RBM)</h2>
+<p>An RBM is a stochastic, undirected, bipartite energy-based model with:</p>
+<ul>
+<li><strong>visible units</strong> representing observed inputs;</li>
+<li><strong>hidden units</strong> learning latent features;</li>
+<li>connections only between visible and hidden layers—no within-layer connections.</li>
+</ul>
+<p>A common binary RBM energy is:</p>
+<p>$$
+E(v,h)=-a^Tv-b^Th-v^TWh.
+$$</p>
+<p>The RBM can discover hidden correlations, learn compact latent representations, support feature extraction/dimensionality reduction, and provide features for downstream clustering or classification.</p>
+<h3 id="strengths-and-caveats">Strengths and caveats</h3>
+<ul>
+<li>unsupervised feature discovery;</li>
+<li>compact representations may reduce noise, downstream storage, and computation;</li>
+<li>probabilistic generative interpretation;</li>
+<li>training can be costly because Gibbs sampling/contrastive divergence approximates difficult gradients;</li>
+<li>slow sampling convergence or poor mixing may impair training;</li>
+<li>training cost and production inference cost are distinct—slow training does not necessarily imply slow online inference.</li>
+</ul>
+<h2 id="21-gan-discriminator-as-energy-like">21. GAN discriminator as “energy-like”</h2>
+<p>In a GAN:</p>
+<ul>
+<li>the <strong>generator</strong> maps noise to generated samples;</li>
+<li>the <strong>discriminator</strong> distinguishes real from generated samples.</li>
+</ul>
+<p>Its scalar score can be viewed as an energy-like compatibility signal (realistic samples favorable, unrealistic ones unfavorable). However:</p>
+<ul>
+<li>GAN training is an adversarial minimax game;</li>
+<li>a standard discriminator is not automatically an explicit EBM with a normalized Boltzmann probability;</li>
+<li>calling the discriminator “energy-like” is an interpretation, not identity of objectives.</li>
+</ul>
+<h2 id="22-memory-based-models">22. Memory-based models</h2>
+<p>A memory-based model stores/utilizes past examples or experiences and retrieves relevant information at prediction time rather than summarizing everything into a fixed parameter set. This is often called <strong>lazy learning</strong> because much computation is deferred until a query arrives.</p>
+<h3 id="typical-characteristics">Typical characteristics</h3>
+<ul>
+<li>low or limited explicit model-fitting effort;</li>
+<li>substantial storage of training examples/memories;</li>
+<li>prediction based on similarity, recall, or retrieved context;</li>
+<li>flexible/local decision boundaries;</li>
+<li>potentially high inference time and memory usage;</li>
+<li>performance depends strongly on representation and similarity metric.</li>
+</ul>
+<p>Examples include k-nearest neighbours (kNN), case-based reasoning, prototype methods, Hopfield networks, memory networks, neural Turing machines (NTMs), and differentiable neural computers (DNCs).</p>
+<h2 id="23-k-nearest-neighbours-knn">23. k-nearest neighbours (kNN)</h2>
+<p>kNN stores training data. For a new query, it finds the $k$ closest stored points.</p>
+<ul>
+<li>classification: usually majority class among neighbours;</li>
+<li>regression: usually average (possibly weighted) neighbour value.</li>
+</ul>
+<p>Examples: classify a new email as spam/non-spam by similarity to labelled emails; predict a house price from similar nearby houses.</p>
+<p>Strengths: simple, non-parametric, effective for small datasets with local structure. Weaknesses: high storage, potentially expensive queries, sensitivity to scaling/distance and irrelevant dimensions.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> kNN retrieves and aggregates stored examples; it does not learn a normalized probability or energy landscape merely because it uses a distance score.</p>
+</blockquote>
+<h2 id="24-prototype-based-methods">24. Prototype-based methods</h2>
+<p>Instead of retaining every example, prototype methods store representative points. They trade detail for reduced memory and faster inference. A prototype is a compressed representative, not necessarily a probabilistic parameter or energy minimum.</p>
+<h2 id="25-hopfield-networks">25. Hopfield networks</h2>
+<p>A classical Hopfield network is a recurrent, typically fully interconnected network (usually excluding self-connections) that stores patterns as stable <strong>attractor states</strong>. Given a noisy or partial cue, dynamics update the state toward a stored pattern—<strong>associative/content-addressable memory</strong>.</p>
+<h3 id="uses">Uses</h3>
+<ul>
+<li>pattern recognition and completion;</li>
+<li>associative memory and retrieval;</li>
+<li>optimization;</li>
+<li>recalling known anomaly signatures from noisy inputs.</li>
+</ul>
+<h3 id="capacity-distinction">Capacity distinction</h3>
+<ul>
+<li><strong>Representation capacity:</strong> ability to encode useful features.</li>
+<li><strong>Memory capacity:</strong> number of stable patterns that can be stored/recalled without excessive interference.</li>
+</ul>
+<p>Hopfield networks do not store unlimited patterns. Too many memories cause interference and spurious attractors. More neurons can increase theoretical capacity but also increase compute/storage and do not eliminate interference automatically.</p>
+<h2 id="26-memory-augmented-neural-networks">26. Memory-augmented neural networks</h2>
+<p>Memory-augmented neural networks add an external differentiable memory to a neural controller. Examples include NTMs and DNCs. They are designed for reasoning, algorithms, long-term memory, and tasks requiring explicit storage and retrieval.</p>
+<p>The bAbI tasks are natural benchmarks because solutions may require retaining facts across sentences, retrieving only relevant support, and performing multi-step reasoning.</p>
+<h2 id="27-energy-based-vs-memory-based">27. Energy-based vs memory-based</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Energy-based model</th>
+<th>Memory-based model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Core object</td>
+<td>Learned scalar compatibility/energy function</td>
+<td>Stored examples, prototypes, or memory states</td>
+</tr>
+<tr>
+<td>Decision</td>
+<td>Find low-energy configuration</td>
+<td>Retrieve/match relevant stored experience</td>
+</tr>
+<tr>
+<td>Learning emphasis</td>
+<td>Shape energy landscape</td>
+<td>Store/organize experience or memories</td>
+</tr>
+<tr>
+<td>Typical strength</td>
+<td>Generative/unsupervised representation and global compatibility</td>
+<td>Direct pattern matching, historical context, rapid recall</td>
+</tr>
+<tr>
+<td>Typical cost</td>
+<td>Partition function/sampling/training</td>
+<td>Memory consumption and query-time computation</td>
+</tr>
+<tr>
+<td>Examples</td>
+<td>RBM, deep Boltzmann machine</td>
+<td>kNN, case-based reasoning, memory networks</td>
+</tr>
+<tr>
+<td>Overlap</td>
+<td>Hopfield networks can be viewed both as energy-based dynamical systems and associative-memory models</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>Energy-based models are especially suited to probabilistic/generative modelling, feature learning, and detecting incompatibility. Memory-based models excel at direct matching and reuse of stored experience, though they may incur high memory and computation overhead.</p>
+<hr>
+<h1 id="part-iv-the-babi-dataset">Part IV — The bAbI Dataset</h1>
+<h2 id="28-definition-and-purpose">28. Definition and purpose</h2>
+<p>The <strong>bAbI dataset</strong> is a synthetic benchmark introduced by Facebook AI Research (FAIR) to evaluate reasoning and comprehension, especially natural-language understanding and question answering. It is analogous in benchmark spirit to MNIST, but uses short textual stories/reasoning tasks rather than handwritten digits.</p>
+<p>“Connectionist intelligence” refers to neural networks simulating cognitive processes such as understanding, memory, and reasoning. bAbI supplies controlled tasks to test these capabilities.</p>
+<h3 id="core-objectives">Core objectives</h3>
+<ul>
+<li>evaluate reasoning ability;</li>
+<li>test fundamental question answering;</li>
+<li>benchmark task-specific learning and compare architectures;</li>
+<li>test memory retention and contextual understanding;</li>
+<li>assess language generalization in a controlled setting;</li>
+<li>establish baselines for RNNs, LSTMs, GRUs, attention/Transformers, and memory-augmented networks;</li>
+<li>support model development and reasoning-error analysis.</li>
+</ul>
+<h2 id="29-composition-and-reasoning-skills">29. Composition and reasoning skills</h2>
+<p>bAbI contains <strong>20 synthetic question-answering tasks</strong>, each targeting a distinct ability. Skills named in the lecture include:</p>
+<ul>
+<li>single supporting fact;</li>
+<li>two/multiple supporting facts;</li>
+<li>fact recall;</li>
+<li>sequential/event/object tracking;</li>
+<li>temporal reasoning;</li>
+<li>coreference resolution;</li>
+<li>pathfinding;</li>
+<li>deduction and induction;</li>
+<li>basic logic and multi-step reasoning;</li>
+<li>memory-based recall of previous events.</li>
+</ul>
+<p>Because the data is synthetic and controlled, it removes much real-world linguistic noise. Answers and reasoning paths can be deterministic, aiding interpretability and systematic diagnosis.</p>
+<h2 id="30-structure-of-a-babi-item">30. Structure of a bAbI item</h2>
+<p>Each task instance contains:</p>
+<ol>
+<li><strong>Input/story/context:</strong> a sequence of factual natural-language sentences.</li>
+<li><strong>Question:</strong> a query requiring direct or indirect reasoning over the story.</li>
+<li><strong>Answer:</strong> a word, number, or phrase derived from context.</li>
+<li><strong>Supporting fact(s):</strong> the story sentences that justify the answer.</li>
+</ol>
+<h3 id="lecture-examples">Lecture examples</h3>
+<p><strong>Single support</strong></p>
+<pre><code class="language-text">Mary went to the kitchen.
+John went to the hallway.
+Question: Where is Mary?
+Answer: kitchen
+Support: “Mary went to the kitchen.”
+</code></pre>
+<p><strong>Two-step/object movement</strong></p>
+<pre><code class="language-text">The football is in the kitchen.
+John moved the football to the bedroom.
+Question: Where is the football?
+Answer: bedroom
+</code></pre>
+<p><strong>Object pickup example</strong></p>
+<pre><code class="language-text">Mary went to the kitchen.
+She picked up the apple.
+John went to the hallway.
+Question: Where is the apple?
+Answer: kitchen
+</code></pre>
+<p><strong>Lecture’s basic-induction illustration</strong></p>
+<pre><code class="language-text">The cat is afraid of the dog.
+The dog is afraid of the lion.
+Question: What is the cat afraid of?
+Answer given in the lecture: lion
+</code></pre>
+<blockquote>
+<p><strong>Caveat:</strong> The final example is presented as transitive/inductive reasoning in the lecture. In unrestricted real-world semantics, “afraid of” is not necessarily transitive; treat it as a controlled synthetic rule for the stated task.</p>
+</blockquote>
+<h2 id="31-connections-to-neural-architectures">31. Connections to neural architectures</h2>
+<ul>
+<li><strong>Vanilla RNN:</strong> naturally processes sentence sequences and carries prior information in hidden state, but struggles with distant facts and long-term dependencies.</li>
+<li><strong>LSTM:</strong> gates mitigate vanishing gradients and preserve longer context.</li>
+<li><strong>GRU:</strong> similar purpose with simpler computation.</li>
+<li><strong>Attention:</strong> focuses on relevant parts/supporting facts, useful for coreference and multi-step reasoning.</li>
+<li><strong>Sequence-to-sequence model:</strong> encodes a story and decodes an answer.</li>
+<li><strong>Transformer (BERT/GPT/T5 examples named):</strong> self-attention handles long dependencies and multitask learning effectively.</li>
+<li><strong>NTM/DNC:</strong> external memory supports explicit storage, retrieval, and complex reasoning.</li>
+</ul>
+<h2 id="32-performance-metrics">32. Performance metrics</h2>
+<ul>
+<li><strong>Accuracy:</strong> percentage of correctly answered questions; 100% means the model succeeded on the evaluated task set.</li>
+<li><strong>Error rate:</strong> proportion of incorrect answers; task-wise error patterns identify bottlenecks such as multi-step deduction or coreference.</li>
+</ul>
+<p>Evaluation should be per task as well as aggregate, because a high overall score may hide failure on a specific reasoning capability.</p>
+<h2 id="33-applications-and-research-value">33. Applications and research value</h2>
+<ul>
+<li>benchmarking reasoning models and comparing architectures;</li>
+<li>developing and diagnosing NLU/QA systems;</li>
+<li>conversational AI;</li>
+<li>memory-augmented AI;</li>
+<li>education applications;</li>
+<li>multi-step reasoning and planning;</li>
+<li>general-purpose AI research;</li>
+<li>interpretable error analysis with known supporting facts.</li>
+</ul>
+<h2 id="34-challenges">34. Challenges</h2>
+<ul>
+<li>Synthetic tasks lack real-world language complexity and ambiguity.</li>
+<li>Models may overfit template/data-generation patterns rather than learn genuine reasoning.</li>
+<li>Strong bAbI performance may not generalize to natural text.</li>
+<li>Simple English under-tests broad multilingual, pragmatic, and world-knowledge abilities.</li>
+<li>Limited scalability/transfer to real-world applications.</li>
+</ul>
+<h2 id="35-future-prospects">35. Future prospects</h2>
+<ul>
+<li>combine controlled bAbI tasks with real-world datasets such as SQuAD and GLUE;</li>
+<li>develop general-purpose/multitask models that solve diverse tasks without separate retraining;</li>
+<li>use Transformers such as GPT/BERT-style models;</li>
+<li>add multilingual and multimodal tasks (text, image, speech);</li>
+<li>improve explainability and transparency of reasoning and decisions.</li>
+</ul>
+<blockquote>
+<p><strong>Exam trap:</strong> bAbI is valuable precisely because it is controlled and interpretable, but that same synthetic nature limits ecological validity. Benchmark success is evidence of performance on specified skills—not proof of general intelligence.</p>
+</blockquote>
+<hr>
+<h1 id="part-v-case-study-iot-anomaly-detection">Part V — Case Study: IoT Anomaly Detection</h1>
+<h2 id="36-scenario-and-stakeholder-requirements">36. Scenario and stakeholder requirements</h2>
+<p>An IoT system produces large, high-dimensional sensor streams and needs unsupervised anomaly detection because labelled anomalies are scarce and new fault types may emerge.</p>
+<p>The source’s case-study stakeholders emphasize:</p>
+<ul>
+<li><strong>Morgan:</strong> low-latency, scalable production detection;</li>
+<li><strong>Alex:</strong> concern about RBM training complexity and Gibbs-sampling convergence;</li>
+<li><strong>Priya:</strong> a hybrid RBM + Hopfield approach combining representation learning with rapid associative recall.</li>
+</ul>
+<p>Three candidate designs:</p>
+<ol>
+<li>RBM + clustering;</li>
+<li>Hopfield network;</li>
+<li>hybrid RBM + Hopfield network.</li>
+</ol>
+<h2 id="37-why-unsupervised-learning-fits">37. Why unsupervised learning fits</h2>
+<ul>
+<li>most sensor observations are normal;</li>
+<li>anomaly labels are rare, incomplete, or expensive;</li>
+<li>new anomalies may not match predefined classes;</li>
+<li>unsupervised representation learning can model normal structure and reveal deviations.</li>
+</ul>
+<p>However, “unsupervised” does not mean “no evaluation.” Thresholds, false positives/negatives, detection delay, drift, robustness, and downstream operational impact still require validation.</p>
+<h2 id="38-rbm-role-discover-and-compress">38. RBM role: discover and compress</h2>
+<p>An RBM can learn correlations among sensor dimensions and encode raw vector $v$ into a compact hidden representation $h$. This may:</p>
+<ul>
+<li>discover latent operating factors;</li>
+<li>reduce dimensionality/noise;</li>
+<li>make downstream clustering/retrieval cheaper;</li>
+<li>assign high energy/reconstruction error to unfamiliar configurations.</li>
+</ul>
+<p>But low energy does not automatically mean “normal” and high energy does not automatically mean “anomaly.” These meanings arise only after training/calibration on appropriate data. Legitimate regime changes or distribution drift can also yield high energy.</p>
+<h2 id="39-hopfield-role-remember-and-recall">39. Hopfield role: remember and recall</h2>
+<p>A Hopfield network can store known anomaly signatures as attractors. A noisy/partial new sensor pattern can converge to a stored signature, enabling rapid identification of previously seen anomaly types.</p>
+<p>This is especially useful for <strong>known anomalies</strong>, but less effective for genuinely novel faults with no matching memory. Capacity, interference, and spurious attractors must be measured.</p>
+<h2 id="40-three-options">40. Three options</h2>
+<h3 id="option-1-rbm-clustering">Option 1 — RBM + clustering</h3>
+<p>Pipeline: raw sensor input $\rightarrow$ RBM embedding $\rightarrow$ cluster/distance or energy-based anomaly score.</p>
+<p><strong>Strengths:</strong> unsupervised feature discovery; compact representation; can surface novel anomalies.</p>
+<p><strong>Weaknesses:</strong> RBM training/sampling complexity; clustering and thresholds require calibration; no direct content-addressable recall of known signatures.</p>
+<h3 id="option-2-hopfield-network">Option 2 — Hopfield network</h3>
+<p>Pipeline: sensor pattern/engineered features $\rightarrow$ associative recall $\rightarrow$ known anomaly match.</p>
+<p><strong>Strengths:</strong> rapid recall; robustness to partial/noisy cues; interpretable match to stored signatures.</p>
+<p><strong>Weaknesses:</strong> limited capacity; requires meaningful stored patterns; weak at discovering novel latent structure; raw high-dimensional inputs can make memory large/noisy.</p>
+<h3 id="option-3-hybrid-rbm-hopfield">Option 3 — Hybrid RBM + Hopfield</h3>
+<p>Pipeline:</p>
+<p>$$
+\text{raw sensors}\rightarrow \text{RBM embedding}\rightarrow \text{Hopfield recall}\rightarrow \text{decision}.
+$$</p>
+<ul>
+<li>RBM: <strong>discover/compress</strong> latent features.</li>
+<li>Hopfield: <strong>store/recall</strong> known anomaly signatures in latent space.</li>
+</ul>
+<p><strong>Advantages:</strong> compact memories, rapid known-anomaly recall, robustness to noise, and a path for detecting both known and novel anomalies.</p>
+<p><strong>Disadvantages:</strong> two-model complexity, independent and end-to-end tuning, accumulated latency, RBM training issues remain, and errors in the embedding propagate into recall.</p>
+<blockquote>
+<p><strong>Design principle:</strong> Combining two models does not automatically outperform either component. A hybrid is justified only if representation quality and associative recall jointly improve the required operational metrics.</p>
+</blockquote>
+<h2 id="41-known-vs-novel-anomalies">41. Known vs novel anomalies</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Anomaly type</th>
+<th>Best mechanism</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Known/repeated signature</td>
+<td>Hopfield recall</td>
+<td>Match noisy cue to stored attractor</td>
+</tr>
+<tr>
+<td>Novel/unseen pattern</td>
+<td>RBM energy/reconstruction/latent-distance signal</td>
+<td>Detect incompatibility with learned normal structure</td>
+</tr>
+</tbody>
+</table></div>
+<p>A practical two-stage rule can be:</p>
+<ol>
+<li>encode input with the RBM;</li>
+<li>attempt Hopfield recall and measure convergence/match quality;</li>
+<li>if confident, label as a known signature;</li>
+<li>otherwise use calibrated energy/reconstruction/latent-distance thresholds to flag novelty;</li>
+<li>route uncertain events for review and later memory update.</li>
+</ol>
+<h2 id="42-stepwise-training-and-validation">42. Stepwise training and validation</h2>
+<ol>
+<li>Train the RBM on representative mostly-normal sensor data.</li>
+<li>Validate latent representation quality, stability, reconstruction/energy separation, and robustness.</li>
+<li>Encode confirmed anomaly signatures using the fixed RBM.</li>
+<li>Store the encoded signatures in Hopfield memory.</li>
+<li>Benchmark clean, noisy, partial, and overlapping recall; measure capacity/interference.</li>
+<li>Validate the complete pipeline on end-to-end detection accuracy, latency, false alarms, missed anomalies, drift, and resource use.</li>
+</ol>
+<p>Testing components separately is insufficient: a good RBM can still produce embeddings unsuitable for Hopfield separation, and a good Hopfield network can fail when fed unstable upstream embeddings.</p>
+<h2 id="43-offline-vs-online-cost">43. Offline vs online cost</h2>
+<h3 id="offline">Offline</h3>
+<ul>
+<li>prepare and normalize data;</li>
+<li>train/tune RBM, including sampling/convergence checks;</li>
+<li>calibrate anomaly thresholds;</li>
+<li>encode and store anomaly memories;</li>
+<li>validate capacity and recall.</li>
+</ul>
+<h3 id="online">Online</h3>
+<ul>
+<li>normalize incoming sensor vector;</li>
+<li>compute RBM embedding/energy;</li>
+<li>run Hopfield recall;</li>
+<li>compare to thresholds/signatures;</li>
+<li>emit classification/alert.</li>
+</ul>
+<p>Training and inference costs are different. Production should optimize the online critical path while allowing heavier offline learning if retraining frequency is manageable.</p>
+<h3 id="latency-optimizations">Latency optimizations</h3>
+<ul>
+<li>compact latent dimension;</li>
+<li>batch/vectorize encoding;</li>
+<li>cache/precompute stored signatures;</li>
+<li>limit Hopfield iterations with a confidence/stability criterion;</li>
+<li>quantize or prune where accuracy permits;</li>
+<li>monitor average and tail latency, not just throughput.</li>
+</ul>
+<h2 id="44-strategic-recommendation">44. Strategic recommendation</h2>
+<p>A staged hybrid pilot is reasonable when the system needs both novel-anomaly sensitivity and fast known-pattern recall:</p>
+<ol>
+<li>establish RBM-only and Hopfield-only baselines;</li>
+<li>prove that the RBM representation improves separability/compression;</li>
+<li>prove that Hopfield recall meets capacity and latency requirements;</li>
+<li>integrate only if the hybrid improves end-to-end operational metrics enough to justify complexity;</li>
+<li>retain a simpler fallback if the hybrid does not outperform.</li>
+</ol>
+<hr>
+<h1 id="part-vi-likely-exam-questions-and-answer-frames">Part VI — Likely Exam Questions and Answer Frames</h1>
+<h2 id="45-short-answer-questions">45. Short-answer questions</h2>
+<h3 id="q1-define-a-neural-language-model">Q1. Define a neural language model.</h3>
+<p>An NLM uses neural networks to assign probabilities to word sequences, typically predicting each next word from prior context. Dense embeddings allow shared semantic representations and support language understanding/generation.</p>
+<h3 id="q2-why-are-embeddings-superior-to-one-hot-vectors">Q2. Why are embeddings superior to one-hot vectors?</h3>
+<p>They are dense and lower-dimensional and can encode semantic/syntactic similarity; one-hot vectors are sparse identities with no inherent relation between different words.</p>
+<h3 id="q3-differentiate-cbow-and-skip-gram">Q3. Differentiate CBOW and Skip-gram.</h3>
+<p>CBOW predicts a target word from surrounding context; Skip-gram predicts surrounding context words from a target. CBOW is commonly faster/common-word oriented; Skip-gram often represents rare words better.</p>
+<h3 id="q4-explain-a-word-analogy-using-vector-arithmetic">Q4. Explain a word analogy using vector arithmetic.</h3>
+<p>$\mathbf v_{king}-\mathbf v_{man}+\mathbf v_{woman}\approx\mathbf v_{queen}$ because learned relation directions can be approximately preserved in embedding space.</p>
+<h3 id="q5-define-an-ebm">Q5. Define an EBM.</h3>
+<p>An EBM learns a scalar $E_\theta(x,y)$ assigning low energy to compatible/plausible configurations and high energy to incompatible ones; inference minimizes energy.</p>
+<h3 id="q6-is-energy-a-probability">Q6. Is energy a probability?</h3>
+<p>No. Energy is a score. A Boltzmann distribution can convert it into probability using $e^{-E}/Z$, but normalization is required.</p>
+<h3 id="q7-what-makes-a-model-memory-based">Q7. What makes a model memory-based?</h3>
+<p>It stores examples/experiences or memory states and retrieves relevant ones at inference rather than relying only on a fixed learned parameterization.</p>
+<h3 id="q8-explain-hopfield-associative-memory">Q8. Explain Hopfield associative memory.</h3>
+<p>Patterns are stored as stable attractors. Starting with a noisy/partial cue, recurrent dynamics converge toward a stored pattern, enabling content-addressable recall.</p>
+<h3 id="q9-what-is-babi">Q9. What is bAbI?</h3>
+<p>A FAIR-created synthetic suite of 20 QA tasks designed to benchmark reasoning, memory, comprehension, and language understanding in a controlled, interpretable environment.</p>
+<h3 id="q10-state-a-major-babi-limitation">Q10. State a major bAbI limitation.</h3>
+<p>Models may exploit synthetic templates and fail to generalize to complex real-world language; benchmark success is not equivalent to general intelligence.</p>
+<h2 id="46-scenario-case-study-answer-method">46. Scenario/case-study answer method</h2>
+<p>For any architecture-selection scenario:</p>
+<ol>
+<li>identify the data structure (tabular, spatial, sequential, graph, memory/retrieval);</li>
+<li>identify the operational objective (classification, generation, compression, novelty detection, recall);</li>
+<li>match the inductive bias/model;</li>
+<li>state one or two relevant strengths;</li>
+<li>state limitations/costs;</li>
+<li>propose metrics and validation;</li>
+<li>if proposing a hybrid, justify why both components are necessary and how they are integrated.</li>
+</ol>
+<h3 id="example-choose-a-model-for-image-classification">Example: choose a model for image classification</h3>
+<p>Choose a CNN because local filters and parameter sharing capture spatial patterns such as edges and shapes. An FNN lacks spatial awareness, while an RNN’s recurrence is unnecessary unless the input is a temporal image sequence.</p>
+<h3 id="example-choose-a-model-for-long-text-sequences">Example: choose a model for long text sequences</h3>
+<p>Use an LSTM/GRU or Transformer. Vanilla RNNs can model sequence order but struggle with distant dependencies; gated recurrence mitigates vanishing gradients, while self-attention directly connects distant positions.</p>
+<h3 id="example-iot-anomaly-scenario">Example: IoT anomaly scenario</h3>
+<p>Use an RBM for unsupervised latent structure/novelty and Hopfield memory for rapid recall of known signatures. Validate each stage and the end-to-end pipeline; do not assume the hybrid is automatically superior.</p>
+<hr>
+<h1 id="part-vii-exam-traps-and-misconceptions">Part VII — Exam Traps and Misconceptions</h1>
+<ol>
+<li><strong>“Any scalar loss is an energy.”</strong> False; an energy must score configurations in a model whose learning/inference semantics use that score.</li>
+<li><strong>“Low energy always means normal.”</strong> False; meaning depends on training and calibration.</li>
+<li><strong>“High energy always means anomaly.”</strong> False; distribution shift or legitimate novel regimes may also yield high energy.</li>
+<li><strong>“Energy equals probability.”</strong> False; probability requires normalization, typically $e^{-E}/Z$.</li>
+<li><strong>“GAN objective and EBM objective are identical.”</strong> False; the discriminator can be interpreted as energy-like, but GAN training is adversarial.</li>
+<li><strong>“kNN learns a probability model.”</strong> False; it retrieves neighbours and aggregates labels/values.</li>
+<li><strong>“More stored examples automatically improve a parametric model.”</strong> False unless training/updates use them; memory-based models differ because stored items directly affect retrieval.</li>
+<li><strong>“FNN handles sequence context.”</strong> False without explicit engineered context; it has no recurrent memory.</li>
+<li><strong>“CNN is best for temporal sequence data.”</strong> False for a standard CNN; CNNs specialize in spatial/local grid structure.</li>
+<li><strong>“GRU has the same separate cell state as LSTM.”</strong> False.</li>
+<li><strong>“CBOW predicts context from target.”</strong> False; that is Skip-gram.</li>
+<li><strong>“Skip-gram predicts target from context.”</strong> False; that is CBOW.</li>
+<li><strong>“Embedding similarity is sequence probability.”</strong> False.</li>
+<li><strong>“Softmax makes any score a properly trained language model.”</strong> False.</li>
+<li><strong>“Saving Word2Vec improves generalization.”</strong> False; it only persists learned parameters.</li>
+<li><strong>“Lowercasing or high <code>min_count</code> fixes insufficient data.”</strong> False; both are preprocessing choices with trade-offs.</li>
+<li><strong>“Hopfield networks are mainly dimensionality reducers.”</strong> False; their central role is associative recall.</li>
+<li><strong>“RBMs are simply classifiers.”</strong> False; they are generative/energy-based representation models, though features can feed a classifier.</li>
+<li><strong>“Hopfield capacity is unlimited.”</strong> False; interference and spurious attractors emerge.</li>
+<li><strong>“More Hopfield neurons solve everything.”</strong> False; cost and interference remain.</li>
+<li><strong>“A smaller Hopfield network is always better.”</strong> False; it trades efficiency against representational/storage capacity.</li>
+<li><strong>“Hybrid always beats a single model.”</strong> False; complexity and error propagation may outweigh benefits.</li>
+<li><strong>“Unsupervised learning needs no evaluation.”</strong> False.</li>
+<li><strong>“bAbI success proves general reasoning.”</strong> False; it proves performance on controlled tasks and may involve template exploitation.</li>
+</ol>
+<hr>
+<h1 id="part-viii-rapid-revision">Part VIII — Rapid Revision</h1>
+<h2 id="47-one-line-memory-anchors">47. One-line memory anchors</h2>
+<ul>
+<li><strong>Language model:</strong> probability of a token/sequence given context.</li>
+<li><strong>Embedding:</strong> dense vector encoding semantic/syntactic relations.</li>
+<li><strong>CBOW:</strong> context $\rightarrow$ center word.</li>
+<li><strong>Skip-gram:</strong> center word $\rightarrow$ context.</li>
+<li><strong>Word analogy:</strong> relation as vector offset.</li>
+<li><strong>FNN:</strong> one-way flow; structured data; no memory.</li>
+<li><strong>CNN:</strong> convolution; spatial/grid patterns.</li>
+<li><strong>RNN:</strong> recurrent hidden state; sequences; vanishing gradients.</li>
+<li><strong>LSTM:</strong> cell state + input/forget/output gates.</li>
+<li><strong>GRU:</strong> update/reset gates; no separate LSTM-style cell state.</li>
+<li><strong>EBM:</strong> low energy = compatible; high energy = incompatible.</li>
+<li><strong>RBM:</strong> visible–hidden bipartite stochastic EBM; feature discovery/compression.</li>
+<li><strong>Memory-based:</strong> store and retrieve past examples/experiences.</li>
+<li><strong>kNN:</strong> neighbour retrieval; majority/average.</li>
+<li><strong>Hopfield:</strong> attractor-based associative recall.</li>
+<li><strong>MANN/NTM/DNC:</strong> neural controller + external memory.</li>
+<li><strong>bAbI:</strong> 20 synthetic FAIR QA/reasoning tasks with story, question, answer, and supporting facts.</li>
+<li><strong>Hybrid IoT:</strong> RBM discovers/compresses; Hopfield remembers/recalls.</li>
+</ul>
+<h2 id="48-formula-sheet">48. Formula sheet</h2>
+<p>$$
+P(w_{1:T})=\prod_{t=1}^{T}P(w_t\mid w_{<t})
+$$</p>
+<p>$$
+\mathbf v_{king}-\mathbf v_{man}+\mathbf v_{woman}\approx\mathbf v_{queen}
+$$</p>
+<p>$$
+\mathbf h_{CBOW}=\frac{1}{|C|}\sum_{w\in C}\mathbf v_w
+$$</p>
+<p>$$
+\mathbf y=f(W\mathbf x+\mathbf b)
+$$</p>
+<p>$$
+\mathbf h_t=f(W_{xh}\mathbf x_t+W_{hh}\mathbf h_{t-1}+\mathbf b)
+$$</p>
+<p>$$
+y^*=\arg\min_y E_\theta(x,y)
+$$</p>
+<p>$$
+p_\theta(x)=\frac{e^{-E_\theta(x)}}{Z_\theta}
+$$</p>
+<p>$$
+E_{RBM}(v,h)=-a^Tv-b^Th-v^TWh
+$$</p>
+<h2 id="49-final-mental-model">49. Final mental model</h2>
+<p>Ask three questions:</p>
+<ol>
+<li><strong>What must the system represent?</strong> Use embeddings/CNN/RBM-style representation learning.</li>
+<li><strong>What must it remember?</strong> Use recurrent state, gates, attention, external memory, kNN, or Hopfield attractors.</li>
+<li><strong>What decision must it make?</strong> Predict probability (language model), minimize energy (EBM), retrieve similar experience (memory-based model), or answer using supporting facts (bAbI-style reasoning).</li>
+</ol>
+<p>The whole week can be compressed into one chain:</p>
+<p>$$
+\boxed{\text{Represent} \rightarrow \text{Model context/compatibility} \rightarrow \text{Remember/retrieve} \rightarrow \text{Reason/predict}}
+$$</p>
+<h2 id="review-week-augmentation-consolidated-architecture-exam-cues">Review Week augmentation: consolidated architecture exam cues</h2>
+<ul>
+<li>ResNet = residual/skip connections; MobileNet = depthwise-separable convolution; DenseNet = dense connectivity; EfficientNet = compound scaling.</li>
+<li>RNN = recurrent hidden state; GRU = update/reset gates without a separate cell state; LSTM = forget/input/output gates plus cell state; Transformer = attention-centered parallel sequence processing.</li>
+<li>Static embeddings (Word2Vec/GloVe) normally assign one vector per word type; contextual methods (ELMo and Transformer encoders) vary the representation with context.</li>
+<li>For long-report triage, the reviewed design was contextual embeddings + LSTM + self-attention + binary classifier—not a pure Transformer. Its rationale combines recurrent memory with dynamic emphasis on clinically relevant phrases.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-14.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 14: Autoencoders and Representation Learning</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

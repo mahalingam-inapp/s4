@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Deep Learning · Week 14 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Deep Learning</span>
+      <span class="brand-title">Week 14</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html" selected>Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Neural Networks and Deep Learning
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Neural Networks, Backpropagation, Model Tuning, and Evaluation
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Convolutional Neural Networks, Transfer Learning and Computer-Vision…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        RNNs, GRU, LSTM, NLP, Word Embeddings, Transfer Learning and Attention
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        RBMs, Deep Belief Networks, Autoencoders, and Contrastive Divergence
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Reinforcement Learning, Policy Networks, Target Networks and DQN
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Generative Adversarial Networks (GANs)
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Data Augmentation, Hyperparameter Tuning, Transfer Learning and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Feed-Forward Neural Networks, Perceptrons, Loss, Backpropagation and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Python Programming Fundamentals
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Machine Learning, Classification, and Naive Bayes
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Logistic Regression as a Neural Network, MNIST, and K-Means
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        PCA and Bag-of-Words
+      </a>
+      <a class="is-active" href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Autoencoders and Representation Learning
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Exhaustive Exam-Oriented Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Deep Learning · Week 14</p>
+        <h1 class="page-title">Autoencoders and Representation Learning</h1>
+        <p class="page-meta">Week 14 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-week-scope-and-learning-outcomes">1. Week scope and learning outcomes</a></li>
+      <li><a href="#2-autoencoder-fundamentals">2. Autoencoder fundamentals</a></li>
+      <li><a href="#3-architecture-and-data-flow">3. Architecture and data flow</a></li>
+      <li><a href="#4-training-objective-and-reconstruction-loss">4. Training objective and reconstruction loss</a></li>
+      <li><a href="#5-bottleneck-compression-and-reconstruction-trade-off">5. Bottleneck, compression, and reconstruction trade-off</a></li>
+      <li><a href="#6-linear-and-nonlinear-representations-comparison-with-pca">6. Linear and nonlinear representations; comparison with PCA</a></li>
+      <li><a href="#7-applications">7. Applications</a></li>
+      <li><a href="#8-autoencoder-architectures">8. Autoencoder architectures</a></li>
+      <li><a href="#9-stacked-autoencoders">9. Stacked autoencoders</a></li>
+      <li><a href="#10-recreating-the-cat-workflow">10. “Recreating the cat” workflow</a></li>
+      <li><a href="#11-regularization">11. Regularization</a></li>
+      <li><a href="#12-week-14-implementation-pytorch-convolutional-autoencoder">12. Week 14 implementation: PyTorch convolutional autoencoder</a></li>
+      <li><a href="#13-visionrefresh-heritage-photograph-case-study">13. VisionRefresh heritage-photograph case study</a></li>
+      <li><a href="#14-practical-examples-and-use-cases">14. Practical examples and use cases</a></li>
+      <li><a href="#15-exam-traps-and-corrections">15. Exam traps and corrections</a></li>
+      <li><a href="#16-likely-examination-questions-with-model-answers">16. Likely examination questions with model answers</a></li>
+      <li><a href="#17-rapid-revision">17. Rapid revision</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-week-scope-and-learning-outcomes">1. Week scope and learning outcomes</h2>
+<p>Week 14 covers:</p>
+<ul>
+<li>the purpose and architecture of autoencoders;</li>
+<li>encoder, decoder, latent space, bottleneck, and reconstruction loss;</li>
+<li>representation learning through compression and reconstruction;</li>
+<li>vanilla, denoising, sparse, variational, convolutional, deep, and stacked autoencoders;</li>
+<li>dimensionality reduction, feature extraction, anomaly detection, denoising, generation, and pretraining;</li>
+<li>regularization using dropout, (L_2), and sparsity constraints;</li>
+<li>the “recreating the cat” stacked-autoencoder example;</li>
+<li>a PyTorch image-reconstruction implementation; and</li>
+<li>the VisionRefresh heritage-photograph case study and its fidelity–speed trade-off.</li>
+</ul>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> Know not merely what an autoencoder is, but <strong>which architecture to use, when to use it, how it works, and what output/trade-off to expect</strong>.</p>
+</blockquote>
+<hr>
+<h2 id="2-autoencoder-fundamentals">2. Autoencoder fundamentals</h2>
+<h3 id="2-1-definition">2.1 Definition</h3>
+<p>An <strong>autoencoder (AE)</strong> is an artificial neural network trained to reproduce its input. It learns an efficient internal representation, usually from unlabeled data, by compressing an input and then reconstructing it.</p>
+<p>\[
+x \xrightarrow{f_\theta} z \xrightarrow{g_\phi} \hat{x}
+\]</p>
+<p>where:</p>
+<ul>
+<li>(x): original input;</li>
+<li>(f_\theta): encoder;</li>
+<li>(z): latent code/latent representation/bottleneck;</li>
+<li>(g_\phi): decoder; and</li>
+<li>\(\hat{x}\): reconstructed input.</li>
+</ul>
+<p>The desired result is:</p>
+<p>\[
+\hat{x}\approx x
+\]</p>
+<p>The encoder and decoder are normally trained end-to-end to minimize reconstruction error.</p>
+<h3 id="2-2-why-it-is-called-unsupervised-learning">2.2 Why it is called unsupervised learning</h3>
+<ul>
+<li>No external class label is required.</li>
+<li>The input itself supplies the reconstruction target.</li>
+<li>The model learns features from the structure of the data.</li>
+<li>In a standard AE, the training pair is effectively ((x,x)).</li>
+</ul>
+<p>Strictly, this training setup is also often described as <strong>self-supervised</strong>, because the target is derived from the input. The lecture uses the broader term <strong>unsupervised learning</strong>.</p>
+<h3 id="2-3-representation-learning">2.3 Representation learning</h3>
+<p><strong>Representation learning</strong> means learning useful features automatically rather than manually engineering them. An autoencoder is forced to retain information that helps reconstruction.</p>
+<p>Compression can encourage the model to capture:</p>
+<ul>
+<li>shapes;</li>
+<li>edges;</li>
+<li>textures;</li>
+<li>intensity patterns;</li>
+<li>correlations among features;</li>
+<li>simple linear relationships; and</li>
+<li>complex nonlinear relationships.</li>
+</ul>
+<p>The learned code can be used in downstream classification, clustering, regression, link prediction, node classification, or transfer learning.</p>
+<blockquote>
+<p><strong>Important caveat:</strong> An AE does not inevitably discover what a human considers “semantically important.” It preserves what helps minimize its chosen loss under its architecture, bottleneck, data, regularization, and optimization.</p>
+</blockquote>
+<hr>
+<h2 id="3-architecture-and-data-flow">3. Architecture and data flow</h2>
+<h3 id="3-1-complete-pipeline">3.1 Complete pipeline</h3>
+<p><strong>Input → Encoder → Latent space/bottleneck → Decoder → Reconstruction → Loss → Backpropagation</strong></p>
+<p>The lecture’s visual memory aid is a <strong>funnel</strong>:</p>
+<ul>
+<li>broad input side;</li>
+<li>narrowing encoder;</li>
+<li>narrow bottleneck;</li>
+<li>expanding decoder; and</li>
+<li>broad reconstructed-output side.</li>
+</ul>
+<h3 id="3-2-encoder">3.2 Encoder</h3>
+<p>The encoder maps input data to a compact representation:</p>
+<p>\[
+z=f_\theta(x)
+\]</p>
+<p>Its layers generally reduce dimensionality progressively. Input data may be images, text, time series, graphs, or other unlabeled/raw data.</p>
+<p>Common hidden activations mentioned:</p>
+<ul>
+<li>ReLU;</li>
+<li>sigmoid; and</li>
+<li>tanh.</li>
+</ul>
+<p>In a deep AE, successive encoder layers can learn increasingly abstract features.</p>
+<h3 id="3-3-latent-space-or-bottleneck">3.3 Latent space or bottleneck</h3>
+<p>The <strong>latent space</strong> is the internal representation produced by the encoder. When it is the smallest layer, it is also called the <strong>bottleneck</strong> or <strong>code</strong>.</p>
+<p>Functions:</p>
+<ul>
+<li>stores compressed representations;</li>
+<li>constrains the information that passes to the decoder;</li>
+<li>removes/reduces redundant dimensions;</li>
+<li>captures features needed for reconstruction and downstream tasks.</li>
+</ul>
+<p>The size and structure of (z) strongly affect reconstruction quality.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> The latent representation is not necessarily a downsampled or recognizable image. It can be an abstract vector such as ([0.31,-1.02,0.18,\ldots]). A face or cat need not be visually discernible in it.</p>
+</blockquote>
+<h3 id="3-4-decoder">3.4 Decoder</h3>
+<p>The decoder maps the latent code back to the input space:</p>
+<p>\[
+\hat{x}=g_\phi(z)
+\]</p>
+<p>It often mirrors the encoder, using hidden layers that progressively increase dimensionality. For images, it may use upsampling or transposed convolutions.</p>
+<p>The decoder receives the code, not a separate copy of the original input. It cannot exactly recreate information genuinely discarded by the encoder unless that information is inferable from learned regularities.</p>
+<p>Common output activations mentioned:</p>
+<ul>
+<li>sigmoid for binary or normalized ([0,1]) outputs;</li>
+<li>ReLU for nonnegative outputs; and</li>
+<li>softmax when an output represents categorical/multiclass probabilities.</li>
+</ul>
+<p>The activation must match the output range and task.</p>
+<hr>
+<h2 id="4-training-objective-and-reconstruction-loss">4. Training objective and reconstruction loss</h2>
+<h3 id="4-1-general-objective">4.1 General objective</h3>
+<p>For samples (x^{(i)}), AE training minimizes:</p>
+<p>\[
+\min_{\theta,\phi}\frac{1}{m}\sum_{i=1}^{m}
+\mathcal{L}\left(x^{(i)},g_\phi(f_\theta(x^{(i)}))\right)
+\]</p>
+<p>Training sequence:</p>
+<ol>
+<li>Pass (x) through the encoder.</li>
+<li>Obtain (z).</li>
+<li>Decode (z) to produce \(\hat{x}\).</li>
+<li>Compare \(\hat{x}\) with (x).</li>
+<li>Backpropagate the reconstruction loss.</li>
+<li>Update encoder and decoder parameters.</li>
+<li>Repeat for multiple epochs.</li>
+</ol>
+<p>The deviation between input and reconstruction drives learning and forces the latent representation to capture useful characteristics.</p>
+<h3 id="4-2-mean-squared-error-mse">4.2 Mean squared error (MSE)</h3>
+<p>\[
+\operatorname{MSE}(x,\hat{x})=
+\frac{1}{n}\sum_{j=1}^{n}(x_j-\hat{x}_j)^2
+\]</p>
+<ul>
+<li>Common for continuous-valued data and normalized grayscale pixels.</li>
+<li>Penalizes large numerical deviations more strongly because errors are squared.</li>
+<li>Examples of continuous data discussed: temperature over 30 days, age, house/product price, and price prediction.</li>
+</ul>
+<h3 id="4-3-binary-cross-entropy-bce">4.3 Binary cross-entropy (BCE)</h3>
+<p>For binary or Bernoulli-like normalized values:</p>
+<p>\[
+\operatorname{BCE}(x,\hat{x})=-\frac{1}{n}\sum_{j=1}^{n}
+\left[x_j\log \hat{x}_j+(1-x_j)\log(1-\hat{x}_j)\right]
+\]</p>
+<ul>
+<li>Common for binary data and sometimes normalized pixel data.</li>
+<li>Measures divergence between target values and predictions under a Bernoulli interpretation.</li>
+<li>Requires compatible output values, commonly obtained with sigmoid.</li>
+</ul>
+<blockquote>
+<p><strong>Exam trap:</strong> BCE does not automatically sharpen an image or improve contrast. Loss choice must fit the output distribution and must be tested.</p>
+</blockquote>
+<h3 id="4-4-what-a-low-reconstruction-loss-means-and-does-not-mean">4.4 What a low reconstruction loss means—and does not mean</h3>
+<p>A low loss means the output is close to the target according to that metric. It does <strong>not</strong> guarantee:</p>
+<ul>
+<li>human-perceived visual quality;</li>
+<li>semantic importance;</li>
+<li>interpretability of latent dimensions;</li>
+<li>good downstream features; or</li>
+<li>freedom from identity copying.</li>
+</ul>
+<p>Two visually different images may have similar MSE. For high-fidelity applications, use visual/perceptual assessment in addition to pixel loss.</p>
+<hr>
+<h2 id="5-bottleneck-compression-and-reconstruction-trade-off">5. Bottleneck, compression, and reconstruction trade-off</h2>
+<p>Suppose an input with 784 features is encoded into 32 latent values:</p>
+<p>\[
+784\rightarrow32\rightarrow784
+\]</p>
+<p>The narrow layer forces compression. In general:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Bottleneck</th>
+<th>Likely effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Larger</td>
+<td>More information capacity, easier reconstruction, weaker compression</td>
+</tr>
+<tr>
+<td>Smaller</td>
+<td>Stronger compression, greater information loss, potentially higher MSE</td>
+</tr>
+<tr>
+<td>Too large</td>
+<td>Risk of learning an unhelpful near-identity mapping</td>
+</tr>
+<tr>
+<td>Too small</td>
+<td>Loss of detail and poor reconstruction</td>
+</tr>
+</tbody>
+</table></div>
+<p>If a trained bottleneck is reduced to one-quarter of its size, reconstruction error will usually rise. Further training may let the model adapt, but it commonly settles at a higher error and prioritizes coarse structure over fine detail.</p>
+<blockquote>
+<p><strong>Key logic:</strong> Less latent capacity → less information retained → harder exact reconstruction → higher expected reconstruction error.</p>
+</blockquote>
+<h3 id="5-1-identity-mapping-problem">5.1 Identity-mapping problem</h3>
+<p>An over-capable AE may copy input to output without learning useful structure. Useful constraints include:</p>
+<ul>
+<li>an undercomplete bottleneck;</li>
+<li>sparsity;</li>
+<li>denoising corruption;</li>
+<li>dropout;</li>
+<li>weight regularization; and</li>
+<li>architectural restrictions.</li>
+</ul>
+<hr>
+<h2 id="6-linear-and-nonlinear-representations-comparison-with-pca">6. Linear and nonlinear representations; comparison with PCA</h2>
+<h3 id="6-1-linear-representation">6.1 Linear representation</h3>
+<ul>
+<li>Captures simple, direct relationships.</li>
+<li>Suitable for linearly separable/simple patterns.</li>
+<li>A purely linear undercomplete AE trained with squared error is closely related to PCA.</li>
+</ul>
+<h3 id="6-2-nonlinear-representation">6.2 Nonlinear representation</h3>
+<ul>
+<li>Uses nonlinear activations to capture intricate real-world patterns.</li>
+<li>Can represent structures that linear PCA cannot.</li>
+<li>Real datasets may yield a mixture of simple and complex learned patterns.</li>
+</ul>
+<h3 id="6-3-autoencoder-vs-pca">6.3 Autoencoder vs PCA</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>PCA</th>
+<th>Autoencoder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linear dimensionality reduction</td>
+<td>Can be linear or nonlinear</td>
+</tr>
+<tr>
+<td>Finds orthogonal directions of maximum variance</td>
+<td>Learns encoder/decoder through reconstruction loss</td>
+</tr>
+<tr>
+<td>Closed-form/classical ML method</td>
+<td>Neural-network model trained iteratively</td>
+</tr>
+<tr>
+<td>Principal components are interpretable mathematically</td>
+<td>Latent features need not be orthogonal or directly interpretable</td>
+</tr>
+<tr>
+<td>Limited to linear structure</td>
+<td>Can learn hierarchical and nonlinear structure</td>
+</tr>
+</tbody>
+</table></div>
+<p>The lecture calls PCA the conceptual “backbone” because both reduce dimensionality; the crucial difference is that AEs learn the transformation through neural-network layers.</p>
+<hr>
+<h2 id="7-applications">7. Applications</h2>
+<h3 id="7-1-dimensionality-reduction">7.1 Dimensionality reduction</h3>
+<ul>
+<li>Compress high-dimensional inputs into a lower-dimensional code.</li>
+<li>Simplifies downstream models.</li>
+<li>Can improve computational efficiency.</li>
+<li>Provides a nonlinear alternative to PCA.</li>
+</ul>
+<h3 id="7-2-feature-extraction-and-transfer-learning">7.2 Feature extraction and transfer learning</h3>
+<ul>
+<li>Use (z) as learned features for classification, clustering, or regression.</li>
+<li>Stacked AEs can initialize deeper networks.</li>
+<li>Graph representations can support node classification and link prediction.</li>
+</ul>
+<h3 id="7-3-anomaly-detection">7.3 Anomaly detection</h3>
+<ol>
+<li>Train on normal data.</li>
+<li>The model learns normal patterns.</li>
+<li>Normal observations usually reconstruct well.</li>
+<li>Poorly represented/unusual observations produce higher reconstruction error.</li>
+<li>Flag observations above a chosen threshold.</li>
+</ol>
+<p>\[
+s(x)=\mathcal{L}(x,\hat{x})
+\]</p>
+<blockquote>
+<p><strong>Caveat:</strong> High error is a signal, not proof, of an anomaly. Threshold choice and training-data quality matter.</p>
+</blockquote>
+<p><strong>Practical use case:</strong> Train on normal banking transactions; unusually structured transactions with large reconstruction loss are investigated.</p>
+<h3 id="7-4-denoising-and-restoration">7.4 Denoising and restoration</h3>
+<ul>
+<li>Remove corruption from signals, images, or text.</li>
+<li>Learn robust features.</li>
+<li>Can serve as pretraining for deeper networks.</li>
+</ul>
+<p><strong>Reconstruction</strong> reproduces the provided input. <strong>Restoration</strong> aims to recover a cleaner version and therefore requires clean targets or another explicit restoration objective.</p>
+<h3 id="7-5-compression-synthesis-and-generation">7.5 Compression, synthesis, and generation</h3>
+<ul>
+<li>Basic AEs provide compact representations.</li>
+<li>VAEs support probabilistic generation, interpolation, and synthesis.</li>
+<li>Convolutional AEs are useful for high-dimensional spatial data.</li>
+</ul>
+<hr>
+<h2 id="8-autoencoder-architectures">8. Autoencoder architectures</h2>
+<p>All variants retain the core logic—encode, represent, decode—but modify the architecture, training input, constraints, or loss for a particular problem.</p>
+<h3 id="8-1-master-comparison">8.1 Master comparison</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Defining mechanism</th>
+<th>Typical objective/use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vanilla AE</td>
+<td>Usually symmetric fully connected encoder–decoder</td>
+<td>Basic compression, reconstruction, feature extraction</td>
+</tr>
+<tr>
+<td>Denoising AE</td>
+<td>Corrupted input, clean target</td>
+<td>Noise robustness, denoising, robust features</td>
+</tr>
+<tr>
+<td>Sparse AE</td>
+<td>Sparsity penalty on activations</td>
+<td>Selective/interpretable features, classification, clustering</td>
+</tr>
+<tr>
+<td>VAE</td>
+<td>Probabilistic latent distribution + KL term</td>
+<td>Generation, synthesis, interpolation, clustering</td>
+</tr>
+<tr>
+<td>Convolutional AE</td>
+<td>Convolutional encoder/decoder</td>
+<td>Images, spatial hierarchy, denoising, compression</td>
+</tr>
+<tr>
+<td>Deep AE</td>
+<td>Multiple hidden layers</td>
+<td>Hierarchical nonlinear features, complex high-dimensional data</td>
+</tr>
+<tr>
+<td>Stacked AE</td>
+<td>Layer-wise autoencoder stacking + global fine-tuning</td>
+<td>Hierarchical features and deep-network pretraining</td>
+</tr>
+</tbody>
+</table></div>
+<p>These properties can overlap: for example, an AE may be convolutional <strong>and</strong> denoising.</p>
+<h3 id="8-2-vanilla-autoencoder">8.2 Vanilla autoencoder</h3>
+<p>Structure:</p>
+<p><strong>Input → fully connected encoder → bottleneck → fully connected decoder → reconstruction</strong></p>
+<ul>
+<li>Simplest/base architecture.</li>
+<li>Often symmetric.</li>
+<li>Uses MSE or BCE as appropriate.</li>
+<li>Used for general compression and simple unsupervised tasks.</li>
+</ul>
+<h3 id="8-3-denoising-autoencoder-dae">8.3 Denoising autoencoder (DAE)</h3>
+<p>Let (x) be clean input and \(\tilde{x}\) its corrupted version:</p>
+<p>\[
+\tilde{x}\rightarrow z\rightarrow\hat{x}, \qquad \hat{x}\approx x
+\]</p>
+<p>Training procedure:</p>
+<ol>
+<li>Start with clean (x).</li>
+<li>Apply a corruption process (q(\tilde{x}\mid x)).</li>
+<li>Feed \(\tilde{x}\) to the encoder.</li>
+<li>Reconstruct \(\hat{x}\).</li>
+<li>Compare \(\hat{x}\) with clean (x), not \(\tilde{x}\).</li>
+</ol>
+<p>Benefits:</p>
+<ul>
+<li>robustness to noise;</li>
+<li>clean feature extraction;</li>
+<li>improved generalization;</li>
+<li>anomaly detection; and</li>
+<li>deep-network pretraining.</li>
+</ul>
+<p><strong>Practical example:</strong> Add random noise to scanned documents during training but use clean scans as targets; the AE learns the underlying document structure.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> If output is compared with the noisy input, the model is rewarded for reproducing noise and is not being trained as a proper DAE.</p>
+</blockquote>
+<h3 id="8-4-sparse-autoencoder">8.4 Sparse autoencoder</h3>
+<p>A sparse AE encourages only a small subset of latent neurons to be active for each input.</p>
+<p>Generic objective:</p>
+<p>\[
+\mathcal{L}_{\text{sparse}}
+=\mathcal{L}_{\text{recon}}+\lambda\,\Omega_{\text{sparsity}}
+\]</p>
+<p>Sparsity mechanisms mentioned:</p>
+<ul>
+<li>\(L_1\) penalty on activations; and</li>
+<li>KL-divergence penalty between desired and observed average activation.</li>
+</ul>
+<p>If target activation is \(\rho\) and unit \(j\)&rsquo;s observed mean is \(\hat{\rho}_j\):</p>
+<p>\[
+\sum_j D_{KL}(\rho\|\hat{\rho}_j)
+=\sum_j\left[
+\rho\log\frac{\rho}{\hat{\rho}_j}
++(1-\rho)\log\frac{1-\rho}{1-\hat{\rho}_j}
+\right]
+\]</p>
+<p>Uses:</p>
+<ul>
+<li>feature selection/learning;</li>
+<li>interpretable and selective latent representations;</li>
+<li>dimensionality reduction;</li>
+<li>classification/clustering features; and</li>
+<li>anomaly detection.</li>
+</ul>
+<blockquote>
+<p><strong>Exam trap:</strong> Sparse does not mean low-dimensional. A 100-dimensional code with only five active values is high-dimensional but sparse. Dropout is also not the defining sparsity mechanism: dropout randomly disables units, whereas an explicit sparsity penalty shapes activations.</p>
+</blockquote>
+<h3 id="8-5-variational-autoencoder-vae">8.5 Variational autoencoder (VAE)</h3>
+<p>A VAE encodes an input into parameters of a probability distribution, commonly:</p>
+<p>\[
+q_\phi(z\mid x)=\mathcal{N}(\mu(x),\operatorname{diag}(\sigma^2(x)))
+\]</p>
+<p>It samples a latent vector using the reparameterization idea:</p>
+<p>\[
+z=\mu+\sigma\odot\epsilon,qquad \epsilon\sim\mathcal{N}(0,I)
+\]</p>
+<p>VAE loss:</p>
+<p>\[
+\mathcal{L}_{VAE}
+=\mathcal{L}_{\text{recon}}
++D_{KL}\left(q_\phi(z\mid x)\|p(z)\right)
+\]</p>
+<p>The KL term encourages the latent distribution to follow a prior such as a standard Gaussian, promoting a smooth and continuous latent space.</p>
+<p>Uses:</p>
+<ul>
+<li>image/text generation;</li>
+<li>data synthesis;</li>
+<li>sampling;</li>
+<li>latent interpolation; and</li>
+<li>clustering/representation learning.</li>
+</ul>
+<blockquote>
+<p><strong>Exam trap:</strong> A VAE is not an ordinary AE with a smaller bottleneck. Its defining property is the <strong>probabilistic latent distribution and KL regularization</strong>.</p>
+</blockquote>
+<h3 id="8-6-convolutional-autoencoder-cae">8.6 Convolutional autoencoder (CAE)</h3>
+<p>The encoder uses convolutions and often pooling/strided convolution; the decoder uses upsampling and convolution or transposed convolution.</p>
+<p>Why suitable for images:</p>
+<ul>
+<li>local connectivity captures neighboring-pixel relationships;</li>
+<li>shared filters reduce parameters relative to dense layers;</li>
+<li>feature maps preserve spatial hierarchies;</li>
+<li>early filters learn edges/textures and deeper layers learn shapes/objects.</li>
+</ul>
+<p>Uses:</p>
+<ul>
+<li>image compression;</li>
+<li>image denoising;</li>
+<li>reconstruction; and</li>
+<li>spatial feature extraction.</li>
+</ul>
+<blockquote>
+<p>The transcript says convolution “preserves special hierarchies”; the intended term is <strong>spatial hierarchies</strong>.</p>
+</blockquote>
+<h3 id="8-7-deep-autoencoder">8.7 Deep autoencoder</h3>
+<ul>
+<li>Multiple layers in both encoder and decoder.</li>
+<li>Each successive layer can capture more abstract nonlinear structure.</li>
+<li>Useful for high-dimensional complex data, dimensionality reduction, feature extraction, and pretraining.</li>
+</ul>
+<p>Lecture example: DNA data → remove zero-variance features → feature reconstruction/selection with a deep AE → prediction/survival-analysis model → survival probability/biomarker prediction.</p>
+<hr>
+<h2 id="9-stacked-autoencoders">9. Stacked autoencoders</h2>
+<h3 id="9-1-definition-and-hierarchy">9.1 Definition and hierarchy</h3>
+<p>A <strong>stacked autoencoder (SAE)</strong> combines multiple encoder/decoder layers. Each encoder receives the previous encoder’s representation and learns a higher-level representation.</p>
+<p>Image hierarchy example:</p>
+<ul>
+<li>Layer 1: edges/basic patterns;</li>
+<li>Layer 2: textures;</li>
+<li>Layer 3: shapes or objects.</li>
+</ul>
+<p>The architecture can learn complex features without labels and improve reconstruction, feature extraction, classification, clustering, anomaly detection, compression, and deep-network initialization.</p>
+<h3 id="9-2-greedy-layer-wise-pretraining">9.2 Greedy layer-wise pretraining</h3>
+<p><strong>Stage 1:</strong></p>
+<p>\[
+x\rightarrow h_1\rightarrow\hat{x}
+\]</p>
+<p>Train AE 1 to reconstruct (x).</p>
+<p><strong>Stage 2:</strong></p>
+<p>\[
+h_1\rightarrow h_2\rightarrow\hat{h}_1
+\]</p>
+<p>Use learned (h_1) as the input to AE 2.</p>
+<p>Continue similarly for deeper layers. Each stage learns a higher-level representation and supplies pretrained weights.</p>
+<h3 id="9-3-end-to-end-fine-tuning">9.3 End-to-end fine-tuning</h3>
+<p>After pretraining:</p>
+<ol>
+<li>Stack all pretrained encoders and corresponding decoders.</li>
+<li>Keep relevant layers trainable.</li>
+<li>Run the complete input-to-reconstruction network.</li>
+<li>Calculate final reconstruction loss.</li>
+<li>Backpropagate through the full stack.</li>
+<li>Jointly update all weights.</li>
+</ol>
+<p>Fine-tuning makes the layers cooperate on the final objective.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> Pretraining does not mean permanently freezing the encoder. The standard sequence taught is <strong>pretrain → stack → jointly fine-tune</strong>.</p>
+</blockquote>
+<h3 id="9-4-why-layer-wise-pretraining-was-useful">9.4 Why layer-wise pretraining was useful</h3>
+<ul>
+<li>Historically helped optimize deep networks.</li>
+<li>Supplied better initialization than random weights.</li>
+<li>Improved training stability and convergence.</li>
+<li>Reduced some difficulties of deep optimization.</li>
+</ul>
+<p>Modern techniques reduce the need for greedy pretraining in many applications, but it remains conceptually important.</p>
+<h3 id="9-5-challenges-and-remedies">9.5 Challenges and remedies</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Why it occurs</th>
+<th>Remedies mentioned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Training difficulty</td>
+<td>Deep multilayer optimization</td>
+<td>Greedy pretraining, end-to-end fine-tuning</td>
+</tr>
+<tr>
+<td>Vanishing gradients</td>
+<td>Gradients weaken through deep layers</td>
+<td>Proper initialization, architecture tuning</td>
+</tr>
+<tr>
+<td>Overfitting</td>
+<td>High-capacity model memorizes data</td>
+<td>Dropout, sparsity, other regularization</td>
+</tr>
+<tr>
+<td>Blurry/lost detail</td>
+<td>Restrictive bottleneck, unsuitable architecture/loss</td>
+<td>More capacity, convolution, better objectives</td>
+</tr>
+</tbody>
+</table></div>
+<p>Future improvements mentioned:</p>
+<ul>
+<li>hybrid models combining AEs with VAEs or other architectures;</li>
+<li>attention mechanisms;</li>
+<li>adversarial training;</li>
+<li>stronger solutions to overfitting and vanishing gradients; and</li>
+<li>use on more complex tasks.</li>
+</ul>
+<hr>
+<h2 id="10-recreating-the-cat-workflow">10. “Recreating the cat” workflow</h2>
+<p>The cat example demonstrates unsupervised feature learning and image reconstruction with stacked AEs.</p>
+<h3 id="10-1-data-and-preprocessing">10.1 Data and preprocessing</h3>
+<ul>
+<li>Use an existing dataset such as MNIST, cat-vs-dog/Kaggle, or an individual cat image.</li>
+<li>Resize consistently, for example (64\times64) or (128\times128).</li>
+<li>Normalize pixel values to ([0,1]) for stable training.</li>
+</ul>
+<h3 id="10-2-model-construction">10.2 Model construction</h3>
+<ul>
+<li>Encoder progressively compresses the image.</li>
+<li>Layers may be fully connected or convolutional.</li>
+<li>Latent space should retain shapes, textures, edges, and other useful features.</li>
+<li>Decoder progressively expands the code using dense layers, upsampling, or transposed convolutions.</li>
+</ul>
+<h3 id="10-3-training">10.3 Training</h3>
+<ol>
+<li>Train the first AE layer on raw pixels.</li>
+<li>Pass its learned representation to the second AE.</li>
+<li>Repeat for additional layers.</li>
+<li>Stack all layers.</li>
+<li>Fine-tune the entire model using backpropagation.</li>
+<li>Use MSE or BCE as appropriate to compare original and reconstructed images.</li>
+</ol>
+<h3 id="10-4-interpretation">10.4 Interpretation</h3>
+<ul>
+<li>Input and reconstructed output should be similar.</li>
+<li>The bottleneck need not display a recognizable cat.</li>
+<li>Early layers capture simple features; deeper layers capture abstract patterns.</li>
+<li>Stacking can improve hierarchical representation and reconstruction.</li>
+</ul>
+<blockquote>
+<p><strong>Caveat:</strong> Some lecture statements call the output “more enhanced” or “perfect.” A standard AE is optimized to reproduce its target, not automatically enhance it. Enhancement/denoising requires suitable corrupted inputs, clean targets, architecture, and loss.</p>
+</blockquote>
+<hr>
+<h2 id="11-regularization">11. Regularization</h2>
+<h3 id="11-1-dropout">11.1 Dropout</h3>
+<ul>
+<li>Randomly disables neurons during training.</li>
+<li>Reduces co-adaptation.</li>
+<li>Encourages robust feature learning and generalization.</li>
+</ul>
+<h3 id="11-2-l-2-regularization">11.2 (L_2) regularization</h3>
+<p>Adds a weight penalty:</p>
+<p>\[
+\mathcal{L}_{total}=\mathcal{L}_{recon}+\lambda\sum_k w_k^2
+\]</p>
+<ul>
+<li>Discourages very large weights.</li>
+<li>Promotes smoother/simpler models.</li>
+<li>Helps prevent overfitting.</li>
+</ul>
+<h3 id="11-3-sparsity-constraint">11.3 Sparsity constraint</h3>
+<ul>
+<li>Encourages only a few latent units to be active.</li>
+<li>Can yield efficient, selective features and improve generalization.</li>
+<li>Implemented with (L_1) activation penalties or KL-based activation penalties.</li>
+</ul>
+<h3 id="11-4-do-not-confuse-the-mechanisms">11.4 Do not confuse the mechanisms</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Direct target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dropout</td>
+<td>Random unit availability during training</td>
+</tr>
+<tr>
+<td>(L_2)</td>
+<td>Magnitude of weights</td>
+</tr>
+<tr>
+<td>Sparsity constraint</td>
+<td>Number/strength of active latent units</td>
+</tr>
+<tr>
+<td>Denoising corruption</td>
+<td>Robustness to input noise</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="12-week-14-implementation-pytorch-convolutional-autoencoder">12. Week 14 implementation: PyTorch convolutional autoencoder</h2>
+<blockquote>
+<p><strong>Transcript inconsistency to remember:</strong> The introduction and conclusion mention “TensorFlow/Keras,” but the demonstrated libraries and API are <strong>PyTorch</strong>: <code>torch</code>, <code>torch.nn</code>, <code>torch.optim</code>, and <code>torchvision</code>.</p>
+</blockquote>
+<h3 id="12-1-colab-setup">12.1 Colab setup</h3>
+<ol>
+<li>Open Google Colab and sign in.</li>
+<li>Rename the notebook “Week 14.”</li>
+<li>Use <strong>+ Code</strong> for code cells and <strong>+ Text</strong> for text/comments.</li>
+<li>Upload <code>cat.jpg</code> and ensure the filename/path matches exactly.</li>
+</ol>
+<h3 id="12-2-libraries-and-roles">12.2 Libraries and roles</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>torch</code></td>
+<td>Tensors, computation, GPU-accelerated operations</td>
+</tr>
+<tr>
+<td><code>torch.nn</code></td>
+<td>Model base class, layers, activations, losses</td>
+</tr>
+<tr>
+<td><code>torch.optim</code></td>
+<td>Parameter-update algorithms such as SGD, Adam, RMSprop</td>
+</tr>
+<tr>
+<td><code>torchvision</code></td>
+<td>Computer-vision datasets, pretrained models, transformations</td>
+</tr>
+<tr>
+<td><code>PIL</code></td>
+<td>Image loading/manipulation</td>
+</tr>
+<tr>
+<td><code>matplotlib</code></td>
+<td>Plot original, encoded, and reconstructed outputs</td>
+</tr>
+</tbody>
+</table></div>
+<p>Examples mentioned:</p>
+<ul>
+<li>tensor creation: <code>torch.zeros</code>, <code>torch.ones</code>;</li>
+<li>layers: <code>nn.Linear</code>, <code>nn.Conv2d</code>, <code>nn.LSTM</code>;</li>
+<li>activation: <code>nn.ReLU</code>, sigmoid;</li>
+<li>optimizers: SGD, Adam, RMSprop.</li>
+</ul>
+<h3 id="12-3-model-structure">12.3 Model structure</h3>
+<p>The AE subclasses <code>nn.Module</code> and defines:</p>
+<ul>
+<li>an encoder using <code>nn.Sequential</code>, <code>nn.Conv2d</code>, and ReLU;</li>
+<li>a decoder using <code>nn.Sequential</code>, ReLU, <code>nn.ConvTranspose2d</code>, and sigmoid; and</li>
+<li><code>forward</code>, which returns encoded and decoded tensors.</li>
+</ul>
+<p>Conceptual skeleton:</p>
+<pre><code class="language-python">class Autoencoder(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.encoder = nn.Sequential(
+            nn.Conv2d(...),
+            nn.ReLU(),
+            # additional compression layers
+        )
+        self.decoder = nn.Sequential(
+            nn.ConvTranspose2d(...),
+            nn.ReLU(),
+            nn.ConvTranspose2d(...),
+            nn.Sigmoid(),
+        )
+
+    def forward(self, x):
+        encoded = self.encoder(x)
+        decoded = self.decoder(encoded)
+        return encoded, decoded
+</code></pre>
+<p>The exact layer arguments were not preserved in the transcript, so they should not be invented in an exam answer.</p>
+<h3 id="12-4-data-preparation">12.4 Data preparation</h3>
+<p>Use a <code>torchvision.transforms.Compose</code> pipeline to:</p>
+<ul>
+<li>convert to grayscale with the required output channels;</li>
+<li>resize to the model’s required dimensions; and</li>
+<li>convert the image to a tensor.</li>
+</ul>
+<p>Then:</p>
+<ul>
+<li>load <code>cat.jpg</code> with PIL;</li>
+<li>apply transformations; and</li>
+<li>add a batch dimension before passing it to the model.</li>
+</ul>
+<h3 id="12-5-loss-optimizer-and-training">12.5 Loss, optimizer, and training</h3>
+<p>Demonstrated choices:</p>
+<ul>
+<li>criterion: MSE loss;</li>
+<li>optimizer: Adam;</li>
+<li>learning rate: (0.001);</li>
+<li>epochs: 20;</li>
+<li>training data: a single uploaded image.</li>
+</ul>
+<p>Training loop logic:</p>
+<ol>
+<li>Forward-pass image tensor.</li>
+<li>Obtain encoded and decoded outputs.</li>
+<li>Compute loss between decoded output and original image tensor.</li>
+<li>Clear old gradients.</li>
+<li>Backpropagate.</li>
+<li>Update weights with Adam.</li>
+<li>Print epoch and loss.</li>
+</ol>
+<h3 id="12-6-visualization">12.6 Visualization</h3>
+<p>After training, plot:</p>
+<ul>
+<li>original input image;</li>
+<li>encoded representation; and</li>
+<li>reconstructed image.</li>
+</ul>
+<p>The lecture observed that loss can fluctuate but should generally be optimized over training.</p>
+<h3 id="12-7-implementation-caveats">12.7 Implementation caveats</h3>
+<ul>
+<li>Training on one image demonstrates memorization/reconstruction, not generalization to a data distribution.</li>
+<li>The narration alternates between MSE, cross-entropy, and BCE; the actual described model setup explicitly uses <strong>MSE loss</strong>.</li>
+<li>The lecturer calls the bottleneck a “sparse matrix,” but a bottleneck is not inherently sparse unless a sparsity mechanism is applied.</li>
+<li>A standard AE does not perform anomaly detection simply because it has been constructed; anomaly scoring requires training on normal data and evaluating reconstruction error on new cases.</li>
+</ul>
+<hr>
+<h2 id="13-visionrefresh-heritage-photograph-case-study">13. VisionRefresh heritage-photograph case study</h2>
+<h3 id="13-1-scenario">13.1 Scenario</h3>
+<p>Ana (data engineer) and Ben (ML researcher) propose a stacked AE to reconstruct digitized heritage photographs for a museum.</p>
+<p>Stakeholders:</p>
+<ul>
+<li>curator: museum-quality, detailed prints/high fidelity;</li>
+<li>product manager Liu: fast online processing.</li>
+</ul>
+<p>Dataset and preprocessing:</p>
+<ul>
+<li>5,000 grayscale images;</li>
+<li>includes heritage images, MNIST benchmarks, and cat-vs-dog samples;</li>
+<li>resize to (64\times64);</li>
+<li>normalize pixels to ([0,1]).</li>
+</ul>
+<p>Since each grayscale image has one value per pixel:</p>
+<p>\[
+64\times64=4096\text{ input features}
+\]</p>
+<h3 id="13-2-fully-connected-stacked-architecture">13.2 Fully connected stacked architecture</h3>
+<p>Encoder:</p>
+<p>\[
+4096\rightarrow1024\rightarrow256\rightarrow64
+\]</p>
+<p>Decoder:</p>
+<p>\[
+64\rightarrow256\rightarrow1024\rightarrow4096
+\]</p>
+<p>The 64-unit code has (1/64) as many scalar dimensions as the input:</p>
+<p>\[
+\frac{4096}{64}=64:1
+\]</p>
+<p>Layers are pretrained sequentially with MSE and then jointly fine-tuned. The case also mentions symmetric decoding/upsampling.</p>
+<h3 id="13-3-observations">13.3 Observations</h3>
+<ul>
+<li>Portrait reconstructions appear blurred.</li>
+<li>Landscape samples lose sharp edges.</li>
+<li>General shapes are captured, but fine texture is missed.</li>
+<li>Face/fur is not discernible at the bottleneck—this is normal because (z) is abstract.</li>
+<li>A simple CAE on MNIST may perform well because MNIST is much simpler than photographs.</li>
+</ul>
+<h3 id="13-4-why-details-are-lost">13.4 Why details are lost</h3>
+<p><strong>Low-frequency/coarse information:</strong> broad shapes, large regions, gradual intensity changes, overall composition.</p>
+<p><strong>High-frequency/fine information:</strong> edges, hair, fur, texture, facial details, foliage, sharp transitions.</p>
+<p>The small bottleneck and fully connected architecture favor broad structure and can lose high-frequency details. Flattening an image also removes the explicit inductive bias that nearby pixels are spatially related.</p>
+<h3 id="13-5-three-proposed-decisions">13.5 Three proposed decisions</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it changes</th>
+<th>Likely benefit</th>
+<th>Limitation/cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Increase bottleneck (64\to128)</td>
+<td>Latent capacity</td>
+<td>Retain more detail; potentially lower reconstruction error</td>
+<td>Less compression, more parameters/training cost</td>
+</tr>
+<tr>
+<td>Change MSE to BCE</td>
+<td>Reconstruction objective</td>
+<td>May change pixel behavior under a suitable Bernoulli model</td>
+<td>Does not guarantee contrast/sharpness or restore lost information</td>
+</tr>
+<tr>
+<td>Add convolutional layers</td>
+<td>Spatial inductive bias</td>
+<td>Better edges, textures, locality, image feature learning</td>
+<td>Greater redesign/tuning/system complexity</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Capacity problem:</strong> increase the bottleneck.</p>
+<p><strong>Spatial-feature problem:</strong> add convolution.</p>
+<p><strong>Objective mismatch:</strong> evaluate an alternative loss experimentally.</p>
+<p>The two most promising fidelity changes can also be combined: a convolutional architecture with a suitably sized latent code.</p>
+<h3 id="13-6-fidelity-vs-speed">13.6 Fidelity vs speed</h3>
+<ul>
+<li>If fidelity dominates, the case’s direct choice is 128 latent neurons; a convolutional redesign is the stronger long-term image solution.</li>
+<li>If speed/compression dominates, retain the 64-neuron code, subject to measured quality.</li>
+<li>Bottleneck size alone does not determine latency; the full architecture, hardware, batch size, and input resolution also matter.</li>
+</ul>
+<h3 id="13-7-required-evaluation">13.7 Required evaluation</h3>
+<p>Compare at least:</p>
+<ol>
+<li>dense AE + 64 code + MSE (baseline);</li>
+<li>dense AE + 128 code + MSE;</li>
+<li>convolutional AE + selected code size + MSE;</li>
+<li>alternative losses only where probabilistically justified.</li>
+</ol>
+<p>Measure:</p>
+<ul>
+<li>reconstruction MSE;</li>
+<li>visual/perceptual quality;</li>
+<li>edge and texture preservation;</li>
+<li>time per epoch and convergence time;</li>
+<li>inference latency and images/second;</li>
+<li>trainable parameter count;</li>
+<li>model memory/size;</li>
+<li>hardware needs; and</li>
+<li>implementation/maintenance complexity.</li>
+</ul>
+<p>Use a <strong>Pareto</strong> view: a configuration is attractive when one objective cannot be improved without sacrificing another. Set minimum quality and maximum latency thresholds rather than independently choosing either the lowest MSE or the fastest model.</p>
+<h3 id="13-8-dataset-and-task-caveats">13.8 Dataset and task caveats</h3>
+<ul>
+<li>MNIST is useful for debugging but cannot validate museum-quality photographic reconstruction.</li>
+<li>Mixing MNIST, cat/dog, and heritage images creates domain mismatch.</li>
+<li>Production training data should resemble real heritage photographs and their degradation.</li>
+<li>Scan noise, fading, scratches, exposure, compression artifacts, and resolution affect performance.</li>
+<li>An AE cannot recover genuinely absent historical information exactly; it may only infer plausible content.</li>
+<li>If the objective is restoration, train degraded image → clean/reference image, not image → itself.</li>
+</ul>
+<h3 id="13-9-recommended-answer-to-the-case">13.9 Recommended answer to the case</h3>
+<p>For high-fidelity museum output, test a convolutional AE with a larger or empirically tuned bottleneck because:</p>
+<ol>
+<li>(128) addresses latent-capacity loss;</li>
+<li>convolution addresses lost spatial locality and high-frequency detail;</li>
+<li>BCE alone does not solve architecture/capacity limitations; and</li>
+<li>final selection must satisfy a measured latency constraint.</li>
+</ol>
+<p>For fast online processing, retain or optimize the 64-unit model only if it meets a defined minimum visual-quality threshold. Benchmark actual inference latency rather than assuming bottleneck size alone determines speed.</p>
+<hr>
+<h2 id="14-practical-examples-and-use-cases">14. Practical examples and use cases</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Suitable AE</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Detect unusual factory sensor readings</td>
+<td>AE anomaly detector</td>
+<td>Abnormal patterns reconstruct poorly</td>
+</tr>
+<tr>
+<td>Remove noise from scanned documents</td>
+<td>Denoising AE</td>
+<td>Noisy input is mapped to clean target</td>
+</tr>
+<tr>
+<td>Learn selective features for clustering</td>
+<td>Sparse AE</td>
+<td>Few latent units activate per sample</td>
+</tr>
+<tr>
+<td>Generate new handwritten digits</td>
+<td>VAE/conv-VAE</td>
+<td>Sample from a smooth probabilistic latent space</td>
+</tr>
+<tr>
+<td>Compress and reconstruct photographs</td>
+<td>Convolutional AE</td>
+<td>Exploits image locality and spatial hierarchy</td>
+</tr>
+<tr>
+<td>Initialize a deep classifier with unlabeled data</td>
+<td>Stacked AE</td>
+<td>Greedy pretraining supplies useful weights</td>
+</tr>
+<tr>
+<td>Reduce nonlinear customer features</td>
+<td>Nonlinear AE</td>
+<td>Learns nonlinear compact representation</td>
+</tr>
+<tr>
+<td>Restore damaged heritage photographs</td>
+<td>Denoising/restoration CAE</td>
+<td>Requires degraded inputs and clean/reference targets</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="15-exam-traps-and-corrections">15. Exam traps and corrections</h2>
+<ol>
+<li>
+<p><strong>“Autoencoders always learn the most important semantic features.”</strong><br>
+   False. They learn features useful for minimizing the training objective.</p>
+</li>
+<li>
+<p><strong>“The latent code must look like a smaller input image.”</strong><br>
+   False. It may be entirely abstract.</p>
+</li>
+<li>
+<p><strong>“A smaller bottleneck improves reconstruction.”</strong><br>
+   Usually false. It strengthens compression but generally makes reconstruction harder.</p>
+</li>
+<li>
+<p><strong>“The decoder can magically recover discarded detail.”</strong><br>
+   False. Exact discarded information is unavailable unless inferable from learned patterns.</p>
+</li>
+<li>
+<p><strong>“Denoising AE target is the noisy input.”</strong><br>
+   False. Input is noisy; target is clean.</p>
+</li>
+<li>
+<p><strong>“Sparse means low-dimensional.”</strong><br>
+   False. Sparsity concerns activity, not vector length.</p>
+</li>
+<li>
+<p><strong>“Dropout is the definition of a sparse AE.”</strong><br>
+   False. A sparse AE explicitly penalizes latent activation.</p>
+</li>
+<li>
+<p><strong>“VAE is just a standard AE with a narrow code.”</strong><br>
+   False. It models a latent probability distribution and uses KL regularization.</p>
+</li>
+<li>
+<p><strong>“Pretrained layers must stay frozen.”</strong><br>
+   False. They are normally jointly fine-tuned for the final objective.</p>
+</li>
+<li>
+<p><strong>“BCE automatically makes images sharper.”</strong><br>
+    False. It changes the objective; it cannot restore information the model cannot encode.</p>
+</li>
+<li>
+<p><strong>“Low MSE guarantees excellent perceived quality.”</strong><br>
+    False. Pixel similarity and human visual quality are not identical.</p>
+</li>
+<li>
+<p><strong>“MNIST performance proves readiness for photographs.”</strong><br>
+    False. MNIST is a much simpler domain.</p>
+</li>
+<li>
+<p><strong>“A bottleneck is automatically sparse.”</strong><br>
+    False. It is only sparse if constrained/penalized to be sparse.</p>
+</li>
+<li>
+<p><strong>“The demonstrated implementation is TensorFlow/Keras.”</strong><br>
+    False despite narration; the demonstrated API is PyTorch.</p>
+</li>
+<li>
+<p><strong>“A standard reconstruction AE automatically enhances the image.”</strong><br>
+    False. Enhancement requires an explicit target/objective.</p>
+</li>
+</ol>
+<hr>
+<h2 id="16-likely-examination-questions-with-model-answers">16. Likely examination questions with model answers</h2>
+<h3 id="q1-define-an-autoencoder-and-explain-its-architecture">Q1. Define an autoencoder and explain its architecture.</h3>
+<p>An autoencoder is a neural network trained without external labels to reconstruct its input. The encoder (f_\theta) maps (x) to a latent code (z); the bottleneck stores a compact representation; and the decoder (g_\phi) maps (z) to reconstruction \(\hat{x}\). Encoder and decoder parameters are trained by minimizing a reconstruction loss such as MSE or BCE.</p>
+<h3 id="q2-how-does-an-ae-learn-representations">Q2. How does an AE learn representations?</h3>
+<p>It compresses input into a constrained latent space and reconstructs it. Backpropagation uses the difference between (x) and \(\hat{x}\) to update both halves. The bottleneck and other constraints force the code to retain information that is useful for reconstruction.</p>
+<h3 id="q3-explain-anomaly-detection-using-an-ae">Q3. Explain anomaly detection using an AE.</h3>
+<p>Train the AE primarily on normal data. It learns to reconstruct normal patterns accurately. Unusual samples are poorly represented and tend to have higher reconstruction error. Use the error as an anomaly score and flag samples above a validated threshold.</p>
+<h3 id="q4-compare-mse-and-bce-reconstruction-loss">Q4. Compare MSE and BCE reconstruction loss.</h3>
+<p>MSE averages squared numerical differences and is suited to continuous outputs. BCE uses a Bernoulli/probability interpretation and is suited to binary or compatible ([0,1]) targets. BCE is not inherently a sharpening loss; choice depends on the data model and output activation.</p>
+<h3 id="q5-differentiate-standard-and-denoising-aes">Q5. Differentiate standard and denoising AEs.</h3>
+<p>A standard AE receives clean (x) and reconstructs (x). A DAE receives corrupted \(\tilde{x}\) but reconstructs clean (x). This prevents copying the corruption and encourages noise-robust structure.</p>
+<h3 id="q6-what-is-a-sparse-ae-how-is-sparsity-introduced">Q6. What is a sparse AE? How is sparsity introduced?</h3>
+<p>A sparse AE encourages most latent units to be inactive for any sample. Its objective combines reconstruction loss with a sparsity penalty, such as (L_1) on activations or KL divergence between desired and observed average activation.</p>
+<h3 id="q7-explain-a-vae-and-its-loss">Q7. Explain a VAE and its loss.</h3>
+<p>A VAE encodes each input into parameters such as mean and variance of a latent distribution, samples (z), and decodes it. Its objective is reconstruction loss plus KL divergence between the learned posterior and a prior. This creates a smooth latent space useful for generation and interpolation.</p>
+<h3 id="q8-why-are-convolutional-aes-preferred-for-images">Q8. Why are convolutional AEs preferred for images?</h3>
+<p>Convolutions use local connectivity and weight sharing, so they exploit neighboring pixels and learn edges, textures, shapes, and spatial hierarchies. Dense AEs flatten images and do not naturally encode locality.</p>
+<h3 id="q9-explain-greedy-layer-wise-pretraining-and-fine-tuning">Q9. Explain greedy layer-wise pretraining and fine-tuning.</h3>
+<p>Train AE 1 on raw input, then train AE 2 on AE 1’s encoded representation, and repeat. Stack the pretrained layers and jointly fine-tune the complete encoder–decoder by backpropagating final reconstruction loss through all trainable layers.</p>
+<h3 id="q10-what-happens-when-the-bottleneck-is-made-much-smaller">Q10. What happens when the bottleneck is made much smaller?</h3>
+<p>Compression becomes stronger, latent capacity falls, more detail is discarded, and reconstruction error generally increases. With retraining the model may preserve coarse structure but settle at a higher MSE.</p>
+<h3 id="q11-discuss-regularization-in-aes">Q11. Discuss regularization in AEs.</h3>
+<p>Dropout randomly disables units to reduce co-adaptation; (L_2) penalizes large weights; sparsity penalizes widespread latent activation; and denoising corruption prevents simple copying. All can reduce overfitting and promote robust representations.</p>
+<h3 id="q12-analyze-the-visionrefresh-decision">Q12. Analyze the VisionRefresh decision.</h3>
+<p>Increasing (64\to128) directly improves latent capacity and is suitable when fidelity dominates. Convolution more directly addresses lost edges/textures by exploiting spatial locality and is the stronger long-term photographic architecture. BCE alone is not guaranteed to help. Compare configurations on MSE, perceptual quality, edge retention, latency, training cost, parameters, and complexity; select a Pareto-efficient model that satisfies quality and speed thresholds.</p>
+<h3 id="q13-write-the-demonstrated-pytorch-training-workflow">Q13. Write the demonstrated PyTorch training workflow.</h3>
+<p>Transform and batch <code>cat.jpg</code>; instantiate the convolutional AE; choose MSE and Adam with learning rate (0.001); for 20 epochs perform forward pass, compare decoded tensor to input, zero gradients, backpropagate, update weights, and print loss; finally visualize input, code, and reconstruction.</p>
+<hr>
+<h2 id="17-rapid-revision">17. Rapid revision</h2>
+<h3 id="17-1-one-line-facts">17.1 One-line facts</h3>
+<ul>
+<li><strong>AE:</strong> reconstructs its input through a learned code.</li>
+<li><strong>Encoder:</strong> (x\to z).</li>
+<li><strong>Decoder:</strong> (z\to\hat{x}).</li>
+<li><strong>Bottleneck:</strong> constrains representational capacity.</li>
+<li><strong>Training goal:</strong> minimize \(\mathcal{L}(x,\hat{x})\).</li>
+<li><strong>MSE:</strong> common for continuous data.</li>
+<li><strong>BCE:</strong> common for binary/Bernoulli-like ([0,1]) outputs.</li>
+<li><strong>Smaller code:</strong> stronger compression, usually higher error.</li>
+<li><strong>DAE:</strong> noisy input, clean target.</li>
+<li><strong>Sparse AE:</strong> few active latent units.</li>
+<li><strong>VAE:</strong> distributional code + reconstruction + KL.</li>
+<li><strong>CAE:</strong> convolutions preserve spatial structure.</li>
+<li><strong>Deep/stacked AE:</strong> hierarchical features.</li>
+<li><strong>Greedy pretraining:</strong> train one AE layer at a time.</li>
+<li><strong>Fine-tuning:</strong> jointly optimize full stack.</li>
+<li><strong>Anomaly:</strong> often high reconstruction error.</li>
+<li><strong>Dropout:</strong> randomly disables units.</li>
+<li><strong>(L_2):</strong> penalizes large weights.</li>
+<li><strong>PCA:</strong> linear; nonlinear AE can capture more complex structure.</li>
+<li><strong>PyTorch demo:</strong> MSE + Adam((0.001)) + 20 epochs + <code>cat.jpg</code>.</li>
+<li><strong>VisionRefresh:</strong> capacity → larger code; spatial detail → convolution; BCE is not magic.</li>
+</ul>
+<h3 id="17-2-architecture-selection-mnemonic">17.2 Architecture-selection mnemonic</h3>
+<ul>
+<li><strong>Compress/Reconstruct</strong> → vanilla AE</li>
+<li><strong>Clean noise</strong> → denoising AE</li>
+<li><strong>Select few features</strong> → sparse AE</li>
+<li><strong>Generate</strong> → VAE</li>
+<li><strong>Process images</strong> → convolutional AE</li>
+<li><strong>Learn hierarchy/pretrain</strong> → deep or stacked AE</li>
+</ul>
+<h3 id="17-3-essential-formulas">17.3 Essential formulas</h3>
+<p>\[
+z=f_\theta(x),\qquad \hat{x}=g_\phi(z)
+\]</p>
+<p>\[
+\operatorname{MSE}=\frac{1}{n}\sum_{j=1}^{n}(x_j-\hat{x}_j)^2
+\]</p>
+<p>\[
+\operatorname{BCE}=-\frac{1}{n}\sum_j
+[x_j\log\hat{x}_j+(1-x_j)\log(1-\hat{x}_j)]
+\]</p>
+<p>\[
+\mathcal{L}_{sparse}=\mathcal{L}_{recon}+\lambda\Omega_{sparsity}
+\]</p>
+<p>\[
+\mathcal{L}_{VAE}=\mathcal{L}_{recon}+D_{KL}(q_\phi(z|x)\|p(z))
+\]</p>
+<h3 id="17-4-final-mental-model">17.4 Final mental model</h3>
+<blockquote>
+<p>An autoencoder learns by squeezing data through a representation and reconstructing it. The bottleneck controls capacity, the architecture controls which structures are easy to learn, the loss defines what “good reconstruction” means, and regularization controls robustness and generalization. Select the AE variant according to the problem—not by assuming one architecture or loss is universally best.</p>
+</blockquote>
+        </div>
+    <nav class="week-pager">
+      <a href="week-13.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 13: PCA and Bag-of-Words</span>
+      </a>
+      <a href="week-15.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 15: Exhaustive Exam-Oriented Study Notes</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

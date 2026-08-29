@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Deep Learning · Week 13 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Deep Learning</span>
+      <span class="brand-title">Week 13</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html" selected>Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Neural Networks and Deep Learning
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Neural Networks, Backpropagation, Model Tuning, and Evaluation
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Convolutional Neural Networks, Transfer Learning and Computer-Vision…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        RNNs, GRU, LSTM, NLP, Word Embeddings, Transfer Learning and Attention
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        RBMs, Deep Belief Networks, Autoencoders, and Contrastive Divergence
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Reinforcement Learning, Policy Networks, Target Networks and DQN
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Generative Adversarial Networks (GANs)
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Data Augmentation, Hyperparameter Tuning, Transfer Learning and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Feed-Forward Neural Networks, Perceptrons, Loss, Backpropagation and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Python Programming Fundamentals
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Machine Learning, Classification, and Naive Bayes
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Logistic Regression as a Neural Network, MNIST, and K-Means
+      </a>
+      <a class="is-active" href="week-13.html">
+        <span class="week-num">Week 13</span>
+        PCA and Bag-of-Words
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Autoencoders and Representation Learning
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Exhaustive Exam-Oriented Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Deep Learning · Week 13</p>
+        <h1 class="page-title">PCA and Bag-of-Words</h1>
+        <p class="page-meta">Week 13 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-week-at-a-glance">1. Week at a glance</a></li>
+      <li><a href="#2-definition-and-purpose">2. Definition and purpose</a></li>
+      <li><a href="#3-why-dimensionality-reduction-matters">3. Why dimensionality reduction matters</a></li>
+      <li><a href="#4-mathematical-foundation">4. Mathematical foundation</a></li>
+      <li><a href="#5-complete-pca-workflow">5. Complete PCA workflow</a></li>
+      <li><a href="#6-visualization-intuition">6. Visualization intuition</a></li>
+      <li><a href="#7-mnist-case-study">7. MNIST case study</a></li>
+      <li><a href="#8-applications">8. Applications</a></li>
+      <li><a href="#9-advantages-and-limitations">9. Advantages and limitations</a></li>
+      <li><a href="#10-pca-exam-traps">10. PCA exam traps</a></li>
+      <li><a href="#11-definition">11. Definition</a></li>
+      <li><a href="#12-bow-construction-pipeline">12. BoW construction pipeline</a></li>
+      <li><a href="#13-binary-vs-frequency-bow">13. Binary vs frequency BoW</a></li>
+      <li><a href="#14-why-sparse-representation-matters">14. Why sparse representation matters</a></li>
+      <li><a href="#15-preprocessing-decisions-and-caveats">15. Preprocessing decisions and caveats</a></li>
+      <li><a href="#16-strengths-weaknesses-and-use-cases">16. Strengths, weaknesses, and use cases</a></li>
+      <li><a href="#17-tf-idf">17. TF-IDF</a></li>
+      <li><a href="#18-n-grams">18. N-grams</a></li>
+      <li><a href="#19-subword-and-character-features">19. Subword and character features</a></li>
+      <li><a href="#20-reducing-or-structuring-a-bow-matrix">20. Reducing or structuring a BoW matrix</a></li>
+      <li><a href="#21-topic-modelling">21. Topic modelling</a></li>
+      <li><a href="#22-word-embeddings-and-modern-nlp">22. Word embeddings and modern NLP</a></li>
+      <li><a href="#23-problem">23. Problem</a></li>
+      <li><a href="#24-end-to-end-pipeline">24. End-to-end pipeline</a></li>
+      <li><a href="#25-customer-feedback-representation-dispute">25. Customer-feedback representation dispute</a></li>
+      <li><a href="#26-evaluation">26. Evaluation</a></li>
+      <li><a href="#27-visualization">27. Visualization</a></li>
+      <li><a href="#28-conceptual-code">28. Conceptual code</a></li>
+      <li><a href="#29-pca-vs-bow">29. PCA vs BoW</a></li>
+      <li><a href="#30-feature-selection-vs-feature-extraction">30. Feature selection vs feature extraction</a></li>
+      <li><a href="#31-sparse-vs-dense">31. Sparse vs dense</a></li>
+      <li><a href="#32-short-answer-questions">32. Short-answer questions</a></li>
+      <li><a href="#33-long-answer-frameworks">33. Long-answer frameworks</a></li>
+      <li><a href="#34-one-line-memory-aids">34. One-line memory aids</a></li>
+      <li><a href="#35-final-checklist">35. Final checklist</a></li>
+      <li><a href="#36-final-conceptual-map">36. Final conceptual map</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<blockquote>
+<p>Exam-oriented notes consolidated from all Week 13 material. Transcription/UI noise and duplicate explanations have been removed; distinct examples, cautions, questions, and instructor emphases are retained.</p>
+</blockquote>
+<h2 id="1-week-at-a-glance">1. Week at a glance</h2>
+<p>Week 13 connects two representation-learning problems:</p>
+<ol>
+<li><strong>Principal Component Analysis (PCA):</strong> transform high-dimensional numerical data into fewer, orthogonal, variance-preserving dimensions.</li>
+<li><strong>Bag-of-Words (BoW):</strong> transform text into numerical feature vectors that machine-learning algorithms can process.</li>
+</ol>
+<p>The advanced text section then improves BoW with <strong>TF-IDF, n-grams, subword features, feature selection, dimensionality reduction, topic modelling, and modern embeddings</strong>.</p>
+<hr>
+<h1 id="part-i-principal-component-analysis-pca">Part I — Principal Component Analysis (PCA)</h1>
+<h2 id="2-definition-and-purpose">2. Definition and purpose</h2>
+<p><strong>Principal Component Analysis (PCA)</strong> is a statistical, linear-algebra-based technique for <strong>dimensionality reduction and representation learning</strong>. It transforms possibly correlated original features into a smaller set of <strong>uncorrelated (orthogonal) principal components</strong>, ranked by how much variance they explain.</p>
+<p>PCA projects data from its original feature space to a component space. The aim is to preserve the most important patterns with fewer dimensions.</p>
+<h3 id="key-terms">Key terms</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dimensionality</td>
+<td>Number of features/axes used to represent an observation</td>
+</tr>
+<tr>
+<td>Dimensionality reduction</td>
+<td>Replacing many dimensions with fewer informative ones</td>
+</tr>
+<tr>
+<td>Principal component (PC)</td>
+<td>A new axis/direction formed as a linear combination of original features</td>
+</tr>
+<tr>
+<td>Orthogonal</td>
+<td>Perpendicular; components are mutually uncorrelated</td>
+</tr>
+<tr>
+<td>Variance</td>
+<td>Spread of data along a direction; PCA treats larger variance as more information-bearing</td>
+</tr>
+<tr>
+<td>Explained variance</td>
+<td>Variance captured by a component</td>
+</tr>
+<tr>
+<td>Covariance</td>
+<td>Extent to which two features vary together</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Instructor emphasis:</strong> the first principal component captures the maximum possible variance; the second captures the maximum remaining variance subject to being orthogonal to the first; later PCs follow the same rule.</p>
+<h2 id="3-why-dimensionality-reduction-matters">3. Why dimensionality reduction matters</h2>
+<p>PCA can:</p>
+<ul>
+<li>improve computational efficiency and reduce training time;</li>
+<li>reduce storage requirements and compress data;</li>
+<li>remove redundant/correlated information;</li>
+<li>mitigate overfitting by reducing unnecessary features;</li>
+<li>suppress low-variance noise;</li>
+<li>permit 2-D or 3-D visualization of high-dimensional data;</li>
+<li>reveal clusters, patterns, and relationships more clearly;</li>
+<li>sometimes improve downstream classification performance.</li>
+</ul>
+<h3 id="important-qualification">Important qualification</h3>
+<p>The lecture informally calls PCA “feature selection.” More precisely, PCA is usually <strong>feature extraction</strong>: it creates new features from linear combinations of the originals. It does not normally select a literal subset of original columns.</p>
+<h2 id="4-mathematical-foundation">4. Mathematical foundation</h2>
+<p>Assume a data matrix $X\in\mathbb{R}^{n\times d}$, where $n$ is the number of samples and $d$ the number of features.</p>
+<h3 id="4-1-standardization">4.1 Standardization</h3>
+<p>PCA is scale-sensitive. For each feature $j$, compute</p>
+<p>\[
+z_{ij}=\frac{x_{ij}-\mu_j}{\sigma_j}
+\]</p>
+<p>where μ_j is its mean and σ_j its standard deviation. Standardized features have approximately mean 0 and variance 1, preventing a large-unit feature from dominating merely because of its scale.</p>
+<p>If features already share meaningful, comparable units, centering may sometimes suffice; for the taught workflow, use standardization.</p>
+<h3 id="4-2-covariance-matrix">4.2 Covariance matrix</h3>
+<p>For standardized matrix $Z$, the sample covariance matrix is</p>
+<p>\[
+C=\frac{1}{n-1}Z^T Z
+\]</p>
+<p>$C\in\mathbb{R}^{d\times d}$. Its diagonal contains feature variances; off-diagonal entries describe pairwise covariance.</p>
+<h3 id="4-3-eigenvalues-and-eigenvectors">4.3 Eigenvalues and eigenvectors</h3>
+<p>Solve</p>
+<p>\[
+Cv_i=\lambda_i v_i
+\]</p>
+<ul>
+<li>$v_i$: eigenvector, giving a principal direction;</li>
+<li>$\lambda_i$: eigenvalue, giving variance captured along that direction.</li>
+</ul>
+<p>Sort eigenpairs so that</p>
+<p>\[
+\lambda_1\ge\lambda_2\ge\cdots\ge\lambda_d.
+\]</p>
+<p>The eigenvectors of the symmetric covariance matrix are orthogonal.</p>
+<h3 id="4-4-explained-variance-ratio">4.4 Explained-variance ratio</h3>
+<p>For PC $i$,</p>
+<p>\[
+\text{EVR}_i=\frac{\lambda_i}{\sum_{j=1}^{d}\lambda_j}.
+\]</p>
+<p>Cumulative explained variance for the first $k$ PCs is</p>
+<p>\[
+\text{CEV}(k)=\sum_{i=1}^{k}\text{EVR}_i.
+\]</p>
+<p>Choose the smallest $k$ that reaches a desired information threshold, such as 90%, 95%, or another value justified by validation.</p>
+<h3 id="4-5-projection">4.5 Projection</h3>
+<p>Let $W_k=[v_1,v_2,\ldots,v_k]$. The reduced representation is</p>
+<p>\[
+Y=ZW_k,
+\]</p>
+<p>where $Y\in\mathbb{R}^{n\times k}$.</p>
+<p>An approximate reconstruction is</p>
+<p>\[
+\hat Z=YW_k^T,
+\]</p>
+<p>and, after undoing standardization, it can be returned to the original units. Reconstruction is approximate when $k<d$.</p>
+<h2 id="5-complete-pca-workflow">5. Complete PCA workflow</h2>
+<ol>
+<li>Collect the $n\times d$ dataset.</li>
+<li>Split training and test data when building a predictive model.</li>
+<li>Fit scaling parameters on the <strong>training set only</strong>; transform both train and test with those parameters.</li>
+<li>Compute the training covariance matrix.</li>
+<li>Calculate eigenvalues and eigenvectors.</li>
+<li>Sort eigenvectors by descending eigenvalue.</li>
+<li>Select the top $k$ directions using cumulative explained variance and/or validation.</li>
+<li>Project training and test observations into the $k$-dimensional subspace.</li>
+<li>Train/evaluate the downstream model or visualize the projected data.</li>
+</ol>
+<h3 id="data-leakage-trap">Data-leakage trap</h3>
+<p>Do not standardize or fit PCA on the full dataset before splitting. Test-set means, variances, and directions would leak into training. In a pipeline:</p>
+<p>\[
+\text{train data}\rightarrow\text{fit scaler}\rightarrow\text{fit PCA}\rightarrow\text{fit model}.
+\]</p>
+<p>Apply the already fitted transformations to validation/test data.</p>
+<h2 id="6-visualization-intuition">6. Visualization intuition</h2>
+<p>Before PCA, high-dimensional points may appear scattered or overlapping. Projection onto PC1 and PC2 reorients the coordinate system toward the directions of greatest variation. A 2-D/3-D plot may then expose clusters or class structure.</p>
+<h3 id="taught-3-d-example">Taught 3-D example</h3>
+<p>For a 3-feature dataset:</p>
+<ol>
+<li>form a $3\times3$ covariance matrix;</li>
+<li>obtain $\lambda_1,\lambda_2,\lambda_3$ and $v_1,v_2,v_3$;</li>
+<li>if $\lambda_1$ and $\lambda_2$ together explain 95% of variance, keep $v_1,v_2$;</li>
+<li>project the data onto their 2-D subspace.</li>
+</ol>
+<h3 id="practical-example">Practical example</h3>
+<p>If a dataset has 100 features but its first 10 PCs retain nearly all useful variability, work with those 10 components. This simplifies storage and modelling, although each PC is a combination rather than one of the original 100 variables.</p>
+<h2 id="7-mnist-case-study">7. MNIST case study</h2>
+<p>MNIST consists of grayscale images of handwritten digits. Each $28\times28$ image becomes <strong>784 pixel features</strong>, so the raw data are high-dimensional.</p>
+<p>PCA can transform the 784 correlated pixel dimensions into fewer components that capture dominant handwriting variations. Benefits include:</p>
+<ul>
+<li>lower computational load and faster model training;</li>
+<li>smaller storage footprint;</li>
+<li>2-D visualization using the first two PCs;</li>
+<li>removal of less informative/noisy pixel directions;</li>
+<li>possible improvement in classification through denoising.</li>
+</ul>
+<p>It is not guaranteed to improve accuracy: PCA preserves variance, not class-separating information.</p>
+<h2 id="8-applications">8. Applications</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Application</th>
+<th>PCA contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data compression</td>
+<td>Stores fewer component scores while retaining much variability</td>
+</tr>
+<tr>
+<td>Image compression</td>
+<td>Keeps dominant visual structure with fewer dimensions</td>
+</tr>
+<tr>
+<td>Noise reduction</td>
+<td>Discards low-variance directions often associated with noise</td>
+</tr>
+<tr>
+<td>Visualization</td>
+<td>Projects high-dimensional data into 2-D/3-D</td>
+</tr>
+<tr>
+<td>Preprocessing</td>
+<td>Reduces collinearity and model input size</td>
+</tr>
+<tr>
+<td>Pattern discovery</td>
+<td>Can expose dominant structure, relationships, or clusters</td>
+</tr>
+<tr>
+<td>Text matrices</td>
+<td>Can reduce a numeric document-term/TF-IDF matrix, although truncated SVD is often more natural for sparse text</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="9-advantages-and-limitations">9. Advantages and limitations</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Advantages</th>
+<th>Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reduces dimensions and redundancy</td>
+<td>PCs are harder to interpret than original features</td>
+</tr>
+<tr>
+<td>Improves speed and storage efficiency</td>
+<td>Assumes useful structure is linear</td>
+</tr>
+<tr>
+<td>May reduce overfitting</td>
+<td>Sensitive to feature scale</td>
+</tr>
+<tr>
+<td>Can remove low-variance noise</td>
+<td>High variance is not always task-relevant information</td>
+</tr>
+<tr>
+<td>Enables visualization</td>
+<td>Outliers can distort covariance and PCs</td>
+</tr>
+<tr>
+<td>Produces uncorrelated components</td>
+<td>Information is lost when components are discarded</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="linear-vs-nonlinear-structure">Linear vs nonlinear structure</h3>
+<p>Ordinary PCA finds linear directions. If data lie on a nonlinear manifold, linear PCs may not represent it well. <strong>Kernel PCA</strong> extends the idea by implicitly mapping data to a nonlinear feature space, but it is more complex and harder to interpret.</p>
+<h2 id="10-pca-exam-traps">10. PCA exam traps</h2>
+<ul>
+<li><strong>Principal</strong>, not “principle,” component analysis.</li>
+<li>PCA does not merely delete columns; it rotates the feature space and forms linear combinations.</li>
+<li>Orthogonal/uncorrelated PCs do not automatically imply statistically independent PCs.</li>
+<li>PC signs are arbitrary: $v$ and $-v$ define the same axis.</li>
+<li>PCA is unsupervised and ignores class labels.</li>
+<li>Maximum variance is not identical to maximum predictive power.</li>
+<li>Standardization and PCA serve different purposes: scaling equalizes feature influence; PCA rotates/reduces dimensions.</li>
+<li>Reduced representation $Y$ is not the same as reconstruction $\hat Z$.</li>
+<li>Low variance is often noise, not always; a low-variance feature can be discriminative.</li>
+<li>Fit preprocessing only on training data.</li>
+</ul>
+<hr>
+<h1 id="part-ii-bag-of-words-bow">Part II — Bag-of-Words (BoW)</h1>
+<h2 id="11-definition">11. Definition</h2>
+<p><strong>Bag-of-Words (BoW)</strong> is a simple text-representation method that converts documents into numerical vectors. Every unique vocabulary term becomes a feature, and a document’s value for that feature records the term’s count or presence.</p>
+<p>It disregards grammar and word order while retaining word occurrence/frequency. It is called a “bag” because the model knows which words are present, but not their sequence.</p>
+<h3 id="core-objects">Core objects</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Object</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Corpus</td>
+<td>A structured collection of text documents</td>
+</tr>
+<tr>
+<td>Document</td>
+<td>One text unit, e.g., review, article, tweet, or email</td>
+</tr>
+<tr>
+<td>Token</td>
+<td>A unit produced by tokenization, commonly a word</td>
+</tr>
+<tr>
+<td>Vocabulary</td>
+<td>Set of unique retained tokens/features across the corpus</td>
+</tr>
+<tr>
+<td>Document-term matrix</td>
+<td>Rows are documents; columns are vocabulary features</td>
+</tr>
+<tr>
+<td>Sparse matrix</td>
+<td>Matrix storing mainly the nonzero entries</td>
+</tr>
+</tbody>
+</table></div>
+<p>A corpus may include metadata such as source, genre, author, or domain. Corpora can be general or domain-specific (medical, legal, scientific). They support model training, language-pattern analysis, frequency studies, sentiment analysis, topic modelling, and classification.</p>
+<h2 id="12-bow-construction-pipeline">12. BoW construction pipeline</h2>
+<h3 id="12-1-collect-a-corpus">12.1 Collect a corpus</h3>
+<p>Example:</p>
+<ul>
+<li>$D_1$: “I love machine learning”</li>
+<li>$D_2$: “Machine learning is amazing”</li>
+<li>$D_3$: “I love deep learning”</li>
+</ul>
+<h3 id="12-2-preprocess">12.2 Preprocess</h3>
+<p>Typical steps:</p>
+<ol>
+<li><strong>Text cleaning:</strong> remove unwanted punctuation, special characters, and—when appropriate—numbers.</li>
+<li><strong>Lower-casing:</strong> map “Product” and “product” to one feature unless capitalization carries meaning.</li>
+<li><strong>Tokenization:</strong> split documents into tokens.</li>
+<li><strong>Stop-word treatment:</strong> optionally remove frequent function words such as “the,” “is,” and “and.”</li>
+<li><strong>Stemming or lemmatization:</strong> optionally reduce related forms to a shared base.</li>
+</ol>
+<h3 id="12-3-build-the-vocabulary">12.3 Build the vocabulary</h3>
+<p>After suitable preprocessing, a possible vocabulary is:</p>
+<p>\[
+[\text{amazing},\text{deep},\text{is},\text{learning},\text{love},\text{machine}].
+\]</p>
+<p>Vocabulary order fixes column order.</p>
+<h3 id="12-4-vectorize-each-document">12.4 Vectorize each document</h3>
+<p>Using the order above:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Document</th>
+<th style="text-align: right;">amazing</th>
+<th style="text-align: right;">deep</th>
+<th style="text-align: right;">is</th>
+<th style="text-align: right;">learning</th>
+<th style="text-align: right;">love</th>
+<th style="text-align: right;">machine</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$D_1$</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>$D_2$</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>$D_3$</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table></div>
+<p>This document-term matrix is the numerical input to a model.</p>
+<h2 id="13-binary-vs-frequency-bow">13. Binary vs frequency BoW</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Representation</th>
+<th>Value</th>
+<th>Best interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binary</td>
+<td>1 if term occurs, otherwise 0</td>
+<td>Presence/absence matters</td>
+</tr>
+<tr>
+<td>Frequency/count</td>
+<td>Number of occurrences</td>
+<td>Repetition/intensity matters</td>
+</tr>
+</tbody>
+</table></div>
+<p>If “good” appears three times, binary BoW records 1; count BoW records 3.</p>
+<p><strong>Exam trap:</strong> both vectors have one dimension per vocabulary term. Binary encoding does <strong>not</strong> reduce dimensionality; it only changes values.</p>
+<h2 id="14-why-sparse-representation-matters">14. Why sparse representation matters</h2>
+<p>Real vocabularies can contain thousands or millions of features, while any single document uses only a small subset. Most matrix entries are zero, so the document-term matrix is <strong>high-dimensional and sparse</strong>.</p>
+<p>Sparse storage:</p>
+<ul>
+<li>stores nonzero values and their positions rather than every zero;</li>
+<li>reduces memory and often speeds computation;</li>
+<li>is the default output style of tools such as <code>CountVectorizer</code>.</li>
+</ul>
+<p>Converting a large sparse matrix to a dense array can exhaust memory.</p>
+<h2 id="15-preprocessing-decisions-and-caveats">15. Preprocessing decisions and caveats</h2>
+<h3 id="stop-words">Stop words</h3>
+<p>Removing stop words reduces vocabulary and noise, but it is task-dependent. Words such as “not,” “no,” and “never” may be crucial to sentiment:</p>
+<ul>
+<li>“good” vs “not good”</li>
+<li>“recommend” vs “do not recommend”</li>
+</ul>
+<p>Do not apply a generic stop-word list blindly.</p>
+<h3 id="stemming">Stemming</h3>
+<p>Stemming crudely strips affixes: e.g., “connected,” “connecting,” and “connection” may be mapped toward a common stem. It lowers sparsity/vocabulary size but can create unnatural stems or merge distinct meanings.</p>
+<h3 id="lemmatization">Lemmatization</h3>
+<p>Lemmatization maps inflected words to linguistic lemmas, e.g., “better” → “good” when context supports it. It is usually more interpretable but costs more computation and language knowledge.</p>
+<h3 id="vocabulary-size-trade-off">Vocabulary-size trade-off</h3>
+<ul>
+<li>Smaller vocabulary: faster, less sparse, lower overfitting risk, but can discard meaningful distinctions.</li>
+<li>Larger vocabulary: preserves detail and nuance, but raises memory, computation, and sparsity.</li>
+</ul>
+<p>Choose using validation performance, not stakeholder preference alone.</p>
+<h2 id="16-strengths-weaknesses-and-use-cases">16. Strengths, weaknesses, and use cases</h2>
+<h3 id="strengths">Strengths</h3>
+<ul>
+<li>simple and intuitive;</li>
+<li>easy to implement;</li>
+<li>efficiently produces numeric features;</li>
+<li>works with many conventional ML algorithms;</li>
+<li>strong, interpretable baseline;</li>
+<li>useful with limited data or computational resources.</li>
+</ul>
+<h3 id="weaknesses">Weaknesses</h3>
+<ul>
+<li>ignores word order, grammar, context, and much semantics;</li>
+<li>treats vocabulary entries as unrelated dimensions;</li>
+<li>creates large, sparse, high-dimensional matrices;</li>
+<li>raw counts overemphasize common or long-document terms;</li>
+<li>struggles with synonyms and polysemy;</li>
+<li>vocabulary may fail on unseen/out-of-vocabulary words.</li>
+</ul>
+<h3 id="applications">Applications</h3>
+<ul>
+<li>text/document classification;</li>
+<li>spam detection;</li>
+<li>topic categorization;</li>
+<li>basic sentiment analysis;</li>
+<li>information retrieval/basic search by matching query and document terms;</li>
+<li>feature extraction for traditional machine-learning models.</li>
+</ul>
+<p>BoW remains valuable when word presence/frequency matters more than deep context, or as a fast baseline on small datasets.</p>
+<hr>
+<h1 id="part-iii-improvements-and-advanced-text-representations">Part III — Improvements and advanced text representations</h1>
+<h2 id="17-tf-idf">17. TF-IDF</h2>
+<p>Raw BoW gives common terms large counts even when they are not informative. <strong>Term Frequency–Inverse Document Frequency (TF-IDF)</strong> increases the importance of terms frequent in one document but rare across the corpus.</p>
+<h3 id="term-frequency">Term frequency</h3>
+<p>A common normalized definition is</p>
+<p>\[
+TF(t,d)=\frac{f_{t,d}}{\sum_{u\in d}f_{u,d}},
+\]</p>
+<p>where $f_{t,d}$ is the count of term $t$ in document $d$. Implementations may use raw or log-scaled TF.</p>
+<h3 id="document-frequency-and-inverse-document-frequency">Document frequency and inverse document frequency</h3>
+<p>Let $N$ be the number of documents and $df(t)$ the number containing $t$:</p>
+<p>\[
+IDF(t)=\log\left(\frac{N}{df(t)}\right).
+\]</p>
+<p>Smoothed implementations often use</p>
+<p>\[
+IDF(t)=\log\left(\frac{N+1}{df(t)+1}\right)+1.
+\]</p>
+<h3 id="combined-weight">Combined weight</h3>
+<p>\[
+TFIDF(t,d)=TF(t,d)\times IDF(t).
+\]</p>
+<p>Thus corpus-wide common words are downweighted; rare but locally important words are highlighted. Uses include keyword extraction, document classification, retrieval, and sentiment analysis.</p>
+<h3 id="bow-vs-tf-idf">BoW vs TF-IDF</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>BoW count</th>
+<th>TF-IDF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Raw occurrence frequency</td>
+<td>Frequency adjusted by corpus rarity</td>
+</tr>
+<tr>
+<td>Common words may dominate</td>
+<td>Common words receive low weight</td>
+</tr>
+<tr>
+<td>Simple and interpretable</td>
+<td>Often more discriminative</td>
+</tr>
+<tr>
+<td>No corpus-level importance</td>
+<td>Explicitly uses document frequency</td>
+</tr>
+</tbody>
+</table></div>
+<p>TF-IDF still does not inherently capture word order or semantic equivalence.</p>
+<h2 id="18-n-grams">18. N-grams</h2>
+<p>An <strong>n-gram</strong> is a sequence of $n$ consecutive tokens:</p>
+<ul>
+<li>unigram: one token, e.g., “machine”;</li>
+<li>bigram: two tokens, e.g., “machine learning”;</li>
+<li>trigram: three tokens, e.g., “deep learning model.”</li>
+</ul>
+<p>For “I love natural language processing,” bigrams are:</p>
+<p>\[
+(I, love), (love, natural), (natural, language), (language, processing).
+\]</p>
+<h3 id="benefits">Benefits</h3>
+<ul>
+<li>partially restores local word order;</li>
+<li>treats meaningful phrases (“machine learning”) as features;</li>
+<li>preserves negation patterns such as “not good”;</li>
+<li>helps sentiment analysis, classification, and contextual feature extraction.</li>
+</ul>
+<h3 id="costs">Costs</h3>
+<ul>
+<li>vocabulary grows rapidly;</li>
+<li>sparsity, memory, and computation rise;</li>
+<li>rare n-grams can overfit;</li>
+<li>longer n-grams still do not provide general contextual understanding.</li>
+</ul>
+<p>Use validation and controls such as minimum document frequency, maximum vocabulary size, or regularization.</p>
+<h2 id="19-subword-and-character-features">19. Subword and character features</h2>
+<p>Instead of whole words, features may be characters or subwords. This helps:</p>
+<ul>
+<li>morphologically rich languages such as German and Finnish;</li>
+<li>misspellings and word variants;</li>
+<li>unseen words;</li>
+<li>related forms such as “run,” “running,” and “runner.”</li>
+</ul>
+<p>“Unhappiness” might be represented using units resembling “un,” “happy,” and “ness.” Techniques mentioned include <strong>Byte-Pair Encoding (BPE)</strong> and <strong>SentencePiece</strong>.</p>
+<h2 id="20-reducing-or-structuring-a-bow-matrix">20. Reducing or structuring a BoW matrix</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PCA</td>
+<td>Dense linear components maximizing variance</td>
+</tr>
+<tr>
+<td>Truncated SVD / LSA</td>
+<td>Low-rank latent structure; suitable for sparse text matrices</td>
+</tr>
+<tr>
+<td>NMF</td>
+<td>Nonnegative factors that can form interpretable topics</td>
+</tr>
+<tr>
+<td>χ² test</td>
+<td>Selects features associated with class labels</td>
+</tr>
+<tr>
+<td>Mutual information</td>
+<td>Selects features informative about labels</td>
+</tr>
+<tr>
+<td>LDA topic model</td>
+<td>Represents documents as mixtures of topics and topics as mixtures of words</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="pca-on-text">PCA on text</h3>
+<p>PCA can reduce a high-dimensional numeric BoW/TF-IDF matrix, but centering may destroy sparsity. <strong>Truncated SVD</strong>, often called latent semantic analysis in this setting, is commonly preferred because it operates efficiently on sparse matrices.</p>
+<h3 id="pca-vs-lda">PCA vs LDA</h3>
+<ul>
+<li>PCA/SVD: algebraic dimensionality reduction; components capture variance/low-rank structure.</li>
+<li>Latent Dirichlet Allocation: probabilistic topic model; documents are topic mixtures and topics are word distributions.</li>
+</ul>
+<p>Do not confuse LDA topic modelling with Linear Discriminant Analysis, which shares the abbreviation.</p>
+<h2 id="21-topic-modelling">21. Topic modelling</h2>
+<p>Topic models discover hidden themes without requiring document labels.</p>
+<ul>
+<li><strong>LDA:</strong> documents are mixtures of topics; topics are mixtures/distributions of words.</li>
+<li><strong>NMF:</strong> decomposes the nonnegative document-term matrix into document-topic and topic-term factors.</li>
+</ul>
+<p>A news corpus, for example, may yield topics corresponding to sports, politics, and entertainment.</p>
+<h2 id="22-word-embeddings-and-modern-nlp">22. Word embeddings and modern NLP</h2>
+<p><strong>Word2Vec</strong> and <strong>GloVe</strong> map words to dense continuous vectors where semantic relationships can be represented geometrically. Unlike BoW/TF-IDF, embeddings can associate related words.</p>
+<p><strong>BERT (Bidirectional Encoder Representations from Transformers)</strong> creates context-sensitive representations by considering text in both directions. This improves tasks such as sentiment analysis and question answering and helps resolve words whose meanings depend on context.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>BoW</th>
+<th>TF-IDF</th>
+<th>Static embedding</th>
+<th>Contextual model (e.g., BERT)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Counts/occurrences</td>
+<td>Yes</td>
+<td>Weighted</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Word order/context</td>
+<td>No</td>
+<td>No</td>
+<td>Limited/static</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Semantic similarity</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes, context-dependent</td>
+</tr>
+<tr>
+<td>Dimensionality</td>
+<td>High, sparse</td>
+<td>High, sparse</td>
+<td>Low, dense</td>
+<td>Dense, computationally costly</td>
+</tr>
+<tr>
+<td>Simplicity/speed</td>
+<td>Highest</td>
+<td>High</td>
+<td>Moderate</td>
+<td>Lowest/highest resource cost</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Instructor emphasis:</strong> modern representations address BoW’s shortcomings, but BoW remains an important baseline because it is simple, fast, and effective in suitable tasks.</p>
+<hr>
+<h1 id="part-iv-sentiment-analysis-case-study">Part IV — Sentiment-analysis case study</h1>
+<h2 id="23-problem">23. Problem</h2>
+<p>A company wants to classify customer reviews as positive, negative, or neutral so that negative feedback can be addressed and customer experience improved.</p>
+<p>Examples:</p>
+<ul>
+<li>Positive: “The product is excellent. I loved it.”</li>
+<li>Negative: “This is the worst product I have ever used.”</li>
+</ul>
+<p>For binary classification, positive may be labelled 1 and negative 0.</p>
+<h2 id="24-end-to-end-pipeline">24. End-to-end pipeline</h2>
+<ol>
+<li>Collect and label reviews.</li>
+<li>Split train/validation/test data before fitting text transformations.</li>
+<li>Clean text; lower-case where appropriate.</li>
+<li>Tokenize.</li>
+<li>Apply a sentiment-aware stop-word policy.</li>
+<li>Stem or lemmatize only if validation supports it.</li>
+<li>Fit a vocabulary on training text.</li>
+<li>Build count/binary BoW or TF-IDF features; consider word and phrase n-grams.</li>
+<li>Train a classifier such as <strong>logistic regression</strong> or <strong>Naive Bayes</strong>.</li>
+<li>Evaluate with a confusion matrix and appropriate metrics.</li>
+<li>Inspect errors, vocabulary coverage, and effects of negation.</li>
+</ol>
+<p>The sample positive review may become “product excellent love” after preprocessing, though removing “it” and other tokens is a modelling choice rather than a universal rule.</p>
+<h2 id="25-customer-feedback-representation-dispute">25. Customer-feedback representation dispute</h2>
+<p>In the embedded case, <strong>Jane</strong> must reconcile two stakeholder preferences:</p>
+<ul>
+<li><strong>Omar — information-rich model:</strong> moderate stop-word removal, frequency counts, and less aggressive preprocessing. Counts distinguish “good” from “good good good” and may help granular sentiment analysis, though repetition is not a perfect measure of sentiment intensity.</li>
+<li><strong>Sofia — lean model:</strong> aggressive stemming and binary presence features, prioritizing processing speed, memory, and operational simplicity.</li>
+</ul>
+<p>Jane is therefore balancing <strong>feature richness against model simplicity</strong>. Frequency and binary vectors have the same dimensionality when they use the same vocabulary; the distinction is the information stored in each cell. Vocabulary size—not whether values are binary or counts—controls the number of dimensions.</p>
+<p>The case’s third document, “Programming is fun and I love learning new programming skills,” records <code>programming = 2</code> under frequency BoW. The count captures repetition but not relationships such as “programming is fun” or “I love learning.”</p>
+<h3 id="correct-resolution">Correct resolution</h3>
+<p>Treat preprocessing, vocabulary size, and vector values as separate decisions. Compare candidate pipelines empirically under the same split and metric:</p>
+<ul>
+<li>Model A (Omar-aligned): moderate preprocessing + frequency BoW.</li>
+<li>Model B (Sofia-aligned): aggressive preprocessing + binary BoW.</li>
+</ul>
+<p>Record predictive metrics (accuracy, precision, recall, F1) and operational metrics (training/inference time, memory, vocabulary size, and feature dimensionality). A further sentiment-aware variant can retain negators, use unigrams+bigrams, and/or TF-IDF.</p>
+<p>Select based on validation evidence, inference/storage constraints, and error analysis. If strengths are complementary, an ensemble could be explored later—but first establish whether either individual pipeline is adequate.</p>
+<h3 id="why-the-extremes-are-unsafe">Why the extremes are unsafe</h3>
+<ul>
+<li>Simplest is not always best: removing “not” can reverse sentiment.</li>
+<li>Richest is not always best: indiscriminate features raise sparsity and overfitting.</li>
+<li>Stakeholder compromise is not a substitute for controlled experimentation.</li>
+</ul>
+<h2 id="26-evaluation">26. Evaluation</h2>
+<p>For classification, construct a confusion matrix and compute metrics suited to the class distribution:</p>
+<p>\[
+\text{Accuracy}=\frac{TP+TN}{TP+TN+FP+FN}
+\]</p>
+<p>\[
+\text{Precision}=\frac{TP}{TP+FP},\qquad
+\text{Recall}=\frac{TP}{TP+FN}
+\]</p>
+<p>\[
+F_1=2\frac{\text{Precision}\cdot\text{Recall}}{\text{Precision}+\text{Recall}}.
+\]</p>
+<p>For imbalanced sentiment classes, macro-F1 or per-class recall may reveal weaknesses hidden by accuracy.</p>
+<h2 id="27-visualization">27. Visualization</h2>
+<ul>
+<li><strong>Word cloud:</strong> word size reflects corpus frequency; useful for an overview but not rigorous comparison.</li>
+<li><strong>Bar chart:</strong> displays top-term frequencies more precisely.</li>
+<li>These reveal dominant terms/themes and can guide feature inspection.</li>
+</ul>
+<p>Frequency does not equal importance or sentiment; a common word can be visually large yet uninformative.</p>
+<hr>
+<h1 id="part-v-python-implementation-using-countvectorizer">Part V — Python implementation using <code>CountVectorizer</code></h1>
+<h2 id="28-conceptual-code">28. Conceptual code</h2>
+<pre><code class="language-python">from sklearn.feature_extraction.text import CountVectorizer
+
+corpus = [
+    &quot;I love machine learning&quot;,
+    &quot;Machine learning is amazing&quot;,
+    &quot;I love deep learning&quot;,
+]
+
+vectorizer = CountVectorizer()
+X = vectorizer.fit_transform(corpus)
+
+print(vectorizer.get_feature_names_out())
+print(X.toarray())  # suitable only for this tiny demonstration
+</code></pre>
+<h3 id="meaning-of-each-step">Meaning of each step</h3>
+<ul>
+<li><code>CountVectorizer()</code> defines tokenization/vocabulary/count rules.</li>
+<li><code>fit_transform(corpus)</code> learns the vocabulary and creates the document-term matrix.</li>
+<li><code>get_feature_names_out()</code> returns column names in matrix order.</li>
+<li><code>X</code> is sparse: rows represent documents; columns represent vocabulary terms; entries are counts.</li>
+<li><code>toarray()</code> exposes the dense matrix for a small classroom example, but should be avoided for large corpora.</li>
+</ul>
+<h3 id="typical-frequency-plot">Typical frequency plot</h3>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+
+terms = vectorizer.get_feature_names_out()
+frequencies = X.sum(axis=0).A1
+
+plt.bar(terms, frequencies)
+plt.title(&quot;Word Frequencies in Corpus&quot;)
+plt.xlabel(&quot;Words&quot;)
+plt.ylabel(&quot;Frequency&quot;)
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+</code></pre>
+<p>The lecture’s core implementation sequence is: <strong>create corpus → create vectorizer → fit and transform → inspect vocabulary/matrix → aggregate frequencies → plot</strong>.</p>
+<h3 id="safe-predictive-pipeline">Safe predictive pipeline</h3>
+<pre><code class="language-python">from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.pipeline import Pipeline
+
+model = Pipeline([
+    (&quot;tfidf&quot;, TfidfVectorizer(ngram_range=(1, 2))),
+    (&quot;clf&quot;, LogisticRegression(max_iter=1000)),
+])
+
+model.fit(train_texts, train_labels)
+predictions = model.predict(test_texts)
+</code></pre>
+<p>The pipeline ensures the vocabulary/IDF is learned only from training data when evaluation is correctly arranged.</p>
+<hr>
+<h1 id="part-vi-high-yield-comparisons">Part VI — High-yield comparisons</h1>
+<h2 id="29-pca-vs-bow">29. PCA vs BoW</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>PCA</th>
+<th>BoW</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>General method for high-dimensional numerical data</td>
+<td>Text-specific conversion to numerical features</td>
+</tr>
+<tr>
+<td>Reduces dimensions</td>
+<td>Usually creates a high-dimensional document-term space</td>
+</tr>
+<tr>
+<td>Produces dense component scores</td>
+<td>Produces sparse count/presence vectors</td>
+</tr>
+<tr>
+<td>Uses covariance/eigenvectors</td>
+<td>Uses tokenization, vocabulary, and counts</td>
+</tr>
+<tr>
+<td>Can be applied after text vectorization</td>
+<td>Must precede any numerical dimensionality reduction on raw text</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Instructor Q&amp;A emphasis:</strong> PCA can operate on images, text matrices, or other high-dimensional numerical data. BoW is specifically for turning a text corpus into numbers a machine can process.</p>
+<h2 id="30-feature-selection-vs-feature-extraction">30. Feature selection vs feature extraction</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature selection</th>
+<th>Feature extraction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Keeps a subset of original features</td>
+<td>Creates new transformed features</td>
+</tr>
+<tr>
+<td>Examples: χ², mutual information</td>
+<td>Examples: PCA, SVD, NMF</td>
+</tr>
+<tr>
+<td>Usually easier to interpret</td>
+<td>Often more compact but less directly interpretable</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="31-sparse-vs-dense">31. Sparse vs dense</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Sparse</th>
+<th>Dense</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mostly zeros</td>
+<td>Most values stored explicitly</td>
+</tr>
+<tr>
+<td>Typical of BoW/TF-IDF</td>
+<td>Typical of PCA scores/embeddings</td>
+</tr>
+<tr>
+<td>Efficient sparse storage is essential</td>
+<td>Standard dense linear algebra is natural</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="part-vii-likely-exam-questions-with-answer-points">Part VII — Likely exam questions with answer points</h1>
+<h2 id="32-short-answer-questions">32. Short-answer questions</h2>
+<h3 id="q1-define-pca">Q1. Define PCA.</h3>
+<p>PCA is an unsupervised linear transformation that converts correlated features into orthogonal principal components ordered by explained variance, enabling dimensionality reduction while retaining dominant patterns.</p>
+<h3 id="q2-state-the-steps-of-pca">Q2. State the steps of PCA.</h3>
+<p>Standardize/center data; compute covariance matrix; find eigenvalues/eigenvectors; sort by eigenvalue; choose top $k$; project data onto those eigenvectors.</p>
+<h3 id="q3-what-do-eigenvectors-and-eigenvalues-mean-in-pca">Q3. What do eigenvectors and eigenvalues mean in PCA?</h3>
+<p>Eigenvectors define component directions; corresponding eigenvalues quantify variance captured by them.</p>
+<h3 id="q4-why-standardize-before-pca">Q4. Why standardize before PCA?</h3>
+<p>Because PCA is scale-sensitive. Standardization prevents large-scale features from dominating covariance and the resulting PCs.</p>
+<h3 id="q5-define-bow-and-state-its-main-limitation">Q5. Define BoW and state its main limitation.</h3>
+<p>BoW maps documents to vocabulary-based count/presence vectors. Its main limitation is loss of word order and context; it also creates sparse, high-dimensional data.</p>
+<h3 id="q6-what-is-a-corpus">Q6. What is a corpus?</h3>
+<p>A structured collection of text documents used for language analysis or model training, often with metadata and sometimes tailored to a domain.</p>
+<h3 id="q7-compare-bow-and-tf-idf">Q7. Compare BoW and TF-IDF.</h3>
+<p>BoW uses raw counts/presence. TF-IDF multiplies within-document frequency by inverse corpus frequency to downweight ubiquitous words and highlight document-specific terms.</p>
+<h3 id="q8-why-use-n-grams">Q8. Why use n-grams?</h3>
+<p>They capture local word sequence and phrases, including negation such as “not good,” but expand vocabulary and sparsity.</p>
+<h3 id="q9-why-is-bow-sparse">Q9. Why is BoW sparse?</h3>
+<p>The corpus vocabulary is large while each document contains only a small subset, so most document-term cells are zero.</p>
+<h3 id="q10-how-can-bow-be-improved">Q10. How can BoW be improved?</h3>
+<p>Use TF-IDF, n-grams, subword features, better preprocessing, feature selection, LSA/truncated SVD, NMF/topic modelling, or semantic/contextual embeddings.</p>
+<h2 id="33-long-answer-frameworks">33. Long-answer frameworks</h2>
+<h3 id="explain-pca-mathematically">Explain PCA mathematically</h3>
+<p>Include: data shape; standardization formula; covariance matrix; eigen-equation; sorting; EVR/cumulative EVR; top-$k$ projection; applications; advantages; limitations; leakage caution.</p>
+<h3 id="explain-bow-with-an-example">Explain BoW with an example</h3>
+<p>Include: corpus; preprocessing; tokenization; vocabulary; document-term matrix; count vs binary values; sparsity; applications; limitations; TF-IDF/n-gram improvements.</p>
+<h3 id="design-a-sentiment-analysis-system">Design a sentiment-analysis system</h3>
+<p>Include: labelled corpus; split before fitting transformations; task-aware preprocessing; BoW/TF-IDF and n-grams; logistic regression/Naive Bayes; confusion matrix and metrics; error analysis; negation caveat; compare candidate pipelines.</p>
+<hr>
+<h1 id="part-viii-rapid-revision">Part VIII — Rapid revision</h1>
+<h2 id="34-one-line-memory-aids">34. One-line memory aids</h2>
+<ul>
+<li><strong>PCA:</strong> standardize → covariance → eigenpairs → rank → select $k$ → project.</li>
+<li><strong>PC1:</strong> direction of maximum variance.</li>
+<li><strong>Eigenvector:</strong> direction; <strong>eigenvalue:</strong> variance captured.</li>
+<li><strong>BoW:</strong> tokenize → vocabulary → count/presence vector.</li>
+<li><strong>TF-IDF:</strong> important here, uncommon everywhere.</li>
+<li><strong>N-gram:</strong> consecutive token sequence that restores limited order.</li>
+<li><strong>Sparse matrix:</strong> many dimensions, mostly zeros.</li>
+<li><strong>Embedding:</strong> dense semantic vector; contextual embeddings vary with context.</li>
+</ul>
+<h2 id="35-final-checklist">35. Final checklist</h2>
+<ul>
+<li>[ ] Can define PCA, PC, covariance, eigenvector, eigenvalue, and explained variance.</li>
+<li>[ ] Can derive/write the PCA equations and workflow.</li>
+<li>[ ] Can explain why scaling and train-only fitting matter.</li>
+<li>[ ] Can discuss PCA applications, MNIST, advantages, and limitations.</li>
+<li>[ ] Can construct a BoW matrix by hand.</li>
+<li>[ ] Can distinguish binary counts, frequency counts, and TF-IDF.</li>
+<li>[ ] Can explain sparsity, stop-word risks, stemming, and lemmatization.</li>
+<li>[ ] Can generate unigrams, bigrams, and trigrams.</li>
+<li>[ ] Can compare BoW, TF-IDF, embeddings, PCA, SVD/LSA, NMF, and LDA.</li>
+<li>[ ] Can describe the <code>CountVectorizer</code> implementation and interpret its matrix.</li>
+<li>[ ] Can design and evaluate a sentiment-classification pipeline.</li>
+</ul>
+<h2 id="36-final-conceptual-map">36. Final conceptual map</h2>
+<p>\[
+\text{Raw text}
+\xrightarrow{\text{clean/tokenize}}
+\text{tokens}
+\xrightarrow{\text{vocabulary + weighting}}
+\text{sparse BoW/TF-IDF matrix}
+\xrightarrow{\text{optional selection/SVD/PCA}}
+\text{compact features}
+\xrightarrow{\text{classifier}}
+\text{prediction}
+\]</p>
+<p>For general numerical data:</p>
+<p>\[
+\text{high-dimensional data}
+\xrightarrow{\text{standardize}}
+\text{covariance/eigenanalysis}
+\xrightarrow{\text{top PCs}}
+\text{lower-dimensional representation}.
+\]</p>
+<p><strong>Bottom line:</strong> BoW makes text computable; TF-IDF and n-grams make frequency features more useful; PCA/SVD make high-dimensional representations more compact; embeddings and transformers add semantic and contextual understanding.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-12.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 12: Logistic Regression as a Neural Network,…</span>
+      </a>
+      <a href="week-14.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 14: Autoencoders and Representation Learning</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

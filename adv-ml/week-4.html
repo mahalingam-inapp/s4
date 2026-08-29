@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Advanced ML · Week 4 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Advanced ML</span>
+      <span class="brand-title">Week 4</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html" selected>Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Review of Machine Learning, Learning Types, and Linear Regression
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Classification, Logistic Regression, Maximum Likelihood and K-Means…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Bias–Variance, Error Analysis, Learning Curves, and Model Selection
+      </a>
+      <a class="is-active" href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Recommendation Systems and Collaborative Filtering
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Content-Based Filtering, Cosine Similarity, UV Decomposition, and…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Bias–Variance Trade-off, Underfitting, Overfitting,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Association Rule Mining, Apriori, and PCY
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Dimensionality Reduction, PCA, Eigen-Decomposition, and SVD
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Text Processing, Bag of Words, TF–IDF, Vector-Space Retrieval, and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Web Advertising, Online Matching, AdWords, and Balance
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        High-Dimensional Clustering, Subspaces, CLIQUE, PROCLUS, and…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Independent Component Analysis, Blind Source Separation, FastICA,…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Social Networks, Graph Laplacians, and Spectral Clustering
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Graph Partitioning, Flow Centrality, Edge Betweenness, and Girvan–Newman
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        ML Life Cycle, Hybrid and Music Recommenders, and Evaluation
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Advanced ML · Week 4</p>
+        <h1 class="page-title">Recommendation Systems and Collaborative Filtering</h1>
+        <p class="page-meta">Week 4 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#exam-scope-and-outcomes">Exam scope and outcomes</a></li>
+      <li><a href="#1-recommendation-systems">1. Recommendation systems</a></li>
+      <li><a href="#2-families-of-recommendation-systems">2. Families of recommendation systems</a></li>
+      <li><a href="#3-collaborative-filtering-foundations">3. Collaborative filtering foundations</a></li>
+      <li><a href="#4-long-tail-phenomenon">4. Long-tail phenomenon</a></li>
+      <li><a href="#5-collaborative-filtering-approaches">5. Collaborative-filtering approaches</a></li>
+      <li><a href="#6-similarity-and-rating-prediction">6. Similarity and rating prediction</a></li>
+      <li><a href="#7-python-demonstration-movielens-item-based-knn">7. Python demonstration: MovieLens item-based KNN</a></li>
+      <li><a href="#8-cold-start-scalability-and-hybrid-design">8. Cold start, scalability, and hybrid design</a></li>
+      <li><a href="#9-vistastream-case-study">9. VistaStream case study</a></li>
+      <li><a href="#10-evaluation">10. Evaluation</a></li>
+      <li><a href="#11-complete-implementation-workflow">11. Complete implementation workflow</a></li>
+      <li><a href="#12-exam-focused-revision">12. Exam-focused revision</a></li>
+      <li><a href="#13-qa-supplement-recommender-details">13. QA supplement — recommender details</a></li>
+      <li><a href="#14-review-week-augmentation-end-to-end-serving-logic">14. Review-week augmentation: end-to-end serving logic</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="exam-scope-and-outcomes">Exam scope and outcomes</h2>
+<p>Week 4 moves from model evaluation to a major real-world ML application: recommendation. You should be able to:</p>
+<ul>
+<li>define recommendation systems and explain their business/user impact;</li>
+<li>compare content-based, collaborative, demographic, community, knowledge-based, stereotype-based, popularity-based, context-aware, conversational, and hybrid recommenders;</li>
+<li>construct and interpret a user–item utility matrix and explain sparsity and the long-tail phenomenon;</li>
+<li>distinguish explicit and implicit feedback;</li>
+<li>explain user-based and item-based collaborative filtering, KNN, Pearson correlation, cosine similarity, matrix factorization, and deep-learning approaches;</li>
+<li>calculate a missing rating from mean-centered similarities;</li>
+<li>describe the complete MovieLens Python/KNN workflow;</li>
+<li>diagnose cold-start and scalability problems;</li>
+<li>evaluate recommenders using precision, recall, and user-satisfaction measures.</li>
+</ul>
+<hr>
+<h2 id="1-recommendation-systems">1. Recommendation systems</h2>
+<h3 id="1-1-definition-and-purpose">1.1 Definition and purpose</h3>
+<p>A <strong>recommendation system</strong> (or <strong>recommender system</strong>) is a subclass of an information-filtering system that predicts the preference a user is likely to assign to an item and recommends products or services accordingly. Information filtering selects the small subset of information relevant to an individual from a very large platform dataset.</p>
+<p>Recommendation systems aim to:</p>
+<ul>
+<li>reduce search effort and information overload;</li>
+<li>personalize the experience;</li>
+<li>predict unknown preferences;</li>
+<li>increase engagement, watch time, conversion, sales, and retention;</li>
+<li>help users discover both popular and niche items.</li>
+</ul>
+<p>They appear in web/mobile applications, social/friendship networks, e-commerce, search, maps, book sites, music services, and OTT/video platforms.</p>
+<h3 id="1-2-everyday-examples">1.2 Everyday examples</h3>
+<ul>
+<li><strong>Amazon:</strong> after buying a bicycle, a user may see a bicycle light, lock, helmet, related bicycles, or products frequently bought by similar customers.</li>
+<li><strong>Facebook/Instagram:</strong> friend suggestions or content liked by people in one’s social circle.</li>
+<li><strong>Netflix/OTT:</strong> movies inferred from watch history, community behavior, language, and region.</li>
+<li><strong>Goodreads:</strong> books based on purchases/ratings and readers with similar interests.</li>
+<li><strong>YouTube:</strong> videos based on viewing and engagement signals.</li>
+<li><strong>Google/Google Scholar:</strong> “similar pages” connected to a searched author or topic.</li>
+<li><strong>Google Maps:</strong> routes/paths informed partly by collective/crowdsourced behavior.</li>
+<li><strong>Libraries and offline life:</strong> best-seller lists, Top 40 lists, the recent-returns shelf, or even a well-used unmarked path through woods are collaborative signals.</li>
+</ul>
+<p>The lecture cited impact figures to illustrate commercial importance: approximately 35% of Amazon purchases were attributed to recommendations; recommendations were said to drive roughly 70% of YouTube viewing time and 75% of Netflix viewing; and personalized landing pages were associated with 20% growth for Alibaba during a 2016 shopping event. Treat these as lecture/survey illustrations, not timeless platform statistics.</p>
+<hr>
+<h2 id="2-families-of-recommendation-systems">2. Families of recommendation systems</h2>
+<h3 id="2-1-content-based-filtering">2.1 Content-based filtering</h3>
+<p>Examines <strong>item properties</strong> and recommends items resembling what the target user already liked.</p>
+<p>Movie features may include genre, director, actors, language, keywords, or theme. If a viewer repeatedly watches war films, recommend other films tagged with the war genre. A sci-fi/space/Christopher Nolan preference leads to items with similar attributes.</p>
+<p><strong>Advantages:</strong> independent of other users; suitable for unusual individual tastes; recommendations are relatively explainable.</p>
+<p><strong>Limitations:</strong> needs good metadata; can over-specialize and repeatedly show the same type; may fail to discover unrelated new interests. For example, completing an action film could result in only action recommendations.</p>
+<h3 id="2-2-collaborative-filtering-cf">2.2 Collaborative filtering (CF)</h3>
+<p>Uses collective <strong>user–item interactions</strong>, rather than item metadata. Its core assumption is:</p>
+<blockquote>
+<p>Users who behaved similarly in the past are likely to behave similarly in the future.</p>
+</blockquote>
+<p>If Alice likes X and Y, and Bob also likes X, Bob may like Y—especially if Alice and Bob are known to have similar taste. It is the online analogue of word-of-mouth: ask a friend with similar taste which restaurant to visit.</p>
+<p>Behavior can include ratings, likes/dislikes, purchases, clicks, play counts, viewing time, and watch history.</p>
+<h3 id="2-3-other-types">2.3 Other types</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Main signal</th>
+<th>Example/use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Knowledge-based</td>
+<td>Domain knowledge plus explicit constraints/requirements</td>
+<td>Find land near a chosen location within ₹10 lakh; recommend family-friendly/award-winning films</td>
+</tr>
+<tr>
+<td>Demographic-based</td>
+<td>Age, gender, location, language, occupation</td>
+<td>Different YouTube/Netflix choices for a 60-year-old in Kerala and a 20-year-old in Delhi</td>
+</tr>
+<tr>
+<td>Community-based</td>
+<td>Friends/social-circle or community behavior</td>
+<td>“Popular among friends,” a reel liked by five friends, trending in one’s city</td>
+</tr>
+<tr>
+<td>Stereotype-based</td>
+<td>Predefined user categories</td>
+<td>Student, parent, action fan, documentary enthusiast</td>
+</tr>
+<tr>
+<td>Popularity-based</td>
+<td>Aggregate top-rated/most-viewed/trending items</td>
+<td>Same top list for everyone; <strong>not personalized</strong></td>
+</tr>
+<tr>
+<td>Context-aware</td>
+<td>Current situation such as time, place, device, or activity</td>
+<td>Morning news versus evening entertainment</td>
+</tr>
+<tr>
+<td>Conversational/critiquing</td>
+<td>Interactive refinement of recommendations</td>
+<td>“Cheaper,” “closer,” or “less violent” feedback narrows results</td>
+</tr>
+<tr>
+<td>Ontology/semantic-web</td>
+<td>Formal concepts and relationships</td>
+<td>Link semantically related books/topics even when wording differs</td>
+</tr>
+<tr>
+<td>Hybrid</td>
+<td>Combination of two or more methods/signals</td>
+<td>CF + content + demographic/community fallbacks</td>
+</tr>
+</tbody>
+</table></div>
+<p>Real platforms normally mix techniques. The lecture described Amazon as using content and collaborative signals; Netflix as combining collaborative, community, and demographic signals; and IMDb as using collaborative, content, knowledge, and stereotype approaches. Hybridization addresses the weaknesses of any one technique but increases implementation, computation, and tuning complexity.</p>
+<p><strong>Assertion–reason exam point:</strong> “Finding similar viewers from watch history is content-based” is false; it is collaborative filtering. The reason “CF relies on user–item interactions and may uncover long-tail items without rich metadata” is true.</p>
+<hr>
+<h2 id="3-collaborative-filtering-foundations">3. Collaborative filtering foundations</h2>
+<h3 id="3-1-entities-and-prediction-task">3.1 Entities and prediction task</h3>
+<p>The two entities are:</p>
+<ul>
+<li><strong>users:</strong> individuals who interact with or rate the system;</li>
+<li><strong>items:</strong> products or services that can be viewed, bought, procured, or recommended.</li>
+</ul>
+<p>For user (i) and item (j), (r_{ij}) denotes the rating. If (r_{42}) is missing, the task is to estimate user 4’s rating of item 2. Outputs can be:</p>
+<ul>
+<li>predicted missing ratings;</li>
+<li>purchase/watch probabilities;</li>
+<li>binary like/dislike predictions;</li>
+<li>Top-(N) ranked recommendations.</li>
+</ul>
+<h3 id="3-2-utility-user-item-matrix">3.2 Utility (user–item) matrix</h3>
+<p>A <strong>utility matrix</strong> is a two-dimensional matrix whose axes are users and items and whose cells contain preferences/ratings. Either orientation is valid if clearly stated.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>User</th>
+<th style="text-align: right;">HP1</th>
+<th style="text-align: right;">HP2</th>
+<th style="text-align: right;">Twilight</th>
+<th style="text-align: right;">Star Wars 1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">?</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>B</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">?</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>C</td>
+<td style="text-align: right;">?</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">5</td>
+</tr>
+</tbody>
+</table></div>
+<p>Ratings may be 1–5 stars, 1–100, positive/negative, like/dislike/neutral, etc. A blank means <strong>unknown/unobserved</strong>, not automatically dislike or zero preference. The recommender predicts these missing cells.</p>
+<p>The recorded Harry Potter/Twilight/Star Wars example used four users and seven movies: three Harry Potter films, Twilight, and three Star Wars films. User A rated HP1 = 4, Twilight = 5, and Star Wars 1 = 1 while leaving other entries blank; user D had only a few ratings, illustrating sparsity.</p>
+<h3 id="3-3-sparse-matrices">3.3 Sparse matrices</h3>
+<p>Commercial matrices may involve millions/billions of users and items, but every user interacts with only a tiny fraction. Hence most cells are empty: the matrix is <strong>sparse</strong>. In the live-session illustration, a viewer may watch only 50–200 of roughly 13,000–16,000 Netflix titles—far below the entire catalogue.</p>
+<p>Sparsity causes:</p>
+<ul>
+<li>weak/noisy similarity estimates;</li>
+<li>high-dimensional vectors;</li>
+<li>memory/computational challenges;</li>
+<li>cold-start and reduced prediction coverage.</li>
+</ul>
+<p>Compressed sparse row (CSR) storage avoids representing every zero explicitly and is central to scalable implementations.</p>
+<h3 id="3-4-explicit-and-implicit-feedback">3.4 Explicit and implicit feedback</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feedback</th>
+<th>Examples</th>
+<th>Strength</th>
+<th>Caveat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Explicit</td>
+<td>stars, written rating, like/dislike, thumbs up/down</td>
+<td>Direct preference signal</td>
+<td>Users often do not provide it; matrix remains sparse</td>
+</tr>
+<tr>
+<td>Implicit</td>
+<td>clicks, searches, play count, page dwell time, watch completion, replays, purchases</td>
+<td>Abundant and automatic</td>
+<td>Behavior is ambiguous: a play/view does not prove enjoyment</td>
+</tr>
+</tbody>
+</table></div>
+<p>Even browsing without rating or adding to cart can influence recommendations because viewed items and time spent are captured implicitly.</p>
+<hr>
+<h2 id="4-long-tail-phenomenon">4. Long-tail phenomenon</h2>
+<p>A physical store has finite shelf/display space and inventory. It emphasizes fast-moving best sellers; less-popular goods stay in storage or are not stocked. A printed newspaper also has a production/distribution ceiling tied to demand.</p>
+<p>An online store/catalogue can display a huge number of items dynamically, even if inventory is not physically present at the browsing location. Serving an online newspaper to 100 versus many millions of readers does not impose the same physical-copy constraint. The popularity-versus-rank curve therefore has:</p>
+<ul>
+<li>a short <strong>head</strong> of highly popular items;</li>
+<li>a long <strong>tail</strong> of many individually low-demand niche items whose combined demand can be substantial.</li>
+</ul>
+<p>Recommendations make niche books, indie films, documentaries, foreign cinema, and rare titles discoverable. This increases catalogue utilization, personalization, and user satisfaction. CF can uncover long-tail items because similar users’ behavior supplies evidence even where item metadata is weak.</p>
+<hr>
+<h2 id="5-collaborative-filtering-approaches">5. Collaborative-filtering approaches</h2>
+<p>The lectures grouped techniques into three broad approaches:</p>
+<ol>
+<li>neighborhood/K-nearest-neighbor methods;</li>
+<li>matrix factorization;</li>
+<li>deep learning.</li>
+</ol>
+<h3 id="5-1-user-based-neighborhood-cf">5.1 User-based neighborhood CF</h3>
+<p>Find users with rating histories similar to the target user. Recommend unseen items liked by those neighbors.</p>
+<p>Example: Jane likes items 1, 2, and 3; Tim likes 2, 3, and 4. Because their overlap shows similar taste, recommend item 1 to Tim (and item 4 to Jane).</p>
+<p>Workflow:</p>
+<ol>
+<li>build the utility matrix;</li>
+<li>compare target user with other users on co-rated items;</li>
+<li>choose the (K) highest-similarity neighbors;</li>
+<li>aggregate their ratings for unseen items, preferably similarity-weighted;</li>
+<li>predict missing ratings and return Top-(N).</li>
+</ol>
+<p><strong>Advantages:</strong> intuitive, personalized, simple for moderate user counts.</p>
+<p><strong>Limitations:</strong> user similarities change frequently, similarity search can be expensive with millions of users, and sparse/high-dimensional data weaken overlap. The lecture explicitly noted limited scalability.</p>
+<h3 id="5-2-item-based-neighborhood-cf">5.2 Item-based neighborhood CF</h3>
+<p>Compute similarity between item rating vectors. If Sandra and Tom both like items 1 and 4, there is evidence that people who like item 1 also like item 4; recommend item 4 to another user who liked item 1.</p>
+<p>Workflow:</p>
+<ol>
+<li>represent each item by ratings/behavior across users;</li>
+<li>compute item–item similarity;</li>
+<li>find items nearest to those the target user liked;</li>
+<li>combine the user’s prior ratings with similarity weights;</li>
+<li>rank unseen candidates.</li>
+</ol>
+<p><strong>Advantages:</strong> item relationships are generally more stable, can be precomputed/cached, and scale better to millions of users and large catalogues.</p>
+<p><strong>Limitations:</strong> new items have no interaction vector; sufficient shared interactions are required.</p>
+<h3 id="5-3-k-nearest-neighbors">5.3 K-nearest neighbors</h3>
+<p>KNN is memory-based: it retrieves neighbors rather than learning a parametric predictive equation. If (K=5), choose the five <strong>most similar users/items</strong>, not the five highest ratings or random records.</p>
+<p>The binary lecture example encoded dislike = 0, like = 1, and unknown = ?. Distances from the target user to six others were 5, 6, 6, 5, 4, and 8. The smallest Hamming distance was 4; that neighbor liked item 2, so predict the target user will like item 2.</p>
+<p>Possible similarity/distance measures mentioned: Hamming, Pearson, cosine, Euclidean, Manhattan, Jaccard, and Minkowski. The metric must fit the representation.</p>
+<h3 id="5-4-matrix-factorization">5.4 Matrix factorization</h3>
+<p>Approximate a huge sparse utility matrix (R) with lower-dimensional user and item matrices:</p>
+<p>\[
+R\approx P Q^T.
+\]</p>
+<p>(P) contains user latent preferences and (Q) contains item latent characteristics. <strong>Latent factors</strong> are learned hidden dimensions—e.g. action tendency, romance level, darkness, comedy, or family friendliness—not necessarily manually labeled.</p>
+<ul>
+<li><strong>SVD:</strong> (R\approx U\Sigma V^T), giving compact representations.</li>
+<li><strong>CUR decomposition:</strong> uses selected actual rows and columns, aiding interpretability and large sparse-data processing.</li>
+</ul>
+<p>Benefits include compactness, scalability, hidden-pattern discovery, and often strong predictive accuracy.</p>
+<h3 id="5-5-deep-learning">5.5 Deep learning</h3>
+<p>Neural architectures can learn nonlinear interaction patterns from large behavioral datasets. The lecture mentioned CNN/deep-learning methods as a third category capable of analyzing complex patterns. In practice architecture choice depends on the data modality; the key exam point is that deep models learn complex representations but demand more data, computation, and careful generalization control.</p>
+<hr>
+<h2 id="6-similarity-and-rating-prediction">6. Similarity and rating prediction</h2>
+<h3 id="6-1-pearson-correlation">6.1 Pearson correlation</h3>
+<p>For two users (x,y), using their co-rated items:</p>
+<p>\[
+\rho_{xy}=\frac{\sum_i(x_i-\bar x)(y_i-\bar y)}
+{\sqrt{\sum_i(x_i-\bar x)^2}\sqrt{\sum_i(y_i-\bar y)^2}}.
+\]</p>
+<p>It is covariance normalized by both vectors’ deviations. Values near +1 mean similar deviations from personal averages, 0 indicates little linear association, and negative values indicate opposing taste.</p>
+<p>Mean-centering removes additive rating-scale bias. Users who rate ([5,4,5,4]) versus ([3,2,3,2]) have different absolute generosity, but both centered vectors are ([0.5,-0.5,0.5,-0.5]), revealing identical preference patterns.</p>
+<h3 id="6-2-cosine-similarity">6.2 Cosine similarity</h3>
+<p>\[
+\operatorname{cosSim}(A,B)=\frac{A\cdot B}{\|A\|\|B\|}.
+\]</p>
+<p>It compares vector direction: smaller angle/higher cosine means greater similarity. It is computationally convenient for sparse item vectors. Libraries may return <strong>cosine distance</strong>, often (1-\text{cosine similarity}), so smaller returned distance means greater similarity.</p>
+<h3 id="6-3-similarity-weighted-mean-centered-prediction">6.3 Similarity-weighted mean-centered prediction</h3>
+<p>For target user (u), missing item (p), and neighbor set (N):</p>
+<p>\[
+\hat r_{up}=\bar r_u+
+\frac{\sum_{v\in N}s(u,v)(r_{vp}-\bar r_v)}
+{\sum_{v\in N}|s(u,v)|}.
+\]</p>
+<p>The absolute denominator is the conventional stable form when similarities can be negative. It starts at the target user’s typical rating and adjusts it using neighbors’ above/below-average opinions. Missing values are predicted from evidence, not assigned arbitrary low ratings.</p>
+<h3 id="6-4-numerical-example-predict-alice-s-rating-of-item-5">6.4 Numerical example: predict Alice’s rating of item 5</h3>
+<p>The utility matrix has Alice, U1, U2, U3 and items I1–I5. Alice rated I1–I4 as (5,4,1,4) and left I5 blank; all other users rated every item.</p>
+<ol>
+<li><strong>Calculate user means.</strong> Alice’s mean is</li>
+</ol>
+<p>\[
+   \bar r_A=(5+4+1+4)/4=3.5.
+   \]</p>
+<p>Other users’ means are calculated from their available ratings. The transcript verbally gives inconsistent arithmetic for U1 (“15/5” but says 2.25); use the displayed matrix values/formula in an exam.</p>
+<ol start="2">
+<li>
+<p><strong>Mean-center ratings:</strong> (r&rsquo;<em ij>{ij}=r</em>-\bar r_i). For Alice, the first three centered values illustrated are (1.5,0.5,-2.5), and I4 is (0.5).</p>
+</li>
+<li>
+<p><strong>Compare centered vectors</strong> using normalized dot products/Pearson-style cosine similarity on common ratings. The lecture reported approximately:</p>
+</li>
+</ol>
+<ul>
+<li>(s(A,U1)\approx0.301) (earlier rounded as 0.303),</li>
+<li>(s(A,U2)\approx-0.33),</li>
+<li>strongest magnitude/positive alignment with U3 reported around (0.707) in the narration, though a later spoken substitution accidentally says (-0.707).</li>
+</ul>
+<ol start="4">
+<li><strong>Weight neighbors’ centered I5 ratings</strong>, normalize by similarities, and add Alice’s mean. The lecture’s final prediction is:</li>
+</ol>
+<p>\[
+   \hat r_{A,I5}\approx3.83.
+   \]</p>
+<p>U3—the most similar user—rated I5 as 4, so Alice’s estimated 3.83 is intuitively consistent.</p>
+<blockquote>
+<p><strong>Exam caution:</strong> the transcript contains several sign/mean slips while verbally reading the slide. The method is the examinable point: calculate means correctly, center ratings, calculate similarity only on comparable entries, use a normalized weighted deviation, then add the target mean.</p>
+</blockquote>
+<hr>
+<h2 id="7-python-demonstration-movielens-item-based-knn">7. Python demonstration: MovieLens item-based KNN</h2>
+<h3 id="7-1-dataset-and-libraries">7.1 Dataset and libraries</h3>
+<p>The demonstration used the Kaggle <strong>MovieLens 20M</strong> dataset (download described as roughly 200 MB) in a Python/Jupyter environment.</p>
+<ul>
+<li><code>numpy</code>: numerical/linear-algebra operations and random selection;</li>
+<li><code>pandas</code>: CSV/dataframe processing, merging, pivoting, concatenation, sorting;</li>
+<li><code>scipy.sparse.csr_matrix</code>: compressed sparse representation;</li>
+<li><code>sklearn.neighbors.NearestNeighbors</code>: KNN search.</li>
+</ul>
+<p>The archive contained several files, but the demo used:</p>
+<ul>
+<li><code>movies.csv</code>: <code>movieId</code>, <code>title</code>, <code>genres</code> (genre ignored in this CF demo);</li>
+<li><code>ratings.csv</code>: <code>userId</code>, <code>movieId</code>, <code>rating</code> (and possibly other source fields not used).</li>
+</ul>
+<h3 id="7-2-data-preparation-workflow">7.2 Data preparation workflow</h3>
+<ol>
+<li>Read both CSVs as pandas dataframes (<code>data_movie</code>, <code>data_rating</code>).</li>
+<li>Retain relevant movie and rating columns.</li>
+<li>Merge on <code>movieId</code> with <code>pd.merge</code>, producing records containing title/movie ID, user ID, and rating.</li>
+<li>Use <code>iloc</code> to select a working view/subset—the demo used the first 100,000 rows and all needed columns. <code>iloc[start_row:end_row, start_col:end_col]</code> is positional indexing.</li>
+<li>Pivot so rows are movie titles, columns are user IDs, and values are ratings. Fill unobserved entries with 0 for matrix computation; remember 0 means “not rated,” not a genuine zero-star preference.</li>
+<li>Convert the movie–user table to a CSR matrix to exploit sparsity.</li>
+</ol>
+<p>The visible table contained titles such as <em>Toy Story</em> and <em>Father of the Bride Part II</em> and a large number of users (the narration references roughly 63,000 columns/users in the working representation).</p>
+<h3 id="7-3-fit-and-query-knn">7.3 Fit and query KNN</h3>
+<ol>
+<li>Choose a random movie row using NumPy’s random choice and the table’s row count. The recorded run selected <em>Grumpier Old Men (1995)</em> (misrecognized in places by transcription).</li>
+<li>Instantiate <code>NearestNeighbors(metric='cosine', algorithm='brute')</code>.</li>
+<li>Fit it on the CSR movie–user matrix.</li>
+<li>Reshape the query movie row to a single sample and call <code>kneighbors(..., n_neighbors=6)</code>.</li>
+<li>The method returns:</li>
+</ol>
+<ul>
+<li><code>indices</code>: positional row indices in the pivot table, <strong>not movie IDs</strong>;</li>
+<li><code>distances</code>: distance from the query; for cosine distance, smaller means more similar.</li>
+</ul>
+<ol start="6">
+<li>Map indices back to movie titles, pair titles with distances, concatenate into a dataframe/series, sort ascending, and print recommendations. The query itself may appear as the zero-distance neighbor, which is why requesting six can yield five other recommendations.</li>
+</ol>
+<h3 id="7-4-reported-output-and-a-transcript-caveat">7.4 Reported output and a transcript caveat</h3>
+<p>The recommendations named included <em>Heat (1995)</em>, <em>Waiting to Exhale</em>, <em>Toy Story</em>, and <em>Father of the Bride Part II</em>. The narration describes numbers such as 0.95 as “95% similarity,” but <code>kneighbors</code> with <code>metric='cosine'</code> ordinarily outputs <strong>distance</strong>, not similarity. Correct interpretation requires checking the code/output: if it is distance, 0.05 corresponds to 0.95 similarity, while distance 0.95 is weak similarity.</p>
+<h3 id="7-5-end-to-end-pseudocode">7.5 End-to-end pseudocode</h3>
+<pre><code class="language-python">movies = pd.read_csv(&quot;movies.csv&quot;)
+ratings = pd.read_csv(&quot;ratings.csv&quot;)
+df = ratings.merge(movies[[&quot;movieId&quot;, &quot;title&quot;]], on=&quot;movieId&quot;)
+
+movie_user = df.iloc[:100_000].pivot_table(
+    index=&quot;title&quot;, columns=&quot;userId&quot;, values=&quot;rating&quot;, fill_value=0
+)
+matrix = csr_matrix(movie_user.values)
+
+model = NearestNeighbors(metric=&quot;cosine&quot;, algorithm=&quot;brute&quot;)
+model.fit(matrix)
+
+query_idx = np.random.choice(movie_user.shape[0])
+distances, indices = model.kneighbors(
+    movie_user.iloc[query_idx].values.reshape(1, -1), n_neighbors=6
+)
+# Map indices back to movie_user.index and sort by ascending distance.
+</code></pre>
+<hr>
+<h2 id="8-cold-start-scalability-and-hybrid-design">8. Cold start, scalability, and hybrid design</h2>
+<h3 id="8-1-cold-start-problem">8.1 Cold-start problem</h3>
+<p>CF needs interaction history.</p>
+<ul>
+<li><strong>New user:</strong> few/no ratings. Use onboarding questions, demographic signals, community trends, popularity, or content-based recommendations until behavior accumulates.</li>
+<li><strong>New item:</strong> no users have rated/watched it. Use metadata/content similarity, promotion/exploration, knowledge-based rules, or a hybrid approach.</li>
+</ul>
+<p>Illustrative hybrid scoring from the quiz:</p>
+<p>\[
+\text{score}=0.70(\text{CF})+0.15(\text{demographic})+0.15(\text{community}),
+\]</p>
+<p>while a cold-start user might initially receive (0.50) demographic + (0.50) community. These weights are examples, not universal constants.</p>
+<h3 id="8-2-user-based-versus-item-based-trade-off">8.2 User-based versus item-based trade-off</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>User-based</th>
+<th>Item-based</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Similarity</td>
+<td>User histories</td>
+<td>Item rating vectors</td>
+</tr>
+<tr>
+<td>Stability</td>
+<td>Lower; tastes change</td>
+<td>Higher; item relationships change less often</td>
+</tr>
+<tr>
+<td>Scalability</td>
+<td>Often poorer with huge user base</td>
+<td>Usually better; similarities can be cached</td>
+</tr>
+<tr>
+<td>Explanation</td>
+<td>“Users like you enjoyed…”</td>
+<td>“Because you liked X…”</td>
+</tr>
+<tr>
+<td>Cold start</td>
+<td>New-user weakness</td>
+<td>New-item weakness</td>
+</tr>
+<tr>
+<td>Best use</td>
+<td>Moderate user base, strong personal neighborhoods</td>
+<td>Large commercial catalogues and stable item relations</td>
+</tr>
+</tbody>
+</table></div>
+<p>Hybrid systems are generally most robust and alleviate cold start, but demand more signals, computation, monitoring, and parameters.</p>
+<hr>
+<h2 id="9-vistastream-case-study">9. VistaStream case study</h2>
+<h3 id="9-1-scenario">9.1 Scenario</h3>
+<p>VistaStream is a new video-on-demand platform. Product manager <strong>Maya Chen</strong> and data scientist <strong>Lucas Diaz</strong> have:</p>
+<ul>
+<li>explicit five-star ratings;</li>
+<li>implicit play counts for thousands of titles;</li>
+<li>a goal of personalized recommendations based on past interactions and similar tastes;</li>
+<li>a catalogue including blockbusters, niche indie films, and documentaries.</li>
+</ul>
+<p>They must choose user-based KNN, item-based cosine similarity, or a hybrid with demographic weights for age/location and community signals.</p>
+<h3 id="9-2-options">9.2 Options</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Strength</th>
+<th>Weakness</th>
+<th>Suitable condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User-based KNN</td>
+<td>Intuitive and strongly personalized</td>
+<td>Poorer scalability, sparse/high-dimensional searches, frequent updates</td>
+<td>Moderate user count with sufficient overlap</td>
+</tr>
+<tr>
+<td>Item-based cosine</td>
+<td>Stable, scalable, cacheable, good catalogue/long-tail support</td>
+<td>New-item cold start</td>
+<td>Large service with established item interactions</td>
+</tr>
+<tr>
+<td>Hybrid</td>
+<td>Best cold-start coverage and robustness</td>
+<td>Highest complexity/cost</td>
+<td>Commercial service needing resilient recommendations</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="9-3-recommended-staged-implementation">9.3 Recommended staged implementation</h3>
+<ol>
+<li>Begin with an item-based cosine baseline because item similarities are stable and scalable.</li>
+<li>Collect both explicit and implicit behavior; do not equate a play with genuine enjoyment.</li>
+<li>Add demographic/community/popularity fallbacks for new users and content metadata for new items.</li>
+<li>Move toward a weighted hybrid as data volume and engineering maturity grow.</li>
+<li>Continuously update rankings and evaluate both offline relevance and actual user outcomes.</li>
+</ol>
+<hr>
+<h2 id="10-evaluation">10. Evaluation</h2>
+<h3 id="10-1-precision-and-recall">10.1 Precision and recall</h3>
+<p>\[
+\text{Precision@N}=\frac{\text{relevant recommended items in Top-N}}
+{\text{total items recommended in Top-N}}
+\]</p>
+<p>High precision means few irrelevant recommendations.</p>
+<p>\[
+\text{Recall@N}=\frac{\text{relevant recommended items in Top-N}}
+{\text{all relevant items available to that user}}
+\]</p>
+<p>High recall means few desirable items were missed. A narrow list of only obvious blockbusters may have good precision but low catalogue coverage/long-tail discovery; increasing discovery can improve recall/diversity while sometimes lowering precision.</p>
+<h3 id="10-2-user-business-success">10.2 User/business success</h3>
+<p>Offline relevance is not enough. Track:</p>
+<ul>
+<li>click-through/play rate;</li>
+<li>watch time and completion;</li>
+<li>repeat viewing;</li>
+<li>session duration;</li>
+<li>explicit ratings;</li>
+<li>retention and user satisfaction;</li>
+<li>catalogue/long-tail utilization.</li>
+</ul>
+<p>Ultimate success is whether recommendations improve the experience and business objective without becoming repetitive or irrelevant.</p>
+<hr>
+<h2 id="11-complete-implementation-workflow">11. Complete implementation workflow</h2>
+<ol>
+<li>Define users, items, objective, and success metrics.</li>
+<li>Collect explicit and implicit feedback.</li>
+<li>Clean interactions and build the utility matrix.</li>
+<li>Preserve unknowns conceptually; use sparse storage rather than treating all blanks as dislike.</li>
+<li>Choose user-based, item-based, factorization, deep, or hybrid approach.</li>
+<li>Calculate similarity/latent representations.</li>
+<li>Select (K) highest-similarity neighbors where KNN is used.</li>
+<li>Predict unknown ratings or candidate scores.</li>
+<li>Apply content/demographic/community/knowledge weights or fallbacks if hybrid.</li>
+<li>Exclude already-consumed items, rank candidates, and serve Top-(N).</li>
+<li>Evaluate precision, recall, stability, satisfaction, scalability, and long-tail behavior.</li>
+<li>Update with new interactions and monitor cold-start and popularity bias.</li>
+</ol>
+<hr>
+<h2 id="12-exam-focused-revision">12. Exam-focused revision</h2>
+<h3 id="essential-formulas">Essential formulas</h3>
+<p>\[
+\rho_{xy}=\frac{\sum_i(x_i-\bar x)(y_i-\bar y)}
+{\sqrt{\sum_i(x_i-\bar x)^2}\sqrt{\sum_i(y_i-\bar y)^2}}
+\]</p>
+<p>\[
+\operatorname{cosSim}(A,B)=\frac{A\cdot B}{\|A\|\|B\|}
+\]</p>
+<p>\[
+\hat r_{up}=\bar r_u+
+\frac{\sum_v s(u,v)(r_{vp}-\bar r_v)}{\sum_v|s(u,v)|}
+\]</p>
+<p>\[
+R\approx PQ^T,\qquad R\approx U\Sigma V^T\text{ (SVD)}
+\]</p>
+<p>\[
+\text{Precision}=\frac{\text{relevant recommended}}{\text{total recommended}},
+\qquad
+\text{Recall}=\frac{\text{relevant recommended}}{\text{total relevant}}
+\]</p>
+<h3 id="high-yield-one-line-answers">High-yield one-line answers</h3>
+<ul>
+<li>A recommender predicts a user’s preference for an item and filters large catalogues personally.</li>
+<li>Content-based uses item features; collaborative filtering uses collective interactions.</li>
+<li>The utility matrix contains users, items, and observed preferences; blanks are unknown.</li>
+<li>Real utility matrices are sparse because each user interacts with very few available items.</li>
+<li>User-based CF finds similar people; item-based CF finds items with similar interaction vectors.</li>
+<li>(K=5) means five most similar neighbors, not five highest-rated records.</li>
+<li>Pearson mean-centers ratings and corrects for users’ different rating generosity.</li>
+<li>Cosine measures vector direction; distinguish cosine similarity from library-returned cosine distance.</li>
+<li><code>kneighbors()</code> indices are pivot-table row positions; map them back to titles.</li>
+<li>Matrix factorization learns compact latent user/item features.</li>
+<li>Long tail is the large set of niche items beyond the small popular head.</li>
+<li>Popularity ranking is the same for everyone and is not personalized.</li>
+<li>Hybrid recommendation reduces single-method weaknesses/cold start but raises complexity.</li>
+<li>Explicit ratings are direct but scarce; implicit behavior is plentiful but ambiguous.</li>
+</ul>
+<h3 id="likely-exam-questions">Likely exam questions</h3>
+<ol>
+<li><strong>Compare content-based and collaborative filtering.</strong> State their inputs, assumptions, advantages, limitations, and one example each.</li>
+<li><strong>Explain a utility matrix and sparsity.</strong> Draw a small matrix, label blanks unknown, and relate sparse storage to commercial scale.</li>
+<li><strong>Explain user- and item-based KNN.</strong> Give workflows, similarity measures, scalability, and cold-start differences.</li>
+<li><strong>Calculate Pearson similarity/predicted rating.</strong> Compute means, center common ratings, normalize dot product, weight neighbor deviations, and add the target mean.</li>
+<li><strong>Describe the MovieLens demo.</strong> Read/merge CSVs, pivot movie × user, fill for computation, CSR conversion, cosine brute-force KNN, map indices, sort distances.</li>
+<li><strong>Explain long tail.</strong> Contrast physical shelf constraints with virtually unlimited online catalogues and show why discovery matters.</li>
+<li><strong>Design VistaStream.</strong> Recommend an item-based baseline evolving into a hybrid; explain demographic/community/content fallbacks and evaluate precision, recall, and satisfaction.</li>
+</ol>
+<h3 id="common-traps">Common traps</h3>
+<ul>
+<li>Do not treat an unrated cell as a dislike.</li>
+<li>Do not call similar-user matching content-based.</li>
+<li>Do not confuse highest similarity with highest rating.</li>
+<li>Do not interpret cosine distance as similarity without conversion.</li>
+<li>Do not assume a play/click proves positive preference.</li>
+<li>Do not assume collaborative filtering alone handles new users/items.</li>
+<li>Do not optimize only accuracy; check scalability, satisfaction, novelty, and long-tail discovery.</li>
+</ul>
+<h2 id="13-qa-supplement-recommender-details">13. QA supplement — recommender details</h2>
+<h3 id="other-families-named">Other families named</h3>
+<ul>
+<li><strong>Popularity-based:</strong> useful for anonymous/new users but weakly personalized and prone to popularity bias.</li>
+<li><strong>Demographic:</strong> uses region/age-group attributes; helps cold start but raises privacy/fairness/stereotyping concerns.</li>
+<li><strong>Community-based:</strong> uses social/community relationships and trusted peers.</li>
+<li><strong>Hybrid:</strong> combines content, collaborative, demographic, popularity, or rules.</li>
+</ul>
+<h3 id="long-tail">Long tail</h3>
+<p>Collaborative filtering can expose niche items beyond blockbusters through like-minded users, improving catalog coverage while requiring enough interaction evidence.</p>
+<h3 id="factor-dimensions-and-missing-entries">Factor dimensions and missing entries</h3>
+<p>For $R\in\mathbb R^{m\times n}$, approximate $R\approx UV^T$ with $U\in\mathbb R^{m\times f}$ and $V\in\mathbb R^{n\times f}$, $f\ll m,n$. Fit observed ratings only; missing is not automatically zero/dislike.</p>
+<h3 id="kneighbors-semantics"><code>kneighbors()</code> semantics</h3>
+<p>It returns distances and fitted-row indices. With <code>k=5</code>, the query item may appear first at distance 0 if it belongs to training data. Map indices through the pivot index before showing titles.</p>
+<h3 id="evaluation-and-staged-design">Evaluation and staged design</h3>
+<p>Use precision/recall@K, hit rate, MAP/NDCG where relevant, coverage, novelty/diversity, cold-start performance, latency, and online conversion/retention. User-based CF adapts quickly but neighborhoods are volatile; item-based CF is often more stable. The review favors a staged hybrid: popularity/content for cold start, item-based CF as interactions grow, then matrix factorization/richer hybrids.</p>
+<h2 id="14-review-week-augmentation-end-to-end-serving-logic">14. Review-week augmentation: end-to-end serving logic</h2>
+<p>The review week consolidates the recommender workflow into a deployable sequence:</p>
+<ol>
+<li>Build a user–item utility matrix from explicit ratings and/or implicit events; preserve missing entries as <strong>unknown</strong>, not automatic dislikes.</li>
+<li>Create a safe fallback for anonymous or new users, normally popularity/trending lists filtered by availability and business rules.</li>
+<li>Normalize user ratings when generous and strict raters use the scale differently.</li>
+<li>Compute user or item similarity only over aligned/co-observed dimensions and require sufficient overlap; a high cosine based on one shared item is unreliable.</li>
+<li>Retrieve neighbours, exclude the query entity itself, predict with a similarity-weighted mean, and guard against zero total similarity.</li>
+<li>As scale grows, favour precomputed item–item relations because items and their relations are generally more stable than user neighbourhoods.</li>
+<li>Graduate to a bias-aware latent-factor model when interaction volume supports it:</li>
+</ol>
+<p>$$\hat r_{ui}=\mu+b_u+b_i+p_u^Tq_i.$$</p>
+<ol start="8">
+<li>Evaluate offline, test online with guardrails, then monitor drift, cold-start segments, coverage, latency, and business impact.</li>
+</ol>
+<p>Cold start has two distinct forms. A <strong>new user</strong> lacks preference history, so onboarding questions, contextual/popularity defaults, or rapid exploration help. A <strong>new item</strong> lacks interactions, so metadata/content similarity, editorial placement, and controlled exploration are needed.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-3.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 3: Bias–Variance, Error Analysis, Learning…</span>
+      </a>
+      <a href="week-5.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 5: Content-Based Filtering, Cosine Similarity,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

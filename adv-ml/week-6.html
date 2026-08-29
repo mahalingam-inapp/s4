@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Advanced ML · Week 6 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Advanced ML</span>
+      <span class="brand-title">Week 6</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html" selected>Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Review of Machine Learning, Learning Types, and Linear Regression
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Classification, Logistic Regression, Maximum Likelihood and K-Means…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Bias–Variance, Error Analysis, Learning Curves, and Model Selection
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Recommendation Systems and Collaborative Filtering
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Content-Based Filtering, Cosine Similarity, UV Decomposition, and…
+      </a>
+      <a class="is-active" href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Bias–Variance Trade-off, Underfitting, Overfitting,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Association Rule Mining, Apriori, and PCY
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Dimensionality Reduction, PCA, Eigen-Decomposition, and SVD
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Text Processing, Bag of Words, TF–IDF, Vector-Space Retrieval, and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Web Advertising, Online Matching, AdWords, and Balance
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        High-Dimensional Clustering, Subspaces, CLIQUE, PROCLUS, and…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Independent Component Analysis, Blind Source Separation, FastICA,…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Social Networks, Graph Laplacians, and Spectral Clustering
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Graph Partitioning, Flow Centrality, Edge Betweenness, and Girvan–Newman
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        ML Life Cycle, Hybrid and Music Recommenders, and Evaluation
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Advanced ML · Week 6</p>
+        <h1 class="page-title">Bias–Variance Trade-off, Underfitting, Overfitting, Cross-Validation, and Evaluation Metrics</h1>
+        <p class="page-meta">Week 6 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#week-overview">Week overview</a></li>
+      <li><a href="#1-generalization-and-model-complexity">1. Generalization and model complexity</a></li>
+      <li><a href="#2-bias">2. Bias</a></li>
+      <li><a href="#3-variance">3. Variance</a></li>
+      <li><a href="#4-bias-variance-error-decomposition">4. Bias–variance error decomposition</a></li>
+      <li><a href="#5-underfitting">5. Underfitting</a></li>
+      <li><a href="#6-overfitting">6. Overfitting</a></li>
+      <li><a href="#7-balanced-fit-and-true-versus-model-function">7. Balanced fit and true versus model function</a></li>
+      <li><a href="#8-bias-variance-python-demonstration">8. Bias/variance Python demonstration</a></li>
+      <li><a href="#9-underfit-balanced-overfit-python-demonstration">9. Underfit–balanced–overfit Python demonstration</a></li>
+      <li><a href="#10-training-validation-and-testing">10. Training, validation, and testing</a></li>
+      <li><a href="#11-cross-validation">11. Cross-validation</a></li>
+      <li><a href="#12-cross-validation-variants">12. Cross-validation variants</a></li>
+      <li><a href="#13-cross-validation-python-demonstration">13. Cross-validation Python demonstration</a></li>
+      <li><a href="#14-evaluation-metrics-regression-versus-classification">14. Evaluation metrics: regression versus classification</a></li>
+      <li><a href="#15-confusion-matrix">15. Confusion matrix</a></li>
+      <li><a href="#16-classification-metric-formulas-and-meanings">16. Classification metric formulas and meanings</a></li>
+      <li><a href="#17-worked-dog-image-example">17. Worked dog-image example</a></li>
+      <li><a href="#18-choosing-a-metric-by-use-case">18. Choosing a metric by use case</a></li>
+      <li><a href="#19-decision-thresholds-and-error-trade-offs">19. Decision thresholds and error trade-offs</a></li>
+      <li><a href="#20-quiz-case-study-medialert-solutions">20. Quiz case study: MediAlert Solutions</a></li>
+      <li><a href="#21-diagnosing-and-improving-model-behavior">21. Diagnosing and improving model behavior</a></li>
+      <li><a href="#22-exam-focused-formula-sheet">22. Exam-focused formula sheet</a></li>
+      <li><a href="#23-likely-exam-questions-and-answer-frameworks">23. Likely exam questions and answer frameworks</a></li>
+      <li><a href="#24-rapid-recall-checklist">24. Rapid-recall checklist</a></li>
+      <li><a href="#25-final-takeaways">25. Final takeaways</a></li>
+      <li><a href="#26-review-week-augmentation-evaluating-recommender-models">26. Review-week augmentation: evaluating recommender models</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="week-overview">Week overview</h2>
+<p>Week 6 is about building models that <strong>generalize</strong> rather than merely fit their training examples. Its major questions are:</p>
+<ol>
+<li>How do bias and variance contribute to prediction error?</li>
+<li>How do underfitting and overfitting arise from model complexity?</li>
+<li>How can validation and cross-validation select an appropriate model without contaminating the final test result?</li>
+<li>How should classification performance be evaluated when different mistakes have different costs?</li>
+</ol>
+<p>The recorded content includes Python demonstrations, a detailed classification-metrics example, a medical-alert case study, and live-class clarifications.</p>
+<hr>
+<h2 id="1-generalization-and-model-complexity">1. Generalization and model complexity</h2>
+<p>A model should learn the stable underlying pattern in its training data and perform well on unseen observations. <strong>Model complexity</strong> describes how flexible a model is:</p>
+<ul>
+<li>a low-degree polynomial, shallow tree, or heavily constrained model is relatively simple;</li>
+<li>a high-degree polynomial, deep tree, or highly flexible model is relatively complex.</li>
+</ul>
+<p>As complexity rises:</p>
+<ul>
+<li>training error generally falls;</li>
+<li>bias generally falls;</li>
+<li>variance generally rises;</li>
+<li>validation/test error usually falls at first, reaches a minimum, then rises.</li>
+</ul>
+<p>The desired model lies near the minimum of expected generalization error—not necessarily at the minimum training error.</p>
+<hr>
+<h2 id="2-bias">2. Bias</h2>
+<h3 id="2-1-definition">2.1 Definition</h3>
+<p>Bias is the systematic difference between a model&rsquo;s average prediction and the true response/function. If $\hat f_D(x)$ is the predictor learned from training set $D$ and $f(x)$ is the true function:</p>
+<p>$$\operatorname{Bias}(x)=E_D[\hat f_D(x)]-f(x).$$</p>
+<p>The lecture introduces bias more simply as the difference/error between actual $y$ and estimated $\hat y$. That residual is useful for intuition, while the expectation above is the formal bias definition.</p>
+<h3 id="2-2-interpreting-bias">2.2 Interpreting bias</h3>
+<ul>
+<li><strong>Low bias:</strong> average predictions closely match the underlying relationship.</li>
+<li><strong>High bias:</strong> the model systematically misses the relationship; it has not learned enough structure.</li>
+</ul>
+<p>A straight line fitted to truly parabolic data is the standard example: the model form is too restricted, so many observations remain far from the fitted line.</p>
+<h3 id="2-3-causes-and-remedies-for-high-bias">2.3 Causes and remedies for high bias</h3>
+<p>Common causes:</p>
+<ul>
+<li>model too simple;</li>
+<li>important predictors omitted;</li>
+<li>excessive regularization;</li>
+<li>insufficient training/fitting;</li>
+<li>incorrect functional form.</li>
+</ul>
+<p>Possible remedies emphasized in the lectures:</p>
+<ul>
+<li>add relevant features—for glucose prediction, supplement age with blood pressure and hereditary/family-history information;</li>
+<li>use a more expressive model—for parabolic data, use quadratic/polynomial terms rather than only a straight line;</li>
+<li>reduce excessive regularization;</li>
+<li>improve feature engineering and train appropriately.</li>
+</ul>
+<p>Adding arbitrary/noisy features is not automatically helpful; the features should carry genuine signal.</p>
+<hr>
+<h2 id="3-variance">3. Variance</h2>
+<h3 id="3-1-definition">3.1 Definition</h3>
+<p>Variance measures how much the fitted prediction changes across different training samples:</p>
+<p>$$\operatorname{Var}(\hat f(x))=E_D\left[\left(\hat f_D(x)-E_D[\hat f_D(x)]\right)^2\right].$$</p>
+<p>It can be understood as model sensitivity to changes in training data.</p>
+<h3 id="3-2-interpreting-variance">3.2 Interpreting variance</h3>
+<ul>
+<li><strong>Low variance:</strong> different training samples produce similar fitted models.</li>
+<li><strong>High variance:</strong> small changes in the sample can produce very different functions/predictions.</li>
+</ul>
+<p>High variance is associated with overfitting: the model tracks peculiarities and noise in its training sample.</p>
+<h3 id="3-3-causes-and-remedies-for-high-variance">3.3 Causes and remedies for high variance</h3>
+<p>Common causes:</p>
+<ul>
+<li>excessive model complexity;</li>
+<li>too many weak/noisy features;</li>
+<li>too little representative training data;</li>
+<li>insufficient regularization;</li>
+<li>training a flexible model until it memorizes noise.</li>
+</ul>
+<p>Remedies:</p>
+<ul>
+<li>simplify the model;</li>
+<li>remove irrelevant features or perform feature selection;</li>
+<li>use regularization such as ridge/L2 or lasso/L1;</li>
+<li>collect more representative training data;</li>
+<li>use cross-validation to tune complexity;</li>
+<li>use appropriate ensembling where relevant.</li>
+</ul>
+<p>The lecture verbally mentions reducing the number of rows to reduce variance; the standard practical correction is the opposite: <strong>more representative observations usually reduce estimation variance</strong>. What should be reduced is unnecessary complexity/noisy dimensions, not useful sample size.</p>
+<hr>
+<h2 id="4-bias-variance-error-decomposition">4. Bias–variance error decomposition</h2>
+<p>For squared-error regression, expected prediction error can be decomposed as:</p>
+<p>$$E[(Y-\hat f(X))^2]=\operatorname{Bias}[\hat f(X)]^2+\operatorname{Var}[\hat f(X)]+\sigma^2.$$</p>
+<p>where $\sigma^2$ is irreducible error/noise.</p>
+<h3 id="4-1-irreducible-error">4.1 Irreducible error</h3>
+<p>Irreducible error comes from randomness, measurement noise, omitted/unobservable factors, and stochastic outcomes. It cannot be eliminated completely by choosing another model. Better measurement or richer data may reduce some noise, but the developer&rsquo;s direct modelling controls are primarily bias and variance.</p>
+<h3 id="4-2-the-trade-off">4.2 The trade-off</h3>
+<ul>
+<li>Increasing flexibility usually reduces bias but raises variance.</li>
+<li>Decreasing flexibility usually reduces variance but raises bias.</li>
+<li>It is generally impossible to reduce both indefinitely.</li>
+</ul>
+<p>The objective is an <strong>optimal compromise</strong> that minimizes total generalization error.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Bias</th>
+<th>Variance</th>
+<th>Typical interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High</td>
+<td>Low</td>
+<td>Underfit/simple/stable but systematically wrong</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>High</td>
+<td>Overfit/flexible/unstable</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>Low</td>
+<td>Desired balanced/generalizing fit</td>
+</tr>
+<tr>
+<td>High</td>
+<td>High</td>
+<td>Fundamentally poor model/data/process</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>Transcript correction: one spoken summary briefly swaps the underfit label for “low bias, high variance”; the later lecture, diagrams, and standard theory correctly identify this as <strong>overfitting</strong>.</p>
+</blockquote>
+<hr>
+<h2 id="5-underfitting">5. Underfitting</h2>
+<h3 id="5-1-meaning-and-behavior">5.1 Meaning and behavior</h3>
+<p>An underfit model is too simple to capture the underlying pattern. It performs poorly on both training and validation/test data.</p>
+<p>Characteristics:</p>
+<ul>
+<li>high bias;</li>
+<li>commonly low variance;</li>
+<li>high training error;</li>
+<li>high validation/test error;</li>
+<li>consistently wrong or oversimplified answers;</li>
+<li>decision boundary unable to separate much of the training data.</li>
+</ul>
+<p>In the classification illustration, a simple boundary misclassifies many <code>+</code> observations. In regression, a straight line is fitted to parabolic points and cannot follow their curvature.</p>
+<h3 id="5-2-remedies">5.2 Remedies</h3>
+<ul>
+<li>choose a more expressive model;</li>
+<li>increase polynomial degree or tree depth appropriately;</li>
+<li>add genuinely relevant features/interactions;</li>
+<li>reduce excessive regularization;</li>
+<li>train longer if optimization stopped too early;</li>
+<li>improve feature representation.</li>
+</ul>
+<p>Practical example: predicting house price from only one weak feature may underfit. Add relevant size, location, bedrooms, age, and quality features, and use a model capable of representing nonlinear effects where necessary.</p>
+<hr>
+<h2 id="6-overfitting">6. Overfitting</h2>
+<h3 id="6-1-meaning-and-behavior">6.1 Meaning and behavior</h3>
+<p>An overfit model is excessively complex relative to the available signal and data. It learns noise and sample-specific details rather than only the stable relationship.</p>
+<p>Characteristics:</p>
+<ul>
+<li>low training bias/error;</li>
+<li>high variance;</li>
+<li>excellent or near-perfect training fit;</li>
+<li>much poorer validation/test performance;</li>
+<li>unstable predictions across different samples;</li>
+<li>a needlessly irregular decision boundary or curve.</li>
+</ul>
+<p>The classroom curve winds through almost every training point even though the true pattern is simple/parabolic. It looks accurate on training data but fails on new data.</p>
+<h3 id="6-2-remedies">6.2 Remedies</h3>
+<ul>
+<li>simplify the model;</li>
+<li>use ridge/L2 or lasso/L1 regularization;</li>
+<li>remove weak/noisy features;</li>
+<li>collect more representative data;</li>
+<li>use cross-validation for model/hyperparameter selection;</li>
+<li>use early stopping where relevant;</li>
+<li>augment data when appropriate;</li>
+<li>prune trees or constrain flexible learners.</li>
+</ul>
+<h3 id="6-3-regularization">6.3 Regularization</h3>
+<p>Regularization adds a penalty for excessive coefficient magnitude/complexity:</p>
+<p><strong>Ridge/L2</strong></p>
+<p>$$J_{L2}=J+\lambda\sum_j\beta_j^2$$</p>
+<p><strong>Lasso/L1</strong></p>
+<p>$$J_{L1}=J+\lambda\sum_j|\beta_j|.$$</p>
+<p>Larger $\lambda$ usually decreases variance but increases bias. Cross-validation should tune $\lambda$.</p>
+<hr>
+<h2 id="7-balanced-fit-and-true-versus-model-function">7. Balanced fit and true versus model function</h2>
+<p>A balanced model has enough complexity to capture the genuine pattern but not enough freedom to chase every noise fluctuation. Some training points may remain imperfectly fitted; this is acceptable if unseen performance is better.</p>
+<p>The live class distinguishes:</p>
+<ul>
+<li><strong>true function:</strong> the underlying real-world relationship/pattern that generates observations;</li>
+<li><strong>model function:</strong> the approximation learned by the algorithm from finite noisy samples.</li>
+</ul>
+<p>The true function is generally unknown in real applications. Synthetic demonstrations define it explicitly, allowing the learned curve to be compared against it.</p>
+<p>To achieve a balanced fit:</p>
+<ul>
+<li>choose appropriate complexity;</li>
+<li>use adequate, representative training data;</li>
+<li>validate carefully;</li>
+<li>tune hyperparameters;</li>
+<li>inspect both training and validation behavior.</li>
+</ul>
+<hr>
+<h2 id="8-bias-variance-python-demonstration">8. Bias/variance Python demonstration</h2>
+<h3 id="8-1-age-glucose-example">8.1 Age–glucose example</h3>
+<p>The notebook uses 48 age/glucose observations and visually inspects their scatter. The points are broadly spread and not perfectly linear, so a single linear-regression line has noticeable bias.</p>
+<p>The initial fit reports an approximate slope of <code>0.47</code> and intercept around <code>51</code>. Illustrative predictions include:</p>
+<ul>
+<li>age 92 → glucose about 95;</li>
+<li>age 52 → glucose about 76;</li>
+<li>age 22 → glucose about 62.</li>
+</ul>
+<p>Changing the train/test split changes coefficients and predictions slightly—for example, using roughly one-third as test data produces an approximate slope <code>0.44</code>, intercept <code>53</code>, age-92 prediction <code>94</code>, and age-22 prediction <code>63</code>. This illustrates variance: a different training sample produces a different fit.</p>
+<p>The transcript explores test fractions around <code>0.192</code> (close to 20% for 48 points), <code>0.33</code>, and <code>0.35</code>. Since a dataset contains whole observations, libraries resolve fractional sizes to integer sample counts.</p>
+<h3 id="8-2-bias-variance-decomposition-output">8.2 Bias–variance decomposition output</h3>
+<p>Using <code>mlxtend.evaluate.bias_variance_decomp</code>, the lecture reports illustrative values:</p>
+<ul>
+<li>for one split: bias about <code>74.208</code>, variance about <code>6</code>, MSE about <code>80</code>;</li>
+<li>for test size around <code>0.192</code>: bias about <code>28.82</code>, variance about <code>5.337</code>, MSE about <code>34</code>.</li>
+</ul>
+<p>The exact results depend on the split/randomness. The main conclusion is high bias relative to variance, consistent with a linear model trying to fit a non-linear relationship.</p>
+<hr>
+<h2 id="9-underfit-balanced-overfit-python-demonstration">9. Underfit–balanced–overfit Python demonstration</h2>
+<p>The notebook imports NumPy, Matplotlib, linear regression, polynomial features, pipeline support, and cross-validation scoring. It generates 30 random samples around a known cosine-like true function and fits polynomial models.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: right;">Polynomial degree</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>Straight line; high bias; underfit</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>Follows broad true pattern; balanced fit in the shown run</td>
+</tr>
+<tr>
+<td style="text-align: right;">15</td>
+<td>Highly oscillatory and tracks most training points; overfit</td>
+</tr>
+</tbody>
+</table></div>
+<p>Changing degree 4 to 3 makes the middle model somewhat less flexible; increasing the high degree to 18 makes overfitting even more obvious. The demonstration uses a pipeline so polynomial transformation and regression are evaluated together, with 10-fold cross-validation.</p>
+<p>Key insight: degree is a <strong>complexity hyperparameter</strong>. Training fit alone favors large degrees; cross-validated performance identifies the useful level.</p>
+<hr>
+<h2 id="10-training-validation-and-testing">10. Training, validation, and testing</h2>
+<h3 id="10-1-roles">10.1 Roles</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Partition</th>
+<th>Purpose</th>
+<th>Typical decisions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Training</td>
+<td>Learn model parameters/weights from <code>X</code> and <code>y</code></td>
+<td>coefficients, split rules, learned weights</td>
+</tr>
+<tr>
+<td>Validation</td>
+<td>Compare models and tune hyperparameters</td>
+<td>polynomial degree, regularization, threshold, architecture</td>
+</tr>
+<tr>
+<td>Test</td>
+<td>One-time final estimate on untouched data</td>
+<td>report generalization performance</td>
+</tr>
+</tbody>
+</table></div>
+<p>The majority of data usually goes to training because learning a stable underlying pattern requires enough examples. An often-mentioned simple split is 80% training and 20% testing; a development workflow normally separates training, validation, and final testing.</p>
+<p>The live class calls error on the training set <strong>training error</strong> and error on unseen test data <strong>generalization error</strong>.</p>
+<h3 id="10-2-why-the-test-set-must-remain-untouched">10.2 Why the test set must remain untouched</h3>
+<p>If test performance influences model selection, threshold choice, feature design, or hyperparameters, the model indirectly adapts to the test set. The test estimate becomes optimistically biased. Use validation/cross-validation for development and reserve a final hold-out test set.</p>
+<p>If final testing is unsatisfactory, returning to development is possible, but once results guide new choices that test set has effectively become validation data; a new untouched test set is needed for a clean final estimate.</p>
+<hr>
+<h2 id="11-cross-validation">11. Cross-validation</h2>
+<p>Cross-validation repeatedly changes which observations serve as training and validation data. It uses limited data efficiently and reduces dependence on one fortunate/unfortunate split.</p>
+<h3 id="11-1-k-fold-cross-validation">11.1 K-fold cross-validation</h3>
+<ol>
+<li>Divide development data into $K$ approximately equal folds.</li>
+<li>For iteration $j$, hold fold $j$ out for validation.</li>
+<li>Train on the other $K-1$ folds.</li>
+<li>Evaluate on fold $j$.</li>
+<li>Repeat until every fold has served once as validation.</li>
+<li>Aggregate scores, usually by their mean and optionally standard deviation.</li>
+</ol>
+<p>For three folds:</p>
+<ul>
+<li>iteration 1: validate on fold 1; train on 2 and 3;</li>
+<li>iteration 2: validate on fold 2; train on 1 and 3;</li>
+<li>iteration 3: validate on fold 3; train on 1 and 2.</li>
+</ul>
+<p>Thus the model is fit $K$ times per candidate configuration, not $K\times K$ times as one live-class phrase suggests.</p>
+<h3 id="11-2-what-cross-validation-provides">11.2 What cross-validation provides</h3>
+<ul>
+<li>better use of small/medium datasets;</li>
+<li>estimate of average validation performance;</li>
+<li>estimate of instability through fold-to-fold spread;</li>
+<li>principled comparison of algorithms/hyperparameters;</li>
+<li>evidence for the bias–variance trade-off.</li>
+</ul>
+<p>Cross-validation instability means results differ greatly across folds. This may indicate small data, heterogeneous groups, outliers, leakage, class imbalance, or high model variance. Report mean and dispersion, not only one score.</p>
+<h3 id="11-3-model-selection-workflow">11.3 Model-selection workflow</h3>
+<ol>
+<li>Hold out final test data.</li>
+<li>Run identical folds for all candidate models/settings on development data.</li>
+<li>Select the configuration with best relevant mean metric, considering variability and complexity.</li>
+<li>Refit the selected pipeline on all development data.</li>
+<li>Evaluate once on the untouched test set.</li>
+</ol>
+<p>All preprocessing/feature selection must be fit <strong>inside each training fold</strong>, typically through a pipeline, to prevent leakage.</p>
+<hr>
+<h2 id="12-cross-validation-variants">12. Cross-validation variants</h2>
+<h3 id="12-1-hold-out-validation">12.1 Hold-out validation</h3>
+<p>One fixed train/validation split. It is fast and simple but more sensitive to how data happen to be divided.</p>
+<h3 id="12-2-stratified-k-fold">12.2 Stratified K-fold</h3>
+<p>Used especially for classification. Each fold approximately preserves class proportions. If a dataset has 75 males and 25 females, every fold should retain roughly the 75:25 distribution. This helps avoid folds missing or underrepresenting the minority class.</p>
+<h3 id="12-3-leave-one-out-cross-validation-loocv">12.3 Leave-One-Out Cross-Validation (LOOCV)</h3>
+<p>For $n$ observations, train $n$ models. Each model validates on one observation and trains on the other $n-1$. It uses almost all data for each fit but can be computationally expensive and its individual validation outcomes can be highly variable.</p>
+<h3 id="12-4-leave-p-out">12.4 Leave-$p$-Out</h3>
+<p>Hold out every possible set of $p$ observations and train on the rest. The number of validation combinations is:</p>
+<p>$$\binom{n}{p}.$$</p>
+<p>For $n=100$:</p>
+<ul>
+<li>$p=1$: 100 splits;</li>
+<li>$p=2$: $\binom{100}{2}=4,950$ splits.</li>
+</ul>
+<p>It rapidly becomes computationally infeasible as $p$ grows.</p>
+<h3 id="12-5-monte-carlo-repeated-random-split-validation">12.5 Monte Carlo/repeated random-split validation</h3>
+<p>Randomly sample train/validation divisions many times (the lecture illustrates 70% training and 30% validation), compute an error each time, and average:</p>
+<p>$$\bar E=\frac1R\sum_{r=1}^R E_r.$$</p>
+<p>Unlike K-fold, some observations may be validated multiple times and others not at all in a finite number of repetitions.</p>
+<h3 id="12-6-time-series-cross-validation">12.6 Time-series cross-validation</h3>
+<p>Temporal order must be preserved. Train on the past and validate on a later window; expand or roll the training window forward. The lecture illustrates growing from approximately 30% training/20% validation with later data unused, eventually reaching 80% training/20% validation.</p>
+<p>Never randomly shuffle future observations into training when predicting the past; that leaks future information.</p>
+<h3 id="12-7-other-named-variants">12.7 Other named variants</h3>
+<p>The lecture also lists general K-fold and time-series validation and refers to hold-out, stratified K-fold, leave-$p$-out, and Monte Carlo validation as variants appropriate to different data structures.</p>
+<hr>
+<h2 id="13-cross-validation-python-demonstration">13. Cross-validation Python demonstration</h2>
+<h3 id="13-1-synthetic-data">13.1 Synthetic data</h3>
+<p>The notebook uses NumPy, Pandas, Matplotlib, Scikit-learn regression/polynomial/CV tools, and creates:</p>
+<ul>
+<li>$n=100$ samples;</li>
+<li>$X\sim\operatorname{Uniform}(a,b)$ with $a=0$, $b=5$;</li>
+<li>Gaussian noise $\epsilon$ with $\sigma=0.25$;</li>
+<li>observations $Y=f(X)+\epsilon$;</li>
+<li>a dense 200-point grid to display the true signal.</li>
+</ul>
+<p>An 80:20 train/test split gives 80 training and 20 test observations.</p>
+<h3 id="13-2-increasing-polynomial-degree">13.2 Increasing polynomial degree</h3>
+<p>Illustrative hold-out MSE values:</p>
+<ul>
+<li>degree 1/linear: about <code>0.418</code>;</li>
+<li>degree 2/quadratic: about <code>0.087</code>;</li>
+<li>degree 3/cubic: about <code>0.051</code>.</li>
+</ul>
+<p>The cubic curve closely follows the synthetic true signal. It has four coefficients when the intercept is counted: $\beta_0,\beta_1,\beta_2,\beta_3$.</p>
+<h3 id="13-3-k-fold-loocv-and-leave-p-out-results">13.3 K-fold, LOOCV, and leave-$p$-out results</h3>
+<p>The notebook creates a <code>KFold</code> object with 15 splits and uses <code>cross_val_score</code> across polynomial degrees. Spoken approximate errors include degree 1 near <code>0.43</code>, degree 2 near <code>0.13</code>, and degree 3 as the optimum; after degree 3, error rises as variance increases. (Some exact transcribed decimal digits are inconsistent; rely on the trend.)</p>
+<p>LOOCV and leave-$p$-out/repeated splitting show the same conclusion: degree 3 best balances bias and variance; higher degrees add complexity without useful improvement. <code>ShuffleSplit</code> is also used in the leave-$p$-out portion of the demonstration.</p>
+<hr>
+<h2 id="14-evaluation-metrics-regression-versus-classification">14. Evaluation metrics: regression versus classification</h2>
+<p>Evaluation metrics are quantitative measures of model/system performance.</p>
+<ul>
+<li>Regression commonly uses MSE and MAE.</li>
+<li>Classification uses the confusion matrix, accuracy, precision, recall/sensitivity, specificity, F1, and related measures.</li>
+</ul>
+<p>Metric choice must reflect the real cost of mistakes, especially with imbalanced classes.</p>
+<hr>
+<h2 id="15-confusion-matrix">15. Confusion matrix</h2>
+<p>For a binary positive/negative problem:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Actual / Predicted</th>
+<th style="text-align: right;">Positive</th>
+<th style="text-align: right;">Negative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Positive</td>
+<td style="text-align: right;">True Positive (TP)</td>
+<td style="text-align: right;">False Negative (FN)</td>
+</tr>
+<tr>
+<td>Negative</td>
+<td style="text-align: right;">False Positive (FP)</td>
+<td style="text-align: right;">True Negative (TN)</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>TP:</strong> actually positive, predicted positive.</li>
+<li><strong>TN:</strong> actually negative, predicted negative.</li>
+<li><strong>FP:</strong> actually negative, incorrectly predicted positive; often called <strong>Type I error</strong>.</li>
+<li><strong>FN:</strong> actually positive, incorrectly predicted negative; often called <strong>Type II error</strong>.</li>
+</ul>
+<p>Correct predictions are on the main diagonal when the matrix is arranged as above; errors are off-diagonal. Libraries may swap row/column orientation, so always inspect axis labels rather than memorizing cell position.</p>
+<hr>
+<h2 id="16-classification-metric-formulas-and-meanings">16. Classification metric formulas and meanings</h2>
+<p>Let $N=TP+TN+FP+FN$.</p>
+<h3 id="16-1-accuracy">16.1 Accuracy</h3>
+<p>$$\text{Accuracy}=\frac{TP+TN}{N}.$$</p>
+<p>Question answered: <strong>What fraction of all predictions were correct?</strong></p>
+<p>Use when classes are reasonably balanced and FP/FN costs are comparable. It can be deceptive on imbalanced data: predicting every case as the majority class may produce high accuracy while entirely failing the minority class.</p>
+<h3 id="16-2-precision-positive-predictive-value">16.2 Precision / Positive Predictive Value</h3>
+<p>$$\text{Precision}=\frac{TP}{TP+FP}.$$</p>
+<p>Question answered: <strong>Among predicted positives, how many were truly positive?</strong></p>
+<p>High precision means few false alarms. Prioritize it when false positives are costly—for example, an expensive intervention or incorrectly blocking a legitimate transaction.</p>
+<h3 id="16-3-recall-sensitivity-true-positive-rate">16.3 Recall / Sensitivity / True Positive Rate</h3>
+<p>$$\text{Recall}=\text{Sensitivity}=\frac{TP}{TP+FN}.$$</p>
+<p>Question answered: <strong>Among actual positives, how many were detected?</strong></p>
+<p>High recall means few missed positives. Prioritize it when false negatives are dangerous, such as serious-disease screening or fraud detection.</p>
+<h3 id="16-4-specificity-true-negative-rate">16.4 Specificity / True Negative Rate</h3>
+<p>$$\text{Specificity}=\frac{TN}{TN+FP}.$$</p>
+<p>Question answered: <strong>Among actual negatives, how many were correctly rejected?</strong></p>
+<p>High specificity means few false alarms among negatives.</p>
+<h3 id="16-5-negative-predictive-value">16.5 Negative Predictive Value</h3>
+<p>$$\text{NPV}=\frac{TN}{TN+FN}.$$</p>
+<p>Question answered: <strong>Among predicted negatives, how many were truly negative?</strong></p>
+<h3 id="16-6-f1-score">16.6 F1 score</h3>
+<p>F1 is the harmonic mean of precision and recall:</p>
+<p>$$F_1=\frac{2}{1/\text{Precision}+1/\text{Recall}}
+=2\frac{\text{Precision}\times\text{Recall}}{\text{Precision}+\text{Recall}}.$$</p>
+<p>It is high only when both precision and recall are high and is useful for imbalanced problems when those two objectives should receive equal weight. It does not include TN, so it is not automatically the best metric for every task.</p>
+<hr>
+<h2 id="17-worked-dog-image-example">17. Worked dog-image example</h2>
+<p>The lecture gives:</p>
+<ul>
+<li>$TP=5$;</li>
+<li>$FP=1$;</li>
+<li>$TN=2$;</li>
+<li>$FN=2$;</li>
+<li>total $N=10$.</li>
+</ul>
+<p>Calculations:</p>
+<p>$$\text{Accuracy}=\frac{5+2}{10}=0.70=70\%.$$</p>
+<p>$$\text{Precision}=\frac{5}{5+1}=0.8333\approx83.3\%.$$</p>
+<p>$$\text{Recall}=\frac{5}{5+2}=0.7143\approx71.4\%.$$</p>
+<p>$$\text{Specificity}=\frac{2}{2+1}=0.6667\approx66.7\%.$$</p>
+<p>$$F_1=2\frac{(0.8333)(0.7143)}{0.8333+0.7143}\approx0.7692=76.9\%.$$</p>
+<blockquote>
+<p>The transcript verbally says F1 is “about 70%.” Direct calculation gives approximately <strong>76.9%</strong>. For an exam calculation, use the formula and show the arithmetic.</p>
+</blockquote>
+<hr>
+<h2 id="18-choosing-a-metric-by-use-case">18. Choosing a metric by use case</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Primary concern</th>
+<th>Metric emphasis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Serious-disease screening</td>
+<td>Do not miss disease</td>
+<td>Recall/sensitivity</td>
+</tr>
+<tr>
+<td>Expensive confirmatory action</td>
+<td>Avoid unnecessary action</td>
+<td>Precision and/or specificity</td>
+</tr>
+<tr>
+<td>Spam filter</td>
+<td>Avoid placing legitimate email in spam</td>
+<td>Precision for spam prediction</td>
+</tr>
+<tr>
+<td>Fraud alert triage</td>
+<td>Catch fraud but analyst capacity limited</td>
+<td>Recall plus precision/F1 and workload</td>
+</tr>
+<tr>
+<td>Balanced classes, equal error costs</td>
+<td>Overall correctness</td>
+<td>Accuracy</td>
+</tr>
+<tr>
+<td>Imbalanced class with equal precision/recall importance</td>
+<td>Balance detection and trust</td>
+<td>F1</td>
+</tr>
+</tbody>
+</table></div>
+<p>No metric is universally best. Define the positive class and error costs first.</p>
+<hr>
+<h2 id="19-decision-thresholds-and-error-trade-offs">19. Decision thresholds and error trade-offs</h2>
+<p>Many classifiers output a score/probability and convert it into a class using a threshold.</p>
+<ul>
+<li>Lowering the positive threshold usually predicts more positives: <strong>recall rises</strong>, FN falls, but FP rises and precision/specificity may fall.</li>
+<li>Raising the threshold usually predicts fewer positives: <strong>precision/specificity may rise</strong>, FP falls, but FN rises and recall may fall.</li>
+</ul>
+<p>This is the central Type I/Type II trade-off. Changing the threshold does not retrain the underlying model; it changes the operating point.</p>
+<p>Choose a threshold using:</p>
+<ul>
+<li>false-positive and false-negative costs;</li>
+<li>stakeholder priorities;</li>
+<li>capacity to review alerts;</li>
+<li>validation data;</li>
+<li>regulatory/safety needs;</li>
+<li>precision–recall or ROC analysis where appropriate.</li>
+</ul>
+<hr>
+<h2 id="20-quiz-case-study-medialert-solutions">20. Quiz case study: MediAlert Solutions</h2>
+<h3 id="20-1-scenario-and-stakeholders">20.1 Scenario and stakeholders</h3>
+<p>MediAlert deploys a medical warning classifier. Clinical stakeholders want high sensitivity so dangerous cases are not missed. Operations/finance teams worry that excessive false alarms create unnecessary tests, workload, cost, alarm fatigue, and reduced trust.</p>
+<p>Thus:</p>
+<ul>
+<li><strong>false negative / Type II error:</strong> sick/high-risk patient classified safe; potentially severe clinical harm;</li>
+<li><strong>false positive / Type I error:</strong> safe patient classified high-risk; unnecessary intervention and resource burden.</li>
+</ul>
+<h3 id="20-2-why-accuracy-is-insufficient">20.2 Why accuracy is insufficient</h3>
+<p>Medical positives may be rare. A model can be highly accurate by predicting nearly everyone negative while missing many genuinely dangerous cases. The full confusion matrix and class-specific metrics are required.</p>
+<h3 id="20-3-options-considered">20.3 Options considered</h3>
+<p><strong>Option 1 — Adjust decision threshold</strong></p>
+<ul>
+<li>quick and low-cost;</li>
+<li>can raise recall immediately by lowering the threshold;</li>
+<li>redistributes FP/FN but does not repair poor learned separation, weak features, or unrepresentative training data.</li>
+</ul>
+<p><strong>Option 2 — Retrain with borderline cases</strong></p>
+<ul>
+<li>collect/label difficult examples near the decision boundary;</li>
+<li>helps the model learn ambiguity and improve separation/calibration;</li>
+<li>addresses a root cause rather than only changing a cutoff;</li>
+<li>costs time, data curation, expert labeling, and revalidation.</li>
+</ul>
+<p><strong>Option 3 — Deploy unchanged and monitor</strong></p>
+<ul>
+<li>gains real-world evidence quickly;</li>
+<li>risky in a high-stakes setting if known error patterns can harm patients;</li>
+<li>monitoring detects problems but does not prevent the first harms.</li>
+</ul>
+<h3 id="20-4-strong-long-term-strategy">20.4 Strong long-term strategy</h3>
+<p>The review recommends a multi-phase approach:</p>
+<ol>
+<li>define clinically acceptable recall/specificity and error costs;</li>
+<li>use validation data for an interim safety-oriented threshold;</li>
+<li>collect and label borderline/representative cases;</li>
+<li>retrain and recalibrate the model;</li>
+<li>validate by subgroup and relevant clinical metric;</li>
+<li>pilot with human oversight;</li>
+<li>deploy gradually with drift, threshold, alert-volume, FP and FN monitoring;</li>
+<li>continue scheduled re-evaluation/retraining.</li>
+</ol>
+<p>Retraining is strategically stronger than threshold-only adjustment because it may improve the score distribution itself. Threshold choice remains necessary after retraining.</p>
+<h3 id="20-5-clinical-versus-operational-objectives">20.5 Clinical versus operational objectives</h3>
+<p>Clinical priority often emphasizes sensitivity because missing disease is dangerous. Operational priority emphasizes precision/specificity because false alarms consume capacity. A defensible system explicitly balances both, rather than hiding the conflict inside one accuracy number.</p>
+<hr>
+<h2 id="21-diagnosing-and-improving-model-behavior">21. Diagnosing and improving model behavior</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Observed pattern</th>
+<th>Likely diagnosis</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Training error high; validation error high</td>
+<td>Underfitting/high bias</td>
+<td>increase complexity, add useful features, reduce regularization</td>
+</tr>
+<tr>
+<td>Training error low; validation error much higher</td>
+<td>Overfitting/high variance</td>
+<td>simplify, regularize, collect data, feature-select, early stop</td>
+</tr>
+<tr>
+<td>Training and validation good; test unexpectedly poor</td>
+<td>leakage, shift, repeated test use, unrepresentative split</td>
+<td>audit pipeline/data and obtain clean hold-out</td>
+</tr>
+<tr>
+<td>Fold scores vary greatly</td>
+<td>instability/high variance or heterogeneous data</td>
+<td>inspect groups/outliers, stratify/group splits, collect data</td>
+</tr>
+<tr>
+<td>High accuracy but low recall</td>
+<td>class imbalance/majority prediction</td>
+<td>examine confusion matrix; tune threshold/retrain/use suitable metric</td>
+</tr>
+<tr>
+<td>High recall but low precision</td>
+<td>many false alarms</td>
+<td>raise threshold, improve features/model, retrain borderline negatives</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="22-exam-focused-formula-sheet">22. Exam-focused formula sheet</h2>
+<h3 id="bias-variance">Bias–variance</h3>
+<p>$$\operatorname{Bias}(x)=E_D[\hat f_D(x)]-f(x)$$</p>
+<p>$$\operatorname{Var}(\hat f(x))=E_D[(\hat f_D(x)-E_D[\hat f_D(x)])^2]$$</p>
+<p>$$\text{Expected squared error}=\text{Bias}^2+\text{Variance}+\text{Irreducible error}$$</p>
+<h3 id="regression-metrics">Regression metrics</h3>
+<p>$$\operatorname{MSE}=\frac1n\sum_i(y_i-\hat y_i)^2$$</p>
+<p>$$\operatorname{MAE}=\frac1n\sum_i|y_i-\hat y_i|$$</p>
+<h3 id="classification-metrics">Classification metrics</h3>
+<p>$$\text{Accuracy}=\frac{TP+TN}{TP+TN+FP+FN}$$</p>
+<p>$$\text{Precision}=\frac{TP}{TP+FP}$$</p>
+<p>$$\text{Recall/Sensitivity}=\frac{TP}{TP+FN}$$</p>
+<p>$$\text{Specificity}=\frac{TN}{TN+FP}$$</p>
+<p>$$\text{NPV}=\frac{TN}{TN+FN}$$</p>
+<p>$$F_1=2\frac{PR}{P+R}$$</p>
+<h3 id="leave-p-out-split-count">Leave-$p$-out split count</h3>
+<p>$$\#\text{splits}=\binom np$$</p>
+<hr>
+<h2 id="23-likely-exam-questions-and-answer-frameworks">23. Likely exam questions and answer frameworks</h2>
+<h3 id="q1-define-bias-and-variance-and-explain-their-trade-off">Q1. Define bias and variance and explain their trade-off.</h3>
+<p>Define bias as systematic error of the average learned predictor and variance as sensitivity across training samples. State the squared-error decomposition and explain how complexity usually lowers bias but raises variance.</p>
+<h3 id="q2-distinguish-underfitting-and-overfitting">Q2. Distinguish underfitting and overfitting.</h3>
+<p>Compare complexity, bias, variance, training error, validation error, and remedies. Use straight-line-on-parabola versus high-degree-curve-through-noise examples.</p>
+<h3 id="q3-explain-k-fold-cross-validation">Q3. Explain K-fold cross-validation.</h3>
+<p>Give the six-step algorithm, mention each fold validates exactly once, aggregate mean/spread, and state that a separate final test set must remain untouched.</p>
+<h3 id="q4-compare-k-fold-stratified-k-fold-loocv-leave-p-out-monte-carlo-and-time-series-cv">Q4. Compare K-fold, stratified K-fold, LOOCV, leave-$p$-out, Monte Carlo, and time-series CV.</h3>
+<p>Focus on how splits are constructed, class preservation, computation, repetition, and temporal order.</p>
+<h3 id="q5-draw-and-explain-a-confusion-matrix">Q5. Draw and explain a confusion matrix.</h3>
+<p>Define TP, TN, FP/Type I, and FN/Type II. Note that row/column orientation may vary.</p>
+<h3 id="q6-calculate-accuracy-precision-recall-specificity-and-f1">Q6. Calculate accuracy, precision, recall, specificity, and F1.</h3>
+<p>Write formulas, substitute values carefully, state percentage, and interpret each denominator in words.</p>
+<h3 id="q7-why-can-accuracy-be-misleading">Q7. Why can accuracy be misleading?</h3>
+<p>Explain class imbalance with a majority-class example and recommend confusion-matrix metrics aligned with error costs.</p>
+<h3 id="q8-explain-the-precision-recall-threshold-trade-off">Q8. Explain the precision–recall threshold trade-off.</h3>
+<p>Lower threshold → more predicted positives, higher recall/lower FN but more FP. Higher threshold → fewer positives, often higher precision/specificity but more FN.</p>
+<h3 id="q9-how-should-medialert-improve-its-system">Q9. How should MediAlert improve its system?</h3>
+<p>Recommend a safety threshold as interim mitigation, enrich with borderline cases, retrain/recalibrate, validate subgroup and clinical metrics, pilot with oversight, then monitor and retrain.</p>
+<h3 id="q10-why-is-cross-validation-not-a-replacement-for-testing">Q10. Why is cross-validation not a replacement for testing?</h3>
+<p>CV is repeatedly used for selection and becomes part of development. Only untouched hold-out data estimates final generalization without selection bias.</p>
+<hr>
+<h2 id="24-rapid-recall-checklist">24. Rapid-recall checklist</h2>
+<ul>
+<li>[ ] Bias is systematic error; variance is sensitivity to training samples.</li>
+<li>[ ] Expected squared error = bias² + variance + irreducible error.</li>
+<li>[ ] Underfit = high bias, usually low variance, poor train and test performance.</li>
+<li>[ ] Overfit = low training error, high variance, poor unseen performance.</li>
+<li>[ ] Complexity lowers bias but eventually raises variance.</li>
+<li>[ ] Regularization trades some bias for reduced variance.</li>
+<li>[ ] Validation tunes; untouched testing reports final generalization.</li>
+<li>[ ] K-fold fits $K$ models per candidate and validates each fold once.</li>
+<li>[ ] Stratification preserves class proportions.</li>
+<li>[ ] Time-series CV never trains on the future to predict the past.</li>
+<li>[ ] LOOCV uses $n$ fits; leave-$p$-out uses $\binom np$ fits.</li>
+<li>[ ] TP and TN are correct; FP is Type I; FN is Type II.</li>
+<li>[ ] Precision conditions on predicted positives.</li>
+<li>[ ] Recall conditions on actual positives.</li>
+<li>[ ] Specificity conditions on actual negatives.</li>
+<li>[ ] Accuracy may hide minority-class failure.</li>
+<li>[ ] F1 balances precision and recall but ignores TN.</li>
+<li>[ ] Threshold changes redistribute FP and FN; they do not retrain the model.</li>
+<li>[ ] Medical AI decisions require metric, threshold, stakeholder, and harm analysis.</li>
+<li>[ ] In the dog example, F1 calculates to about 76.9%, despite the spoken approximation.</li>
+</ul>
+<h2 id="25-final-takeaways">25. Final takeaways</h2>
+<ol>
+<li>The best model is neither the simplest nor the one with the lowest training error; it is the model with the best validated generalization.</li>
+<li>Bias and variance explain why model complexity must be tuned rather than maximized.</li>
+<li>Cross-validation makes model selection more reliable, but it must be paired with a final untouched test set and leakage-free pipelines.</li>
+<li>A confusion matrix reveals which kind of mistakes a classifier makes; accuracy alone does not.</li>
+<li>Precision, recall, specificity, F1, and threshold choice must follow the real-world costs of false positives and false negatives.</li>
+<li>In high-stakes deployment, threshold adjustment is useful short-term mitigation; representative data, retraining, calibration, validation, human oversight, and monitoring create the stronger long-term solution.</li>
+</ol>
+<h2 id="26-review-week-augmentation-evaluating-recommender-models">26. Review-week augmentation: evaluating recommender models</h2>
+<p>The review week applies this week&rsquo;s generalization framework to recommender systems. Cross-validation can compare user-based CF, item-based CF, and matrix-factorization variants, but the split must match deployment. A random interaction split estimates missing-at-random prediction; a chronological split better tests next-period recommendation and avoids future-to-past leakage.</p>
+<p>Rating accuracy and ranking utility answer different questions. RMSE strongly penalizes large rating errors and remains in rating units, yet a model can achieve good RMSE while presenting a poor top-$K$ list. Therefore combine:</p>
+<ul>
+<li>prediction error: RMSE or MAE;</li>
+<li>retrieval/ranking: precision@K, recall@K, hit rate, MAP, or NDCG;</li>
+<li>catalogue/user experience: coverage, novelty, diversity, serendipity, and cold-start performance;</li>
+<li>operations/business: latency, conversion, retention, revenue, complaints, and fairness.</li>
+</ul>
+<p>Apply the bias–variance diagnosis to recommender hyperparameters: very small neighbourhoods and excessive latent capacity tend toward high variance; very broad neighbourhoods and too few latent factors tend toward high bias. Regularization, adequate representative data, and validated complexity improve generalization, but no metric or offline split replaces monitored online testing.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-5.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 5: Content-Based Filtering, Cosine Similarity,…</span>
+      </a>
+      <a href="week-7.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 7: Association Rule Mining, Apriori, and PCY</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

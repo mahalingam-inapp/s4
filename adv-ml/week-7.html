@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Advanced ML · Week 7 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Advanced ML</span>
+      <span class="brand-title">Week 7</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html" selected>Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Review of Machine Learning, Learning Types, and Linear Regression
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Classification, Logistic Regression, Maximum Likelihood and K-Means…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Bias–Variance, Error Analysis, Learning Curves, and Model Selection
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Recommendation Systems and Collaborative Filtering
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Content-Based Filtering, Cosine Similarity, UV Decomposition, and…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Bias–Variance Trade-off, Underfitting, Overfitting,…
+      </a>
+      <a class="is-active" href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Association Rule Mining, Apriori, and PCY
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Dimensionality Reduction, PCA, Eigen-Decomposition, and SVD
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Text Processing, Bag of Words, TF–IDF, Vector-Space Retrieval, and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Web Advertising, Online Matching, AdWords, and Balance
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        High-Dimensional Clustering, Subspaces, CLIQUE, PROCLUS, and…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Independent Component Analysis, Blind Source Separation, FastICA,…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Social Networks, Graph Laplacians, and Spectral Clustering
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Graph Partitioning, Flow Centrality, Edge Betweenness, and Girvan–Newman
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        ML Life Cycle, Hybrid and Music Recommenders, and Evaluation
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Advanced ML · Week 7</p>
+        <h1 class="page-title">Association Rule Mining, Apriori, and PCY</h1>
+        <p class="page-meta">Week 7 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#exam-scope-and-learning-outcomes">Exam scope and learning outcomes</a></li>
+      <li><a href="#1-association-analysis-and-association-rule-mining">1. Association analysis and association-rule mining</a></li>
+      <li><a href="#2-the-association-mining-task">2. The association-mining task</a></li>
+      <li><a href="#3-brute-force-frequent-itemset-mining">3. Brute-force frequent-itemset mining</a></li>
+      <li><a href="#4-apriori-principle">4. Apriori principle</a></li>
+      <li><a href="#5-apriori-algorithm">5. Apriori algorithm</a></li>
+      <li><a href="#6-complete-apriori-numerical-example">6. Complete Apriori numerical example</a></li>
+      <li><a href="#7-pcy-algorithm">7. PCY algorithm</a></li>
+      <li><a href="#8-greenmart-case-study-and-managerial-use">8. GreenMart case study and managerial use</a></li>
+      <li><a href="#9-practical-use-cases">9. Practical use cases</a></li>
+      <li><a href="#10-exam-focused-revision">10. Exam-focused revision</a></li>
+      <li><a href="#appendix-content-of-the-appended-live-transcript">Appendix — Content of the appended live transcript</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="exam-scope-and-learning-outcomes">Exam scope and learning outcomes</h2>
+<p>This week develops association analysis from definitions through scalable frequent-itemset algorithms. You should be able to:</p>
+<ul>
+<li>distinguish association analysis from association-rule mining;</li>
+<li>calculate support count, support, and confidence;</li>
+<li>separate frequent-itemset generation from rule generation;</li>
+<li>explain why brute force is expensive;</li>
+<li>state and apply the Apriori/anti-monotone principle;</li>
+<li>perform candidate join, prune, database-scan, and termination steps;</li>
+<li>generate rules from a frequent itemset and test minimum confidence;</li>
+<li>explain how PCY uses hashing and a bitmap to reduce second-pass candidate pairs;</li>
+<li>translate statistically strong rules into practical cross-selling decisions.</li>
+</ul>
+<hr>
+<h2 id="1-association-analysis-and-association-rule-mining">1. Association analysis and association-rule mining</h2>
+<h3 id="1-1-definitions">1.1 Definitions</h3>
+<p><strong>Association analysis</strong> is the general task of finding frequent patterns among objects/items in transaction databases, relational databases, or other information repositories. The discovered co-occurrence patterns are associations.</p>
+<p><strong>Association-rule mining (ARM)</strong> is the predictive rule-discovery task: given transactions, find rules that predict the occurrence of one item/itemset based on other items in the same transaction.</p>
+<p>Common applications:</p>
+<ul>
+<li>market-basket/basket-data analysis;</li>
+<li>cross-marketing and product bundling;</li>
+<li>catalogue design and shelf/layout planning;</li>
+<li>loss-leader analysis;</li>
+<li>web/clickstream or service-usage patterns;</li>
+<li>preprocessing or pattern discovery for clustering and classification.</li>
+</ul>
+<p><strong>Lecture illustration:</strong> customers buying automotive accessories/tyres may also be likely to purchase vehicle service. A retailer could offer a service coupon with the product.</p>
+<h3 id="1-2-market-basket-data">1.2 Market-basket data</h3>
+<p>A <strong>transaction</strong> is the collection of items purchased by a customer in one visit/order. Market-basket analysis discovers relationships between sets of items across many transactions—not merely within one basket.</p>
+<p>Let the item universe be (I={i_1,i_2,\ldots,i_d}) and the transaction database (D={T_1,\ldots,T_N}), with each (T_t\subseteq I).</p>
+<h3 id="1-3-itemsets-and-support">1.3 Itemsets and support</h3>
+<ul>
+<li><strong>Itemset:</strong> collection of one or more items, e.g. \(\{milk,bread,diaper\}\).</li>
+<li><strong>k-itemset:</strong> itemset containing exactly (k) items; \(\{bread,milk\}\) is a 2-itemset.</li>
+<li><strong>Support count/frequency:</strong></li>
+</ul>
+<p>\[
+  \sigma(X)=|\{T\in D:X\subseteq T\}|.
+  \]</p>
+<ul>
+<li><strong>Support:</strong> fraction of all transactions containing (X):</li>
+</ul>
+<p>\[
+  s(X)=\frac{\sigma(X)}{N}.
+  \]</p>
+<ul>
+<li><strong>Frequent itemset:</strong> (X) such that (s(X)\ge\text{minsup}), equivalently \(\sigma(X)\ge\text{minimum support count}\).</li>
+</ul>
+<p>If \(\{milk,bread,diaper\}\) occurs in 2 of 5 transactions, its support count is 2 and support is (2/5=0.40).</p>
+<h3 id="1-4-association-rules">1.4 Association rules</h3>
+<p>An association rule is an implication</p>
+<p>\[
+X\rightarrow Y,
+\]</p>
+<p>where (X,Y\subseteq I), (X\cap Y=\varnothing), and both are nonempty. (X) is the <strong>antecedent</strong> and (Y) the <strong>consequent</strong>. The arrow means association/predictive implication, not logical certainty or causation.</p>
+<p>For rule (X\rightarrow Y):</p>
+<p>\[
+\operatorname{support}(X\rightarrow Y)=s(X\cup Y)=\frac{\sigma(X\cup Y)}{N}
+\]</p>
+<p>\[
+\operatorname{confidence}(X\rightarrow Y)
+=P(Y\mid X)
+=\frac{s(X\cup Y)}{s(X)}
+=\frac{\sigma(X\cup Y)}{\sigma(X)}.
+\]</p>
+<p>Support measures how widespread the complete combination is. Confidence measures how often (Y) occurs among transactions already containing (X).</p>
+<p><strong>Milk–diaper–beer example (5 transactions):</strong> \(\{milk,diaper,beer\}\) occurs twice, while \(\{milk,diaper\}\) occurs three times.</p>
+<p>\[
+s(\{milk,diaper\}\rightarrow\{beer\})=2/5=0.40
+\]</p>
+<p>\[
+c(\{milk,diaper\}\rightarrow\{beer\})=2/3\approx0.67.
+\]</p>
+<p>Changing the direction changes confidence but not support of the union:</p>
+<ul>
+<li>\(\{milk,beer\}\rightarrow\{diaper\}\): confidence (2/2=1.00);</li>
+<li>\(\{diaper\}\rightarrow\{milk,beer\}\): confidence (2/4=0.50).</li>
+</ul>
+<p>All partitions of the same union \(\{milk,diaper,beer\}\) have support 0.40, but different antecedent frequencies produce different confidence.</p>
+<blockquote>
+<p><strong>Caveat:</strong> high confidence does not prove that (X) causes (Y), and it may reflect a generally popular consequent. This week’s formal thresholds are support and confidence; in practice lift and business context are often added.</p>
+</blockquote>
+<hr>
+<h2 id="2-the-association-mining-task">2. The association-mining task</h2>
+<p>Given minimum support and confidence thresholds, find every rule satisfying:</p>
+<p>\[
+s(X\cup Y)\ge\text{minsup}
+\quad\text{and}\quad
+c(X\rightarrow Y)\ge\text{minconf}.
+\]</p>
+<p>The efficient workflow has two phases:</p>
+<ol>
+<li><strong>Frequent-itemset generation:</strong> use minimum support to find all frequent itemsets.</li>
+<li><strong>Rule generation:</strong> partition each frequent itemset into antecedent/consequent and retain rules meeting minimum confidence.</li>
+</ol>
+<p>This division matters: support is a property of an itemset/union; confidence is directional and belongs to a rule. The transcript occasionally says frequent-itemset generation uses both support and confidence, but the later algorithm and quiz correctly separate responsibilities: <strong>support first, confidence second</strong>.</p>
+<hr>
+<h2 id="3-brute-force-frequent-itemset-mining">3. Brute-force frequent-itemset mining</h2>
+<h3 id="3-1-exhaustive-method">3.1 Exhaustive method</h3>
+<ol>
+<li>Enumerate every possible itemset/rule.</li>
+<li>Scan transactions and calculate support.</li>
+<li>Retain frequent itemsets.</li>
+<li>Generate every valid rule partition.</li>
+<li>Calculate confidence and prune weak rules.</li>
+</ol>
+<p>For (d) unique items there are (2^d) subsets including the empty set. With five items (A,B,C,D,E), the lattice contains:</p>
+<ul>
+<li>1 empty set;</li>
+<li>5 singleton itemsets;</li>
+<li>\(\binom52=10\) pairs;</li>
+<li>\(\binom53=10\) triples;</li>
+<li>\(\binom54=5\) four-itemsets;</li>
+<li>1 five-itemset;</li>
+<li>total (1+5+10+10+5+1=32=2^5).</li>
+</ul>
+<h3 id="3-2-number-of-possible-rules">3.2 Number of possible rules</h3>
+<p>For each item, its status can be antecedent, consequent, or absent: (3^d) assignments. Remove assignments with empty antecedent or empty consequent, correcting for the both-empty overlap:</p>
+<p>\[
+\boxed{3^d-2^{d+1}+1}
+\]</p>
+<p>possible nontrivial association rules. For (d=6):</p>
+<p>\[
+3^6-2^7+1=729-128+1=602.
+\]</p>
+<p>The lecture’s spoken formula omitted one factor of 2 but its stated answer 602 corresponds to the correct expression above.</p>
+<h3 id="3-3-cost">3.3 Cost</h3>
+<p>Let:</p>
+<ul>
+<li>(N): number of transactions;</li>
+<li>(M): number of candidate itemsets (up to approximately (2^d));</li>
+<li>(W): average/maximum transaction width or cost of matching a candidate to a transaction.</li>
+</ul>
+<p>Matching every transaction against every candidate costs approximately:</p>
+<p>\[
+O(NMW).
+\]</p>
+<p>The exponential candidate count makes brute force impractical. Three improvement directions introduced were:</p>
+<ol>
+<li>reduce candidates through pruning;</li>
+<li>reduce transactions considered as itemset size grows/remove irrelevant transactions;</li>
+<li>reduce comparisons using efficient data structures.</li>
+</ol>
+<p>Apriori primarily reduces candidates; PCY further reduces pair candidates using hashing.</p>
+<hr>
+<h2 id="4-apriori-principle">4. Apriori principle</h2>
+<h3 id="4-1-anti-monotone-property-of-support">4.1 Anti-monotone property of support</h3>
+<p>If (X\subseteq Y), every transaction containing (Y) also contains (X), so:</p>
+<p>\[
+\sigma(X)\ge\sigma(Y),\qquad s(X)\ge s(Y).
+\]</p>
+<p>Therefore:</p>
+<ul>
+<li>if an itemset is frequent, <strong>all its subsets are frequent</strong>;</li>
+<li>contrapositively, if an itemset is infrequent, <strong>all its supersets are infrequent</strong>.</li>
+</ul>
+<p>This is the <strong>Apriori principle</strong> or <strong>anti-monotone/downward-closure property</strong> of support.</p>
+<p>If \(\{A,B\}\) is infrequent, immediately prune \(\{A,B,C\},\{A,B,D\},\{A,B,E\},\ldots\). No larger set containing (AB) can recover support.</p>
+<blockquote>
+<p><strong>Important correction:</strong> frequent subsets are <strong>necessary but not sufficient</strong> for a superset to be frequent. The transcript sometimes loosely suggests a frequent set’s supersets are likely/frequent. They are only candidates and must still be support-counted.</p>
+</blockquote>
+<h3 id="4-2-example-of-pruning">4.2 Example of pruning</h3>
+<p>For singleton counts bread 4, pork 2, milk 4, beer 3, diaper 4, eggs 1 with minimum support count 3:</p>
+<ul>
+<li>retain bread, milk, beer, diaper;</li>
+<li>prune pork and eggs and all supersets containing them.</li>
+</ul>
+<p>At the pair level, prune pairs such as bread–beer or milk–beer if their support count is 2 (&lt;3), and never build triples containing those infrequent pairs. The surviving triple bread–milk–diaper has support count 3. The lecture reported that support-based pruning reduced the candidate workload substantially (by 13 in the illustrated lattice).</p>
+<hr>
+<h2 id="5-apriori-algorithm">5. Apriori algorithm</h2>
+<h3 id="5-1-notation-and-key-operations">5.1 Notation and key operations</h3>
+<ul>
+<li>(C_k): candidate (k)-itemsets.</li>
+<li>(L_k): frequent (k)-itemsets satisfying minimum support.</li>
+<li><strong>Join:</strong> generate (C_k) by self-joining compatible members of (L_{k-1}), written (L_{k-1}\Join L_{k-1}).</li>
+<li><strong>Prune:</strong> remove candidate (c\in C_k) if any ((k-1))-subset of (c) is not in (L_{k-1}).</li>
+</ul>
+<h3 id="5-2-iterative-procedure">5.2 Iterative procedure</h3>
+<ol>
+<li>Scan the database to produce frequent singletons (L_1).</li>
+<li>Set (k=2).</li>
+<li>Join (L_{k-1}) with itself to form (C_k).</li>
+<li>Apply subset pruning before support counting.</li>
+<li>Scan the database and count support for surviving candidates.</li>
+<li>Form (L_k={c\in C_k:\sigma(c)\ge\text{minsup count}}).</li>
+<li>If (L_k\ne\varnothing), increment (k) and repeat.</li>
+<li>Stop when no candidates/frequent sets remain.</li>
+<li>Generate high-confidence rules from all frequent itemsets.</li>
+</ol>
+<p>Apriori requires multiple database passes but compares far fewer candidates than exhaustive search.</p>
+<hr>
+<h2 id="6-complete-apriori-numerical-example">6. Complete Apriori numerical example</h2>
+<p>The lecture uses 9 transactions (T_{100})–(T_{900}) (spoken as 101–109 in places), five items (I1\ldots I5), minimum support count 2 (support (2/9\approx22.2\%)), and minimum confidence 70%.</p>
+<h3 id="6-1-first-pass-c-1-rightarrow-l-1">6.1 First pass: (C_1\rightarrow L_1)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th style="text-align: right;">Support count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I1</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td>I2</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td>I3</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td>I4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>I5</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table></div>
+<p>All meet count 2:</p>
+<p>\[
+L_1=\{I1,I2,I3,I4,I5\}.
+\]</p>
+<h3 id="6-2-pair-generation-c-2-rightarrow-l-2">6.2 Pair generation: (C_2\rightarrow L_2)</h3>
+<p>Self-join (L_1) to generate all pairs, scan, and remove pairs with count below 2. The frequent pairs are:</p>
+<p>\[
+L_2=\{I1I2,I1I3,I1I5,I2I3,I2I4,I2I5\}.
+\]</p>
+<p>Illustrative counts include (I1I2=4), (I1I3=4), (I1I4=1), and (I1I5=2). Zero/one-count pairs such as (I3I4,I3I5,I4I5) are excluded.</p>
+<h3 id="6-3-triple-generation-c-3-rightarrow-l-3">6.3 Triple generation: (C_3\rightarrow L_3)</h3>
+<p>Join compatible pairs and apply Apriori pruning:</p>
+<ul>
+<li>Keep (I1I2I3) because its pair subsets (I1I2,I1I3,I2I3\in L_2).</li>
+<li>Keep (I1I2I5) because (I1I2,I1I5,I2I5\in L_2).</li>
+<li>Prune (I2I3I5) because subset (I3I5\notin L_2).</li>
+</ul>
+<p>After counting:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Triple</th>
+<th style="text-align: right;">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\(I1I2I3\)</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>\(I1I2I5\)</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table></div>
+<p>Thus:</p>
+<p>\[
+L_3=\{I1I2I3,I1I2I5\}.
+\]</p>
+<h3 id="6-4-four-item-attempt-and-termination">6.4 Four-item attempt and termination</h3>
+<p>Joining the two triples yields candidate (I1I2I3I5), but its subset (I2I3I5\notin L_3). Prune it without a database count. Therefore (C_4=\varnothing), and Apriori stops: no larger frequent itemset can exist.</p>
+<h3 id="6-5-rule-generation-from-l-i1-i2-i5">6.5 Rule generation from \(L=\{I1,I2,I5\}\)</h3>
+<p>For every nonempty proper subset (S\subset L), generate:</p>
+<p>\[
+S\rightarrow L\setminus S,
+\qquad
+c=\frac{\sigma(L)}{\sigma(S)}.
+\]</p>
+<p>Here \(\sigma(L)=2\) and minconf = 70%.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Rule</th>
+<th style="text-align: right;">Confidence</th>
+<th>Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\(I1,I2\rightarrow I5\)</td>
+<td style="text-align: right;">(2/4=50\%)</td>
+<td>Reject</td>
+</tr>
+<tr>
+<td>\(I1,I5\rightarrow I2\)</td>
+<td style="text-align: right;">(2/2=100\%)</td>
+<td>Accept</td>
+</tr>
+<tr>
+<td>\(I2,I5\rightarrow I1\)</td>
+<td style="text-align: right;">(2/2=100\%)</td>
+<td>Accept</td>
+</tr>
+<tr>
+<td>\(I1\rightarrow I2,I5\)</td>
+<td style="text-align: right;">(2/6\approx33\%)</td>
+<td>Reject</td>
+</tr>
+<tr>
+<td>\(I2\rightarrow I1,I5\)</td>
+<td style="text-align: right;">(2/7\approx29\%)</td>
+<td>Reject</td>
+</tr>
+<tr>
+<td>\(I5\rightarrow I1,I2\)</td>
+<td style="text-align: right;">(2/2=100\%)</td>
+<td>Accept</td>
+</tr>
+</tbody>
+</table></div>
+<p>All six partitions have the same union support (2/9), but only three have confidence at least 70%.</p>
+<hr>
+<h2 id="7-pcy-algorithm">7. PCY algorithm</h2>
+<h3 id="7-1-motivation">7.1 Motivation</h3>
+<p>PCY, named for Park, Chen, and Yu, is an Apriori variant for large transaction datasets. Apriori’s second pass can be memory-intensive because (n) frequent singletons can produce up to:</p>
+<p>\[
+\binom n2=\frac{n(n-1)}2
+\]</p>
+<p>candidate pairs. PCY uses otherwise spare memory in pass 1 to hash all encountered pairs into buckets, allowing many impossible pairs to be eliminated before explicit counting in pass 2.</p>
+<h3 id="7-2-standard-pcy-workflow">7.2 Standard PCY workflow</h3>
+<p><strong>Pass 1</strong></p>
+<ol>
+<li>Count every individual item.</li>
+<li>For each basket, generate its pairs.</li>
+<li>Hash each pair to a bucket and increment that bucket count.</li>
+</ol>
+<p>After pass 1:</p>
+<ol start="4">
+<li>Mark frequent singleton items.</li>
+<li>Convert bucket counts to a bitmap: bucket bit = 1 if count \(\ge\) minimum support; else 0.</li>
+</ol>
+<p><strong>Pass 2</strong></p>
+<ol start="6">
+<li>A pair becomes a candidate only if:
+   - both individual items are frequent; and
+   - its hash bucket bit is 1.</li>
+<li>Count only these candidate pairs exactly.</li>
+<li>Retain pairs whose actual support meets the threshold.</li>
+</ol>
+<p>The bitmap is compact (one bit per bucket) and filters candidate pairs. A frequent bucket is <strong>necessary, not sufficient</strong>: collisions mean several infrequent pairs may collectively make a bucket frequent. Exact pair counts are still required.</p>
+<h3 id="7-3-twelve-transaction-example">7.3 Twelve-transaction example</h3>
+<p>The lecture dataset has 12 baskets (T_1\ldots T_{12}) over items 1–6 (e.g. (T_1={1,2,3}), (T_2={2,3,4}), (T_{12}={3,4,6})). Singleton counts were:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th style="text-align: right;">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td>6</td>
+<td style="text-align: right;">4</td>
+</tr>
+</tbody>
+</table></div>
+<p>All survive the lecture’s initial low singleton cutoff. Generate unique pairs from baskets; example counts mentioned include (12=2), (13=3), (23=3), (24=3), and (34=4).</p>
+<p>The demonstration uses:</p>
+<p>\[
+h(i,j)=(i\times j)\bmod 10.
+\]</p>
+<p>Mod is the remainder operation: (7\bmod5=2), (2\bmod4=2), (4\bmod2=0). Examples:</p>
+<ul>
+<li>(h(1,3)=3);</li>
+<li>(h(2,3)=6);</li>
+<li>(h(2,4)=8);</li>
+<li>(h(4,5)=20\bmod10=0);</li>
+<li>(h(4,6)=24\bmod10=4).</li>
+</ul>
+<p>Pairs are grouped by bucket (e.g. bucket 0 includes 45; bucket 2 includes 34; bucket 3 includes 13; bucket 4 includes 46; bucket 8 includes 24 in the displayed mapping). With threshold 4, the lecture concludes that pairs 34 and 35 are potential/frequent candidates.</p>
+<blockquote>
+<p><strong>PCY caveat:</strong> the narration describes assigning a bucket the “highest support count” of a pair in it. Standard PCY instead increments the bucket once for <strong>every pair occurrence</strong>, so a bucket count is the sum of all pair occurrences hashing there. The bitmap then filters; an exact second pass decides which individual pairs are truly frequent.</p>
+</blockquote>
+<h3 id="7-4-brute-force-vs-apriori-vs-pcy">7.4 Brute force vs Apriori vs PCY</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Core strategy</th>
+<th>Strength</th>
+<th>Weakness</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Brute force</td>
+<td>Enumerate/test everything</td>
+<td>Simple and complete</td>
+<td>Exponential candidates, high comparisons</td>
+</tr>
+<tr>
+<td>Apriori</td>
+<td>Downward closure; join and subset-prune</td>
+<td>Eliminates whole branches</td>
+<td>Multiple scans; second-pass pairs can still be numerous</td>
+</tr>
+<tr>
+<td>PCY</td>
+<td>Apriori + pass-1 hashing/bitmap</td>
+<td>Reduces pair candidates and memory</td>
+<td>Hash collisions; needs exact second-pass counting</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="8-greenmart-case-study-and-managerial-use">8. GreenMart case study and managerial use</h2>
+<h3 id="8-1-scenario">8.1 Scenario</h3>
+<p>GreenMart, a regional supermarket chain, wants data-driven cross-promotions among five abstract products (I1\ldots I5).</p>
+<ul>
+<li><strong>Emily, data scientist:</strong> runs Apriori, calculates support/confidence, ensures statistical reliability.</li>
+<li><strong>Raj, store manager:</strong> assesses inventory, feasibility, shortage risk, and operational cost.</li>
+<li><strong>Sofia, marketing specialist:</strong> designs campaigns, increases cross-selling, engagement, and promotional impact.</li>
+</ul>
+<p>The case reproduces the Apriori results:</p>
+<p>\[
+L_1=\{I1,I2,I3,I4,I5\}
+\]</p>
+<p>\[
+L_2=\{I1I2,I1I3,I1I5,I2I3,I2I4,I2I5\}
+\]</p>
+<p>\[
+L_3=\{I1I2I3,I1I2I5\},\qquad C_4=\varnothing.
+\]</p>
+<p>From \(I1I2I5\), three rules have 100% confidence:</p>
+<ul>
+<li>\(I1,I5\rightarrow I2\);</li>
+<li>\(I2,I5\rightarrow I1\);</li>
+<li>\(I5\rightarrow I1,I2\).</li>
+</ul>
+<p>The reverse-style rule \(I1,I2\rightarrow I5\) has only 50% and is rejected at minconf 70%.</p>
+<h3 id="8-2-choosing-a-promotion">8.2 Choosing a promotion</h3>
+<p>Confidence alone cannot pick among three 100% rules. Evaluate:</p>
+<ul>
+<li>antecedent support/customer reach;</li>
+<li>inventory and risk of stock-outs;</li>
+<li>gross margin and expected sales lift;</li>
+<li>campaign and operational complexity;</li>
+<li>customer clarity/convenience;</li>
+<li>cost of giving a reward versus incremental revenue.</li>
+</ul>
+<p>The quiz favors \(I5\rightarrow I1,I2\) as a potentially attractive campaign: one trigger item is easy to explain and may create two-product cross-selling. However, it is appropriate only if (I1/I2) stock, margins, and fulfilment can support the demand. If (I1) inventory is constrained, a statistically perfect rule pointing toward (I1) may be operationally poor.</p>
+<p><strong>Lesson:</strong> mining identifies statistically dependable opportunities; managers decide which is profitable, practical, scalable, and customer-friendly.</p>
+<h3 id="8-3-end-to-end-business-workflow">8.3 End-to-end business workflow</h3>
+<ol>
+<li>Convert transaction logs to baskets.</li>
+<li>Choose minsup to avoid rare/unreliable combinations.</li>
+<li>Generate (L_1,L_2,\ldots) through join, prune, and scans.</li>
+<li>Stop when no candidate remains.</li>
+<li>Generate rules from frequent itemsets.</li>
+<li>Apply minconf.</li>
+<li>Translate rules into cross-sell/bundle/layout candidates.</li>
+<li>Check inventory, margin, reach, and campaign simplicity.</li>
+<li>Pilot the promotion and measure incremental lift, not just historical confidence.</li>
+</ol>
+<hr>
+<h2 id="9-practical-use-cases">9. Practical use cases</h2>
+<ul>
+<li><strong>Retail:</strong> bread + diaper → beer; co-locate items, issue coupons, or bundle complementary products.</li>
+<li><strong>Automotive:</strong> tyre/accessory purchase → service booking; trigger maintenance offers.</li>
+<li><strong>E-commerce catalogue:</strong> “frequently bought together” and bundle design.</li>
+<li><strong>Telecom:</strong> data-pack + roaming feature → international calling add-on.</li>
+<li><strong>Healthcare operations:</strong> co-occurring services/tests can inform bundled scheduling; associations must not be interpreted as medical causality.</li>
+<li><strong>Web behavior:</strong> page A + page B → page C; improve navigation or content placement.</li>
+<li><strong>Fraud/security:</strong> repeated combinations of event types can flag patterns for review; association does not itself prove fraud.</li>
+</ul>
+<hr>
+<h2 id="10-exam-focused-revision">10. Exam-focused revision</h2>
+<h3 id="essential-formulas">Essential formulas</h3>
+<p>\[
+\sigma(X)=\#\{T:X\subseteq T\},\qquad s(X)=\frac{\sigma(X)}N
+\]</p>
+<p>\[
+s(X\rightarrow Y)=\frac{\sigma(X\cup Y)}N
+\]</p>
+<p>\[
+c(X\rightarrow Y)=\frac{\sigma(X\cup Y)}{\sigma(X)}=P(Y\mid X)
+\]</p>
+<p>\[
+X\subseteq Y\Rightarrow s(X)\ge s(Y)
+\]</p>
+<p>\[
+\#\text{itemsets}=2^d,\qquad
+\#\text{rules}=3^d-2^{d+1}+1
+\]</p>
+<p>\[
+\text{Brute-force cost}\approx O(NMW),\qquad
+\#\text{pairs}=\binom n2
+\]</p>
+<h3 id="one-line-recall">One-line recall</h3>
+<ul>
+<li>Association analysis finds patterns; ARM generates directional implication rules.</li>
+<li>Support decides frequent itemsets; confidence decides strong rules.</li>
+<li>Same union means same support, but rule direction changes confidence.</li>
+<li>Apriori: every subset of a frequent itemset is frequent; any superset of an infrequent itemset is infrequent.</li>
+<li>A candidate survives subset pruning but must still pass exact support counting.</li>
+<li>(C_k) means candidates; (L_k) means frequent itemsets.</li>
+<li>Apriori stops when the next candidate/frequent level is empty.</li>
+<li>PCY hashes pairs in pass 1 and uses a bucket bitmap to filter pass-2 candidates.</li>
+<li>A frequent PCY bucket does not prove every pair in it is frequent because of collisions.</li>
+<li>Strong statistical rules still require business feasibility analysis.</li>
+</ul>
+<h3 id="likely-exam-prompts">Likely exam prompts</h3>
+<ol>
+<li><strong>Calculate support and confidence.</strong> Count union transactions for numerator; use (N) for support denominator and antecedent count for confidence denominator.</li>
+<li><strong>Explain two-phase ARM.</strong> Frequent itemsets by minsup, then rule partitions by minconf.</li>
+<li><strong>Derive candidate counts.</strong> Explain (2^d) itemsets and (3^d-2^{d+1}+1) rules.</li>
+<li><strong>State/prove Apriori principle.</strong> If a transaction contains a superset, it necessarily contains every subset, so support cannot increase with added items.</li>
+<li><strong>Run Apriori.</strong> Write (C_1\to L_1\to C_2\to L_2\ldots), show join, check every subset, count support, and state termination.</li>
+<li><strong>Generate rules from (I1I2I5).</strong> Enumerate six nonempty partitions and calculate all confidence values.</li>
+<li><strong>Explain PCY.</strong> Item counts and bucket counts in pass 1, bitmap, candidate conditions, exact pass-2 counts, collision caveat.</li>
+<li><strong>Recommend a GreenMart promotion.</strong> Compare confidence plus inventory, reach, simplicity, margin, and expected lift.</li>
+</ol>
+<h3 id="common-traps">Common traps</h3>
+<ul>
+<li>Do not divide confidence by total transactions.</li>
+<li>Do not treat (X\rightarrow Y) and (Y\rightarrow X) as equally confident.</li>
+<li>Do not infer causality from co-occurrence.</li>
+<li>Do not say frequent subsets guarantee a frequent superset.</li>
+<li>Do not support-count a candidate already invalidated by an infrequent subset.</li>
+<li>Do not confuse a PCY frequent bucket with a confirmed frequent pair.</li>
+<li>Do not choose a promotion solely because confidence is 100%.</li>
+</ul>
+<hr>
+<h2 id="appendix-content-of-the-appended-live-transcript">Appendix — Content of the appended live transcript</h2>
+<p>The file’s live-session recording introduces itself as a <strong>Week 6/review session</strong>, not Week 7 association-rule mining. It revises material belonging with the bias–variance/cross-validation notes. It is summarized here solely to preserve full transcript coverage.</p>
+<h3 id="a-bias-variance-and-fit">A. Bias, variance, and fit</h3>
+<ul>
+<li>Bias is described as systematic difference between predicted/expected and true value; variance as sensitivity to different training samples.</li>
+<li>Total expected error was reviewed as:</li>
+</ul>
+<p>\[
+  \text{Bias}^2+\text{Variance}+\text{irreducible noise}.
+  \]</p>
+<ul>
+<li>High bias/low variance → underfitting; low bias/high variance → overfitting; low bias/low variance is the desired but never perfectly zero ideal; high bias/high variance is worst.</li>
+<li>Bullseye/scatter intuition: bias is displacement from the true center, variance is dispersion; the <strong>true function</strong> is the underlying natural pattern in the population/data, while a model function is an estimate fitted to samples.</li>
+<li>A straight line fitted to curved data is too simple/high-bias. A highly complex curve may memorize noise/high variance.</li>
+<li>Underfitting remedies: suitable richer model, relevant features, more representative training data, less excessive regularization.</li>
+<li>Overfitting remedies: simplify/remove irrelevant features, L1/Lasso or L2/Ridge regularization, and more representative data.</li>
+<li>The live examples contrast a too-simple model for house-price relations with an unnecessarily complex model for a simple yes/no rainfall task. The algorithm labels used in the spoken examples are imperfect; the core principle is to match capacity and target type to the problem.</li>
+</ul>
+<h3 id="b-training-validation-test-and-k-fold-cv">B. Training, validation, test, and k-fold CV</h3>
+<ul>
+<li>Training data fit parameters and produce training error; validation tunes hyperparameters/weights/model choices; test data estimate final generalization error.</li>
+<li>Most data normally go to training because learning patterns needs sufficient examples.</li>
+<li>In k-fold CV, split the dataset into (k) approximately equal folds. Repeat (k) iterations, each time validating on a different fold and training on the remaining (k-1). Aggregate validation results.</li>
+<li>The session’s three-fold illustration should have <strong>three total fits</strong>, not “3 × 3” fits as accidentally spoken. Each fold serves once as validation.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-6.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 6: Bias–Variance Trade-off, Underfitting,…</span>
+      </a>
+      <a href="week-8.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 8: Dimensionality Reduction, PCA,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

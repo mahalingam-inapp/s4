@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Advanced ML · Week 10 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Advanced ML</span>
+      <span class="brand-title">Week 10</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html" selected>Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Review of Machine Learning, Learning Types, and Linear Regression
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Classification, Logistic Regression, Maximum Likelihood and K-Means…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Bias–Variance, Error Analysis, Learning Curves, and Model Selection
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Recommendation Systems and Collaborative Filtering
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Content-Based Filtering, Cosine Similarity, UV Decomposition, and…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Bias–Variance Trade-off, Underfitting, Overfitting,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Association Rule Mining, Apriori, and PCY
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Dimensionality Reduction, PCA, Eigen-Decomposition, and SVD
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Text Processing, Bag of Words, TF–IDF, Vector-Space Retrieval, and…
+      </a>
+      <a class="is-active" href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Web Advertising, Online Matching, AdWords, and Balance
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        High-Dimensional Clustering, Subspaces, CLIQUE, PROCLUS, and…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Independent Component Analysis, Blind Source Separation, FastICA,…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Social Networks, Graph Laplacians, and Spectral Clustering
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Graph Partitioning, Flow Centrality, Edge Betweenness, and Girvan–Newman
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        ML Life Cycle, Hybrid and Music Recommenders, and Evaluation
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Advanced ML · Week 10</p>
+        <h1 class="page-title">Web Advertising, Online Matching, AdWords, and Balance</h1>
+        <p class="page-meta">Week 10 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#exam-scope-and-learning-outcomes">Exam scope and learning outcomes</a></li>
+      <li><a href="#1-web-advertising">1. Web advertising</a></li>
+      <li><a href="#2-online-versus-offline-algorithms">2. Online versus offline algorithms</a></li>
+      <li><a href="#3-advertising-as-an-allocation-matching-problem">3. Advertising as an allocation/matching problem</a></li>
+      <li><a href="#4-search-advertising-and-the-adwords-problem">4. Search advertising and the AdWords problem</a></li>
+      <li><a href="#5-competitive-analysis">5. Competitive analysis</a></li>
+      <li><a href="#6-simplified-and-greedy-adwords-algorithms">6. Simplified and greedy AdWords algorithms</a></li>
+      <li><a href="#7-balance-msvv-algorithm">7. Balance/MSVV algorithm</a></li>
+      <li><a href="#8-ecoshop-case-study">8. EcoShop case study</a></li>
+      <li><a href="#9-end-to-end-ad-allocation-workflow">9. End-to-end ad-allocation workflow</a></li>
+      <li><a href="#10-exam-focused-revision">10. Exam-focused revision</a></li>
+      <li><a href="#11-live-session-additions-and-instructor-emphasis">11. Live-session additions and instructor emphasis</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="exam-scope-and-learning-outcomes">Exam scope and learning outcomes</h2>
+<p>Week 10 models web advertising as real-time allocation under relevance, capacity, and advertiser-budget constraints. You should be able to:</p>
+<ul>
+<li>describe major forms of web advertising and the ad-serving architecture;</li>
+<li>distinguish online and offline algorithms;</li>
+<li>explain context awareness and the exploration–exploitation trade-off;</li>
+<li>formulate ad allocation as weighted bipartite matching;</li>
+<li>define bids, impressions, PPC, CTR, expected revenue, and budgets;</li>
+<li>explain the AdWords allocation problem and why naive greedy selection can fail;</li>
+<li>calculate competitive ratios;</li>
+<li>run the simplified Balance allocation and discuss its guarantee;</li>
+<li>make a business decision in the EcoShop campaign case.</li>
+</ul>
+<hr>
+<h2 id="1-web-advertising">1. Web advertising</h2>
+<h3 id="1-1-definition-and-forms">1.1 Definition and forms</h3>
+<p>Advertising promotes a firm’s products/services. <strong>Web advertising</strong> carries that marketing message through Internet-based channels to potential customers.</p>
+<p>Major forms introduced:</p>
+<ul>
+<li><strong>Email marketing:</strong> promotional email sent simultaneously to a large audience; often appears in promotions/spam folders.</li>
+<li><strong>Social-media marketing:</strong> ads embedded in Facebook, Instagram, and other feeds/reels, often selected from user/background/history signals.</li>
+<li><strong>Web banners/display ads:</strong> graphical/text ads delivered with a webpage, placed beside or within content or as pop-ups.</li>
+</ul>
+<p>The course focuses on banners and search ads because they require an immediate algorithmic choice of which advertiser to show.</p>
+<h3 id="1-2-banner-serving">1.2 Banner serving</h3>
+<p>A banner usually comes from a centralized/dedicated <strong>ad server</strong>, not necessarily the page owner. An advertising agency/network loads creatives, schedules delivery, and serves them dynamically to designated pages. Refreshing a page may produce a different yet contextually relevant ad.</p>
+<p>Benefits can flow to both sides:</p>
+<ul>
+<li>publisher/host monetizes traffic;</li>
+<li>advertiser reaches likely customers;</li>
+<li>a relevant banner may improve engagement and direct traffic to the advertiser or page.</li>
+</ul>
+<h3 id="1-3-conventional-versus-ad-recommendation">1.3 Conventional versus ad recommendation</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Conventional recommendation</th>
+<th>Ad recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Suggests products/content to improve user experience</td>
+<td>Selects paid advertising opportunities</td>
+</tr>
+<tr>
+<td>A poor suggestion normally has no direct allocation charge</td>
+<td>Click/impression may consume advertiser money depending on pricing model</td>
+</tr>
+<tr>
+<td>Can recommend many items with less urgency</td>
+<td>Must act immediately for a transient page/query slot</td>
+</tr>
+<tr>
+<td>Mainly optimizes relevance/engagement</td>
+<td>Jointly optimizes relevance, click likelihood, revenue, budget, policies</td>
+</tr>
+</tbody>
+</table></div>
+<p>An ordinary Netflix suggestion can be ignored harmlessly. An ad platform must decide whether a scarce paid opportunity should be spent on this user now, and must update user/ad state after outcomes.</p>
+<blockquote>
+<p><strong>Pricing caveat:</strong> lectures/quiz use simplified pay-per-click (PPC), where mere display costs nothing. Real systems may also price per impression (CPM) or conversion. Always state the assumed model.</p>
+</blockquote>
+<hr>
+<h2 id="2-online-versus-offline-algorithms">2. Online versus offline algorithms</h2>
+<h3 id="2-1-offline-algorithm">2.1 Offline algorithm</h3>
+<p>Collects the relevant dataset/input first, performs computation outside the live request path, and then publishes a decision/policy. It can revisit/recompute when new information is later collected.</p>
+<p>A practical system may train from historical logs offline, deploy a policy table/model, serve requests using that fixed policy, record outcomes, and rebuild periodically. Learning remains offline even though serving is live.</p>
+<h3 id="2-2-online-algorithm">2.2 Online algorithm</h3>
+<p>Processes a stream one arrival at a time:</p>
+<ol>
+<li>observe the current query/page/user context;</li>
+<li>make an immediate decision without knowing future arrivals;</li>
+<li>deploy it irreversibly;</li>
+<li>update budget/state and process the next arrival.</li>
+</ol>
+<p>Web ad allocation is online because the future query sequence is unknown, a slot disappears immediately, and budgets continuously change. The live lecture’s analogy contrasted revisable parking choice with an immediate one-way decision; the essential distinction is future knowledge and irrevocable allocation.</p>
+<h3 id="2-3-context-aware-recommendation">2.3 Context-aware recommendation</h3>
+<p>Select an ad related to the user’s <strong>current context</strong>—the page/query being viewed now, along with current user signals. A user reading an MBA-program page should be more eligible for education advertising than an unrelated product ad.</p>
+<h3 id="2-4-explore-exploit-trade-off">2.4 Explore–exploit trade-off</h3>
+<ul>
+<li><strong>Exploit:</strong> show an ad already believed to fit the user/high CTR; earns near-term value.</li>
+<li><strong>Explore:</strong> occasionally test an unfamiliar ad to learn emerging interests/performance.</li>
+</ul>
+<p>Only exploitation becomes repetitive and may miss changing interests (football this week, cricket next week). Only exploration wastes known opportunities. Exploration does not remove bid/budget feasibility: a controlled trade-off is required.</p>
+<hr>
+<h2 id="3-advertising-as-an-allocation-matching-problem">3. Advertising as an allocation/matching problem</h2>
+<h3 id="3-1-core-challenge">3.1 Core challenge</h3>
+<p>When a user/query creates an ad slot, allocate an eligible advertisement immediately, while:</p>
+<ul>
+<li>matching advertiser relevance to the user/query;</li>
+<li>respecting advertiser bid and remaining budget;</li>
+<li>respecting the maximum ads shown per page/query;</li>
+<li>balancing current revenue against future opportunity;</li>
+<li>updating context and interest in real time;</li>
+<li>often combining multiple models/heuristics rather than one monolithic algorithm.</li>
+</ul>
+<p>In the simplified course model, every advertiser wants one showing and every user sees exactly one ad. Real AdWords budgets permit the same advertiser to win multiple queries until budget is exhausted.</p>
+<h3 id="3-2-scoring-a-user-ad-pair">3.2 Scoring a user–ad pair</h3>
+<p>Let (U) be users/slots, (A) ads/advertisers, and</p>
+<p>\[
+F(u,a)=\text{value/score of showing ad }a\text{ to user }u.
+\]</p>
+<p>Signals may include:</p>
+<ul>
+<li>advertiser’s bid/willingness to pay;</li>
+<li>probability of click (CTR);</li>
+<li>relevance/quality and platform policy;</li>
+<li>value expected after a click (conversion/spend/dwell time);</li>
+<li>remaining budget.</li>
+</ul>
+<p>For PPC, a basic monetization score is:</p>
+<p>\[
+\boxed{\text{Expected revenue per impression}=\text{bid per click}\times P(\text{click})=b_{qa}\cdot CTR_{qa}.}
+\]</p>
+<p>The transcript calls this “expected revenue per click”; dimensionally it is expected revenue <strong>per opportunity/impression</strong>. Conditional revenue per actual click is the bid.</p>
+<h3 id="3-3-weighted-bipartite-matching">3.3 Weighted bipartite matching</h3>
+<p>Create a bipartite graph:</p>
+<ul>
+<li>left nodes: users/queries/slots;</li>
+<li>right nodes: ads/advertisers;</li>
+<li>edge ((u,a)): feasible assignment;</li>
+<li>edge weight: (F(u,a)).</li>
+</ul>
+<p>Let (x_{ua}\in{0,1}) indicate selection. A simplified one-to-one maximum-weight matching is:</p>
+<p>\[
+\max \sum_{u\in U}\sum_{a\in A}F(u,a)x_{ua}
+\]</p>
+<p>subject to</p>
+<p>\[
+\sum_a x_{ua}=1\quad\forall u,
+\qquad
+\sum_u x_{ua}\le1\quad\forall a.
+\]</p>
+<p>If multiple ads may appear, replace the first equality by \(\sum_a x_{ua}\le L_u\), the display limit. Real advertising also adds budget constraints such as expected/realized spend no greater than (B_a).</p>
+<p>The lecture also writes probabilistic/fractional assignment (p_{ua}), with sums equal to one. Interpret it as the probability/share of assigning ad (a) to user (u), multiplying the edge value.</p>
+<h3 id="3-4-marriage-problem-analogy">3.4 “Marriage problem” analogy</h3>
+<p>Two disjoint sets (men/women) have compatibility scores/preferences. Initially everyone is free; proposals are made; a free recipient accepts, while an engaged recipient switches if a better-preferred proposer arrives, freeing the prior match.</p>
+<blockquote>
+<p><strong>Conceptual caveat:</strong> this proposal procedure resembles <strong>stable matching</strong> (Gale–Shapley), whose goal is no blocking pair. Maximum-weight bipartite matching maximizes total edge weight. They are related matching problems but not mathematically identical objectives.</p>
+</blockquote>
+<hr>
+<h2 id="4-search-advertising-and-the-adwords-problem">4. Search advertising and the AdWords problem</h2>
+<h3 id="4-1-search-ad-scenario">4.1 Search-ad scenario</h3>
+<p>A search engine returns organic results plus separately marked ads. A query such as “MBA programs” triggers education advertisers bidding on relevant keywords. The system decides online whether Amrita, SRM, VIT, or another eligible university ad occupies each limited slot.</p>
+<p>Entities:</p>
+<ul>
+<li>search engine/platform;</li>
+<li>advertisers/ads;</li>
+<li>users and sequential queries/keywords.</li>
+</ul>
+<p>Advertisers:</p>
+<ul>
+<li>bid different amounts for different keywords;</li>
+<li>set daily/weekly/monthly budgets in advance;</li>
+<li>in the simplified PPC model, pay only when clicked;</li>
+<li>must have sufficient remaining budget for a possible charge.</li>
+</ul>
+<p>Platform goal: select at most the display limit of eligible ads and maximize realized/expected revenue without overrunning budgets.</p>
+<h3 id="4-2-formal-inputs-and-workflow">4.2 Formal inputs and workflow</h3>
+<ul>
+<li>stream of queries \(q_1,q_2,\ldots,q_n\), unknown in advance;</li>
+<li>bid (b(q,a)) from advertiser (a) for query (q), possibly zero;</li>
+<li>CTR (CTR(q,a));</li>
+<li>advertiser budget (B_a);</li>
+<li>display capacity (L_q).</li>
+</ul>
+<p>For each arriving query:</p>
+<ol>
+<li>identify advertisers bidding on/relevant to it;</li>
+<li>remove advertisers without enough remaining budget;</li>
+<li>calculate expected value, commonly (b\times CTR);</li>
+<li>apply display capacity and allocation policy;</li>
+<li>show selected ads;</li>
+<li>if clicked under PPC, charge advertiser and reduce budget;</li>
+<li>log impression/click and update serving state; periodically rebuild learned policies offline.</li>
+</ol>
+<p>An <strong>impression</strong> is a display. Impression without click earns zero under the simplified PPC assumption.</p>
+<hr>
+<h2 id="5-competitive-analysis">5. Competitive analysis</h2>
+<p>An online algorithm cannot be judged against perfect decisions made with the same limited information alone. Compare it with <strong>OPT</strong>, an all-knowing offline scheduler that sees the entire future sequence and maximizes revenue.</p>
+<p>\[
+\boxed{CR=\frac{Revenue_{online}}{Revenue_{OPT}}.}
+\]</p>
+<p>Usually the guarantee is the minimum ratio over all allowed input sequences. A ratio of 0.75 guarantees at least 75% of offline optimal revenue under the stated model.</p>
+<ul>
+<li><strong>Adversarial model:</strong> arrival order may be the worst possible; guarantee must hold for every sequence.</li>
+<li><strong>Random-order model:</strong> assumes queries arrive randomly; potentially higher ratios rely on this weaker assumption and do not supersede an adversarial worst-case bound.</li>
+</ul>
+<p>Evaluation can additionally include total revenue, budget utilization/pacing, relevance, CTR, conversions, and user experience.</p>
+<hr>
+<h2 id="6-simplified-and-greedy-adwords-algorithms">6. Simplified and greedy AdWords algorithms</h2>
+<h3 id="6-1-simplified-model">6.1 Simplified model</h3>
+<p>The lecture simplifies to:</p>
+<ul>
+<li>one ad per query;</li>
+<li>equal advertiser budgets;</li>
+<li>equal CTR;</li>
+<li>bids in \(\{0,1\}\) (eligible/not eligible).</li>
+</ul>
+<p>On each query, choose any eligible advertiser with remaining budget. This exposes why online tie choices matter.</p>
+<h3 id="6-2-why-naive-greedy-can-fail">6.2 Why naive greedy can fail</h3>
+<p>Advertiser A bids only on X. Advertiser B bids on X and Y. Both have budget 4; query stream is four X followed by four Y.</p>
+<p>A poor greedy tie-break gives all four X queries to flexible B, exhausting it. A cannot serve Y, so all four Y remain unallocated.</p>
+<ul>
+<li>Greedy revenue: 4.</li>
+<li>Offline optimum: allocate four X to A and four Y to B, revenue 8.</li>
+</ul>
+<p>\[
+CR=4/8=1/2.
+\]</p>
+<p>Lesson: preserve a flexible advertiser for future queries that only it can serve.</p>
+<h3 id="6-3-unequal-bid-bicycle-flower-example">6.3 Unequal-bid bicycle/flower example</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Keyword</th>
+<th style="text-align: right;">Bidder 1</th>
+<th style="text-align: right;">Bidder 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bicycle</td>
+<td style="text-align: right;">$1.00 | $0.99</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td>Flowers</td>
+<td style="text-align: right;">$1.00</td>
+<td style="text-align: right;">no bid</td>
+</tr>
+</tbody>
+</table></div>
+<p>Both budgets are $100. The stream contains 100 bicycle queries followed by 100 flower queries.</p>
+<p>Immediate highest-bid greedy gives the first 100 bicycle queries to bidder 1 and exhausts its budget; bidder 2 cannot serve flowers.</p>
+<ul>
+<li>Greedy revenue: (100\times1=\$100).</li>
+<li>Offline optimum: bicycles to bidder 2 ((100\times0.99=\$99)) and flowers to bidder 1 ((100\times1=\$100)), total $199.</li>
+</ul>
+<p>\[
+CR=100/199\approx0.503,
+\]</p>
+<p>approximately the 1/2 worst case.</p>
+<hr>
+<h2 id="7-balance-msvv-algorithm">7. Balance/MSVV algorithm</h2>
+<h3 id="7-1-simplified-balance-rule">7.1 Simplified Balance rule</h3>
+<p>For every query, among eligible advertisers with sufficient budget, choose one with the <strong>largest unspent/remaining budget</strong>. Break ties arbitrarily. This paces spend and preserves future flexibility better than an arbitrary/highest-current-bid greedy rule.</p>
+<h3 id="7-2-two-advertiser-example">7.2 Two-advertiser example</h3>
+<p>Again A bids only X, B bids X and Y, both budgets = 4, and queries are XXXXYYYY. A possible Balance sequence is A, B, A for early X allocations followed by B for remaining feasible opportunities, producing revenue 6 versus optimum 8:</p>
+<p>\[
+CR=6/8=3/4.
+\]</p>
+<p>The lecture’s algebra represents online revenue as (2B-x=B+y), where (x) and (y) describe spending/allocations across query types, and derives minimum revenue (3B/2) against optimum (2B), hence 3/4 for this constructed two-advertiser case.</p>
+<h3 id="7-3-general-stated-bound">7.3 General stated bound</h3>
+<p>The course states a worst-case competitive ratio:</p>
+<p>\[
+1-\frac1e\approx0.632.
+\]</p>
+<p>Interpretation: in the general stated model, the algorithm guarantees roughly 63% of offline optimum even under an adversarial query sequence; the quiz says this is the best possible worst-case guarantee.</p>
+<blockquote>
+<p><strong>Theory caveat:</strong> the transcript conflates plain “choose largest remaining budget” Balance with the more refined <strong>MSVV/AdWords bid-scaling algorithm</strong>. In standard online AdWords theory (under appropriate small-bid assumptions), MSVV ranks an eligible advertiser using bid multiplied by a function of fraction spent/remaining and obtains (1-1/e). Plain largest-remaining-budget Balance has model-dependent guarantees. For the exam, reproduce the course rule and (1-1/e) claim, but state assumptions if asked critically.</p>
+</blockquote>
+<p>The acronym refers to Mehta, Saberi, Vazirani, and Vazirani (transcription misspells the names).</p>
+<h3 id="7-4-general-n-advertiser-worst-case-construction">7.4 General (n)-advertiser worst-case construction</h3>
+<p>The lecture describes (n) advertisers (A_1,\ldots,A_n), each budget (B), with (nB) queries arriving in (n) rounds of (B) queries. Eligible sets shrink by round:</p>
+<ul>
+<li>round 1: (A_1,\ldots,A_n);</li>
+<li>round 2: (A_2,\ldots,A_n);</li>
+<li>round (i): (A_i,\ldots,A_n).</li>
+</ul>
+<p>Offline OPT assigns round (i) to (A_i). The lecture gives a capped cumulative-allocation expression of the form</p>
+<p>\[
+S_k=\min\left(B,\sum_{i=1}^{k}\frac{B}{n-i+1}\right),
+\]</p>
+<p>illustrating how balanced load accumulates as eligible advertisers shrink. The harmonic/exponential limiting analysis leads to the stated (1-1/e) ratio.</p>
+<hr>
+<h2 id="8-ecoshop-case-study">8. EcoShop case study</h2>
+<h3 id="8-1-scenario">8.1 Scenario</h3>
+<p>EcoShop launches search ads monitored by:</p>
+<ul>
+<li><strong>Lara</strong>, Marketing Manager;</li>
+<li><strong>Marco</strong>, Data Analyst;</li>
+<li><strong>Nina</strong>, AdOps Lead.</li>
+</ul>
+<p>Queries such as “eco-friendly notebook” and “sustainable backpack” arrive sequentially (Q1,Q2,Q3,\ldots). The page can display at most two ads. The team must choose immediately using bid, CTR, relevance, and remaining daily budget.</p>
+<p>For Q1:</p>
+<ul>
+<li>EcoShop: bid $2, CTR 0.10 → expected revenue (2\times0.10=\$0.20) per impression/opportunity.</li>
+<li>Competitor: bid $1.50, CTR 0.20 → expected revenue (1.50\times0.20=\$0.30).</li>
+</ul>
+<p>The lower bid has higher expected value because it is twice as likely to be clicked. Do not rank only by raw bid.</p>
+<h3 id="8-2-decision-options">8.2 Decision options</h3>
+<ul>
+<li><strong>A — immediate greedy:</strong> choose highest current (bid\times CTR). Strong short-term monetization, but may exhaust an advertiser needed for later queries.</li>
+<li><strong>B — budget pacing:</strong> reserve some budget/flexible advertisers for potentially better future queries. May sacrifice immediate revenue for higher total campaign revenue.</li>
+<li><strong>C — adjust bids/CTR estimates:</strong> bids are controlled by advertisers; CTR is estimated from user/ad/query behavior and creative relevance. A bid change does not mechanically improve CTR—creative/targeting experiments and new data do.</li>
+</ul>
+<h3 id="8-3-recommended-strategy">8.3 Recommended strategy</h3>
+<ol>
+<li>Filter for query/ad relevance and policy eligibility.</li>
+<li>Remove advertisers unable to cover a click.</li>
+<li>Score using calibrated (bid\times CTR), not bid alone.</li>
+<li>Enforce the two-ad display limit.</li>
+<li>Apply pacing/Balance-style adjustment based on remaining budget and time/query opportunity.</li>
+<li>Retain controlled exploration to update CTR estimates.</li>
+<li>Compare realized revenue with a hindsight/offline benchmark through competitive ratio.</li>
+<li>Monitor CTR, conversion, budget utilization, and customer relevance—not revenue alone.</li>
+</ol>
+<p>Short term, select high expected-value feasible ads; medium term, tune pacing and creatives; long term, learn a robust online policy from logged outcomes.</p>
+<hr>
+<h2 id="9-end-to-end-ad-allocation-workflow">9. End-to-end ad-allocation workflow</h2>
+<ol>
+<li>User searches or opens a page.</li>
+<li>Extract query, page, and user context.</li>
+<li>Retrieve advertisers bidding on/relevant to the opportunity.</li>
+<li>Check policies, display limit, and remaining budgets.</li>
+<li>Estimate CTR/relevance/conversion and compute expected value.</li>
+<li>Apply greedy, Balance/MSVV, matching, or hybrid policy.</li>
+<li>Show selected ads immediately.</li>
+<li>Observe impression, click, and downstream behavior.</li>
+<li>Under PPC, charge on click and update budget.</li>
+<li>Log the outcome and periodically recalibrate models/policies offline.</li>
+<li>Evaluate revenue, relevance, pacing, and competitive performance.</li>
+</ol>
+<hr>
+<h2 id="10-exam-focused-revision">10. Exam-focused revision</h2>
+<h3 id="essential-formulas">Essential formulas</h3>
+<p>\[
+\text{Expected PPC revenue per impression}=bid\times CTR
+\]</p>
+<p>\[
+\max\sum_{u,a}F(u,a)x_{ua}
+\]</p>
+<p>\[
+CR=\frac{Revenue_{online}}{Revenue_{offline\ optimum}}
+\]</p>
+<p>\[
+CR_{greedy,worst}\approx\frac12,
+\qquad
+CR_{course\ Balance/MSVV}=1-\frac1e\approx0.632
+\]</p>
+<h3 id="high-yield-one-line-answers">High-yield one-line answers</h3>
+<ul>
+<li>Web advertising markets through Internet channels; banners are dynamically served from ad servers.</li>
+<li>Online decisions are sequential, immediate, irrevocable, and lack future queries.</li>
+<li>Context-aware ads match the current page/query/user situation.</li>
+<li>Exploit known high performers; explore to learn emerging interests.</li>
+<li>PPC charges only on clicks under the simplified model; an impression is merely a display.</li>
+<li>Bid is amount per click; CTR is click probability; bid × CTR is expected revenue per impression.</li>
+<li>Bipartite matching connects users/queries to ads and maximizes total feasible edge weight.</li>
+<li>Budgets make “always select highest current value” potentially shortsighted.</li>
+<li>Offline OPT sees all future queries and is the competitive-analysis benchmark.</li>
+<li>Greedy can waste flexible advertisers on early queries; Balance paces by remaining budget.</li>
+<li>A random-order guarantee cannot be compared as if it were a stronger adversarial guarantee.</li>
+</ul>
+<h3 id="likely-exam-prompts">Likely exam prompts</h3>
+<ol>
+<li><strong>Compare online/offline ad algorithms.</strong> Discuss future knowledge, reversibility, live serving, and periodic offline policy rebuilding.</li>
+<li><strong>Formulate weighted bipartite matching.</strong> Define nodes, weights, assignment variables, one-to-one/display-limit constraints, and objective.</li>
+<li><strong>Explain AdWords workflow.</strong> Keyword bids, CTR, budgets, eligibility, display limit, click charging, streaming queries.</li>
+<li><strong>Show greedy’s 1/2 failure.</strong> Use A: X only, B: X/Y, query order XXXXYYYY, and compare with OPT.</li>
+<li><strong>Calculate bicycle/flower ratio.</strong> Greedy $100; OPT $199; ratio (100/199\approx0.503).</li>
+<li><strong>Explain Balance.</strong> Largest remaining budget in course simplification, 3/4 example, and stated (1-1/e) general guarantee.</li>
+<li><strong>Analyze EcoShop Q1.</strong> $2×0.1=$0.20 versus $1.5×0.2=$0.30; use expected value plus budget pacing.</li>
+</ol>
+<h3 id="common-misconceptions">Common misconceptions</h3>
+<ul>
+<li>A displayed PPC ad does not necessarily generate payment.</li>
+<li>Highest bid is not necessarily highest expected revenue.</li>
+<li>Knowing user preference is not the only issue; budgets/capacity are hard constraints.</li>
+<li>Offline learning does not update separately for every live request.</li>
+<li>Greedy is not always optimal.</li>
+<li>Do not display every eligible ad; enforce the page/query limit.</li>
+<li>CTR and bid are distinct: increasing bid does not automatically improve CTR.</li>
+<li>Competitive ratio is online revenue divided by offline optimum, not the reverse.</li>
+<li>Stable marriage and maximum-weight matching are not identical objectives.</li>
+</ul>
+<hr>
+<h2 id="11-live-session-additions-and-instructor-emphasis">11. Live-session additions and instructor emphasis</h2>
+<p>The Week 10 live session reinforced:</p>
+<ul>
+<li>web advertising as Internet-delivered marketing to potential users;</li>
+<li>dynamic banners controlled by agencies/ad servers rather than the host alone;</li>
+<li>offline computation versus online immediate decisions;</li>
+<li>paid ad recommendation’s stronger budget/timeliness stakes than ordinary content recommendation;</li>
+<li>exploration and exploitation as necessary for changing interests;</li>
+<li>graph-based user–advertiser scoring and exact-one simplified assumptions.</li>
+</ul>
+<p>It also briefly recapped Week 9 NLP terms (text data, bag of words, stemming, lemmatization) and reminded students that LMS videos through Week 12 were described as compulsory for exam eligibility. These administrative/review remarks do not alter the Week 10 ad-allocation algorithms but are retained here for complete transcript coverage.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-9.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 9: Text Processing, Bag of Words, TF–IDF,…</span>
+      </a>
+      <a href="week-11.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 11: High-Dimensional Clustering, Subspaces,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Advanced ML · Week 1 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Advanced ML</span>
+      <span class="brand-title">Week 1</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html" selected>Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a class="is-active" href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Review of Machine Learning, Learning Types, and Linear Regression
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Classification, Logistic Regression, Maximum Likelihood and K-Means…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Bias–Variance, Error Analysis, Learning Curves, and Model Selection
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Recommendation Systems and Collaborative Filtering
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Content-Based Filtering, Cosine Similarity, UV Decomposition, and…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Bias–Variance Trade-off, Underfitting, Overfitting,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Association Rule Mining, Apriori, and PCY
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Dimensionality Reduction, PCA, Eigen-Decomposition, and SVD
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Text Processing, Bag of Words, TF–IDF, Vector-Space Retrieval, and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Web Advertising, Online Matching, AdWords, and Balance
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        High-Dimensional Clustering, Subspaces, CLIQUE, PROCLUS, and…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Independent Component Analysis, Blind Source Separation, FastICA,…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Social Networks, Graph Laplacians, and Spectral Clustering
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Graph Partitioning, Flow Centrality, Edge Betweenness, and Girvan–Newman
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        ML Life Cycle, Hybrid and Music Recommenders, and Evaluation
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Advanced ML · Week 1</p>
+        <h1 class="page-title">Review of Machine Learning, Learning Types, and Linear Regression</h1>
+        <p class="page-meta">Week 1 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#learning-objectives">Learning objectives</a></li>
+      <li><a href="#1-what-is-machine-learning">1. What is machine learning?</a></li>
+      <li><a href="#2-conventional-programming-versus-machine-learning">2. Conventional programming versus machine learning</a></li>
+      <li><a href="#3-why-advanced-ml-is-needed-scale-and-applications">3. Why advanced ML is needed: scale and applications</a></li>
+      <li><a href="#4-types-of-machine-learning">4. Types of machine learning</a></li>
+      <li><a href="#5-supervised-tasks-regression-and-classification">5. Supervised tasks: regression and classification</a></li>
+      <li><a href="#6-unsupervised-tasks-clustering-and-association-rules">6. Unsupervised tasks: clustering and association rules</a></li>
+      <li><a href="#7-simple-linear-regression">7. Simple linear regression</a></li>
+      <li><a href="#8-worked-example-predict-glucose-level-from-age">8. Worked example: predict glucose level from age</a></li>
+      <li><a href="#9-python-implementation-described-in-the-lecture">9. Python implementation described in the lecture</a></li>
+      <li><a href="#10-training-testing-evaluation-and-improvement">10. Training, testing, evaluation, and improvement</a></li>
+      <li><a href="#11-novamart-case-study-selecting-an-ml-roadmap">11. NovaMart case study: selecting an ML roadmap</a></li>
+      <li><a href="#12-high-value-comparisons-for-the-exam">12. High-value comparisons for the exam</a></li>
+      <li><a href="#13-exam-focused-recall-and-self-test">13. Exam-focused recall and self-test</a></li>
+      <li><a href="#14-qa-supplement-transcript-details-and-instructor-emphases">14. QA supplement — transcript details and instructor emphases</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="learning-objectives">Learning objectives</h2>
+<p>By the end of this week, you should be able to:</p>
+<ul>
+<li>define machine learning from multiple viewpoints;</li>
+<li>distinguish conventional rule-based programming from machine learning;</li>
+<li>describe offline, online/feedback-loop, and large-data iterative ML workflows;</li>
+<li>identify supervised, unsupervised, and reinforcement-learning problems;</li>
+<li>distinguish regression, classification, clustering, and association-rule mining;</li>
+<li>formulate simple linear regression, interpret its parameters and error term, and derive the least-squares estimates;</li>
+<li>solve the age–glucose numerical example manually and explain its Python implementation;</li>
+<li>select an appropriate ML approach for a practical business case, including the NovaMart case used in the week material.</li>
+</ul>
+<hr>
+<h2 id="1-what-is-machine-learning">1. What is machine learning?</h2>
+<h3 id="core-viewpoints">Core viewpoints</h3>
+<p><strong>Learning</strong> is a process by which a system improves its performance through experience. A machine-learning system acquires knowledge autonomously through a computer program rather than requiring every operational rule to be written explicitly.</p>
+<p>A common general definition is:</p>
+<blockquote>
+<p>Machine learning is a field of study that gives computers the capability to learn without being explicitly programmed.</p>
+</blockquote>
+<p>The live session described this as a model learning from data or supplied information and becoming better at performing the required activity. “Without explicit programming” does <strong>not</strong> mean that no code or algorithm exists; it means the final decision rules or mapping are learned from examples rather than exhaustively hand-coded by a programmer.</p>
+<h3 id="tom-mitchell-s-definition-experience-task-and-performance">Tom Mitchell&rsquo;s definition: experience, task, and performance</h3>
+<p>A computer program is said to learn from <strong>experience</strong> \(E\), with respect to some <strong>task</strong> \(T\) and <strong>performance measure</strong> \(P\), if its performance on \(T\), as measured by \(P\), improves with \(E\).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Meaning</th>
+<th>Spam-filter example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\(E\): experience</td>
+<td>The data/exposure from which the program learns</td>
+<td>Previously labeled spam and legitimate emails</td>
+</tr>
+<tr>
+<td>\(T\): task</td>
+<td>The activity the program must perform</td>
+<td>Classify a new email</td>
+</tr>
+<tr>
+<td>\(P\): performance</td>
+<td>The measure used to judge improvement</td>
+<td>Accuracy, precision, recall, or error rate</td>
+</tr>
+</tbody>
+</table></div>
+<p>The essential test is not simply whether a program runs repeatedly; its measured performance on the specified task must improve because of experience.</p>
+<h3 id="pattern-and-uncertainty-viewpoint">Pattern-and-uncertainty viewpoint</h3>
+<p>ML can also be defined as a set of methods that:</p>
+<ol>
+<li>automatically detects or discovers patterns in data;</li>
+<li>uses those patterns to predict future/unseen data or make other decisions;</li>
+<li>operates under uncertainty.</li>
+</ol>
+<p>Data may be numeric, text, an image/photo, a fingerprint, speech/voice, video, or other multimedia. If a problem is completely certain and can be captured reliably by fixed rules, ML/AI may be unnecessary; ML is especially valuable where patterns are complex, changing, or uncertain.</p>
+<hr>
+<h2 id="2-conventional-programming-versus-machine-learning">2. Conventional programming versus machine learning</h2>
+<h3 id="information-flow">Information flow</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Inputs to the computer</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conventional programming</td>
+<td>Human-written program/rules + data</td>
+<td>Answers/results</td>
+</tr>
+<tr>
+<td>Supervised machine learning (training)</td>
+<td>Example data + corresponding known outputs/labels</td>
+<td>A learned model/program</td>
+</tr>
+<tr>
+<td>Trained ML model (inference)</td>
+<td>Learned model + new input data</td>
+<td>Predicted output</td>
+</tr>
+</tbody>
+</table></div>
+<p>In conventional C, C++, Java, or Python programming, a developer studies the problem and encodes the algorithm using the language&rsquo;s syntax and semantics. For a prime-number checker, the prime-test algorithm is already in the computer; the user supplies a number, and the program returns “prime” or “not prime.” Similarly, adding two numbers follows rules explicitly written by the programmer.</p>
+<p>In supervised ML, the system receives examples of inputs and correct outputs and learns the mapping that produced those outputs. Examples include spam detection and facial recognition. The programmer still chooses an algorithm and builds a pipeline, but the model learns the detailed pattern/rules from data.</p>
+<h3 id="development-cycles">Development cycles</h3>
+<p><strong>Conventional cycle</strong></p>
+<ol>
+<li>Study the problem.</li>
+<li>Write rules/program.</li>
+<li>Evaluate.</li>
+<li>Analyze errors; if necessary, restudy the problem and rewrite rules.</li>
+<li>Launch once evaluation succeeds.</li>
+</ol>
+<p><strong>Classical/offline ML cycle</strong></p>
+<ol>
+<li>Define and study the problem.</li>
+<li>Collect and clean data.</li>
+<li>Select/construct a suitable algorithm and train it on the data; do not manually enumerate all decision rules.</li>
+<li>Evaluate the solution on data not used for fitting.</li>
+<li>Analyze errors, iterate, and refine the data/model/approach.</li>
+<li>Deploy the model.</li>
+</ol>
+<p><strong>Online-learning or feedback-loop variant</strong></p>
+<ol>
+<li>Train, evaluate, and deploy.</li>
+<li>Capture feedback or fresh data after deployment.</li>
+<li>Feed it back to training.</li>
+<li>Retrain/optimize, reevaluate, and continue the refinement cycle.</li>
+</ol>
+<p>Deployment is therefore not necessarily the end of learning. The live-session instructor stated that feedback loops can apply to both supervised and unsupervised learning, though their unsupervised use is more advanced. Once a model is already deployed, the repeated loop concerns feedback, training, evaluation, and refinement rather than repeatedly performing the initial deployment step.</p>
+<p><strong>Big-data/knowledge-discovery variant:</strong> with a very large dataset, train an ML algorithm, examine potentially multiple solutions, improve the solution, use what is learned to understand the problem more clearly, and iterate.</p>
+<h3 id="instructor-emphasis-data-quality-and-generalization">Instructor emphasis: data quality and generalization</h3>
+<ul>
+<li>ML needs data; useful training starts with <strong>clean data</strong>.</li>
+<li>The test data should be different from the training data. Reusing training examples does not demonstrate that the model learned a general rule.</li>
+<li>The aim is performance on unseen, real-world cases—<strong>generalization</strong>—not memorization.</li>
+<li>After evaluation, errors are analyzed and minimized through iteration/refinement before deployment.</li>
+</ul>
+<p>Practical analogy from the live session: knowing only the sequence “ABCDEFG” does not by itself establish an ability to speak; competence must be tested using different letters, words, and sentences. Likewise, a model must be tested beyond the examples used for training.</p>
+<hr>
+<h2 id="3-why-advanced-ml-is-needed-scale-and-applications">3. Why advanced ML is needed: scale and applications</h2>
+<h3 id="big-data-motivation">Big-data motivation</h3>
+<p>Online systems such as YouTube, Amazon, Google, Facebook, and Netflix generate enormous volumes of users, interactions, networks, pages, and multimedia. The lecture used older YouTube statistics illustratively: roughly 600 hours of video uploaded per minute and about 3.25 billion hours watched per month, along with extremely large daily views, monthly unique visits, and operating costs. The exact figures were presented as older and likely much larger now; the examinable point is the <strong>scale</strong>, not memorization of transient statistics.</p>
+<p>At this volume, ordinary fixed-rule programs alone are insufficient to extract and analyze patterns for system and human benefit. Advanced ML and AI methods are required to process the volume and complexity.</p>
+<h3 id="major-applications">Major applications</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Application</th>
+<th>Data/pattern used</th>
+<th>Output or use case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Recommendation systems</td>
+<td>Browsing, past purchases/views, user profiles, similar-user behavior, feedback</td>
+<td>Amazon/Flipkart products, Facebook friend suggestions, Netflix movies</td>
+</tr>
+<tr>
+<td>Medical imaging</td>
+<td>CT, MRI, X-ray, retinal and other images</td>
+<td>Disease detection, cancer-cell identification, possible risk indicators such as glaucoma/diabetes-related conditions</td>
+</tr>
+<tr>
+<td>Cyber/network/cloud security</td>
+<td>Traffic and endpoint behavior</td>
+<td>Malware/virus detection, network-anomaly detection, unsafe-site warnings, safer browsing, cloud protection</td>
+</tr>
+<tr>
+<td>Self-driving vehicles</td>
+<td>Rapid camera/video frames and other sensor data</td>
+<td>Recognize road scenes and issue steering, brake, and accelerator commands in real time; CNNs were highlighted</td>
+</tr>
+<tr>
+<td>Speech/voice recognition</td>
+<td>Audio/speech features compared with learned patterns/data</td>
+<td>Speech-to-text, speaker/voice recognition, voice-based access control; deep neural networks were highlighted</td>
+</tr>
+<tr>
+<td>Search engines</td>
+<td>Billions/trillions of web pages, extracted text, queries, rankings</td>
+<td>Crawl/extract pages, apply NLP, rank results, interpret even imperfectly phrased queries</td>
+</tr>
+<tr>
+<td>Computer vision</td>
+<td>Pixels in images/video/visual signals</td>
+<td>Recognize and classify objects such as cars, trucks, and handbags; ANNs/CNNs learn visual patterns</td>
+</tr>
+</tbody>
+</table></div>
+<p>Recommendation engines analyze large quantities of data. Amazon can use what a user searched, browsed, or purchased and what similar users viewed or purchased. Facebook analyzes profiles and friendship networks. Netflix may use both user–item relationships and user–user similarity, together with viewing/search/genre behavior, to queue a likely next movie.</p>
+<p>Computer vision is a branch of AI that uses ML—especially neural networks and convolutional neural networks—to understand images and videos. Deep learning is a domain within ML; the live session specifically associated CNNs with self-driving camera processing and deep neural networks with speech recognition.</p>
+<hr>
+<h2 id="4-types-of-machine-learning">4. Types of machine learning</h2>
+<h3 id="4-1-supervised-learning">4.1 Supervised learning</h3>
+<p>Supervised learning trains a machine using <strong>well-labeled data</strong>. Each training observation contains:</p>
+<ul>
+<li>\(X\): input variable(s), predictor(s), or features;</li>
+<li>\(Y\): the correct output, target, tag, class, or value.</li>
+</ul>
+<p>The goal is to infer a mapping \(f\) such that:</p>
+<p>\[
+f:X\rightarrow Y
+\]</p>
+<p>At prediction time, only the new \(X\) is supplied; the trained model predicts its \(Y\). The “supervisor” or “teacher” is the known target information. Labels may be names or categories (triangle, spam, politics), binary values (0/1), or quantities (price, glucose level).</p>
+<p><strong>Shape example:</strong> training data include geometric features and labels. Number of sides is one feature: three sides helps indicate “triangle”; four sides may indicate “square” or “rectangle,” so other features such as angles or side lengths may also be required. A new shape is supplied only through its features, and the model predicts its label.</p>
+<p>Examples of supervised model families mentioned in the lecture include neural networks, support-vector machines, decision trees, and Bayesian classifiers. Supervised tasks divide primarily into regression and classification.</p>
+<h3 id="4-2-unsupervised-learning">4.2 Unsupervised learning</h3>
+<p>Unsupervised learning receives <strong>unlabeled/raw input</strong>: only \(X\), with no corresponding \(Y\) and no prior knowledge of the correct class/value. It is self-guided and seeks structure, patterns, groupings, or relationships in the data.</p>
+<p><strong>Animal example:</strong> a raw collection contains cat and dog images without the words “cat” or “dog.” The algorithm interprets their features and discovers two different groups. It has found structure; it was not taught the semantic names of those groups.</p>
+<p>Mentioned examples include K-means, clustering approaches, and (in the lecture&rsquo;s broad categorization) genetic algorithms. Association-rule mining is another unsupervised pattern-discovery task.</p>
+<h3 id="4-3-reinforcement-learning">4.3 Reinforcement learning</h3>
+<p>The course did not examine reinforcement learning in depth because it is a large domain. Its basic elements are:</p>
+<ul>
+<li>an <strong>agent</strong>;</li>
+<li>an <strong>environment</strong>;</li>
+<li>actions performed by the agent;</li>
+<li>positive rewards for desirable/correct actions and negative rewards/penalties for undesirable actions.</li>
+</ul>
+<p>Through feedback, the agent learns behavior intended to maximize cumulative reward and avoid actions that led to penalties. Practical examples include game playing, robotics, and sequential control.</p>
+<h3 id="4-4-do-not-confuse-these-two-distinctions">4.4 Do not confuse these two distinctions</h3>
+<p><strong>Supervised vs. unsupervised</strong> concerns whether target labels \(Y\) are available. <strong>Structured vs. unstructured data</strong> concerns the form/schema of data. They are different dimensions: supervised or unsupervised tasks may involve tabular structured data, text, images, or other unstructured data.</p>
+<h3 id="comparison">Comparison</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Supervised</th>
+<th>Unsupervised</th>
+<th>Reinforcement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Training signal</td>
+<td>Known \(Y\) for each \(X\)</td>
+<td>No \(Y\)</td>
+<td>Rewards/penalties from interaction</td>
+</tr>
+<tr>
+<td>Main aim</td>
+<td>Predict class or value</td>
+<td>Discover patterns/groups/relations</td>
+<td>Learn a policy of actions</td>
+</tr>
+<tr>
+<td>Typical tasks</td>
+<td>Regression, classification</td>
+<td>Clustering, association rules</td>
+<td>Sequential decision-making</td>
+</tr>
+<tr>
+<td>Example</td>
+<td>Predict house price</td>
+<td>Segment customers</td>
+<td>Robot navigation</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Caveat:</strong> neither supervised nor unsupervised learning is universally “more efficient” or “more modern.” The live discussion informally favored unsupervised learning for broad, unlabeled clusters, but the correct method depends on the problem statement, desired output, labels, features, data quality, and constraints.</p>
+<hr>
+<h2 id="5-supervised-tasks-regression-and-classification">5. Supervised tasks: regression and classification</h2>
+<h3 id="regression">Regression</h3>
+<p>Regression is a statistical predictive technique used when the target is a <strong>continuous quantity</strong>. It estimates the relationship between independent/predictor variables and a dependent/response variable.</p>
+<p>Examples:</p>
+<ul>
+<li>predict the exact age of a viewer from behavior;</li>
+<li>predict an exact indoor temperature from weather, time, or door sensors;</li>
+<li>predict house price from house size;</li>
+<li>forecast sales;</li>
+<li>predict glucose level from age.</li>
+</ul>
+<p><strong>House example:</strong> training pairs contain house size \(X\) and known price \(Y\). After fitting the regression model, a new house size alone is supplied and the model predicts a price, such as \($160{,}000\).</p>
+<h3 id="classification">Classification</h3>
+<p>Classification predicts a <strong>discrete category/class/label</strong>. It approximates a mapping from input features \(X\) to discrete \(Y\).</p>
+<p><strong>News example:</strong> extract text features from labeled news articles. Training labels include food, sports, and politics. For a new article, feed only its features/text and predict its category.</p>
+<p>Other examples: spam/not spam, fraud/genuine, churn/no churn, diseased/healthy, or positive/neutral/negative sentiment.</p>
+<h3 id="same-domain-different-question">Same domain, different question</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Output type</th>
+<th>Task</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“What will tomorrow&rsquo;s exact average temperature be?”</td>
+<td>Continuous number</td>
+<td>Regression</td>
+</tr>
+<tr>
+<td>“Will tomorrow be cold, warm, or hot?”</td>
+<td>Discrete category</td>
+<td>Classification</td>
+</tr>
+</tbody>
+</table></div>
+<p>Classification requires explicit class definitions. The lecture illustrated possible thresholds: above about \(40^\circ\text{C}\) could be called hot and below it cold, or three intervals could define cold, warm, and hot. The precise boundary is a design/domain decision; changing it changes the labels.</p>
+<hr>
+<h2 id="6-unsupervised-tasks-clustering-and-association-rules">6. Unsupervised tasks: clustering and association rules</h2>
+<h3 id="clustering">Clustering</h3>
+<p>Clustering groups observations so that points in the same group have similar features/properties and points in different groups are comparatively dissimilar. It operates on \(X\) without a known \(Y\).</p>
+<p><strong>Fruit example:</strong> a raw dataset contains apples, cherries, oranges, mangoes, pineapples, etc. Based on features, a clustering algorithm such as K-means separates similar fruits into clusters. The algorithm discovers group structure; attaching semantic names afterward may require human interpretation.</p>
+<p>Practical use case: group customers using visit duration, pages viewed, category preferences, and purchase frequency, then tailor marketing to high spenders, price-sensitive shoppers, or window shoppers.</p>
+<h3 id="association-rule-mining">Association-rule mining</h3>
+<p>Association-rule mining discovers rules, co-occurrence patterns, or relationships among items in transactional data. It asks which items tend to occur together; it does not primarily form customer clusters or predict a continuous number.</p>
+<p>Example transactions:</p>
+<ul>
+<li>Customer 1: milk, bread, butter</li>
+<li>Customer 2: milk, cereal, bread, butter</li>
+<li>Customer 3: milk, bread, butter</li>
+</ul>
+<p>These imply a stronger observed association among milk, bread, and butter than among milk, bread, and sugar. A common rule form is:</p>
+<p>\[
+\{\text{milk, bread}\}\Rightarrow\{\text{butter}\}
+\]</p>
+<p>Uses include supermarket shelf proximity, online recommendations, cross-selling, product bundles, and market-basket analysis. Association indicates co-occurrence, not necessarily causation.</p>
+<p>Review/case-study augmentation introduces three common rule measures:</p>
+<ul>
+<li><strong>Support:</strong> how frequently an itemset occurs in all transactions.</li>
+<li><strong>Confidence:</strong> how often the consequent occurs when the antecedent occurs.</li>
+<li><strong>Lift:</strong> strength relative to what would be expected if antecedent and consequent were independent; lift greater than 1 suggests a positive association.</li>
+</ul>
+<p>Sparse transaction matrices—many products purchased rarely and many empty item entries—can yield few frequent itemsets and make rule discovery difficult. Support, confidence, and lift thresholds must be selected carefully.</p>
+<hr>
+<h2 id="7-simple-linear-regression">7. Simple linear regression</h2>
+<h3 id="purpose-and-model">Purpose and model</h3>
+<p>Simple linear regression fits the best straight-line relationship between one independent variable \(X\) and a dependent variable \(Y\).</p>
+<p>The deterministic line is:</p>
+<p>\[
+Y=\beta_0+\beta_1X
+\]</p>
+<p>The probabilistic model adds a random error term:</p>
+<p>\[
+Y=\beta_0+\beta_1X+\varepsilon
+\]</p>
+<p>This corresponds to the familiar line \(y=mx+c\): \(\beta_1\) is the slope \(m\), and \(\beta_0\) is the vertical intercept \(c\).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\(X\)</td>
+<td>Independent, predictor, or explanatory variable</td>
+</tr>
+<tr>
+<td>\(Y\)</td>
+<td>Dependent, response, or target variable</td>
+</tr>
+<tr>
+<td>\(\beta_0\)</td>
+<td>True intercept: average/expected \(Y\) when \(X=0\)</td>
+</tr>
+<tr>
+<td>\(\beta_1\)</td>
+<td>True slope: expected change in \(Y\) for a one-unit increase in \(X\)</td>
+</tr>
+<tr>
+<td>\(\varepsilon\)</td>
+<td>Random deviation/error representing noise and omitted influences</td>
+</tr>
+</tbody>
+</table></div>
+<p>For fixed \(X\), \(Y\) is random because \(\varepsilon\) is random. With \(n\) independent observations \((X_i,Y_i)\), the points scatter around the true regression line. Some may lie exactly on it, but generally each has its own error \(\varepsilon_i\).</p>
+<h3 id="error-residual-and-variance">Error, residual, and variance</h3>
+<p>The model error is the vertical difference between an observed point and the line. For a fitted model:</p>
+<p>\[
+\hat Y_i=\hat\beta_0+\hat\beta_1X_i,
+\qquad e_i=Y_i-\hat Y_i
+\]</p>
+<p>The lecture sometimes described this as a perpendicular distance, but ordinary least squares minimizes <strong>vertical</strong> residuals in the \(Y\)-direction.</p>
+<p>The variance parameter \(\sigma^2\) controls the spread of the conditional normal curves around the regression line:</p>
+<ul>
+<li>small \(\sigma^2\): observed points usually lie close to the true line;</li>
+<li>large \(\sigma^2\): observations may deviate considerably from expected values.</li>
+</ul>
+<h3 id="least-squares-objective">Least-squares objective</h3>
+<p>The best-fit line minimizes the sum of squared vertical residuals:</p>
+<p>\[
+F(B_0,B_1)=\sum_{i=1}^{n}\left[Y_i-(B_0+B_1X_i)\right]^2
+\]</p>
+<p>This is the sum of squared errors/residuals (SSE). Squaring prevents positive and negative residuals from canceling and gives larger deviations greater influence.</p>
+<p>To minimize \(F\), take partial derivatives with respect to both unknowns and set them to zero:</p>
+<p>\[
+\frac{\partial F}{\partial B_0}
+=-2\sum_{i=1}^{n}\left[Y_i-B_0-B_1X_i\right]=0
+\]</p>
+<p>\[
+\frac{\partial F}{\partial B_1}
+=-2\sum_{i=1}^{n}X_i\left[Y_i-B_0-B_1X_i\right]=0
+\]</p>
+<p>Solving these normal equations gives the least-squares estimates. Hats indicate estimates from sample data rather than unknown population parameters:</p>
+<p>\[
+\hat\beta_1=
+\frac{\sum_{i=1}^{n}(X_i-\bar X)(Y_i-\bar Y)}
+{\sum_{i=1}^{n}(X_i-\bar X)^2}
+=\frac{S_{XY}}{S_{XX}}
+\]</p>
+<p>where</p>
+<p>\[
+S_{XY}=\sum X_iY_i-\frac{(\sum X_i)(\sum Y_i)}{n}
+\]</p>
+<p>\[
+S_{XX}=\sum X_i^2-\frac{(\sum X_i)^2}{n}
+\]</p>
+<p>and</p>
+<p>\[
+\hat\beta_0=\bar Y-\hat\beta_1\bar X
+=\frac{\sum Y_i-\hat\beta_1\sum X_i}{n}
+\]</p>
+<p>The fitted/estimated regression line is:</p>
+<p>\[
+\hat Y=\hat\beta_0+\hat\beta_1X
+\]</p>
+<blockquote>
+<p><strong>Accuracy note:</strong> a brief live-session utterance reversed “slope” and “intercept.” The recorded lecture and formulas establish the correct interpretation: \(\beta_1\) is slope; \(\beta_0\) is intercept.</p>
+</blockquote>
+<hr>
+<h2 id="8-worked-example-predict-glucose-level-from-age">8. Worked example: predict glucose level from age</h2>
+<h3 id="problem-and-data">Problem and data</h3>
+<p>The input/predictor \(X\) is age; the output/response \(Y\) is glucose level. Six labeled observations are used, including \((43,99)\) and \((21,65)\). The full ages referred to in the live session are 43, 21, 25, 42, 57, and 59. The model must predict the glucose level for a person whose age is not one of the training observations.</p>
+<p>For manual calculation, construct columns \(X\), \(Y\), \(XY\), \(X^2\), and optionally \(Y^2\). For example, the first row contributes \(43\times99\), \(43^2\), and \(99^2\).</p>
+<p>The lecture gives:</p>
+<p>\[
+n=6,\quad \sum X=247,\quad \sum Y=486,
+\]</p>
+<p>\[
+\sum XY=20{,}485,\quad \sum X^2=11{,}409
+\]</p>
+<p>From these:</p>
+<p>\[
+S_{XY}=478,\qquad S_{XX}=1240
+\]</p>
+<p>Therefore:</p>
+<p>\[
+\hat\beta_1=\frac{478}{1240}\approx0.385
+\]</p>
+<p>\[
+\hat\beta_0=\bar Y-\hat\beta_1\bar X\approx65.14\text{ or }65.15
+\]</p>
+<p>The fitted model is:</p>
+<p>\[
+\hat Y=65.14+0.385X
+\]</p>
+<p>For age \(55\):</p>
+<p>\[
+\hat Y=65.14+(0.385)(55)\approx86.3
+\]</p>
+<p>Thus the model predicts a glucose level of approximately <strong>86.3</strong>. The software result shown was about <strong>86.32329</strong>, with the tiny difference due to use of unrounded coefficients.</p>
+<h3 id="what-the-model-means">What the model means</h3>
+<ul>
+<li>Slope \(\approx0.385\): within this fitted example, a one-year increase in age corresponds to an expected increase of about 0.385 glucose units.</li>
+<li>Intercept \(\approx65.14\): mathematical fitted value at age zero. It need not have a useful real-world interpretation when \(X=0\) is outside the meaningful data range.</li>
+<li>Each residual is the observed glucose value minus the value on the fitted line at that age.</li>
+</ul>
+<h3 id="important-caveat-from-the-live-session">Important caveat from the live session</h3>
+<p>The instructor explicitly warned that this six-row dataset is only a small teaching example, not a realistic or logically validated medical dataset. Real applications can contain lakhs of observations, and one should not infer a medical law or causal relationship from these six values. The small sample was chosen for ease of manual computation.</p>
+<hr>
+<h2 id="9-python-implementation-described-in-the-lecture">9. Python implementation described in the lecture</h2>
+<p>The recorded demonstration followed this logic:</p>
+<ol>
+<li>Enter paired age/glucose values as a NumPy array (<code>np.array</code>).</li>
+<li>Plot the six points and label the axes “Age” and “Glucose Level.”</li>
+<li>Separate the paired array into \(X\) and \(Y\) (the lecture used <code>np.split</code> in its demonstration).</li>
+<li>Import <code>LinearRegression</code> from scikit-learn.</li>
+<li>Fit the model with the training inputs and targets.</li>
+<li>Inspect the learned coefficient and intercept: approximately 0.385225 and 65.14.</li>
+<li>Put 55 into a test NumPy array and call the model&rsquo;s <code>predict</code> method.</li>
+<li>Obtain approximately 86.32329.</li>
+<li>Plot the fitted line and observe that residuals are vertical point-to-line distances; the line was selected to minimize their squared sum.</li>
+</ol>
+<p>A clear modern equivalent is:</p>
+<pre><code class="language-python">import numpy as np
+from sklearn.linear_model import LinearRegression
+
+# Six training observations; y values should match the lecture table.
+X = np.array([43, 21, 25, 42, 57, 59]).reshape(-1, 1)
+y = np.array([...])
+
+model = LinearRegression().fit(X, y)
+print(model.coef_[0])     # slope, approximately 0.385225
+print(model.intercept_)  # intercept, approximately 65.14
+print(model.predict(np.array([[55]])))  # approximately 86.32329
+</code></pre>
+<p>The mathematical and Python approaches should give the same result. The only reason the demonstration used just six observations was to keep manual arithmetic manageable.</p>
+<hr>
+<h2 id="10-training-testing-evaluation-and-improvement">10. Training, testing, evaluation, and improvement</h2>
+<h3 id="end-to-end-workflow">End-to-end workflow</h3>
+<ol>
+<li>State the business/problem objective.</li>
+<li>Collect relevant, clean data.</li>
+<li>For supervised learning, ensure each training \(X\) has a target \(Y\).</li>
+<li>Select and train an appropriate algorithm/model.</li>
+<li>Reserve different data for testing/evaluation.</li>
+<li>Compare predictions with actual targets using an appropriate measure.</li>
+<li>Analyze errors.</li>
+<li>Iterate on data, features, model choice, and settings.</li>
+<li>Deploy when acceptable.</li>
+<li>Where appropriate, use post-deployment feedback and retraining.</li>
+</ol>
+<p>Without \(Y\), ordinary supervised linear regression cannot estimate its slope/intercept or compute training residuals. On unseen cases, \(Y\) may initially be hidden from the model but must be available later if a quantitative test error is to be calculated.</p>
+<p>Common regression evaluation measures introduced in the accompanying week notes include:</p>
+<ul>
+<li><strong>MSE:</strong> mean of squared errors;</li>
+<li><strong>RMSE:</strong> square root of MSE, expressed in target units;</li>
+<li><strong>MAE:</strong> mean absolute error;</li>
+<li><strong>\(R^2\):</strong> proportion of target variation explained relative to a mean baseline.</li>
+</ul>
+<p>A model should achieve useful performance on both training and testing data. Very low training error with poor test performance indicates poor generalization/overfitting.</p>
+<p>Ways to improve include collecting more representative labeled data, cleaning data, engineering/selecting meaningful features, choosing a more suitable algorithm, and tuning its hyperparameters. ML improvement generally comes through better data and retraining rather than manually rewriting every decision rule.</p>
+<hr>
+<h2 id="11-novamart-case-study-selecting-an-ml-roadmap">11. NovaMart case study: selecting an ML roadmap</h2>
+<p>NovaMart is an e-commerce startup balancing three stakeholder priorities:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Stakeholder</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ana, lead data scientist</td>
+<td>Prediction accuracy and generalization to unseen data</td>
+</tr>
+<tr>
+<td>Raj, marketing manager</td>
+<td>Customer understanding and campaign personalization</td>
+</tr>
+<tr>
+<td>Priya, IT</td>
+<td>Limited compute, low training overhead, memory/operational feasibility</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="mapping-each-business-question-to-an-ml-task">Mapping each business question to an ML task</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Business question</th>
+<th>Useful inputs</th>
+<th>Output</th>
+<th>Technique</th>
+<th>Learning type</th>
+<th>Main caveat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Forecast daily/quarterly sales</td>
+<td>Ad spend, visits, promotions, season/holiday, previous sales</td>
+<td>Numeric sales</td>
+<td>Linear regression</td>
+<td>Supervised</td>
+<td>Needs sufficient labeled sales history</td>
+</tr>
+<tr>
+<td>Classify review sentiment</td>
+<td>Review text features</td>
+<td>Positive/neutral/negative</td>
+<td>Classification</td>
+<td>Supervised</td>
+<td>Needs labeled reviews</td>
+</tr>
+<tr>
+<td>Segment customers</td>
+<td>Pages, time, clicks, purchase frequency, category interests</td>
+<td>Customer groups</td>
+<td>Clustering</td>
+<td>Unsupervised</td>
+<td>Feature choice and number/interpretation of clusters</td>
+</tr>
+<tr>
+<td>Discover product bundles</td>
+<td>Transaction baskets</td>
+<td>Co-purchase rules</td>
+<td>Association rules</td>
+<td>Unsupervised</td>
+<td>Sparse data and threshold selection</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="three-strategic-options">Three strategic options</h3>
+<p><strong>Option A — linear regression:</strong> simple, fast, interpretable, and computationally efficient; supports sales, financial, and inventory planning. It needs historical labeled outcomes and offers less direct customer insight.</p>
+<p><strong>Option B — clustering:</strong> directly supports targeted marketing without predefined labels. It may reveal frequent buyers, price-sensitive shoppers, occasional buyers, or window shoppers. Quality depends strongly on meaningful behavioral features; irrelevant variables such as random customer IDs distort similarity. One must also choose the number of clusters and interpret them.</p>
+<p><strong>Option C — association rules:</strong> generates product affinity, cross-selling, recommendation, shelf-layout, and bundle insights. It can struggle when transactions are sparse and may reveal product-level rather than customer-level behavior.</p>
+<p>Infrastructure affects algorithm selection and feasibility, but it does not by itself determine whether the method should be supervised or unsupervised. Linear regression is an especially inexpensive baseline. Clustering can also be manageable, depending on data size and algorithm.</p>
+<h3 id="review-quiz-augmentation-balanced-phased-roadmap">Review/quiz augmentation: balanced phased roadmap</h3>
+<p>The case review favored clustering as the most balanced <strong>initial</strong> choice because it:</p>
+<ul>
+<li>gives Raj immediate actionable personalization;</li>
+<li>does not require pre-existing labels;</li>
+<li>can fit reasonable infrastructure limits;</li>
+<li>produces customer-segment features that can later strengthen prediction.</li>
+</ul>
+<p>A phased roadmap is therefore:</p>
+<ol>
+<li><strong>Customer segmentation:</strong> understand behavior and target promotions.</li>
+<li><strong>Sales forecasting:</strong> combine historical sales, traffic, marketing variables, and learned customer segments.</li>
+<li><strong>Association rules:</strong> improve recommendations, bundles, and basket size.</li>
+</ol>
+<p>This is contextual, not a universal claim that clustering is always best. If forecasting is the primary objective and good labeled history exists, regression may be the correct first choice; if cross-selling is urgent and transactions are sufficiently dense, association rules may be first.</p>
+<hr>
+<h2 id="12-high-value-comparisons-for-the-exam">12. High-value comparisons for the exam</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>If the requested output is…</th>
+<th style="text-align: right;">Labels?</th>
+<th>Choose…</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exact continuous number</td>
+<td style="text-align: right;">Yes</td>
+<td>Regression</td>
+<td>Sales, price, glucose, temperature</td>
+</tr>
+<tr>
+<td>Discrete class</td>
+<td style="text-align: right;">Yes</td>
+<td>Classification</td>
+<td>Spam, sentiment, article topic</td>
+</tr>
+<tr>
+<td>Natural groups</td>
+<td style="text-align: right;">No</td>
+<td>Clustering</td>
+<td>Customer segments</td>
+</tr>
+<tr>
+<td>Item co-occurrences/rules</td>
+<td style="text-align: right;">No target labels</td>
+<td>Association-rule mining</td>
+<td>Market baskets</td>
+</tr>
+<tr>
+<td>Sequence of actions maximizing reward</td>
+<td style="text-align: right;">Rewards instead of fixed labels</td>
+<td>Reinforcement learning</td>
+<td>Robot/game agent</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="common-traps">Common traps</h3>
+<ul>
+<li><strong>Regression vs classification:</strong> predicting exact temperature is regression; predicting cold/warm/hot is classification.</li>
+<li><strong>Clustering vs classification:</strong> classification uses named target classes during training; clustering discovers groups without those labels.</li>
+<li><strong>Clustering vs association rules:</strong> clustering answers “what similar groups exist?”; association rules answer “what items occur together?”</li>
+<li><strong>Label status vs data format:</strong> supervised/un-supervised is not the same as structured/unstructured.</li>
+<li><strong>Prediction vs causation:</strong> a fitted association or regression relationship does not by itself prove that \(X\) causes \(Y\).</li>
+<li><strong>Training vs test data:</strong> fitting and evaluating on the same examples cannot establish generalization.</li>
+<li><strong>\(\beta_0\) vs \(\beta_1\):</strong> \(\beta_0\) is intercept; \(\beta_1\) is slope.</li>
+<li><strong>True vs estimated line:</strong> \(\beta_0,\beta_1\) are population/true parameters; hats denote estimates from observed data.</li>
+<li><strong>Residual direction:</strong> ordinary least squares minimizes squared vertical residuals, not shortest geometric distances.</li>
+<li><strong>Small teaching dataset:</strong> do not treat the age–glucose data as medical evidence.</li>
+</ul>
+<hr>
+<h2 id="13-exam-focused-recall-and-self-test">13. Exam-focused recall and self-test</h2>
+<h3 id="must-memorize-equations">Must-memorize equations</h3>
+<p>\[
+Y=\beta_0+\beta_1X+\varepsilon
+\]</p>
+<p>\[
+e_i=Y_i-\hat Y_i,qquad
+SSE=\sum_{i=1}^{n}e_i^2
+\]</p>
+<p>\[
+\hat\beta_1=
+\frac{\sum(X_i-\bar X)(Y_i-\bar Y)}{\sum(X_i-\bar X)^2}
+=\frac{S_{XY}}{S_{XX}}
+\]</p>
+<p>\[
+S_{XY}=\sum X_iY_i-\frac{(\sum X_i)(\sum Y_i)}{n},qquad
+S_{XX}=\sum X_i^2-\frac{(\sum X_i)^2}{n}
+\]</p>
+<p>\[
+\hat\beta_0=\bar Y-\hat\beta_1\bar X,qquad
+\hat Y=\hat\beta_0+\hat\beta_1X
+\]</p>
+<h3 id="short-answer-prompts">Short-answer prompts</h3>
+<ol>
+<li><strong>State Mitchell&rsquo;s definition.</strong> Include \(E\), \(T\), \(P\), and improvement of performance with experience.</li>
+<li><strong>Why square residuals?</strong> To stop sign cancellation, penalize large deviations, and obtain a minimizable objective.</li>
+<li><strong>Why hold out test data?</strong> To measure generalization on unseen cases rather than memorization of training examples.</li>
+<li><strong>What does \(\sigma^2\) mean?</strong> The error spread around the regression line; small values imply tighter observations.</li>
+<li><strong>Why is labeled data necessary for regression?</strong> It supplies observed \(Y\) values needed to estimate parameters and calculate errors.</li>
+<li><strong>Why can a recommendation system be ML?</strong> It learns patterns in browsing, purchases, profiles, and similar-user behavior to predict relevant items.</li>
+<li><strong>Why is customer segmentation unsupervised?</strong> Natural groups are sought without predefined target categories.</li>
+<li><strong>Why is market-basket analysis not clustering?</strong> Its objective is item co-occurrence rules, not groups of similar observations.</li>
+<li><strong>What is an online-learning loop?</strong> Post-deployment feedback becomes new experience for retraining, reevaluation, and refinement.</li>
+<li><strong>Why is clean data emphasized?</strong> Learned patterns reflect the training data; poor, noisy, or irrelevant data produce poor rules and predictions.</li>
+</ol>
+<h3 id="numerical-recall">Numerical recall</h3>
+<p>For the teaching example:</p>
+<ul>
+<li>\(n=6\), \(\sum X=247\), \(\sum Y=486\)</li>
+<li>\(\sum XY=20{,}485\), \(\sum X^2=11{,}409\)</li>
+<li>\(S_{XY}=478\), \(S_{XX}=1240\)</li>
+<li>\(\hat\beta_1\approx0.385\), \(\hat\beta_0\approx65.14\)</li>
+<li>\(\hat Y=65.14+0.385X\)</li>
+<li>at \(X=55\), \(\hat Y\approx86.3\)</li>
+</ul>
+<h3 id="final-one-minute-revision">Final one-minute revision</h3>
+<ul>
+<li>ML learns patterns from experience/data and is most useful under uncertainty.</li>
+<li>Traditional programming: rules + data → output; supervised training: inputs + known outputs → learned model.</li>
+<li>Supervised = \(X,Y\); unsupervised = \(X\) only; reinforcement = agent, environment, rewards.</li>
+<li>Regression predicts continuous values; classification predicts categories.</li>
+<li>Clustering finds similar groups; association rules find co-occurring items.</li>
+<li>Linear regression fits \(\hat Y=\hat\beta_0+\hat\beta_1X\) by minimizing squared vertical residuals.</li>
+<li>Use different training and test data; good performance means generalization to unseen cases.</li>
+<li>Real ML is iterative: define, collect/clean, train, evaluate, analyze errors, refine, deploy, and potentially learn from feedback.</li>
+<li>Choose techniques from the business question, available labels, features, data quality, compute resources, and required output—not from a belief that one learning type is universally superior.</li>
+</ul>
+<h2 id="14-qa-supplement-transcript-details-and-instructor-emphases">14. QA supplement — transcript details and instructor emphases</h2>
+<h3 id="application-areas-explicitly-reviewed">Application areas explicitly reviewed</h3>
+<ul>
+<li><strong>Computer vision</strong> learns from images/video (cars, trucks, handbags, etc.) and extensively uses neural networks.</li>
+<li><strong>Cybersecurity</strong> applications include malware/endpoint protection and safer browsing.</li>
+<li>Other large-scale motivations include speech/language processing, medical analytics, recommendations, and finance. The instructor&rsquo;s point was that fixed hand-written algorithms are often inadequate for scale, variety, and uncertainty.</li>
+</ul>
+<h3 id="association-rule-example">Association-rule example</h3>
+<p>The supermarket illustration associates milk, bread, butter, and cereal more strongly than an arbitrary combination such as milk, bread, and sugar. Stores and online retailers can use co-occurrence for layout, bundling, and cross-selling. Association does not establish causation.</p>
+<h3 id="linear-regression-numerical-anchors">Linear-regression numerical anchors</h3>
+<ul>
+<li>Examples include <code>(age, glucose) = (43,99)</code> and <code>(21,65)</code>.</li>
+<li>The hand calculation constructs $XY$, $X^2$, and $Y^2$ columns, obtaining $\hat\beta_1\approx0.385$ and $\hat\beta_0\approx65.14$.</li>
+<li>Fitted equation: $\hat y=65.14+0.385x$.</li>
+<li>For age 55: $\hat y\approx86.3$.</li>
+</ul>
+<p>The slope describes sample association, not proof that age causally raises glucose.</p>
+<h3 id="statistical-assumption-behind-the-pictured-curves">Statistical assumption behind the pictured curves</h3>
+<p>The lecture depicts outcomes around the line as normal distributions whose spread is controlled by $\sigma^2$. A textbook interpretation is $Y\mid X=x\sim N(\beta_0+\beta_1x,\sigma^2)$ with independent constant-variance errors. The fitted line estimates a conditional mean, not every individual&rsquo;s exact outcome.</p>
+<h3 id="novamart-emphasis">NovaMart emphasis</h3>
+<p>The quiz separates sales forecasting (regression), customer segmentation (clustering), and co-purchase discovery (association rules). Labels, features, quality, generalization, compute/memory, maintenance, and actionability all matter. A phased portfolio can serve all three; one algorithm cannot answer all three questions.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-2.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 2: Classification, Logistic Regression, Maximum…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

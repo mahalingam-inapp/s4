@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Entrepreneurship · Week 11 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Entrepreneurship</span>
+      <span class="brand-title">Week 11</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html" selected>Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Entrepreneurship and Innovation — Week 1 Exam Notes
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Entrepreneurship, Innovation, Creativity, Service Innovation and…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Innovation Foundations, Process and Product Innovation, Design…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Entrepreneurial Journey, Execution, Creativity, Innovation and…
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Entrepreneurial Opportunities, Evaluation, Competition and Failure
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Entrepreneurial Problem Solving, Lean Processes and Revenue Models
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Entrepreneurial Storytelling, Vision, Mission, Pitching, IP and the…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Entrepreneurial Marketing, Sales, Research, Branding and Market Sizing
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        User Research, Entrepreneurial Finance, Accounting and Financial…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Managing Growth, Lean Execution, Failure, Adaptation, and Business…
+      </a>
+      <a class="is-active" href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Business Planning, Feasibility Analysis and the Business Model Canvas
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Networks, Entrepreneurial Teams, Startup Operations and Readiness
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Resource Planning, Venture Launch, Learning and Execution
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Financial Assessment, Funding, Growth and Exit
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Comprehensive Exam-Preparation Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Entrepreneurship · Week 11</p>
+        <h1 class="page-title">Business Planning, Feasibility Analysis and the Business Model Canvas</h1>
+        <p class="page-meta">Week 11 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-week-overview-and-central-message">1. Week overview and central message</a></li>
+      <li><a href="#2-what-a-business-plan-is-and-is-not">2. What a business plan is—and is not</a></li>
+      <li><a href="#3-lessons-from-entrepreneurial-history-and-disruption">3. Lessons from entrepreneurial history and disruption</a></li>
+      <li><a href="#4-the-entrepreneurial-team">4. The entrepreneurial team</a></li>
+      <li><a href="#5-customer-segments-and-value-propositions">5. Customer segments and value propositions</a></li>
+      <li><a href="#6-desirability-feasibility-and-viability">6. Desirability, feasibility and viability</a></li>
+      <li><a href="#7-business-model-canvas-bmc">7. Business Model Canvas (BMC)</a></li>
+      <li><a href="#8-feasibility-analysis">8. Feasibility analysis</a></li>
+      <li><a href="#9-writing-the-business-plan">9. Writing the business plan</a></li>
+      <li><a href="#10-food-truck-business-plan-example">10. Food-truck business-plan example</a></li>
+      <li><a href="#11-modern-planning-as-an-adaptive-learning-system">11. Modern planning as an adaptive learning system</a></li>
+      <li><a href="#12-freshtray-case-study">12. FreshTray case study</a></li>
+      <li><a href="#13-live-session-extensions-mvp-pivot-environment-and-inclusion">13. Live-session extensions: MVP, pivot, environment and inclusion</a></li>
+      <li><a href="#14-common-mistakes-and-cautions">14. Common mistakes and cautions</a></li>
+      <li><a href="#15-likely-exam-questions-and-answer-directions">15. Likely exam questions and answer directions</a></li>
+      <li><a href="#16-rapid-revision">16. Rapid revision</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-week-overview-and-central-message">1. Week overview and central message</h2>
+<p>Week 11 explains how entrepreneurs move from an attractive idea to a defensible business model and, eventually, a business plan. The central warning is that <strong>an idea, a product and a plan are not the same thing</strong>.</p>
+<blockquote>
+<p><strong>Core principle:</strong> A business plan is a living, evidence-based statement of what the entrepreneur has learned so far, what they presently believe will work, why they believe it, and what they expect if the plan is executed. It is not a precise prediction of the future.</p>
+</blockquote>
+<p>The week covers:</p>
+<ul>
+<li>avoiding the “Field of Dreams” approach;</li>
+<li>treating entrepreneurship as intelligent risk reduction rather than blind risk-taking;</li>
+<li>forming an effective founding team;</li>
+<li>creating disruptive and defensible business ideas;</li>
+<li>developing a customer-centred value proposition;</li>
+<li>using the Business Model Canvas (BMC) and Lean Canvas;</li>
+<li>assessing product, organizational, financial and market feasibility;</li>
+<li>writing and evaluating a business plan;</li>
+<li>testing assumptions through customer discovery and small experiments;</li>
+<li>deciding whether evidence justifies further investment.</li>
+</ul>
+<hr>
+<h2 id="2-what-a-business-plan-is-and-is-not">2. What a business plan is—and is not</h2>
+<h3 id="2-1-the-field-of-dreams-mistake">2.1 The “Field of Dreams” mistake</h3>
+<p>The instructor uses the film <em>Field of Dreams</em> as shorthand for the belief: <strong>“If I build it, people will come.”</strong> That is a dream, not a plan.</p>
+<p>Three versions of this mistake are emphasized:</p>
+<ol>
+<li><strong>Action without planning:</strong> “I will do what I want; somehow it will work and I will somehow borrow the required money.” Even a requirement of roughly half a crore cannot be answered merely with “I will get it.”</li>
+<li><strong>Serving everybody:</strong> assuming one generic offering—such as blue jeans—can serve adults, children and every other group equally well.</li>
+<li><strong>Assuming immediate adoption:</strong> believing that customers will instantly recognize an unknown product’s greatness and buy it without hesitation.</li>
+</ol>
+<p>Even an urgent impulse purchase involves evaluation. A thirsty customer may still inspect water quality, temperature, storage conditions and plastic quality. If caution exists even for water during immediate need, an unfamiliar and non-urgent product will face still more resistance.</p>
+<h3 id="2-2-business-planning-is-learning-under-uncertainty">2.2 Business planning is learning under uncertainty</h3>
+<p>A plan does <strong>not</strong> prescribe exactly what the firm will do next year and every year thereafter. It requires the entrepreneur to:</p>
+<ol>
+<li>learn how similar needs are currently addressed;</li>
+<li>investigate what might become true if the proposed innovation exists;</li>
+<li>compare alternative ways of organizing the business;</li>
+<li>choose the presently best alternative;</li>
+<li>explain why it is best and what is expected to happen;</li>
+<li>revise the document when evidence changes.</li>
+</ol>
+<p>The cooking analogy: when attempting an unfamiliar dish from an unfamiliar cuisine, one studies cooking methods and recipes, imagines the result, starts, tastes and makes changes. A business plan works similarly.</p>
+<p>An adequate plan should withstand scrutiny by intelligent, informed outsiders. It takes considerable time and energy, but entrepreneurial people often enjoy the detective work: finding information about something that does not yet exist, reconciling conflicting opinions and designing something new.</p>
+<h3 id="2-3-intelligent-risk-taking">2.3 Intelligent risk-taking</h3>
+<p>Entrepreneurs have incomplete information. Their task is not to eliminate uncertainty—usually impossible—but to <strong>minimize avoidable risk by doing everything feasible to understand the uncertainty</strong>.</p>
+<p>This distinction is exam-worthy:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Blind risk</th>
+<th>Entrepreneurial risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acts on hope</td>
+<td>Acts on explicit assumptions</td>
+</tr>
+<tr>
+<td>Treats opinions as facts</td>
+<td>Seeks evidence</td>
+</tr>
+<tr>
+<td>Spends before testing</td>
+<td>Tests the riskiest unknown cheaply</td>
+</tr>
+<tr>
+<td>Defends the original idea</td>
+<td>Learns and adapts</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="2-4-product-business-model-and-business-plan">2.4 Product, business model and business plan</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Product</strong></td>
+<td>The specific good/service or technology being offered.</td>
+</tr>
+<tr>
+<td><strong>Offering</strong></td>
+<td>Product plus packaging, warranty, salesperson/service, store/channel, brand experience and associated support.</td>
+</tr>
+<tr>
+<td><strong>Business model</strong></td>
+<td>The integrated logic by which the entire business creates, delivers and captures value.</td>
+</tr>
+<tr>
+<td><strong>Business Model Canvas</strong></td>
+<td>A one-page representation of nine mutually dependent business-model elements.</td>
+</tr>
+<tr>
+<td><strong>Business plan</strong></td>
+<td>A fuller, coherent, evidence-supported document explaining the opportunity, market, strategy, operations, team, finances, risks and execution logic.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Instructor emphasis:</strong> business is not equal to product. It includes sourcing, warehousing, manufacturing, design, packaging, distribution, selling, warranty, finance, organization, marketing, operations, R&amp;D, sales and customer support.</p>
+<hr>
+<h2 id="3-lessons-from-entrepreneurial-history-and-disruption">3. Lessons from entrepreneurial history and disruption</h2>
+<h3 id="3-1-google-finding-the-missing-part-of-the-model">3.1 Google: finding the missing part of the model</h3>
+<p>According to the lecture anecdote, Google began from doctoral work by two founders interested in filtering spam in search engines, but they initially did not want to build a search engine. An Indian student recognized that filtering alone was incomplete: existing search engines could copy or acquire the idea. He developed the search-engine component in about two months, completing a business logic the founders had not initially seen.</p>
+<p><strong>Lesson:</strong> technical excellence may still leave the business model incomplete. Ask what must be added so the innovation creates a complete, defensible customer solution.</p>
+<h3 id="3-2-microsoft-the-original-idea-was-not-the-eventual-business">3.2 Microsoft: the original idea was not the eventual business</h3>
+<p>Bill Gates and Paul Allen left Harvard with technical ideas far removed from the Microsoft that ultimately emerged. They spent years in inexpensive accommodation without meaningful market response. When IBM advertised for an operating system for a planned personal computer, they recognized the commercial opening, located an existing operating system, acquired it, learned and enhanced it, and offered DOS to IBM.</p>
+<p><strong>Lesson:</strong> the successful plan can be years in the making. Adaptation to a genuine market opportunity matters more than attachment to the initial concept.</p>
+<h3 id="3-3-disruptive-innovation">3.3 Disruptive innovation</h3>
+<p>The lecture associates disruptive-innovation thinking with Clayton Christensen: create something genuinely new that solves a problem better than today’s method. Innovation is not random guessing; it requires disciplined, different thinking across the <strong>whole business</strong>, not merely a novel product.</p>
+<p>Examples:</p>
+<ul>
+<li><strong>X-ray and ultrasound:</strong> ultrasound supplied a safer, continuous view of organs, the heart and a fetus, rather than a single millisecond-like image. X-ray did not disappear; it refocused on strengths such as precise images of bones and also evolved into newer treatments/technologies such as proton-beam therapy for sensitive areas. Disruption forces incumbents to innovate and specialize.</li>
+<li><strong>CRT to LED/flat displays:</strong> cathode-ray-tube televisions and monitors were bulky because of the gun mechanism behind the screen. LED technology enabled compact displays, solving an important space problem—especially in smaller urban homes—at similar or lower prices. Black-and-white TV gave way to colour; colour evolved toward HD, 4K and potentially 8K.</li>
+<li><strong>Video rental to streaming:</strong> physical rental demanded a trip to a store and offered limited preview information. Faster, cheaper internet—Jio is cited in India—made downloading/streaming convenient. Amazon Prime Video and Netflix benefited because consumers wanted effortless entertainment after dinner.</li>
+<li><strong>Future disruption:</strong> ask what could disrupt Netflix. The instructor mentions quantum computing (described in the lecture as potentially offering vastly more computing power in similar space and perhaps at similar price) and 5G enabling faster video delivery. The point is not to accept a forecast uncritically; it is to scan technologies and ask how the current model must evolve.</li>
+</ul>
+<p><strong>Strategic response to disruption:</strong> an incumbent need not vanish. It can identify the activities where it remains superior, innovate those activities and redefine its value.</p>
+<hr>
+<h2 id="4-the-entrepreneurial-team">4. The entrepreneurial team</h2>
+<p>A one-person business can exist—for example, a neighbourhood shop or livelihood activity—but scalable ventures that create lasting value and employment usually need a team.</p>
+<h3 id="4-1-characteristics-of-a-strong-team">4.1 Characteristics of a strong team</h3>
+<ul>
+<li>Members possess <strong>complementary knowledge and skill</strong>, rather than identical backgrounds.</li>
+<li>They think differently and express disagreements constructively; discussion across four distinct areas can produce a better answer than one person’s thinking.</li>
+<li>Each functional leader has enough reputation and expertise to attract other high-quality people. A talented robotics recruit, for example, will assess whether the engineering leader can genuinely teach and lead them.</li>
+<li>Members need not be old friends. Close friendship can cloud judgment; it may be preferable that members know of one another’s work without deep personal ties.</li>
+<li>Rewards and perceived value must be fair. “I brought the idea” versus “I built everything” can destroy the company through internal conflict.</li>
+<li>Prior entrepreneurial experience is useful even if the venture failed, provided the person made sound decisions and did the right work.</li>
+<li>Mistakes are expected. The instructor’s formulation is that perhaps nine of ten actions will be mistakes; the critical tenth action must correct the effects of the other nine.</li>
+</ul>
+<h3 id="4-2-bad-team-patterns">4.2 Bad team patterns</h3>
+<ul>
+<li>assembling only best friends;</li>
+<li>assembling people who merely argue;</li>
+<li>concentrating all knowledge in one discipline;</li>
+<li>hiring impressive titles without relevant ability;</li>
+<li>creating inequitable rewards that encourage founder conflict.</li>
+</ul>
+<p><strong>Likely exam angle:</strong> explain why team complementarity, credibility and fair rewards are part of feasibility—not merely HR matters.</p>
+<hr>
+<h2 id="5-customer-segments-and-value-propositions">5. Customer segments and value propositions</h2>
+<h3 id="5-1-customer-segment-specificity-is-mandatory">5.1 Customer segment: specificity is mandatory</h3>
+<p>The first question in entrepreneurship, marketing and operations is: <strong>whom exactly are we serving?</strong> Without a happy customer who pays on time, returns and refers others, there is no business.</p>
+<p>“Adults,” “everyone,” or “people who need transport” are not adequate segments. Demographics alone may also be insufficient. A segment may require behavioural and psychographic indicators: environmentally conscious customers might attend environmental meetings, buy relevant books, work in related fields, and deliberately purchase from sustainable companies.</p>
+<p>Specificity makes the remaining business decisions possible. A jeans firm cannot design, promote and distribute effectively for “everybody.” Likewise, a ride-hailing venture must distinguish office workers commuting home, shoppers without cars, airport users and hourly renters.</p>
+<h3 id="5-2-value-proposition-is-more-than-a-product-benefit">5.2 Value proposition is more than a product benefit</h3>
+<p>A value proposition answers why a particular customer will gladly pay for the <strong>entire offering</strong> and feel pleased it exists. It includes functional, emotional, experiential, social and symbolic value.</p>
+<p>Example: an authentic Sachin Tendulkar autograph on an object may create value through rarity, sporting memories, happiness, identity, family legacy and collectability—not merely the physical object. A unique signed cup offered for ₹100 would feel worth far more to a cricket fan.</p>
+<p>For Ola/Uber, value is not simply a low fare. Customers seek a clean, maintained car; a clean and polite driver; freedom from cheating; reliable point-to-point travel; a working app and payment system; short waiting time; and an uncomplicated experience.</p>
+<h3 id="5-3-ash-maurya-s-three-part-initial-value-proposition">5.3 Ash Maurya’s three-part initial value proposition</h3>
+<p>The lecture attributes a useful formulation to Ash Maurya. The initial proposition should specify:</p>
+<ol>
+<li><strong>Desired end result:</strong> what the customer ultimately wants—not merely the product attribute. A fast motorcycle may represent thrill, openness or release from a constrained routine.</li>
+<li><strong>Time period:</strong> how long the benefit occupies the customer’s life or mind. A momentary flash may rarely sustain a business; value usually needs a meaningful duration.</li>
+<li><strong>Objections addressed:</strong> doubts that prevent acceptance—authenticity, durability, context, quality, legality, credibility or inconvenience.</li>
+</ol>
+<p>The value proposition changes once customers interact with the offering. The entrepreneur may discover meanings never imagined—for example, a signed keepsake becoming a legacy for children.</p>
+<h3 id="5-4-empathy-map">5.4 Empathy map</h3>
+<p>An empathy map helps the entrepreneur view the offering through the customer’s senses, thoughts, emotions and surrounding influences. Consumers are not robots making purely financial decisions; they evaluate emotionally, financially and experientially.</p>
+<p>A toothpaste claiming to reverse cavities may be attractively priced and objectively differentiated, but the customer’s first reaction may be “Is this real?” Credibility and felt risk must therefore be addressed.</p>
+<p>For underserved customers, empathy cannot be done entirely from an air-conditioned laboratory while imagining life in 40°C heat. The entrepreneur must observe and, where appropriate, experience the customer’s conditions. Social solutions must respect customers’ adaptability, dignity, beliefs and lived reality.</p>
+<hr>
+<h2 id="6-desirability-feasibility-and-viability">6. Desirability, feasibility and viability</h2>
+<p>A promising venture must pass three lenses:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Lens</th>
+<th>Core question</th>
+<th>Lecture emphasis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Desirability</strong></td>
+<td>Do people find it attractive and worth engaging with?</td>
+<td>In a world of innumerable firms and ideas, the venture must stand out through name, product, business behaviour, experience or even founder personality. Elon Musk is cited as a founder whose distinctive public identity raises attention.</td>
+</tr>
+<tr>
+<td><strong>Feasibility</strong></td>
+<td>Can it genuinely be built and delivered?</td>
+<td>Extraordinary claims—such as floating skateboards or superconducting systems—require proof that real users and informed observers can accept.</td>
+</tr>
+<tr>
+<td><strong>Viability</strong></td>
+<td>Can it endure economically and strategically?</td>
+<td>A short-lived novelty that disappears after a few months is insufficient.</td>
+</tr>
+</tbody>
+</table></div>
+<p>A firm can have a good prototype, team and canvas and still fail one of these lenses.</p>
+<h3 id="social-entrepreneurship-applications">Social-entrepreneurship applications</h3>
+<ul>
+<li>A company may deliberately employ people with disabilities, accepting some efficiency cost while creating social progress and customer goodwill.</li>
+<li>A shoe venture for financially poor customers must design the entire system, not merely the shoe: sourcing, affordability, production, distribution, durability and the customers’ actual conditions.</li>
+<li>A birthday-party project for homeless children can create a moment of joy through gathering people, food and toys; an expensive or highly styled event is not essential.</li>
+</ul>
+<hr>
+<h2 id="7-business-model-canvas-bmc">7. Business Model Canvas (BMC)</h2>
+<h3 id="7-1-purpose-and-time-advantage">7.1 Purpose and time advantage</h3>
+<p>A conventional plan can require about <strong>three or four experienced people working full-time for six months</strong>. The entrepreneur may discover after all that effort that the idea is poor. The BMC is a preliminary “artist’s canvas” that summarizes nine aspects, allowing a team to judge whether the opportunity deserves a full plan.</p>
+<p>The lecture contrasts roughly six months of planning with an initial canvas exercise that might take <strong>one day with three or four people</strong>, followed by further research. It is a shortcut for evaluation, not a replacement for the final plan.</p>
+<h3 id="7-2-the-nine-components">7.2 The nine components</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Question</th>
+<th>Ride-hailing illustration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Customer Segments</strong></td>
+<td>Exactly whom do we serve?</td>
+<td>Specific commuters, shoppers, airport users or renters—not “everyone.”</td>
+</tr>
+<tr>
+<td><strong>Value Propositions</strong></td>
+<td>What complete value makes that segment willingly choose us?</td>
+<td>Clean, safe, reliable, non-deceptive, convenient point-to-point travel at an acceptable price.</td>
+</tr>
+<tr>
+<td><strong>Channels</strong></td>
+<td>How do customers discover, obtain and use the service?</td>
+<td>Internet/app, Google and city searches, digital advertising, meet-ups and referrals.</td>
+</tr>
+<tr>
+<td><strong>Customer Relationships</strong></td>
+<td>How do we acquire, retain and grow customers?</td>
+<td>Reliable experience, referrals, repeat use and low waiting time. Retention reduces repeated acquisition/education costs.</td>
+</tr>
+<tr>
+<td><strong>Revenue Streams</strong></td>
+<td>Why, how and how much will customers pay?</td>
+<td>Automated fare collection, card/digital payments such as Paytm, premium airport/hourly use and transaction revenue.</td>
+</tr>
+<tr>
+<td><strong>Key Resources</strong></td>
+<td>Which assets/capabilities are essential?</td>
+<td>Technology platform, network, brand, data, legal capability and access to drivers/cars.</td>
+</tr>
+<tr>
+<td><strong>Key Activities</strong></td>
+<td>What must be done exceptionally well?</td>
+<td>Maintain app uptime and payments; assure clean, maintained cars; recruit/monitor polite drivers; match supply and demand.</td>
+</tr>
+<tr>
+<td><strong>Key Partnerships</strong></td>
+<td>Who makes the model possible or legitimate?</td>
+<td>Drivers/car owners, city authorities, lawyers, finance/payment partners and technology partners.</td>
+</tr>
+<tr>
+<td><strong>Cost Structure</strong></td>
+<td>Where do costs arise and what cost logic creates advantage?</td>
+<td>Technology, incentives, marketing, support and compliance; avoiding legacy taxi-licensing economics was central.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="7-3-ola-uber-case-alignment-across-the-canvas">7.3 Ola/Uber case: alignment across the canvas</h3>
+<p>Traditional taxis had high entry/licensing costs. The instructor cites a possible Mumbai licensing burden above ₹1 crore, which then had to be recovered through fares. Drivers might still earn only around ₹1 lakh per year despite long days.</p>
+<p>Ride-hailing firms argued that they supplied technology rather than owning taxis: independent owners could obtain commercial permission and use the platform. Legal and city relationships therefore became key partnerships.</p>
+<p>Driver incentives aligned supply with customer experience. In the instructor’s field inquiry, a driver described receiving about <strong>75% of a ₹350 fare</strong>, with bonuses after roughly five or ten rides. Motivated drivers cover more of the city, reduce passenger waiting and give better service. Thus cost structure, partner incentives, customer relationships and value proposition reinforce one another.</p>
+<p>Digital payment increased convenience and reduced cash friction. Operational requirements included a clean, odour-free, maintained car; polite driver; continuously available website/app; and reliable payments.</p>
+<h3 id="7-4-consistency-and-defensibility">7.4 Consistency and defensibility</h3>
+<p>The nine boxes must be mutually consistent. Defensibility comes from an interconnected system that is difficult to copy—not from one feature or a confusingly similar name.</p>
+<p>If driver, passenger, owner, finance company, car quality and city authorities are all supported, a rival must reproduce the whole network. That takes capital and time while the incumbent advances.</p>
+<p>A lower-ranked price competitor can sometimes be allowed to serve the least profitable price-sensitive customers, while the leader concentrates on premium airport or hourly users. Competing on only one dimension, especially low price, is usually fragile.</p>
+<h3 id="7-5-lean-canvas-modification">7.5 Lean Canvas modification</h3>
+<p>The Lean Canvas replaces the BMC’s left-side <strong>key partners, key activities and key resources</strong> with:</p>
+<ul>
+<li><strong>Problems:</strong> the most important customer or contextual problems, from a handle being too small to national regulatory/policy compliance;</li>
+<li><strong>Solutions:</strong> provisional answers that remain uncertain and testable;</li>
+<li><strong>Key metrics:</strong> quantified report cards such as price response, ease of maintenance, usage or retention.</li>
+</ul>
+<p>It makes the entrepreneur more scientist-like across prototype and product versions. A streamlined application asks for the one market-segment priority, one emphasized value proposition and one relationship priority rather than trying to solve everything at once.</p>
+<hr>
+<h2 id="8-feasibility-analysis">8. Feasibility analysis</h2>
+<h3 id="8-1-definition-and-purpose">8.1 Definition and purpose</h3>
+<p>Feasibility analysis asks whether the contemplated venture can realistically work. It occurs before major commitment and tests the plan rather than merely declaring, “I know the customers.” Product feasibility is only one part and, in the instructor’s view, not necessarily the most important.</p>
+<h3 id="8-2-four-dimensions">8.2 Four dimensions</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Main questions/evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Product/service feasibility</strong></td>
+<td>Is the problem important? Will people use the proposed solution rather than remain with current behaviour? What quality is necessary?</td>
+</tr>
+<tr>
+<td><strong>Organizational feasibility</strong></td>
+<td>Can this team, technology and organization deliver it? Is it too advanced, intimidating or technically demanding for intended users/employees?</td>
+</tr>
+<tr>
+<td><strong>Financial feasibility</strong></td>
+<td>What do cash flow, income statement and balance sheet imply? Are costs, funding needs and cash burn sustainable?</td>
+</tr>
+<tr>
+<td><strong>Market feasibility</strong></td>
+<td>Are enough customers interested? Who exactly are they? What behaviours matter? What proportion of the market do they form? Can the firm reach and serve them?</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="8-3-user-research-as-the-foundation">8.3 User research as the foundation</h3>
+<p>Detailed, one-to-one conversations with likely early customers are usually more valuable than questionnaires alone. Surveys may be part of the process, but interviews and observation help reveal how people would use the offering and why they might remain with the status quo.</p>
+<p>Because people are unfamiliar with research and hypothetical ventures, the researcher should:</p>
+<ol>
+<li>explain the purpose;</li>
+<li>show a prototype, picture or other concrete representation;</li>
+<li>help respondents understand the entrepreneur’s proposed world;</li>
+<li>encourage honest, detailed information;</li>
+<li>apply the learning back to the venture.</li>
+</ol>
+<p>The instructor describes this as reciprocal empathy: the entrepreneur empathizes with customers, while the visual/prototype helps customers empathize enough with the entrepreneur’s idea to answer meaningfully.</p>
+<h3 id="8-4-quality-and-willingness-to-pay">8.4 Quality and willingness to pay</h3>
+<p>The instructor’s post-operative eye product was expensive, but the risk reduction justified purchase. A feasibility study for such a product should recognize customers for whom avoiding health complications makes extremely high quality non-negotiable.</p>
+<p><strong>Lesson:</strong> price objections cannot be interpreted without understanding stakes, risk and desired outcome.</p>
+<h3 id="8-5-market-estimates-are-educated-judgments">8.5 Market estimates are educated judgments</h3>
+<p>No market-research report will perfectly reveal the exact percentage of customers for a novel venture. Much of the estimate is an educated guess supported by primary work, triangulation and transparent assumptions.</p>
+<p>Do not insert the largest available market number simply to impress. Sophisticated reviewers will recognize the inflation and may discount both the plan and its author.</p>
+<p>Use <strong>TAM–SAM–SOM</strong> logic from the broad population downward. Define the target through observable traits—for example, master’s graduates who aspire to PhDs, are environmentally conscious and regularly buy from sustainable firms. Census data and purchasing information from relevant companies can progressively narrow the plausible segment.</p>
+<h3 id="8-6-geographic-and-logistical-feasibility">8.6 Geographic and logistical feasibility</h3>
+<p>Evidence from North India may or may not transfer to South India. Study the actual location. E-commerce does not eliminate geography: in areas without mature logistics networks, delivery may be unreliable due to roads, closures and weather. A startup cannot reproduce Amazon’s vans and aircraft, so third-party logistics capability becomes part of feasibility.</p>
+<hr>
+<h2 id="9-writing-the-business-plan">9. Writing the business plan</h2>
+<h3 id="9-1-it-cannot-be-learned-in-15-20-minutes">9.1 It cannot be learned in 15–20 minutes</h3>
+<p>Business-plan writing requires practice, feedback and revision—ideally through an incubator, startup coach or practical project. Memorizing headings is not competence. The instructor repeatedly emphasizes: <strong>read the chapter and practise</strong>; the chapter is described as broadly applicable across India, Japan and elsewhere.</p>
+<p>No single structure fits every business. Figure 11.16 is one valid traditional format, not the uniquely correct one. Larger ventures seeking investment need more formal coverage than small livelihood businesses.</p>
+<h3 id="9-2-sequoia-style-problem-first-plan">9.2 Sequoia-style problem-first plan</h3>
+<p>The instructor recommends examining Sequoia Capital’s concise format, described as roughly 15 slides. It begins with:</p>
+<ul>
+<li>the problem;</li>
+<li>who experiences it;</li>
+<li>why they care;</li>
+<li>why the need is urgent <strong>now</strong>;</li>
+<li>the solution and remaining business logic.</li>
+</ul>
+<h3 id="9-3-traditional-sections-and-their-logic">9.3 Traditional sections and their logic</h3>
+<ol>
+<li><strong>Executive summary:</strong> one or two paragraphs explaining the company, problem, solution, customers, market potential, current stage and funding need.</li>
+<li><strong>Business description:</strong> the business—not merely product specifications.</li>
+<li><strong>Market/industry analysis:</strong> target customer, market size and growth/profit logic.</li>
+<li><strong>Market strategy:</strong> focus on one primary market and strategy. Define the assumptions/triggers under which a secondary strategy would be used.</li>
+<li><strong>Marketing plan:</strong> positioning, messages, budget, channels, sales promotion, publicity and distribution.</li>
+<li><strong>Competitive analysis:</strong> what competitors offer and communicate, how customers respond and what meaningful advantage the venture has.</li>
+<li><strong>Operations/production:</strong> how the offering will be made and delivered.</li>
+<li><strong>Management/team/advisers:</strong> role-relevant evidence that the people can execute.</li>
+<li><strong>Innovation and intellectual property:</strong> genuine distinctiveness and protection.</li>
+<li><strong>Product design and development:</strong> development stage, milestones and continual innovation. The product is a necessary foundation but should not displace market logic.</li>
+<li><strong>Financial plan:</strong> reasonable income statement, balance sheet, cash flow, fixed/variable costs, burn rate, funding requested and use of funds.</li>
+<li><strong>Contingency/growth/exit choices:</strong> what can be cut during downturns, and whether the company may grow, sell or franchise.</li>
+</ol>
+<h3 id="9-4-primary-strategy-plus-contingent-strategy">9.4 Primary strategy plus contingent strategy</h3>
+<p>Do not claim ten markets and ten strategies. Choose one focused market and primary approach. Then specify:</p>
+<blockquote>
+<p>If stated assumptions change under defined conditions, the venture will switch to the second strategy.</p>
+</blockquote>
+<p>This makes the plan adaptive without making it vague.</p>
+<h3 id="9-5-what-investors-and-judges-seek">9.5 What investors and judges seek</h3>
+<ul>
+<li>a concise, comprehensible concept;</li>
+<li>problem–solution fit and identifiable customers;</li>
+<li>why customers will buy and buy again;</li>
+<li>market size;</li>
+<li>product/business readiness;</li>
+<li>innovation/IP potential;</li>
+<li>differentiation from competitors in ways customers value;</li>
+<li>founders, managers, advisers and relevant credibility;</li>
+<li>plausible financial statements;</li>
+<li>amount requested, use of funds and expected result.</li>
+</ul>
+<h3 id="9-6-communicate-to-human-beings">9.6 Communicate to human beings</h3>
+<p>Do not lead with technical “mumbo jumbo,” such as a 3.4 GHz clock-rate improvement, without explaining why it matters. State the customer consequence in simple language.</p>
+<p>Team descriptions should not be traditional personal recitations of birthplace and parents. Show why the reader should trust the founders: relevant experience, demonstrated results and current role.</p>
+<hr>
+<h2 id="10-food-truck-business-plan-example">10. Food-truck business-plan example</h2>
+<p>The lecture illustrates the sections using a mobile kitchen serving distinctive Latin/Caribbean food; Indian adaptations could feature specialist Bengali, Goan fish or Sri Lankan cuisine, with equipment such as a dosa plate where required.</p>
+<h3 id="10-1-concept-and-sensory-experience">10.1 Concept and sensory experience</h3>
+<p>“A truck serving the region’s best cuisine with festive flair” is more than food. Presentation changes perceived taste. Relevant sensory cues include:</p>
+<ul>
+<li>visual appeal and cleanliness;</li>
+<li>fresh aroma;</li>
+<li>sounds such as papadum crackling;</li>
+<li>the festive atmosphere;</li>
+<li>the chef/founder’s story.</li>
+</ul>
+<p>The founding chef may have returned after a distinguished career to serve the community where they grew up. That emotional story is part of the concept and investor/customer value.</p>
+<h3 id="10-2-trial-is-not-repeat-demand">10.2 Trial is not repeat demand</h3>
+<p>Novelty may bring one visit; market advantage must explain why customers return. The instructor recalls highly rated Jain home-cooked food in Kerala: the food met the dietary need, but reaching the family’s home through an environment that felt like old ruins made the experience unfamiliar enough that he did not return.</p>
+<p><strong>Lesson:</strong> excellent core product cannot compensate for every surrounding experience failure.</p>
+<h3 id="10-3-industry-and-market-analysis">10.3 Industry and market analysis</h3>
+<p>The restaurant illustration states that a small share—about 5%—may earn exceptional profit/growth, while about 50% may close within two years and the remainder merely manage. The exact figures are lecture examples; the analytical point is to show where the proposed venture fits and why it can outperform the base rate.</p>
+<h3 id="10-4-competitive-analysis-with-a-causal-insight">10.4 Competitive analysis with a causal insight</h3>
+<p>A table of competitors, locations, cuisine and average quality is useful but loses detail. Primary evidence makes it strategically valuable. Example: if customers in festive environments connect with others and discuss the experience <strong>ten times more</strong> than in a non-festive setting, festive atmosphere becomes a meaningful, evidence-backed differentiator.</p>
+<h3 id="10-5-concentrated-marketing">10.5 Concentrated marketing</h3>
+<p>“Focus, focus, focus” is described as marketing magic. Formal agency marketing is expensive, so startups may need social media, word of mouth, publicity and founder-led promotion.</p>
+<ul>
+<li>Facebook advertising is described as less costly than LinkedIn; LinkedIn is criticized as very expensive.</li>
+<li>Newspaper articles/publicity can deliver relatively low-cost exposure.</li>
+<li>Crowdfunding is not free magic. A platform may advertise a 5% platform charge and add payment/credit-card charges (the lecture mentions about 3.5%), bringing the practical cost toward roughly 10%.</li>
+</ul>
+<h3 id="10-6-financial-resilience">10.6 Financial resilience</h3>
+<p>Separate fixed monthly and variable expenses so investors understand cash requirements and which costs can be cut during a downturn. Know the burn rate. A business that needs only about ₹2 lakh during a difficult period has more capacity to protect itself than one with uncontrollable fixed commitments.</p>
+<h3 id="10-7-sell-retain-or-franchise">10.7 Sell, retain or franchise</h3>
+<p>The Laughing Man Coffee example raises whether a celebrity founder such as Hugh Jackman should sell a successful company if business management is not their comparative advantage, or franchise it.</p>
+<p>In franchising, the owner supplies a proven recipe/system, brand name, advertising and often sourcing/rental assistance; the franchisee operates the outlet and pays a percentage of sales or related fee. Goli Vada Pav and McDonald’s are cited as familiar franchise examples.</p>
+<hr>
+<h2 id="11-modern-planning-as-an-adaptive-learning-system">11. Modern planning as an adaptive learning system</h2>
+<h3 id="11-1-static-plan-versus-living-plan">11.1 Static plan versus living plan</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Static/traditional misuse</th>
+<th>Modern, living plan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claims the future is known</td>
+<td>States current beliefs and evidence</td>
+</tr>
+<tr>
+<td>Written once</td>
+<td>Updated after learning</td>
+</tr>
+<tr>
+<td>Forecasts treated as promises</td>
+<td>Forecasts treated as testable assumptions</td>
+</tr>
+<tr>
+<td>Success means following the document</td>
+<td>Success means improving decisions</td>
+</tr>
+<tr>
+<td>Hides uncertainty</td>
+<td>Identifies critical unknowns and triggers</td>
+</tr>
+</tbody>
+</table></div>
+<p>A business plan is also a communication device for investors, employees, partners and advisers. It organizes thinking around the problem, customer, value, revenue logic and operations. For investors, credible founders, evidence, coherent economics and an adaptive response to risk matter more than false certainty.</p>
+<h3 id="11-2-assumption-driven-planning">11.2 Assumption-driven planning</h3>
+<p>Typical assumptions include:</p>
+<ul>
+<li><strong>Customer:</strong> people have the problem and will pay for the solution.</li>
+<li><strong>Market:</strong> the reachable segment is large enough.</li>
+<li><strong>Value:</strong> the proposed benefit is sufficiently important.</li>
+<li><strong>Cost:</strong> the solution can be delivered profitably.</li>
+<li><strong>Operational:</strong> the team and partners can support the model and growth.</li>
+<li><strong>Financial:</strong> projected volume, price, cost and cash timing are credible.</li>
+</ul>
+<p>Testing sequence:</p>
+<ol>
+<li>list assumptions;</li>
+<li>rank them by impact and uncertainty;</li>
+<li>test the high-impact/high-uncertainty assumption first;</li>
+<li>gather behavioural evidence;</li>
+<li>compare results with pre-set decision criteria;</li>
+<li>revise, pivot, stop or invest further.</li>
+</ol>
+<h3 id="11-3-research-validation-and-execution">11.3 Research, validation and execution</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Best use</th>
+<th>Limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Interviews</strong></td>
+<td>Explore needs, language, motivations and objections</td>
+<td>Stated intention may not become action; politeness and hypothetical bias occur</td>
+</tr>
+<tr>
+<td><strong>Surveys</strong></td>
+<td>Identify broad patterns economically</td>
+<td>Wording/sample bias; shallow explanation; intention is not payment</td>
+</tr>
+<tr>
+<td><strong>Observation</strong></td>
+<td>Reveal actual context and behaviour</td>
+<td>Behaviour still needs interpretation</td>
+</tr>
+<tr>
+<td><strong>Prototype/pilot</strong></td>
+<td>Test use, willingness to pay and repeat behaviour</td>
+<td>Small/local results may not generalize; design may influence outcome</td>
+</tr>
+<tr>
+<td><strong>Secondary market research</strong></td>
+<td>Industry size, trends and competitor context</td>
+<td>Broad numbers may not represent the actual target segment</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Market research</strong> studies the environment; <strong>market validation</strong> tests whether specific customers actually behave as required.</p>
+<hr>
+<h2 id="12-freshtray-case-study">12. FreshTray case study</h2>
+<h3 id="12-1-situation">12.1 Situation</h3>
+<p>FreshTray is a campus café team considering a breakfast pre-order service. Product lead Anna must decide whether to invest in a full app or first validate whether students will use the service, pay for convenience and return.</p>
+<p>Initial uncertainty includes:</p>
+<ul>
+<li>whether students genuinely need pre-ordering;</li>
+<li>whether they will pay a convenience fee;</li>
+<li>whether usage will repeat;</li>
+<li>whether operations and economics support the service.</li>
+</ul>
+<h3 id="12-2-initial-research">12.2 Initial research</h3>
+<p>The team conducted short interviews and observations. <strong>28 of 40 students expressed interest:</strong></p>
+<p>\[
+\text{Expressed interest} = \frac{28}{40}\times100 = 70\%
+\]</p>
+<p>This is a positive signal, not proof of demand. Students may like the concept but decline to pay, forget to order, revert to their routine or try it only once.</p>
+<p>Anna combines:</p>
+<ul>
+<li>data (interviews and observations);</li>
+<li>experience;</li>
+<li>logical reasoning.</li>
+</ul>
+<h3 id="12-3-bmc-application">12.3 BMC application</h3>
+<ul>
+<li><strong>Customer segment:</strong> campus students, especially those with rushed breakfast routines.</li>
+<li><strong>Value proposition:</strong> convenient pre-ordering, shorter waits and predictable breakfast access.</li>
+<li><strong>Channels:</strong> a simple pre-order mechanism and café fulfilment; a full app is deliberately postponed.</li>
+<li><strong>Customer relationship:</strong> reliable service that encourages repeat weekly use.</li>
+<li><strong>Revenue streams:</strong> breakfast sales plus a <strong>$2 convenience fee</strong>.</li>
+<li><strong>Cost structure:</strong> staff time, food preparation, order handling and eventual technology.</li>
+</ul>
+<p>The canvas converts “students like it” into the larger question: can all parts work together economically and operationally?</p>
+<h3 id="12-4-riskiest-assumption">12.4 Riskiest assumption</h3>
+<p>The most consequential unknown is:</p>
+<blockquote>
+<p>Will students repeatedly place orders and pay the $2 convenience fee?</p>
+</blockquote>
+<p>It is both highly uncertain and highly important; therefore, it should be tested before investing in a complete app.</p>
+<h3 id="12-5-four-week-pilot">12.5 Four-week pilot</h3>
+<p>FreshTray proposes a small four-week breakfast pre-order experiment with the $2 fee. Success criteria are defined <strong>before</strong> the test:</p>
+<ol>
+<li>at least <strong>50 orders per week</strong>; and</li>
+<li>a <strong>repeat rate above 30%</strong>.</li>
+</ol>
+<p>Decision logic:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Result</th>
+<th>Interpretation/action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≥50 weekly orders <strong>and</strong> &gt;30% repeat</td>
+<td>Evidence supports demand and retention; consider fuller investment/app development.</td>
+</tr>
+<tr>
+<td>High first orders, low repeat</td>
+<td>Novelty/initial interest exists, but sustained value is weak; investigate experience, value or price.</td>
+</tr>
+<tr>
+<td>Low orders, good repeat among a few</td>
+<td>A narrow loyal segment may exist; refine targeting/market size.</td>
+</tr>
+<tr>
+<td>Both low</td>
+<td>Rework the proposition, segment or price—or stop before larger sunk cost.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The pilot is <strong>validated learning</strong>, not primarily marketing. It measures actual behaviour, willingness to pay and retention.</p>
+<h3 id="12-6-case-lessons">12.6 Case lessons</h3>
+<ul>
+<li>70% stated interest does not establish feasibility.</li>
+<li>Opinions identify hypotheses; behaviour tests them.</li>
+<li>More interviews are not automatically better once the critical unknown requires a real purchase test.</li>
+<li>Do not build a complete product merely to test demand.</li>
+<li>Define metrics and decision rules in advance to prevent post-hoc rationalization.</li>
+<li>A failed pilot does not necessarily mean the entire need is invalid; it may expose the wrong segment, price, channel or proposition.</li>
+<li>Evidence should inform judgment, not replace it.</li>
+</ul>
+<p>FreshTray’s validation cycle:</p>
+<blockquote>
+<p><strong>Understand customers → Map the model → Identify assumptions → Test the critical risk cheaply → Measure behaviour → Learn → Adapt → Invest further only when justified</strong></p>
+</blockquote>
+<hr>
+<h2 id="13-live-session-extensions-mvp-pivot-environment-and-inclusion">13. Live-session extensions: MVP, pivot, environment and inclusion</h2>
+<p>The live class links Week 11 planning to the earlier lean-startup cycle:</p>
+<blockquote>
+<p><strong>Build → Measure → Learn → Iterate</strong></p>
+</blockquote>
+<h3 id="13-1-minimum-viable-product-mvp">13.1 Minimum viable product (MVP)</h3>
+<p>The purpose of “build” is not to create a perfect finished product. It is to create a <strong>minimum viable product</strong>—the smallest useful version that can test the idea.</p>
+<ul>
+<li><strong>Build:</strong> create the testable small version.</li>
+<li><strong>Measure:</strong> determine whether people accept, use and recommend it.</li>
+<li><strong>Learn:</strong> interpret customer feedback and evidence.</li>
+<li><strong>Iterate:</strong> make changes and repeat the loop.</li>
+</ul>
+<p>Learning must produce action. Keeping the evidence without changing the product or model is not entrepreneurial learning.</p>
+<h3 id="13-2-pivot-deliberate-change-not-abandonment">13.2 Pivot: deliberate change, not abandonment</h3>
+<p>A <strong>pivot</strong> is a deliberate change of direction when evidence shows the original approach is not fully working. It does not necessarily abandon the original goal.</p>
+<p>The Kochi–Bengaluru analogy: if one road closes, the traveller does not cancel the destination and return to Kochi; they choose another route. <strong>The path changes while the goal remains.</strong> A rigid founder continues investing because the idea is personally cherished; an entrepreneurial founder responds to evidence.</p>
+<p>Four pivot forms discussed:</p>
+<ol>
+<li><strong>Product-feature pivot:</strong> remove or reduce an unused feature and strengthen what customers value. Example: a fitness app’s calorie tracker consumed months of work but users ignored it; resources should shift toward valued workout-video features.</li>
+<li><strong>Customer-segment/use pivot:</strong> focus on the users or use case showing the strongest behaviour. Instagram began as <strong>Burbn</strong>, a location/check-in and friend-planning app that also allowed photo sharing. Observed use showed that photo sharing mattered most, so the founders concentrated on it. A participant added that it was later acquired by Facebook/Meta for about $1 billion.</li>
+<li><strong>Business-model/revenue pivot:</strong> preserve product and customer but change how revenue is earned. Adobe moved from one-time software purchases to subscriptions, generating recurring revenue.</li>
+<li><strong>Distribution-channel pivot:</strong> keep the product but change access—for example, replace wholesalers/retailers or a physical store with direct-to-consumer/e-commerce channels.</li>
+</ol>
+<p>None guarantees success. The principle is to build, observe, pivot where justified and build again.</p>
+<h3 id="13-3-external-environment">13.3 External environment</h3>
+<p>Some business-model choices are controllable; external forces are not. The entrepreneur controls the response, not the event.</p>
+<ul>
+<li><strong>Economic conditions:</strong> inflation increases raw-material cost and can reduce consumer spending; interest rates and consumer confidence affect decisions. The founder must decide whether to raise prices, absorb loss or reduce cost.</li>
+<li><strong>Government policy:</strong> Startup India and production-linked incentive (PLI) schemes can support entrepreneurship, while taxation, compliance and import-rule changes can create new constraints. Firms must adapt quickly.</li>
+<li><strong>Technology and supply chain:</strong> technological change is rapid and interconnected, increasing disruption risk. COVID-19 disrupted logistics and forced offline education and many businesses online.</li>
+</ul>
+<p>The desired mindset is adaptability rather than surrender when an uncontrollable condition changes.</p>
+<h3 id="13-4-inclusive-entrepreneurship-and-the-ecosystem">13.4 Inclusive entrepreneurship and the ecosystem</h3>
+<p>Entrepreneurship should be accessible, but founders begin from unequal positions and face different barriers: limited networks, social constraints, insufficient guidance, weak access to investors or technology partners.</p>
+<p>Support can come from:</p>
+<ul>
+<li>peer groups and mentors;</li>
+<li>entrepreneurship cells;</li>
+<li>incubators and technology-business incubators (Amrita TBI is cited);</li>
+<li>Kerala Startup Mission and similar public ecosystems;</li>
+<li>founder, investor and technology networks.</li>
+</ul>
+<p>The founder remains responsible but need not work alone. The task is to locate and collaborate with the ecosystem that can turn barriers into opportunities.</p>
+<h3 id="13-5-live-session-framing-of-business-plan-purposes">13.5 Live-session framing of business-plan purposes</h3>
+<p>Students described a business plan as a written roadmap for starting, operating and making money; it contains objectives, strategies, channels, infrastructure, short/long-term goals, timelines and the route to operationalization. The instructor expanded this into three purposes:</p>
+<ol>
+<li><strong>Communication tool:</strong> aligns employees and stakeholders, signals direction and helps investors judge whether the opportunity merits investment.</li>
+<li><strong>Thinking tool:</strong> writing forces difficult questions—Who exactly is the customer? Is capital adequate? Is the offering truly different?—and exposes weak assumptions.</li>
+<li><strong>Planning/control tool:</strong> connects desired end state and timelines with the operations, resources and actions required to reach it.</li>
+</ol>
+<p>The executive summary is likened to a film trailer: a first-page nutshell that should communicate problem, business, customer, competitors, advantage, financial highlights and funding need strongly enough that the reader asks, “Tell me more.”</p>
+<h3 id="13-6-live-feasibility-examples-and-calculation">13.6 Live feasibility examples and calculation</h3>
+<p>The live class reinforces the four feasibility dimensions with two examples:</p>
+<p><strong>Water-bottle economics:</strong> if a bottle costs <strong>₹500</strong> to make but customers will pay only <strong>₹350</strong>, the loss is:</p>
+<p>\[
+₹500-₹350=₹150 \text{ per unit}
+\]</p>
+<p>Even 1,000 buyers produce a total loss of ₹150,000 rather than validating the business. Large investment or sales volume cannot repair negative unit economics. Early startups may not earn profit immediately, but they must understand and control losses and the path to positive cash flow.</p>
+<p><strong>Healthy-dessert café:</strong></p>
+<ul>
+<li>Product feasibility: increasing health consciousness, especially after COVID, creates a plausible need for lower-sugar/lower-calorie desserts.</li>
+<li>Market feasibility: possible segments include health-conscious people, parents/children, fitness enthusiasts, athletes and people managing weight.</li>
+<li>Financial feasibility: depends on ingredient cost, price, volume and demand; it cannot be declared merely from interest.</li>
+<li>Organizational feasibility: requires specialised chefs, procurement, finance, operations and managers capable of making the concept real.</li>
+</ul>
+<h3 id="13-7-nine-business-plan-components-in-the-live-class">13.7 Nine business-plan components in the live class</h3>
+<p>The live instructor organizes the plan into nine components:</p>
+<ol>
+<li><strong>Executive summary</strong> — the trailer/nutshell.</li>
+<li><strong>Company description</strong> — why the company exists, vision, mission, history, people and execution intent.</li>
+<li><strong>Products and services</strong> — what is sold and, more importantly, the customer value and differentiation rather than a feature dump.</li>
+<li><strong>Market analysis</strong> — industry size, segments, trends, technological change and growth opportunities.</li>
+<li><strong>Marketing plan</strong> — the 4Ps (product, price, place and promotion), campaigns, direct distribution or channel partners.</li>
+<li><strong>Operational plan</strong> — how the company fulfils demand; production, supply chain, inventory, technology, logistics and transport. A campaign creating 5,000 orders is harmful if operations cannot deliver.</li>
+<li><strong>Management team</strong> — the people behind execution; investors seek an agile, flexible team able to respond to changing technology and preferences.</li>
+<li><strong>Financial plan</strong> — cost estimates, budgets, cash flow, profitability, break-even and funding requirement.</li>
+<li><strong>Risk analysis</strong> — venture-specific risks such as demand failure and the planned response; do not pretend the firm operates in a smooth, perfect world.</li>
+</ol>
+<h3 id="13-8-four-business-plan-pitfalls-from-the-live-class">13.8 Four business-plan pitfalls from the live class</h3>
+<ol>
+<li><strong>Overconfidence in projections:</strong> claiming 10 lakh first-year customers or profitability in eight months without a defensible basis damages credibility. Investors fund evidence and genuineness, not optimism alone.</li>
+<li><strong>Neglecting competition:</strong> arrogance that no rival can reach the firm is dangerous. Nokia, Kodak and BlackBerry are cited as warnings.</li>
+<li><strong>Product–business confusion:</strong> years spent perfecting the product do not answer whether customers will buy or whether pricing, marketing and distribution work.</li>
+<li><strong>Paralysis by planning:</strong> endless addition of “one more feature” lets competitors advance. Launch a suitable test, learn and iterate rather than refining indefinitely.</li>
+</ol>
+<hr>
+<h2 id="14-common-mistakes-and-cautions">14. Common mistakes and cautions</h2>
+<ol>
+<li><strong>“Everyone is my customer.”</strong> This prevents meaningful design and marketing.</li>
+<li><strong>Equating features with value.</strong> Customers buy outcomes, feelings and experiences as well as functions.</li>
+<li><strong>Believing stated interest equals demand.</strong> Payment and repeat use are stronger evidence.</li>
+<li><strong>Treating the product as the entire business.</strong> Delivery, partners, economics and relationships may determine success.</li>
+<li><strong>Using only secondary market data.</strong> Broad reports must be tested against a precise segment with primary research.</li>
+<li><strong>Choosing the largest market number.</strong> Sophisticated readers may discount the whole plan.</li>
+<li><strong>Copying a plan template mechanically.</strong> Sections must fit the venture and form a coherent argument.</li>
+<li><strong>Using technical specifications without customer meaning.</strong> Explain benefits in ordinary language.</li>
+<li><strong>Trying many markets simultaneously.</strong> Use concentrated marketing and defined contingency triggers.</li>
+<li><strong>Ignoring logistics and regional variation.</strong> E-commerce still depends on roads, weather and partners.</li>
+<li><strong>Assuming price is the only value proposition.</strong> Systems of mutually reinforcing benefits are more defensible.</li>
+<li><strong>Underestimating acquisition cost.</strong> Retention and referrals can reduce recurring marketing expenditure.</li>
+<li><strong>Calling crowdfunding free finance.</strong> Platform and payment fees materially reduce receipts.</li>
+<li><strong>Ignoring burn rate and fixed costs.</strong> Know survival time and which costs can be reduced.</li>
+<li><strong>Building with friends rather than complementary experts.</strong> Friendship can obscure capability and fairness problems.</li>
+<li><strong>Treating a plan as fixed.</strong> New evidence should change assumptions, forecasts and actions.</li>
+</ol>
+<hr>
+<h2 id="15-likely-exam-questions-and-answer-directions">15. Likely exam questions and answer directions</h2>
+<h3 id="q1-define-a-business-plan-and-distinguish-it-from-a-dream">Q1. Define a business plan and distinguish it from a dream.</h3>
+<p>State that it is a living, evidence-supported explanation of the chosen business approach, its rationale and expected outcomes. Contrast it with the Field-of-Dreams assumptions of automatic funding, universal customers and instant adoption. Use the water-purchase caution or jeans example.</p>
+<h3 id="q2-explain-why-entrepreneurship-is-risk-taking-but-not-blind-risk">Q2. Explain why entrepreneurship is risk-taking but not blind risk.</h3>
+<p>Uncertainty cannot be removed; entrepreneurs reduce it through research, assumption ranking, pilots and adaptation. Use Google/Microsoft or FreshTray.</p>
+<h3 id="q3-discuss-the-nine-elements-of-the-bmc-and-their-interdependence">Q3. Discuss the nine elements of the BMC and their interdependence.</h3>
+<p>Define all nine, then use Ola/Uber to show how driver incentives improve supply, waiting time, customer satisfaction, retention and revenue. Conclude that consistency creates defensibility.</p>
+<h3 id="q4-what-is-a-value-proposition">Q4. What is a value proposition?</h3>
+<p>Explain the complete functional, emotional, experiential and symbolic value of the offering. Include Ash Maurya’s end result, time period and objections. Use the Sachin autograph or ride-hailing example.</p>
+<h3 id="q5-differentiate-bmc-and-lean-canvas">Q5. Differentiate BMC and Lean Canvas.</h3>
+<p>BMC maps the full business; Lean Canvas replaces key partners/activities/resources with problem/solution/key metrics and supports iterative testing.</p>
+<h3 id="q6-explain-feasibility-analysis">Q6. Explain feasibility analysis.</h3>
+<p>Cover product/service, organizational, financial and market feasibility. Emphasize one-to-one user research, prototype-assisted discussion, educated estimates, geographical/logistics context and willingness to pay.</p>
+<h3 id="q7-outline-a-strong-business-plan">Q7. Outline a strong business plan.</h3>
+<p>Use problem/customer/why-now logic, executive summary, business and market analysis, focused strategy, marketing, competition, operations, team, IP, product development, finances, funding/use and contingencies. State that no structure is universally correct.</p>
+<h3 id="q8-evaluate-freshtray-s-decision">Q8. Evaluate FreshTray’s decision.</h3>
+<p>Calculate 28/40 = 70%, then explain why expressed interest is not behavioural proof. Identify the $2-fee/repeat-use assumption; describe the four-week pilot and thresholds of 50 orders/week and &gt;30% repeat.</p>
+<h3 id="q9-why-is-a-team-important-for-a-scalable-venture">Q9. Why is a team important for a scalable venture?</h3>
+<p>Discuss complementary skills, expressive differences, recruiting credibility, fair rewards and prior entrepreneurial learning. Contrast with solo livelihood ventures and friendship-based teams.</p>
+<h3 id="q10-how-can-a-business-respond-to-disruptive-innovation">Q10. How can a business respond to disruptive innovation?</h3>
+<p>Use ultrasound/X-ray, CRT/LED or rental/streaming. Explain refocusing on strengths, innovating and redesigning the integrated model.</p>
+<hr>
+<h2 id="16-rapid-revision">16. Rapid revision</h2>
+<h3 id="one-line-definitions">One-line definitions</h3>
+<ul>
+<li><strong>Business plan:</strong> a living, evidence-based explanation of what should work, why and with what expected results.</li>
+<li><strong>Business model:</strong> the integrated logic of creating, delivering and capturing value.</li>
+<li><strong>BMC:</strong> nine-box visual summary used to test the coherence of a business model.</li>
+<li><strong>Lean Canvas:</strong> experiment-oriented canvas emphasizing problems, solutions and metrics.</li>
+<li><strong>Feasibility analysis:</strong> assessment of whether the product, organization, finances and market can realistically support the venture.</li>
+<li><strong>Value proposition:</strong> the total value that makes a specific customer willingly choose and pay for an offering.</li>
+<li><strong>Validated learning:</strong> evidence obtained from a designed test of actual customer behaviour.</li>
+<li><strong>Burn rate:</strong> the rate at which a venture consumes cash.</li>
+<li><strong>Franchise:</strong> permission to operate a proven branded system in exchange for fees/revenue share under specified support and controls.</li>
+</ul>
+<h3 id="numbers-to-remember-from-the-transcript">Numbers to remember from the transcript</h3>
+<ul>
+<li>Full business-plan effort: about <strong>3–4 experienced people × 6 months full time</strong>.</li>
+<li>Initial BMC shortcut illustration: about <strong>3–4 people × 1 day</strong>, followed by deeper work.</li>
+<li>Sequoia-style plan: roughly <strong>15 slides</strong>.</li>
+<li>FreshTray interviews: <strong>28/40 = 70% interest</strong>.</li>
+<li>FreshTray pilot: <strong>4 weeks</strong>, <strong>$2 fee</strong>, <strong>≥50 orders/week</strong>, <strong>&gt;30% repeat</strong>.</li>
+<li>Ride-hailing illustration: <strong>₹350 fare</strong>, driver described about <strong>75% share</strong>, bonus after about <strong>5–10 rides</strong>.</li>
+<li>Taxi licensing illustration: potentially <strong>more than ₹1 crore</strong> in Mumbai.</li>
+<li>Driver-income illustration: about <strong>₹1 lakh/year</strong> despite long hours.</li>
+<li>Crowdfunding illustration: <strong>5% platform fee + about 3.5% payment fee</strong>, potentially near 10% overall.</li>
+<li>Restaurant illustration: roughly <strong>5% highly profitable/growing; 50% may close within two years</strong>.</li>
+<li>Festive-atmosphere insight: customers discussed/connected around it about <strong>10× more</strong> in the example.</li>
+</ul>
+<h3 id="nine-bmc-boxes-memory-order">Nine BMC boxes—memory order</h3>
+<blockquote>
+<p><strong>Segments → Value → Channels → Relationships → Revenue → Resources → Activities → Partners → Costs</strong></p>
+</blockquote>
+<h3 id="three-venture-lenses">Three venture lenses</h3>
+<blockquote>
+<p><strong>Desirable to customers + Feasible to deliver + Viable over time</strong></p>
+</blockquote>
+<h3 id="high-yield-process">High-yield process</h3>
+<blockquote>
+<p><strong>Research → Define the exact customer → Articulate value → Map all nine boxes → Check alignment → Identify the riskiest assumption → Test cheaply → Measure behaviour → Learn/adapt → Write or revise the full plan → Execute and review</strong></p>
+</blockquote>
+<h3 id="final-instructor-emphasis">Final instructor emphasis</h3>
+<ul>
+<li>Do not build and merely hope customers come.</li>
+<li>Do not confuse a product with a business.</li>
+<li>Customer understanding precedes the rest of the canvas.</li>
+<li>Focus is essential: one segment, a clear proposition and a coherent strategy.</li>
+<li>A plan must survive intelligent scrutiny but remain open to change.</li>
+<li>Read, practise, obtain feedback and revise; memorizing headings is not business planning.</li>
+</ul>
+<h1 id="review-week-augmentation">Review Week Augmentation</h1>
+<ul>
+<li>A business plan is a living set of assumptions linked across customers, value, operations, partners and economics; revise it when evidence changes.</li>
+<li>FreshLoop&rsquo;s business model must show distinct value for food businesses, consumers and NGOs and explain how these sides are coordinated.</li>
+<li>Neighborhood prototypes should test commercial and operational feasibility together: demand, density, price, delivery, spoilage, satisfaction and unit economics.</li>
+<li>Possible revenue models—commission, supplier fee, subscription, delivery fee, partnership income or premium service—are options for analysis, not established case facts.</li>
+<li>Investor-ready planning integrates competition, cash-flow stability, margins, capital needs, scalability and founder execution rather than presenting an attractive forecast alone.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-10.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 10: Managing Growth, Lean Execution, Failure,…</span>
+      </a>
+      <a href="week-12.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 12: Networks, Entrepreneurial Teams, Startup…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

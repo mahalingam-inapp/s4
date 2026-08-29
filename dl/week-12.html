@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Deep Learning · Week 12 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Deep Learning</span>
+      <span class="brand-title">Week 12</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html" selected>Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Neural Networks and Deep Learning
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Neural Networks, Backpropagation, Model Tuning, and Evaluation
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Convolutional Neural Networks, Transfer Learning and Computer-Vision…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        RNNs, GRU, LSTM, NLP, Word Embeddings, Transfer Learning and Attention
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        RBMs, Deep Belief Networks, Autoencoders, and Contrastive Divergence
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Reinforcement Learning, Policy Networks, Target Networks and DQN
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Generative Adversarial Networks (GANs)
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Data Augmentation, Hyperparameter Tuning, Transfer Learning and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Feed-Forward Neural Networks, Perceptrons, Loss, Backpropagation and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Python Programming Fundamentals
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Machine Learning, Classification, and Naive Bayes
+      </a>
+      <a class="is-active" href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Logistic Regression as a Neural Network, MNIST, and K-Means
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        PCA and Bag-of-Words
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Autoencoders and Representation Learning
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Exhaustive Exam-Oriented Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Deep Learning · Week 12</p>
+        <h1 class="page-title">Logistic Regression as a Neural Network, MNIST, and K-Means</h1>
+        <p class="page-meta">Week 12 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#scope-and-learning-outcomes">Scope and learning outcomes</a></li>
+      <li><a href="#1-definition-and-purpose">1. Definition and purpose</a></li>
+      <li><a href="#2-why-it-is-called-the-simplest-neural-network">2. Why it is called the simplest neural network</a></li>
+      <li><a href="#3-linear-regression-vs-logistic-regression-vs-neural-network">3. Linear regression vs logistic regression vs neural network</a></li>
+      <li><a href="#4-sigmoid-function">4. Sigmoid function</a></li>
+      <li><a href="#5-probability-and-decision-threshold">5. Probability and decision threshold</a></li>
+      <li><a href="#6-odds-log-odds-and-linearity-assumption">6. Odds, log-odds, and linearity assumption</a></li>
+      <li><a href="#7-assumptions-and-conditions">7. Assumptions and conditions</a></li>
+      <li><a href="#8-loss-function-binary-cross-entropy">8. Loss function: binary cross-entropy</a></li>
+      <li><a href="#9-gradient-descent-and-derivation">9. Gradient descent and derivation</a></li>
+      <li><a href="#10-end-to-end-workflow">10. End-to-end workflow</a></li>
+      <li><a href="#11-logistic-regression-implementation-demonstrated">11. Logistic regression implementation demonstrated</a></li>
+      <li><a href="#12-advantages-limitations-applications">12. Advantages, limitations, applications</a></li>
+      <li><a href="#13-confusion-matrix">13. Confusion matrix</a></li>
+      <li><a href="#14-metrics-and-formulas">14. Metrics and formulas</a></li>
+      <li><a href="#15-roc-curve-and-auc">15. ROC curve and AUC</a></li>
+      <li><a href="#16-ethical-threshold-selection">16. Ethical threshold selection</a></li>
+      <li><a href="#17-what-mnist-is">17. What MNIST is</a></li>
+      <li><a href="#18-historical-significance-and-importance">18. Historical significance and importance</a></li>
+      <li><a href="#19-exploration-and-preprocessing">19. Exploration and preprocessing</a></li>
+      <li><a href="#20-mnist-variants-and-related-datasets">20. MNIST variants and related datasets</a></li>
+      <li><a href="#21-logistic-regression-baseline-on-mnist">21. Logistic regression baseline on MNIST</a></li>
+      <li><a href="#22-challenges-and-mitigation">22. Challenges and mitigation</a></li>
+      <li><a href="#23-simple-feed-forward-neural-network-implementation">23. Simple feed-forward neural network implementation</a></li>
+      <li><a href="#24-supervised-vs-unsupervised-learning">24. Supervised vs unsupervised learning</a></li>
+      <li><a href="#25-mathematical-objective">25. Mathematical objective</a></li>
+      <li><a href="#26-algorithm-workflow">26. Algorithm/workflow</a></li>
+      <li><a href="#27-advantages">27. Advantages</a></li>
+      <li><a href="#28-limitations-and-remedies">28. Limitations and remedies</a></li>
+      <li><a href="#29-extensions">29. Extensions</a></li>
+      <li><a href="#30-applications">30. Applications</a></li>
+      <li><a href="#31-scenario">31. Scenario</a></li>
+      <li><a href="#32-iteration-story">32. Iteration story</a></li>
+      <li><a href="#33-possible-business-interpretation">33. Possible business interpretation</a></li>
+      <li><a href="#34-feature-scaling">34. Feature scaling</a></li>
+      <li><a href="#35-three-decision-options">35. Three decision options</a></li>
+      <li><a href="#36-fraud-use-case">36. Fraud use case</a></li>
+      <li><a href="#37-image-compression-use-case">37. Image compression use case</a></li>
+      <li><a href="#38-hyperparameter-tuning">38. Hyperparameter tuning</a></li>
+      <li><a href="#39-k-means-image-compression-detail">39. K-Means image compression detail</a></li>
+      <li><a href="#40-high-yield-misconceptions">40. High-yield misconceptions</a></li>
+      <li><a href="#41-model-with-high-confidence-on-a-blurry-image">41. Model with high confidence on a blurry image</a></li>
+      <li><a href="#42-administrative-instructor-emphasis-retained-from-the-live-class">42. Administrative instructor emphasis retained from the live class</a></li>
+      <li><a href="#43-short-answer-questions">43. Short-answer questions</a></li>
+      <li><a href="#44-long-answer-derivation-questions">44. Long-answer/derivation questions</a></li>
+      <li><a href="#45-formula-bank">45. Formula bank</a></li>
+      <li><a href="#46-one-minute-facts">46. One-minute facts</a></li>
+      <li><a href="#47-final-integrated-takeaway">47. Final integrated takeaway</a></li>
+      <li><a href="#review-week-augmentation-bce-and-deployment-threshold">Review Week augmentation: BCE and deployment threshold</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="scope-and-learning-outcomes">Scope and learning outcomes</h2>
+<p>Week 12 connects classical machine learning with neural networks through logistic regression, introduces MNIST as a standard image-classification benchmark, explains learning without labels through K-Means, and demonstrates Python implementations of logistic regression and an MNIST feed-forward network. The live session adds important examination points on sigmoid properties, cross-entropy minimization, confusion-matrix metrics, threshold selection, ethics, model bias, and overfitting.</p>
+<p>By the end of the week, you should be able to:</p>
+<ul>
+<li>explain why logistic regression can be viewed as the simplest neural network;</li>
+<li>derive its probability output, loss, gradients, and decision rule;</li>
+<li>compare linear regression, logistic regression, and a multilayer neural network;</li>
+<li>describe MNIST, its preprocessing, benchmarking role, limitations, and variants;</li>
+<li>implement and evaluate logistic regression and a simple MNIST neural network;</li>
+<li>explain K-Means mathematically and trace its assignment–update cycle;</li>
+<li>assess K-Means applications, limitations, extensions, and business trade-offs;</li>
+<li>select evaluation metrics and classification thresholds according to error costs.</li>
+</ul>
+<hr>
+<h1 id="part-i-logistic-regression-as-a-simple-neural-network">Part I — Logistic Regression as a Simple Neural Network</h1>
+<h2 id="1-definition-and-purpose">1. Definition and purpose</h2>
+<p><strong>Logistic regression</strong> is a supervised statistical/machine-learning method used primarily for classification. In binary classification, it models the probability that an observation belongs to the positive class.</p>
+<p>Examples of binary outcomes:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Application</th>
+<th>Class 0</th>
+<th>Class 1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Email filtering</td>
+<td>Not spam</td>
+<td>Spam</td>
+</tr>
+<tr>
+<td>Medical diagnosis</td>
+<td>No disease</td>
+<td>Disease</td>
+</tr>
+<tr>
+<td>Fraud detection</td>
+<td>Legitimate</td>
+<td>Fraudulent</td>
+</tr>
+<tr>
+<td>Sentiment</td>
+<td>Sad/negative</td>
+<td>Happy/positive</td>
+</tr>
+<tr>
+<td>Customer churn</td>
+<td>Stays</td>
+<td>Leaves</td>
+</tr>
+<tr>
+<td>Credit scoring</td>
+<td>Will not repay</td>
+<td>Will repay</td>
+</tr>
+</tbody>
+</table></div>
+<p>Unlike linear regression, which predicts an unrestricted continuous value, logistic regression converts a linear score into a value between 0 and 1 and interprets it as a probability.</p>
+<h2 id="2-why-it-is-called-the-simplest-neural-network">2. Why it is called the simplest neural network</h2>
+<p>For an input vector \(\mathbf{x}=[x_1,\ldots,x_d]^T\), logistic regression performs the same core operations as a single artificial neuron:</p>
+<ol>
+<li>combine inputs using learnable weights;</li>
+<li>add a learnable bias;</li>
+<li>apply a nonlinear activation function;</li>
+<li>calculate a loss;</li>
+<li>update parameters from feedback, usually through gradient descent.</li>
+</ol>
+<p>The linear score is</p>
+<p>\[
+z=\mathbf{w}^T\mathbf{x}+b=\sum_{j=1}^{d}w_jx_j+b.
+\]</p>
+<p>The sigmoid activation produces</p>
+<p>\[
+\hat y=P(y=1\mid \mathbf{x})=\sigma(z)=\frac{1}{1+e^{-z}}.
+\]</p>
+<p>Thus the architecture is effectively:</p>
+<p>\[
+\text{input features}\rightarrow\text{weighted sum + bias}\rightarrow\text{sigmoid}\rightarrow\text{probability}.
+\]</p>
+<p>It has <strong>no hidden layer</strong>. A deeper neural network repeats similar weighted transformations across one or more hidden layers, allowing it to learn hierarchical and nonlinear representations. The live-session emphasis was that logistic regression contains weighted inputs, a nonlinear activation, learnable parameters, and gradient-based updating—everything needed for the simplest one-neuron model—while lacking the task subdivision performed by hidden layers.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> “No hidden layer” does not mean “no layer-like computation.” Logistic regression is equivalent to a single sigmoid output neuron, not a multilayer network.</p>
+</blockquote>
+<h3 id="relationship-with-the-perceptron">Relationship with the perceptron</h3>
+<p>Both a perceptron and logistic regression first compute the same kind of affine score, \(z=\mathbf w^T\mathbf x+b\). The important difference emphasized in the lecture is the output function:</p>
+<ul>
+<li>a classical perceptron uses a hard step/sign rule and directly produces a binary value;</li>
+<li>logistic regression uses the smooth sigmoid and therefore produces a probability before thresholding.</li>
+</ul>
+<p>The sigmoid is differentiable, allowing probability interpretation and gradient-based minimization of cross-entropy. The perceptron’s hard step is not differentiable at its boundary and does not express calibrated probability.</p>
+<h2 id="3-linear-regression-vs-logistic-regression-vs-neural-network">3. Linear regression vs logistic regression vs neural network</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Linear regression</th>
+<th>Logistic regression</th>
+<th>Multilayer neural network</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Main output</td>
+<td>Continuous value</td>
+<td>Class probability</td>
+<td>Class probability, score, or continuous value</td>
+</tr>
+<tr>
+<td>Typical task</td>
+<td>House price, temperature</td>
+<td>Spam/not spam, sold/not sold</td>
+<td>Complex classification/regression</td>
+</tr>
+<tr>
+<td>Output mapping</td>
+<td>Usually identity</td>
+<td>Sigmoid for binary class</td>
+<td>Activations such as ReLU, sigmoid, softmax</td>
+</tr>
+<tr>
+<td>Hidden layers</td>
+<td>None</td>
+<td>None</td>
+<td>One or more</td>
+</tr>
+<tr>
+<td>Decision threshold</td>
+<td>Not normally used</td>
+<td>Yes</td>
+<td>Often used for classification</td>
+</tr>
+<tr>
+<td>Representation learning</td>
+<td>Very limited</td>
+<td>Very limited</td>
+<td>Learns hierarchical features</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Instructor Q&amp;A example:</strong></p>
+<ul>
+<li>Predict the price of a house using number of bedrooms and area: <strong>linear regression</strong>, because price is continuous.</li>
+<li>Predict whether the same house will be sold within 30 days: <strong>logistic regression</strong>, because the output is a binary event/probability.</li>
+</ul>
+<h2 id="4-sigmoid-function">4. Sigmoid function</h2>
+<h3 id="formula">Formula</h3>
+<p>\[
+\sigma(z)=\frac{1}{1+e^{-z}}.
+\]</p>
+<h3 id="core-properties">Core properties</h3>
+<ol>
+<li><strong>Range:</strong> \(0<\sigma(z)<1\), so it is suitable for probability-like outputs.</li>
+<li><strong>Shape:</strong> smooth, continuous, monotonic, S-shaped curve.</li>
+<li><strong>Midpoint/symmetry:</strong> \(\sigma(0)=0.5\) and \(\sigma(-z)=1-\sigma(z)\).</li>
+<li><strong>Steepest change:</strong> around \(z=0\); the slope becomes small at large positive or negative values.</li>
+<li><strong>Derivative:</strong></li>
+</ol>
+<p>\[
+   \sigma'(z)=\sigma(z)[1-\sigma(z)].
+   \]</p>
+<p>The derivative makes gradient computation convenient. In deeper networks, however, sigmoid saturation can create very small gradients; this is one reason ReLU is commonly used in hidden layers.</p>
+<h3 id="numerical-example-emphasized-in-the-live-session">Numerical example emphasized in the live session</h3>
+<p>For \(z=2\):</p>
+<p>\[
+\sigma(2)=\frac{1}{1+e^{-2}}\approx 0.8808.
+\]</p>
+<p>At a threshold of 0.5, this is classified as the positive class.</p>
+<h2 id="5-probability-and-decision-threshold">5. Probability and decision threshold</h2>
+<p>The network does <strong>not normally output the final label directly</strong>. It first outputs a probability, after which a decision rule creates the label:</p>
+<p>\[
+\hat c=
+\begin{cases}
+1,&\hat y\ge \tau,\\
+0,&\hat y<\tau,
+\end{cases}
+\]</p>
+<p>where \(\tau\) is the threshold. A common default is \(\tau=0.5\), but it is not universally optimal.</p>
+<p>Example: \(\hat y=0.73\), \(\tau=0.5\Rightarrow\hat c=1\).</p>
+<h3 id="effect-of-changing-the-threshold">Effect of changing the threshold</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Threshold change</th>
+<th style="text-align: right;">Predicted positives</th>
+<th style="text-align: right;">Recall</th>
+<th style="text-align: right;">Precision</th>
+<th>Typical error effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lower \(\tau\)</td>
+<td style="text-align: right;">More</td>
+<td style="text-align: right;">Usually rises</td>
+<td style="text-align: right;">May fall</td>
+<td>Fewer false negatives, more false positives</td>
+</tr>
+<tr>
+<td>Raise \(\tau\)</td>
+<td style="text-align: right;">Fewer</td>
+<td style="text-align: right;">Usually falls</td>
+<td style="text-align: right;">May rise</td>
+<td>More false negatives, fewer false positives</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Medical screening:</strong> missing a real disease case (false negative) can be extremely costly. A lower threshold flags more borderline cases, prioritizing <strong>recall/sensitivity</strong>, though confirmatory review is required.</p>
+<p><strong>Spam filtering:</strong> marking an important legitimate email as spam (false positive) may be more disruptive than allowing occasional spam. A higher threshold makes the filter act only when confident, prioritizing <strong>precision</strong>.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> Lowering a threshold is not the same as “lowering accuracy.” It changes the operating trade-off between false positives and false negatives; its desirability must be evaluated against the use case.</p>
+</blockquote>
+<h2 id="6-odds-log-odds-and-linearity-assumption">6. Odds, log-odds, and linearity assumption</h2>
+<p>If \(p=P(y=1\mid x)\), the odds are</p>
+<p>\[
+\frac{p}{1-p}.
+\]</p>
+<p>Taking the logarithm gives the logit:</p>
+<p>\[
+\log\left(\frac{p}{1-p}\right)=\mathbf{w}^T\mathbf{x}+b.
+\]</p>
+<p>Therefore, logistic regression assumes a <strong>linear relationship between predictors and the log-odds</strong>, not necessarily between predictors and the raw probability.</p>
+<h2 id="7-assumptions-and-conditions">7. Assumptions and conditions</h2>
+<p>The lecture identified these assumptions:</p>
+<ul>
+<li>the dependent variable is binary for basic logistic regression;</li>
+<li>observations are independent;</li>
+<li>there is little or no multicollinearity among independent variables;</li>
+<li>predictors relate linearly to the log-odds of the outcome.</li>
+</ul>
+<p>Practical modelling also requires appropriate data quality, representative samples, sensible feature scaling where needed, and enough observations relative to the number of parameters.</p>
+<h2 id="8-loss-function-binary-cross-entropy">8. Loss function: binary cross-entropy</h2>
+<p>For one observation:</p>
+<p>\[
+\ell(y,\hat y)=-[y\log(\hat y)+(1-y)\log(1-\hat y)].
+\]</p>
+<p>For \(m\) observations:</p>
+<p>\[
+J(\mathbf{w},b)=-\frac{1}{m}\sum_{i=1}^{m}left[y^{(i)}\log \hat y^{(i)}+(1-y^{(i)})\log(1-\hat y^{(i)})\right].
+\]</p>
+<p>Interpretation:</p>
+<ul>
+<li>if \(y=1\), loss is \(-\log(\hat y)\), heavily penalizing a small predicted probability;</li>
+<li>if \(y=0\), loss is \(-\log(1-\hat y)\), heavily penalizing a large predicted probability;</li>
+<li>confident correct predictions have low loss;</li>
+<li>confident incorrect predictions have very high loss.</li>
+</ul>
+<p>The lecture repeatedly emphasized: <strong>reduce cross-entropy loss to improve the fitted model</strong>, subject to validation against overfitting.</p>
+<blockquote>
+<p><strong>Correction/exam trap:</strong> Cross-entropy is standard for logistic classification. Ordinary linear regression is normally trained with mean squared error or an equivalent least-squares objective, not binary cross-entropy.</p>
+</blockquote>
+<h2 id="9-gradient-descent-and-derivation">9. Gradient descent and derivation</h2>
+<p>For \(\hat{\mathbf y}=\sigma(X\mathbf w+b)\), the gradients are</p>
+<p>\[
+\frac{\partial J}{\partial \mathbf w}=\frac{1}{m}X^T(\hat{\mathbf y}-\mathbf y),
+\qquad
+\frac{\partial J}{\partial b}=\frac{1}{m}\sum_{i=1}^{m}(\hat y^{(i)}-y^{(i)}).
+\]</p>
+<p>With learning rate \(\alpha\):</p>
+<p>\[
+\mathbf w\leftarrow\mathbf w-\alpha\frac{\partial J}{\partial \mathbf w},
+\qquad
+b\leftarrow b-\alpha\frac{\partial J}{\partial b}.
+\]</p>
+<p>Training repeats forward calculation, loss calculation, gradient calculation, and parameter updating until a stopping condition is met—for example, negligible improvement, sufficiently small gradient, or a maximum number of iterations.</p>
+<p>The demonstration initialized weights and bias to zero, which is valid for ordinary single-output logistic regression because there are no interchangeable hidden neurons that must break symmetry.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> Zero initialization is acceptable for logistic regression, but initializing every weight identically in a multilayer hidden layer prevents neurons from breaking symmetry and learning different features.</p>
+</blockquote>
+<h2 id="10-end-to-end-workflow">10. End-to-end workflow</h2>
+<ol>
+<li><strong>Collect data.</strong> Ensure features and binary labels are relevant.</li>
+<li><strong>Clean/preprocess.</strong> Handle missing values and noise; encode variables; scale features where appropriate.</li>
+<li><strong>Split data.</strong> Use training and test sets; optionally use validation data for tuning.</li>
+<li><strong>Initialize parameters.</strong> Logistic regression may start with zero weights and bias.</li>
+<li><strong>Train.</strong> Use gradient descent or a library solver to minimize cross-entropy.</li>
+<li><strong>Predict probabilities.</strong> Apply sigmoid to test-set scores.</li>
+<li><strong>Convert probabilities to labels.</strong> Apply a threshold selected for the application.</li>
+<li><strong>Evaluate.</strong> Use confusion matrix, accuracy, precision, recall, F1, ROC curve/AUC, and domain costs.</li>
+<li><strong>Tune and validate.</strong> Adjust learning rate, iterations, regularization, threshold, and features without using the test set as training feedback.</li>
+</ol>
+<h2 id="11-logistic-regression-implementation-demonstrated">11. Logistic regression implementation demonstrated</h2>
+<h3 id="data-and-settings">Data and settings</h3>
+<ul>
+<li>Python/Google Colab notebook;</li>
+<li>NumPy for numerical operations;</li>
+<li><code>sklearn.datasets.make_classification</code> for a synthetic dataset;</li>
+<li><code>train_test_split</code> for splitting;</li>
+<li><code>accuracy_score</code> for evaluation;</li>
+<li>1,000 samples, 20 features, 2 classes, <code>random_state=42</code>;</li>
+<li>80% training and 20% testing;</li>
+<li>learning rate \(0.1\), 1,000 iterations;</li>
+<li>reported accuracy approximately 87%.</li>
+</ul>
+<h3 id="conceptual-code">Conceptual code</h3>
+<pre><code class="language-python">def sigmoid(z):
+    return 1 / (1 + np.exp(-z))
+
+weights = np.zeros(n_features)
+bias = 0.0
+
+for _ in range(n_iterations):
+    linear = X_train @ weights + bias
+    probabilities = sigmoid(linear)
+    dw = X_train.T @ (probabilities - y_train) / n_samples
+    db = np.mean(probabilities - y_train)
+    weights -= learning_rate * dw
+    bias -= learning_rate * db
+
+test_probabilities = sigmoid(X_test @ weights + bias)
+y_pred = (test_probabilities &gt;= 0.5).astype(int)
+</code></pre>
+<p>Training uses <code>X_train, y_train</code>; evaluation/prediction uses unseen <code>X_test</code>, compared with <code>y_test</code>. Printing four decimal places changes display precision, not model performance.</p>
+<h2 id="12-advantages-limitations-applications">12. Advantages, limitations, applications</h2>
+<h3 id="advantages">Advantages</h3>
+<ul>
+<li>simple and interpretable;</li>
+<li>computationally efficient;</li>
+<li>produces probabilities;</li>
+<li>strong baseline for binary classification;</li>
+<li>works well when classes are approximately linearly separable in feature space;</li>
+<li>coefficients can be interpreted through log-odds/odds ratios.</li>
+</ul>
+<h3 id="limitations">Limitations</h3>
+<ul>
+<li>linear decision boundary without engineered nonlinear features;</li>
+<li>cannot naturally learn hierarchical image structure;</li>
+<li>can underfit complex relationships;</li>
+<li>sensitive to severe multicollinearity and poorly scaled/irrelevant features;</li>
+<li>default 0.5 threshold may be unsuitable;</li>
+<li>performance can be misleading on imbalanced data;</li>
+<li>outliers and data-quality problems can affect the fit.</li>
+</ul>
+<h3 id="applications-explicitly-discussed">Applications explicitly discussed</h3>
+<ul>
+<li>spam and email filtering;</li>
+<li>disease diagnosis such as diabetes or heart conditions;</li>
+<li>fraud detection in financial transactions;</li>
+<li>customer churn prediction;</li>
+<li>credit scoring/loan repayment likelihood;</li>
+<li>sentiment analysis;</li>
+<li>binary image recognition;</li>
+<li>predicting customer response to marketing advertisements/campaigns.</li>
+</ul>
+<h3 id="multiclass-extension">Multiclass extension</h3>
+<p>Logistic regression can support multiple classes using:</p>
+<ul>
+<li><strong>one-vs-rest:</strong> train one binary classifier per class;</li>
+<li><strong>multinomial/softmax regression:</strong> calculate a joint probability distribution across all classes.</li>
+</ul>
+<hr>
+<h1 id="part-ii-evaluation-of-binary-classifiers">Part II — Evaluation of Binary Classifiers</h1>
+<h2 id="13-confusion-matrix">13. Confusion matrix</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Actual / Predicted</th>
+<th style="text-align: right;">Positive</th>
+<th style="text-align: right;">Negative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Positive</td>
+<td style="text-align: right;">True positive (TP)</td>
+<td style="text-align: right;">False negative (FN)</td>
+</tr>
+<tr>
+<td>Negative</td>
+<td style="text-align: right;">False positive (FP)</td>
+<td style="text-align: right;">True negative (TN)</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>TP:</strong> actual positive, correctly predicted positive.</li>
+<li><strong>TN:</strong> actual negative, correctly predicted negative.</li>
+<li><strong>FP:</strong> actual negative, incorrectly predicted positive (false alarm).</li>
+<li><strong>FN:</strong> actual positive, incorrectly predicted negative (miss).</li>
+</ul>
+<h2 id="14-metrics-and-formulas">14. Metrics and formulas</h2>
+<p>\[
+\text{Accuracy}=\frac{TP+TN}{TP+TN+FP+FN}
+\]</p>
+<p>\[
+\text{Precision}=\frac{TP}{TP+FP}
+\]</p>
+<p>\[
+\text{Recall/Sensitivity/TPR}=\frac{TP}{TP+FN}
+\]</p>
+<p>\[
+\text{Specificity/TNR}=\frac{TN}{TN+FP}
+\]</p>
+<p>\[
+F_1=2\frac{\text{Precision}\times\text{Recall}}{\text{Precision}+\text{Recall}}
+\]</p>
+<p>The \(F_1\)-score is the harmonic mean of precision and recall and is useful when both errors matter, particularly with imbalance.</p>
+<h3 id="why-accuracy-alone-can-fail">Why accuracy alone can fail</h3>
+<p>Suppose 85% of observations are positive. A model that predicts “positive” for everything obtains 85% accuracy while completely failing on the 15% negative class. This was the instructor’s key warning: high accuracy may simply reflect class imbalance or training-set bias.</p>
+<p>The live session broadly stressed recall for logistic-regression use cases, but the correct general rule is: <strong>the important metric depends on the business/clinical cost of FP and FN.</strong></p>
+<h2 id="15-roc-curve-and-auc">15. ROC curve and AUC</h2>
+<p>The receiver operating characteristic curve plots:</p>
+<ul>
+<li>\(\text{TPR}=\text{Recall}\) against</li>
+<li>\(\text{FPR}=FP/(FP+TN)=1-\text{Specificity}\)</li>
+</ul>
+<p>over all possible thresholds.</p>
+<p><strong>ROC-AUC</strong> summarizes ranking/separation ability across thresholds. Higher AUC means a randomly chosen positive is more likely to receive a higher score than a randomly chosen negative.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> High ROC-AUC does not guarantee good deployed decisions at a chosen threshold. The operating threshold and the real cost of errors still matter.</p>
+</blockquote>
+<h2 id="16-ethical-threshold-selection">16. Ethical threshold selection</h2>
+<p>The student–instructor discussion raised whether threshold manipulation can be unethical, especially if medical thresholds are adjusted to create commercial benefit or unnecessary testing/treatment.</p>
+<p>The sound conclusion is:</p>
+<ul>
+<li>thresholds legitimately differ by application because error costs differ;</li>
+<li>the developer/organization must justify the threshold using clinical or business objectives and validation evidence;</li>
+<li>stakeholder welfare, transparency, fairness, regulation, and human oversight matter;</li>
+<li>intentionally choosing a threshold to exploit users or create avoidable harm is unethical;</li>
+<li>screening probability should not be confused with a definitive medical diagnosis.</li>
+</ul>
+<hr>
+<h1 id="part-iii-mnist-dataset">Part III — MNIST Dataset</h1>
+<h2 id="17-what-mnist-is">17. What MNIST is</h2>
+<p><strong>MNIST</strong> stands for <strong>Modified National Institute of Standards and Technology</strong> dataset. It is a foundational benchmark for handwritten-digit classification, computer vision, and neural-network education.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total images</td>
+<td>70,000</td>
+</tr>
+<tr>
+<td>Training images</td>
+<td>60,000</td>
+</tr>
+<tr>
+<td>Test images</td>
+<td>10,000</td>
+</tr>
+<tr>
+<td>Classes</td>
+<td>10 digits: 0–9</td>
+</tr>
+<tr>
+<td>Image shape</td>
+<td>\(28\times28\) pixels</td>
+</tr>
+<tr>
+<td>Channels</td>
+<td>1 (grayscale)</td>
+</tr>
+<tr>
+<td>Flattened features</td>
+<td>\(28\times28=784\)</td>
+</tr>
+<tr>
+<td>Typical raw pixel range</td>
+<td>0–255</td>
+</tr>
+</tbody>
+</table></div>
+<p>Every image has a digit label, so the standard task is supervised multiclass classification.</p>
+<blockquote>
+<p><strong>Correction/exam trap:</strong> The fixed 60,000/10,000 split is approximately 85.7%/14.3% of all 70,000 images, not exactly 90/10 and not 70/30. The transcript informally called it 90/10; quote the actual counts in an exam.</p>
+</blockquote>
+<p>The transcript described pixel value 0 as black and 255 as white, which is the usual MNIST convention; normalization divides by 255 to map values approximately to \([0,1]\).</p>
+<h2 id="18-historical-significance-and-importance">18. Historical significance and importance</h2>
+<ul>
+<li>introduced and widely adopted in the 1990s;</li>
+<li>supplied a standardized way to compare classification algorithms;</li>
+<li>simple, accessible, and fast enough for teaching and prototyping;</li>
+<li>helped demonstrate progress in pattern recognition and computer vision;</li>
+<li>supports comparisons among logistic regression, neural networks, CNNs, and other methods;</li>
+<li>remains foundational even though newer datasets are more challenging.</li>
+</ul>
+<p>MNIST is a useful <strong>benchmark</strong>, but strong MNIST performance alone does not prove real-world robustness.</p>
+<h2 id="19-exploration-and-preprocessing">19. Exploration and preprocessing</h2>
+<h3 id="exploration">Exploration</h3>
+<p>Before modelling:</p>
+<ul>
+<li>inspect dataset dimensions and labels;</li>
+<li>plot several sample images;</li>
+<li>inspect digit frequency/distribution;</li>
+<li>check data quality and ambiguous handwriting;</li>
+<li>verify train/test separation.</li>
+</ul>
+<p>The digits are represented roughly evenly, which reduces class bias. Balance supports fairer training, but balance alone does not guarantee absence of overfitting or underfitting.</p>
+<h3 id="normalization">Normalization</h3>
+<p>\[
+x_{normalized}=\frac{x}{255}.
+\]</p>
+<p>Benefits include faster, more stable optimization and avoiding unnecessarily large input magnitudes.</p>
+<h3 id="reshaping">Reshaping</h3>
+<ul>
+<li>Logistic regression/dense model: flatten \((28,28)\) into 784 features.</li>
+<li>CNN: retain the 2-D spatial organization, usually with a channel dimension \((28,28,1)\).</li>
+</ul>
+<h3 id="label-representation">Label representation</h3>
+<ul>
+<li>Sparse integer labels: \(0,1,\ldots,9\), compatible with sparse categorical loss.</li>
+<li>One-hot labels: e.g., digit 3 becomes \([0,0,0,1,0,0,0,0,0,0]\), compatible with categorical cross-entropy.</li>
+</ul>
+<blockquote>
+<p><strong>Exam trap:</strong> Normalization acts on image pixels; one-hot encoding acts on labels. One-hot encoding is not required “for normalization.”</p>
+</blockquote>
+<h2 id="20-mnist-variants-and-related-datasets">20. MNIST variants and related datasets</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Content</th>
+<th>Relationship/use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fashion-MNIST</td>
+<td>Clothing items</td>
+<td>Drop-in, harder alternative with similar shape</td>
+</tr>
+<tr>
+<td>EMNIST</td>
+<td>More handwritten characters/letters and digits</td>
+<td>Extends the handwritten recognition task</td>
+</tr>
+<tr>
+<td>KMNIST</td>
+<td>Japanese Kuzushiji characters</td>
+<td>Similar image format, different visual concepts</td>
+</tr>
+<tr>
+<td>CIFAR-10</td>
+<td>Small color object images</td>
+<td>More complex, color and varied objects</td>
+</tr>
+<tr>
+<td>ImageNet</td>
+<td>Large-scale real-world object images</td>
+<td>Much greater scale and complexity</td>
+</tr>
+</tbody>
+</table></div>
+<p>Testing an MNIST pipeline on Fashion-MNIST, EMNIST, or KMNIST examines whether preprocessing/modeling ideas transfer when resolution and grayscale format remain similar but the visual concepts and labels change.</p>
+<p>It does <strong>not</strong> prove:</p>
+<ul>
+<li>robustness to arbitrary resolutions;</li>
+<li>robustness to color channels;</li>
+<li>universal image classification ability;</li>
+<li>reliable performance on noisy real-world images.</li>
+</ul>
+<h2 id="21-logistic-regression-baseline-on-mnist">21. Logistic regression baseline on MNIST</h2>
+<p>Typical procedure:</p>
+<ol>
+<li>load MNIST;</li>
+<li>normalize pixels;</li>
+<li>flatten to 784 features;</li>
+<li>fit a multiclass logistic regression model (the lecture mentioned <code>max_iter=1000</code>);</li>
+<li>call <code>predict(X_test)</code>;</li>
+<li>compare predictions with <code>y_test</code> using accuracy and other metrics.</li>
+</ol>
+<p>Logistic regression is fast and interpretable but treats flattened pixels as independent features and cannot capture spatial hierarchies such as edges, strokes, and shapes. This motivates CNNs, whose convolutional filters preserve local structure and spatial awareness.</p>
+<h2 id="22-challenges-and-mitigation">22. Challenges and mitigation</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Explanation</th>
+<th>Mitigation/next step</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Overfitting</td>
+<td>Flexible models memorize simple training patterns</td>
+<td>Dropout, weight decay, early stopping, validation</td>
+</tr>
+<tr>
+<td>Limited realism</td>
+<td>Real digits may contain noise, rotation, scale, or distortion</td>
+<td>Data augmentation: rotation, zoom, noise, shifts</td>
+</tr>
+<tr>
+<td>Spatial limitation of logistic regression</td>
+<td>Flattening discards 2-D locality</td>
+<td>Use CNNs</td>
+</tr>
+<tr>
+<td>Possible class imbalance in new data</td>
+<td>Production distribution may differ from benchmark</td>
+<td>Inspect distribution; use suitable metrics/sampling</td>
+</tr>
+<tr>
+<td>Dataset simplicity</td>
+<td>Near-perfect benchmark scores may not transfer</td>
+<td>Evaluate on harder, representative datasets</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="23-simple-feed-forward-neural-network-implementation">23. Simple feed-forward neural network implementation</h2>
+<h3 id="libraries-components-used">Libraries/components used</h3>
+<ul>
+<li>TensorFlow/Keras;</li>
+<li><code>mnist.load_data()</code>;</li>
+<li><code>Sequential</code> model;</li>
+<li><code>Flatten</code> and <code>Dense</code> layers;</li>
+<li>categorical conversion utility for one-hot labels;</li>
+<li>Matplotlib for training/validation plots.</li>
+</ul>
+<h3 id="architecture">Architecture</h3>
+<p>\[
+(28\times28)\xrightarrow{Flatten}784
+\xrightarrow{Dense(128),\ ReLU}128
+\xrightarrow{Dense(10),\ Softmax}10\text{ class probabilities}.
+\]</p>
+<ul>
+<li><code>Flatten</code> converts each image into a one-dimensional vector.</li>
+<li>Hidden <code>Dense(128)</code> learns combinations of pixel features; ReLU supplies nonlinearity.</li>
+<li>Output <code>Dense(10)</code> represents digits 0–9; softmax is the appropriate multiclass probability activation.</li>
+<li>It is <strong>feed-forward/sequential</strong> because information travels from input to hidden to output without recurrent feedback connections.</li>
+</ul>
+<h3 id="compile-and-train-settings-demonstrated">Compile and train settings demonstrated</h3>
+<ul>
+<li>optimizer: Adam;</li>
+<li>loss: categorical cross-entropy;</li>
+<li>metric: accuracy only in the demonstration;</li>
+<li>epochs: 5;</li>
+<li>batch size: 32;</li>
+<li>validation split: 0.1 of the training data.</li>
+</ul>
+<p>An <strong>epoch</strong> is one complete pass through the training data. A <strong>batch</strong> is the subset used for one parameter update. More epochs take more time and may improve fit until overfitting begins.</p>
+<h3 id="evaluation-and-plots">Evaluation and plots</h3>
+<ul>
+<li>evaluate on the 10,000-image test set;</li>
+<li>reported test accuracy: about 97%;</li>
+<li>plot training loss and validation loss against epoch;</li>
+<li>plot training accuracy and validation accuracy against epoch;</li>
+<li>desired observed pattern in the demonstration: loss decreased and accuracy increased;</li>
+<li>show example images with their predicted digits (examples included 7, 2, 1, 0, 4).</li>
+</ul>
+<blockquote>
+<p><strong>Exam trap:</strong> Decreasing training loss alone is not proof of generalization. If validation loss begins to rise while training loss falls, the model is overfitting.</p>
+</blockquote>
+<hr>
+<h1 id="part-iv-learning-without-labels-k-means">Part IV — Learning Without Labels: K-Means</h1>
+<h2 id="24-supervised-vs-unsupervised-learning">24. Supervised vs unsupervised learning</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Supervised learning</th>
+<th>Unsupervised learning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uses labelled examples</td>
+<td>Uses feature data without target labels</td>
+</tr>
+<tr>
+<td>Learns mapping from inputs to known outputs</td>
+<td>Discovers latent patterns/groups</td>
+</tr>
+<tr>
+<td>Logistic regression, classification</td>
+<td>K-Means clustering</td>
+</tr>
+<tr>
+<td>Tested against known labels</td>
+<td>Assessed by cohesion, separation, stability, and usefulness</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>K-Means</strong> is a popular unsupervised algorithm that partitions \(n\) observations into a predefined number \(K\) of clusters. Points in the same cluster should be similar and close to their centroid.</p>
+<p>Inputs and outputs:</p>
+<ul>
+<li>input: feature vectors and chosen \(K\);</li>
+<li>output: one cluster assignment per point and \(K\) centroid vectors.</li>
+</ul>
+<p>K-Means discovers mathematical groups. It does not learn named business categories; people interpret and label the resulting clusters.</p>
+<h2 id="25-mathematical-objective">25. Mathematical objective</h2>
+<p>Let cluster \(C_k\) have centroid \(\boldsymbol\mu_k\). K-Means minimizes the within-cluster sum of squares (WCSS), also called inertia or sum of squared errors:</p>
+<p>\[
+J=\sum_{k=1}^{K}\sum_{\mathbf{x}_i\in C_k}\|\mathbf{x}_i-\boldsymbol\mu_k\|_2^2.
+\]</p>
+<p>For two-dimensional points, Euclidean distance is</p>
+<p>\[
+d(\mathbf{x},\boldsymbol\mu)=\sqrt{(x_1-\mu_1)^2+(x_2-\mu_2)^2}.
+\]</p>
+<p>The centroid update is the component-wise mean:</p>
+<p>\[
+\boldsymbol\mu_k=\frac{1}{|C_k|}\sum_{\mathbf{x}_i\in C_k}\mathbf{x}_i.
+\]</p>
+<h2 id="26-algorithm-workflow">26. Algorithm/workflow</h2>
+<ol>
+<li><strong>Choose \(K\).</strong> This predefines the number of clusters.</li>
+<li><strong>Initialize \(K\) centroids.</strong> Choose them randomly or with a method such as K-Means++.</li>
+<li><strong>Assignment step.</strong> Assign each point to the nearest centroid, usually by Euclidean distance.</li>
+<li><strong>Update step.</strong> Recalculate every centroid as the mean of its assigned points.</li>
+<li><strong>Repeat assignment and update</strong> until:
+   - centroids no longer change significantly;
+   - assignments become stable; or
+   - the maximum number of iterations is reached.</li>
+</ol>
+<p>For the lecture’s two-dimensional example with \(K=3\), three random centers are selected; all points are assigned to their nearest center; means are recomputed; this repeats until three stable groups appear.</p>
+<h3 id="what-convergence-means">What convergence means</h3>
+<p>Convergence means the algorithm has stabilized for the current initialization and \(K\). It does <strong>not</strong> prove that:</p>
+<ul>
+<li>the global minimum was found;</li>
+<li>\(K\) is correct;</li>
+<li>the clusters are meaningful for the business;</li>
+<li>the data naturally has spherical clusters.</li>
+</ul>
+<h2 id="27-advantages">27. Advantages</h2>
+<ul>
+<li>simple to understand and implement;</li>
+<li>computationally efficient and scalable to large datasets;</li>
+<li>produces explicit centroids and assignments;</li>
+<li>useful for exploratory pattern discovery;</li>
+<li>works well for compact, reasonably separated, similarly sized clusters.</li>
+</ul>
+<h2 id="28-limitations-and-remedies">28. Limitations and remedies</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Limitation</th>
+<th>Why it matters</th>
+<th>Possible remedy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Must choose \(K\)</td>
+<td>Too few merges groups; too many models noise</td>
+<td>Elbow method, silhouette score, business validation</td>
+</tr>
+<tr>
+<td>Sensitive to initialization</td>
+<td>Different seeds can give different local solutions</td>
+<td>K-Means++, multiple initializations, choose lowest inertia</td>
+</tr>
+<tr>
+<td>Sensitive to outliers</td>
+<td>Means can be pulled far from dense regions</td>
+<td>Remove/handle outliers; use K-Medoids</td>
+</tr>
+<tr>
+<td>Assumes compact/roughly spherical clusters</td>
+<td>Struggles with curved, elongated, non-convex groups</td>
+<td>Hierarchical or density-based clustering</td>
+</tr>
+<tr>
+<td>Scale-sensitive</td>
+<td>Large-range feature dominates Euclidean distance</td>
+<td>Standardize/normalize features</td>
+</tr>
+<tr>
+<td>May be slow at very large scale</td>
+<td>Repeated distance calculations</td>
+<td>Mini-batch methods or sampling</td>
+</tr>
+<tr>
+<td>Cluster labels have no inherent meaning</td>
+<td>“Cluster 1” is not automatically “VIP”</td>
+<td>Profile and interpret after clustering</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="29-extensions">29. Extensions</h2>
+<h3 id="k-medoids">K-Medoids</h3>
+<p>Uses an actual data point (medoid) as each cluster representative rather than an arithmetic mean. It is less sensitive to outliers and can support more general distance measures, but is often more computationally expensive.</p>
+<h3 id="hierarchical-clustering">Hierarchical clustering</h3>
+<p>Builds a tree/dendrogram of nested clusters and need not commit to one \(K\) at the start:</p>
+<ul>
+<li><strong>agglomerative:</strong> bottom-up merging;</li>
+<li><strong>divisive:</strong> top-down splitting.</li>
+</ul>
+<p>It allows exploration at multiple granularities.</p>
+<h2 id="30-applications">30. Applications</h2>
+<h3 id="customer-market-segmentation">Customer/market segmentation</h3>
+<p>Group customers by purchasing behavior so businesses such as e-commerce platforms can create targeted campaigns.</p>
+<h3 id="anomaly-and-fraud-screening">Anomaly and fraud screening</h3>
+<p>Model normal groups; points unusually far from their nearest centroid become anomaly candidates. Distance is a signal for investigation, not proof of fraud.</p>
+<h3 id="image-segmentation-and-compression">Image segmentation and compression</h3>
+<p>Cluster similar pixels/colors and replace each color by its centroid color, reducing the palette and file size while attempting to preserve perceived quality.</p>
+<h3 id="other-uses-mentioned">Other uses mentioned</h3>
+<ul>
+<li>document/text clustering;</li>
+<li>pattern discovery in unlabeled data;</li>
+<li>biological and market data grouping.</li>
+</ul>
+<hr>
+<h1 id="part-v-datavista-k-means-case-study">Part V — DataVista K-Means Case Study</h1>
+<h2 id="31-scenario">31. Scenario</h2>
+<p>DataVista, a mid-sized e-commerce startup, prepares a marketing and risk-analysis project using three months of transaction logs from <strong>5,000 customers</strong>. Each customer has two features:</p>
+<ol>
+<li>purchase frequency;</li>
+<li>average order value.</li>
+</ol>
+<p>The initial choice is \(K=3\). Centroids are initialized randomly, customers are assigned by Euclidean distance, centroids are updated by their cluster means, and the process repeats until assignments and centroids stabilize. Clusters are visualized on a two-dimensional scatter plot.</p>
+<h2 id="32-iteration-story">32. Iteration story</h2>
+<ul>
+<li><strong>First iteration:</strong> poor random centers mix high-frequency and low-value customers.</li>
+<li><strong>After the first update:</strong> centers move toward dense behavioral regions.</li>
+<li><strong>Second iteration:</strong> fewer customers switch clusters.</li>
+<li><strong>Third iteration:</strong> membership is nearly constant; the algorithm has converged.</li>
+</ul>
+<p>Centroid movement is evidence of iterative refinement, not a defect.</p>
+<h2 id="33-possible-business-interpretation">33. Possible business interpretation</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Segment</th>
+<th>Possible characteristics</th>
+<th>Possible action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frequent buyers</td>
+<td>High frequency; medium/high value</td>
+<td>Loyalty and retention offers</td>
+</tr>
+<tr>
+<td>High-value customers</td>
+<td>Lower frequency; very high value</td>
+<td>VIP/premium offers</td>
+</tr>
+<tr>
+<td>Occasional buyers</td>
+<td>Low frequency and lower spending</td>
+<td>Discounts and engagement campaigns</td>
+</tr>
+</tbody>
+</table></div>
+<p>These names are business interpretations assigned after examining the clusters; K-Means itself produces only numeric groups.</p>
+<h2 id="34-feature-scaling">34. Feature scaling</h2>
+<p>Purchase frequency might range from 1–100 while order value ranges from 10–10,000. Without scaling, order value can dominate Euclidean distance. Standardization allows both features to contribute more comparably.</p>
+<h2 id="35-three-decision-options">35. Three decision options</h2>
+<h3 id="option-1-accept-the-converged-k-3-result">Option 1 — Accept the converged \(K=3\) result</h3>
+<p>Advantages: immediate, simple, no extra computation. Risks: current result may depend on an unfavorable initialization and may hide a VIP group.</p>
+<h3 id="option-2-rerun-k-3-using-different-random-seeds">Option 2 — Rerun \(K=3\) using different random seeds</h3>
+<p>Raj favors this to reduce sensitivity to initialization, compare stability, and possibly find lower WCSS. Lee notes the added runtime and limited server capacity.</p>
+<p>Changing seeds answers: <strong>Did we find a good solution for the same three-cluster hypothesis?</strong></p>
+<h3 id="option-3-change-to-k-4">Option 3 — Change to \(K=4\)</h3>
+<p>May isolate a small very-high-order-value VIP group, enabling targeted service. Risks include over-segmentation, more complex campaign management, capturing noise, and added computation.</p>
+<p>Changing \(K\) answers: <strong>Does the data/business require a different number of groups?</strong></p>
+<h3 id="recommended-balanced-approach">Recommended balanced approach</h3>
+<ol>
+<li>scale the features;</li>
+<li>run multiple initializations for \(K=3\);</li>
+<li>compare inertia, silhouette, stability, cluster size, interpretability, and actionability;</li>
+<li>evaluate \(K=4\) separately to see whether the VIP cluster is stable and useful;</li>
+<li>select the simplest reliable segmentation that creates business value.</li>
+</ol>
+<h2 id="36-fraud-use-case">36. Fraud use case</h2>
+<p>The risk team flags transactions far from their nearest centroid. A large distance may represent fraud, but also a rare legitimate purchase, new behavior, or a special occasion. Therefore, use the distance to prioritize review—not as an automatic accusation.</p>
+<h2 id="37-image-compression-use-case">37. Image compression use case</h2>
+<p>The product-design group clusters similar RGB pixels into a small palette. Instead of storing thousands of unique colors, the representation stores a color dictionary plus pixel-to-cluster assignments.</p>
+<p>Business caveat: excessive compression may alter product color, creating dissatisfaction, returns, or loss of trust. Compression quality must be visually validated, not judged by file size alone.</p>
+<hr>
+<h1 id="part-vi-quiz-concepts-and-misconceptions">Part VI — Quiz Concepts and Misconceptions</h1>
+<h2 id="38-hyperparameter-tuning">38. Hyperparameter tuning</h2>
+<p><strong>Hyperparameters</strong> are settings chosen before/during training rather than learned directly from the training data. Examples include learning rate, epochs, regularization strength, tree depth, neural-network size, batch size, and \(K\) in K-Means.</p>
+<p>Proper tuning workflow:</p>
+<p>\[
+\text{choose settings}\rightarrow\text{train}\rightarrow\text{evaluate on validation data}\rightarrow\text{compare}\rightarrow\text{select}.
+\]</p>
+<ul>
+<li>learning rate too high: unstable/overshooting training;</li>
+<li>learning rate too low: slow convergence;</li>
+<li>too few epochs: underfitting;</li>
+<li>too many epochs: possible overfitting.</li>
+</ul>
+<p>Tuning does not make model selection irrelevant. One must select both an appropriate algorithm/architecture and suitable hyperparameters. The held-out test set should provide final unbiased evaluation rather than being repeatedly used for tuning.</p>
+<h2 id="39-k-means-image-compression-detail">39. K-Means image compression detail</h2>
+<p>Suppose nearby colors are:</p>
+<ul>
+<li>RGB(123, 87, 45)</li>
+<li>RGB(125, 89, 47)</li>
+<li>RGB(124, 88, 46)</li>
+</ul>
+<p>K-Means may represent all by centroid RGB(124, 88, 46). An image with 10,000 unique colors might be reduced to 50 or 100 representative colors, with every pixel storing/using its palette assignment.</p>
+<h2 id="40-high-yield-misconceptions">40. High-yield misconceptions</h2>
+<ol>
+<li><strong>“Logistic regression predicts a continuous outcome.”</strong> False; it predicts a class probability and usually a discrete class after thresholding.</li>
+<li><strong>“The classifier directly outputs a final class.”</strong> Usually false; it first outputs a score/probability.</li>
+<li><strong>“A 0.5 threshold is always best.”</strong> False; threshold choice depends on error costs.</li>
+<li><strong>“Accuracy is always the best metric.”</strong> False; imbalance and asymmetric costs may make precision, recall, F1, or other measures more relevant.</li>
+<li><strong>“High ROC-AUC guarantees a good deployed system.”</strong> False; threshold and operating context remain crucial.</li>
+<li><strong>“Testing on Fashion-MNIST proves general image robustness.”</strong> False; it is transfer within a constrained 28×28 grayscale representation.</li>
+<li><strong>“K-Means learns known labels.”</strong> False; it discovers groups from features/distances.</li>
+<li><strong>“Centroids stay fixed after initialization.”</strong> False; they are recalculated after every assignment step.</li>
+<li><strong>“Convergence proves optimal clustering.”</strong> False; it only indicates stability for that run/settings.</li>
+<li><strong>“More clusters always improve segmentation.”</strong> False; too many can over-segment and capture noise.</li>
+<li><strong>“A distant point is fraud.”</strong> False; it is an anomaly candidate.</li>
+<li><strong>“K-Means works only on customer data.”</strong> False; it also supports images, documents, biological data, and other numeric feature spaces.</li>
+</ol>
+<hr>
+<h1 id="part-vii-live-session-q-a-and-instructor-emphasis">Part VII — Live-Session Q&amp;A and Instructor Emphasis</h1>
+<h2 id="41-model-with-high-confidence-on-a-blurry-image">41. Model with high confidence on a blurry image</h2>
+<p>A student trained an image classifier with roughly 20 uploaded images. It assigned around 85% confidence even to a blurry dog image and up to 99% for exact-looking examples.</p>
+<p>Instructor diagnosis and advice:</p>
+<ul>
+<li>the dataset may be too small/inadequate;</li>
+<li>one class may dominate, creating training bias/class imbalance;</li>
+<li>high train or familiar-image accuracy may not translate to real-world performance;</li>
+<li>99% on a tiny familiar dataset is a warning sign for overfitting rather than proof of perfection;</li>
+<li>add more diverse and balanced examples;</li>
+<li>inspect the training dataset first;</li>
+<li>if the problem persists, inspect the architecture, algorithm, and overall technique.</li>
+</ul>
+<p>Practical extension: use distinct train/validation/test sets, augmentation, confusion matrices per class, and genuinely unseen images.</p>
+<h2 id="42-administrative-instructor-emphasis-retained-from-the-live-class">42. Administrative instructor emphasis retained from the live class</h2>
+<ul>
+<li>Students were reminded to complete LMS videos, assessments, and live-session requirements; twelve weeks were stated as mandatory for examination eligibility.</li>
+<li>The Review Week 3 mini-project deadline mentioned in that recorded session was the 29th of the month.</li>
+<li>The mini-project report should document findings/work and include screenshots, pictures, or other proof.</li>
+<li>Colab notebooks should be meaningfully renamed; <code>.ipynb</code> denotes a Python notebook, while console scripts use <code>.py</code>.</li>
+<li>Codes may be shared, but students were explicitly encouraged to run and implement them independently.</li>
+</ul>
+<p>These recorded dates are contextual; current deadlines should always be checked in the LMS.</p>
+<hr>
+<h1 id="part-viii-likely-examination-questions">Part VIII — Likely Examination Questions</h1>
+<h2 id="43-short-answer-questions">43. Short-answer questions</h2>
+<ol>
+<li>Define logistic regression and state two applications.</li>
+<li>Why can logistic regression be treated as a simple neural network?</li>
+<li>Write the sigmoid formula and list four properties.</li>
+<li>Distinguish probability output from class label.</li>
+<li>What is the default classification threshold, and why might it be changed?</li>
+<li>State the assumptions of binary logistic regression.</li>
+<li>Define TP, TN, FP, and FN.</li>
+<li>Write formulas for accuracy, precision, recall, and F1.</li>
+<li>Why can accuracy mislead on imbalanced data?</li>
+<li>What does ROC-AUC measure?</li>
+<li>Expand MNIST and describe its size and image format.</li>
+<li>Why is MNIST historically important?</li>
+<li>Distinguish normalization, flattening, and one-hot encoding.</li>
+<li>Name three MNIST variants/related datasets.</li>
+<li>Define K-Means and its objective function.</li>
+<li>What are centroid, assignment, update, inertia, and convergence?</li>
+<li>Why is K-Means sensitive to random initialization and outliers?</li>
+<li>Compare K-Means and K-Medoids.</li>
+<li>Distinguish agglomerative and divisive hierarchical clustering.</li>
+<li>Explain K-Means image compression.</li>
+</ol>
+<h2 id="44-long-answer-derivation-questions">44. Long-answer/derivation questions</h2>
+<h3 id="q1-explain-logistic-regression-as-a-one-neuron-neural-network">Q1. Explain logistic regression as a one-neuron neural network.</h3>
+<p>Include weighted sum, bias, sigmoid, probability, threshold, cross-entropy, gradient descent, no hidden layer, advantages, and limitations.</p>
+<h3 id="q2-derive-the-training-update-for-logistic-regression">Q2. Derive the training update for logistic regression.</h3>
+<p>Begin with \(z=Xw+b\), \(\hat y=\sigma(z)\), binary cross-entropy, show \(dw=X^T(\hat y-y)/m\), \(db=\sum(\hat y-y)/m\), and write the update equations.</p>
+<h3 id="q3-explain-why-threshold-selection-must-follow-application-costs">Q3. Explain why threshold selection must follow application costs.</h3>
+<p>Contrast medical screening (lower threshold, higher recall, fewer FN) with spam filtering (higher threshold, higher precision, fewer FP). Mention ethical governance.</p>
+<h3 id="q4-describe-mnist-and-a-complete-classification-workflow">Q4. Describe MNIST and a complete classification workflow.</h3>
+<p>Cover 70,000 images, 60,000/10,000 split, 28×28 grayscale, 784 flattened features, labels 0–9, normalization, exploration, model training, test evaluation, limitations, and transition to CNNs.</p>
+<h3 id="q5-explain-k-means-with-mathematics-and-a-worked-workflow">Q5. Explain K-Means with mathematics and a worked workflow.</h3>
+<p>State WCSS objective; explain \(K\), initialization, Euclidean assignment, mean update, iteration, convergence, limitations, and multiple initialization.</p>
+<h3 id="q6-analyze-datavista-s-choice-among-accepting-k-3-rerunning-seeds-and-moving-to-k-4">Q6. Analyze DataVista’s choice among accepting \(K=3\), rerunning seeds, and moving to \(K=4\).</h3>
+<p>Discuss stability, compute, VIP segment usefulness, scaling, inertia/silhouette, interpretability, and business actionability.</p>
+<h3 id="q7-explain-how-k-means-supports-anomaly-detection-and-image-compression-with-caveats">Q7. Explain how K-Means supports anomaly detection and image compression, with caveats.</h3>
+<p>For fraud, distance indicates unusual behavior but does not prove fraud. For compression, pixels are replaced by palette centroids, but product-color fidelity must be checked.</p>
+<hr>
+<h1 id="part-ix-rapid-revision-sheet">Part IX — Rapid Revision Sheet</h1>
+<h2 id="45-formula-bank">45. Formula bank</h2>
+<p>\[
+z=\mathbf{w}^T\mathbf{x}+b
+\]</p>
+<p>\[
+\sigma(z)=\frac{1}{1+e^{-z}},\qquad \sigma'(z)=\sigma(z)[1-\sigma(z)]
+\]</p>
+<p>\[
+\log\frac{p}{1-p}=\mathbf{w}^T\mathbf{x}+b
+\]</p>
+<p>\[
+J_{BCE}=-\frac1m\sum_i[y_i\log\hat y_i+(1-y_i)\log(1-\hat y_i)]
+\]</p>
+<p>\[
+\nabla_wJ=\frac1mX^T(\hat y-y),\qquad \frac{\partial J}{\partial b}=\frac1m\sum_i(\hat y_i-y_i)
+\]</p>
+<p>\[
+\text{Precision}=\frac{TP}{TP+FP},\quad
+\text{Recall}=\frac{TP}{TP+FN},\quad
+F_1=\frac{2PR}{P+R}
+\]</p>
+<p>\[
+J_{KMeans}=\sum_{k=1}^K\sum_{x_i\in C_k}\|x_i-\mu_k\|^2,qquad
+\mu_k=\frac1{|C_k|}\sum_{x_i\in C_k}x_i
+\]</p>
+<h2 id="46-one-minute-facts">46. One-minute facts</h2>
+<ul>
+<li>Logistic regression = linear score + sigmoid; no hidden layer.</li>
+<li>Linear regression predicts a continuous value; logistic regression predicts class probability.</li>
+<li>Default threshold is often 0.5, but costs determine the deployed threshold.</li>
+<li>Lower threshold: recall up, false positives often up. Higher threshold: precision often up, false negatives often up.</li>
+<li>Accuracy can conceal imbalance; inspect precision, recall, F1, confusion matrix, and ROC-AUC.</li>
+<li>MNIST: 70,000 labeled grayscale digit images, 28×28, 60,000 train + 10,000 test, 10 classes.</li>
+<li>Flattened MNIST has 784 features; CNNs retain spatial structure.</li>
+<li>Feed-forward demonstration: Flatten → Dense(128, ReLU) → Dense(10, softmax), Adam, categorical cross-entropy, 5 epochs, batch 32, 0.1 validation, about 97% test accuracy.</li>
+<li>K-Means: choose \(K\) → initialize → assign → update → repeat.</li>
+<li>K-Means minimizes WCSS/inertia; centroid is the cluster mean.</li>
+<li>K-Means needs scaling, is seed/outlier sensitive, and prefers compact clusters.</li>
+<li>Multiple seeds improve confidence; changing a seed is not the same as changing \(K\).</li>
+<li>K-Medoids is more outlier-resistant; hierarchical clustering supplies a cluster tree.</li>
+<li>Convergence is stability, not guaranteed global optimality or business usefulness.</li>
+<li>A large centroid distance is an anomaly signal, not proof of fraud.</li>
+</ul>
+<h2 id="47-final-integrated-takeaway">47. Final integrated takeaway</h2>
+<p>Week 12 moves from a single supervised sigmoid neuron to a benchmark multiclass image problem and then to unsupervised discovery. Logistic regression shows the minimum structure needed for neural-style learning: weights, bias, nonlinearity, loss, and gradient updates. MNIST demonstrates how data representation, preprocessing, architecture, and evaluation shape image classification. K-Means shows how learning can proceed without labels through distance-based iterative optimization. Across all three topics, the central managerial lesson is the same: a numerical score is not a business decision. Metrics, thresholds, clusters, and model complexity must be interpreted against data quality, error costs, ethics, computation, and real-world usefulness.</p>
+<h2 id="review-week-augmentation-bce-and-deployment-threshold">Review Week augmentation: BCE and deployment threshold</h2>
+<ul>
+<li>Binary cross-entropy is \(L=-[y\log p+(1-y)\log(1-p)]\).</li>
+<li><code>BCELoss</code> expects probabilities, usually after sigmoid. <code>BCEWithLogitsLoss</code> is generally preferable for raw logits because it combines sigmoid and BCE in a numerically stable form.</li>
+<li>Adam adapts updates using first- and second-moment estimates of gradients. The classification threshold is separate from training loss and should be selected using validation evidence and the relative cost of false positives and false negatives; it need not be 0.5.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-11.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 11: Machine Learning, Classification, and Naive…</span>
+      </a>
+      <a href="week-13.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 13: PCA and Bag-of-Words</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

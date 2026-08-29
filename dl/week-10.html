@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Deep Learning · Week 10 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Deep Learning</span>
+      <span class="brand-title">Week 10</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html" selected>Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Neural Networks and Deep Learning
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Neural Networks, Backpropagation, Model Tuning, and Evaluation
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Convolutional Neural Networks, Transfer Learning and Computer-Vision…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        RNNs, GRU, LSTM, NLP, Word Embeddings, Transfer Learning and Attention
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        RBMs, Deep Belief Networks, Autoencoders, and Contrastive Divergence
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Reinforcement Learning, Policy Networks, Target Networks and DQN
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Generative Adversarial Networks (GANs)
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Data Augmentation, Hyperparameter Tuning, Transfer Learning and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Feed-Forward Neural Networks, Perceptrons, Loss, Backpropagation and…
+      </a>
+      <a class="is-active" href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Python Programming Fundamentals
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Machine Learning, Classification, and Naive Bayes
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Logistic Regression as a Neural Network, MNIST, and K-Means
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        PCA and Bag-of-Words
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Autoencoders and Representation Learning
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Exhaustive Exam-Oriented Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Deep Learning · Week 10</p>
+        <h1 class="page-title">Python Programming Fundamentals</h1>
+        <p class="page-meta">Week 10 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#scope-and-learning-outcomes">Scope and learning outcomes</a></li>
+      <li><a href="#1-introduction-to-python">1. Introduction to Python</a></li>
+      <li><a href="#2-development-environments-and-installation">2. Development environments and installation</a></li>
+      <li><a href="#3-how-python-code-executes">3. How Python code executes</a></li>
+      <li><a href="#4-python-lexical-and-syntax-essentials">4. Python lexical and syntax essentials</a></li>
+      <li><a href="#5-variables-assignment-typing-and-memory">5. Variables, assignment, typing, and memory</a></li>
+      <li><a href="#6-standard-data-types">6. Standard data types</a></li>
+      <li><a href="#7-lists">7. Lists</a></li>
+      <li><a href="#8-tuples">8. Tuples</a></li>
+      <li><a href="#9-dictionaries">9. Dictionaries</a></li>
+      <li><a href="#10-choosing-a-data-structure-bytewave-analytics-case-study">10. Choosing a data structure: ByteWave Analytics case study</a></li>
+      <li><a href="#11-input-output-and-built-in-functions">11. Input, output, and built-in functions</a></li>
+      <li><a href="#12-functions-and-modular-programming">12. Functions and modular programming</a></li>
+      <li><a href="#13-conditions-loops-and-a-consolidated-program">13. Conditions, loops, and a consolidated program</a></li>
+      <li><a href="#14-important-comparisons">14. Important comparisons</a></li>
+      <li><a href="#15-common-misconceptions-and-exam-traps">15. Common misconceptions and exam traps</a></li>
+      <li><a href="#16-likely-examination-questions-with-answer-points">16. Likely examination questions with answer points</a></li>
+      <li><a href="#17-rapid-revision-sheet">17. Rapid revision sheet</a></li>
+      <li><a href="#18-instructor-emphases-and-administrative-note">18. Instructor emphases and administrative note</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="scope-and-learning-outcomes">Scope and learning outcomes</h2>
+<p>Week 10 moves from the earlier deep-learning implementations (which already used Python libraries) to the language foundations needed to understand and write those implementations. By the end of the week, a learner should be able to:</p>
+<ul>
+<li>explain Python&rsquo;s origin, design goals, features, applications, and popularity;</li>
+<li>distinguish interpreted execution from the explicit compile-then-run model;</li>
+<li>choose between cloud and local development environments;</li>
+<li>write syntactically correct Python using identifiers, keywords, indentation, quotations, comments, logical lines, variables, assignments, and standard data types;</li>
+<li>distinguish interactive mode from script mode;</li>
+<li>define and call functions and explain modularity/reusability;</li>
+<li>select lists, tuples, and dictionaries based on mutability, lookup, memory, readability, and business requirements; and</li>
+<li>assemble a small, readable Python program using input, calculations, conditions, loops, collections, and functions.</li>
+</ul>
+<hr>
+<h2 id="1-introduction-to-python">1. Introduction to Python</h2>
+<h3 id="1-1-definition-and-history">1.1 Definition and history</h3>
+<p>Python is a <strong>high-level, general-purpose, interpreted programming language</strong> known for simple, readable syntax. It was created by <strong>Guido van Rossum</strong> and publicly released in <strong>1991</strong>. Work began in the late 1980s and drew ideas from earlier languages such as ABC, Modula-3, C, ALGOL, Smalltalk, and Unix shell scripting. The stated design lesson is that Python combined useful ideas while trying to refine disadvantages of earlier languages.</p>
+<p>Python is:</p>
+<ul>
+<li><strong>open source</strong>: it can be used without paying a licence fee;</li>
+<li>supported by a large, continually growing community;</li>
+<li>suitable for beginners because code resembles natural language;</li>
+<li>powerful enough for professional, research, and large-project use; and</li>
+<li>continually developed through Python 2 and Python 3 version families.</li>
+</ul>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> Python became a major language because simplicity, flexibility, control, a rich ecosystem, and cross-domain applicability occur together—not because of only one feature.</p>
+</blockquote>
+<h3 id="1-2-why-python-is-widely-used">1.2 Why Python is widely used</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Meaning</th>
+<th>Practical value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simplicity</td>
+<td>Few keywords, clean structure, intuitive syntax</td>
+<td>Faster learning and less boilerplate than languages such as C</td>
+</tr>
+<tr>
+<td>Readability</td>
+<td>Code is close to ordinary English</td>
+<td>Easier collaboration, review, debugging, and maintenance</td>
+</tr>
+<tr>
+<td>Versatility</td>
+<td>Used across many domains</td>
+<td>One language can support web, data, AI, scripting, automation, and databases</td>
+</tr>
+<tr>
+<td>Dynamic typing</td>
+<td>A variable name need not be declared with a fixed type</td>
+<td>Rapid and flexible development</td>
+</tr>
+<tr>
+<td>Interpreted nature</td>
+<td>Source can be run without a separate user-managed compilation step</td>
+<td>Quick testing and interactive development</td>
+</tr>
+<tr>
+<td>Rich libraries</td>
+<td>Ready-made packages implement common and advanced operations</td>
+<td>Complex work can be completed with less code</td>
+</tr>
+<tr>
+<td>Portability</td>
+<td>Similar code runs on multiple operating systems/hardware</td>
+<td>Reduced platform-specific rewriting</td>
+</tr>
+<tr>
+<td>Interactive mode</td>
+<td>Statements/snippets can be executed immediately</td>
+<td>Convenient experimentation and debugging</td>
+</tr>
+<tr>
+<td>Extensibility</td>
+<td>Low-level modules can be added to the interpreter</td>
+<td>Customization and performance-oriented integration</td>
+</tr>
+<tr>
+<td>Database support</td>
+<td>Interfaces exist for major commercial databases</td>
+<td>Useful for database management and data engineering</td>
+</tr>
+<tr>
+<td>GUI support</td>
+<td>Libraries enable portable graphical applications</td>
+<td>Desktop/user-interface development</td>
+</tr>
+<tr>
+<td>Scalability</td>
+<td>Better structure/support than ad-hoc shell scripts</td>
+<td>Suitable from small scripts to larger applications</td>
+</tr>
+</tbody>
+</table></div>
+<p>Examples mentioned include web development, data science, artificial intelligence, machine learning, deep learning, graph neural networks, neural-network model building, data/database analysis, scripting, GUI applications, research, and projects. If a graph neural network or deep-learning task is required, Python&rsquo;s ecosystem often already provides a suitable library.</p>
+<h3 id="1-3-python-compared-with-c-java-style-development">1.3 Python compared with C/Java-style development</h3>
+<p>In C, a beginner must learn constructs such as headers, <code>main</code>, <code>printf</code>, <code>scanf</code>, braces, and an explicit compile/run workflow. In Python, corresponding intent is expressed more directly using functions such as <code>print()</code> and <code>input()</code>, and indentation replaces braces for blocks.</p>
+<pre><code class="language-python">print(&quot;Hello Python&quot;)
+name = input(&quot;Enter your name: &quot;)
+</code></pre>
+<p>This does <strong>not</strong> mean Python has no syntax. It means that its syntax is comparatively compact and readable.</p>
+<h3 id="1-4-portability-and-supported-environments">1.4 Portability and supported environments</h3>
+<p>The lecture describes Python as portable across Unix variants (including Linux, Solaris, and FreeBSD), Windows families, macOS, and historically several other platforms/devices. It has also been ported to Java and .NET virtual-machine environments. The central exam point is <strong>cross-platform compatibility</strong>, not memorization of obsolete platform names.</p>
+<hr>
+<h2 id="2-development-environments-and-installation">2. Development environments and installation</h2>
+<h3 id="2-1-cloud-based-versus-local-execution">2.1 Cloud-based versus local execution</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Cloud-based IDE (e.g., Google Colab)</th>
+<th>Local environment (e.g., Jupyter, VS Code, PyCharm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Setup</td>
+<td>Usually no local setup</td>
+<td>Python, IDE, libraries, and paths must be installed/configured</td>
+</tr>
+<tr>
+<td>Hardware</td>
+<td>Provider supplies compute; GPU options such as a T4 may be available</td>
+<td>CPU, RAM, and GPU must exist locally</td>
+</tr>
+<tr>
+<td>Access</td>
+<td>Browser/internet based</td>
+<td>Runs on the user&rsquo;s system</td>
+</tr>
+<tr>
+<td>Privacy</td>
+<td>Data/code is placed in a cloud environment</td>
+<td>Preferred for confidential or high-security work</td>
+</tr>
+<tr>
+<td>Dependency control</td>
+<td>Convenient but platform-controlled</td>
+<td>Greater control over versions and libraries</td>
+</tr>
+<tr>
+<td>Best use</td>
+<td>Learning, experiments, accessible compute</td>
+<td>Confidential projects, offline work, custom hardware/setup</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Instructor Q&amp;A:</strong> “Give an example of a cloud-based Python ecosystem/IDE.” <strong>Answer:</strong> Google Colab. Jupyter Notebook, VS Code, and PyCharm were discussed as local options.</p>
+</blockquote>
+<h3 id="2-2-local-installation-workflow">2.2 Local installation workflow</h3>
+<ol>
+<li>Download Python from <code>python.org</code>.</li>
+<li>Run the installer.</li>
+<li>Configure/add Python to the system path.</li>
+<li>Install or configure an IDE such as PyCharm or VS Code if desired.</li>
+<li>Install the libraries required by the project.</li>
+</ol>
+<p>An IDE provides editing, execution, debugging, and project-management support; it is <strong>not the Python language itself</strong>. The Python interpreter executes Python code, while an IDE is a development interface around it.</p>
+<h3 id="2-3-version-compatibility-caveat">2.3 Version compatibility caveat</h3>
+<p>The newest Python version is not automatically the best version for every project. The instructor described a local generative-AI/GPU project in which a newer Python version did not support the required CUDA-related extension, while Python 3.10 (or another earlier compatible version) did. Exact version numbers were recalled uncertainly; the durable lesson is:</p>
+<ul>
+<li>check the compatibility matrix of Python, CUDA, frameworks, drivers, and packages;</li>
+<li>do not upgrade merely because a version is newest; and</li>
+<li>select a version supported by the complete dependency stack.</li>
+</ul>
+<blockquote>
+<p><strong>Exam trap:</strong> “Latest version = maximum compatibility” is false.</p>
+</blockquote>
+<hr>
+<h2 id="3-how-python-code-executes">3. How Python code executes</h2>
+<h3 id="3-1-interpreter-and-compiler">3.1 Interpreter and compiler</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Compiler-oriented workflow</th>
+<th>Interpreted workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The whole source program is translated before execution in a distinct programmer-visible step</td>
+<td>Statements are executed through an interpreter without a separate user-managed compile step</td>
+</tr>
+<tr>
+<td>Produces a machine-code or intermediate artifact before running</td>
+<td>Supports immediate/interactive execution</td>
+</tr>
+<tr>
+<td>Examples discussed: C, C++, Java (Java source becomes bytecode such as <code>.class</code>)</td>
+<td>Example: Python</td>
+</tr>
+</tbody>
+</table></div>
+<p>Lecture illustration:</p>
+<ul>
+<li>Java: <code>Hello.java</code> → compile → <code>Hello.class</code> bytecode → execute → output.</li>
+<li>Python: <code>hello.py</code> → invoke interpreter → output, with no separate compilation command required in the basic workflow.</li>
+</ul>
+<p>Technically, common Python implementations may compile source to bytecode internally. Therefore the accurate statement is: <strong>Python is commonly described as interpreted because the user normally runs source through an interpreter and does not manage a distinct compile stage.</strong></p>
+<h3 id="3-2-interactive-mode-repl">3.2 Interactive mode (REPL)</h3>
+<p>The Read–Eval–Print Loop accepts a statement, evaluates it, prints the result, and waits for the next statement.</p>
+<pre><code class="language-python">&gt;&gt;&gt; print(&quot;Hello Python&quot;)
+Hello Python
+&gt;&gt;&gt; 3 + 4 * 5
+23
+</code></pre>
+<p>Multiplication has higher precedence than addition, so:</p>
+<p>\[
+3 + 4 \times 5 = 3 + 20 = 23
+\]</p>
+<p>Interactive mode is ideal for short tests, learning, and debugging snippets. A multi-line compound statement in the interactive interpreter is terminated by entering an <strong>empty physical line</strong>.</p>
+<h3 id="3-3-script-mode">3.3 Script mode</h3>
+<p>A complete program is saved, normally with a <code>.py</code> extension, and passed to the interpreter. Execution continues until the script ends or an error/explicit termination occurs. Script mode is suited to reusable, maintainable programs.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Interactive mode</th>
+<th>Script mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Immediate one-statement/snippet feedback</td>
+<td>Executes saved program file</td>
+</tr>
+<tr>
+<td>Good for experiments and debugging</td>
+<td>Good for complete/reusable applications</td>
+</tr>
+<tr>
+<td>Work may not be preserved unless copied</td>
+<td>Code is persistently stored</td>
+</tr>
+<tr>
+<td>Blank line can terminate a compound input block</td>
+<td>Blank lines normally improve readability and do not terminate the file</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="4-python-lexical-and-syntax-essentials">4. Python lexical and syntax essentials</h2>
+<h3 id="4-1-statements-and-order">4.1 Statements and order</h3>
+<p>A statement is an instruction executed by Python. In ordinary sequential execution, order matters because later statements may depend on earlier state.</p>
+<pre><code class="language-python">x = 10
+y = x + 5
+print(y)       # 15
+</code></pre>
+<p>Moving <code>y = x + 5</code> before the assignment to <code>x</code> would fail if <code>x</code> had not already been defined.</p>
+<h3 id="4-2-identifiers">4.2 Identifiers</h3>
+<p>An <strong>identifier</strong> names a variable, function, class, module, or other object.</p>
+<p>Rules:</p>
+<ul>
+<li>begins with <code>A–Z</code>, <code>a–z</code>, or <code>_</code>;</li>
+<li>remaining characters may contain letters, digits <code>0–9</code>, or underscores;</li>
+<li>cannot contain punctuation such as <code>@</code>, <code>$</code>, or <code>%</code>;</li>
+<li>cannot be a reserved keyword; and</li>
+<li>is case-sensitive: <code>Manpower</code> and <code>manpower</code> are different identifiers.</li>
+</ul>
+<p>Examples:</p>
+<pre><code class="language-python">sales_total = 100       # valid
+_helper = 5             # valid
+product2 = &quot;Book&quot;       # valid
+# 2product = &quot;Book&quot;     # invalid: begins with digit
+# sales-total = 100     # invalid: hyphen
+</code></pre>
+<h3 id="4-3-naming-conventions">4.3 Naming conventions</h3>
+<p>Conventions improve consistency even when the interpreter would accept another valid identifier.</p>
+<ul>
+<li>Class names normally begin with an uppercase letter and use CapWords, e.g., <code>SalesReport</code>.</li>
+<li>Functions and ordinary variables normally use lowercase <code>snake_case</code>, e.g., <code>calculate_total</code>.</li>
+<li>A single leading underscore, <code>_name</code>, conventionally marks an internal/non-public name; it does not enforce true privacy.</li>
+<li>Two leading underscores, <code>__name</code>, inside a class trigger name mangling and are often described pedagogically as “strongly private.” They still do not create absolute security.</li>
+<li>Names with both leading and trailing double underscores, such as <code>__init__</code>, are language-defined/special (“dunder”) names; do not invent such names casually.</li>
+</ul>
+<blockquote>
+<p><strong>Exam trap:</strong> A leading underscore is a convention, not an access-control guarantee.</p>
+</blockquote>
+<h3 id="4-4-keywords-reserved-words">4.4 Keywords/reserved words</h3>
+<p>Keywords already have language-defined meanings and cannot be used as identifiers. Examples include <code>and</code>, <code>else</code>, <code>if</code>, <code>for</code>, <code>while</code>, <code>def</code>, <code>return</code>, <code>class</code>, <code>True</code>, <code>False</code>, and <code>None</code>. The transcript describes keywords as lowercase; remember that modern Python also contains case-sensitive literals/keywords such as <code>True</code>, <code>False</code>, and <code>None</code>.</p>
+<h3 id="4-5-indentation-and-suites">4.5 Indentation and suites</h3>
+<p>Python does not use braces to delimit blocks for functions, classes, conditions, or loops. A <strong>suite</strong> is a group/block of statements controlled by a header and represented by indentation.</p>
+<pre><code class="language-python">if score &gt;= 50:
+    print(&quot;Pass&quot;)
+    result = True
+else:
+    print(&quot;Fail&quot;)
+    result = False
+</code></pre>
+<ul>
+<li>Statements in the same block must use consistent indentation.</li>
+<li>The number of spaces is syntactically flexible, but standard style uses four.</li>
+<li>Incorrect or inconsistent indentation changes block membership or raises an error.</li>
+<li><code>if</code> and <code>else</code> align with each other; their controlled statements align within their respective suites.</li>
+</ul>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> Indentation is “very important” and is rigidly enforced because it performs the role braces perform in many other languages.</p>
+</blockquote>
+<h3 id="4-6-logical-lines-physical-lines-and-continuation">4.6 Logical lines, physical lines, and continuation</h3>
+<p>A statement normally occupies one logical line. Explicit continuation uses a backslash:</p>
+<pre><code class="language-python">total = item1 + \
+        item2 + \
+        item3
+</code></pre>
+<p>Inside parentheses, square brackets, or braces, continuation is implicit and the backslash is unnecessary:</p>
+<pre><code class="language-python">days = [
+    &quot;Monday&quot;,
+    &quot;Tuesday&quot;,
+    &quot;Wednesday&quot;,
+]
+</code></pre>
+<p>Prefer implicit continuation because a trailing backslash is fragile.</p>
+<h3 id="4-7-multiple-statements-on-one-line">4.7 Multiple statements on one line</h3>
+<p>Python permits multiple simple statements separated by semicolons:</p>
+<pre><code class="language-python">x = 1; y = 2; print(x + y)
+</code></pre>
+<p>However, one statement per line is clearer and more maintainable. A semicolon is normally unnecessary at the end of a Python statement.</p>
+<h3 id="4-8-quotations-and-strings">4.8 Quotations and strings</h3>
+<p>Python accepts matching single or double quotes for ordinary string literals and triple quotes for multi-line strings.</p>
+<pre><code class="language-python">word = 'Python'
+sentence = &quot;Python is readable.&quot;
+paragraph = &quot;&quot;&quot;This text
+occupies multiple lines.&quot;&quot;&quot;
+</code></pre>
+<p>The opening and closing quote type must match. Triple-quoted strings are string literals; when used as the first statement in a module, class, or function they serve as documentation strings.</p>
+<h3 id="4-9-comments-and-blank-lines">4.9 Comments and blank lines</h3>
+<p>Single-line comments start with <code>#</code> and continue to the line end:</p>
+<pre><code class="language-python"># Calculate net revenue after returns
+net_revenue = sales - returns
+</code></pre>
+<p>The lecture refers to triple-quoted text as a way to write multi-line comments. More precisely, Python has no special multi-line comment token: consecutive <code>#</code> lines are comments, while an unassigned triple-quoted literal is merely an unevaluated/unused string expression (and may be a docstring in special positions).</p>
+<p>Good comments explain <strong>why</strong>, assumptions, or non-obvious logic; they should not repeat self-evident code. Blank lines improve visual organization. In a <code>.py</code> file they do not end the program; in an interactive multi-line entry, an empty line signals completion.</p>
+<hr>
+<h2 id="5-variables-assignment-typing-and-memory">5. Variables, assignment, typing, and memory</h2>
+<h3 id="5-1-variables-and-dynamic-typing">5.1 Variables and dynamic typing</h3>
+<p>A variable is a name bound to an object/value. Python does not require a separate type declaration before assignment.</p>
+<pre><code class="language-python">x = 10          # x refers to an int object
+x = &quot;ten&quot;       # x now refers to a str object
+</code></pre>
+<p>The <strong>object has a type</strong>; the name can later be rebound to an object of another type. Python infers the type at assignment time.</p>
+<pre><code class="language-python">age = 25
+height = 5.8
+name = &quot;Asha&quot;
+active = True
+
+print(type(age))       # &lt;class 'int'&gt;
+</code></pre>
+<h3 id="5-2-assignment-and-multiple-assignment">5.2 Assignment and multiple assignment</h3>
+<pre><code class="language-python">a = b = c = 0               # same initial value bound to three names
+name, age, score = &quot;Ravi&quot;, 30, 82.5
+</code></pre>
+<p>The number of targets and unpacked values must match. With mutable values, chained assignment can make multiple names refer to the <strong>same object</strong>:</p>
+<pre><code class="language-python">a = b = []
+a.append(1)
+print(b)                     # [1]
+</code></pre>
+<h3 id="5-3-memory-model">5.3 Memory model</h3>
+<p>Assignment binds a name to an object in memory; it does not necessarily copy a value. Reassignment changes the binding. If no references to an object remain, Python&rsquo;s memory management can reclaim it. Mutability determines whether an existing object can change in place.</p>
+<hr>
+<h2 id="6-standard-data-types">6. Standard data types</h2>
+<h3 id="6-1-scalar-basic-types">6.1 Scalar/basic types</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Meaning</th>
+<th>Example</th>
+<th>Mutable?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int</code></td>
+<td>Whole integer; Python supports very large integers subject to memory</td>
+<td><code>42</code>, <code>-7</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>Floating-point/decimal approximation</td>
+<td><code>3.14</code>, <code>-0.5</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>complex</code></td>
+<td>Real and imaginary parts</td>
+<td><code>2 + 3j</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>str</code></td>
+<td>Ordered Unicode text sequence</td>
+<td><code>"Python"</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td>Logical truth value</td>
+<td><code>True</code>, <code>False</code></td>
+<td>No</td>
+</tr>
+</tbody>
+</table></div>
+<p>Floating-point values are binary approximations, so exact decimal equality can be unreliable in some calculations. Use an appropriate tolerance or decimal representation for precision-sensitive financial work.</p>
+<h3 id="6-2-string-operations">6.2 String operations</h3>
+<p>Strings support concatenation, repetition, indexing/slicing, and many methods.</p>
+<pre><code class="language-python">name = &quot;Python&quot;
+greeting = name.upper() + &quot; is fun&quot;
+print(greeting)                     # PYTHON is fun
+print(name[0:3])                    # Pyt
+print(&quot;ha&quot; * 3)                    # hahaha
+</code></pre>
+<p>Strings are immutable: methods such as <code>.upper()</code> return a new string rather than altering the original object.</p>
+<h3 id="6-3-collections-overview">6.3 Collections overview</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Structure</th>
+<th>Syntax</th>
+<th style="text-align: right;">Ordered?</th>
+<th style="text-align: right;">Mutable?</th>
+<th>Main access model</th>
+<th>Best suited to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List</td>
+<td><code>[1, 2, 3]</code></td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Yes</td>
+<td>Position/index</td>
+<td>Changeable ordered sequence</td>
+</tr>
+<tr>
+<td>Tuple</td>
+<td><code>(1, 2, 3)</code></td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">No</td>
+<td>Position/index</td>
+<td>Fixed record/configuration</td>
+</tr>
+<tr>
+<td>Dictionary</td>
+<td><code>{"a": 1}</code></td>
+<td style="text-align: right;">Insertion-ordered in modern Python</td>
+<td style="text-align: right;">Yes</td>
+<td>Key</td>
+<td>Meaningful key-to-value lookup</td>
+</tr>
+</tbody>
+</table></div>
+<p>The lecture calls dictionaries “unordered,” reflecting an older/general conceptual description. For exams based strictly on the slide, state that dictionaries are key–value mappings and not accessed by numeric position; for modern Python, also know that insertion order is preserved.</p>
+<hr>
+<h2 id="7-lists">7. Lists</h2>
+<p>A list is a mutable, ordered sequence that can store multiple items, including heterogeneous types.</p>
+<pre><code class="language-python">sales = [120, 135, 128]
+sales.append(142)
+sales[0] = 125
+print(sales)               # [125, 135, 128, 142]
+</code></pre>
+<p>Common operations/methods include <code>append</code>, <code>extend</code>, <code>insert</code>, <code>remove</code>, <code>pop</code>, indexing, slicing, iteration, <code>len</code>, and sorting.</p>
+<h3 id="advantages">Advantages</h3>
+<ul>
+<li>preserves sequence/order;</li>
+<li>easy iteration and positional access;</li>
+<li>grows/shrinks dynamically;</li>
+<li>supports in-place updates;</li>
+<li>readable for daily metrics, time series, product records, and other ordered collections.</li>
+</ul>
+<h3 id="limitations">Limitations</h3>
+<ul>
+<li>searching for an arbitrary value generally requires a linear scan, approximately \(O(n)\);</li>
+<li>positional entries can become unclear when each field has a business meaning;</li>
+<li>mutability permits accidental modification; and</li>
+<li>typically uses more overhead than a comparable tuple.</li>
+</ul>
+<p><strong>Use case:</strong> daily sales measurements collected chronologically are naturally represented as a list.</p>
+<hr>
+<h2 id="8-tuples">8. Tuples</h2>
+<p>A tuple is an ordered, immutable sequence.</p>
+<pre><code class="language-python">database_config = (&quot;localhost&quot;, 5432, &quot;analytics&quot;)
+coordinates = (10.5, 76.2)
+</code></pre>
+<p>Immutability means the tuple&rsquo;s element references cannot be added, removed, or reassigned after creation. It signals that the record should remain fixed and helps prevent accidental structural change.</p>
+<h3 id="advantages-2">Advantages</h3>
+<ul>
+<li>protects fixed data from direct structural modification;</li>
+<li>communicates intent clearly;</li>
+<li>often has slightly less memory overhead than a list; and</li>
+<li>can be used as a dictionary key when all contained elements are hashable.</li>
+</ul>
+<h3 id="limitations-caveats">Limitations/caveats</h3>
+<ul>
+<li>cannot append, remove, or replace elements;</li>
+<li>updates require constructing a new tuple;</li>
+<li>position-only meaning may reduce readability; and</li>
+<li>a tuple can contain a mutable object, so “tuple is immutable” does not guarantee that every nested object is immutable.</li>
+</ul>
+<p>Typical uses: coordinates, fixed configuration values, and stable settings.</p>
+<hr>
+<h2 id="9-dictionaries">9. Dictionaries</h2>
+<p>A dictionary is a mutable mapping of unique, hashable keys to values.</p>
+<pre><code class="language-python">feature_flags = {
+    &quot;dark_mode&quot;: True,
+    &quot;beta_checkout&quot;: False,
+}
+
+feature_flags[&quot;dark_mode&quot;] = False
+print(feature_flags[&quot;beta_checkout&quot;])
+</code></pre>
+<p>Common methods include <code>keys()</code>, <code>values()</code>, <code>items()</code>, <code>get()</code>, <code>update()</code>, and <code>pop()</code>.</p>
+<h3 id="why-lookup-is-fast">Why lookup is fast</h3>
+<p>Dictionaries use hashing. A hash function maps a key to a likely storage location, so average insertion, update, and lookup are approximately:</p>
+<p>\[
+T(n) = O(1) \quad \text{on average}
+\]</p>
+<p>Worst-case behavior can degrade (conceptually toward \(O(n)\)) because of collisions or adversarial conditions, so “constant time” is an average-case claim, not an absolute guarantee.</p>
+<h3 id="advantages-3">Advantages</h3>
+<ul>
+<li>fast key-based retrieval;</li>
+<li>descriptive keys improve readability;</li>
+<li>convenient updates and membership tests;</li>
+<li>well suited to feature flags, user information, product catalogs, and ID-based records.</li>
+</ul>
+<h3 id="limitations-2">Limitations</h3>
+<ul>
+<li>more memory overhead than simple sequences;</li>
+<li>keys must be hashable and unique;</li>
+<li>inconsistent key formats cause failed/duplicated lookups; and</li>
+<li>dictionary access is by key, not by semantic numeric position.</li>
+</ul>
+<hr>
+<h2 id="10-choosing-a-data-structure-bytewave-analytics-case-study">10. Choosing a data structure: ByteWave Analytics case study</h2>
+<h3 id="10-1-business-context">10.1 Business context</h3>
+<p>ByteWave Analytics must store and retrieve product sales/metrics, configuration settings, and feature flags. The developer perspective prioritizes technical performance, while the project-manager perspective also values maintainability, clarity, team skill, delivery time, and business risk.</p>
+<h3 id="10-2-recommended-choices">10.2 Recommended choices</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Choice</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chronological product sales/daily metrics</td>
+<td>List</td>
+<td>Ordered, appendable, easily iterated</td>
+</tr>
+<tr>
+<td>Fixed configuration that should not change</td>
+<td>Tuple</td>
+<td>Immutability communicates/protects stable structure</td>
+</tr>
+<tr>
+<td>Feature flags or values retrieved by name/ID</td>
+<td>Dictionary</td>
+<td>Clear key–value semantics and average \(O(1)\) lookup</td>
+</tr>
+<tr>
+<td>Complex records</td>
+<td>Dictionary or list of dictionaries</td>
+<td>Field names are clearer than unexplained positions</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="10-3-list-versus-dictionary-for-metrics">10.3 List versus dictionary for metrics</h3>
+<p>Use a <strong>list</strong> when order and sequential processing dominate and lookup by a meaningful ID is unimportant. Use a <strong>dictionary</strong> when direct lookup/update by product, feature, or user ID dominates.</p>
+<p>Example:</p>
+<pre><code class="language-python"># Sequence-oriented
+daily_sales = [1200, 1350, 1280]
+
+# Lookup-oriented
+sales_by_product = {
+    &quot;P100&quot;: 1200,
+    &quot;P200&quot;: 1350,
+}
+</code></pre>
+<h3 id="10-4-normalizing-keys-before-dictionary-use">10.4 Normalizing keys before dictionary use</h3>
+<p>Raw IDs may arrive as integers, strings, differently cased text, or strings with extra spaces. Since <code>101</code> and <code>"101"</code> are distinct keys, normalize at the system boundary.</p>
+<pre><code class="language-python">def normalize_product_id(raw_id):
+    return str(raw_id).strip().upper()
+
+sales_by_product[normalize_product_id(&quot; p100 &quot;)] = 1200
+</code></pre>
+<p>Normalization creates one canonical representation, simplifies downstream logic, prevents duplicate logical IDs, and reduces special cases. Supporting several raw key types everywhere increases complexity and error risk.</p>
+<h3 id="10-5-decision-framework">10.5 Decision framework</h3>
+<p>Ask four questions:</p>
+<ol>
+<li><strong>Mutability:</strong> must the structure change after creation?</li>
+<li><strong>Lookup:</strong> is access mainly by position/sequence or by meaningful key?</li>
+<li><strong>Memory/performance:</strong> are size and lookup frequency large enough to matter?</li>
+<li><strong>Readability/maintenance:</strong> will another developer understand what each value means?</li>
+</ol>
+<p>Avoid both <strong>premature optimization</strong> (choosing complexity without evidence) and <strong>ignoring performance</strong> (using linear searches for a genuinely lookup-heavy workload). Benchmark when scale matters, and balance technical efficiency with organizational needs.</p>
+<hr>
+<h2 id="11-input-output-and-built-in-functions">11. Input, output, and built-in functions</h2>
+<h3 id="11-1-input">11.1 <code>input()</code></h3>
+<p><code>input(prompt)</code> displays an optional prompt and returns entered data as a <strong>string</strong>.</p>
+<pre><code class="language-python">age_text = input(&quot;Enter age: &quot;)
+age = int(age_text)
+</code></pre>
+<blockquote>
+<p><strong>Exam trap:</strong> <code>input()</code> does not automatically return an integer even if the user types digits.</p>
+</blockquote>
+<h3 id="11-2-print">11.2 <code>print()</code></h3>
+<p><code>print()</code> sends values to standard output.</p>
+<pre><code class="language-python">name = &quot;Asha&quot;
+score = 92
+print(name, score)
+print(f&quot;{name} scored {score}&quot;)
+</code></pre>
+<h3 id="11-3-built-in-versus-user-defined-functions">11.3 Built-in versus user-defined functions</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Built-in function</th>
+<th>User-defined function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Already supplied by Python</td>
+<td>Written by the programmer for a specific need</td>
+</tr>
+<tr>
+<td>Ready to call</td>
+<td>Must be defined before it is called during sequential execution</td>
+</tr>
+<tr>
+<td>Examples: <code>print</code>, <code>input</code>, <code>len</code>, <code>range</code>, <code>type</code></td>
+<td>Examples: <code>add</code>, <code>multiply</code>, <code>divide</code>, <code>greet</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Built-ins reduce repeated implementation and improve productivity. User-defined functions provide customization and modularity.</p>
+<hr>
+<h2 id="12-functions-and-modular-programming">12. Functions and modular programming</h2>
+<p>A function is a reusable block of code designed to perform a specific task. It is defined using <code>def</code>.</p>
+<pre><code class="language-python">def greet(name):
+    return &quot;Hello &quot; + name
+
+message = greet(&quot;Shazia&quot;)
+print(message)                 # Hello Shazia
+</code></pre>
+<ul>
+<li><code>greet</code> is the function name.</li>
+<li><code>name</code> is a parameter.</li>
+<li><code>"Shazia"</code> is the argument supplied at the call.</li>
+<li><code>return</code> sends a result back to the caller.</li>
+</ul>
+<pre><code class="language-python">def add(a, b):
+    return a + b
+
+result = add(3, 4)             # 7
+</code></pre>
+<p>Functions turn a long program into manageable modules. Instead of debugging 100 undifferentiated lines, one might isolate ten-line addition, multiplication, and division functions. This improves:</p>
+<ul>
+<li>reusability;</li>
+<li>readability;</li>
+<li>testing and debugging;</li>
+<li>maintenance;</li>
+<li>collaboration; and</li>
+<li>scalability.</li>
+</ul>
+<blockquote>
+<p><strong>Exam trap:</strong> Printing and returning are not identical. <code>print(value)</code> displays a value; <code>return value</code> passes it to the caller for further use.</p>
+</blockquote>
+<hr>
+<h2 id="13-conditions-loops-and-a-consolidated-program">13. Conditions, loops, and a consolidated program</h2>
+<p>Although the week focuses on language essentials, the implementation session demonstrates variables, functions, loop logic, comments, structure, and indentation together.</p>
+<pre><code class="language-python">def calculate_average(values):
+    &quot;&quot;&quot;Return the arithmetic mean of a non-empty sequence.&quot;&quot;&quot;
+    total = 0
+    for value in values:
+        total = total + value
+    return total / len(values)
+
+
+student_name = input(&quot;Enter student name: &quot;)
+scores = [78, 84, 91]
+average = calculate_average(scores)
+
+if average &gt;= 50:
+    status = &quot;Pass&quot;
+else:
+    status = &quot;Fail&quot;
+
+print(f&quot;{student_name}: average={average:.2f}, status={status}&quot;)
+</code></pre>
+<p>This program shows:</p>
+<ul>
+<li>a user-defined function and parameter;</li>
+<li>a list;</li>
+<li>initialization and reassignment of variables;</li>
+<li>a <code>for</code> loop and indented suite;</li>
+<li><code>len()</code> and <code>input()</code> built-ins;</li>
+<li>arithmetic;</li>
+<li>an <code>if</code>/<code>else</code> decision; and</li>
+<li>formatted output.</li>
+</ul>
+<hr>
+<h2 id="14-important-comparisons">14. Important comparisons</h2>
+<h3 id="14-1-readability-portability-object-orientation-interpretation">14.1 Readability, portability, object orientation, interpretation</h3>
+<p>These are distinct ideas:</p>
+<ul>
+<li><strong>Readability:</strong> humans can understand the source easily.</li>
+<li><strong>Portability:</strong> the program can run across platforms with little/no change.</li>
+<li><strong>Object orientation:</strong> code can organize state and behavior using classes/objects.</li>
+<li><strong>Interpreted execution:</strong> code is run through an interpreter without a separate user-managed compile step.</li>
+</ul>
+<p>One does not imply the others.</p>
+<h3 id="14-2-list-versus-tuple-versus-dictionary">14.2 List versus tuple versus dictionary</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Question</th>
+<th>List</th>
+<th>Tuple</th>
+<th>Dictionary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Can structure change?</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Access style</td>
+<td>Index</td>
+<td>Index</td>
+<td>Key</td>
+</tr>
+<tr>
+<td>Duplicates</td>
+<td>Allowed</td>
+<td>Allowed</td>
+<td>Keys unique; values may repeat</td>
+</tr>
+<tr>
+<td>Typical lookup</td>
+<td>Position \(O(1)\); value search \(O(n)\)</td>
+<td>Position \(O(1)\); value search \(O(n)\)</td>
+<td>Key lookup average \(O(1)\)</td>
+</tr>
+<tr>
+<td>Meaning</td>
+<td>Changeable sequence</td>
+<td>Fixed sequence/record</td>
+<td>Named mapping</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="14-3-dynamic-versus-static-typing">14.3 Dynamic versus static typing</h3>
+<p>In statically typed languages, a variable is commonly declared with a type that constrains later assignments. In Python, names are dynamically bound and can be rebound to objects of different types. Dynamic typing increases flexibility but can move certain errors from compile time to run time, so clear naming, validation, tests, and optional type hints are useful.</p>
+<hr>
+<h2 id="15-common-misconceptions-and-exam-traps">15. Common misconceptions and exam traps</h2>
+<ol>
+<li><strong>“Python has no compilation whatsoever.”</strong> Common implementations may compile internally to bytecode; the key is no separate user-managed compile step in normal use.</li>
+<li><strong>“Interpreted means Python ignores syntax.”</strong> False; syntax and indentation are enforced.</li>
+<li><strong>“Semicolons are required.”</strong> False; they are usually unnecessary.</li>
+<li><strong>“Indentation is only cosmetic.”</strong> False; it defines suites/blocks.</li>
+<li><strong>“Any spaces are fine within one block.”</strong> False; indentation must be consistent.</li>
+<li><strong>“Triple quotes are a true multi-line-comment operator.”</strong> Strictly false; they create string literals, although unused ones are sometimes employed comment-like.</li>
+<li><strong>“Variables have permanent types.”</strong> False; objects have types and names can be rebound.</li>
+<li><strong>“Assignment copies an object.”</strong> Not necessarily; it normally binds another reference.</li>
+<li><strong>“Tuples make everything inside immutable.”</strong> False if they contain mutable nested objects.</li>
+<li><strong>“Dictionaries are always \(O(1)\).”</strong> Average key operations are \(O(1)\); worst cases can be worse.</li>
+<li><strong>“Dictionaries are lists with labels.”</strong> Incomplete; they are hash mappings with unique hashable keys.</li>
+<li><strong>“A leading underscore makes data secure/private.”</strong> It is mainly a convention.</li>
+<li><strong>“<code>input()</code> returns the type the user intended.”</strong> It returns a string unless explicitly converted.</li>
+<li><strong>“An IDE and interpreter are the same.”</strong> The IDE assists development; the interpreter executes Python.</li>
+<li><strong>“Cloud is always preferable.”</strong> Local execution may be required for privacy, security, offline work, or controlled dependencies.</li>
+<li><strong>“Local is always faster/more capable.”</strong> Cloud systems can supply GPUs and eliminate local hardware constraints.</li>
+<li><strong>“Newest Python is always safest.”</strong> Framework/CUDA/package compatibility may require an earlier version.</li>
+<li><strong>“Readable code matters only to beginners.”</strong> Readability directly improves professional collaboration, debugging, maintenance, and scalability.</li>
+</ol>
+<hr>
+<h2 id="16-likely-examination-questions-with-answer-points">16. Likely examination questions with answer points</h2>
+<h3 id="q1-define-python-and-explain-its-major-features">Q1. Define Python and explain its major features.</h3>
+<p>Python is a high-level, general-purpose, interpreted, open-source language created by Guido van Rossum and released in 1991. Explain simplicity, readability, versatility, dynamic typing, rich libraries, portability, interactivity, extensibility, database/GUI support, and scalability, with applications in web, data science, AI/ML/DL, scripting, and research.</p>
+<h3 id="q2-why-is-python-considered-beginner-friendly-yet-powerful">Q2. Why is Python considered beginner-friendly yet powerful?</h3>
+<p>Natural-language-like syntax, few keywords, no brace-heavy boilerplate, immediate execution, and rich built-ins reduce entry difficulty. Libraries, extensibility, cross-platform support, database/GUI connectivity, and AI/data ecosystems support professional-scale work.</p>
+<h3 id="q3-compare-compiled-and-interpreted-languages">Q3. Compare compiled and interpreted languages.</h3>
+<p>Discuss whole-program translation as a distinct step versus interpreter-led execution; use C/C++/Java and Python examples; mention Java bytecode; qualify that Python may create bytecode internally.</p>
+<h3 id="q4-compare-interactive-and-script-modes">Q4. Compare interactive and script modes.</h3>
+<p>Define REPL and <code>.py</code> script execution; compare immediacy, persistence, use cases, and blank-line behavior for multi-line REPL statements.</p>
+<h3 id="q5-explain-python-identifier-rules-and-conventions">Q5. Explain Python identifier rules and conventions.</h3>
+<p>State valid first/subsequent characters, case sensitivity, prohibition on punctuation/keywords, class/function naming style, and meanings/caveats of <code>_name</code>, <code>__name</code>, and <code>__name__</code>.</p>
+<h3 id="q6-why-is-indentation-significant-in-python">Q6. Why is indentation significant in Python?</h3>
+<p>It defines suites for functions, classes, conditions, and loops; replaces braces; must be consistent; incorrect indentation changes logic or raises an error. Include a short <code>if/else</code> example.</p>
+<h3 id="q7-explain-dynamic-typing-and-python-s-memory-model">Q7. Explain dynamic typing and Python&rsquo;s memory model.</h3>
+<p>Names bind to typed objects; no type declaration is required; rebinding can change the referenced type; assignment may share references; mutable objects can be changed in place.</p>
+<h3 id="q8-distinguish-built-in-and-user-defined-functions">Q8. Distinguish built-in and user-defined functions.</h3>
+<p>Built-ins are predefined (<code>print</code>, <code>input</code>, <code>len</code>, <code>range</code>); user-defined functions use <code>def</code> for specific requirements. Discuss parameters, arguments, return values, modularity, reusability, readability, and debugging.</p>
+<h3 id="q9-compare-lists-tuples-and-dictionaries">Q9. Compare lists, tuples, and dictionaries.</h3>
+<p>Use the structure comparison table: order, mutability, access model, complexity, memory/readability implications, and appropriate use cases.</p>
+<h3 id="q10-recommend-structures-for-bytewave-analytics">Q10. Recommend structures for ByteWave Analytics.</h3>
+<p>List for chronological/changeable sales; tuple for fixed configuration; dictionary for feature flags or ID lookup. Explain normalization of product IDs and balance developer performance concerns with manager maintainability/delivery concerns.</p>
+<h3 id="q11-compare-cloud-and-local-python-environments">Q11. Compare cloud and local Python environments.</h3>
+<p>Google Colab versus local Jupyter/VS Code/PyCharm: setup, compute/GPU availability, privacy, internet reliance, dependency control, and version compatibility.</p>
+<h3 id="q12-explain-comments-quotations-and-line-continuation">Q12. Explain comments, quotations, and line continuation.</h3>
+<p>Cover <code>#</code>, the triple-quoted-string caveat, matching quote marks, explicit <code>\</code> continuation, implicit continuation inside delimiters, and blank lines.</p>
+<hr>
+<h2 id="17-rapid-revision-sheet">17. Rapid revision sheet</h2>
+<ul>
+<li><strong>Creator/year:</strong> Guido van Rossum, 1991.</li>
+<li><strong>Core description:</strong> high-level, interpreted, general-purpose, open-source, readable.</li>
+<li><strong>Main strengths:</strong> simplicity + versatility + readable syntax + dynamic typing + rich libraries + portability.</li>
+<li><strong>Domains:</strong> web, scripting, database/data engineering, data science, AI, ML, DL, GUI, research.</li>
+<li><strong>Cloud example:</strong> Google Colab; provider supplies hardware and may provide GPU.</li>
+<li><strong>Local examples:</strong> Jupyter Notebook, VS Code, PyCharm; better control/privacy but uses local hardware.</li>
+<li><strong>Compatibility rule:</strong> match Python version to libraries, CUDA, and frameworks.</li>
+<li><strong>REPL:</strong> immediate Read–Eval–Print Loop; blank line completes a compound entry.</li>
+<li><strong>Script:</strong> saved <code>.py</code> program executed by interpreter.</li>
+<li><strong>Identifier:</strong> letter/underscore first; then letters/digits/underscores; case-sensitive; no keywords/punctuation.</li>
+<li><strong>Block structure:</strong> colon + consistent indentation; four spaces by convention.</li>
+<li><strong>Comment:</strong> <code>#</code>; triple quotes are strings, not a dedicated comment syntax.</li>
+<li><strong>Continuation:</strong> backslash explicitly; implicit inside <code>()</code>, <code>[]</code>, <code>{}</code>.</li>
+<li><strong>Dynamic typing:</strong> objects have types; names are rebound.</li>
+<li><strong><code>input()</code>:</strong> returns <code>str</code>; convert explicitly.</li>
+<li><strong>Function:</strong> <code>def name(parameters): ... return value</code>.</li>
+<li><strong>List:</strong> ordered + mutable; use for changing sequences.</li>
+<li><strong>Tuple:</strong> ordered + immutable; use for fixed structures.</li>
+<li><strong>Dictionary:</strong> key–value + mutable; average key lookup \(O(1)\).</li>
+<li><strong>Sequence value search:</strong> generally \(O(n)\).</li>
+<li><strong>Normalization:</strong> convert external identifiers to one canonical form before using them as keys.</li>
+<li><strong>Final design rule:</strong> select a structure from requirements—mutability, access pattern, scale, memory, readability—not habit.</li>
+</ul>
+<hr>
+<h2 id="18-instructor-emphases-and-administrative-note">18. Instructor emphases and administrative note</h2>
+<ul>
+<li>Python basics are essential for understanding the machine-learning/deep-learning implementations used throughout the course.</li>
+<li>Correct, clear, efficient, maintainable code matters more than merely making code run.</li>
+<li>Readability and reusability enable collaboration and scalability from small scripts to large applications.</li>
+<li>Functions are especially valuable for isolating faults and maintaining long programs.</li>
+<li>O&rsquo;Reilly&rsquo;s <em>Learning Python</em> (5th edition was specifically mentioned) and Python Software Foundation resources were recommended for further study.</li>
+<li>The live session repeatedly reminded students that all <strong>12 weeks of LMS video content must be completed</strong> to satisfy the stated end-semester examination eligibility requirement; students should check the official LMS/current course rules and deadlines.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-9.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 9: Feed-Forward Neural Networks, Perceptrons,…</span>
+      </a>
+      <a href="week-11.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 11: Machine Learning, Classification, and Naive…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

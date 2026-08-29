@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Deep Learning · Week 3 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Deep Learning</span>
+      <span class="brand-title">Week 3</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html" selected>Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Neural Networks and Deep Learning
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Neural Networks, Backpropagation, Model Tuning, and Evaluation
+      </a>
+      <a class="is-active" href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Convolutional Neural Networks, Transfer Learning and Computer-Vision…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        RNNs, GRU, LSTM, NLP, Word Embeddings, Transfer Learning and Attention
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        RBMs, Deep Belief Networks, Autoencoders, and Contrastive Divergence
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Reinforcement Learning, Policy Networks, Target Networks and DQN
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Generative Adversarial Networks (GANs)
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Data Augmentation, Hyperparameter Tuning, Transfer Learning and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Feed-Forward Neural Networks, Perceptrons, Loss, Backpropagation and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Python Programming Fundamentals
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Machine Learning, Classification, and Naive Bayes
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Logistic Regression as a Neural Network, MNIST, and K-Means
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        PCA and Bag-of-Words
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Autoencoders and Representation Learning
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Exhaustive Exam-Oriented Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Deep Learning · Week 3</p>
+        <h1 class="page-title">Convolutional Neural Networks, Transfer Learning and Computer-Vision Applications</h1>
+        <p class="page-meta">Week 3 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#scope-and-learning-outcomes">Scope and learning outcomes</a></li>
+      <li><a href="#1-why-cnns">1. Why CNNs?</a></li>
+      <li><a href="#2-end-to-end-cnn-architecture">2. End-to-end CNN architecture</a></li>
+      <li><a href="#3-evolution-of-major-architectures">3. Evolution of major architectures</a></li>
+      <li><a href="#4-transfer-learning">4. Transfer learning</a></li>
+      <li><a href="#5-cnn-applications">5. CNN applications</a></li>
+      <li><a href="#6-object-detection-and-localization-case-study">6. Object detection and localization case study</a></li>
+      <li><a href="#7-tensorflow-keras-cnn-implementation">7. TensorFlow/Keras CNN implementation</a></li>
+      <li><a href="#8-high-yield-comparisons">8. High-yield comparisons</a></li>
+      <li><a href="#9-likely-exam-questions-with-answer-points">9. Likely exam questions with answer points</a></li>
+      <li><a href="#10-exam-traps-and-corrections">10. Exam traps and corrections</a></li>
+      <li><a href="#11-rapid-revision-sheet">11. Rapid revision sheet</a></li>
+      <li><a href="#12-references-mentioned-in-the-lectures">12. References mentioned in the lectures</a></li>
+      <li><a href="#review-week-augmentation-cnn-architecture-distinctions">Review Week augmentation: CNN architecture distinctions</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="scope-and-learning-outcomes">Scope and learning outcomes</h2>
+<p>Week 3 progresses from single-/multilayer neural networks, perceptrons, activation functions, forward/backpropagation, model training and fine-tuning to <strong>Convolutional Neural Networks (CNNs)</strong>. The week covers CNN structure and evolution, transfer learning, face recognition, neural style transfer, object detection/localization, and a TensorFlow/Keras implementation.</p>
+<p>After studying these notes, you should be able to:</p>
+<ul>
+<li>define a CNN and explain why it is preferred to a plain multilayer perceptron (MLP) for images;</li>
+<li>describe convolution, activation, pooling, flattening, dense layers and the resulting feature hierarchy;</li>
+<li>compare LeNet, AlexNet, VGGNet, GoogLeNet/Inception, ResNet, DenseNet, MobileNet, EfficientNet and Vision Transformers;</li>
+<li>explain transfer learning, feature extraction and fine-tuning;</li>
+<li>distinguish face detection, face recognition and embedding comparison;</li>
+<li>derive content/style losses in neural style transfer;</li>
+<li>distinguish classification, localization and detection and apply IoU and NMS;</li>
+<li>evaluate two-stage versus single-shot detectors and edge versus cloud deployment; and</li>
+<li>interpret and reproduce the demonstrated TensorFlow/Keras CNN.</li>
+</ul>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> Questions may ask either “explain CNN with its architecture” or “explain the CNN diagram in detail.” Match the depth and diagram to the wording. Theory must also be practised in code.</p>
+</blockquote>
+<hr>
+<h2 id="1-why-cnns">1. Why CNNs?</h2>
+<h3 id="1-1-definition">1.1 Definition</h3>
+<p>A <strong>Convolutional Neural Network (CNN)</strong> is a class of deep-learning model designed to process <strong>grid-like data</strong>, especially images. An image is naturally represented as a rectangular grid of pixels; a colour image also has channels (for example, an RGB image of size \(224\times224\times3\)). CNNs learn spatial hierarchies of visual features and are central to image recognition, classification, object detection and segmentation.</p>
+<p>CNNs use small learned filters rather than connecting every pixel independently to every neuron. This gives three major advantages:</p>
+<ol>
+<li><strong>Local connectivity:</strong> a filter examines a small neighbourhood at a time.</li>
+<li><strong>Weight sharing:</strong> the same filter weights are applied at every spatial location.</li>
+<li><strong>Hierarchical feature learning:</strong> early layers detect simple features; deeper layers combine them into meaningful parts and objects.</li>
+</ol>
+<p>These properties reduce the number of parameters and computation compared with a fully connected image model, improve training efficiency, and preserve spatial relationships.</p>
+<h3 id="1-2-cnn-versus-a-plain-mlp">1.2 CNN versus a plain MLP</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Plain MLP</th>
+<th>CNN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input treatment</td>
+<td>Image is usually flattened; spatial layout is largely lost</td>
+<td>Retains grid/spatial structure</td>
+</tr>
+<tr>
+<td>Connections</td>
+<td>Typically dense; every input connects to many neurons</td>
+<td>Local receptive fields</td>
+</tr>
+<tr>
+<td>Weights</td>
+<td>Separate weights across locations</td>
+<td>Shared filter weights across the image</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>Very large for realistic images</td>
+<td>Far fewer for equivalent feature extraction</td>
+</tr>
+<tr>
+<td>Robustness to position</td>
+<td>Poorer; object movement changes many inputs</td>
+<td>Better translation tolerance through convolution/pooling</td>
+</tr>
+<tr>
+<td>Best suited to</td>
+<td>General vector/tabular representations</td>
+<td>Images and other grid-like data</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Illustration from the live class:</strong> if a cat and dog occupy different parts of an image, a plain MLP may identify patterns but does not naturally encode their spatial arrangement. CNN filters preserve local spatial relationships. This is also why face-ID systems can tolerate some shift or tilt of the face.</p>
+<blockquote>
+<p><strong>Clarifying caveat:</strong> CNN weights are still learned and updated during training by backpropagation. “The same weights everywhere” means that one filter’s learned weights are <strong>shared across spatial positions</strong>, not that CNN weights never update.</p>
+</blockquote>
+<hr>
+<h2 id="2-end-to-end-cnn-architecture">2. End-to-end CNN architecture</h2>
+<pre><code class="language-text">Input image
+   ↓
+Convolution → feature maps
+   ↓
+Non-linear activation (usually ReLU)
+   ↓
+Pooling / subsampling
+   ↓
+[Repeat convolution–activation–pooling as required]
+   ↓
+Flatten
+   ↓
+Fully connected (dense) layer(s)
+   ↓
+Output: class probabilities or regression value(s)
+</code></pre>
+<p>The number and arrangement of convolutional, pooling and dense layers depend on the problem. There is no rule that each type occurs only once.</p>
+<h3 id="2-1-input-layer">2.1 Input layer</h3>
+<ul>
+<li>Receives raw image pixels.</li>
+<li>Shape is normally \(H\times W\times C\), where \(C=3\) for RGB.</li>
+<li>Example: \(224\times224\times3\).</li>
+</ul>
+<h3 id="2-2-convolutional-layer">2.2 Convolutional layer</h3>
+<p>The convolutional layer is the core feature extractor. A small matrix called a <strong>filter</strong> or <strong>kernel</strong> (commonly \(3\times3\), sometimes \(5\times5\)) slides across the input. At each position, element-wise multiplication and summation produce one output value.</p>
+<p>For input \(X\), kernel \(K\), and bias \(b\), a 2-D cross-correlation-style operation used in CNN libraries is:</p>
+<p>\[
+Z_{i,j}=\sum_m\sum_n X_{i+m,j+n}K_{m,n}+b
+\]</p>
+<p>The result produced by one filter is a <strong>feature map</strong>. Multiple filters produce multiple stacked feature maps. During training, each filter specializes in a pattern such as an edge, colour transition, texture or curve.</p>
+<p>For input size \(N\), kernel size \(F\), padding \(P\), and stride \(S\), the spatial output size is:</p>
+<p>\[
+N_{out}=\left\lfloor\frac{N+2P-F}{S}\right\rfloor+1
+\]</p>
+<p><strong>Practical example:</strong> a vertical-edge filter produces large activations where light/dark pixel values change vertically. A different filter may respond to curves or texture.</p>
+<h3 id="2-3-feature-maps-and-feature-hierarchy">2.3 Feature maps and feature hierarchy</h3>
+<p>A feature map indicates <strong>where and how strongly a learned pattern occurs</strong>. It is localized evidence, not a complete class prediction for each patch.</p>
+<ul>
+<li>Early layers: edges, lines, colour changes and simple textures.</li>
+<li>Middle layers: corners, curves, repeated motifs and object parts (eyes, wheels).</li>
+<li>Deep layers: faces, expressions, vehicles or other semantically meaningful patterns.</li>
+<li>Dense/output layers: combine evidence from many maps to decide the final class.</li>
+</ul>
+<blockquote>
+<p><strong>Exam trap:</strong> A feature-map activation does not normally mean “this patch is class X.” Classification comes after features are aggregated.</p>
+</blockquote>
+<h3 id="2-4-activation-layer">2.4 Activation layer</h3>
+<p>An activation function introduces non-linearity so that the network can learn complex patterns.</p>
+<p>The most commonly emphasized function is ReLU:</p>
+<p>\[
+\operatorname{ReLU}(x)=\max(0,x)
+\]</p>
+<p>It maps negative values to zero and retains positive values. Sigmoid and \(\tanh\) exist, but ReLU is widely used in CNN hidden layers.</p>
+<h3 id="2-5-pooling-layer">2.5 Pooling layer</h3>
+<p>Pooling reduces spatial dimensions, computation and sensitivity to small spatial variations while retaining dominant information.</p>
+<h4 id="max-pooling">Max pooling</h4>
+<p>For each local window, retain the maximum value. With a \(2\times2\) window and stride 2, a \(4\times4\) map becomes \(2\times2\).</p>
+<p>Live-session example:</p>
+<p>\[
+X=\begin{bmatrix}
+1&3&2&4\\
+0&6&1&2\\
+3&1&5&7\\
+2&4&0&1
+\end{bmatrix}
+\]</p>
+<p>The four \(2\times2\) blocks have maxima \(6,4,4,7\), so:</p>
+<p>\[
+\operatorname{MaxPool}(X)=
+\begin{bmatrix}6&4\\4&7\end{bmatrix}
+\]</p>
+<h4 id="average-pooling">Average pooling</h4>
+<p>Replace each local block by its mean. For the first block above:</p>
+<p>\[
+\frac{1+3+0+6}{4}=2.5
+\]</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pooling type</th>
+<th>Operation</th>
+<th>Tendency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max pooling</td>
+<td>Maximum in each window</td>
+<td>Preserves strongest/dominant response</td>
+</tr>
+<tr>
+<td>Average pooling</td>
+<td>Mean of each window</td>
+<td>Produces smoother summary</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="2-6-flatten-layer">2.6 Flatten layer</h3>
+<p>Flatten converts multidimensional feature maps into a one-dimensional vector. It bridges spatial feature extraction and dense classification. It has no learned parameters.</p>
+<h3 id="2-7-fully-connected-dense-layer">2.7 Fully connected (dense) layer</h3>
+<p>Every neuron receives the flattened representation. Dense layers learn weights and biases to aggregate all extracted evidence and perform:</p>
+<ul>
+<li><strong>classification</strong> (often a Softmax output), or</li>
+<li><strong>regression</strong> (one or more continuous values).</li>
+</ul>
+<p>For \(C\) classes, Softmax converts logits \(z_i\) to probabilities:</p>
+<p>\[
+p_i=\frac{e^{z_i}}{\sum_{j=1}^{C}e^{z_j}}
+\]</p>
+<hr>
+<h2 id="3-evolution-of-major-architectures">3. Evolution of major architectures</h2>
+<p>The evolution moves from relatively simple designs to deeper, more accurate and computationally efficient networks.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Architecture</th>
+<th style="text-align: right;">Approx. year</th>
+<th>Main contribution / emphasis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LeNet</strong></td>
+<td style="text-align: right;">1998 (live class also mentioned an early 1988 origin)</td>
+<td>Early convolution + pooling system for handwritten-digit recognition; associated with MNIST</td>
+</tr>
+<tr>
+<td><strong>AlexNet</strong></td>
+<td style="text-align: right;">2012</td>
+<td>ImageNet breakthrough; popularized deep CNNs, ReLU, GPU training and dropout; sharply reduced image-recognition error</td>
+</tr>
+<tr>
+<td><strong>ZFNet</strong></td>
+<td style="text-align: right;">2013</td>
+<td>Refinement/visualization of AlexNet-style design</td>
+</tr>
+<tr>
+<td><strong>VGGNet</strong></td>
+<td style="text-align: right;">2014</td>
+<td>Simple, uniform stack of small \(3\times3\) convolutions; greater depth improves feature extraction, but parameter-heavy</td>
+</tr>
+<tr>
+<td><strong>GoogLeNet / Inception</strong></td>
+<td style="text-align: right;">2014</td>
+<td>Inception modules process multiple spatial scales efficiently; strong performance with fewer parameters than VGG</td>
+</tr>
+<tr>
+<td><strong>ResNet</strong></td>
+<td style="text-align: right;">2015</td>
+<td>Residual/shortcut connections improve gradient flow and enable very deep networks</td>
+</tr>
+<tr>
+<td><strong>DenseNet</strong></td>
+<td style="text-align: right;">2016/2017</td>
+<td>Each layer receives features from all preceding layers; feature reuse, stronger gradient flow and fewer parameters</td>
+</tr>
+<tr>
+<td><strong>MobileNet</strong></td>
+<td style="text-align: right;">2017</td>
+<td>Designed for mobile/embedded devices; depthwise-separable convolution reduces compute</td>
+</tr>
+<tr>
+<td><strong>EfficientNet</strong></td>
+<td style="text-align: right;">2019</td>
+<td>Compound scaling jointly balances depth, width and input resolution for accuracy/efficiency</td>
+</tr>
+<tr>
+<td><strong>Vision Transformer (ViT)</strong></td>
+<td style="text-align: right;">Later development</td>
+<td>Splits an image into patches treated as tokens and uses self-attention for global context; supports CNN–Transformer hybrids</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="3-1-lenet-and-mnist">3.1 LeNet and MNIST</h3>
+<p>MNIST is a standard dataset of many handwritten digit images (roughly tens of thousands; the lecture referred to around 60,000). Its varied handwriting styles make it useful for training digit-recognition systems. LeNet combined convolution and pooling for this problem and helped establish the CNN idea.</p>
+<h3 id="3-2-alexnet">3.2 AlexNet</h3>
+<ul>
+<li>Won the 2012 ImageNet competition and pioneered modern deep learning in computer vision.</li>
+<li>Used ReLU instead of slower saturating activations, dropout for regularization and GPU computation.</li>
+<li>The live class emphasized its dramatic error-rate reduction and benchmark status.</li>
+</ul>
+<h3 id="3-3-vggnet-versus-googlenet">3.3 VGGNet versus GoogLeNet</h3>
+<ul>
+<li><strong>VGGNet:</strong> conceptually simple and deep; repeated \(3\times3\) filters; excellent feature extraction but computationally/parameter intensive.</li>
+<li><strong>GoogLeNet:</strong> inception modules observe multiple receptive-field scales; more computationally efficient and uses fewer parameters.</li>
+</ul>
+<h3 id="3-4-resnet">3.4 ResNet</h3>
+<p>A residual block learns a residual function \(F(x)\), then adds the original input:</p>
+<p>\[
+y=F(x)+x
+\]</p>
+<p>The identity shortcut lets gradients travel more directly through the network, helping alleviate degradation and vanishing-gradient problems in very deep models.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> A residual/shortcut connection adds an earlier representation to a later one. It is not the same as an ordinary dense layer, where every neuron is connected through independently learned weights.</p>
+</blockquote>
+<h3 id="3-5-densenet">3.5 DenseNet</h3>
+<p>DenseNet concatenates feature maps from all previous layers:</p>
+<p>\[
+x_l=H_l([x_0,x_1,\ldots,x_{l-1}])
+\]</p>
+<p>This encourages feature reuse, improves gradient flow and can achieve high accuracy with fewer parameters. The lecture connected its strong feature extraction to demanding face-ID and medical-image uses.</p>
+<h3 id="3-6-mobilenet-efficientnet-and-vit">3.6 MobileNet, EfficientNet and ViT</h3>
+<ul>
+<li><strong>MobileNet:</strong> uses depthwise-separable convolution so CNNs can run on devices with limited compute.</li>
+<li><strong>EfficientNet:</strong> compound scaling balances network depth, width and resolution instead of scaling one dimension alone.</li>
+<li><strong>ViT:</strong> converts fixed-size image patches into tokens, analogous to word tokens in NLP, and uses self-attention rather than conventional convolution for feature extraction. It captures global context; CNNs remain relevant in hybrid approaches.</li>
+</ul>
+<hr>
+<h2 id="4-transfer-learning">4. Transfer learning</h2>
+<h3 id="4-1-definition-and-rationale">4.1 Definition and rationale</h3>
+<p><strong>Transfer learning</strong> is a machine-learning technique in which a model pretrained on one task (usually a large source dataset) is reused and adapted for a different but related target task. It is a technique within machine learning, not a replacement for machine learning.</p>
+<p>Instead of learning everything from scratch, it transfers useful learned representations. CNN early layers commonly learn general features—edges, shapes and textures—while later layers are more task-specific. Therefore, a model trained on a large dataset such as ImageNet can be an effective starting point for a smaller target dataset.</p>
+<p>Benefits:</p>
+<ul>
+<li>much less labelled target data;</li>
+<li>shorter training time;</li>
+<li>lower computational cost;</li>
+<li>faster development/deployment;</li>
+<li>often better accuracy than scratch training on a small dataset.</li>
+</ul>
+<h3 id="4-2-traditional-learning-versus-transfer-learning">4.2 Traditional learning versus transfer learning</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Traditional training from scratch</th>
+<th>Transfer learning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Randomly initialized parameters</td>
+<td>Starts from pretrained parameters</td>
+</tr>
+<tr>
+<td>Needs a large task-specific dataset</td>
+<td>Effective with limited labelled data</td>
+</tr>
+<tr>
+<td>High time and compute</td>
+<td>Faster and cheaper</td>
+</tr>
+<tr>
+<td>Learns basic and task-specific features anew</td>
+<td>Reuses basic features and learns/adapts task-specific features</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="4-3-standard-workflow">4.3 Standard workflow</h3>
+<ol>
+<li><strong>Select a suitable pretrained model</strong> whose source task/data are reasonably related.</li>
+<li><strong>Remove/replace the original classification head</strong> with a new output head for the target classes.</li>
+<li><strong>Freeze the convolutional base</strong> initially so its useful weights are not changed.</li>
+<li><strong>Train the new classifier</strong> on the target dataset, usually with a small learning rate.</li>
+<li><strong>Optionally fine-tune:</strong> unfreeze some upper layers and retrain gently.</li>
+<li>Validate on held-out target data and deploy.</li>
+</ol>
+<pre><code class="language-text">ImageNet-pretrained CNN
+        ↓
+Replace final classifier
+        ↓
+Freeze most layers
+        ↓
+Train new head
+        ↓
+Optionally unfreeze upper layers
+        ↓
+Fine-tune with small learning rate
+</code></pre>
+<h3 id="4-4-feature-extraction-versus-fine-tuning">4.4 Feature extraction versus fine-tuning</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature extraction</th>
+<th>Fine-tuning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pretrained backbone frozen</td>
+<td>Some pretrained layers unfrozen</td>
+</tr>
+<tr>
+<td>Only new head is trained</td>
+<td>Head and selected upper layers adapt</td>
+</tr>
+<tr>
+<td>Fast; lower overfitting risk</td>
+<td>Potentially better task fit</td>
+</tr>
+<tr>
+<td>Good for very small datasets</td>
+<td>Useful when more target data are available</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Caveat:</strong> Fine-tuning too many layers with too little data or too large a learning rate can destroy useful pretrained knowledge (<strong>catastrophic forgetting</strong>) or overfit.</p>
+<h3 id="4-5-medical-image-example">4.5 Medical-image example</h3>
+<p>To build a tumour classifier from a small set of medical images:</p>
+<ul>
+<li>begin with a CNN pretrained on a large image dataset;</li>
+<li>reuse its edge/shape/texture detectors;</li>
+<li>replace the final head with tumour categories;</li>
+<li>train the head and perhaps fine-tune upper layers.</li>
+</ul>
+<p>The live lecture extended the idea: if an MRI-detection system already exists and only a modification is needed, adapting/integrating pretrained models is much faster than rebuilding preprocessing, feature extraction and training from scratch.</p>
+<h3 id="4-6-common-pretrained-families-and-domains">4.6 Common pretrained families and domains</h3>
+<p>Computer vision commonly uses AlexNet, VGG, Inception, ResNet, DenseNet, MobileNet or EfficientNet-style pretrained models. Transfer learning is also effective in NLP, where pretrained language representations are adapted to downstream tasks.</p>
+<p>The recorded lecture additionally mentioned:</p>
+<ul>
+<li><strong>source datasets:</strong> ImageNet and COCO;</li>
+<li><strong>frameworks:</strong> TensorFlow and PyTorch;</li>
+<li><strong>adaptation aids:</strong> data augmentation and learning-rate adjustment;</li>
+<li><strong>healthcare:</strong> fine-tune a pretrained model to classify an X-ray as normal or pneumonia-affected and analyze MRI images;</li>
+<li><strong>NLP:</strong> adapt BERT/GPT-style models for sentiment analysis and translation;</li>
+<li><strong>speech/audio:</strong> convert speaker audio to a spectrogram, segment/stack it, reuse an image-style CNN such as AlexNet, and classify emotion (anger, joy, sadness, neutral or boredom); and</li>
+<li><strong>speech recognition and object detection</strong> as further target domains.</li>
+</ul>
+<h3 id="4-7-transfer-learning-categories-and-challenges">4.7 Transfer-learning categories and challenges</h3>
+<p>The lecture’s decision diagram distinguishes transfer settings by asking whether source and target have the same data distribution/domain and the same task:</p>
+<ul>
+<li><strong>ordinary learning:</strong> source/target setting and task are essentially the same;</li>
+<li><strong>inductive transfer learning:</strong> target task differs, so labelled target information guides the new task;</li>
+<li><strong>transductive transfer learning / domain adaptation:</strong> task is the same but source and target domains/distributions differ;</li>
+<li><strong>unsupervised transfer learning:</strong> the target differs and labelled target data are unavailable, so transfer supports an unsupervised target problem.</li>
+</ul>
+<p>The source and target must be sufficiently related for transferred features to help. Key challenges are <strong>domain mismatch</strong>, inappropriate pretrained-model selection, output-head mismatch and negative transfer. Select a source model whose learned representation fits the target modality; for example, an image source is a more natural starting point for another visual problem, while audio may first be transformed into a spectrogram before using an image CNN.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> Transfer learning does not mean blindly copying a complete model. The final task-specific head is normally replaced, and freezing/fine-tuning choices must match dataset size and task similarity.</p>
+</blockquote>
+<hr>
+<h2 id="5-cnn-applications">5. CNN applications</h2>
+<h3 id="5-1-broad-uses">5.1 Broad uses</h3>
+<ul>
+<li>Image classification and recognition</li>
+<li>Object detection and localization</li>
+<li>Image segmentation</li>
+<li>Face identification/security</li>
+<li>Medical imaging (e.g., locating suspicious regions in MRI scans)</li>
+<li>Autonomous driving/pedestrian recognition</li>
+<li>Industrial inspection and robotic vision</li>
+<li>Neural style transfer</li>
+</ul>
+<h3 id="5-2-face-detection-versus-face-recognition">5.2 Face detection versus face recognition</h3>
+<p>These are separate stages:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Question answered</th>
+<th>Typical output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Face detection</td>
+<td>“Where are the faces?”</td>
+<td>Bounding boxes/cropped face regions</td>
+</tr>
+<tr>
+<td>Face recognition</td>
+<td>“Whose face is this?”</td>
+<td>Identity or similarity score</td>
+</tr>
+</tbody>
+</table></div>
+<p>Correct pipeline:</p>
+<pre><code class="language-text">Group/input photo
+   ↓
+Face detector
+   ↓
+Crop/align each face
+   ↓
+CNN embedding network
+   ↓
+Face embedding vector
+   ↓
+Euclidean/cosine comparison with enrolled vectors
+   ↓
+Identity match
+</code></pre>
+<p>A <strong>face embedding</strong> is a compact numerical vector that represents identity-relevant facial features. Images of the same person should produce nearby vectors; different identities should be farther apart.</p>
+<p>Methods/models named in the lecture include Haar cascades, MTCNN and SSD for detection; Local Binary Pattern Histograms (LBPH) as a traditional local-pattern recognizer; FaceNet, DeepFace and OpenFace-style deep embedding models; and OpenCV for lightweight deployment. FaceNet embeddings support one-shot matching, while DeepFace was highlighted for robust verification/identification from large-scale training.</p>
+<p>Cosine similarity is:</p>
+<p>\[
+\cos(\theta)=\frac{u\cdot v}{\lVert u\rVert\lVert v\rVert}
+\]</p>
+<p>Euclidean distance is:</p>
+<p>\[
+d(u,v)=\sqrt{\sum_i(u_i-v_i)^2}
+\]</p>
+<blockquote>
+<p><strong>Exam traps:</strong></p>
+<ul>
+<li>Similarity metrics compare embeddings; they do <strong>not</strong> locate faces.</li>
+<li>Computing an embedding from the entire uncropped scene introduces background and other-person information. Detect/crop first.</li>
+<li>Triplet loss shapes the embedding space; it does not replace a face detector.</li>
+</ul>
+</blockquote>
+<h3 id="5-3-triplet-loss">5.3 Triplet loss</h3>
+<p>Triplet training uses:</p>
+<ul>
+<li>anchor \(A\): a reference face;</li>
+<li>positive \(P\): the same identity;</li>
+<li>negative \(N\): a different identity.</li>
+</ul>
+<p>The objective makes \(A\) closer to \(P\) than to \(N\) by margin \(\alpha\):</p>
+<p>\[
+L=\max\left(\lVert f(A)-f(P)\rVert^2-\lVert f(A)-f(N)\rVert^2+\alpha,0\right)
+\]</p>
+<h3 id="5-4-neural-style-transfer-nst">5.4 Neural Style Transfer (NST)</h3>
+<p>NST synthesizes a <strong>generated image</strong> \(G\) that preserves the structure/content of a content image \(C\) while adopting the artistic texture/style of a style image \(S\).</p>
+<p>Procedure:</p>
+<ol>
+<li>Load a pretrained CNN and keep its weights fixed.</li>
+<li>Pass content, style and generated images through it.</li>
+<li>Use deeper feature activations to compare content.</li>
+<li>Use feature correlations (Gram matrices) across selected layers to compare style.</li>
+<li>Optimize the pixels of \(G\), not the network weights.</li>
+</ol>
+<p>Content loss at layer \(l\):</p>
+<p>\[
+L_{content}=\frac{1}{2}\sum_{i,j}\left(F^{l}_{ij}(G)-F^{l}_{ij}(C)\right)^2
+\]</p>
+<p>For feature matrix \(F^l\), the Gram matrix is:</p>
+<p>\[
+G^l_{ij}=\sum_k F^l_{ik}F^l_{jk}
+\]</p>
+<p>Style loss compares the generated and style-image Gram matrices across selected layers:</p>
+<p>\[
+L_{style}=\sum_l w_l\left\|G^l(G)-G^l(S)\right\|_F^2
+\]</p>
+<p>Total loss:</p>
+<p>\[
+L_{total}=\alpha L_{content}+\beta L_{style}
+\]</p>
+<p>\(\alpha\) and \(\beta\) control the content–style balance.</p>
+<p>The lecture used VGG19 as an example feature extractor and linked NST to filters/stylized photos (such as Snapchat/Prisma), art and design, photo enhancement, and marketing/branding graphics. It also warned that image manipulation and deepfakes can be misused; creative techniques should be applied responsibly.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> In classical NST, the pretrained CNN is a fixed feature extractor. Gradient descent updates the generated image pixels.</p>
+</blockquote>
+<h3 id="5-5-named-application-examples-challenges-and-future-trends">5.5 Named application examples, challenges and future trends</h3>
+<ul>
+<li><strong>YOLO (You Only Look Once):</strong> simultaneously predicts boxes and class probabilities for real-time detection.</li>
+<li><strong>SSD (Single Shot MultiBox Detector):</strong> detects at multiple scales using feature maps of different resolutions.</li>
+<li><strong>R-CNN:</strong> generates region proposals, then applies a CNN to classify/refine them.</li>
+<li><strong>Fast R-CNN:</strong> shares convolutional computation across proposals.</li>
+<li><strong>Faster R-CNN:</strong> adds an RPN for end-to-end proposal generation.</li>
+<li><strong>Tesla Autopilot example:</strong> real-time recognition of pedestrians and obstacles for navigation/safety.</li>
+<li><strong>Facebook example:</strong> face recognition and automatic tagging to improve interaction.</li>
+<li><strong>Prisma example:</strong> transforms user photographs into stylized artwork.</li>
+</ul>
+<p>Challenges include real-time latency in safety-critical autonomous systems and privacy/ethical risks in face recognition, unauthorized surveillance and deepfakes. Developers and policy makers must balance innovation with individual privacy and responsible use. Anticipated trends include 3-D imaging, improved algorithms, edge computing, better accuracy/speed, and expanded creative tools for personalized content.</p>
+<hr>
+<h2 id="6-object-detection-and-localization-case-study">6. Object detection and localization case study</h2>
+<h3 id="6-1-optivision-labs-scenario">6.1 OptiVision Labs scenario</h3>
+<p>OptiVision Labs is designing a robotic scanner for packages and pallets on a moving conveyor belt.</p>
+<ul>
+<li><strong>Anna Ramirez:</strong> Lead Engineer</li>
+<li><strong>Mark Chen:</strong> Algorithm Specialist</li>
+<li><strong>Lisa Ortiz:</strong> Product Manager</li>
+</ul>
+<p>The system must detect and localize every object, classify it as <strong>small box</strong>, <strong>large box</strong> or <strong>pallet</strong>, exceed <strong>30 FPS</strong>, and balance accuracy, latency, memory, compute, complexity and future extensibility.</p>
+<h3 id="6-2-classification-localization-and-detection">6.2 Classification, localization and detection</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Question</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Classification</td>
+<td>What is in the image?</td>
+<td>One or more class labels</td>
+</tr>
+<tr>
+<td>Localization</td>
+<td>Where is the object?</td>
+<td>Bounding-box coordinates</td>
+</tr>
+<tr>
+<td>Object detection</td>
+<td>What objects are present, and where?</td>
+<td>Class + confidence + box for each object</td>
+</tr>
+</tbody>
+</table></div>
+<p>A box may be represented as \((x,y,w,h)\) or \((x_{min},y_{min},x_{max},y_{max})\).</p>
+<h3 id="6-3-bounding-box-regression">6.3 Bounding-box regression</h3>
+<p>Bounding-box regression refines an approximate box by predicting coordinate offsets—move left/right/up/down, widen, shrink, and so on.</p>
+<p>It does <strong>not</strong>:</p>
+<ul>
+<li>classify the object;</li>
+<li>generate proposals; or</li>
+<li>remove duplicates.</li>
+</ul>
+<blockquote>
+<p><strong>Memory aid:</strong> proposal says “look here”; regression says “adjust the box”; classification says “what it is”; NMS says “remove duplicates.”</p>
+</blockquote>
+<h3 id="6-4-sliding-windows-and-region-proposals">6.4 Sliding windows and region proposals</h3>
+<p>Traditional sliding-window detection exhaustively evaluates many overlapping image windows. It provides good coverage but is slow and redundant. That is Mark’s concern: too many candidate regions can prevent the conveyor system from meeting its real-time target.</p>
+<p>A <strong>Region Proposal Network (RPN)</strong> learns to suggest likely object regions more intelligently. In a two-stage detector, proposals are then classified and refined.</p>
+<h3 id="6-5-two-stage-versus-single-shot-detection">6.5 Two-stage versus single-shot detection</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Two-stage detector</th>
+<th>Single-shot detector</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pipeline</td>
+<td>Proposals first; classify/refine second</td>
+<td>Direct class + box prediction in one pass</td>
+</tr>
+<tr>
+<td>Examples</td>
+<td>Faster R-CNN</td>
+<td>YOLO, SSD</td>
+</tr>
+<tr>
+<td>Localization</td>
+<td>Usually stronger, especially for small objects</td>
+<td>Traditionally somewhat lower, though modern systems narrow the gap</td>
+</tr>
+<tr>
+<td>Speed/FPS</td>
+<td>Lower</td>
+<td>Higher; real-time friendly</td>
+</tr>
+<tr>
+<td>Compute/memory</td>
+<td>Higher</td>
+<td>Lower</td>
+</tr>
+<tr>
+<td>Complexity</td>
+<td>Greater</td>
+<td>Simpler deployment</td>
+</tr>
+</tbody>
+</table></div>
+<p>Single-shot detectors often divide the image into a grid and predict boxes, objectness/confidence and class probabilities directly.</p>
+<h3 id="6-6-intersection-over-union-iou">6.6 Intersection over Union (IoU)</h3>
+<p>IoU measures overlap between predicted box \(B_p\) and ground-truth box \(B_g\):</p>
+<p>\[
+\operatorname{IoU}(B_p,B_g)=\frac{|B_p\cap B_g|}{|B_p\cup B_g|}
+\]</p>
+<ul>
+<li>Range: \(0\) (no overlap) to \(1\) (perfect overlap).</li>
+<li>The case study uses \(\operatorname{IoU}\ge0.5\) to count a localization as valid.</li>
+</ul>
+<p><strong>Practical example:</strong> if intersection area is 40 and union area is 80, \(IoU=40/80=0.5\), so it just meets the case-study threshold.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> IoU evaluates spatial overlap. It does not classify objects, choose an architecture or control conveyor speed.</p>
+</blockquote>
+<h3 id="6-7-non-maximum-suppression-nms">6.7 Non-Maximum Suppression (NMS)</h3>
+<p>Detectors may predict several overlapping boxes around one object. NMS removes redundant detections:</p>
+<ol>
+<li>Sort boxes by confidence.</li>
+<li>Keep the highest-confidence box.</li>
+<li>Compute its IoU with nearby boxes of the relevant class.</li>
+<li>Suppress boxes whose overlap exceeds the NMS threshold.</li>
+<li>Repeat with the remaining boxes.</li>
+</ol>
+<p>IoU is a <strong>measurement</strong>; NMS is a <strong>decision procedure using that measurement</strong>.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> Evaluation IoU usually compares prediction with ground truth. NMS IoU usually compares predictions with one another.</p>
+</blockquote>
+<h3 id="6-8-confidence-precision-and-recall">6.8 Confidence, precision and recall</h3>
+<p><strong>Precision</strong> measures how many predicted detections are correct:</p>
+<p>\[
+\text{Precision}=\frac{TP}{TP+FP}
+\]</p>
+<p><strong>Recall</strong> measures how many real objects were detected:</p>
+<p>\[
+\text{Recall}=\frac{TP}{TP+FN}
+\]</p>
+<p>High recall means few missed packages; high precision means few false alarms. Industrial conveyor systems may prioritize recall because a missed item can be expensive, while still controlling false positives.</p>
+<p>Confidence and NMS thresholds alter the precision–recall balance. Lowering a confidence threshold generally increases recall but may reduce precision.</p>
+<h3 id="6-9-fps-latency-and-throughput">6.9 FPS, latency and throughput</h3>
+<ul>
+<li><strong>FPS:</strong> frames processed per second.</li>
+<li><strong>Latency:</strong> time from capture to usable detection result.</li>
+<li><strong>Throughput:</strong> total work completed per unit time.</li>
+</ul>
+<p>High FPS does not automatically guarantee low per-frame latency in every batched system, so both should be measured. In the case study, <strong>above 30 FPS</strong> is required because the belt moves continuously; slow processing could allow objects to leave the field of view.</p>
+<h3 id="6-10-edge-versus-cloud-deployment">6.10 Edge versus cloud deployment</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Edge inference (on scanner)</th>
+<th>Cloud inference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Low and predictable communication latency</td>
+<td>Powerful/scalable compute</td>
+</tr>
+<tr>
+<td>Works without reliable network</td>
+<td>Easier central updates</td>
+</tr>
+<tr>
+<td>Better data locality</td>
+<td>Can support larger models</td>
+</tr>
+<tr>
+<td>Strict compute/memory/power limits</td>
+<td>Network latency, bandwidth and outages</td>
+</tr>
+<tr>
+<td>More device optimization required</td>
+<td>Possible latency spikes</td>
+</tr>
+</tbody>
+</table></div>
+<p>The quiz’s primary reason for edge computing is <strong>reduced communication latency</strong>, not automatic accuracy improvement, cost reduction or scalability.</p>
+<h3 id="6-11-optional-3-d-depth">6.11 Optional 3-D depth</h3>
+<p>Depth supplies distance/spatial information and can:</p>
+<ul>
+<li>separate touching or overlapping objects;</li>
+<li>improve localization/counting;</li>
+<li>help with occlusion; and</li>
+<li>improve recall.</li>
+</ul>
+<p>Costs include extra sensors, calibration, computation and system complexity. Depth does not replace classification, box regression or NMS.</p>
+<h3 id="6-12-case-alternatives">6.12 Case alternatives</h3>
+<p><strong>Option A — region proposals on an edge device</strong></p>
+<ul>
+<li>Pros: stronger localization/refinement, low network latency, robust local operation.</li>
+<li>Cons: lower FPS, higher memory and compute demand on constrained hardware.</li>
+</ul>
+<p><strong>Option B — single-shot detector in the cloud, optional depth</strong></p>
+<ul>
+<li>Pros: high raw throughput, scalable compute, potential recall benefit from depth.</li>
+<li>Cons: variable network latency, bandwidth dependence and more sensor/cloud complexity.</li>
+</ul>
+<p><strong>Reasoned recommendation:</strong> Because a moving production line requires predictable low latency and over 30 FPS, first benchmark an optimized single-shot detector <strong>on the edge</strong> if hardware permits. The stated options need not be accepted as inseparable bundles. If forced to choose only A or B, compare measured end-to-end FPS/latency and miss cost: choose A when localization reliability and deterministic operation dominate and it can be optimized past 30 FPS; choose B only when network service-level guarantees make cloud latency acceptable and throughput/recall dominate.</p>
+<p>If a two-stage model reaches only 20 FPS against a 30-FPS target, do not replace it blindly. First:</p>
+<ol>
+<li>profile the RPN, backbone, classification and regression heads;</li>
+<li>reduce input resolution or proposal count where acceptable;</li>
+<li>apply pruning, quantization or hardware acceleration;</li>
+<li>retune confidence/NMS thresholds; and</li>
+<li>revalidate <strong>both</strong> FPS/latency and IoU/precision/recall.</li>
+</ol>
+<hr>
+<h2 id="7-tensorflow-keras-cnn-implementation">7. TensorFlow/Keras CNN implementation</h2>
+<h3 id="7-1-tensorflow-and-keras">7.1 TensorFlow and Keras</h3>
+<p><strong>TensorFlow</strong> is Google Brain’s open-source framework for building, training and deploying machine-learning/deep-learning models. It supports CPU, GPU, TPU, cloud, mobile and edge execution.</p>
+<p>Key ideas:</p>
+<ul>
+<li><strong>Tensor:</strong> multidimensional array; scalar = 0-D, vector = 1-D, matrix = 2-D, and higher-dimensional data are higher-rank tensors.</li>
+<li><strong>Computational graph:</strong> operations are nodes and flowing data are edges, enabling efficient execution.</li>
+<li><strong>Keras:</strong> high-level TensorFlow API for building/training neural networks (<code>tensorflow.keras</code>).</li>
+<li>Ecosystem: TensorFlow Lite for mobile/embedded deployment, TensorFlow.js for web ML and TensorFlow Extended for production pipelines.</li>
+</ul>
+<p>The lecture also mentioned support/use cases spanning CNNs, RNNs, Transformers, supervised/unsupervised/reinforcement learning, NLP chatbots/sentiment/translation, time series, anomaly detection, robotics/games, healthcare and drug discovery.</p>
+<h3 id="7-2-demonstrated-sequential-model">7.2 Demonstrated sequential model</h3>
+<p>The demonstration imports TensorFlow and Keras layers/models, constructs a <code>Sequential</code> CNN, and stacks three convolution–pooling blocks:</p>
+<pre><code class="language-python">from tensorflow.keras import layers, models
+
+model = models.Sequential([
+    layers.Input(shape=(64, 64, 3)),
+    layers.Conv2D(32, (3, 3), activation=&quot;relu&quot;),
+    layers.MaxPooling2D((2, 2)),
+    layers.Conv2D(64, (3, 3), activation=&quot;relu&quot;),
+    layers.MaxPooling2D((2, 2)),
+    layers.Conv2D(64, (3, 3), activation=&quot;relu&quot;),
+    layers.MaxPooling2D((2, 2)),
+    layers.Flatten(),
+    layers.Dense(64, activation=&quot;relu&quot;),
+    layers.Dense(10, activation=&quot;softmax&quot;),
+])
+
+model.compile(
+    optimizer=&quot;adam&quot;,
+    loss=&quot;sparse_categorical_crossentropy&quot;,
+    metrics=[&quot;accuracy&quot;],
+)
+</code></pre>
+<p>The exact layer widths shown in the transcript were first convolution 32 filters, later convolutions 64 filters, \(3\times3\) kernels, \(2\times2\) max pooling, ReLU hidden activations and a 10-class Softmax output.</p>
+<p>With a \(64\times64\times3\) input and valid \(3\times3\) convolution, the first convolution produces \(62\times62\times32\). The first \(2\times2\) pooling then produces \(31\times31\times32\).</p>
+<p>For that first convolution, parameters are:</p>
+<p>\[
+(3\times3\times3+1)\times32=896
+\]</p>
+<p>Pooling and flattening layers have zero trainable parameters. Dense-layer parameters are \((n_{in}+1)n_{out}\).</p>
+<h3 id="7-3-compilation-and-model-summary">7.3 Compilation and model summary</h3>
+<ul>
+<li><strong>Adam</strong> is the optimizer.</li>
+<li><strong>Sparse categorical cross-entropy</strong> is appropriate when labels are integer class IDs; categorical cross-entropy is used with one-hot targets.</li>
+<li><strong>Accuracy</strong> is the requested metric.</li>
+<li><code>model.summary()</code> reports output shapes and parameter counts.</li>
+<li>The demonstration reported about <strong>684,490 total/trainable parameters</strong> (about <strong>2.61 MB</strong>) and zero non-trainable parameters.</li>
+</ul>
+<blockquote>
+<p><strong>Important correction/exam trap:</strong> Zero non-trainable parameters does <strong>not</strong> mean “nothing is left to train” or that training is complete. It means every parameter is currently marked trainable. A frozen transfer-learning backbone would create non-trainable parameters.</p>
+</blockquote>
+<h3 id="7-4-input-shape-warning-and-modern-keras-form">7.4 Input-shape warning and modern Keras form</h3>
+<p>The transcript showed a warning about passing <code>input_shape</code> directly into a layer. In a Sequential model, the input dimensions need to be specified only once; later layers infer their shapes. The clean modern form is an explicit <code>layers.Input(...)</code> as shown above.</p>
+<h3 id="7-5-zero-padding">7.5 Zero padding</h3>
+<p>Padding adds border pixels, usually zeros. For stride 1 and an odd \(F\times F\) kernel, choosing</p>
+<p>\[
+P=\frac{F-1}{2}
+\]</p>
+<p>preserves spatial size. Thus a \(3\times3\) kernel uses \(P=1\). In Keras, <code>padding="same"</code> performs same-size padding for stride 1.</p>
+<h3 id="7-6-training-evaluation">7.6 Training/evaluation</h3>
+<p>After model construction and compilation:</p>
+<pre><code class="language-python">history = model.fit(x_train, y_train, epochs=..., validation_data=(x_val, y_val))
+test_loss, test_accuracy = model.evaluate(x_test, y_test)
+</code></pre>
+<p>The lecture’s code primarily demonstrated architecture and summary; it noted that a real dataset and subsequent epochs/evaluation are needed to measure accuracy.</p>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> Change the number of layers, filters and classes to suit the problem statement; do not copy one architecture mechanically. Run and practise the notebook so the theoretical layers become concrete.</p>
+</blockquote>
+<hr>
+<h2 id="8-high-yield-comparisons">8. High-yield comparisons</h2>
+<h3 id="8-1-dense-connections-versus-residual-shortcuts">8.1 Dense connections versus residual shortcuts</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Residual network</th>
+<th>DenseNet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adds input to later output: \(F(x)+x\)</td>
+<td>Concatenates all earlier feature maps</td>
+</tr>
+<tr>
+<td>Learns residual correction</td>
+<td>Maximizes feature reuse</td>
+</tr>
+<tr>
+<td>Direct identity gradient path</td>
+<td>Many short paths to earlier layers</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="8-2-detection-operations-by-responsibility">8.2 Detection operations by responsibility</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Region proposal / RPN</td>
+<td>Generates candidate locations</td>
+</tr>
+<tr>
+<td>Bounding-box regression</td>
+<td>Refines candidate coordinates</td>
+</tr>
+<tr>
+<td>Classifier</td>
+<td>Assigns object type</td>
+</tr>
+<tr>
+<td>Confidence score</td>
+<td>Expresses prediction strength</td>
+</tr>
+<tr>
+<td>IoU</td>
+<td>Measures box overlap</td>
+</tr>
+<tr>
+<td>NMS</td>
+<td>Removes redundant predicted boxes</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="8-3-cnn-transfer-learning-and-vit">8.3 CNN, transfer learning and ViT</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Core mechanism</th>
+<th>Best remembered as</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CNN</td>
+<td>Local shared filters</td>
+<td>Learn spatial feature hierarchy</td>
+</tr>
+<tr>
+<td>Transfer learning</td>
+<td>Reuse pretrained representations</td>
+<td>Adapt rather than start from zero</td>
+</tr>
+<tr>
+<td>ViT</td>
+<td>Patch tokens + self-attention</td>
+<td>Global-context image modeling inspired by NLP</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="9-likely-exam-questions-with-answer-points">9. Likely exam questions with answer points</h2>
+<h3 id="q1-define-a-cnn-and-explain-its-architecture">Q1. Define a CNN and explain its architecture.</h3>
+<p>Define grid-like image processing; draw input → convolution → ReLU → pooling → repeated blocks → flatten → dense → output; explain filter sliding, feature maps, spatial reduction, hierarchy and classification.</p>
+<h3 id="q2-why-are-cnns-preferred-to-mlps-for-images">Q2. Why are CNNs preferred to MLPs for images?</h3>
+<p>Mention local receptive fields, shared weights, fewer parameters, preserved spatial relationships, hierarchical features, compute efficiency and improved tolerance to location changes.</p>
+<h3 id="q3-perform-max-average-pooling-on-a-matrix">Q3. Perform max/average pooling on a matrix.</h3>
+<p>Partition according to pool size and stride; select maximum or compute mean in every block. For the lecture matrix, max pooling yields \(\begin{bmatrix}6&4\\4&7\end{bmatrix}\).</p>
+<h3 id="q4-trace-cnn-evolution">Q4. Trace CNN evolution.</h3>
+<p>LeNet/MNIST → AlexNet/ReLU-GPU-dropout → VGG/small filters and depth → Inception/multiscale efficiency → ResNet/shortcuts → DenseNet/feature reuse → MobileNet/mobile efficiency → EfficientNet/compound scaling → ViT/patch attention.</p>
+<h3 id="q5-explain-transfer-learning-and-fine-tuning">Q5. Explain transfer learning and fine-tuning.</h3>
+<p>Define pretrained source model adapted to related target task; explain reusable early features, replacing head, freezing base, training head, optional partial unfreezing at low learning rate; state benefits and overfitting/catastrophic-forgetting caveats.</p>
+<h3 id="q6-explain-a-face-recognition-pipeline">Q6. Explain a face-recognition pipeline.</h3>
+<p>Detection → crop/align → embedding CNN → vector comparison → identity. Distinguish detection from recognition and metrics from localization; optionally explain triplet loss.</p>
+<h3 id="q7-explain-neural-style-transfer-mathematically">Q7. Explain neural style transfer mathematically.</h3>
+<p>Fixed pretrained CNN; generated image is optimized; deep feature content loss + Gram-matrix style loss; total weighted loss \(\alpha L_c+\beta L_s\).</p>
+<h3 id="q8-distinguish-classification-localization-and-detection">Q8. Distinguish classification, localization and detection.</h3>
+<p>Classification = what; localization = where; detection = class and box for every object.</p>
+<h3 id="q9-define-iou-and-nms">Q9. Define IoU and NMS.</h3>
+<p>Give intersection/union formula, range and 0.5 threshold; describe confidence sorting and overlap suppression; distinguish ground-truth evaluation from prediction-to-prediction suppression.</p>
+<h3 id="q10-compare-two-stage-and-single-shot-detectors">Q10. Compare two-stage and single-shot detectors.</h3>
+<p>Two-stage = proposals then classification/regression, usually more precise but slower/heavier. Single-shot = direct one-pass prediction, faster and suitable for real time, traditionally some localization trade-off.</p>
+<h3 id="q11-recommend-a-detector-deployment-for-optivision-labs">Q11. Recommend a detector/deployment for OptiVision Labs.</h3>
+<p>Use evidence: &gt;30 FPS, low predictable latency, miss cost, IoU, recall, memory and network conditions. Prefer measured optimization and edge deployment where feasible; justify any choice rather than claiming a universally best model.</p>
+<h3 id="q12-explain-the-demonstrated-keras-model-and-parameter-counts">Q12. Explain the demonstrated Keras model and parameter counts.</h3>
+<p>Three Conv2D–MaxPool blocks, flatten, ReLU dense layer, 10-way Softmax; Adam + sparse cross-entropy + accuracy. Use \((k_hk_wc_{in}+1)c_{out}\) for convolution parameters and explain zero-parameter pooling/flatten layers.</p>
+<hr>
+<h2 id="10-exam-traps-and-corrections">10. Exam traps and corrections</h2>
+<ol>
+<li><strong>“CNNs are only classifiers.”</strong> False: they are also backbones for detection, localization, segmentation, embeddings and style transfer.</li>
+<li><strong>“Feature maps are patch-level class decisions.”</strong> False: they show learned-pattern responses.</li>
+<li><strong>“Pooling learns parameters.”</strong> Standard max/average pooling does not.</li>
+<li><strong>“Flatten preserves spatial arrangement explicitly.”</strong> It converts maps to a vector; spatial features must already have been encoded.</li>
+<li><strong>“Shared weights never train.”</strong> False: shared kernel values train, but the same values are reused spatially.</li>
+<li><strong>“ResNet shortcut equals a fully connected layer.”</strong> False: it adds an earlier activation through an identity/projection route.</li>
+<li><strong>“Transfer learning means no training.”</strong> False: at minimum the new head is trained; fine-tuning may adapt upper layers.</li>
+<li><strong>“Similarity detects faces.”</strong> False: a detector locates; similarity compares embeddings.</li>
+<li><strong>“Triplet loss replaces detection.”</strong> False: it trains discriminative embeddings.</li>
+<li><strong>“NST trains the CNN.”</strong> Classical NST freezes the CNN and updates the image.</li>
+<li><strong>“Bounding-box regression proposes boxes or removes duplicates.”</strong> False: it refines coordinates.</li>
+<li><strong>“IoU performs classification.”</strong> False: it measures overlap.</li>
+<li><strong>“NMS compares predictions with ground truth.”</strong> Usually false: it suppresses overlapping predictions.</li>
+<li><strong>“Higher FPS always means lower latency.”</strong> Not necessarily in batched/pipelined systems; measure both.</li>
+<li><strong>“Edge automatically increases model accuracy.”</strong> Its main case-study advantage is latency/reliability; hardware is constrained.</li>
+<li><strong>“Cloud is always faster.”</strong> Compute may be faster, but end-to-end time includes network delay.</li>
+<li><strong>“Depth replaces the 2-D detector.”</strong> False: it adds spatial information and complexity.</li>
+<li><strong>“Zero non-trainable parameters means training is finished.”</strong> False: all current parameters are trainable.</li>
+<li><strong>“Only the first Conv2D must receive <code>input_shape</code>.”</strong> More precisely, input shape is declared once, preferably via an explicit <code>Input</code> layer; subsequent layers infer shapes.</li>
+</ol>
+<hr>
+<h2 id="11-rapid-revision-sheet">11. Rapid revision sheet</h2>
+<h3 id="one-line-definitions">One-line definitions</h3>
+<ul>
+<li><strong>CNN:</strong> deep network using local shared filters to learn spatial feature hierarchies.</li>
+<li><strong>Kernel/filter:</strong> small learned matrix slid across an input.</li>
+<li><strong>Feature map:</strong> spatial pattern-response map produced by one filter.</li>
+<li><strong>ReLU:</strong> \(\max(0,x)\).</li>
+<li><strong>Pooling:</strong> parameter-free spatial summarization/downsampling.</li>
+<li><strong>Flatten:</strong> converts feature maps to one vector.</li>
+<li><strong>Dense layer:</strong> aggregates features for classification/regression.</li>
+<li><strong>Transfer learning:</strong> adapts a pretrained model to a related target task.</li>
+<li><strong>Fine-tuning:</strong> gently retrains selected pretrained layers.</li>
+<li><strong>Embedding:</strong> compact vector representation used for similarity matching.</li>
+<li><strong>IoU:</strong> intersection area divided by union area.</li>
+<li><strong>NMS:</strong> removes overlapping duplicate predictions.</li>
+<li><strong>RPN:</strong> learned region-proposal generator.</li>
+<li><strong>FPS:</strong> frames processed per second.</li>
+<li><strong>Latency:</strong> time from input to result.</li>
+</ul>
+<h3 id="must-know-formulas">Must-know formulas</h3>
+<p>\[
+N_{out}=\left\lfloor\frac{N+2P-F}{S}\right\rfloor+1
+\]</p>
+<p>\[
+\operatorname{ReLU}(x)=\max(0,x)
+\]</p>
+<p>\[
+p_i=\frac{e^{z_i}}{\sum_j e^{z_j}}
+\]</p>
+<p>\[
+\operatorname{IoU}=\frac{\text{intersection}}{\text{union}}
+\]</p>
+<p>\[
+\text{Precision}=\frac{TP}{TP+FP},\qquad
+\text{Recall}=\frac{TP}{TP+FN}
+\]</p>
+<p>\[
+y=F(x)+x
+\]</p>
+<p>\[
+L_{triplet}=\max(d(A,P)-d(A,N)+\alpha,0)
+\]</p>
+<p>\[
+L_{NST}=\alpha L_{content}+\beta L_{style}
+\]</p>
+<h3 id="last-minute-memory-chain">Last-minute memory chain</h3>
+<pre><code class="language-text">CNN: pixels → filters → maps → ReLU → pool → flatten → dense → output
+Face ID: detect → crop → embed → compare → identify
+Detection: propose/direct-predict → regress → classify → confidence → NMS
+Transfer: pretrained base → replace head → freeze → train → fine-tune
+Architecture history: LeNet → AlexNet → VGG/Inception → ResNet/DenseNet
+                      → MobileNet → EfficientNet → ViT
+</code></pre>
+<h3 id="instructor-priority-reminders">Instructor-priority reminders</h3>
+<ul>
+<li>Be able to draw and explain the detailed CNN diagram.</li>
+<li>Practise max pooling numerically; it is suitable for an MCQ/calculation.</li>
+<li>Know architectural specialties, not merely their names.</li>
+<li>Relate theory to the Keras code and <code>model.summary()</code> output.</li>
+<li>In design questions, balance accuracy, FPS, latency, memory and deployment constraints; there is no universal detector.</li>
+<li>Practise the implementation rather than relying only on definitions.</li>
+</ul>
+<hr>
+<h2 id="12-references-mentioned-in-the-lectures">12. References mentioned in the lectures</h2>
+<ul>
+<li><em>Deep Learning</em> (MIT Press, 2016).</li>
+<li><em>Deep Learning with Python</em> (Manning, 2018), highlighted for practical Keras/TensorFlow examples.</li>
+<li>TensorFlow CNN documentation/guide.</li>
+<li>“Deep Residual Learning for Image Recognition,” IEEE/CVPR.</li>
+<li>“Very Deep Convolutional Networks for Large-Scale Image Recognition.”</li>
+</ul>
+<h2 id="review-week-augmentation-cnn-architecture-distinctions">Review Week augmentation: CNN architecture distinctions</h2>
+<ul>
+<li>At each convolution location, take local input–kernel element-wise products, sum them, optionally add bias, and apply an activation. Sliding this operation produces a feature map. Early filters commonly detect edges/corners/textures; deeper layers combine these into shapes and object parts. Depth increases the effective receptive field.</li>
+<li>ResNet residual block: \(y=F(x)+x\). The shortcut improves information and gradient flow, reduces degradation/optimization difficulty, and makes very deep (100+ layer) models practical. <strong>ResNet is defined by skip connections, not depthwise-separable convolution.</strong></li>
+<li>MobileNet decomposes ordinary convolution into depthwise spatial filtering of each input channel followed by pointwise \(1\times1\) channel mixing. This reduces parameters and computation for mobile, IoT, edge, and embedded deployment.</li>
+<li>High-yield distinction: ResNet—skip connections; MobileNet—depthwise-separable convolution; DenseNet—dense connectivity; EfficientNet—compound scaling of depth, width, and resolution.</li>
+<li>Transfer-learning workflow: load a pretrained model, replace/adapt output layers, then fine-tune selected or all layers. A low learning rate helps preserve useful learned features, especially when the target dataset is small and related.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-2.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 2: Neural Networks, Backpropagation, Model…</span>
+      </a>
+      <a href="week-4.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 4: RNNs, GRU, LSTM, NLP, Word Embeddings,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

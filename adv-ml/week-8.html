@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Advanced ML · Week 8 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Advanced ML</span>
+      <span class="brand-title">Week 8</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html" selected>Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Review of Machine Learning, Learning Types, and Linear Regression
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Classification, Logistic Regression, Maximum Likelihood and K-Means…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Bias–Variance, Error Analysis, Learning Curves, and Model Selection
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Recommendation Systems and Collaborative Filtering
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Content-Based Filtering, Cosine Similarity, UV Decomposition, and…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Bias–Variance Trade-off, Underfitting, Overfitting,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Association Rule Mining, Apriori, and PCY
+      </a>
+      <a class="is-active" href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Dimensionality Reduction, PCA, Eigen-Decomposition, and SVD
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Text Processing, Bag of Words, TF–IDF, Vector-Space Retrieval, and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Web Advertising, Online Matching, AdWords, and Balance
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        High-Dimensional Clustering, Subspaces, CLIQUE, PROCLUS, and…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Independent Component Analysis, Blind Source Separation, FastICA,…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Social Networks, Graph Laplacians, and Spectral Clustering
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Graph Partitioning, Flow Centrality, Edge Betweenness, and Girvan–Newman
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        ML Life Cycle, Hybrid and Music Recommenders, and Evaluation
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Advanced ML · Week 8</p>
+        <h1 class="page-title">Dimensionality Reduction, PCA, Eigen-Decomposition, and SVD</h1>
+        <p class="page-meta">Week 8 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#week-overview">Week overview</a></li>
+      <li><a href="#1-dimension-and-dimensionality-reduction">1. Dimension and dimensionality reduction</a></li>
+      <li><a href="#2-curse-of-dimensionality">2. Curse of dimensionality</a></li>
+      <li><a href="#3-families-of-reduction-techniques">3. Families of reduction techniques</a></li>
+      <li><a href="#4-vectors-matrices-and-eigenpairs">4. Vectors, matrices, and eigenpairs</a></li>
+      <li><a href="#5-variance-and-covariance">5. Variance and covariance</a></li>
+      <li><a href="#6-standardization-and-centering">6. Standardization and centering</a></li>
+      <li><a href="#7-principal-component-analysis-pca">7. Principal Component Analysis (PCA)</a></li>
+      <li><a href="#8-complete-pca-workflow">8. Complete PCA workflow</a></li>
+      <li><a href="#9-numerical-pca-example-from-the-lecture">9. Numerical PCA example from the lecture</a></li>
+      <li><a href="#10-singular-value-decomposition-svd">10. Singular Value Decomposition (SVD)</a></li>
+      <li><a href="#11-pca-through-svd">11. PCA through SVD</a></li>
+      <li><a href="#12-truncated-svd-and-low-rank-approximation">12. Truncated SVD and low-rank approximation</a></li>
+      <li><a href="#13-python-svd-workflow">13. Python SVD workflow</a></li>
+      <li><a href="#14-quiz-case-study-marketingmetrics-inc">14. Quiz case study: MarketingMetrics Inc.</a></li>
+      <li><a href="#15-pca-limitations-and-caveats">15. PCA limitations and caveats</a></li>
+      <li><a href="#16-practical-use-cases">16. Practical use cases</a></li>
+      <li><a href="#17-formula-sheet">17. Formula sheet</a></li>
+      <li><a href="#18-likely-exam-questions">18. Likely exam questions</a></li>
+      <li><a href="#19-rapid-recall-checklist">19. Rapid-recall checklist</a></li>
+      <li><a href="#20-final-takeaways">20. Final takeaways</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="week-overview">Week overview</h2>
+<p>Week 8 explains why high-dimensional data are difficult, how dimensionality can be reduced while retaining useful information, and how <strong>Principal Component Analysis (PCA)</strong> and <strong>Singular Value Decomposition (SVD)</strong> achieve this through linear algebra. The material includes hand calculations, Python implementations, a marketing case study, and live-class explanations.</p>
+<hr>
+<h2 id="1-dimension-and-dimensionality-reduction">1. Dimension and dimensionality reduction</h2>
+<p>A tabular dataset contains rows (observations) and columns (fields, attributes, or features). Its <strong>dimension</strong> is the number of features/columns used to represent each observation.</p>
+<p><strong>Dimensionality reduction</strong> transforms or selects features so that the data use fewer dimensions while preserving as much relevant information as possible.</p>
+<h3 id="1-1-why-reduce-dimensions">1.1 Why reduce dimensions?</h3>
+<ul>
+<li>Lower memory/storage requirements</li>
+<li>Faster computation and model training</li>
+<li>Easier visualization (for example, project 100 dimensions into 2D)</li>
+<li>Less noise and redundancy</li>
+<li>Reduced multicollinearity</li>
+<li>Potentially better generalization</li>
+<li>Fewer observations needed to obtain adequate coverage of the feature space</li>
+</ul>
+<p>Not every column is useful. Some may be irrelevant, redundant, noisy, or highly correlated with others.</p>
+<h3 id="1-2-information-loss-caveat">1.2 Information loss caveat</h3>
+<p>Reduction usually involves a trade-off. A good method retains most task-relevant information, but exact preservation is not guaranteed when dimensions are discarded. PCA specifically retains directions of high variance, which are not always the directions most useful for prediction.</p>
+<hr>
+<h2 id="2-curse-of-dimensionality">2. Curse of dimensionality</h2>
+<p>As the number of dimensions grows, the feature space expands extremely quickly. Data become sparse, distance/similarity becomes less informative, computation and storage rise, and many more observations are needed to generalize reliably.</p>
+<p>The lecture illustrates this exponential intuition as roughly 10 values of coverage per feature:</p>
+<ul>
+<li>1 dimension → $10^1$ combinations;</li>
+<li>2 dimensions → $10^2$;</li>
+<li>10 dimensions → $10^{10}$.</li>
+</ul>
+<p>This is an illustration rather than a universal sample-size law. The precise requirement depends on the distribution, model, noise, and problem.</p>
+<p>The live class uses a room-versus-football-stadium analogy: a larger space requires far more people/data to fill it with comparable density.</p>
+<hr>
+<h2 id="3-families-of-reduction-techniques">3. Families of reduction techniques</h2>
+<h3 id="3-1-feature-selection">3.1 Feature selection</h3>
+<p>Keep a subset of original columns and discard others. The retained features keep their original meaning.</p>
+<p>Examples:</p>
+<ul>
+<li>filter methods based on correlation/statistical scores;</li>
+<li>wrapper methods;</li>
+<li>embedded selection such as lasso or tree importance.</li>
+</ul>
+<h3 id="3-2-feature-extraction-projection">3.2 Feature extraction/projection</h3>
+<p>Construct new lower-dimensional features from combinations of the originals. PCA is the main example. Original variables are no longer individually retained, so interpretability may decrease.</p>
+<h3 id="3-3-factorization-matrix-approximation">3.3 Factorization/matrix approximation</h3>
+<p>Factor a data matrix into smaller matrices and use a truncated factorization. Examples mentioned:</p>
+<ul>
+<li>PCA/eigen-decomposition;</li>
+<li>SVD: $A=U\Sigma V^T$;</li>
+<li>CUR approximation, which uses selected columns/rows and a linking matrix so their product approximates $A$.</li>
+</ul>
+<h3 id="3-4-projection-example">3.4 Projection example</h3>
+<p>Suppose features are age ($X_1$), blood pressure ($X_2$), and height ($X_3$). Projection maps their 3D points onto a 2D plane. Unlike simply dropping $X_3$, PCA normally creates two new axes as linear combinations of all three features.</p>
+<hr>
+<h2 id="4-vectors-matrices-and-eigenpairs">4. Vectors, matrices, and eigenpairs</h2>
+<p>A vector such as $(2,3,4)^T$ represents a point/direction in 3D. A matrix can be viewed as a linear transformation that maps vector $x$ to $Ax$.</p>
+<p>An <strong>eigenvector</strong> is a nonzero direction whose orientation is unchanged by the transformation:</p>
+<p>$$Ax=\lambda x,$$</p>
+<p>where $x\ne0$ is the eigenvector and scalar $\lambda$ is its eigenvalue. The transformation scales the vector by $\lambda$; a negative value also reverses direction.</p>
+<h3 id="4-1-characteristic-equation">4.1 Characteristic equation</h3>
+<p>$$Ax=\lambda x$$</p>
+<p>$$ (A-\lambda I)x=0.$$</p>
+<p>For a nonzero solution, $A-\lambda I$ must be singular:</p>
+<p>$$\det(A-\lambda I)=0.$$</p>
+<p>Procedure:</p>
+<ol>
+<li>Solve the characteristic equation for eigenvalues.</li>
+<li>Substitute each $\lambda$ into $(A-\lambda I)x=0$.</li>
+<li>Solve for the corresponding eigenvector and normalize if required.</li>
+</ol>
+<p>An $n\times n$ matrix has $n$ eigenvalues counting multiplicities, though real/independent eigenvectors require relevant conditions. Covariance matrices are real symmetric, so they have real eigenvalues and an orthonormal eigenbasis.</p>
+<h3 id="4-2-orthogonality-and-normalization">4.2 Orthogonality and normalization</h3>
+<p>Vectors $u$ and $v$ are orthogonal if:</p>
+<p>$$u^Tv=0.$$</p>
+<p>Orthonormal vectors are orthogonal and have unit length. PCA eigenvectors of a symmetric covariance matrix can be chosen orthonormal.</p>
+<h3 id="4-3-scaling-caveat">4.3 Scaling caveat</h3>
+<p>If $x$ is an eigenvector, any nonzero multiple $cx$ is also an eigenvector with the <strong>same eigenvalue</strong>:</p>
+<p>$$A(cx)=cAx=c\lambda x=\lambda(cx).$$</p>
+<p>The transcript briefly suggests scaling an eigenvector changes $\lambda$; it does not.</p>
+<h3 id="4-4-example-swap-matrix">4.4 Example: swap matrix</h3>
+<p>For</p>
+<p>$$A=\begin{bmatrix}0&1\\1&0\end{bmatrix},$$</p>
+<ul>
+<li>$x_1=(1,1)^T$ gives $Ax_1=x_1$, so $\lambda_1=1$;</li>
+<li>$x_2=(-1,1)^T$ gives $Ax_2=-x_2$, so $\lambda_2=-1$.</li>
+</ul>
+<p>Their dot product is zero, so they are orthogonal.</p>
+<h3 id="4-5-worked-eigen-decomposition">4.5 Worked eigen-decomposition</h3>
+<p>For</p>
+<p>$$A=\begin{bmatrix}3&1\\1&3\end{bmatrix},$$</p>
+<p>$$\det(A-\lambda I)=(3-\lambda)^2-1
+=\lambda^2-6\lambda+8=0.$$</p>
+<p>Thus:</p>
+<p>$$\lambda_1=4,\qquad\lambda_2=2.$$</p>
+<p>Corresponding directions are $(1,1)^T$ and $(1,-1)^T$. Unit vectors are obtained by dividing each by $\sqrt2$.</p>
+<hr>
+<h2 id="5-variance-and-covariance">5. Variance and covariance</h2>
+<p>For sample feature $X$:</p>
+<p>$$s_X^2=\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar x)^2.$$</p>
+<p>Variance measures spread in one dimension. Standard deviation is $s_X=\sqrt{s_X^2}$, not the other way around as some spoken lines imply.</p>
+<p>For two sample features:</p>
+<p>$$\operatorname{Cov}(X,Y)=\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar x)(y_i-\bar y).$$</p>
+<ul>
+<li>positive covariance: variables tend to increase together;</li>
+<li>negative covariance: one tends to increase while the other decreases;</li>
+<li>near zero: little linear co-movement (not necessarily independence).</li>
+</ul>
+<p>Height and weight provide an intuitive positive-covariance example.</p>
+<p>The covariance matrix for two features is:</p>
+<p>$$C=\begin{bmatrix}
+\operatorname{Var}(X)&\operatorname{Cov}(X,Y)\\
+\operatorname{Cov}(Y,X)&\operatorname{Var}(Y)
+\end{bmatrix}.$$</p>
+<p>It is square and symmetric. Diagonal entries are variances; off-diagonal entries are covariances.</p>
+<hr>
+<h2 id="6-standardization-and-centering">6. Standardization and centering</h2>
+<h3 id="6-1-centering">6.1 Centering</h3>
+<p>$$X_c=X-\mathbf1\mu^T.$$</p>
+<p>Subtract each feature mean so every centered column has mean zero. PCA must at least be centered.</p>
+<h3 id="6-2-z-score-standardization">6.2 Z-score standardization</h3>
+<p>$$z_{ij}=\frac{x_{ij}-\bar x_j}{s_j}.$$</p>
+<p>This gives each feature approximately mean 0 and standard deviation 1. It is important when variables use different units/scales—otherwise a large-scale feature can dominate variance merely because of its units.</p>
+<p>Use training-set means and standard deviations when transforming validation, test, or new observations. Fitting preprocessing on all data causes leakage.</p>
+<p>Centering alone is suitable when variables have comparable units and their natural variance magnitudes are meaningful. Standardizing makes PCA equivalent to operating on a correlation-style matrix.</p>
+<hr>
+<h2 id="7-principal-component-analysis-pca">7. Principal Component Analysis (PCA)</h2>
+<p>PCA is an <strong>unsupervised linear feature-extraction</strong> method. It finds mutually orthogonal directions that successively maximize projected variance.</p>
+<ul>
+<li>PC1 captures the greatest possible variance.</li>
+<li>PC2 captures the greatest remaining variance subject to being orthogonal to PC1.</li>
+<li>Later PCs continue similarly.</li>
+</ul>
+<p>For centered data $X_c\in\mathbb R^{n\times p}$, covariance is:</p>
+<p>$$C=\frac{1}{n-1}X_c^TX_c.$$</p>
+<p>Solve:</p>
+<p>$$Cv_j=\lambda_jv_j,$$</p>
+<p>and sort $\lambda_1\ge\lambda_2\ge\cdots\ge0$. Each $v_j$ is a loading direction/principal axis; $\lambda_j$ is variance along it.</p>
+<h3 id="7-1-optimization-view">7.1 Optimization view</h3>
+<p>PC1 solves:</p>
+<p>$$v_1=\arg\max_{\|v\|=1}\operatorname{Var}(X_cv)
+=\arg\max_{\|v\|=1}v^TCv.$$</p>
+<p>Later components add orthogonality constraints.</p>
+<h3 id="7-2-scores-loadings">7.2 Scores/loadings</h3>
+<p>Let $V_k=[v_1,\dots,v_k]$. Reduced coordinates (scores) are:</p>
+<p>$$Z=X_cV_k.$$</p>
+<p>For a new sample:</p>
+<p>$$z_{new}=(x_{new}-\mu)^TV_k,$$</p>
+<p>with the same training scaling if used.</p>
+<p>Approximate reconstruction is:</p>
+<p>$$\hat X=ZV_k^T+\mu.$$</p>
+<h3 id="7-3-explained-variance">7.3 Explained variance</h3>
+<p>$$\text{EVR}_j=\frac{\lambda_j}{\sum_{ell=1}^p\lambda_\ell}.$$</p>
+<p>$$\text{Cumulative EVR}(k)=\frac{\sum_{j=1}^k\lambda_j}{\sum_{ell=1}^p\lambda_\ell}.$$</p>
+<p>The total variance is the sum of eigenvalues, also equal to the covariance-matrix trace.</p>
+<p>Choose $k$ by cumulative explained variance (often a domain-specific 80%, 90%, 95%, etc.), scree/elbow plot, downstream cross-validation, interpretability, or resource constraints.</p>
+<p>The <strong>Kaiser criterion</strong> (retain eigenvalues $>1$) is sometimes used when PCA is based on standardized variables/correlation matrices; it is a heuristic, not a universal rule.</p>
+<h3 id="7-4-what-pca-does-not-use">7.4 What PCA does not use</h3>
+<p>PCA fits only <code>X</code>; labels <code>y</code> do not determine components. It may preserve large nuisance variation while discarding a low-variance direction that strongly predicts the target. Supervised alternatives such as LDA or supervised feature selection may be better when class separation is the primary objective.</p>
+<h3 id="7-5-pca-versus-feature-selection">7.5 PCA versus feature selection</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>PCA</th>
+<th>Feature selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Creates new linear combinations</td>
+<td>Retains original columns</td>
+</tr>
+<tr>
+<td>Often better compression of correlated information</td>
+<td>Higher interpretability</td>
+</tr>
+<tr>
+<td>Components may mix every variable</td>
+<td>Feature meanings remain direct</td>
+</tr>
+<tr>
+<td>Unsupervised variance objective</td>
+<td>Can be supervised or unsupervised</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="8-complete-pca-workflow">8. Complete PCA workflow</h2>
+<ol>
+<li>Separate features from labels; fit PCA only on features.</li>
+<li>Handle missing values/outliers appropriately.</li>
+<li>Split data before learned preprocessing.</li>
+<li>Center or standardize training features.</li>
+<li>Compute covariance matrix.</li>
+<li>Find covariance eigenvalues/eigenvectors (or use SVD).</li>
+<li>Sort components by descending eigenvalue.</li>
+<li>Select $k$ using explained variance and validation/business needs.</li>
+<li>Form feature/loading matrix $V_k$.</li>
+<li>Project training and future data onto $V_k$.</li>
+<li>Train/evaluate downstream models on scores.</li>
+<li>Store mean, scale, and loadings for reproducible deployment.</li>
+</ol>
+<hr>
+<h2 id="9-numerical-pca-example-from-the-lecture">9. Numerical PCA example from the lecture</h2>
+<p>The demonstration begins with ten observations and two columns $X_1,X_2$.</p>
+<ol>
+<li>Compute means (the spoken $X_1$ sum is 18.1, so $\bar X_1=1.81$).</li>
+<li>Subtract each column mean to obtain zero-mean data.</li>
+<li>Compute the $2\times2$ covariance matrix.</li>
+<li>Solve $\det(C-\lambda I)=0$.</li>
+<li>The lecture reports eigenvalues approximately <code>0.490</code> and <code>1.28</code>.</li>
+<li>Compute the corresponding orthogonal eigenvectors.</li>
+<li>Sort them so the eigenvector for <code>1.28</code> is PC1.</li>
+<li>Plotting shows most spread along PC1; PC2 is perpendicular and captures less spread.</li>
+<li>Project the centered $10\times2$ data using the transposed eigenvector/loading matrix.</li>
+<li>Retain only the first score coordinate to reduce 2D data to 1D.</li>
+</ol>
+<p>Matrix orientation can be written either row-wise or column-wise. With the modern convention $X_c:n\times p$ and $V_k:p\times k$, use $Z=X_cV_k$ to obtain $n\times k$ scores.</p>
+<p>The notebook uses NumPy functions such as <code>np.mean</code>, <code>np.cov</code>, transpose operations, and <code>numpy.linalg.eig</code>. A displayed covariance matrix is approximately:</p>
+<p>$$\begin{bmatrix}0.6165&-0.6154\\-0.6154&0.71\end{bmatrix}$$</p>
+<p>(some spoken digits are unclear). It then obtains eigenvectors around values such as <code>-0.735</code> and <code>±0.677</code>, assembles them, projects the centered matrix, and discards the lower-variance score column.</p>
+<p>Important sign caveat: eigenvectors may appear with opposite signs across software/manual work. Both $v$ and $-v$ define the same component axis and explained variance.</p>
+<hr>
+<h2 id="10-singular-value-decomposition-svd">10. Singular Value Decomposition (SVD)</h2>
+<p>For any real $m\times n$ matrix $A$:</p>
+<p>$$A=U\Sigma V^T.$$</p>
+<ul>
+<li>$U$: $m\times m$ orthogonal matrix of left singular vectors (or $m\times r$ in reduced SVD);</li>
+<li>$V$: $n\times n$ orthogonal matrix of right singular vectors (or $n\times r$ reduced);</li>
+<li>$\Sigma$: rectangular diagonal matrix of nonnegative singular values $\sigma_1\ge\sigma_2\ge\cdots\ge0$;</li>
+<li>$r=\operatorname{rank}(A)$ is the number of positive singular values.</li>
+</ul>
+<p>The lecture describes SVD as decomposing one matrix into three matrices. Multiplying them reconstructs the original matrix (subject to floating-point precision).</p>
+<h3 id="10-1-relationship-to-eigen-decomposition">10.1 Relationship to eigen-decomposition</h3>
+<p>$$A^TA=V\Sigma^2V^T,$$</p>
+<p>so columns of $V$ are eigenvectors of $A^TA$ and its eigenvalues are $\sigma_i^2$.</p>
+<p>$$AA^T=U\Sigma^2U^T,$$</p>
+<p>so columns of $U$ are eigenvectors of $AA^T$.</p>
+<p>Singular values are square roots of these nonnegative eigenvalues:</p>
+<p>$$\sigma_i=\sqrt{\lambda_i(A^TA)}.$$</p>
+<p>Singular values are not themselves generally eigenvalues of $A$.</p>
+<h3 id="10-2-constructing-svd-conceptually">10.2 Constructing SVD conceptually</h3>
+<ol>
+<li>Compute $A^TA$.</li>
+<li>Find its eigenvalues/eigenvectors.</li>
+<li>Sort descending.</li>
+<li>Set singular values to square roots of eigenvalues.</li>
+<li>Put right singular vectors into $V$.</li>
+<li>For nonzero $\sigma_i$, compute:</li>
+</ol>
+<p>$$u_i=\frac{Av_i}{\sigma_i}.$$</p>
+<ol start="7">
+<li>Complete orthonormal bases if full matrices are required.</li>
+</ol>
+<p>Repeated singular values mean the individual basis vectors within that subspace are not unique; any orthonormal rotation of the same subspace is valid.</p>
+<hr>
+<h2 id="11-pca-through-svd">11. PCA through SVD</h2>
+<p>For centered data $X_c=U\Sigma V^T$:</p>
+<p>$$C=\frac1{n-1}X_c^TX_c
+=V\frac{\Sigma^2}{n-1}V^T.$$</p>
+<p>Therefore:</p>
+<ul>
+<li>PCA loading directions are columns of $V$;</li>
+<li>covariance eigenvalues/explained variances are $\lambda_j=\sigma_j^2/(n-1)$;</li>
+<li>PCA scores are:</li>
+</ul>
+<p>$$Z=X_cV=U\Sigma.$$</p>
+<p>SVD is often preferred computationally because it can operate directly on centered data without explicitly forming the covariance matrix and is numerically stable.</p>
+<p>Do not store <code>U</code> as the transformation for new samples: its rows are tied to the training observations. Store training mean/scale and $V_k$.</p>
+<hr>
+<h2 id="12-truncated-svd-and-low-rank-approximation">12. Truncated SVD and low-rank approximation</h2>
+<p>Retain only the first $k$ singular triplets:</p>
+<p>$$A_k=U_k\Sigma_kV_k^T.$$</p>
+<p>This is the best rank-$k$ approximation to $A$ under Frobenius and spectral norms (Eckart–Young theorem).</p>
+<p>Applications:</p>
+<ul>
+<li>image compression;</li>
+<li>latent semantic analysis/text retrieval;</li>
+<li>recommender systems and latent factors;</li>
+<li>noise reduction;</li>
+<li>data compression and visualization.</li>
+</ul>
+<p>For sparse term-document/count matrices, <code>TruncatedSVD</code> is often applied without centering because centering destroys sparsity. This differs from classical centered PCA.</p>
+<hr>
+<h2 id="13-python-svd-workflow">13. Python SVD workflow</h2>
+<p>The lecture&rsquo;s Python demonstration uses NumPy:</p>
+<pre><code class="language-python">U, s, VT = np.linalg.svd(A, full_matrices=True)
+</code></pre>
+<p><code>s</code> is a one-dimensional vector of singular values, so construct a compatible diagonal/rectangular $\Sigma$ if explicitly reconstructing:</p>
+<pre><code class="language-python">Sigma = np.zeros_like(A, dtype=float)
+np.fill_diagonal(Sigma, s)
+A_reconstructed = U @ Sigma @ VT
+</code></pre>
+<p>For reduced SVD:</p>
+<pre><code class="language-python">U, s, VT = np.linalg.svd(A, full_matrices=False)
+A_reconstructed = U @ np.diag(s) @ VT
+</code></pre>
+<p>For rank-$k$ compression:</p>
+<pre><code class="language-python">A_k = U[:, :k] @ np.diag(s[:k]) @ VT[:k, :]
+</code></pre>
+<p>Explained variance for centered-data PCA is proportional to <code>s**2</code>; use <code>(s**2)/(n-1)</code> and normalize by its sum for ratios.</p>
+<p>The code lesson emphasizes inspecting matrix dimensions, reconstructing $A$ from $U\Sigma V^T$, and retaining fewer singular values/vectors to reduce rank/dimension.</p>
+<hr>
+<h2 id="14-quiz-case-study-marketingmetrics-inc">14. Quiz case study: MarketingMetrics Inc.</h2>
+<p>The company has many correlated marketing metrics and wants fewer dimensions for analysis and modelling. One stakeholder values interpretability of original variables; another values compact representation and information retention.</p>
+<h3 id="14-1-pca-solution">14.1 PCA solution</h3>
+<ol>
+<li>Standardize differently scaled metrics.</li>
+<li>Build the covariance/correlation matrix.</li>
+<li>Compute eigenpairs.</li>
+<li>Sort eigenvalues descending.</li>
+<li>Calculate individual and cumulative explained variance.</li>
+<li>Select enough components to meet the information threshold.</li>
+<li>Form the projection matrix from selected eigenvectors.</li>
+<li>Project standardized observations.</li>
+</ol>
+<p>A large gap after the first eigenvalue suggests one dominant latent factor shared by several correlated metrics. Later small eigenvalues represent little additional variation and may largely reflect redundancy/noise.</p>
+<h3 id="14-2-interpretability-versus-compression">14.2 Interpretability versus compression</h3>
+<p>PCA does not “choose the best original columns.” Each component is a weighted combination called a loading vector. Interpret components by examining large positive/negative loadings and assigning cautious business descriptions such as “overall digital engagement.”</p>
+<p>Recommended compromise:</p>
+<ul>
+<li>use PCA scores for modelling, visualization, or compression;</li>
+<li>retain a loadings table and original descriptive features for stakeholder explanation;</li>
+<li>compare downstream validated performance before deployment;</li>
+<li>do not retain extra PCs solely for interpretability if they add negligible information, but choose $k$ with business needs in mind.</li>
+</ul>
+<h3 id="14-3-kaiser-and-cumulative-criteria">14.3 Kaiser and cumulative criteria</h3>
+<p>The quiz emphasizes both:</p>
+<ul>
+<li>keep components whose cumulative explained variance reaches a chosen target;</li>
+<li>optionally use the Kaiser $\lambda>1$ rule for standardized/correlation PCA.</li>
+</ul>
+<p>Neither replaces validation and domain judgment.</p>
+<hr>
+<h2 id="15-pca-limitations-and-caveats">15. PCA limitations and caveats</h2>
+<ul>
+<li>Linear method; cannot capture arbitrary nonlinear manifolds.</li>
+<li>Sensitive to scale unless standardized.</li>
+<li>Sensitive to outliers because variance/covariance are sensitive.</li>
+<li>Unsupervised: maximum variance may not equal maximum predictive/class-separation value.</li>
+<li>Components may be hard to explain.</li>
+<li>Assumes one global projection; different subpopulations may differ.</li>
+<li>Missing data must be handled first.</li>
+<li>Preprocessing and PCA must be fitted inside training/CV folds.</li>
+<li>Component signs are arbitrary.</li>
+<li>Correlation/covariance does not imply causation.</li>
+<li>Dimensionality reduction cannot compensate for poor-quality, biased, or nonrepresentative data.</li>
+</ul>
+<h3 id="pca-versus-lda">PCA versus LDA</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>PCA</th>
+<th>LDA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unsupervised</td>
+<td>Supervised</td>
+</tr>
+<tr>
+<td>Maximizes total variance</td>
+<td>Maximizes class separation</td>
+</tr>
+<tr>
+<td>Ignores labels</td>
+<td>Uses labels</td>
+</tr>
+<tr>
+<td>Up to $p$ components</td>
+<td>At most $C-1$ discriminants for $C$ classes</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="16-practical-use-cases">16. Practical use cases</h2>
+<h3 id="customer-marketing-data">Customer/marketing data</h3>
+<p>Combine correlated clicks, sessions, impressions, and engagement measures into a few latent components, visualize customer patterns, and train a churn model with less multicollinearity.</p>
+<h3 id="medical-measurements">Medical measurements</h3>
+<p>Compress many correlated biomarkers for exploration. Because low-variance biomarkers might be clinically decisive, validate predictive utility and retain interpretability/safety oversight.</p>
+<h3 id="images">Images</h3>
+<p>Treat pixel values as high-dimensional features; truncated SVD/PCA retains dominant visual variation and reconstructs an approximate lower-storage image.</p>
+<h3 id="text">Text</h3>
+<p>Term-document matrices contain huge vocabularies. Truncated SVD finds latent semantic directions for search/topic-like representations while preserving sparsity-friendly computation.</p>
+<h3 id="recommendations">Recommendations</h3>
+<p>SVD approximates a user–item matrix with user latent factors, singular strengths, and item latent factors, enabling compression and prediction of preferences.</p>
+<hr>
+<h2 id="17-formula-sheet">17. Formula sheet</h2>
+<p>$$z=\frac{x-\bar x}{s}$$</p>
+<p>$$C=\frac1{n-1}X_c^TX_c$$</p>
+<p>$$Cv_j=\lambda_jv_j$$</p>
+<p>$$\det(C-\lambda I)=0$$</p>
+<p>$$Z=X_cV_k$$</p>
+<p>$$\text{EVR}_j=\frac{\lambda_j}{\sum_l\lambda_l}$$</p>
+<p>$$\hat X=ZV_k^T+\mu$$</p>
+<p>$$A=U\Sigma V^T$$</p>
+<p>$$A^TA=V\Sigma^2V^T$$</p>
+<p>$$AA^T=U\Sigma^2U^T$$</p>
+<p>$$\sigma_i=\sqrt{\lambda_i(A^TA)}$$</p>
+<p>$$\lambda_i(\text{covariance})=\frac{\sigma_i^2}{n-1}$$</p>
+<p>$$A_k=U_k\Sigma_kV_k^T$$</p>
+<hr>
+<h2 id="18-likely-exam-questions">18. Likely exam questions</h2>
+<h3 id="q1-define-dimensionality-and-curse-of-dimensionality">Q1. Define dimensionality and curse of dimensionality.</h3>
+<p>Dimension is number of features. Explain exponential space growth, sparsity, larger sample requirement, computation, and weakened distance behavior.</p>
+<h3 id="q2-compare-feature-selection-and-pca">Q2. Compare feature selection and PCA.</h3>
+<p>Selection retains interpretable original variables; PCA constructs orthogonal linear combinations maximizing variance.</p>
+<h3 id="q3-find-eigenvalues-eigenvectors-of-a-2-times2-matrix">Q3. Find eigenvalues/eigenvectors of a $2\times2$ matrix.</h3>
+<p>Use $\det(A-\lambda I)=0$, solve lambdas, substitute into null-space equations, and normalize.</p>
+<h3 id="q4-state-complete-pca-algorithm">Q4. State complete PCA algorithm.</h3>
+<p>Center/standardize, covariance, eigen-decompose/SVD, sort, choose $k$, form loadings, project, and preserve preprocessing for new data.</p>
+<h3 id="q5-what-do-eigenvalues-eigenvectors-mean-in-pca">Q5. What do eigenvalues/eigenvectors mean in PCA?</h3>
+<p>Eigenvectors are principal directions/loadings; eigenvalues are variance captured along them.</p>
+<h3 id="q6-how-is-explained-variance-used">Q6. How is explained variance used?</h3>
+<p>Compute $\lambda_j/\sum\lambda$, cumulative ratios, then select $k$ using threshold, scree plot, validation, and business constraints.</p>
+<h3 id="q7-explain-svd-matrices-and-dimensions">Q7. Explain SVD matrices and dimensions.</h3>
+<p>For $m\times n$ $A$, define $U$, rectangular $\Sigma$, and $V^T$, orthogonality, singular-value order, and reconstruction.</p>
+<h3 id="q8-derive-pca-svd-relationship">Q8. Derive PCA–SVD relationship.</h3>
+<p>Substitute $X_c=U\Sigma V^T$ into $X_c^TX_c/(n-1)$ to show PCA directions $V$ and variances $\Sigma^2/(n-1)$.</p>
+<h3 id="q9-why-not-store-u-for-new-pca-samples">Q9. Why not store $U$ for new PCA samples?</h3>
+<p>$U$ is tied to training rows. Store mean/scale and $V_k$; transform new samples with the same preprocessing and loadings.</p>
+<h3 id="q10-discuss-marketingmetrics-stakeholder-trade-off">Q10. Discuss MarketingMetrics stakeholder trade-off.</h3>
+<p>Explain compression versus interpretability, use loadings to interpret PCs, choose $k$ by information/validation, and retain documentation/original descriptors.</p>
+<hr>
+<h2 id="19-rapid-recall-checklist">19. Rapid-recall checklist</h2>
+<ul>
+<li>[ ] Dimension = number of features/columns.</li>
+<li>[ ] Curse: space/sample needs grow rapidly as dimensions rise.</li>
+<li>[ ] PCA is unsupervised linear feature extraction.</li>
+<li>[ ] Center at minimum; standardize when scales differ.</li>
+<li>[ ] Covariance diagonal = variances; off-diagonal = covariances.</li>
+<li>[ ] Eigenvector direction satisfies $Av=\lambda v$.</li>
+<li>[ ] Scaling an eigenvector does not change its eigenvalue.</li>
+<li>[ ] PC1 captures maximum variance; later PCs are orthogonal.</li>
+<li>[ ] Eigenvalues equal variances captured by PCA directions.</li>
+<li>[ ] Sort eigenpairs descending before selecting components.</li>
+<li>[ ] Scores = centered/scaled data × loadings.</li>
+<li>[ ] New data use training mean, scale, and $V_k$.</li>
+<li>[ ] $A=U\Sigma V^T$ for any rectangular matrix.</li>
+<li>[ ] Right singular vectors are eigenvectors of $A^TA$.</li>
+<li>[ ] Singular values are square roots of eigenvalues of $A^TA$.</li>
+<li>[ ] For centered PCA, explained variance is $\sigma^2/(n-1)$.</li>
+<li>[ ] Truncated SVD gives an optimal rank-$k$ approximation.</li>
+<li>[ ] PCA may discard low-variance predictive information.</li>
+<li>[ ] Eigenvector/component signs are arbitrary.</li>
+<li>[ ] Fit PCA inside cross-validation folds to avoid leakage.</li>
+</ul>
+<h2 id="20-final-takeaways">20. Final takeaways</h2>
+<ol>
+<li>Dimensionality reduction combats sparsity, computational cost, redundancy, and visualization difficulty, but may sacrifice information and interpretation.</li>
+<li>PCA rotates centered/scaled data onto orthogonal maximum-variance axes and keeps the most informative directions.</li>
+<li>Covariance eigenvalues quantify captured variance; eigenvectors define loadings.</li>
+<li>SVD provides a stable direct route to PCA and general low-rank approximation for rectangular matrices.</li>
+<li>Component count must be chosen using explained variance, validation, interpretability, and business/task needs—not an automatic rule alone.</li>
+</ol>
+        </div>
+    <nav class="week-pager">
+      <a href="week-7.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 7: Association Rule Mining, Apriori, and PCY</span>
+      </a>
+      <a href="week-9.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 9: Text Processing, Bag of Words, TF–IDF,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

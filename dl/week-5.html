@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Deep Learning · Week 5 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Deep Learning</span>
+      <span class="brand-title">Week 5</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html" selected>Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Neural Networks and Deep Learning
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Neural Networks, Backpropagation, Model Tuning, and Evaluation
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Convolutional Neural Networks, Transfer Learning and Computer-Vision…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        RNNs, GRU, LSTM, NLP, Word Embeddings, Transfer Learning and Attention
+      </a>
+      <a class="is-active" href="week-5.html">
+        <span class="week-num">Week 5</span>
+        RBMs, Deep Belief Networks, Autoencoders, and Contrastive Divergence
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Reinforcement Learning, Policy Networks, Target Networks and DQN
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Generative Adversarial Networks (GANs)
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Data Augmentation, Hyperparameter Tuning, Transfer Learning and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Feed-Forward Neural Networks, Perceptrons, Loss, Backpropagation and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Python Programming Fundamentals
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Machine Learning, Classification, and Naive Bayes
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Logistic Regression as a Neural Network, MNIST, and K-Means
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        PCA and Bag-of-Words
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Autoencoders and Representation Learning
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Exhaustive Exam-Oriented Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Deep Learning · Week 5</p>
+        <h1 class="page-title">RBMs, Deep Belief Networks, Autoencoders, and Contrastive Divergence</h1>
+        <p class="page-meta">Week 5 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-week-at-a-glance">1. Week at a glance</a></li>
+      <li><a href="#2-representation-learning">2. Representation learning</a></li>
+      <li><a href="#3-definition-and-purposes">3. Definition and purposes</a></li>
+      <li><a href="#4-architecture-why-it-is-restricted">4. Architecture: why it is “restricted”</a></li>
+      <li><a href="#5-energy-based-mathematical-foundation">5. Energy-based mathematical foundation</a></li>
+      <li><a href="#6-rbm-inference-and-reconstruction">6. RBM inference and reconstruction</a></li>
+      <li><a href="#7-gibbs-sampling">7. Gibbs sampling</a></li>
+      <li><a href="#8-contrastive-divergence-cd">8. Contrastive Divergence (CD)</a></li>
+      <li><a href="#9-types-of-rbm">9. Types of RBM</a></li>
+      <li><a href="#10-rbm-applications-with-examples">10. RBM applications with examples</a></li>
+      <li><a href="#11-rbm-limitations">11. RBM limitations</a></li>
+      <li><a href="#12-definition-and-architecture">12. Definition and architecture</a></li>
+      <li><a href="#13-hierarchical-feature-learning">13. Hierarchical feature learning</a></li>
+      <li><a href="#14-canonical-dbn-training">14. Canonical DBN training</a></li>
+      <li><a href="#15-why-unsupervised-pretraining-mattered">15. Why unsupervised pretraining mattered</a></li>
+      <li><a href="#16-dbn-applications">16. DBN applications</a></li>
+      <li><a href="#17-dbn-compared-with-other-architectures">17. DBN compared with other architectures</a></li>
+      <li><a href="#18-dbn-challenges-and-limitations">18. DBN challenges and limitations</a></li>
+      <li><a href="#19-definition-and-learning-objective">19. Definition and learning objective</a></li>
+      <li><a href="#20-architecture">20. Architecture</a></li>
+      <li><a href="#21-types-of-autoencoder">21. Types of autoencoder</a></li>
+      <li><a href="#22-denoising-autoencoder-in-detail">22. Denoising autoencoder in detail</a></li>
+      <li><a href="#23-semi-supervised-classification-with-autoencoders">23. Semi-supervised classification with autoencoders</a></li>
+      <li><a href="#24-nonlinear-dimensionality-reduction">24. Nonlinear dimensionality reduction</a></li>
+      <li><a href="#25-autoencoder-applications">25. Autoencoder applications</a></li>
+      <li><a href="#26-autoencoder-advantages-and-limitations">26. Autoencoder advantages and limitations</a></li>
+      <li><a href="#27-model-setup-described-in-the-lesson">27. Model setup described in the lesson</a></li>
+      <li><a href="#28-scenario-and-objective">28. Scenario and objective</a></li>
+      <li><a href="#29-decision-options">29. Decision options</a></li>
+      <li><a href="#30-diagnostic-sequence-for-poor-uniform-reconstructions">30. Diagnostic sequence for poor/uniform reconstructions</a></li>
+      <li><a href="#31-model-comparison">31. Model comparison</a></li>
+      <li><a href="#32-common-misconceptions-and-exam-traps">32. Common misconceptions and exam traps</a></li>
+      <li><a href="#33-likely-exam-questions-with-answer-points">33. Likely exam questions with answer points</a></li>
+      <li><a href="#34-very-short-answers">34. Very short answers</a></li>
+      <li><a href="#35-one-page-memory-map">35. One-page memory map</a></li>
+      <li><a href="#36-formula-sheet">36. Formula sheet</a></li>
+      <li><a href="#37-final-10-point-checklist">37. Final 10-point checklist</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-week-at-a-glance">1. Week at a glance</h2>
+<p>Week 5 introduces three representation-learning families:</p>
+<ol>
+<li><strong>Restricted Boltzmann Machines (RBMs):</strong> stochastic, energy-based, generative neural networks that learn a probability distribution over inputs without labels.</li>
+<li><strong>Deep Belief Networks (DBNs):</strong> hierarchical models built by stacking RBMs, usually trained by layer-wise unsupervised pretraining followed by supervised fine-tuning.</li>
+<li><strong>Autoencoders (AEs):</strong> encoder–bottleneck–decoder networks trained to reconstruct their input; variants support compression, denoising, robust feature learning, anomaly detection, and generation.</li>
+</ol>
+<p>The common theme is <strong>representation learning</strong>: instead of manually defining features, the model discovers useful latent features from raw data.</p>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> These techniques are especially useful when labeled data are scarce, unlabeled/raw data are abundant, or useful hidden structure must be discovered automatically. Their practical value must be balanced against computational cost, sensitivity to hyperparameters, convergence issues, and interpretability.</p>
+</blockquote>
+<hr>
+<h2 id="2-representation-learning">2. Representation learning</h2>
+<p>Representation learning transforms raw observations into features that become progressively more useful and abstract.</p>
+<p>Example hierarchy for images:</p>
+<p>\[
+\text{pixels} \rightarrow \text{edges} \rightarrow \text{corners/textures} \rightarrow \text{parts} \rightarrow \text{objects}
+\]</p>
+<p>For customer sessions:</p>
+<p>\[
+\text{clicks, searches, carts, purchases} \rightarrow \text{latent interests} \rightarrow \text{recommendations}
+\]</p>
+<p>The latent features are normally not supplied as labels. A unit may, for example, behave like “gaming enthusiast,” “luxury shopper,” or “mobile-accessories shopper” because correlated observations repeatedly occur together.</p>
+<hr>
+<h1 id="part-i-restricted-boltzmann-machines">Part I — Restricted Boltzmann Machines</h1>
+<h2 id="3-definition-and-purposes">3. Definition and purposes</h2>
+<p>A <strong>Restricted Boltzmann Machine (RBM)</strong> is an <strong>unsupervised, stochastic, energy-based probabilistic graphical model</strong>. It learns a joint probability distribution over observed variables and latent variables.</p>
+<p>Typical uses include:</p>
+<ul>
+<li>feature extraction/feature learning;</li>
+<li>nonlinear dimensionality reduction and compact latent representation;</li>
+<li>collaborative filtering and recommendation systems;</li>
+<li>topic or text modeling;</li>
+<li>generative modeling and synthetic sample creation;</li>
+<li>anomaly/outlier detection, including fraud detection;</li>
+<li>unsupervised pretraining of deeper networks, especially DBNs.</li>
+</ul>
+<p>“Stochastic” means units are treated probabilistically rather than as purely deterministic activations. “Generative” means the model learns the data distribution and can reconstruct or sample plausible data patterns.</p>
+<h2 id="4-architecture-why-it-is-restricted">4. Architecture: why it is “restricted”</h2>
+<p>An RBM has exactly two layers:</p>
+<ul>
+<li><strong>Visible layer</strong> \(\mathbf v=(v_1,\ldots,v_m)\): represents observed input features.</li>
+<li><strong>Hidden layer</strong> \(\mathbf h=(h_1,\ldots,h_n)\): represents latent variables/features.</li>
+</ul>
+<p>Every visible unit is connected to every hidden unit through symmetric, bidirectional weighted edges. There are:</p>
+<ul>
+<li>no visible-to-visible connections;</li>
+<li>no hidden-to-hidden connections.</li>
+</ul>
+<p>Thus, the graph is <strong>bipartite</strong>. The absence of intra-layer connections is the “restriction” in Restricted Boltzmann Machine.</p>
+<h3 id="4-1-parameters">4.1 Parameters</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Meaning</th>
+<th>Typical shape</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\(W=[w_{ij}]\)</td>
+<td>connection strength between visible unit \(v_i\) and hidden unit \(h_j\)</td>
+<td>\(m\times n\)</td>
+</tr>
+<tr>
+<td>\(\mathbf a\)</td>
+<td>visible-layer bias vector</td>
+<td>\(m\)</td>
+</tr>
+<tr>
+<td>\(\mathbf b\)</td>
+<td>hidden-layer bias vector</td>
+<td>\(n\)</td>
+</tr>
+</tbody>
+</table></div>
+<p>The \((m,n)\) orientation supports:</p>
+<p>\[
+\mathbf h=\sigma(\mathbf vW+\mathbf b),\qquad
+\hat{\mathbf v}=\sigma(\mathbf hW^T+\mathbf a).
+\]</p>
+<p>Weights learn correlations; biases model baseline tendencies of units to activate. Small non-zero bias initialization may help early learning of feature frequencies, but it does <strong>not</strong> solve the central inference problem.</p>
+<h3 id="4-2-conditional-independence">4.2 Conditional independence</h3>
+<p>The bipartite restriction makes hidden units conditionally independent given the visible vector and visible units conditionally independent given the hidden vector. Hence all units in one layer can be evaluated or sampled in parallel:</p>
+<p>\[
+P(h_j=1\mid \mathbf v)=\sigma\!\left(b_j+\sum_i v_iw_{ij}\right)
+\]</p>
+<p>\[
+P(v_i=1\mid \mathbf h)=\sigma\!\left(a_i+\sum_j h_jw_{ij}\right)
+\]</p>
+<p>where \(\sigma(x)=1/(1+e^{-x})\).</p>
+<blockquote>
+<p><strong>Exam trap:</strong> Conditional independence does not mean visible and hidden variables are unrelated. It means units <em>within the same layer</em> become independent when the opposite layer is known.</p>
+</blockquote>
+<h2 id="5-energy-based-mathematical-foundation">5. Energy-based mathematical foundation</h2>
+<p>For a binary–binary RBM, the standard energy of configuration \((\mathbf v,\mathbf h)\) is</p>
+<p>\[
+E(\mathbf v,\mathbf h)
+=-\sum_i a_iv_i-\sum_j b_jh_j-\sum_i\sum_j v_iw_{ij}h_j.
+\]</p>
+<p>Equivalent vector form:</p>
+<p>\[
+E(\mathbf v,\mathbf h)=-\mathbf a^T\mathbf v-\mathbf b^T\mathbf h-\mathbf v^TW\mathbf h.
+\]</p>
+<p>Interpretation:</p>
+<ul>
+<li><strong>low energy \(\Rightarrow\) high compatibility and high probability</strong>;</li>
+<li><strong>high energy \(\Rightarrow\) low compatibility and low probability</strong>.</li>
+</ul>
+<p>The joint Boltzmann distribution is</p>
+<p>\[
+P(\mathbf v,\mathbf h)=\frac{e^{-E(\mathbf v,\mathbf h)}}{Z},
+\]</p>
+<p>where the partition function is</p>
+<p>\[
+Z=\sum_{\mathbf v}\sum_{\mathbf h}e^{-E(\mathbf v,\mathbf h)}.
+\]</p>
+<p>The marginal probability of an observed vector is obtained by summing over every possible latent explanation:</p>
+<p>\[
+P(\mathbf v)=\sum_{\mathbf h}P(\mathbf v,\mathbf h)
+=\frac{\sum_{\mathbf h}e^{-E(\mathbf v,\mathbf h)}}{Z}.
+\]</p>
+<h3 id="5-1-why-exact-learning-is-difficult">5.1 Why exact learning is difficult</h3>
+<p>The number of binary states grows exponentially. With \(n\) hidden units, there are \(2^n\) hidden vectors; a realistic model with 500 hidden units has \(2^{500}\) possibilities. Computing \(Z\) or exact model expectations is therefore intractable at useful scales.</p>
+<p>The restricted graph makes the conditional distributions tractable, but does <strong>not</strong> make the global partition function cheap. Contrastive Divergence addresses this practical problem.</p>
+<blockquote>
+<p><strong>Correction to noisy transcript wording:</strong> Probability uses \(e^{-E}\), not \(e^{E}\). The negative sign is essential: it makes lower-energy configurations more probable.</p>
+</blockquote>
+<h2 id="6-rbm-inference-and-reconstruction">6. RBM inference and reconstruction</h2>
+<h3 id="forward-inference-pass">Forward/inference pass</h3>
+<ol>
+<li>Clamp the observed data to the visible layer.</li>
+<li>Compute \(P(\mathbf h\mid\mathbf v)\).</li>
+<li>Sample hidden states or use hidden probabilities as a latent representation.</li>
+</ol>
+<h3 id="backward-reconstruction-pass">Backward/reconstruction pass</h3>
+<ol>
+<li>Use the hidden states/probabilities.</li>
+<li>Compute \(P(\mathbf v\mid\mathbf h)\) using \(W^T\) and visible biases.</li>
+<li>Sample or retain probabilities to obtain reconstructed data \(\hat{\mathbf v}\).</li>
+</ol>
+<p>The model learns recurring correlations, not a lookup table of samples. Consequently, reconstructions tend toward high-probability learned structure. For example, if horizontal strokes repeatedly occur in training images, hidden combinations can reconstruct such strokes even from noisy input.</p>
+<h2 id="7-gibbs-sampling">7. Gibbs sampling</h2>
+<p>A Gibbs chain alternates conditional sampling:</p>
+<p>\[
+\mathbf v^{(0)}\rightarrow \mathbf h^{(0)}\rightarrow
+\mathbf v^{(1)}\rightarrow \mathbf h^{(1)}\rightarrow\cdots
+\]</p>
+<p>One full visible–hidden–visible transition is commonly treated as one Gibbs step. Longer chains better approach the model distribution but cost more computation.</p>
+<h2 id="8-contrastive-divergence-cd">8. Contrastive Divergence (CD)</h2>
+<p><strong>Contrastive Divergence</strong> is the standard practical approximation used to train RBMs without explicitly calculating the partition function.</p>
+<h3 id="8-1-positive-phase">8.1 Positive phase</h3>
+<p>Use real training data \(\mathbf v^{(0)}\):</p>
+<p>\[
+\mathbf h^{(0)}\sim P(\mathbf h\mid\mathbf v^{(0)}).
+\]</p>
+<p>Compute data-driven associations:</p>
+<p>\[
+\langle v_ih_j\rangle_{\text{data}}.
+\]</p>
+<p>These express correlations the model should strengthen.</p>
+<h3 id="8-2-negative-phase">8.2 Negative phase</h3>
+<p>Starting from the data, run \(k\) Gibbs steps to obtain reconstructed/model samples \(\mathbf v^{(k)},\mathbf h^{(k)}\). Compute:</p>
+<p>\[
+\langle v_ih_j\rangle_{\text{model/reconstruction}}.
+\]</p>
+<p>These express correlations the model should weaken when its reconstructions overproduce them.</p>
+<h3 id="8-3-parameter-updates">8.3 Parameter updates</h3>
+<p>The central weight update is</p>
+<p>\[
+\Delta W=\eta\left(
+\langle \mathbf v\mathbf h^T\rangle_{\text{data}}
+-
+\langle \mathbf v\mathbf h^T\rangle_{\text{recon}}
+\right),
+\]</p>
+<p>with bias updates</p>
+<p>\[
+\Delta \mathbf a=\eta\left(\mathbf v^{(0)}-\mathbf v^{(k)}\right),
+\qquad
+\Delta \mathbf b=\eta\left(\mathbf h^{(0)}-\mathbf h^{(k)}\right).
+\]</p>
+<p>In words:</p>
+<p>\[
+\text{update}=\text{positive associations}-\text{negative associations}.
+\]</p>
+<p>CD-1 uses one Gibbs step; CD-5 and CD-10 use longer chains. CD-1 is often a useful speed/quality compromise, while larger \(k\) improves the negative-phase approximation at higher cost.</p>
+<h3 id="8-4-hyperparameters-that-must-not-be-confused">8.4 Hyperparameters that must not be confused</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Hyperparameter</th>
+<th>Controls</th>
+<th>If increased</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Learning rate \(\eta\)</td>
+<td>magnitude of each update (“how far”)</td>
+<td>faster changes but possible instability</td>
+</tr>
+<tr>
+<td>Epochs</td>
+<td>number of full passes (“how long”)</td>
+<td>longer training; does not itself enlarge an update</td>
+</tr>
+<tr>
+<td>Gibbs steps \(k\)</td>
+<td>fidelity of the negative-phase approximation</td>
+<td>more computation, usually better sampling</td>
+</tr>
+<tr>
+<td>Hidden units</td>
+<td>representational capacity</td>
+<td>richer features but more cost/overfitting risk</td>
+</tr>
+<tr>
+<td>Number of samples</td>
+<td>amount of training data</td>
+<td>affects evidence and runtime, not step size</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="9-types-of-rbm">9. Types of RBM</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Visible units</th>
+<th>Hidden units</th>
+<th>Best suited to</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binary–Binary RBM</td>
+<td>binary</td>
+<td>binary</td>
+<td>binary vectors</td>
+<td>thresholded/digit images, Boolean features</td>
+</tr>
+<tr>
+<td>Gaussian–Binary RBM</td>
+<td>Gaussian/continuous</td>
+<td>binary</td>
+<td>continuous-valued inputs</td>
+<td>grayscale intensities, sensor readings</td>
+</tr>
+<tr>
+<td>Replicated Softmax RBM</td>
+<td>count/multinomial representation</td>
+<td>usually binary</td>
+<td>document word-count data</td>
+<td>topic/text modeling</td>
+</tr>
+<tr>
+<td>Conditional RBM</td>
+<td>sequence plus conditioning/history</td>
+<td>commonly binary</td>
+<td>temporal dependencies</td>
+<td>speech, video-frame prediction, financial time series</td>
+</tr>
+<tr>
+<td>Convolutional RBM</td>
+<td>spatial feature maps</td>
+<td>feature maps</td>
+<td>spatial/image structure</td>
+<td>image recognition and local pattern learning</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Exam trap:</strong> Replicated Softmax RBM is specifically associated with word-count/document modeling; it is not merely a generic multiclass classifier.</p>
+</blockquote>
+<h2 id="10-rbm-applications-with-examples">10. RBM applications with examples</h2>
+<ul>
+<li><strong>Dimensionality reduction:</strong> compress a high-dimensional vector while preserving latent structure.</li>
+<li><strong>Feature extraction:</strong> learn underlying correlations without handcrafted features.</li>
+<li><strong>Collaborative filtering:</strong> infer a user&rsquo;s latent interests from views/ratings/clicks. Netflix-like movie recommendations and YouTube-like topic recommendations were emphasized.</li>
+<li><strong>Generative modeling:</strong> generate synthetic image/text-like samples from the learned distribution.</li>
+<li><strong>Topic modeling:</strong> identify latent themes from word counts.</li>
+<li><strong>Anomaly detection:</strong> low-probability/high-energy patterns can indicate fraud or unusual activity.</li>
+<li><strong>Deep-network pretraining:</strong> initialize layers of a DBN with meaningful weights.</li>
+</ul>
+<h3 id="practical-recommendation-example">Practical recommendation example</h3>
+<p>Observed session: phone view + charger view + earbuds view. A hidden unit may learn “mobile-accessories shopper,” leading to recommendations such as a phone case, power bank, or wireless charger.</p>
+<h2 id="11-rbm-limitations">11. RBM limitations</h2>
+<ul>
+<li>Training may be unstable, converge slowly, and be sensitive to learning rate, initialization, hidden-unit count, and Gibbs steps.</li>
+<li>Exact likelihood training is intractable; CD is biased/approximate.</li>
+<li>Large datasets/models incur significant computational and memory cost.</li>
+<li>Restricted pairwise connectivity limits direct modeling of some complex dependencies.</li>
+<li>RBM-pretrained deep networks can still suffer optimization issues such as vanishing gradients during later deep training.</li>
+<li>Learned hidden features can be hard to interpret.</li>
+<li>Modern alternatives often offer better scalability and task-specific performance.</li>
+</ul>
+<blockquote>
+<p><strong>Nuance:</strong> Vanishing gradient is principally a deep-network backpropagation issue, not the defining failure of a single two-layer RBM. RBM pretraining was historically introduced partly to mitigate poor deep-network initialization.</p>
+</blockquote>
+<hr>
+<h1 id="part-ii-deep-belief-networks">Part II — Deep Belief Networks</h1>
+<h2 id="12-definition-and-architecture">12. Definition and architecture</h2>
+<p>A <strong>Deep Belief Network (DBN)</strong> is a hierarchical generative model formed by stacking multiple RBMs. The hidden representation learned by one RBM becomes the visible input of the next.</p>
+<p>Example:</p>
+<p>\[
+\mathbf x(784)\rightarrow RBM_1(300)\rightarrow RBM_2(150)
+\rightarrow RBM_3\rightarrow \text{task output}.
+\]</p>
+<p>Only the first RBM sees raw input. Every upper RBM sees the hidden activations of the layer directly below it.</p>
+<p>For a supervised task, a fully connected output head may be added for classification, regression, or another prediction objective.</p>
+<h2 id="13-hierarchical-feature-learning">13. Hierarchical feature learning</h2>
+<ul>
+<li>First RBM: initial/simple features such as edges or basic correlations.</li>
+<li>Second RBM: combinations such as corners, motifs, and textures.</li>
+<li>Higher RBMs: increasingly abstract parts, objects, concepts, or customer profiles.</li>
+</ul>
+<p>Each RBM models a joint distribution between its input representation and its own hidden layer. Stacking lets the DBN refine the hierarchy.</p>
+<h2 id="14-canonical-dbn-training">14. Canonical DBN training</h2>
+<h3 id="stage-1-greedy-layer-wise-unsupervised-pretraining">Stage 1 — Greedy layer-wise unsupervised pretraining</h3>
+<ol>
+<li>Train \(RBM_1\) on raw, unlabeled data.</li>
+<li>Freeze/use \(RBM_1\)&rsquo;s hidden activations as transformed data.</li>
+<li>Train \(RBM_2\) on those activations.</li>
+<li>Repeat for additional RBMs.</li>
+</ol>
+<p>It is called <strong>greedy</strong> because each layer is optimized locally, one at a time, without initially optimizing the whole network&rsquo;s final task loss.</p>
+<h3 id="stage-2-add-a-supervised-output-layer">Stage 2 — Add a supervised output layer</h3>
+<p>Attach a classifier/regressor when the goal is predictive rather than purely generative.</p>
+<h3 id="stage-3-global-supervised-fine-tuning">Stage 3 — Global supervised fine-tuning</h3>
+<p>Use labeled examples and backpropagation to adjust all layers jointly for the target objective.</p>
+<p>Pretraining learns general structure; fine-tuning specializes it for classification/regression. Pretraining alone is not normally the best final classifier.</p>
+<h2 id="15-why-unsupervised-pretraining-mattered">15. Why unsupervised pretraining mattered</h2>
+<p>Historically, deep networks initialized randomly were difficult to optimize because gradients vanished, training was unstable, and lower layers often failed to learn useful features. Layer-wise RBM pretraining supplied a meaningful starting point.</p>
+<p>The classic DBN scenario is:</p>
+<ul>
+<li>abundant unlabeled/raw data;</li>
+<li>scarce or expensive labeled data;</li>
+<li>pretrain on all unlabeled data;</li>
+<li>fine-tune on the limited labeled subset.</li>
+</ul>
+<blockquote>
+<p><strong>Live-session Q&amp;A:</strong> When should an organization choose a DBN because it can use both labeled and unlabeled data? The instructor&rsquo;s answer was a data-scarcity scenario: there is a huge amount of raw/unlabeled data but only a small labeled set. “Image recognition” is an application, not the requested business scenario.</p>
+</blockquote>
+<p>Examples mentioned: credit scoring from extensive raw transaction/history data with relatively few labels, recommendation systems, and predictive analytics.</p>
+<h2 id="16-dbn-applications">16. DBN applications</h2>
+<ul>
+<li>image recognition, classification, and object detection;</li>
+<li>NLP, sentiment analysis, and language modeling;</li>
+<li>speech recognition;</li>
+<li>dimensionality reduction, feature-space reduction, compression, and visualization preprocessing;</li>
+<li>generative modeling, new image/sound generation, and data augmentation;</li>
+<li>anomaly/fraud detection;</li>
+<li>recommendation systems;</li>
+<li>medical diagnosis;</li>
+<li>robotics and finance;</li>
+<li>prediction and hierarchical feature extraction.</li>
+</ul>
+<h2 id="17-dbn-compared-with-other-architectures">17. DBN compared with other architectures</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>DBN</th>
+<th>CNN</th>
+<th>RNN/GRU/LSTM</th>
+<th>Transformer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Core idea</td>
+<td>stacked RBMs; hierarchical generative representation</td>
+<td>spatial/local feature extraction</td>
+<td>sequential state/memory</td>
+<td>attention-based global/contextual relationships</td>
+</tr>
+<tr>
+<td>Typical training</td>
+<td>unsupervised layer-wise pretraining + supervised fine-tuning</td>
+<td>end-to-end supervised/self-supervised optimization</td>
+<td>end-to-end sequence training</td>
+<td>large-scale pretraining/fine-tuning</td>
+</tr>
+<tr>
+<td>Strength</td>
+<td>uses unlabeled data; historical deep initialization; generative feature learning</td>
+<td>images/spatial patterns</td>
+<td>temporal/sequential dependencies</td>
+<td>scalable parallel modeling of long contexts</td>
+</tr>
+<tr>
+<td>Main weakness here</td>
+<td>slow, complex, RBM-dependent</td>
+<td>not inherently generative; task-specific</td>
+<td>sequential computation and gradient challenges</td>
+<td>substantial data/compute requirements</td>
+</tr>
+</tbody>
+</table></div>
+<p>DBNs are among the early successful deep-learning architectures, but CNNs, RNN variants, and Transformers became more prominent because of efficiency, scalability, modern optimization, and superior task-specific results.</p>
+<h2 id="18-dbn-challenges-and-limitations">18. DBN challenges and limitations</h2>
+<ul>
+<li>complex, time-consuming two-stage training;</li>
+<li>layer-wise pretraining plus fine-tuning can be computationally intensive;</li>
+<li>large memory requirements and difficulty scaling to large datasets;</li>
+<li>reliance on RBMs brings convergence and hyperparameter sensitivity;</li>
+<li>possible overfitting during fine-tuning;</li>
+<li>weaker modeling of temporal dependencies than RNNs;</li>
+<li>often superseded by modern architectures.</li>
+</ul>
+<hr>
+<h1 id="part-iii-autoencoders">Part III — Autoencoders</h1>
+<h2 id="19-definition-and-learning-objective">19. Definition and learning objective</h2>
+<p>An <strong>autoencoder</strong> is a neural network trained to encode an input into a useful representation and decode that representation into a reconstruction of the original input.</p>
+<p>\[
+\mathbf z=f_\theta(\mathbf x),\qquad
+\hat{\mathbf x}=g_\phi(\mathbf z).
+\]</p>
+<p>Training minimizes reconstruction loss, for example mean squared error:</p>
+<p>\[
+\mathcal L_{MSE}=\frac1N\sum_{r=1}^N\|\mathbf x_r-\hat{\mathbf x}_r\|_2^2,
+\]</p>
+<p>or binary cross-entropy for binary/normalized data:</p>
+<p>\[
+\mathcal L_{BCE}=-\sum_i[x_i\log \hat x_i+(1-x_i)\log(1-\hat x_i)].
+\]</p>
+<p>Labels are not required for the reconstruction objective, so autoencoders are commonly described as unsupervised/self-supervised representation learners.</p>
+<h2 id="20-architecture">20. Architecture</h2>
+<h3 id="20-1-input-layer">20.1 Input layer</h3>
+<p>Receives raw \(\mathbf x\). An image may be a flattened pixel vector or a 2-D/3-D tensor for convolutional processing.</p>
+<h3 id="20-2-encoder">20.2 Encoder</h3>
+<p>Compresses the input and extracts essential features. Dense layers suit tabular vectors; convolutional layers suit images. Nonlinear activations such as ReLU/PReLU or sigmoid allow nonlinear patterns.</p>
+<h3 id="20-3-bottleneck-latent-space">20.3 Bottleneck/latent space</h3>
+<p>The central representation \(\mathbf z\), usually lower-dimensional than the input. It is a compact summary of the information needed for reconstruction.</p>
+<p>Instructor&rsquo;s numeric example:</p>
+<p>\[
+784\; (28\times28\text{ image})\rightarrow256\rightarrow64
+\rightarrow256\rightarrow784.
+\]</p>
+<p>The bottleneck forces the model to retain dominant structure rather than blindly copy every input value. In a VAE, it represents parameters such as the mean and variance of a probability distribution rather than one fixed code.</p>
+<h3 id="20-4-decoder-and-output">20.4 Decoder and output</h3>
+<p>Mirrors/reverses the encoder, expanding \(\mathbf z\) toward the original dimensionality. The output activation must match the data:</p>
+<ul>
+<li>sigmoid for binary or normalized \([0,1]\) values;</li>
+<li>linear activation for unconstrained continuous values.</li>
+</ul>
+<blockquote>
+<p><strong>Exam trap:</strong> An autoencoder&rsquo;s “encoding” is learned numerical representation/compression, not ordinary encryption or conversion into human-readable text.</p>
+</blockquote>
+<h2 id="21-types-of-autoencoder">21. Types of autoencoder</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Key mechanism</th>
+<th>Main purpose/use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vanilla/basic AE</td>
+<td>ordinary encoder + decoder</td>
+<td>reconstruction and basic compression</td>
+</tr>
+<tr>
+<td>Deep AE</td>
+<td>multiple encoder/decoder layers</td>
+<td>more complex hierarchical representations</td>
+</tr>
+<tr>
+<td>Sparse AE</td>
+<td>sparsity penalty/constraint; only a few latent units active</td>
+<td>selective feature extraction, even with a wider code</td>
+</tr>
+<tr>
+<td>Denoising AE</td>
+<td>corrupted input, clean reconstruction target</td>
+<td>noise removal and robust features</td>
+</tr>
+<tr>
+<td>Variational AE (VAE)</td>
+<td>probabilistic latent distribution, commonly Gaussian</td>
+<td>generation and sampling of new data</td>
+</tr>
+<tr>
+<td>Convolutional AE</td>
+<td>convolution/downsampling and decoding/upsampling</td>
+<td>images and spatial data</td>
+</tr>
+<tr>
+<td>Contractive AE</td>
+<td>penalty discourages large representation changes for small input changes</td>
+<td>robustness to small perturbations</td>
+</tr>
+</tbody>
+</table></div>
+<p>Choose the variant according to the problem: denoising for corrupted data, convolutional for imagery, sparse for selective activations, VAE for new samples, and contractive for local robustness.</p>
+<h2 id="22-denoising-autoencoder-in-detail">22. Denoising autoencoder in detail</h2>
+<p>Training pair:</p>
+<p>\[
+\tilde{\mathbf x}=\text{corrupt}(\mathbf x)\quad\text{as input},
+\qquad \mathbf x\quad\text{as target}.
+\]</p>
+<p>Pipeline:</p>
+<p>\[
+\text{clean sample}\rightarrow\text{add noise}\rightarrow\text{encoder}
+\rightarrow\text{bottleneck}\rightarrow\text{decoder}
+\rightarrow\text{clean reconstruction}.
+\]</p>
+<p>Random noise changes between exposures, whereas genuine structure remains stable. The network therefore learns stable features and ignores inconsistent corruption.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Standard AE</th>
+<th>Denoising AE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clean input; clean reconstruction target</td>
+<td>corrupted input; original clean target</td>
+</tr>
+<tr>
+<td>bottleneck/regularization discourages trivial copying</td>
+<td>corruption adds explicit robustness pressure</td>
+</tr>
+<tr>
+<td>may copy too easily if overcomplete</td>
+<td>learns invariance to corruption</td>
+</tr>
+</tbody>
+</table></div>
+<p>Instructor examples: clarify noisy handwritten digits and recover traffic/highway number plates from degraded images. The bottleneck behaves as a learned filter, though it does not literally guarantee removal of every anomaly.</p>
+<h2 id="23-semi-supervised-classification-with-autoencoders">23. Semi-supervised classification with autoencoders</h2>
+<ol>
+<li>Train the encoder/autoencoder on a large collection of both labeled and unlabeled examples.</li>
+<li>Retain the encoder&rsquo;s latent features.</li>
+<li>Attach a classifier.</li>
+<li>Train/fine-tune using the smaller labeled subset.</li>
+</ol>
+<p>This reduces dependence on expensive labels because unlabeled inputs teach the model the data&rsquo;s structure before classification.</p>
+<h2 id="24-nonlinear-dimensionality-reduction">24. Nonlinear dimensionality reduction</h2>
+<p>Unlike a purely linear projection, nonlinear encoder activations can learn a curved/nonlinear low-dimensional manifold:</p>
+<p>\[
+\mathbf x\in\mathbb R^d\rightarrow\mathbf z\in\mathbb R^k,
+\qquad k<d.
+\]</p>
+<p>Useful applications include visualization, compressed storage, preprocessing, and feature extraction. Reconstruction quality tests how much important information the code retains.</p>
+<h2 id="25-autoencoder-applications">25. Autoencoder applications</h2>
+<ul>
+<li><strong>Denoising/restoration:</strong> remove corruption from images or signals.</li>
+<li><strong>Compression:</strong> store the latent code rather than the full representation.</li>
+<li><strong>Medical storage example:</strong> compress historical MRI/scan data and reconstruct it when needed, reducing storage demands.</li>
+<li><strong>Anomaly/fraud detection:</strong> train on normal patterns; unusually high reconstruction error suggests an anomaly. Transaction features may include location, typical amount, counterpart, and behavior history.</li>
+<li><strong>Recommendation systems:</strong> encode users/items into useful latent representations.</li>
+<li><strong>Feature extraction and semi-supervised learning.</strong></li>
+<li><strong>Generative modeling:</strong> especially VAEs, which sample from learned latent distributions.</li>
+<li><strong>Data preprocessing and visualization.</strong></li>
+</ul>
+<blockquote>
+<p><strong>Important caveat:</strong> A transaction does not literally “fail to pass through” a physical bottleneck. Operationally, the model reconstructs familiar patterns well; high reconstruction error can be used to flag unfamiliar transactions.</p>
+</blockquote>
+<h2 id="26-autoencoder-advantages-and-limitations">26. Autoencoder advantages and limitations</h2>
+<h3 id="advantages">Advantages</h3>
+<ul>
+<li>learns features without manual labels;</li>
+<li>captures nonlinear structure;</li>
+<li>supports dimensionality reduction, noise reduction, anomaly detection, compression, restoration, and generation;</li>
+<li>can exploit abundant unlabeled data;</li>
+<li>deep versions can learn complex representations.</li>
+</ul>
+<h3 id="limitations">Limitations</h3>
+<ul>
+<li>a poorly constrained/high-capacity AE may learn an identity mapping;</li>
+<li>reconstruction accuracy does not automatically imply usefulness for a downstream task;</li>
+<li>sensitivity to architecture, bottleneck size, regularization, learning rate, and other hyperparameters;</li>
+<li>computational cost for large/deep/convolutional models;</li>
+<li>possible overfitting, especially to noisy training data;</li>
+<li>latent representations may be difficult to interpret;</li>
+<li>aggressive compression loses detail, while a large bottleneck may fail to learn compact structure.</li>
+</ul>
+<hr>
+<h1 id="part-iv-python-rbm-implementation-walkthrough">Part IV — Python RBM implementation walkthrough</h1>
+<h2 id="27-model-setup-described-in-the-lesson">27. Model setup described in the lesson</h2>
+<p>The implementation uses Python/Colab, NumPy for arrays/random values, and Matplotlib for plots. The demonstrated toy configuration included:</p>
+<ul>
+<li>6 visible units;</li>
+<li>3 hidden units;</li>
+<li>100 synthetically generated training samples;</li>
+<li>5,000 epochs;</li>
+<li>learning rate \(0.1\);</li>
+<li>\(k=1\) Gibbs step;</li>
+<li>5 sample records for comparing original and reconstructed data.</li>
+</ul>
+<h3 id="core-class-responsibilities">Core class responsibilities</h3>
+<ul>
+<li>initialize \(W\), visible bias, and hidden bias;</li>
+<li>apply a sigmoid function;</li>
+<li>sample hidden states/probabilities from visible data;</li>
+<li>sample/reconstruct visible states from hidden data;</li>
+<li>execute positive and negative CD phases;</li>
+<li>update weights and biases;</li>
+<li>reconstruct sample data for visualization.</li>
+</ul>
+<p>Conceptual pseudocode:</p>
+<pre><code class="language-text">initialize W, visible_bias, hidden_bias
+for each epoch:
+    positive_h_prob = sigmoid(data @ W + hidden_bias)
+    positive_h_state = sample(positive_h_prob)
+    positive_assoc = data.T @ positive_h_prob
+
+    negative_v = data
+    repeat k times:
+        negative_h_prob = sigmoid(negative_v @ W + hidden_bias)
+        negative_h_state = sample(negative_h_prob)
+        negative_v_prob = sigmoid(negative_h_state @ W.T + visible_bias)
+        negative_v = sample(negative_v_prob)
+
+    negative_h_prob = sigmoid(negative_v @ W + hidden_bias)
+    negative_assoc = negative_v.T @ negative_h_prob
+
+    W += learning_rate * (positive_assoc - negative_assoc) / n_samples
+    visible_bias += learning_rate * mean(data - negative_v)
+    hidden_bias += learning_rate * mean(positive_h_prob - negative_h_prob)
+</code></pre>
+<p>The demonstration printed progress at intervals such as 1,000, 2,000, …, 5,000 using the modulus/remainder operator. The instructor explicitly distinguished modulus (remainder) from division (quotient). It then plotted original and reconstructed vectors as bar charts.</p>
+<h3 id="interpretation-and-caution">Interpretation and caution</h3>
+<p>Synthetic data means manually/computationally created data, useful for prototyping when real data are unavailable. It is not automatically realistic or evidence that a production model works. A structured-looking reconstruction only shows what the toy RBM learned; it does not by itself prove denoising quality or business accuracy.</p>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> Practical Python proficiency requires running, modifying, and debugging the code. Research papers and ebooks were recommended both for current applications and implementation details.</p>
+</blockquote>
+<hr>
+<h1 id="part-v-integrated-business-case-innovateflows">Part V — Integrated business case: InnovateFlows</h1>
+<h2 id="28-scenario-and-objective">28. Scenario and objective</h2>
+<p>InnovateFlows, an online retail startup, wants an RBM recommendation prototype from <strong>10,000 user sessions</strong> within <strong>two weeks</strong>.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Stakeholder</th>
+<th>Role/priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sara, Data Engineer</td>
+<td>implementation and computational feasibility; worries about long Gibbs chains and convergence</td>
+</tr>
+<tr>
+<td>Raj, ML Researcher</td>
+<td>rich latent features and recommendation quality</td>
+</tr>
+<tr>
+<td>Elaine, Manager</td>
+<td>a working prototype within the deadline</td>
+</tr>
+</tbody>
+</table></div>
+<p>Visible behaviors may include page views, search terms, clicks, category visits, add-to-cart events, purchases, and session duration. A six-visible/four-hidden illustration uses \(V_1\ldots V_6\) and \(H_1\ldots H_4\).</p>
+<h2 id="29-decision-options">29. Decision options</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Benefit</th>
+<th>Cost/limitation</th>
+<th>Judgment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Reduce hidden units</td>
+<td>faster sampling, smaller model</td>
+<td>less capacity, fewer latent preferences, potentially weaker recommendations</td>
+<td>useful only if compute dominates quality</td>
+</tr>
+<tr>
+<td>2. Keep four hidden units and use CD</td>
+<td>preserves expressive capacity; avoids exact likelihood; practical speed</td>
+<td>approximate gradient and Gibbs cost remain</td>
+<td><strong>best balance</strong></td>
+</tr>
+<tr>
+<td>3. Initialize biases with small non-zero values</td>
+<td>may modestly improve early convergence</td>
+<td>does not solve intractable partition function/model expectation</td>
+<td>minor optimization, not primary solution</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Recommended decision:</strong> Option 2. It preserves the four hidden units for richer customer-interest representations and uses Contrastive Divergence to meet computational/deadline constraints. This balances Sara&rsquo;s feasibility concern, Raj&rsquo;s quality goal, and Elaine&rsquo;s delivery requirement.</p>
+<h2 id="30-diagnostic-sequence-for-poor-uniform-reconstructions">30. Diagnostic sequence for poor/uniform reconstructions</h2>
+<p>If outputs collapse to nearly uniform values:</p>
+<ol>
+<li>Inspect weight and bias initialization; check symmetry, scale, and saturation.</li>
+<li>Compare positive- and negative-phase statistics; if they are nearly identical or degenerate, CD supplies little useful learning signal.</li>
+<li>Inspect update magnitudes/signs and verify matrix orientation, sigmoid/sampling code, normalization, learning rate, and whether parameters actually change.</li>
+</ol>
+<p>Changing only biases or removing hidden units can mask symptoms without locating the learning failure.</p>
+<hr>
+<h1 id="part-vi-integrated-comparisons-and-exam-preparation">Part VI — Integrated comparisons and exam preparation</h1>
+<h2 id="31-model-comparison">31. Model comparison</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Autoencoder</th>
+<th>Denoising Autoencoder</th>
+<th>RBM</th>
+<th>DBN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Core architecture</td>
+<td>encoder–latent code–decoder</td>
+<td>same, with corrupted input</td>
+<td>one visible + one hidden layer</td>
+<td>stacked RBMs, often plus task head</td>
+</tr>
+<tr>
+<td>Learning signal</td>
+<td>reconstruction</td>
+<td>clean target from noisy input</td>
+<td>likelihood approximation/energy</td>
+<td>unsupervised RBM pretraining + supervised fine-tuning</td>
+</tr>
+<tr>
+<td>Probabilistic generative model</td>
+<td>not necessarily</td>
+<td>not necessarily</td>
+<td>yes</td>
+<td>yes/historically generative</td>
+</tr>
+<tr>
+<td>Main goal</td>
+<td>compact features/reconstruction</td>
+<td>robust features and denoising</td>
+<td>learn distribution and latent correlations</td>
+<td>hierarchical features</td>
+</tr>
+<tr>
+<td>Contrastive Divergence</td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td>yes, within RBM pretraining</td>
+</tr>
+<tr>
+<td>Bottleneck</td>
+<td>normally yes or otherwise regularized</td>
+<td>yes/regularized</td>
+<td>not called a bottleneck</td>
+<td>not the defining feature</td>
+</tr>
+<tr>
+<td>Labels required</td>
+<td>no for pretraining</td>
+<td>no for pretraining</td>
+<td>no</td>
+<td>no for pretraining; yes for supervised fine-tuning</td>
+</tr>
+<tr>
+<td>Typical output</td>
+<td>reconstructed input</td>
+<td>clean reconstruction</td>
+<td>samples/reconstruction/latent features</td>
+<td>prediction or generated representation</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="32-common-misconceptions-and-exam-traps">32. Common misconceptions and exam traps</h2>
+<ol>
+<li><strong>“Lower RBM energy means a worse state.”</strong> False—lower energy means higher probability.</li>
+<li><strong>“An RBM is fully connected within every layer.”</strong> False—only cross-layer connections exist.</li>
+<li><strong>“RBMs require labels.”</strong> False—they are unsupervised.</li>
+<li><strong>“Hidden units are predefined customer categories.”</strong> False—they are learned latent features.</li>
+<li><strong>“The partition function is computed exactly during CD.”</strong> False—CD avoids exact model expectation/normalization.</li>
+<li><strong>“Bias initialization solves RBM computational complexity.”</strong> False—it may aid convergence but not exponential state summation.</li>
+<li><strong>“Fewer hidden units always improve an RBM.”</strong> False—compute falls, but representational capacity may also fall.</li>
+<li><strong>“Learning rate tells how many epochs to train.”</strong> False—learning rate controls update size; epochs control repetitions.</li>
+<li><strong>“Increasing \(k\) increases the learning rate.”</strong> False—it improves/changes the negative-phase sample.</li>
+<li><strong>“RBMs memorize examples.”</strong> False—they learn correlations and a distribution.</li>
+<li><strong>“Every DBN layer is trained on raw input.”</strong> False—upper layers receive preceding hidden activations.</li>
+<li><strong>“DBN pretraining alone yields the optimal classifier.”</strong> False—supervised fine-tuning specializes it.</li>
+<li><strong>“DBNs are simply CNNs or RNNs.”</strong> False—their architecture and training are different.</li>
+<li><strong>“Autoencoders encrypt data.”</strong> False—they learn numerical representations.</li>
+<li><strong>“Any autoencoder automatically denoises.”</strong> False—a denoising AE is explicitly trained with corrupted input and clean target.</li>
+<li><strong>“Good reconstruction guarantees useful classification.”</strong> False—the reconstruction objective may preserve task-irrelevant details.</li>
+<li><strong>“An anomaly cannot pass through the bottleneck.”</strong> Metaphorical only—anomaly detection normally uses reconstruction error or latent deviation.</li>
+</ol>
+<h2 id="33-likely-exam-questions-with-answer-points">33. Likely exam questions with answer points</h2>
+<h3 id="q1-define-an-rbm-and-explain-why-it-is-restricted">Q1. Define an RBM and explain why it is restricted.</h3>
+<p>An RBM is an unsupervised stochastic energy-based probabilistic network with visible and hidden layers. Every visible unit connects to every hidden unit, but there are no visible–visible or hidden–hidden links. This bipartite restriction creates conditional independence and makes \(P(h\mid v)\) and \(P(v\mid h)\) efficient.</p>
+<h3 id="q2-derive-the-relationship-among-energy-joint-probability-and-marginal-visible-probability">Q2. Derive the relationship among energy, joint probability, and marginal visible probability.</h3>
+<p>Write the binary RBM energy, then
+\(P(v,h)=e^{-E(v,h)}/Z\),
+\(Z=\sum_v\sum_h e^{-E(v,h)}\), and
+\(P(v)=\sum_hP(v,h)\). Explain low energy/high probability and exponential intractability.</p>
+<h3 id="q3-explain-cd-k">Q3. Explain CD-\(k\).</h3>
+<p>Start with data; compute hidden probabilities and positive associations; run \(k\) alternating Gibbs steps; compute negative associations from reconstruction; update parameters by data statistics minus reconstruction/model statistics. State the speed–accuracy trade-off.</p>
+<h3 id="q4-how-is-a-dbn-trained">Q4. How is a DBN trained?</h3>
+<p>Greedy layer-wise unsupervised RBM pretraining, passing each hidden representation upward; add a task head; supervised backpropagation fine-tunes the complete stack. It is valuable when unlabeled data are plentiful and labeled data scarce.</p>
+<h3 id="q5-compare-dbn-cnn-and-rnn">Q5. Compare DBN, CNN, and RNN.</h3>
+<p>DBN: stacked RBMs, hierarchical generative features, slow layer-wise pretraining. CNN: spatial/local pattern processing. RNN/LSTM/GRU: sequential/temporal dependence. Modern architectures generally train and scale more efficiently for their specialized tasks.</p>
+<h3 id="q6-explain-an-autoencoder-and-the-role-of-its-bottleneck">Q6. Explain an autoencoder and the role of its bottleneck.</h3>
+<p>The encoder maps input to a compact code; the bottleneck retains essential features; the decoder reconstructs original dimensionality; training minimizes reconstruction error. The code supports compression, feature learning, visualization, and downstream tasks.</p>
+<h3 id="q7-standard-versus-denoising-autoencoder">Q7. Standard versus denoising autoencoder.</h3>
+<p>Standard AE receives clean input and reconstructs it. Denoising AE receives a corrupted version but targets the original clean input, forcing stable, noise-resistant representation learning.</p>
+<h3 id="q8-discuss-types-of-autoencoder">Q8. Discuss types of autoencoder.</h3>
+<p>Explain vanilla, deep, sparse, denoising, variational, convolutional, and contractive variants, identifying the constraint/mechanism and suitable use case for each.</p>
+<h3 id="q9-how-can-autoencoders-perform-anomaly-detection">Q9. How can autoencoders perform anomaly detection?</h3>
+<p>Train predominantly on normal data. The AE learns normal structure and reconstructs it well. At inference, unusually high reconstruction error or abnormal latent representation signals a possible anomaly; select a validation-based threshold and investigate false positives.</p>
+<h3 id="q10-analyze-the-innovateflows-decision">Q10. Analyze the InnovateFlows decision.</h3>
+<p>Keeping four hidden units with CD is best: it maintains latent-feature capacity while avoiding exact likelihood computation and helps meet the two-week deadline. Reducing units sacrifices quality; small bias initialization is only a secondary optimization.</p>
+<h2 id="34-very-short-answers">34. Very short answers</h2>
+<ul>
+<li><strong>Latent variable:</strong> an unobserved factor inferred from observed data.</li>
+<li><strong>Bipartite graph:</strong> nodes split into two sets with edges only across sets.</li>
+<li><strong>Partition function:</strong> normalization constant summing unnormalized probabilities over all states.</li>
+<li><strong>Positive phase:</strong> statistics under observed data; strengthens real correlations.</li>
+<li><strong>Negative phase:</strong> statistics under reconstructions/model samples; weakens unsupported correlations.</li>
+<li><strong>CD-1:</strong> Contrastive Divergence using one Gibbs step.</li>
+<li><strong>Greedy pretraining:</strong> train one layer locally at a time.</li>
+<li><strong>Fine-tuning:</strong> jointly optimize the pretrained network for a target task using labels.</li>
+<li><strong>Bottleneck:</strong> compact central representation in an autoencoder.</li>
+<li><strong>Sparse representation:</strong> only a small fraction of latent units activate.</li>
+<li><strong>Synthetic data:</strong> artificially/manual or computationally generated data, often used for prototypes or augmentation.</li>
+<li><strong>Hyperparameter:</strong> developer-selected setting such as learning rate or hidden-unit count, not learned directly as a model parameter.</li>
+</ul>
+<hr>
+<h1 id="rapid-revision">Rapid revision</h1>
+<h2 id="35-one-page-memory-map">35. One-page memory map</h2>
+<h3 id="rbm">RBM</h3>
+<ul>
+<li>Two layers: visible observations + hidden latent features.</li>
+<li>Restricted = no intra-layer edges; graph is bipartite.</li>
+<li>Energy: \(-a^Tv-b^Th-v^TWh\).</li>
+<li>Probability: \(P(v,h)=e^{-E}/Z\); lower energy means higher probability.</li>
+<li>Conditionals are easy; \(Z\) and exact model expectation are hard.</li>
+<li>Train with CD: positive/data association minus negative/reconstruction association.</li>
+<li>Gibbs chain: \(v\to h\to v\); \(k\) trades compute for approximation quality.</li>
+<li>Uses: latent features, recommendation, generation, topics, anomaly detection, DBN pretraining.</li>
+<li>Weaknesses: approximate/unstable training, hyperparameter sensitivity, scaling and interpretability.</li>
+</ul>
+<h3 id="dbn">DBN</h3>
+<ul>
+<li>Stack RBMs: hidden output of one becomes visible input of the next.</li>
+<li>Higher layers learn more abstract features.</li>
+<li>Train bottom-up without labels; attach output head; fine-tune jointly with labels.</li>
+<li>Best historical scenario: much unlabeled data, little labeled data.</li>
+<li>Slower and more complex than modern end-to-end architectures; weak on temporal structure compared with RNNs.</li>
+</ul>
+<h3 id="autoencoder">Autoencoder</h3>
+<ul>
+<li>\(x\to\text{encoder}\to z\to\text{decoder}\to\hat x\).</li>
+<li>Bottleneck/regularization prevents trivial copying and learns useful structure.</li>
+<li>Denoising: noisy input, clean target.</li>
+<li>Sparse: few active latent units.</li>
+<li>VAE: probabilistic latent space and new-sample generation.</li>
+<li>Convolutional: spatial/image data.</li>
+<li>Contractive: robustness to small perturbations.</li>
+<li>Uses: compression, denoising, nonlinear reduction, features, anomalies, semi-supervised learning.</li>
+</ul>
+<h2 id="36-formula-sheet">36. Formula sheet</h2>
+<p>\[
+E(v,h)=-a^Tv-b^Th-v^TWh
+\]</p>
+<p>\[
+P(v,h)=\frac{e^{-E(v,h)}}{Z},\qquad
+Z=\sum_v\sum_h e^{-E(v,h)}
+\]</p>
+<p>\[
+P(h_j=1\mid v)=\sigma\left(b_j+\sum_iw_{ij}v_i\right)
+\]</p>
+<p>\[
+P(v_i=1\mid h)=\sigma\left(a_i+\sum_jw_{ij}h_j\right)
+\]</p>
+<p>\[
+\Delta W=\eta\left(\langle vh^T\rangle_{data}-\langle vh^T\rangle_{recon}\right)
+\]</p>
+<p>\[
+z=f_\theta(x),\qquad \hat x=g_\phi(z),\qquad
+\min_{\theta,\phi}\mathcal L(x,\hat x)
+\]</p>
+<h2 id="37-final-10-point-checklist">37. Final 10-point checklist</h2>
+<ol>
+<li>RBM = unsupervised + stochastic + energy-based + bipartite.</li>
+<li>Restricted means no same-layer connections.</li>
+<li>Lower energy means higher probability.</li>
+<li>Partition function is the source of exact-training intractability.</li>
+<li>CD approximates learning with positive and negative phases.</li>
+<li>Learning rate, epochs, Gibbs steps, and hidden-unit count do different jobs.</li>
+<li>DBN = stacked RBMs trained bottom-up, then fine-tuned.</li>
+<li>Upper RBMs receive lower hidden activations, not raw input.</li>
+<li>AE = encoder + bottleneck + decoder; denoising AE uses noisy input/clean target.</li>
+<li>Always connect the model choice to data type, label availability, accuracy, compute, and deadline.</li>
+</ol>
+        </div>
+    <nav class="week-pager">
+      <a href="week-4.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 4: RNNs, GRU, LSTM, NLP, Word Embeddings,…</span>
+      </a>
+      <a href="week-6.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 6: Reinforcement Learning, Policy Networks,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

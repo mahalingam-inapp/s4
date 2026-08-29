@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Advanced ML · Week 12 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Advanced ML</span>
+      <span class="brand-title">Week 12</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html" selected>Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Review of Machine Learning, Learning Types, and Linear Regression
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Classification, Logistic Regression, Maximum Likelihood and K-Means…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Bias–Variance, Error Analysis, Learning Curves, and Model Selection
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Recommendation Systems and Collaborative Filtering
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Content-Based Filtering, Cosine Similarity, UV Decomposition, and…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Bias–Variance Trade-off, Underfitting, Overfitting,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Association Rule Mining, Apriori, and PCY
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Dimensionality Reduction, PCA, Eigen-Decomposition, and SVD
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Text Processing, Bag of Words, TF–IDF, Vector-Space Retrieval, and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Web Advertising, Online Matching, AdWords, and Balance
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        High-Dimensional Clustering, Subspaces, CLIQUE, PROCLUS, and…
+      </a>
+      <a class="is-active" href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Independent Component Analysis, Blind Source Separation, FastICA,…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Social Networks, Graph Laplacians, and Spectral Clustering
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Graph Partitioning, Flow Centrality, Edge Betweenness, and Girvan–Newman
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        ML Life Cycle, Hybrid and Music Recommenders, and Evaluation
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Advanced ML · Week 12</p>
+        <h1 class="page-title">Independent Component Analysis, Blind Source Separation, FastICA, and PCA Comparison</h1>
+        <p class="page-meta">Week 12 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#learning-objectives">Learning objectives</a></li>
+      <li><a href="#1-ica-definition-purpose-and-intuition">1. ICA: definition, purpose, and intuition</a></li>
+      <li><a href="#2-cocktail-party-problem-and-blind-source-separation">2. Cocktail-party problem and blind source separation</a></li>
+      <li><a href="#3-linear-ica-model">3. Linear ICA model</a></li>
+      <li><a href="#4-statistical-independence-and-non-gaussianity">4. Statistical independence and non-Gaussianity</a></li>
+      <li><a href="#5-ica-assumptions-and-identifiability">5. ICA assumptions and identifiability</a></li>
+      <li><a href="#6-ica-preprocessing-centering-and-whitening">6. ICA preprocessing: centering and whitening</a></li>
+      <li><a href="#7-ica-computation-and-deflation">7. ICA computation and deflation</a></li>
+      <li><a href="#8-fastica">8. FastICA</a></li>
+      <li><a href="#9-pca-review">9. PCA review</a></li>
+      <li><a href="#10-pca-and-ica-similarities">10. PCA and ICA: similarities</a></li>
+      <li><a href="#11-pca-versus-ica-detailed-comparison">11. PCA versus ICA: detailed comparison</a></li>
+      <li><a href="#12-demo-synthetic-ica-with-python">12. Demo: synthetic ICA with Python</a></li>
+      <li><a href="#13-techvibe-analytics-case-study">13. TechVibe Analytics case study</a></li>
+      <li><a href="#14-live-medical-case-fetal-heartbeat-through-noise">14. Live medical case: fetal heartbeat through noise</a></li>
+      <li><a href="#15-administrative-live-session-review-notes">15. Administrative/live-session review notes</a></li>
+      <li><a href="#16-formula-sheet">16. Formula sheet</a></li>
+      <li><a href="#17-exam-traps-and-corrections">17. Exam traps and corrections</a></li>
+      <li><a href="#18-exam-focused-recall">18. Exam-focused recall</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="learning-objectives">Learning objectives</h2>
+<p>After this week, you should be able to:</p>
+<ul>
+<li>define Independent Component Analysis (ICA) and blind source separation (BSS);</li>
+<li>formulate the linear mixing model \(X=AS\) and explain the mixing and unmixing matrices;</li>
+<li>state ICA&rsquo;s identifiability assumptions and unavoidable ambiguities;</li>
+<li>explain why independence is stronger than zero correlation and why non-Gaussianity is essential;</li>
+<li>describe centering, whitening, kurtosis, and FastICA&rsquo;s fixed-point/deflation workflow;</li>
+<li>distinguish PCA&rsquo;s variance/uncorrelated-components objective from ICA&rsquo;s independence/source-recovery objective;</li>
+<li>reproduce the code-demo workflow and interpret sign/order changes in recovered signals;</li>
+<li>select PCA, ICA, or a PCA→ICA pipeline for TechVibe and practical signal-separation cases;</li>
+<li>explain live-session applications such as EEG cleaning, background-noise removal, and fetal-heartbeat extraction.</li>
+</ul>
+<hr>
+<h2 id="1-ica-definition-purpose-and-intuition">1. ICA: definition, purpose, and intuition</h2>
+<p>Independent Component Analysis is an <strong>unsupervised statistical and computational technique</strong> that separates observed multivariate/mixed data into latent additive components that are as statistically independent as possible.</p>
+<p>In signal-processing language:</p>
+<p>\[
+\text{observed mixtures}\longrightarrow\text{estimated independent sources}
+\]</p>
+<p>A multivariate signal contains several distinguishable sub-signals blended together. ICA tries to computationally reverse that blending.</p>
+<h3 id="pca-versus-ica-in-one-sentence">PCA versus ICA in one sentence</h3>
+<ul>
+<li><strong>PCA:</strong> rotate/project data to uncorrelated directions ordered by variance, often retaining only a few for compression.</li>
+<li><strong>ICA:</strong> unmix data into statistically independent latent sources, usually seeking source recovery rather than variance ordering.</li>
+</ul>
+<p>The live session called ICA a “variant” in the broad family of linear component methods, but emphasized that its working, objective, and process are different from PCA.</p>
+<hr>
+<h2 id="2-cocktail-party-problem-and-blind-source-separation">2. Cocktail-party problem and blind source separation</h2>
+<h3 id="cocktail-party-problem">Cocktail-party problem</h3>
+<p>Imagine many people speaking while music, drums, piano, glasses, and ambient noise are also present. Every microphone records a different mixture. Humans can focus on individual voices; the computational question is how to recover those distinct sources from the mixtures.</p>
+<p>For the two-speaker/two-microphone example:</p>
+<ul>
+<li>source signals: \(s_1(t),s_2(t)\);</li>
+<li>microphone observations: \(x_1(t),x_2(t)\).</li>
+</ul>
+<p>\[
+x_1(t)=a_{11}s_1(t)+a_{12}s_2(t)
+\]</p>
+<p>\[
+x_2(t)=a_{21}s_1(t)+a_{22}s_2(t)
+\]</p>
+<p>Coefficients depend on speaker–microphone distances, microphone properties, acoustics, and relative gains. Each observation contains both sources with different strengths.</p>
+<p>The lecture illustrates \(s_1\) with a sinusoid and \(s_2\) with a sawtooth purely for clarity; real speech is not sinusoidal. One mixed signal is sinusoid-dominated and another sawtooth-dominated, but neither equals an original source.</p>
+<h3 id="blind-source-separation-bss">Blind source separation (BSS)</h3>
+<p>BSS recovers source signals from observed mixtures with little/no prior information about:</p>
+<ul>
+<li>the source waveforms;</li>
+<li>the mixing process/matrix.</li>
+</ul>
+<p>It is “blind” because only mixtures are observed. The cocktail-party problem is the standard BSS example.</p>
+<h3 id="applications-mentioned">Applications mentioned</h3>
+<ul>
+<li>speech/speaker separation;</li>
+<li>speech recognition and enhancement;</li>
+<li>voice recognition from mixed audio;</li>
+<li>handwriting-pattern recognition;</li>
+<li>EEG artifact/source separation from multiple electrodes;</li>
+<li>fetal ECG/heartbeat extraction;</li>
+<li>background-noise removal in audio/video editing;</li>
+<li>finding basic/local components or features of images;</li>
+<li>separating natural signal/image mixtures.</li>
+</ul>
+<p>Practical insight from the instructor: observe sounds in the environment and ask how a machine—not a human—could distinguish each minute source. ICA provides one answer under suitable assumptions.</p>
+<hr>
+<h2 id="3-linear-ica-model">3. Linear ICA model</h2>
+<h3 id="matrix-equation">Matrix equation</h3>
+<p>The foundation is:</p>
+<p>\[
+X=AS
+\]</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\(S\)</td>
+<td>Unknown latent/source matrix; rows (under a common convention) are independent source signals</td>
+</tr>
+<tr>
+<td>\(A\)</td>
+<td>Unknown mixing matrix; tells how sources combine in each sensor</td>
+</tr>
+<tr>
+<td>\(X\)</td>
+<td>Observed mixed data available to the analyst</td>
+</tr>
+</tbody>
+</table></div>
+<p>With \(m\) sensors, \(n\) sources, and \(T\) samples:</p>
+<p>\[
+S\in\mathbb R^{n\times T},\quad
+A\in\mathbb R^{m\times n},\quad
+X\in\mathbb R^{m\times T}
+\]</p>
+<p>The square basic case assumes \(m=n\) and full-rank/invertible \(A\).</p>
+<h3 id="unmixing-matrix">Unmixing matrix</h3>
+<p>If \(A\) were known and invertible:</p>
+<p>\[
+S=A^{-1}X
+\]</p>
+<p>Define:</p>
+<p>\[
+W=A^{-1}
+\]</p>
+<p>Then estimated sources are:</p>
+<p>\[
+\hat S=WX
+\]</p>
+<p>The practical ICA objective is to estimate \(W\), not simply invert a known \(A\). If estimation is successful:</p>
+<p>\[
+WA\approx I,\qquad \hat S\approx S
+\]</p>
+<p>The transcript occasionally reverses multiplication order (<code>XW</code>) while speaking. That reflects row/column convention confusion. Under the course&rsquo;s stated \(X=AS\) column-sample convention, the dimensionally consistent recovery is <strong>\(S=WX\)</strong>.</p>
+<h3 id="one-component-form">One-component form</h3>
+<p>A candidate component is a projection:</p>
+<p>\[
+y=w^Tx
+\]</p>
+<p>where \(w^T\) is one row of \(W\). Since \(x=As\):</p>
+<p>\[
+y=w^TAs=z^Ts,\qquad z=A^Tw
+\]</p>
+<p>ICA chooses \(w\) so that \(y\) is maximally non-Gaussian/independent. Under the model, such an extremum corresponds to one source up to ambiguity.</p>
+<hr>
+<h2 id="4-statistical-independence-and-non-gaussianity">4. Statistical independence and non-Gaussianity</h2>
+<h3 id="independence">Independence</h3>
+<p>Random variables \(Y_1,Y_2\) are independent if knowing one provides no information about the other. Formally:</p>
+<p>\[
+p(y_1,y_2)=p(y_1)p(y_2)
+\]</p>
+<p>Independence implies zero covariance when moments exist, but zero covariance does <strong>not</strong> generally imply independence.</p>
+<p>Example: if \(Y\) is symmetric around zero and \(Z=Y^2\), then \(Y\) and \(Z\) can have zero correlation while \(Z\) is completely determined by \(Y\). PCA can decorrelate them, but ICA seeks the stronger property.</p>
+<h3 id="why-non-gaussian-sources">Why non-Gaussian sources?</h3>
+<p>The Central Limit Theorem motivates ICA: a nontrivial sum/mixture of independent variables tends to be more Gaussian than the original variables. Therefore, projections of the observed mixtures that are <strong>maximally non-Gaussian</strong> are candidates for original independent sources.</p>
+<p>The course describes checking Gaussianity with a histogram:</p>
+<ul>
+<li>bell-shaped normal curve → Gaussian-looking;</li>
+<li>departure from Gaussian shape → non-Gaussian.</li>
+</ul>
+<h3 id="accuracy-corrections-and-precise-assumption">Accuracy corrections and precise assumption</h3>
+<ul>
+<li><strong>Non-Gaussian does not mean non-symmetric.</strong> A Laplace distribution is symmetric yet non-Gaussian; a skewed distribution is non-Gaussian, but asymmetry is not required.</li>
+<li>Standard ICA permits <strong>at most one Gaussian source</strong>. If two or more independent sources are Gaussian, their whitened mixture is rotationally indistinguishable, so their individual directions cannot be uniquely identified.</li>
+<li>It is too strong to say ICA cannot contain any Gaussian source; the precise identifiability statement is “at most one.”</li>
+</ul>
+<h3 id="higher-order-statistics-and-kurtosis">Higher-order statistics and kurtosis</h3>
+<p>PCA uses second-order statistics (variance/covariance). ICA requires information beyond covariance, often through kurtosis or negentropy.</p>
+<p>For centered \(y\), excess kurtosis is:</p>
+<p>\[
+\operatorname{kurt}(y)=
+\frac{E[y^4]}{(E[y^2])^2}-3
+\]</p>
+<ul>
+<li>Gaussian: excess kurtosis 0;</li>
+<li>positive: heavy-tailed/super-Gaussian;</li>
+<li>negative: flatter/sub-Gaussian;</li>
+<li>larger \(|\operatorname{kurt}(y)|\): stronger departure from Gaussianity.</li>
+</ul>
+<p>Kurtosis is a fourth-order statistic. It can be sensitive to outliers, so FastICA often uses robust nonlinear contrast functions/approximations to negentropy rather than raw kurtosis alone.</p>
+<hr>
+<h2 id="5-ica-assumptions-and-identifiability">5. ICA assumptions and identifiability</h2>
+<h3 id="core-assumptions">Core assumptions</h3>
+<ol>
+<li>Sources are statistically independent.</li>
+<li>Sources are non-Gaussian, except at most one may be Gaussian.</li>
+<li>Mixing is linear and approximately instantaneous in the basic model.</li>
+<li>Mixing matrix has sufficient rank; the basic course derivation assumes square/invertible \(A\).</li>
+<li>There are enough observed mixtures relative to sources; the simple case uses number of sensors = number of sources.</li>
+<li>Samples are sufficient to estimate source statistics.</li>
+</ol>
+<p>The recorded lecture sometimes says the mixing matrix is “square and orthogonal.” Squareness/invertibility is a simplifying assumption, but the original physical mixing matrix need not be orthogonal. <strong>Whitening</strong> transforms the remaining mixing in whitened space into an orthogonal rotation.</p>
+<h3 id="unavoidable-ambiguities">Unavoidable ambiguities</h3>
+<p>Even ideal ICA cannot determine:</p>
+<p><strong>Permutation/order:</strong> for permutation matrix \(P\),</p>
+<p>\[
+AS=(AP^{-1})(PS)
+\]</p>
+<p>so recovered components may appear in any order.</p>
+<p><strong>Scale/sign:</strong> for invertible diagonal \(D\),</p>
+<p>\[
+AS=(AD^{-1})(DS)
+\]</p>
+<p>so amplitude and sign can move between source and mixing column. A recovered source may be inverted or scaled and still be correct.</p>
+<p>This explains why the demo recovers sinusoid, sawtooth, and noise in changed order/colors and sometimes opposite sign.</p>
+<h3 id="rotational-ambiguity">Rotational ambiguity</h3>
+<p>Whitened data are uncorrelated with identity covariance, but any orthogonal rotation preserves identity covariance:</p>
+<p>\[
+\operatorname{Cov}(Qz)=QI Q^T=I
+\]</p>
+<p>Whitening alone cannot select the independent rotation. ICA uses higher-order non-Gaussian structure to resolve it—unless sources are Gaussian, where rotations remain indistinguishable.</p>
+<hr>
+<h2 id="6-ica-preprocessing-centering-and-whitening">6. ICA preprocessing: centering and whitening</h2>
+<h3 id="step-1-centering">Step 1: centering</h3>
+<p>Compute feature/sensor mean and subtract it:</p>
+<p>\[
+X_c=X-\mu,\qquad \mu=E[X]
+\]</p>
+<p>The centered observations have mean approximately zero. This removes offsets and simplifies ICA derivations/optimization.</p>
+<h3 id="step-2-covariance">Step 2: covariance</h3>
+<p>With \(T\) centered samples:</p>
+<p>\[
+C_X=\frac1T X_cX_c^T
+\]</p>
+<p>(Some sample-covariance definitions use \(T-1\); remain consistent.)</p>
+<h3 id="step-3-whitening-sphering">Step 3: whitening/sphering</h3>
+<p>Eigen decomposition:</p>
+<p>\[
+C_X=E\Lambda E^T
+\]</p>
+<p>Whitening matrix:</p>
+<p>\[
+V=\Lambda^{-1/2}E^T
+\]</p>
+<p>Whitened data:</p>
+<p>\[
+Z=VX_c
+\]</p>
+<p>Then:</p>
+<p>\[
+E[Z]=0,\qquad \operatorname{Cov}(Z)=I
+\]</p>
+<p>Thus whitened variables are uncorrelated and each has unit variance. The demo computes covariance and uses SVD/eigenvalue-based operations to form the whitening transform; near-zero off-diagonal numerical values are acceptable floating-point error.</p>
+<h3 id="why-whitening-helps-but-is-insufficient">Why whitening helps but is insufficient</h3>
+<ul>
+<li>removes second-order correlation;</li>
+<li>normalizes variance;</li>
+<li>reduces ICA&rsquo;s remaining search to a rotation;</li>
+<li>makes optimization faster and more stable.</li>
+</ul>
+<p>But uncorrelated is not independent, so whitening/PCA does not finish source separation. ICA applies a further rotation that maximizes non-Gaussianity/independence.</p>
+<hr>
+<h2 id="7-ica-computation-and-deflation">7. ICA computation and deflation</h2>
+<h3 id="generative-view">Generative view</h3>
+<p>ICA assumes a hidden process generated observations by linearly mixing independent sources. It infers an unmixing map from the observations.</p>
+<h3 id="extracting-one-component">Extracting one component</h3>
+<ol>
+<li>Choose/initialize a vector \(w\).</li>
+<li>Project \(y=w^TX\).</li>
+<li>Adjust \(w\) to maximize a non-Gaussianity contrast.</li>
+<li>Normalize \(w\) to unit length.</li>
+<li>The projection estimates one source.</li>
+</ol>
+<h3 id="extracting-subsequent-components">Extracting subsequent components</h3>
+<p>Use a new vector \(v\), remove its projections onto previously found vectors, normalize it, and optimize its non-Gaussianity. The lecture describes \(v\) as orthogonal to \(w\), then repeats until the requested number of components equals the number of observations/sources in the square case.</p>
+<p>This is <strong>deflationary ICA</strong>: components are estimated one at a time.</p>
+<h3 id="challenge-of-gaussian-weak-components">Challenge of Gaussian/weak components</h3>
+<p>A deflationary algorithm prioritizes strongly non-Gaussian directions. A Gaussian or nearly Gaussian component has little non-Gaussian contrast and may be difficult/impossible to identify distinctly—especially if there is more than one Gaussian source. Earlier extraction errors can also propagate because later vectors are constrained relative to earlier estimates.</p>
+<hr>
+<h2 id="8-fastica">8. FastICA</h2>
+<p>FastICA is a fast fixed-point algorithm for ICA. The recorded lectures did not derive it fully but the demo exposes its key loop.</p>
+<h3 id="typical-one-unit-update">Typical one-unit update</h3>
+<p>For whitened samples \(Z\), choose a nonlinearity \(g\), often \(g(u)=\tanh(u)\). A common update is:</p>
+<p>\[
+w_{new}=E[Zg(w^TZ)]-E[g'(w^TZ)]w
+\]</p>
+<p>Then normalize:</p>
+<p>\[
+w_{new}\leftarrow\frac{w_{new}}{\|w_{new}\|}
+\]</p>
+<p>For subsequent components, decorrelate against earlier rows \(w_j\):</p>
+<p>\[
+w_{new}\leftarrow w_{new}-\sum_{j<k}(w_{new}^Tw_j)w_j
+\]</p>
+<p>and normalize again.</p>
+<h3 id="convergence-sign-invariant-test">Convergence/sign-invariant test</h3>
+<p>Because \(w\) and \(-w\) represent the same component up to sign, a suitable criterion is:</p>
+<p>\[
+\left|\,|w_{new}^Tw_{old}|-1\right|<\varepsilon
+\]</p>
+<p>Repeat until convergence/threshold or a maximum iteration count.</p>
+<h3 id="role-of-contrast-functions">Role of contrast functions</h3>
+<p>The demo defines \(g\) and \(g'\), takes a random weight guess, projects mixed/whitened signals, passes the projection through these functions, computes means, updates weights, normalizes, and decorrelates to avoid extracting the same component twice.</p>
+<hr>
+<h2 id="9-pca-review">9. PCA review</h2>
+<h3 id="objective-and-workflow">Objective and workflow</h3>
+<p>PCA simplifies/compresses a dataset by finding orthogonal directions of maximum variance.</p>
+<ol>
+<li>Standardize/center data.</li>
+<li>Compute covariance matrix.</li>
+<li>Compute eigenvalues/eigenvectors.</li>
+<li>Sort eigenvectors by decreasing eigenvalue.</li>
+<li>Project onto the first \(k\) components.</li>
+</ol>
+<p>\[
+C=\frac1N X_c^TX_c,\qquad Cv_i=\lambda_i v_i
+\]</p>
+<p>The first principal component corresponds to largest eigenvalue/variance; second is next-largest and orthogonal (90°) to the first; and so on.</p>
+<p>If original data have 10 columns, one might retain 3 principal components. This reduces dimension but normally loses some information unless discarded eigenvalues are exactly zero. The lecture says “make sure we do not lose any information”; more precisely, PCA minimizes reconstruction loss for a given \(k\) and aims to retain <strong>most</strong> variance/information, not necessarily all.</p>
+<h3 id="pca-uses-second-order-structure">PCA uses second-order structure</h3>
+<p>PCA diagonalizes covariance, yielding uncorrelated outputs. It does not generally guarantee statistical independence except in special cases, notably jointly Gaussian data where uncorrelatedness implies independence.</p>
+<hr>
+<h2 id="10-pca-and-ica-similarities">10. PCA and ICA: similarities</h2>
+<ul>
+<li>unsupervised linear transformation/component methods;</li>
+<li>can be written as matrix multiplications/factorizations;</li>
+<li>transform coordinates/features into a new representation;</li>
+<li>can support feature extraction and dimensionality reduction;</li>
+<li>frequently use centering, covariance ideas, and PCA/SVD-based whitening;</li>
+<li>may be composed in a pipeline.</li>
+</ul>
+<p>The lecture loosely calls both matrix-factorization methods. PCA is commonly a low-rank factorization for compression; square ICA is commonly full-rank source factorization, though practical ICA can request fewer components.</p>
+<hr>
+<h2 id="11-pca-versus-ica-detailed-comparison">11. PCA versus ICA: detailed comparison</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>PCA</th>
+<th>ICA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary objective</td>
+<td>Maximize variance; dimensionality reduction/compression</td>
+<td>Maximize statistical independence; source separation</td>
+</tr>
+<tr>
+<td>Output relation</td>
+<td>Uncorrelated components</td>
+<td>Independent components (as far as model permits)</td>
+</tr>
+<tr>
+<td>Statistics</td>
+<td>Second order: covariance/variance</td>
+<td>Higher order/non-Gaussianity: kurtosis, negentropy, nonlinear contrasts</td>
+</tr>
+<tr>
+<td>Component ordering</td>
+<td>Ordered by eigenvalue/explained variance</td>
+<td>No inherent order; permutation ambiguity</td>
+</tr>
+<tr>
+<td>Orthogonality</td>
+<td>Principal directions mutually orthogonal</td>
+<td>Independent directions need not be orthogonal in original space; whitened unmixing rotation is orthogonal</td>
+</tr>
+<tr>
+<td>Component importance</td>
+<td>Earlier PCs prioritized</td>
+<td>No variance-based importance ranking; each recovered source may matter</td>
+</tr>
+<tr>
+<td>Compression</td>
+<td>Common: retain \(k<n\)</td>
+<td>Classical square ICA usually preserves source count; reduced ICA is possible</td>
+</tr>
+<tr>
+<td>Gaussian data</td>
+<td>Fully valid for variance structure</td>
+<td>Multiple Gaussian sources not individually identifiable</td>
+</tr>
+<tr>
+<td>Typical use</td>
+<td>Visualization, compression, noise reduction, overfitting control</td>
+<td>Cocktail-party/source separation, artifact removal</td>
+</tr>
+<tr>
+<td>Information loss</td>
+<td>Discarding PCs loses residual variance</td>
+<td>Full-rank transform retains dimension but recovery has estimation/ambiguity limits</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="matrix-views">Matrix views</h3>
+<p>PCA often has an orthonormal loading matrix \(U\):</p>
+<p>\[
+U^TU=I
+\]</p>
+<p>The transcript calls \(U\) “symmetric,” but orthonormality does <strong>not</strong> imply symmetry. The correct property is orthogonal/orthonormal columns.</p>
+<p>ICA:</p>
+<p>\[
+X=AS,\qquad \hat S=WX
+\]</p>
+<p>There is generally no requirement that original \(A\) be symmetric/orthogonal.</p>
+<h3 id="correlation-versus-independence">Correlation versus independence</h3>
+<p>The lecture sometimes says ICA “removes correlations and independence.” Correctly stated: ICA usually includes decorrelation/whitening but goes further to remove higher-order statistical dependencies, seeking independence. PCA removes only linear correlation.</p>
+<h3 id="component-ordering-and-importance">Component ordering and importance</h3>
+<p>PCA has a natural order \(\lambda_1\ge\lambda_2\ge\dots\). ICA&rsquo;s permutation ambiguity means “component 1” is not intrinsically more important. “All ICA components are equally important” should be read as <strong>no built-in variance ranking</strong>, not a guarantee that every source has equal business value.</p>
+<hr>
+<h2 id="12-demo-synthetic-ica-with-python">12. Demo: synthetic ICA with Python</h2>
+<h3 id="adaptation-and-libraries">Adaptation and libraries</h3>
+<p>The demo was adapted from a GitHub example and simplified by omitting toy Gaussian/non-Gaussian generation and the final kurtosis check. It used:</p>
+<ul>
+<li>NumPy/pandas;</li>
+<li>SciPy signal utilities (the transcript misrecognizes SciPy as “Skype”);</li>
+<li>Matplotlib in a Jupyter notebook;</li>
+<li>custom FastICA-related functions.</li>
+</ul>
+<h3 id="full-workflow">Full workflow</h3>
+<ol>
+<li>Generate 1,000 samples over an interval from 0 to 200.</li>
+<li>Create three independent sources:
+   - sinusoidal wave;
+   - sawtooth wave;
+   - random/noise signal.</li>
+<li>Stack them into source matrix \(S\).</li>
+<li>Define a fixed/random \(3\times3\) mixing matrix \(A\) using values shown in code (the transcript lists values such as 0.5, 1, 0.2, 0.9, 0.5, 0.8, 0.2, 0.4, 1 but is garbled).</li>
+<li>Mix with a dot product to obtain observed \(X\); every observed channel contains portions of all three sources.</li>
+<li>Plot original sources and mixtures; mixtures do not visually match an individual source.</li>
+<li>Center \(X\) by subtracting its mean.</li>
+<li>Compute covariance.</li>
+<li>Use SVD/eigenvalues to create whitening transform.</li>
+<li>Project centered data into whitened space.</li>
+<li>Verify whitened covariance is approximately the identity matrix; tiny values or “negative zero” are numerical artifacts.</li>
+<li>Run FastICA to estimate unmixing weights \(W\).</li>
+<li>Recenter recovered signals as needed.</li>
+<li>Plot original and recovered signals.</li>
+</ol>
+<h3 id="result-interpretation">Result interpretation</h3>
+<p>Recovered signals closely resemble sinusoid, sawtooth, and random source, but:</p>
+<ul>
+<li>colors/order differ → permutation ambiguity;</li>
+<li>signs may flip → sign/scale ambiguity;</li>
+<li>“almost” rather than perfectly equal → numerical/statistical estimation.</li>
+</ul>
+<p>These are expected ICA properties, not necessarily failures.</p>
+<h3 id="kurtosis-check">Kurtosis check</h3>
+<p>The original demo included kurtosis to verify non-Gaussianity of generated/recovered signals. It was intentionally removed from the lecture code for simplicity, but the instructor noted it as a valid check.</p>
+<hr>
+<h2 id="13-techvibe-analytics-case-study">13. TechVibe Analytics case study</h2>
+<h3 id="scenario">Scenario</h3>
+<p>TechVibe has mixed sensor signals and must decide whether to:</p>
+<ul>
+<li>compress/reduce features;</li>
+<li>recover physical/latent independent sources;</li>
+<li>do both efficiently.</li>
+</ul>
+<p>Stakeholders in the case include Priya working with PCA and Nina making the strategic decision. The key mistake to avoid is treating PCA and ICA as interchangeable merely because both transform matrices.</p>
+<h3 id="pca-option">PCA option</h3>
+<p>PCA standardizes data, builds covariance, performs eigendecomposition, and retains high-variance components.</p>
+<p>Advantages:</p>
+<ul>
+<li>efficient compression and visualization;</li>
+<li>denoising/redundancy reduction;</li>
+<li>reduced storage/computation;</li>
+<li>lower overfitting risk.</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li>components are variance directions, not necessarily physical sources;</li>
+<li>low-variance signals may be discarded even if meaningful;</li>
+<li>uncorrelated outputs can remain statistically dependent;</li>
+<li>dimension reduction creates information/reconstruction loss.</li>
+</ul>
+<h3 id="ica-option">ICA option</h3>
+<p>ICA estimates \(W\) and independent sources using non-Gaussianity.</p>
+<p>Advantages:</p>
+<ul>
+<li>suited to source recovery and artifact isolation;</li>
+<li>separates latent processes hidden in mixtures;</li>
+<li>examines higher-order dependencies.</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li>needs model assumptions and non-Gaussian source structure;</li>
+<li>initialization/convergence may matter;</li>
+<li>no natural ordering;</li>
+<li>scale, sign, and permutation are ambiguous;</li>
+<li>Gaussian components are hard/unidentifiable in multiples;</li>
+<li>can cost more than PCA.</li>
+</ul>
+<h3 id="combined-pca-ica-option">Combined PCA→ICA option</h3>
+<ol>
+<li>Center/standardize.</li>
+<li>Use PCA/SVD to whiten and optionally reduce dimension/noise.</li>
+<li>Retain enough PCs to preserve source subspace.</li>
+<li>Apply ICA in the whitened lower-dimensional space.</li>
+</ol>
+<p>Benefits:</p>
+<ul>
+<li>decorrelates and unit-scales inputs;</li>
+<li>reduces computation/noise;</li>
+<li>improves numerical stability;</li>
+<li>then extracts independent sources.</li>
+</ul>
+<p>Risk: aggressive PCA can remove a low-variance but important source before ICA ever sees it. Select \(k\) using explained variance <strong>and domain/source-recovery validation</strong>, not variance alone.</p>
+<h3 id="decision-rule">Decision rule</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Business/technical objective</th>
+<th>Choice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compact representation, visualization, compression</td>
+<td>PCA</td>
+</tr>
+<tr>
+<td>Recover distinct physical/latent sources</td>
+<td>ICA</td>
+</tr>
+<tr>
+<td>High-dimensional/noisy data plus source recovery</td>
+<td>PCA whitening/reduction → ICA</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="case-review-emphasis-gaussian-component">Case-review emphasis: Gaussian component</h3>
+<p>If one source is Gaussian and others non-Gaussian, ICA can often recover the non-Gaussian sources and leave a residual Gaussian direction. In deflationary extraction, the Gaussian component provides weak contrast and is hardest to identify. Two or more Gaussian sources cannot be uniquely separated by ordinary ICA.</p>
+<hr>
+<h2 id="14-live-medical-case-fetal-heartbeat-through-noise">14. Live medical case: fetal heartbeat through noise</h2>
+<p>During pregnancy, multiple electrodes on the mother&rsquo;s abdomen record different linear mixtures of:</p>
+<ul>
+<li>fetal heartbeat (target);</li>
+<li>maternal heartbeat;</li>
+<li>muscle/movement contractions;</li>
+<li>sensor/environmental noise.</li>
+</ul>
+<p>Each electrode is one observation channel:</p>
+<p>\[
+X=AS
+\]</p>
+<p>Neither clean heartbeat nor exact mixing matrix is directly available, matching a blind-source condition. ICA can estimate components; domain knowledge then identifies the fetal component and rejects maternal/artifact components.</p>
+<p>Practical workflow:</p>
+<ol>
+<li>collect synchronized multi-electrode signals;</li>
+<li>clean/center/whiten;</li>
+<li>apply ICA;</li>
+<li>inspect recovered components using waveform/spectral/clinical clues;</li>
+<li>reconstruct or retain fetal component;</li>
+<li>clinician reviews the result.</li>
+</ol>
+<p>Important caveat: ICA does not automatically know which recovered component is “baby,” and a safety-critical medical system requires validated acquisition, component identification, and clinician oversight. It estimates independent sources; a human/domain model assigns meaning.</p>
+<p>The live Q&amp;A also accepted EEG/medical-signal processing and video background-noise removal as logical applications. The instructor emphasized being able to apply theory to real-world problems, not merely repeat definitions.</p>
+<hr>
+<h2 id="15-administrative-live-session-review-notes">15. Administrative/live-session review notes</h2>
+<ul>
+<li>Previous-week recap: subspace clustering, with <strong>PROCLUS</strong> as top-down and <strong>CLIQUE</strong> as bottom-up in the instructor&rsquo;s summary.</li>
+<li>Review Week 3 mini-project status was discussed; the historical deadline stated was July 29 for that course run.</li>
+<li>Students were reminded to complete LMS material through Week 12/required videos for eligibility and keep pace with live sessions. Treat historical deadlines and current requirements separately.</li>
+</ul>
+<hr>
+<h2 id="16-formula-sheet">16. Formula sheet</h2>
+<h3 id="mixing-unmixing">Mixing/unmixing</h3>
+<p>\[
+X=AS,\qquad W\approx A^{-1},\qquad \hat S=WX
+\]</p>
+<h3 id="two-source-model">Two-source model</h3>
+<p>\[
+x_1=a_{11}s_1+a_{12}s_2,\qquad
+x_2=a_{21}s_1+a_{22}s_2
+\]</p>
+<h3 id="candidate-component">Candidate component</h3>
+<p>\[
+y=w^Tx=w^TAs=z^Ts,\qquad z=A^Tw
+\]</p>
+<h3 id="centering-and-covariance">Centering and covariance</h3>
+<p>\[
+X_c=X-E[X],\qquad
+C_X=\frac1T X_cX_c^T
+\]</p>
+<h3 id="whitening">Whitening</h3>
+<p>\[
+C_X=E\Lambda E^T,\qquad
+V=\Lambda^{-1/2}E^T,\qquad
+Z=VX_c,\qquad
+\operatorname{Cov}(Z)=I
+\]</p>
+<h3 id="excess-kurtosis">Excess kurtosis</h3>
+<p>\[
+\operatorname{kurt}(y)=\frac{E[y^4]}{(E[y^2])^2}-3
+\]</p>
+<h3 id="fastica-fixed-point-update">FastICA fixed-point update</h3>
+<p>\[
+w^+=E[Zg(w^TZ)]-E[g'(w^TZ)]w,\qquad
+w^+\leftarrow\frac{w^+}{\|w^+\|}
+\]</p>
+<h3 id="deflation-orthogonalization">Deflation/orthogonalization</h3>
+<p>\[
+w_k\leftarrow w_k-\sum_{j<k}(w_k^Tw_j)w_j,\qquad
+w_k\leftarrow\frac{w_k}{\|w_k\|}
+\]</p>
+<h3 id="independence-2">Independence</h3>
+<p>\[
+p(s_1,\ldots,s_n)=\prod_i p(s_i)
+\]</p>
+<hr>
+<h2 id="17-exam-traps-and-corrections">17. Exam traps and corrections</h2>
+<ul>
+<li>ICA = <strong>Independent Component Analysis</strong>, not “independent compounder/commodity analysis.”</li>
+<li>PCA = <strong>Principal Component Analysis</strong>, not “principle.”</li>
+<li>SciPy is the Python scientific library; it is not Skype.</li>
+<li>Non-Gaussian is not the same as asymmetric/non-symmetric.</li>
+<li>ICA generally allows at most one Gaussian source; do not state “absolutely no Gaussian source” without qualification.</li>
+<li>Uncorrelated does not generally mean independent.</li>
+<li>Whitening achieves zero correlation/unit variance, not full independence.</li>
+<li>The physical mixing matrix need not be orthogonal; whitening makes the remaining effective mixing orthogonal.</li>
+<li>\(U^TU=I\) means orthonormality, not symmetry.</li>
+<li>ICA does not have a natural component order; PCA does.</li>
+<li>ICA recovery is ambiguous in sign, scale, and permutation.</li>
+<li>PCA with \(k<n\) normally loses some information, even though it optimally preserves variance for a linear rank-\(k\) projection.</li>
+<li>PCA is not guaranteed to recover original sources.</li>
+<li>A full-rank ICA transform is not primarily compression, though reduced-component ICA implementations exist.</li>
+<li>Under \(X=AS\), use \(\hat S=WX\) with \(W\approx A^{-1}\); check dimensions before trusting transcript word order.</li>
+<li>“All ICA components equally important” means no built-in variance order, not equal domain value.</li>
+</ul>
+<hr>
+<h2 id="18-exam-focused-recall">18. Exam-focused recall</h2>
+<h3 id="short-answer-prompts">Short-answer prompts</h3>
+<ol>
+<li><strong>What is ICA?</strong> An unsupervised method that decomposes observed mixtures into maximally independent latent components.</li>
+<li><strong>Why is it blind?</strong> Sources and mixing process are unknown; only mixtures are observed.</li>
+<li><strong>State the ICA model.</strong> \(X=AS\), estimate \(W\approx A^{-1}\), recover \(\hat S=WX\).</li>
+<li><strong>Why non-Gaussianity?</strong> Mixtures are generally more Gaussian than independent sources; maximizing non-Gaussianity finds source directions.</li>
+<li><strong>Why can Gaussian sources not all be separated?</strong> Whitened Gaussian distributions are rotationally symmetric, so individual orientations are unidentifiable.</li>
+<li><strong>What does centering do?</strong> Removes means/offsets.</li>
+<li><strong>What does whitening do?</strong> Makes covariance identity: uncorrelated, unit-variance coordinates.</li>
+<li><strong>Why is whitening insufficient?</strong> Many rotations share identity covariance; higher-order dependence remains.</li>
+<li><strong>What is kurtosis used for?</strong> A fourth-order measure of departure from Gaussianity.</li>
+<li><strong>What is FastICA&rsquo;s basic loop?</strong> Project, apply contrast/nonlinearity, fixed-point update, normalize, decorrelate, repeat.</li>
+<li><strong>Why can recovered signals have opposite sign/order?</strong> ICA has sign/scale and permutation ambiguities.</li>
+<li><strong>PCA vs ICA objective?</strong> PCA maximizes variance/uncorrelatedness; ICA maximizes independence/source recovery.</li>
+<li><strong>When combine them?</strong> Use PCA for whitening/noise/dimension management before ICA, retaining the true source subspace.</li>
+<li><strong>How does the fetal-heartbeat case fit BSS?</strong> Multiple electrodes contain unknown mixtures of fetal, maternal, muscle, and noise sources.</li>
+</ol>
+<h3 id="final-one-minute-revision">Final one-minute revision</h3>
+<ul>
+<li>ICA separates mixtures; PCA compresses/orders variance.</li>
+<li>Cocktail party = canonical blind-source-separation problem.</li>
+<li>Model: \(X=AS\); learn \(W\), recover \(\hat S=WX\).</li>
+<li>Assumptions: independent sources, linear full-rank mixing, adequate sensors/samples, at most one Gaussian source.</li>
+<li>Center → whiten → rotate for maximal non-Gaussianity.</li>
+<li>PCA uses covariance/eigenvectors (second order); ICA uses higher-order/non-Gaussian information.</li>
+<li>Whitening removes correlation, not dependence.</li>
+<li>FastICA uses nonlinear fixed-point updates and decorrelation.</li>
+<li>ICA components have no natural order and may flip sign/scale.</li>
+<li>Demo sources: sinusoid, sawtooth, random; 1,000 samples; mixed by \(3\times3\) matrix; recovered nearly correctly.</li>
+<li>TechVibe: PCA for compression, ICA for sources, PCA→ICA when both are needed.</li>
+<li>Live use cases: speech, EEG, video noise removal, image parts, fetal-heartbeat extraction.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-11.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 11: High-Dimensional Clustering, Subspaces,…</span>
+      </a>
+      <a href="week-13.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 13: Social Networks, Graph Laplacians, and…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

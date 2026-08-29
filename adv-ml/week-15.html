@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Advanced ML · Week 15 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Advanced ML</span>
+      <span class="brand-title">Week 15</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html" selected>Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Review of Machine Learning, Learning Types, and Linear Regression
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Classification, Logistic Regression, Maximum Likelihood and K-Means…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Bias–Variance, Error Analysis, Learning Curves, and Model Selection
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Recommendation Systems and Collaborative Filtering
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Content-Based Filtering, Cosine Similarity, UV Decomposition, and…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Bias–Variance Trade-off, Underfitting, Overfitting,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Association Rule Mining, Apriori, and PCY
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Dimensionality Reduction, PCA, Eigen-Decomposition, and SVD
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Text Processing, Bag of Words, TF–IDF, Vector-Space Retrieval, and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Web Advertising, Online Matching, AdWords, and Balance
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        High-Dimensional Clustering, Subspaces, CLIQUE, PROCLUS, and…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Independent Component Analysis, Blind Source Separation, FastICA,…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Social Networks, Graph Laplacians, and Spectral Clustering
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Graph Partitioning, Flow Centrality, Edge Betweenness, and Girvan–Newman
+      </a>
+      <a class="is-active" href="week-15.html">
+        <span class="week-num">Week 15</span>
+        ML Life Cycle, Hybrid and Music Recommenders, and Evaluation
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Advanced ML · Week 15</p>
+        <h1 class="page-title">ML Life Cycle, Hybrid and Music Recommenders, and Evaluation</h1>
+        <p class="page-meta">Week 15 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#exam-scope-and-learning-outcomes">Exam scope and learning outcomes</a></li>
+      <li><a href="#1-machine-learning-project-life-cycle">1. Machine-learning project life cycle</a></li>
+      <li><a href="#2-recommender-system-foundations">2. Recommender-system foundations</a></li>
+      <li><a href="#3-hybrid-architecture-and-seven-hybridization-types">3. Hybrid architecture and seven hybridization types</a></li>
+      <li><a href="#4-music-recommendation-systems">4. Music recommendation systems</a></li>
+      <li><a href="#5-acoustic-and-emotion-based-methods">5. Acoustic and emotion-based methods</a></li>
+      <li><a href="#6-recommender-evaluation">6. Recommender evaluation</a></li>
+      <li><a href="#7-tuneblend-case-study">7. TuneBlend case study</a></li>
+      <li><a href="#8-exam-focused-revision">8. Exam-focused revision</a></li>
+      <li><a href="#9-live-session-additions-and-exam-emphasis">9. Live-session additions and exam emphasis</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="exam-scope-and-learning-outcomes">Exam scope and learning outcomes</h2>
+<p>This final week integrates production ML practice with advanced recommendation design. You should be able to:</p>
+<ul>
+<li>explain the end-to-end, iterative ML project life cycle;</li>
+<li>distinguish content-based (CBRS), collaborative-filtering (CFRS), and hybrid recommenders;</li>
+<li>identify seven hybridization patterns from their data/model flow;</li>
+<li>design a music recommender using user, item, acoustic, context, and emotion data;</li>
+<li>compare K-means/EMD, EM/Monte Carlo, and average-vector/Euclidean approaches;</li>
+<li>calculate predictive, ranking, behavioral, and business recommender metrics;</li>
+<li>recommend a technically and commercially appropriate TuneBlend rollout.</li>
+</ul>
+<hr>
+<h2 id="1-machine-learning-project-life-cycle">1. Machine-learning project life cycle</h2>
+<h3 id="1-1-meaning-and-purpose">1.1 Meaning and purpose</h3>
+<p>The <strong>ML life cycle</strong> is a cyclic, structured process for developing, deploying, and continuously improving an efficient ML solution. It guides the full project—not only training—and aims to solve a business problem reliably.</p>
+<p>High-level flow:</p>
+<ol>
+<li>identify business goal;</li>
+<li>frame it as an ML problem;</li>
+<li>collect/process data and engineer features;</li>
+<li>select, train, validate, tune, and evaluate a model;</li>
+<li>deploy for inference/prediction;</li>
+<li>continuously monitor data and model behavior;</li>
+<li>feed evidence back into earlier stages.</li>
+</ol>
+<h3 id="1-2-problem-framing">1.2 Problem framing</h3>
+<p>Translate the business need into a measurable ML task:</p>
+<ul>
+<li>identify stakeholders and collaborate with them;</li>
+<li>define objective, desired outcome, scope, users, constraints, and decisions supported;</li>
+<li>specify available/needed observed data;</li>
+<li>define target variable/prediction;</li>
+<li>choose performance and business metrics;</li>
+<li>decide what must be optimized and what failure costs.</li>
+</ul>
+<p><strong>Example:</strong> “Improve customer retention” is not yet an ML task. A framing could be: predict probability of churn within 30 days, use it to prioritize limited retention offers, optimize recall subject to campaign cost and fairness constraints.</p>
+<p>Business framing comes first; selecting a model and then inventing a goal is poor practice.</p>
+<h3 id="1-3-well-architected-nine-stage-workflow">1.3 Well-architected nine-stage workflow</h3>
+<h4 id="1-problem-definition">1. Problem definition</h4>
+<ul>
+<li>stakeholder collaboration;</li>
+<li>clear documented objective, outcome, scope, assumptions, constraints;</li>
+<li>comprehensive foundation for subsequent work.</li>
+</ul>
+<h4 id="2-data-collection">2. Data collection</h4>
+<ul>
+<li><strong>relevance:</strong> data/features match the problem;</li>
+<li><strong>quality:</strong> accurate/correct, with ethical/privacy issues addressed;</li>
+<li><strong>quantity:</strong> sufficient examples for robust learning;</li>
+<li><strong>diversity:</strong> broad scenarios, populations, and patterns to avoid blind spots.</li>
+</ul>
+<h4 id="3-cleaning-and-preprocessing">3. Cleaning and preprocessing</h4>
+<ul>
+<li>correct missing values, outliers, duplicates, and inconsistencies;</li>
+<li>sanitize/standardize formats;</li>
+<li>scale numerical variables;</li>
+<li>encode categorical variables;</li>
+<li>transform raw data into organized usable structured/semi-structured tables.</li>
+</ul>
+<h4 id="4-exploratory-data-analysis-eda">4. Exploratory data analysis (EDA)</h4>
+<ul>
+<li>statistical summaries and visualization;</li>
+<li>find distributions, trends, correlations, anomalies, leakage, and potential challenges;</li>
+<li>derive insights guiding feature engineering and model selection.</li>
+</ul>
+<h4 id="5-feature-engineering-and-selection">5. Feature engineering and selection</h4>
+<ul>
+<li><strong>engineering:</strong> create/transform features to capture useful relationships;</li>
+<li><strong>selection:</strong> retain the most significant/useful subset;</li>
+<li>use domain expertise;</li>
+<li>balance predictive accuracy against computation, latency, and maintainability.</li>
+</ul>
+<h4 id="6-model-selection">6. Model selection</h4>
+<ul>
+<li>align model family with task and data characteristics;</li>
+<li>consider performance, interpretability, complexity, scalability, latency, and cost;</li>
+<li>experiment with multiple candidate models/data representations rather than assume one is best.</li>
+</ul>
+<h4 id="7-model-training-and-validation">7. Model training and validation</h4>
+<ul>
+<li>expose model to historical training data and learn dependencies;</li>
+<li>iterate on parameters/features and minimize error;</li>
+<li>tune using regularization such as L1/L2 where appropriate;</li>
+<li>validate rigorously on unseen development data;</li>
+<li>automate build/train/test/release using CI/CD pipelines for multiple environments.</li>
+</ul>
+<h4 id="8-evaluation-and-tuning">8. Evaluation and tuning</h4>
+<ul>
+<li>evaluate on appropriate held-out data;</li>
+<li>use accuracy, precision, recall, F1, regression/ranking metrics, and project-specific measures;</li>
+<li>identify model strengths/weaknesses through rigorous tests;</li>
+<li>tune iteratively and stress-test robustness, subgroups, and edge cases.</li>
+</ul>
+<h4 id="9-deployment-and-continuous-monitoring">9. Deployment and continuous monitoring</h4>
+<ul>
+<li>integrate the trained model with an existing system or real-world application;</li>
+<li>serve predictions/inferences for informed decisions;</li>
+<li>transform theoretical insight into practical business value;</li>
+<li>monitor continuously and adjust/retrain as necessary.</li>
+</ul>
+<p>Monitoring covers desired performance, drift, prediction errors, data quality/schema, latency, reliability, fairness/security, and business outcomes. Deployment is not the end.</p>
+<h3 id="1-4-well-architected-quality-dimensions">1.4 Well-architected quality dimensions</h3>
+<ul>
+<li>reliability and robustness;</li>
+<li>efficiency and scalability;</li>
+<li>sustainability/resource awareness;</li>
+<li>security, privacy, and ethical controls;</li>
+<li>cost optimization;</li>
+<li>operational excellence/operability;</li>
+<li>maintainability and reproducibility.</li>
+</ul>
+<p>CI/CD is important but alone does not make a well-architected ML system. The full loop must revisit framing/data/features/models when monitoring reveals change.</p>
+<hr>
+<h2 id="2-recommender-system-foundations">2. Recommender-system foundations</h2>
+<p>A recommender is an information-filtering system that predicts a user’s rating/preference for an item and returns a ranked recommendation list.</p>
+<p>Input may include processed user/item/rating/context data; output is Top-(N)/Top-(K) ranked items.</p>
+<h3 id="2-1-content-based-recommendation-cbrs">2.1 Content-based recommendation (CBRS)</h3>
+<p>Matches user profile/query with item properties/features.</p>
+<p><strong>Crop example:</strong> compare a farmer’s soil composition, temperature, and other land properties against each crop’s requirements; recommend matching crops.</p>
+<p>Advantages: user independence, explanations from features, works without similar users.</p>
+<p>Problems:</p>
+<ul>
+<li>limited/expensive content analysis;</li>
+<li>metadata maintenance;</li>
+<li>over-specialization (narrow recommendations);</li>
+<li>new-user/user-profile cold start and sometimes new-item metadata gaps.</li>
+</ul>
+<h3 id="2-2-collaborative-filtering-cfrs">2.2 Collaborative filtering (CFRS)</h3>
+<p>Uses user–item interaction/rating matrix and similarity/learned patterns rather than item description alone.</p>
+<ul>
+<li>user-based or item-based;</li>
+<li>memory-based (operate on stored interactions directly);</li>
+<li>model-based (train an ML/data-mining model);</li>
+<li>combinations/hybrid CF.</li>
+</ul>
+<p><strong>Crop example:</strong> build a land–crop interaction matrix from neighboring farms and land histories; infer what crop may work on a similar plot.</p>
+<p>Advantages: can discover across categories/serendipitous items; learns collective behavior.</p>
+<p>Problems:</p>
+<ul>
+<li>user and item cold start;</li>
+<li>sparse utility matrix;</li>
+<li>users are interdependent, creating greater privacy considerations;</li>
+<li><strong>shilling attack:</strong> fake profiles/biased ratings injected to promote or suppress items.</li>
+</ul>
+<h3 id="2-3-hybrid-recommendation">2.3 Hybrid recommendation</h3>
+<p>Combines CBRS and CFRS signals/models to improve precision and reduce individual weaknesses.</p>
+<p><strong>Hybrid crop result:</strong> combine soil properties, crop characteristics, the farm’s history, neighboring-land outcomes, and land–crop patterns. This can reduce cold start, over-specialization, sparsity dependence, and manipulation exposure—but does not eliminate them. Cold start remains fundamental until enough reliable information accumulates.</p>
+<hr>
+<h2 id="3-hybrid-architecture-and-seven-hybridization-types">3. Hybrid architecture and seven hybridization types</h2>
+<p>The content channel maps user profile/query to item description/candidates. The collaborative channel derives similar users/neighbors and predicted items from interaction profiles. A fusion layer combines their candidates/scores/representations into a final ranked Top-(N).</p>
+<h3 id="3-1-weighted-hybrid">3.1 Weighted hybrid</h3>
+<p>Combine numeric scores:</p>
+<p>\[
+s(u,i)=w_c s_{content}(u,i)+w_{cf}s_{CF}(u,i),
+\qquad w_c+w_{cf}=1.
+\]</p>
+<p>Tune weights for validation/business objectives. Suitable when both systems score the same candidates on comparable/calibrated scales.</p>
+<h3 id="3-2-switching-hybrid">3.2 Switching hybrid</h3>
+<p>Select one recommender based on situation:</p>
+<ul>
+<li>new user → content/popularity;</li>
+<li>sufficient history → collaborative;</li>
+<li>sparse/low-confidence CF → content fallback.</li>
+</ul>
+<p>Critical feature: <strong>only one model is chosen for that case</strong>, rather than blending scores.</p>
+<h3 id="3-3-cascaded-hybrid">3.3 Cascaded hybrid</h3>
+<p>Apply recommenders sequentially. Model 1 creates/ranks a candidate set; model 2 refines, filters, or reranks only those candidates.</p>
+<p>Example: content model retrieves 100 relevant songs; CF reranks these for the user. Appending two independent Top-(N) lists is not a cascade.</p>
+<h3 id="3-4-mixed-hybrid">3.4 Mixed hybrid</h3>
+<p>Present/interleave results from several recommenders together, potentially including content, collaborative, and historical signals. Simple concatenation risks duplicates, poor calibration, inconsistent ordering, and list domination.</p>
+<h3 id="3-5-feature-combination-hybrid">3.5 Feature-combination hybrid</h3>
+<p>Treat output/information from one source as additional features for a single downstream recommender. Example: append collaborative neighborhood statistics to item/content features before training a ranking model.</p>
+<h3 id="3-6-feature-augmentation-hybrid">3.6 Feature-augmentation hybrid</h3>
+<p>One model produces an inferred feature—preference, item score, embedding, or classification—which augments the input of a second model. The generated information is integrated at the next recommendation level.</p>
+<h3 id="3-7-meta-level-hybrid">3.7 Meta-level hybrid</h3>
+<p>Pass an entire learned representation/model from one recommender into another, e.g. a content model learns a user-interest profile/embedding and the collaborative downstream model uses that representation. Critical distinction: a representation/model is passed, not merely a candidate list.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>What is combined/passed?</th>
+<th>Identifying question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Weighted</td>
+<td>Scores</td>
+<td>Are model scores numerically blended?</td>
+</tr>
+<tr>
+<td>Switching</td>
+<td>Choice of model</td>
+<td>Is one model selected based on context?</td>
+</tr>
+<tr>
+<td>Cascade</td>
+<td>Candidate list/order</td>
+<td>Does model 2 refine model 1’s candidates?</td>
+</tr>
+<tr>
+<td>Mixed</td>
+<td>Displayed lists</td>
+<td>Are several outputs shown/interleaved?</td>
+</tr>
+<tr>
+<td>Feature combination</td>
+<td>Raw/derived features</td>
+<td>Are multiple signal types joined into one feature space?</td>
+</tr>
+<tr>
+<td>Feature augmentation</td>
+<td>Generated feature/score</td>
+<td>Does model 1 create an extra input for model 2?</td>
+</tr>
+<tr>
+<td>Meta-level</td>
+<td>Learned representation/model</td>
+<td>Is an entire learned profile/embedding transferred?</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="4-music-recommendation-systems">4. Music recommendation systems</h2>
+<h3 id="4-1-motivation-and-applications">4.1 Motivation and applications</h3>
+<p>Digital catalogues contain millions of songs/tracks/albums, so users cannot manually explore everything. Music recommenders assist selection/playback according to taste, context, time, activity, and mood.</p>
+<p>Global services include Spotify, Amazon Music, and YouTube; localized examples in the lecture include Boomplay (Nigeria), Pandora, and Deezer (France). Recommendation applications also occur in Amazon/Flipkart products, OTT movies, Goodreads books, friend networks, YouTube videos, and news.</p>
+<h3 id="4-2-architecture">4.2 Architecture</h3>
+<p>Core components:</p>
+<ul>
+<li>music collection/content description database;</li>
+<li>music ratings/interactions database;</li>
+<li>user-interest/profile model;</li>
+<li>matching/recommendation algorithm;</li>
+<li>context (time, activity, mood, location);</li>
+<li>user interface for query, display, and feedback.</li>
+</ul>
+<p>Items can be full songs, tracks, albums, artists, or other musical units.</p>
+<h3 id="4-3-user-profiling">4.3 User profiling</h3>
+<p>Users vary by:</p>
+<ul>
+<li><strong>demographic:</strong> age, gender, marital status;</li>
+<li><strong>geographic:</strong> country/location, urban/rural;</li>
+<li><strong>psychographic:</strong> lifestyle, personality, attitude, opinions, mood, preference stability;</li>
+<li>listening expertise and context.</li>
+</ul>
+<p>Listening-experience categories:</p>
+<ul>
+<li><strong>savants:</strong> music central to life; extensive knowledge;</li>
+<li><strong>enthusiasts:</strong> music important but alongside other interests;</li>
+<li><strong>casuals:</strong> some interest, less central;</li>
+<li><strong>indifferents:</strong> listen but music is not essential; presented as the largest category, followed by casuals, enthusiasts, savants.</li>
+</ul>
+<h3 id="4-4-item-music-metadata">4.4 Item/music metadata</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Metadata</th>
+<th>Source/content</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Editorial</td>
+<td>Expert/editor-entered</td>
+<td>title, artist, album, composer, genre, lyrics tags</td>
+</tr>
+<tr>
+<td>Cultural</td>
+<td>Analysis of social/textual/cultural information</td>
+<td>similarity, reviews, usage context, cultural associations</td>
+</tr>
+<tr>
+<td>Acoustic</td>
+<td>Audio signal</td>
+<td>rhythm, beat, tempo, timbre/instrument, energy, mood</td>
+</tr>
+</tbody>
+</table></div>
+<p>Metadata-only retrieval processes title, artist, genre, lyrics, etc. It is simple and data-light but expensive to maintain as catalogue grows, ignores collaborative behavior, and may be less accurate.</p>
+<h3 id="4-5-recommendation-techniques">4.5 Recommendation techniques</h3>
+<ul>
+<li><strong>Collaborative filtering:</strong> nearest users/items and score unseen songs from history and correlations; memory-, model-, and hybrid-based forms.</li>
+<li><strong>Content/audio-signal retrieval:</strong> compare acoustic features such as rhythm/mood.</li>
+<li>K-means with Earth Mover’s Distance (EMD);</li>
+<li>Expectation–Maximization (EM) with possible Monte Carlo sampling;</li>
+<li>average feature vector with Euclidean distance;</li>
+<li>emotion/mood classifiers from lyrics and/or audio.</li>
+</ul>
+<p>Applications named: Shazam (recognition/discovery), Humtap (uses humming/acoustic input), and Gracenote (music metadata/lyrics-oriented services; transcript says “Grace knot”).</p>
+<hr>
+<h2 id="5-acoustic-and-emotion-based-methods">5. Acoustic and emotion-based methods</h2>
+<h3 id="5-1-feature-representation-and-scaling">5.1 Feature representation and scaling</h3>
+<p>A song may be represented by a vector:</p>
+<p>\[
+x_i=[tempo,energy,valence,arousal,rhythm,timbre,\ldots].
+\]</p>
+<p>It may instead be a time sequence, histogram/distribution of local frames, learned embedding, or human labels. Standardize features before Euclidean methods:</p>
+<p>\[
+z_{ij}=\frac{x_{ij}-\mu_j}{\sigma_j}.
+\]</p>
+<p>Otherwise tempo’s numerical range can dominate valence in [0,1]. Also handle missing/outliers, redundant features, loudness, temporal alignment, and dimension reduction.</p>
+<h3 id="5-2-average-vector-euclidean-distance">5.2 Average vector + Euclidean distance</h3>
+<p>Average frame-level features to one compact vector and compare:</p>
+<p>\[
+d(x,y)=\sqrt{\sum_j(x_j-y_j)^2}.
+\]</p>
+<p>Advantages: fast, simple, scalable, easy baseline. Limitations: loses temporal/distributional structure, depends on scaling, and may blur distinctive sections.</p>
+<h3 id="5-3-k-means-and-emd">5.3 K-means and EMD</h3>
+<p>Standard K-means minimizes squared Euclidean within-cluster distance:</p>
+<p>\[
+J=\sum_{k=1}^{K}\sum_{x_i\in C_k}\|x_i-\mu_k\|_2^2.
+\]</p>
+<p>It is fast/interpretable but needs (K), scaling, and initialization; assumes hard, roughly centroid-compatible clusters.</p>
+<p><strong>Earth Mover’s Distance/Wasserstein distance</strong> compares distributions by minimum transport cost:</p>
+<p>\[
+EMD(P,Q)=\min_F\sum_{i,j}f_{ij}d_{ij}
+\]</p>
+<p>under flow/mass constraints. It suits rhythm/pitch/timbre/mood histograms and recognizes slightly shifted distributions. It is computationally expensive and needs a meaningful ground distance.</p>
+<blockquote>
+<p><strong>Technical qualification:</strong> standard K-means centroids are tied to squared Euclidean geometry. “K-means with EMD” requires compatible Wasserstein barycenters/generalized updates, or use K-medoids with actual tracks as representatives. Arbitrarily replacing the distance is not standard K-means.</p>
+</blockquote>
+<h3 id="5-4-em-and-monte-carlo">5.4 EM and Monte Carlo</h3>
+<p>EM fits latent-variable/probabilistic clusters and supports soft membership:</p>
+<p>\[
+\gamma_{ik}=P(z_i=k\mid x_i,\theta).
+\]</p>
+<ul>
+<li><strong>E-step:</strong> calculate membership responsibilities/expected latent variables.</li>
+<li><strong>M-step:</strong> maximize expected complete-data log likelihood:</li>
+</ul>
+<p>\[
+  \theta^{new}=\arg\max_\theta E_{z\mid x,\theta^{old}}[\log p(x,z\mid\theta)].
+  \]</p>
+<p>Benefits: overlapping styles/moods, cluster-specific covariance, uncertainty. Costs: model assumptions, local optima, initialization, covariance degeneracy, and runtime.</p>
+<p>Monte Carlo EM approximates an intractable expectation:</p>
+<p>\[
+E[g(z)]\approx\frac1M\sum_{m=1}^{M}g(z^{(m)}).
+\]</p>
+<p>It enables richer latent models but adds sampling noise, convergence/operations complexity, and cost. Ordinary tractable EM does <strong>not</strong> inherently require Monte Carlo.</p>
+<h3 id="5-5-valence-arousal-and-mood">5.5 Valence, arousal, and mood</h3>
+<ul>
+<li><strong>Valence:</strong> positive/pleasant versus negative/unpleasant emotion.</li>
+<li><strong>Arousal:</strong> energetic/exciting versus calm/low activation.</li>
+</ul>
+<p>MIREX-inspired (transcribed “Myrex/MARAX”) taxonomy gives five clusters, including examples:</p>
+<ol>
+<li>passionate, rousing, confident;</li>
+<li>rollicking, cheerful, fun;</li>
+<li>literate, wistful, brooding;</li>
+<li>humorous, silly;</li>
+<li>aggressive.</li>
+</ol>
+<p>Simpler mood labels include happy (“Good to Be Alive”), angry (“Take It Out on Me”), sad (“Let It All Go”), and peaceful (“Say It Again”). Classifiers may analyze lyrics, acoustic signals, or both.</p>
+<p>Emotion is subjective, context/culture-dependent, multi-label, and expensive to annotate. Benchmark labels may not match TuneBlend users.</p>
+<hr>
+<h2 id="6-recommender-evaluation">6. Recommender evaluation</h2>
+<p>Let (Rel_u) be relevant held-out items for user (u), and (Rec_u@K) the top (K) list.</p>
+<h3 id="6-1-predictive-relevance-quality">6.1 Predictive/relevance quality</h3>
+<p>\[
+Precision@K=\frac{|Rec_u@K\cap Rel_u|}{K}.
+\]</p>
+<p>Example: 5 relevant among top 10 → 0.5. It measures shortlist purity.</p>
+<p>\[
+Recall@K=\frac{|Rec_u@K\cap Rel_u|}{|Rel_u|}.
+\]</p>
+<p>Example: 5 of 8 total relevant items retrieved → 0.625. It measures relevant-item coverage.</p>
+<p>\[
+F_\beta@K=(1+\beta^2)\frac{P@K\cdot R@K}{\beta^2P@K+R@K}.
+\]</p>
+<p>At \(\beta=1\):</p>
+<p>\[
+F_1=\frac{2PR}{P+R}.
+\]</p>
+<p>\(\beta>1\) emphasizes recall; \(\beta<1\) precision. The transcript’s reciprocal F1 statement omits a factor: correctly, \(1/F_1=(1/2)(1/P+1/R)\).</p>
+<h3 id="6-2-ranking-quality">6.2 Ranking quality</h3>
+<p><strong>Reciprocal rank</strong> for query/user (u):</p>
+<p>\[
+RR_u=\frac1{rank_u^{first\ relevant}},
+\]</p>
+<p>zero if none. <strong>MRR</strong>:</p>
+<p>\[
+MRR=\frac1{|U|}\sum_u RR_u.
+\]</p>
+<p>It rewards finding the first relevant item early; it ignores later relevant items.</p>
+<p><strong>Average Precision@K:</strong></p>
+<p>\[
+AP@K=\frac{1}{\min(|Rel_u|,K)}
+\sum_{r=1}^{K}Precision@r\cdot rel(r),
+\]</p>
+<p>where (rel(r)=1) if rank (r) is relevant. (Some conventions divide by \(|Rel_u|\); state the convention.) <strong>MAP@K</strong> averages AP across users/queries. It rewards all relevant items occurring early.</p>
+<p><strong>Hit Rate@K:</strong></p>
+<p>\[
+Hit_u@K=\mathbf1(|Rec_u@K\cap Rel_u|>0),
+\qquad HR@K=\frac1{|U|}\sum_u Hit_u@K.
+\]</p>
+<p>It asks only whether at least one relevant result appears. Rank 1 and rank (K) are equally a hit; HR naturally increases as (K) grows.</p>
+<h3 id="6-3-behavioral-beyond-accuracy-metrics">6.3 Behavioral/beyond-accuracy metrics</h3>
+<ul>
+<li><strong>Diversity:</strong> intra-list variety across genres/categories/items, often average pairwise dissimilarity; improves breadth/user experience.</li>
+<li><strong>Novelty:</strong> recommends less familiar/less popular long-tail items. A common self-information score:</li>
+</ul>
+<p>\[
+  novelty(i)=-\log p_{train}(i),
+  \]</p>
+<p>averaged across list/users.
+- <strong>Serendipity:</strong> relevant and useful surprise beyond expected/history-based recommendations. Dissimilarity/cosine distance contributes, but true serendipity also requires relevance—not merely randomness.
+- <strong>Popularity bias:</strong> excessive recommendation of popular items. Measure via catalogue coverage, average recommendation popularity (ARP), recommendation overlap, concentration/Gini index.</p>
+<p>Novelty and popularity bias oppose each other conceptually, but a system must balance discovery with relevance.</p>
+<h3 id="6-4-business-metrics">6.4 Business metrics</h3>
+<ul>
+<li>average revenue per user;</li>
+<li>CTR = proportion of recommendation impressions clicked;</li>
+<li>conversion rate = clicks/impressions that become desired outcomes (purchase, listen, cart, follow, etc.);</li>
+<li>session length/time spent;</li>
+<li>bounce rate = users leaving after one page/item;</li>
+<li>engagement, retention, listening completion, skips, repeat usage.</li>
+</ul>
+<p>No single offline metric is sufficient. A technically good cluster can produce poor playlists; validate online with user/business outcomes.</p>
+<hr>
+<h2 id="7-tuneblend-case-study">7. TuneBlend case study</h2>
+<h3 id="7-1-situation">7.1 Situation</h3>
+<p>TuneBlend, a small music startup, has rhythm, tempo, timbre, energy, mood, valence, and arousal features.</p>
+<ul>
+<li><strong>Alex</strong>, data scientist: acoustic modeling/cluster quality;</li>
+<li><strong>Sara</strong>, product manager: recommendation quality, cost, deployment speed;</li>
+<li><strong>Priya</strong>, UX researcher: emotion perception and mood playlists.</li>
+</ul>
+<p>Options:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Best fit</th>
+<th>Strength</th>
+<th>Main risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Average vector + Euclidean</td>
+<td>Tight resources/rapid baseline</td>
+<td>Fast, scalable, debuggable</td>
+<td>Loses temporal/distribution detail</td>
+</tr>
+<tr>
+<td>Generalized clustering with EMD</td>
+<td>Fine acoustic distributions</td>
+<td>Perceptually meaningful transport comparison</td>
+<td>Expensive; nonstandard centroid issue</td>
+</tr>
+<tr>
+<td>EM + possible Monte Carlo</td>
+<td>Probabilistic overlap/cluster quality</td>
+<td>Soft memberships, rich uncertainty</td>
+<td>Slow/complex; assumptions and local optima</td>
+</tr>
+<tr>
+<td>Emotion/mood model</td>
+<td>Engagement/theme playlists</td>
+<td>Human-facing mood experiences</td>
+<td>Labels subjective and costly</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="7-2-recommended-staged-plan">7.2 Recommended staged plan</h3>
+<ol>
+<li><strong>Deploy baseline:</strong> standardized average feature vectors + Euclidean neighbors/clusters; establish latency, cost, and Top-(K) benchmarks.</li>
+<li><strong>Add mood intelligence:</strong> collect/validate labels, build valence/arousal features, offer mood playlists, measure engagement/skip rate.</li>
+<li><strong>Offline rich-model tests:</strong> compare EMD-compatible clustering and probabilistic EM; use approximations only when quality gain justifies cost.</li>
+<li><strong>Hybridize:</strong> combine acoustic, mood, collaborative listening behavior, metadata, and context through a clearly chosen hybrid architecture.</li>
+<li><strong>A/B test:</strong> precision/recall/MAP/novelty/diversity plus listening time, completion, skips, retention, and resource cost.</li>
+</ol>
+<p>Complexity does not guarantee accuracy, mood relevance, or engagement. Match method to the current objective.</p>
+<hr>
+<h2 id="8-exam-focused-revision">8. Exam-focused revision</h2>
+<h3 id="essential-formulas">Essential formulas</h3>
+<p>\[
+Precision@K=\frac{relevant\ in\ topK}{K},\qquad
+Recall@K=\frac{relevant\ in\ topK}{all\ relevant}
+\]</p>
+<p>\[
+F_\beta=(1+\beta^2)\frac{PR}{\beta^2P+R}
+\]</p>
+<p>\[
+MRR=\frac1{|U|}\sum_u\frac1{rank_u^{first\ relevant}}
+\]</p>
+<p>\[
+AP@K=\frac1{denominator}\sum_{r=1}^{K}P@r\cdot rel(r),
+\qquad MAP@K=mean_u(AP_u@K)
+\]</p>
+<p>\[
+novelty(i)=-\log p(i),\qquad
+z_{ij}=\frac{x_{ij}-\mu_j}{\sigma_j}
+\]</p>
+<h3 id="high-yield-one-line-answers">High-yield one-line answers</h3>
+<ul>
+<li>The ML lifecycle begins with business framing and remains cyclic after deployment.</li>
+<li>Feature engineering creates/transforms; feature selection retains a useful subset.</li>
+<li>CBRS uses item/user features; CFRS uses interaction patterns.</li>
+<li>Shilling attacks inject fake profiles/ratings.</li>
+<li>Weighted blends scores; switching chooses a model; cascade passes candidates; meta-level passes a learned representation.</li>
+<li>Music profiles include demographic, geographic, psychographic, and listening-expertise signals.</li>
+<li>Editorial, cultural, and acoustic are the three music metadata classes.</li>
+<li>Valence is positive/negative; arousal is exciting/calm.</li>
+<li>MRR focuses on first relevant rank; MAP uses all relevant ranks; Hit Rate only checks any hit.</li>
+<li>Diversity is variety, novelty is unfamiliarity, serendipity is relevant surprise.</li>
+</ul>
+<h3 id="likely-exam-prompts">Likely exam prompts</h3>
+<ol>
+<li><strong>Explain nine lifecycle stages</strong> and continuous monitoring/CI-CD.</li>
+<li><strong>Compare CBRS/CFRS/hybrid crop recommendation.</strong> Include cold start, sparsity, over-specialization, shilling.</li>
+<li><strong>Identify hybrid type from architecture.</strong> State exactly whether score, choice, list, feature, or representation is passed.</li>
+<li><strong>Design music recommender.</strong> Cover user/item profiling, metadata, context, collaborative/acoustic/emotion techniques.</li>
+<li><strong>Compare TuneBlend methods.</strong> Scaling, EMD/K-medoids caveat, EM soft memberships, simple baseline, mood-label risks.</li>
+<li><strong>Calculate Top-(K) metrics.</strong> Precision, recall, F-beta, MRR, AP/MAP, Hit Rate.</li>
+<li><strong>Explain why one metric is insufficient.</strong> Combine relevance/ranking, beyond-accuracy, and business engagement.</li>
+</ol>
+<h3 id="common-traps">Common traps</h3>
+<ul>
+<li>Deployment is not the last meaningful step; monitoring closes the loop.</li>
+<li>Combining two datasets does not automatically create a hybrid recommender.</li>
+<li>Nearest users help produce item recommendations; they are not normally the final items.</li>
+<li>Appending two lists is mixed, not necessarily cascaded.</li>
+<li>A candidate list and a learned user embedding are not the same meta-level information.</li>
+<li>Euclidean distance without feature scaling can be meaningless.</li>
+<li>Standard K-means cannot accept arbitrary EMD by simple substitution.</li>
+<li>EM does not always require Monte Carlo.</li>
+<li>Acoustically similar songs are not guaranteed to suit the same listener.</li>
+<li>Hit Rate does not distinguish first versus last position within Top-(K).</li>
+<li>Cluster quality does not guarantee recommendation/business quality.</li>
+</ul>
+<hr>
+<h2 id="9-live-session-additions-and-exam-emphasis">9. Live-session additions and exam emphasis</h2>
+<p>The live session recapped Week 14 graph partitioning/community detection (nodes, edges, manageability, hidden patterns, efficiency, applications such as divide-and-conquer, data clustering, circuits/parallel computing/web advertising, and divisive vs agglomerative methods). It then reinforced CBRS, CFRS, hybrid crop recommendation, and all seven hybridization types.</p>
+<p>Instructor exam emphasis:</p>
+<ul>
+<li>ML lifecycle/recommendation architecture was highlighted as important for the end-semester exam.</li>
+<li>Expect case-study questions resembling assessments and some numerical/problem questions, though not predominantly calculations.</li>
+<li>Study both instructor slides/materials and LMS videos.</li>
+<li>Administrative reminders stressed completion of eligibility requirements before the deadline and identified the exam date as 19 September in that cohort.</li>
+</ul>
+<p>These remarks are retained for complete transcript coverage; current administrative dates should always be confirmed separately.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-14.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 14: Graph Partitioning, Flow Centrality, Edge…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

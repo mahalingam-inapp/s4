@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Deep Learning · Week 6 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Deep Learning</span>
+      <span class="brand-title">Week 6</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html" selected>Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Neural Networks and Deep Learning
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Neural Networks, Backpropagation, Model Tuning, and Evaluation
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Convolutional Neural Networks, Transfer Learning and Computer-Vision…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        RNNs, GRU, LSTM, NLP, Word Embeddings, Transfer Learning and Attention
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        RBMs, Deep Belief Networks, Autoencoders, and Contrastive Divergence
+      </a>
+      <a class="is-active" href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Reinforcement Learning, Policy Networks, Target Networks and DQN
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Generative Adversarial Networks (GANs)
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Data Augmentation, Hyperparameter Tuning, Transfer Learning and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Feed-Forward Neural Networks, Perceptrons, Loss, Backpropagation and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Python Programming Fundamentals
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Machine Learning, Classification, and Naive Bayes
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Logistic Regression as a Neural Network, MNIST, and K-Means
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        PCA and Bag-of-Words
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Autoencoders and Representation Learning
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Exhaustive Exam-Oriented Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Deep Learning · Week 6</p>
+        <h1 class="page-title">Reinforcement Learning, Policy Networks, Target Networks and DQN</h1>
+        <p class="page-meta">Week 6 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-week-overview-and-learning-objectives">1. Week overview and learning objectives</a></li>
+      <li><a href="#2-goal-oriented-decision-making-and-reinforcement-learning">2. Goal-oriented decision making and reinforcement learning</a></li>
+      <li><a href="#3-policy-networks">3. Policy networks</a></li>
+      <li><a href="#4-value-based-rl-q-learning-and-temporal-difference-learning">4. Value-based RL, Q-learning and temporal-difference learning</a></li>
+      <li><a href="#5-target-networks">5. Target networks</a></li>
+      <li><a href="#6-experience-replay">6. Experience replay</a></li>
+      <li><a href="#7-deep-q-network-dqn">7. Deep Q-Network (DQN)</a></li>
+      <li><a href="#8-practical-implementation-walkthrough-week-6-video-4">8. Practical implementation walkthrough (Week 6 Video 4)</a></li>
+      <li><a href="#9-actor-critic-methods-and-architecture-choice">9. Actor–critic methods and architecture choice</a></li>
+      <li><a href="#10-dataforge-robotics-case-study">10. DataForge Robotics case study</a></li>
+      <li><a href="#11-instructor-examples-and-practical-use-cases">11. Instructor examples and practical use cases</a></li>
+      <li><a href="#12-common-misconceptions-and-exam-traps">12. Common misconceptions and exam traps</a></li>
+      <li><a href="#13-likely-exam-questions-with-answer-points">13. Likely exam questions with answer points</a></li>
+      <li><a href="#14-rapid-revision-sheet">14. Rapid revision sheet</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<blockquote>
+<p><strong>Exam focus:</strong> Reinforcement learning (RL) as goal-oriented decision making; policy networks; deterministic and stochastic policies; policy gradients and REINFORCE; exploration versus exploitation; temporal-difference (TD) learning; target networks; Deep Q-Networks (DQN); experience replay; actor–critic methods; implementation and case analysis.</p>
+</blockquote>
+<h2 id="1-week-overview-and-learning-objectives">1. Week overview and learning objectives</h2>
+<p>Week 6 moves from basic deep learning to goal-oriented decision making. The central idea is that an autonomous <strong>agent</strong> learns which actions to take in an <strong>environment</strong> so that its long-run reward is maximized. Depending on problem complexity, decision making can use simple conditionals, decision trees or mathematical optimization; nonlinear, sequential and uncertain problems motivate heuristics, genetic algorithms and especially RL.</p>
+<p>By the end of the week, one should be able to:</p>
+<ul>
+<li>define RL and explain its interaction loop;</li>
+<li>identify agent, environment, state, action, reward, policy, Q-value and episode;</li>
+<li>explain how a policy network maps states to actions;</li>
+<li>compare deterministic and stochastic policies;</li>
+<li>explain exploration–exploitation and policy-gradient learning;</li>
+<li>state why TD/Q-learning can be unstable and how target networks help;</li>
+<li>describe DQN architecture, replay memory, target synchronization and training;</li>
+<li>compare DQN, REINFORCE and actor–critic approaches;</li>
+<li>interpret a practical DQN implementation and diagnose inconsistent rewards.</li>
+</ul>
+<h2 id="2-goal-oriented-decision-making-and-reinforcement-learning">2. Goal-oriented decision making and reinforcement learning</h2>
+<h3 id="2-1-meaning">2.1 Meaning</h3>
+<p><strong>Goal-oriented decision making</strong> selects actions whose outcomes align with a specified objective. In RL, the objective is expressed through rewards, and an agent improves its behavior through repeated interaction rather than receiving a labelled “correct action” for every state.</p>
+<p><strong>Reinforcement learning</strong> is a machine-learning paradigm in which an agent learns by trial and error, receiving rewards or penalties from an environment and developing a strategy that maximizes expected cumulative reward.</p>
+<p>The goal is <strong>not merely the largest immediate reward</strong>. The agent seeks the largest expected return:</p>
+<p>$$
+G_t = \sum_{k=0}^{\infty}\gamma^k r_{t+k+1}, \qquad 0 \le \gamma < 1
+$$</p>
+<p>where $\gamma$ discounts distant rewards. A short-term sacrifice can be rational if it creates a larger future return.</p>
+<h3 id="2-2-rl-interaction-loop">2.2 RL interaction loop</h3>
+<p>At time $t$:</p>
+<ol>
+<li>The agent observes state $s_t$.</li>
+<li>It chooses action $a_t$ according to policy $\pi$.</li>
+<li>The environment changes to $s_{t+1}$.</li>
+<li>The environment supplies reward $r_{t+1}$.</li>
+<li>The agent updates its policy/value estimates and repeats.</li>
+</ol>
+<pre><code class="language-text">Agent --action a_t--&gt; Environment
+Agent &lt;--state s_(t+1), reward r_(t+1)-- Environment
+</code></pre>
+<p>An <strong>episode</strong> is the complete trajectory from an initial state to a terminal/final state. The agent learns over many episodes until behavior converges toward an optimal strategy.</p>
+<h3 id="2-3-core-terms">2.3 Core terms</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Exam-ready definition</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agent</strong></td>
+<td>Learner/decision maker capable of selecting actions. It may contain a neural network and a policy.</td>
+<td>Robot, game AI, autonomous vehicle, AI vacuum cleaner</td>
+</tr>
+<tr>
+<td><strong>Environment</strong></td>
+<td>The external setting in which the agent operates; it changes state and returns feedback after actions.</td>
+<td>Warehouse, classroom floor, game world, market</td>
+</tr>
+<tr>
+<td><strong>State, $s$</strong></td>
+<td>Representation of the current situation of the environment.</td>
+<td>Grid position, chessboard, sensor vector, image/frame</td>
+</tr>
+<tr>
+<td><strong>Action, $a$</strong></td>
+<td>Choice available to the agent.</td>
+<td>Up/down/left/right, clean, accelerate, brake, pick object</td>
+</tr>
+<tr>
+<td><strong>Reward, $r$</strong></td>
+<td>Scalar feedback indicating the desirability of an action/outcome.</td>
+<td>Goal $+1$; collision/hole $-1$; step cost</td>
+</tr>
+<tr>
+<td><strong>Policy, $\pi$</strong></td>
+<td>Strategy that maps states to actions or action probabilities.</td>
+<td>“Clean if dirt is present”; softmax probabilities</td>
+</tr>
+<tr>
+<td><strong>Q-value, $Q(s,a)$</strong></td>
+<td>Expected cumulative future reward from action $a$ in state $s$ and thereafter following a policy.</td>
+<td>Long-run value of moving right from a cell</td>
+</tr>
+<tr>
+<td><strong>Episode</strong></td>
+<td>One complete run from initial to terminal state.</td>
+<td>Start-to-goal/obstacle warehouse run</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Instructor Q&amp;A — who gives the reward?</strong> The user does not manually reward every action. The environment returns feedback according to the reward logic designed for the task. For a vacuum-cleaner agent, cleaning actual dirt can receive positive feedback; attempting to clean where there is no dirt can receive negative feedback. The “environment” is the work area (for example, the classroom or office floor) and its task dynamics/reward mechanism.</p>
+<h3 id="2-4-rl-compared-with-other-decision-methods">2.4 RL compared with other decision methods</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Main characteristic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rule-based system</td>
+<td>Fixed if–then rules</td>
+</tr>
+<tr>
+<td>Mathematical optimization</td>
+<td>Known objective and explicit constraints</td>
+</tr>
+<tr>
+<td>Heuristic decision making</td>
+<td>Approximate or intuition-driven rules</td>
+</tr>
+<tr>
+<td>Decision tree</td>
+<td>Structured branching decisions</td>
+</tr>
+<tr>
+<td>Genetic algorithm</td>
+<td>Population-based search, useful for complex nonlinear optimization</td>
+</tr>
+<tr>
+<td>Reinforcement learning</td>
+<td>Sequential decisions learned from interaction and reward feedback</td>
+</tr>
+</tbody>
+</table></div>
+<p>The defining RL feature is <strong>learning from experience in a sequential environment</strong>.</p>
+<h2 id="3-policy-networks">3. Policy networks</h2>
+<h3 id="3-1-definition-and-role">3.1 Definition and role</h3>
+<p>A <strong>policy network</strong> is a neural network parameterized by $\theta$ that directly represents a policy:</p>
+<p>$$
+\pi_\theta(a\mid s)=P(A_t=a\mid S_t=s)
+$$</p>
+<p>It accepts the current state and produces either an action or a distribution over actions. Direct state-to-action mapping enables fast, context-aware, data-driven decisions. By learning good action sequences, an agent can navigate complex environments, adapt to new situations and improve toward a predefined goal.</p>
+<pre><code class="language-text">State -&gt; Policy network -&gt; action scores/probabilities -&gt; selected action
+</code></pre>
+<p>The instructor’s study-policy analogy: to “crack an exam,” a student chooses a study policy (for example, six, eight or twelve study hours). In RL, the policy similarly guides action selection toward a goal.</p>
+<h3 id="3-2-deterministic-versus-stochastic-policy">3.2 Deterministic versus stochastic policy</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Deterministic policy</th>
+<th>Stochastic policy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mapping</td>
+<td>$a=\mu(s)$</td>
+<td>$a\sim\pi(a\mid s)$</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>One fixed action</td>
+<td>Probability distribution over actions</td>
+</tr>
+<tr>
+<td>Same state revisited</td>
+<td>Same action</td>
+<td>Possibly different sampled action</td>
+</tr>
+<tr>
+<td>Strength</td>
+<td>Predictable and efficient</td>
+<td>Natural exploration; handles uncertainty</td>
+</tr>
+<tr>
+<td>Limitation</td>
+<td>Can become rigid or miss alternatives</td>
+<td>Variable behavior; probability estimation required</td>
+</tr>
+<tr>
+<td>Example</td>
+<td>Vacuum: if dirt, always clean</td>
+<td>Navigation: left .2, right .4, up .3, down .1</td>
+</tr>
+</tbody>
+</table></div>
+<p>In the vacuum example, “dirt → clean; no dirt → do not clean” is deterministic. A stochastic robot selects among actions according to probabilities.</p>
+<p>If $P(\text{up})=.5$, $P(\text{right})=.3$, and $P(\text{down})=.2$, ten visits might yield five up, three right and two down actions. It does <strong>not</strong> always choose “up” merely because up has the largest probability.</p>
+<p><strong>Important distinction:</strong> deterministic environment dynamics mean that the same state–action pair produces the same next state. This does not force the policy to be deterministic. A stochastic policy can create different trajectories in a deterministic environment.</p>
+<p>The lecture also names finer architectural/use categories: <strong>discrete-action</strong>, <strong>continuous-action</strong>, <strong>actor–critic</strong>, <strong>hierarchical</strong>, <strong>multi-agent</strong> and <strong>recurrent</strong> policy networks. These are not alternatives to the basic deterministic/stochastic distinction; most ultimately implement one of those two policy forms. Deterministic continuous-control methods include Deep Deterministic Policy Gradient (DDPG), with examples such as robotic-arm control and autonomous driving. Stochastic policy optimization includes Monte Carlo policy gradient/REINFORCE, Proximal Policy Optimization (PPO) and Trust Region Policy Optimization (TRPO), and can support discrete or continuous actions.</p>
+<blockquote>
+<p><strong>Model-selection caveat (repeated instructor emphasis):</strong> no algorithm is universally “best.” Performance depends on the problem, dataset/experience, training procedure and hyperparameters. A decision tree, SVM, unsupervised method or RL method can be preferable on different tasks. The algorithm/reward timing can also be adapted to the problem—for example, delivering feedback after a sequence of 50 actions rather than after every action—rather than using an existing method unchanged.</p>
+</blockquote>
+<h3 id="3-3-exploration-versus-exploitation">3.3 Exploration versus exploitation</h3>
+<ul>
+<li><strong>Exploration:</strong> try unfamiliar actions to obtain information and discover potentially better routes.</li>
+<li><strong>Exploitation:</strong> choose the action currently believed to yield the greatest reward.</li>
+</ul>
+<p>Too much exploration wastes effort and prevents reliable use of known good actions. Too much exploitation makes the agent repeatedly use its current best action, potentially locking into a suboptimal solution and limiting continuous improvement. Effective learning requires a balance.</p>
+<p>An $\varepsilon$-greedy policy chooses:</p>
+<p>$$
+a_t=\begin{cases}
+\text{random action}, & \text{with probability }\varepsilon,\\
+\arg\max_a Q(s_t,a), & \text{with probability }1-\varepsilon.
+\end{cases}
+$$</p>
+<p>Usually $\varepsilon$ starts high and decays, moving from exploration toward exploitation.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> $\varepsilon=0$ removes only the additional $\varepsilon$-greedy randomness. A softmax/stochastic policy can still sample different actions.</p>
+</blockquote>
+<h3 id="3-4-policy-gradient-methods">3.4 Policy-gradient methods</h3>
+<p>Policy gradients optimize the policy parameters directly rather than first learning Q-values and then deriving a policy. Their objective is:</p>
+<p>$$
+J(\theta)=\mathbb{E}_{\tau\sim\pi_\theta}[G(\tau)]
+$$</p>
+<p>The policy-gradient idea is:</p>
+<p>$$
+\nabla_\theta J(\theta)\approx
+\mathbb{E}\left[\nabla_\theta\log\pi_\theta(a_t\mid s_t)G_t\right]
+$$</p>
+<p>Thus, actions associated with high return become more probable; actions associated with poor return become less probable.</p>
+<h4 id="reinforce">REINFORCE</h4>
+<p>REINFORCE is a Monte Carlo policy-gradient algorithm:</p>
+<ol>
+<li>Run a complete episode using $\pi_\theta$.</li>
+<li>Calculate the return $G_t$ for each time step.</li>
+<li>Update the policy in the direction $\nabla_\theta\log\pi_\theta(a_t\mid s_t)G_t$.</li>
+</ol>
+<p>With a baseline $b(s_t)$, usually $V(s_t)$:</p>
+<p>$$
+A_t=G_t-b(s_t)
+$$</p>
+<p>$$
+\nabla_\theta J(\theta)\approx
+\mathbb{E}\left[\nabla_\theta\log\pi_\theta(a_t\mid s_t)A_t\right]
+$$</p>
+<ul>
+<li>$A_t>0$: sampled action performed better than expected; increase its probability.</li>
+<li>$A_t<0$: it performed worse than expected; decrease its probability.</li>
+</ul>
+<p>If an action makes a Frozen Lake agent fall into a hole, the return is below the baseline, giving negative advantage. Its probability decreases; because softmax probabilities sum to one, alternatives become relatively more likely.</p>
+<p>The baseline <strong>reduces gradient variance</strong>. It does not remove learning, cancel all bad-episode updates or change the optimal policy.</p>
+<h3 id="3-5-uses-and-trends-of-policy-networks">3.5 Uses and trends of policy networks</h3>
+<p>Applications emphasized in the sessions:</p>
+<ul>
+<li>robotics: navigation, manipulation and adaptive control;</li>
+<li>gaming: strategy and complex sequential play;</li>
+<li>autonomous vehicles: adaptive navigation in dynamic environments;</li>
+<li>finance: trading and portfolio decisions under uncertainty;</li>
+<li>healthcare: treatment/decision optimization;</li>
+<li>recommendation and other real-time decision systems.</li>
+</ul>
+<p>Emerging directions include multi-agent learning, hierarchical policies, transfer/generalization, safer and more explainable policies, and use in increasingly complex real-world environments.</p>
+<h2 id="4-value-based-rl-q-learning-and-temporal-difference-learning">4. Value-based RL, Q-learning and temporal-difference learning</h2>
+<h3 id="4-1-q-values-and-bellman-target">4.1 Q-values and Bellman target</h3>
+<p>$Q(s,a)$ estimates long-term return, not only immediate reward. The optimal Bellman relationship is:</p>
+<p>$$
+Q^*(s,a)=\mathbb{E}\left[r+\gamma\max_{a'}Q^*(s',a')\mid s,a\right]
+$$</p>
+<p>Tabular Q-learning updates:</p>
+<p>$$
+Q(s,a)\leftarrow Q(s,a)+\alpha\left[r+\gamma\max_{a'}Q(s',a')-Q(s,a)\right]
+$$</p>
+<p>The bracketed quantity is the <strong>TD error</strong>:</p>
+<p>$$
+\delta=r+\gamma\max_{a'}Q(s',a')-Q(s,a)
+$$</p>
+<h3 id="4-2-temporal-difference-learning">4.2 Temporal-difference learning</h3>
+<p><strong>TD learning</strong> combines ideas from:</p>
+<ul>
+<li>Monte Carlo methods: learning from experience/returns;</li>
+<li>dynamic programming: <strong>bootstrapping</strong>, i.e., updating an estimate using another estimate.</li>
+</ul>
+<p>It learns from incomplete episodes by comparing successive predictions with observed reward plus an estimated future value. This is more incremental than waiting for the entire episode.</p>
+<h3 id="4-3-sources-of-instability">4.3 Sources of instability</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bootstrapping error</td>
+<td>Targets use imperfect estimates; errors can propagate and amplify.</td>
+</tr>
+<tr>
+<td>Moving/non-stationary target</td>
+<td>Updating a network changes both prediction and the target it is trying to match.</td>
+</tr>
+<tr>
+<td>Oscillation/divergence</td>
+<td>Poor learning rate or rapidly changing targets can make updates fluctuate or explode.</td>
+</tr>
+<tr>
+<td>Overestimation bias</td>
+<td>The max operator can favor noisy overestimates, especially in stochastic environments.</td>
+</tr>
+<tr>
+<td>Correlated observations</td>
+<td>Consecutive episode transitions violate the ideal of independent, identically distributed samples.</td>
+</tr>
+<tr>
+<td>Function-approximation effects</td>
+<td>One neural-network update affects many states; exploding/vanishing gradients and generalization errors can destabilize unrelated regions.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The combination of function approximation, bootstrapping and off-policy learning is especially challenging. DQN addresses two major issues using <strong>experience replay</strong> and a <strong>target network</strong>.</p>
+<h2 id="5-target-networks">5. Target networks</h2>
+<h3 id="5-1-definition-and-primary-purpose">5.1 Definition and primary purpose</h3>
+<p>A <strong>target network</strong> is an auxiliary, delayed copy of the primary/online value network. It provides a temporarily fixed reference for computing TD targets. Its primary purpose is to <strong>stabilize training by decoupling target computation from online-network updates</strong>.</p>
+<p>Without separation, the same continually changing network supplies both predicted Q-values and targets; the learner chases a moving target. A slower target network reduces rapid fluctuations, oscillation, feedback instability and divergence, producing smoother convergence and more accurate Q estimates—even in complex, high-dimensional environments.</p>
+<h3 id="5-2-online-and-target-network">5.2 Online and target network</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Online/local Q-network, $Q(s,a;\theta)$</th>
+<th>Target Q-network, $Q(s,a;\theta^-)$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Updated by gradient descent each training step</td>
+<td>Frozen between synchronizations</td>
+</tr>
+<tr>
+<td>Produces current predicted Q-values</td>
+<td>Produces stable next-state target values</td>
+</tr>
+<tr>
+<td>Learns continuously</td>
+<td>Copies or slowly tracks online parameters</td>
+</tr>
+</tbody>
+</table></div>
+<p>For a transition $(s,a,r,s',d)$, where $d=1$ if terminal:</p>
+<p>$$
+y=r+\gamma(1-d)\max_{a'}Q(s',a';\theta^-)
+$$</p>
+<p>The online-network loss is commonly mean squared TD error:</p>
+<p>$$
+L(\theta)=\mathbb{E}\left[(y-Q(s,a;\theta))^2\right]
+$$</p>
+<p>Only $\theta$ receives the gradient update; $y$ is treated as fixed for that step.</p>
+<h3 id="5-3-hard-and-soft-updates">5.3 Hard and soft updates</h3>
+<p><strong>Hard update:</strong> after every $K$ learning updates, copy:</p>
+<p>$$
+\theta^-\leftarrow\theta
+$$</p>
+<p><strong>Soft/Polyak update:</strong> at every step or regularly:</p>
+<p>$$
+\theta^-\leftarrow\tau\theta+(1-\tau)\theta^-, \qquad \tau\ll1
+$$</p>
+<p>Hard updating gives piecewise-constant targets; soft updating changes them smoothly. Both preserve slower target movement than the online learner.</p>
+<h3 id="5-4-correct-dqn-update-order">5.4 Correct DQN update order</h3>
+<ol>
+<li>Sample a minibatch from replay memory.</li>
+<li>Compute targets with the frozen target network.</li>
+<li>Compute online predictions and TD loss.</li>
+<li>Backpropagate and update only the online network.</li>
+<li>At the prescribed interval, hard-copy online weights, or apply a soft update.</li>
+</ol>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> the target network is a “stabilizing anchor” and the stable <strong>learning signal</strong> is the key. Its immediate effect is slower-changing target values.</p>
+</blockquote>
+<h3 id="5-5-what-a-target-network-does-not-do">5.5 What a target network does not do</h3>
+<p>It does not create exploration, replace gradient descent, remove the replay buffer, or learn as an independent model. It is updated from the online network. Its job differs from experience replay.</p>
+<h2 id="6-experience-replay">6. Experience replay</h2>
+<h3 id="6-1-replay-memory">6.1 Replay memory</h3>
+<p>Instead of training only on the newest consecutive transition, DQN stores:</p>
+<p>$$
+e_t=(s_t,a_t,r_{t+1},s_{t+1},d_t)
+$$</p>
+<p>in a replay buffer and later draws random minibatches.</p>
+<p>Benefits:</p>
+<ul>
+<li>breaks temporal correlation between neighboring frames/transitions;</li>
+<li>reuses old experiences, improving data/sample efficiency;</li>
+<li>mixes experiences from different parts of the state space;</li>
+<li>produces more stable gradient updates.</li>
+</ul>
+<p>A common Python structure is <code>collections.deque(maxlen=N)</code>: it has fixed capacity and automatically discards the oldest item when full. Appending and <strong>random minibatch sampling are separate operations</strong>.</p>
+<h3 id="6-2-experience-replay-versus-target-network">6.2 Experience replay versus target network</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Experience replay</th>
+<th>Target network</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stabilizes the <strong>data distribution</strong></td>
+<td>Stabilizes the <strong>TD target</strong></td>
+</tr>
+<tr>
+<td>Randomizes minibatches and breaks temporal correlation</td>
+<td>Reduces the moving-target feedback loop</td>
+</tr>
+<tr>
+<td>Reuses transitions</td>
+<td>Holds delayed/frozen parameters</td>
+</tr>
+<tr>
+<td>Improves sample efficiency</td>
+<td>Improves convergence and reduces oscillation</td>
+</tr>
+</tbody>
+</table></div>
+<p>Both mechanisms are complementary: replay alone does not guarantee stable targets, and a target network alone does not remove correlated training data.</p>
+<h2 id="7-deep-q-network-dqn">7. Deep Q-Network (DQN)</h2>
+<h3 id="7-1-motivation">7.1 Motivation</h3>
+<p>Tabular Q-learning requires one value per state–action pair and is practical only when states can be enumerated. Images, raw game frames, camera data, large maps and high-dimensional sensor vectors make the table prohibitively large. <strong>DQN replaces the Q-table with a deep neural network</strong>:</p>
+<p>$$
+s\longrightarrow \text{neural network}\longrightarrow
+[Q(s,a_1),\ldots,Q(s,a_m)]
+$$</p>
+<p>The selected exploitative action is $\arg\max_a Q(s,a)$. Deep feature learning reduces the burden of manually enumerating high-dimensional states and lets classic Q-learning operate on learned representations.</p>
+<h3 id="7-2-architecture">7.2 Architecture</h3>
+<ul>
+<li><strong>Input:</strong> state representation. For vector states, a feature vector; for visual tasks, commonly a stack of raw frames (the session example mentions $84\times84\times4$).</li>
+<li><strong>Feature layers:</strong> CNN layers for image inputs learn edges, shapes and objects. Fully connected layers can be used directly for vector inputs. ReLU is a typical activation. RNNs may be used where temporal sequence/state history matters.</li>
+<li><strong>Output:</strong> one Q-value for every discrete action.</li>
+<li><strong>Loss:</strong> difference (often MSE) between predicted and target Q-values.</li>
+<li><strong>Optimizer:</strong> gradient-based optimizer such as Adam.</li>
+<li><strong>Stabilizers:</strong> replay memory and target network.</li>
+<li><strong>Behavior policy:</strong> often decaying $\varepsilon$-greedy.</li>
+</ul>
+<h3 id="7-3-end-to-end-dqn-training-pipeline">7.3 End-to-end DQN training pipeline</h3>
+<ol>
+<li>Initialize online and target networks; copy online weights to target.</li>
+<li>Initialize fixed-capacity replay buffer.</li>
+<li>Observe the environment state.</li>
+<li>Choose an action using $\varepsilon$-greedy behavior.</li>
+<li>Execute the action; observe reward, next state and terminal flag.</li>
+<li>Store the transition in replay memory.</li>
+<li>Once sufficient samples exist, draw a random minibatch.</li>
+<li>Compute target $y$ using the target network.</li>
+<li>Gather the online Q-value for each sampled action.</li>
+<li>Compute TD/MSE loss, clear gradients, backpropagate and use the optimizer.</li>
+<li>Hard- or soft-update the target network.</li>
+<li>Decay $\varepsilon$, continue until episode termination, and repeat episodes.</li>
+</ol>
+<h3 id="7-4-advantages-limitations-and-applications">7.4 Advantages, limitations and applications</h3>
+<p><strong>Advantages</strong></p>
+<ul>
+<li>handles large/high-dimensional input spaces;</li>
+<li>learns representations from raw sensory/image data;</li>
+<li>scales Q-learning to complex environments;</li>
+<li>replay and target networks make learning substantially more stable;</li>
+<li>successful in dynamic decision tasks such as Atari games.</li>
+</ul>
+<p><strong>Limitations</strong></p>
+<ul>
+<li>computationally expensive;</li>
+<li>sensitive to learning rate, discount, replay size, batch size, target-update rate and exploration schedule;</li>
+<li>may converge slowly;</li>
+<li>standard DQN assumes a manageable set of discrete actions;</li>
+<li>can struggle with sparse rewards and tasks requiring long-term planning;</li>
+<li>may overestimate action values.</li>
+</ul>
+<p><strong>Applications:</strong> Atari/game-playing AI, robot navigation and object manipulation, autonomous vehicles, and continuously optimized finance/trading strategies.</p>
+<h2 id="8-practical-implementation-walkthrough-week-6-video-4">8. Practical implementation walkthrough (Week 6 Video 4)</h2>
+<h3 id="8-1-notebook-and-libraries">8.1 Notebook and libraries</h3>
+<p>The implementation was demonstrated in Google Colab (notebook named <code>RL.ipynb</code>). Theory precedes implementation: understanding states, actions, rewards, Q-values, memories and target updates is required to interpret the code.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Library/module</th>
+<th>Role in the demonstration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gym</code></td>
+<td>Create and interact with the RL environment</td>
+</tr>
+<tr>
+<td><code>torch</code></td>
+<td>Define/train neural networks</td>
+</tr>
+<tr>
+<td><code>random</code></td>
+<td>Random exploration and sampling</td>
+</tr>
+<tr>
+<td><code>numpy</code></td>
+<td>Numerical work</td>
+</tr>
+<tr>
+<td><code>collections.deque</code></td>
+<td>Fixed-capacity replay memory</td>
+</tr>
+<tr>
+<td><code>matplotlib</code></td>
+<td>Plot reward progression</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="8-2-q-network">8.2 Q-network</h3>
+<p>The illustrated Q-network used a 64-unit state/hidden representation, a $64\times64$ linear layer and an output sized to the number of actions. A forward pass maps states to Q-values. Backpropagation is used during learning, even though only the forward method is explicitly defined in a PyTorch module.</p>
+<h3 id="8-3-replay-buffer-class">8.3 Replay-buffer class</h3>
+<p>The buffer:</p>
+<ul>
+<li>stores past experiences in a <code>deque</code>;</li>
+<li>appends state, action, reward, next state and <code>done</code>;</li>
+<li>randomly samples a batch;</li>
+<li>separates the tuple fields into state/action/reward/next-state/done tensors;</li>
+<li>exposes its current length so learning starts only after enough examples exist.</li>
+</ul>
+<h3 id="8-4-dqn-agent-class">8.4 DQN-agent class</h3>
+<p>The agent initializes state/action sizes and hyperparameters including learning rate, $\gamma$, $\varepsilon$, epsilon decay and minimum epsilon. It creates:</p>
+<ul>
+<li>local/online Q-network;</li>
+<li>target Q-network;</li>
+<li>Adam optimizer;</li>
+<li>replay memory of size 1,000 with batch size 64 in the demonstration.</li>
+</ul>
+<p>Key methods:</p>
+<ul>
+<li><code>act(state)</code>: choose a greedy online-network action or random action based on epsilon;</li>
+<li><code>step(...)</code>: store the transition and, when memory exceeds the batch size, sample and call learning;</li>
+<li><code>learn(experiences)</code>: compute target and expected Q-values, calculate loss, optimize online parameters and soft-update the target;</li>
+<li><code>update_epsilon()</code>: decay epsilon while respecting its minimum.</li>
+</ul>
+<h3 id="8-5-training-demonstration">8.5 Training demonstration</h3>
+<p>The environment was <strong>CartPole-v0</strong>. The instructor reduced the intended 500 episodes to 300 for recording speed and noted that episode count can be changed; more experience generally gives the learner more opportunity to improve, though exam answers should not claim that more episodes automatically guarantee an optimal result.</p>
+<p>During each episode, the code resets the environment, repeatedly selects actions, accumulates total reward, stores/learns from transitions, prints episode reward and epsilon, saves the model and plots reward per episode. Observed rewards fluctuate because exploration and stochastic training sometimes produce good and bad trajectories. Broadly, epsilon decays while later reward performance improves; the stated final observation was about 109 reward around the 300th/301st printed episode.</p>
+<blockquote>
+<p><strong>Transcription caveat:</strong> the transcript once says epsilon “increasing and decreasing,” but the intended implemented schedule is epsilon decay. Reward fluctuations are expected; epsilon should normally trend downward to its floor.</p>
+</blockquote>
+<h2 id="9-actor-critic-methods-and-architecture-choice">9. Actor–critic methods and architecture choice</h2>
+<h3 id="9-1-actor-critic">9.1 Actor–critic</h3>
+<p>Actor–critic combines policy-based and value-based learning:</p>
+<ul>
+<li><strong>Actor:</strong> learns $\pi_\theta(a\mid s)$ and selects actions.</li>
+<li><strong>Critic:</strong> estimates $V_w(s)$ or $Q_w(s,a)$ and evaluates the actor.</li>
+</ul>
+<p>A typical TD advantage is:</p>
+<p>$$
+\delta_t=r_{t+1}+\gamma V_w(s_{t+1})-V_w(s_t)
+$$</p>
+<p>The critic learns from $\delta_t$; the actor changes action probability in proportion to the same feedback. Compared with plain REINFORCE, the critic supplies lower-variance, stepwise learning signals rather than waiting only for a full episodic return.</p>
+<h3 id="9-2-comparison">9.2 Comparison</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>DQN</th>
+<th>REINFORCE</th>
+<th>Actor–critic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Family</td>
+<td>Value-based</td>
+<td>Policy-based</td>
+<td>Hybrid</td>
+</tr>
+<tr>
+<td>Learns</td>
+<td>$Q(s,a)$</td>
+<td>Policy directly</td>
+<td>Policy plus value estimate</td>
+</tr>
+<tr>
+<td>Action choice</td>
+<td>Derived, often $\varepsilon$-greedy</td>
+<td>Sample from policy</td>
+<td>Actor samples/chooses</td>
+</tr>
+<tr>
+<td>Typical strength</td>
+<td>Stable/interpretable value estimates with replay + target</td>
+<td>Simple direct policy optimization</td>
+<td>Better balance of policy flexibility and lower-variance feedback</td>
+</tr>
+<tr>
+<td>Typical weakness</td>
+<td>Discrete actions; hyperparameter/computation burden</td>
+<td>High variance; often slower/noisier learning</td>
+<td>More complex; two learners can introduce tuning issues</td>
+</tr>
+<tr>
+<td>Prefer when</td>
+<td>Stability and clear Q-value interpretation matter</td>
+<td>Direct/fast policy optimization is the priority</td>
+<td>Overall balance and noisy/inconsistent rewards matter</td>
+</tr>
+</tbody>
+</table></div>
+<p>“Fast convergence” is context-dependent; the case notes associate direct policy optimization with speed, DQN with stability/clear reward interpretation, and actor–critic with the strongest overall compromise.</p>
+<h2 id="10-dataforge-robotics-case-study">10. DataForge Robotics case study</h2>
+<h3 id="10-1-scenario-and-formulation">10.1 Scenario and formulation</h3>
+<p>DataForge Robotics develops autonomous warehouse navigation. Maya prototypes a Python grid world similar to OpenAI Gym’s <strong>Frozen Lake</strong>: each cell represents an aisle, safe region or obstacle/hole. The robot must move from start to goal without entering hazards.</p>
+<ul>
+<li><strong>State:</strong> robot location and relevant surroundings.</li>
+<li><strong>Actions:</strong> up, down, left, right (or warehouse movement commands).</li>
+<li><strong>Rewards:</strong> positive for reaching the goal; negative for holes, collisions or inefficient actions; possibly small step cost.</li>
+<li><strong>Policy:</strong> navigation strategy.</li>
+<li><strong>Episode:</strong> start-to-goal/hole/terminal run.</li>
+</ul>
+<p>Maya builds a PyTorch policy network. Raj investigates DQN/Q-values. Logs show inconsistent rewards between exploratory new paths and exploitation of known routes, and some reward summaries conflict with transition logs.</p>
+<h3 id="10-2-correct-diagnosis">10.2 Correct diagnosis</h3>
+<p>Reward variability can be a natural consequence of exploration: random or low-probability actions can temporarily lower returns while producing useful data. A learning-rate change addresses the <strong>size of parameter updates</strong>, not the diversity of experiences. Therefore, do not reduce learning rate merely because exploration makes rewards vary.</p>
+<p>Before changing architecture or hyperparameters:</p>
+<ol>
+<li>validate that reward summaries and transition logs use the same episode boundaries and preprocessing;</li>
+<li>inspect sampled actions, policy probabilities and $\varepsilon$ values;</li>
+<li>inspect predicted Q-values/TD errors;</li>
+<li>separate exploratory from exploitative episodes;</li>
+<li>run comparable seeds/evaluation episodes with exploration disabled;</li>
+<li>then tune learning rate or exploration schedule based on evidence.</li>
+</ol>
+<h3 id="10-3-recommendation-logic">10.3 Recommendation logic</h3>
+<ul>
+<li>Choose <strong>DQN</strong> if stability, discrete actions and interpretable Q-values are primary.</li>
+<li>Choose <strong>REINFORCE</strong> if direct policy optimization and conceptual simplicity matter and high variance is acceptable.</li>
+<li>Choose <strong>actor–critic</strong> when both policy flexibility and value-based feedback are needed, especially under noisy/inconsistent rewards.</li>
+</ul>
+<p>For this case, the source recommends <strong>actor–critic as the strongest overall compromise</strong>, while recognizing all three as viable depending on stakeholder priorities.</p>
+<h2 id="11-instructor-examples-and-practical-use-cases">11. Instructor examples and practical use cases</h2>
+<h3 id="frozen-lake">Frozen Lake</h3>
+<p>An agent navigates a grid from start to goal while avoiding holes. It illustrates states, discrete actions, positive/negative rewards, stochastic action sampling, exploration, Q-values and negative advantage after falling into a hole.</p>
+<h3 id="ai-vacuum-cleaner">AI vacuum cleaner</h3>
+<p>The agent operates on a floor/environment. Dirt detection defines state information; “clean” or “do not clean” are actions. Cleaning real dirt can be rewarded, while cleaning a clean spot can be penalized. A fixed rule illustrates a deterministic policy.</p>
+<h3 id="assignment-presentation-feedback">Assignment/presentation feedback</h3>
+<p>Instructor feedback after submission illustrates reward/feedback: the learner adjusts future behavior based on the received signal.</p>
+<h3 id="atari-games">Atari games</h3>
+<p>Raw pixel frames create a high-dimensional state space. CNN-based DQN extracts visual features and outputs an action value for each game action. Replay memory and target networks make training more reliable.</p>
+<h3 id="warehouse-robot">Warehouse robot</h3>
+<p>Grid cells represent aisles and obstacles. Policy networks provide direct decisions; DQN supplies long-run route values; actor–critic combines both.</p>
+<h2 id="12-common-misconceptions-and-exam-traps">12. Common misconceptions and exam traps</h2>
+<ol>
+<li><strong>“RL maximizes immediate reward.”</strong> False; it maximizes expected cumulative return.</li>
+<li><strong>“The end user manually gives each reward.”</strong> False; the environment/reward function supplies it after interaction.</li>
+<li><strong>“A policy and Q-function are the same.”</strong> False; a policy selects actions, while a Q-function evaluates state–action pairs.</li>
+<li><strong>“Stochastic means choose the most probable action.”</strong> False; it means sample from the entire distribution.</li>
+<li><strong>“Deterministic dynamics imply deterministic behavior.”</strong> False; a stochastic policy can vary actions.</li>
+<li><strong>“$\varepsilon=0$ makes every policy deterministic.”</strong> False; only epsilon randomness disappears.</li>
+<li><strong>“DQN is just a larger Q-table.”</strong> False; it approximates Q-values with a neural network.</li>
+<li><strong>“CNN replaces replay or target networks.”</strong> False; CNN extracts image features; the other two stabilize training.</li>
+<li><strong>“Replay and target networks solve the same problem.”</strong> False; replay breaks data correlation, target networks slow target movement.</li>
+<li><strong>“Replay buffer randomly decides what to retain.”</strong> Usually false; a fixed-capacity deque drops oldest items, while minibatches are sampled randomly.</li>
+<li><strong>“The target network trains independently.”</strong> False; it copies/tracks online parameters.</li>
+<li><strong>“Target networks increase exploration.”</strong> False; exploration comes from $\varepsilon$-greedy or a stochastic policy.</li>
+<li><strong>“A target network removes all instability.”</strong> False; function approximation, reward noise and tuning can still cause problems.</li>
+<li><strong>“REINFORCE baseline removes negative learning.”</strong> False; negative advantage intentionally reduces a bad sampled action’s probability.</li>
+<li><strong>“More episodes guarantee perfection.”</strong> False; more data helps only with sound environment design, reward signal, algorithm and hyperparameters.</li>
+<li><strong>“Inconsistent rewards automatically mean lower learning rate.”</strong> False; first distinguish exploration variability, logging errors and unstable parameter updates.</li>
+<li><strong>“DQN works naturally for any continuous action.”</strong> Standard DQN produces one value per discrete action; continuous control usually motivates actor-based methods.</li>
+</ol>
+<h2 id="13-likely-exam-questions-with-answer-points">13. Likely exam questions with answer points</h2>
+<h3 id="q1-define-rl-and-explain-its-loop">Q1. Define RL and explain its loop.</h3>
+<p>Define agent–environment trial-and-error learning; state the cumulative-reward objective; explain state → policy/action → environment → next state/reward → update; define episode.</p>
+<h3 id="q2-explain-policy-networks-and-compare-deterministic-and-stochastic-policies">Q2. Explain policy networks and compare deterministic and stochastic policies.</h3>
+<p>Define direct state-to-action mapping; show $a=\mu(s)$ versus $a\sim\pi(a\mid s)$; compare predictability, exploration and uncertainty; use vacuum/navigation examples.</p>
+<h3 id="q3-explain-exploration-versus-exploitation">Q3. Explain exploration versus exploitation.</h3>
+<p>Define both, state risks of excess, present $\varepsilon$-greedy equation and epsilon decay; distinguish stochastic-policy sampling from epsilon randomness.</p>
+<h3 id="q4-what-is-td-learning-and-why-can-it-be-unstable">Q4. What is TD learning and why can it be unstable?</h3>
+<p>Explain Monte Carlo plus bootstrapping, incomplete-episode updates and TD error; discuss moving targets, error propagation, overestimation, correlated data and neural approximation.</p>
+<h3 id="q5-why-is-a-target-network-used-in-dqn">Q5. Why is a target network used in DQN?</h3>
+<p>Describe online/target separation; write $y=r+\gamma(1-d)\max Q(s',a';\theta^-)$; explain fixed reference, reduced oscillation/divergence, hard and soft synchronization.</p>
+<h3 id="q6-differentiate-target-network-and-experience-replay">Q6. Differentiate target network and experience replay.</h3>
+<p>Use the two-column comparison: target stability versus data decorrelation/sample reuse; emphasize complementarity.</p>
+<h3 id="q7-explain-dqn-architecture-and-training">Q7. Explain DQN architecture and training.</h3>
+<p>Motivate high-dimensional approximation; input/features/output Q-vector; epsilon action; transition storage; random minibatch; target computation; MSE/Adam update; target synchronization; epsilon decay.</p>
+<h3 id="q8-explain-reinforce-with-baseline">Q8. Explain REINFORCE with baseline.</h3>
+<p>Direct policy optimization; full-episode return; log-policy gradient; $A=G-V(s)$; positive/negative advantage; baseline reduces variance without changing optimum.</p>
+<h3 id="q9-compare-dqn-reinforce-and-actor-critic">Q9. Compare DQN, REINFORCE and actor–critic.</h3>
+<p>Contrast what each learns, action selection, stability/variance, complexity and suitable conditions. For noisy warehouse rewards, justify actor–critic as an overall compromise.</p>
+<h3 id="q10-diagnose-inconsistent-reward-signals-in-dataforge-robotics">Q10. Diagnose inconsistent reward signals in DataForge Robotics.</h3>
+<p>Explain exploration-induced variability; validate logs; compare policy probabilities, Q-values and epsilon; evaluate without exploration; distinguish learning-rate tuning from exploration tuning; then choose architecture based on goals.</p>
+<h3 id="q11-describe-the-week-6-practical">Q11. Describe the Week 6 practical.</h3>
+<p>Mention Colab, Gym CartPole-v0, PyTorch Q-network, <code>deque</code> replay buffer, local/target networks, Adam, replay capacity 1,000, batch 64, soft update, epsilon decay, 300 recorded episodes and reward plot.</p>
+<h2 id="14-rapid-revision-sheet">14. Rapid revision sheet</h2>
+<h3 id="one-line-definitions">One-line definitions</h3>
+<ul>
+<li><strong>RL:</strong> learning sequential decisions through environment feedback to maximize cumulative return.</li>
+<li><strong>Policy:</strong> rule/distribution for choosing actions from states.</li>
+<li><strong>Policy network:</strong> neural policy mapping state to action probabilities/actions.</li>
+<li><strong>Q-value:</strong> expected long-term return of a state–action pair.</li>
+<li><strong>TD learning:</strong> bootstrap from reward plus a successor estimate before an episode ends.</li>
+<li><strong>DQN:</strong> neural approximation of Q-values for high-dimensional states.</li>
+<li><strong>Replay buffer:</strong> memory of transitions sampled in random minibatches.</li>
+<li><strong>Target network:</strong> delayed/frozen Q-network used to construct stable TD targets.</li>
+<li><strong>REINFORCE:</strong> Monte Carlo algorithm that directly optimizes a stochastic policy.</li>
+<li><strong>Actor–critic:</strong> actor chooses; critic evaluates and supplies lower-variance feedback.</li>
+</ul>
+<h3 id="must-remember-formulas">Must-remember formulas</h3>
+<p>$$G_t=\sum_{k=0}^{\infty}\gamma^k r_{t+k+1}$$</p>
+<p>$$Q(s,a)\leftarrow Q(s,a)+\alpha[r+\gamma\max_{a'}Q(s',a')-Q(s,a)]$$</p>
+<p>$$y=r+\gamma(1-d)\max_{a'}Q(s',a';\theta^-)$$</p>
+<p>$$L(\theta)=\mathbb{E}[(y-Q(s,a;\theta))^2]$$</p>
+<p>$$\theta^-\leftarrow\theta \quad\text{(hard)},\qquad
+\theta^-\leftarrow\tau\theta+(1-\tau)\theta^- \quad\text{(soft)}$$</p>
+<p>$$A_t=G_t-V(s_t)$$</p>
+<p>$$\nabla_\theta J\approx\mathbb{E}[\nabla_\theta\log\pi_\theta(a_t\mid s_t)A_t]$$</p>
+<h3 id="last-minute-comparisons">Last-minute comparisons</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>If asked about…</th>
+<th>Recall…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Policy vs Q-value</td>
+<td>Choose versus evaluate</td>
+</tr>
+<tr>
+<td>Deterministic vs stochastic</td>
+<td>Fixed action versus sampled distribution</td>
+</tr>
+<tr>
+<td>Exploration vs exploitation</td>
+<td>Learn alternatives versus use known best</td>
+</tr>
+<tr>
+<td>Replay vs target network</td>
+<td>Decorrelate samples versus stabilize targets</td>
+</tr>
+<tr>
+<td>Online vs target network</td>
+<td>Gradient-updated versus delayed/frozen</td>
+</tr>
+<tr>
+<td>Q-learning vs DQN</td>
+<td>Table versus neural function approximator</td>
+</tr>
+<tr>
+<td>REINFORCE vs actor–critic</td>
+<td>Episodic high-variance return versus value-guided lower-variance update</td>
+</tr>
+<tr>
+<td>Learning rate vs epsilon</td>
+<td>Update magnitude versus experience diversity</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="20-second-dqn-story">20-second DQN story</h3>
+<p>Observe state → choose an epsilon-greedy action → receive reward/next state → store transition → sample a random minibatch → compute frozen-target Bellman values → minimize online-network TD loss → periodically/softly update target → decay epsilon → repeat.</p>
+<h3 id="instructor-emphasized-takeaways">Instructor-emphasized takeaways</h3>
+<ul>
+<li>RL is goal-oriented and feedback driven.</li>
+<li>The agent is the decision maker; the environment supplies the resulting state and reward.</li>
+<li>A policy maps states to actions; a Q-value measures expected cumulative reward.</li>
+<li>Balance exploration and exploitation—neither extreme is desirable.</li>
+<li>Target networks provide the stable learning signal; replay memory provides diverse past experience.</li>
+<li>DQN is the explicit bridge between deep neural networks and classical Q-learning.</li>
+<li>Applications repeatedly emphasized: gaming, robotics/navigation, autonomous systems and finance/trading.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-5.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 5: RBMs, Deep Belief Networks, Autoencoders,…</span>
+      </a>
+      <a href="week-7.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 7: Generative Adversarial Networks (GANs)</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

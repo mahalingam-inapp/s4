@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Deep Learning · Week 11 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Deep Learning</span>
+      <span class="brand-title">Week 11</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html" selected>Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Neural Networks and Deep Learning
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Neural Networks, Backpropagation, Model Tuning, and Evaluation
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Convolutional Neural Networks, Transfer Learning and Computer-Vision…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        RNNs, GRU, LSTM, NLP, Word Embeddings, Transfer Learning and Attention
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        RBMs, Deep Belief Networks, Autoencoders, and Contrastive Divergence
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Reinforcement Learning, Policy Networks, Target Networks and DQN
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Generative Adversarial Networks (GANs)
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Data Augmentation, Hyperparameter Tuning, Transfer Learning and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Feed-Forward Neural Networks, Perceptrons, Loss, Backpropagation and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Python Programming Fundamentals
+      </a>
+      <a class="is-active" href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Machine Learning, Classification, and Naive Bayes
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Logistic Regression as a Neural Network, MNIST, and K-Means
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        PCA and Bag-of-Words
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Autoencoders and Representation Learning
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Exhaustive Exam-Oriented Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Deep Learning · Week 11</p>
+        <h1 class="page-title">Machine Learning, Classification, and Naive Bayes</h1>
+        <p class="page-meta">Week 11 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-week-overview-and-learning-objectives">1. Week overview and learning objectives</a></li>
+      <li><a href="#2-machine-learning-fundamentals">2. Machine learning fundamentals</a></li>
+      <li><a href="#3-what-learning-means">3. What “learning” means</a></li>
+      <li><a href="#4-data-mining-and-analytics">4. Data mining and analytics</a></li>
+      <li><a href="#5-classification-foundations">5. Classification foundations</a></li>
+      <li><a href="#6-why-classifier-evaluation-matters">6. Why classifier evaluation matters</a></li>
+      <li><a href="#7-bayes-theorem">7. Bayes’ theorem</a></li>
+      <li><a href="#8-naive-bayes-classifier">8. Naive Bayes classifier</a></li>
+      <li><a href="#9-recorded-python-scikit-learn-implementation">9. Recorded Python/scikit-learn implementation</a></li>
+      <li><a href="#10-loan-default-case-study-data-innovators-ltd">10. Loan-default case study: Data Innovators Ltd.</a></li>
+      <li><a href="#11-face-recognition-case-study">11. Face-recognition case study</a></li>
+      <li><a href="#12-live-session-recap-python-execution">12. Live-session recap: Python execution</a></li>
+      <li><a href="#13-review-week-3-mini-project-instructions-live-session">13. Review Week 3 mini-project instructions (live session)</a></li>
+      <li><a href="#14-common-exam-traps-and-corrections">14. Common exam traps and corrections</a></li>
+      <li><a href="#15-likely-exam-questions-with-answer-points">15. Likely exam questions with answer points</a></li>
+      <li><a href="#16-rapid-revision">16. Rapid revision</a></li>
+      <li><a href="#review-week-augmentation-safety-focused-classifier-evaluation">Review Week augmentation: safety-focused classifier evaluation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-week-overview-and-learning-objectives">1. Week overview and learning objectives</h2>
+<p>Week 11 moves from the foundations of machine learning to elementary classification, model evaluation, the theory of Naive Bayes, and a Python/scikit-learn implementation. The intended outcomes are to:</p>
+<ul>
+<li>understand supervised, unsupervised, and reinforcement learning;</li>
+<li>distinguish regression, classification, clustering, and association learning;</li>
+<li>understand data-processing patterns, pattern identification, and predictive-model building;</li>
+<li>define classification formally and recognize binary, multiclass, and multilabel tasks;</li>
+<li>follow the workflow of preprocessing, algorithm selection, training, validation/testing, prediction, and evaluation;</li>
+<li>evaluate classifiers with accuracy, precision, recall, F1-score, confusion matrices, ROC curves, and precision–recall curves;</li>
+<li>understand class imbalance and why accuracy can be misleading;</li>
+<li>derive Bayes&rsquo; theorem and the Naive Bayes decision rule;</li>
+<li>compare Gaussian, Multinomial, Bernoulli, Complement, and Categorical Naive Bayes;</li>
+<li>implement and compare GaussianNB, Decision Tree, Random Forest, and SVM models;</li>
+<li>interpret scatter plots, decision boundaries, and business trade-offs in model selection.</li>
+</ul>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> Practical implementation matters as much as theory. Coding exposes errors, forces problem solving, introduces tools, and gives a more realistic understanding of model behavior.</p>
+</blockquote>
+<hr>
+<h2 id="2-machine-learning-fundamentals">2. Machine learning fundamentals</h2>
+<h3 id="2-1-definition">2.1 Definition</h3>
+<p><strong>Machine learning (ML)</strong> is a subset of artificial intelligence in which systems learn patterns from data and use those patterns to make predictions or decisions <strong>without being explicitly programmed with a rule for every case</strong>. More technically, ML programs computers to optimize a performance criterion using example data or past experience.</p>
+<p>ML develops algorithms and statistical models that:</p>
+<ol>
+<li>receive input data;</li>
+<li>identify useful patterns or relationships;</li>
+<li>learn a model from those patterns;</li>
+<li>apply the model to new data;</li>
+<li>improve performance over time through data and experience.</li>
+</ol>
+<p>The broad hierarchy emphasized in the live class was:</p>
+<p>$$
+\text{Artificial Intelligence} \supset \text{Machine Learning} \supset \text{Deep Learning}
+$$</p>
+<p>Supervised, unsupervised, and reinforcement learning sit within the ML family. Deep learning uses multilayer neural networks and is especially useful for advanced, data-intensive tasks.</p>
+<h3 id="2-2-why-make-machines-learn">2.2 Why make machines learn?</h3>
+<p>Learning is useful when a fixed, explicit program is inadequate:</p>
+<ul>
+<li><strong>Human expertise does not exist:</strong> e.g., autonomous navigation on Mars.</li>
+<li><strong>Humans cannot fully articulate their expertise:</strong> e.g., speech recognition.</li>
+<li><strong>The solution changes with time:</strong> e.g., routing in a computer network or changing spam patterns.</li>
+<li><strong>A general solution must adapt to a particular person/case:</strong> e.g., biometric recognition.</li>
+<li><strong>Large datasets must be analyzed:</strong> ML can uncover actionable insights that are hard to obtain manually.</li>
+<li><strong>Repetitive tasks should be automated:</strong> saves time and resources.</li>
+<li><strong>Better decisions are needed:</strong> predictions and patterns can support business, medical, and social decisions.</li>
+</ul>
+<p>There is no need to “learn” a task such as payroll calculation when its rules are already precise, stable, and programmable. This is a classic exam distinction between conventional programming and ML.</p>
+<h3 id="2-3-why-study-ml">2.3 Why study ML?</h3>
+<ul>
+<li>High job-market demand, industry growth, and career opportunities.</li>
+<li>Versatility across healthcare, finance, e-commerce, entertainment, and autonomous systems.</li>
+<li>Ability to solve real-world problems and automate repetitive work.</li>
+<li>Social impact in climate change, healthcare, accessibility, and education.</li>
+<li>Development of transferable analytical, programming, and problem-solving skills.</li>
+<li>Foundation for deep learning, NLP, computer vision, and reinforcement learning.</li>
+</ul>
+<h3 id="2-4-applications">2.4 Applications</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Examples from the sessions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Healthcare</td>
+<td>Disease prediction, medical imaging, medical diagnosis, drug discovery</td>
+</tr>
+<tr>
+<td>Finance</td>
+<td>Fraud detection, credit scoring, algorithmic trading, loan-default prediction, risk assessment</td>
+</tr>
+<tr>
+<td>E-commerce/retail</td>
+<td>Recommendation systems, market-basket analysis, customer segmentation, CRM</td>
+</tr>
+<tr>
+<td>Transportation</td>
+<td>Autonomous vehicles, route optimization</td>
+</tr>
+<tr>
+<td>NLP</td>
+<td>Chatbots/ChatGPT, sentiment analysis, speech recognition, language translation</td>
+</tr>
+<tr>
+<td>Vision</td>
+<td>Face recognition, character recognition, image classification</td>
+</tr>
+<tr>
+<td>Other</td>
+<td>Telecom troubleshooting, bioinformatics, web mining, climate and education applications</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="3-what-learning-means">3. What “learning” means</h2>
+<p>Learning is the process of acquiring knowledge, skills, behavior, or understanding through experience, practice, observation, or study. It supports growth and adaptation in humans, animals, and machines.</p>
+<p>Human learning may be cognitive, behavioral, experiential, social, observational/imitative, reflective, or based on memorization. Machine learning parallels this idea: a model converts available data into useful knowledge and improves through examples and feedback.</p>
+<h3 id="3-1-data-versus-knowledge">3.1 Data versus knowledge</h3>
+<ul>
+<li>Data is often abundant and comparatively cheap (e.g., transaction records and data warehouses).</li>
+<li>Useful knowledge is scarce and expensive.</li>
+<li>ML learns a general model from examples: the model should be a useful approximation of the data-generating pattern, not merely a memory of the examples.</li>
+</ul>
+<p><strong>Retail example:</strong> Transaction data may show that people who bought <em>The Da Vinci Code</em> also bought <em>The Five People You Meet in Heaven</em>. The learned association powers a recommendation.</p>
+<h3 id="3-2-major-learning-paradigms">3.2 Major learning paradigms</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Paradigm</th>
+<th>Data/feedback</th>
+<th>Goal</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supervised learning</td>
+<td>Labeled input–output pairs</td>
+<td>Learn a mapping and predict labels/values</td>
+<td>Spam detection, diabetes prediction, classification, regression</td>
+</tr>
+<tr>
+<td>Unsupervised learning</td>
+<td>Unlabeled data</td>
+<td>Discover latent patterns or groups</td>
+<td>Clustering, pattern discovery</td>
+</tr>
+<tr>
+<td>Reinforcement learning</td>
+<td>Trial and error; rewards and penalties</td>
+<td>Learn a policy for acting in an environment</td>
+<td>Agent learns which actions produce positive outcomes</td>
+</tr>
+</tbody>
+</table></div>
+<p>In reinforcement learning, an <strong>agent</strong> takes actions in an <strong>environment</strong> and uses rewards/penalties as feedback. It does not know the correct answer in advance.</p>
+<hr>
+<h2 id="4-data-mining-and-analytics">4. Data mining and analytics</h2>
+<h3 id="4-1-data-mining">4.1 Data mining</h3>
+<p><strong>Data mining</strong> is the extraction of important, meaningful, and often previously unknown patterns from a large dataset. It turns raw data into usable knowledge.</p>
+<p>Applications mentioned: retail/market-basket analysis, CRM, operations optimization, troubleshooting, telecommunications, bioinformatics, web mining, finance, credit scoring, and fraud detection.</p>
+<h3 id="4-2-roles-of-statistics-and-computer-science">4.2 Roles of statistics and computer science</h3>
+<ul>
+<li><strong>Statistics:</strong> inference from samples, describing data, and presenting distributions through numerical summaries and graphs.</li>
+<li><strong>Computer science:</strong> efficient algorithms for optimization, model representation, evaluation, and inference.</li>
+</ul>
+<h3 id="4-3-descriptive-predictive-and-prescriptive-analytics">4.3 Descriptive, predictive, and prescriptive analytics</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Analytics type</th>
+<th>Central question</th>
+<th>Examples</th>
+<th>Key distinction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descriptive</td>
+<td>What happened?</td>
+<td>Sales reports, historical customer patterns, association rules</td>
+<td>Describes past/present data</td>
+</tr>
+<tr>
+<td>Predictive</td>
+<td>What is likely to happen?</td>
+<td>Fraud, churn, default, or disease prediction</td>
+<td>Forecasts an outcome from past data</td>
+</tr>
+<tr>
+<td>Prescriptive</td>
+<td>What action should be taken?</td>
+<td>Optimized intervention or recommendation</td>
+<td>Adds decision/optimization logic</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Exam trap:</strong> Association-rule mining remains <strong>descriptive</strong> even if a business later acts on its results. It becomes prescriptive only when an optimization/decision process recommends what should be done.</p>
+<h3 id="4-4-association-rule-learning">4.4 Association-rule learning</h3>
+<p>Association rules estimate relationships such as:</p>
+<p>$$
+P(\text{buy }Y\mid\text{buy }X)
+$$</p>
+<p><strong>Instructor example:</strong> If a person shops at 7:00 a.m. for tea leaves/tea bags and milk, the instructor suggested an approximately 90% chance of also buying bread, biscuits, or toast because the items jointly suggest breakfast preparation. A retailer can use the association to recommend or colocate the products.</p>
+<p><strong>Important:</strong> Association relies on dependence/relationships among items. It is therefore not a natural use case for a classifier whose simplifying assumption is that features are conditionally independent.</p>
+<hr>
+<h2 id="5-classification-foundations">5. Classification foundations</h2>
+<h3 id="5-1-definition">5.1 Definition</h3>
+<p><strong>Classification</strong> is a supervised-learning task that assigns each data point to one or more predefined categorical classes. It uses labeled examples to learn the relation between <strong>input features</strong> (independent variables) and a <strong>target label</strong>.</p>
+<p>Examples:</p>
+<ul>
+<li>spam vs not spam;</li>
+<li>fraud vs legitimate transaction;</li>
+<li>default vs non-default applicant;</li>
+<li>dog, cat, bird, or horse;</li>
+<li>diabetes: yes/no, predicted from age and glucose level;</li>
+<li>credit eligibility based on credit score;</li>
+<li>face, character, speech, and medical-pattern recognition.</li>
+</ul>
+<h3 id="5-2-classification-types">5.2 Classification types</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binary</td>
+<td>Exactly two possible classes</td>
+<td>Spam/not spam, fraud/legitimate, diabetes yes/no</td>
+</tr>
+<tr>
+<td>Multiclass</td>
+<td>Exactly one class chosen from more than two</td>
+<td>Cat/dog/bird/horse</td>
+</tr>
+<tr>
+<td>Multilabel</td>
+<td>One item may receive several labels</td>
+<td>An email may be spam, promotion, and newsletter simultaneously</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Exam trap:</strong> Multiclass and multilabel are not synonyms. Multiclass produces one label; multilabel produces a set of labels.</p>
+<h3 id="5-3-data-partitions">5.3 Data partitions</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Partition</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Training set</td>
+<td>Fits the model and learns patterns from labeled data</td>
+</tr>
+<tr>
+<td>Validation set</td>
+<td>Optional holdout used for hyperparameter tuning/model selection</td>
+</tr>
+<tr>
+<td>Test set</td>
+<td>Final evaluation on unseen data</td>
+</tr>
+</tbody>
+</table></div>
+<p>The lectures describe validation as optional for a simple exercise; a basic train/test split can work. For complex problems or tuning, keep validation data separate.</p>
+<p><strong>Example:</strong> Features <code>age = 45</code> and <code>glucose = 130</code> may be paired with label <code>diabetes = yes</code>. After learning from such labeled records, the model predicts yes/no for unseen feature combinations.</p>
+<h3 id="5-4-classification-workflow">5.4 Classification workflow</h3>
+<ol>
+<li><strong>Preprocess:</strong> clean data, remove/handle missing values, eliminate unsuitable data, encode categories, normalize/scale when needed.</li>
+<li><strong>Select an algorithm:</strong> match the method to the data, problem, desired boundary, interpretability, and cost.</li>
+<li><strong>Train:</strong> fit the algorithm to $X_{train}$ and $y_{train}$ so it learns underlying patterns.</li>
+<li><strong>Validate/tune:</strong> evaluate alternatives and hyperparameters when a validation set is used.</li>
+<li><strong>Predict:</strong> apply the trained model to unseen $X$ values.</li>
+<li><strong>Evaluate:</strong> use the test labels and appropriate metrics/visualizations.</li>
+<li><strong>Improve:</strong> feature engineering, data transformation, hyperparameter tuning, or additional data.</li>
+</ol>
+<p>Do not confuse <strong>algorithm selection</strong> with <strong>training</strong>:</p>
+<p>$$
+\text{Chosen algorithm} + \text{training data} \longrightarrow \text{trained model}
+$$</p>
+<p>The model—not the abstract algorithm—is then used for prediction.</p>
+<h3 id="5-5-common-classification-algorithms">5.5 Common classification algorithms</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Core idea</th>
+<th>Typical strength/use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Logistic Regression</td>
+<td>Linear probabilistic model</td>
+<td>Binary tasks such as spam/fraud</td>
+</tr>
+<tr>
+<td>Decision Tree</td>
+<td>Sequential feature-based rules</td>
+<td>Interpretability; nonlinear patterns</td>
+</tr>
+<tr>
+<td>Random Forest</td>
+<td>Ensemble of decision trees</td>
+<td>Better generalization/accuracy than a single tree in many cases</td>
+</tr>
+<tr>
+<td>SVM</td>
+<td>Separating hyperplane with maximum margin; kernels allow complexity</td>
+<td>High-dimensional data and separated classes</td>
+</tr>
+<tr>
+<td>K-Nearest Neighbors (KNN)</td>
+<td>Majority class among nearest neighbors</td>
+<td>Nonparametric, local classification</td>
+</tr>
+<tr>
+<td>Naive Bayes</td>
+<td>Bayes theorem plus conditional-independence assumption</td>
+<td>Fast probabilistic classification, especially text</td>
+</tr>
+<tr>
+<td>Neural Network</td>
+<td>Layered nonlinear representation</td>
+<td>Complex, nonlinear, high-dimensional patterns</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Transcript correction/exam trap:</strong> The live transcript says “K means neighbors” and calls it a classifier. The described majority-vote method is <strong>K-Nearest Neighbors (KNN)</strong>. K-means is an unsupervised clustering method.</p>
+</blockquote>
+<hr>
+<h2 id="6-why-classifier-evaluation-matters">6. Why classifier evaluation matters</h2>
+<p>Evaluation determines whether the model predicts correctly, generalizes beyond training data, and suffers from underfitting or overfitting.</p>
+<ul>
+<li><strong>Overfitting:</strong> memorizes training examples/noise but performs poorly on unseen data.</li>
+<li><strong>Underfitting:</strong> fails to capture the underlying pattern even in training data.</li>
+<li><strong>Generalization:</strong> successful performance on new, unseen examples.</li>
+</ul>
+<p><strong>Face example:</strong> A model trained on Person A’s photos should recognize a new photo of Person A. Failure suggests insufficient training, weak feature learning, or the need for model adjustment—not that memorization is the goal.</p>
+<h3 id="6-1-confusion-matrix">6.1 Confusion matrix</h3>
+<p>Taking “positive” to be the event of interest:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: right;">Predicted positive</th>
+<th style="text-align: right;">Predicted negative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Actual positive</td>
+<td style="text-align: right;">True Positive (TP)</td>
+<td style="text-align: right;">False Negative (FN)</td>
+</tr>
+<tr>
+<td>Actual negative</td>
+<td style="text-align: right;">False Positive (FP)</td>
+<td style="text-align: right;">True Negative (TN)</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>TP:</strong> positive case correctly detected (fraud caught).</li>
+<li><strong>FP:</strong> negative case incorrectly flagged positive (legitimate transaction blocked).</li>
+<li><strong>FN:</strong> positive case missed (fraud allowed; risky borrower predicted safe).</li>
+<li><strong>TN:</strong> negative case correctly identified (legitimate transaction accepted).</li>
+</ul>
+<p>In loan risk, false negatives can be especially costly because an actual defaulter may be classified as non-default.</p>
+<h3 id="6-2-metrics-and-formulas">6.2 Metrics and formulas</h3>
+<p><strong>Accuracy — overall proportion correct</strong></p>
+<p>$$
+\text{Accuracy}=\frac{TP+TN}{TP+TN+FP+FN}
+$$</p>
+<p><strong>Precision — reliability of positive predictions</strong></p>
+<p>$$
+\text{Precision}=\frac{TP}{TP+FP}
+$$</p>
+<p>Question answered: “Of everything flagged positive, how many were truly positive?”</p>
+<p><strong>Recall / sensitivity / true-positive rate — coverage of actual positives</strong></p>
+<p>$$
+\text{Recall}=\frac{TP}{TP+FN}
+$$</p>
+<p>Question answered: “Of all true positive cases, how many did the model catch?”</p>
+<p><strong>F1-score — harmonic mean of precision and recall</strong></p>
+<p>$$
+F_1=2\frac{\text{Precision}\cdot\text{Recall}}{\text{Precision}+\text{Recall}}
+$$</p>
+<p><strong>Specificity / true-negative rate</strong></p>
+<p>$$
+\text{Specificity}=\frac{TN}{TN+FP}
+$$</p>
+<p><strong>False-positive rate</strong></p>
+<p>$$
+FPR=\frac{FP}{FP+TN}=1-\text{Specificity}
+$$</p>
+<h3 id="6-3-class-imbalance">6.3 Class imbalance</h3>
+<p>Suppose 95% of transactions are legitimate and 5% are fraud. A model that predicts “legitimate” for everything has 95% accuracy but zero fraud recall. Thus accuracy alone can conceal complete failure on the minority class.</p>
+<p>For imbalanced data, inspect:</p>
+<ul>
+<li>precision, recall, and F1;</li>
+<li>confusion matrix;</li>
+<li>class support;</li>
+<li>ROC/PR curves;</li>
+<li>class-weighted metrics;</li>
+<li>resampling or synthetic-data methods where appropriate.</li>
+</ul>
+<h3 id="6-4-roc-and-precision-recall-curves">6.4 ROC and precision–recall curves</h3>
+<ul>
+<li><strong>ROC curve:</strong> plots true-positive rate against false-positive rate across thresholds.</li>
+<li><strong>Precision–recall (PR) curve:</strong> plots precision against recall across thresholds.</li>
+</ul>
+<p>PR curves are usually more informative when the positive class is rare (fraud, disease, spam). ROC remains useful for general threshold analysis.</p>
+<h3 id="6-5-classification-thresholds">6.5 Classification thresholds</h3>
+<p>A classifier may output a probability or score. A threshold converts it to a class decision.</p>
+<p><strong>Example:</strong> Risk score $=0.58$.</p>
+<ul>
+<li>threshold $0.50$: $0.58\ge0.50$, reject;</li>
+<li>threshold $0.60$: $0.58<0.60$, approve.</li>
+</ul>
+<p>The <strong>score has not changed</strong>; only the decision rule has. Lowering/raising a threshold changes the FP–FN and precision–recall trade-off. Select the threshold using business costs, not convention alone.</p>
+<h3 id="6-6-classification-report-averages">6.6 Classification report averages</h3>
+<ul>
+<li><strong>Support:</strong> number of true instances in a class.</li>
+<li><strong>Macro average:</strong> unweighted mean across classes; gives each class equal importance.</li>
+<li><strong>Weighted average:</strong> mean weighted by class support; majority classes have more influence.</li>
+</ul>
+<hr>
+<h2 id="7-bayes-theorem">7. Bayes’ theorem</h2>
+<h3 id="7-1-formula-and-terms">7.1 Formula and terms</h3>
+<p>For class $C$ and observed evidence/features $X$:</p>
+<p>$$
+P(C\mid X)=\frac{P(X\mid C)P(C)}{P(X)}
+$$</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$P(C)$</td>
+<td>Prior</td>
+<td>Belief/probability of class $C$ before observing $X$</td>
+</tr>
+<tr>
+<td>$P(X\mid C)$</td>
+<td>Likelihood</td>
+<td>Probability of observing $X$ if $C$ is true</td>
+</tr>
+<tr>
+<td>$P(X)$</td>
+<td>Evidence / marginal likelihood</td>
+<td>Overall probability of the evidence; normalization term</td>
+</tr>
+<tr>
+<td>$P(C\mid X)$</td>
+<td>Posterior</td>
+<td>Updated probability of $C$ after observing $X$</td>
+</tr>
+</tbody>
+</table></div>
+<p>Conceptually:</p>
+<p>$$
+\text{Posterior}=\frac{\text{Likelihood}\times\text{Prior}}{\text{Evidence}}
+$$</p>
+<p>Bayes’ theorem is a framework for updating a prior belief using new evidence. It underpins Bayesian inference in statistics, ML, diagnosis, fraud detection, and risk assessment.</p>
+<h3 id="7-2-derivation">7.2 Derivation</h3>
+<p>From conditional probability:</p>
+<p>$$
+P(C\cap X)=P(C\mid X)P(X)=P(X\mid C)P(C)
+$$</p>
+<p>Therefore:</p>
+<p>$$
+P(C\mid X)=\frac{P(X\mid C)P(C)}{P(X)}
+$$</p>
+<p>For mutually exclusive, exhaustive classes $C_k$:</p>
+<p>$$
+P(X)=\sum_k P(X\mid C_k)P(C_k)
+$$</p>
+<h3 id="7-3-rare-disease-example">7.3 Rare-disease example</h3>
+<p>Given:</p>
+<ul>
+<li>sensitivity $P(+\mid D)=0.99$;</li>
+<li>specificity $P(-\mid \neg D)=0.95$, hence $P(+\mid\neg D)=0.05$;</li>
+<li>prevalence $P(D)=0.001$, hence $P(\neg D)=0.999$.</li>
+</ul>
+<p>Then:</p>
+<p>$$
+P(D\mid +)=\frac{0.99(0.001)}{0.99(0.001)+0.05(0.999)}
+=\frac{0.00099}{0.05094}\approx0.0194=1.94\%
+$$</p>
+<p>Even a positive test gives only about 1.94% disease probability because the disease is extremely rare. This demonstrates the importance of the prior/base rate.</p>
+<h3 id="7-4-when-normalization-can-be-omitted">7.4 When normalization can be omitted</h3>
+<p>For a fixed input $X$, $P(X)$ is identical across candidate classes. Thus, to choose the most likely class:</p>
+<p>$$
+\hat C=\arg\max_C P(C\mid X)
+=\arg\max_C P(X\mid C)P(C)
+$$</p>
+<p><strong>Exam trap:</strong> Omitting $P(X)$ is valid for <strong>class ranking/argmax</strong>, but the resulting values are not normalized probabilities. Do not compare them directly with a fixed probability threshold such as $0.8$ unless they are normalized/calibrated.</p>
+<hr>
+<h2 id="8-naive-bayes-classifier">8. Naive Bayes classifier</h2>
+<h3 id="8-1-definition-and-decision-rule">8.1 Definition and decision rule</h3>
+<p><strong>Naive Bayes (NB)</strong> is a family of probabilistic classifiers based on Bayes’ theorem. It calculates a posterior score for each candidate class and assigns the class with the highest score.</p>
+<p>For feature vector $X=(x_1,x_2,\dots,x_n)$:</p>
+<p>$$
+P(C\mid x_1,\ldots,x_n)
+=\frac{P(x_1,\ldots,x_n\mid C)P(C)}{P(x_1,\ldots,x_n)}
+$$</p>
+<p>The <strong>naive conditional-independence assumption</strong> is:</p>
+<p>$$
+P(x_1,\ldots,x_n\mid C)=\prod_{i=1}^{n}P(x_i\mid C)
+$$</p>
+<p>Therefore:</p>
+<p>$$
+P(C\mid X)\propto P(C)\prod_{i=1}^{n}P(x_i\mid C)
+$$</p>
+<p>and the classifier predicts:</p>
+<p>$$
+\hat C=\arg\max_C P(C)\prod_{i=1}^{n}P(x_i\mid C)
+$$</p>
+<p>In practice, log probabilities avoid numerical underflow:</p>
+<p>$$
+\hat C=\arg\max_C\left[\log P(C)+\sum_i\log P(x_i\mid C)\right]
+$$</p>
+<h3 id="8-2-why-is-it-called-naive">8.2 Why is it called “naive”?</h3>
+<p>The model treats all features as conditionally independent given the class and lets each contribute independently to the final prediction. In reality, features are often correlated, so this assumption is frequently violated. It nevertheless simplifies computation and can work remarkably well—especially with high-dimensional, weakly correlated features such as word occurrences in text.</p>
+<p>The sessions also emphasize:</p>
+<ul>
+<li><strong>equal/direct contribution:</strong> correlations are not explicitly modeled;</li>
+<li><strong>class-conditional independence:</strong> the joint feature likelihood factorizes within a class;</li>
+<li><strong>representative training data:</strong> estimated distributions should reflect the real problem space;</li>
+<li><strong>data quality:</strong> poor/missing/unrepresentative data weakens probability estimates;</li>
+<li><strong>zero-probability handling:</strong> smoothing is required for unseen feature–class combinations.</li>
+</ul>
+<h3 id="8-3-laplace-smoothing">8.3 Laplace smoothing</h3>
+<p>Without smoothing, one unseen word/feature can make the entire product zero. For categorical counts:</p>
+<p>$$
+P(x_i=v\mid C)=\frac{N_{v,C}+\alpha}{N_C+\alpha K}
+$$</p>
+<p>where $K$ is the number of possible values and $\alpha=1$ gives Laplace smoothing.</p>
+<h3 id="8-4-main-variants">8.4 Main variants</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Feature assumption</th>
+<th>Appropriate data/use cases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gaussian NB</td>
+<td>Continuous values follow a normal distribution within each class</td>
+<td>Blood pressure, sensor measurements, debt ratio, credit score</td>
+</tr>
+<tr>
+<td>Multinomial NB</td>
+<td>Discrete nonnegative counts/frequencies</td>
+<td>Word counts, text classification, spam, sentiment, document categories</td>
+</tr>
+<tr>
+<td>Bernoulli NB</td>
+<td>Binary feature presence/absence</td>
+<td>Whether a word/event occurs; binary transaction indicators</td>
+</tr>
+<tr>
+<td>Complement NB</td>
+<td>Uses complement-of-class statistics; designed to improve minority-class behavior</td>
+<td>Imbalanced text/classification datasets, rare-topic detection</td>
+</tr>
+<tr>
+<td>Categorical NB</td>
+<td>Discrete categorical values</td>
+<td>Weather/condition/preferences and other categorical predictors</td>
+</tr>
+</tbody>
+</table></div>
+<p>The three principal variants emphasized were Gaussian, Multinomial, and Bernoulli; Complement and Categorical were additional variants.</p>
+<h3 id="8-5-gaussian-naive-bayes">8.5 Gaussian Naive Bayes</h3>
+<p>For continuous feature $x_i$, class $C=c$:</p>
+<p>$$
+P(x_i\mid C=c)=\frac{1}{\sqrt{2\pi\sigma_{ic}^2}}
+\exp\left(-\frac{(x_i-\mu_{ic})^2}{2\sigma_{ic}^2}\right)
+$$</p>
+<p>It estimates a class-specific mean $\mu_{ic}$ and variance $\sigma_{ic}^2$ for every feature. It is suitable when continuous features are approximately Gaussian. If the assumption is poor, consider transformations, alternative models, or feature engineering.</p>
+<h3 id="8-6-naive-bayes-workflow">8.6 Naive Bayes workflow</h3>
+<ol>
+<li>Handle missing values.</li>
+<li>Select useful features.</li>
+<li>Encode categorical variables (one-hot or label encoding as appropriate).</li>
+<li>Normalize/scale if appropriate. The lecture notes that Gaussian data may need scaling; Multinomial/Bernoulli usually do not require it.</li>
+<li>Choose the matching NB variant.</li>
+<li>Fit prior and conditional likelihood parameters on training data.</li>
+<li>Predict the highest-posterior class for unseen data.</li>
+<li>Evaluate accuracy, precision, recall, F1, and confusion matrix.</li>
+<li>Tune smoothing/other hyperparameters and perform feature engineering if needed.</li>
+</ol>
+<h3 id="8-7-advantages">8.7 Advantages</h3>
+<ul>
+<li>Simple and easy to implement.</li>
+<li>Very fast training and prediction.</li>
+<li>Computationally efficient for large datasets.</li>
+<li>Scales approximately linearly with the number of features.</li>
+<li>Works well with high-dimensional data, especially text.</li>
+<li>Useful as a quick baseline.</li>
+<li>Can ignore a missing feature and use the remaining/marginal likelihood information in suitable implementations.</li>
+</ul>
+<h3 id="8-8-limitations">8.8 Limitations</h3>
+<ul>
+<li>Conditional-independence assumption is often unrealistic.</li>
+<li>Performance may decline with highly correlated features.</li>
+<li>It represents comparatively simple decision structures.</li>
+<li>Probability estimates may be poorly calibrated even when ranking/classification is good.</li>
+<li>Zero-frequency problems occur without smoothing.</li>
+<li>GaussianNB can suffer when continuous features are strongly non-Gaussian.</li>
+<li>It is sensitive to unrepresentative training data and poor feature choice.</li>
+</ul>
+<h3 id="8-9-applications">8.9 Applications</h3>
+<ul>
+<li>spam vs non-spam filtering;</li>
+<li>text, document, article, and review categorization;</li>
+<li>sentiment analysis;</li>
+<li>medical diagnosis from symptoms/measurements;</li>
+<li>fraud and risk detection;</li>
+<li>simple user preference/product recommendation classification;</li>
+<li>large-scale, time-sensitive prediction tasks.</li>
+</ul>
+<p><strong>Practical example:</strong> For age and income, NB can predict whether a customer will buy a product by estimating $P(\text{Yes}\mid\text{age,income})$ and $P(\text{No}\mid\text{age,income})$, then choosing the larger posterior.</p>
+<hr>
+<h2 id="9-recorded-python-scikit-learn-implementation">9. Recorded Python/scikit-learn implementation</h2>
+<h3 id="9-1-environment-and-libraries">9.1 Environment and libraries</h3>
+<p>The demonstration uses a new Google Colab notebook renamed “Week 11.” Students were told to understand and reproduce the implementation, not merely receive/copy the code.</p>
+<p>Libraries/components:</p>
+<ul>
+<li><code>numpy</code> for arrays and synthetic random data;</li>
+<li><code>matplotlib.pyplot</code> for scatter plots, decision regions, and bar charts;</li>
+<li><code>train_test_split</code> for partitioning data;</li>
+<li><code>GaussianNB</code>;</li>
+<li><code>DecisionTreeClassifier</code>;</li>
+<li><code>RandomForestClassifier</code>;</li>
+<li><code>SVC</code> with a linear kernel;</li>
+<li><code>accuracy_score</code>, <code>classification_report</code>, and confusion-matrix-related metrics.</li>
+</ul>
+<h3 id="9-2-dataset">9.2 Dataset</h3>
+<ul>
+<li>Synthetic data rather than a real/Kaggle dataset.</li>
+<li>100 samples.</li>
+<li>Two numerical features stored as a 2-D NumPy array.</li>
+<li>Binary labels $0/1$ created by a simple threshold rule.</li>
+<li>A fixed random state (42) is used where shown to improve reproducibility.</li>
+<li>Split: 70% training and 30% testing, producing $X_{train},X_{test},y_{train},y_{test}$.</li>
+</ul>
+<h3 id="9-3-models-and-training-pattern">9.3 Models and training pattern</h3>
+<p>Models compared:</p>
+<ol>
+<li>Gaussian Naive Bayes;</li>
+<li>Decision Tree (<code>random_state=42</code>);</li>
+<li>Random Forest (<code>random_state=42</code>);</li>
+<li>linear SVM (the transcript mentions <code>random_state=42</code>).</li>
+</ol>
+<p>General loop:</p>
+<pre><code class="language-python">model.fit(X_train, y_train)
+y_pred = model.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(classification_report(y_test, y_pred))
+</code></pre>
+<p>A new sample is also passed to every model with <code>predict</code>; the transcript reports all models returning the same binary sequence/prediction, transcribed as “1 0.”</p>
+<h3 id="9-4-visualization">9.4 Visualization</h3>
+<ul>
+<li>Scatter plot of training and testing observations on Feature 1 and Feature 2.</li>
+<li>A grid is created over feature space.</li>
+<li>Each model predicts the grid points.</li>
+<li>Colored regions display its decision boundary/regions.</li>
+<li>Plots are titled using the model name and labeled by Feature 1/Feature 2.</li>
+<li><code>plt.show()</code> is required to display figures.</li>
+<li>A sky-blue bar chart titled <strong>Model Comparison</strong>, y-axis <strong>Accuracy</strong>, summarizes results and includes a grid.</li>
+</ul>
+<h3 id="9-5-reported-results-from-the-synthetic-demonstration">9.5 Reported results from the synthetic demonstration</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: right;">Reported test accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GaussianNB</td>
+<td style="text-align: right;">86.67%</td>
+</tr>
+<tr>
+<td>Decision Tree</td>
+<td style="text-align: right;">90.00%</td>
+</tr>
+<tr>
+<td>Random Forest</td>
+<td style="text-align: right;">86.67%</td>
+</tr>
+<tr>
+<td>Linear SVM</td>
+<td style="text-align: right;">96.67%</td>
+</tr>
+</tbody>
+</table></div>
+<p>The transcript also mentions class-specific precision around <code>0.79</code> for class 0 and refers to precision, recall, F1, support, macro average, and weighted average in the report; some exact per-class values are unclear in the transcription.</p>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> On this particular synthetic dataset, SVM performed best; this does not prove SVM is universally best. Model effectiveness depends on the dataset’s distribution, construction, features, and task.</p>
+</blockquote>
+<hr>
+<h2 id="10-loan-default-case-study-data-innovators-ltd">10. Loan-default case study: Data Innovators Ltd.</h2>
+<h3 id="10-1-scenario">10.1 Scenario</h3>
+<ul>
+<li><strong>Sam</strong>, data analyst: examines patterns and evaluation.</li>
+<li><strong>Maya</strong>, project manager: makes the model-selection recommendation.</li>
+<li><strong>Leo</strong>, intern: implements experiments.</li>
+<li>Features: debt-to-income ratio (Feature 1) and credit score (Feature 2).</li>
+<li>Target: <code>0 = non-default</code>, <code>1 = default</code>.</li>
+<li>Compared models: GaussianNB, SVM, and Decision Tree.</li>
+</ul>
+<p>The objective is not merely maximum accuracy; it is to balance predictive performance, complexity, interpretability, implementation effort, and business risk.</p>
+<h3 id="10-2-scatter-plot-versus-decision-boundary-plot">10.2 Scatter plot versus decision-boundary plot</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Plot</th>
+<th>What it answers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data-distribution scatter plot</td>
+<td>How do observed default/non-default cases spread? Are classes separated or overlapping? Are train/test points representative?</td>
+</tr>
+<tr>
+<td>Decision-boundary plot</td>
+<td>How does a trained algorithm partition the feature space? What class would it assign in each region?</td>
+</tr>
+</tbody>
+</table></div>
+<p>Likely pattern: low debt-to-income plus high credit score tends toward non-default. Heavy overlap implies a harder problem and may signal missing predictors or noisy labels.</p>
+<h3 id="10-3-boundary-shapes">10.3 Boundary shapes</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Typical boundary</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GaussianNB</td>
+<td>Smooth, probability-based curves</td>
+<td>Arises from class-conditional Gaussian densities</td>
+</tr>
+<tr>
+<td>SVM</td>
+<td>Margin-based line/curve</td>
+<td>Kernel determines linear/nonlinear flexibility</td>
+</tr>
+<tr>
+<td>Decision Tree</td>
+<td>Axis-aligned, step-like rectangles</td>
+<td>Sequential threshold rules</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="10-4-case-study-accuracy-chart">10.4 Case-study accuracy chart</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: right;">Case-study accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GaussianNB</td>
+<td style="text-align: right;">85%</td>
+</tr>
+<tr>
+<td>SVM</td>
+<td style="text-align: right;">82%</td>
+</tr>
+<tr>
+<td>Decision Tree</td>
+<td style="text-align: right;">88%</td>
+</tr>
+</tbody>
+</table></div>
+<p>These case-study values are distinct from the synthetic implementation’s values and must not be mixed.</p>
+<h3 id="10-5-decision-alternatives">10.5 Decision alternatives</h3>
+<ol>
+<li><strong>Choose GaussianNB:</strong> fastest and simplest, few lines of code, solid 85%, good baseline.</li>
+<li><strong>Choose Decision Tree:</strong> highest displayed accuracy (88%) and rule-based explanation, but more complex/jagged boundaries and overfitting risk.</li>
+<li><strong>Collect more data:</strong> appropriate when current evidence is weak, overlap is high, or ranking may change with a larger/representative sample.</li>
+</ol>
+<p>Best recommendation requires:</p>
+<ul>
+<li>confusion-matrix costs, especially false negatives in default prediction;</li>
+<li>cross-validation rather than one split;</li>
+<li>interpretability requirements;</li>
+<li>latency/training constraints;</li>
+<li>data size, separability, and stability;</li>
+<li>feature engineering and transformations;</li>
+<li>calibration/threshold requirements;</li>
+<li>business cost of each error type.</li>
+</ul>
+<p><strong>Cross-validation</strong> repeats training/evaluation across folds and tests whether a result is stable rather than an accident of one train/test split.</p>
+<h3 id="10-6-feature-engineering-and-non-gaussian-data">10.6 Feature engineering and non-Gaussian data</h3>
+<p>If Gaussian assumptions are weak:</p>
+<ul>
+<li>inspect distributions and outliers;</li>
+<li>transform skewed variables (e.g., log/power transforms where meaningful);</li>
+<li>standardize if useful;</li>
+<li>remove/repair poor features;</li>
+<li>create stronger predictors;</li>
+<li>compare with non-Gaussian models;</li>
+<li>evaluate the impact rather than assuming transformation helps.</li>
+</ul>
+<hr>
+<h2 id="11-face-recognition-case-study">11. Face-recognition case study</h2>
+<h3 id="11-1-basic-recorded-lecture-example">11.1 Basic recorded-lecture example</h3>
+<p>Training images should show the same person from multiple poses/angles (front and inclined views). The model extracts/uses facial characteristics such as eye, nose, lips, and ear positions. It is then tested with new images. Recognition of the trained person indicates useful learning; failure indicates insufficient training or a weak model.</p>
+<p>Real-world difficulties include:</p>
+<ul>
+<li>pose;</li>
+<li>lighting;</li>
+<li>occlusion;</li>
+<li>glasses;</li>
+<li>beard;</li>
+<li>makeup;</li>
+<li>hairstyle.</li>
+</ul>
+<p>Other classification examples include MNIST handwriting/character recognition, speech recognition with temporal dependence and language syntax/dictionaries, sensor fusion, and medical diagnosis from symptoms.</p>
+<h3 id="11-2-live-session-expansion">11.2 Live-session expansion</h3>
+<p>The live instructor described two phases:</p>
+<ol>
+<li><strong>Training:</strong> analyze many labeled face images from several angles; learn features such as eye/eyebrow position and nose length.</li>
+<li><strong>Testing:</strong> present genuinely unseen images and predict a class such as male/female or an identity.</li>
+</ol>
+<p>The session claimed simple gender/age face classification can reach roughly 90–100% in basic examples. Treat this as an instructor illustration, not a guaranteed real-world benchmark: accuracy depends on dataset quality, bias, lighting, demographics, and evaluation design.</p>
+<p>Advanced biometric face-lock systems must store enrolled user representations and handle greater security, storage, memory, and variation requirements. The instructor distinguished this from a simple image classifier. For advanced recognition and filters, deep neural networks/CNNs are preferred because multiple layers can perform richer processing on large datasets.</p>
+<p><strong>Exam trap:</strong> A model that merely recognizes its training images has not proven generalization. Evaluation must use unseen images.</p>
+<hr>
+<h2 id="12-live-session-recap-python-execution">12. Live-session recap: Python execution</h2>
+<h3 id="q-is-python-compiled-or-interpreted">Q: Is Python compiled or interpreted?</h3>
+<p><strong>Expected class answer:</strong> Python is interpreted. The instructor contrasted:</p>
+<ul>
+<li>compiled languages such as C/C++: translate/compile the program as a whole and then report errors;</li>
+<li>interpreted execution: process code line by line and stop/report when an error is encountered.</li>
+</ul>
+<p>This was highlighted as a common fresher interview question.</p>
+<blockquote>
+<p><strong>Technical nuance:</strong> Standard Python implementations compile source into bytecode and execute it through a virtual machine, but for the exam, follow the lecture’s intended classification: Python is interpreted.</p>
+</blockquote>
+<hr>
+<h2 id="13-review-week-3-mini-project-instructions-live-session">13. Review Week 3 mini-project instructions (live session)</h2>
+<h3 id="13-1-title-and-purpose">13.1 Title and purpose</h3>
+<p><strong>“Image in the Wild: Build a Mini Dataset and Test a CNN.”</strong> The project is ungraded but was strongly encouraged because it develops practical experience in dataset creation, CNN use, troubleshooting, and model-behavior analysis.</p>
+<h3 id="13-2-required-allowed-approach">13.2 Required/allowed approach</h3>
+<ul>
+<li>Study CNN architectures, pretrained models, transfer learning, and evaluation metrics.</li>
+<li>First create a step-by-step implementation strategy/workflow.</li>
+<li>Take your own photographs and create a small image dataset. The instructor mentioned 10–30 initially and later 20–30 or up to 50 images.</li>
+<li>Choose coherent categories, e.g., cats vs dogs, flowers, trees, or animals.</li>
+<li>Use a pretrained model or, optionally, train from scratch.</li>
+<li>Tools allowed/suggested: Google Vision API, Teachable Machine, or another suitable tool.</li>
+<li>Teachable Machine was presented as a low/no-code way to use pretrained ML capabilities.</li>
+<li>Observe predictions, confidence, labels, and confusion-matrix-style evaluation where available.</li>
+<li>Identify failures and propose a data-augmentation/improvement strategy.</li>
+</ul>
+<h3 id="13-3-evidence-and-report">13.3 Evidence and report</h3>
+<ul>
+<li>Record all work and results as proof; do not submit unsupported narrative.</li>
+<li>Include evidence/screenshots of the dataset, implementation/run, and predictions.</li>
+<li>Analyze model behavior and failure cases.</li>
+<li>Produce a PDF report in roughly 3–5 stages/sections.</li>
+<li>Required artifacts include the created images/dataset and model predictions.</li>
+</ul>
+<h3 id="13-4-q-a-clarification">13.4 Q&amp;A clarification</h3>
+<p><strong>Q: Must photographs be in the same category?</strong><br>
+<strong>A:</strong> Students have freedom of choice, but coherent labeled categories are required so the model can identify distinctions. Example: multiple cat images and multiple dog images under the broad theme of animals.</p>
+<p><strong>Q: Is a self-created dataset mandatory with a pretrained model?</strong><br>
+<strong>A:</strong> Creating data is essential when training from scratch. With transfer learning/pretrained models, the generated dataset may not be required in the same way, but it was assigned so students gain hands-on dataset-creation experience.</p>
+<p><strong>Q: Can the project be simple or advanced?</strong><br>
+<strong>A:</strong> Either. A pretrained model is acceptable; training from scratch is also allowed. The key learning outcomes are building a dataset, applying a CNN/image model, encountering implementation issues, and learning to resolve them.</p>
+<h3 id="13-5-submission-presentation-details-stated-in-class">13.5 Submission/presentation details stated in class</h3>
+<ul>
+<li>The live recording date was the 19th; deadline stated as the <strong>29th of that month</strong>.</li>
+<li>One or two strong reports may be selected for presentation in the Review Week 3 live session.</li>
+<li>Suggested presentation: about 15–20 minutes and roughly 3–5 slides (the transcript around slide count is noisy, but “3 or 5 slides” is the clear intent).</li>
+<li>Students were reminded to consult the LMS for authoritative instructions and to complete all course eligibility requirements—videos and assessments—to avoid end-semester examination issues.</li>
+</ul>
+<blockquote>
+<p><strong>Administrative caveat:</strong> Deadlines and eligibility rules can change; the transcript itself directs students to the LMS as the authoritative source.</p>
+</blockquote>
+<hr>
+<h2 id="14-common-exam-traps-and-corrections">14. Common exam traps and corrections</h2>
+<ol>
+<li><strong>“High accuracy means a good classifier.”</strong> False under imbalance; inspect class-level errors and business costs.</li>
+<li><strong>“The highest one-split accuracy proves the best algorithm.”</strong> False; results depend on dataset, split, metrics, tuning, and cross-validation.</li>
+<li><strong>“A model should memorize training examples.”</strong> False; the target is generalization.</li>
+<li><strong>“Validation and test sets serve the same purpose.”</strong> False; validation tunes/selects, test estimates final unseen performance.</li>
+<li><strong>“Multiclass = multilabel.”</strong> False; one label versus multiple simultaneous labels.</li>
+<li><strong>“Naive Bayes assumes features are absolutely independent.”</strong> More precisely, it assumes <strong>conditional independence given the class</strong>.</li>
+<li><strong>“Removing Bayes’ denominator always breaks classification.”</strong> False for argmax class ranking; true normalized probabilities do require it.</li>
+<li><strong>“Unnormalized NB scores can be used with a threshold such as 0.8.”</strong> False unless normalized/calibrated.</li>
+<li><strong>“Association rules are prescriptive.”</strong> They are descriptive unless paired with an action-optimization system.</li>
+<li><strong>“K-means uses majority class of neighbors.”</strong> False; that is KNN. K-means clusters unlabeled observations.</li>
+<li><strong>“GaussianNB is automatically suitable for any numerical data.”</strong> False; check distribution and dependence assumptions.</li>
+<li><strong>“Scaling is always mandatory for every NB variant.”</strong> False; need depends on variant and representation.</li>
+<li><strong>“A synthetic demonstration proves production performance.”</strong> False; it demonstrates workflow only.</li>
+<li><strong>“SVM is best because it achieved 96.67% in class.”</strong> Only for that generated dataset/split.</li>
+<li><strong>“Face recognition and face-lock security are identical.”</strong> Face lock requires enrollment/storage/security and robust biometric matching beyond simple classification.</li>
+</ol>
+<hr>
+<h2 id="15-likely-exam-questions-with-answer-points">15. Likely exam questions with answer points</h2>
+<h3 id="15-1-define-ml-and-explain-when-it-is-preferred-to-rule-based-programming">15.1 Define ML and explain when it is preferred to rule-based programming.</h3>
+<p>Mention learning from data without case-by-case explicit rules; performance optimization using examples/past experience; use when expertise is absent/inarticulable, patterns change, personalization is needed, or data is too large. Contrast with stable deterministic payroll rules.</p>
+<h3 id="15-2-compare-supervised-unsupervised-and-reinforcement-learning">15.2 Compare supervised, unsupervised, and reinforcement learning.</h3>
+<p>Define labels, unlabeled pattern discovery, and agent–environment trial/error with rewards/penalties. Add one example each.</p>
+<h3 id="15-3-explain-the-complete-classification-workflow">15.3 Explain the complete classification workflow.</h3>
+<p>Preprocessing → algorithm selection → training → validation/tuning → prediction on unseen data → evaluation → improvement. Explain training/validation/test roles.</p>
+<h3 id="15-4-derive-bayes-theorem-and-define-its-components">15.4 Derive Bayes’ theorem and define its components.</h3>
+<p>Start from joint probability, derive $P(C\mid X)=P(X\mid C)P(C)/P(X)$, and define prior, likelihood, evidence, posterior.</p>
+<h3 id="15-5-explain-naive-bayes-and-the-naive-assumption">15.5 Explain Naive Bayes and the naive assumption.</h3>
+<p>Give posterior equation, conditional-independence factorization, argmax decision rule, computational advantage, and limitation with correlated features.</p>
+<h3 id="15-6-compare-naive-bayes-variants">15.6 Compare Naive Bayes variants.</h3>
+<p>Gaussian: continuous normal features; Multinomial: counts; Bernoulli: binary presence/absence; Complement: imbalance; Categorical: categorical variables.</p>
+<h3 id="15-7-why-is-laplace-smoothing-needed">15.7 Why is Laplace smoothing needed?</h3>
+<p>An unseen feature–class combination otherwise gives probability zero, causing the full likelihood product to become zero. Add-$\alpha$ smoothing prevents this.</p>
+<h3 id="15-8-explain-accuracy-precision-recall-and-f1-with-formulas">15.8 Explain accuracy, precision, recall, and F1 with formulas.</h3>
+<p>Define confusion-matrix terms first, write all formulas, explain precision’s concern with FP and recall’s concern with FN, and say F1 balances both.</p>
+<h3 id="15-9-why-does-accuracy-fail-under-class-imbalance">15.9 Why does accuracy fail under class imbalance?</h3>
+<p>Use the 95% legitimate/5% fraud all-negative example. Recommend precision, recall, F1, confusion matrix, PR curve, and class support.</p>
+<h3 id="15-10-compare-roc-and-pr-curves">15.10 Compare ROC and PR curves.</h3>
+<p>ROC: TPR vs FPR; PR: precision vs recall. PR is more informative for rare positive classes.</p>
+<h3 id="15-11-explain-thresholding">15.11 Explain thresholding.</h3>
+<p>Threshold converts a score to a decision. Changing it changes FP/FN and precision/recall but not the model’s underlying score. Use the 0.58 example.</p>
+<h3 id="15-12-discuss-the-data-innovators-ltd-decision">15.12 Discuss the Data Innovators Ltd. decision.</h3>
+<p>State features/models/accuracies, then weigh accuracy, interpretability, complexity, false-negative business cost, cross-validation, data quantity, and separability. Avoid declaring a universal winner.</p>
+<h3 id="15-13-explain-how-face-recognition-demonstrates-generalization">15.13 Explain how face recognition demonstrates generalization.</h3>
+<p>Train on multiple angles and facial features; test on unseen poses/images; address lighting/occlusion/accessories; distinguish basic classification from secure biometric systems and advanced deep learning.</p>
+<h3 id="15-14-distinguish-descriptive-predictive-and-prescriptive-analytics">15.14 Distinguish descriptive, predictive, and prescriptive analytics.</h3>
+<p>What happened / what may happen / what should be done. Explain why association rules themselves are descriptive.</p>
+<hr>
+<h2 id="16-rapid-revision">16. Rapid revision</h2>
+<h3 id="core-one-liners">Core one-liners</h3>
+<ul>
+<li>ML learns a model from examples to optimize performance without explicit rules for every case.</li>
+<li>Supervised = labeled; unsupervised = unlabeled; reinforcement = reward/penalty in an environment.</li>
+<li>Classification assigns predefined categories; regression predicts continuous values; clustering discovers groups.</li>
+<li>Training learns; validation tunes; testing estimates final generalization.</li>
+<li>Bayes: posterior $\propto$ likelihood $\times$ prior.</li>
+<li>Naive Bayes assumes features are conditionally independent given the class.</li>
+<li>Gaussian = continuous normal; Multinomial = counts; Bernoulli = binary.</li>
+<li>Accuracy alone is unsafe under imbalance.</li>
+<li>Precision penalizes false alarms; recall penalizes missed positives.</li>
+<li>F1 is the harmonic mean of precision and recall.</li>
+<li>PR curves are especially valuable for rare positives.</li>
+<li>Threshold choice changes decisions and error trade-offs, not scores.</li>
+<li>Scatter plots show data; decision-boundary plots show model partitions.</li>
+<li>The best model depends on data and business cost—not algorithm reputation.</li>
+</ul>
+<h3 id="formula-sheet">Formula sheet</h3>
+<p>$$
+P(C\mid X)=\frac{P(X\mid C)P(C)}{P(X)}
+$$</p>
+<p>$$
+\hat C_{NB}=\arg\max_C P(C)\prod_iP(x_i\mid C)
+$$</p>
+<p>$$
+\text{Accuracy}=\frac{TP+TN}{TP+TN+FP+FN}
+$$</p>
+<p>$$
+\text{Precision}=\frac{TP}{TP+FP},\qquad
+\text{Recall}=\frac{TP}{TP+FN}
+$$</p>
+<p>$$
+F_1=\frac{2PR}{P+R},\qquad
+\text{Specificity}=\frac{TN}{TN+FP}
+$$</p>
+<h3 id="numbers-not-to-confuse">Numbers not to confuse</h3>
+<ul>
+<li>Recorded synthetic implementation: NB <strong>86.67%</strong>, Tree <strong>90%</strong>, Forest <strong>86.67%</strong>, SVM <strong>96.67%</strong>.</li>
+<li>Loan case study: NB <strong>85%</strong>, SVM <strong>82%</strong>, Tree <strong>88%</strong>.</li>
+<li>Rare-disease posterior example: approximately <strong>1.94%</strong> after a positive test.</li>
+<li>Implementation split: <strong>70% train / 30% test</strong>, <strong>100 samples</strong>, <strong>2 features</strong>.</li>
+</ul>
+<h3 id="final-instructor-emphases">Final instructor emphases</h3>
+<ul>
+<li>Model performance depends heavily on the nature and quality of the dataset.</li>
+<li>Use all major evaluation metrics; accuracy alone does not give the full picture.</li>
+<li>Read research papers/references to understand current industry and research practice.</li>
+<li>Implement the methods yourself and learn from errors.</li>
+<li>Keep up with LMS videos, assessments, eligibility requirements, and the Review Week 3 instructions.</li>
+</ul>
+<h2 id="review-week-augmentation-safety-focused-classifier-evaluation">Review Week augmentation: safety-focused classifier evaluation</h2>
+<ul>
+<li>In clinical triage, false negatives can delay attention while false positives increase workload. Evaluate sensitivity/recall, specificity, precision, F1, AUROC, AUPRC, calibration, and false-negative rate—not accuracy alone.</li>
+<li>If 95% of reports are low risk, an always-low classifier achieves 95% accuracy yet is clinically useless. Threshold selection is an operational choice driven by error costs and need not be 0.5.</li>
+<li>Prevent leakage from duplicate/patient overlap, preprocessing performed on the whole dataset, future/label-derived information, or features unavailable at inference. Prefer patient-level splitting.</li>
+<li>Audit performance across hospitals, demographics, equipment, reporting styles, clinicians’ language, prevalence, and time periods; conduct external validation before deployment.</li>
+<li>A decision-support output should expose probability, class, highlighted evidence, calibration/confidence information, model version, and an audit trail, with clinician oversight.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-10.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 10: Python Programming Fundamentals</span>
+      </a>
+      <a href="week-12.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 12: Logistic Regression as a Neural Network,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

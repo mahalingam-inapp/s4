@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Deep Learning · Week 2 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Deep Learning</span>
+      <span class="brand-title">Week 2</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html" selected>Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Neural Networks and Deep Learning
+      </a>
+      <a class="is-active" href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Neural Networks, Backpropagation, Model Tuning, and Evaluation
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Convolutional Neural Networks, Transfer Learning and Computer-Vision…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        RNNs, GRU, LSTM, NLP, Word Embeddings, Transfer Learning and Attention
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        RBMs, Deep Belief Networks, Autoencoders, and Contrastive Divergence
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Reinforcement Learning, Policy Networks, Target Networks and DQN
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Generative Adversarial Networks (GANs)
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Data Augmentation, Hyperparameter Tuning, Transfer Learning and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Feed-Forward Neural Networks, Perceptrons, Loss, Backpropagation and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Python Programming Fundamentals
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Machine Learning, Classification, and Naive Bayes
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Logistic Regression as a Neural Network, MNIST, and K-Means
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        PCA and Bag-of-Words
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Autoencoders and Representation Learning
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Exhaustive Exam-Oriented Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Deep Learning · Week 2</p>
+        <h1 class="page-title">Neural Networks, Backpropagation, Model Tuning, and Evaluation</h1>
+        <p class="page-meta">Week 2 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-learning-objectives-and-conceptual-map">1. Learning objectives and conceptual map</a></li>
+      <li><a href="#2-foundations-and-terminology">2. Foundations and terminology</a></li>
+      <li><a href="#3-single-layer-neural-network-slnn-perceptron">3. Single-layer neural network (SLNN) / perceptron</a></li>
+      <li><a href="#4-linear-separability-and-logic-gates">4. Linear separability and logic gates</a></li>
+      <li><a href="#5-activation-functions">5. Activation functions</a></li>
+      <li><a href="#6-multi-layer-neural-networks-mlnns">6. Multi-layer neural networks (MLNNs)</a></li>
+      <li><a href="#7-slnn-versus-mlnn">7. SLNN versus MLNN</a></li>
+      <li><a href="#8-data-splitting-train-development-validation-and-test">8. Data splitting: train, development/validation, and test</a></li>
+      <li><a href="#9-bias-variance-trade-off">9. Bias–variance trade-off</a></li>
+      <li><a href="#10-hyperparameters-and-tuning">10. Hyperparameters and tuning</a></li>
+      <li><a href="#11-recommendation-system-evaluation-example">11. Recommendation-system evaluation example</a></li>
+      <li><a href="#12-coding-walkthrough-pytorch-in-google-colab">12. Coding walkthrough: PyTorch in Google Colab</a></li>
+      <li><a href="#13-case-studies-and-applied-reasoning">13. Case studies and applied reasoning</a></li>
+      <li><a href="#14-exam-traps-and-common-misconceptions">14. Exam traps and common misconceptions</a></li>
+      <li><a href="#15-likely-exam-questions-with-model-answers">15. Likely exam questions with model answers</a></li>
+      <li><a href="#16-rapid-revision">16. Rapid revision</a></li>
+      <li><a href="#review-week-augmentation-activation-and-gradient-corrections">Review Week augmentation: activation and gradient corrections</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<blockquote>
+<p>Exam-oriented notes compiled from all four Week 2 videos, the live session, and the quiz material. Transcription/player noise has been removed; substantive explanations, examples, caveats, questions, and instructor emphasis are retained and clarified.</p>
+</blockquote>
+<h2 id="1-learning-objectives-and-conceptual-map">1. Learning objectives and conceptual map</h2>
+<p>Week 2 moves from the simplest artificial neuron to trainable multilayer networks and then to reliable model development.</p>
+<ol>
+<li>Understand a <strong>single-layer neural network/perceptron</strong>, its learning rule, activation functions, applications, and limitations.</li>
+<li>Understand a <strong>multi-layer neural network (MLNN)</strong>, the role of hidden layers, forward propagation, backpropagation, and gradient descent.</li>
+<li>Learn how to divide data into <strong>training, development/validation, and test sets</strong>.</li>
+<li>Diagnose <strong>high bias (underfitting)</strong> and <strong>high variance (overfitting)</strong>.</li>
+<li>Understand and tune <strong>hyperparameters</strong> such as learning rate, batch size, epochs, and network depth.</li>
+<li>Connect theory to a PyTorch/Google Colab implementation.</li>
+</ol>
+<p>The central progression is:</p>
+<pre><code class="language-text">Linear, simple problem → perceptron → one linear decision boundary
+Non-linear, complex problem → hidden layer(s) + non-linear activation → MLNN
+Training → forward pass → loss → backward pass → parameter update → repeat
+Reliable evaluation → train/dev/test separation + bias–variance diagnosis
+</code></pre>
+<hr>
+<h2 id="2-foundations-and-terminology">2. Foundations and terminology</h2>
+<h3 id="2-1-artificial-neural-network-ann">2.1 Artificial neural network (ANN)</h3>
+<p>An ANN is inspired by the human brain: interconnected artificial neurons receive signals, transform them, and pass information onward. A conventional network has:</p>
+<ul>
+<li><strong>Input layer:</strong> receives features.</li>
+<li><strong>Hidden layer(s):</strong> performs intermediate transformations and learns patterns.</li>
+<li><strong>Output layer:</strong> produces a prediction, such as a class probability or regression value.</li>
+</ul>
+<p>Week 1 prerequisites recalled in the live class were AI, machine learning, deep learning as a subset of ML, linear regression, logistic regression, and the ANN structure. Linear regression was connected to the slope-intercept idea (y=mx+b); logistic regression was recalled as probability-based output between 0 and 1.</p>
+<h3 id="2-2-parameters-versus-hyperparameters">2.2 Parameters versus hyperparameters</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Meaning</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parameters</strong></td>
+<td>Values learned from data during training</td>
+<td>weights $W$, biases $b$</td>
+</tr>
+<tr>
+<td><strong>Hyperparameters</strong></td>
+<td>External settings chosen before/during model development; not learned directly by ordinary training</td>
+<td>learning rate, batch size, epochs, hidden layers, neurons, regularization strength</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Exam trap:</strong> Bias $b$ inside a neuron is a learned <strong>parameter</strong>. “High bias” in the bias–variance trade-off is a different concept: systematic model error caused by an overly simple model.</p>
+<hr>
+<h2 id="3-single-layer-neural-network-slnn-perceptron">3. Single-layer neural network (SLNN) / perceptron</h2>
+<h3 id="3-1-definition">3.1 Definition</h3>
+<p>A <strong>single-layer neural network</strong> is the simplest neural-network form. It maps input features directly to an output using one trainable linear transformation, followed by an activation function. The fundamental single-layer binary classifier is the <strong>perceptron</strong>.</p>
+<p>It has an input layer and an output unit, with <strong>no hidden layer</strong>. The term “single layer” normally counts the trainable output layer, not the passive input layer.</p>
+<h3 id="3-2-computation">3.2 Computation</h3>
+<p>For input vector $\mathbf{x}=[x_1,\ldots,x_n]^T$, weights $\mathbf{w}$, and bias $b$:</p>
+<p>$$
+z=\mathbf{w}^T\mathbf{x}+b=\sum_{i=1}^{n}w_i x_i+b
+$$</p>
+<p>The prediction is:</p>
+<p>$$
+\hat y=f(z)
+$$</p>
+<p>For a threshold/step activation with threshold $\theta$:</p>
+<p>$$
+f(z)=
+\begin{cases}
+1,&z\ge \theta\\
+0,&z<\theta
+\end{cases}
+$$</p>
+<p>The threshold can be absorbed into the bias, so a common form uses threshold zero.</p>
+<p><strong>Correct order (quiz emphasis):</strong> receive inputs → multiply by weights → sum → add bias → apply activation/compare with threshold → output 0 or 1.</p>
+<h3 id="3-3-what-weights-bias-and-activation-do">3.3 What weights, bias, and activation do</h3>
+<ul>
+<li>A <strong>weight</strong> expresses the influence/importance and direction of an input feature.</li>
+<li>The <strong>bias</strong> shifts the decision boundary. Without bias, $\mathbf{w}^T\mathbf{x}=0$ must pass through the origin; adding $b$ allows the boundary to move.</li>
+<li>The <strong>activation function</strong> converts the net input into an output and determines whether the neuron “fires.” Many different $z$ values can map to the same class: with threshold 0, $2.3,7.8,100\mapsto1$, while $-0.5,-12\mapsto0$.</li>
+</ul>
+<p><strong>Instructor analogy — fruit sorting:</strong> use a single rule: a fruit above 150 g is called an apple; below 150 g is placed in the other class (for example, grape). This is a direct two-class threshold decision, illustrating what a perceptron can do—not a realistic botanical classifier.</p>
+<h3 id="3-4-geometric-interpretation">3.4 Geometric interpretation</h3>
+<p>The decision boundary is the hyperplane</p>
+<p>$$
+\mathbf{w}^T\mathbf{x}+b=0.
+$$</p>
+<p>In two dimensions it is a line; in three dimensions, a plane; in higher dimensions, a hyperplane. A perceptron predicts a class according to which side of this boundary a point lies on.</p>
+<h3 id="3-5-perceptron-learning-rule">3.5 Perceptron learning rule</h3>
+<p>For a labeled example $(\mathbf{x},y)$:</p>
+<p>$$
+\mathbf{w}_{new}=\mathbf{w}_{old}+\eta(y-\hat y)\mathbf{x}
+$$</p>
+<p>$$
+b_{new}=b_{old}+\eta(y-\hat y)
+$$</p>
+<p>where:</p>
+<ul>
+<li>$y$: actual/target label,</li>
+<li>$\hat y$: predicted label,</li>
+<li>$y-\hat y$: prediction error,</li>
+<li>$\eta>0$: learning rate,</li>
+<li>$\mathbf{x}$: input feature vector.</li>
+</ul>
+<p>Equivalent lecture phrasing was “old weight plus a correction proportional to error and input, scaled by the learning rate.” If $y=\hat y$, the correction is zero; in the standard perceptron algorithm only misclassified examples cause a change.</p>
+<p><strong>Learning algorithm:</strong> initialize weights and bias → predict each example → update on mistakes → repeat for multiple epochs.</p>
+<p><strong>Instructor analogy — basketball:</strong> a learner misses a shot, then changes angle, trajectory, and force. Likewise, after an incorrect prediction the perceptron adjusts its weights and tries again.</p>
+<h3 id="3-6-learning-rate-and-epochs">3.6 Learning rate and epochs</h3>
+<ul>
+<li><strong>Learning rate $\eta$:</strong> size of each parameter update.</li>
+<li>Too small: stable but slow convergence; many epochs may be required.</li>
+<li>Too large: overshooting, oscillating loss, unstable training, possibly no convergence.</li>
+<li>$\eta=0$: $w_{new}=w_{old}$; learning stops completely.</li>
+<li><strong>Epoch:</strong> one complete pass through the training set.</li>
+</ul>
+<p>More epochs cannot repair a fundamentally unsuitable model, a zero learning rate, unstable optimization, or non-linearly separable data.</p>
+<h3 id="3-7-perceptron-convergence-theorem">3.7 Perceptron convergence theorem</h3>
+<p>If the training data is linearly separable, the perceptron learning algorithm converges to a separating hyperplane in a finite number of updates. If the data is not linearly separable, errors may persist and weights may continue changing without reaching zero training error.</p>
+<p><strong>Diagnostic implication:</strong> after checking that the algorithm, bias, updates, and number of epochs are reasonable, persistent classification errors can indicate that no single linear separator exists.</p>
+<hr>
+<h2 id="4-linear-separability-and-logic-gates">4. Linear separability and logic gates</h2>
+<h3 id="4-1-definition">4.1 Definition</h3>
+<p>Data is <strong>linearly separable</strong> if one straight line (or one hyperplane in higher dimensions) can completely separate its classes.</p>
+<h3 id="4-2-truth-tables">4.2 Truth tables</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: right;">(x_1)</th>
+<th style="text-align: right;">(x_2)</th>
+<th style="text-align: right;">AND</th>
+<th style="text-align: right;">OR</th>
+<th style="text-align: right;">XOR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>AND:</strong> ((1,1)) can be separated from the other three points with one line.</li>
+<li><strong>OR:</strong> ((0,0)) can be separated from the other three points with one line.</li>
+<li><strong>XOR:</strong> positive points ((0,1),(1,0)) occupy opposite corners, while negative points ((0,0),(1,1)) occupy the other opposite corners. No single line separates them.</li>
+</ul>
+<p>XOR therefore cannot be solved by a single-layer perceptron. It requires a curved/non-linear boundary or multiple piecewise linear boundaries, which hidden neurons can construct.</p>
+<p><strong>Classic historical/instructor emphasis:</strong> XOR exposed the central limitation of early perceptrons. More training, a different learning rate, or merely changing the optimizer does not give a single hyperplane the ability to represent XOR.</p>
+<h3 id="4-3-suitable-slnn-use-cases">4.3 Suitable SLNN use cases</h3>
+<ul>
+<li>Simple binary filtering or rule-like classification.</li>
+<li>Basic keyword-based spam detection (e.g., conspicuous “win an iPhone” language).</li>
+<li>Simple credit-risk checks when the boundary is approximately linear.</li>
+<li>IoT threshold alerts: trigger when a measurement exceeds a limit.</li>
+<li>Elementary AND/OR-type decisions.</li>
+</ul>
+<h3 id="4-4-advantages-and-limitations">4.4 Advantages and limitations</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Advantages</th>
+<th>Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cheap and computationally light</td>
+<td>Learns only one linear boundary</td>
+</tr>
+<tr>
+<td>Fast to train/infer</td>
+<td>Cannot solve XOR/non-linearly separable classes</td>
+</tr>
+<tr>
+<td>Easy to implement</td>
+<td>Cannot learn hierarchical/high-level patterns or shapes</td>
+</tr>
+<tr>
+<td>Highly interpretable; explainable to nontechnical users</td>
+<td>Modern real-world patterns are often too complex</td>
+</tr>
+<tr>
+<td>Useful for foundational/simple tasks</td>
+<td>Simple spam rules can be manipulated by more sophisticated language</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="5-activation-functions">5. Activation functions</h2>
+<h3 id="5-1-purpose">5.1 Purpose</h3>
+<p>An activation function is applied after the weighted sum and bias:</p>
+<p>$$
+a=f(z),\qquad z=\mathbf{w}^T\mathbf{x}+b.
+$$</p>
+<p>It controls information flow and enables neural networks to represent non-linear relationships. The live-class analogy was a <strong>gatekeeper</strong> that decides whether/how strongly information passes to the next neuron.</p>
+<p>Without non-linear activations, stacking layers does not add expressive power. A composition of linear/affine transformations is still one affine transformation:</p>
+<p>$$
+W_2(W_1x+b_1)+b_2=(W_2W_1)x+(W_2b_1+b_2).
+$$</p>
+<p>Thus hidden layers require non-linear activation to learn complex boundaries.</p>
+<h3 id="5-2-main-functions-covered">5.2 Main functions covered</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Formula</th>
+<th>Range</th>
+<th>Main use/point</th>
+<th>Caveat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Step/threshold</td>
+<td>$f(z)=1$ if $z\ge\theta$, else $0$</td>
+<td>$\{0,1\}$</td>
+<td>Perceptron; basic AND/OR binary decisions</td>
+<td>Discontinuous/non-differentiable; unsuitable for ordinary gradient-based hidden-layer training</td>
+</tr>
+<tr>
+<td>Sigmoid</td>
+<td>(sigma(z)=\frac{1}{1+e^{-z}})</td>
+<td>((0,1))</td>
+<td>Probability-like binary output; logistic regression/classification</td>
+<td>Saturation causes small gradients and slow learning/vanishing gradients</td>
+</tr>
+<tr>
+<td>Tanh</td>
+<td>(\tanh(z)=\frac{e^z-e^{-z}}{e^z+e^{-z}})</td>
+<td>((-1,1))</td>
+<td>Zero-centered hidden activations; can be more balanced/stable than sigmoid</td>
+<td>Also saturates and can vanish at large (</td>
+</tr>
+<tr>
+<td>ReLU</td>
+<td>(\operatorname{ReLU}(z)=\max(0,z))</td>
+<td>([0,\infty))</td>
+<td>Common modern hidden-layer activation; simple, fast, better gradient flow for positive inputs</td>
+<td>Zero gradient on negative side can create “dead” units</td>
+</tr>
+</tbody>
+</table></div>
+<p>The lecture particularly stressed ReLU: negative values become 0, positive values pass through unchanged; it is widely used in deep networks and helps mitigate vanishing gradients.</p>
+<p><strong>Practical example:</strong> for predicting whether a customer buys a product, sigmoid can output a probability such as 0.73. A threshold (often 0.5) converts it to a binary decision.</p>
+<p><strong>Exam trap:</strong> An S-shaped sigmoid curve does not mean a single perceptron can form any arbitrary non-linear class boundary. The boundary $w^Tx+b=0$ remains linear; sigmoid smoothly maps the linear score to a probability.</p>
+<hr>
+<h2 id="6-multi-layer-neural-networks-mlnns">6. Multi-layer neural networks (MLNNs)</h2>
+<h3 id="6-1-definition-and-architecture">6.1 Definition and architecture</h3>
+<p>An MLNN consists of an input layer, one or more hidden layers, and an output layer. Hidden layers apply weights, biases, and non-linear activations to learn intermediate representations. This enables the network to model non-linear relationships and complex patterns that a single-layer network cannot.</p>
+<p>In a <strong>fully connected/dense layer</strong>, every neuron in one layer connects to every neuron in the next. Each connection has a learnable weight.</p>
+<p>The live session referred to networks with multiple hidden layers as deep neural networks; in common usage, “deep” usually means multiple representation-learning layers.</p>
+<h3 id="6-2-role-of-hidden-layers">6.2 Role of hidden layers</h3>
+<p>Each hidden layer transforms its input into a representation useful to the next layer. With multiple layers, features may become progressively abstract:</p>
+<pre><code class="language-text">Image pixels → edges → corners/textures → shapes/parts → object class
+Customer attributes → simple signals → interactions/relationships → response probability
+</code></pre>
+<p>For XOR, hidden neurons can create intermediate linear regions; the output neuron combines them into a non-linear/piecewise-linear separator.</p>
+<h3 id="6-3-forward-propagation">6.3 Forward propagation</h3>
+<p>Let (a^{(0)}=x). For layer (l):</p>
+<p>$$
+z^{(l)}=W^{(l)}a^{(l-1)}+b^{(l)}
+$$</p>
+<p>$$
+a^{(l)}=f^{(l)}(z^{(l)}).
+$$</p>
+<p>The output of one layer becomes the input to the next. This repeats until the output layer produces:</p>
+<ul>
+<li>class scores/probabilities for classification, or</li>
+<li>continuous values for regression.</li>
+</ul>
+<h3 id="6-4-output-layer-design">6.4 Output-layer design</h3>
+<ul>
+<li><strong>Binary classification:</strong> commonly one sigmoid output and binary cross-entropy.</li>
+<li><strong>Multiclass classification:</strong> commonly softmax output and categorical cross-entropy.</li>
+<li><strong>General regression:</strong> usually a linear output (no restricting activation) and MSE or a related regression loss.</li>
+</ul>
+<p><strong>Quiz emphasis:</strong> ReLU in a general regression output would force all predictions non-negative. Use it only if the target is inherently non-negative and that constraint is intended.</p>
+<h3 id="6-5-loss-functions">6.5 Loss functions</h3>
+<p>A loss measures disagreement between prediction (hat y) and true target (y).</p>
+<p>Mean squared error for (m) regression observations:</p>
+<p>$$
+J=\frac{1}{m}\sum_{i=1}^{m}(y_i-\hat y_i)^2.
+$$</p>
+<p>Binary cross-entropy:</p>
+<p>$$
+J=-\frac{1}{m}\sum_{i=1}^{m}\left[y_i\log\hat y_i+(1-y_i)\log(1-\hat y_i)\right].
+$$</p>
+<p>The lecture associated MSE with regression and cross-entropy with classification.</p>
+<h3 id="6-6-backpropagation">6.6 Backpropagation</h3>
+<p>Backpropagation trains a multilayer network by efficiently computing the gradient of the loss with respect to each weight and bias.</p>
+<ol>
+<li>Run a <strong>forward pass</strong> and compute (hat y).</li>
+<li>Compute the loss (J(y,\hat y)).</li>
+<li>Propagate error information backward from output to input.</li>
+<li>Apply the chain rule to obtain (\partial J/\partial W^{(l)}) and (\partial J/\partial b^{(l)}).</li>
+<li>Update parameters to reduce loss.</li>
+</ol>
+<p>For gradient descent:</p>
+<p>$$
+W^{(l)}\leftarrow W^{(l)}-\eta\frac{\partial J}{\partial W^{(l)}},\qquad
+b^{(l)}\leftarrow b^{(l)}-\eta\frac{\partial J}{\partial b^{(l)}}.
+$$</p>
+<p>The <strong>negative gradient</strong> points locally toward decreasing loss. Repeating forward pass → backward pass → update across many epochs is the foundation of neural-network training.</p>
+<p><strong>Distinction:</strong> backpropagation computes gradients; an optimizer such as SGD or Adam uses them to update parameters.</p>
+<h3 id="6-7-gradient-descent-variants">6.7 Gradient-descent variants</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Variant</th>
+<th style="text-align: right;">Data per update</th>
+<th>Strengths</th>
+<th>Weaknesses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Batch gradient descent</td>
+<td style="text-align: right;">Entire training set</td>
+<td>Stable/accurate gradient</td>
+<td>Expensive and slow per update on large data</td>
+</tr>
+<tr>
+<td>Stochastic gradient descent (SGD)</td>
+<td style="text-align: right;">One example</td>
+<td>Frequent updates; can move quickly and escape shallow structures</td>
+<td>Noisy updates</td>
+</tr>
+<tr>
+<td>Mini-batch gradient descent</td>
+<td style="text-align: right;">Small batch</td>
+<td>Efficient vectorization and compromise between stability and speed</td>
+<td>Batch size must be selected</td>
+</tr>
+<tr>
+<td>Adam</td>
+<td style="text-align: right;">Adaptive moments/learning rates</td>
+<td>Often fast and convenient in deep learning</td>
+<td>Extra state; not proof that a model generalizes better</td>
+</tr>
+</tbody>
+</table></div>
+<p>The video stated that SGD updates from one example at a time and mini-batch descent combines benefits of SGD and batch descent.</p>
+<h3 id="6-8-mlnn-advantages-limitations-applications">6.8 MLNN advantages, limitations, applications</h3>
+<p><strong>Advantages</strong></p>
+<ul>
+<li>Learns non-linear relationships and XOR-like boundaries.</li>
+<li>Extracts features and interactions automatically.</li>
+<li>Scales to classification, regression, vision, recommendation, and pattern-recognition tasks.</li>
+</ul>
+<p><strong>Limitations emphasized by the instructor</strong></p>
+<ul>
+<li>Slow/expensive training compared with a perceptron.</li>
+<li>Requires substantial data.</li>
+<li>Less explainable because many internal transformations interact.</li>
+<li>Requires careful fine-tuning.</li>
+<li>Greater capacity introduces overfitting risk and resource demands.</li>
+</ul>
+<p><strong>Applications mentioned:</strong> fraud detection, pattern recognition, recommendation systems, manufacturing/vision inspection, image detection, computer vision, and facial recognition.</p>
+<hr>
+<h2 id="7-slnn-versus-mlnn">7. SLNN versus MLNN</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>SLNN / perceptron</th>
+<th>MLNN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hidden layers</td>
+<td>None</td>
+<td>One or more</td>
+</tr>
+<tr>
+<td>Boundary</td>
+<td>One linear hyperplane</td>
+<td>Non-linear/piecewise-linear boundaries</td>
+</tr>
+<tr>
+<td>Feature learning</td>
+<td>Minimal/direct</td>
+<td>Hierarchical, learned representations</td>
+</tr>
+<tr>
+<td>Problems</td>
+<td>Simple, linearly separable</td>
+<td>Complex and non-linearly separable</td>
+</tr>
+<tr>
+<td>XOR</td>
+<td>Cannot solve</td>
+<td>Can solve</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>Low</td>
+<td>Higher</td>
+</tr>
+<tr>
+<td>Interpretability</td>
+<td>High</td>
+<td>Lower</td>
+</tr>
+<tr>
+<td>Data requirement</td>
+<td>Relatively low</td>
+<td>Often high</td>
+</tr>
+<tr>
+<td>Training</td>
+<td>Simple perceptron update</td>
+<td>Forward pass + loss + backpropagation + optimizer</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Important caveat:</strong> The coding lecture observed a lower training loss for its MLNN than its SLNN under the demonstrated setup. This is evidence for that run, not a universal theorem that “more layers are always more efficient.” Architecture, optimizer, initialization, data, and evaluation protocol also changed or can affect the result. Lower training loss alone does not prove better generalization.</p>
+<hr>
+<h2 id="8-data-splitting-train-development-validation-and-test">8. Data splitting: train, development/validation, and test</h2>
+<h3 id="8-1-why-split-data">8.1 Why split data?</h3>
+<p>Training and evaluating on the same data allows a model to memorize dataset-specific patterns/noise and gives an over-optimistic estimate. Separate unseen data tests whether learning generalizes.</p>
+<h3 id="8-2-roles">8.2 Roles</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Split</th>
+<th>Purpose</th>
+<th>What must not happen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Training set</strong></td>
+<td>Fit weights and biases</td>
+<td>Do not report its performance as unbiased final performance</td>
+</tr>
+<tr>
+<td><strong>Development/validation set</strong></td>
+<td>Tune hyperparameters, compare models, choose architecture/epoch, diagnose under/overfitting</td>
+<td>Do not repeatedly optimize against the test set instead</td>
+</tr>
+<tr>
+<td><strong>Test set</strong></td>
+<td>Final unbiased evaluation after all training/tuning decisions</td>
+<td>Do not train on it or use it for early stopping; ideally evaluate once</td>
+</tr>
+</tbody>
+</table></div>
+<p>The recorded lecture gave a common <strong>70/15/15</strong> random split. The live session allowed roughly <strong>70–80% train</strong>, <strong>10–15% development</strong>, and <strong>10–15% test</strong>. These are guidelines, not universal laws.</p>
+<h3 id="8-3-splitting-strategies">8.3 Splitting strategies</h3>
+<ul>
+<li><strong>Random split:</strong> simple; e.g., 70/15/15. When classes are imbalanced, stratification is usually helpful.</li>
+<li><strong>Temporal split:</strong> earlier interactions form training data; later interactions form validation/test data. This better mimics deployment when predicting the future and prevents future-to-past leakage.</li>
+<li><strong>K-fold cross-validation:</strong> divide data into $K$ subsets; train on $K-1$, validate on the remaining fold, rotate, and aggregate results. Useful when data is limited.</li>
+</ul>
+<p><strong>Exam trap:</strong> Random splitting is not appropriate if it allows the same user, future information, duplicates, or related records to leak across splits.</p>
+<h3 id="8-4-early-stopping">8.4 Early stopping</h3>
+<p>Train while validation performance improves. Stop when validation loss begins to worsen, and restore the checkpoint from the best validation epoch.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: right;">Epoch</th>
+<th style="text-align: right;">Training loss</th>
+<th style="text-align: right;">Validation loss</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0.40</td>
+<td style="text-align: right;">0.42</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.28</td>
+</tr>
+<tr>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">0.15</td>
+<td style="text-align: right;">0.20</td>
+</tr>
+<tr>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;"><strong>0.18</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">0.24</td>
+</tr>
+</tbody>
+</table></div>
+<p>Choose epoch 20, not 25. Using the test set for early stopping leaks test information and biases final evaluation.</p>
+<hr>
+<h2 id="9-bias-variance-trade-off">9. Bias–variance trade-off</h2>
+<h3 id="9-1-definitions">9.1 Definitions</h3>
+<ul>
+<li><strong>Bias:</strong> error caused by approximating a complex real-world relationship with an overly simple model or strong assumptions. High bias leads to underfitting.</li>
+<li><strong>Variance:</strong> error caused by sensitivity to fluctuations in the training data. High variance leads to fitting noise and poor performance on new data.</li>
+<li><strong>Irreducible error/noise:</strong> inherent randomness, measurement error, label noise, or unobserved factors that no model can completely eliminate.</li>
+</ul>
+<p>A common conceptual decomposition for squared prediction error is:</p>
+<p>$$
+\mathbb{E}\left[(y-\hat f(x))^2\right]
+=\operatorname{Bias}(\hat f(x))^2+\operatorname{Variance}(\hat f(x))+\sigma^2.
+$$</p>
+<p>The goal is not to minimize bias or variance independently but to select a model that generalizes well—the useful “best-fit” point in the trade-off.</p>
+<h3 id="9-2-diagnosis-table">9.2 Diagnosis table</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Training error</th>
+<th>Validation error</th>
+<th>Likely diagnosis</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High</td>
+<td>High and similar</td>
+<td>High bias / underfitting</td>
+<td>Model cannot learn training pattern</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>Much higher</td>
+<td>High variance / overfitting</td>
+<td>Model memorizes training data/noise</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>Low and similar</td>
+<td>Good fit</td>
+<td>Generalization is comparatively good</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Quiz scenario:</strong> training error is high, validation error similarly high, and more data does not help → <strong>high bias</strong>, not high variance. Increasing dropout or L2 regularization would usually worsen this underfitting.</p>
+<h3 id="9-3-remedies">9.3 Remedies</h3>
+<p><strong>For high bias:</strong></p>
+<ul>
+<li>increase model capacity (more neurons/layers where justified),</li>
+<li>add/engineer informative features,</li>
+<li>train appropriately longer if optimization is incomplete,</li>
+<li>reduce excessive regularization.</li>
+</ul>
+<p><strong>For high variance:</strong></p>
+<ul>
+<li>collect more representative data,</li>
+<li>simplify the model,</li>
+<li>apply L1/L2 regularization or dropout,</li>
+<li>use data augmentation,</li>
+<li>use early stopping.</li>
+</ul>
+<p><strong>Examples from the lectures:</strong> linear regression on a complex non-linear dataset can have high bias; a deep network with excessive layers on a small dataset and no regularization can have high variance.</p>
+<hr>
+<h2 id="10-hyperparameters-and-tuning">10. Hyperparameters and tuning</h2>
+<h3 id="10-1-major-hyperparameters">10.1 Major hyperparameters</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Hyperparameter</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Learning rate</td>
+<td>Size of gradient update; too high may fail to converge, too low may be very slow</td>
+</tr>
+<tr>
+<td>Batch size</td>
+<td>Samples used for each gradient update; affects gradient noise, memory, and speed</td>
+</tr>
+<tr>
+<td>Epochs</td>
+<td>Complete passes through training data; too many may overfit</td>
+</tr>
+<tr>
+<td>Hidden layers/neurons</td>
+<td>Model depth/capacity; too few underfit, too many may overfit and cost more</td>
+</tr>
+<tr>
+<td>Regularization</td>
+<td>Penalizes complexity; generally increases bias while reducing variance</td>
+</tr>
+<tr>
+<td>Number of features</td>
+<td>Too few may omit signal; too many irrelevant features may increase variance without regularization</td>
+</tr>
+<tr>
+<td>Tree depth/minimum samples per split</td>
+<td>For decision trees; shallow trees tend toward high bias, deep trees toward high variance</td>
+</tr>
+</tbody>
+</table></div>
+<p>The lecture noted that a very high learning rate may behave like underfitting/failure to converge, whereas a very low rate can cause slow convergence and, with prolonged fitting, may accompany overfitting. The most precise interpretation is that learning rate primarily controls optimization; overfitting must be diagnosed from train–validation behavior.</p>
+<h3 id="10-2-tuning-methods">10.2 Tuning methods</h3>
+<ul>
+<li><strong>Grid search:</strong> systematically tests every combination in a defined grid. Thorough over that grid but can be expensive.</li>
+<li><strong>Random search:</strong> samples random combinations; often explores more distinct values with fewer trials.</li>
+<li><strong>Bayesian optimization:</strong> uses past trial results to model the hyperparameter–performance relationship and propose promising next trials.</li>
+<li><strong>Cross-validation:</strong> assesses how settings perform across folds and reduces dependence on one validation split.</li>
+<li><strong>Early stopping:</strong> tunes the effective number of epochs efficiently.</li>
+</ul>
+<h3 id="10-3-practical-tuning-strategy">10.3 Practical tuning strategy</h3>
+<ol>
+<li>Begin with reasonable defaults/simple settings.</li>
+<li>Prioritize influential values such as learning rate and batch size.</li>
+<li>Use random/grid search for a bounded space; consider Bayesian optimization for costly trials.</li>
+<li>Measure on validation data/cross-validation, never the final test set.</li>
+<li>Balance performance against computation, memory, latency, and deployment cost.</li>
+<li>Freeze all decisions, then evaluate once on test data.</li>
+</ol>
+<hr>
+<h2 id="11-recommendation-system-evaluation-example">11. Recommendation-system evaluation example</h2>
+<p>The dataset-splitting lecture illustrated a pipeline:</p>
+<pre><code class="language-text">Split interactions → select candidate items → generate recommendations → evaluate
+</code></pre>
+<h3 id="11-1-candidate-selection">11.1 Candidate selection</h3>
+<ul>
+<li>Consider all dataset items.</li>
+<li>Select candidates from user interactions or neighborhood methods such as cosine similarity/K-nearest neighbors.</li>
+<li>Use popularity-based candidates/filtering.</li>
+</ul>
+<h3 id="11-2-offline-metrics">11.2 Offline metrics</h3>
+<ul>
+<li>Precision and recall.</li>
+<li>NDCG (normalized discounted cumulative gain).</li>
+<li>MRR (mean reciprocal rank).</li>
+<li>AUC (area under the ROC curve).</li>
+<li>Coverage.</li>
+<li>Diversity and novelty.</li>
+</ul>
+<h3 id="11-3-online-metrics">11.3 Online metrics</h3>
+<ul>
+<li>Click-through rate (CTR).</li>
+<li>Conversion rate.</li>
+<li>User engagement.</li>
+</ul>
+<p>Effective splitting, candidate selection, and robust metrics help balance recommendation quality, generalization, performance, and scalability.</p>
+<hr>
+<h2 id="12-coding-walkthrough-pytorch-in-google-colab">12. Coding walkthrough: PyTorch in Google Colab</h2>
+<h3 id="12-1-environment">12.1 Environment</h3>
+<p>Google Colab is a free cloud-hosted Python notebook environment. A notebook uses the <code>.ipynb</code> extension, runs without local installation, connects to a cloud runtime, and can save work in Google Drive when signed in.</p>
+<p>Libraries demonstrated:</p>
+<pre><code class="language-python">import torch
+from torch import nn
+from torch import optim
+</code></pre>
+<ul>
+<li><code>torch</code>: tensors and core operations.</li>
+<li><code>torch.nn</code>: neural-network modules/layers/losses.</li>
+<li><code>torch.optim</code>: optimizers such as SGD and Adam.</li>
+</ul>
+<h3 id="12-2-single-layer-model-structure">12.2 Single-layer model structure</h3>
+<p>The transcript described a class derived from <code>nn.Module</code>, with <code>__init__</code> defining a direct input-to-output linear layer and an activation, and <code>forward</code> applying the layer and activation. Hyperparameters shown were:</p>
+<ul>
+<li><code>input_size = 10</code></li>
+<li><code>output_size = 1</code></li>
+<li><code>learning_rate = 0.01</code></li>
+<li><code>epochs = 100</code></li>
+<li>100 generated samples in the demonstration.</li>
+</ul>
+<p>A representative form is:</p>
+<pre><code class="language-python">class SingleLayerNN(nn.Module):
+    def __init__(self, input_size, output_size):
+        super().__init__()
+        self.linear = nn.Linear(input_size, output_size)
+        self.activation = nn.ReLU()  # use sigmoid for probability output if appropriate
+
+    def forward(self, x):
+        return self.activation(self.linear(x))
+</code></pre>
+<p>The lecture referred to ReLU in the class and also to sigmoid when instantiating/discussing the model. Treat the correct output activation as task-dependent, not as both simultaneously required.</p>
+<h3 id="12-3-training-loop">12.3 Training loop</h3>
+<pre><code class="language-python">for epoch in range(epochs):
+    optimizer.zero_grad()       # clear accumulated gradients
+    predictions = model(X)     # forward propagation
+    loss = criterion(predictions, y)
+    loss.backward()             # backpropagation: compute gradients
+    optimizer.step()            # update parameters
+</code></pre>
+<p>The loss printed across 100 epochs decreased, which indicates successful optimization on the demonstrated training data.</p>
+<p><strong>Exam/code traps:</strong></p>
+<ul>
+<li>PyTorch gradients accumulate unless cleared with <code>zero_grad()</code>.</li>
+<li><code>loss.backward()</code> computes gradients; <code>optimizer.step()</code> changes weights.</li>
+<li>Falling training loss shows the model is fitting the training objective; it does not by itself establish accuracy, test performance, or absence of overfitting.</li>
+</ul>
+<h3 id="12-4-multi-layer-model">12.4 Multi-layer model</h3>
+<p>The MLNN adds <code>hidden_size</code>, a hidden linear layer, a non-linear activation such as ReLU, and an output layer. For regression, the demonstration stated that the output layer had no activation.</p>
+<pre><code class="language-python">class MultiLayerNN(nn.Module):
+    def __init__(self, input_size, hidden_size, output_size):
+        super().__init__()
+        self.hidden = nn.Linear(input_size, hidden_size)
+        self.activation = nn.ReLU()
+        self.output = nn.Linear(hidden_size, output_size)
+
+    def forward(self, x):
+        x = self.activation(self.hidden(x))
+        return self.output(x)  # linear output for general regression
+</code></pre>
+<p>The demonstration kept learning rate 0.01 and 100 epochs, used Adam for the MLNN, and observed loss fall from about 1.027 toward a small decimal. It compared this with the SLNN’s loss and attributed improved fitting to the hidden layer.</p>
+<p><strong>Fair-comparison caveat:</strong> because the optimizer also changed (SGD versus Adam), the difference cannot be attributed solely to the hidden layer without a controlled experiment. Also, “0.something” is not literally zero loss. Proper comparison needs the same data/split, loss, initialization protocol, optimizer or controlled optimizer analysis, and validation/test metrics such as accuracy, F1, ROC-AUC, or regression error.</p>
+<p>The final video summary also described a simple perceptron for the AND gate using step activation and perceptron-style updates. This is conceptually distinct from a generic differentiable PyTorch ReLU/regression demonstration; know both patterns.</p>
+<hr>
+<h2 id="13-case-studies-and-applied-reasoning">13. Case studies and applied reasoning</h2>
+<h3 id="13-1-market-reach-predicting-email-response">13.1 Market Reach: predicting email response</h3>
+<p>A digital-marketing company initially used a single-layer perceptron with:</p>
+<ul>
+<li>customer age,</li>
+<li>past email engagement,</li>
+<li>time of day the email is sent,</li>
+<li>number of previous campaigns received.</li>
+</ul>
+<p>It performed well for some customers but poorly for others.</p>
+<p><strong>Likely question: Why did it struggle?</strong></p>
+<p><strong>Answer:</strong> Response behavior probably depends on non-linear interactions among age, engagement, timing, and campaign fatigue. A perceptron provides only one linear boundary and no hidden representation, so it lacks capacity for these complex relationships. An MLNN with a non-linear hidden layer can learn interactions. Validation data should then determine whether that added capacity genuinely generalizes.</p>
+<h3 id="13-2-customer-sentiment-cortex-analytics-quiz-case">13.2 Customer sentiment / Cortex Analytics quiz case</h3>
+<p>The initial sentiment classifier used two engineered features:</p>
+<ul>
+<li>review length,</li>
+<li>keyword density.</li>
+</ul>
+<p>The resulting classes were non-linearly separable/XOR-like, so a single-layer perceptron failed.</p>
+<h4 id="key-concepts">Key concepts</h4>
+<ul>
+<li><strong>Feature space:</strong> a coordinate system whose axes are input features; every review becomes a point.</li>
+<li><strong>Hyperplane:</strong> the linear boundary learned by a perceptron.</li>
+<li><strong>Root cause:</strong> no one hyperplane separates the sentiment labels—not insufficient epochs.</li>
+<li><strong>MLNN solution:</strong> hidden neurons transform original features into intermediate representations that can be separated at the output.</li>
+</ul>
+<h4 id="architecture-options-discussed">Architecture options discussed</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Strength</th>
+<th>Cost/risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3 hidden sigmoid neurons</td>
+<td>Measured capacity increase; likely sufficient for XOR-like boundary; lower resource use</td>
+<td>Sigmoid saturation/vanishing gradients; potentially slower convergence</td>
+</tr>
+<tr>
+<td>5 hidden ReLU neurons</td>
+<td>Higher capacity, faster optimization, stronger positive-side gradient flow</td>
+<td>More parameters/memory/compute and greater overfitting risk</td>
+</tr>
+</tbody>
+</table></div>
+<p>The prudent starting option can be the smaller three-neuron model when two inputs and a modest XOR-like pattern are involved; scale only if validation evidence justifies it. ReLU is generally preferred for modern hidden layers, but architecture choice must balance capacity, training behavior, resources, and generalization.</p>
+<h4 id="feature-engineering-alternative">Feature-engineering alternative</h4>
+<p>Possible richer features include sentiment score, TF-IDF, n-grams, word embeddings, and positive/negative-word ratios. Feature engineering can sometimes make a problem linearly separable, but it is manual, domain-dependent, and harder to maintain. An MLNN can learn useful representations automatically and address non-linear relations more directly.</p>
+<h4 id="engineering-decision-principle">Engineering decision principle</h4>
+<p>Choose the <strong>simplest model that adequately solves the problem</strong>. Consider:</p>
+<ul>
+<li>ability to represent the boundary,</li>
+<li>model capacity,</li>
+<li>overfitting risk,</li>
+<li>CPU/GPU and memory,</li>
+<li>training time,</li>
+<li>deployment latency/cost,</li>
+<li>future scalability and maintainability.</li>
+</ul>
+<hr>
+<h2 id="14-exam-traps-and-common-misconceptions">14. Exam traps and common misconceptions</h2>
+<ol>
+<li><strong>Input layer is not a hidden layer.</strong> A perceptron has no hidden layer.</li>
+<li><strong>Single-layer does not mean no computation.</strong> It still learns weights and bias and applies an activation.</li>
+<li><strong>Bias is not “the error rate.”</strong> In $w^Tx+b$, bias is an intercept/shift parameter.</li>
+<li><strong>Activation comes after weighted sum plus bias</strong>, not before.</li>
+<li><strong>Sigmoid introduces a non-linear output mapping, but a single sigmoid neuron still has a linear decision boundary.</strong></li>
+<li><strong>XOR cannot be fixed by more epochs or a changed learning rate</strong> when the architecture remains a single hyperplane.</li>
+<li><strong>Backpropagation and gradient descent are not identical.</strong> Backprop computes gradients; gradient descent applies an update.</li>
+<li><strong>Loss decreasing is not the same as accuracy increasing</strong> and does not establish generalization.</li>
+<li><strong>More layers/neurons are not automatically better.</strong> Capacity, data, optimization, overfitting, and resources matter.</li>
+<li><strong>ReLU does not completely eliminate vanishing gradients.</strong> It helps on active positive units but can produce dead neurons for persistently negative inputs.</li>
+<li><strong>Test data must not guide hyperparameters, epochs, or model selection.</strong> That is validation data’s role.</li>
+<li><strong>The test set should be unseen and used only after decisions are frozen.</strong></li>
+<li><strong>High training and validation error together mean high bias</strong>, not high variance.</li>
+<li><strong>Low training error with much worse validation error means high variance.</strong></li>
+<li><strong>Regularization raises bias and lowers variance in general.</strong> Adding it to an underfit model can make matters worse.</li>
+<li><strong>An epoch is a full data pass</strong>, not merely one gradient update; with mini-batches, one epoch contains multiple steps.</li>
+<li><strong>A smaller loss in one demo is not proof of universal model superiority.</strong> Compare on held-out data under controlled conditions.</li>
+<li><strong>Regression output is usually linear.</strong> ReLU is only appropriate when a non-negative constraint is intended.</li>
+</ol>
+<hr>
+<h2 id="15-likely-exam-questions-with-model-answers">15. Likely exam questions with model answers</h2>
+<h3 id="q1-define-a-perceptron-and-explain-its-operation">Q1. Define a perceptron and explain its operation.</h3>
+<p>A perceptron is a single-layer binary classifier with no hidden layer. It computes $z=w^Tx+b$ and applies a step function to return 0 or 1. During learning, it corrects weights and bias using the prediction error. It can solve linearly separable problems but cannot solve XOR.</p>
+<h3 id="q2-derive-state-the-perceptron-update-rule-and-interpret-every-term">Q2. Derive/state the perceptron update rule and interpret every term.</h3>
+<p>$$w_{new}=w_{old}+\eta(y-\hat y)x,\quad b_{new}=b_{old}+\eta(y-\hat y).$$</p>
+<p>$\eta$ controls update size; $y-\hat y$ gives error direction; multiplication by $x$ assigns correction to weights in proportion to feature values. A correct prediction gives zero update.</p>
+<h3 id="q3-why-is-bias-necessary">Q3. Why is bias necessary?</h3>
+<p>Without bias, the decision hyperplane must pass through the origin. Bias shifts the hyperplane, enabling separation of data that is linearly separable but not by an origin-constrained boundary.</p>
+<h3 id="q4-why-can-and-and-or-be-solved-by-a-perceptron-but-xor-cannot">Q4. Why can AND and OR be solved by a perceptron but XOR cannot?</h3>
+<p>AND and OR labels can each be separated by one straight line. XOR assigns the same class to opposite corners, so no one line separates the classes. Hidden neurons are needed to combine multiple boundaries.</p>
+<h3 id="q5-explain-the-role-of-activation-functions">Q5. Explain the role of activation functions.</h3>
+<p>They transform $z=Wx+b$, control neuron output, and—when non-linear—prevent stacked layers from collapsing into one linear map. Step supports basic perceptrons, sigmoid gives probability-like output, tanh is zero-centered, and ReLU passes positive values while setting negative values to zero.</p>
+<h3 id="q6-explain-forward-propagation-and-backpropagation">Q6. Explain forward propagation and backpropagation.</h3>
+<p>Forward propagation repeatedly applies $z^{(l)}=W^{(l)}a^{(l-1)}+b^{(l)}$ and $a^{(l)}=f(z^{(l)})$ to produce a prediction. The loss compares prediction with target. Backpropagation uses the chain rule from output toward input to compute each parameter’s gradient; an optimizer then updates parameters in the negative-gradient direction.</p>
+<h3 id="q7-compare-sgd-mini-batch-descent-and-batch-descent">Q7. Compare SGD, mini-batch descent, and batch descent.</h3>
+<p>SGD updates from one example and is noisy but frequent. Batch descent uses all training data and is stable but computationally heavy. Mini-batch descent uses a small subset per update, gaining vectorization and a compromise between stability and speed.</p>
+<h3 id="q8-distinguish-training-validation-and-test-sets">Q8. Distinguish training, validation, and test sets.</h3>
+<p>Training data learns parameters; validation data tunes hyperparameters, selects models/epochs, and diagnoses fit; test data gives the final unbiased estimate after all choices are complete. Mixing test data into training/tuning causes leakage and optimistic bias.</p>
+<h3 id="q9-explain-the-bias-variance-trade-off">Q9. Explain the bias–variance trade-off.</h3>
+<p>High bias arises from excessive simplicity and underfits both training and validation data. High variance arises from sensitivity to training noise, producing low training error but high validation error. Model complexity and regularization must be balanced to minimize generalization error, while irreducible noise remains.</p>
+<h3 id="q10-what-are-hyperparameters-explain-tuning-methods">Q10. What are hyperparameters? Explain tuning methods.</h3>
+<p>Hyperparameters are external settings such as learning rate, batch size, epochs, depth, and regularization. Grid search enumerates a grid, random search samples combinations, Bayesian optimization uses past trials to propose promising choices, and cross-validation provides more robust estimates.</p>
+<h3 id="q11-why-does-an-mlnn-solve-more-complex-problems-than-an-slnn">Q11. Why does an MLNN solve more complex problems than an SLNN?</h3>
+<p>Hidden layers with non-linear activation learn intermediate features and combine multiple linear regions into a non-linear boundary. An SLNN has only one hyperplane and cannot represent such interactions.</p>
+<h3 id="q12-interpret-training-loss-falls-continuously-but-validation-loss-rises-after-epoch-20">Q12. Interpret: training loss falls continuously but validation loss rises after epoch 20.</h3>
+<p>The model begins overfitting after epoch 20. Use early stopping and restore the epoch-20 model; do not choose the final epoch or use test loss for this choice.</p>
+<h3 id="q13-why-may-a-three-neuron-sigmoid-network-be-chosen-over-five-relu-neurons">Q13. Why may a three-neuron sigmoid network be chosen over five ReLU neurons?</h3>
+<p>If three neurons already represent the required XOR-like boundary, the smaller model costs less and may overfit less. Five ReLU neurons offer higher capacity and often faster training, but that extra capacity should be justified by validation evidence.</p>
+<h3 id="q14-what-is-irreducible-error">Q14. What is irreducible error?</h3>
+<p>It is error caused by inherent noise, imperfect measurement, random behavior, or unavailable variables. Even a perfect model of the learnable relationship cannot remove it.</p>
+<hr>
+<h2 id="16-rapid-revision">16. Rapid revision</h2>
+<h3 id="core-formulas">Core formulas</h3>
+<p>$$z=w^Tx+b,\qquad \hat y=f(z)$$</p>
+<p>$$w\leftarrow w+\eta(y-\hat y)x,\qquad b\leftarrow b+\eta(y-\hat y)$$</p>
+<p>$$z^{(l)}=W^{(l)}a^{(l-1)}+b^{(l)},\qquad a^{(l)}=f^{(l)}(z^{(l)})$$</p>
+<p>$$W\leftarrow W-\eta\frac{\partial J}{\partial W},\qquad b\leftarrow b-\eta\frac{\partial J}{\partial b}$$</p>
+<p>$$\operatorname{ReLU}(z)=\max(0,z),\qquad \sigma(z)=\frac{1}{1+e^{-z}}$$</p>
+<h3 id="one-minute-recall-table">One-minute recall table</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Prompt</th>
+<th>Recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Perceptron</td>
+<td>$w^Tx+b\to$ step; binary; no hidden layer</td>
+</tr>
+<tr>
+<td>Bias parameter</td>
+<td>Shifts decision boundary</td>
+</tr>
+<tr>
+<td>Linear separability</td>
+<td>One hyperplane separates classes</td>
+</tr>
+<tr>
+<td>XOR</td>
+<td>Not linearly separable; needs hidden layer(s)</td>
+</tr>
+<tr>
+<td>Hidden layer</td>
+<td>Learns intermediate/non-linear representation</td>
+</tr>
+<tr>
+<td>Activation</td>
+<td>Adds non-linearity; controls neuron output</td>
+</tr>
+<tr>
+<td>Forward pass</td>
+<td>Input → weighted transformations → prediction</td>
+</tr>
+<tr>
+<td>Loss</td>
+<td>Predicted versus actual error</td>
+</tr>
+<tr>
+<td>Backprop</td>
+<td>Chain-rule gradient computation</td>
+</tr>
+<tr>
+<td>Optimizer</td>
+<td>Uses gradients to update parameters</td>
+</tr>
+<tr>
+<td>Learning rate</td>
+<td>Update step size</td>
+</tr>
+<tr>
+<td>Epoch</td>
+<td>One full training-set pass</td>
+</tr>
+<tr>
+<td>Train set</td>
+<td>Learn $W,b$</td>
+</tr>
+<tr>
+<td>Validation set</td>
+<td>Tune/select/early-stop</td>
+</tr>
+<tr>
+<td>Test set</td>
+<td>Final unbiased evaluation, ideally once</td>
+</tr>
+<tr>
+<td>High bias</td>
+<td>Train high, validation high; underfit</td>
+</tr>
+<tr>
+<td>High variance</td>
+<td>Train low, validation much higher; overfit</td>
+</tr>
+<tr>
+<td>Irreducible error</td>
+<td>Noise no model can eliminate</td>
+</tr>
+<tr>
+<td>Grid vs random</td>
+<td>All grid combinations vs sampled combinations</td>
+</tr>
+<tr>
+<td>Good engineering</td>
+<td>Simplest adequate model, validated fairly</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="final-high-yield-summary">Final high-yield summary</h3>
+<ul>
+<li>A perceptron is fast, cheap, interpretable, and suitable for linearly separable binary tasks.</li>
+<li>Its learning rule changes weights in proportion to error, input, and learning rate.</li>
+<li>AND and OR are linearly separable; XOR is the canonical failure.</li>
+<li>Non-linear activations make multilayer composition expressive.</li>
+<li>An MLNN uses hidden layers to learn interactions and hierarchical features.</li>
+<li>Training cycles through forward propagation, loss computation, backpropagation, and optimizer updates.</li>
+<li>Dataset separation prevents leakage: train parameters, validate choices, test once.</li>
+<li>High bias means underfitting; high variance means overfitting; irreducible noise remains.</li>
+<li>Hyperparameters control training and capacity and must be tuned on validation data.</li>
+<li>Lower training loss or a larger network does not automatically mean better real-world performance.</li>
+</ul>
+<h2 id="review-week-augmentation-activation-and-gradient-corrections">Review Week augmentation: activation and gradient corrections</h2>
+<ul>
+<li>ReLU is \(\operatorname{ReLU}(x)=\max(0,x)\). It suppresses negative activations and introduces non-linearity; without a nonlinear activation, stacked linear layers collapse to an equivalent linear transformation.</li>
+<li><strong>Exam correction:</strong> ReLU ordinarily does not reduce feature-map dimensions; pooling or strided operations do. ReLU changes activations, whereas softmax normalizes a score vector into non-negative values summing to one.</li>
+<li>Vanishing gradients arise from repeated multiplication by derivatives whose magnitudes are below one; exploding gradients arise when repeated products become very large. Gradient clipping primarily addresses exploding gradients. LSTM/GRU gating provides a better path for long-range recurrent information and gradients.</li>
+<li>Fine-tuning a pretrained network still uses backpropagation; “pretrained” does not mean “no gradient-based learning.”</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-1.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 1: Neural Networks and Deep Learning</span>
+      </a>
+      <a href="week-3.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 3: Convolutional Neural Networks, Transfer…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

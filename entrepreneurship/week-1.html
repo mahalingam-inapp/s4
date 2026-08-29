@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Entrepreneurship · Week 1 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Entrepreneurship</span>
+      <span class="brand-title">Week 1</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html" selected>Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a class="is-active" href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Entrepreneurship and Innovation — Week 1 Exam Notes
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Entrepreneurship, Innovation, Creativity, Service Innovation and…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Innovation Foundations, Process and Product Innovation, Design…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Entrepreneurial Journey, Execution, Creativity, Innovation and…
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Entrepreneurial Opportunities, Evaluation, Competition and Failure
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Entrepreneurial Problem Solving, Lean Processes and Revenue Models
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Entrepreneurial Storytelling, Vision, Mission, Pitching, IP and the…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Entrepreneurial Marketing, Sales, Research, Branding and Market Sizing
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        User Research, Entrepreneurial Finance, Accounting and Financial…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Managing Growth, Lean Execution, Failure, Adaptation, and Business…
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Business Planning, Feasibility Analysis and the Business Model Canvas
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Networks, Entrepreneurial Teams, Startup Operations and Readiness
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Resource Planning, Venture Launch, Learning and Execution
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Financial Assessment, Funding, Growth and Exit
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Comprehensive Exam-Preparation Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Entrepreneurship · Week 1</p>
+        <h1 class="page-title">Entrepreneurship and Innovation — Week 1 Exam Notes</h1>
+        <p class="page-meta">Week 1 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-week-1-at-a-glance">1. Week 1 at a glance</a></li>
+      <li><a href="#2-managing-time-and-priorities">2. Managing time and priorities</a></li>
+      <li><a href="#3-goals-reading-notes-memory-and-exams">3. Goals, reading, notes, memory, and exams</a></li>
+      <li><a href="#4-what-managers-do">4. What managers do</a></li>
+      <li><a href="#5-business-environment-and-organizational-structure">5. Business environment and organizational structure</a></li>
+      <li><a href="#6-production-of-products-and-services">6. Production of products and services</a></li>
+      <li><a href="#7-entrepreneurship-innovation-customers-and-cross-functional-work">7. Entrepreneurship, innovation, customers, and cross-functional work</a></li>
+      <li><a href="#8-integrated-case-sophia-martinez">8. Integrated case: Sophia Martinez</a></li>
+      <li><a href="#9-likely-exam-angles-and-answer-frames">9. Likely exam angles and answer frames</a></li>
+      <li><a href="#10-rapid-revision-sheet">10. Rapid revision sheet</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<blockquote>
+<p><strong>Coverage:</strong> All seven Week 1 videos, the live session, and the quiz/case material in <code>Week 1 Done.md</code>. These are detailed study notes, not a short summary.</p>
+</blockquote>
+<h2 id="1-week-1-at-a-glance">1. Week 1 at a glance</h2>
+<p>Week 1 establishes two foundations:</p>
+<ol>
+<li><strong>How to learn and work effectively:</strong> time management, prioritization, reading, note-taking, memory, test preparation, focus, SMART goals, and active learning.</li>
+<li><strong>How a business works:</strong> managerial roles, the business environment, organizational structure, production and service processes, marketing/sales, customer value, cross-functional coordination, entrepreneurship, and innovation.</li>
+</ol>
+<p>The instructor&rsquo;s recurring message is that a degree, idea, or busy schedule is not enough. Competence becomes visible through understanding, execution, customer value, and outcomes.</p>
+<hr>
+<h2 id="2-managing-time-and-priorities">2. Managing time and priorities</h2>
+<h3 id="2-1-time-management-is-a-learned-professional-skill">2.1 Time management is a learned professional skill</h3>
+<ul>
+<li>An MBA normally represents a full-time workload. Trying to combine full-time work and a full-time MBA without reducing or restructuring something is likely to damage both.</li>
+<li>Do not assume that four weekend hours are enough. Decide deliberately whether the programme is full-time or part-time and negotiate the required time with family and work.</li>
+<li>A credential without ability is compared to holding a degree that says one is a musician: sooner or later people discover whether the skill is real.</li>
+<li>Professionalism means doing the necessary work in front of you, then taking leisure. Responsibilities give leisure meaning; a life with no responsibility can itself become boring.</li>
+</ul>
+<p><strong>Illustrative weekly arrangement:</strong> reserve three weekday evenings (for example, 7:30–10:30 p.m.) for study, protect two weekday evenings for family, and allocate agreed weekend periods. The exact schedule is personal; the principle is visible, negotiated time blocks.</p>
+<h3 id="2-2-planning-scheduling-and-estimation">2.2 Planning, scheduling, and estimation</h3>
+<p>Time management has two parts:</p>
+<ol>
+<li><strong>Draw the time out:</strong> put specific study periods into a calendar (Outlook or another calendar can be colour-coded by course/topic).</li>
+<li><strong>Manage the reserved time:</strong> enter it with a task list, remove distractions, and execute rather than postponing.</li>
+</ol>
+<p>Convert a block into concrete work. Example:</p>
+<ul>
+<li>Read Chapter 3: estimated 60 minutes.</li>
+<li>Take notes/answer questions: estimated 45 minutes.</li>
+<li>Use the remainder of a two-hour block to review.</li>
+</ul>
+<p>Writing the plan makes it psychologically real and primes the mind to act. Estimation improves through feedback: if a task estimated at 45 minutes takes longer, schedule more next time; with practice and fluency, it may later fall to 30 minutes. Also recognize dependencies—one task may need to be completed before another becomes easy.</p>
+<h3 id="2-3-procrastination-causes-and-remedies">2.3 Procrastination: causes and remedies</h3>
+<p>The basic cause is the preference for immediate pleasure over effort. At first, unfamiliar learning may feel unpleasant, especially when the motivation is only the eventual salary or credential.</p>
+<p>Remedies emphasized:</p>
+<ul>
+<li>Make the personal goal emotionally important: promotion, responsibility, income, capability, or becoming an entrepreneur.</li>
+<li>Replace negative self-talk (“I am not good”) with trained, constructive self-belief (“I am good; I can learn this”).</li>
+<li>Organize a specific weekly schedule and topic plan.</li>
+<li>Remove distractions before beginning.</li>
+<li>Rest when the real problem is fatigue. The instructor&rsquo;s example was a 15–20 minute afternoon nap that restored productive energy until about 6:30 p.m.</li>
+<li>Reward yourself after completion.</li>
+<li>Tell an accountability person whose opinion matters—not merely someone who will approve anything. A respected colleague can make a commitment more binding.</li>
+</ul>
+<h3 id="2-4-distraction-control-and-deep-focus">2.4 Distraction control and deep focus</h3>
+<ul>
+<li>The laptop is not necessarily the problem; WhatsApp, email alerts, sounds, calls, and task switching on it are.</li>
+<li>Put the phone on silent or turn it off. Treat study as urgent enough to deserve two uninterrupted hours.</li>
+<li>Disable alerts and, where needed, use headphones to block environmental noise.</li>
+<li>Nothing important is normally lost by temporarily disconnecting from low-priority communication.</li>
+<li>Notes taken during focused study prevent the useless last-minute cycle of rereading the book or replaying videos.</li>
+</ul>
+<p>The live session sharpened this point: <strong>distractions are expensive</strong>. After an interruption, the brain may require roughly <strong>20–23 minutes</strong> to regain full focus. If attention shifts every 10–15 minutes while building a pitch, product, plan, or idea, the learner/entrepreneur repeatedly touches fragments without developing a complete, strong result.</p>
+<p>Focus improves:</p>
+<ul>
+<li><strong>Productivity:</strong> thought and work move faster.</li>
+<li><strong>Decision quality:</strong> pricing, features, service consistency, and customer strategy become clearer.</li>
+<li><strong>Quality of work:</strong> deeper thinking reveals small details; quality applies to products, services, communication, and customer experience.</li>
+</ul>
+<h3 id="2-5-prioritization-and-self-management">2.5 Prioritization and self-management</h3>
+<p>Education must be treated as an important priority, not as whatever is done after all other activities. A valid reason might be wanting promotion, more money, greater responsibility, or a more interesting life. In early semesters, progress may begin in small pieces and accelerate as habits develop.</p>
+<p>Distinguish:</p>
+<ul>
+<li><strong>Urgent</strong> from <strong>important</strong>.</li>
+<li><strong>Activity</strong> from <strong>progress</strong>.</li>
+<li>Filling time from placing time where it produces an outcome or impact.</li>
+</ul>
+<p>Being busy all day can produce no forward movement. A neat calendar and checklist may be only <strong>activity management</strong>. Entrepreneurial time management asks whether activity moves the venture in the right direction.</p>
+<h3 id="2-6-time-as-an-entrepreneurial-unfair-advantage">2.6 Time as an entrepreneurial “unfair advantage”</h3>
+<p>Money can be raised, skills learned, and teams hired; nobody can buy more than the same 24 hours. Two founders may have similar ideas, resources, and markets, yet the one who uses time better can win.</p>
+<p>Time affects three stages:</p>
+<ol>
+<li><strong>Decisions:</strong> avoid disguising indefinite delay as careful thought. Speed is not blind rushing; it is the habit of deciding at the right time.</li>
+<li><strong>Execution:</strong> ideas can occur anywhere (even in the shower), but the first real step distinguishes imagination from entrepreneurship.</li>
+<li><strong>Outcomes:</strong> the world generally rewards results, not effort alone. Balance speed and quality—moving too slowly loses opportunity, while moving recklessly harms quality.</li>
+</ol>
+<p><strong>Feature-choice example:</strong></p>
+<ul>
+<li>Option A: spend two weeks analysing two features and collecting opinions.</li>
+<li>Option B: decide in two days, launch, and learn from feedback.</li>
+<li>Neither is automatically wrong. The danger is that two weeks becomes four and four becomes eight. Use enough analysis for a responsible decision, then execute and learn.</li>
+</ul>
+<h3 id="2-7-allocation-efficiency-consistency-momentum-framework">2.7 Allocation–Efficiency–Consistency–Momentum framework</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Meaning</th>
+<th>Diagnostic question/example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Allocation</strong></td>
+<td>Put scarce time where it creates impact.</td>
+<td>With five startup hours today, what deserves them? Four hours perfecting a logo and none speaking to a customer may decorate an idea rather than build a business.</td>
+</tr>
+<tr>
+<td><strong>Efficiency</strong></td>
+<td>Reduce friction so work moves smoothly.</td>
+<td>Unnecessary meetings, notifications, switching tasks, and spending 30 minutes repeatedly revising a simple email all consume effort without proportional progress.</td>
+</tr>
+<tr>
+<td><strong>Consistency</strong></td>
+<td>Show up systematically and continue every day.</td>
+<td>The startup participant Ratish was discussed as someone whose progress required regular effort, meetings, follow-ups, planning, and decisions—not one day of work followed by several idle days.</td>
+</tr>
+<tr>
+<td><strong>Momentum</strong></td>
+<td>The movement created when all three operate together.</td>
+<td>Allocation directs energy; efficiency keeps it moving smoothly; consistency keeps it running.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Consistency is the toughest part and is essentially discipline. The gym analogy: enthusiasm often survives days one to three and disappears on day four. Entrepreneurship requires maintaining the energy of the start.</p>
+<hr>
+<h2 id="3-goals-reading-notes-memory-and-exams">3. Goals, reading, notes, memory, and exams</h2>
+<h3 id="3-1-smart-goals">3.1 SMART goals</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Letter</th>
+<th>Requirement</th>
+<th>Entrepreneurship examples and cautions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S — Specific</strong></td>
+<td>State exactly what will improve; avoid “improve my business.”</td>
+<td>Identify the particular sales, product, service, or customer-experience change.</td>
+</tr>
+<tr>
+<td><strong>M — Measurable</strong></td>
+<td>Make progress trackable.</td>
+<td>Increase sales from 100 units to 200 units.</td>
+</tr>
+<tr>
+<td><strong>A — Achievable</strong></td>
+<td>Fit the goal to time, resources, skills, and stage.</td>
+<td>A venture beginning with 33 children cannot realistically begin at 10,000; 200 customers may be a credible nearer target.</td>
+</tr>
+<tr>
+<td><strong>R — Relevant</strong></td>
+<td>Align with the venture&rsquo;s broader purpose and real conditions.</td>
+<td>A sustainability goal should fit the organization, stakeholders, society, and long-term growth—not merely look attractive today.</td>
+</tr>
+<tr>
+<td><strong>T — Time-bound</strong></td>
+<td>Fix a deadline.</td>
+<td>Raise a specified amount of capital by August/September 2026.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Complete example: <strong>Increase the cafe&rsquo;s monthly sales by 20% over the next three months through combo offers and improved customer experience.</strong> It is clear, measurable, realistic, aligned, and time-limited. A clear goal creates focus; focus drives action; action drives results.</p>
+<p>SMART goals organize work but do not by themselves remove distractions, ensure reflection, or prevent cramming.</p>
+<h3 id="3-2-reading-as-an-active-process">3.2 Reading as an active process</h3>
+<ul>
+<li>Read with a purpose and questions rather than moving the eyes across text.</li>
+<li>Preview headings and structure; identify what the chapter is trying to teach.</li>
+<li>Relate new material to prior knowledge and practical business situations.</li>
+<li>Pause, paraphrase, question, and test understanding.</li>
+<li>Identify main ideas and supporting evidence instead of highlighting everything.</li>
+<li>Rereading alone creates familiarity, which can be mistaken for mastery.</li>
+</ul>
+<h3 id="3-3-note-taking-and-the-cornell-method">3.3 Note-taking and the Cornell method</h3>
+<p>Taking notes is part of understanding, not clerical copying. Handwriting encourages processing and summarization; typing can tempt verbatim copying.</p>
+<p>Cornell page structure:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Position/function</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Title/topic</strong></td>
+<td>Top</td>
+<td>Clear identity of the lecture/chapter.</td>
+</tr>
+<tr>
+<td><strong>Notes column</strong></td>
+<td>Large right-hand area</td>
+<td>Main lecture notes, explanations, details, and examples.</td>
+</tr>
+<tr>
+<td><strong>Cue column</strong></td>
+<td>Narrow left-hand area</td>
+<td>Keywords, concepts, questions, and retrieval prompts added during or after class.</td>
+</tr>
+<tr>
+<td><strong>Summary</strong></td>
+<td>Bottom</td>
+<td>Brief synthesis of the page in the learner&rsquo;s own words.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Use the cue column later to cover the notes and self-test. Benefits include organization, active recall, easier revision, comprehension, and long-term retention.</p>
+<h3 id="3-4-active-versus-passive-learning">3.4 Active versus passive learning</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Passive/surface learning</th>
+<th>Active/deep learning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Repeated reading, copying, memorizing, highlighting without thought, last-minute video replay</td>
+<td>Solving cases, applying theory, explaining to another person, questioning, retrieving without looking, reflecting, and comparing alternatives</td>
+</tr>
+<tr>
+<td>Initially easy and fast</td>
+<td>Requires effort and deliberate practice</td>
+</tr>
+<tr>
+<td>Familiarity and short-term recall</td>
+<td>Durable understanding, analysis, transfer, and decision ability</td>
+</tr>
+</tbody>
+</table></div>
+<p>Reflection turns experience into knowledge:</p>
+<ol>
+<li>What happened?</li>
+<li>Why did it happen?</li>
+<li>Which concept/theory explains it?</li>
+<li>What should be done differently next time?</li>
+</ol>
+<h3 id="3-5-chunking-memory-and-revision">3.5 Chunking, memory, and revision</h3>
+<ul>
+<li>Break a large task into manageable focused units (the case uses 30-minute research blocks) with short breaks.</li>
+<li>Chunking reduces cognitive overload because working memory is limited, makes progress visible, and reduces the feeling of being overwhelmed.</li>
+<li>It is different from cramming: distributed sessions improve retention; an intense final burst may briefly increase recall but produces stress, weak understanding, and poor application.</li>
+<li>Chunking alone is insufficient without spaced review, active recall, reflection, and long-term scheduling.</li>
+<li>Test preparation should be continuous: create usable notes as the course proceeds, retrieve ideas without looking, practice applying concepts, and avoid relying on last-minute exposure.</li>
+</ul>
+<hr>
+<h2 id="4-what-managers-do">4. What managers do</h2>
+<p>Management work can be grouped into three broad categories covering most managerial activity.</p>
+<h3 id="4-1-informational-roles">4.1 Informational roles</h3>
+<ul>
+<li><strong>Monitor/seek information:</strong> learn what is happening in operations, customers, competitors, journals, markets, seasons, and society.</li>
+<li><strong>Disseminate information:</strong> tell colleagues what they need to know.</li>
+<li><strong>Spokesperson/information provider:</strong> answer questions such as a product&rsquo;s price or communicate results.</li>
+</ul>
+<p>Education develops the ability to describe situations well and, importantly, to know what questions to ask.</p>
+<h3 id="4-2-interpersonal-roles">4.2 Interpersonal roles</h3>
+<ul>
+<li><strong>Figurehead/formal role:</strong> people expect a manager to behave appropriately and authentically.</li>
+<li><strong>Leader:</strong> sometimes push, more often encourage, and make it easier for subordinates and colleagues to succeed.</li>
+<li><strong>Liaison/networker:</strong> maintain links across people so a call or request can get work done.</li>
+</ul>
+<h3 id="4-3-decisional-roles">4.3 Decisional roles</h3>
+<ul>
+<li><strong>Entrepreneur/change initiator:</strong> start projects, redesign older work, and pursue customer-focused improvements with minimal disruption.</li>
+<li><strong>Disturbance handler:</strong> solve unexpected problems—for example, replace an absent employee or correct a label-printing machine that is slightly misaligned.</li>
+<li><strong>Resource allocator:</strong> compare solution cost, time, and consequences.</li>
+<li><strong>Negotiator:</strong> resolve statements such as “I cannot do all of this, but I can do some.”</li>
+</ul>
+<p>Examples ranged from assigning Rakesh&rsquo;s work when he is ill to a senior leader deciding how to respond to Jio&rsquo;s new university initiative. Managers are hired substantially to solve problems; MBA knowledge and experience improve this capacity.</p>
+<hr>
+<h2 id="5-business-environment-and-organizational-structure">5. Business environment and organizational structure</h2>
+<h3 id="5-1-macro-environment-broad-forces">5.1 Macro environment: broad forces</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Force</th>
+<th>Transcript examples/implications</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Economic</strong></td>
+<td>National performance, inflation/prices, buying sentiment, employment, currency and exchange rates. An exchange movement can make shipment to the USA twice as expensive. Demand for genuinely trained MBAs may raise salaries.</td>
+</tr>
+<tr>
+<td><strong>Technological</strong></td>
+<td>AI/ChatGPT and large language models, image AI, automation, and robotic factories. Firms that fail to adapt when rivals do may disappear.</td>
+</tr>
+<tr>
+<td><strong>Sociocultural/demographic</strong></td>
+<td>Ageing Japan versus India&rsquo;s young population; gaps in vocational training for electricians, carpenters, and builders; greater visibility of gender equality and the need to avoid discrimination.</td>
+</tr>
+<tr>
+<td><strong>Environmental/human-induced</strong></td>
+<td>Heat in factories, traffic, pollution, stress, and highly polluted Indian urban areas affect health, retention, and operations.</td>
+</tr>
+<tr>
+<td><strong>Political/government/legal</strong></td>
+<td>Government policies, administrative delays, and encouragement of entrepreneurship affect firms. Policy can support job generation and national development.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The environment is dynamic. AI, post-pandemic demand for online learning, and government priorities can change quickly. The instructor cited Byju&rsquo;s: reduced post-pandemic interest in online learning compounded its other serious ethical/business problems.</p>
+<h3 id="5-2-micro-internal-and-immediate-environment">5.2 Micro/internal and immediate environment</h3>
+<ul>
+<li><strong>Owners/shareholders:</strong> their preferences and rights strongly influence the company.</li>
+<li><strong>Managers:</strong> may demand financial strengthening, operational changes, or return-to-office policies.</li>
+<li><strong>Employees:</strong> may require climate control, resist long polluted commutes, and have work and welfare needs.</li>
+<li><strong>Customers:</strong> judge whether value justifies price and can leave for better solutions.</li>
+<li><strong>Competitors:</strong> lower-cost or different offerings require understanding and adaptation.</li>
+<li><strong>Suppliers:</strong> cross-border supply (for example, China to India) may become difficult.</li>
+<li><strong>Intermediaries:</strong> distributors, stores, legal actors, and quality-control entities enable the route to market.</li>
+</ul>
+<p><strong>Exam distinction:</strong> competitor action is a <strong>micro</strong> influence because it directly affects the firm&rsquo;s market, not a macro force. Spend most attention on the company itself and immediate environment while continuing to scan broader forces.</p>
+<h3 id="5-3-organizational-hierarchy-and-the-c-suite">5.3 Organizational hierarchy and the C-suite</h3>
+<p>In a listed company, shareholders vote for directors; the board represents shareholders and appoints/oversees the top executive. Senior leaders appoint other heads, who in turn appoint/manage lower levels.</p>
+<p>Hierarchy:</p>
+<ol>
+<li><strong>Senior management/C-suite</strong> — enterprise direction.</li>
+<li><strong>Middle managers</strong> — regional managers, production heads/directors, sales managers.</li>
+<li><strong>First-line managers</strong> — supervisors, team leaders, foremen.</li>
+</ol>
+<p>Hierarchy creates coordination rather than necessarily rigid control. People should work with whoever has the needed information and decision rights while respecting structure enough to avoid chaos.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Core responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CEO/CMD/President</strong></td>
+<td>Overall direction, major decisions, performance and stakeholder reporting (sales, expenses, profit).</td>
+</tr>
+<tr>
+<td><strong>COO</strong></td>
+<td>Day-to-day company operations and staff management; often the number-two executive.</td>
+</tr>
+<tr>
+<td><strong>CIO</strong></td>
+<td>Information, computer, telephone, and related systems that support production, sales, and accurate data.</td>
+</tr>
+<tr>
+<td><strong>CHRO</strong></td>
+<td>Recruit, manage, develop, pay, and when necessary release people; oversees recruitment, HR, training/L&amp;D.</td>
+</tr>
+<tr>
+<td><strong>CMO</strong></td>
+<td>Describe and position the offering, price it, choose where it is sold, and manage marketing/channel activity.</td>
+</tr>
+<tr>
+<td><strong>CRO</strong></td>
+<td>Own sales/revenue targets; example: commit to and manage a 20% sales increase.</td>
+</tr>
+<tr>
+<td><strong>CTO</strong></td>
+<td>Technology, intellectual property, technical superiority, and relevant equipment/capability.</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="6-production-of-products-and-services">6. Production of products and services</h2>
+<h3 id="6-1-core-conversion-model">6.1 Core conversion model</h3>
+<p>A company fundamentally (1) makes something customers will pay for and (2) gets/sells/delivers it to them.</p>
+<p><strong>Inputs/factors of production → conversion/transformation process → outputs → customer</strong></p>
+<p>Inputs include:</p>
+<ul>
+<li>Natural resources and raw materials.</li>
+<li>Human resources with suitable skills/training.</li>
+<li>Capital/money.</li>
+<li>Equipment, facilities, information, energy, and supporting supplies.</li>
+</ul>
+<h3 id="6-2-product-example-bottled-water">6.2 Product example: bottled water</h3>
+<p>The business must source water, purify it with additives/filters, form the plastic bottle, make the label, fill, stamp, seal, test, package (including cardboard), and distribute. Each resource and operation forms part of production.</p>
+<h3 id="6-3-service-example-subway-restaurant">6.3 Service example: Subway restaurant</h3>
+<ul>
+<li>Trained people receive ingredients such as tomatoes, onions, sauces, and frozen supplies.</li>
+<li>The store uses space, water, electricity, refrigerators, equipment, and money.</li>
+<li>Workers thaw, cut, combine, prepare, wrap, and hand the sandwich to the customer.</li>
+<li>The combination creates greater value than the separate components.</li>
+<li>A manufactured product may leave a factory in volume and move through an Amazon warehouse; a service output may be produced and delivered directly in the store.</li>
+</ul>
+<h3 id="6-4-facility-layout-and-process-choice">6.4 Facility layout and process choice</h3>
+<p>Layout follows the nature and flow of work:</p>
+<ul>
+<li>One person versus a team of ten.</li>
+<li>Assembly-line/assembly-machine flow, as in cars, where each station adds a part.</li>
+<li>Project or fixed-position collaboration, as with a handicraft/window installation.</li>
+</ul>
+<p>The layout should support sequence, movement, volume, technology, people, and customer/service requirements.</p>
+<h3 id="6-5-operations-concerns">6.5 Operations concerns</h3>
+<ul>
+<li>Match capacity and output to demand; demand is uncertain and the business must be able to meet it.</li>
+<li>Maintain quality and consistency in both products and services.</li>
+<li>Coordinate sourcing, inventory, equipment, labour, production, packaging, distribution, and feedback.</li>
+<li>Improve the process for speed, lower cost, fewer errors, and reliable delivery without sacrificing customer value.</li>
+</ul>
+<hr>
+<h2 id="7-entrepreneurship-innovation-customers-and-cross-functional-work">7. Entrepreneurship, innovation, customers, and cross-functional work</h2>
+<h3 id="7-1-entrepreneurship-versus-innovation">7.1 Entrepreneurship versus innovation</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Entrepreneurship</th>
+<th>Innovation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifies an opportunity/problem, organizes resources, accepts uncertainty/risk, creates and captures value, and builds a sustainable venture.</td>
+<td>Introduces a new or improved product, process, service, experience, pricing/delivery approach, or business model that creates value.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Innovation does not require advanced technology, a new invention, or a large R&amp;D budget. It can be:</p>
+<ul>
+<li><strong>Product innovation:</strong> new product or important feature.</li>
+<li><strong>Process innovation:</strong> faster, cheaper, or better production/logistics/delivery.</li>
+<li><strong>Service innovation:</strong> easier onboarding, support, purchase, or interaction.</li>
+<li><strong>Business-model innovation:</strong> subscription, usage-based pricing, platform, or another way to create/capture value.</li>
+</ul>
+<h3 id="7-2-customer-centred-sequence">7.2 Customer-centred sequence</h3>
+<ol>
+<li>Understand the customer and the real problem.</li>
+<li>Understand competitors and the environment.</li>
+<li>Identify the opportunity.</li>
+<li>Design a proposed solution.</li>
+<li>Build a prototype/early version.</li>
+<li>Test with customers.</li>
+<li>Learn and revise.</li>
+<li>Align production/operations, marketing, sales, and finance.</li>
+<li>Launch/scale.</li>
+<li>Continue feedback and improvement.</li>
+</ol>
+<p>Prototyping reduces uncertainty and development cost, validates assumptions, improves usability, and catches problems before scaling. The modern approach is <strong>early learning and concurrent feedback</strong>, not “build everything, launch, then fix.”</p>
+<h3 id="7-3-five-basics-of-every-business-live-session-framework">7.3 Five basics of every business (live-session framework)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Key question</th>
+<th>Examples/emphasis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Design</strong></td>
+<td>Who is the real customer, what problem needs solving, and what should be built around that need?</td>
+<td>A college cafe designs quick, affordable, satisfying food; a phone might target premium users, ease of use, a clean interface, or smooth experience.</td>
+</tr>
+<tr>
+<td><strong>Produce</strong></td>
+<td>How is the idea converted into a real, reliable product/service?</td>
+<td>Focus on quality, consistency, and ability to meet uncertain demand.</td>
+</tr>
+<tr>
+<td><strong>Deliver</strong></td>
+<td>How does it reach the customer correctly and on time?</td>
+<td>In a cafe, serve the correct order on time.</td>
+</tr>
+<tr>
+<td><strong>Sell</strong></td>
+<td>How is value communicated?</td>
+<td>Even the best product fails if the entrepreneur cannot communicate it through presentation, pricing, and customer interaction.</td>
+</tr>
+<tr>
+<td><strong>Satisfy</strong></td>
+<td>Did the whole experience make the customer want to return?</td>
+<td>Satisfaction after use supports loyalty and continuity.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="7-4-customer-value-and-selling-orientation">7.4 Customer value and selling orientation</h3>
+<p>Customer value is determined by customer priorities, not the company&rsquo;s feature list. If reliable delivery matters more than new features, improving delivery creates more value. Common drivers: reliability, convenience, trust, simplicity, speed, transparent pricing, usability, and service quality.</p>
+<p>Feedback sources include interviews, surveys, reviews, complaints, support tickets, and usage data. Feedback is required before and after launch.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Transactional selling</th>
+<th>Relationship/consultative selling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Short-term, product-centred, pressure for an immediate transaction</td>
+<td>Ask questions, diagnose need, recommend the appropriate solution, support use, build trust and long-term success</td>
+</tr>
+</tbody>
+</table></div>
+<p>Relationship selling can create repeat purchases, loyalty, referrals, satisfaction, and higher customer lifetime value.</p>
+<h3 id="7-5-cross-functional-organization">7.5 Cross-functional organization</h3>
+<p>An organization joins leadership with marketing, operations, product/engineering, sales, finance, and other functions. Leadership is the “brain” that sets direction, but cannot perform without the rest.</p>
+<ul>
+<li>Marketing understands customers and communicates positioning.</li>
+<li>Product/engineering turns the imagined solution into reality.</li>
+<li>Operations ensures it is produced consistently and as intended.</li>
+<li>Sales communicates value and closes/maintains relationships.</li>
+<li>Finance supplies discipline and resources.</li>
+</ul>
+<p>Traditional “throw over the wall” development (marketing → engineering → production → sales → customer) creates late changes, delay, rework, cost, and mismatched promises. Concurrent collaboration identifies conflicts early and keeps the customer visible throughout.</p>
+<hr>
+<h2 id="8-integrated-case-sophia-martinez">8. Integrated case: Sophia Martinez</h2>
+<h3 id="8-1-facts">8.1 Facts</h3>
+<p>Sophia, a third-year marketing student at Crestview University, interns at BrightWave Solutions while handling coursework and a live client project. She faces phone notifications, impromptu calls, a shared apartment with little quiet space, and last-minute cramming before client presentations.</p>
+<p>She uses:</p>
+<ul>
+<li>A specific two-day research goal with measurable checkpoints that is achievable, relevant to the pitch, and time-bound.</li>
+<li>Thirty-minute chunks.</li>
+<li>Handwritten Cornell notes (left cue column, right details, bottom summary).</li>
+<li>Malik as a peer accountability partner.</li>
+</ul>
+<p>The continuing cramming shows a key distinction: good <strong>micro-level techniques</strong> can still sit inside poor <strong>macro-level planning</strong>.</p>
+<h3 id="8-2-options">8.2 Options</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>A: Daily phone-free sessions</th>
+<th>B: Weekly milestones</th>
+<th>C: Peer supervisor per milestone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Main problem addressed</td>
+<td>Interruptions/environment</td>
+<td>Long-term pacing and priorities</td>
+<td>Enforcement/accountability</td>
+</tr>
+<tr>
+<td>Strengths</td>
+<td>Deep work, concentration, active learning, fewer switching costs</td>
+<td>Prevents cramming, shows progress, sustains project momentum</td>
+<td>Visibility, responsibility, deadline adherence</td>
+</tr>
+<tr>
+<td>Costs/risks</td>
+<td>Reduced flexibility and delayed urgent responses</td>
+<td>Planning/monitoring overhead</td>
+<td>Micromanagement, resentment, reduced autonomy, relationship strain</td>
+</tr>
+<tr>
+<td>Overall</td>
+<td>Best direct response to distraction</td>
+<td>Most balanced systemic/root-cause response</td>
+<td>Use carefully; convert supervision into supportive accountability</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Best integrated answer:</strong> combine A and B, and adapt C so Malik/peers are supportive accountability partners rather than hierarchical supervisors. Protect focus daily, review weekly milestones, and use collaborative check-ins.</p>
+<h3 id="8-3-root-cause-logic">8.3 Root-cause logic</h3>
+<ul>
+<li><strong>Symptoms:</strong> stress, cramming, superficial learning.</li>
+<li><strong>Immediate cause:</strong> interruptions and attention switching.</li>
+<li><strong>Systemic causes:</strong> inadequate long-term schedule, lack of milestones, and uncontrolled environment.</li>
+<li><strong>Lesson:</strong> SMART goals, chunking, and notes are necessary but insufficient; sustained success also needs macro planning, focus protection, review, and healthy team dynamics.</li>
+</ul>
+<hr>
+<h2 id="9-likely-exam-angles-and-answer-frames">9. Likely exam angles and answer frames</h2>
+<h3 id="short-definition-questions">Short-definition questions</h3>
+<ul>
+<li>Define time management, prioritization, procrastination, active learning, Cornell notes, SMART goals, managerial roles, macro/micro environment, production, entrepreneurship, innovation, customer value, and cross-functional team.</li>
+<li>Distinguish activity management from entrepreneurial time management.</li>
+<li>Distinguish efficiency from consistency; explain how both combine with allocation to create momentum.</li>
+<li>Distinguish product and service production; transactional and relationship selling; entrepreneurship and innovation; micro and macro environment.</li>
+</ul>
+<h3 id="framework-questions">Framework questions</h3>
+<ul>
+<li>Explain <strong>SMART</strong> with one measurable venture example.</li>
+<li>Explain <strong>Allocation–Efficiency–Consistency → Momentum</strong>.</li>
+<li>Explain <strong>Inputs → Conversion → Outputs</strong>, using bottled water or Subway.</li>
+<li>Explain managerial roles: <strong>informational, interpersonal, decisional</strong>.</li>
+<li>Explain business basics: <strong>Design → Produce → Deliver → Sell → Satisfy</strong>.</li>
+<li>Explain customer-centred innovation from insight through prototype, feedback, alignment, launch, and continuous improvement.</li>
+</ul>
+<h3 id="applied-case-questions">Applied/case questions</h3>
+<ul>
+<li>A founder spends most available time perfecting a logo: diagnose poor allocation and recommend customer interviews/prototyping.</li>
+<li>Two founders face a feature decision: discuss the balance between analysis, decision speed, launch, feedback, and quality.</li>
+<li>A factory becomes hotter and employees leave: combine environmental, human-resource, operations, and managerial analysis.</li>
+<li>A competitor launches a cheaper product: classify it as micro environment, gather information, assess customer value, and coordinate a response.</li>
+<li>A student uses SMART goals but still crams: explain why micro tools require macro milestones and distraction control.</li>
+<li>A sales team promises features production cannot provide: explain why concurrent cross-functional coordination prevents rework and dissatisfaction.</li>
+</ul>
+<h3 id="instructor-emphasis-to-reproduce-in-answers">Instructor emphasis to reproduce in answers</h3>
+<ul>
+<li>A qualification without demonstrated skill has little lasting value.</li>
+<li>Time cannot be purchased; how it is used is an entrepreneurial advantage.</li>
+<li>Speed does not mean blind haste; balance timely decisions with quality.</li>
+<li>Ideas are common; execution and outcomes matter.</li>
+<li>Being busy is not the same as moving forward.</li>
+<li>Customer needs must shape design, production, delivery, sales, and satisfaction.</li>
+<li>Quality exists everywhere: product, service, communication, and experience.</li>
+<li>Managers must scan changing internal, micro, and macro environments and solve problems.</li>
+</ul>
+<hr>
+<h2 id="10-rapid-revision-sheet">10. Rapid revision sheet</h2>
+<h3 id="one-line-recall">One-line recall</h3>
+<ul>
+<li><strong>Time management:</strong> deliberately allocate protected time to high-impact work and execute it consistently.</li>
+<li><strong>Entrepreneurial time:</strong> decision + execution + balanced speed/quality → outcome.</li>
+<li><strong>Momentum:</strong> right allocation + low-friction efficiency + daily consistency.</li>
+<li><strong>Interruption cost:</strong> full refocus may take about 20–23 minutes.</li>
+<li><strong>SMART:</strong> Specific, Measurable, Achievable, Relevant, Time-bound.</li>
+<li><strong>Cornell:</strong> cue left, detailed notes right, summary bottom.</li>
+<li><strong>Active learning:</strong> retrieve, apply, explain, solve, reflect.</li>
+<li><strong>Manager roles:</strong> informational, interpersonal, decisional.</li>
+<li><strong>Macro:</strong> economy, technology, society/demography, environment, politics/government/legal.</li>
+<li><strong>Micro:</strong> owners/managers/employees plus customers, competitors, suppliers, intermediaries.</li>
+<li><strong>Management levels:</strong> C-suite → middle → first-line.</li>
+<li><strong>Production:</strong> inputs/factors → conversion → valued output.</li>
+<li><strong>Business basics:</strong> Design → Produce → Deliver → Sell → Satisfy.</li>
+<li><strong>Entrepreneurship:</strong> organize opportunity/resources under uncertainty to create sustainable value.</li>
+<li><strong>Innovation:</strong> implement a valuable improvement; technology is optional.</li>
+<li><strong>Customer-centred development:</strong> insight → prototype → test → revise → align → launch → improve.</li>
+<li><strong>Cross-functional rule:</strong> collaborate early; do not throw work over departmental walls.</li>
+<li><strong>Sophia case:</strong> A protects focus, B fixes pacing, collaborative C supplies accountability; combine them.</li>
+</ul>
+<h3 id="ten-second-misconceptions-check">Ten-second misconceptions check</h3>
+<ul>
+<li>More hours ≠ more progress.</li>
+<li>A neat calendar ≠ effective time use.</li>
+<li>Careful thought ≠ indefinite delay.</li>
+<li>Effort ≠ rewarded outcome.</li>
+<li>SMART goals alone ≠ distraction control.</li>
+<li>Chunking alone ≠ deep learning.</li>
+<li>Notes alone ≠ mastery; retrieval/application are required.</li>
+<li>Innovation ≠ invention or technology only.</li>
+<li>More features ≠ more customer value.</li>
+<li>Competitors ≠ macro environment.</li>
+<li>Customer feedback ≠ post-launch only.</li>
+<li>Strong departments working separately ≠ a strong organization.</li>
+</ul>
+<h1 id="review-week-augmentation">Review Week Augmentation</h1>
+<ul>
+<li>A good or technically advanced idea is insufficient: entrepreneurial success also requires a real customer need, usability, execution, scalability, adaptability and perceived value.</li>
+<li>Keep <strong>invention</strong> (creating something new) distinct from <strong>innovation</strong> (implementing a new or improved idea to create value). Incremental improvements to process or experience still count as innovation.</li>
+<li>Extend innovation analysis beyond product features to process, experience, business model and partnerships. FreshLoop is therefore more than an app: logistics, trust, support and partner coordination are part of the innovation.</li>
+<li>Perceived value is multidimensional: <strong>benefits minus all experienced costs</strong>, including money, time, effort, uncertainty, inconvenience, switching and frustration. Higher price can win through reliability, personalization, responsiveness and trust.</li>
+<li>Feedback is an innovation loop—feedback → insight → change → new experience → new feedback—not merely customer service.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-2.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 2: Entrepreneurship, Innovation, Creativity,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

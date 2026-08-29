@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Deep Learning · Week 4 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Deep Learning</span>
+      <span class="brand-title">Week 4</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html" selected>Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Neural Networks and Deep Learning
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Neural Networks, Backpropagation, Model Tuning, and Evaluation
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Convolutional Neural Networks, Transfer Learning and Computer-Vision…
+      </a>
+      <a class="is-active" href="week-4.html">
+        <span class="week-num">Week 4</span>
+        RNNs, GRU, LSTM, NLP, Word Embeddings, Transfer Learning and Attention
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        RBMs, Deep Belief Networks, Autoencoders, and Contrastive Divergence
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Reinforcement Learning, Policy Networks, Target Networks and DQN
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Generative Adversarial Networks (GANs)
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Data Augmentation, Hyperparameter Tuning, Transfer Learning and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Feed-Forward Neural Networks, Perceptrons, Loss, Backpropagation and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Python Programming Fundamentals
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Machine Learning, Classification, and Naive Bayes
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Logistic Regression as a Neural Network, MNIST, and K-Means
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        PCA and Bag-of-Words
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Autoencoders and Representation Learning
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Exhaustive Exam-Oriented Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Deep Learning · Week 4</p>
+        <h1 class="page-title">RNNs, GRU, LSTM, NLP, Word Embeddings, Transfer Learning and Attention</h1>
+        <p class="page-meta">Week 4 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-week-map-and-exam-focus">1. Week map and exam focus</a></li>
+      <li><a href="#2-sequential-data-and-why-rnns-are-needed">2. Sequential data and why RNNs are needed</a></li>
+      <li><a href="#3-recurrent-neural-networks-rnns">3. Recurrent Neural Networks (RNNs)</a></li>
+      <li><a href="#4-training-rnns-backpropagation-through-time">4. Training RNNs: Backpropagation Through Time</a></li>
+      <li><a href="#5-lstm-long-short-term-memory">5. LSTM: Long Short-Term Memory</a></li>
+      <li><a href="#6-gru-gated-recurrent-unit">6. GRU: Gated Recurrent Unit</a></li>
+      <li><a href="#7-rnn-versus-gru-versus-lstm">7. RNN versus GRU versus LSTM</a></li>
+      <li><a href="#8-natural-language-processing-nlp">8. Natural Language Processing (NLP)</a></li>
+      <li><a href="#9-text-features-and-word-embeddings">9. Text features and word embeddings</a></li>
+      <li><a href="#10-transfer-learning-and-pretrained-nlp-models">10. Transfer learning and pretrained NLP models</a></li>
+      <li><a href="#11-attention-mechanisms">11. Attention mechanisms</a></li>
+      <li><a href="#12-sentinel-satellite-classification-application">12. Sentinel satellite classification application</a></li>
+      <li><a href="#13-explainability-for-sequence-models">13. Explainability for sequence models</a></li>
+      <li><a href="#14-practical-pytorch-rnn-with-attention-walkthrough">14. Practical PyTorch RNN-with-attention walkthrough</a></li>
+      <li><a href="#15-edulingua-case-study">15. EduLingua case study</a></li>
+      <li><a href="#16-instructor-q-a-and-emphasis-preserved">16. Instructor Q&amp;amp;A and emphasis preserved</a></li>
+      <li><a href="#17-exam-traps-and-precision-corrections">17. Exam traps and precision corrections</a></li>
+      <li><a href="#18-likely-exam-questions-with-answer-outlines">18. Likely exam questions with answer outlines</a></li>
+      <li><a href="#19-rapid-revision">19. Rapid revision</a></li>
+      <li><a href="#review-week-augmentation-clinical-sequence-classification-synthesis">Review Week augmentation: clinical sequence-classification synthesis</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-week-map-and-exam-focus">1. Week map and exam focus</h2>
+<p>Week 4 moves from <strong>CNNs for spatial/image data</strong> to models for <strong>ordered or sequential data</strong>. The central chain is:</p>
+<ol>
+<li>A vanilla <strong>Recurrent Neural Network (RNN)</strong> retains a hidden state so that previous inputs can influence the current output.</li>
+<li>Repeated backpropagation through time creates <strong>vanishing/exploding-gradient</strong> problems, especially for long-term dependencies.</li>
+<li><strong>LSTM</strong> and <strong>GRU</strong> add gates that regulate memory and make long-range learning more practical.</li>
+<li><strong>Natural Language Processing (NLP)</strong> turns human language into representations that a model can process.</li>
+<li><strong>Word embeddings</strong> encode words as dense semantic vectors.</li>
+<li><strong>Transfer learning</strong> adapts large pretrained models instead of training everything from scratch.</li>
+<li><strong>Attention</strong> dynamically assigns importance to relevant input elements; multi-head attention learns several relationship types in parallel.</li>
+<li>A practical PyTorch example combines an RNN with attention for binary sequence classification and visualizes attention weights.</li>
+</ol>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> Read the papers/books listed with the course sessions. The lectures provide the basic framework; references deepen the concepts.</p>
+</blockquote>
+<hr>
+<h2 id="2-sequential-data-and-why-rnns-are-needed">2. Sequential data and why RNNs are needed</h2>
+<h3 id="2-1-sequential-data">2.1 Sequential data</h3>
+<p><strong>Sequential data</strong> is data in which <strong>order matters</strong> and an element may depend on earlier elements.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Sequential example</th>
+<th>Why order matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sentence/text</td>
+<td>Reordering words may change or destroy meaning: “My name is Yadu” is not equivalent to an arbitrary permutation.</td>
+</tr>
+<tr>
+<td>Time series</td>
+<td>A stock price, weather value, or demand observation is associated with a time order.</td>
+</tr>
+<tr>
+<td>Speech/audio</td>
+<td>Sound evolves through an ordered waveform over time.</td>
+</tr>
+<tr>
+<td>Sensor/IoT readings</td>
+<td>Each observation is linked to a timestamp and prior state.</td>
+</tr>
+<tr>
+<td>Video</td>
+<td>A video is an ordered sequence of frames; shuffling frames changes the action.</td>
+</tr>
+<tr>
+<td>Exam rankings</td>
+<td>Rank 1, rank 2, etc. cannot be arbitrarily rearranged.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Non-sequential data</strong> is data for which order is not essential to the intended task, such as an unordered collection of independent photographs or a tabular record whose columns are treated as simultaneous features.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> An individual image contains important <em>spatial</em> relationships, but the lecture’s RNN-versus-CNN distinction is that RNNs explicitly model an ordered progression over time/position, whereas CNNs learn local spatial features.</p>
+</blockquote>
+<h3 id="2-2-cnn-versus-rnn">2.2 CNN versus RNN</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>CNN</th>
+<th>RNN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary strength</td>
+<td>Spatial/local feature extraction</td>
+<td>Ordered/sequential dependency modeling</td>
+</tr>
+<tr>
+<td>Typical input</td>
+<td>Images/pixels</td>
+<td>Text, time series, speech, sensor streams, video-frame sequences</td>
+</tr>
+<tr>
+<td>Core operation</td>
+<td>Convolution and shared filters</td>
+<td>Recurrent hidden-state update with shared weights across time</td>
+</tr>
+<tr>
+<td>Memory of previous step</td>
+<td>Not an explicit recurrent memory loop</td>
+<td>Yes, via the hidden state</td>
+</tr>
+<tr>
+<td>Examples emphasized</td>
+<td>Facial recognition, phone unlocking, image recognition</td>
+<td>Document/sentence processing, summarization, forecasting, speech recognition</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Transfer-learning recap:</strong> A pretrained model can be reused and modified for a related problem rather than trained and validated from scratch. This applies beyond CNNs, including NLP.</p>
+<hr>
+<h2 id="3-recurrent-neural-networks-rnns">3. Recurrent Neural Networks (RNNs)</h2>
+<h3 id="3-1-definition">3.1 Definition</h3>
+<p>A <strong>Recurrent Neural Network</strong> is a neural network designed for sequential or temporal data. It contains recurrent connections that carry a <strong>hidden state</strong> across time steps, allowing information from earlier inputs to affect later predictions.</p>
+<p>RNNs have input, hidden, and output layers. The required hidden size/number of layers is a design choice determined by the problem; it is not a universal constant.</p>
+<h3 id="3-2-memory-loop-and-hidden-state">3.2 Memory loop and hidden state</h3>
+<p>At time step \(t\), the RNN uses both the current input \(x_t\) and previous hidden state \(h_{t-1}\):</p>
+<p>\[
+h_t = \phi(W_{xh}x_t + W_{hh}h_{t-1} + b_h)
+\]</p>
+<p>\[
+y_t = \psi(W_{hy}h_t + b_y)
+\]</p>
+<p>where:</p>
+<ul>
+<li>\(W_{xh}\): input-to-hidden weights;</li>
+<li>\(W_{hh}\): recurrent/hidden-to-hidden weights;</li>
+<li>\(W_{hy}\): hidden-to-output weights;</li>
+<li>\(\phi\): usually \(\tanh\) or another hidden activation;</li>
+<li>\(\psi\): task-dependent output activation.</li>
+</ul>
+<p>The same weights are shared across time, which lets the model process variable positions consistently. The hidden state is a compressed memory, <strong>not a literal storage of the entire sequence</strong>.</p>
+<p><strong>Human-reading analogy from the live lecture:</strong> A reader remembers preceding words while reading the next one; otherwise the reader cannot understand the complete sentence. Similarly, the RNN’s memory loop preserves useful prior context until the sequence can be interpreted.</p>
+<h3 id="3-3-common-input-output-arrangements">3.3 Common input–output arrangements</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Arrangement</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One-to-many</td>
+<td>Image caption generation</td>
+</tr>
+<tr>
+<td>Many-to-one</td>
+<td>Sentiment classification of a sentence</td>
+</tr>
+<tr>
+<td>Many-to-many, aligned</td>
+<td>Tagging every word in a sentence</td>
+</tr>
+<tr>
+<td>Many-to-many, different lengths</td>
+<td>Machine translation/sequence-to-sequence generation</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="3-4-applications-stated-in-the-source">3.4 Applications stated in the source</h3>
+<ul>
+<li><strong>Time-series forecasting:</strong> predict future values from historical trends.</li>
+<li><strong>Language modeling:</strong> predict/generate text using preceding context.</li>
+<li><strong>Speech recognition:</strong> process an audio sequence and recognize spoken words.</li>
+<li><strong>Signal processing.</strong></li>
+<li><strong>Anomaly detection</strong> in sequential/time-series data (the transcript says “enamel detection,” evidently transcription noise).</li>
+<li><strong>NLP</strong>, summarization, and ordered-document processing.</li>
+</ul>
+<hr>
+<h2 id="4-training-rnns-backpropagation-through-time">4. Training RNNs: Backpropagation Through Time</h2>
+<h3 id="4-1-bptt">4.1 BPTT</h3>
+<p>An RNN is <strong>unrolled through time</strong>. A forward pass computes hidden states and outputs for all time steps; the loss is then propagated backward through those repeated computations. This is <strong>Backpropagation Through Time (BPTT)</strong>.</p>
+<p>Because of the chain rule, gradients include products of many Jacobians/activation derivatives:</p>
+<p>\[
+\frac{\partial L}{\partial h_t}
+=
+\frac{\partial L}{\partial h_T}
+\prod_{k=t+1}^{T}
+\frac{\partial h_k}{\partial h_{k-1}}
+\]</p>
+<p>Repeated multiplication causes the two major RNN training problems.</p>
+<h3 id="4-2-vanishing-gradient">4.2 Vanishing gradient</h3>
+<p>If typical derivative magnitudes are below 1, their product shrinks exponentially. The live lecture illustrates this with \(0.5^{50}\), which is extremely close to zero.</p>
+<p><strong>Effects:</strong></p>
+<ul>
+<li>earlier time steps receive almost no parameter update;</li>
+<li>training slows or stalls;</li>
+<li>the model struggles to connect distant inputs and outputs;</li>
+<li>long-term dependencies are not learned effectively.</li>
+</ul>
+<p>Sigmoid and \(\tanh\) derivatives can be small, particularly in saturated regions, so repeated multiplication makes this problem acute in long sequences.</p>
+<h3 id="4-3-exploding-gradient">4.3 Exploding gradient</h3>
+<p>If relevant factors have magnitude above 1, repeated multiplication makes gradients grow rapidly.</p>
+<p><strong>Effects:</strong></p>
+<ul>
+<li>unstable weight updates;</li>
+<li>highly erratic/diverging loss;</li>
+<li>possible numerical overflow/NaNs;</li>
+<li>unreliable training and increased computational difficulty.</li>
+</ul>
+<h3 id="4-4-remedies-mentioned">4.4 Remedies mentioned</h3>
+<ul>
+<li>gated architectures: <strong>LSTM</strong> and <strong>GRU</strong>;</li>
+<li>attention mechanisms;</li>
+<li>gradient clipping (particularly useful for exploding gradients);</li>
+<li>careful weight initialization;</li>
+<li>suitable activations such as ReLU where appropriate;</li>
+<li>layer normalization;</li>
+<li>skip/residual connections.</li>
+</ul>
+<blockquote>
+<p><strong>Exam trap:</strong> ReLU does not by itself guarantee that a recurrent model learns long dependencies, and gradient clipping primarily bounds exploding gradients; it does not fundamentally solve vanishing gradients.</p>
+</blockquote>
+<hr>
+<h2 id="5-lstm-long-short-term-memory">5. LSTM: Long Short-Term Memory</h2>
+<h3 id="5-1-definition-and-motivation">5.1 Definition and motivation</h3>
+<p>An <strong>LSTM</strong> is a gated RNN designed to retain useful information across long sequences and mitigate the vanishing-gradient/long-term-dependency problem. Unlike a vanilla RNN’s single hidden-state pathway, it explicitly maintains:</p>
+<ul>
+<li>hidden state \(h_t\) (exposed/output representation);</li>
+<li>cell state \(c_t\) (long-term memory pathway);</li>
+<li>forget, input, and output gates.</li>
+</ul>
+<h3 id="5-2-equations">5.2 Equations</h3>
+<p>\[
+f_t=\sigma(W_f[x_t,h_{t-1}]+b_f)
+\]</p>
+<p>\[
+i_t=\sigma(W_i[x_t,h_{t-1}]+b_i)
+\]</p>
+<p>\[
+\tilde c_t=\tanh(W_c[x_t,h_{t-1}]+b_c)
+\]</p>
+<p>\[
+c_t=f_t\odot c_{t-1}+i_t\odot\tilde c_t
+\]</p>
+<p>\[
+o_t=\sigma(W_o[x_t,h_{t-1}]+b_o)
+\]</p>
+<p>\[
+h_t=o_t\odot\tanh(c_t)
+\]</p>
+<h3 id="5-3-gate-functions">5.3 Gate functions</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Question answered</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Forget gate \(f_t\)</td>
+<td>What old information is no longer relevant?</td>
+<td>Scales/discards parts of \(c_{t-1}\).</td>
+</tr>
+<tr>
+<td>Input gate \(i_t\)</td>
+<td>What new information should be stored?</td>
+<td>Controls candidate-memory insertion.</td>
+</tr>
+<tr>
+<td>Candidate \(\tilde c_t\)</td>
+<td>What new content could be remembered?</td>
+<td>Proposes new memory values.</td>
+</tr>
+<tr>
+<td>Cell state \(c_t\)</td>
+<td>What long-term information should flow onward?</td>
+<td>Carries controlled memory through time.</td>
+</tr>
+<tr>
+<td>Output gate \(o_t\)</td>
+<td>What memory should be exposed now?</td>
+<td>Controls the hidden state/output representation.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="5-4-strengths-limitations-and-use">5.4 Strengths, limitations, and use</h3>
+<p><strong>Strengths:</strong> better at very long dependencies, document summarization, large language sequences, and translation; selective forgetting prevents all old information from accumulating indiscriminately.</p>
+<p><strong>Costs:</strong> three gates plus candidate/cell computation mean more weight matrices, parameters, stored activations, memory, computation, and training time. The live lecture emphasizes that LSTM is heavier, slower, more resource-demanding, and harder to train than GRU, while often being more capable on long sequences.</p>
+<hr>
+<h2 id="6-gru-gated-recurrent-unit">6. GRU: Gated Recurrent Unit</h2>
+<h3 id="6-1-definition">6.1 Definition</h3>
+<p>A <strong>GRU</strong> is a simplified gated RNN that addresses standard-RNN limitations with two gates:</p>
+<ul>
+<li><strong>update gate</strong>;</li>
+<li><strong>reset gate</strong>.</li>
+</ul>
+<p>It merges long-term cell memory and exposed hidden memory into a single hidden state; it has <strong>no separate cell state</strong>.</p>
+<h3 id="6-2-equations">6.2 Equations</h3>
+<p>One common convention is:</p>
+<p>\[
+z_t=\sigma(W_zx_t+U_zh_{t-1}+b_z)
+\]</p>
+<p>\[
+r_t=\sigma(W_rx_t+U_rh_{t-1}+b_r)
+\]</p>
+<p>\[
+\tilde h_t=\tanh(W_hx_t+U_h(r_t\odot h_{t-1})+b_h)
+\]</p>
+<p>\[
+h_t=z_t\odot h_{t-1}+(1-z_t)\odot\tilde h_t
+\]</p>
+<p>Some texts reverse the two coefficients in the final interpolation; always state the convention being used.</p>
+<h3 id="6-3-component-functions">6.3 Component functions</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Update gate \(z_t\)</td>
+<td>Determines the balance between retaining prior hidden state and accepting candidate information.</td>
+</tr>
+<tr>
+<td>Reset gate \(r_t\)</td>
+<td>Determines how much past state participates in constructing the candidate.</td>
+</tr>
+<tr>
+<td>Candidate state \(\tilde h_t\)</td>
+<td>Potential new hidden content derived from current input and reset-filtered history.</td>
+</tr>
+<tr>
+<td>Final hidden state \(h_t\)</td>
+<td>Gated mixture of prior state and candidate state; also serves as output memory.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="6-4-strengths-and-limitations">6.4 Strengths and limitations</h3>
+<ul>
+<li>fewer gates and parameters than LSTM;</li>
+<li>lower memory use and computational cost;</li>
+<li>generally faster/easier to train;</li>
+<li>often comparable performance for many tasks and useful for short-to-medium sequences, speech-to-text, and translation.</li>
+</ul>
+<p>The live instructor frames GRU as less trustworthy than LSTM for very long documents because its compact/updating memory may overwrite useful history. This is a <strong>rule of thumb, not an absolute law</strong>: empirical performance depends on data, tuning, and task.</p>
+<blockquote>
+<p><strong>Correction to a noisy transcript statement:</strong> A GRU does not use “input and output gates.” Its defining gates are update and reset. A reset gate is applied at each time step to candidate formation; it is not merely a manual whole-document reset.</p>
+</blockquote>
+<hr>
+<h2 id="7-rnn-versus-gru-versus-lstm">7. RNN versus GRU versus LSTM</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Vanilla RNN</th>
+<th>GRU</th>
+<th>LSTM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Memory</td>
+<td>Hidden state</td>
+<td>Hidden state</td>
+<td>Hidden + separate cell state</td>
+</tr>
+<tr>
+<td>Gates</td>
+<td>None</td>
+<td>Update, reset</td>
+<td>Forget, input, output</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>Lowest</td>
+<td>Medium</td>
+<td>Highest</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>Fast per step, but difficult long-range training</td>
+<td>Usually fastest gated option</td>
+<td>Usually slower</td>
+</tr>
+<tr>
+<td>Long dependencies</td>
+<td>Weak</td>
+<td>Good</td>
+<td>Often strongest</td>
+</tr>
+<tr>
+<td>Vanishing-gradient resistance</td>
+<td>Low</td>
+<td>Improved</td>
+<td>Improved</td>
+</tr>
+<tr>
+<td>Typical choice</td>
+<td>Simple/short sequence baseline</td>
+<td>Efficiency and moderate sequences</td>
+<td>Very long/complex dependencies</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Absolute exam facts:</strong></p>
+<ul>
+<li>GRU has <strong>two gates and no separate cell state</strong>.</li>
+<li>LSTM has <strong>three gates plus a cell state</strong>.</li>
+<li>The GRU candidate state is <strong>not a gate</strong>.</li>
+<li>Neither architecture “eliminates” all gradient problems; they mitigate them.</li>
+</ul>
+<hr>
+<h2 id="8-natural-language-processing-nlp">8. Natural Language Processing (NLP)</h2>
+<h3 id="8-1-definition-and-scope">8.1 Definition and scope</h3>
+<p><strong>NLP</strong> is the AI field that enables computers to understand, interpret, analyze, and generate human language. It combines:</p>
+<ul>
+<li>linguistics: grammar, syntax, semantics, pragmatics;</li>
+<li>machine learning trained on language corpora;</li>
+<li>deep neural models such as RNN, LSTM, GRU, and Transformers.</li>
+</ul>
+<p><strong>Objectives:</strong></p>
+<ul>
+<li>language understanding: extract meaning from text/speech, e.g., sentiment in a review;</li>
+<li>language generation: produce human-like language, e.g., a chatbot response;</li>
+<li>enable human–machine interaction and reduce linguistic barriers.</li>
+</ul>
+<p><strong>NLP versus NLU:</strong> Natural Language Understanding is a subset within the broader NLP field. NLU includes semantic parsing, relation extraction, paraphrase understanding, sentiment analysis, and dialogue understanding; broader NLP also includes translation, categorization, and generation.</p>
+<h3 id="8-2-six-stage-pipeline-emphasized-in-lectures-case-study">8.2 Six-stage pipeline emphasized in lectures/case study</h3>
+<p>\[
+\text{Raw input}\to\text{Tokenization}\to\text{Stop-word processing}
+\to\text{Feature extraction/embeddings}\to\text{Model training}\to\text{Prediction}
+\]</p>
+<p>Example:</p>
+<ol>
+<li>Input: “I love programming in Python.”</li>
+<li>Tokens: <code>[I, love, programming, in, Python]</code>.</li>
+<li>After illustrative stop-word removal: <code>[love, programming, Python]</code>.</li>
+<li>Convert tokens into numeric embeddings.</li>
+<li>Train a sentiment/topic classifier.</li>
+<li>Output: <strong>Positive</strong>.</li>
+</ol>
+<h3 id="8-3-tokenization">8.3 Tokenization</h3>
+<p>Tokenization splits text into meaningful units such as words/subwords. It does <strong>not</strong> remove stop words, generate embeddings, classify text, or identify named entities.</p>
+<h3 id="8-4-stop-words-and-caveat">8.4 Stop words and caveat</h3>
+<p>Stop words are common words often carrying limited standalone information: “the,” “in,” “on,” “is,” “at,” “of,” “and.” Removal can reduce noise, vocabulary, and computation in traditional systems.</p>
+<p>However, it is task-dependent:</p>
+<ul>
+<li>“I am <strong>not</strong> happy” changes meaning if “not” is deleted.</li>
+<li>modal words such as “should,” “could,” or “would” may distinguish a suggestion from a negative statement.</li>
+</ul>
+<p>Therefore contextual tasks may benefit from retaining stop words.</p>
+<h3 id="8-5-normalization">8.5 Normalization</h3>
+<ul>
+<li><strong>Stemming:</strong> mechanically reduces words to a stem (possibly not a valid word).</li>
+<li><strong>Lemmatization:</strong> maps an inflected word to its dictionary lemma using linguistic knowledge.</li>
+</ul>
+<p>Example: <code>improve</code>, <code>improved</code>, <code>improving</code>, <code>improves</code> → a common base. These reduce vocabulary but do not by themselves understand intent.</p>
+<h3 id="8-6-nlp-applications">8.6 NLP applications</h3>
+<ul>
+<li>sentiment analysis and text classification;</li>
+<li>spam detection;</li>
+<li>machine translation;</li>
+<li>question answering;</li>
+<li>chatbots/dialogue agents;</li>
+<li>speech recognition;</li>
+<li>summarization;</li>
+<li>named entity recognition;</li>
+<li>recommendations and text similarity.</li>
+</ul>
+<hr>
+<h2 id="9-text-features-and-word-embeddings">9. Text features and word embeddings</h2>
+<h3 id="9-1-why-numeric-features-are-necessary">9.1 Why numeric features are necessary</h3>
+<p>Neural/ML models operate on numbers, not raw strings. <strong>Feature extraction</strong> converts language into numeric representations.</p>
+<h3 id="9-2-bag-of-words-and-tf-idf">9.2 Bag of Words and TF–IDF</h3>
+<p><strong>Bag of Words (BoW)</strong> represents a document using vocabulary counts and ignores word order/context.</p>
+<p><strong>TF–IDF</strong> increases the weight of terms that are frequent in a document but uncommon across the corpus:</p>
+<p>\[
+\operatorname{tfidf}(t,d)=\operatorname{tf}(t,d)\log\left(\frac{N}{\operatorname{df}(t)}\right)
+\]</p>
+<p>They are fast and useful baselines, but sparse, high-dimensional, and weak at semantics/context.</p>
+<h3 id="9-3-word-embeddings">9.3 Word embeddings</h3>
+<p>A <strong>word embedding</strong> is a dense, low-dimensional vector representation in which semantic/syntactic relationships are encoded geometrically. Typical classic dimensions are about 50–300.</p>
+<p>Compared with one-hot encoding:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>One-hot</th>
+<th>Embedding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sparse and vocabulary-sized</td>
+<td>Dense and lower-dimensional</td>
+</tr>
+<tr>
+<td>Equal distance between distinct words</td>
+<td>Similar words can be nearby</td>
+</tr>
+<tr>
+<td>No learned semantics</td>
+<td>Encodes usage/semantic relationships</td>
+</tr>
+</tbody>
+</table></div>
+<p>Examples:</p>
+<ul>
+<li><code>dog</code> and <code>puppy</code> should be closer than <code>dog</code> and <code>table</code>.</li>
+<li>The classic analogy is approximately \(v(king)-v(man)+v(woman)\approx v(queen)\).</li>
+<li>“king and queen are close” and “apple and banana are close” share a relation structure but contain different entity types; embeddings help preserve those distinctions.</li>
+</ul>
+<h3 id="9-4-embedding-methods">9.4 Embedding methods</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Central idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Word2Vec CBOW</td>
+<td>Predict a target word from surrounding context.</td>
+</tr>
+<tr>
+<td>Word2Vec Skip-gram</td>
+<td>Predict surrounding context from a target word.</td>
+</tr>
+<tr>
+<td>GloVe</td>
+<td>Uses global word co-occurrence statistics.</td>
+</tr>
+<tr>
+<td>FastText</td>
+<td>Incorporates subword/character n-gram information; helps with morphology and rare words.</td>
+</tr>
+<tr>
+<td>ELMo</td>
+<td>Contextual embeddings from a language model.</td>
+</tr>
+<tr>
+<td>BERT/GPT-family representations</td>
+<td>Transformer-based contextual representations; the same word may have different vectors in different contexts.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Example of context: “river <strong>bank</strong>” and “bank account” should give different contextual representations for “bank.”</p>
+<h3 id="9-5-benefits-and-uses">9.5 Benefits and uses</h3>
+<ul>
+<li>dimensionality reduction and lower computation than one-hot vectors;</li>
+<li>semantic and syntactic similarity;</li>
+<li>reusable pretrained input features;</li>
+<li>improved accuracy and reduced training time;</li>
+<li>text similarity, sentiment, translation, QA, and recommendation.</li>
+</ul>
+<hr>
+<h2 id="10-transfer-learning-and-pretrained-nlp-models">10. Transfer learning and pretrained NLP models</h2>
+<h3 id="10-1-definition">10.1 Definition</h3>
+<p><strong>Transfer learning</strong> reuses knowledge from a model pretrained on a large/general dataset for a different but related downstream task. Usually, the model is then <strong>fine-tuned</strong> on a smaller task-specific dataset.</p>
+<h3 id="10-2-process">10.2 Process</h3>
+<ol>
+<li><strong>Pretraining:</strong> train on a massive corpus such as Wikipedia/Common Crawl using a general objective.</li>
+<li><strong>Adaptation/fine-tuning:</strong> continue training on a labeled domain/task dataset, often with a task-specific output head.</li>
+</ol>
+<p>Common pretraining objectives stated:</p>
+<ul>
+<li>causal/next-token language modeling (associated with GPT);</li>
+<li>masked-language modeling (associated with BERT);</li>
+<li>next-sentence prediction (used in original BERT pretraining).</li>
+</ul>
+<h3 id="10-3-why-transfer-learning">10.3 Why transfer learning?</h3>
+<ul>
+<li>overcomes limited labeled task data;</li>
+<li>reduces training time and compute;</li>
+<li>reuses rich linguistic/contextual knowledge;</li>
+<li>generalizes better;</li>
+<li>often produces state-of-the-art downstream performance.</li>
+</ul>
+<p>Training a large NLP model from scratch demands vast corpora, memory, and high-performance compute; this is why the instructor strongly recommends pretrained models.</p>
+<h3 id="10-4-models-named-in-the-source">10.4 Models named in the source</h3>
+<ul>
+<li>BERT (Bidirectional Encoder Representations from Transformers);</li>
+<li>GPT;</li>
+<li>T5;</li>
+<li>RoBERTa;</li>
+<li>DistilBERT;</li>
+<li>XLNet;</li>
+<li>Word2Vec and GloVe as pretrained embedding resources.</li>
+</ul>
+<p>Downstream uses include sentiment analysis, classification, translation, summarization, and question answering.</p>
+<hr>
+<h2 id="11-attention-mechanisms">11. Attention mechanisms</h2>
+<h3 id="11-1-core-idea">11.1 Core idea</h3>
+<p><strong>Attention</strong> lets a model give different relevance weights to different input elements instead of treating every element equally. It mimics selective human focus and is especially useful for long sequences or complex inputs.</p>
+<p>Benefits emphasized:</p>
+<ul>
+<li>focuses computation on relevant information;</li>
+<li>captures long-range dependencies;</li>
+<li>improves accuracy and efficiency;</li>
+<li>handles variable-length inputs;</li>
+<li>produces attention weights that can provide some interpretive insight;</li>
+<li>works across text, speech, images, video, and graphs.</li>
+</ul>
+<blockquote>
+<p><strong>Caveat:</strong> Attention weights can be inspected, but they are not automatically a complete or causal explanation of every prediction.</p>
+</blockquote>
+<h3 id="11-2-query-key-value-formulation">11.2 Query, key, value formulation</h3>
+<p>For query matrix \(Q\), key matrix \(K\), and value matrix \(V\):</p>
+<p>\[
+\operatorname{Attention}(Q,K,V)
+=
+\operatorname{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
+\]</p>
+<p>Steps:</p>
+<ol>
+<li>identify/project queries, keys, and values;</li>
+<li>compute similarity/alignment scores (dot product, scaled dot product, or additive scoring);</li>
+<li>apply softmax to normalize scores into attention weights;</li>
+<li>compute the weighted sum of values.</li>
+</ol>
+<p>Scaling by \(\sqrt{d_k}\) prevents large dot products from driving softmax into saturation.</p>
+<h3 id="11-3-types">11.3 Types</h3>
+<ul>
+<li><strong>Additive attention:</strong> a small feed-forward network scores query–key compatibility.</li>
+<li><strong>Dot-product attention:</strong> uses query–key dot products.</li>
+<li><strong>Scaled dot-product attention:</strong> scales by \(\sqrt{d_k}\); central to Transformers.</li>
+<li><strong>Self-attention:</strong> queries, keys, and values come from the same sequence.</li>
+<li><strong>Multi-head attention:</strong> performs multiple attention operations in parallel subspaces:</li>
+</ul>
+<p>\[
+\operatorname{MHA}(Q,K,V)=\operatorname{Concat}(head_1,\dots,head_H)W^O
+\]</p>
+<p>This captures diverse relationships simultaneously.</p>
+<h3 id="11-4-sparse-attention">11.4 Sparse attention</h3>
+<p>Dense self-attention normally has \(O(n^2)\) pairwise score complexity. Sparse attention retains only selected connections.</p>
+<p>Exam-safe pipeline:</p>
+<ol>
+<li>compute/select relevance structure;</li>
+<li>retain top-\(k\) or allowed tokens/connections;</li>
+<li>normalize over the retained set;</li>
+<li>compute the weighted combination.</li>
+</ol>
+<blockquote>
+<p><strong>Trap:</strong> Normalize over all tokens, prune, and fail to renormalize—the weights no longer sum to one over retained tokens and output scale depends on pruning.</p>
+</blockquote>
+<h3 id="11-5-domain-applications">11.5 Domain applications</h3>
+<p><strong>Machine translation:</strong> while generating each target word, focus on relevant source words.</p>
+<p><strong>Text:</strong> emphasize sentiment-bearing/contextual words.</p>
+<p><strong>Computer vision:</strong> visual attention supports image recognition and object detection; Vision Transformers and CNN–attention hybrids improve spatial understanding.</p>
+<p><strong>Graph neural networks:</strong> assign different importance to nodes or edges.</p>
+<p><strong>Speech recognition:</strong> focus on critical audio regions, handle variable duration, and improve transcription in background noise or multi-speaker settings. Attention prioritizes relevant signals; it does not literally perform noise removal by itself.</p>
+<p><strong>Action recognition:</strong> temporal attention selects critical frames/motion patterns; spatial attention selects important regions. Challenges include high-dimensional video, motion variation, lighting, and background. Uses include surveillance, sports, and interactive systems.</p>
+<p><strong>Future directions:</strong> Vision Transformers, CNN–attention hybrids, multimodal alignment across images/text/audio, autonomous driving, diagnostics, and personalized AI.</p>
+<hr>
+<h2 id="12-sentinel-satellite-classification-application">12. Sentinel satellite classification application</h2>
+<p>Attention can focus on key image regions to improve land-use, vegetation, environmental-change, disaster-response, and feature classification.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Mission</th>
+<th>Data/focus stated</th>
+<th>Example classification/monitoring uses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sentinel-1</td>
+<td>Radar/SAR imaging</td>
+<td>Surface-water mapping, deforestation, urban classification, land deformation/earthquakes</td>
+</tr>
+<tr>
+<td>Sentinel-2</td>
+<td>Multispectral optical imagery</td>
+<td>Vegetation health, land cover, crop monitoring, deforestation, water bodies</td>
+</tr>
+<tr>
+<td>Sentinel-3</td>
+<td>Ocean/land monitoring; optical, radar-altimetry, thermal infrared</td>
+<td>Ocean chlorophyll, sea-surface temperature, land-surface temperature</td>
+</tr>
+<tr>
+<td>Sentinel-4/5</td>
+<td>Atmospheric monitoring</td>
+<td>Air quality; CO₂, NO₂, methane/greenhouse-gas monitoring</td>
+</tr>
+<tr>
+<td>Sentinel-6</td>
+<td>Radar altimetry/sea-level monitoring</td>
+<td>Oceanographic classification, sea-level rise, coastal management</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Classification approaches:</strong></p>
+<ul>
+<li>supervised: labeled data with Random Forest, SVM, k-NN, CNN/deep learning;</li>
+<li>unsupervised: k-means, hierarchical clustering, Gaussian mixture models;</li>
+<li>hybrid approaches.</li>
+</ul>
+<p><strong>Challenges:</strong> high dimensionality, cloud obstruction of optical imagery (preprocessing or cloud-penetrating Sentinel-1 SAR can help), and temporal variability.</p>
+<p><strong>Broader uses:</strong> agriculture, forestry, urban planning, water resources, disaster management, and environmental/socioeconomic decision support.</p>
+<hr>
+<h2 id="13-explainability-for-sequence-models">13. Explainability for sequence models</h2>
+<p><strong>Interpretability</strong> means obtaining insight into why a model produced a prediction.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Gradient-based explanation</th>
+<th>Attention-based architectural signal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Computed after/around a prediction using derivatives</td>
+<td>Generated within the forward pass</td>
+</tr>
+<tr>
+<td>Post hoc saliency/sensitivity</td>
+<td>Explicit learned importance weights per time step</td>
+</tr>
+<tr>
+<td>PyTorch autograd can produce it</td>
+<td>Requires an attention component</td>
+</tr>
+<tr>
+<td>Does not make the base architecture inherently interpretable</td>
+<td>Offers built-in inspectable signals, though not guaranteed causal explanation</td>
+</tr>
+</tbody>
+</table></div>
+<p>Changing the optimizer, initialization, or use of synthetic data does not make a model architecturally interpretable.</p>
+<hr>
+<h2 id="14-practical-pytorch-rnn-with-attention-walkthrough">14. Practical PyTorch RNN-with-attention walkthrough</h2>
+<h3 id="14-1-environment-and-data">14.1 Environment and data</h3>
+<p>The demonstration uses a Google Colab <code>.ipynb</code> notebook. Colab allows code/text cells, data upload through the file pane, and execution indicators. The lecture distinguishes:</p>
+<ul>
+<li><strong>synthetic dataset:</strong> generated for the experiment/project;</li>
+<li><strong>real dataset:</strong> collected from a real environment.</li>
+</ul>
+<h3 id="14-2-libraries">14.2 Libraries</h3>
+<ul>
+<li><code>torch</code>: tensors and core PyTorch operations;</li>
+<li><code>torch.nn</code>: layers, loss functions, model utilities;</li>
+<li><code>torch.optim</code>: optimizers such as SGD and Adam;</li>
+<li><code>numpy</code>: array/numerical operations;</li>
+<li><code>matplotlib</code>: visualization;</li>
+<li><code>torchvision</code> (mentioned): pretrained models, datasets, and transformations for images.</li>
+</ul>
+<p>PyTorch features emphasized:</p>
+<ul>
+<li>GPU-accelerated tensors similar to NumPy arrays;</li>
+<li>matrix multiplication, indexing, reshaping;</li>
+<li>dynamic computation graphs built during execution;</li>
+<li>automatic differentiation (<code>autograd</code>) for gradients/backpropagation.</li>
+</ul>
+<blockquote>
+<p><strong>Source inconsistency:</strong> The code walkthrough imports and describes PyTorch, although the closing narration accidentally calls it TensorFlow/Keras. Treat the demonstrated framework as PyTorch.</p>
+</blockquote>
+<h3 id="14-3-synthetic-sequence-generation">14.3 Synthetic sequence generation</h3>
+<p>The function takes sequence length and batch size, creates random input sequences with <code>torch.rand</code>, creates random binary target labels with <code>torch.randint</code>, and returns inputs and targets.</p>
+<h3 id="14-4-model-architecture">14.4 Model architecture</h3>
+<p>An <code>ExplainableRNN(nn.Module)</code> class contains:</p>
+<ol>
+<li>an RNN layer parameterized by input and hidden sizes;</li>
+<li>a linear attention-scoring layer from hidden size to 1;</li>
+<li>a fully connected output layer;</li>
+<li>a sigmoid for binary probability in the lecture implementation.</li>
+</ol>
+<p>If the RNN returns</p>
+<p>\[
+H=[h_1,\ldots,h_T]\in\mathbb{R}^{B\times T\times H},
+\]</p>
+<p>the attention calculation is conceptually:</p>
+<p>\[
+e_t=w_a^\top\tanh(h_t)+b_a,
+\qquad
+\alpha_t=\frac{e^{e_t}}{\sum_j e^{e_j}},
+\]</p>
+<p>\[
+c=\sum_{t=1}^{T}\alpha_t h_t,
+\qquad
+\hat y=\sigma(W_cc+b_c).
+\]</p>
+<p>The model returns both prediction \(\hat y\) and attention weights \(\alpha\).</p>
+<h3 id="14-5-training-configuration-stated">14.5 Training configuration stated</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Hyperparameter</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sequence length</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td>Batch size</td>
+<td style="text-align: right;">32</td>
+</tr>
+<tr>
+<td>Input size</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Hidden size</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr>
+<td>Output size</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Epochs</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td>Learning rate</td>
+<td style="text-align: right;">0.01</td>
+</tr>
+<tr>
+<td>Loss</td>
+<td style="text-align: right;">Binary cross-entropy (<code>BCELoss</code>)</td>
+</tr>
+<tr>
+<td>Optimizer</td>
+<td style="text-align: right;">Adam</td>
+</tr>
+</tbody>
+</table></div>
+<p>Training loop:</p>
+<ol>
+<li>generate inputs and targets;</li>
+<li>forward pass to predictions and attention weights;</li>
+<li>compute BCE loss;</li>
+<li>clear old gradients (<code>optimizer.zero_grad()</code>);</li>
+<li>backpropagate (<code>loss.backward()</code>);</li>
+<li>update parameters (<code>optimizer.step()</code>);</li>
+<li>print epoch and loss.</li>
+</ol>
+<p>Observed losses were roughly 0.68–0.70. The lecture says rerunning should lower loss; exam-safe caveat: random batches and stochastic optimization mean loss is not guaranteed to decrease on every run/epoch. A value near \(\ln 2\approx0.693\) is chance-level BCE for balanced random binary labels, and if labels are independent of inputs the model cannot learn a real predictive pattern.</p>
+<h3 id="14-6-binary-classification-logit-sigmoid-bce">14.6 Binary classification: logit, sigmoid, BCE</h3>
+<p>A <strong>logit</strong> is an unrestricted score in \(( -\infty,+\infty )\). Sigmoid converts it to probability:</p>
+<p>\[
+\sigma(a)=\frac{1}{1+e^{-a}}.
+\]</p>
+<p>Binary cross-entropy:</p>
+<p>\[
+L=-\left[y\log(p)+(1-y)\log(1-p)\right].
+\]</p>
+<ul>
+<li><code>BCELoss</code>: input must already be a probability, so use <strong>logit → sigmoid → BCELoss</strong>.</li>
+<li><code>BCEWithLogitsLoss</code>: combines sigmoid and BCE more stably, so <strong>do not apply sigmoid before it</strong>.</li>
+</ul>
+<h3 id="14-7-visualization">14.7 Visualization</h3>
+<p>A visualization function takes inputs, attention weights, targets, and predictions and uses a loop to plot attention weights over sequence positions. Titles include sequence/sample, true label, and prediction; axes and legend make the important time steps visible. One example showed true label 1 and prediction about 0.53.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> A probability of 0.53 is only slightly above the usual 0.5 threshold; it does not establish “good accuracy.” Accuracy must be calculated across an evaluation set.</p>
+</blockquote>
+<hr>
+<h2 id="15-edulingua-case-study">15. EduLingua case study</h2>
+<h3 id="15-1-scenario">15.1 Scenario</h3>
+<p>EduLingua wants an automated student-feedback analyzer. Stakeholders:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Person</th>
+<th>Role</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sarah</td>
+<td>Project manager</td>
+<td>Rapid deployment/MVP</td>
+</tr>
+<tr>
+<td>Rahul</td>
+<td>Lead engineer</td>
+<td>Robustness and maintainability</td>
+</tr>
+<tr>
+<td>Maria</td>
+<td>Data analyst</td>
+<td>Accuracy, semantic features, richer insights</td>
+</tr>
+</tbody>
+</table></div>
+<p>Required categories: <strong>Positive, Negative, Suggestion</strong>. Optional extensions include NER for courses/instructors and later machine translation.</p>
+<h3 id="15-2-sentiment-text-classification">15.2 Sentiment/text classification</h3>
+<p>Text classification assigns predefined labels. Sentiment analysis specifically identifies opinion/emotional polarity.</p>
+<ul>
+<li>“The instructor explained concepts clearly.” → Positive</li>
+<li>“The assignments were confusing.” → Negative</li>
+<li>“Please include more practical exercises.” → Suggestion</li>
+</ul>
+<p>Sentiment analysis is not translation, summarization, embedding generation, or entity extraction.</p>
+<h3 id="15-3-named-entity-recognition">15.3 Named Entity Recognition</h3>
+<p><strong>NER</strong> locates and classifies entities such as people, organizations, locations, dates, course names, and instructor names.</p>
+<p>Example: “Professor Smith taught Python Programming.”</p>
+<ul>
+<li>Professor Smith → Person/Instructor</li>
+<li>Python Programming → Course</li>
+</ul>
+<p>NER enables <strong>aspect-based feedback</strong>, linking opinion to a specific target:</p>
+<blockquote>
+<p>“Professor John explains concepts well, but assignments are too difficult.”</p>
+</blockquote>
+<ul>
+<li>Instructor/Professor John → Positive</li>
+<li>Assignments → Negative</li>
+</ul>
+<p>This is richer than one overall sentiment label but increases development time, computation, testing, and maintenance.</p>
+<h3 id="15-4-options-and-trade-off">15.4 Options and trade-off</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Advantage</th>
+<th>Cost/risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Baseline sentiment-only MVP</td>
+<td>Fast, cheaper, easy to test, meets immediate need</td>
+<td>Less analytical depth</td>
+</tr>
+<tr>
+<td>Add NER now</td>
+<td>Course/instructor-level and aspect-based insights</td>
+<td>More complexity and time</td>
+</tr>
+<tr>
+<td>Add machine translation later</td>
+<td>Multilingual scalability</td>
+<td>Extra engineering/testing; not needed for immediate launch</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="15-5-tf-idf-versus-contextual-embeddings">15.5 TF–IDF versus contextual embeddings</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>TF–IDF</th>
+<th>Contextual embeddings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fast and simple MVP baseline</td>
+<td>More semantic/context-aware</td>
+</tr>
+<tr>
+<td>Ignores order and context</td>
+<td>Same word changes representation by context</td>
+</tr>
+<tr>
+<td>Low initial cost</td>
+<td>More model/compute complexity</td>
+</tr>
+<tr>
+<td>May require later replacement for advanced NER/aspect tasks</td>
+<td>Reusable foundation for sentiment, NER, aspects, translation</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="15-6-technical-debt-and-recommendation">15.6 Technical debt and recommendation</h3>
+<p>If the first system tightly couples TF–IDF to the classifier, later moving to NER/Transformers may require replacing features, retraining, redeployment, and retesting. That accumulated future cost is <strong>technical debt</strong>.</p>
+<p><strong>Best strategic compromise presented by the source:</strong> ship a focused sentiment/suggestion MVP quickly, but use a modular, future-proof architecture—preferably reusable contextual embeddings/pretrained representations—so NER, aspect analysis, and multilingual support can be added without redesigning the entire pipeline.</p>
+<hr>
+<h2 id="16-instructor-q-a-and-emphasis-preserved">16. Instructor Q&amp;A and emphasis preserved</h2>
+<h3 id="q1-on-what-kinds-of-problems-is-a-cnn-used">Q1. On what kinds of problems is a CNN used?</h3>
+<p>Primarily image/picture problems where features are extracted from pixels. Facial recognition, phone unlocking, and image recognition are applications.</p>
+<h3 id="q2-what-is-the-key-difference-between-cnn-and-rnn">Q2. What is the key difference between CNN and RNN?</h3>
+<p>The RNN has a recurrent memory/hidden-state loop for ordered context; a CNN primarily extracts spatial features.</p>
+<h3 id="q3-why-does-an-rnn-need-memory">Q3. Why does an RNN need memory?</h3>
+<p>To retain earlier words/time steps so the sequence can be understood as a whole. Without recurrence, each item would be processed independently.</p>
+<h3 id="q4-what-is-sequential-data">Q4. What is sequential data?</h3>
+<p>Data where order matters and each step may depend on the previous step: sentences, time series, audio, sensors, and video frames.</p>
+<h3 id="q5-what-causes-vanishing-gradient">Q5. What causes vanishing gradient?</h3>
+<p>Repeated chain-rule multiplication of small derivatives during BPTT makes the gradient approach zero; early steps stop receiving useful updates.</p>
+<h3 id="q6-what-causes-exploding-gradient">Q6. What causes exploding gradient?</h3>
+<p>Repeated multiplication of large factors makes gradients grow excessively, causing unstable or failed training.</p>
+<h3 id="q7-why-lstm-and-gru">Q7. Why LSTM and GRU?</h3>
+<p>They are gated upgrades to vanilla RNNs that regulate information flow and mitigate memory/gradient difficulties. LSTM favors long/complex sequences; GRU favors a lighter/faster architecture.</p>
+<h3 id="q8-why-is-nlp-used-with-rnn-lstm-gru">Q8. Why is NLP used with RNN/LSTM/GRU?</h3>
+<p>It processes language so the system can represent and understand words, grammar, sentence structure, and meaning. Converting words into numerical vectors is one step in that broader process—not the whole purpose of NLP.</p>
+<h3 id="q9-why-use-transfer-learning-in-nlp">Q9. Why use transfer learning in NLP?</h3>
+<p>Training a large language model from scratch requires enormous data, compute, memory, and time. Pretrained models such as BERT/GPT or embeddings such as GloVe can be adapted to the target task.</p>
+<hr>
+<h2 id="17-exam-traps-and-precision-corrections">17. Exam traps and precision corrections</h2>
+<ol>
+<li><strong>GRU gates:</strong> update and reset—not input/output/forget.</li>
+<li><strong>LSTM gates:</strong> forget, input, output, plus a distinct cell state.</li>
+<li><strong>Hidden state:</strong> compressed temporal representation, not verbatim storage of every prior token.</li>
+<li><strong>BPTT:</strong> recurrence is unfolded through time; ordinary feed-forward backpropagation language alone is incomplete.</li>
+<li><strong>Vanishing vs exploding:</strong> tiny products cause vanishing; large products cause exploding.</li>
+<li><strong>BCELoss vs BCEWithLogitsLoss:</strong> the first needs probabilities; the second takes logits.</li>
+<li><strong>Attention:</strong> prioritizes relevant portions; it does not automatically remove noise and is not always a faithful causal explanation.</li>
+<li><strong>Sparse attention:</strong> prune/select before normalizing over retained entries, or renormalize after pruning.</li>
+<li><strong>Tokenization:</strong> only segmentation; it is not stop-word removal, embedding, NER, or classification.</li>
+<li><strong>NER vs sentiment:</strong> NER identifies entities; sentiment classifies opinion. They complement one another.</li>
+<li><strong>Stop-word removal:</strong> not always desirable—negations and modals can carry crucial meaning.</li>
+<li><strong>Static vs contextual embedding:</strong> Word2Vec/GloVe usually give one vector per word type; BERT-like models vary by context.</li>
+<li><strong>Transfer learning:</strong> reuse and adapt pretrained knowledge; it is not merely copying a final model without task adaptation.</li>
+<li><strong>Loss near 0.693:</strong> for balanced random binary targets this is chance behavior, not evidence of successful learning.</li>
+<li><strong>Framework:</strong> despite a closing slip mentioning TensorFlow/Keras, the implementation described uses PyTorch.</li>
+<li><strong>Performance claims:</strong> GRU is often faster and LSTM often stronger for long dependencies, but neither is universally superior.</li>
+</ol>
+<hr>
+<h2 id="18-likely-exam-questions-with-answer-outlines">18. Likely exam questions with answer outlines</h2>
+<h3 id="18-1-define-an-rnn-and-explain-its-architecture">18.1 Define an RNN and explain its architecture.</h3>
+<p>Define sequential processing, shared recurrent weights, current input plus prior hidden state, feedback/memory loop, equations, and common applications.</p>
+<h3 id="18-2-explain-bptt-and-vanishing-exploding-gradients">18.2 Explain BPTT and vanishing/exploding gradients.</h3>
+<p>Discuss unrolling, chain-rule products, derivative magnitude below/above 1, consequences, and remedies such as gated cells and clipping.</p>
+<h3 id="18-3-compare-rnn-gru-and-lstm">18.3 Compare RNN, GRU, and LSTM.</h3>
+<p>Use the comparison table: memory states, gates, parameter count, speed, computational requirements, and long-range capability.</p>
+<h3 id="18-4-explain-lstm-gates-with-equations">18.4 Explain LSTM gates with equations.</h3>
+<p>Describe forget, input, candidate cell, cell update, output gate, and hidden state; connect the cell pathway to long-term learning.</p>
+<h3 id="18-5-explain-gru-gates-with-equations">18.5 Explain GRU gates with equations.</h3>
+<p>Describe update, reset, candidate, and interpolated hidden state; mention no separate cell state and lower cost.</p>
+<h3 id="18-6-define-nlp-and-explain-its-pipeline">18.6 Define NLP and explain its pipeline.</h3>
+<p>Input → tokenization → context-sensitive stop-word/normalization decisions → numerical features/embeddings → training → prediction. Add tasks and caveats.</p>
+<h3 id="18-7-what-are-word-embeddings-compare-them-with-one-hot-encoding">18.7 What are word embeddings? Compare them with one-hot encoding.</h3>
+<p>Dense, low-dimensional, semantic vectors versus sparse vocabulary-sized vectors; describe Word2Vec, GloVe, FastText, and contextual embeddings.</p>
+<h3 id="18-8-explain-transfer-learning-in-nlp">18.8 Explain transfer learning in NLP.</h3>
+<p>Pretraining on massive corpora, fine-tuning on downstream task, reasons (data/compute/time/generalization), objectives, and named models.</p>
+<h3 id="18-9-explain-scaled-dot-product-and-multi-head-attention">18.9 Explain scaled dot-product and multi-head attention.</h3>
+<p>Write \(\operatorname{softmax}(QK^T/\sqrt{d_k})V\); define Q/K/V, normalization, weighted sum, and parallel heads.</p>
+<h3 id="18-10-how-does-attention-improve-speech-or-machine-translation">18.10 How does attention improve speech or machine translation?</h3>
+<p>It dynamically aligns/focuses on relevant time segments/source words, supporting variable lengths and long-range context; it does not directly guarantee noise removal.</p>
+<h3 id="18-11-analyze-the-edulingua-decision">18.11 Analyze the EduLingua decision.</h3>
+<p>Recommend an MVP with a modular pretrained/contextual foundation; explain the trade-off among delivery speed, robustness, analytical depth, NER, aspects, translation, and technical debt.</p>
+<h3 id="18-12-explain-the-practical-rnn-attention-model">18.12 Explain the practical RNN-attention model.</h3>
+<p>Synthetic sequences → RNN outputs → learned attention scores → softmax weights → context vector → FC/sigmoid → BCE → Adam/BPTT; visualize weights and evaluate on held-out data.</p>
+<hr>
+<h2 id="19-rapid-revision">19. Rapid revision</h2>
+<h3 id="19-1-one-line-definitions">19.1 One-line definitions</h3>
+<ul>
+<li><strong>Sequential data:</strong> ordered data whose meaning/prediction depends on position and history.</li>
+<li><strong>RNN:</strong> network that passes a hidden state through time.</li>
+<li><strong>BPTT:</strong> backpropagation through an RNN unrolled over time.</li>
+<li><strong>Vanishing gradient:</strong> gradients shrink toward zero across many steps.</li>
+<li><strong>Exploding gradient:</strong> gradients grow to unstable magnitudes.</li>
+<li><strong>LSTM:</strong> gated RNN with forget/input/output gates and cell state.</li>
+<li><strong>GRU:</strong> lighter gated RNN with update/reset gates and no separate cell state.</li>
+<li><strong>NLP:</strong> AI methods for understanding, analyzing, and generating human language.</li>
+<li><strong>Embedding:</strong> dense numerical representation preserving learned relationships.</li>
+<li><strong>Transfer learning:</strong> adapt pretrained knowledge to a related task.</li>
+<li><strong>Attention:</strong> learned relevance weighting over input elements.</li>
+<li><strong>NER:</strong> detect and label entities such as people, organizations, locations, and courses.</li>
+</ul>
+<h3 id="19-2-must-memorize-formulas">19.2 Must-memorize formulas</h3>
+<p>\[
+h_t=\phi(W_{xh}x_t+W_{hh}h_{t-1}+b_h)
+\]</p>
+<p>\[
+c_t=f_t\odot c_{t-1}+i_t\odot\tilde c_t,
+\qquad h_t=o_t\odot\tanh(c_t)
+\]</p>
+<p>\[
+h_t=z_t\odot h_{t-1}+(1-z_t)\odot\tilde h_t
+\]</p>
+<p>\[
+\operatorname{Attention}(Q,K,V)=
+\operatorname{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+\]</p>
+<p>\[
+\sigma(x)=\frac{1}{1+e^{-x}}
+\]</p>
+<p>\[
+L_{BCE}=-[y\log p+(1-y)\log(1-p)]
+\]</p>
+<h3 id="19-3-thirty-second-comparison">19.3 Thirty-second comparison</h3>
+<ul>
+<li><strong>RNN:</strong> simplest; hidden-state recurrence; weak long memory.</li>
+<li><strong>GRU:</strong> update + reset; no cell state; fewer parameters; efficient.</li>
+<li><strong>LSTM:</strong> forget + input + output; cell state; heavier; strong long-range memory.</li>
+<li><strong>Attention/Transformer:</strong> direct relevance-weighted access across positions; multi-head attention captures different relationships.</li>
+</ul>
+<h3 id="19-4-final-checklist">19.4 Final checklist</h3>
+<ul>
+<li>Can I distinguish sequential and non-sequential data?</li>
+<li>Can I draw/unroll an RNN and state the hidden-state equation?</li>
+<li>Can I derive why \(0.5^{50}\) vanishes and why values above 1 can explode?</li>
+<li>Can I name every LSTM and GRU gate without mixing them?</li>
+<li>Can I explain tokenization, stop words, features, embeddings, training, and prediction in order?</li>
+<li>Can I compare one-hot, TF–IDF, static embeddings, and contextual embeddings?</li>
+<li>Can I explain pretraining versus fine-tuning?</li>
+<li>Can I write the scaled dot-product attention formula and explain Q/K/V?</li>
+<li>Can I state the correct sigmoid/loss order?</li>
+<li>Can I analyze the EduLingua stakeholder trade-off and technical debt?</li>
+</ul>
+<h2 id="review-week-augmentation-clinical-sequence-classification-synthesis">Review Week augmentation: clinical sequence-classification synthesis</h2>
+<h3 id="high-yield-recurrent-model-distinctions">High-yield recurrent-model distinctions</h3>
+<ul>
+<li>Vanilla RNN update concept: \(x_t+h_{t-1}\rightarrow h_t\); BPTT unrolls recurrence and propagates gradients through time. In a long clinical report, early history or negation can alter a much later finding; a vanilla RNN may receive too little learning signal at early positions because of vanishing gradients.</li>
+<li>GRU update gate balances retained hidden-state information against new information; reset gate controls how much old information enters candidate construction. A GRU has no separate LSTM-style cell state and is often simpler/more efficient. <strong>A GRU retention question points to the update gate, not a forget gate.</strong></li>
+<li>LSTM uses a dedicated cell state for long-term information. Forget gate removes old cell content, input gate stores new content, and output gate exposes cell information through the hidden state. Hidden state and cell state are not interchangeable.</li>
+<li>Memory shortcut: RNN—hidden state; GRU—update/reset; LSTM—forget/input/output plus cell state.</li>
+</ul>
+<h3 id="preprocessing-and-representation-corrections">Preprocessing and representation corrections</h3>
+<ul>
+<li>Tokenization may operate at word, subword, character, or sentence level and must not be confused with embedding.</li>
+<li>Stop-word removal must be domain-aware: removing “no” from “no evidence of malignancy” reverses the clinical meaning.</li>
+<li>With a 10,000-word vocabulary, a one-hot vector contains one 1 and 9,999 zeros: it is sparse, high-dimensional, and does not encode similarity such as <em>malignant</em> ≈ <em>cancerous</em>. Dense embeddings are compact and can encode semantic proximity.</li>
+<li>Word2Vec: CBOW predicts a target from context; skip-gram predicts context from a target. GloVe uses global word–word co-occurrence. FastText uses character/subword n-grams and helps with morphology, rare words, and OOV-like cases. ELMo produces contextual vectors using a deep bidirectional language model. Word2Vec/GloVe are normally static; ELMo and Transformer encoders are contextual. The word “bank” illustrates context dependence.</li>
+</ul>
+<h3 id="attention-corrections-and-implementation-pipeline">Attention corrections and implementation pipeline</h3>
+<ul>
+<li>Q is what is sought, K describes matching/relevance, and V is the information aggregated:
+  \[
+  \operatorname{Attention}(Q,K,V)=\operatorname{softmax}\!\left(\frac{QK^T}{\sqrt{d_k}}\right)V.
+  \]
+  \(QK^T\) gives compatibility, scaling prevents extreme dot products, softmax yields non-negative weights summing to one, and those weights aggregate values. Q is not a prediction, and attention softmax is not the final binary classifier.</li>
+<li>Multi-head attention runs learned heads in parallel, concatenates their outputs, and applies a linear transform. Different heads can capture syntactic, semantic, positional, and long-distance relations; its purpose is not sequence-length reduction or removal of positional information.</li>
+<li>An LSTM with self-attention remains an attention-augmented recurrent model, not a pure Transformer. The LSTM supplies recurrent memory; attention supplies dynamic relevance. Transformers are attention-centered and do not require traditional recurrence.</li>
+<li>Clinical triage pipeline: report → domain-aware tokenization/preprocessing → contextual embeddings → LSTM hidden states → Q/K/V attention → scaled scores → softmax → weighted representation → classifier → probability → chosen threshold → high/low-risk class.</li>
+<li>PyTorch training: tensor input (commonly batch × sequence length × embedding dimension, subject to configuration) → forward pass/logit or probability → BCE loss → backward/autograd → Adam update. <code>BCELoss</code> expects probabilities; <code>BCEWithLogitsLoss</code> accepts raw logits and combines sigmoid with BCE more stably. The operational threshold need not be 0.5.</li>
+<li>Attention-highlighted phrases are model-generated relevance indicators, not proof of causal reasoning; use them alongside validation and other explanation methods.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-3.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 3: Convolutional Neural Networks, Transfer…</span>
+      </a>
+      <a href="week-5.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 5: RBMs, Deep Belief Networks, Autoencoders,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>CSR · Week 4 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">CSR</span>
+      <span class="brand-title">Week 4</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html" selected>CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Corporate Social Responsibility (CSR) and Sustainability
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        History, Evolution, Practice and Future of CSR
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Ethics of CSR, Corporate Citizenship, Philanthropy, Government,…
+      </a>
+      <a class="is-active" href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Globalization, International CSR, Triple Bottom Line and CSR in Finance
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        CSR: Scope, Benefits, Importance, Stakeholders, Indian Initiatives…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        CSR in Sectors, Drivers, Corporate Initiatives and Governance
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        CSR, Sustainable Operations, Logistics, Sustainability, ESG and…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Environment, Natural Resources, SDGs, Environmental Protection, EIA…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Global Warming, Climate Change, Carbon Management and Environmental…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        CSR and Sustainability
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Environmental and Energy Management
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Water Management, Waste Management, Sustainable Packaging and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Renewable Energy
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Solar PV, Renewable-Energy Companies, Pollution, and Social…
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        CSR and Sustainability
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">CSR · Week 4</p>
+        <h1 class="page-title">Globalization, International CSR, Triple Bottom Line and CSR in Finance</h1>
+        <p class="page-meta">Week 4 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#how-to-use-these-notes">How to use these notes</a></li>
+      <li><a href="#1-week-overview">1. Week overview</a></li>
+      <li><a href="#2-globalization-and-csr">2. Globalization and CSR</a></li>
+      <li><a href="#3-triple-bottom-line-tbl">3. Triple Bottom Line (TBL)</a></li>
+      <li><a href="#4-measuring-tbl-and-esg-performance">4. Measuring TBL and ESG performance</a></li>
+      <li><a href="#5-riverbend-textiles-case-study">5. Riverbend Textiles case study</a></li>
+      <li><a href="#6-csr-in-the-finance-sector">6. CSR in the finance sector</a></li>
+      <li><a href="#7-international-csr-icsr">7. International CSR (ICSR)</a></li>
+      <li><a href="#8-csr-governance-through-charitable-trusts">8. CSR governance through charitable trusts</a></li>
+      <li><a href="#9-globalization-in-india">9. Globalization in India</a></li>
+      <li><a href="#10-live-class-application-steelmax-european-carbon-rules-and-international-csr">10. Live-class application: SteelMax, European carbon rules and international CSR</a></li>
+      <li><a href="#11-one-health-instructor-s-food-for-thought">11. One Health — instructor&amp;rsquo;s “food for thought”</a></li>
+      <li><a href="#12-integrated-frameworks-and-memory-maps">12. Integrated frameworks and memory maps</a></li>
+      <li><a href="#13-exam-preparation">13. Exam preparation</a></li>
+      <li><a href="#14-rapid-revision-sheet">14. Rapid revision sheet</a></li>
+      <li><a href="#review-week-augmentation">Review Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="how-to-use-these-notes">How to use these notes</h2>
+<p>These notes consolidate the five recorded lectures, the quiz/case-study material, and the live-class discussion. They retain the instructor&rsquo;s definitions, arguments, examples and areas of emphasis while removing timestamps, LMS messages, greetings and repeated wording.</p>
+<h2 id="1-week-overview">1. Week overview</h2>
+<p>The week connects five themes:</p>
+<ol>
+<li>Globalization and CSR</li>
+<li>Triple Bottom Line (TBL)</li>
+<li>CSR in the finance sector</li>
+<li>International CSR (ICSR) and its framework</li>
+<li>Globalization in India</li>
+</ol>
+<p>The unifying idea is that business success cannot be assessed only through profit. Global expansion creates wider economic opportunity, but also wider responsibility for people, society, human rights, supply chains and the natural environment.</p>
+<hr>
+<h2 id="2-globalization-and-csr">2. Globalization and CSR</h2>
+<h3 id="2-1-meaning-of-globalization">2.1 Meaning of globalization</h3>
+<p>Globalization is the process of cross-border exchange and the relatively free flow of resources among countries. It creates worldwide integration of:</p>
+<ul>
+<li>technology;</li>
+<li>ideas, information, data and knowledge;</li>
+<li>capital and cash;</li>
+<li>people and human resources;</li>
+<li>goods, services and trade; and</li>
+<li>culture.</li>
+</ul>
+<p>It establishes or enables domestic organizations to operate in foreign countries through movement of capital, trade, information, culture and people. It is a business-expansion phenomenon that mobilizes resources among nations so that they can be used more fully for global growth.</p>
+<p><strong>Instructor example — Apple iPhone:</strong> Apple is a US company, but many iPhone components come from Asian, especially Southeast Asian, countries. A product may therefore embody a global supply network.</p>
+<p>Everyday evidence of globalization includes foreign products in Indian markets and products ordered through e-commerce portals arriving from different countries.</p>
+<h3 id="2-2-core-characteristics">2.2 Core characteristics</h3>
+<h4 id="free-trade">Free trade</h4>
+<ul>
+<li>Countries buy and sell goods across borders with reduced government interference.</li>
+<li>Trade growth can increase cash inflow, corporate profit, GDP and GNP and can help national economies flourish.</li>
+<li>The lecture treats the removal of economic, social and geographical barriers as a central pursuit of globalization.</li>
+</ul>
+<h4 id="liberalization">Liberalization</h4>
+<p>Liberalization means freedom for corporations or businesspeople to establish business ventures, trade or commerce domestically or abroad. It lets industrialists operate across geographies.</p>
+<p>Examples mentioned: Google, Samsung, Xiaomi/MI, Apple and Nestlé. The Indian smartphone market illustrates how liberalization allows foreign brands, including Chinese firms, to establish a strong presence.</p>
+<h4 id="economic-globalization">Economic globalization</h4>
+<ul>
+<li>Integrates domestic economies with the world economy.</li>
+<li>Increases economic interdependence.</li>
+<li>Accelerates exchange of goods, services, technology, data and capital.</li>
+<li>Requires attention to taxes and tariffs governing international trade.</li>
+</ul>
+<h4 id="connectivity">Connectivity</h4>
+<p>Digital connectivity allows people and firms in different places to exchange information, ideas and culture freely. In an era of digitization, distance is less of a constraint.</p>
+<h4 id="collaboration">Collaboration</h4>
+<p>Globalization encourages entrepreneurs and corporations to share expertise and knowledge. Collaboration can produce technological advancement, modernization, rapid development, innovation and solutions to global challenges. The instructor linked this to Industry 4.0 and to partnerships and alliances in CSR.</p>
+<h4 id="cultural-globalization">Cultural globalization</h4>
+<p>Cultural globalization is the transmission of values, ideas, meanings and social behaviour across national and regional borders. A firm entering another country must understand local people and culture. Cultural exchange can strengthen relationships, but it also makes contextual sensitivity essential.</p>
+<h4 id="commercialization-product-access">Commercialization/product access</h4>
+<p>Globalization expands the range of consumer and non-consumer goods in a country, opens global markets and permits firms to commercialize products at scale.</p>
+<h3 id="2-3-links-with-marketing-logistics-and-supply-chains">2.3 Links with marketing, logistics and supply chains</h3>
+<ul>
+<li><strong>Global marketing:</strong> products and brands are promoted and sold internationally.</li>
+<li><strong>Global logistics:</strong> products are transported across countries.</li>
+<li><strong>Supply-chain management:</strong> an integrated chain connects supplier → manufacturer → wholesaler → distributor → retailer → customer.</li>
+<li><strong>E-commerce:</strong> makes globally sourced products directly available to consumers.</li>
+</ul>
+<h3 id="2-4-how-globalization-supports-csr">2.4 How globalization supports CSR</h3>
+<p>Globalization can:</p>
+<ul>
+<li>enable firms to reach more communities and conduct larger CSR projects;</li>
+<li>help a company study local problems and needs before acting;</li>
+<li>strengthen connections with customers, suppliers, communities and other stakeholders;</li>
+<li>build trust through clear communication;</li>
+<li>provide worldwide access to resources, technology and expertise;</li>
+<li>enable sustainable innovation;</li>
+<li>create market opportunities and competitive advantage when customers reward responsible conduct;</li>
+<li>promote alliances that address global problems; and</li>
+<li>facilitate continuous improvement in CSR practices.</li>
+</ul>
+<p>CSR is broader than philanthropy. The lecture repeatedly connects it with <strong>ethics, social welfare and environmental conservation</strong>. Global reach can increase profit, but the final purpose of CSR remains social benefit and reduction of environmental harm.</p>
+<h3 id="2-5-critical-perspective">2.5 Critical perspective</h3>
+<p>Globalization may remove barriers and improve growth, but companies must not use global expansion to shift harm elsewhere. A low market price may conceal social or environmental costs. Global companies remain responsible for working conditions, supply-chain conduct, emissions, community effects and truthful disclosure.</p>
+<hr>
+<h2 id="3-triple-bottom-line-tbl">3. Triple Bottom Line (TBL)</h2>
+<h3 id="3-1-definition-and-central-argument">3.1 Definition and central argument</h3>
+<p>The <strong>Triple Bottom Line</strong> is a sustainability framework organized around three Ps: <strong>People, Planet and Profit/Prosperity</strong>.</p>
+<p>Traditional accounting emphasizes financial profit. TBL argues that business outcomes cannot be measured through finance alone. A firm should maximize positive social and environmental effects while maintaining financial performance. An organization using TBL is accountable to all stakeholders, not only shareholders.</p>
+<h3 id="3-2-shareholders-versus-stakeholders">3.2 Shareholders versus stakeholders</h3>
+<ul>
+<li><strong>Shareholders</strong> own shares and expect a return on investment.</li>
+<li><strong>Stakeholders</strong> are all parties affected by or interested in the firm: shareholders/investors, employees, customers, clients, government, communities, senior officials, supply-chain partners and vendors.</li>
+</ul>
+<p>Shareholders are therefore only one part of the stakeholder community.</p>
+<h3 id="3-3-the-three-pillars">3.3 The three pillars</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pillar</th>
+<th>Meaning</th>
+<th>Subjects and possible measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>People</strong></td>
+<td>Present and future social impact on internal and external stakeholders</td>
+<td>employee welfare, fair wages, safe work, diversity and inclusion, human rights, training, retention, customer welfare, community health and education, supplier labour standards</td>
+</tr>
+<tr>
+<td><strong>Planet</strong></td>
+<td>Impact on the natural environment and ecological systems</td>
+<td>GHG emissions, energy, water, waste, pollution, biodiversity, renewable energy, environmental protection and conservation</td>
+</tr>
+<tr>
+<td><strong>Profit/Prosperity</strong></td>
+<td>Overall economic impact, not merely accounting profit</td>
+<td>profitability, revenue, taxes paid responsibly, jobs created, local procurement, innovation, resilient operations and long-term value</td>
+</tr>
+</tbody>
+</table></div>
+<p>The instructor described <strong>Planet</strong> as requiring especially strong effort because pollution and climate change create effects beyond the firm.</p>
+<h3 id="3-4-sustainability-and-sustainable-development">3.4 Sustainability and sustainable development</h3>
+<p><strong>Sustainable development</strong> means meeting the needs of the present generation without compromising the needs of future generations. Relevant actions include environmental conservation, renewable energy, pollution reduction and lower greenhouse-gas emissions.</p>
+<p>Greenhouse gases contribute to global warming and the rise in the earth&rsquo;s atmospheric temperature. Emissions from factories and automobiles must therefore be reduced.</p>
+<h3 id="3-5-tbl-is-balance-not-sacrifice">3.5 TBL is balance, not sacrifice</h3>
+<p>TBL does not require society and environment to be valued at the expense of financial viability. The three pillars are interdependent: innovative firms can “do well by doing good,” and sustainable practices can yield financial benefits.</p>
+<p>Examples of synergy:</p>
+<ul>
+<li>energy efficiency lowers emissions and operating costs;</li>
+<li>good employment practices improve loyalty, productivity and retention;</li>
+<li>responsible supply chains reduce interruption and compliance risks;</li>
+<li>a trusted reputation attracts customers and investors;</li>
+<li>stronger local economies support durable demand and operations.</li>
+</ul>
+<h3 id="3-6-benefits-emphasized-in-the-lecture">3.6 Benefits emphasized in the lecture</h3>
+<ul>
+<li>Better corporate culture and closer alignment with HR.</li>
+<li>Easier attraction and retention of talent.</li>
+<li>Higher employee engagement, loyalty and pride.</li>
+<li>More diverse and inclusive workforce.</li>
+<li>Better customer relationships and reputation.</li>
+<li>Improved financial performance and investment appeal.</li>
+<li>Lower legal, regulatory and reputational risk.</li>
+<li>More robust, sustainable supply chains and fewer business interruptions.</li>
+<li>Better ESG scores and credibility with investors.</li>
+</ul>
+<p>Failure on pollution or employee relations can produce fines, reputational damage and retention problems.</p>
+<hr>
+<h2 id="4-measuring-tbl-and-esg-performance">4. Measuring TBL and ESG performance</h2>
+<h3 id="4-1-esg">4.1 ESG</h3>
+<p><strong>ESG</strong> means Environmental, Social and Governance. It is a measurable, metric-driven way to assess a company&rsquo;s sustainability performance.</p>
+<ul>
+<li><strong>Environmental:</strong> emissions, energy, pollution, waste, water and biodiversity.</li>
+<li><strong>Social:</strong> workers, customers, communities, human rights and supply-chain labour.</li>
+<li><strong>Governance:</strong> how the company is controlled in stakeholders&rsquo; interests—board independence, women directors, accountability, ethics, disclosure and sound employee practices.</li>
+</ul>
+<p>The lectures sometimes use “ESD” in the auto-transcript, but the intended term in this context is <strong>ESG</strong>.</p>
+<h3 id="4-2-csr-versus-esg">4.2 CSR versus ESG</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>CSR</th>
+<th>ESG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A company&rsquo;s commitment and actions toward society and environment; often expressed through projects, ethical practice, volunteering or monetary resources</td>
+<td>A structured, measurable assessment of environmental, social and governance performance</td>
+</tr>
+<tr>
+<td>Purpose- and action-oriented</td>
+<td>Metrics- and disclosure-oriented</td>
+</tr>
+<tr>
+<td>Often voluntary internationally, though specified CSR spending is mandatory for qualifying companies in India</td>
+<td>Used by investors, lenders, regulators and firms to compare and manage performance</td>
+</tr>
+</tbody>
+</table></div>
+<p>They are complementary: CSR explains responsible commitment and action; ESG helps measure, govern and verify it.</p>
+<h3 id="4-3-suggested-indicators">4.3 Suggested indicators</h3>
+<ul>
+<li><strong>People:</strong> injuries, turnover, training hours, wage fairness, diversity, community beneficiaries, supplier-audit findings.</li>
+<li><strong>Planet:</strong> Scope 1–3 emissions, energy intensity, renewable-energy share, water use, wastewater, waste recycled and pollution incidents.</li>
+<li><strong>Profit:</strong> margins, cash flow, productivity, innovation revenue, jobs, taxes, local purchases and risk-adjusted long-term returns.</li>
+</ul>
+<p>Metrics need baselines, targets, time periods and independent verification. A single attractive number must not hide deterioration in another pillar.</p>
+<h3 id="4-4-emission-scopes">4.4 Emission scopes</h3>
+<ul>
+<li><strong>Scope 1:</strong> direct emissions from owned or controlled sources.</li>
+<li><strong>Scope 2:</strong> indirect emissions from purchased energy.</li>
+<li><strong>Scope 3:</strong> other value-chain emissions, upstream and downstream, including suppliers, transport, product use and disposal.</li>
+</ul>
+<p>Scope 3 is often the largest and hardest to control. It requires supplier engagement, data, audits and purchasing standards.</p>
+<h3 id="4-5-carbon-neutrality">4.5 Carbon neutrality</h3>
+<p>Carbon neutrality means achieving net-zero carbon emissions by reducing emissions as far as practicable and balancing residual emissions with credible removals or offsets. Reduction, efficiency and renewable energy should precede reliance on offsets.</p>
+<hr>
+<h2 id="5-riverbend-textiles-case-study">5. Riverbend Textiles case study</h2>
+<h3 id="5-1-situation">5.1 Situation</h3>
+<p>Riverbend Textiles is used to apply TBL/ESG thinking to a strategic choice. The case asks students to assess environmental performance, employee and supplier conditions, economic resilience and the trade-off between a sustainability investment and an immediately profitable alternative.</p>
+<h3 id="5-2-diagnostic-framework">5.2 Diagnostic framework</h3>
+<h4 id="planet">Planet</h4>
+<ul>
+<li>Track energy consumption and its source.</li>
+<li>Reduce GHG emissions, including value-chain/Scope 3 emissions.</li>
+<li>Improve water efficiency and wastewater treatment.</li>
+<li>Reduce, reuse and recycle waste.</li>
+<li>Consider lifecycle effects rather than only factory-gate effects.</li>
+</ul>
+<h4 id="people">People</h4>
+<ul>
+<li>Protect employees&rsquo; health, safety, wages and development.</li>
+<li>Audit suppliers for child labour, forced labour, unsafe conditions, excessive hours and wage violations.</li>
+<li>Use corrective action and supplier capacity-building, not superficial box-ticking.</li>
+<li>Protect customers through safe, responsibly produced products.</li>
+</ul>
+<h4 id="profit">Profit</h4>
+<ul>
+<li>Evaluate cost savings, productivity, market access, brand value, customer loyalty and risk reduction.</li>
+<li>Include local jobs, local sourcing and community economic impact.</li>
+<li>Judge long-term resilience, not only short-term accounting return.</li>
+</ul>
+<h3 id="5-3-option-a-versus-option-b">5.3 Option A versus Option B</h3>
+<p>The case contrasts a sustainability-oriented <strong>Option A</strong> with a more conventional/short-term-return <strong>Option B</strong>. Option A is strategically superior when it:</p>
+<ul>
+<li>reduces energy, water, waste and emission costs;</li>
+<li>strengthens worker and supplier practices;</li>
+<li>protects market access and reputation;</li>
+<li>answers customer and investor ESG expectations;</li>
+<li>lowers regulatory and supply risks; and</li>
+<li>creates long-term profit through synergy among all three pillars.</li>
+</ul>
+<p>The correct exam logic is not “green is always better.” Demonstrate why the chosen option creates verifiable People–Planet–Profit value and remains financially feasible.</p>
+<hr>
+<h2 id="6-csr-in-the-finance-sector">6. CSR in the finance sector</h2>
+<h3 id="6-1-definition-and-need">6.1 Definition and need</h3>
+<p>CSR in finance means integrating responsibility for environmental and social effects into financial institutions&rsquo; operations and business models. Stakeholder pressure is growing because finance influences which activities receive capital.</p>
+<p>Major concerns include climate risk, inequality, diversity, ethics and sustainable development.</p>
+<h3 id="6-2-core-principles">6.2 Core principles</h3>
+<ul>
+<li>Sustainable and socially responsible investing.</li>
+<li>Transparent ESG reporting.</li>
+<li>Ethical treatment of customers and employees.</li>
+<li>Reduction of carbon/environmental footprint.</li>
+<li>Community development.</li>
+<li>Accountability and fair lending.</li>
+<li>Long-term shared value instead of short-term profit alone.</li>
+<li>Risk management and protection of stakeholder trust.</li>
+</ul>
+<p><strong>Carbon footprint</strong> refers to the carbon-dioxide-equivalent emissions caused directly and indirectly by activities, such as industrial and automobile emissions.</p>
+<h3 id="6-3-purposes-for-financial-institutions">6.3 Purposes for financial institutions</h3>
+<ul>
+<li>Mitigate business, legal, regulatory and reputational risks.</li>
+<li>Attract and retain talent.</li>
+<li>Build trust and preserve reputation.</li>
+<li>Meet stakeholder expectations.</li>
+<li>Contribute to society and the UN Sustainable Development Goals (SDGs).</li>
+<li>remain competitive while creating long-term value.</li>
+</ul>
+<h3 id="6-4-main-applications-and-examples">6.4 Main applications and examples</h3>
+<h4 id="socially-responsible-investing-sri">Socially responsible investing (SRI)</h4>
+<p>Investment strategies seek financial returns while considering ESG factors, allowing investors to align capital with their values.</p>
+<h4 id="sustainable-finance-and-climate-finance">Sustainable finance and climate finance</h4>
+<ul>
+<li><strong>Sustainable finance:</strong> financial products and services designed with long-term social and environmental impacts in view.</li>
+<li><strong>Climate finance:</strong> finance directed toward climate-change mitigation or adaptation.</li>
+</ul>
+<p>Examples include loans or investment for solar panels, renewable energy and other low-carbon solutions.</p>
+<h4 id="financial-literacy-and-inclusion">Financial literacy and inclusion</h4>
+<p>Banks can fund education, financial-literacy programmes and access to financial services. Literacy matters because access alone does not ensure informed use; people must understand saving, borrowing, interest, insurance, fraud and digital payments.</p>
+<p><strong>Financial inclusion</strong> aims to give underserved people affordable, useful and responsible access to payments, savings, credit and insurance.</p>
+<h4 id="community-development-and-education">Community development and education</h4>
+<p>Financial institutions can donate money or resources for schools, basic facilities, computers and laptops, especially as digitization becomes essential.</p>
+<h4 id="health-and-wellness">Health and wellness</h4>
+<p>Examples include medical-research funding, hospital donations and employee health insurance. During COVID-19, firms supported healthcare and produced PPE, masks and sanitizer; research also supported vaccines and medicines. Government hospitals lacking basic facilities were highlighted as potential beneficiaries.</p>
+<h4 id="corporate-philanthropy-and-volunteering">Corporate philanthropy and volunteering</h4>
+<p>Donations and employee expertise/volunteer work can address social and environmental causes.</p>
+<h4 id="ethical-conduct">Ethical conduct</h4>
+<p>Adopt ethical codes, fair customer treatment, transparent disclosures and accountability; avoid predatory lending. Ethics means doing what is right, not merely what is minimally legal.</p>
+<h3 id="6-5-strategic-outcome">6.5 Strategic outcome</h3>
+<p>Good CSR can improve goodwill, customer preference, employee pride, investor confidence and profit. Poor CSR or weak transparency can create serious legal, regulatory and reputational exposure. Maximizing shareholder return alone is therefore insufficient.</p>
+<hr>
+<h2 id="7-international-csr-icsr">7. International CSR (ICSR)</h2>
+<h3 id="7-1-meaning">7.1 Meaning</h3>
+<p>International Corporate Social Responsibility is the responsibility of companies—especially MNCs—to act responsibly across every country where they operate. It requires the business to consider its impact on:</p>
+<ul>
+<li>people and society;</li>
+<li>employees and working conditions;</li>
+<li>animals, birds, aquatic systems and ecosystems;</li>
+<li>the natural environment;</li>
+<li>human rights and child labour; and</li>
+<li>corruption and ethical conduct.</li>
+</ul>
+<p>Consumers, governments and large firms increasingly demand fair and sustainable products. A multinational should not lower its standards simply because a host country has weaker regulation.</p>
+<h3 id="7-2-sustainable-growth-in-international-business">7.2 Sustainable growth in international business</h3>
+<p>Sustainable growth seeks a better quality of life now and for generations to come. Combining CSR and sustainable growth integrates <strong>ecological, social and economic</strong> concerns and can become a responsible, reputable and commercially thriving management approach.</p>
+<h3 id="7-3-framework-for-implementation">7.3 Framework for implementation</h3>
+<ol>
+<li><strong>Engage stakeholders.</strong> Identify shareholders, investors, employees, customers, clients, government, communities and suppliers; balance their viewpoints.</li>
+<li><strong>Assess existing products and innovate.</strong> Continuously review product effects and design better alternatives.</li>
+<li><strong>Exercise due diligence.</strong> Take reasonable steps to identify, prevent and mitigate error, harm and risk.</li>
+<li><strong>Adopt a formal ICSR policy.</strong> State global expectations, responsibilities and action mechanisms.</li>
+<li><strong>Train employees.</strong> Use workshops, webinars and courses across operating locations.</li>
+<li><strong>Map and manage supply-chain risk.</strong> Responsibility extends through the supplier–customer chain.</li>
+<li><strong>Set expectations for business partners.</strong> Require suppliers, customers and other relationships to comply with ICSR standards.</li>
+<li><strong>Track and review results.</strong> Use a scheduled process to adjust and improve the policy.</li>
+<li><strong>Publicize policy and performance.</strong> Publish policies, risks and mitigation on the company website or reports.</li>
+<li><strong>Provide grievance and remedy mechanisms.</strong> A complaint desk/department must receive, investigate and resolve complaints, with action defined for non-compliance.</li>
+</ol>
+<h3 id="7-4-regulatory-arbitrage">7.4 Regulatory arbitrage</h3>
+<p><strong>Regulatory arbitrage</strong> occurs when a company shifts operations to a country with weaker labour, environmental or safety laws to reduce cost. It may be locally legal but can cause pollution, unsafe work, exploitation and human-rights harm.</p>
+<p>The proper CSR response is <strong>one global company standard</strong> for labour, safety, human rights and the environment, supported by internal and independent external audits, supplier inspections and credible disclosure.</p>
+<h3 id="7-5-legal-compliance-versus-ethical-responsibility">7.5 Legal compliance versus ethical responsibility</h3>
+<p>Law provides a minimum threshold. Ethical responsibility can require more. If Country A has strict emission limits and Country B weak limits, a responsible company should retain the higher standard instead of exploiting Country B&rsquo;s weakness.</p>
+<h3 id="7-6-international-frameworks-referenced-in-the-material">7.6 International frameworks referenced in the material</h3>
+<ul>
+<li><strong>United Nations Sustainable Development Goals (17 SDGs):</strong> a common 2030 framework covering poverty, health, education, equality, decent work, responsible consumption, climate, ecosystems, peace and partnership.</li>
+<li><strong>UN Global Compact:</strong> principles concerning human rights, labour, environment and anti-corruption.</li>
+<li><strong>OECD Guidelines for Multinational Enterprises:</strong> responsible conduct across disclosure, employment, environment, bribery, consumer interests and other areas.</li>
+<li><strong>ISO 26000:</strong> guidance on social responsibility; not a certifiable management-system standard.</li>
+<li><strong>Global Reporting Initiative (GRI):</strong> sustainability-reporting standards.</li>
+<li><strong>Paris climate framework:</strong> global effort to limit climate change and encourage decarbonization.</li>
+<li><strong>CSRD:</strong> cited as an example of increasingly rigorous sustainability-disclosure requirements.</li>
+</ul>
+<p>The examination principle is consistency: frameworks guide global responsibility, while local law, sector rules and company policy determine specific obligations.</p>
+<hr>
+<h2 id="8-csr-governance-through-charitable-trusts">8. CSR governance through charitable trusts</h2>
+<h3 id="8-1-trust-based-ownership-model">8.1 Trust-based ownership model</h3>
+<p>A charitable trust may own a controlling or significant share of a company. Dividends then flow to the trust and finance social-development programmes.</p>
+<p><strong>Business profit → dividends → trust income → social investment</strong></p>
+<p>This institutionalizes CSR funding and reduces dependence on annual CEO preferences, board discretion and budget changes.</p>
+<h3 id="8-2-standalone-foundation-versus-share-owning-trust">8.2 Standalone foundation versus share-owning trust</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Standalone CSR department/foundation</th>
+<th>Charitable trust ownership</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Funding generally depends on annual company budgets and approval</td>
+<td>Shareholding generates dividends</td>
+</tr>
+<tr>
+<td>Can vary with management priorities</td>
+<td>More stable and long-term linkage to business success</td>
+</tr>
+<tr>
+<td>Operationally close to management</td>
+<td>Greater structural independence may improve public trust</td>
+</tr>
+</tbody>
+</table></div>
+<p>Potential strengths are predictable financing, continuity, governance and alignment with a social purpose. This does not eliminate the need for transparency, competent trustees, impact measurement and accountability.</p>
+<hr>
+<h2 id="9-globalization-in-india">9. Globalization in India</h2>
+<h3 id="9-1-transformation-of-the-indian-economy-and-society">9.1 Transformation of the Indian economy and society</h3>
+<p>Globalization and urbanization have changed India&rsquo;s social, cultural, political and economic environment. Government economic policy shapes employment, planning, investment, society and income. Cross-country culture and economic unification help transform the domestic economy into an international one.</p>
+<h3 id="9-2-positive-effects-emphasized">9.2 Positive effects emphasized</h3>
+<ul>
+<li>Large growth in foreign investment across sectors.</li>
+<li>Potential increase in GNP and national financial strength.</li>
+<li>Improvement in information technology and transportation.</li>
+<li>Employment growth through Special Economic Zones (SEZs), where selected rules and incentives facilitate business.</li>
+<li>Higher compensation from foreign firms for skilled Indian labour.</li>
+<li>Better standards of living and development opportunities in Tier 1 and Tier 2 cities.</li>
+<li>Factories, projects and R&amp;D centres established by foreign firms.</li>
+<li>Global reach for Indian-origin businesses.</li>
+</ul>
+<h3 id="9-3-factors-enabling-globalization-in-india">9.3 Factors enabling globalization in India</h3>
+<h4 id="technology-and-communication">Technology and communication</h4>
+<p>4G/5G, smartphones and widespread internet access have made real-time communication easy. The instructor noted a major expansion of India&rsquo;s digital/mobile economy after 2016. WhatsApp, Instagram, Facebook, Twitter/X and other platforms let firms communicate across the world with little effort.</p>
+<h4 id="capital-mobility">Capital mobility</h4>
+<p>Barriers to movement of capital have progressively fallen. Digital payments and information technology make sending and receiving money quicker, integrate financial markets and permit transactions at larger scale.</p>
+<h4 id="multinational-corporations">Multinational corporations</h4>
+<p>MNCs help developing economies participate globally. Improved shipping and logistics made India attractive for affordable manufacturing. MNCs interact with local communities, sell internationally, spread successful business methods and set benchmarks. Google, Facebook/Meta and others established or emphasized Indian operations and R&amp;D because of digitization.</p>
+<h3 id="9-4-companies-and-anecdotes-named-by-the-instructor">9.4 Companies and anecdotes named by the instructor</h3>
+<ul>
+<li><strong>Tata Group:</strong> presence stated as 100+ countries across six continents; sectors include TCS, Motors, Steel, Chemicals, Consumer Products, Titan, Capital, Power and hospitality. Tata Motors&rsquo; multi-powertrain offerings—electric, CNG, petrol and diesel—illustrate recent transformation. Tata Power was associated with CSR, renewable energy, solar PV, thermal and hybrid systems.</li>
+<li><strong>Aditya Birla Group:</strong> described as operating in 36 countries across the Americas and Africa; founded by Shiv Narayan Birla in 1857, headquartered in Mumbai and employing over 100,000 people (figures should be reproduced as lecture facts if asked).</li>
+<li><strong>Infosys:</strong> Indian multinational in consulting, IT solutions and outsourcing; founded in 1981 by N. R. Narayana Murthy in Bengaluru; described as India&rsquo;s second-largest IT company with global offices.</li>
+<li>Other names: HCL Technologies, Wipro, Google India, Amazon India, Apple India, Microsoft India, Nestlé India, IBM, Coca-Cola, Pepsi, Hindustan Unilever, Toyota, LG, Citibank, HP, Sony, Samsung and DHL.</li>
+<li><strong>Toyota–Maruti Suzuki collaboration:</strong> Glanza and hybrid-technology cooperation were used to show cross-company collaboration (the transcript&rsquo;s “Marathi/Melania” is an obvious transcription error).</li>
+<li><strong>Samsung:</strong> cited as a top-selling smartphone brand with factories in India.</li>
+<li><strong>DHL:</strong> example of a global logistics and supply-chain company.</li>
+</ul>
+<h3 id="9-5-overall-evaluation">9.5 Overall evaluation</h3>
+<p>Globalization expanded business, profit, FDI, GNP, logistics, global markets and e-commerce in India. Its CSR dimension remains essential: firms entering or leaving India must address ethics, society, employees, communities, supply chains and the environment.</p>
+<hr>
+<h2 id="10-live-class-application-steelmax-european-carbon-rules-and-international-csr">10. Live-class application: SteelMax, European carbon rules and international CSR</h2>
+<h3 id="10-1-case-facts">10.1 Case facts</h3>
+<p>SteelMax India is a hypothetical/representative manufacturer exporting to Europe. Indian production had a low-cost advantage, but carbon-intensive production now creates a visible “hidden cost”: European carbon rules can raise the effective price of imports and weaken competitiveness.</p>
+<h3 id="10-2-carbon-border-adjustment-mechanism-cbam">10.2 Carbon Border Adjustment Mechanism (CBAM)</h3>
+<p>The transcript often says “CBM”; the intended term is <strong>CBAM—Carbon Border Adjustment Mechanism</strong>. In the instructor&rsquo;s explanation, CBAM places a carbon cost on emission-intensive products imported into Europe. Higher embedded emissions make exports more expensive. Steel and cement were highlighted.</p>
+<p>The strategic lesson: sustainability is no longer merely philanthropic; international regulation can directly affect price, exports and market access.</p>
+<h3 id="10-3-csr-sustainability-response">10.3 CSR/sustainability response</h3>
+<p>SteelMax should:</p>
+<ul>
+<li>transform production toward “green steel”;</li>
+<li>reduce direct and value-chain emissions;</li>
+<li>replace non-renewable fossil energy with renewable energy where feasible;</li>
+<li>invest in energy-efficient and low-emission technology;</li>
+<li>examine hydrogen while recognizing its cost implications;</li>
+<li>invest in pollution control;</li>
+<li>improve sustainable supply-chain practices;</li>
+<li>protect employee welfare and human rights;</li>
+<li>strengthen ESG reporting; and</li>
+<li>create verifiable disclosure mechanisms.</li>
+</ul>
+<p>Disclosure must survive verification. Merely claiming that hydrogen, renewables or low-emission technology was used is inadequate. False or unverifiable disclosure can itself damage exports and credibility.</p>
+<h3 id="10-4-broader-implications">10.4 Broader implications</h3>
+<ul>
+<li>Investors, banks and regulators demand sustainable practices because they too face scrutiny.</li>
+<li>Present rules may emphasize emissions; future rules may penalize unfair employee practices and other social/governance failures.</li>
+<li>International CSR therefore integrates environment, society, governance, stakeholder engagement, risk management and supply-chain responsibility.</li>
+</ul>
+<hr>
+<h2 id="11-one-health-instructor-s-food-for-thought">11. One Health — instructor&rsquo;s “food for thought”</h2>
+<p><strong>One Health</strong> is a holistic idea connecting <strong>human health, animal health and environmental health</strong>. It was presented as indirectly, rather than centrally, related to CSR.</p>
+<p>Businesses affect public and ecosystem health through emissions, waste, pollution and climate change. Responsible waste and emission management can therefore support all three dimensions. The larger purpose is a healthier, better world.</p>
+<hr>
+<h2 id="12-integrated-frameworks-and-memory-maps">12. Integrated frameworks and memory maps</h2>
+<h3 id="12-1-from-globalization-to-responsible-value">12.1 From globalization to responsible value</h3>
+<p><strong>Globalization</strong> → wider operations and supply chains → more stakeholders and impacts → international CSR/due diligence → ESG measurement and disclosure → People–Planet–Profit outcomes → durable market access and shared value.</p>
+<h3 id="12-2-tbl-csr-esg-relationship">12.2 TBL–CSR–ESG relationship</h3>
+<ul>
+<li><strong>CSR asks:</strong> What responsibilities and actions should the company undertake?</li>
+<li><strong>TBL asks:</strong> Is value being created for People, Planet and Profit?</li>
+<li><strong>ESG asks:</strong> How can environmental, social and governance performance be measured and governed?</li>
+<li><strong>ICSR asks:</strong> How can these responsibilities be applied consistently across borders and supply chains?</li>
+</ul>
+<h3 id="12-3-strategic-csr">12.3 Strategic CSR</h3>
+<p>Strategic CSR aligns social/environmental action with core business capabilities. It differs from disconnected charity because it simultaneously addresses a genuine stakeholder need, supports competitive strength, uses measurable outcomes and builds long-term value.</p>
+<hr>
+<h2 id="13-exam-preparation">13. Exam preparation</h2>
+<h3 id="13-1-likely-short-answer-questions">13.1 Likely short-answer questions</h3>
+<ol>
+<li>
+<p><strong>Define globalization.</strong>
+   - Cross-border exchange/free flow of capital, goods, services, information, technology, people and culture.
+   - Worldwide integration and resource mobilization.
+   - Mention expansion, barrier reduction and Apple/e-commerce example.</p>
+</li>
+<li>
+<p><strong>What is TBL?</strong>
+   - Sustainability framework: People, Planet, Profit/Prosperity.
+   - Accountability to all stakeholders.
+   - Performance beyond financial profit.</p>
+</li>
+<li>
+<p><strong>Define sustainable development.</strong>
+   - Present needs without compromising future generations&rsquo; needs.</p>
+</li>
+<li>
+<p><strong>Distinguish shareholder and stakeholder.</strong>
+   - Shareholder is an owner/investor; stakeholder is any affected/interested party.
+   - Shareholders are a subset of stakeholders.</p>
+</li>
+<li>
+<p><strong>What is financial inclusion?</strong>
+   - Affordable, useful, responsible access to payments, savings, credit and insurance for underserved groups.</p>
+</li>
+<li>
+<p><strong>What is regulatory arbitrage?</strong>
+   - Shifting activity to weaker legal regimes to reduce cost; legally possible but ethically and socially harmful.</p>
+</li>
+<li>
+<p><strong>What is due diligence?</strong>
+   - Reasonable, systematic steps to identify, prevent, mitigate, track and remedy risk/harm.</p>
+</li>
+<li>
+<p><strong>What is CBAM?</strong>
+   - EU carbon-pricing mechanism for certain emission-intensive imports; embedded emissions can increase import cost.</p>
+</li>
+<li>
+<p><strong>What is One Health?</strong>
+   - Integrated human–animal–environmental health.</p>
+</li>
+</ol>
+<h3 id="13-2-likely-essay-questions-and-model-answer-points">13.2 Likely essay questions and model-answer points</h3>
+<h4 id="explain-the-features-of-globalization-and-its-connection-with-csr">“Explain the features of globalization and its connection with CSR.”</h4>
+<ul>
+<li>Define globalization.</li>
+<li>Explain free trade, liberalization, economic integration, connectivity, collaboration and cultural globalization.</li>
+<li>Link to global marketing, logistics and supply chains.</li>
+<li>Benefits: growth, profit, FDI, product variety, knowledge and innovation.</li>
+<li>CSR link: wider stakeholder reach, local needs, sustainable solutions and partnerships.</li>
+<li>Caveat: cross-border growth must not externalize environmental or labour harm.</li>
+<li>Use Apple and Indian-market examples.</li>
+</ul>
+<h4 id="critically-explain-tbl">“Critically explain TBL.”</h4>
+<ul>
+<li>Define TBL and contrast profit-only accounting.</li>
+<li>Explain each P with stakeholders and metrics.</li>
+<li>Show interdependence/synergy.</li>
+<li>Discuss benefits: culture, retention, customers, investors, risk and supply resilience.</li>
+<li>State measurement difficulty and danger of trade-offs/greenwashing.</li>
+<li>Apply Riverbend example.</li>
+</ul>
+<h4 id="discuss-csr-in-the-finance-sector">“Discuss CSR in the finance sector.”</h4>
+<ul>
+<li>Finance allocates capital and therefore shapes real-economy outcomes.</li>
+<li>Principles: SRI, sustainable/climate finance, fair lending, transparency and stakeholder treatment.</li>
+<li>Applications: literacy/inclusion, education, health, renewables, philanthropy and volunteering.</li>
+<li>Benefits: trust, talent, shared value and risk mitigation.</li>
+<li>Risks of unethical conduct: legal, regulatory and reputational.</li>
+</ul>
+<h4 id="explain-the-international-framework-of-csr">“Explain the international framework of CSR.”</h4>
+<ul>
+<li>Define ICSR and list people, animals/ecosystems, labour, human rights, child labour, corruption and environment.</li>
+<li>Explain sustainable growth and one global standard.</li>
+<li>Present implementation cycle: stakeholders → assess → due diligence → policy → train → supply chain → track → disclose → grievance/remedy.</li>
+<li>Mention UNGC, OECD, ISO 26000, GRI, SDGs and climate/disclosure regimes.</li>
+<li>Contrast compliance and ethics; explain regulatory arbitrage.</li>
+</ul>
+<h4 id="evaluate-globalization-in-india">“Evaluate globalization in India.”</h4>
+<ul>
+<li>Social, cultural, political and economic transformation.</li>
+<li>Foreign investment, GNP, IT, transportation, SEZ jobs, wages and urban living standards.</li>
+<li>Enablers: technology, 4G/5G, post-2016 smartphone/internet growth, capital mobility and MNCs.</li>
+<li>Use Tata, Aditya Birla, Infosys and foreign-MNC examples.</li>
+<li>End with CSR responsibilities and balanced evaluation.</li>
+</ul>
+<h4 id="apply-international-csr-to-steelmax">“Apply international CSR to SteelMax.”</h4>
+<ul>
+<li>Diagnose embedded carbon and lost low-cost advantage under CBAM.</li>
+<li>Propose renewable energy, efficiency, green steel/hydrogen, pollution control and supply-chain improvement.</li>
+<li>Demand verified ESG disclosure.</li>
+<li>Explain stakeholder, finance, market-access and future social-regulation implications.</li>
+</ul>
+<h3 id="13-3-case-answer-template">13.3 Case-answer template</h3>
+<p>Use <strong>D–S–A–M–R</strong>:</p>
+<ol>
+<li><strong>Diagnose</strong> the social, environmental, economic and governance problem.</li>
+<li><strong>Stakeholders</strong> affected and their legitimate expectations.</li>
+<li><strong>Alternatives</strong> with People–Planet–Profit trade-offs.</li>
+<li><strong>Measures</strong>: baseline, KPI, target, deadline and verification.</li>
+<li><strong>Recommend</strong> the option that creates feasible long-term shared value; state risks and mitigation.</li>
+</ol>
+<h3 id="13-4-key-terms">13.4 Key terms</h3>
+<p>Globalization; liberalization; free trade; economic integration; cultural globalization; connectivity; collaboration; MNC; FDI; SEZ; global logistics; supply chain; stakeholder; shareholder; TBL; People; Planet; Profit/Prosperity; sustainable development; CSR; ICSR; ESG; GRI; ISO 26000; UN Global Compact; OECD Guidelines; SDGs; due diligence; regulatory arbitrage; SRI; sustainable finance; climate finance; financial inclusion; carbon footprint; carbon neutrality; Scope 1, 2 and 3; CBAM; CSRD; green steel; grievance mechanism; One Health; strategic CSR.</p>
+<h3 id="13-5-common-confusions-and-corrections">13.5 Common confusions and corrections</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Confusion</th>
+<th>Correct understanding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CSR means charity only</td>
+<td>CSR includes ethics, stakeholders, core operations, society and environment; philanthropy is one component.</td>
+</tr>
+<tr>
+<td>TBL rejects profit</td>
+<td>Profit remains essential, but must be balanced with People and Planet.</td>
+</tr>
+<tr>
+<td>Shareholders and stakeholders are identical</td>
+<td>Shareholders are one stakeholder group.</td>
+</tr>
+<tr>
+<td>ESG and CSR are synonyms</td>
+<td>CSR is commitment/action; ESG is a measurable performance/governance framework.</td>
+</tr>
+<tr>
+<td>Sustainability means only environment</td>
+<td>It includes environmental, social and economic continuity; ESG adds governance explicitly.</td>
+</tr>
+<tr>
+<td>Legal compliance proves ethical conduct</td>
+<td>Law is a floor; ethics may demand a higher consistent global standard.</td>
+</tr>
+<tr>
+<td>A company is responsible only for its factory</td>
+<td>ICSR and Scope 3 extend attention to suppliers, logistics, customers and the value chain.</td>
+</tr>
+<tr>
+<td>Carbon neutral means zero gross emissions</td>
+<td>It means net zero after deep reductions and balancing credible residuals.</td>
+</tr>
+<tr>
+<td>“CBM” in the transcript is the formal name</td>
+<td>The intended formal term is CBAM.</td>
+</tr>
+<tr>
+<td>ISO 26000 is a certification</td>
+<td>It is guidance on social responsibility, not a certifiable management-system standard.</td>
+</tr>
+<tr>
+<td>Good ESG disclosure is enough</td>
+<td>Claims must reflect real operational improvement and be verifiable.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="13-6-instructor-emphasis-to-remember">13.6 Instructor emphasis to remember</h3>
+<ul>
+<li>“It is not just profit.”</li>
+<li>People, Planet and Profit are connected.</li>
+<li>Reduce the negative impact on the environment.</li>
+<li>Sustainable development protects future generations.</li>
+<li>Stakeholder community is broader than shareholders.</li>
+<li>Globalization connects CSR with global marketing, logistics and supply chains.</li>
+<li>Ethical conduct requires transparency and accountability.</li>
+<li>International responsibility must be verified, not merely claimed.</li>
+<li>Theory should be translated into practical business decisions.</li>
+</ul>
+<hr>
+<h2 id="14-rapid-revision-sheet">14. Rapid revision sheet</h2>
+<ul>
+<li><strong>Globalization:</strong> cross-border flows + integration + business expansion.</li>
+<li><strong>Main features:</strong> free trade, liberalization, economic integration, connectivity, collaboration, culture and commercialization.</li>
+<li><strong>TBL:</strong> People + Planet + Profit/Prosperity.</li>
+<li><strong>CSR:</strong> ethical, social and environmental responsibility expressed through core conduct and initiatives.</li>
+<li><strong>ESG:</strong> measurable E–S–G performance and governance.</li>
+<li><strong>Finance CSR:</strong> responsible investment, fair treatment, disclosure, inclusion, climate finance and community support.</li>
+<li><strong>ICSR:</strong> consistent responsibility across countries and the full supply chain.</li>
+<li><strong>India enablers:</strong> policy, FDI, SEZs, digitization, technology, capital mobility and MNCs.</li>
+<li><strong>SteelMax lesson:</strong> dirty production converts hidden environmental cost into visible export cost under CBAM.</li>
+<li><strong>One Health:</strong> human + animal + environmental health.</li>
+<li><strong>Best exam conclusion:</strong> durable corporate success comes from measurable, verified integration of stakeholder welfare, environmental stewardship and economic resilience.</li>
+</ul>
+<h2 id="review-week-augmentation">Review Week Augmentation</h2>
+<ul>
+<li>Sustainable finance combines financial viability with environmental, social and governance considerations; it does not ignore profit and is broader than finance for environmental projects.</li>
+<li>Examples beyond the environment include healthcare, education and responsible-business finance. Green finance is its environmental subset; climate finance is climate-specific finance for mitigation or adaptation.</li>
+<li>Climate finance may come from governments, international organisations, development banks, private investors and public-private partnerships. It is a shared responsibility: developing countries are not excluded and the burden is not transferred wholly to private capital.</li>
+<li>Apply the Triple Bottom Line to GreenWave: the CFO&rsquo;s liquidity and timing concerns are a legitimate <strong>Profit</strong> constraint that must be balanced with <strong>People</strong> (worker and supplier conditions) and <strong>Planet</strong> (water, wastewater, energy and emissions).</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-3.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 3: Ethics of CSR, Corporate Citizenship,…</span>
+      </a>
+      <a href="week-5.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 5: CSR: Scope, Benefits, Importance,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Deep Learning · Week 1 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Deep Learning</span>
+      <span class="brand-title">Week 1</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html" selected>Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a class="is-active" href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Neural Networks and Deep Learning
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Neural Networks, Backpropagation, Model Tuning, and Evaluation
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Convolutional Neural Networks, Transfer Learning and Computer-Vision…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        RNNs, GRU, LSTM, NLP, Word Embeddings, Transfer Learning and Attention
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        RBMs, Deep Belief Networks, Autoencoders, and Contrastive Divergence
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Reinforcement Learning, Policy Networks, Target Networks and DQN
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Generative Adversarial Networks (GANs)
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Data Augmentation, Hyperparameter Tuning, Transfer Learning and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Feed-Forward Neural Networks, Perceptrons, Loss, Backpropagation and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Python Programming Fundamentals
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Machine Learning, Classification, and Naive Bayes
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Logistic Regression as a Neural Network, MNIST, and K-Means
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        PCA and Bag-of-Words
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Autoencoders and Representation Learning
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Exhaustive Exam-Oriented Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Deep Learning · Week 1</p>
+        <h1 class="page-title">Neural Networks and Deep Learning</h1>
+        <p class="page-meta">Week 1 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#learning-outcomes">Learning outcomes</a></li>
+      <li><a href="#1-artificial-intelligence-machine-learning-and-deep-learning">1. Artificial intelligence, machine learning, and deep learning</a></li>
+      <li><a href="#2-what-is-a-neural-network">2. What is a neural network?</a></li>
+      <li><a href="#3-biological-versus-artificial-neurons">3. Biological versus artificial neurons</a></li>
+      <li><a href="#4-core-neural-network-terminology">4. Core neural-network terminology</a></li>
+      <li><a href="#5-network-architectures">5. Network architectures</a></li>
+      <li><a href="#6-supervised-learning-with-neural-networks">6. Supervised learning with neural networks</a></li>
+      <li><a href="#7-performance-evaluation">7. Performance evaluation</a></li>
+      <li><a href="#8-historical-evolution-of-artificial-neural-networks">8. Historical evolution of artificial neural networks</a></li>
+      <li><a href="#9-feature-learning-and-understanding">9. Feature learning and “understanding”</a></li>
+      <li><a href="#10-philosophical-and-cognitive-aspects">10. Philosophical and cognitive aspects</a></li>
+      <li><a href="#11-ethics-and-social-responsibility">11. Ethics and social responsibility</a></li>
+      <li><a href="#12-live-class-applications-and-discussion">12. Live-class applications and discussion</a></li>
+      <li><a href="#13-bytewise-solutions-case-study">13. ByteWise Solutions case study</a></li>
+      <li><a href="#14-practical-examples-and-use-cases">14. Practical examples and use cases</a></li>
+      <li><a href="#15-important-comparisons">15. Important comparisons</a></li>
+      <li><a href="#16-exam-traps-and-caveats">16. Exam traps and caveats</a></li>
+      <li><a href="#17-likely-exam-questions-with-answer-points">17. Likely exam questions with answer points</a></li>
+      <li><a href="#18-rapid-revision-sheet">18. Rapid revision sheet</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<blockquote>
+<p><strong>Exam-oriented master notes.</strong> These notes consolidate the four Week 1 videos, the live session, quiz material, and the ByteWise Solutions case study. Repeated transcript passages are merged; distinct definitions, explanations, examples, caveats, instructor emphases, and Q&amp;A points are retained.</p>
+</blockquote>
+<h2 id="learning-outcomes">Learning outcomes</h2>
+<p>After Week 1, you should be able to:</p>
+<ol>
+<li>Define an artificial neural network (ANN) and explain its brain-inspired structure.</li>
+<li>Compare biological and artificial neurons.</li>
+<li>Explain inputs, weights, bias, activation, layers, forward propagation, loss, backpropagation, gradient descent, learning rate, and epochs.</li>
+<li>Distinguish feedforward networks, CNNs, RNNs, and deep neural networks.</li>
+<li>Explain supervised learning, its workflow, metrics, overfitting, and underfitting.</li>
+<li>Trace the historical development of ANN from cognitive science to deep learning.</li>
+<li>Discuss philosophical, cognitive, ethical, and societal issues surrounding neural networks.</li>
+<li>Select and manage neural-network solutions for business problems under accuracy, latency, cost, and resource constraints.</li>
+</ol>
+<hr>
+<h2 id="1-artificial-intelligence-machine-learning-and-deep-learning">1. Artificial intelligence, machine learning, and deep learning</h2>
+<h3 id="1-1-relationship">1.1 Relationship</h3>
+<ul>
+<li><strong>Artificial intelligence (AI)</strong> is the broad field of building systems that perform tasks associated with intelligence.</li>
+<li><strong>Machine learning (ML)</strong> is a subset of AI in which systems learn patterns from data instead of relying only on explicitly written rules.</li>
+<li><strong>Deep learning (DL)</strong> is a subset of ML based on multilayer neural networks.</li>
+</ul>
+<p>Thus:</p>
+<p>$$\text{Deep Learning} \subset \text{Machine Learning} \subset \text{Artificial Intelligence}$$</p>
+<p>The live class stressed that deep learning is not separate from ML; it is a particular model family within ML. The course uses neural networks to show how raw or structured observations become input vectors, pass through hidden computations, and produce predictions.</p>
+<h3 id="1-2-machine-learning-paradigms">1.2 Machine-learning paradigms</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Paradigm</th>
+<th>Training signal</th>
+<th>Goal</th>
+<th>Typical example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supervised learning</td>
+<td>Labelled input-output pairs</td>
+<td>Learn a mapping from inputs to known targets</td>
+<td>Digit classification, attrition prediction</td>
+</tr>
+<tr>
+<td>Unsupervised learning</td>
+<td>Unlabelled data</td>
+<td>Discover structure or groups</td>
+<td>Customer segmentation</td>
+</tr>
+<tr>
+<td>Reinforcement learning</td>
+<td>Rewards/penalties from interaction</td>
+<td>Learn actions that maximise cumulative reward</td>
+<td>Game playing, control systems</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Exam trap:</strong> A neural network is an architecture, not a learning paradigm. Neural networks can be trained in supervised, unsupervised, self-supervised, or reinforcement-learning settings.</p>
+<h3 id="1-3-why-deep-learning-and-why-now">1.3 Why deep learning, and why now?</h3>
+<p>The live session motivated deep learning with familiar systems that act almost instantly, such as phone face-unlock and recommendation engines. Conventional ML includes linear regression, logistic regression, decision trees, and support-vector machines (SVMs), but manually engineered approaches can struggle with large amounts of unstructured image, audio, and raw-text data. Deep learning learns multi-level representations from such data, enabled by modern datasets and computing power.</p>
+<p>The instructor&rsquo;s analogy treats AI as the broad world of intelligent cooking, ML as a trained cook learning recipes, and deep learning as a “master chef” with experience from an enormous number of recipes. The point is increasing specialization and learned experience, not that DL literally reasons like a chef.</p>
+<p>Deep-learning families named in class include feedforward networks, CNNs, RNNs, <strong>transformers</strong>, <strong>GANs (generative adversarial networks)</strong>, and <strong>diffusion models</strong>. Week 1 concentrates on the foundations rather than all of these architectures.</p>
+<h3 id="1-4-regression-recap-from-the-live-class">1.4 Regression recap from the live class</h3>
+<ul>
+<li><strong>Linear regression</strong> predicts a continuous value—for example, car resale value from mileage and year of manufacture.</li>
+<li><strong>Logistic regression</strong> predicts a categorical/binary outcome—for example, whether tomorrow will be rainy (yes/no).</li>
+<li><strong>Decision trees</strong> make rule-based splits; SVMs are another conventional ML family named in the hierarchy.</li>
+</ul>
+<p>The linear form reviewed was:</p>
+<p>$$y=ax+b$$</p>
+<p>where $y$ is output, $x$ is input, $a$ is slope/coefficient, and $b$ is intercept. With multiple inputs:</p>
+<p>$$y=\sum_{i=1}^{n}a_i x_i+b$$</p>
+<p>This resembles a neuron&rsquo;s weighted sum, with $a_i$ corresponding to weights and $b$ to bias. Logistic/sigmoid behavior can then map a score to a firing-like binary probability. The instructor cautioned that familiar regression mathematics may appear inside neural computation, but the architecture, preprocessing, and training context differ from a standalone regression model.</p>
+<p><strong>Terminology caveat:</strong> “Bias” has two meanings. A neuron&rsquo;s bias $b$ is a learnable mathematical offset; social/data bias is systematic unfair distortion. They must not be confused.</p>
+<hr>
+<h2 id="2-what-is-a-neural-network">2. What is a neural network?</h2>
+<p>An <strong>artificial neural network</strong> is a computational model inspired by the human brain. It consists of interconnected artificial neurons arranged in layers. It receives input data, performs simple weighted computations across neurons, learns patterns from examples, and produces a prediction or classification.</p>
+<p>The instructor repeatedly emphasized four ideas:</p>
+<ul>
+<li>Neural networks are <strong>brain-inspired</strong>, not literal copies of the brain.</li>
+<li>Individual neurons perform relatively simple calculations; their <strong>collective action</strong> learns complex patterns.</li>
+<li>Learning means adjusting internal parameters—especially <strong>weights and biases</strong>—so predicted outputs become closer to actual outputs.</li>
+<li>Practice and implementation are necessary to understand the concepts; terminology should be connected to the actual data flow.</li>
+</ul>
+<h3 id="2-1-weather-example">2.1 Weather example</h3>
+<p>Humans see a cloudy sky and predict rain using prior experience. A neural network similarly learns a relationship from historical data and uses it to predict an outcome. The prediction is data-based, not magical understanding.</p>
+<h3 id="2-2-basic-information-flow">2.2 Basic information flow</h3>
+<p>$$\text{Input layer} \rightarrow \text{Hidden layer(s)} \rightarrow \text{Output layer}$$</p>
+<ul>
+<li><strong>Input layer:</strong> receives raw or preprocessed data; each input neuron commonly represents a feature.</li>
+<li><strong>Hidden layer(s):</strong> perform computations and progressively extract patterns. Their number and size depend on task complexity.</li>
+<li><strong>Output layer:</strong> produces the final prediction, class score, or probability.</li>
+</ul>
+<p>For inputs $x_1,x_2,\ldots,x_n$, a neuron computes:</p>
+<p>$$z=\sum_{i=1}^{n} w_i x_i+b$$</p>
+<p>and then applies an activation function:</p>
+<p>$$a=f(z)$$</p>
+<p>where $w_i$ are weights, $b$ is bias, $z$ is the weighted sum, and $a$ is the neuron&rsquo;s output.</p>
+<h3 id="2-3-why-layers-matter">2.3 Why layers matter</h3>
+<p>Every layer transforms the representation it receives. A shallow layer may detect elementary patterns; deeper layers combine them into more abstract patterns. More layers can increase representational capacity, but do <strong>not automatically guarantee</strong> better accuracy: data quality, architecture, optimization, regularization, and generalization also matter.</p>
+<hr>
+<h2 id="3-biological-versus-artificial-neurons">3. Biological versus artificial neurons</h2>
+<h3 id="3-1-biological-neuron">3.1 Biological neuron</h3>
+<p>A neuron is a fundamental unit of the brain and nervous system:</p>
+<ol>
+<li><strong>Dendrites</strong> receive electrochemical signals.</li>
+<li>The <strong>cell body (soma)</strong> integrates/processes them.</li>
+<li>The <strong>axon</strong> carries the output signal.</li>
+<li><strong>Synapses</strong> connect neurons; neurotransmitters transmit information.</li>
+<li>Learning can involve strengthening or weakening synaptic connections.</li>
+</ol>
+<p>Instructor example: seeing an apple activates learned associations so the brain identifies it as an apple, recalling even the nursery association “A for apple.”</p>
+<h3 id="3-2-mapping-to-an-artificial-neuron">3.2 Mapping to an artificial neuron</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Biological system</th>
+<th>Artificial analogue</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dendrites</td>
+<td>Input features $x_i$</td>
+<td>Receive signals/data</td>
+</tr>
+<tr>
+<td>Synaptic strength</td>
+<td>Weights $w_i$</td>
+<td>Control influence of each input</td>
+</tr>
+<tr>
+<td>Cell body</td>
+<td>Weighted sum plus bias</td>
+<td>Aggregate inputs</td>
+</tr>
+<tr>
+<td>Firing mechanism</td>
+<td>Activation function</td>
+<td>Decide/shape transmitted output</td>
+</tr>
+<tr>
+<td>Axon</td>
+<td>Neuron output</td>
+<td>Pass result to the next layer</td>
+</tr>
+<tr>
+<td>Synaptic adaptation</td>
+<td>Weight updates</td>
+<td>Learn from error</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="3-3-critical-distinction">3.3 Critical distinction</h3>
+<p>Artificial networks imitate selected functional ideas—connection, signal integration, and adaptation—but human cognition also involves emotion, intuition, embodiment, context, subjective experience, and flexible reasoning. “Inspired by the brain” must not be written as “identical to the brain.”</p>
+<hr>
+<h2 id="4-core-neural-network-terminology">4. Core neural-network terminology</h2>
+<h3 id="4-1-features-labels-weights-and-bias">4.1 Features, labels, weights, and bias</h3>
+<ul>
+<li><strong>Feature:</strong> an input variable, such as age, salary, or years of service.</li>
+<li><strong>Label/target:</strong> the correct output supplied during supervised training, such as “leaves” or “stays.”</li>
+<li><strong>Weight:</strong> learnable coefficient measuring an input or connection&rsquo;s influence.</li>
+<li><strong>Bias:</strong> learnable offset that lets a neuron shift its activation threshold.</li>
+<li><strong>Parameters:</strong> values learned during training, primarily weights and biases.</li>
+<li><strong>Hyperparameters:</strong> values selected before/during training, such as learning rate, layer size, batch size, and number of epochs.</li>
+</ul>
+<p><strong>Exam trap:</strong> Learning rate is a hyperparameter, not a learned weight.</p>
+<h3 id="4-2-activation-functions">4.2 Activation functions</h3>
+<p>Without nonlinear activations, stacked layers reduce to an overall linear transformation and cannot learn sufficiently intricate relationships.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Activation</th>
+<th>Expression/use</th>
+<th>Source emphasis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sigmoid</td>
+<td>$\sigma(z)=\frac{1}{1+e^{-z}}$</td>
+<td>Common for binary-output probability</td>
+</tr>
+<tr>
+<td>ReLU</td>
+<td>$\max(0,z)$</td>
+<td>Helps mitigate vanishing-gradient problems and is widely used in hidden layers</td>
+</tr>
+<tr>
+<td>Softmax</td>
+<td>$p_i=\frac{e^{z_i}}{\sum_j e^{z_j}}$</td>
+<td>Converts class scores to probabilities for multiclass classification</td>
+</tr>
+</tbody>
+</table></div>
+<p>Activation choice depends on the task and implementation. In the live Q&amp;A, the instructor noted that modifying activation behavior changes node-to-node transmission and therefore the downstream output.</p>
+<h3 id="4-3-forward-propagation">4.3 Forward propagation</h3>
+<p>In a <strong>forward pass</strong>, data moves from input through hidden layers to output. Each layer computes its activation based on the previous layer:</p>
+<p>$$a^{(l)}=f\left(W^{(l)}a^{(l-1)}+b^{(l)}\right)$$</p>
+<p>No parameter is corrected during the forward calculation itself; it produces the current prediction $\hat y$.</p>
+<h3 id="4-4-loss-function">4.4 Loss function</h3>
+<p>A <strong>loss function</strong> measures the discrepancy between prediction $\hat y$ and true target $y$. Training attempts to minimize loss.</p>
+<p>For regression, mean squared error (MSE) is:</p>
+<p>$$\operatorname{MSE}=\frac{1}{N}\sum_{i=1}^{N}(y_i-\hat y_i)^2$$</p>
+<p>Classification often uses cross-entropy. A smaller loss generally indicates predictions closer to targets on the evaluated data.</p>
+<h3 id="4-5-backpropagation-and-chain-rule">4.5 Backpropagation and chain rule</h3>
+<p><strong>Backpropagation</strong> efficiently calculates the gradient of the loss with respect to every weight and bias, moving from output toward earlier layers. It applies the <strong>chain rule</strong> through nested computations:</p>
+<p>$$\frac{\partial L}{\partial w}=
+\frac{\partial L}{\partial a}
+\frac{\partial a}{\partial z}
+\frac{\partial z}{\partial w}$$</p>
+<p>Backpropagation calculates gradients; the optimizer uses those gradients to update parameters. This distinction is a common exam point.</p>
+<h3 id="4-6-gradient-descent">4.6 Gradient descent</h3>
+<p>The <strong>gradient</strong> points in the direction of greatest local increase in loss. Gradient descent moves parameters in the opposite direction:</p>
+<p>$$w_{t+1}=w_t-\eta\frac{\partial L}{\partial w_t}$$</p>
+<p>$$b_{t+1}=b_t-\eta\frac{\partial L}{\partial b_t}$$</p>
+<p>where $\eta$ is the learning rate.</p>
+<h3 id="4-7-learning-rate">4.7 Learning rate</h3>
+<p>The <strong>learning rate</strong> controls update-step size.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Too small</td>
+<td>Very slow convergence; excessive training time; may appear stuck</td>
+</tr>
+<tr>
+<td>Appropriate</td>
+<td>Stable progress toward a useful minimum</td>
+</tr>
+<tr>
+<td>Too large</td>
+<td>Overshoots the minimum; loss may oscillate or diverge</td>
+</tr>
+</tbody>
+</table></div>
+<p>A learning-rate schedule can reduce the rate during training: take larger steps initially and smaller steps near convergence.</p>
+<p><strong>Exam signal:</strong> Oscillating loss strongly suggests a learning rate that is too large, although poor scaling or noisy batches can also contribute.</p>
+<h3 id="4-8-epoch-and-iteration">4.8 Epoch and iteration</h3>
+<ul>
+<li><strong>Epoch:</strong> one complete pass through the full training dataset.</li>
+<li><strong>Iteration/update:</strong> one optimizer update, usually using one batch.</li>
+</ul>
+<p>If $N$ samples are divided into batches of size $B$, updates per epoch are approximately $\lceil N/B\rceil$.</p>
+<p>Training for more epochs can improve fitting until overfitting begins; validation performance should guide stopping.</p>
+<h3 id="4-9-complete-learning-loop">4.9 Complete learning loop</h3>
+<ol>
+<li>Initialize weights and biases.</li>
+<li>Forward propagate inputs to obtain $\hat y$.</li>
+<li>Compute loss $L(y,\hat y)$.</li>
+<li>Backpropagate to calculate gradients.</li>
+<li>Update parameters using an optimizer such as gradient descent.</li>
+<li>Repeat across batches and epochs.</li>
+<li>Evaluate on validation/test data to assess generalization.</li>
+</ol>
+<hr>
+<h2 id="5-network-architectures">5. Network architectures</h2>
+<h3 id="5-1-feedforward-neural-network-fnn">5.1 Feedforward neural network (FNN)</h3>
+<ul>
+<li>Information moves in one direction: input $\rightarrow$ hidden layer(s) $\rightarrow$ output.</li>
+<li>It has no feedback cycles or recurrent loops.</li>
+<li>It is a basic choice for fixed-size feature vectors and structured/tabular data.</li>
+</ul>
+<h3 id="5-2-recurrent-neural-network-rnn">5.2 Recurrent neural network (RNN)</h3>
+<p>RNNs include recurrent/feedback connections, allowing information from an earlier step to affect a later step:</p>
+<p>$$h_t=f(W_xx_t+W_hh_{t-1}+b)$$</p>
+<p>They suit <strong>sequential data</strong> such as time series, text, and speech because ordering and prior context matter. In sentiment analysis, the meaning of a word can depend on preceding words.</p>
+<p><strong>Feedback loop meaning:</strong> it gives the network a form of state/memory, not conscious recollection.</p>
+<h3 id="5-3-convolutional-neural-network-cnn">5.3 Convolutional neural network (CNN)</h3>
+<p>CNNs are specialized for spatially structured inputs, especially images.</p>
+<ul>
+<li><strong>Convolution layer:</strong> slides learned filters across an image to detect local patterns.</li>
+<li><strong>Feature maps:</strong> outputs showing where a learned feature occurs.</li>
+<li><strong>ReLU/nonlinearity:</strong> permits nonlinear feature combinations.</li>
+<li><strong>Pooling (e.g., max pooling):</strong> reduces spatial dimensions by retaining prominent local responses.</li>
+<li><strong>Output/classification layer:</strong> maps extracted features to classes.</li>
+</ul>
+<p>Hierarchical image learning commonly progresses:</p>
+<p>$$\text{pixels} \rightarrow \text{edges/curves} \rightarrow \text{shapes/textures} \rightarrow \text{parts/patterns} \rightarrow \text{object/class}$$</p>
+<p>Pooling reduces computation and offers some tolerance to small shifts, but excessive pooling can discard useful detail.</p>
+<h3 id="5-4-graph-neural-networks-gnns">5.4 Graph neural networks (GNNs)</h3>
+<p>The recorded lecture briefly identified GNNs as a modern/trending family for graph-structured data. They extend neural learning to nodes and relationships rather than only grids or sequences.</p>
+<h3 id="5-5-shallow-versus-deep-networks">5.5 Shallow versus deep networks</h3>
+<p>The transcript describes deep learning as neural networks with “three or more layers” and notes that a deep network may contain 10, 20, 50, 100, or more hidden layers. The core concept is <strong>depth through multiple representation-learning layers</strong>; exact counting conventions vary by textbook (some count input/output layers, others count only parameterized layers).</p>
+<p><strong>Exam-safe wording:</strong> A deep neural network has multiple successive hidden/learnable layers that learn hierarchical representations. State the instructor&rsquo;s “three or more layers” convention if the question explicitly follows the lecture.</p>
+<h3 id="5-6-why-depth-matters-x-ray-example">5.6 Why depth matters: X-ray example</h3>
+<p>The live class used a four-stage medical-image illustration:</p>
+<ol>
+<li>Layer 1 detects edges and curves.</li>
+<li>Layer 2 detects shapes.</li>
+<li>Layer 3 detects patterns/irregularities.</li>
+<li>Layer 4 distinguishes a tumour-like abnormality from normal tissue.</li>
+</ol>
+<p>Each layer has a role in extracting progressively more abstract information; layers are not intentionally “neutral” placeholders.</p>
+<hr>
+<h2 id="6-supervised-learning-with-neural-networks">6. Supervised learning with neural networks</h2>
+<h3 id="6-1-definition">6.1 Definition</h3>
+<p><strong>Supervised learning</strong> trains a model using labelled examples, where every input has a corresponding known output. The network adjusts weights and biases to reduce the difference between predicted and actual outputs.</p>
+<p>Instructor market-basket illustration: given tea leaves and milk as inputs, predict the probability that bread will also be purchased. The intended lesson is input-output association learned from labelled historical examples.</p>
+<h3 id="6-2-workflow">6.2 Workflow</h3>
+<ol>
+<li><strong>Collect data:</strong> sources mentioned include Kaggle, the UCI repository, GitHub, and organizational/offline datasets.</li>
+<li><strong>Preprocess:</strong> clean data, handle missing values, remove or treat outliers, structure/encode features, and ensure labels are suitable.</li>
+<li><strong>Split data:</strong> maintain separate training and validation/test sets.</li>
+<li><strong>Configure the network:</strong> select inputs, hidden layers/nodes, outputs, activations, loss, and optimizer.</li>
+<li><strong>Train:</strong> forward pass, loss calculation, backpropagation, and parameter updates.</li>
+<li><strong>Evaluate:</strong> apply suitable performance metrics and inspect the confusion matrix.</li>
+<li><strong>Iterate:</strong> tune complexity and hyperparameters while monitoring generalization.</li>
+</ol>
+<h3 id="6-3-mnist-practical-example">6.3 MNIST practical example</h3>
+<p>MNIST contains images of handwritten digits. Handwriting varies and is not perfectly structured, yet a trained network can learn digit patterns and classify new images into $0$–$9$.</p>
+<p>Pipeline:</p>
+<p>$$\text{images} \rightarrow \text{preprocessing} \rightarrow \text{forward prediction} \rightarrow \text{loss} \rightarrow \text{backpropagation} \rightarrow \text{evaluation}$$</p>
+<p>The lecture uses MNIST because it is common, accessible, and clearly demonstrates image classification. It can be downloaded from well-known data repositories; the conceptual point is how labelled images teach a classifier.</p>
+<h3 id="6-4-overfitting-and-underfitting">6.4 Overfitting and underfitting</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Meaning</th>
+<th>Pattern</th>
+<th>Remedies mentioned/appropriate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Overfitting</td>
+<td>Model learns training examples/noise too specifically</td>
+<td>High training performance, weaker unseen-data performance</td>
+<td>Regularization, validation, simpler model, more/augmented data, early stopping</td>
+</tr>
+<tr>
+<td>Underfitting</td>
+<td>Model is too simple or insufficiently trained to capture patterns</td>
+<td>Poor training and validation performance</td>
+<td>More capacity, better features, longer/better training, suitable learning rate</td>
+</tr>
+</tbody>
+</table></div>
+<p>The source explicitly mentions <strong>regularization, cross-validation, and optimizing model complexity</strong> to balance performance.</p>
+<p><strong>Exam trap:</strong> Overfitting is not “learning well” in the desirable sense; it is failure to generalize. A high learning rate is not the definition of underfitting, though bad optimization can cause poor fit.</p>
+<h3 id="6-5-training-validation-and-test-data">6.5 Training, validation, and test data</h3>
+<ul>
+<li><strong>Training set:</strong> fits weights and biases.</li>
+<li><strong>Validation set:</strong> selects hyperparameters, model versions, and stopping point.</li>
+<li><strong>Test set:</strong> estimates final performance on unseen data.</li>
+</ul>
+<p>Repeatedly tuning against the test set leaks information and makes the reported result optimistic.</p>
+<hr>
+<h2 id="7-performance-evaluation">7. Performance evaluation</h2>
+<p>For binary classification:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Actual / predicted</th>
+<th style="text-align: right;">Positive</th>
+<th style="text-align: right;">Negative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Positive</td>
+<td style="text-align: right;">True positive (TP)</td>
+<td style="text-align: right;">False negative (FN)</td>
+</tr>
+<tr>
+<td>Negative</td>
+<td style="text-align: right;">False positive (FP)</td>
+<td style="text-align: right;">True negative (TN)</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="7-1-metrics">7.1 Metrics</h3>
+<p>$$\text{Accuracy}=\frac{TP+TN}{TP+TN+FP+FN}$$</p>
+<p>$$\text{Precision}=\frac{TP}{TP+FP}$$</p>
+<p>$$\text{Recall}=\frac{TP}{TP+FN}$$</p>
+<p>$$F_1=2\cdot\frac{\text{Precision}\cdot\text{Recall}}{\text{Precision}+\text{Recall}}$$</p>
+<ul>
+<li><strong>Accuracy:</strong> proportion of all predictions that are correct.</li>
+<li><strong>Precision:</strong> among predicted positives, the proportion actually positive.</li>
+<li><strong>Recall/sensitivity:</strong> among actual positives, the proportion detected.</li>
+<li><strong>F1-score:</strong> harmonic balance between precision and recall.</li>
+<li><strong>Confusion matrix:</strong> table of TP, TN, FP, and FN; it does not itself combine all metrics, but provides the counts from which they are calculated.</li>
+</ul>
+<p><strong>Transcript correction/exam trap:</strong> The spoken lecture momentarily described both precision and recall as involving “actual positives.” Use the standard formulas above.</p>
+<h3 id="7-2-metric-selection">7.2 Metric selection</h3>
+<ul>
+<li>Accuracy can mislead on imbalanced classes.</li>
+<li>Prefer high recall when missing a positive is costly (e.g., disease screening).</li>
+<li>Prefer high precision when false alarms are costly.</li>
+<li>Use F1 when both error types matter and classes are imbalanced.</li>
+<li>Business evaluation may also require <strong>latency</strong>, throughput, cost, robustness, and fairness.</li>
+</ul>
+<h3 id="7-3-predicted-15-versus-actual-20-example">7.3 Predicted 15 versus actual 20 example</h3>
+<p>The lecture informally calls a prediction of 15 against an actual count of 20 “reasonably efficient.” For an exam, do not automatically convert that into classification accuracy. It is a numerical error example; the correct metric depends on task definition.</p>
+<hr>
+<h2 id="8-historical-evolution-of-artificial-neural-networks">8. Historical evolution of artificial neural networks</h2>
+<h3 id="8-1-motivation-and-intellectual-foundations">8.1 Motivation and intellectual foundations</h3>
+<p>ANN research began with attempts to emulate aspects of neural activity and understand human thought. Cognitive science combined psychology, neuroscience, linguistics, philosophy, computer science, and related disciplines to study perception, learning, memory, intelligence, and decision-making.</p>
+<p>Two broad approaches emerged:</p>
+<ul>
+<li><strong>Symbolic AI:</strong> represents knowledge with explicit symbols, logic, and predefined rules.</li>
+<li><strong>Connectionism/neural networks:</strong> intelligence emerges from networks of simple interacting units learning statistical patterns from data.</li>
+</ul>
+<p>Researchers named in the lecture include <strong>Marvin Minsky</strong> and <strong>Herbert Simon</strong>, whose work explored cognition and AI.</p>
+<h3 id="8-2-key-milestones">8.2 Key milestones</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Period/year</th>
+<th>Milestone</th>
+<th>Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1940s / 1943</td>
+<td>McCulloch–Pitts neuron</td>
+<td>Theoretical binary neuron using simple logic; foundational simulation of neural activity</td>
+</tr>
+<tr>
+<td>1958</td>
+<td>Frank Rosenblatt&rsquo;s perceptron</td>
+<td>Learning algorithm capable of binary classification; demonstrated learning from data</td>
+</tr>
+<tr>
+<td>1980s</td>
+<td>Backpropagation became central to multilayer training</td>
+<td>Enabled systematic gradient-based adjustment across layers</td>
+</tr>
+<tr>
+<td>Early 2000s onward</td>
+<td>Deep-learning revolution</td>
+<td>Larger datasets, stronger computing power, and better algorithms enabled deeper networks</td>
+</tr>
+<tr>
+<td>Modern era</td>
+<td>CNNs, RNNs, GNNs and other architectures</td>
+<td>Specialized learning for images, sequences, graphs, and complex applications</td>
+</tr>
+</tbody>
+</table></div>
+<p>The source transcription calls the first model “Mac Collopits/Math Colopets”; the standard name is <strong>McCulloch–Pitts</strong>.</p>
+<h3 id="8-3-architecture-evolution">8.3 Architecture evolution</h3>
+<p>Neural architectures moved from no/single hidden-layer shallow models toward multilayer networks capable of hierarchical feature learning. This shift supported breakthroughs in image recognition, speech recognition, natural-language processing, and computer vision.</p>
+<p>The lecture compares this evolution to mobile phones moving from large antenna-equipped devices, through keypad phones, to touchscreen smartphones: technology improves through successive milestones rather than appearing fully formed.</p>
+<h3 id="8-4-why-the-deep-learning-revolution-occurred">8.4 Why the deep-learning revolution occurred</h3>
+<ol>
+<li><strong>More data:</strong> large datasets provide enough examples to learn complex representations.</li>
+<li><strong>More compute:</strong> GPUs and improved computing make large-scale training feasible.</li>
+<li><strong>Better algorithms/training techniques:</strong> backpropagation-based optimization, improved activations, regularization, and architecture advances make deep networks trainable.</li>
+</ol>
+<h3 id="8-5-limitations-of-early-models">8.5 Limitations of early models</h3>
+<ul>
+<li>Perceptrons could solve only <strong>linearly separable</strong> problems.</li>
+<li>Complex nonlinear tasks exceeded early model capacity.</li>
+<li>Deep networks suffered from <strong>vanishing gradients</strong>, in which gradients become too small for meaningful early-layer updates.</li>
+<li>Computing power was limited.</li>
+<li>Training data were insufficient.</li>
+</ul>
+<p>These constraints restricted learning of complex patterns. Modern methods mitigate, rather than universally eliminate, these issues.</p>
+<h3 id="8-6-impact-on-the-ai-landscape">8.6 Impact on the AI landscape</h3>
+<p>Neural networks became the foundation of modern deep learning, transforming industries and accelerating research through advances in vision, speech, language, and prediction. Their importance comes from learning useful representations directly from data rather than relying solely on hand-written rules or manually designed features.</p>
+<hr>
+<h2 id="9-feature-learning-and-understanding">9. Feature learning and “understanding”</h2>
+<p>Traditional ML often depends heavily on human-designed features. Deep networks can learn a hierarchy of features automatically from data. For an image, they may learn edges, then shapes, then object parts, then classes. For text, embeddings and sequence models transform words into numeric representations and contextual patterns.</p>
+<p>However, pattern learning should not automatically be called human-like understanding. Neural networks can perform highly capable prediction without conscious comprehension, emotion, intention, or an explicit explanation of why a decision was made.</p>
+<hr>
+<h2 id="10-philosophical-and-cognitive-aspects">10. Philosophical and cognitive aspects</h2>
+<h3 id="10-1-interdisciplinary-nature-of-ai">10.1 Interdisciplinary nature of AI</h3>
+<p>The lecture links AI with computer science, psychology, philosophy, neuroscience, biology, mathematics, and sociology. These connections matter because intelligence raises technical and human questions simultaneously.</p>
+<h3 id="10-2-neural-networks-versus-human-cognition">10.2 Neural networks versus human cognition</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Neural networks</th>
+<th>Human cognition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Learn statistical patterns through algorithms and data</td>
+<td>Includes learning plus emotion, intuition, embodiment, and complex reasoning</td>
+</tr>
+<tr>
+<td>Often require large datasets</td>
+<td>Can learn flexibly from comparatively few experiences</td>
+</tr>
+<tr>
+<td>Excel at a trained task</td>
+<td>Adapt and transfer knowledge across contexts more naturally</td>
+</tr>
+<tr>
+<td>Internal representations are often opaque</td>
+<td>People can sometimes give explicit, introspective reasons (though not always perfectly)</td>
+</tr>
+<tr>
+<td>Simulate aspects of cognitive function</td>
+<td>Possess subjective experience as ordinarily understood</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="10-3-connectionism-and-constructivism">10.3 Connectionism and constructivism</h3>
+<ul>
+<li><strong>Connectionism:</strong> cognition can emerge from networks of many simple connected units; this directly informs neural-network design.</li>
+<li><strong>Constructivism:</strong> learners actively construct knowledge rather than passively receive it; this emphasizes adaptive representation-building.</li>
+</ul>
+<p>Together, these perspectives influence attempts to model learning and adaptation in tasks such as NLP and image recognition.</p>
+<h3 id="10-4-black-box-and-interpretability-problem">10.4 Black-box and interpretability problem</h3>
+<p>Neural networks can make effective decisions without transparent, human-readable reasoning. Their internal representations are often difficult to interpret. This creates practical and philosophical problems:</p>
+<ul>
+<li>Can an opaque model be accountable?</li>
+<li>How can a decision be audited or contested?</li>
+<li>Is correct behavior equivalent to genuine understanding?</li>
+<li>What explanation is required in healthcare, finance, or law?</li>
+</ul>
+<h3 id="10-5-can-machines-think">10.5 Can machines think?</h3>
+<ul>
+<li><strong>Turing Test (Alan Turing):</strong> evaluates whether a machine exhibits conversational/intelligent behavior indistinguishable from a human.</li>
+<li><strong>Chinese Room argument (John Searle):</strong> challenges the claim that correct symbol manipulation equals genuine understanding.</li>
+</ul>
+<p>The contrast is between <strong>simulating intelligent behavior</strong> and <strong>possessing comprehension</strong>.</p>
+<h3 id="10-6-symbolic-versus-statistical-intelligence">10.6 Symbolic versus statistical intelligence</h3>
+<p>Symbolic AI uses explicit rules intended to reproduce reasoning. Neural networks use data-driven statistical learning that resembles learning from experience. Philosophers debate whether intelligence must be symbolic/rule-based or can emerge from learned connections and patterns.</p>
+<h3 id="10-7-mind-body-problem-physicalism-and-functionalism">10.7 Mind–body problem, physicalism, and functionalism</h3>
+<ul>
+<li>The <strong>mind–body problem</strong> asks how mind/consciousness relates to physical processes.</li>
+<li>Neural networks operate through computation yet perform tasks once associated with conscious thought; this raises—but does not settle—the question of whether cognitive functions require consciousness.</li>
+<li><strong>Functionalism</strong> defines mental states by the roles/functions they perform rather than the material that implements them. ANN performance supports the possibility that intelligence-like functions can arise in non-biological systems.</li>
+</ul>
+<h3 id="10-8-consciousness-and-qualia">10.8 Consciousness and qualia</h3>
+<p><strong>Qualia</strong> are subjective experiences—the felt quality of seeing color, feeling pain, etc. Neural networks process information but there is no basis in the course material for claiming that they possess subjective experience. This is the “hard problem” of consciousness: can computation alone ever produce experience, or only simulate behavior associated with it?</p>
+<h3 id="10-9-generalization-and-adaptability">10.9 Generalization and adaptability</h3>
+<p>Networks excel in domains represented by their training distribution but may struggle across substantially different contexts without retraining. Human cognition transfers and adapts knowledge more naturally. Generalization is therefore both a technical goal and a philosophical boundary.</p>
+<h3 id="10-10-suggested-readings-mentioned">10.10 Suggested readings mentioned</h3>
+<p>The lecture points students toward Alan Turing&rsquo;s work on computing machinery and intelligence and an MIT Press critique titled <em>What Computers Still Can&rsquo;t Do</em> for deeper study of machine intelligence debates.</p>
+<hr>
+<h2 id="11-ethics-and-social-responsibility">11. Ethics and social responsibility</h2>
+<h3 id="11-1-bias-and-fairness">11.1 Bias and fairness</h3>
+<p>Networks learn from historical data. If the data contain societal bias, the model can inherit or amplify it, producing unfair or discriminatory outcomes.</p>
+<p>$$\text{Biased history} \rightarrow \text{biased training signal} \rightarrow \text{potentially biased decisions}$$</p>
+<p>Fairness requires representative data, metric-based audits, subgroup evaluation, governance, and human review—not merely high overall accuracy.</p>
+<h3 id="11-2-accountability-autonomy-and-agency">11.2 Accountability, autonomy, and agency</h3>
+<p>As systems make consequential decisions, ask:</p>
+<ul>
+<li>Who is responsible for an error—the developer, deployer, data owner, or decision-maker?</li>
+<li>Does autonomous task performance constitute “deciding” or merely computation?</li>
+<li>Can a black-box output be used when a person has a right to an explanation?</li>
+</ul>
+<h3 id="11-3-employment-and-inequality">11.3 Employment and inequality</h3>
+<p>Automation may improve efficiency but can displace workers and worsen inequality if unmanaged. Organizations and policymakers need reskilling, transition support, and careful deployment.</p>
+<h3 id="11-4-high-stakes-domains">11.4 High-stakes domains</h3>
+<p>Healthcare, law, and finance require special attention to bias, fairness, reliability, interpretability, and responsibility because errors have real-world consequences.</p>
+<h3 id="11-5-human-uniqueness-and-future-ai">11.5 Human uniqueness and future AI</h3>
+<p>Language and vision systems have narrowed performance gaps in selected tasks, challenging traditional claims about human uniqueness. Future progress may produce more general capability, but current networks remain short of broad human cognition. Ethical frameworks must evolve alongside technical capability.</p>
+<hr>
+<h2 id="12-live-class-applications-and-discussion">12. Live-class applications and discussion</h2>
+<h3 id="12-1-employee-attrition-model">12.1 Employee-attrition model</h3>
+<p>The live session used employee data—such as <strong>age, salary, and years of service</strong>—as an input vector. Hidden layers learn patterns, and the output predicts whether the employee is likely to <strong>leave</strong> or <strong>stay</strong>.</p>
+<p>This example demonstrates:</p>
+<ul>
+<li>feature vector formation;</li>
+<li>hidden-layer pattern recognition;</li>
+<li>binary classification;</li>
+<li>the need to choose hidden nodes/layers explicitly;</li>
+<li>business usefulness of prediction.</li>
+</ul>
+<p>A simple starting design suggested in class was one hidden layer with four nodes. This is an illustrative starting point, not a universal rule; architecture should be validated empirically.</p>
+<h3 id="12-2-build-versus-buy-subscription-q-a">12.2 Build-versus-buy/subscription Q&amp;A</h3>
+<p>A student asked how an organization developing a credit-risk use case should decide whether to build a model or subscribe to an existing NLP/AI service when needs may initially be uncertain.</p>
+<p>Instructor response and implications:</p>
+<ul>
+<li><strong>Cost matters</strong>, especially from the organization&rsquo;s perspective and for controlling future subscription expense.</li>
+<li>Technical feasibility is not only about affordability; <strong>integration</strong> with the existing model/layers is a major issue.</li>
+<li>Large models may contain many interconnected hidden layers. Changing a weight, layer behavior, or activation can affect downstream output.</li>
+<li>Developers need to understand the purpose and activity of relevant layers/components before adapting or integrating a service.</li>
+<li>If technically possible, the organization may update a layer, integrate an NLP component, or change activation behavior to obtain the desired node-to-node output.</li>
+</ul>
+<p><strong>Practical extension:</strong> A robust build/buy decision should examine total cost of ownership, data privacy, vendor lock-in, latency, customization, explainability, skills, maintenance, integration/API constraints, service reliability, regulatory compliance, and expected scale.</p>
+<hr>
+<h2 id="13-bytewise-solutions-case-study">13. ByteWise Solutions case study</h2>
+<h3 id="13-1-business-setting">13.1 Business setting</h3>
+<p>ByteWise Solutions considers two neural-network applications:</p>
+<ol>
+<li><strong>Invoice/handwritten-digit recognition</strong> — extract/classify visual information from invoices.</li>
+<li><strong>Customer-feedback sentiment analysis</strong> — classify text sentiment.</li>
+</ol>
+<p>The case connects technical design with development strategy, accuracy, latency, and constrained resources.</p>
+<h3 id="13-2-model-selection">13.2 Model selection</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Input/output</th>
+<th>Best-fit architecture</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Invoice/digit recognition</td>
+<td>Image pixels $\rightarrow$ digit/content class</td>
+<td>CNN</td>
+<td>Local filters, spatial hierarchy, translation tolerance, shared weights</td>
+</tr>
+<tr>
+<td>Sentiment analysis</td>
+<td>Words/tokens $\rightarrow$ sentiment class</td>
+<td>RNN (as taught in the case)</td>
+<td>Sequential context and feedback/state across word order</td>
+</tr>
+</tbody>
+</table></div>
+<p>Modern NLP may use transformers, but the case specifically tests why an RNN suits sequential sentiment data.</p>
+<h3 id="13-3-cnn-invoice-pipeline">13.3 CNN invoice pipeline</h3>
+<ol>
+<li>Image enters the input layer as pixel values.</li>
+<li>Convolutional filters detect local edges and curves.</li>
+<li>Deeper layers combine them into strokes, shapes, and digit patterns.</li>
+<li>Activation functions introduce nonlinearity.</li>
+<li>Max pooling reduces spatial size while retaining strong feature responses.</li>
+<li>Final layers output class probabilities, often via softmax.</li>
+</ol>
+<p>MNIST is relevant as a baseline because it demonstrates handwritten-digit recognition, though real invoices introduce more variation in layouts, fonts, noise, and scanning quality.</p>
+<h3 id="13-4-rnn-sentiment-pipeline">13.4 RNN sentiment pipeline</h3>
+<ol>
+<li>Tokenize customer feedback.</li>
+<li>Convert words to <strong>embeddings</strong>—dense numeric vectors representing learned semantic relationships.</li>
+<li>Process tokens sequentially.</li>
+<li>Recurrent state carries relevant earlier context.</li>
+<li>Output layer predicts sentiment (e.g., positive/negative/neutral).</li>
+</ol>
+<p>Example: “The product looked good, but it failed quickly.” A sequence-aware model should allow the later clause to change the overall interpretation.</p>
+<h3 id="13-5-shared-training-fundamentals">13.5 Shared training fundamentals</h3>
+<p>Both models use:</p>
+<ul>
+<li>forward propagation;</li>
+<li>a loss function;</li>
+<li>backpropagation;</li>
+<li>gradient-based weight updates;</li>
+<li>a learning rate;</li>
+<li>repeated epochs;</li>
+<li>training/validation separation;</li>
+<li>monitoring for overfitting.</li>
+</ul>
+<p>Architecture differs, but the fundamental optimization loop remains the same.</p>
+<h3 id="13-6-accuracy-and-latency">13.6 Accuracy and latency</h3>
+<ul>
+<li><strong>Accuracy</strong> measures correctness but must be supplemented by per-class and error-cost metrics.</li>
+<li><strong>Latency</strong> is the time from input/request to prediction. Low latency matters for operational workflows and interactive applications.</li>
+<li>A larger model may improve accuracy but increase training time, inference latency, memory use, and cost.</li>
+</ul>
+<h3 id="13-7-development-options-and-trade-offs">13.7 Development options and trade-offs</h3>
+<p>The case presents alternatives resembling:</p>
+<ul>
+<li>build the CNN first, then the RNN;</li>
+<li>build the RNN first, then the CNN;</li>
+<li>develop both in parallel.</li>
+</ul>
+<p>Parallel work can shorten calendar time only if teams, compute, data, and integration capacity are sufficient. With scarce specialists or shared infrastructure, naive parallelism causes contention, coordination cost, and delays.</p>
+<h3 id="13-8-conditional-project-planning">13.8 Conditional project planning</h3>
+<p>Prioritize according to business value and constraints:</p>
+<ul>
+<li>If invoice automation provides immediate operational savings or is technically more mature, prioritize CNN delivery.</li>
+<li>If customer feedback drives urgent retention/brand decisions, prioritize the RNN.</li>
+<li>If there are independent teams and enough compute/data-engineering support, parallelize work while standardizing shared pipelines.</li>
+<li>Use small proofs of concept to reduce uncertainty before full investment.</li>
+</ul>
+<h3 id="13-9-recommended-integrated-strategy">13.9 Recommended integrated strategy</h3>
+<ol>
+<li>Define measurable success criteria: task metrics, latency, cost, and acceptable error types.</li>
+<li>Audit and prepare both datasets.</li>
+<li>Build small baselines.</li>
+<li>Allocate scarce specialists to the higher-value or higher-risk bottleneck.</li>
+<li>Reuse shared infrastructure for preprocessing, training, monitoring, and deployment.</li>
+<li>Validate on representative unseen data.</li>
+<li>Compare business benefit against compute/development cost.</li>
+<li>Deploy incrementally and monitor drift, fairness, failures, and latency.</li>
+</ol>
+<hr>
+<h2 id="14-practical-examples-and-use-cases">14. Practical examples and use cases</h2>
+<h3 id="14-1-image-recognition">14.1 Image recognition</h3>
+<ul>
+<li>Handwritten-digit classification</li>
+<li>Invoice data extraction</li>
+<li>Medical X-ray screening</li>
+<li>Object and face recognition</li>
+</ul>
+<p>CNNs are useful because spatially nearby pixels form meaningful local patterns.</p>
+<h3 id="14-2-speech-processing">14.2 Speech processing</h3>
+<p>Audio can be represented as time-dependent features; sequential architectures learn how earlier sound segments affect later interpretation. Applications include speech recognition and voice interfaces.</p>
+<h3 id="14-3-natural-language-processing">14.3 Natural-language processing</h3>
+<ul>
+<li>Sentiment analysis</li>
+<li>Text classification</li>
+<li>Language understanding</li>
+<li>Sequence prediction</li>
+</ul>
+<p>Text must be transformed into numerical representations such as embeddings. Context, sequence, and word order are essential.</p>
+<h3 id="14-4-time-series">14.4 Time series</h3>
+<p>RNN-style state supports forecasting when present values depend on past observations, such as demand or sensor readings.</p>
+<h3 id="14-5-structured-business-prediction">14.5 Structured business prediction</h3>
+<p>Feedforward networks can map fixed feature vectors to outcomes such as employee attrition, credit risk, or purchase propensity. Structured data does not automatically require deep learning; conventional ML should remain a baseline.</p>
+<hr>
+<h2 id="15-important-comparisons">15. Important comparisons</h2>
+<h3 id="15-1-forward-propagation-versus-backpropagation">15.1 Forward propagation versus backpropagation</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Forward propagation</th>
+<th>Backpropagation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Moves input toward output</td>
+<td>Moves error influence backward</td>
+</tr>
+<tr>
+<td>Produces prediction</td>
+<td>Produces parameter gradients</td>
+</tr>
+<tr>
+<td>Uses current weights</td>
+<td>Evaluates how weights affected loss</td>
+</tr>
+<tr>
+<td>Followed by loss calculation</td>
+<td>Followed by optimizer update</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="15-2-cnn-versus-rnn-versus-fnn">15.2 CNN versus RNN versus FNN</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>FNN</th>
+<th>CNN</th>
+<th>RNN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Best suited to</td>
+<td>Fixed-size/structured features</td>
+<td>Spatial/grid data</td>
+<td>Ordered sequences</td>
+</tr>
+<tr>
+<td>Core mechanism</td>
+<td>Dense feedforward connections</td>
+<td>Local filters and shared weights</td>
+<td>Recurrent hidden state</td>
+</tr>
+<tr>
+<td>Typical example</td>
+<td>Attrition prediction</td>
+<td>Invoice digits</td>
+<td>Sentiment/time series</td>
+</tr>
+<tr>
+<td>Loop/state</td>
+<td>No</td>
+<td>Usually no recurrent state</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="15-3-symbolic-ai-versus-neural-networks">15.3 Symbolic AI versus neural networks</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Symbolic AI</th>
+<th>Neural networks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Explicit rules and symbols</td>
+<td>Learned weights and distributed representations</td>
+</tr>
+<tr>
+<td>Reasoning path can be clearer</td>
+<td>Often opaque/black-box</td>
+</tr>
+<tr>
+<td>Requires rule engineering</td>
+<td>Requires suitable data and training</td>
+</tr>
+<tr>
+<td>Can struggle with messy perception</td>
+<td>Excels at pattern recognition</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="15-4-parameter-versus-hyperparameter">15.4 Parameter versus hyperparameter</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Hyperparameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Learned from data</td>
+<td>Chosen/configured by practitioner</td>
+</tr>
+<tr>
+<td>Weight, bias</td>
+<td>Learning rate, layers, epochs, batch size</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="16-exam-traps-and-caveats">16. Exam traps and caveats</h2>
+<ol>
+<li><strong>ANNs mimic selected brain functions; they are not biological brains.</strong></li>
+<li><strong>Backpropagation computes gradients; gradient descent updates parameters.</strong></li>
+<li><strong>Loss is not the same as accuracy.</strong> Loss is an optimization objective; accuracy is an evaluation metric.</li>
+<li><strong>Precision and recall are not interchangeable.</strong> Precision denominator is predicted positives; recall denominator is actual positives.</li>
+<li><strong>A confusion matrix is a count table, not a single score.</strong></li>
+<li><strong>More layers do not guarantee greater accuracy.</strong> They add capacity and training difficulty.</li>
+<li><strong>Overfitting means poor generalization despite good training fit.</strong></li>
+<li><strong>Underfitting means the model fails to capture even the training pattern adequately.</strong></li>
+<li><strong>High learning rate can overshoot/oscillate; low rate can be painfully slow.</strong></li>
+<li><strong>An epoch is one full dataset pass, not one sample or one update.</strong></li>
+<li><strong>Feedforward networks have no cycles; RNNs explicitly carry recurrent state.</strong></li>
+<li><strong>Sigmoid is suited to binary probability output; softmax to mutually exclusive multiclass output; ReLU commonly to hidden layers.</strong></li>
+<li><strong>Perceptrons are limited to linearly separable problems.</strong></li>
+<li><strong>High overall accuracy does not prove fairness or good minority-class performance.</strong></li>
+<li><strong>Behavior that passes a Turing-style test does not settle consciousness or understanding.</strong></li>
+<li><strong>Historical bias in data can be learned and amplified.</strong></li>
+<li><strong>The instructor&rsquo;s “three or more layers” definition of deep learning is a course convention; counting conventions differ.</strong></li>
+<li><strong>CNN and RNN selection follows data structure: spatial versus sequential.</strong></li>
+<li><strong>A word embedding represents a token numerically; it is not itself a complete sentiment model.</strong></li>
+<li><strong>Parallel development is beneficial only with adequate independent resources and coordination.</strong></li>
+</ol>
+<hr>
+<h2 id="17-likely-exam-questions-with-answer-points">17. Likely exam questions with answer points</h2>
+<h3 id="q1-define-an-ann-and-explain-its-structure">Q1. Define an ANN and explain its structure.</h3>
+<p>An ANN is a brain-inspired computational model of interconnected artificial neurons. The input layer receives features, hidden layers compute weighted nonlinear transformations and extract patterns, and the output layer produces a class or prediction. Learning adjusts weights and biases to minimize loss.</p>
+<h3 id="q2-compare-biological-and-artificial-neurons">Q2. Compare biological and artificial neurons.</h3>
+<p>Map dendrites to inputs, synaptic strengths to weights, soma to weighted aggregation, firing to activation, axon to output, and synaptic plasticity to weight adjustment. Add the caveat that ANNs only abstract selected mechanisms and lack the full biological/cognitive system.</p>
+<h3 id="q3-explain-how-a-neural-network-learns">Q3. Explain how a neural network learns.</h3>
+<p>Describe initialization, forward pass, prediction, loss computation, backpropagation using the chain rule, gradient-descent update, epochs, and validation. Include $w\leftarrow w-\eta\partial L/\partial w$.</p>
+<h3 id="q4-what-is-supervised-learning-explain-with-an-example">Q4. What is supervised learning? Explain with an example.</h3>
+<p>It learns from labelled input-output pairs. Examples: MNIST images labelled $0$–$9$, or employee attributes labelled leave/stay. Explain preprocessing, training, and unseen-data evaluation.</p>
+<h3 id="q5-explain-overfitting-and-underfitting">Q5. Explain overfitting and underfitting.</h3>
+<p>Overfitting captures training noise and fails on unseen cases; underfitting lacks capacity or training to capture patterns. Contrast training/validation behavior and list remedies.</p>
+<h3 id="q6-explain-accuracy-precision-recall-f1-and-confusion-matrix">Q6. Explain accuracy, precision, recall, F1, and confusion matrix.</h3>
+<p>Draw TP/TN/FP/FN matrix, write formulas, explain when each matters, and warn that accuracy may mislead for imbalanced classes.</p>
+<h3 id="q7-trace-ann-development">Q7. Trace ANN development.</h3>
+<p>Mention cognitive-science motivation, McCulloch–Pitts (1943), Rosenblatt perceptron (1958), backpropagation in the 1980s, deep-learning growth after 2000 due to data/compute/algorithms, and modern specialized architectures.</p>
+<h3 id="q8-why-were-early-neural-networks-limited">Q8. Why were early neural networks limited?</h3>
+<p>Linear separability limitation, insufficient data and compute, shallow capacity, and vanishing gradients in deeper training.</p>
+<h3 id="q9-compare-fnn-cnn-and-rnn">Q9. Compare FNN, CNN, and RNN.</h3>
+<p>Use direction/state, data structure, core operation, and applications. FNN: fixed features; CNN: spatial filters; RNN: recurrent sequence state.</p>
+<h3 id="q10-why-is-cnn-appropriate-for-invoice-recognition">Q10. Why is CNN appropriate for invoice recognition?</h3>
+<p>Invoices are images with local spatial patterns. Convolutions detect edges/strokes, deeper layers learn digit/character forms, pooling reduces dimension, and output layers classify content. Mention real-invoice complexity beyond MNIST.</p>
+<h3 id="q11-why-is-rnn-appropriate-for-sentiment-analysis">Q11. Why is RNN appropriate for sentiment analysis?</h3>
+<p>Sentiment depends on word order and prior context. Embeddings encode words numerically; recurrent state passes context through the sequence; final output classifies sentiment.</p>
+<h3 id="q12-discuss-neural-networks-versus-human-cognition">Q12. Discuss neural networks versus human cognition.</h3>
+<p>Cover brain inspiration, pattern learning, data requirements, black-box reasoning, limited transfer, human emotion/intuition/context, consciousness, and qualia.</p>
+<h3 id="q13-explain-turing-test-and-chinese-room">Q13. Explain Turing Test and Chinese Room.</h3>
+<p>Turing focuses on indistinguishable intelligent behavior. Searle argues that correct symbol manipulation may occur without comprehension. The pair highlights performance versus genuine understanding.</p>
+<h3 id="q14-discuss-ethical-concerns">Q14. Discuss ethical concerns.</h3>
+<p>Bias/fairness, opacity, accountability, autonomy, job displacement, inequality, high-stakes harm, governance, and evolving responsibility.</p>
+<h3 id="q15-recommend-a-bytewise-development-strategy">Q15. Recommend a ByteWise development strategy.</h3>
+<p>Match CNN to invoices and RNN to sentiment; define accuracy/latency/cost criteria; create baselines; prioritize by business value and bottlenecks; parallelize only with sufficient independent resources; validate, deploy incrementally, and monitor.</p>
+<h3 id="q16-what-determines-a-build-versus-buy-decision-for-an-ai-service">Q16. What determines a build-versus-buy decision for an AI service?</h3>
+<p>Cost and affordability plus integration feasibility, customization, layer/component compatibility, data privacy, latency, vendor lock-in, explainability, skills, maintenance, compliance, and scale.</p>
+<hr>
+<h2 id="18-rapid-revision-sheet">18. Rapid revision sheet</h2>
+<h3 id="one-line-definitions">One-line definitions</h3>
+<ul>
+<li><strong>ANN:</strong> layered network of artificial neurons that learns input-output patterns.</li>
+<li><strong>Neuron:</strong> weighted sum plus bias followed by activation.</li>
+<li><strong>Weight:</strong> learned connection strength.</li>
+<li><strong>Bias:</strong> learned offset.</li>
+<li><strong>Activation:</strong> nonlinear transformation of neuron input.</li>
+<li><strong>Forward pass:</strong> compute prediction from input to output.</li>
+<li><strong>Loss:</strong> prediction-error objective.</li>
+<li><strong>Backpropagation:</strong> chain-rule calculation of gradients from output backward.</li>
+<li><strong>Gradient descent:</strong> update parameters opposite the loss gradient.</li>
+<li><strong>Learning rate:</strong> parameter-update step size.</li>
+<li><strong>Epoch:</strong> one complete pass through training data.</li>
+<li><strong>Supervised learning:</strong> learning from labelled examples.</li>
+<li><strong>Overfitting:</strong> fits training detail/noise but generalizes poorly.</li>
+<li><strong>Underfitting:</strong> insufficiently captures the underlying pattern.</li>
+<li><strong>CNN:</strong> spatial feature learner using convolution.</li>
+<li><strong>RNN:</strong> sequence learner with recurrent state.</li>
+<li><strong>Embedding:</strong> dense numeric representation of a token/entity.</li>
+<li><strong>Qualia:</strong> subjective felt experience.</li>
+</ul>
+<h3 id="formula-block">Formula block</h3>
+<p>$$z=\sum_i w_ix_i+b,\qquad a=f(z)$$</p>
+<p>$$w\leftarrow w-\eta\frac{\partial L}{\partial w}$$</p>
+<p>$$\operatorname{MSE}=\frac{1}{N}\sum_i(y_i-\hat y_i)^2$$</p>
+<p>$$\text{Accuracy}=\frac{TP+TN}{TP+TN+FP+FN}$$</p>
+<p>$$\text{Precision}=\frac{TP}{TP+FP},\quad
+\text{Recall}=\frac{TP}{TP+FN}$$</p>
+<p>$$F_1=2\frac{PR}{P+R}$$</p>
+<h3 id="must-remember-timeline">Must-remember timeline</h3>
+<p>$$1943\ \text{McCulloch–Pitts} \rightarrow 1958\ \text{Perceptron} \rightarrow 1980s\ \text{Backpropagation} \rightarrow 2000s+\ \text{Deep learning}$$</p>
+<h3 id="must-remember-pairings">Must-remember pairings</h3>
+<ul>
+<li>Images/invoices/digits $\rightarrow$ <strong>CNN</strong></li>
+<li>Text/time series/sequences $\rightarrow$ <strong>RNN</strong> (course case)</li>
+<li>Fixed structured features $\rightarrow$ <strong>FNN</strong></li>
+<li>Binary output $\rightarrow$ <strong>sigmoid</strong></li>
+<li>Multiclass output $\rightarrow$ <strong>softmax</strong></li>
+<li>Hidden-layer default concept $\rightarrow$ <strong>ReLU</strong></li>
+<li>Oscillating loss $\rightarrow$ learning rate likely <strong>too high</strong></li>
+<li>Slow convergence $\rightarrow$ learning rate may be <strong>too low</strong></li>
+<li>Great train, weak validation $\rightarrow$ <strong>overfitting</strong></li>
+<li>Weak train and validation $\rightarrow$ <strong>underfitting</strong></li>
+</ul>
+<h3 id="thirty-second-week-1-summary">Thirty-second Week 1 summary</h3>
+<p>Neural networks are brain-inspired layered models. Inputs are multiplied by weights, combined with bias, passed through nonlinear activations, and propagated to an output. Supervised training compares predictions with labels, computes loss, backpropagates gradients, and updates weights by gradient descent. CNNs learn spatial image features; RNNs retain sequential context; depth enables hierarchical feature learning. Modern deep learning grew from early neuron/perceptron research because of more data, compute, and improved training. Powerful pattern recognition does not equal human consciousness or transparent reasoning, so bias, fairness, accountability, employment impact, and responsible deployment are essential—especially in high-stakes and business settings.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-2.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 2: Neural Networks, Backpropagation, Model…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

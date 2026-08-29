@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Deep Learning · Week 7 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Deep Learning</span>
+      <span class="brand-title">Week 7</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html" selected>Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Neural Networks and Deep Learning
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Neural Networks, Backpropagation, Model Tuning, and Evaluation
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Convolutional Neural Networks, Transfer Learning and Computer-Vision…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        RNNs, GRU, LSTM, NLP, Word Embeddings, Transfer Learning and Attention
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        RBMs, Deep Belief Networks, Autoencoders, and Contrastive Divergence
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Reinforcement Learning, Policy Networks, Target Networks and DQN
+      </a>
+      <a class="is-active" href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Generative Adversarial Networks (GANs)
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Data Augmentation, Hyperparameter Tuning, Transfer Learning and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Feed-Forward Neural Networks, Perceptrons, Loss, Backpropagation and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Python Programming Fundamentals
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Machine Learning, Classification, and Naive Bayes
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Logistic Regression as a Neural Network, MNIST, and K-Means
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        PCA and Bag-of-Words
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Autoencoders and Representation Learning
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Exhaustive Exam-Oriented Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Deep Learning · Week 7</p>
+        <h1 class="page-title">Generative Adversarial Networks (GANs)</h1>
+        <p class="page-meta">Week 7 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-learning-outcomes">1. Learning outcomes</a></li>
+      <li><a href="#2-what-is-a-gan">2. What is a GAN?</a></li>
+      <li><a href="#3-adversarial-network-versus-gan">3. Adversarial network versus GAN</a></li>
+      <li><a href="#4-the-two-components">4. The two components</a></li>
+      <li><a href="#5-why-competition-improves-output">5. Why competition improves output</a></li>
+      <li><a href="#6-basic-gan-data-flow">6. Basic GAN data flow</a></li>
+      <li><a href="#7-formal-objective">7. Formal objective</a></li>
+      <li><a href="#8-alternating-training-procedure">8. Alternating training procedure</a></li>
+      <li><a href="#9-encoder-decoder-architecture">9. Encoder–decoder architecture</a></li>
+      <li><a href="#10-encoder-decoder-versus-generator-discriminator">10. Encoder/decoder versus Generator/Discriminator</a></li>
+      <li><a href="#11-generator-architecture">11. Generator architecture</a></li>
+      <li><a href="#12-discriminator-architecture">12. Discriminator architecture</a></li>
+      <li><a href="#13-architectural-choice-and-performance">13. Architectural choice and performance</a></li>
+      <li><a href="#14-standard-gan-dcgan-and-cyclegan-comparison">14. Standard GAN, DCGAN, and CycleGAN comparison</a></li>
+      <li><a href="#15-dcgan">15. DCGAN</a></li>
+      <li><a href="#16-cyclegan">16. CycleGAN</a></li>
+      <li><a href="#17-variant-selection-rule">17. Variant-selection rule</a></li>
+      <li><a href="#18-applications">18. Applications</a></li>
+      <li><a href="#19-advantages">19. Advantages</a></li>
+      <li><a href="#20-ethical-and-legal-caveat">20. Ethical and legal caveat</a></li>
+      <li><a href="#21-limitations">21. Limitations</a></li>
+      <li><a href="#22-standard-neural-network-training-loop">22. Standard neural-network training loop</a></li>
+      <li><a href="#23-general-training-challenges-and-remedies">23. General training challenges and remedies</a></li>
+      <li><a href="#24-mode-collapse">24. Mode collapse</a></li>
+      <li><a href="#25-training-instability">25. Training instability</a></li>
+      <li><a href="#26-discriminator-dominance-and-gradient-saturation">26. Discriminator dominance and gradient saturation</a></li>
+      <li><a href="#27-balancing-learning-rates">27. Balancing learning rates</a></li>
+      <li><a href="#28-label-smoothing">28. Label smoothing</a></li>
+      <li><a href="#29-batch-normalization">29. Batch normalization</a></li>
+      <li><a href="#30-progressive-training-early-stopping-and-diverse-architectures">30. Progressive training, early stopping, and diverse architectures</a></li>
+      <li><a href="#31-changing-generator-capacity">31. Changing Generator capacity</a></li>
+      <li><a href="#32-longer-training-and-more-compute">32. Longer training and more compute</a></li>
+      <li><a href="#33-why-gan-evaluation-is-difficult">33. Why GAN evaluation is difficult</a></li>
+      <li><a href="#34-inception-score-is">34. Inception Score (IS)</a></li>
+      <li><a href="#35-fr-chet-inception-distance-fid">35. Fréchet Inception Distance (FID)</a></li>
+      <li><a href="#36-practical-evaluation-checklist">36. Practical evaluation checklist</a></li>
+      <li><a href="#37-colab-and-libraries">37. Colab and libraries</a></li>
+      <li><a href="#38-simple-generator">38. Simple Generator</a></li>
+      <li><a href="#39-simple-discriminator">39. Simple Discriminator</a></li>
+      <li><a href="#40-model-and-optimizer-initialization">40. Model and optimizer initialization</a></li>
+      <li><a href="#41-real-data-and-labels">41. Real data and labels</a></li>
+      <li><a href="#42-discriminator-update">42. Discriminator update</a></li>
+      <li><a href="#43-generator-update">43. Generator update</a></li>
+      <li><a href="#44-epochs-and-visualization">44. Epochs and visualization</a></li>
+      <li><a href="#45-case-context">45. Case context</a></li>
+      <li><a href="#46-mapping-problem-to-intervention">46. Mapping problem to intervention</a></li>
+      <li><a href="#47-recommended-sequence">47. Recommended sequence</a></li>
+      <li><a href="#48-common-misconceptions-from-the-case">48. Common misconceptions from the case</a></li>
+      <li><a href="#49-high-probability-exam-questions-with-answer-points">49. High-probability exam questions with answer points</a></li>
+      <li><a href="#50-exam-traps-and-corrections">50. Exam traps and corrections</a></li>
+      <li><a href="#51-rapid-revision-sheet">51. Rapid revision sheet</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<blockquote>
+<p><strong>Exam-oriented scope:</strong> GAN foundations, adversarial training, encoder/decoder and generator/discriminator architectures, DCGAN and CycleGAN, neural-network and GAN training challenges, evaluation, PyTorch implementation, and the live-session case discussion.</p>
+</blockquote>
+<h2 id="1-learning-outcomes">1. Learning outcomes</h2>
+<p>After this week, you should be able to:</p>
+<ul>
+<li>define a Generative Adversarial Network (GAN) and explain its significance;</li>
+<li>distinguish a general <strong>adversarial network/process</strong> from a <strong>GAN</strong>;</li>
+<li>explain the roles of the Generator and Discriminator and their game-like training;</li>
+<li>describe encoder–decoder and generator–discriminator architectures;</li>
+<li>compare standard GAN, DCGAN, and CycleGAN and select one for a use case;</li>
+<li>identify common neural-network and GAN training failures;</li>
+<li>explain GAN evaluation metrics and their limitations;</li>
+<li>outline and interpret a simple PyTorch GAN implementation;</li>
+<li>recommend stabilization steps while balancing quality, compute, cost, and time.</li>
+</ul>
+<hr>
+<h1 id="part-i-gan-foundations">Part I — GAN Foundations</h1>
+<h2 id="2-what-is-a-gan">2. What is a GAN?</h2>
+<p>A <strong>Generative Adversarial Network (GAN)</strong> is a class of machine-learning/deep-learning models that learns to generate new, realistic synthetic data through competition between two neural networks:</p>
+<ol>
+<li>a <strong>Generator</strong> \(G\), which creates synthetic samples; and</li>
+<li>a <strong>Discriminator</strong> \(D\), which judges whether a sample is real or generated.</li>
+</ol>
+<p>GANs were introduced by <strong>Ian Goodfellow and colleagues in 2014</strong>. They became especially important in image synthesis and data augmentation and have substantially influenced computer vision and generative AI.</p>
+<p>The live session emphasized that a GAN does more than classify an existing input: it learns an underlying data distribution and produces a new sample resembling that distribution. It is especially useful <strong>when creating data is more valuable than merely classifying it</strong>.</p>
+<h3 id="synthetic-data">Synthetic data</h3>
+<p><strong>Synthetic data</strong> is artificially generated data designed to resemble real training data. It may represent images, audio, text, videos, signals, or other structures.</p>
+<h3 id="gan-as-unsupervised-learning">GAN as unsupervised learning</h3>
+<p>The instructor described basic GAN learning as <strong>unsupervised</strong> because it learns underlying patterns/distributions without ordinary class labels. During adversarial training, however, the Discriminator is operationally trained with real/fake targets. In an exam, preserve the course framing but be ready to state this nuance.</p>
+<h2 id="3-adversarial-network-versus-gan">3. Adversarial network versus GAN</h2>
+<p>An <strong>adversarial network/process</strong> is the broader idea of using competition during training. It may include:</p>
+<ul>
+<li>adversarial examples—inputs intentionally perturbed to challenge a model;</li>
+<li>adversarial attacks and models designed to resist them;</li>
+<li>adversarial training used to improve robustness;</li>
+<li>two or more models interacting competitively.</li>
+</ul>
+<p>A <strong>GAN</strong> is a particular adversarial framework whose central purpose is generation: the Generator produces samples, while the Discriminator evaluates their authenticity.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> “Adversarial network” and “GAN” are not perfect synonyms. GANs use adversarial learning, but adversarial learning also covers robustness and attacks outside generative modeling.</p>
+</blockquote>
+<h2 id="4-the-two-components">4. The two components</h2>
+<h3 id="4-1-generator-g">4.1 Generator \(G\)</h3>
+<p>The Generator:</p>
+<ul>
+<li>receives a random latent/noise vector \(z\);</li>
+<li>maps it into a synthetic sample \(G(z)\);</li>
+<li>tries to imitate the real-data distribution;</li>
+<li>tries to make the Discriminator classify generated data as real.</li>
+</ul>
+<p>Noise is commonly sampled from a <strong>Gaussian</strong> or <strong>uniform</strong> distribution. Different latent vectors should lead to different outputs, giving variety.</p>
+<h3 id="4-2-discriminator-d">4.2 Discriminator \(D\)</h3>
+<p>The Discriminator:</p>
+<ul>
+<li>receives both real samples and generated samples;</li>
+<li>acts as a binary classifier;</li>
+<li>outputs a probability or score indicating whether the input is real;</li>
+<li>learns to correctly distinguish real data from Generator output.</li>
+</ul>
+<p>Typical interpretation:</p>
+<ul>
+<li>\(D(x)\approx 1\): sample is considered real;</li>
+<li>\(D(x)\approx 0\): sample is considered fake;</li>
+<li>near equilibrium, \(D(x)\approx 0.5\) because generated and real samples are difficult to distinguish.</li>
+</ul>
+<h2 id="5-why-competition-improves-output">5. Why competition improves output</h2>
+<p>The networks are trained simultaneously/alternately in a game-like setting:</p>
+<ul>
+<li>the Generator improves its output to deceive the Discriminator;</li>
+<li>the Discriminator improves its ability to spot fake output;</li>
+<li>feedback from \(D\) supplies a learning signal to \(G\);</li>
+<li>repeated competition can produce increasingly realistic samples.</li>
+</ul>
+<p>The live instructor compared this to repeatedly performing a difficult task: after many attempts and feedback, one discovers shortcuts or criteria that lead to success. Similarly, \(G\) learns which characteristics make \(D\) accept a sample, while \(D\) learns the features of increasingly convincing fakes.</p>
+<h3 id="instructor-q-a">Instructor Q&amp;A</h3>
+<p><strong>Question:</strong> What happens if there is no competition between the Generator and Discriminator?</p>
+<p><strong>Answer:</strong> Learning feedback is weakened and the output remains poor or less realistic. The adversarial competition is the key mechanism behind GAN quality.</p>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> A Generator is not initially an expert “trying to cheat.” Initially it tries to generate realistic samples; through repeated Discriminator feedback, fooling the Discriminator becomes its effective objective.</p>
+</blockquote>
+<h2 id="6-basic-gan-data-flow">6. Basic GAN data flow</h2>
+<p>\[
+z\sim p_z(z) \longrightarrow G(z)=x_{fake}
+\longrightarrow D(x_{fake}) \longrightarrow \text{real/fake score}
+\]</p>
+<p>In parallel:</p>
+<p>\[
+x_{real}\sim p_{data}(x) \longrightarrow D(x_{real})
+\]</p>
+<p>The Discriminator compares evidence from real and generated data, and its feedback is used to update both networks.</p>
+<h2 id="7-formal-objective">7. Formal objective</h2>
+<p>The original minimax objective is:</p>
+<p>\[
+\min_G\max_D V(D,G)
+=\mathbb{E}_{x\sim p_{data}}[\log D(x)]
++\mathbb{E}_{z\sim p_z}[\log(1-D(G(z)))]
+\]</p>
+<ul>
+<li>\(D\) maximizes correct classification of real and fake samples.</li>
+<li>\(G\) minimizes the ability of \(D\) to reject generated samples.</li>
+</ul>
+<p>In practice, the commonly used non-saturating Generator loss is:</p>
+<p>\[
+L_G=-\mathbb{E}_{z\sim p_z}[\log D(G(z))]
+\]</p>
+<p>The binary-cross-entropy Discriminator loss can be written as:</p>
+<p>\[
+L_D=-\mathbb{E}_{x\sim p_{data}}[\log D(x)]
+-\mathbb{E}_{z\sim p_z}[\log(1-D(G(z)))]
+\]</p>
+<p>The course describes this competition as a <strong>zero-sum game</strong>: improvement by one side challenges the other, producing a dynamic balance.</p>
+<h2 id="8-alternating-training-procedure">8. Alternating training procedure</h2>
+<ol>
+<li>Randomly initialize the weights of \(G\) and \(D\).</li>
+<li>Sample real data \(x\) from the training set.</li>
+<li>Sample noise \(z\) from the latent distribution.</li>
+<li>Generate \(x_{fake}=G(z)\).</li>
+<li>Train \(D\):
+   - label real data as real;
+   - label generated data as fake;
+   - compute binary cross-entropy loss;
+   - update \(D\)&rsquo;s weights to reduce classification error.</li>
+<li>Train \(G\):
+   - generate a new/retained fake batch;
+   - pass it through \(D\);
+   - compare \(D(G(z))\) with the target “real”;
+   - backpropagate through \(D\) into \(G\), updating only \(G\).</li>
+<li>Alternate these steps for many epochs until satisfactory convergence.</li>
+</ol>
+<blockquote>
+<p><strong>Exam trap:</strong> When training \(D\) on fake data in PyTorch, use <code>fake_data.detach()</code> so the Generator is not updated during the Discriminator step. When training \(G\), do not detach; gradients must flow through \(D\) to \(G\).</p>
+</blockquote>
+<hr>
+<h1 id="part-ii-architectures">Part II — Architectures</h1>
+<h2 id="9-encoder-decoder-architecture">9. Encoder–decoder architecture</h2>
+<p>An <strong>encoder</strong> compresses an input into a lower-dimensional latent representation. A <strong>decoder</strong> reconstructs or generates an output from that representation.</p>
+<p>\[
+x\xrightarrow{Encoder}h\xrightarrow{Decoder}\hat{x}
+\]</p>
+<ul>
+<li>Encoder: high-dimensional input \(\rightarrow\) compact latent space.</li>
+<li>Decoder: latent representation \(\rightarrow\) reconstructed data.</li>
+<li>Used in autoencoders for efficient representation, compression, reconstruction, and generation.</li>
+</ul>
+<p>The lecture used an intuitive encoding analogy: conversion from plain text to cipher text and decoding back to plain text. This is only an analogy; a neural encoder learns representations rather than necessarily performing cryptographic encryption.</p>
+<h2 id="10-encoder-decoder-versus-generator-discriminator">10. Encoder/decoder versus Generator/Discriminator</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Encoder</th>
+<th>Decoder</th>
+<th>Generator</th>
+<th>Discriminator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Main action</td>
+<td>Compresses input</td>
+<td>Reconstructs output</td>
+<td>Creates synthetic data</td>
+<td>Classifies authenticity</td>
+</tr>
+<tr>
+<td>Typical input</td>
+<td>Real data</td>
+<td>Latent code</td>
+<td>Random/conditioned latent vector</td>
+<td>Real or fake sample</td>
+</tr>
+<tr>
+<td>Typical output</td>
+<td>Latent representation</td>
+<td>Reconstructed data</td>
+<td>Synthetic sample</td>
+<td>Real/fake probability</td>
+</tr>
+<tr>
+<td>Objective</td>
+<td>Retain important features compactly</td>
+<td>Recover data</td>
+<td>Fool \(D\)/match real distribution</td>
+<td>Detect fakes</td>
+</tr>
+<tr>
+<td>Relationship</td>
+<td>Cooperative reconstruction</td>
+<td>Cooperative reconstruction</td>
+<td>Adversarial competition</td>
+<td>Adversarial competition</td>
+</tr>
+</tbody>
+</table></div>
+<p>The Generator often resembles a decoder because both expand a latent representation into a high-dimensional sample. A Discriminator often resembles an encoder/classifier because it progressively extracts features and reduces spatial dimensions before classification.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> An encoder and a Discriminator may look structurally similar, but their objectives differ. An encoder creates a useful latent representation; a Discriminator estimates authenticity.</p>
+</blockquote>
+<h2 id="11-generator-architecture">11. Generator architecture</h2>
+<h3 id="typical-flow">Typical flow</h3>
+<p>\[
+z\rightarrow \text{Dense/reshape}\rightarrow
+\text{feature map}\rightarrow
+\text{transpose convolutions/up-sampling}\rightarrow
+\text{larger feature maps}\rightarrow x_{fake}
+\]</p>
+<p>Important design elements:</p>
+<ul>
+<li><strong>Random noise/latent vector:</strong> source of variation.</li>
+<li><strong>Dense layer:</strong> projects the latent vector into a feature representation.</li>
+<li><strong>Reshaping:</strong> converts a vector into spatial feature maps.</li>
+<li><strong>Transpose convolution/up-sampling:</strong> increases spatial resolution.</li>
+<li><strong>Batch normalization:</strong> stabilizes intermediate activation distributions.</li>
+<li><strong>ReLU:</strong> often used in hidden layers.</li>
+<li><strong>Tanh:</strong> commonly used in the output layer for normalized image values in \([-1,1]\).</li>
+</ul>
+<p>The architecture may contain convolutional, deconvolutional/transpose-convolutional, or residual blocks. Encoder blocks can extract/transform features; decoder-style blocks reconstruct or generate the final image/audio/text representation.</p>
+<h3 id="activation-functions">Activation functions</h3>
+<p>ReLU:</p>
+<p>\[
+\operatorname{ReLU}(x)=\max(0,x)
+\]</p>
+<p>It introduces non-linearity and supports complex mappings.</p>
+<p>Tanh:</p>
+<p>\[
+\tanh(x)=\frac{e^x-e^{-x}}{e^x+e^{-x}},\qquad \tanh(x)\in[-1,1]
+\]</p>
+<p>If real images are normalized to \([-1,1]\), Tanh makes the Generator output range compatible.</p>
+<h2 id="12-discriminator-architecture">12. Discriminator architecture</h2>
+<h3 id="typical-flow-2">Typical flow</h3>
+<p>\[
+x\rightarrow \text{convolutions/down-sampling}\rightarrow
+\text{feature maps}\rightarrow \text{flatten/dense}\rightarrow
+\sigma(\cdot)\rightarrow P(\text{real})
+\]</p>
+<p>Common elements:</p>
+<ul>
+<li>convolutions to extract spatial features;</li>
+<li>down-sampling to reduce spatial dimensions;</li>
+<li>batch normalization in appropriate intermediate layers;</li>
+<li><strong>Leaky ReLU</strong> to retain a small gradient for negative inputs;</li>
+<li>a final scalar output;</li>
+<li><strong>Sigmoid</strong> for probability in \([0,1]\) when using BCE.</li>
+</ul>
+<p>Leaky ReLU:</p>
+<p>\[
+f(x)=\begin{cases}x,&x>0\\ \alpha x,&x\leq 0\end{cases}
+\]</p>
+<p>Sigmoid:</p>
+<p>\[
+\sigma(x)=\frac{1}{1+e^{-x}}
+\]</p>
+<h2 id="13-architectural-choice-and-performance">13. Architectural choice and performance</h2>
+<p>Architecture affects:</p>
+<ul>
+<li>image/output quality;</li>
+<li>training stability;</li>
+<li>convergence speed;</li>
+<li>mode coverage/diversity;</li>
+<li>computational cost;</li>
+<li>the type of task the GAN can solve.</li>
+</ul>
+<p>Wider or deeper networks provide more capacity but require more memory and computation and may be harder to optimize. Adding layers does not automatically improve output.</p>
+<hr>
+<h1 id="part-iii-gan-variants">Part III — GAN Variants</h1>
+<h2 id="14-standard-gan-dcgan-and-cyclegan-comparison">14. Standard GAN, DCGAN, and CycleGAN comparison</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Basic GAN</th>
+<th>DCGAN</th>
+<th>CycleGAN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full name</td>
+<td>Generative Adversarial Network</td>
+<td>Deep Convolutional GAN</td>
+<td>Cycle-Consistent GAN</td>
+</tr>
+<tr>
+<td>Main purpose</td>
+<td>General synthetic-data generation</td>
+<td>Stable, high-quality image generation</td>
+<td>Image-to-image/domain translation</td>
+</tr>
+<tr>
+<td>Core architecture</td>
+<td>Often fully connected or general neural nets</td>
+<td>Convolution and transpose convolution</td>
+<td>Two Generators + two Discriminators</td>
+</tr>
+<tr>
+<td>Input</td>
+<td>Random noise</td>
+<td>Random noise/feature tensor</td>
+<td>Image from domain \(X\) or \(Y\)</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>Synthetic sample</td>
+<td>Realistic image</td>
+<td>Translated image in other domain</td>
+</tr>
+<tr>
+<td>Pairing requirement</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Can use unpaired domain datasets</td>
+</tr>
+<tr>
+<td>Typical use</td>
+<td>General synthesis</td>
+<td>Faces, objects, textures, art, fashion, medical images</td>
+<td>Horse↔zebra, summer↔winter, day↔night, style transfer</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="15-dcgan">15. DCGAN</h2>
+<p><strong>DCGAN (Deep Convolutional Generative Adversarial Network)</strong> uses convolutional architectures to improve image quality and training stability.</p>
+<h3 id="typical-dcgan-design">Typical DCGAN design</h3>
+<ul>
+<li>Generator uses dense projection, reshaping, transpose convolutions, BatchNorm, ReLU, and Tanh output.</li>
+<li>Discriminator uses convolutions, down-sampling, BatchNorm where appropriate, Leaky ReLU, and real/fake prediction.</li>
+<li>Convolution layers exploit local spatial structure, making DCGAN effective for images.</li>
+</ul>
+<h3 id="uses">Uses</h3>
+<ul>
+<li>realistic faces and objects;</li>
+<li>textures;</li>
+<li>art and fashion;</li>
+<li>medical imaging;</li>
+<li>stable image generation from noise.</li>
+</ul>
+<h3 id="strengths-and-weaknesses">Strengths and weaknesses</h3>
+<p><strong>Strengths:</strong> better spatial feature learning, improved visual quality, usually more stable than a naïve fully connected GAN.</p>
+<p><strong>Weaknesses:</strong> still vulnerable to unstable adversarial learning and mode collapse; architecture and hyperparameters need careful tuning.</p>
+<h2 id="16-cyclegan">16. CycleGAN</h2>
+<p><strong>CycleGAN</strong> performs translation between two image domains without requiring one-to-one paired examples.</p>
+<p>Let domains be \(X\) and \(Y\):</p>
+<ul>
+<li>\(G:X\rightarrow Y\);</li>
+<li>\(F:Y\rightarrow X\);</li>
+<li>\(D_Y\) distinguishes real \(Y\) images from \(G(X)\);</li>
+<li>\(D_X\) distinguishes real \(X\) images from \(F(Y)\).</li>
+</ul>
+<p>It therefore contains <strong>two Generators and two Discriminators</strong>.</p>
+<h3 id="cycle-consistency">Cycle consistency</h3>
+<p>The translation should preserve content sufficiently to return to the starting image:</p>
+<p>\[
+F(G(x))\approx x,\qquad G(F(y))\approx y
+\]</p>
+<p>A typical cycle-consistency loss is:</p>
+<p>\[
+L_{cyc}(G,F)=
+\mathbb{E}_{x\sim p_X}\|F(G(x))-x\|_1+
+\mathbb{E}_{y\sim p_Y}\|G(F(y))-y\|_1
+\]</p>
+<h3 id="uses-emphasized-in-class">Uses emphasized in class</h3>
+<ul>
+<li>horse \(\leftrightarrow\) zebra;</li>
+<li>winter \(\leftrightarrow\) summer;</li>
+<li>night city \(\leftrightarrow\) daytime city;</li>
+<li>image colorization;</li>
+<li>photo enhancement;</li>
+<li>seasonal change;</li>
+<li>style/domain change.</li>
+</ul>
+<p>The live session described the two domains as separate source and target folders/datasets.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> CycleGAN translation is not language translation. It is mapping an image from one visual domain to another while retaining underlying content.</p>
+</blockquote>
+<h2 id="17-variant-selection-rule">17. Variant-selection rule</h2>
+<ul>
+<li>Choose <strong>DCGAN</strong> when the task is generation of stable, realistic images from noise, especially faces, objects, or textures.</li>
+<li>Choose <strong>CycleGAN</strong> when the task is conversion/translation between two visual domains and paired examples are unavailable.</li>
+<li>Choose architecture based on <strong>task</strong>, <strong>desired image quality</strong>, and <strong>training stability</strong>, not on popularity alone.</li>
+</ul>
+<hr>
+<h1 id="part-iv-applications-benefits-and-risks">Part IV — Applications, Benefits, and Risks</h1>
+<h2 id="18-applications">18. Applications</h2>
+<ul>
+<li><strong>Image generation:</strong> realistic faces, objects, landscapes, and artwork.</li>
+<li><strong>Video generation/synthesis:</strong> coherent video sequences and manipulated video.</li>
+<li><strong>Deepfakes:</strong> realistic face/image/video manipulation.</li>
+<li><strong>Super-resolution:</strong> generating a higher-resolution version of an image.</li>
+<li><strong>Data augmentation:</strong> creating additional samples for limited datasets.</li>
+<li><strong>Style transfer/domain translation:</strong> applying artistic styles or translating domains.</li>
+<li><strong>Text-to-image synthesis.</strong></li>
+<li><strong>Audio generation:</strong> generating or transforming audio.</li>
+<li><strong>Medical imaging:</strong> synthesis/augmentation where real data is scarce.</li>
+<li><strong>Fashion design and product development.</strong></li>
+<li><strong>Natural-language-processing-related generative tasks.</strong></li>
+<li><strong>Creative AI:</strong> art, design, and media creation.</li>
+</ul>
+<p>Examples named in the recorded lesson included <strong>DeepArt</strong>, <strong>NVIDIA GauGAN</strong> for landscape generation, and deepfake technology for entertainment/education.</p>
+<h3 id="live-example-this-person-does-not-exist">Live example: “This Person Does Not Exist”</h3>
+<p>The live session used a website that generates a new artificial human face after each refresh. Key lesson:</p>
+<ul>
+<li>the displayed people do not exist;</li>
+<li>many viewers cannot distinguish them from real people;</li>
+<li>occasional side-view/detail mismatches expose model limitations;</li>
+<li>even broadly available models can generate highly convincing output;</li>
+<li>output realism depends on how well the Generator and Discriminator are trained and optimized.</li>
+</ul>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> Image generation is advancing rapidly; models and optimization techniques continue to improve. The lecturer encouraged exploring free/open-source generation tools to gain practical experience.</p>
+</blockquote>
+<h2 id="19-advantages">19. Advantages</h2>
+<ul>
+<li>generates high-quality output resembling real data;</li>
+<li>supports multiple data types and creative tasks;</li>
+<li>provides synthetic samples for data augmentation;</li>
+<li>learns complex data distributions;</li>
+<li>enables innovation in art, medical imaging, fashion, development, and media;</li>
+<li>offers very realistic image/video synthesis through adversarial refinement.</li>
+</ul>
+<h2 id="20-ethical-and-legal-caveat">20. Ethical and legal caveat</h2>
+<p>Deepfake and face-generation tools can be used for entertainment or education, but using a person&rsquo;s face/image without consent can be unethical or illegal. Generated media should respect consent, privacy, ownership, and applicable law.</p>
+<blockquote>
+<p><strong>Exam-worthy caveat:</strong> Technical capability does not imply lawful or ethical permission.</p>
+</blockquote>
+<h2 id="21-limitations">21. Limitations</h2>
+<ul>
+<li><strong>Mode collapse:</strong> Generator produces limited/repetitive outputs.</li>
+<li><strong>Training instability:</strong> adversarial dynamics may oscillate or diverge.</li>
+<li><strong>Hyperparameter sensitivity:</strong> learning rates, update balance, initialization, and architecture matter greatly.</li>
+<li><strong>Evaluation difficulty:</strong> no single universally accepted metric captures quality, diversity, and subjective realism.</li>
+<li><strong>Compute cost:</strong> deep models require time and hardware.</li>
+<li><strong>Artifacts and mistakes:</strong> generated faces/images may contain inconsistent details.</li>
+<li><strong>Ethical misuse:</strong> deception, non-consensual deepfakes, and misinformation.</li>
+</ul>
+<hr>
+<h1 id="part-v-neural-network-training-and-challenges">Part V — Neural-Network Training and Challenges</h1>
+<h2 id="22-standard-neural-network-training-loop">22. Standard neural-network training loop</h2>
+<p>Training adjusts weights and biases to minimize a predefined loss.</p>
+<ol>
+<li><strong>Initialization:</strong> initialize weights, e.g., random or Xavier initialization.</li>
+<li><strong>Choose hyperparameters:</strong> learning rate, batch size, epochs, optimizer, etc.</li>
+<li><strong>Forward propagation:</strong> inputs pass layer by layer; activations add non-linearity.</li>
+<li><strong>Prediction:</strong> network produces output.</li>
+<li><strong>Loss computation:</strong> compare prediction with target.
+   - Mean squared error for regression.
+   - Cross-entropy for classification.</li>
+<li><strong>Backpropagation:</strong> propagate error backward and use the chain rule to compute gradients.</li>
+<li><strong>Optimization:</strong> SGD, Adam, or another optimizer updates parameters.</li>
+<li><strong>Repeat for multiple epochs:</strong> each epoch gives further opportunity to learn.</li>
+<li><strong>Validation/stopping:</strong> assess generalization, tune hyperparameters, and stop at maximum epochs or via early stopping.</li>
+</ol>
+<p>The learning rate controls the size of each parameter-update step.</p>
+<h2 id="23-general-training-challenges-and-remedies">23. General training challenges and remedies</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Meaning/impact</th>
+<th>Remedies mentioned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vanishing gradients</td>
+<td>Gradients become extremely small; early layers learn slowly</td>
+<td>Better activations, normalization, careful initialization</td>
+</tr>
+<tr>
+<td>Exploding gradients</td>
+<td>Gradients become very large; updates become unstable</td>
+<td>Initialization, normalization, gradient control</td>
+</tr>
+<tr>
+<td>Overfitting</td>
+<td>Model memorizes training data/noise and generalizes poorly</td>
+<td>Validation, regularization, data augmentation, early stopping</td>
+</tr>
+<tr>
+<td>Underfitting</td>
+<td>Model is too simple to learn the pattern; low training accuracy</td>
+<td>Increase capacity, train/tune appropriately</td>
+</tr>
+<tr>
+<td>Insufficient/poor data</td>
+<td>Limited learning and weak performance</td>
+<td>Preprocess, augment, or generate synthetic data</td>
+</tr>
+<tr>
+<td>Hyperparameter choice</td>
+<td>Bad learning rate/batch size/etc. hurts performance</td>
+<td>Grid search, random search, Bayesian optimization</td>
+</tr>
+<tr>
+<td>Compute limitations</td>
+<td>Deep networks need significant time/hardware</td>
+<td>GPU, TPU, distributed computing, efficient algorithms</td>
+</tr>
+<tr>
+<td>Slow convergence</td>
+<td>Poor initialization/optimizer slows learning</td>
+<td>Xavier initialization, adaptive optimization such as Adam</td>
+</tr>
+<tr>
+<td>Adversarial vulnerability</td>
+<td>Small input perturbations can fool networks</td>
+<td>Adversarial training and robust optimization</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="overfitting-versus-underfitting">Overfitting versus underfitting</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Overfitting</th>
+<th>Underfitting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Training performance</td>
+<td>Usually high</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>New-data performance</td>
+<td>Poor</td>
+<td>Poor</td>
+</tr>
+<tr>
+<td>Cause</td>
+<td>Learns data and noise too precisely</td>
+<td>Insufficient capacity/learning</td>
+</tr>
+<tr>
+<td>Direction of remedy</td>
+<td>More regularization/data, earlier stop</td>
+<td>More capacity/features/training</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Exam trap:</strong> High training accuracy alone is not proof of a good model; validation/test performance measures generalization.</p>
+</blockquote>
+<hr>
+<h1 id="part-vi-gan-specific-training-problems">Part VI — GAN-Specific Training Problems</h1>
+<h2 id="24-mode-collapse">24. Mode collapse</h2>
+<p><strong>Mode collapse</strong> occurs when the Generator produces only a narrow, repetitive subset of possible outputs instead of representing the full data distribution.</p>
+<p>Desired output:</p>
+<p>\[
+\text{Texture A, Texture B, Texture C, Texture D}
+\]</p>
+<p>Collapsed output:</p>
+<p>\[
+\text{Texture A, Texture A, Texture A, Texture A}
+\]</p>
+<p>The samples may look realistic yet still lack diversity. Therefore, realism alone does not prove successful generation.</p>
+<h3 id="causes">Causes</h3>
+<ul>
+<li>unstable adversarial dynamics;</li>
+<li>imbalance between \(G\) and \(D\);</li>
+<li>mismatched learning rates;</li>
+<li>poorly designed architecture;</li>
+<li>Generator discovers a narrow output that repeatedly fools \(D\).</li>
+</ul>
+<h3 id="impact">Impact</h3>
+<ul>
+<li>reduced variability;</li>
+<li>incomplete coverage of the real distribution;</li>
+<li>poor usefulness for image generation and synthetic-data augmentation;</li>
+<li>business failure when users need varied designs/textures.</li>
+</ul>
+<h2 id="25-training-instability">25. Training instability</h2>
+<p>GAN instability arises because two networks optimize competing objectives. Causes include:</p>
+<ul>
+<li>one network becoming too strong;</li>
+<li>poor initialization;</li>
+<li>inappropriate learning rates;</li>
+<li>architecture design flaws;</li>
+<li>loss functions poorly aligned with the problem.</li>
+</ul>
+<p>Consequences include mode collapse, oscillation, failure to converge, unreliable generation, and poor domain adaptation.</p>
+<h2 id="26-discriminator-dominance-and-gradient-saturation">26. Discriminator dominance and gradient saturation</h2>
+<p>If \(D\) learns far faster than \(G\):</p>
+<p>\[
+D(G(z))\rightarrow 0
+\]</p>
+<p>The Generator may receive weak/unhelpful gradients and improve slowly. A “perfect” Discriminator is therefore not always desirable during training; it must be strong enough to guide \(G\), but not so dominant that useful learning signals disappear.</p>
+<h2 id="27-balancing-learning-rates">27. Balancing learning rates</h2>
+<p>If the Discriminator dominates, reduce its learning rate or otherwise adjust the relative update schedule.</p>
+<ul>
+<li><strong>\(D\) learning rate too high:</strong> dominance, poor Generator feedback, instability.</li>
+<li><strong>\(D\) learning rate too low:</strong> weak authenticity judgment, poor guidance, exploitable errors.</li>
+</ul>
+<p>The target is <strong>balance</strong>, not maximum strength for either network.</p>
+<h2 id="28-label-smoothing">28. Label smoothing</h2>
+<p>Instead of assigning the real target exactly \(1.0\), use a softer value such as \(0.9\):</p>
+<p>\[
+y_{real}=0.9\quad\text{instead of}\quad 1.0
+\]</p>
+<p>Benefits:</p>
+<ul>
+<li>prevents Discriminator overconfidence;</li>
+<li>softens decision boundaries;</li>
+<li>can provide smoother gradients;</li>
+<li>improves adversarial stability;</li>
+<li>may reduce sensitivity to noisy labels.</li>
+</ul>
+<p>It does <strong>not</strong> directly increase dataset size, image resolution, texture diversity, or compute efficiency; it does not replace architecture improvements or fix every GAN failure.</p>
+<h2 id="29-batch-normalization">29. Batch normalization</h2>
+<p>Batch normalization normalizes intermediate activations, helping maintain more consistent layer-input distributions.</p>
+<p>Potential benefits:</p>
+<ul>
+<li>more stable gradients;</li>
+<li>faster convergence;</li>
+<li>reduced activation/distribution shifts;</li>
+<li>improved GAN training stability.</li>
+</ul>
+<p>Typical DCGAN pattern:</p>
+<p>\[
+\text{Generator: TransposeConv}\rightarrow\text{BatchNorm}\rightarrow\text{ReLU}
+\]</p>
+<p>\[
+\text{Discriminator: Conv}\rightarrow\text{BatchNorm}\rightarrow\text{Activation}
+\]</p>
+<p>It adds operations and slight memory overhead, but often addresses instability more directly than merely buying more compute.</p>
+<h2 id="30-progressive-training-early-stopping-and-diverse-architectures">30. Progressive training, early stopping, and diverse architectures</h2>
+<ul>
+<li><strong>Progressive training:</strong> start with low-resolution/simple outputs, then gradually increase complexity/resolution. This builds stability before scaling.</li>
+<li><strong>Early stopping:</strong> stops training when validation behavior worsens or improvement ceases, helping prevent overfitting.</li>
+<li><strong>Architecture diversity/redesign:</strong> change capacity, normalization, or block design when optimization changes are insufficient.</li>
+<li><strong>Balanced update rates:</strong> coordinate \(G\) and \(D\) training so neither permanently dominates.</li>
+</ul>
+<h2 id="31-changing-generator-capacity">31. Changing Generator capacity</h2>
+<h3 id="wider-layers">Wider layers</h3>
+<p><strong>Benefit:</strong> more model capacity; can learn complex textures.</p>
+<p><strong>Risk:</strong> more parameters, memory, compute, and possible overfitting.</p>
+<h3 id="additional-hidden-layers">Additional hidden layers</h3>
+<p><strong>Benefit:</strong> deeper/hierarchical feature representations.</p>
+<p><strong>Risk:</strong> harder optimization and longer training.</p>
+<h3 id="dropout">Dropout</h3>
+<p>Dropout randomly disables neurons during training to reduce dependence on particular features.</p>
+<p><strong>Benefit:</strong> regularization and robustness.</p>
+<p><strong>Risk:</strong> GANs are already delicate; excessive dropout may reduce Generator capacity and slow convergence.</p>
+<h2 id="32-longer-training-and-more-compute">32. Longer training and more compute</h2>
+<p>Longer training helps when:</p>
+<ul>
+<li>training is stable;</li>
+<li>loss/quality trends are improving;</li>
+<li>the model is converging slowly.</li>
+</ul>
+<p>It does not fix:</p>
+<ul>
+<li>mode collapse;</li>
+<li>vanishing/saturated gradients;</li>
+<li>Generator–Discriminator imbalance;</li>
+<li>an unsuitable architecture.</li>
+</ul>
+<p>Similarly, additional GPU/TPU resources speed experiments and enable more iterations, but do not correct bad learning dynamics or design.</p>
+<blockquote>
+<p><strong>Instructor/case-study emphasis:</strong> Hardware should accelerate a sound approach, not compensate for a flawed one.</p>
+</blockquote>
+<hr>
+<h1 id="part-vii-evaluation">Part VII — Evaluation</h1>
+<h2 id="33-why-gan-evaluation-is-difficult">33. Why GAN evaluation is difficult</h2>
+<p>GAN output has at least two distinct properties:</p>
+<ol>
+<li><strong>Quality/fidelity:</strong> Does each sample look realistic?</li>
+<li><strong>Diversity/coverage:</strong> Do samples represent many modes of the real distribution?</li>
+</ol>
+<p>A model can score well on one and poorly on the other. Human perception is subjective, and image-focused metrics may not transfer to audio, text, or other domains. No single universally accepted metric captures everything.</p>
+<h2 id="34-inception-score-is">34. Inception Score (IS)</h2>
+<p>IS uses a pretrained classifier and rewards:</p>
+<ul>
+<li>low-entropy predictions for individual images (recognizable/high-quality images);</li>
+<li>high-entropy marginal predictions across images (diverse classes).</li>
+</ul>
+<p>\[
+IS=\exp\left(\mathbb{E}_{x\sim p_g}
+KL\big(p(y|x)\,\|\,p(y)\big)\right)
+\]</p>
+<p>Higher is generally better.</p>
+<h3 id="limitations">Limitations</h3>
+<ul>
+<li>depends on the pretrained classifier;</li>
+<li>does not directly compare generated and real distributions;</li>
+<li>can miss within-class diversity or artifacts;</li>
+<li>primarily suited to images.</li>
+</ul>
+<h2 id="35-fr-chet-inception-distance-fid">35. Fréchet Inception Distance (FID)</h2>
+<p>FID compares feature distributions of real and generated images:</p>
+<p>\[
+FID=\|\mu_r-\mu_g\|_2^2+
+\operatorname{Tr}\left(\Sigma_r+\Sigma_g-2(\Sigma_r\Sigma_g)^{1/2}\right)
+\]</p>
+<ul>
+<li>\(\mu_r,\Sigma_r\): mean and covariance of real-image features;</li>
+<li>\(\mu_g,\Sigma_g\): mean and covariance of generated-image features.</li>
+</ul>
+<p>Lower is generally better because the feature distributions are closer.</p>
+<h3 id="limitations-2">Limitations</h3>
+<ul>
+<li>sensitive to sample size and feature extractor;</li>
+<li>image/domain dependent;</li>
+<li>does not fully capture subjective realism;</li>
+<li>not universally effective for non-image GANs.</li>
+</ul>
+<blockquote>
+<p><strong>Exam trap:</strong> Higher IS is better; lower FID is better.</p>
+</blockquote>
+<h2 id="36-practical-evaluation-checklist">36. Practical evaluation checklist</h2>
+<p>Track more than one signal:</p>
+<ul>
+<li>Generator and Discriminator losses;</li>
+<li>visual/qualitative realism;</li>
+<li>output diversity and evidence of mode collapse;</li>
+<li>IS and/or FID for images;</li>
+<li>training stability over epochs;</li>
+<li>task-specific and human evaluation;</li>
+<li>business usefulness, e.g., whether generated textures offer genuine variety.</li>
+</ul>
+<hr>
+<h1 id="part-viii-pytorch-implementation-walkthrough">Part VIII — PyTorch Implementation Walkthrough</h1>
+<h2 id="37-colab-and-libraries">37. Colab and libraries</h2>
+<p>The implementation lesson used <strong>Google Colab</strong>:</p>
+<ul>
+<li>sign in using a Google/Gmail account;</li>
+<li>create/rename the notebook by week;</li>
+<li>execute Python code in cells;</li>
+<li>use CPU/GPU/TPU-backed computation as available.</li>
+</ul>
+<h3 id="pytorch-torch-features-emphasized">PyTorch/Torch features emphasized</h3>
+<ul>
+<li>open-source deep-learning platform (Torch originated in Lua; PyTorch is its widely used Python implementation);</li>
+<li>multidimensional tensors similar to NumPy arrays;</li>
+<li>GPU acceleration;</li>
+<li>dynamic computational graphs for flexible experimentation and debugging;</li>
+<li>automatic differentiation;</li>
+<li>neural-network layers and loss functions;</li>
+<li>optimization algorithms;</li>
+<li>hardware acceleration support.</li>
+</ul>
+<p>Key modules:</p>
+<ul>
+<li><code>torch.Tensor</code>: primary data structure;</li>
+<li><code>torch.nn</code>: neural-network modules/layers;</li>
+<li><code>torch.optim</code>: optimizers such as SGD and Adam;</li>
+<li><code>matplotlib</code>: plots, charts, and generated-output visualization.</li>
+</ul>
+<p>Dynamic graphs are useful when adding layers, changing activations, testing dropout, or quickly comparing architectures.</p>
+<h2 id="38-simple-generator">38. Simple Generator</h2>
+<p>The demonstrated conceptual structure was:</p>
+<pre><code class="language-python">class Generator(nn.Module):
+    def __init__(self, latent_dim, data_dim):
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Linear(latent_dim, 128),
+            nn.ReLU(),
+            nn.Linear(128, data_dim),
+            nn.Tanh()
+        )
+
+    def forward(self, z):
+        return self.net(z)
+</code></pre>
+<ul>
+<li>Input: random latent vector.</li>
+<li>Hidden non-linearity: ReLU.</li>
+<li>Output: Tanh-constrained generated value in \([-1,1]\).</li>
+<li><code>forward()</code> returns generated data.</li>
+</ul>
+<h2 id="39-simple-discriminator">39. Simple Discriminator</h2>
+<pre><code class="language-python">class Discriminator(nn.Module):
+    def __init__(self, data_dim):
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Linear(data_dim, 128),
+            nn.LeakyReLU(0.2),
+            nn.Linear(128, 1),
+            nn.Sigmoid()
+        )
+
+    def forward(self, x):
+        return self.net(x)
+</code></pre>
+<ul>
+<li>Input: real or generated data.</li>
+<li>Leaky ReLU retains gradients on negative values.</li>
+<li>Sigmoid outputs probability in \([0,1]\).</li>
+</ul>
+<h2 id="40-model-and-optimizer-initialization">40. Model and optimizer initialization</h2>
+<p>The lecture set:</p>
+<ul>
+<li>latent dimension \(=100\);</li>
+<li>data dimension \(=1\) for a simple one-dimensional demonstration;</li>
+<li>binary cross-entropy loss;</li>
+<li>Adam optimizer for both networks;</li>
+<li>learning rate described as <code>0.002</code> in the transcript;</li>
+<li>Adam betas \((0.5,0.999)\).</li>
+</ul>
+<pre><code class="language-python">latent_dim = 100
+data_dim = 1
+
+G = Generator(latent_dim, data_dim)
+D = Discriminator(data_dim)
+criterion = nn.BCELoss()
+
+opt_G = torch.optim.Adam(G.parameters(), lr=0.002, betas=(0.5, 0.999))
+opt_D = torch.optim.Adam(D.parameters(), lr=0.002, betas=(0.5, 0.999))
+</code></pre>
+<blockquote>
+<p><strong>Transcription caveat:</strong> Many conventional GAN examples use <code>lr=0.0002</code>; the spoken transcript states <code>0.002</code>. For an exam based strictly on this source, remember the stated value but verify the supplied notebook/code if numerical precision is tested.</p>
+</blockquote>
+<h2 id="41-real-data-and-labels">41. Real data and labels</h2>
+<p>For simplicity, the example used a <strong>sine wave/one-dimensional data</strong> as real data. Real samples receive label \(1\), fake samples label \(0\). The lesson mentioned <code>torch.linspace</code> and reshaping/view operations to prepare the data.</p>
+<h2 id="42-discriminator-update">42. Discriminator update</h2>
+<pre><code class="language-python">opt_D.zero_grad()
+
+real_out = D(real_data)
+loss_real = criterion(real_out, real_labels)
+
+z = torch.randn(batch_size, latent_dim)
+fake_data = G(z)
+fake_out = D(fake_data.detach())
+loss_fake = criterion(fake_out, fake_labels)
+
+loss_D = loss_real + loss_fake
+loss_D.backward()
+opt_D.step()
+</code></pre>
+<p>Why detach? \(D\) should update during this step, not \(G\).</p>
+<h2 id="43-generator-update">43. Generator update</h2>
+<pre><code class="language-python">opt_G.zero_grad()
+
+out = D(fake_data)
+loss_G = criterion(out, real_labels)
+loss_G.backward()
+opt_G.step()
+</code></pre>
+<p>The target is “real” because \(G\) wants \(D\) to classify generated samples as real.</p>
+<h2 id="44-epochs-and-visualization">44. Epochs and visualization</h2>
+<p>The transcript first mentions <strong>1000 epochs</strong>, then says <strong>100 epochs</strong> were used for simplicity and timely output. The important concept is repeated alternating training; exact demonstration count may have been shortened.</p>
+<p>At intervals, sample a random latent vector, generate data, move it to CPU if needed, and plot it against the real data using Matplotlib to observe progress.</p>
+<h3 id="implementation-logic-in-one-view">Implementation logic in one view</h3>
+<p>\[
+\text{Noise}\rightarrow G\rightarrow \text{Fake sample}
+\rightarrow D\rightarrow \text{losses}
+\rightarrow \text{update }D\text{ and }G
+\rightarrow \text{repeat/plot}
+\]</p>
+<hr>
+<h1 id="part-ix-ai-innovate-lab-case-study-and-decision-framework">Part IX — AI Innovate Lab Case Study and Decision Framework</h1>
+<h2 id="45-case-context">45. Case context</h2>
+<p>AI Innovate Lab is building a PyTorch GAN in Google Colab to synthesize realistic textures for virtual environments. The goals are:</p>
+<ul>
+<li>realistic texture quality;</li>
+<li>output diversity;</li>
+<li>stable training;</li>
+<li>acceptable development time and compute cost.</li>
+</ul>
+<p>The observed problem is early <strong>Discriminator dominance</strong>, weak/unstable Generator learning, and risk of mode collapse. Team ideas include learning-rate changes, label smoothing, wider/deeper Generator layers, dropout, longer training, BatchNorm, and additional GPU/TPU time.</p>
+<h2 id="46-mapping-problem-to-intervention">46. Mapping problem to intervention</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Observed problem</th>
+<th>Most direct response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Discriminator too strong</td>
+<td>Reduce \(D\)&rsquo;s learning rate or rebalance update rates</td>
+</tr>
+<tr>
+<td>Overconfident Discriminator</td>
+<td>Apply one-sided label smoothing</td>
+</tr>
+<tr>
+<td>Poor gradient/activation stability</td>
+<td>Add/tune BatchNorm and architecture</td>
+</tr>
+<tr>
+<td>Low output diversity</td>
+<td>Address mode collapse; improve balance and Generator design</td>
+</tr>
+<tr>
+<td>Slow but stable improvement</td>
+<td>Train longer</td>
+</tr>
+<tr>
+<td>Experiments take too long</td>
+<td>Add GPU/TPU resources</td>
+</tr>
+<tr>
+<td>Poor architecture</td>
+<td>Redesign before scaling compute</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="47-recommended-sequence">47. Recommended sequence</h2>
+<ol>
+<li><strong>Establish a baseline.</strong> Record losses, quality, diversity, stability, and resource use.</li>
+<li><strong>Balance learning dynamics.</strong> Tune relative learning rates/update rates; apply label smoothing if \(D\) is overconfident.</li>
+<li><strong>Monitor diversity.</strong> Check whether different latent vectors yield genuinely different textures.</li>
+<li><strong>Improve architecture if needed.</strong> Add appropriate BatchNorm, tune capacity, and use regularization cautiously.</li>
+<li><strong>Scale compute only after stability.</strong> Use more GPU/TPU time for faster or longer sound experiments.</li>
+</ol>
+<p>Changing multiple factors simultaneously creates <strong>confounding variables</strong>: if performance changes, the team cannot identify which intervention caused it. Controlled experiments are easier to interpret.</p>
+<h2 id="48-common-misconceptions-from-the-case">48. Common misconceptions from the case</h2>
+<ol>
+<li><strong>“A strong Discriminator is always good.”</strong> False—an overwhelmingly strong \(D\) can destroy useful Generator gradients.</li>
+<li><strong>“More epochs always improve output.”</strong> False—longer training may reinforce an unstable failure mode.</li>
+<li><strong>“More TPU/GPU fixes instability.”</strong> False—it improves speed, not learning dynamics.</li>
+<li><strong>“Label smoothing directly increases texture diversity or realism.”</strong> False—it primarily regularizes \(D\).</li>
+<li><strong>“Adding layers always improves the Generator.”</strong> False—capacity also raises cost and optimization difficulty.</li>
+<li><strong>“Dropout always improves GANs.”</strong> False—too much can weaken \(G\).</li>
+<li><strong>“Mode collapse means samples cannot look realistic.”</strong> False—samples may be realistic but repetitive.</li>
+</ol>
+<hr>
+<h1 id="part-x-exam-preparation">Part X — Exam Preparation</h1>
+<h2 id="49-high-probability-exam-questions-with-answer-points">49. High-probability exam questions with answer points</h2>
+<h3 id="q1-define-a-gan-and-explain-its-components">Q1. Define a GAN and explain its components.</h3>
+<ul>
+<li>Introduced by Goodfellow et al. in 2014.</li>
+<li>Two networks: Generator and Discriminator.</li>
+<li>\(G\) maps noise to synthetic samples.</li>
+<li>\(D\) classifies real versus generated samples.</li>
+<li>Alternating adversarial training improves both.</li>
+<li>Used in image synthesis, augmentation, deepfakes, style transfer, etc.</li>
+</ul>
+<h3 id="q2-explain-the-adversarial-training-process">Q2. Explain the adversarial training process.</h3>
+<ul>
+<li>Initialize \(G\) and \(D\).</li>
+<li>Train \(D\) on real samples labeled real and generated samples labeled fake.</li>
+<li>Compute BCE and update \(D\).</li>
+<li>Train \(G\) by asking \(D\) to classify fake samples as real.</li>
+<li>Backpropagate through \(D\) into \(G\).</li>
+<li>Repeat alternately until satisfactory convergence.</li>
+</ul>
+<h3 id="q3-compare-encoder-decoder-and-generator-discriminator-architectures">Q3. Compare encoder–decoder and generator–discriminator architectures.</h3>
+<ul>
+<li>Encoder compresses; decoder reconstructs.</li>
+<li>Generator synthesizes; Discriminator judges authenticity.</li>
+<li>Encoder–decoder pair is cooperative; GAN pair is adversarial.</li>
+<li>Generator often resembles decoder; Discriminator often resembles encoder/classifier.</li>
+</ul>
+<h3 id="q4-compare-dcgan-and-cyclegan">Q4. Compare DCGAN and CycleGAN.</h3>
+<ul>
+<li>DCGAN: convolution-based, noise-to-image, stable image generation.</li>
+<li>CycleGAN: two domains, two Generators, two Discriminators, unpaired translation.</li>
+<li>Cycle-consistency preserves content.</li>
+<li>Examples: DCGAN faces/textures; CycleGAN horse↔zebra, summer↔winter.</li>
+</ul>
+<h3 id="q5-what-is-mode-collapse-state-causes-and-remedies">Q5. What is mode collapse? State causes and remedies.</h3>
+<ul>
+<li>Repetitive/limited outputs; failure to cover full distribution.</li>
+<li>Causes: imbalance, unstable dynamics, learning-rate mismatch, architecture flaws.</li>
+<li>Remedies: rebalance learning, tune architecture/normalization, monitor diversity, progressive training and other stabilization strategies.</li>
+</ul>
+<h3 id="q6-explain-gan-training-instability">Q6. Explain GAN training instability.</h3>
+<ul>
+<li>Competitive non-stationary objectives.</li>
+<li>One network may dominate.</li>
+<li>Poor initialization, learning rates, architecture, or loss worsens it.</li>
+<li>Consequences: mode collapse, oscillation, failure to converge.</li>
+<li>Remedies: BatchNorm, balanced rates, label smoothing, progressive training, early stopping, careful tuning.</li>
+</ul>
+<h3 id="q7-explain-is-and-fid">Q7. Explain IS and FID.</h3>
+<ul>
+<li>IS measures classifier confidence plus generated-class diversity; higher is better.</li>
+<li>FID compares real/generated feature means and covariances; lower is better.</li>
+<li>Both are image-focused and do not fully capture subjective realism or every domain.</li>
+</ul>
+<h3 id="q8-outline-a-pytorch-gan-training-loop">Q8. Outline a PyTorch GAN training loop.</h3>
+<ul>
+<li>Define <code>nn.Module</code> classes for \(G\) and \(D\).</li>
+<li>Use ReLU/Tanh in \(G\), LeakyReLU/Sigmoid in \(D\).</li>
+<li>Use BCE and Adam.</li>
+<li>Train \(D\) with real and detached fake data.</li>
+<li>Train \(G\) with fake data targeted as real.</li>
+<li>Repeat, monitor losses, and visualize output.</li>
+</ul>
+<h3 id="q9-why-is-random-noise-used">Q9. Why is random noise used?</h3>
+<ul>
+<li>Defines latent-space input.</li>
+<li>Allows multiple possible outputs.</li>
+<li>Enables learned mapping from a simple distribution to the complex data distribution.</li>
+<li>Poor use of noise/latent space can appear as low diversity or mode collapse.</li>
+</ul>
+<h3 id="q10-give-an-ethical-limitation-of-gans">Q10. Give an ethical limitation of GANs.</h3>
+<ul>
+<li>Non-consensual face/video use, misinformation, and deceptive deepfakes.</li>
+<li>Obtain consent and respect privacy, ownership, and law.</li>
+</ul>
+<h2 id="50-exam-traps-and-corrections">50. Exam traps and corrections</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Trap</th>
+<th>Correct statement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GAN is a single network</td>
+<td>It contains at least a Generator and Discriminator</td>
+</tr>
+<tr>
+<td>Generator takes only real images as input</td>
+<td>Basic GAN commonly takes random noise; conditional/translation variants differ</td>
+</tr>
+<tr>
+<td>Discriminator generates images</td>
+<td>It classifies authenticity</td>
+</tr>
+<tr>
+<td>Encoder and Generator are identical</td>
+<td>They may resemble each other only in certain architectures; goals differ</td>
+</tr>
+<tr>
+<td>CycleGAN uses one Generator</td>
+<td>It uses two Generators and two Discriminators</td>
+</tr>
+<tr>
+<td>CycleGAN needs paired images</td>
+<td>Its major value is unpaired domain translation</td>
+</tr>
+<tr>
+<td>High IS and high FID are good</td>
+<td>High IS, <strong>low FID</strong></td>
+</tr>
+<tr>
+<td>Realistic images prove no mode collapse</td>
+<td>Repetitive realistic output can still be collapsed</td>
+</tr>
+<tr>
+<td>A perfect Discriminator is ideal throughout training</td>
+<td>It may deprive \(G\) of useful gradients</td>
+</tr>
+<tr>
+<td>More compute cures instability</td>
+<td>It only accelerates computation</td>
+</tr>
+<tr>
+<td>Tanh output is \([0,1]\)</td>
+<td>Tanh is \([-1,1]\); Sigmoid is \([0,1]\)</td>
+</tr>
+<tr>
+<td><code>detach()</code> is used in Generator training</td>
+<td>It is used for fake samples during the Discriminator update</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="51-rapid-revision-sheet">51. Rapid revision sheet</h2>
+<h3 id="core-facts">Core facts</h3>
+<ul>
+<li><strong>2014:</strong> Ian Goodfellow and colleagues introduced GANs.</li>
+<li><strong>Generator:</strong> noise \(\rightarrow\) synthetic sample.</li>
+<li><strong>Discriminator:</strong> real/fake sample \(\rightarrow\) probability.</li>
+<li><strong>Mechanism:</strong> alternating adversarial competition and feedback.</li>
+<li><strong>Generator hidden activation:</strong> commonly ReLU.</li>
+<li><strong>Generator output:</strong> commonly Tanh for \([-1,1]\)-normalized images.</li>
+<li><strong>Discriminator activation:</strong> commonly Leaky ReLU; final Sigmoid with BCE.</li>
+<li><strong>DCGAN:</strong> convolutions; stable high-quality image generation.</li>
+<li><strong>CycleGAN:</strong> two Generators + two Discriminators; unpaired domain translation; cycle consistency.</li>
+<li><strong>Mode collapse:</strong> realistic or unrealistic but repetitive samples; poor diversity.</li>
+<li><strong>Dominant \(D\):</strong> weak/saturated Generator gradients.</li>
+<li><strong>Label smoothing:</strong> e.g., real \(1.0\rightarrow0.9\); regularizes \(D\).</li>
+<li><strong>BatchNorm:</strong> stabilizes intermediate distributions and gradients.</li>
+<li><strong>IS:</strong> higher better.</li>
+<li><strong>FID:</strong> lower better.</li>
+<li><strong>Ethics:</strong> consent and responsible use are essential for deepfakes.</li>
+</ul>
+<h3 id="one-minute-training-sequence">One-minute training sequence</h3>
+<ol>
+<li>Sample real data and noise.</li>
+<li>Generate fake data.</li>
+<li>Update \(D\) using real + <code>fake.detach()</code>.</li>
+<li>Update \(G\) by targeting fake samples as real.</li>
+<li>Repeat and monitor quality, diversity, losses, and stability.</li>
+</ol>
+<h3 id="one-minute-stabilization-sequence">One-minute stabilization sequence</h3>
+<ol>
+<li>Measure a baseline.</li>
+<li>Balance \(G/D\) learning and update rates.</li>
+<li>Apply label smoothing when \(D\) is overconfident.</li>
+<li>Add/tune BatchNorm and architecture if required.</li>
+<li>Use progressive training/early stopping appropriately.</li>
+<li>Add compute only after algorithmic stability.</li>
+</ol>
+<h3 id="final-memory-hook">Final memory hook</h3>
+<blockquote>
+<p><strong>Generate → Discriminate → Feed back → Rebalance → Repeat.</strong> A successful GAN needs both realism <strong>and</strong> diversity; competition helps quality, but imbalance causes instability.</p>
+</blockquote>
+        </div>
+    <nav class="week-pager">
+      <a href="week-6.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 6: Reinforcement Learning, Policy Networks,…</span>
+      </a>
+      <a href="week-8.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 8: Data Augmentation, Hyperparameter Tuning,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

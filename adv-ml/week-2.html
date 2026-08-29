@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Advanced ML · Week 2 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Advanced ML</span>
+      <span class="brand-title">Week 2</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html" selected>Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Review of Machine Learning, Learning Types, and Linear Regression
+      </a>
+      <a class="is-active" href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Classification, Logistic Regression, Maximum Likelihood and K-Means…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Bias–Variance, Error Analysis, Learning Curves, and Model Selection
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Recommendation Systems and Collaborative Filtering
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Content-Based Filtering, Cosine Similarity, UV Decomposition, and…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Bias–Variance Trade-off, Underfitting, Overfitting,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Association Rule Mining, Apriori, and PCY
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Dimensionality Reduction, PCA, Eigen-Decomposition, and SVD
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Text Processing, Bag of Words, TF–IDF, Vector-Space Retrieval, and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Web Advertising, Online Matching, AdWords, and Balance
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        High-Dimensional Clustering, Subspaces, CLIQUE, PROCLUS, and…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Independent Component Analysis, Blind Source Separation, FastICA,…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Social Networks, Graph Laplacians, and Spectral Clustering
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Graph Partitioning, Flow Centrality, Edge Betweenness, and Girvan–Newman
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        ML Life Cycle, Hybrid and Music Recommenders, and Evaluation
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Advanced ML · Week 2</p>
+        <h1 class="page-title">Classification, Logistic Regression, Maximum Likelihood and K-Means Clustering</h1>
+        <p class="page-meta">Week 2 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#week-overview">Week overview</a></li>
+      <li><a href="#1-machine-learning-task-types">1. Machine-learning task types</a></li>
+      <li><a href="#2-linear-regression-recap-from-the-live-class">2. Linear-regression recap from the live class</a></li>
+      <li><a href="#3-logistic-regression">3. Logistic regression</a></li>
+      <li><a href="#4-estimating-logistic-regression-parameters">4. Estimating logistic-regression parameters</a></li>
+      <li><a href="#5-maximum-likelihood-estimation-mle">5. Maximum Likelihood Estimation (MLE)</a></li>
+      <li><a href="#6-logistic-regression-in-python">6. Logistic regression in Python</a></li>
+      <li><a href="#7-clustering-fundamentals">7. Clustering fundamentals</a></li>
+      <li><a href="#8-k-means-clustering">8. K-means clustering</a></li>
+      <li><a href="#9-manual-k-means-example">9. Manual K-means example</a></li>
+      <li><a href="#10-k-means-with-scikit-learn">10. K-means with Scikit-learn</a></li>
+      <li><a href="#11-integrated-practical-use-cases">11. Integrated practical use cases</a></li>
+      <li><a href="#12-review-case-study-augmentation-medipredict">12. Review/case-study augmentation: MediPredict</a></li>
+      <li><a href="#13-exam-focused-comparisons">13. Exam-focused comparisons</a></li>
+      <li><a href="#14-high-yield-formula-sheet">14. High-yield formula sheet</a></li>
+      <li><a href="#15-likely-exam-questions-and-answer-points">15. Likely exam questions and answer points</a></li>
+      <li><a href="#16-rapid-recall-checklist">16. Rapid-recall checklist</a></li>
+      <li><a href="#17-final-takeaways">17. Final takeaways</a></li>
+      <li><a href="#18-qa-supplement-transcript-clarifications">18. QA supplement — transcript clarifications</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="week-overview">Week overview</h2>
+<p>Week 2 connects three foundational ideas:</p>
+<ol>
+<li><strong>Regression</strong> predicts a continuous numerical value.</li>
+<li><strong>Classification</strong> predicts a categorical class (often through a probability).</li>
+<li><strong>Clustering</strong> discovers groups in unlabelled data.</li>
+</ol>
+<p>The recorded lessons cover logistic regression, two approaches to parameter estimation, Python implementations, K-means theory, and K-means in Scikit-learn. The live class also revisits linear regression because its line, loss function, parameters, and limitations motivate logistic regression. The quiz/review material adds important implementation and deployment trade-offs.</p>
+<hr>
+<h2 id="1-machine-learning-task-types">1. Machine-learning task types</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Learning type</th>
+<th>Training data</th>
+<th>Output</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linear regression</td>
+<td>Supervised</td>
+<td>Features <code>X</code> and known numeric target <code>y</code></td>
+<td>Continuous value</td>
+<td>house price, rainfall in mm, glucose level, sales</td>
+</tr>
+<tr>
+<td>Logistic regression/classification</td>
+<td>Supervised</td>
+<td>Features <code>X</code> and known class label <code>y</code></td>
+<td>Class probability and class</td>
+<td>pass/fail, spam/not spam, normal/critical glucose</td>
+</tr>
+<tr>
+<td>K-means clustering</td>
+<td>Unsupervised</td>
+<td>Features <code>X</code>; no known target label</td>
+<td>Cluster assignment</td>
+<td>customer segments, image regions, social groups</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="1-1-regression-versus-classification">1.1 Regression versus classification</h3>
+<ul>
+<li>Both are <strong>predictive-modelling</strong> problems and normally use labelled historical data.</li>
+<li>Regression predicts a continuous response. Given house area, predict price; given temperature and pressure, predict tomorrow&rsquo;s rainfall in millimetres; given age, predict glucose level.</li>
+<li>Classification predicts a categorical/nominal response. Given study hours, predict pass or fail; given email features, predict spam or not spam; given age, predict whether glucose is normal or critical.</li>
+<li><strong>Binary classification</strong> has two classes, commonly encoded as <code>0</code> and <code>1</code>.</li>
+<li><strong>Multiclass/multinomial classification</strong> has more than two classes, such as grade A, B, C, or fail. Logistic regression can be extended to multiclass classification.</li>
+</ul>
+<h3 id="1-2-labelled-data-workflow">1.2 Labelled-data workflow</h3>
+<p>During training, a supervised algorithm receives both:</p>
+<ul>
+<li><code>X</code>: input variables, predictors, or <strong>features</strong>;</li>
+<li><code>y</code>: output/response/target variable or label.</li>
+</ul>
+<p>Training produces a fitted classifier. At inference time, the model receives new <code>X</code> values and predicts <code>y</code>. For example, historical study hours and pass/fail labels train a model; a new value of 30 study hours is then used to predict pass or fail.</p>
+<p>The overall workflow is commonly:</p>
+<ol>
+<li><strong>Training:</strong> build the model from labelled examples.</li>
+<li><strong>Validation:</strong> evaluate and fine-tune model choices/hyperparameters. Operationally, prediction resembles testing; validation is used during model development.</li>
+<li><strong>Testing:</strong> estimate final performance on unseen data.</li>
+</ol>
+<p>Validation is sometimes treated as part of training. The important distinction is its purpose: tuning versus final unbiased evaluation.</p>
+<h3 id="1-3-common-classification-applications">1.3 Common classification applications</h3>
+<ul>
+<li>Image classification</li>
+<li>Spam detection</li>
+<li>Medical risk/disease classification</li>
+<li>Pass/fail prediction</li>
+<li>Customer purchase/churn prediction</li>
+<li>Binary and multiclass categorization</li>
+</ul>
+<hr>
+<h2 id="2-linear-regression-recap-from-the-live-class">2. Linear-regression recap from the live class</h2>
+<p>This recap is examinable because logistic regression begins with the same linear score.</p>
+<h3 id="2-1-model-and-parameter-meanings">2.1 Model and parameter meanings</h3>
+<p>The school-level slope-intercept form is:</p>
+<p>$$y=mx+c$$</p>
+<p>The simple linear-regression model is:</p>
+<p>$$y_i=\beta_0+\beta_1x_i+\epsilon_i$$</p>
+<p>where:</p>
+<ul>
+<li>$y_i$ is the observed or actual response;</li>
+<li>$x_i$ is the feature value;</li>
+<li>$\beta_0$ is the intercept;</li>
+<li>$\beta_1$ is the slope;</li>
+<li>$\epsilon_i$ is the error/residual.</li>
+</ul>
+<p>The fitted value is:</p>
+<p>$$\hat y_i=\beta_0+\beta_1x_i$$</p>
+<p>and the residual is $y_i-\hat y_i$. The goal is a <strong>line of best fit</strong> with small overall residuals, not literally a line passing through every point.</p>
+<p>In the live example, if age is <code>X</code> and glucose level is <code>y</code>, an actual row might contain $x_1=43$ and $y_1=99$. These are observed data, not model predictions. The model uses such pairs to learn how to predict glucose for a new age.</p>
+<h3 id="2-2-least-squares-loss-and-model-quality">2.2 Least-squares loss and model quality</h3>
+<p>The sum-of-squared-error cost is:</p>
+<p>$$J(\beta_0,\beta_1)=\sum_{i=1}^{n}\left[y_i-(\beta_0+\beta_1x_i)\right]^2$$</p>
+<p>It may be divided by $n$ (or another constant) to form a mean loss; a positive constant scaling does not change the location of the minimizer. Smaller cost means the fitted line is closer to the observations; a large cost suggests a poorer fit on those data.</p>
+<p>For simple linear regression, a closed-form estimate is available:</p>
+<p>$$\beta_1=\frac{\sum_i(x_i-\bar x)(y_i-\bar y)}{\sum_i(x_i-\bar x)^2}
+=\frac{\operatorname{Cov}(X,Y)}{\operatorname{Var}(X)}$$</p>
+<p>$$\beta_0=\bar y-\beta_1\bar x$$</p>
+<p>Here $\bar x$ and $\bar y$ are the respective means. The instructor emphasized practising the numerical problem by hand to understand what the model computes internally.</p>
+<h3 id="2-3-why-linear-regression-is-not-the-right-binary-classifier">2.3 Why linear regression is not the right binary classifier</h3>
+<p>If class labels are coded <code>0/1</code>, a linear model can still predict values such as $-0.3$ or $1.4$. Such values are not probabilities. Applying an artificial threshold of 0.5 produces classes, but it does not repair the model&rsquo;s underlying problems:</p>
+<ul>
+<li>outputs are unbounded;</li>
+<li>squared-error training does not directly optimize class likelihood/separation;</li>
+<li>outliers can strongly affect squared loss;</li>
+<li>probability interpretation is unreliable;</li>
+<li>the resulting decision boundary may be poor.</li>
+</ul>
+<p>This motivates logistic regression, which keeps its probability output in $(0,1)$.</p>
+<hr>
+<h2 id="3-logistic-regression">3. Logistic regression</h2>
+<p>Despite its name, logistic regression is primarily a <strong>classification</strong> model. It predicts the probability that an observation belongs to a target class.</p>
+<p>Example encoding:</p>
+<ul>
+<li>$y=0$: glucose level normal;</li>
+<li>$y=1$: glucose level critical.</li>
+</ul>
+<h3 id="3-1-probability-odds-and-log-odds">3.1 Probability, odds, and log-odds</h3>
+<p>Probability measures the chance of an event and lies in $[0,1]$. In equally likely elementary cases it can be written as successful outcomes divided by total outcomes.</p>
+<p>If the event probability is $p$, then:</p>
+<p>$$\text{odds}=\frac{p}{1-p}$$</p>
+<p>Odds compare the probability that the event occurs with the probability that it does not occur. They range from $0$ to $\infty$, not from 0 to 1.</p>
+<p>Taking the natural logarithm gives the <strong>logit</strong> or log-odds:</p>
+<p>$$\log\left(\frac{p}{1-p}\right)$$</p>
+<p>Log-odds range from $-\infty$ to $+\infty$, which allows a linear predictor to be used:</p>
+<p>$$\log\left(\frac{p}{1-p}\right)=\beta_0+\beta_1x$$</p>
+<p>With multiple features, replace $\beta_1x$ by $\sum_j\beta_jx_j$.</p>
+<h3 id="3-2-deriving-the-sigmoid-logistic-function">3.2 Deriving the sigmoid/logistic function</h3>
+<p>Let $z=\beta_0+\beta_1x$. Starting with</p>
+<p>$$\log\left(\frac{p}{1-p}\right)=z,$$</p>
+<p>remove the natural logarithm:</p>
+<p>$$\frac{p}{1-p}=e^z.$$</p>
+<p>Rearranging:</p>
+<p>$$p=\frac{e^z}{1+e^z}=\frac{1}{1+e^{-z}}.$$</p>
+<p>Thus the sigmoid/logistic function is:</p>
+<p>$$\sigma(z)=\frac{1}{1+e^{-z}}.$$</p>
+<p>It is an S-shaped, smooth, monotonically increasing curve. A linear score may take any real value, but the sigmoid maps it strictly between 0 and 1. This is why logistic output can be interpreted as a probability.</p>
+<h3 id="3-3-from-probability-to-a-class">3.3 From probability to a class</h3>
+<p>For a standard binary example:</p>
+<p>$$\hat y=\begin{cases}1,&p\ge 0.5\\0,&p<0.5\end{cases}$$</p>
+<p>The live class uses 0.5 because it is the equal-probability point. In practice the decision threshold may be tuned to business costs. For example, medical screening may use a lower threshold to reduce missed high-risk patients. Threshold tuning changes the class decision, not the probability model itself.</p>
+<h3 id="3-4-interpretation-example">3.4 Interpretation example</h3>
+<p>Suppose $z=-4+0.08(60)=0.8$. Then</p>
+<p>$$p=\frac{1}{1+e^{-0.8}}\approx0.69.$$</p>
+<p>At a 0.5 threshold, the patient is classified as critical/high-risk. The value 0.69 is a probability estimate; the final <code>1</code> is the thresholded class.</p>
+<hr>
+<h2 id="4-estimating-logistic-regression-parameters">4. Estimating logistic-regression parameters</h2>
+<p>The required parameters are the intercept and coefficient(s), such as $\beta_0$ and $\beta_1$. Unlike simple linear regression, logistic regression does not have the same direct closed-form solution. It is fitted iteratively.</p>
+<p>The lectures discuss two related views:</p>
+<ol>
+<li>optimization of a loss with gradient descent;</li>
+<li>maximum likelihood estimation (MLE), usually implemented by minimizing negative log-likelihood.</li>
+</ol>
+<h3 id="4-1-gradient-descent-core-idea">4.1 Gradient descent: core idea</h3>
+<p>Start with initial parameter values, often zero, and repeatedly update them in the direction that reduces loss:</p>
+<p>$$\beta_j\leftarrow\beta_j-\alpha\frac{\partial J}{\partial\beta_j}$$</p>
+<p>where:</p>
+<ul>
+<li>$J$ is the objective/loss function;</li>
+<li>$\alpha$ is the learning rate;</li>
+<li>the derivative/gradient describes the direction of steepest increase, so subtracting it moves downhill.</li>
+</ul>
+<p>For two parameters:</p>
+<p>$$\beta_0\leftarrow\beta_0-\alpha\frac{\partial J}{\partial\beta_0},\qquad
+\beta_1\leftarrow\beta_1-\alpha\frac{\partial J}{\partial\beta_1}.$$</p>
+<p>The introductory lecture describes a squared-error-style loss, $\sum_i(y_i-\hat y_i)^2$, to explain the mechanics of iterative updates. The MLE lecture supplies the classification-appropriate likelihood objective; in standard logistic regression, negative log-likelihood/cross-entropy is the conventional loss.</p>
+<h3 id="4-2-learning-rate-trade-off">4.2 Learning-rate trade-off</h3>
+<ul>
+<li><strong>Too large:</strong> fast movement but can overshoot the optimum, oscillate, fail to converge, or produce inaccurate training.</li>
+<li><strong>Too small:</strong> stable and potentially precise, but convergence is slow and many iterations are required.</li>
+<li>Illustrative lecture values include <code>0.001</code>; the correct value depends on scaling and data.</li>
+</ul>
+<p>The iteration count/epochs can also be set explicitly (the demonstration uses 300). A maximum-iteration limit avoids an endless loop. Convergence may instead be detected when assignments/parameters/loss cease changing meaningfully.</p>
+<p><strong>Review refinement:</strong> tiny parameter updates alone can be misleading when $\alpha$ is tiny. A small gradient norm $\|\nabla J\|$ is stronger evidence of reaching a stationary point; production implementations often combine tolerance and maximum-iteration criteria.</p>
+<hr>
+<h2 id="5-maximum-likelihood-estimation-mle">5. Maximum Likelihood Estimation (MLE)</h2>
+<h3 id="5-1-probability-and-conditional-probability">5.1 Probability and conditional probability</h3>
+<p>MLE is a probabilistic parameter-estimation framework. Conditional probability</p>
+<p>$$P(Y\mid X)$$</p>
+<p>is read “the probability of $Y$ given $X$”: the chance of $Y$ when $X$ is known. In supervised learning, the model seeks parameters that make the observed target values highly probable given the inputs.</p>
+<blockquote>
+<p>The transcript occasionally reverses the conditioning notation while speaking. For supervised classification, the relevant quantity is $P(y_i\mid x_i;\theta)$.</p>
+</blockquote>
+<h3 id="5-2-likelihood-of-a-dataset">5.2 Likelihood of a dataset</h3>
+<p>For observations assumed conditionally independent given parameters $\theta$:</p>
+<p>$$L(\theta)=\prod_{i=1}^{n}P(y_i\mid x_i;\theta).$$</p>
+<p>This product is the likelihood: the observed data are fixed, and it is viewed as a function of the model parameters. MLE chooses:</p>
+<p>$$\hat\theta=\arg\max_\theta L(\theta).$$</p>
+<p>The model form and its parameters constitute the modelling hypothesis; estimation finds the hypothesis/parameters that best explain the observed data.</p>
+<h3 id="5-3-why-use-log-likelihood">5.3 Why use log-likelihood?</h3>
+<p>Logarithms turn products into sums:</p>
+<p>$$\log(a b c)=\log a+\log b+\log c.$$</p>
+<p>Therefore:</p>
+<p>$$\ell(\theta)=\log L(\theta)=\sum_{i=1}^{n}\log P(y_i\mid x_i;\theta).$$</p>
+<p>This is simpler to optimize and avoids numerical underflow from multiplying many small probabilities. Since optimizers are commonly expressed as minimizers, maximize log-likelihood or equivalently minimize <strong>negative log-likelihood (NLL)</strong>:</p>
+<p>$$\operatorname{NLL}(\theta)=-\ell(\theta).$$</p>
+<h3 id="5-4-bernoulli-model-for-binary-classification">5.4 Bernoulli model for binary classification</h3>
+<p>For $y\in\{0,1\}$:</p>
+<p>$$P(Y=1)=p,\qquad P(Y=0)=1-p.$$</p>
+<p>This is a Bernoulli distribution (binomial reasoning across multiple trials). Its expectation is:</p>
+<p>$$E[Y]=1\cdot p+0\cdot(1-p)=p.$$</p>
+<p>For one observation, the compact Bernoulli probability is:</p>
+<p>$$P(y\mid x)=p^y(1-p)^{1-y}.$$</p>
+<p>The lecture verbally motivates this through a selector expression $py+(1-p)(1-y)$: when $y=1$, it returns $p$; when $y=0$, it returns $1-p$. The exponent form is the conventional likelihood form.</p>
+<p>With prediction $p_i=\hat y_i=\sigma(\beta_0+\beta^Tx_i)$, the full likelihood is:</p>
+<p>$$L(\beta)=\prod_i p_i^{y_i}(1-p_i)^{1-y_i}.$$</p>
+<p>The log-likelihood is:</p>
+<p>$$\ell(\beta)=\sum_i\left[y_i\log p_i+(1-y_i)\log(1-p_i)\right].$$</p>
+<p>The binary cross-entropy/NLL minimized in standard logistic regression is:</p>
+<p>$$J(\beta)=-\sum_i\left[y_i\log p_i+(1-y_i)\log(1-p_i)\right].$$</p>
+<p>It gives high likelihood/low loss when the predicted probability is close to the actual class and low likelihood/high loss when the model is confidently wrong.</p>
+<h3 id="5-5-optimization-methods">5.5 Optimization methods</h3>
+<p>There is no simple closed-form logistic solution, so iterative numerical optimization is used. The lecture mentions:</p>
+<ul>
+<li>gradient descent;</li>
+<li>Newton–Raphson;</li>
+<li>bisection-type numerical methods (details outside course scope).</li>
+</ul>
+<p>Whether one says “maximize likelihood/log-likelihood” or “minimize negative log-likelihood,” the optimum parameters are the same.</p>
+<hr>
+<h2 id="6-logistic-regression-in-python">6. Logistic regression in Python</h2>
+<p>The demonstration uses age as the feature and glucose category (<code>normal</code>/<code>critical</code>) as the target. Inspection suggests that critical glucose becomes more common as age increases.</p>
+<h3 id="6-1-libraries-and-data">6.1 Libraries and data</h3>
+<ul>
+<li><strong>NumPy:</strong> arrays and linear algebra</li>
+<li><strong>Pandas:</strong> loading/managing the CSV data frame</li>
+<li><strong>Matplotlib:</strong> plots</li>
+<li><strong>Scikit-learn:</strong> train/test splitting and built-in logistic regression</li>
+<li>CSV means <strong>comma-separated values</strong>.</li>
+</ul>
+<h3 id="6-2-custom-implementation-structure">6.2 Custom implementation structure</h3>
+<p>The model is separated into functions for:</p>
+<ol>
+<li><strong>normalization</strong> of <code>X</code> (the lecture describes centering as $X-\bar X$);</li>
+<li><strong>prediction</strong> using the sigmoid $1/(1+e^{-(\beta_0+\beta_1X)})$;</li>
+<li><strong>logistic training</strong>, which initializes coefficients, iterates, computes derivatives, and updates parameters;</li>
+<li>training/test orchestration.</li>
+</ol>
+<p>Conceptual pseudocode:</p>
+<pre><code class="language-python">b0, b1 = 0.0, 0.0
+learning_rate = 0.001
+
+for epoch in range(300):
+    probability = sigmoid(b0 + b1 * x_train)
+    db0 = ...  # derivative with respect to b0
+    db1 = ...  # derivative with respect to b1
+    b0 = b0 - learning_rate * db0
+    b1 = b1 - learning_rate * db1
+</code></pre>
+<p>After splitting into <code>X_train</code>, <code>X_test</code>, <code>y_train</code>, and <code>y_test</code>, fit only on the training set. Normalize test data consistently with training statistics, compute probabilities, apply the 0.5 class threshold, plot results, and calculate accuracy:</p>
+<p>$$\text{accuracy}=\frac{\text{number of correct predictions}}{\text{total predictions}}.$$</p>
+<p>The small custom demonstration reports approximately 0.8 accuracy (two misclassifications).</p>
+<blockquote>
+<p>Important practical caveat: never independently learn a different normalization from the test set. Store training mean/scale and apply them unchanged to validation, test, and future inputs.</p>
+</blockquote>
+<h3 id="6-3-scikit-learn-implementation">6.3 Scikit-learn implementation</h3>
+<p>The built-in workflow is concise:</p>
+<pre><code class="language-python">from sklearn.linear_model import LogisticRegression
+
+lr_model = LogisticRegression(...)
+lr_model.fit(X_train, y_train)
+y_pred = lr_model.predict(X_test)
+accuracy = lr_model.score(X_test, y_test)
+</code></pre>
+<p>The demonstration&rsquo;s built-in model reports 100% on its deliberately simple, framed sample. The instructor explicitly warns not to generalize from this tiny result: a realistic evaluation needs a much larger and more varied dataset (the lecture suggests at least around 1,000 examples with representative classes). Always retain unseen test data and inspect more than accuracy when class imbalance or unequal errors matter.</p>
+<h3 id="6-4-custom-code-versus-a-library">6.4 Custom code versus a library</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Custom training loop</th>
+<th>Mature library implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full control over learning rate, epochs, updates and logging</td>
+<td>Hyperparameters supplied through constructor/API</td>
+</tr>
+<tr>
+<td>Can inspect gradients and every training step</td>
+<td>Internal optimization mostly abstracted</td>
+</tr>
+<tr>
+<td>Useful for education, research and optimizer experiments</td>
+<td>Useful for rapid prototyping and production</td>
+</tr>
+<tr>
+<td>More code, debugging and maintenance</td>
+<td>Optimized, tested, numerically stable and reproducible</td>
+</tr>
+<tr>
+<td>Greater risk of implementation error</td>
+<td>Less freedom to alter the internal update rule</td>
+</tr>
+</tbody>
+</table></div>
+<p>The review emphasizes that sample accuracy alone is insufficient. Choose using reliability, transparency, maintainability, deployment readiness, adaptability, validation needs, and the application&rsquo;s consequences.</p>
+<hr>
+<h2 id="7-clustering-fundamentals">7. Clustering fundamentals</h2>
+<p>Clustering partitions a dataset into groups so that items within a group have similar properties while dissimilar items lie in different groups. It is commonly applied to large unlabelled datasets for exploration or before another technique such as classification.</p>
+<h3 id="7-1-why-clustering-is-unsupervised">7.1 Why clustering is unsupervised</h3>
+<p>Only features are supplied; known target labels are absent. In an age/glucose dataset, for example, there may be numerical measurements but no <code>normal</code> or <code>critical</code> label. The algorithm discovers structure rather than learning a supplied input-output mapping.</p>
+<p>Clustering can therefore create descriptive labels/cluster IDs for previously unlabelled observations. These IDs can support exploratory analysis or act as cautious <strong>pseudo-labels</strong> in semi-supervised workflows, but a cluster number is not automatically a true business class.</p>
+<h3 id="7-2-clustering-families-mentioned">7.2 Clustering families mentioned</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Example</th>
+<th>Central idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Centroid-based</td>
+<td>K-means</td>
+<td>Assign observations to representative centers</td>
+</tr>
+<tr>
+<td>Density-based</td>
+<td>DBSCAN</td>
+<td>Dense connected regions form clusters</td>
+</tr>
+<tr>
+<td>Distribution/model-based</td>
+<td>Gaussian mixture model (GMM)</td>
+<td>Data arise from a mixture of distributions</td>
+</tr>
+<tr>
+<td>Hierarchical</td>
+<td>CURE</td>
+<td>Build a hierarchy/structure of clusters</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="7-3-applications">7.3 Applications</h3>
+<ul>
+<li><strong>Market/customer segmentation:</strong> discover groups with similar behavior when no segment labels exist.</li>
+<li><strong>Social-network analysis:</strong> represent activity/relationships as a graph and discover communities.</li>
+<li><strong>Image segmentation:</strong> group pixels/regions with similar characteristics.</li>
+<li><strong>Anomaly detection:</strong> identify observations that do not belong well to normal groups.</li>
+<li><strong>Preprocessing/exploration:</strong> understand large datasets before supervised modelling.</li>
+</ul>
+<hr>
+<h2 id="8-k-means-clustering">8. K-means clustering</h2>
+<p>K-means is a centroid-based unsupervised algorithm. <code>K</code> is the chosen number of clusters; “means” refers to updating each center to the arithmetic mean of its assigned observations.</p>
+<h3 id="8-1-two-alternating-operations">8.1 Two alternating operations</h3>
+<ol>
+<li><strong>Assignment:</strong> assign every point to its nearest centroid.</li>
+<li><strong>Update:</strong> recompute each centroid as the mean of all points assigned to it.</li>
+</ol>
+<p>Repeat until assignments no longer change or centroid movement becomes negligible.</p>
+<p>The original observations never move. Membership can change because the centroids move after an update, making a different centroid nearest on the next assignment.</p>
+<h3 id="8-2-full-algorithm">8.2 Full algorithm</h3>
+<ol>
+<li>Choose $K$.</li>
+<li>Initialize $K$ centroids. The lecture mentions random selection and <strong>K-means++</strong> initialization.</li>
+<li>For each point, compute its distance to every centroid and assign it to the nearest.</li>
+<li>For cluster $C_k$, update:</li>
+</ol>
+<p>$$\mu_k=\frac{1}{|C_k|}\sum_{x_i\in C_k}x_i.$$</p>
+<ol start="5">
+<li>Repeat steps 3–4 until convergence.</li>
+</ol>
+<p>Choosing $K$ can be tricky and may use domain knowledge. Arbitrarily making an enormous number of clusters (for example, 1,000) can defeat the purpose of summarizing and interpreting the data. In practice, diagnostics such as the elbow method or silhouette score can supplement domain knowledge.</p>
+<h3 id="8-3-distance-measures">8.3 Distance measures</h3>
+<p>For points $x=(x_1,x_2)$ and $y=(y_1,y_2)$:</p>
+<p><strong>Euclidean distance</strong></p>
+<p>$$d_2(x,y)=\sqrt{(x_1-y_1)^2+(x_2-y_2)^2}.$$</p>
+<p>Squaring prevents positive and negative coordinate differences from cancelling and measures straight-line distance.</p>
+<p><strong>Manhattan distance</strong></p>
+<p>$$d_1(x,y)=|x_1-y_1|+|x_2-y_2|.$$</p>
+<p>The distance metric determines the closest center during assignment. It does not select $K$, recompute the centroid, or by itself determine convergence.</p>
+<blockquote>
+<p>Strict terminology: standard K-means conventionally uses squared Euclidean distance with arithmetic means. The lecture uses Manhattan distance to simplify its manual assignment example while still recomputing means. A fully Manhattan-based analogue is more naturally called K-medians.</p>
+</blockquote>
+<h3 id="8-4-convergence-and-iteration-controls">8.4 Convergence and iteration controls</h3>
+<p>K-means is considered converged when:</p>
+<ul>
+<li>assignments stop changing; or</li>
+<li>centroid movement/change falls below a tolerance.</li>
+</ul>
+<p>The live discussion explains why updated centers are needed: each update fine-tunes the grouping, and another assignment checks whether observations now belong nearer to another center. On the eight-point example, two or three iterations may be sufficient. Real implementations automate the process.</p>
+<p>For very large datasets, developers may specify <code>max_iter</code> to bound computation and prevent endless looping. Robust implementations combine a convergence tolerance with a maximum iteration count. The transcript notes that very large volumes may require deliberate computational limits; exact choices depend on resource and accuracy needs.</p>
+<h3 id="8-5-practical-limitations-and-care">8.5 Practical limitations and care</h3>
+<ul>
+<li>Results can depend on initial centroids; use K-means++ and/or multiple restarts.</li>
+<li>Feature scale affects distance. Standardize features when units differ materially (for example, annual income versus a 1–5 satisfaction score).</li>
+<li>K-means works best for roughly compact, center-based clusters and is sensitive to outliers.</li>
+<li>Cluster labels such as 0, 1, and 2 are identifiers only; their numeric order has no meaning.</li>
+</ul>
+<hr>
+<h2 id="9-manual-k-means-example">9. Manual K-means example</h2>
+<p>The lecture uses eight points:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Point</th>
+<th style="text-align: right;">Coordinates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$A_1$</td>
+<td style="text-align: right;">$(2,10)$</td>
+</tr>
+<tr>
+<td>$A_2$</td>
+<td style="text-align: right;">$(2,5)$</td>
+</tr>
+<tr>
+<td>$A_3$</td>
+<td style="text-align: right;">$(8,4)$</td>
+</tr>
+<tr>
+<td>$A_4$</td>
+<td style="text-align: right;">$(5,8)$</td>
+</tr>
+<tr>
+<td>$A_5$</td>
+<td style="text-align: right;">$(7,5)$</td>
+</tr>
+<tr>
+<td>$A_6$</td>
+<td style="text-align: right;">$(6,4)$</td>
+</tr>
+<tr>
+<td>$A_7$</td>
+<td style="text-align: right;">$(1,2)$</td>
+</tr>
+<tr>
+<td>$A_8$</td>
+<td style="text-align: right;">$(4,9)$</td>
+</tr>
+</tbody>
+</table></div>
+<p>Set $K=3$ and randomly/arbitrarily initialize centers at $A_1$, $A_4$, and $A_7$. For the classroom calculation, use Manhattan distance.</p>
+<h3 id="9-1-sample-assignment-calculations">9.1 Sample assignment calculations</h3>
+<p>For $A_1=(2,10)$:</p>
+<ul>
+<li>to $A_1$: $0$;</li>
+<li>to $A_4=(5,8)$: $|2-5|+|10-8|=5$;</li>
+<li>to $A_7=(1,2)$: $|2-1|+|10-2|=9$.</li>
+</ul>
+<p>Hence $A_1$ belongs to cluster 1.</p>
+<p>For $A_2=(2,5)$:</p>
+<ul>
+<li>to $A_1$: $|2-2|+|5-10|=5$;</li>
+<li>to $A_4$: $|2-5|+|5-8|=6$;</li>
+<li>to $A_7$: $|2-1|+|5-2|=4$.</li>
+</ul>
+<p>The smallest value is 4, so $A_2$ joins cluster 3. The same procedure is performed for every point.</p>
+<h3 id="9-2-first-update-and-subsequent-iteration">9.2 First update and subsequent iteration</h3>
+<p>After assigning all points to their nearest initial center, recompute each center coordinate-by-coordinate as the average of its members. Then calculate all distances again using the updated centers.</p>
+<p>The transcript&rsquo;s second illustrated assignment produces:</p>
+<ul>
+<li>$C_1=\{A_1,A_8\}$;</li>
+<li>$C_2=\{A_3,A_4,A_5,A_6\}$;</li>
+<li>$C_3=\{A_2,A_7\}$.</li>
+</ul>
+<p>The corresponding updated means shown are:</p>
+<ul>
+<li>$\mu_1=(3,9.5)$;</li>
+<li>$\mu_2=(6.5,5.25)$ by direct arithmetic from the listed members (the spoken transcript appears to say $(6.5,6.5)$, an apparent transcription/slide mismatch);</li>
+<li>$\mu_3=(1.5,3.5)$.</li>
+</ul>
+<p>Continue assignment and updating until the groupings no longer change. The exam-relevant point is the method: <strong>distance assigns; mean updates; iteration produces convergence</strong>.</p>
+<hr>
+<h2 id="10-k-means-with-scikit-learn">10. K-means with Scikit-learn</h2>
+<h3 id="10-1-libraries-and-data-preparation">10.1 Libraries and data preparation</h3>
+<p>The demonstration uses:</p>
+<ul>
+<li>NumPy;</li>
+<li>Pandas for a data frame with columns <code>X</code> and <code>Y</code>;</li>
+<li>Matplotlib and the <code>ggplot</code> style for visualization;</li>
+<li><code>KMeans</code> from <code>sklearn.cluster</code>.</li>
+</ul>
+<p>The same eight two-dimensional points from the manual example are placed in a data frame and scatter-plotted.</p>
+<h3 id="10-2-fit-centers-and-labels">10.2 Fit, centers, and labels</h3>
+<p>Conceptual code:</p>
+<pre><code class="language-python">from sklearn.cluster import KMeans
+
+kmeans = KMeans(n_clusters=3, random_state=..., n_init=...)
+kmeans.fit(data)
+
+centroids = kmeans.cluster_centers_
+labels = kmeans.labels_
+</code></pre>
+<p>A single <code>fit</code> call performs initialization, repeated assignment/update iterations, and stopping internally.</p>
+<ul>
+<li><code>cluster_centers_</code> contains final centroid coordinates.</li>
+<li><code>labels_</code> contains one cluster ID for every input row, in the same order as the original dataset.</li>
+<li><code>cluster_centers_[labels_]</code> recovers the assigned centroid coordinates row-by-row.</li>
+</ul>
+<p>The recorded run reports centers approximately $(7,4.33)$, $(1.5,3.5)$, and $(3.6,9)$, with three members in one cluster, two in another, and three in the third. The exact numeric label attached to a center may change across runs because label numbers are arbitrary and initialization can differ.</p>
+<p>Plot points in different colors according to <code>labels_</code> and overlay centroid markers. A legend can call them Group 1, Group 2, and Group 3, but these names are descriptive rather than known ground-truth classes.</p>
+<hr>
+<h2 id="11-integrated-practical-use-cases">11. Integrated practical use cases</h2>
+<h3 id="11-1-medical-glucose-analysis">11.1 Medical glucose analysis</h3>
+<ul>
+<li><strong>Linear regression:</strong> predict the numerical glucose level from age and other features.</li>
+<li><strong>Logistic regression:</strong> predict $P(\text{critical glucose}\mid X)$ and classify normal/critical.</li>
+<li><strong>K-means:</strong> when labels are absent, discover patient profiles based on glucose, age, BMI, and other measurements; clinicians must interpret and validate the clusters before treating them as risk categories.</li>
+</ul>
+<h3 id="11-2-customer-analytics">11.2 Customer analytics</h3>
+<ul>
+<li>Use K-means on frequency, recency, spend, and engagement to discover customer segments.</li>
+<li>Once a meaningful outcome such as “will buy next month” is labelled, train logistic regression to estimate purchase probability.</li>
+<li>Use the probability, not only the class, to prioritize marketing efforts; choose a threshold based on campaign cost and expected value.</li>
+</ul>
+<h3 id="11-3-email-filtering">11.3 Email filtering</h3>
+<ul>
+<li>Features may include word indicators, sender reputation, link count, and message metadata.</li>
+<li>Logistic regression estimates spam probability from labelled messages.</li>
+<li>A threshold greater than 0.5 may reduce false spam flags; a lower threshold may catch more spam. This illustrates why threshold choice is a business/risk decision.</li>
+</ul>
+<hr>
+<h2 id="12-review-case-study-augmentation-medipredict">12. Review/case-study augmentation: MediPredict</h2>
+<p>MediPredict must classify patients as high-risk or low-risk from labelled laboratory results. Priya initially treats the binary target as a linear-regression problem, obtains unbounded predictions, and thresholds at 0.5. The custom approach needs normalization, prediction, gradient computation, parameter updates, and convergence logic. On the small sample it achieves about 80% with two errors, while a built-in classifier reports 100%.</p>
+<h3 id="12-1-what-the-case-actually-demonstrates">12.1 What the case actually demonstrates</h3>
+<ul>
+<li>A purpose-built classification method is more appropriate because it outputs valid probabilities and learns through a classification likelihood.</li>
+<li>The 100% value is not proof of future performance; it may reflect a tiny/artificially separable sample.</li>
+<li>Engineering choice must balance accuracy, reliability, maintainability, transparency, reproducibility, stability, deployment readiness, and long-term healthcare quality—not only one test score.</li>
+</ul>
+<h3 id="12-2-options-and-what-each-fixes">12.2 Options and what each fixes</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Benefit</th>
+<th>What it does <strong>not</strong> fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Threshold tuning</td>
+<td>Trades false positives against false negatives</td>
+<td>Does not turn linear output into a valid probability model</td>
+</tr>
+<tr>
+<td>Regularization</td>
+<td>Constrains coefficients, reduces overfitting, improves stability/generalization</td>
+<td>Does not bound predictions to $[0,1]$</td>
+</tr>
+<tr>
+<td>Probability calibration</td>
+<td>Post-processes scores to improve probability interpretation</td>
+<td>Does not make an unsuitable underlying objective ideal</td>
+</tr>
+<tr>
+<td>Adaptive learning rate</td>
+<td>May improve optimization speed/stability</td>
+<td>Does not fix unbounded linear outputs</td>
+</tr>
+<tr>
+<td>Logistic/built-in classifier</td>
+<td>Appropriate probability model, lower code complexity, mature optimization</td>
+<td>Offers less control over internal update logic</td>
+</tr>
+</tbody>
+</table></div>
+<p>If the custom approach must be investigated, the review suggests stabilizing it with regularization, calibrating probabilities, assessing deployment suitability, and comparing fairly with the classifier. For most real healthcare binary-classification deployments, a mature classification implementation is preferred.</p>
+<hr>
+<h2 id="13-exam-focused-comparisons">13. Exam-focused comparisons</h2>
+<h3 id="13-1-linear-versus-logistic-regression">13.1 Linear versus logistic regression</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Linear regression</th>
+<th>Logistic regression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary purpose</td>
+<td>Continuous prediction</td>
+<td>Classification</td>
+</tr>
+<tr>
+<td>Core score</td>
+<td>$\beta_0+\beta^Tx$</td>
+<td>Same linear score before transformation</td>
+</tr>
+<tr>
+<td>Output range</td>
+<td>$(-\infty,\infty)$</td>
+<td>Probability in $(0,1)$</td>
+</tr>
+<tr>
+<td>Transformation</td>
+<td>None</td>
+<td>Sigmoid</td>
+</tr>
+<tr>
+<td>Typical objective</td>
+<td>Squared error</td>
+<td>Negative log-likelihood/cross-entropy</td>
+</tr>
+<tr>
+<td>Parameter fitting</td>
+<td>Closed form possible in ordinary least squares</td>
+<td>Iterative numerical optimization</td>
+</tr>
+<tr>
+<td>Binary decision</td>
+<td>Not native; artificial threshold</td>
+<td>Threshold model probability</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="13-2-classification-versus-clustering">13.2 Classification versus clustering</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Classification</th>
+<th>Clustering</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Learning</td>
+<td>Supervised</td>
+<td>Unsupervised</td>
+</tr>
+<tr>
+<td>Labels during training</td>
+<td>Required</td>
+<td>Absent</td>
+</tr>
+<tr>
+<td>Objective</td>
+<td>Predict a known class concept</td>
+<td>Discover similarity-based groups</td>
+</tr>
+<tr>
+<td>Examples</td>
+<td>spam/not spam, pass/fail</td>
+<td>market segments, image regions</td>
+</tr>
+<tr>
+<td>Output meaning</td>
+<td>Defined target label</td>
+<td>Arbitrary cluster ID requiring interpretation</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="13-3-gradient-descent-versus-mle">13.3 Gradient descent versus MLE</h3>
+<p>These are not competing categories:</p>
+<ul>
+<li><strong>MLE/NLL specifies what objective logistic regression should optimize.</strong></li>
+<li><strong>Gradient descent specifies how parameters can be moved to optimize it.</strong></li>
+</ul>
+<p>Newton–Raphson is another possible optimization procedure for the same likelihood objective.</p>
+<hr>
+<h2 id="14-high-yield-formula-sheet">14. High-yield formula sheet</h2>
+<h3 id="linear-regression">Linear regression</h3>
+<p>$$\hat y=\beta_0+\beta_1x$$</p>
+<p>$$J=\sum_i(y_i-\hat y_i)^2$$</p>
+<p>$$\beta_1=\frac{\sum_i(x_i-\bar x)(y_i-\bar y)}{\sum_i(x_i-\bar x)^2},\qquad
+\beta_0=\bar y-\beta_1\bar x$$</p>
+<h3 id="logistic-regression">Logistic regression</h3>
+<p>$$z=\beta_0+\beta^Tx$$</p>
+<p>$$\text{odds}=\frac{p}{1-p}$$</p>
+<p>$$\log\left(\frac{p}{1-p}\right)=z$$</p>
+<p>$$p=\sigma(z)=\frac{1}{1+e^{-z}}$$</p>
+<h3 id="bernoulli-likelihood">Bernoulli likelihood</h3>
+<p>$$P(y_i\mid x_i)=p_i^{y_i}(1-p_i)^{1-y_i}$$</p>
+<p>$$L(\beta)=\prod_i p_i^{y_i}(1-p_i)^{1-y_i}$$</p>
+<p>$$\ell(\beta)=\sum_i[y_i\log p_i+(1-y_i)\log(1-p_i)]$$</p>
+<p>$$\operatorname{NLL}=-\ell(\beta)$$</p>
+<h3 id="gradient-descent">Gradient descent</h3>
+<p>$$\theta\leftarrow\theta-\alpha\nabla J(\theta)$$</p>
+<h3 id="k-means">K-means</h3>
+<p>$$c_i=\arg\min_k d(x_i,\mu_k)$$</p>
+<p>$$\mu_k=\frac{1}{|C_k|}\sum_{x_i\in C_k}x_i$$</p>
+<p>$$d_2(x,y)=\sqrt{\sum_j(x_j-y_j)^2},\qquad d_1(x,y)=\sum_j|x_j-y_j|$$</p>
+<hr>
+<h2 id="15-likely-exam-questions-and-answer-points">15. Likely exam questions and answer points</h2>
+<h3 id="q1-distinguish-regression-and-classification">Q1. Distinguish regression and classification.</h3>
+<p>State that both are supervised predictive methods; regression predicts a continuous value, classification predicts a categorical label/probability. Give at least one example of each.</p>
+<h3 id="q2-derive-the-sigmoid-from-the-logit-equation">Q2. Derive the sigmoid from the logit equation.</h3>
+<p>Begin with $\ln[p/(1-p)]=z$, exponentiate to $p/(1-p)=e^z$, rearrange to $p=e^z/(1+e^z)=1/(1+e^{-z})$, and explain its $(0,1)$ output.</p>
+<h3 id="q3-why-not-use-linear-regression-for-binary-classification">Q3. Why not use linear regression for binary classification?</h3>
+<p>Mention unbounded outputs, invalid probability interpretation, squared-error rather than likelihood objective, sensitivity to outliers/poor boundary, and that thresholding does not fix the fundamental model mismatch.</p>
+<h3 id="q4-explain-mle-for-logistic-regression">Q4. Explain MLE for logistic regression.</h3>
+<p>Assume Bernoulli targets, multiply probabilities of observed labels, take logs to convert product into a sum, maximize log-likelihood or minimize NLL/cross-entropy, and use an iterative optimizer because there is no simple closed-form solution.</p>
+<h3 id="q5-explain-learning-rate-in-gradient-descent">Q5. Explain learning rate in gradient descent.</h3>
+<p>Define the update rule. Large rates can overshoot/diverge; small rates converge slowly. Mention tolerance/gradient norm and a maximum epoch limit.</p>
+<h3 id="q6-give-k-means-steps">Q6. Give K-means steps.</h3>
+<p>Choose $K$, initialize centers, assign to nearest center using distance, replace every center with its members&rsquo; mean, repeat until assignments/centers stabilize.</p>
+<h3 id="q7-why-can-k-means-membership-change-if-points-do-not-move">Q7. Why can K-means membership change if points do not move?</h3>
+<p>Centroids move after mean recomputation; a different centroid can then become closest. Only assignments and centers change, not original observations.</p>
+<h3 id="q8-explain-cluster-centers-and-labels">Q8. Explain <code>cluster_centers_</code> and <code>labels_</code>.</h3>
+<p>The first stores final centroid coordinates. The second stores one cluster ID per input row in original row order. <code>cluster_centers_[labels_]</code> returns each row&rsquo;s assigned centroid.</p>
+<h3 id="q9-compare-custom-and-built-in-logistic-regression">Q9. Compare custom and built-in logistic regression.</h3>
+<p>Custom code gives procedural control and visibility but adds complexity, bugs, maintenance, and stability risk. A built-in library is concise, optimized, tested, and production-friendly but exposes less internal control.</p>
+<h3 id="q10-explain-why-100-sample-accuracy-may-be-misleading">Q10. Explain why 100% sample accuracy may be misleading.</h3>
+<p>It can arise from a tiny, artificial, easily separable sample and says little about generalization. Use representative data, unseen testing, reproducible splits, and metrics suited to class balance and error costs.</p>
+<hr>
+<h2 id="16-rapid-recall-checklist">16. Rapid-recall checklist</h2>
+<ul>
+<li>[ ] Classification predicts categories; regression predicts continuous values.</li>
+<li>[ ] Logistic regression is a classifier even though it is called “regression.”</li>
+<li>[ ] The linear score is unbounded; sigmoid converts it to $(0,1)$.</li>
+<li>[ ] Odds are $p/(1-p)$; log-odds equal the linear predictor.</li>
+<li>[ ] A 0.5 threshold is conventional, not mandatory.</li>
+<li>[ ] Binary targets are modeled with a Bernoulli distribution.</li>
+<li>[ ] Dataset likelihood is a product; log-likelihood is a sum.</li>
+<li>[ ] Maximizing log-likelihood equals minimizing NLL/cross-entropy.</li>
+<li>[ ] Gradient descent subtracts learning rate times gradient.</li>
+<li>[ ] Very large learning rate can overshoot; very small is slow.</li>
+<li>[ ] Validation tunes; testing provides final evaluation.</li>
+<li>[ ] K-means is unsupervised and centroid-based.</li>
+<li>[ ] Distance assigns points; arithmetic mean updates centroids.</li>
+<li>[ ] Points stay fixed; centroids and memberships can change.</li>
+<li>[ ] Stop at stable assignments/negligible movement, with <code>max_iter</code> as a safeguard.</li>
+<li>[ ] Cluster IDs are arbitrary, not ordered categories.</li>
+<li>[ ] Tiny demonstration accuracy must not be mistaken for production evidence.</li>
+</ul>
+<h2 id="17-final-takeaways">17. Final takeaways</h2>
+<ol>
+<li>Logistic regression resolves the probability-range problem of linear regression by modeling log-odds and applying the sigmoid.</li>
+<li>Its parameters are chosen probabilistically through MLE; NLL/cross-entropy is the minimization form of that objective.</li>
+<li>Numerical optimization such as gradient descent or Newton–Raphson is required because logistic regression lacks the simple ordinary-least-squares closed form.</li>
+<li>K-means discovers structure without labels by alternating nearest-center assignment and mean recomputation.</li>
+<li>Practical model selection is not merely an accuracy contest: data representativeness, error costs, convergence, stability, maintainability, and deployment requirements all matter.</li>
+</ol>
+<h2 id="18-qa-supplement-transcript-clarifications">18. QA supplement — transcript clarifications</h2>
+<h3 id="validation-label-nuance">Validation-label nuance</h3>
+<p>The recording says only <code>X</code> is supplied during validation/testing. That is true at prediction time, but known labels must exist outside the model to calculate accuracy/loss. Validation labels guide tuning; test labels support final evaluation and must not guide development.</p>
+<h3 id="shape-grouping-illustration">Shape-grouping illustration</h3>
+<p>K-means is illustrated with unlabelled features of rectangles, triangles, and squares. It discovers descriptive cluster IDs; they are not guaranteed semantic ground-truth labels.</p>
+<h3 id="complete-iteration-anchor">Complete iteration anchor</h3>
+<p>Initial centers are $A_1=(2,10)$, $A_4=(5,8)$, and $A_7=(1,2)$, using Manhattan distance for hand calculation. The second illustrated memberships are $C_1=\{A_1,A_8\}$, $C_2=\{A_3,A_4,A_5,A_6\}$, and $C_3=\{A_2,A_7\}$. Direct means are $(3,9.5)$, $(6.5,5.25)$, and $(1.5,3.5)$, correcting the spoken middle-coordinate mismatch.</p>
+<h3 id="mle-loss-correction">MLE/loss correction</h3>
+<p>The selector expression $\hat y y+(1-\hat y)(1-y)$ returns the probability assigned to the observed class. Conventional likelihood is $p^y(1-p)^{1-y}$ and NLL is binary cross-entropy. Standard logistic regression does not normally train with the squared-error loss used for introductory gradient-descent intuition.</p>
+<h3 id="small-demo-warning">Small-demo warning</h3>
+<p>About 80% versus 100% comes from a deliberately framed tiny dataset. It cannot establish superiority without identical preprocessing, representative unseen data, repeated evaluation, and class-sensitive metrics.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-1.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 1: Review of Machine Learning, Learning Types,…</span>
+      </a>
+      <a href="week-3.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 3: Bias–Variance, Error Analysis, Learning…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

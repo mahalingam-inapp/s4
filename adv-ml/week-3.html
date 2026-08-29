@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Advanced ML · Week 3 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Advanced ML</span>
+      <span class="brand-title">Week 3</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html" selected>Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Review of Machine Learning, Learning Types, and Linear Regression
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Classification, Logistic Regression, Maximum Likelihood and K-Means…
+      </a>
+      <a class="is-active" href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Bias–Variance, Error Analysis, Learning Curves, and Model Selection
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Recommendation Systems and Collaborative Filtering
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Content-Based Filtering, Cosine Similarity, UV Decomposition, and…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Bias–Variance Trade-off, Underfitting, Overfitting,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Association Rule Mining, Apriori, and PCY
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Dimensionality Reduction, PCA, Eigen-Decomposition, and SVD
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Text Processing, Bag of Words, TF–IDF, Vector-Space Retrieval, and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Web Advertising, Online Matching, AdWords, and Balance
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        High-Dimensional Clustering, Subspaces, CLIQUE, PROCLUS, and…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Independent Component Analysis, Blind Source Separation, FastICA,…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Social Networks, Graph Laplacians, and Spectral Clustering
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Graph Partitioning, Flow Centrality, Edge Betweenness, and Girvan–Newman
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        ML Life Cycle, Hybrid and Music Recommenders, and Evaluation
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Advanced ML · Week 3</p>
+        <h1 class="page-title">Bias–Variance, Error Analysis, Learning Curves, and Model Selection</h1>
+        <p class="page-meta">Week 3 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#exam-scope-and-learning-outcomes">Exam scope and learning outcomes</a></li>
+      <li><a href="#1-generalization-and-the-evaluation-workflow">1. Generalization and the evaluation workflow</a></li>
+      <li><a href="#2-bias">2. Bias</a></li>
+      <li><a href="#3-variance">3. Variance</a></li>
+      <li><a href="#4-bias-variance-decomposition-and-total-error">4. Bias–variance decomposition and total error</a></li>
+      <li><a href="#5-learning-curves">5. Learning curves</a></li>
+      <li><a href="#6-cross-validation-and-leakage-free-evaluation">6. Cross-validation and leakage-free evaluation</a></li>
+      <li><a href="#7-model-selection">7. Model selection</a></li>
+      <li><a href="#8-regularization-and-complexity-control">8. Regularization and complexity control</a></li>
+      <li><a href="#9-integrated-case-study-datapulse-customer-churn">9. Integrated case study — DataPulse customer churn</a></li>
+      <li><a href="#10-practical-decision-guide">10. Practical decision guide</a></li>
+      <li><a href="#11-exam-focused-recall">11. Exam-focused recall</a></li>
+      <li><a href="#12-qa-supplement-transcript-specific-details-and-corrections">12. QA supplement — transcript-specific details and corrections</a></li>
+      <li><a href="#13-review-week-augmentation">13. Review-week augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="exam-scope-and-learning-outcomes">Exam scope and learning outcomes</h2>
+<p>This week explains how to evaluate a machine-learning model rather than introducing a new learning algorithm. By the end, you should be able to:</p>
+<ul>
+<li>define and calculate bias, variance, MSE, RMSE, and total error;</li>
+<li>diagnose underfitting and overfitting;</li>
+<li>explain the bias–variance trade-off and select an appropriate model complexity;</li>
+<li>interpret training and validation learning curves;</li>
+<li>distinguish training, validation, and test sets;</li>
+<li>perform and explain k-fold and leave-one-out cross-validation;</li>
+<li>use validation error, AIC, and BIC for model selection;</li>
+<li>recognize data leakage and unrepresentative datasets;</li>
+<li>recommend remedies in practical cases such as customer-churn prediction.</li>
+</ul>
+<blockquote>
+<p><strong>Notation used throughout:</strong> (y) is the true/observed value, \(\hat y\) (“y-cap”) is a model prediction, \(E[\hat y]\) is the expected prediction over possible training samples/models, (n) is the number of observations, and \(\epsilon_i\) is the prediction error for observation (i).</p>
+</blockquote>
+<hr>
+<h2 id="1-generalization-and-the-evaluation-workflow">1. Generalization and the evaluation workflow</h2>
+<p>The ultimate objective is <strong>generalization</strong>: good performance on data that was not used to fit the model. Low training error alone is not sufficient; the model should have low validation/test error as well.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Purpose</th>
+<th>Permitted use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Training set</td>
+<td>Estimate/fit model parameters</td>
+<td>The model learns from it</td>
+</tr>
+<tr>
+<td>Validation set</td>
+<td>Estimate prediction error, tune hyperparameters, compare models, fine-tune choices</td>
+<td>May influence model selection, but not final unbiased assessment</td>
+</tr>
+<tr>
+<td>Test set</td>
+<td>Final assessment of the chosen model’s generalization</td>
+<td>Use only after all model choices are fixed</td>
+</tr>
+</tbody>
+</table></div>
+<p>The lecture’s illustrative split for 1,000 observations is 600 training, 200 validation, and 200 testing. If only a train/validation arrangement is used, an 80:20 split (800:200) was suggested. Omitting an independent test set means there is no clean final assessment of the chosen model’s generalization.</p>
+<p>The three broad model-selection approaches introduced were:</p>
+<ol>
+<li>train–validation–test evaluation;</li>
+<li>resampling methods, such as random train/test splits and cross-validation;</li>
+<li>probabilistic/information-criterion methods, such as AIC and BIC.</li>
+</ol>
+<hr>
+<h2 id="2-bias">2. Bias</h2>
+<h3 id="2-1-meaning">2.1 Meaning</h3>
+<p><strong>Bias is systematic prediction error</strong>: the model makes a consistent error even when the particular sample or sample size changes. It represents the difference between the average prediction and the true target:</p>
+<p>\[
+\operatorname{Bias}(\hat y)=E[\hat y]-y.
+\]</p>
+<p>The sign indicates the direction of systematic error. Its magnitude indicates how far the average prediction is from the truth. In informal parts of the lectures, “bias,” “bias error,” and “error” were used interchangeably; in formal analysis, distinguish a single residual \(\hat y-y\) from expected model bias \(E[\hat y]-y\).</p>
+<p><strong>Lecture example:</strong> a glucose model receives age 45, predicts glucose 80, while the actual glucose is 70. The signed error is (80-70=10). This indicates overprediction by 10 units.</p>
+<h3 id="2-2-bias-in-regression">2.2 Bias in regression</h3>
+<p>A simple linear-regression prediction is</p>
+<p>\[
+\hat y=\beta_0+\beta_1x,
+\]</p>
+<p>with an error term often represented through</p>
+<p>\[
+y=\beta_0+\beta_1x+\epsilon.
+\]</p>
+<p>For a point \((x_i,y_i)\), the fitted line produces \(\hat y_i\). The vertical distance between the actual point and prediction is its residual/error, e.g. \(\epsilon_i=\hat y_i-y_i\) under the lecture’s sign convention. There is error because fitting requires assumptions and approximation; real points normally do not all lie exactly on the fitted line.</p>
+<p>Zero bias is an ideal: the model’s expected prediction exactly matches the true value. The instructor stressed that exact zero is generally unrealistic in real applications; the practical aim is bias close to zero (illustratively 0.1 or 0.2, though what is “small” depends on units and context).</p>
+<h3 id="2-3-causes-of-high-bias">2.3 Causes of high bias</h3>
+<ul>
+<li><strong>Wrong model family or wrong assumptions:</strong> fitting a straight line to a relationship that is actually quadratic, polynomial, or sigmoid-shaped.</li>
+<li><strong>Insufficient observations:</strong> too few training rows to capture the underlying trend.</li>
+<li><strong>Missing or inadequate features:</strong> important predictors are absent.</li>
+<li><strong>Too much imposed simplicity/regularization:</strong> the hypothesis class cannot represent the target relation.</li>
+</ul>
+<p><strong>House-price use case:</strong> predicting price from number of rooms while omitting location makes the model systematically wrong because location strongly affects price. Even if the room coefficient is estimated correctly, a central-city and remote house with the same rooms need not have similar prices.</p>
+<h3 id="2-4-high-low-and-ideal-bias">2.4 High, low, and ideal bias</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Bias level</th>
+<th>Interpretation</th>
+<th>Typical fit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High</td>
+<td>Large systematic errors; model misses the trend</td>
+<td>Underfit</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>Few restrictive assumptions; model follows training structure more closely</td>
+<td>Potentially good, but check variance</td>
+</tr>
+<tr>
+<td>Zero</td>
+<td>Expected predictions equal truth</td>
+<td>Theoretical ideal, rarely attainable exactly</td>
+</tr>
+</tbody>
+</table></div>
+<p>A straight line fitted to parabola-shaped data may still produce valid coefficients \(\beta_0,\beta_1\), but it is underfit: merely obtaining fitted parameters does not mean the model captures the data-generating pattern.</p>
+<h3 id="2-5-aggregating-errors-absolute-error-mse-and-rmse">2.5 Aggregating errors: absolute error, MSE, and RMSE</h3>
+<p>Simply summing signed errors is misleading because positive and negative errors can cancel. Two alternatives discussed were absolute errors and squared errors. The principal measures are:</p>
+<p>\[
+\operatorname{MSE}=\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat y_i)^2
+\]</p>
+<p>\[
+\operatorname{RMSE}=\sqrt{\operatorname{MSE}}.
+\]</p>
+<p>Squaring:</p>
+<ul>
+<li>prevents sign cancellation;</li>
+<li>makes all contributions non-negative;</li>
+<li>penalizes large errors disproportionately;</li>
+<li>produces a convenient differentiable objective.</li>
+</ul>
+<p>RMSE takes the square root so the result returns to the target’s original units and is easier to interpret.</p>
+<p><strong>Live-session calculation:</strong> predictions \([10,12,9]\), true values \([11,11,11]\). Errors under \(\hat y-y\) are \([-1,1,-2]\). Therefore:</p>
+<p>\[
+\operatorname{MSE}=\frac{(-1)^2+1^2+(-2)^2}{3}=\frac{6}{3}=2,
+\qquad \operatorname{RMSE}=\sqrt 2\approx1.414.
+\]</p>
+<p><strong>Additional example:</strong> errors \([-3,3,-1,1]\) sum to zero, but their squared errors are \([9,9,1,1]\), so MSE is (20/4=5). The model clearly is not error-free.</p>
+<h3 id="2-6-ways-to-reduce-bias">2.6 Ways to reduce bias</h3>
+<ul>
+<li>Use a more expressive model: replace a line by a nonlinear/polynomial curve; add (x^2,x^3), etc.</li>
+<li>Increase parameters or layers when the task truly requires the capacity; for image tasks, a CNN may capture structure missed by a simple model.</li>
+<li>Add relevant features (more columns/dimensions), e.g. supplement age with blood pressure and other clinical predictors for glucose prediction.</li>
+<li>Add representative training samples (more rows).</li>
+<li>Reduce regularization strength, or remove excessive regularization. L1/L2 penalties improve control and generalization but also constrain the fit and can add bias.</li>
+</ul>
+<p>These remedies must be used carefully because most increase model flexibility and can increase variance.</p>
+<hr>
+<h2 id="3-variance">3. Variance</h2>
+<h3 id="3-1-statistical-and-model-meanings">3.1 Statistical and model meanings</h3>
+<p>Ordinary statistical variance describes spread around a mean. Model variance applies the same idea to predictions obtained from different possible training samples:</p>
+<p>\[
+\operatorname{Var}(\hat y)=E\left[(\hat y-E[\hat y])^2\right].
+\]</p>
+<p>It measures <strong>sensitivity to the training data</strong>. If different subsets of the same population produce substantially different fitted models or predictions, variance is high. An average over observations may be used in an empirical estimate.</p>
+<p><strong>10,000-sample use case:</strong> repeatedly train on different subsets of a 10,000-row dataset. If a customer’s prediction changes dramatically across runs, the model has high variance even if each run fits its own training subset well.</p>
+<h3 id="3-2-bullseye-analogy">3.2 Bullseye analogy</h3>
+<ul>
+<li><strong>Bias:</strong> distance of the arrows’ center from the bullseye (accuracy relative to truth).</li>
+<li><strong>Variance:</strong> spread among the arrows themselves (consistency across attempts).</li>
+</ul>
+<p>Arrows tightly grouped away from the center indicate high bias but low variance. Arrows scattered around the center may have low average bias but high variance. Tight arrows near the center correspond to low bias and low variance.</p>
+<h3 id="3-3-low-and-high-variance">3.3 Low and high variance</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Variance</th>
+<th>Behavior</th>
+<th>Typical outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Low</td>
+<td>Predictions/models are stable across samples; less sensitive to training data</td>
+<td>Often associated with simpler models; may underfit if too inflexible</td>
+</tr>
+<tr>
+<td>High</td>
+<td>Small training-set changes yield very different fits; model memorizes sample-specific detail/noise</td>
+<td>Overfitting; excellent training performance but poor/inconsistent unseen-data performance</td>
+</tr>
+</tbody>
+</table></div>
+<p>The live lecture compared high variance to a student memorizing answers by heart: familiar questions are answered perfectly, but a related question phrased differently cannot be solved because the underlying pattern was not learned.</p>
+<h3 id="3-4-ways-to-reduce-variance">3.4 Ways to reduce variance</h3>
+<ul>
+<li>Use an appropriately simpler model: fewer parameters/layers, lower polynomial degree, shallower tree, or linear rather than unnecessarily nonlinear model.</li>
+<li>Retain only relevant features; do not overload a model with irrelevant columns.</li>
+<li>Increase L1 or L2 regularization.</li>
+<li>Use cross-validation to expose instability and choose a stable complexity/hyperparameter setting.</li>
+<li>In standard ML practice, obtain more representative training data, which usually stabilizes estimates.</li>
+<li>Consider early stopping and variance-reducing ensembles where appropriate (extensions included in the quiz/review material).</li>
+</ul>
+<blockquote>
+<p><strong>Transcript caveat:</strong> one recorded slide says “use less number of samples” to reduce variance. The embedded review notes and standard statistical result instead recommend <strong>more representative training data</strong>. Reducing a training set generally makes estimates less stable, not more. Treat cross-validation as an evaluation/model-selection mechanism: it does not magically reduce the variance of a fixed fitted model, but it reveals instability and helps select settings that generalize.</p>
+</blockquote>
+<hr>
+<h2 id="4-bias-variance-decomposition-and-total-error">4. Bias–variance decomposition and total error</h2>
+<h3 id="4-1-algebraic-idea">4.1 Algebraic idea</h3>
+<p>Start with squared prediction error and add/subtract \(E[\hat y]\):</p>
+<p>\[
+(y-\hat y)^2=
+\left[(y-E[\hat y])+(E[\hat y]-\hat y)\right]^2.
+\]</p>
+<p>Expanding \((a+b)^2=a^2+b^2+2ab\), then taking expectations, makes the cross-term vanish because</p>
+<p>\[
+E[E[\hat y]-\hat y]=0.
+\]</p>
+<p>Thus, for the simplified setting in the lecture:</p>
+<p>\[
+E[(y-\hat y)^2]=\operatorname{Bias}(\hat y)^2+\operatorname{Var}(\hat y).
+\]</p>
+<p>When intrinsic outcome noise is included, the full expected test error is:</p>
+<p>\[
+\boxed{\text{Total expected error}=\text{Bias}^2+\text{Variance}+\text{Irreducible noise}.}
+\]</p>
+<p>The noise term reflects inherent randomness, measurement noise, omitted/unobservable variables, or random behavior. It cannot be eliminated by model choice. The practical ideal is therefore to reduce bias and variance until total error approaches the irreducible-noise floor.</p>
+<h3 id="4-2-four-diagnostic-combinations">4.2 Four diagnostic combinations</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Bias</th>
+<th>Variance</th>
+<th>Diagnosis</th>
+<th>Performance pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High</td>
+<td>Low</td>
+<td>Underfitting</td>
+<td>Inaccurate but relatively stable</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>High</td>
+<td>Overfitting</td>
+<td>Accurate on training data but unstable on unseen data</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>Low</td>
+<td>Desired/optimal</td>
+<td>Accurate and consistent; good generalization</td>
+</tr>
+<tr>
+<td>High</td>
+<td>High</td>
+<td>Worst case</td>
+<td>Inaccurate and inconsistent</td>
+</tr>
+</tbody>
+</table></div>
+<p>High bias/low variance and low bias/high variance are common combinations, not absolute laws.</p>
+<h3 id="4-3-the-trade-off">4.3 The trade-off</h3>
+<p>Increasing complexity tends to:</p>
+<ul>
+<li>lower training error and bias;</li>
+<li>raise sensitivity to sample-specific detail and hence variance;</li>
+<li>increase computation and resource needs.</li>
+</ul>
+<p>Decreasing complexity tends to lower variance but may increase bias. Consequently, test error is commonly U-shaped against model complexity: it falls while bias reduction dominates, reaches an optimum, then rises as variance dominates. Select the complexity at which validation/test error (or estimated total error) is minimized—not the most complex model and not necessarily the lowest training error.</p>
+<p><strong>Case 1:</strong> a linear equation fitted to polynomial data is too simple → high bias, low variance, underfit.</p>
+<p><strong>Case 2:</strong> a degree-3/4 or higher model that follows every fluctuation may have low bias, high variance, overfit.</p>
+<p>Modern deep networks can learn complex domains with low bias, especially with large training datasets, but capacity must still be controlled through validation, regularization, and other generalization techniques.</p>
+<hr>
+<h2 id="5-learning-curves">5. Learning curves</h2>
+<h3 id="5-1-definition-and-construction">5.1 Definition and construction</h3>
+<p>A <strong>learning curve</strong> plots an error/loss measure (often MSE including whatever noise is present) against training experience—here, chiefly training/validation-set size.</p>
+<p>Construction:</p>
+<ol>
+<li>train with an initial number of examples, e.g. 500;</li>
+<li>evaluate training and validation error;</li>
+<li>repeat with 1,000, 1,500, and progressively more examples;</li>
+<li>plot both errors against dataset size.</li>
+</ol>
+<p>Learning curves help determine whether more data is beneficial, whether model capacity is sufficient, and whether the bias–variance balance is appropriate. Validation is part of model development; final testing/prediction follows validation.</p>
+<h3 id="5-2-diagnosing-fit">5.2 Diagnosing fit</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Training curve</th>
+<th>Validation curve</th>
+<th>Diagnosis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Underfit, case A</td>
+<td>High/flat, perhaps noisy</td>
+<td>High/flat, perhaps noisy</td>
+<td>Model cannot learn adequately</td>
+</tr>
+<tr>
+<td>Underfit, case B</td>
+<td>Keeps decreasing and has not stabilized</td>
+<td>Also keeps decreasing/not stabilized</td>
+<td>Insufficient capacity or learning not complete; endpoint is not a settled solution</td>
+</tr>
+<tr>
+<td>Overfit</td>
+<td>Continues decreasing and becomes very low</td>
+<td>Decreases initially, reaches a minimum, then rises; gap widens</td>
+<td>High variance; stop/tune near minimum validation loss</td>
+</tr>
+<tr>
+<td>Good fit</td>
+<td>Decreases then stabilizes low</td>
+<td>Decreases then stabilizes low, with a small gap above training loss</td>
+<td>Good generalization</td>
+</tr>
+</tbody>
+</table></div>
+<p>For underfitting, increase meaningful capacity, add better features, and train longer if optimization is incomplete. For overfitting, simplify, regularize, add representative data, use early stopping, or tune via cross-validation.</p>
+<h3 id="5-3-diagnosing-data-representativeness">5.3 Diagnosing data representativeness</h3>
+<p><strong>Under-representative training set:</strong> too few or too narrow training examples to capture the trend relative to validation data. Both curves may oscillate before stabilizing, but a persistent large train–validation gap remains.</p>
+<p><strong>Under-representative validation set:</strong> too few/narrow examples to evaluate model ability reliably. Typical signs are:</p>
+<ul>
+<li>a stable training loss but noisy/oscillatory validation loss around it; or</li>
+<li>a suspiciously large persistent gap because the small validation sample is not reliable/representative.</li>
+</ul>
+<p>Validation data must resemble deployment conditions. A split covering only one region, hospital, demographic, season, or customer segment can report attractive performance that collapses in production.</p>
+<blockquote>
+<p><strong>Interpret curves jointly:</strong> a gap by itself usually signals a generalization/representation problem; whether it is classic overfitting, a distribution mismatch, or too-small validation data depends on curve levels, shapes, split design, and whether validation loss rises after a minimum.</p>
+</blockquote>
+<hr>
+<h2 id="6-cross-validation-and-leakage-free-evaluation">6. Cross-validation and leakage-free evaluation</h2>
+<h3 id="6-1-k-fold-cross-validation">6.1 k-fold cross-validation</h3>
+<p>Cross-validation estimates out-of-sample performance efficiently when data are limited.</p>
+<ol>
+<li>Split data into (k) folds.</li>
+<li>Train on (k-1) folds.</li>
+<li>Validate on the held-out fold.</li>
+<li>Rotate the held-out fold in round-robin fashion.</li>
+<li>Complete (k) runs so every fold is used once for validation.</li>
+<li>Average the validation metrics; also inspect their spread.</li>
+</ol>
+<p>In five-fold CV, four folds (80%) train and one (20%) validates on each run. In ten-fold CV, 90% trains and 10% validates per run; it uses more training data per fit and can reduce estimation bias, but costs roughly twice as many fits as five-fold CV.</p>
+<p>High fold-to-fold score variability indicates model instability/high variance, distribution differences among folds, or both. Remedies include simplifying, increasing regularization, adding representative data, and improving features/split design.</p>
+<h3 id="6-2-leave-one-out-cross-validation-loocv">6.2 Leave-one-out cross-validation (LOOCV)</h3>
+<p>LOOCV is k-fold CV with (k=n): one observation validates and the other (n-1) train, repeated (n) times. It uses almost all observations for each fit but can be computationally expensive.</p>
+<h3 id="6-3-out-of-fold-predictions">6.3 Out-of-fold predictions</h3>
+<p>In five-fold CV, the predictions for fold 1 come from a model trained on folds 2–5; fold 2 predictions come from another model trained on folds 1,3,4,5; and so on. Concatenated out-of-fold predictions therefore come from <strong>multiple fitted models</strong>, not one model trained on the complete dataset. After selection, retrain the chosen specification on the full allowed training data before final testing/deployment.</p>
+<h3 id="6-4-preprocessing-must-occur-inside-each-fold">6.4 Preprocessing must occur inside each fold</h3>
+<p>For every fold:</p>
+<ol>
+<li>fit imputation, scaling/normalization, PCA, and feature selection only on that fold’s training portion;</li>
+<li>transform the training portion;</li>
+<li>use the same fitted transformations on the validation portion.</li>
+</ol>
+<p>Fitting preprocessing on the entire dataset before CV lets validation information influence training. This <strong>data leakage</strong> creates overly optimistic scores and a poor generalization estimate.</p>
+<p>Other leakage sources include target-derived predictors, future information, duplicate observations split across folds, and feature engineering performed before splitting.</p>
+<hr>
+<h2 id="7-model-selection">7. Model selection</h2>
+<h3 id="7-1-meaning">7.1 Meaning</h3>
+<p><strong>Model selection</strong> is choosing the most appropriate model from alternatives that differ in family, complexity, or hyperparameters—for example:</p>
+<ul>
+<li>linear versus logistic regression;</li>
+<li>different polynomial degrees;</li>
+<li>binary versus multinomial logistic classification;</li>
+<li>k-nearest-neighbor classifiers with different neighbor counts;</li>
+<li>neural networks with different architectures or regularization strengths.</li>
+</ul>
+<p>Probabilistic criteria choose using in-sample fit plus a complexity penalty. Resampling methods choose using estimated out-of-sample error.</p>
+<h3 id="7-2-k-nearest-neighbors-knn-case-study">7.2 k-nearest neighbors (KNN) case study</h3>
+<p>For a new point, KNN calculates distance (e.g. Euclidean or Manhattan) to training points, selects the (K) nearest, and assigns the majority class. If (K=5), with three neighbors from class 1 and two from class 0, predict class 1.</p>
+<p>The hyperparameter (K) controls complexity in the reverse direction many students first expect:</p>
+<ul>
+<li><strong>Small (K), especially (K=1):</strong> highly flexible/complex boundary, can memorize training data, minimal or zero training error, high overfitting risk.</li>
+<li><strong>Large (K):</strong> heavy smoothing, simpler boundary, greater underfitting risk.</li>
+</ul>
+<p>Plot training and cross-validation misclassification rate against (K). In the lecture illustration, training error rises from near zero, validation error falls toward about 0.20, stays relatively flat over an intermediate range, and rises again beyond very large (K) (around 100). The broad useful region was described as approximately (K=10) to (100), with a possible choice around 40–50. These numerical values belong only to that plotted dataset; in an exam, select the (K) minimizing validation error (and preferably a stable/simple choice in a near-tied region).</p>
+<h3 id="7-3-akaike-information-criterion-aic">7.3 Akaike Information Criterion (AIC)</h3>
+<p>AIC scores fit while penalizing the number of estimated parameters:</p>
+<p>\[
+\operatorname{AIC}=-2LL+2k,
+\]</p>
+<p>where (LL) is maximized log-likelihood and (k) is the number of parameters. The lecture also presented a per-observation normalized form:</p>
+<p>\[
+\operatorname{AIC}/n=-\frac{2}{n}LL+\frac{2k}{n}.
+\]</p>
+<p>These rank models identically when all are fitted to the same (n). Choose the <strong>lowest AIC</strong>. AIC has a predictive emphasis and commonly accepts more complexity than BIC.</p>
+<p>For binary logistic regression, the data log-likelihood is the sum of terms</p>
+<p>\[
+y_i\log(\hat y_i)+(1-y_i)\log(1-\hat y_i).
+\]</p>
+<p>It is larger (less negative) when predicted probabilities align closely with observed labels and worse when they are far away.</p>
+<h3 id="7-4-bayesian-information-criterion-bic">7.4 Bayesian Information Criterion (BIC)</h3>
+<p>\[
+\operatorname{BIC}=-2LL+k\log n.
+\]</p>
+<p>Again, choose the <strong>lowest BIC</strong>. Because its parameter penalty grows with sample size, BIC generally favors simpler models more strongly than AIC on large datasets.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Complexity penalty</th>
+<th>General tendency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AIC</td>
+<td>(2k)</td>
+<td>Prediction-focused; often tolerates more complexity</td>
+</tr>
+<tr>
+<td>BIC</td>
+<td>(k\log n)</td>
+<td>Stronger large-sample penalty; often selects a simpler model</td>
+</tr>
+</tbody>
+</table></div>
+<p>Other probabilistic principles named (not developed mathematically in the lecture) were <strong>minimum description length (MDL)</strong> and <strong>structural risk minimization (SRM)</strong>.</p>
+<hr>
+<h2 id="8-regularization-and-complexity-control">8. Regularization and complexity control</h2>
+<p>Regularization adds a penalty to the loss/cost function, discouraging excessive flexibility and improving generalization.</p>
+<ul>
+<li><strong>L1 (Lasso):</strong> shrinks coefficients and can make some exactly zero; performs embedded feature selection.</li>
+<li><strong>L2 (Ridge/weight decay):</strong> smoothly shrinks weights, usually keeps all features, and often stabilizes the model.</li>
+</ul>
+<p>Increasing regularization generally lowers variance but raises bias. Weakening regularization lowers bias but raises overfitting risk. The correct strength is selected using validation/CV, not by assuming “more” or “less” is always better.</p>
+<hr>
+<h2 id="9-integrated-case-study-datapulse-customer-churn">9. Integrated case study — DataPulse customer churn</h2>
+<h3 id="9-1-situation-and-diagnosis">9.1 Situation and diagnosis</h3>
+<p>DataPulse has 10,000 customers, 50 usage features, and a three-hidden-layer neural network. Training accuracy is 95%, but validation accuracy is below 70%.</p>
+<p>This large generalization gap is a classic sign of <strong>overfitting/high variance</strong>. Likely contributors include excessive parameters, irrelevant features, and insufficient regularization. Irreducible churn noise may arise from unobserved life events, measurement error, or genuinely random customer behavior, but the large train–validation gap indicates reducible variance as well.</p>
+<h3 id="9-2-options">9.2 Options</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Bias</th>
+<th>Variance</th>
+<th>Strength</th>
+<th>Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A: logistic regression with only 5 features</td>
+<td>Higher</td>
+<td>Low</td>
+<td>Fast, interpretable, stable</td>
+<td>May discard information, miss nonlinear relations, and underfit</td>
+</tr>
+<tr>
+<td>B: retain deep net, strengthen L2, use 10-fold CV</td>
+<td>Low</td>
+<td>Controlled but potentially still high</td>
+<td>Preserves nonlinear capacity and all information</td>
+<td>Computationally expensive; requires careful tuning; CV evaluates rather than directly curing variance</td>
+</tr>
+<tr>
+<td>C: moderate feature reduction + regularization + 5-fold CV</td>
+<td>Moderate</td>
+<td>Moderately low</td>
+<td>Balanced reduction of unnecessary complexity with reliable validation</td>
+<td>Requires sound feature-selection and penalty tuning</td>
+</tr>
+</tbody>
+</table></div>
+<p>Emma favors fewer parameters to stabilize variance. Carlos worries that removing informative variables will increase bias. Both concerns are valid: variance reduction taken too far becomes underfitting.</p>
+<p><strong>Best balanced recommendation from the case:</strong> start with Option C—moderate, leakage-free feature reduction, tuned regularization, and five-fold CV. Compare it empirically with a regularized version of Option B. Select using mean and fold variability of validation performance, then retrain and evaluate once on the untouched test set. Option B may win when churn truly depends on complex nonlinear interactions; Option A is a useful interpretable baseline, not automatically the final choice.</p>
+<hr>
+<h2 id="10-practical-decision-guide">10. Practical decision guide</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Evidence</th>
+<th>Most likely issue</th>
+<th>Actions to test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Training and validation errors both high and close</td>
+<td>High bias/underfit</td>
+<td>More suitable model family, better features, less regularization, sufficient training</td>
+</tr>
+<tr>
+<td>Training error very low; validation error high/rising</td>
+<td>High variance/overfit</td>
+<td>Simplify, regularize, add representative data, early stop, feature selection</td>
+</tr>
+<tr>
+<td>Both low with small stable gap</td>
+<td>Good fit</td>
+<td>Preserve pipeline; confirm once on test set</td>
+</tr>
+<tr>
+<td>Fold scores fluctuate strongly</td>
+<td>Instability/high variance or split heterogeneity</td>
+<td>Inspect strata/groups/time, simplify, regularize, obtain more data</td>
+</tr>
+<tr>
+<td>Validation curve is noisy</td>
+<td>Too-small/unrepresentative validation sample</td>
+<td>Larger/stratified/group-aware validation or repeated CV</td>
+</tr>
+<tr>
+<td>Validation is excellent but deployment poor</td>
+<td>Leakage or distribution mismatch</td>
+<td>Audit preprocessing, time order, duplicates, target leakage, representativeness</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="11-exam-focused-recall">11. Exam-focused recall</h2>
+<h3 id="essential-formulas">Essential formulas</h3>
+<p>\[
+\operatorname{Bias}(\hat y)=E[\hat y]-y
+\]</p>
+<p>\[
+\operatorname{Var}(\hat y)=E[(\hat y-E[\hat y])^2]
+\]</p>
+<p>\[
+\operatorname{MSE}=\frac1n\sum_{i=1}^{n}(y_i-\hat y_i)^2,
+\qquad \operatorname{RMSE}=\sqrt{\operatorname{MSE}}
+\]</p>
+<p>\[
+\text{Expected total error}=\text{Bias}^2+\text{Variance}+\text{Irreducible noise}
+\]</p>
+<p>\[
+\operatorname{AIC}=-2LL+2k,
+\qquad \operatorname{BIC}=-2LL+k\log n
+\]</p>
+<h3 id="one-line-answers">One-line answers</h3>
+<ul>
+<li><strong>Underfitting:</strong> high bias, usually low variance; model too simple to capture the trend.</li>
+<li><strong>Overfitting:</strong> low bias, high variance; model learns training-specific noise and generalizes poorly.</li>
+<li><strong>Ideal:</strong> low bias and low variance; total error approaches irreducible noise.</li>
+<li><strong>Why square errors?</strong> Stop cancellation and penalize large mistakes.</li>
+<li><strong>Why RMSE?</strong> Put the error back in the target’s units.</li>
+<li><strong>Learning curve:</strong> error versus training experience/data size, usually showing both training and validation error.</li>
+<li><strong>k-fold CV:</strong> (k) fits; each fold validates once while the other (k-1) folds train.</li>
+<li><strong>LOOCV:</strong> k-fold with (k=n).</li>
+<li><strong>Small (K) in KNN:</strong> more complex and prone to overfit; large (K): smoother and prone to underfit.</li>
+<li><strong>Information criteria:</strong> reward likelihood/fit and penalize parameter count; lower is better.</li>
+<li><strong>AIC vs BIC:</strong> BIC’s (k\log n) penalty becomes stronger with larger (n).</li>
+<li><strong>Data leakage:</strong> information outside a fold’s training portion influences model fitting, inflating validation results.</li>
+</ul>
+<h3 id="likely-exam-prompts-and-answer-skeletons">Likely exam prompts and answer skeletons</h3>
+<ol>
+<li><strong>Derive the bias–variance decomposition.</strong> Add and subtract (E[\hat y]), expand the square, take expectation, show the cross-term is zero, then add irreducible noise.</li>
+<li><strong>Explain the trade-off.</strong> Simple model → high bias/low variance; complex model → low bias/high variance; validation error is U-shaped; choose the minimum.</li>
+<li><strong>Interpret learning curves.</strong> State axes, compare curve levels and gap, identify fit type, then recommend a remedy.</li>
+<li><strong>Explain five-fold CV.</strong> Split into five, train on four/validate on one, rotate five times, aggregate mean and variability; fit preprocessing within each training fold.</li>
+<li><strong>Select (K) for KNN.</strong> Avoid (K=1) memorization and excessively large-(K) smoothing; select the stable region with minimum CV misclassification.</li>
+<li><strong>Compare AIC and BIC.</strong> Give formulas, define (LL,k,n), state lower is better, and explain BIC’s stronger large-sample complexity penalty.</li>
+<li><strong>Diagnose 95% train versus &lt;70% validation accuracy.</strong> High variance/overfit; tune regularization and capacity, evaluate feature reduction and model alternatives through leakage-free CV.</li>
+</ol>
+<h3 id="final-checklist">Final checklist</h3>
+<ul>
+<li>Do not equate low training error with a good model.</li>
+<li>Do not call a signed residual and formal expected bias identical without explaining the context.</li>
+<li>Never fit scaler/PCA/imputation/feature selection on all data before CV.</li>
+<li>Cross-validation supports evaluation and selection; it is not itself a penalty on a fitted model.</li>
+<li>More complexity is not universally better; simpler is not universally safer.</li>
+<li>Select using unseen-data evidence, then reserve the test set for one final assessment.</li>
+</ul>
+<h2 id="12-qa-supplement-transcript-specific-details-and-corrections">12. QA supplement — transcript-specific details and corrections</h2>
+<h3 id="concrete-bias-and-error-illustration">Concrete bias and error illustration</h3>
+<p>The lecture uses actual glucose 70 and prediction 80, giving signed error intuition of $80-70=10$. An individual residual and formal model bias differ: residual is $y-\hat y$; bias is $E_D[\hat f_D(x)]-f(x)$ across training samples. Signed errors can cancel, motivating MAE or squared error; squaring also penalizes large misses and RMSE restores target units.</p>
+<h3 id="data-size-correction">Data-size correction</h3>
+<p>Some spoken lines suggest fewer samples reduce variance. More <strong>representative independent training observations</strong> generally reduce model-estimation variance. Subsampling saves computation but usually does not cure overfitting. Cross-validation estimates instability; it does not replace useful data.</p>
+<h3 id="learning-curve-signatures">Learning-curve signatures</h3>
+<ul>
+<li><strong>Underfit:</strong> training and validation error plateau high and close; adding data alone rarely fixes bias.</li>
+<li><strong>Overfit:</strong> training error low/falling, validation error much higher; data, simplification, or regularization may help.</li>
+<li><strong>Good fit:</strong> both stabilize low with a small gap.</li>
+<li><strong>Under-representative validation set:</strong> validation curve is noisy/oscillatory and unreliable.</li>
+</ul>
+<h3 id="selection-criteria">Selection criteria</h3>
+<p>For KNN, small $k$ is flexible/high variance and large $k$ is smoother/higher bias; choose by CV. AIC and BIC reward likelihood fit but penalize parameter count; BIC penalizes more strongly as $n$ grows. Lower values are comparable only for models fitted to comparable data/likelihoods.</p>
+<h3 id="datapulse-emphasis">DataPulse emphasis</h3>
+<p>The 95%-training versus 70%-test pattern indicates overfitting/high variance. Regularization changes complexity; CV estimates generalization and tunes its strength. More data does not fix leakage, biased validation, or an inappropriate model automatically.</p>
+<h2 id="13-review-week-augmentation">13. Review-week augmentation</h2>
+<p>The review week reconnects bias–variance analysis to recommender-system model selection. A neighborhood model with too few or overly specific neighbours, or a factor model with too many latent dimensions and weak regularization, can memorize sparse interactions and show high variance. An excessively simple popularity model, very large neighbourhood, or factor model with too few latent dimensions can underfit and show high bias.</p>
+<p>Use cross-validation to choose neighbourhood size, similarity rules, latent-factor count, and regularization strength. Each fold serves once as validation while the remaining folds train the candidate; the final test set remains untouched. For recommenders, random folds are not always safe: if the aim is to predict future behaviour, prefer a time-aware split so later interactions do not leak into training.</p>
+<p>RMSE measures rating-prediction error,</p>
+<p>$$\operatorname{RMSE}=\sqrt{\frac{1}{|T|}\sum_{(u,i)\in T}(r_{ui}-\hat r_{ui})^2},$$</p>
+<p>but it does not establish that the top-$K$ list is useful. Pair it with ranking/retrieval metrics such as precision@K, recall@K, hit rate, MAP or NDCG, plus coverage, novelty, diversity, latency, and online business outcomes.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-2.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 2: Classification, Logistic Regression, Maximum…</span>
+      </a>
+      <a href="week-4.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 4: Recommendation Systems and Collaborative…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

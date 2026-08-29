@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Entrepreneurship · Week 9 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Entrepreneurship</span>
+      <span class="brand-title">Week 9</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html" selected>Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Entrepreneurship and Innovation — Week 1 Exam Notes
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Entrepreneurship, Innovation, Creativity, Service Innovation and…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Innovation Foundations, Process and Product Innovation, Design…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Entrepreneurial Journey, Execution, Creativity, Innovation and…
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Entrepreneurial Opportunities, Evaluation, Competition and Failure
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Entrepreneurial Problem Solving, Lean Processes and Revenue Models
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Entrepreneurial Storytelling, Vision, Mission, Pitching, IP and the…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Entrepreneurial Marketing, Sales, Research, Branding and Market Sizing
+      </a>
+      <a class="is-active" href="week-9.html">
+        <span class="week-num">Week 9</span>
+        User Research, Entrepreneurial Finance, Accounting and Financial…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Managing Growth, Lean Execution, Failure, Adaptation, and Business…
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Business Planning, Feasibility Analysis and the Business Model Canvas
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Networks, Entrepreneurial Teams, Startup Operations and Readiness
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Resource Planning, Venture Launch, Learning and Execution
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Financial Assessment, Funding, Growth and Exit
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Comprehensive Exam-Preparation Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Entrepreneurship · Week 9</p>
+        <h1 class="page-title">User Research, Entrepreneurial Finance, Accounting and Financial Projections</h1>
+        <p class="page-meta">Week 9 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#how-to-use-these-notes">How to use these notes</a></li>
+      <li><a href="#1-user-research-vs-market-research">1. User Research vs. Market Research</a></li>
+      <li><a href="#2-entrepreneurial-finance-and-accounting-purpose">2. Entrepreneurial Finance and Accounting: Purpose</a></li>
+      <li><a href="#3-funding-strategies-across-the-venture-life-cycle-figure-9-2">3. Funding Strategies Across the Venture Life Cycle (Figure 9.2)</a></li>
+      <li><a href="#4-debt-vs-equity-financing">4. Debt vs. Equity Financing</a></li>
+      <li><a href="#5-charitable-missions-and-social-businesses">5. Charitable Missions and Social Businesses</a></li>
+      <li><a href="#6-accounting-basics-for-entrepreneurs">6. Accounting Basics for Entrepreneurs</a></li>
+      <li><a href="#7-startup-financial-statements-and-projections">7. Startup Financial Statements and Projections</a></li>
+      <li><a href="#8-integrated-entrepreneurial-decision-framework">8. Integrated Entrepreneurial Decision Framework</a></li>
+      <li><a href="#9-likely-exam-angles">9. Likely Exam Angles</a></li>
+      <li><a href="#10-rapid-revision-sheet">10. Rapid Revision Sheet</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="how-to-use-these-notes">How to use these notes</h2>
+<p>This week connects two practical startup questions:</p>
+<ol>
+<li><strong>How do we understand the right early customers without wasting scarce marketing money?</strong></li>
+<li><strong>How do we fund, measure and financially manage the venture without running out of cash?</strong></li>
+</ol>
+<p>The instructor repeatedly stresses application rather than memorisation. User research should uncover what the entrepreneur does not yet know; finance and accounting should guide actual business choices rather than remain textbook exercises.</p>
+<hr>
+<h2 id="1-user-research-vs-market-research">1. User Research vs. Market Research</h2>
+<h3 id="1-1-why-user-research-matters-to-an-entrepreneur">1.1 Why user research matters to an entrepreneur</h3>
+<ul>
+<li>Television advertisements, large hoardings and widespread Google advertising are expensive. A young venture cannot market like a large established company.</li>
+<li>Example: a startup may have only <strong>₹10,00,000 in the bank</strong>. It must understand the consumer and communicate in a low-cost way appropriate to its entrepreneurial stage.</li>
+<li>Marketing communication should therefore be grounded in research that identifies the <strong>ideal customer</strong>.</li>
+<li>This disciplined ideal-customer search is especially necessary for small companies, although large companies increasingly recognise its value too.</li>
+<li>The entrepreneur should not automatically distribute 1,000–2,000 questionnaires. The first task is to understand users in relation to <strong>when and why they normally buy</strong>.</li>
+</ul>
+<h3 id="1-2-adoption-timing-and-customer-psychology">1.2 Adoption timing and customer psychology</h3>
+<p>Customers do not buy on the same timetable.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>User type</th>
+<th>Behaviour</th>
+<th>Entrepreneurial relevance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Early adopter</td>
+<td>Actively seeks new developments and buys early</td>
+<td>Can try an unfinished/new offering, provide feedback and reviews, and reveal product gaps</td>
+</tr>
+<tr>
+<td>Late adopter</td>
+<td>Buys last because of fear that a new product may break or fail</td>
+<td>Usually unsuitable as the venture&rsquo;s first target, but relevant later in the customer journey</td>
+</tr>
+</tbody>
+</table></div>
+<p>Example: a person who attends every technology talk to learn what is new may be an early buyer of products from technology firms. Such people deserve focused study.</p>
+<p>User selection must consider both the previously studied <strong>customer journey</strong> and users&rsquo; psychological make-up. Ask:</p>
+<ul>
+<li>Are they genuinely early users?</li>
+<li>Can they provide reviews useful for later customers?</li>
+<li>Can they identify what the product lacks?</li>
+<li>Will they be good customers who pay on time, thereby protecting the startup&rsquo;s limited cash?</li>
+</ul>
+<p>This is the foundation of user research: an <strong>intelligence-intensive and time-intensive</strong> process focused on the right people.</p>
+<h3 id="1-3-selecting-the-research-base">1.3 Selecting the research base</h3>
+<p>Research must be conducted where the relevant users naturally appear.</p>
+<ul>
+<li>A new robot-software company might attend a trade show where people examine new robots.</li>
+<li>It should identify people concerned with industrial applications, not simply interview an unrelated 15-year-old.</li>
+<li>This progressive narrowing or “honing down” defines the user-research base.</li>
+</ul>
+<p>Do not immediately ask, “Will you buy the robot product I am designing?” A respondent may reasonably say, “No—show it to me.” Instead, determine what the person can meaningfully help with <strong>at the present stage</strong>.</p>
+<h3 id="1-4-nature-of-user-research-questions">1.4 Nature of user-research questions</h3>
+<p>User research is not mainly a rigid demographic questionnaire such as:</p>
+<ol>
+<li>How old are you?</li>
+<li>What colour are your eyes? (The transcript renders this unclearly, but its purpose is to illustrate an irrelevant fixed demographic question.)</li>
+</ol>
+<p>Instead, begin with the broader area: “We are thinking about this space; what is your opinion?” Then develop a conversational inquiry.</p>
+<p>Good user-research questions are:</p>
+<ul>
+<li><strong>Precise in purpose</strong>, but open-ended in the answers they permit.</li>
+<li>Open-minded and non-leading.</li>
+<li>Broad enough to expose assumptions about the entire problem space, neighbouring areas and situations of use.</li>
+<li>Designed to let a participant disagree and redirect the inquiry.</li>
+</ul>
+<p>Bad approach: “Our planning team has designed this product. Do you agree that it is right?” A hesitant “yes, sort of” does not constitute useful research; the instructor calls this <strong>“waste-of-time research.”</strong></p>
+<h3 id="1-5-user-research-and-market-research-compared">1.5 User research and market research compared</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>User/design research</th>
+<th>Market research</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary purpose</td>
+<td>Explore the user, problem and possible solution; help develop/refine the product</td>
+<td>Test or validate predefined propositions as scientifically as possible</td>
+</tr>
+<tr>
+<td>Typical format</td>
+<td>Conversation and inquiry; precise but open-ended questions</td>
+<td>Predefined, standardised questionnaire or study</td>
+</tr>
+<tr>
+<td>Sample</td>
+<td>Small; the right users may be hard to reach</td>
+<td>Often large because statistical confidence requires scale</td>
+</tr>
+<tr>
+<td>Type of output</td>
+<td>Rich psychological and behavioural insight; many ideas</td>
+<td>Aggregated answers, proportions and confidence in a specified answer</td>
+</tr>
+<tr>
+<td>Best startup stage</td>
+<td>Early, when money and certainty are limited</td>
+<td>More feasible when the company is larger</td>
+</tr>
+<tr>
+<td>Relationship to assumptions</td>
+<td>Seeks to reveal and challenge them</td>
+<td>Often tests a proposition already framed by the organisation</td>
+</tr>
+</tbody>
+</table></div>
+<p>Instructor&rsquo;s illustrative idea-yield comparison:</p>
+<ul>
+<li><strong>Market research:</strong> 1,000 interviews may produce only about <strong>5 new ideas</strong>.</li>
+<li><strong>User research:</strong> 10 well-chosen interviews may produce about <strong>50 ideas</strong>.</li>
+</ul>
+<p>The exact ratio is illustrative, but the point is the much greater insight per carefully selected participant.</p>
+<p>Scientific analogy:</p>
+<ul>
+<li>Market research resembles testing: “If sodium and chloride are combined in this way, will they produce salt—yes or no?”</li>
+<li>User research resembles asking: “I want a salty taste; what substances or reactions might help?” It invites the participant to help develop the solution.</li>
+</ul>
+<h3 id="1-6-airbnb-example-user-research-that-changed-the-business">1.6 Airbnb example: user research that changed the business</h3>
+<p>An early Airbnb-style conversation could begin: “You have never heard of us; we have just started and are considering this idea. What do you think?” Negative reactions are useful because participants help define the product and refine the prototype.</p>
+<p>Research can also uncover frequency and market clues:</p>
+<ul>
+<li>A user says they would stay during every convention attended.</li>
+<li>They attend about <strong>3 conventions per year</strong> and stay <strong>2 nights each time</strong>.</li>
+<li>Estimated use = <code>3 conventions × 2 nights = 6 nights per year</code>.</li>
+<li>The user may identify an entire Bangalore meetup group whose members behave similarly.</li>
+</ul>
+<p>This is a “gem” produced by user research: a behavioural segment and a rough usage estimate emerge from one deep conversation.</p>
+<p>The more transformative Airbnb finding was that a prospective guest wanted around <strong>six positive reviews for a house</strong> before trusting it. Airbnb had not known that reviews were the decisive trust mechanism. After ensuring roughly six reviews per house before advertising it, growth reportedly shifted from slow to extremely steep—almost a straight upward line. The instructor treats this as “gold” and as an example of an <strong>unknown unknown</strong> discovered through design research.</p>
+<h3 id="1-7-design-research-does-not-mean-designing-like-an-architect">1.7 Design research does not mean designing like an architect</h3>
+<p>Here, “design” means gaining insight into user behaviour and needs. It is not the physical design work of an architect, carpenter or house-builder.</p>
+<p>Practical method:</p>
+<ol>
+<li>Explore the general area.</li>
+<li>Offer two or three possible kinds of ideas rather than one fixed solution.</li>
+<li>Discuss the situations in which they might be placed or used.</li>
+<li>Listen for reactions to the whole space, surrounding conditions and unstated assumptions.</li>
+<li>Use the discoveries to define/refine the prototype, positioning and customer journey.</li>
+</ol>
+<h3 id="1-8-five-major-disciplines-of-deep-user-research">1.8 Five major disciplines of deep user research</h3>
+<h4 id="a-explore-rather-than-validate-prematurely">A. Explore, rather than validate prematurely</h4>
+<p>Do not lock the user into one specific application. An exploratory framing lets participants expose problems with the space, context or assumptions—not merely approve/reject one feature.</p>
+<h4 id="b-know-your-blind-spots">B. Know your blind spots</h4>
+<ul>
+<li>Do not presuppose agreement.</li>
+<li>A user&rsquo;s disagreement can prevent later pain, headaches and wasted capital.</li>
+<li>Avoid allowing prior investment to dictate the questions.</li>
+<li>Money already wasted is a <strong>sunk cost</strong>. Continuing a mistaken course merely because money has already been spent wastes still more money.</li>
+<li>Acknowledge the mistake and restart from the current point with more open questions.</li>
+</ul>
+<h4 id="c-lose-your-focus-in-a-productive-way">C. “Lose your focus” in a productive way</h4>
+<p>Do not remain so attached to a preselected answer that other explanations become invisible. User research should reach the user&rsquo;s psychological level and examine what people:</p>
+<ul>
+<li>say,</li>
+<li>think,</li>
+<li>do,</li>
+<li>know, and</li>
+<li>feel.</li>
+</ul>
+<p>This depth requires time. If a relevant early customer is willing to spend significant time, use the opportunity—but first verify that the person truly resembles an early customer.</p>
+<h4 id="d-find-the-answer-underneath-the-question">D. Find the answer underneath the question</h4>
+<p>Example: an entrepreneur asks about the size or comfort of a cushion used while gaming on a laptop. The participant explains that the real issue is the <strong>chair and sitting posture</strong>, not merely the cushion. The implication is that the cushion may need to become part of a larger seating solution.</p>
+<p>If the entrepreneur asks only, “Is my cushion comfortable?”, a vague “somewhat” hides the real problem. The researcher must be open to discovering that the original question itself was wrong.</p>
+<h4 id="e-map-what-is-known-and-unknown">E. Map what is known and unknown</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Knowledge category</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Known known</td>
+<td>Something the entrepreneur knows</td>
+<td>“India” has five letters when written in English</td>
+</tr>
+<tr>
+<td>Known unknown</td>
+<td>Something one knows one does not know</td>
+<td>Not knowing an astronomical fact because one is not an astrophysicist</td>
+</tr>
+<tr>
+<td>Unknown unknown</td>
+<td>An important factor one does not even realise is missing</td>
+<td>Airbnb initially not knowing that six positive reviews could unlock trust and growth</td>
+</tr>
+</tbody>
+</table></div>
+<p>Do not discard all existing knowledge and begin from zero. Retain known facts, explicitly list known gaps, and conduct the work needed to expose unknown unknowns. These discoveries can become the venture&rsquo;s unique “gem.”</p>
+<h3 id="1-9-link-to-the-customer-journey">1.9 Link to the customer journey</h3>
+<ul>
+<li>Map where the customer is today.</li>
+<li>Admit what is not known early in the journey and investigate it.</li>
+<li>Repeat research later because customers may change their minds.</li>
+<li>User-research terminology is specific, but the findings map directly onto customer-journey stages.</li>
+</ul>
+<hr>
+<h2 id="2-entrepreneurial-finance-and-accounting-purpose">2. Entrepreneurial Finance and Accounting: Purpose</h2>
+<h3 id="2-1-why-every-entrepreneur-must-learn-it">2.1 Why every entrepreneur must learn it</h3>
+<p>Many people fear finance and accounting, but the instructor calls this one of the easiest topics because it is comparatively precise and can be learned without years of startup experience.</p>
+<p>Its practical purposes are to ensure that the entrepreneur:</p>
+<ul>
+<li>does not run out of money before implementing the idea,</li>
+<li>knows where money was spent,</li>
+<li>understands what the business and its model actually are,</li>
+<li>can test whether the business model/canvas can eventually make enough money, and</li>
+<li>can explain why the expected economics make sense.</li>
+</ul>
+<p>The objective is not to turn the entrepreneur into a bookkeeper. However, basic finance and accounting are prerequisites for anyone starting, joining or helping a small company. “I am not a finance person” is not an acceptable business stance.</p>
+<h3 id="2-2-finance-vs-accounting">2.2 Finance vs. accounting</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Finance</th>
+<th>Accounting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Obtains and allocates money so the venture can act before accumulating all the required cash</td>
+<td>Records and explains what happened to the money and the economic condition of the venture</td>
+</tr>
+<tr>
+<td>Includes funding, borrowing, ownership trade-offs and projections</td>
+<td>Includes the income statement, balance sheet, cash-flow statement and the accounting equation</td>
+</tr>
+<tr>
+<td>Forward-looking and decision-oriented</td>
+<td>Both historical/recording-oriented and decision-supporting</td>
+</tr>
+</tbody>
+</table></div>
+<p>The instructor&rsquo;s humorous initial analogy is that entrepreneurial finance is the “science of EMI”: just as a bike can be obtained through EMI rather than waiting to pay all cash, a venture can use financial tools to act sooner. The analogy is limited, however, because EMI is specifically <strong>debt</strong>, while entrepreneurial finance also includes equity and other instruments.</p>
+<h3 id="2-3-core-income-statement-logic-introduced">2.3 Core income-statement logic introduced</h3>
+<p><code>Sales − Cost of Goods Sold (COGS) = Gross Profit</code></p>
+<p>From gross profit, subtract items such as:</p>
+<ul>
+<li>Sales, General and Administrative expenses (<strong>SG&amp;A</strong>),</li>
+<li>Research and Development (<strong>R&amp;D</strong>), and</li>
+<li>other operating/financial costs.</li>
+</ul>
+<p>These categories show what the venture sells, what it costs directly to produce, and what the resulting money must support.</p>
+<hr>
+<h2 id="3-funding-strategies-across-the-venture-life-cycle-figure-9-2">3. Funding Strategies Across the Venture Life Cycle (Figure 9.2)</h2>
+<p>The instructor strongly emphasises Figure 9.2 and recommends spending <strong>at least 30 minutes</strong> understanding it.</p>
+<h3 id="3-1-seed-metaphor">3.1 Seed metaphor</h3>
+<p>A startup begins as a seed idea. It can become a large tree only if:</p>
+<ul>
+<li>money “waters” it at the right time,</li>
+<li>funding is neither too much nor too little,</li>
+<li>the “soil” is right, and</li>
+<li>the right people help it grow.</li>
+</ul>
+<p>Before or alongside funding:</p>
+<ol>
+<li>Assemble an initial founding team—often <strong>2, 3 or 5 people</strong>—with complementary skills; one can start alone if necessary.</li>
+<li>Understand the consumer or industrial problem.</li>
+<li>Decide where the money for validation and building will come from.</li>
+</ol>
+<h3 id="3-2-personal-savings">3.2 Personal savings</h3>
+<ul>
+<li>The founder should normally invest some personal money. If the founder shows no financial faith in the idea, an outsider may ask why they should believe in it.</li>
+<li>Do <strong>not underinvest</strong>, but do <strong>not overdo it</strong> by making personal life impossible or unhappy.</li>
+<li>The middle path may mean reducing luxuries (perhaps two cars rather than five; no unnecessary vacation homes), not selling every essential possession.</li>
+<li>Deep Kalra/MakeMyTrip anecdote: at a severe point, the founder reportedly paid company expenses using his personal credit card; the venture was close to bankruptcy.</li>
+<li>Lesson: founder commitment matters, but personal financial exposure must remain considered.</li>
+</ul>
+<h3 id="3-3-family-and-friends">3.3 Family and friends</h3>
+<ul>
+<li>Present the venture as an investment, not as a request for a charitable donation.</li>
+<li>Jeff Bezos presented Amazon to his parents, explained the idea and answered questions. His father had business experience while his mother offered a different perspective; they concluded he might be onto something.</li>
+<li>At incorporation, ownership is divided among initial founders. A solo founder may initially retain 100%.</li>
+<li>Family/friend investors usually receive ownership proportionate to the negotiated investment and valuation.</li>
+<li>Instructor&rsquo;s illustration: an investment of <strong>₹1,00,00,000</strong> might be exchanged for <strong>20% ownership</strong>, depending on valuation and circumstances. Valuation is sophisticated and requires further knowledge.</li>
+<li>If the company succeeds, those investors participate in the upside. Bezos&rsquo;s parents became extraordinarily wealthy from their early investment.</li>
+<li>Indian business families, including the Tata-group context mentioned by the instructor, also fund family ventures while allocating ownership between funders and the person running the new business.</li>
+</ul>
+<h3 id="3-4-angel-investors-and-the-seed-round">3.4 Angel investors and the seed round</h3>
+<p>An angel investor is generally a wealthy individual who invests and also helps through good and bad times—not an “angel” merely because of charity.</p>
+<p>Possible angel profiles:</p>
+<ul>
+<li>a successful entrepreneur who sold a previous company and now seeks new ventures, or</li>
+<li>a person with inherited wealth allocating some of it to young companies in the hope that one or two become the next MakeMyTrip.</li>
+</ul>
+<p>Angels generally want an ownership structure that lets them participate if the venture succeeds.</p>
+<p>The <strong>seed round</strong> may finance:</p>
+<ul>
+<li>prototype development,</li>
+<li>completion of the business plan,</li>
+<li>sufficient user research,</li>
+<li>formation/hiring of the initial team, and</li>
+<li>sometimes the founder&rsquo;s salary while this work is underway.</li>
+</ul>
+<p>The next stage may arrive after roughly a year, sometimes six months, and in rare cases as early as three months.</p>
+<h3 id="3-5-early-stage-financing">3.5 Early-stage financing</h3>
+<p>By the early stage, the venture should be able to show more evidence:</p>
+<ul>
+<li>a completed/improving business plan,</li>
+<li>an initial team,</li>
+<li>a prototype,</li>
+<li>customer interest,</li>
+<li>user research indicating the possibility of acquiring a few hundred customers quickly,</li>
+<li>letters or statements from customers saying “prepare it and I will buy” (not a 100% guarantee, but valuable evidence), and</li>
+<li>customers willing to help improve the product.</li>
+</ul>
+<p>Angels may invest again at this stage, with more confidence and larger cheques. Required capital may now fund:</p>
+<ul>
+<li>a sales force,</li>
+<li>a factory, and/or</li>
+<li>a workforce of around 100 people.</li>
+</ul>
+<p>Angel sizes differ: some may invest around <strong>₹10,00,000</strong>, while others invest only at <strong>₹5,00,00,000 or above</strong>. The entrepreneur targets investors whose capacity fits the stage.</p>
+<p>Early-stage finance is not a single event repeated mechanically every six months. It is an evolving phase with stages 1, 2, 3, 4, etc.</p>
+<h3 id="3-6-venture-capital">3.6 Venture capital</h3>
+<ul>
+<li>Venture capitalists professionally pool money and search for high-return ventures.</li>
+<li>Their proposition to capital providers may be: a bank offers around <strong>6%</strong>, whereas the venture fund achieved around <strong>60%</strong> in a strong year (illustrative figures, not a guaranteed return).</li>
+<li>The fund may be organised as a company-like entity or partnership.</li>
+<li><strong>General partners (GPs):</strong> assemble/manage the fund, find investment ideas and execute/manage investments.</li>
+<li><strong>Limited partners (LPs):</strong> supply much of the capital and remain comparatively hands-off.</li>
+<li>Together, the participants and investment purpose form the venture-capital organisation.</li>
+<li>The label “venture capitalist” is not necessarily tightly regulated; many can call themselves one. The instructor suggests perhaps about <strong>500 major global names</strong> as a rough figure.</li>
+<li>Strong VCs contribute more than money: professional expertise, global contacts and introductions that can help a new sales force quickly reach prospective business customers.</li>
+<li>Competition among investors is not purely hostile; they also cooperate informally.</li>
+</ul>
+<h3 id="3-7-mature-stage-funding-and-ipo">3.7 Mature-stage funding and IPO</h3>
+<p>At a later/mature stage, the company may approach the investing public by preparing an offering document. This is an <strong>Initial Public Offering (IPO)</strong>—the first public sale/offer of company ownership.</p>
+<h3 id="3-8-funding-stage-overview">3.8 Funding-stage overview</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Venture stage</th>
+<th>Typical sources</th>
+<th>What the money/evidence is for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Idea/pre-seed</td>
+<td>Founder savings; founding team</td>
+<td>Demonstrate commitment; understand problem; begin validation</td>
+</tr>
+<tr>
+<td>Seed</td>
+<td>Family/friends; angels</td>
+<td>Business plan, user research, prototype, initial team and possibly founder salary</td>
+</tr>
+<tr>
+<td>Early stage</td>
+<td>Larger angels; venture capital</td>
+<td>Demonstrated interest, customer evidence, sales force, factory, larger workforce and scaling</td>
+</tr>
+<tr>
+<td>Mature stage</td>
+<td>Public investors through IPO</td>
+<td>Broad capital raising and further expansion</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="4-debt-vs-equity-financing">4. Debt vs. Equity Financing</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Debt financing</th>
+<th>Equity financing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What provider receives</td>
+<td>Repayment plus interest</td>
+<td>A negotiated percentage of ownership</td>
+</tr>
+<tr>
+<td>Ownership</td>
+<td>Lender normally owns no part of company</td>
+<td>Investor becomes a part-owner</td>
+</tr>
+<tr>
+<td>Repayment assurance</td>
+<td>Contractual expectation of repayment</td>
+<td>No assured repayment; investor may lose everything</td>
+</tr>
+<tr>
+<td>Startup availability</td>
+<td>Very difficult for new firms</td>
+<td>Common route for risky startups</td>
+</tr>
+<tr>
+<td>Provider&rsquo;s protection/upside</td>
+<td>High interest and collateral</td>
+<td>Participation in potentially large company-value growth</td>
+</tr>
+<tr>
+<td>Founder cost</td>
+<td>Interest, repayment obligation and risk to pledged assets</td>
+<td>Dilution and shared control/upside</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="4-1-why-startup-debt-is-difficult">4.1 Why startup debt is difficult</h3>
+<ul>
+<li>A new company can fail unexpectedly and may have no repayment history.</li>
+<li>Banks/lenders may demand high interest.</li>
+<li>They ask what they can seize if cash is spent and the loan is unpaid—e.g., company cars or an office building.</li>
+<li><strong>Collateral</strong> is an asset available to the lender if the borrower cannot repay.</li>
+</ul>
+<h3 id="4-2-equity-trade-off">4.2 Equity trade-off</h3>
+<ul>
+<li>Investor and founder participate together in the company&rsquo;s outcome.</li>
+<li>The ownership percentage is negotiated.</li>
+<li>Equity investors receive neither interest nor assured near-term repayment.</li>
+<li>They may lose the entire investment; the instructor notes that startup investors often do.</li>
+<li>Returns usually take a long time because most startups do not distribute money immediately.</li>
+</ul>
+<h3 id="4-3-hybrid-advanced-variation">4.3 Hybrid/advanced variation</h3>
+<p>The instructor briefly mentions <strong>convertible preferred</strong> financing: it may initially appear/account as debt until a specified point, although economically the provider&rsquo;s money is intended to become part of the investment/ownership structure. Detailed mechanics are beyond this class segment.</p>
+<hr>
+<h2 id="5-charitable-missions-and-social-businesses">5. Charitable Missions and Social Businesses</h2>
+<h3 id="5-1-what-a-charitable-mission-does">5.1 What a charitable mission does</h3>
+<p>Practices vary worldwide, so the examples are not an authoritative global list. Broadly, an NGO or charitable mission helps do something that government could do but is not doing sufficiently.</p>
+<p>Unlike a normal commercial mission such as “make soft drinks for the masses,” a charitable purpose may need more explicit articulation before its financing model becomes clear.</p>
+<p>Examples:</p>
+<ul>
+<li><strong>Khan Academy:</strong> advances education globally, especially for people unable to afford it. Although the content generates economic value and attention, it was deliberately established around a charitable mission rather than founder profit.</li>
+<li><strong>Red Cross:</strong> assists people who are helpless or in urgent need during disasters.</li>
+</ul>
+<h3 id="5-2-social-business">5.2 Social business</h3>
+<p>A company with a major social purpose and an appropriate classification may be a <strong>social business</strong>. Its funding strategy differs from that of an ordinary profit-maximising startup. Charitable organisations and social businesses therefore require special fundraising strategies; one cannot simply assume “people will give funds.”</p>
+<h3 id="5-3-mission-statements">5.3 Mission statements</h3>
+<ul>
+<li>Charitable organisations often strive to define a mission statement.</li>
+<li>The instructor personally questions how useful mission statements always are, but acknowledges that many people find them useful.</li>
+<li>Metropolitan Museum of Art example: its mission historically specified establishing and maintaining <strong>in New York</strong> a museum and library connected with art/artists. Location would not always belong in a mission statement, but there are no absolute rules.</li>
+<li>The New York emphasis reflects loyalty and purpose; it explains why the institution&rsquo;s people work, rather than suggesting they are merely trying to look virtuous.</li>
+<li>The Louvre in Paris is mentioned as another museum of comparable elite reputation.</li>
+</ul>
+<h3 id="5-4-bootstrapping-and-other-opportunities">5.4 Bootstrapping and other opportunities</h3>
+<p>The segment flags two further entrepreneurial questions:</p>
+<ul>
+<li>What financing opportunities are available to startups and mission-led organisations?</li>
+<li>If external financing is unavailable, how can the venture make progress on its own through <strong>bootstrapping</strong>—building with internal/personal resources and operating cash rather than relying primarily on outside capital?</li>
+</ul>
+<p>The transcript raises these as topics to consider but does not provide a fuller bootstrapping process in this week’s captured material.</p>
+<hr>
+<h2 id="6-accounting-basics-for-entrepreneurs">6. Accounting Basics for Entrepreneurs</h2>
+<h3 id="6-1-instructor-emphasis">6.1 Instructor emphasis</h3>
+<ul>
+<li>Students are expected to study the book, PPT and figures themselves; much of this material may have been learned before but forgotten.</li>
+<li>The equation must be understood <strong>logically</strong>, not merely memorised, because it supports the profit-and-loss statement, balance sheet and better business decisions.</li>
+<li>“Accounting is your friend” when used to evaluate assets, obligations and returns.</li>
+</ul>
+<h3 id="6-2-fundamental-accounting-equation-figure-9-6">6.2 Fundamental accounting equation (Figure 9.6)</h3>
+<p><code>Assets = Liabilities + Equity</code></p>
+<ul>
+<li><strong>Asset:</strong> something valuable owned/controlled by the business.</li>
+<li><strong>Liability:</strong> an obligation or amount owed to another party that helped finance the asset.</li>
+<li><strong>Equity:</strong> the owners&rsquo; residual interest after liabilities are deducted.</li>
+</ul>
+<p>Rearranged:</p>
+<p><code>Equity = Assets − Liabilities</code></p>
+<p>Personal analogy: a car or house may be partly financed by the owner and partly by a bank. The asset&rsquo;s value is supported by both the obligation to the bank and the owner&rsquo;s own share.</p>
+<h3 id="6-3-productive-use-of-assets-and-return-on-assets-roa">6.3 Productive use of assets and Return on Assets (ROA)</h3>
+<p>The key entrepreneurial question is not merely “What do we own?” but “Are we using it productively enough to earn a return?”</p>
+<p>Examples:</p>
+<ul>
+<li><strong>Ola car:</strong> ride revenue minus all expenses is the benefit of owning and deploying the car.</li>
+<li><strong>Airbnb house:</strong> renting part of a house generates a return from that asset.</li>
+<li><strong>Land:</strong> a shopping mall earns through shops/customers; a petrol station earns through petrol-sale profits.</li>
+<li><strong>Conference furniture:</strong> chairs may be operationally necessary, but the entrepreneur must still ask how many are needed and whether they must be so expensive.</li>
+</ul>
+<p>If an asset produces no adequate return or operational benefit, it may be the wrong or unnecessary purchase.</p>
+<p>Instructor&rsquo;s view: social good may form part of a commercial venture&rsquo;s mission, but the major economic reason for starting a business is to implement an idea that earns a strong return from the resources owned/used.</p>
+<h3 id="6-4-intelligent-use-of-liabilities">6.4 Intelligent use of liabilities</h3>
+<p>A liability is not automatically bad. The relevant decision is whether borrowed capital produces a return greater than its cost.</p>
+<p>Example:</p>
+<ul>
+<li>Bank loan interest = <strong>10%</strong>.</li>
+<li>Asset/business return using the loan = <strong>50%</strong>.</li>
+<li>Positive spread = <code>50% − 10% = 40 percentage points</code> before considering other effects/costs.</li>
+</ul>
+<p>The borrowed money is being used intelligently if its return comfortably exceeds interest and repayment risk. Conversely, taking a huge housing obligation while job/income security is uncertain is dangerous.</p>
+<p>The same principle applies when “paying” for money by giving away part of ownership: the capital obtained should create a return greater than the economic value surrendered.</p>
+<h3 id="6-5-equity-and-return-on-equity-roe">6.5 Equity and Return on Equity (ROE)</h3>
+<p>Example: a house is purchased with a <strong>20% down payment</strong> and <strong>80% financing</strong>.</p>
+<ul>
+<li>Asset = 100% of house value.</li>
+<li>Liability = 80%.</li>
+<li>Equity = <code>100% − 80% = 20%</code>.</li>
+</ul>
+<p>ROE asks whether the owners&rsquo; own funds are being used better than alternatives.</p>
+<ul>
+<li>If the venture returns only <strong>2%</strong> on equity while a savings account yields approximately <strong>5%</strong> (the instructor self-corrects from 10% to 5%), the venture is unattractive if no improvement is expected.</li>
+<li>If expected business return is close to <strong>200% in a year</strong>, that potential cannot be matched merely by leaving money in the bank; the equity allocation may be attractive, subject to risk and realism.</li>
+</ul>
+<p>The instructor stresses that understanding the return logic behind assets, liabilities and equity teaches more entrepreneurial judgement than memorising definitions.</p>
+<h3 id="6-6-simple-accounting-equation-example">6.6 Simple accounting-equation example</h3>
+<p>An owner starts a company with <strong>₹1,00,000 of personal savings</strong>:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th style="text-align: right;">Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Assets (cash)</td>
+<td style="text-align: right;">₹1,00,000</td>
+</tr>
+<tr>
+<td>Liabilities</td>
+<td style="text-align: right;">₹0</td>
+</tr>
+<tr>
+<td>Equity</td>
+<td style="text-align: right;">₹1,00,000</td>
+</tr>
+</tbody>
+</table></div>
+<p>The owner has 100% equity because no outsider is owed anything.</p>
+<p>This does <strong>not</strong> mean a business should always own everything outright. If a bank supplies money at 10% and a side restaurant can realistically earn about 50% on that capital, using the liability can be sensible.</p>
+<p>Final decision test: <strong>Is the venture producing sufficient returns from its assets, from the capital obtained through liabilities, and from the owner&rsquo;s equity? If not, why not?</strong></p>
+<hr>
+<h2 id="7-startup-financial-statements-and-projections">7. Startup Financial Statements and Projections</h2>
+<h3 id="7-1-projections-are-disciplined-estimates-not-promises">7.1 Projections are disciplined estimates, not promises</h3>
+<p>Future results are unknown, so the entrepreneur must “guess smart.” For example:</p>
+<ul>
+<li>Start with evidence such as 100 parts already sold.</li>
+<li>Observe profit and relevant balance-sheet items.</li>
+<li>Carry the operating logic forward.</li>
+<li>Adjust for future choices and conditions.</li>
+<li>Estimate financial statements and expected returns on assets/equity.</li>
+</ul>
+<p>The forecast will probably not be exactly correct. It is still essential because systematic forecasting is one of the best ways to learn and manage the business.</p>
+<h3 id="7-2-projections-as-strategic-decision-tools">7.2 Projections as strategic decision tools</h3>
+<p>Example: management considers postponing R&amp;D and redirecting money to marketing.</p>
+<ul>
+<li>Short-term marketing may improve current sales.</li>
+<li>But the next product may then arrive a year late.</li>
+<li>If competitors are already developing the next generation, cutting R&amp;D is foolish.</li>
+<li>The projection forces management to display the consequences and may justify retaining or increasing R&amp;D spending.</li>
+</ul>
+<p>Finance is therefore not “technical mumbo-jumbo”; it is the disciplined expression of business choices through statements.</p>
+<h3 id="7-3-recommended-preparation-order">7.3 Recommended preparation order</h3>
+<ol>
+<li>Develop the <strong>profit-and-loss/income statement</strong> first; it is usually easiest.</li>
+<li>Project it month by month.</li>
+<li>Use the results to develop the <strong>balance sheet</strong>.</li>
+<li>Then derive/interpret the <strong>cash-flow statement</strong>.</li>
+</ol>
+<p>The income statement records performance over a period (e.g., three months or one year). Profits may add cash/assets to the balance sheet, and cash may then be used to buy other productive assets.</p>
+<h3 id="7-4-the-three-core-statements">7.4 The three core statements</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Statement</th>
+<th>Core question</th>
+<th>Timing/view</th>
+<th>Main content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Income statement / P&amp;L</td>
+<td>How did we earn or lose money?</td>
+<td>Over a period, e.g., last 3 or 12 months</td>
+<td>Revenue less COGS, operating costs, taxes, depreciation and other relevant costs → net income</td>
+</tr>
+<tr>
+<td>Balance sheet</td>
+<td>Where do we stand now after all activity?</td>
+<td>At a specific date</td>
+<td>Assets, liabilities and equity</td>
+</tr>
+<tr>
+<td>Statement of cash flows</td>
+<td>How much actual cash is available and where did it come from/go?</td>
+<td>Cash movements and current cash position</td>
+<td>Actual operating/financing cash, payroll, tax payments and adjustment for non-cash items</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="income-statement-detail">Income statement detail</h4>
+<p>Questions behind revenue projection include:</p>
+<ul>
+<li>How many customers will buy?</li>
+<li>What price will the store charge?</li>
+<li>What margin/profit will the store demand for carrying the product?</li>
+<li>How much revenue ultimately returns to the producer?</li>
+</ul>
+<p>Then subtract:</p>
+<ul>
+<li>direct production cost/COGS,</li>
+<li>R&amp;D,</li>
+<li>sales, general and administrative expense,</li>
+<li>financial expenses,</li>
+<li>taxes and depreciation where applicable.</li>
+</ul>
+<p>The result indicates net income and product/business performance during the period.</p>
+<h4 id="balance-sheet-detail-figure-9-11">Balance sheet detail (Figure 9.11)</h4>
+<p>It is explicitly dated because it is a snapshot “at this point in time.” Ask:</p>
+<ul>
+<li>Do we have more cash than last year?</li>
+<li>More assets?</li>
+<li>Fewer liabilities?</li>
+<li>What furniture or other items still retain value?</li>
+<li>What amounts remain payable?</li>
+<li>What residual amount belongs to owners?</li>
+</ul>
+<p>Example: a company owns five factories. Each has a liability of around <strong>₹1,00,00,000</strong>, but each factory is worth more than the debt. The excess value is part of equity.</p>
+<h4 id="income-statement-illustration-figure-9-12">Income statement illustration (Figure 9.12)</h4>
+<p>Figure 9.12 categorises revenue and expenses. Exact category presentation can vary. The instructor prefers remembering a general model and then adapting it to each specific statement.</p>
+<h4 id="dynamic-incremental-statements-figure-9-13">Dynamic/incremental statements (Figure 9.13)</h4>
+<p>A new sale changes the statements. They are living and dynamic, not static forms. The detailed mechanics shown are less essential than understanding that each transaction incrementally changes financial position and performance.</p>
+<h3 id="7-5-cash-is-operationally-supreme">7.5 Cash is operationally supreme</h3>
+<p>The statement of cash flows may be the most useful statement because:</p>
+<ul>
+<li>taxes must actually be paid,</li>
+<li>employees/payroll must actually be paid, and</li>
+<li>a venture without cash no longer has a business.</li>
+</ul>
+<p>The instructor&rsquo;s phrase: <strong>“Cash is king, queen and everything.”</strong></p>
+<p>However, cash flow is derived after the other two statements because it is harder to model systematically without them. Thus it comes third in preparation order even though its practical effect ranks first.</p>
+<h3 id="7-6-depreciation-and-non-cash-adjustments">7.6 Depreciation and non-cash adjustments</h3>
+<ul>
+<li>Depreciation is an accounting rule allocating/reducing recorded asset value over time.</li>
+<li>No cheque is written merely because depreciation expense is recorded.</li>
+<li>Accounting depreciation does not always mirror market reality: a house may appreciate even though an accounting rule records depreciation for a business asset.</li>
+<li>Therefore cash-flow analysis removes/adds back depreciation and other non-cash items when moving from accounting income to actual cash.</li>
+</ul>
+<p>The cash-flow statement then distinguishes where cash benefits arise—for example:</p>
+<ul>
+<li>cash generated from operating the business, and</li>
+<li>cash/economic advantage associated with financing, such as borrowing at a rate lower than the return generated from the borrowed funds.</li>
+</ul>
+<p>Its endpoint is the actual cash available in the bank.</p>
+<h3 id="7-7-how-projections-are-built">7.7 How projections are built</h3>
+<p>There is no perfectly scientific answer to “Why 20% sales growth rather than 50%?” Use informed functional judgement:</p>
+<ol>
+<li>Ask salespeople for their market feel.</li>
+<li>Ask sales management.</li>
+<li>Ask production specialists what output will cost.</li>
+<li>Gather estimates from knowledgeable experts in every functional area.</li>
+<li>Integrate the estimates; final responsibility remains with the entrepreneur/manager making the projection.</li>
+<li>Compare forecast with actual performance and adjust repeatedly.</li>
+</ol>
+<p>Early forecasts will be only partly correct. Precision improves as the business gains experience. Major shocks—such as a pandemic stopping activity—can make reality diverge drastically.</p>
+<p>Projection review should ask:</p>
+<ul>
+<li>Is the product close to doing well?</li>
+<li>Is it truly growing?</li>
+<li>Are customer numbers accelerating?</li>
+<li>Has the venture crossed the hump where it can make the product for half the first-year cost?</li>
+</ul>
+<p>This applied analysis, more than abstract formulas, is what the instructor regards as finance in practice. Drawing on a career in finance, the instructor notes that much real work did not resemble theoretical textbook coverage and advises studying the book&rsquo;s applied material.</p>
+<h3 id="7-8-using-parts-of-statements-for-functional-decisions-figures-9-15-9-16">7.8 Using parts of statements for functional decisions (Figures 9.15–9.16)</h3>
+<p>Statements need not be considered only as indivisible wholes. Different functions can focus on relevant components.</p>
+<p>Pizza example:</p>
+<ul>
+<li>Selling price = <strong>₹100</strong>.</li>
+<li>Ingredient/direct cost = <strong>₹30</strong>.</li>
+<li>Contribution before other costs = <code>₹100 − ₹30 = ₹70</code>.</li>
+<li>Contribution margin on sales = <code>₹70 / ₹100 = 70%</code>.</li>
+</ul>
+<p>Marketing may focus on this price-minus-direct-cost contribution. However, saying “we make ₹70” is incomplete because the venture also had to buy assets to produce/sell the pizza. Financial analysis must therefore assess <strong>return on assets</strong>, not only unit contribution. Figure 9.16 provides that calculation framework.</p>
+<hr>
+<h2 id="8-integrated-entrepreneurial-decision-framework">8. Integrated Entrepreneurial Decision Framework</h2>
+<p>Use the week as one connected process:</p>
+<ol>
+<li><strong>Identify the relevant early user</strong> by adoption timing, context and psychology.</li>
+<li><strong>Conduct open-ended user research</strong> to uncover needs, blind spots and unknown unknowns.</li>
+<li><strong>Refine the prototype and business model</strong> using behavioural evidence rather than assumption-confirming surveys.</li>
+<li><strong>Estimate usage and economics</strong> (e.g., stays per year, customers, price, retailer margin and COGS).</li>
+<li><strong>Build P&amp;L projections</strong> month by month.</li>
+<li><strong>Determine funding needs and stage</strong>: founder, friends/family, angels, VC or public capital.</li>
+<li><strong>Choose debt/equity intelligently</strong>, comparing cost, collateral, dilution and expected return.</li>
+<li><strong>Translate actions into the balance sheet and cash-flow statement</strong>.</li>
+<li><strong>Monitor ROA, ROE and cash</strong>, not merely sales or gross margin.</li>
+<li><strong>Repeat research and revise projections</strong> as customers, costs and the environment change.</li>
+</ol>
+<hr>
+<h2 id="9-likely-exam-angles">9. Likely Exam Angles</h2>
+<h3 id="short-answer-definition-questions">Short-answer/definition questions</h3>
+<ul>
+<li>Define user research/design research and distinguish it from market research.</li>
+<li>Define early adopter and late adopter.</li>
+<li>Explain blind spots, sunk cost, known unknown and unknown unknown.</li>
+<li>State and explain <code>Assets = Liabilities + Equity</code>.</li>
+<li>Define asset, liability, equity, collateral, debt financing and equity financing.</li>
+<li>Define angel investor, GP, LP, venture capital, IPO, social business and bootstrapping.</li>
+<li>Distinguish the income statement, balance sheet and cash-flow statement.</li>
+<li>Explain depreciation as a non-cash expense.</li>
+</ul>
+<h3 id="long-answer-application-questions">Long-answer/application questions</h3>
+<ol>
+<li><strong>Why should an early startup prefer deep user research to a large survey?</strong> Discuss resource constraints, adopter timing, open questioning, insight yield and product refinement.</li>
+<li><strong>Explain Airbnb&rsquo;s six-review discovery</strong> as an unknown unknown and show how it affected trust and growth.</li>
+<li><strong>Describe the venture-funding life cycle</strong> from personal savings to IPO, including evidence and uses of funds at each stage.</li>
+<li><strong>Compare debt and equity financing</strong> from the perspectives of founder and provider.</li>
+<li><strong>Explain how the accounting equation guides entrepreneurial decisions</strong>, using Ola/house/land examples.</li>
+<li><strong>Why can liability be useful?</strong> Compare cost of capital with asset return using the 10% loan/50% return illustration.</li>
+<li><strong>How are startup financial projections prepared and refined?</strong> Include functional experts, monthly forecasts, actual-vs-projected learning and external shocks.</li>
+<li><strong>Why can a profitable firm still fail?</strong> Explain non-cash accounting items and “cash is king, queen and everything.”</li>
+<li><strong>Analyse the pizza example</strong>, showing contribution and why asset investment/ROA must also be considered.</li>
+<li><strong>Discuss financing for charitable missions/social businesses</strong>, using Khan Academy, Red Cross and the Metropolitan Museum examples.</li>
+</ol>
+<h3 id="calculation-drills">Calculation drills</h3>
+<ol>
+<li>Airbnb usage: <code>3 conventions × 2 nights = 6 nights/year</code>.</li>
+<li>Equity: <code>Asset value − Liability = Equity</code>; with 80% debt, equity is 20%.</li>
+<li>Borrowing spread: <code>50% asset return − 10% interest = 40 percentage points</code> before other costs.</li>
+<li>Founder investment: ₹1,00,000 asset − ₹0 liability = ₹1,00,000 equity.</li>
+<li>Pizza contribution: ₹100 selling price − ₹30 direct cost = ₹70 contribution; contribution margin = 70%.</li>
+</ol>
+<h3 id="instructor-emphasis-points-worth-stating-explicitly">Instructor-emphasis points worth stating explicitly</h3>
+<ul>
+<li>User-research questions should be open-ended but purposeful.</li>
+<li>Do not confuse confirmation with discovery.</li>
+<li>Disagreement can save money and pain.</li>
+<li>Past expenditure is sunk; do not compound it.</li>
+<li>Figure 9.2 deserves at least 30 minutes of study.</li>
+<li>Founders must understand finance; it is not optional.</li>
+<li>The economic logic behind accounting matters more than rote definitions.</li>
+<li>Cash-flow preparation may come third, but cash survival comes first.</li>
+<li>Projections will be imperfect; their value is disciplined learning and decision-making.</li>
+</ul>
+<hr>
+<h2 id="10-rapid-revision-sheet">10. Rapid Revision Sheet</h2>
+<h3 id="ten-one-line-takeaways">Ten one-line takeaways</h3>
+<ol>
+<li>A resource-poor startup wins by understanding the right early user, not by imitating mass advertising.</li>
+<li>User research explores behaviour and needs; market research statistically tests predefined questions.</li>
+<li>Ask what users say, think, do, know and feel—and look for the answer underneath the question.</li>
+<li>Unknown unknowns, such as Airbnb&rsquo;s six-review trust threshold, can transform a venture.</li>
+<li>Funding generally progresses from founder savings → family/friends → angels → VC → IPO.</li>
+<li>Debt requires repayment/interest and often collateral; equity gives ownership and has no assured repayment.</li>
+<li><code>Assets = Liabilities + Equity</code>; equity is the residual ownership.</li>
+<li>Borrow only when expected productive return justifies the cost and risk.</li>
+<li>Build P&amp;L first, then balance sheet, then cash flow—but remember that cash determines survival.</li>
+<li>Projections are intelligent, revisable estimates that make strategic trade-offs visible.</li>
+</ol>
+<h3 id="must-remember-examples">Must-remember examples</h3>
+<ul>
+<li>Startup cash illustration: ₹10,00,000.</li>
+<li>Research yield illustration: 1,000 market interviews → 5 ideas; 10 user interviews → 50 ideas.</li>
+<li>Airbnb: six reviews unlock trust; 3 conventions × 2 nights = 6 nights/year.</li>
+<li>Family/friend valuation illustration: ₹1,00,00,000 for 20%.</li>
+<li>Angel cheque illustrations: ₹10,00,000 vs. ₹5,00,00,000+.</li>
+<li>VC return illustration: bank 6% vs. fund 60% in a strong year.</li>
+<li>Loan/return illustration: borrow at 10%, earn 50%.</li>
+<li>ROE comparison: venture 2% vs. savings about 5%; possible venture upside 200%.</li>
+<li>Pizza: ₹100 price − ₹30 ingredients = ₹70 contribution, before asset and other costs.</li>
+</ul>
+<h3 id="final-memory-map">Final memory map</h3>
+<p><code>Right user → deep inquiry → insight → prototype/business model → financial projection → suitable funding → accounting statements → ROA/ROE/cash review → revised decisions</code></p>
+<h1 id="review-week-augmentation">Review Week Augmentation</h1>
+<ul>
+<li>Evidence-based judgment follows <strong>data → insight → decision → experiment → new data</strong>. Data informs but never replaces entrepreneurial judgment.</li>
+<li>Feedback is a continuous innovation mechanism, and observation should be compared with stated preference to uncover latent needs and unreliable assumptions.</li>
+<li>FreshLoop trust depends on safety, freshness, source transparency, the reason for discounting, delivery reliability and credible remedies; reviews and responsive support reinforce repeat use.</li>
+<li>Network effects are possible but not automatic. More suppliers and buyers help only when reliability, density, trust and coordinated execution make the marketplace useful.</li>
+<li>Keep revenue, profit and cash flow distinct, and use real behavior, repeat rates, delay/spoilage patterns and price response when deciding whether to adapt or expand.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-8.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 8: Entrepreneurial Marketing, Sales, Research,…</span>
+      </a>
+      <a href="week-10.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 10: Managing Growth, Lean Execution, Failure,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Advanced ML · Week 9 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Advanced ML</span>
+      <span class="brand-title">Week 9</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html" selected>Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Review of Machine Learning, Learning Types, and Linear Regression
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Classification, Logistic Regression, Maximum Likelihood and K-Means…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Bias–Variance, Error Analysis, Learning Curves, and Model Selection
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Recommendation Systems and Collaborative Filtering
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Content-Based Filtering, Cosine Similarity, UV Decomposition, and…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Bias–Variance Trade-off, Underfitting, Overfitting,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Association Rule Mining, Apriori, and PCY
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Dimensionality Reduction, PCA, Eigen-Decomposition, and SVD
+      </a>
+      <a class="is-active" href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Text Processing, Bag of Words, TF–IDF, Vector-Space Retrieval, and…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Web Advertising, Online Matching, AdWords, and Balance
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        High-Dimensional Clustering, Subspaces, CLIQUE, PROCLUS, and…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Independent Component Analysis, Blind Source Separation, FastICA,…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Social Networks, Graph Laplacians, and Spectral Clustering
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Graph Partitioning, Flow Centrality, Edge Betweenness, and Girvan–Newman
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        ML Life Cycle, Hybrid and Music Recommenders, and Evaluation
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Advanced ML · Week 9</p>
+        <h1 class="page-title">Text Processing, Bag of Words, TF–IDF, Vector-Space Retrieval, and Cosine Similarity</h1>
+        <p class="page-meta">Week 9 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#learning-objectives">Learning objectives</a></li>
+      <li><a href="#1-natural-language-processing-and-text-in-ml">1. Natural language processing and text in ML</a></li>
+      <li><a href="#2-end-to-end-text-mining-pipeline">2. End-to-end text-mining pipeline</a></li>
+      <li><a href="#3-text-preprocessing-techniques">3. Text preprocessing techniques</a></li>
+      <li><a href="#4-bag-of-words">4. Bag of Words</a></li>
+      <li><a href="#5-term-frequency-tf">5. Term Frequency (TF)</a></li>
+      <li><a href="#6-inverse-document-frequency-idf">6. Inverse Document Frequency (IDF)</a></li>
+      <li><a href="#7-tf-idf">7. TF–IDF</a></li>
+      <li><a href="#8-document-vectors-and-the-vector-space-model">8. Document vectors and the Vector Space Model</a></li>
+      <li><a href="#9-query-representation-and-retrieval">9. Query representation and retrieval</a></li>
+      <li><a href="#10-why-euclidean-distance-is-problematic-for-document-length">10. Why Euclidean distance is problematic for document length</a></li>
+      <li><a href="#11-l2-normalization-and-cosine-similarity">11. L2 normalization and cosine similarity</a></li>
+      <li><a href="#12-numerical-retrieval-example">12. Numerical retrieval example</a></li>
+      <li><a href="#13-edulearn-case-study-preprocessing-student-feedback">13. EduLearn case study: preprocessing student feedback</a></li>
+      <li><a href="#14-live-case-plagiarism-detection-turnitin-illustration">14. Live case: plagiarism detection / Turnitin illustration</a></li>
+      <li><a href="#15-formula-sheet">15. Formula sheet</a></li>
+      <li><a href="#16-exam-focused-traps-and-recall">16. Exam-focused traps and recall</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="learning-objectives">Learning objectives</h2>
+<p>After this week, you should be able to:</p>
+<ul>
+<li>define natural language processing (NLP) and explain why ML needs numerical text representations;</li>
+<li>distinguish structured, semi-structured, and unstructured text;</li>
+<li>describe text cleansing, tokenization, stop-word removal, stemming, and lemmatization;</li>
+<li>construct a vocabulary and Bag-of-Words (BoW) document vectors;</li>
+<li>explain BoW&rsquo;s simplicity, sparsity, order insensitivity, and semantic limitations;</li>
+<li>calculate normalized term frequency, inverse document frequency, and TF–IDF;</li>
+<li>represent documents and queries in one vector space;</li>
+<li>use L2 normalization and cosine similarity to rank documents;</li>
+<li>solve the New York Times/Post/Los Angeles Times retrieval example while recognizing transcription inconsistencies;</li>
+<li>discuss the EduLearn preprocessing experiment and the live-session plagiarism-detection case.</li>
+</ul>
+<hr>
+<h2 id="1-natural-language-processing-and-text-in-ml">1. Natural language processing and text in ML</h2>
+<h3 id="definition-and-scope">Definition and scope</h3>
+<p>Natural language processing is an intersection/subfield of computer science and artificial intelligence concerned with processing human language and making it machine-readable. Human natural language can include:</p>
+<ul>
+<li>written text;</li>
+<li>spoken language/speech;</li>
+<li>sign language and gestures;</li>
+<li>facial expressions used communicatively.</li>
+</ul>
+<p>Computers do not directly understand English, Hindi, Tamil, Malayalam, or another human language as humans do. ML algorithms require numbers, so NLP acts as a bridge:</p>
+<p>\[
+\text{unstructured human language}
+\longrightarrow
+\text{structured, computable numerical features}
+\]</p>
+<p>Only after conversion can a model detect patterns, train, classify, retrieve, compare, or predict.</p>
+<h3 id="forms-of-text">Forms of text</h3>
+<p>Text occurs as paragraphs, tables, web pages/HTML, emails, social-media posts, documents, and many other sources.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Form</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Structured</td>
+<td>Consistent schema/fields</td>
+<td>Clean database table with aligned features</td>
+</tr>
+<tr>
+<td>Semi-structured</td>
+<td>Some organization but not a rigid relational schema</td>
+<td>HTML/web page</td>
+</tr>
+<tr>
+<td>Unstructured/raw</td>
+<td>No fixed feature layout</td>
+<td>Email body, social post, free-form feedback</td>
+</tr>
+</tbody>
+</table></div>
+<p>All may require preprocessing. Preprocessing brings usable structure to raw/unstructured language and improves the efficiency/quality of later representations.</p>
+<h3 id="applications-mentioned">Applications mentioned</h3>
+<ul>
+<li><strong>Speech/voice recognition:</strong> access control and many industrial systems.</li>
+<li><strong>Document summarization:</strong> reduce pages of material to a few sentences containing the main essence; useful in search and information review.</li>
+<li><strong>Plagiarism/similarity detection:</strong> compare submitted and source documents.</li>
+<li><strong>Automated question answering.</strong></li>
+<li><strong>Search engines/information retrieval:</strong> rank documents relevant to a query.</li>
+<li><strong>Text classification:</strong> e.g., student-feedback categories in the EduLearn case.</li>
+</ul>
+<h3 id="live-session-administrative-emphasis">Live-session administrative emphasis</h3>
+<p>The instructor reminded students that completion through <strong>Week 12</strong> was an eligibility requirement for the end-semester examination in this course run and advised keeping pace with LMS videos, quizzes, and DT activities rather than rushing at the end. Verify current institutional rules separately if they change.</p>
+<p>The live recap also correctly identified dimensionality as the number of features and referred to PCA and <strong>SVD</strong> for dimensionality reduction. The instructor momentarily expanded SVD as support vector machines, then immediately corrected that slip; SVD means <strong>singular value decomposition</strong>.</p>
+<hr>
+<h2 id="2-end-to-end-text-mining-pipeline">2. End-to-end text-mining pipeline</h2>
+<p>A typical classical pipeline is:</p>
+<ol>
+<li>Collect text.</li>
+<li>Clean noise/markup.</li>
+<li>Normalize case and punctuation according to the task.</li>
+<li>Tokenize.</li>
+<li>Optionally remove stop words.</li>
+<li>Optionally stem or lemmatize.</li>
+<li>Build a training vocabulary.</li>
+<li>Convert documents to BoW/count vectors.</li>
+<li>Weight features with TF–IDF if needed.</li>
+<li>Train a classifier or place documents in a vector-space retrieval model.</li>
+<li>Apply the <strong>same fitted preprocessing and vocabulary</strong> to validation/test text or queries.</li>
+<li>Evaluate accuracy/retrieval quality, memory, computation, and business usefulness.</li>
+</ol>
+<p>Preprocessing is not universally beneficial. Removing or merging a token can destroy a signal—e.g., removing “not” can reverse sentiment. Choose steps for the task and validate them empirically.</p>
+<hr>
+<h2 id="3-text-preprocessing-techniques">3. Text preprocessing techniques</h2>
+<h3 id="3-1-text-cleansing-and-normalization">3.1 Text cleansing and normalization</h3>
+<p>Common operations include:</p>
+<ul>
+<li>remove HTML tags, special characters, unwanted markup, and noise;</li>
+<li>standardize case (often lowercase);</li>
+<li>handle punctuation;</li>
+<li>normalize whitespace;</li>
+<li>decide how to treat numbers, URLs, usernames, emojis, etc.</li>
+</ul>
+<p>Without lowercase normalization, <code>Learning</code> and <code>learning</code> become two vocabulary features. This inflates dimensionality even when the distinction is irrelevant.</p>
+<h3 id="3-2-tokenization">3.2 Tokenization</h3>
+<p>Tokenization splits a text/string into units called <strong>tokens</strong>, commonly words or subwords. Example:</p>
+<pre><code class="language-text">artificial neural network
+→ [artificial, neural, network]
+</code></pre>
+<p>Tokens are the units counted by BoW and TF–IDF. A tokenizer defines what happens to punctuation, contractions, hyphens, and special symbols, so tokenization decisions affect the vocabulary.</p>
+<h3 id="3-3-stop-word-removal">3.3 Stop-word removal</h3>
+<p>Stop words are very frequent function words that often add little discriminative information in a particular retrieval/classification task, such as <code>a</code>, <code>an</code>, <code>the</code>, <code>to</code>, and <code>is</code>. Removing them:</p>
+<ul>
+<li>shrinks vocabulary and vectors;</li>
+<li>reduces noise and computation;</li>
+<li>prevents frequent generic terms dominating counts.</li>
+</ul>
+<p>However, stop-word lists are task-specific. Negations and certain grammatical words can be meaningful. In the recorded example, <code>to</code> was removed as unhelpful for that BoW task.</p>
+<h3 id="3-4-stemming">3.4 Stemming</h3>
+<p>Stemming uses heuristic truncation rules to map variants to an approximate root/stem:</p>
+<pre><code class="language-text">running, runner, runs → run (intended family)
+changing, changed → chang/change depending on stemmer
+</code></pre>
+<p>Advantages:</p>
+<ul>
+<li>fast and computationally inexpensive;</li>
+<li>aggressive vocabulary reduction;</li>
+<li>less memory and potentially faster training.</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>output may not be a valid dictionary word;</li>
+<li>over-stemming may merge distinct meanings;</li>
+<li>under-stemming may fail to merge true variants;</li>
+<li>semantic distinctions can be lost.</li>
+</ul>
+<h3 id="3-5-lemmatization">3.5 Lemmatization</h3>
+<p>Lemmatization uses vocabulary and morphological/linguistic analysis to map a word to its valid dictionary base form (<strong>lemma</strong>):</p>
+<pre><code class="language-text">changing, changed → change
+better → good  (with appropriate linguistic analysis)
+</code></pre>
+<p>Advantages:</p>
+<ul>
+<li>valid dictionary forms;</li>
+<li>usually better linguistic/semantic consistency;</li>
+<li>less destructive than crude truncation.</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>slower and more computationally expensive;</li>
+<li>may need part-of-speech/context information;</li>
+<li>often reduces vocabulary less aggressively than stemming.</li>
+</ul>
+<h3 id="stemming-versus-lemmatization">Stemming versus lemmatization</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Stemming</th>
+<th>Lemmatization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Method</td>
+<td>Heuristic cutting</td>
+<td>Linguistic/morphological analysis</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>May be invalid stem</td>
+<td>Valid dictionary lemma</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>Faster</td>
+<td>Slower</td>
+</tr>
+<tr>
+<td>Vocabulary reduction</td>
+<td>Usually more aggressive</td>
+<td>Usually more conservative</td>
+</tr>
+<tr>
+<td>Meaning preservation</td>
+<td>Greater risk</td>
+<td>Better on average</td>
+</tr>
+</tbody>
+</table></div>
+<p>Neither technique solves BoW&rsquo;s inability to model word order, synonyms, antonyms, or context. They only consolidate morphological forms.</p>
+<hr>
+<h2 id="4-bag-of-words">4. Bag of Words</h2>
+<h3 id="definition">Definition</h3>
+<p>Feature extraction transforms data into a form suitable for ML. Bag of Words is a foundational feature-extraction technique that represents a document by the <strong>presence or count of vocabulary terms</strong>, ignoring:</p>
+<ul>
+<li>word order/position;</li>
+<li>grammar and sentence structure;</li>
+<li>context and compositional meaning.</li>
+</ul>
+<p>It is called a “bag” because the tokens are treated as an unordered collection.</p>
+<h3 id="vocabulary-and-vector-construction">Vocabulary and vector construction</h3>
+<p>Given a corpus:</p>
+<ol>
+<li>preprocess/tokenize documents;</li>
+<li>list each distinct retained token once to form vocabulary \(V=[t_1,\dots,t_{|V|}]\);</li>
+<li>assign each term a fixed coordinate;</li>
+<li>for document \(d\), store count \(c(t_i,d)\) at coordinate \(i\).</li>
+</ol>
+<p>\[
+\mathbf d=[c(t_1,d),c(t_2,d),\ldots,c(t_{|V|},d)]
+\]</p>
+<p>Presence-only/binary BoW uses 1 if the term occurs and 0 otherwise; count BoW preserves frequency. The recordings discuss both occurrence and count, with the worked vectors using counts.</p>
+<h3 id="recorded-two-sentence-example">Recorded two-sentence example</h3>
+<p>The sentences are approximately:</p>
+<pre><code class="language-text">S1: Welcome to Great Learning. Now start learning.
+S2: Learning is a good practice.
+</code></pre>
+<p><strong>Without preprocessing:</strong> punctuation/case are retained, so capitalized <code>Learning</code> and lowercase <code>learning</code> can become separate terms; common words and punctuation variants enlarge the vocabulary. A document vector position exists for every vocabulary term even if its count is zero.</p>
+<p><strong>With preprocessing:</strong></p>
+<ul>
+<li>lowercase text;</li>
+<li>remove punctuation;</li>
+<li>remove stop words such as <code>to</code> and <code>is</code>;</li>
+<li>combine <code>Learning</code> and <code>learning</code> under one token.</li>
+</ul>
+<p>Then <code>learning</code> occurs twice in \(S1\) and once in \(S2\). The lecture states the corrected \(S1\) vector as <code>1121100</code> for its displayed vocabulary and explicitly notes a correction to the displayed \(S2\) vector. The transcript garbles that second sequence (<code>000010011</code>) relative to the apparent vocabulary size, so reconstruct vectors from the exact vocabulary/count table rather than memorizing the corrupted digit string.</p>
+<h3 id="key-characteristics">Key characteristics</h3>
+<p><strong>Advantages</strong></p>
+<ul>
+<li>simple and intuitive;</li>
+<li>easy to implement, debug, and interpret;</li>
+<li>useful baseline for many classical NLP tasks;</li>
+<li>often effective for topic/content signals where exact word order is less critical.</li>
+</ul>
+<p><strong>Sparsity</strong></p>
+<p>Vocabulary can contain thousands or millions of terms, while any one document uses only a small subset. Most vector entries are zero, so BoW vectors are sparse. Sparsity permits specialized storage, but a very large vocabulary is still memory- and computation-intensive at scale.</p>
+<p><strong>Equal treatment and semantic limitations</strong></p>
+<p>Plain BoW gives no inherent understanding of relations among terms. It does not know that two words are synonyms or antonyms. Every vocabulary coordinate is independent unless later modeling adds structure.</p>
+<p><strong>Order insensitivity</strong></p>
+<pre><code class="language-text">John is quicker than Mary.
+Mary is quicker than John.
+</code></pre>
+<p>These sentences contain the same terms/counts, so they receive identical BoW vectors despite opposite relational meaning.</p>
+<p>Other examples:</p>
+<ul>
+<li><code>dog bites man</code> vs <code>man bites dog</code>;</li>
+<li><code>good</code> vs <code>not good</code> if <code>not</code> is removed;</li>
+<li><code>excellent</code> and <code>great</code> remain separate despite similar meaning;</li>
+<li><code>hot</code> and <code>cold</code> remain separate without knowing they contrast.</li>
+</ul>
+<p>BoW can support small/basic summarization or classification baselines, but it cannot truly understand a paragraph&rsquo;s contextual meaning. More advanced embeddings/contextual language models address some of these issues, beyond this week&rsquo;s scope.</p>
+<hr>
+<h2 id="5-term-frequency-tf">5. Term Frequency (TF)</h2>
+<p>TF measures how often term \(t\) occurs in document \(d\).</p>
+<h3 id="raw-tf">Raw TF</h3>
+<p>\[
+\operatorname{TF}_{raw}(t,d)=c(t,d)
+\]</p>
+<h3 id="length-normalized-tf">Length-normalized TF</h3>
+<p>Because longer documents naturally contain more words, the lecture normalizes by total terms:</p>
+<p>\[
+\operatorname{TF}(t,d)=
+\frac{c(t,d)}{\sum_{w}c(w,d)}
+=\frac{\text{count of }t\text{ in }d}
+{\text{total terms in }d}
+\]</p>
+<p>Example: <code>cat</code> appears 3 times in a 100-word document:</p>
+<p>\[
+\operatorname{TF}(cat,d)=\frac3{100}=0.03
+\]</p>
+<p>TF captures <strong>within-document prominence</strong>, but alone overvalues common corpus-wide words.</p>
+<h3 id="log-scaled-tf">Log-scaled TF</h3>
+<p>For large counts, a common weighting is:</p>
+<p>\[
+\operatorname{TF}_{log}(t,d)=
+\begin{cases}
+1+\log(c(t,d)),&c(t,d)>0\\
+0,&c(t,d)=0
+\end{cases}
+\]</p>
+<p>The piecewise zero case matters: \(\log0\) is undefined. One should not blindly compute \(1+\log0\). Log scaling reflects diminishing returns: the difference between 1 and 10 occurrences matters more than between 1,001 and 1,010.</p>
+<hr>
+<h2 id="6-inverse-document-frequency-idf">6. Inverse Document Frequency (IDF)</h2>
+<h3 id="definition-2">Definition</h3>
+<p>Let:</p>
+<ul>
+<li>\(N\): total number of documents in the corpus;</li>
+<li>\(df(t)\): number of documents containing term \(t\) at least once.</li>
+</ul>
+<p>The standard course formula is:</p>
+<p>\[
+\operatorname{IDF}(t)=\log\left(\frac{N}{df(t)}\right)
+\]</p>
+<p>IDF is defined corpus-wide for a <strong>term</strong>, whereas TF is for a <strong>term–document pair</strong>.</p>
+<p>Interpretation:</p>
+<ul>
+<li>term in nearly every document: low IDF and low discriminative value;</li>
+<li>rare term: high IDF and high discriminative value;</li>
+<li>term in all \(N\) documents: \(\log(N/N)=0\).</li>
+</ul>
+<p>IDF downweights common words and upweights rarer, potentially meaningful words. Document frequency counts <strong>documents containing a term</strong>, not the total number of occurrences across all documents.</p>
+<h3 id="cat-example">Cat example</h3>
+<p>If the corpus contains \(10{,}000{,}000\) documents and <code>cat</code> occurs in \(1{,}000\) documents:</p>
+<p>\[
+\operatorname{IDF}(cat)=
+\log_{10}\left(\frac{10{,}000{,}000}{1{,}000}\right)
+=\log_{10}(10{,}000)=4
+\]</p>
+<p>The raw ratio is huge, so the logarithm compresses the scale. Base 10, base 2, or natural log changes numerical scale but normally not rank if used consistently. The lecture often uses base 10; the numerical retrieval example uses base 2.</p>
+<h3 id="common-formula-error">Common formula error</h3>
+<p>Do <strong>not</strong> invert the ratio as \(\log(df/N)\). That would make rare terms negative and reverse the intended weighting. Use \(N/df(t)\), or a documented smoothed implementation.</p>
+<hr>
+<h2 id="7-tf-idf">7. TF–IDF</h2>
+<p>TF–IDF quantifies how important term \(t\) is to document \(d\) relative to a corpus:</p>
+<p>\[
+w_{t,d}=\operatorname{TF}(t,d)\operatorname{IDF}(t)
+\]</p>
+<p>For the cat example:</p>
+<p>\[
+TF\text{–}IDF=0.03\times4=0.12
+\]</p>
+<p>One weighted variant presented is:</p>
+<p>\[
+w_{t,d}=left(1+\log TF_{t,d}\right)
+\log\left(\frac N{df(t)}\right)
+\]</p>
+<p>with zero handling as described above. Different software may use raw/normalized/sublinear TF, smoothed IDF, or add constants. State the chosen convention.</p>
+<h3 id="live-practical-analogy">Live practical analogy</h3>
+<p>In an AI textbook, <code>backpropagation</code> may occur frequently within the deep-learning chapter (high TF there) but infrequently across all chapters (high IDF relative to the full book/corpus). It therefore receives a high TF–IDF weight in the deep-learning chapter. A generic term repeated throughout the book would receive lower IDF.</p>
+<h3 id="what-the-score-means">What the score means</h3>
+<ul>
+<li>high TF + high IDF → characteristic/discriminative for this document;</li>
+<li>high TF + low IDF → frequent but generic across corpus;</li>
+<li>zero TF → zero TF–IDF in that document;</li>
+<li>unseen query term outside the fitted vocabulary has no coordinate/weight in the current vector space.</li>
+</ul>
+<hr>
+<h2 id="8-document-vectors-and-the-vector-space-model">8. Document vectors and the Vector Space Model</h2>
+<h3 id="count-vector-example-shakespeare-works">Count-vector example: Shakespeare works</h3>
+<p>The lecture uses documents such as:</p>
+<ul>
+<li><em>Antony and Cleopatra</em>;</li>
+<li><em>Julius Caesar</em>;</li>
+<li><em>The Tempest</em>;</li>
+<li><em>Hamlet</em>;</li>
+<li><em>Othello</em>;</li>
+<li><em>Macbeth</em>.</li>
+</ul>
+<p>Terms of interest include Antony, Brutus, Caesar, Calpurnia (transcript varies), Cleopatra, mercy, and other displayed names/terms. Examples stated:</p>
+<ul>
+<li><code>Antony</code>: 157 in <em>Antony and Cleopatra</em>, 73 in <em>Julius Caesar</em>, 0 in several others;</li>
+<li><code>Brutus</code>: 4 in <em>Antony and Cleopatra</em>, 157 in <em>Julius Caesar</em>, 1 in <em>Hamlet</em>, 0 in <em>Othello</em> and <em>Macbeth</em>.</li>
+</ul>
+<p>For its displayed term order, the transcript gives the <em>Antony and Cleopatra</em> count vector approximately as:</p>
+<p>\[
+[157,4,232,0,57,2,2]
+\]</p>
+<p>and an <em>Othello</em> vector resembling:</p>
+<p>\[
+[0,0,1,0,0,5,1]
+\]</p>
+<p>The exact term spellings/order should be taken from the question table; the conceptual point is that each document becomes a fixed-length count/weight vector.</p>
+<h3 id="geometry">Geometry</h3>
+<p>If the vocabulary contains \(|V|\) terms, the vector space has \(|V|\) dimensions. Each axis corresponds to one term, and each document is a point/vector from the origin whose coordinates are counts or TF–IDF weights.</p>
+<p>For a three-term vocabulary—e.g., Amrita, Vidyapeetham, University—a document with coordinates such as \([1,5,6]\) is a point in 3-D; the line from the origin to it is its document vector. Real corpora can contain lakhs of documents and hundreds of thousands/millions of terms, creating high-dimensional sparse spaces.</p>
+<hr>
+<h2 id="9-query-representation-and-retrieval">9. Query representation and retrieval</h2>
+<h3 id="query-as-a-document">Query as a document</h3>
+<p>To retrieve documents for query \(q\):</p>
+<ol>
+<li>preprocess the query exactly like corpus documents;</li>
+<li>treat it as another short document;</li>
+<li>use the corpus vocabulary and global corpus IDF values;</li>
+<li>compute its TF/TF–IDF coordinates;</li>
+<li>assign zero to vocabulary terms absent from the query;</li>
+<li>compare the query vector to each document vector;</li>
+<li>rank documents from highest relevance score to lowest.</li>
+</ol>
+<p>A query and documents must live in the <strong>same coordinate space</strong>. Do not build an unrelated query vocabulary or recompute IDF from the query alone.</p>
+<h3 id="weighted-and-unweighted-queries">Weighted and unweighted queries</h3>
+<p>The query may use binary presence, raw/normalized TF, or TF–IDF. Repeated query terms can receive higher TF depending on the adopted convention. Terms not shared with a document contribute zero to their dot product.</p>
+<hr>
+<h2 id="10-why-euclidean-distance-is-problematic-for-document-length">10. Why Euclidean distance is problematic for document length</h2>
+<p>Suppose:</p>
+<pre><code class="language-text">D  = “hello how are you”
+D' = “hello how are you hello how are you”
+</code></pre>
+<p>If \(\mathbf d\) is the count vector for \(D\), then \(\mathbf d'=2\mathbf d\). They have the same term proportions/topic direction but different magnitudes.</p>
+<p>Euclidean distance is:</p>
+<p>\[
+\|\mathbf d'-\mathbf d\|_2=\|2\mathbf d-\mathbf d\|_2=\|\mathbf d\|_2>0
+\]</p>
+<p>It treats repeated/longer text as distant even when content proportions are identical. Cosine similarity compares direction:</p>
+<p>\[
+\cos(\mathbf d,2\mathbf d)=1
+\]</p>
+<p>Thus cosine is generally preferred for length-insensitive directional similarity in BoW/TF–IDF retrieval.</p>
+<p><strong>Caveat:</strong> Euclidean distance is not universally invalid. On L2-normalized vectors,</p>
+<p>\[
+\|\hat a-\hat b\|_2^2=2-2\cos(a,b)
+\]</p>
+<p>so Euclidean distance and cosine ranking are monotonically related. The lecture&rsquo;s objection applies mainly to <strong>unnormalized</strong> text vectors.</p>
+<hr>
+<h2 id="11-l2-normalization-and-cosine-similarity">11. L2 normalization and cosine similarity</h2>
+<h3 id="l2-length-and-unit-vector">L2 length and unit vector</h3>
+<p>\[
+\|x\|_2=\sqrt{\sum_i x_i^2},qquad
+\hat x=\frac{x}{\|x\|_2}
+\]</p>
+<p>L2 normalization changes length to 1 while retaining direction.</p>
+<h3 id="cosine-similarity">Cosine similarity</h3>
+<p>\[
+\operatorname{cosim}(q,d)=
+\frac{q\cdot d}{\|q\|_2\|d\|_2}
+=\frac{\sum_iq_i d_i}
+{\sqrt{\sum_iq_i^2}\sqrt{\sum_i d_i^2}}
+\]</p>
+<p>Equivalently:</p>
+<p>\[
+\operatorname{cosim}(q,d)=\hat q\cdot\hat d
+\]</p>
+<p>For nonnegative count/TF–IDF vectors:</p>
+<ul>
+<li>near 1: highly similar direction/content distribution;</li>
+<li>near 0: little/no vocabulary overlap;</li>
+<li>rank highest cosine first.</li>
+</ul>
+<p>The transcript once says “rank in ascending order” but immediately states the highest similarity/most relevant document ranks first. The correct ranking is <strong>descending cosine similarity</strong>.</p>
+<h3 id="literary-document-example">Literary-document example</h3>
+<p>The lecture compares term-frequency vectors for:</p>
+<ul>
+<li>SAS: <em>Sense and Sensibility</em>;</li>
+<li>PAP: <em>Pride and Prejudice</em>;</li>
+<li>WH: <em>Wuthering Heights</em> (the transcript misrecognizes this as “Bothering/Burning Heights”).</li>
+</ul>
+<p>Selected terms include affection, jealous/jealousy, gossip, and a fourth displayed term. After L2 normalization, part of the SAS unit vector is stated as approximately \([0.789,0.515,0.335,0]\). Reported similarities are:</p>
+<ul>
+<li>\(\cos(SAS,PAP)\approx0.994\), highest;</li>
+<li>other pairs lower, around 0.79 and 0.64 in the transcript.</li>
+</ul>
+<p>Conclusion: SAS and PAP are most similar <strong>with respect to the selected terms</strong>, consistent with both being Jane Austen novels; WH, by Emily Brontë, is less similar in this restricted representation. Similarity conclusions depend on vocabulary/features, not an absolute literary truth.</p>
+<hr>
+<h2 id="12-numerical-retrieval-example">12. Numerical retrieval example</h2>
+<h3 id="documents-and-vocabulary">Documents and vocabulary</h3>
+<p>\[
+D_1=\text{“New York Times”}
+\]</p>
+<p>\[
+D_2=\text{“New York Post”}
+\]</p>
+<p>\[
+D_3=\text{“Los Angeles Times”}
+\]</p>
+<p>The alphabetized vocabulary is:</p>
+<p>\[
+[\text{angeles},\text{los},\text{new},\text{post},\text{times},\text{york}]
+\]</p>
+<p>Raw count vectors are:</p>
+<p>\[
+TF(D_1)=[0,0,1,0,1,1]
+\]</p>
+<p>\[
+TF(D_2)=[0,0,1,1,0,1]
+\]</p>
+<p>\[
+TF(D_3)=[1,1,0,0,1,0]
+\]</p>
+<p>Counts are only 0/1, so the instructor omits TF length normalization/log weighting in documents. IDF uses base 2 for illustration, with \(N=3\):</p>
+<p>\[
+idf(angeles)=idf(los)=idf(post)=\log_2(3/1)\approx1.584
+\]</p>
+<p>\[
+idf(new)=idf(times)=idf(york)=\log_2(3/2)\approx0.584
+\]</p>
+<p>Therefore:</p>
+<p>\[
+v(D_1)=[0,0,0.584,0,0.584,0.584]
+\]</p>
+<p>\[
+v(D_2)=[0,0,0.584,1.584,0,0.584]
+\]</p>
+<p>\[
+v(D_3)=[1.584,1.584,0,0,0.584,0]
+\]</p>
+<p>The corresponding correct L2 lengths from these displayed vectors are approximately:</p>
+<p>\[
+\|D_1\|=\sqrt{3(0.584)^2}\approx1.011
+\]</p>
+<p>\[
+\|D_2\|=\sqrt{2(0.584)^2+(1.584)^2}\approx1.786
+\]</p>
+<p>\[
+\|D_3\|=\sqrt{2(1.584)^2+(0.584)^2}\approx2.316
+\]</p>
+<h3 id="query-and-course-result">Query and course result</h3>
+<p>The transcript names the query <strong>“new times”</strong> but gives a query vector resembling:</p>
+<p>\[
+q=[0,0,0.584,0,0.292,0]
+\]</p>
+<p>and reports lengths/similarities including:</p>
+<ul>
+<li>course-stated \(\cos(D_1,q)=0.776\);</li>
+<li>course-stated \(\cos(D_2,q)=0.292\);</li>
+<li>final ranking \(D_1,D_2,D_3\).</li>
+</ul>
+<p>The intended conclusion is sound: <code>New York Times</code> shares both query terms, <code>New York Post</code> shares only <code>new</code>, and <code>Los Angeles Times</code> shares only <code>times</code>; \(D_1\) ranks first.</p>
+<h3 id="accuracy-caveat-internally-inconsistent-arithmetic">Accuracy/caveat: internally inconsistent arithmetic</h3>
+<p>The transcribed calculation mixes conventions and contains conflicting numbers:</p>
+<ul>
+<li>a two-token query <code>new times</code> normally has normalized TF \(1/2\) for <strong>both</strong> terms, giving weights \(0.292,0.292\), not \(0.584,0.292\);</li>
+<li>if raw TF is used, both weights are \(0.584\);</li>
+<li>the query norm stated as 1.011 does not match either of those query vectors;</li>
+<li>one denominator reference gives \(D_1\)&rsquo;s length as 0.652 even though the earlier correct value is 1.011;</li>
+<li>the stated 0.776 and 0.292 do not consistently follow one displayed vector convention.</li>
+</ul>
+<p>For an exam, follow the formula/convention explicitly specified in the question and recompute rather than memorizing these inconsistent intermediate values. Under a consistent normalized-query convention \(q=[0,0,0.292,0,0.292,0]\):</p>
+<p>\[
+\cos(D_1,q)=\frac{0.584(0.292)+0.584(0.292)}{1.011\sqrt{2(0.292)^2}}\approx0.816
+\]</p>
+<p>\[
+\cos(D_2,q)\approx0.231,qquad
+\cos(D_3,q)\approx0.178
+\]</p>
+<p>The ranking remains:</p>
+<p>\[
+D_1>D_2>D_3
+\]</p>
+<hr>
+<h2 id="13-edulearn-case-study-preprocessing-student-feedback">13. EduLearn case study: preprocessing student feedback</h2>
+<h3 id="business-problem">Business problem</h3>
+<p>EduLearn receives thousands of open-ended student comments and wants to classify them automatically. Miguel, a data analyst, proposes comparing preprocessing pipelines on a representative subset before committing to one.</p>
+<h3 id="options">Options</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Pipeline</th>
+<th>Strength</th>
+<th>Risk/cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>Tokenization only</td>
+<td>Simplest and fastest preprocessing</td>
+<td>Largest vocabulary, redundant variants, more memory/features</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Tokenization + stemming</td>
+<td>Usually smallest vocabulary, lower memory and computation</td>
+<td>Invalid/ambiguous roots; possible accuracy loss</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Tokenization + lemmatization</td>
+<td>Valid canonical forms and better semantic consistency</td>
+<td>More preprocessing time/resources; vocabulary often larger than stemming</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="miguel-s-experiment">Miguel&rsquo;s experiment</h3>
+<p>Test all pipelines on a small but representative subset and compare:</p>
+<ul>
+<li>classification accuracy (and suitable precision, recall, F1 where classes are imbalanced);</li>
+<li>vocabulary size/vector dimensionality;</li>
+<li>sparsity and memory use;</li>
+<li>preprocessing and model-training time;</li>
+<li>inference latency;</li>
+<li>interpretability and error patterns.</li>
+</ul>
+<p>Do not select a pipeline from theory alone. A small accuracy decrease—illustratively 2%—may be acceptable if memory/computation improves substantially and overall performance remains comparable, depending on business priorities. Conversely, a high-stakes classification task may justify lemmatization&rsquo;s added cost.</p>
+<h3 id="core-strategic-lesson">Core strategic lesson</h3>
+<p>The stemming-versus-lemmatization debate improves morphological consolidation, memory, and feature quality; it does <strong>not</strong> repair BoW&rsquo;s deeper lack of order/context/semantics. Evaluate the complete downstream task.</p>
+<hr>
+<h2 id="14-live-case-plagiarism-detection-turnitin-illustration">14. Live case: plagiarism detection / Turnitin illustration</h2>
+<p>The live session used Turnitin as a conceptual large-scale document-similarity case:</p>
+<ol>
+<li>tokenize and clean a submitted document;</li>
+<li>convert it and source documents to TF–IDF vectors;</li>
+<li>compute cosine similarity against many source vectors;</li>
+<li>identify/flag highly similar passages/sources;</li>
+<li>generate a report containing similarity information for an instructor/checker.</li>
+</ol>
+<p>The class scenario used cosine similarity \(\ge0.7\) as an illustrative flag threshold and contrasted cosine&rsquo;s angle-based comparison with raw Euclidean distance. It also discussed reports for plagiarism and AI-generated content.</p>
+<h3 id="important-caveats">Important caveats</h3>
+<ul>
+<li>The exact proprietary Turnitin production architecture, training corpus, thresholds, and AI-detection methods were <strong>not established from a primary technical source in the transcript</strong>. Treat TF–IDF + cosine and the 0.7 threshold as the instructor&rsquo;s explanatory model/case, not a guaranteed description of every product component.</li>
+<li>A high text similarity is evidence for review, not automatic proof of plagiarism. Quotations, references, standard phrasing, templates, and legitimate overlap require human interpretation.</li>
+<li>AI-authorship detection is a different problem from source matching; cosine overlap alone cannot reliably prove that text was generated by an LLM.</li>
+<li>At scale, systems commonly operate at passage/segment level and use indexing to avoid comparing every document pair naively.</li>
+</ul>
+<p>Practical use case: a university can use similarity scores to prioritize submissions for manual review while providing matched sources and highlighted passages, preserving a human decision stage.</p>
+<hr>
+<h2 id="15-formula-sheet">15. Formula sheet</h2>
+<h3 id="bag-of-words-count">Bag-of-Words count</h3>
+<p>\[
+d_i=c(t_i,d)
+\]</p>
+<h3 id="normalized-term-frequency">Normalized term frequency</h3>
+<p>\[
+TF(t,d)=\frac{c(t,d)}{\sum_w c(w,d)}
+\]</p>
+<h3 id="log-tf">Log TF</h3>
+<p>\[
+TF_{log}(t,d)=
+\begin{cases}1+\log c(t,d),&c(t,d)>0\\0,&c(t,d)=0\end{cases}
+\]</p>
+<h3 id="document-frequency-and-idf">Document frequency and IDF</h3>
+<p>\[
+df(t)=|\{d:t\in d\}|,qquad
+IDF(t)=\log\left(\frac N{df(t)}\right)
+\]</p>
+<h3 id="tf-idf">TF–IDF</h3>
+<p>\[
+w_{t,d}=TF(t,d)\times IDF(t)
+\]</p>
+<h3 id="l2-norm-and-normalization">L2 norm and normalization</h3>
+<p>\[
+\|x\|_2=\sqrt{\sum_i x_i^2},qquad
+\hat x=\frac{x}{\|x\|_2}
+\]</p>
+<h3 id="cosine-similarity-2">Cosine similarity</h3>
+<p>\[
+\cos(q,d)=\frac{\sum_iq_i d_i}
+{\sqrt{\sum_iq_i^2}\sqrt{\sum_i d_i^2}}
+=\hat q\cdot\hat d
+\]</p>
+<h3 id="euclidean-cosine-relationship-for-unit-vectors">Euclidean–cosine relationship for unit vectors</h3>
+<p>\[
+\|\hat a-\hat b\|_2^2=2-2\cos(a,b)
+\]</p>
+<hr>
+<h2 id="16-exam-focused-traps-and-recall">16. Exam-focused traps and recall</h2>
+<h3 id="common-traps">Common traps</h3>
+<ul>
+<li>TF counts occurrences <strong>within one document</strong>; DF counts <strong>documents</strong> containing the term.</li>
+<li>IDF is \(\log(N/df)\), not \(\log(df/N)\).</li>
+<li>A term occurring in all documents has standard unsmoothed IDF 0.</li>
+<li>BoW ignores order; TF–IDF changes weights but still ignores order/context.</li>
+<li>Sparse does not mean “small vocabulary”; it means most coordinates in each vector are zero.</li>
+<li>Stemming is not always better or more accurate than lemmatization; it is usually faster/more aggressive.</li>
+<li>Lemmatization does not always shrink vocabulary more than stemming.</li>
+<li>Query IDF comes from the corpus, not the query itself.</li>
+<li>Query and documents must share vocabulary coordinates and preprocessing.</li>
+<li>Normalize both vectors before interpreting their dot product as cosine.</li>
+<li>Rank retrieval results by <strong>descending</strong> cosine.</li>
+<li>Raw Euclidean distance is sensitive to document length; after L2 normalization it is closely related to cosine.</li>
+<li>Similarity does not itself prove plagiarism or causality/authorship.</li>
+</ul>
+<h3 id="short-answer-prompts">Short-answer prompts</h3>
+<ol>
+<li><strong>Why must NLP vectorize text?</strong> ML algorithms require numerical, structured inputs.</li>
+<li><strong>Why is BoW called a bag?</strong> It retains terms/counts but discards order, grammar, and context.</li>
+<li><strong>Why are BoW vectors sparse?</strong> Each document uses only a small subset of the corpus vocabulary.</li>
+<li><strong>What does TF measure?</strong> Local prominence of a term in one document.</li>
+<li><strong>What does IDF measure?</strong> Corpus rarity/discriminative power.</li>
+<li><strong>Why combine TF and IDF?</strong> Reward terms frequent locally but uncommon globally.</li>
+<li><strong>Why use a logarithm?</strong> Compress very large counts/ratios and model diminishing returns.</li>
+<li><strong>Why treat a query as a document?</strong> It allows the same vocabulary, weighting, and vector comparison.</li>
+<li><strong>Why use cosine for text?</strong> It compares direction/content proportions with less sensitivity to length.</li>
+<li><strong>What remains unsolved after stemming/lemmatization?</strong> Word order and contextual/semantic relations.</li>
+<li><strong>Why does Miguel test several pipelines?</strong> The best accuracy–memory–compute trade-off is data/task dependent.</li>
+<li><strong>What is the correct conclusion of the New York example?</strong> <code>New York Times</code> ranks first for <code>new times</code>, followed by <code>New York Post</code>, then <code>Los Angeles Times</code> under the course setup.</li>
+</ol>
+<h3 id="final-one-minute-revision">Final one-minute revision</h3>
+<ul>
+<li>NLP bridges unstructured human language and numerical ML features.</li>
+<li>Clean → tokenize → optionally remove stop words → stem/lemmatize → build vocabulary → vectorize.</li>
+<li>BoW is simple/interpretable but sparse, order-insensitive, and semantically weak.</li>
+<li>\(TF=c/|d|\); \(IDF=\log(N/df)\); TF–IDF is their product.</li>
+<li>Vocabulary terms are vector-space axes; documents and queries are vectors in the same space.</li>
+<li>L2-normalize and use cosine; highest cosine ranks first.</li>
+<li>The “cat” example gives TF 0.03, base-10 IDF 4, TF–IDF 0.12.</li>
+<li>Shakespeare and literary examples show count vectors and feature-dependent similarity.</li>
+<li>New York retrieval: intended order is D1, D2, D3, but recompute rather than memorize inconsistent transcript decimals.</li>
+<li>EduLearn: tokenization is cheapest, stemming is compact but risky, lemmatization is cleaner but costlier; choose through validation.</li>
+<li>The live plagiarism case illustrates TF–IDF/cosine screening, but high similarity still requires contextual human review.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-8.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 8: Dimensionality Reduction, PCA,…</span>
+      </a>
+      <a href="week-10.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 10: Web Advertising, Online Matching, AdWords,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>
