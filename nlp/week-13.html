@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>NLP · Week 13 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">NLP</span>
+      <span class="brand-title">Week 13</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html" selected>NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Foundations of Natural Language Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        spaCy Conventions, Text Preprocessing, and Tokenization
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Dependency Parsing, Named Entity Recognition, and Token Operations
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Token-Based Matching, Word Vectors, and Semantic Similarity
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Named Entities, Dependency-Based Intent Recognition, Semantic…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Annotation, Training spaCy NER Models, and an Airline-Review Case Study
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Text Classification and Sentiment Analysis
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Text Classification, TF–IDF, SVM, Doc2Vec and Twitter Sentiment Analysis
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Topic Modelling
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        BERT and Modern Pre-trained Language Models
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Fine-Tuning Language Models, Efficient Transformers, Sentence…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Cross-Lingual NLP, Multilingual Models, Transformer Serving, and…
+      </a>
+      <a class="is-active" href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Transformers, Attention, Evaluation, Hugging Face, TensorBoard, and…
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Hugging Face, Fine-Tuning, Deployment, and Applied Case Studies
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Vision Transformers, DETR, Self-Supervised Vision, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">NLP · Week 13</p>
+        <h1 class="page-title">Transformers, Attention, Evaluation, Hugging Face, TensorBoard, and Case Studies</h1>
+        <p class="page-meta">Week 13 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-week-overview">1. Week overview</a></li>
+      <li><a href="#2-why-transformers-matter">2. Why Transformers matter</a></li>
+      <li><a href="#3-the-intuition-behind-attention">3. The intuition behind attention</a></li>
+      <li><a href="#4-how-a-single-attention-head-works">4. How a single attention head works</a></li>
+      <li><a href="#5-multi-head-attention">5. Multi-head attention</a></li>
+      <li><a href="#6-multi-head-attention-in-practical-tasks">6. Multi-head attention in practical tasks</a></li>
+      <li><a href="#7-how-attention-heads-learn-to-specialize">7. How attention heads learn to specialize</a></li>
+      <li><a href="#8-evaluation-metrics-classification">8. Evaluation metrics: classification</a></li>
+      <li><a href="#9-metrics-beyond-classification">9. Metrics beyond classification</a></li>
+      <li><a href="#10-tensorboard-visualization-and-experiment-tracking">10. TensorBoard: visualization and experiment tracking</a></li>
+      <li><a href="#11-hugging-face-transformers">11. Hugging Face Transformers</a></li>
+      <li><a href="#12-hugging-face-tokenizer-pipeline">12. Hugging Face tokenizer pipeline</a></li>
+      <li><a href="#13-case-study-1-hate-speech-detection">13. Case study 1 — Hate-speech detection</a></li>
+      <li><a href="#14-review-case-socialguard-multimodal-meme-moderation">14. Review case — SocialGuard multimodal meme moderation</a></li>
+      <li><a href="#15-case-study-2-e-commerce-customer-support">15. Case study 2 — E-commerce customer support</a></li>
+      <li><a href="#16-common-misconceptions-and-corrections">16. Common misconceptions and corrections</a></li>
+      <li><a href="#17-exam-focused-rapid-revision">17. Exam-focused rapid revision</a></li>
+      <li><a href="#references-named-by-the-lecturer">References named by the lecturer</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-week-overview">1. Week overview</h2>
+<p>Week 13 connects five themes:</p>
+<ol>
+<li>Why Transformer architecture matters in modern NLP.</li>
+<li>How single-head and multi-head attention work and how heads specialize.</li>
+<li>How to select evaluation metrics for classification, retrieval, regression, translation, summarization, and language modeling.</li>
+<li>How Hugging Face tokenizers and pretrained Transformers support practical NLP development.</li>
+<li>How to build, diagnose, and deploy Transformer solutions through hate-speech and customer-support case studies.</li>
+</ol>
+<p>The lecturer’s recurring message was that a model cannot be trained, interpreted, or improved responsibly without choosing suitable metrics and inspecting what the system is actually learning. Transformer components should not be treated as a black box.</p>
+<hr>
+<h2 id="2-why-transformers-matter">2. Why Transformers matter</h2>
+<p>Transformers have become one of the most influential modern AI architectures and have repeatedly outperformed earlier approaches, especially in NLP. Large-parameter Transformer models can generate long, coherent, convincing text such as essays and dialogue, including text containing mixed languages and emojis. This capability has opened new AI application areas.</p>
+<p>Important Transformer applications mentioned in the lectures include:</p>
+<ul>
+<li>machine translation;</li>
+<li>text summarization;</li>
+<li>question answering;</li>
+<li>sentiment analysis;</li>
+<li>dialogue and general text generation.</li>
+</ul>
+<p>The key architectural component behind this success is <strong>multi-head attention</strong>. Attention lets the model dynamically identify the input elements that matter for the output it is generating, instead of assigning equal importance to every word.</p>
+<h3 id="week-12-recap-included-in-the-live-session">Week 12 recap included in the live session</h3>
+<p>The instructor briefly connected Week 13 to cross-lingual and multilingual language processing and the evolution of machine translation:</p>
+<ul>
+<li><strong>Rule-based machine translation:</strong> translation according to explicitly designed linguistic rules.</li>
+<li><strong>Statistical machine translation:</strong> probabilistic translation learned from bilingual corpora.</li>
+<li><strong>Neural machine translation:</strong> deep neural networks learn the input-to-output mapping; this is the dominant modern approach.</li>
+</ul>
+<hr>
+<h2 id="3-the-intuition-behind-attention">3. The intuition behind attention</h2>
+<p>Suppose a French sentence must be translated into English. Processing the entire source sentence as an undifferentiated unit is inefficient because different source words matter at different target-generation steps. When producing each English word, attention lets the model “zero in” on the most relevant parts of the French sentence.</p>
+<p>Language contains:</p>
+<ul>
+<li><strong>local dependencies</strong>, between nearby tokens; and</li>
+<li><strong>long-range dependencies</strong>, between tokens separated by several intervening tokens.</li>
+</ul>
+<p>Example: in “The book that the students borrowed from the library was damaged,” the model must connect <strong>book</strong> with <strong>was</strong>, despite the intervening phrase. Attention provides direct access to such relationships.</p>
+<p>Attention therefore computes a focused, contextual representation rather than treating every word as equally important.</p>
+<hr>
+<h2 id="4-how-a-single-attention-head-works">4. How a single attention head works</h2>
+<p>The lecture described three stages.</p>
+<h3 id="4-1-split-information-into-query-key-and-value">4.1 Split information into Query, Key, and Value</h3>
+<p>Every input representation is transformed into three learned representations:</p>
+<ul>
+<li><strong>Query (Q):</strong> what the current token is looking for.</li>
+<li><strong>Key (K):</strong> what information a token can be matched on; what a position might contain.</li>
+<li><strong>Value (V):</strong> the content/information available at that position.</li>
+</ul>
+<p>For input matrix \(X\):</p>
+<p>\[
+Q=XW_Q,\qquad K=XW_K,\qquad V=XW_V
+\]</p>
+<p>Here, \(W_Q\), \(W_K\), and \(W_V\) are learned projection matrices. These are matrices—not “metrics”—and they control how a head transforms the input into representations used to determine focus.</p>
+<h3 id="4-2-calculate-relevance">4.2 Calculate relevance</h3>
+<p>Each query is compared with keys to produce attention scores. A high score means the corresponding input position is more relevant to the current query.</p>
+<p>Scaled dot-product attention is:</p>
+<p>\[
+\operatorname{Attention}(Q,K,V)=
+\operatorname{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+\]</p>
+<p>The division by \(\sqrt{d_k}\) keeps large dot products from making softmax excessively sharp as the key dimension grows.</p>
+<h3 id="4-3-form-a-weighted-combination">4.3 Form a weighted combination</h3>
+<p>Softmax turns relevance scores into weights. Values are combined in proportion to those weights, producing a focused representation for the current token/query.</p>
+<p>In short:</p>
+<ol>
+<li>construct Q, K, and V;</li>
+<li>compare Q with K;</li>
+<li>normalize the scores;</li>
+<li>use them to weight V.</li>
+</ol>
+<hr>
+<h2 id="5-multi-head-attention">5. Multi-head attention</h2>
+<p>A single head provides only one attention pattern. Natural language simultaneously contains grammatical, semantic, positional, contextual, and long-distance relationships. <strong>Multi-head attention</strong> runs several attention heads in parallel so that the model can inspect the same input from several learned representation subspaces.</p>
+<p>For head \(i\):</p>
+<p>\[
+\text{head}_i=\operatorname{Attention}(Q_i,K_i,V_i)
+\]</p>
+<p>The outputs are concatenated and projected:</p>
+<p>\[
+\operatorname{MultiHead}(Q,K,V)=
+\operatorname{Concat}(\text{head}_1,\ldots,\text{head}_h)W_O
+\]</p>
+<p>This resembles a team of specialists:</p>
+<ul>
+<li>one expert may emphasize grammar;</li>
+<li>another may identify overall meaning;</li>
+<li>another may connect concepts;</li>
+<li>another may capture long-range dependencies or subtle contextual meaning.</li>
+</ul>
+<p>Combining these perspectives produces a richer, multidimensional representation than any single head could provide.</p>
+<h3 id="critical-caveat-roles-are-not-predefined">Critical caveat: roles are not predefined</h3>
+<p>The “Head 1/2/3” examples below are conceptual illustrations, not fixed assignments. Developers do not normally program Head 1 to learn syntax and Head 2 to learn negation. Head index is merely a label:</p>
+<p>\[
+\text{head index}\ne\text{fixed semantic role}
+\]</p>
+<p>Redundancy is also possible; heads are enabled to learn complementary patterns but are not guaranteed to be completely different.</p>
+<hr>
+<h2 id="6-multi-head-attention-in-practical-tasks">6. Multi-head attention in practical tasks</h2>
+<h3 id="6-1-english-to-german-translation">6.1 English-to-German translation</h3>
+<p>A conceptual division of labor is:</p>
+<ul>
+<li>one head captures long-range subject–verb relationships in English;</li>
+<li>one head learns word order and grammatical structures needed for correct German order;</li>
+<li>one head captures contextual nuance so word choices are accurate and expressive.</li>
+</ul>
+<p>This illustrates why translation is not simple word replacement: target grammar, distant dependencies, and contextual meaning must all be considered.</p>
+<h3 id="6-2-sentiment-analysis">6.2 Sentiment analysis</h3>
+<p>For a movie review:</p>
+<ul>
+<li>one head may focus on strong polarity terms such as <em>amazing</em> or <em>terrible</em>;</li>
+<li>one may recognize modifier patterns such as <em>not bad</em> versus <em>really bad</em>;</li>
+<li>one may infer overall context, including negation and sarcasm.</li>
+</ul>
+<p>Practical examples:</p>
+<ul>
+<li>“The movie was <strong>not bad</strong>” cannot be classified from <em>bad</em> alone.</li>
+<li>“Wonderful—another two hours I will never get back” requires context to detect sarcasm.</li>
+</ul>
+<p>Sarcasm is especially difficult because its reversal of literal sentiment may not be marked by one explicit token such as <em>not</em>.</p>
+<h3 id="6-3-question-answering">6.3 Question answering</h3>
+<p>Given a question and a passage, the model must locate an answer span. Conceptually:</p>
+<ul>
+<li>one head matches exact or semantically similar question/passage words;</li>
+<li>one relates question intent to sentences and passage structure;</li>
+<li>one combines evidence and identifies the start and end of the answer span.</li>
+</ul>
+<h3 id="6-4-other-useful-relationships">6.4 Other useful relationships</h3>
+<p>Heads can capture local phrase structure, syntactic agreement, semantic association, entity relationships, coreference, long-range qualification, and contextual disambiguation.</p>
+<hr>
+<h2 id="7-how-attention-heads-learn-to-specialize">7. How attention heads learn to specialize</h2>
+<p>Specialization is an <strong>emergent training outcome</strong>, not a deterministic design rule.</p>
+<ol>
+<li><strong>Random initialization:</strong> each head’s Q/K/V projection weights begin with different random values.</li>
+<li><strong>Diverse starting perspectives:</strong> because the weights differ, heads initially view the same sequence through slightly different learned “lenses.”</li>
+<li><strong>Loss computation:</strong> the entire Transformer is trained to minimize an overall task loss.</li>
+<li><strong>Backpropagation:</strong> errors are traced backward through the model.</li>
+<li><strong>Gradient updates:</strong> Q/K/V and other weights are adjusted to improve the model’s output.</li>
+<li><strong>Emergent specialization:</strong> repeated updates can make heads useful for different relationships.</li>
+</ol>
+<p>Specialization depends on:</p>
+<ul>
+<li>the task;</li>
+<li>the dataset;</li>
+<li>random initialization and training randomness;</li>
+<li>the broader learned parameter configuration.</li>
+</ul>
+<p>Consequently, Head 1 can learn one pattern in run A and another in run B while both models remain correct. Neural optimization admits many valid parameter solutions. Researchers visualize or probe attention patterns to understand what heads have learned, but attention visualizations should be interpreted carefully; they are evidence about focus patterns, not a guarantee of causal explanation.</p>
+<hr>
+<h2 id="8-evaluation-metrics-classification">8. Evaluation metrics: classification</h2>
+<p>Let:</p>
+<ul>
+<li>\(TP\): actual positive predicted positive;</li>
+<li>\(TN\): actual negative predicted negative;</li>
+<li>\(FP\): actual negative predicted positive;</li>
+<li>\(FN\): actual positive predicted negative.</li>
+</ul>
+<p>The confusion matrix supplies the counts used for accuracy, precision, recall, and F1.</p>
+<h3 id="8-1-accuracy">8.1 Accuracy</h3>
+<p>\[
+\text{Accuracy}=\frac{TP+TN}{TP+TN+FP+FN}
+\]</p>
+<p>Accuracy is the fraction of all predictions that are correct. It is useful for categorical/discrete outputs when classes and error costs are reasonably balanced, such as ordinary sentiment classification.</p>
+<p><strong>Caveat:</strong> it can be misleading with class imbalance. If a disease occurs in only 1% of patients, an “always negative” model is 99% accurate while detecting no positive cases.</p>
+<h3 id="8-2-precision">8.2 Precision</h3>
+<p>\[
+\text{Precision}=\frac{TP}{TP+FP}
+\]</p>
+<p>Precision asks: <strong>Of everything predicted positive, what fraction is truly positive?</strong> It matters when false positives are costly.</p>
+<p>Use cases:</p>
+<ul>
+<li>moderation: avoid incorrectly blocking legitimate posts;</li>
+<li>spam detection: avoid sending genuine messages to spam;</li>
+<li>automated enforcement: avoid penalizing innocent users.</li>
+</ul>
+<p>The recorded lecture verbally described precision imprecisely at one point; the denominator is predicted positives, \(TP+FP\), not all actual positives.</p>
+<h3 id="8-3-recall-sensitivity">8.3 Recall / sensitivity</h3>
+<p>\[
+\text{Recall}=\text{Sensitivity}=\frac{TP}{TP+FN}
+\]</p>
+<p>Recall asks: <strong>Of all actual positives, what fraction did the model find?</strong> It matters when missing a positive is costly.</p>
+<p>Use cases:</p>
+<ul>
+<li>rare-disease screening;</li>
+<li>hate-speech detection where harmful content must not escape;</li>
+<li>fraud or threat detection.</li>
+</ul>
+<p>High recall means relatively few genuine positives are missed. However, a classifier can increase recall by predicting positive very frequently, creating many false positives; recall must therefore be read with precision.</p>
+<h3 id="8-4-precision-versus-recall">8.4 Precision versus recall</h3>
+<ul>
+<li>Precision focuses on <strong>predicted positives</strong>.</li>
+<li>Recall focuses on <strong>actual positives</strong>.</li>
+<li>Raising the decision threshold often raises precision but lowers recall.</li>
+<li>Lowering it often raises recall but lowers precision.</li>
+</ul>
+<p>In medical screening, a sensitive first-stage test may prioritize recall, followed by a more precise confirmatory test.</p>
+<h3 id="8-5-f1-score">8.5 F1 score</h3>
+<p>\[
+F_1=2\frac{\text{Precision}\times\text{Recall}}
+{\text{Precision}+\text{Recall}}
+\]</p>
+<p>F1 is the harmonic mean of precision and recall. It provides one balance-oriented measure of exactness and completeness and is useful when both false positives and false negatives matter.</p>
+<h3 id="8-6-roc-curve-and-auc">8.6 ROC curve and AUC</h3>
+<p>The ROC curve plots <strong>true-positive rate</strong> against <strong>false-positive rate</strong> as the classification threshold changes. <strong>Area Under the ROC Curve (AUC/ROC-AUC)</strong> measures ranking/discrimination across thresholds rather than performance at only one selected threshold.</p>
+<p>Uses:</p>
+<ul>
+<li>compare classifiers independently of a single operating threshold;</li>
+<li>help choose a suitable threshold for deployment.</li>
+</ul>
+<p>Recall at one threshold and ROC-AUC across thresholds are related but not interchangeable.</p>
+<hr>
+<h2 id="9-metrics-beyond-classification">9. Metrics beyond classification</h2>
+<h3 id="9-1-mean-reciprocal-rank-mrr">9.1 Mean Reciprocal Rank (MRR)</h3>
+<p>For each query, take the reciprocal of the rank of the first relevant result and average across queries:</p>
+<p>\[
+MRR=\frac{1}{N}\sum_{i=1}^{N}\frac{1}{\operatorname{rank}_i}
+\]</p>
+<p>MRR strongly rewards placing the first correct result near the top. It is used in article search, question answering, and e-commerce search.</p>
+<h3 id="9-2-mean-average-precision-map">9.2 Mean Average Precision (MAP)</h3>
+<p>Average Precision aggregates precision at ranks where relevant results occur; MAP averages AP across queries. Unlike MRR, it can reflect multiple relevant results per query. It is widely used in information retrieval and ranking.</p>
+<h3 id="9-3-root-mean-squared-error-rmse">9.3 Root Mean Squared Error (RMSE)</h3>
+<p>\[
+RMSE=\sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat y_i)^2}
+\]</p>
+<p>RMSE answers “How far, in outcome units, are predictions from the answers?” Squaring makes large errors particularly influential. It is used for continuous predictions such as temperature, price/stock-related forecasts, and positions in Euclidean space.</p>
+<h3 id="9-4-mean-absolute-percentage-error-mape">9.4 Mean Absolute Percentage Error (MAPE)</h3>
+<p>\[
+MAPE=\frac{100}{n}\sum_{i=1}^{n}\left|\frac{y_i-\hat y_i}{y_i}\right|
+\]</p>
+<p>MAPE reports the average absolute percentage error for a continuous output. Caveat: it is undefined or unstable when actual values are zero or near zero.</p>
+<h3 id="9-5-bleu">9.5 BLEU</h3>
+<p><strong>Bilingual Evaluation Understudy (BLEU)</strong> measures n-gram overlap between a generated sentence and one or more reference translations, with a brevity penalty in the standard formulation. It is widely associated with machine translation.</p>
+<p>Caveat: a valid paraphrase can receive a low overlap score; BLEU does not directly establish factuality or human-perceived quality.</p>
+<h3 id="9-6-meteor">9.6 METEOR</h3>
+<p>METEOR evaluates generated text against references using word matching and a precision/recall-oriented formulation, commonly allowing richer matching than exact n-grams. The lecture characterized it as a precision-based generated-text quality measure. It is used for translation and generation evaluation.</p>
+<h3 id="9-7-rouge">9.7 ROUGE</h3>
+<p>ROUGE is a recall-oriented family of overlap measures comparing generated text with reference text. It is especially common in summarization, where retaining important reference content is central.</p>
+<h3 id="9-8-perplexity">9.8 Perplexity</h3>
+<p>Perplexity indicates how “surprised” or uncertain a language model is on a token sequence and is derived from cross-entropy in next-token prediction:</p>
+<p>\[
+\text{Perplexity}=e^{\text{cross-entropy}}
+\]</p>
+<p>Lower perplexity means the model assigns higher probability to the observed sequence. It is used for language-model and dialogue-generation evaluation, but it does not alone guarantee factual, safe, or useful text.</p>
+<hr>
+<h2 id="10-tensorboard-visualization-and-experiment-tracking">10. TensorBoard: visualization and experiment tracking</h2>
+<p>TensorBoard is a visualization and monitoring tool, especially associated with TensorFlow deep-learning workflows. It reads summary/event files written during program execution.</p>
+<p>Capabilities mentioned:</p>
+<ul>
+<li>plot scalar metrics such as training/validation loss and accuracy;</li>
+<li>show histograms of weights and biases;</li>
+<li>visualize the computational/model graph;</li>
+<li>display training data and logged images;</li>
+<li>project high-dimensional embeddings into a lower-dimensional space;</li>
+<li>compare experiments/runs.</li>
+</ul>
+<p>The practical principle is simple: to improve a system, first measure and observe it.</p>
+<h3 id="10-1-demonstrated-cifar-10-image-logging-workflow">10.1 Demonstrated CIFAR-10 image-logging workflow</h3>
+<p>The lecture attempted this notebook sequence (some commands failed because of package/version or Colab environment issues):</p>
+<pre><code class="language-python">import os
+import datetime
+import numpy as np
+import tensorflow as tf
+import matplotlib.pyplot as plt
+import io
+
+logs_base_dir = &quot;./logs&quot;
+os.makedirs(logs_base_dir, exist_ok=True)
+</code></pre>
+<p>In Jupyter/Colab, TensorBoard is normally loaded/launched with notebook magic:</p>
+<pre><code class="language-python">%load_ext tensorboard
+%tensorboard --logdir ./logs
+</code></pre>
+<p>The lecture tried installing an old/nightly preview package name and encountered “no matching distribution found.” The durable lesson is to use a TensorFlow/TensorBoard version compatible with the current environment rather than memorizing the obsolete package command.</p>
+<p>Load and prepare CIFAR-10:</p>
+<pre><code class="language-python">(x_train, y_train), (x_test, y_test) = tf.keras.datasets.cifar10.load_data()
+
+x_train = x_train / 255.0
+x_test = x_test / 255.0
+
+y_train = tf.keras.utils.to_categorical(y_train)
+y_test = tf.keras.utils.to_categorical(y_test)
+</code></pre>
+<p>The division by 255 scales 8-bit pixel values to approximately \([0,1]\); <code>to_categorical</code> one-hot encodes labels.</p>
+<p>Create a timestamped log directory and writer:</p>
+<pre><code class="language-python">log_dir = &quot;logs/train_data/&quot; + datetime.datetime.now().strftime(&quot;%Y%m%d-%H%M%S&quot;)
+file_writer = tf.summary.create_file_writer(log_dir)
+</code></pre>
+<p>The live correction matters: if <code>import datetime</code> is used, call <code>datetime.datetime.now()</code>, not <code>datetime.now()</code>.</p>
+<p>Log the first 25 images:</p>
+<pre><code class="language-python">with file_writer.as_default():
+    images = np.reshape(x_train[:25], (-1, 32, 32, 3))
+    tf.summary.image(&quot;Training data&quot;, images, max_outputs=25, step=0)
+</code></pre>
+<p><code>tf.summary.image</code> expects a four-dimensional tensor:</p>
+<p>\[
+[\text{batch},\text{height},\text{width},\text{channels}]
+\]</p>
+<p>For CIFAR-10, each image is \(32\times32\times3\). Launch TensorBoard against the parent log directory and inspect the <strong>Images</strong> tab.</p>
+<h3 id="10-2-what-image-logging-proves-and-what-it-does-not">10.2 What image logging proves—and what it does not</h3>
+<p>It can verify:</p>
+<ul>
+<li>samples are readable and have the expected orientation/color/channel layout;</li>
+<li>images correspond to intended labels/text/token-alignment maps;</li>
+<li>data reaches the expected log directory;</li>
+<li>gross preprocessing or alignment errors are absent.</li>
+</ul>
+<p>It does <strong>not</strong> prove:</p>
+<ul>
+<li>that a classifier is accurate;</li>
+<li>that model predictions are correct;</li>
+<li>that precision/recall are sufficient;</li>
+<li>that numeric normalization is correct across the dataset;</li>
+<li>that the learning rate is optimal.</li>
+</ul>
+<p>For numeric validation, inspect min/max, mean, standard deviation, distributions, and anomalous values. For model quality, evaluate on held-out data.</p>
+<h3 id="10-3-runs-and-log-directories">10.3 Runs and log directories</h3>
+<p>Separate timestamped child directories usually appear as separate TensorBoard runs even if they contain the same metric tags:</p>
+<pre><code class="language-text">logs/
+  run_A/events...
+  run_B/events...
+</code></pre>
+<p>\[
+\text{same metric tags}\ne\text{same TensorBoard run}
+\]</p>
+<p>This is useful for comparing experiments such as learning rate 0.001 versus 0.0001. Run identity comes from event-file/log organization, not merely tag names.</p>
+<h3 id="10-4-practical-caution">10.4 Practical caution</h3>
+<p>The lecture used a command resembling <code>rm -rf /logs/...</code> while discussing old logs and mistakenly described it as copying logs. It actually deletes them. Clear logs only when their loss is intentional, and prefer an explicit project-local path.</p>
+<hr>
+<h2 id="11-hugging-face-transformers">11. Hugging Face Transformers</h2>
+<h3 id="11-1-origin-and-evolution">11.1 Origin and evolution</h3>
+<p>Hugging Face began in 2016 around an AI chatbot aimed at teenage emotional support and entertainment. It evolved into a collaborative open-source machine-learning ecosystem. Although initially NLP-centered, it now supports computer vision, speech/audio, reinforcement learning, generative AI, and multimodal work. The recorded lecture quoted a valuation of roughly USD 4.5 billion; treat that as lecture context rather than a timeless technical fact.</p>
+<p>Why it matters to practitioners:</p>
+<ul>
+<li>pretrained checkpoints reduce the need to train from scratch;</li>
+<li>reusable tokenizers, models, datasets, and tooling speed development;</li>
+<li>practitioners can share and exchange work;</li>
+<li>the ecosystem makes advanced ML more accessible and supports team collaboration.</li>
+</ul>
+<h3 id="11-2-pretrained-model-and-fine-tuning-concept">11.2 Pretrained model and fine-tuning concept</h3>
+<p>A pretrained model first learns broad linguistic patterns from large-scale language-modeling data. It can then be <strong>fine-tuned</strong> with task-specific labeled data. This transfer-learning strategy usually needs less task data and compute than training a full Transformer from scratch.</p>
+<p>Common model choices mentioned:</p>
+<ul>
+<li><strong>BERT</strong>;</li>
+<li><strong>RoBERTa</strong>;</li>
+<li><strong>ALBERT</strong>;</li>
+<li><strong>GPT-2</strong>;</li>
+<li><strong>DistilBERT</strong>, a compressed/distilled, smaller and faster BERT-derived model.</li>
+</ul>
+<p>Model choice must account for task, dataset size, modality, latency, memory, and compute resources.</p>
+<hr>
+<h2 id="12-hugging-face-tokenizer-pipeline">12. Hugging Face tokenizer pipeline</h2>
+<p>Tokenization is a pipeline, not necessarily one indivisible operation:</p>
+<pre><code class="language-text">Raw text
+  → normalization
+  → pre-tokenization
+  → tokenizer model / vocabulary rules
+  → token IDs
+  → optional post-processing / padding / truncation
+</code></pre>
+<h3 id="12-1-normalizer-optional">12.1 Normalizer (optional)</h3>
+<p>The normalizer preprocesses and standardizes the input string for a use case. Examples include:</p>
+<ul>
+<li>lowercasing;</li>
+<li>Unicode normalization: NFD, NFC, NFKD, and NFKC.</li>
+</ul>
+<p>The tokenizer tracks alignment while normalizing so generated tokens can be mapped back to the original input text—important for tasks such as named-entity recognition and answer-span extraction.</p>
+<p>Unicode distinctions:</p>
+<ul>
+<li><strong>NFD:</strong> canonical decomposition.</li>
+<li><strong>NFC:</strong> canonical decomposition followed by composition.</li>
+<li><strong>NFKD:</strong> compatibility decomposition.</li>
+<li><strong>NFKC:</strong> compatibility decomposition followed by composition.</li>
+</ul>
+<p>Canonical normalization reconciles alternate Unicode sequences representing essentially the same abstract text. Compatibility normalization can additionally collapse formatting/compatibility distinctions.</p>
+<p><strong>Caveat:</strong> normalization is a design trade-off. Aggressive lowercasing or compatibility normalization can remove distinctions that carry meaning, identity, style, sarcasm, emphasis, or evidence of deliberate obfuscation.</p>
+<h3 id="12-2-pre-tokenizer-optional">12.2 Pre-tokenizer (optional)</h3>
+<p>The pre-tokenizer performs preliminary splitting according to rules and prevents the later model from creating tokens across selected boundaries.</p>
+<p>Example: if spaces must not occur inside a token, split on whitespace first. Multiple pre-tokenizers can be combined in a sequence. A pre-tokenizer may also modify text where an algorithm requires splitting before a later normalization-like step.</p>
+<p>Do not confuse <strong>pre-tokenization</strong> with final subword creation or vocabulary lookup: it establishes preliminary boundaries.</p>
+<h3 id="12-3-tokenizer-model-mandatory-core">12.3 Tokenizer model (mandatory core)</h3>
+<p>The model is the core algorithm that actually applies tokenization/vocabulary rules and is the only mandatory tokenizer component. Examples include:</p>
+<ul>
+<li>Byte-Pair Encoding (BPE);</li>
+<li>WordPiece;</li>
+<li>Unigram;</li>
+<li>byte-level approaches.</li>
+</ul>
+<p>It ultimately associates vocabulary tokens with integer IDs. If text can still be split but no token IDs are produced, the missing/broken stage is the tokenizer model/vocabulary mapping—not necessarily normalization or pre-tokenization.</p>
+<h3 id="12-4-byte-level-pre-tokenization">12.4 Byte-level pre-tokenization</h3>
+<p>Byte-level processing is useful for noisy internet text, unusual symbols, misspellings, emojis, mixed scripts, and character forms not easily handled as conventional words. It reduces out-of-vocabulary difficulties by representing arbitrary text through byte-oriented units.</p>
+<h3 id="12-5-stemming-and-lemmatization">12.5 Stemming and lemmatization</h3>
+<ul>
+<li><strong>Stemming:</strong> heuristically removes affixes to obtain a stem, which may not be a valid word.</li>
+<li><strong>Lemmatization:</strong> converts an inflected form to a dictionary lemma, usually with linguistic knowledge.</li>
+</ul>
+<p>They are not mandatory Hugging Face tokenizer stages. Modern pretrained Transformer tokenizers often handle morphology through subwords, and applying stemming/lemmatization can create a mismatch with the text distribution on which the checkpoint was pretrained.</p>
+<hr>
+<h2 id="13-case-study-1-hate-speech-detection">13. Case study 1 — Hate-speech detection</h2>
+<h3 id="13-1-problem-statement">13.1 Problem statement</h3>
+<p>Identify and mitigate harmful hate speech on online platforms. This is an imbalanced and high-stakes classification problem: false negatives allow harmful content through, while false positives suppress legitimate speech.</p>
+<h3 id="13-2-end-to-end-workflow">13.2 End-to-end workflow</h3>
+<ol>
+<li><strong>Collect a diverse, representative labeled dataset</strong> containing hate-speech and non-hate-speech examples.</li>
+<li><strong>Clean/preprocess</strong> as appropriate: remove noise such as HTML tags and possibly punctuation/stop words; tokenize; optionally stem or lemmatize. Modern pretrained Transformer caveat: do not mechanically remove punctuation/stop words or stem unless validation proves useful, because these may carry context and may conflict with pretrained tokenization.</li>
+<li><strong>Choose an architecture</strong> such as BERT, RoBERTa, or ALBERT based on dataset size and compute.</li>
+<li><strong>Load a pretrained checkpoint</strong> to inherit general linguistic knowledge.</li>
+<li><strong>Fine-tune</strong> it on the labeled hate-speech dataset.</li>
+<li><strong>Tune hyperparameters</strong> such as learning rate, batch size, and number of epochs.</li>
+<li><strong>Evaluate</strong> using accuracy, precision, recall, F1, confusion matrix, and cross-validation to assess generalization.</li>
+<li>Perform subgroup and error analysis before deployment, because aggregate metrics can hide failures on dialects, identities, or subtle forms of hate.</li>
+</ol>
+<hr>
+<h2 id="14-review-case-socialguard-multimodal-meme-moderation">14. Review case — SocialGuard multimodal meme moderation</h2>
+<h3 id="14-1-scenario-and-stakeholders">14.1 Scenario and stakeholders</h3>
+<p>SocialGuard, a nonprofit moderating online content, is building hate-speech detection for social-media memes.</p>
+<ul>
+<li><strong>Alice, data scientist:</strong> defines evaluation criteria, especially precision and recall; prioritizes catching subtle hate speech.</li>
+<li><strong>Miguel, project lead:</strong> manages GPU/compute resources and cost.</li>
+<li><strong>Sara, NLP engineer:</strong> builds the Transformer prototype and tokenizer; prefers manageable preprocessing complexity.</li>
+</ul>
+<p>The team assembles 5,000 labeled memes and starts with a pretrained DistilBERT-based model. The tokenizer includes a normalizer and byte-level pre-tokenizer. Samples and token/image alignment information are logged using <code>tf.summary.image</code> and inspected in TensorBoard before expensive training.</p>
+<h3 id="14-2-fundamental-diagnosis">14.2 Fundamental diagnosis</h3>
+<p>The baseline has strong <strong>text-only</strong> accuracy but fails on <strong>mixed-content memes</strong>, whose meaning comes from interaction between image and text:</p>
+<p>\[
+\text{Meaning}_{meme}\ne \text{Meaning}_{text}+\text{Meaning}_{image}\text{ independently}
+\]</p>
+<p>For example, harmless-looking text may become hateful only when paired with a particular image. DistilBERT is fundamentally text-focused. Therefore, good text-only performance does not imply multimodal understanding.</p>
+<p>Starting with DistilBERT was not pointless: it provides a useful, efficient baseline and shows that the pipeline can learn text signals. Its failure pattern is diagnostic—it isolates the likely missing capability.</p>
+<h3 id="14-3-three-intervention-options">14.3 Three intervention options</h3>
+<h4 id="option-a-add-annotated-multimodal-examples">Option A — add annotated multimodal examples</h4>
+<p>Collect examples that explicitly teach text–image interaction, ideally targeting observed failure categories rather than blindly increasing volume.</p>
+<p>Benefits:</p>
+<ul>
+<li>directly addresses the missing signal;</li>
+<li>likely gives the greatest recall gain on subtle mixed-content hate;</li>
+<li>can support a truly multimodal architecture/fusion mechanism;</li>
+<li>improves representation of real deployment conditions.</li>
+</ul>
+<p>Costs/risks:</p>
+<ul>
+<li>annotation is expensive and slow;</li>
+<li>image-text hate can be context-dependent, creating annotator disagreement;</li>
+<li>new data must be representative and consistently labeled;</li>
+<li>multimodal training raises compute and storage needs.</li>
+</ul>
+<h4 id="option-b-custom-emoji-normalization">Option B — custom emoji normalization</h4>
+<p>Map inconsistent emoji variants or relevant emoji sequences into consistent forms.</p>
+<p>Benefits:</p>
+<ul>
+<li>helpful if error analysis shows emoji inconsistency is a major source of failures;</li>
+<li>relatively targeted and potentially cheaper;</li>
+<li>may simplify noisy text patterns.</li>
+</ul>
+<p>Risks:</p>
+<ul>
+<li>emojis can convey sentiment, identity, sarcasm, or coded hate; collapsing them may destroy meaning;</li>
+<li>it does not supply visual understanding;</li>
+<li>it adds preprocessing complexity and maintenance burden;</li>
+<li>it is unlikely to solve broadly mixed image-text failures.</li>
+</ul>
+<p>Hence, use it only when an emoji-specific error slice demonstrates benefit.</p>
+<h4 id="option-c-hyperparameter-tuning">Option C — hyperparameter tuning</h4>
+<p>Search learning rate, batch size, epochs, regularization, and related training settings.</p>
+<p>Benefits:</p>
+<ul>
+<li>may improve convergence, stability, or generalization;</li>
+<li>appropriate when the representation is adequate but optimization is poor.</li>
+</ul>
+<p>Costs/risks:</p>
+<ul>
+<li>expensive across multiple configurations and random seeds;</li>
+<li>cannot create a missing visual signal;</li>
+<li>may overfit validation data;</li>
+<li>likely treats the symptom rather than the bottleneck here.</li>
+</ul>
+<h3 id="14-4-recommended-decision">14.4 Recommended decision</h3>
+<p><strong>Option A is the best next step</strong>, because the observed error pattern points to a data/representation gap: the model succeeds when text is sufficient and fails when text-image interaction is essential.</p>
+<p>This recommendation should be implemented efficiently:</p>
+<ol>
+<li>slice errors into text-only, image-dominant, mixed text-image, emoji-heavy, sarcasm, coded hate, etc.;</li>
+<li>verify labels and image/token alignment in TensorBoard;</li>
+<li>collect/annotate examples concentrated in the weak slices;</li>
+<li>use a multimodal model or explicit text/image encoders plus fusion;</li>
+<li>keep DistilBERT as a baseline;</li>
+<li>run a small controlled experiment before scaling;</li>
+<li>recalculate precision, recall, F1, confusion matrix, per-slice metrics, and uncertainty intervals;</li>
+<li>only then test emoji normalization or a bounded hyperparameter search if diagnostics justify them.</li>
+</ol>
+<p>This balances Alice’s recall goal with Miguel’s compute constraints. Sara’s desire for simpler preprocessing is also supported: do not add a custom emoji layer without evidence.</p>
+<h3 id="14-5-production-evaluation-extensions">14.5 Production evaluation extensions</h3>
+<p>Precision and recall are excellent starting metrics, but a deployed moderation system may additionally require:</p>
+<ul>
+<li>precision–recall curves and threshold selection;</li>
+<li>per-category and per-subgroup recall;</li>
+<li>calibration;</li>
+<li>latency and throughput;</li>
+<li>human-review load;</li>
+<li>false-positive appeal rates;</li>
+<li>robustness to adversarial obfuscation and distribution shift;</li>
+<li>fairness and policy-consistency audits.</li>
+</ul>
+<p>The central lesson is <strong>diagnosis-driven ML development</strong>: distinguish a data problem, representation problem, preprocessing problem, and optimization problem before spending engineering or compute resources.</p>
+<hr>
+<h2 id="15-case-study-2-e-commerce-customer-support">15. Case study 2 — E-commerce customer support</h2>
+<h3 id="15-1-business-problem">15.1 Business problem</h3>
+<p>A large e-commerce company receives too many customer inquiries, creating long wait times and dissatisfaction. It wants to automate routine support while preserving human handling of complex issues.</p>
+<h3 id="15-2-data-preparation">15.2 Data preparation</h3>
+<p>Collect historical interactions such as:</p>
+<ul>
+<li>emails;</li>
+<li>chat conversations;</li>
+<li>call transcripts;</li>
+<li>social-media messages.</li>
+</ul>
+<p>Clean, normalize, and tokenize them for consistency and quality. Label inquiries into intents/categories such as:</p>
+<ul>
+<li>order status;</li>
+<li>returns;</li>
+<li>product recommendations;</li>
+<li>general inquiries.</li>
+</ul>
+<h3 id="15-3-model-selection-and-fine-tuning">15.3 Model selection and fine-tuning</h3>
+<p>Select a pretrained Hugging Face Transformer such as BERT, GPT-2, or RoBERTa, then fine-tune it on the company’s language and customer-interaction context. Tune learning rate, batch size, and epochs.</p>
+<p>Train/evaluate capabilities for:</p>
+<ul>
+<li><strong>intent classification:</strong> route order-status, return, recommendation, and other requests;</li>
+<li><strong>named-entity recognition:</strong> extract product names, order numbers, and customer information;</li>
+<li><strong>question answering:</strong> answer from FAQs and product/knowledge-base content;</li>
+<li><strong>information retrieval:</strong> find relevant company knowledge;</li>
+<li><strong>response generation:</strong> only with suitable safeguards and grounding.</li>
+</ul>
+<h3 id="15-4-integration">15.4 Integration</h3>
+<p>Expose the model through a <strong>RESTful API</strong> so existing support software can call it. Integrate it into a chatbot that:</p>
+<ul>
+<li>answers common questions automatically;</li>
+<li>retrieves relevant knowledge-base content;</li>
+<li>routes complex, uncertain, or sensitive cases to human agents.</li>
+</ul>
+<h3 id="15-5-expected-outcomes">15.5 Expected outcomes</h3>
+<ul>
+<li>improved customer satisfaction through faster responses;</li>
+<li>improved agent efficiency;</li>
+<li>enhanced insight into customer needs and recurring issues;</li>
+<li>scalability as inquiry volume grows.</li>
+</ul>
+<p>Practical safeguards include confidence thresholds, human escalation, privacy controls for customer data, response monitoring, and continuous evaluation for drift.</p>
+<hr>
+<h2 id="16-common-misconceptions-and-corrections">16. Common misconceptions and corrections</h2>
+<ol>
+<li><strong>“Every attention head has a predefined role.”</strong> No; roles emerge during training.</li>
+<li><strong>“The same head number learns the same function in every run.”</strong> No; random initialization permits different valid solutions.</li>
+<li><strong>“All heads should attend to the same token.”</strong> No; complementary attention patterns are the point, though some redundancy can occur.</li>
+<li><strong>“Attention should always favor nearby words.”</strong> No; long-range dependencies are often essential.</li>
+<li><strong>“One sentiment keyword determines sentiment.”</strong> No; modifiers, negation, sarcasm, and context can reverse meaning.</li>
+<li><strong>“Normalization produces vocabulary IDs.”</strong> No; it standardizes text. The tokenizer model/vocabulary mapping produces IDs later.</li>
+<li><strong>“Pre-tokenization is final tokenization.”</strong> No; it establishes preliminary boundaries.</li>
+<li><strong>“Stemming is required for Transformer token IDs.”</strong> No; pretrained subword tokenizers generally do not require it.</li>
+<li><strong>“TensorBoard Images verifies model predictions.”</strong> No; it mainly validates visualization and input-pipeline behavior.</li>
+<li><strong>“Identical metric tags merge TensorBoard runs.”</strong> No; separate log/event directories define separate runs.</li>
+<li><strong>“Recall and precision are the same.”</strong> No; recall conditions on actual positives, precision on predicted positives.</li>
+<li><strong>“High accuracy proves a good classifier.”</strong> No; imbalance can make accuracy misleading.</li>
+<li><strong>“More hyperparameter tuning fixes missing information.”</strong> No; optimization cannot manufacture an absent modality or label signal.</li>
+<li><strong>“Emoji normalization always improves social-media NLP.”</strong> No; it can erase meaningful distinctions and should be evidence-driven.</li>
+<li><strong>“A text model with high text accuracy understands memes.”</strong> No; mixed-content memes require modeling image-text interaction.</li>
+</ol>
+<hr>
+<h2 id="17-exam-focused-rapid-revision">17. Exam-focused rapid revision</h2>
+<h3 id="definitions-formulas-to-memorize">Definitions/formulas to memorize</h3>
+<ul>
+<li>Q = what the token seeks; K = what can be matched; V = content retrieved.</li>
+<li>Attention: \(\operatorname{softmax}(QK^T/\sqrt{d_k})V\).</li>
+<li>Multi-head attention = parallel learned attention projections, concatenated and projected.</li>
+<li>Accuracy: \((TP+TN)/(TP+TN+FP+FN)\).</li>
+<li>Precision: \(TP/(TP+FP)\).</li>
+<li>Recall/sensitivity: \(TP/(TP+FN)\).</li>
+<li>F1: \(2PR/(P+R)\).</li>
+<li>ROC-AUC measures discrimination across thresholds.</li>
+<li>MRR emphasizes the rank of the first relevant result; MAP summarizes ranked retrieval with possibly multiple relevant results.</li>
+<li>RMSE penalizes large continuous errors; MAPE expresses percentage error.</li>
+<li>BLEU: translation-oriented n-gram overlap; ROUGE: recall-oriented overlap, often summarization; METEOR: reference-based generation metric; perplexity: next-token uncertainty derived from cross-entropy.</li>
+</ul>
+<h3 id="high-yield-conceptual-statements">High-yield conceptual statements</h3>
+<ul>
+<li>Multi-head attention enables complementary contextual representations.</li>
+<li>Head specialization is emergent and non-deterministic.</li>
+<li>Metric selection follows error cost and task type.</li>
+<li>Accuracy is unsafe as the sole metric for imbalanced data.</li>
+<li>Tokenizer normalizer, pre-tokenizer, and model have distinct responsibilities.</li>
+<li>Token alignment must be preserved for span-level tasks.</li>
+<li>TensorBoard supplies observability, not proof of model quality.</li>
+<li>Pretrained checkpoints accelerate task-specific learning through fine-tuning.</li>
+<li>Diagnose whether failure comes from data, representation, preprocessing, optimization, or deployment before choosing an intervention.</li>
+<li>In the SocialGuard case, targeted multimodal data/modeling is the best next step because the failure is specifically mixed-content, while emoji normalization and hyperparameter tuning are conditional later steps.</li>
+</ul>
+<h3 id="suggested-long-answer-structure">Suggested long-answer structure</h3>
+<p>For a Transformer application question:</p>
+<ol>
+<li>define the business/task objective;</li>
+<li>describe representative data and labels;</li>
+<li>explain tokenizer stages and alignment;</li>
+<li>choose a suitable pretrained architecture considering modality and compute;</li>
+<li>describe fine-tuning and hyperparameters;</li>
+<li>select metrics based on false-positive/false-negative costs;</li>
+<li>validate inputs and track experiments;</li>
+<li>perform held-out, cross-validation, slice, and error analysis;</li>
+<li>integrate through an API/application with human fallback;</li>
+<li>monitor drift, fairness, cost, latency, and safety after deployment.</li>
+</ol>
+<h2 id="references-named-by-the-lecturer">References named by the lecturer</h2>
+<ul>
+<li>Steven Bird, Ewan Klein, and Edward Loper, <em>Natural Language Processing with Python</em>.</li>
+<li>Daniel Jurafsky and James H. Martin, <em>Speech and Language Processing</em>.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-12.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 12: Cross-Lingual NLP, Multilingual Models,…</span>
+      </a>
+      <a href="week-14.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 14: Hugging Face, Fine-Tuning, Deployment, and…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

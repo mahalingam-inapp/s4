@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>NLP · Week 2 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">NLP</span>
+      <span class="brand-title">Week 2</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html" selected>NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Foundations of Natural Language Processing
+      </a>
+      <a class="is-active" href="week-2.html">
+        <span class="week-num">Week 2</span>
+        spaCy Conventions, Text Preprocessing, and Tokenization
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Dependency Parsing, Named Entity Recognition, and Token Operations
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Token-Based Matching, Word Vectors, and Semantic Similarity
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Named Entities, Dependency-Based Intent Recognition, Semantic…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Annotation, Training spaCy NER Models, and an Airline-Review Case Study
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Text Classification and Sentiment Analysis
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Text Classification, TF–IDF, SVM, Doc2Vec and Twitter Sentiment Analysis
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Topic Modelling
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        BERT and Modern Pre-trained Language Models
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Fine-Tuning Language Models, Efficient Transformers, Sentence…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Cross-Lingual NLP, Multilingual Models, Transformer Serving, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Transformers, Attention, Evaluation, Hugging Face, TensorBoard, and…
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Hugging Face, Fine-Tuning, Deployment, and Applied Case Studies
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Vision Transformers, DETR, Self-Supervised Vision, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">NLP · Week 2</p>
+        <h1 class="page-title">spaCy Conventions, Text Preprocessing, and Tokenization</h1>
+        <p class="page-meta">Week 2 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-week-overview-and-learning-objectives">1. Week overview and learning objectives</a></li>
+      <li><a href="#2-why-spacy">2. Why spaCy?</a></li>
+      <li><a href="#3-spacy-s-language-processing-pipeline">3. spaCy&amp;rsquo;s language-processing pipeline</a></li>
+      <li><a href="#4-spacy-processing-classes-and-their-duties">4. spaCy processing classes and their duties</a></li>
+      <li><a href="#5-spacy-container-and-helper-classes">5. spaCy container and helper classes</a></li>
+      <li><a href="#6-text-preprocessing">6. Text preprocessing</a></li>
+      <li><a href="#7-tokenization-fundamentals">7. Tokenization fundamentals</a></li>
+      <li><a href="#8-types-of-tokenizer">8. Types of tokenizer</a></li>
+      <li><a href="#9-spacy-tokenization-in-practice">9. spaCy tokenization in practice</a></li>
+      <li><a href="#10-customizing-the-spacy-tokenizer">10. Customizing the spaCy tokenizer</a></li>
+      <li><a href="#11-sentence-segmentation">11. Sentence segmentation</a></li>
+      <li><a href="#12-lemmatization-and-stemming">12. Lemmatization and stemming</a></li>
+      <li><a href="#13-named-entities-and-document-annotations">13. Named entities and document annotations</a></li>
+      <li><a href="#14-byte-pair-encoding-and-multilingual-tokenization">14. Byte Pair Encoding and multilingual tokenization</a></li>
+      <li><a href="#15-features-and-limitations-of-spacy-tokenization">15. Features and limitations of spaCy tokenization</a></li>
+      <li><a href="#16-real-world-case-studies-from-the-lecture">16. Real-world case studies from the lecture</a></li>
+      <li><a href="#17-linguatech-case-study-architecture-and-trade-offs">17. LinguaTech case study — architecture and trade-offs</a></li>
+      <li><a href="#18-common-misconceptions-and-corrections">18. Common misconceptions and corrections</a></li>
+      <li><a href="#19-exam-focused-comparisons">19. Exam-focused comparisons</a></li>
+      <li><a href="#20-likely-exam-questions-and-model-answer-points">20. Likely exam questions and model-answer points</a></li>
+      <li><a href="#21-final-rapid-revision-checklist">21. Final rapid-revision checklist</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-week-overview-and-learning-objectives">1. Week overview and learning objectives</h2>
+<p>Week 2 introduces <strong>tokenization</strong> and the conventions used by <strong>spaCy</strong>. The week connects conceptual NLP preprocessing with practical Python usage and real-world tokenizer design.</p>
+<p>By the end of the week, you should be able to:</p>
+<ul>
+<li>explain why spaCy is used for production NLP;</li>
+<li>describe a language-processing pipeline and its components;</li>
+<li>distinguish spaCy&rsquo;s processing and container classes;</li>
+<li>load a pretrained language model and create a <code>Doc</code>;</li>
+<li>explain and perform word, sentence, character, whitespace, n-gram, and subword tokenization;</li>
+<li>customize spaCy&rsquo;s tokenizer with special cases;</li>
+<li>debug and test tokenizer behavior;</li>
+<li>obtain lemmas, POS tags, dependencies, named entities, and sentence boundaries;</li>
+<li>evaluate preprocessing and tokenizer choices for a particular task, language, and deployment constraint;</li>
+<li>explain the trade-offs between throughput, maintainability, memory use, and domain accuracy.</li>
+</ul>
+<hr>
+<h2 id="2-why-spacy">2. Why spaCy?</h2>
+<h3 id="2-1-definition-and-positioning">2.1 Definition and positioning</h3>
+<p><strong>spaCy</strong> is a free, open-source, industrial-strength Python library designed for NLP. Unlike libraries used mainly for academic demonstrations, it is intended for production and end-to-end NLP application development involving complex document and data understanding.</p>
+<p>Important properties emphasized in the lectures:</p>
+<ul>
+<li><strong>Fast:</strong> core performance-sensitive modules are implemented in C/Cython, allowing efficient processing of large, unstructured text collections.</li>
+<li><strong>Production oriented:</strong> designed to ship working code and process real-world data in reasonable time.</li>
+<li><strong>Pretrained models:</strong> supplies statistical language models trained on large corpora (for example, web or Wikipedia-like data).</li>
+<li><strong>Multilingual:</strong> supports 60+ languages, although the quality and completeness vary by language.</li>
+<li><strong>Extensible:</strong> open-source code is hosted publicly; developers can report bugs, propose features, and contribute.</li>
+<li><strong>Strong ecosystem:</strong> professionally maintained code, documentation, examples, and a developer community.</li>
+</ul>
+<p>The live lecture contrasted spaCy with Stanford CoreNLP, ZPar, and NLTK. The illustrative benchmark values shown included approximately <strong>0.2 ms for spaCy tokenization</strong>, compared with <strong>0.18 ms for CoreNLP, 1 ms for ZPar, and 4 ms for NLTK</strong>; for tagging, the slide cited approximately <strong>1 ms for spaCy versus 10 ms for CoreNLP</strong>. Treat such numbers as workload- and hardware-dependent illustrations, not timeless universal benchmarks. The intended exam point is that <strong>speed is a major reason for spaCy&rsquo;s industry adoption</strong>.</p>
+<h3 id="2-2-model-naming-convention">2.2 Model naming convention</h3>
+<p>Example model names:</p>
+<ul>
+<li><code>en_core_web_sm</code></li>
+<li><code>en_core_web_md</code></li>
+<li><code>en_core_web_lg</code></li>
+</ul>
+<p>Interpretation:</p>
+<ul>
+<li><code>en</code> — English;</li>
+<li><code>core</code> — core NLP capabilities;</li>
+<li><code>web</code> — trained on web text;</li>
+<li><code>sm</code>, <code>md</code>, <code>lg</code> — small, medium, and large model sizes.</li>
+</ul>
+<p>A larger model generally offers more resources/capability but uses more memory and storage. A small model is lighter. The appropriate choice depends on accuracy, memory, latency, and deployment constraints.</p>
+<hr>
+<h2 id="3-spacy-s-language-processing-pipeline">3. spaCy&rsquo;s language-processing pipeline</h2>
+<h3 id="3-1-what-is-a-pipeline">3.1 What is a pipeline?</h3>
+<p>Every NLP application performs several processing steps. A <strong>language-processing pipeline</strong> is the ordered sequence in which these steps operate on text. Each component receives the current <code>Doc</code>, reads or adds annotations, returns the processed <code>Doc</code>, and passes it to the next component.</p>
+<p>Conceptual flow:</p>
+<pre><code class="language-text">Raw text
+  → Tokenizer
+  → Tagger / morphological analysis / lemmatizer
+  → Dependency parser
+  → Named-entity recognizer
+  → Optional rules, categorizer, or custom components
+  → Annotated Doc
+</code></pre>
+<p>The input may be one sentence, multiple sentences, a paragraph, a complete document, or even a book. Tokenization is first because subsequent analysis requires meaningful, smaller units rather than an undifferentiated character sequence.</p>
+<h3 id="3-2-basic-code-pattern">3.2 Basic code pattern</h3>
+<pre><code class="language-python">import spacy
+
+nlp = spacy.load(&quot;en_core_web_md&quot;)
+doc = nlp(&quot;I went there.&quot;)
+</code></pre>
+<p>What happens:</p>
+<ol>
+<li><code>import spacy</code> makes the library available.</li>
+<li><code>spacy.load(...)</code> loads a pretrained model and returns a <code>Language</code> instance, conventionally named <code>nlp</code>.</li>
+<li>The <code>Language</code> object is the text-processing pipeline.</li>
+<li>Calling <code>nlp(text)</code> tokenizes and runs enabled components behind the scenes.</li>
+<li>The result is a <code>Doc</code> containing tokens and the annotations the loaded model can produce—such as POS tags, lemmas, dependencies, and entity labels.</li>
+</ol>
+<p>The pipeline&rsquo;s behavior depends on the <strong>statistical model and its capabilities</strong>. This is why the model must be chosen and loaded before expecting trained annotations.</p>
+<h3 id="3-3-process-the-text-once">3.3 Process the text once</h3>
+<p>Efficient approach:</p>
+<pre><code class="language-python">doc = nlp(text)
+for token in doc:
+    print(token.text, token.pos_, token.dep_, token.lemma_)
+</code></pre>
+<p>Do not call <code>nlp()</code> independently for each isolated word unless that is truly the task:</p>
+<pre><code class="language-python"># Usually inefficient and context-destroying
+for word in words:
+    nlp(word)
+</code></pre>
+<p>Running the full pipeline once preserves sentence context and avoids repeated computation. Reading <code>token.pos_</code> or <code>token.dep_</code> later does not rerun the model; these annotations are already stored in the <code>Doc</code>.</p>
+<h3 id="3-4-inspecting-enabled-components">3.4 Inspecting enabled components</h3>
+<pre><code class="language-python">nlp = spacy.load(&quot;en_core_web_sm&quot;)
+print(nlp.pipe_names)
+</code></pre>
+<p>An illustrative pipeline may contain:</p>
+<ul>
+<li><code>tok2vec</code> (token-to-vector representation),</li>
+<li><code>tagger</code>,</li>
+<li><code>parser</code>,</li>
+<li><code>attribute_ruler</code>,</li>
+<li><code>lemmatizer</code>,</li>
+<li><code>ner</code>.</li>
+</ul>
+<p>Different models can expose different components.</p>
+<h3 id="3-5-blank-versus-trained-pipelines">3.5 Blank versus trained pipelines</h3>
+<pre><code class="language-python">nlp = spacy.blank(&quot;en&quot;)
+</code></pre>
+<p>A blank English pipeline provides language-specific defaults and a tokenizer, but <strong>does not automatically contain trained POS tagging, parsing, or NER components</strong>. Those must be explicitly added and trained, or obtained by loading a trained package.</p>
+<hr>
+<h2 id="4-spacy-processing-classes-and-their-duties">4. spaCy processing classes and their duties</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Class/component</th>
+<th>Duty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Language</code></td>
+<td>The overall text-processing pipeline; normally loaded once per process and passed around the application as <code>nlp</code>.</td>
+</tr>
+<tr>
+<td><code>Tokenizer</code></td>
+<td>Segments raw text and creates a <code>Doc</code> with discovered token boundaries.</td>
+</tr>
+<tr>
+<td>Lemmatizer</td>
+<td>Determines the dictionary/base form of words.</td>
+</tr>
+<tr>
+<td>Morphology / morphological analysis</td>
+<td>Assigns linguistic features such as lemma, noun case, and verb tense, informed by the word and POS tag.</td>
+</tr>
+<tr>
+<td>Tagger</td>
+<td>Annotates part-of-speech tags on the <code>Doc</code>.</td>
+</tr>
+<tr>
+<td>Dependency parser</td>
+<td>Annotates syntactic dependency relations and usually supplies sentence boundaries.</td>
+</tr>
+<tr>
+<td>Entity recognizer (<code>ner</code>)</td>
+<td>Detects and labels named entities such as people, products, organizations, locations, money, dates, or times.</td>
+</tr>
+<tr>
+<td>Text categorizer</td>
+<td>Assigns categories or labels to an entire <code>Doc</code>.</td>
+</tr>
+<tr>
+<td><code>Matcher</code></td>
+<td>Matches token sequences using token-based patterns, broadly analogous to regular expressions over tokens.</td>
+</tr>
+<tr>
+<td><code>PhraseMatcher</code></td>
+<td>Matches sequences based on stored phrases.</td>
+</tr>
+<tr>
+<td><code>EntityRuler</code></td>
+<td>Adds entity spans using token patterns or exact phrase matches.</td>
+</tr>
+<tr>
+<td><code>Sentencizer</code></td>
+<td>Implements rule/custom sentence-boundary detection without requiring the dependency parser.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Each component has a well-defined task. A custom component may read, modify, or add annotations and can influence later components. Extra components execute for every document, so they can improve task accuracy while increasing latency, testing, and maintenance.</p>
+<hr>
+<h2 id="5-spacy-container-and-helper-classes">5. spaCy container and helper classes</h2>
+<h3 id="5-1-core-containers">5.1 Core containers</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Object</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Doc</code></td>
+<td>Central container for a processed text and its linguistic annotations; owns the token sequence and token properties.</td>
+</tr>
+<tr>
+<td><code>Span</code></td>
+<td>A slice of a <code>Doc</code>, such as a sentence or named-entity span.</td>
+</tr>
+<tr>
+<td><code>Token</code></td>
+<td>An individual contextual token—a word, number, punctuation mark, currency symbol, or other meaningful item.</td>
+</tr>
+<tr>
+<td><code>Lexeme</code></td>
+<td>A context-free vocabulary entry or word type, as opposed to a particular token occurrence. Because it has no sentence context, it has no contextual POS or dependency label.</td>
+</tr>
+<tr>
+<td><code>Vocab</code></td>
+<td>The shared language vocabulary, string store, and lexical attributes used by other objects.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The two backbone structures emphasized were <strong><code>Doc</code> and <code>Vocab</code></strong>.</p>
+<h3 id="5-2-shared-vocabulary-and-memory-efficiency">5.2 Shared vocabulary and memory efficiency</h3>
+<p>spaCy avoids storing the same text string repeatedly. Unique strings are stored in a shared <code>Vocab</code>/<code>StringStore</code>, and tokens refer to them through integer hashes.</p>
+<pre><code class="language-text">Token → integer hash → shared Vocab/StringStore → string
+</code></pre>
+<p>Benefits:</p>
+<ul>
+<li>fewer duplicate strings in large corpora;</li>
+<li>lower memory use;</li>
+<li>faster integer comparisons and lookups;</li>
+<li>better scalability across many documents.</li>
+</ul>
+<p>The mapping is bidirectional in concept:</p>
+<pre><code class="language-text">integer hash ↔ string
+</code></pre>
+<h3 id="5-3-useful-token-attributes">5.3 Useful token attributes</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Meaning/use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>token.text</code></td>
+<td>Original surface string.</td>
+</tr>
+<tr>
+<td><code>token.pos_</code></td>
+<td>Coarse grammatical category such as <code>NOUN</code>, <code>VERB</code>, <code>ADJ</code>, <code>ADV</code>, or <code>PRON</code>.</td>
+</tr>
+<tr>
+<td><code>token.dep_</code></td>
+<td>Dependency relation such as <code>ROOT</code>, <code>nsubj</code>, <code>dobj</code>, <code>amod</code>, or <code>prep</code>.</td>
+</tr>
+<tr>
+<td><code>token.lemma_</code></td>
+<td>Dictionary/base form.</td>
+</tr>
+<tr>
+<td><code>token.norm_</code></td>
+<td>Normalized form.</td>
+</tr>
+<tr>
+<td><code>token.shape_</code></td>
+<td>Abstract orthographic pattern.</td>
+</tr>
+<tr>
+<td><code>token.is_stop</code></td>
+<td>Boolean: whether the token is in spaCy&rsquo;s stop-word list.</td>
+</tr>
+<tr>
+<td><code>token.is_alpha</code></td>
+<td>Boolean: whether the token consists of alphabetic characters. The lecture loosely called this “alphanumeric”; the precise spaCy meaning is alphabetic.</td>
+</tr>
+<tr>
+<td><code>token.is_punct</code></td>
+<td>Boolean: whether it is punctuation.</td>
+</tr>
+<tr>
+<td><code>token.is_space</code></td>
+<td>Boolean: whether it is whitespace.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Example:</p>
+<pre><code class="language-python">for token in doc:
+    print(token.text, token.is_alpha, token.is_punct, token.is_space)
+</code></pre>
+<p>If the token is <code>Apple</code>, expected values are approximately <code>True, False, False</code>. A final period normally appears as its own punctuation token.</p>
+<hr>
+<h2 id="6-text-preprocessing">6. Text preprocessing</h2>
+<h3 id="6-1-definition-and-importance">6.1 Definition and importance</h3>
+<p><strong>Text preprocessing</strong> is cleaning and preparing text before feeding it to an NLP model, ML model, or analysis algorithm. Poor-quality data produces poor-quality outputs (“garbage in, garbage out”), because noise present in training data can be encoded by the model.</p>
+<p>Typical operations:</p>
+<ul>
+<li>noise reduction;</li>
+<li>standardization/normalization;</li>
+<li>tokenization;</li>
+<li>stop-word removal;</li>
+<li>stemming;</li>
+<li>lemmatization;</li>
+<li>handling numerical data;</li>
+<li>handling special characters, Unicode, URLs, emojis, and other artifacts.</li>
+</ul>
+<p>Public or social-media data is often unstructured and noisy. Images, URLs, emojis, mixed languages, unwanted messages, and irregular symbols must be assessed—not automatically deleted. What counts as noise depends on the task.</p>
+<h3 id="6-2-cleaning-is-task-dependent">6.2 Cleaning is task dependent</h3>
+<p>There is no universally correct sequence of lowercasing, punctuation removal, stop-word removal, stemming, or lemmatization.</p>
+<p><strong>Lowercasing</strong> reduces vocabulary and makes matching easier, but can destroy information:</p>
+<ul>
+<li><code>Apple</code> may mean the company;</li>
+<li><code>apple</code> may mean the fruit.</li>
+</ul>
+<p><strong>Stop-word removal</strong> can help information retrieval, topic modelling, document clustering, search, or keyword extraction, but may damage sentiment analysis, translation, QA, or inference. Removing <code>not</code> from “not good” reverses the meaning.</p>
+<p><strong>Numerals and special characters</strong> may be irrelevant in one task but essential in another. For example, <code>$175.50</code>, <code>Q3 FY2024</code>, and <code>31-Mar-25</code> are highly informative in finance.</p>
+<h3 id="6-3-early-decisions-propagate">6.3 Early decisions propagate</h3>
+<pre><code class="language-text">Raw text → Cleaning → Tokenization → Embeddings/features → Model → Prediction
+</code></pre>
+<p>An early boundary or normalization error affects all later stages. Poor tokenization cannot easily be repaired downstream.</p>
+<hr>
+<h2 id="7-tokenization-fundamentals">7. Tokenization fundamentals</h2>
+<h3 id="7-1-definition">7.1 Definition</h3>
+<p><strong>Tokenization</strong> is the process of splitting text into <strong>tokens</strong>. A token is an atomic, meaningful unit—the smallest useful unit of semantics for the intended analysis.</p>
+<p>Tokens may be:</p>
+<ul>
+<li>words;</li>
+<li>numbers;</li>
+<li>punctuation;</li>
+<li>currency symbols;</li>
+<li>dates;</li>
+<li>entity names;</li>
+<li>meaningful multiword phrases;</li>
+<li>subwords;</li>
+<li>characters.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">I love natural language processing!
+</code></pre>
+<p>Possible tokens:</p>
+<pre><code class="language-text">I | love | natural | language | processing | !
+</code></pre>
+<p>Tokenization structures otherwise unstructured text, permitting feature extraction, statistical modelling, and later NLP analysis.</p>
+<h3 id="7-2-general-tokenization-operations">7.2 General tokenization operations</h3>
+<p>Depending on the tokenizer and task, the process may include:</p>
+<ul>
+<li>splitting into words or sentences;</li>
+<li>deciding how punctuation should be separated;</li>
+<li>handling contractions such as <code>can't</code>;</li>
+<li>handling possessives such as <code>tomorrow's</code>;</li>
+<li>handling hyphenated words;</li>
+<li>preserving or normalizing special-domain expressions.</li>
+</ul>
+<p>The video used “I can&rsquo;t wait for tomorrow&rsquo;s meeting” to show that a superficially simple sentence contains nontrivial decisions around contractions and apostrophes.</p>
+<h3 id="7-3-benefits">7.3 Benefits</h3>
+<ol>
+<li><strong>More manageable representation:</strong> converts large text into individual analyzable units and relationships.</li>
+<li><strong>Dimensionality/complexity control:</strong> depending on representation, helps focus on meaningful units and supports efficient large-volume processing.</li>
+<li><strong>Feature extraction:</strong> tokens support sentiment analysis, topic modelling, NER, and many other tasks.</li>
+<li><strong>Mathematical modelling:</strong> tokens can be encoded numerically and used with statistical or ML algorithms for insight, prediction, optimization, and data-driven decisions.</li>
+</ol>
+<p>Tokenization is not merely a fixed preliminary routine; it is an architectural design decision affecting vocabulary size, unknown-word handling, memory, sequence length, speed, and downstream accuracy.</p>
+<hr>
+<h2 id="8-types-of-tokenizer">8. Types of tokenizer</h2>
+<h3 id="8-1-word-tokenizer">8.1 Word tokenizer</h3>
+<p>Treats individual words as tokens, often initially using whitespace boundaries.</p>
+<pre><code class="language-text">Machine learning is useful
+→ Machine | learning | is | useful
+</code></pre>
+<p>Advantages:</p>
+<ul>
+<li>simple and interpretable;</li>
+<li>shorter sequences;</li>
+<li>often fast;</li>
+<li>relatively rich semantics per token.</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li>large vocabulary;</li>
+<li>poor handling of unseen or out-of-vocabulary (OOV) words;</li>
+<li>naive whitespace splitting mishandles punctuation, contractions, citations, hashtags, and languages without spaces.</li>
+</ul>
+<h3 id="8-2-sentence-tokenizer">8.2 Sentence tokenizer</h3>
+<p>Splits a document into individual sentences, each treated as a unit.</p>
+<p>Useful for summarization, translation, review processing, document indexing, sentence classification, or long-document chunking.</p>
+<h3 id="8-3-whitespace-tokenizer">8.3 Whitespace tokenizer</h3>
+<p>Splits at spaces, tabs, line breaks, and related whitespace. It is a simple baseline rather than a robust universal solution.</p>
+<h3 id="8-4-character-tokenizer">8.4 Character tokenizer</h3>
+<p>Treats every character as a token.</p>
+<pre><code class="language-text">Hello → H | e | l | l | o
+</code></pre>
+<p>Advantages:</p>
+<ul>
+<li>virtually eliminates OOV words;</li>
+<li>robust to misspellings;</li>
+<li>can be relatively language-independent;</li>
+<li>useful when character-level patterns matter.</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li>very long sequences;</li>
+<li>weak semantics per token;</li>
+<li>higher sequential computation and often slower processing.</li>
+</ul>
+<h3 id="8-5-n-gram-tokenizer">8.5 N-gram tokenizer</h3>
+<p>An <strong>n-gram</strong> is a continuous sequence of <code>n</code> items, usually words or characters.</p>
+<ul>
+<li>unigram (<code>n = 1</code>): <code>computer</code>;</li>
+<li>bigram (<code>n = 2</code>): <code>computer networks</code>;</li>
+<li>trigram (<code>n = 3</code>): <code>computer network security</code>;</li>
+<li>four-gram, five-gram, etc.</li>
+</ul>
+<p>The lecture&rsquo;s main point was that related words can be grouped into a meaningful unit. In typical sliding n-gram extraction, the window advances one item at a time, though task-specific chunking may instead use non-overlapping groups.</p>
+<h3 id="8-6-subword-tokenizer">8.6 Subword tokenizer</h3>
+<p>Breaks words into recurring meaningful pieces:</p>
+<pre><code class="language-text">unbelievable → un | believe | able
+</code></pre>
+<p>Examples: <strong>Byte Pair Encoding (BPE), WordPiece, and SentencePiece</strong>.</p>
+<p>Advantages:</p>
+<ul>
+<li>greatly reduces OOV failures;</li>
+<li>balances vocabulary size and sequence length;</li>
+<li>handles rare or morphologically complex words;</li>
+<li>widely used in Transformers and multilingual NLP.</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li>more complex;</li>
+<li>sequences are longer than whole-word sequences;</li>
+<li>additional computation may be needed.</li>
+</ul>
+<h3 id="8-7-strategy-comparison">8.7 Strategy comparison</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Word</th>
+<th>Subword</th>
+<th>Character</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vocabulary size</td>
+<td>Large</td>
+<td>Medium/balanced</td>
+<td>Very small</td>
+</tr>
+<tr>
+<td>OOV handling</td>
+<td>Poor</td>
+<td>Excellent</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Sequence length</td>
+<td>Short</td>
+<td>Medium</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>Semantic information per token</td>
+<td>High</td>
+<td>Moderate</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Typical speed</td>
+<td>Fast</td>
+<td>Moderate</td>
+<td>Often slower</td>
+</tr>
+<tr>
+<td>Main strength</td>
+<td>Interpretability</td>
+<td>Coverage–efficiency balance</td>
+<td>Robustness to any spelling</td>
+</tr>
+</tbody>
+</table></div>
+<p>The correct strategy depends on the task, language, spelling variation, expected inputs, memory, latency, computation, and semantic requirements. There is <strong>no universally best tokenizer</strong>.</p>
+<p>Practical guidance:</p>
+<ul>
+<li>noisy social-media/OCR text: character or subword units are often robust;</li>
+<li>modern language models: usually subword tokenization;</li>
+<li>memory-constrained device: consider model size, vocabulary storage, and sequence length together—“simpler” is not automatically better;</li>
+<li>phrase detection: n-grams or phrase rules;</li>
+<li>sentence-level classification: sentence segmentation followed by word/subword tokenization.</li>
+</ul>
+<h3 id="8-8-libraries-tools-mentioned">8.8 Libraries/tools mentioned</h3>
+<ul>
+<li>NLTK (Natural Language Toolkit);</li>
+<li>spaCy;</li>
+<li>Stanford CoreNLP;</li>
+<li>Hugging Face Transformers.</li>
+</ul>
+<hr>
+<h2 id="9-spacy-tokenization-in-practice">9. spaCy tokenization in practice</h2>
+<h3 id="9-1-basic-token-iteration">9.1 Basic token iteration</h3>
+<pre><code class="language-python">import spacy
+
+nlp = spacy.load(&quot;en_core_web_sm&quot;)
+doc = nlp(
+    &quot;Natural language processing is a subfield of artificial intelligence.&quot;
+)
+
+for token in doc:
+    print(token.text)
+</code></pre>
+<p>The final period is normally a separate token. Punctuation has linguistic value and should not be reflexively discarded; for example, <code>!</code> can signal emphasis or affect sentence interpretation.</p>
+<h3 id="9-2-pos-lemma-and-dependency-together">9.2 POS, lemma, and dependency together</h3>
+<pre><code class="language-python">for token in doc:
+    print(token.text, token.pos_, token.dep_, token.lemma_)
+</code></pre>
+<p>POS tags are context-dependent. <code>duck</code> is a noun in “The duck swims” but a verb in “Duck quickly!”. The tagger must map contextual ambiguity to a consistent annotation so that downstream parsing can operate.</p>
+<p>Dependency parsing represents grammatical relations, often conceptualized as a dependency tree. It relies on correct tokenization and POS information. An early error can lead to an incorrect tree.</p>
+<p>Example in aspect-based sentiment:</p>
+<pre><code class="language-text">The battery is good, but the camera is disappointing.
+</code></pre>
+<p>A dependency parser can associate <code>good</code> with <code>battery</code> and <code>disappointing</code> with <code>camera</code>, which is more useful than merely finding positive and negative words.</p>
+<hr>
+<h2 id="10-customizing-the-spacy-tokenizer">10. Customizing the spaCy tokenizer</h2>
+<h3 id="10-1-why-customization-is-necessary">10.1 Why customization is necessary</h3>
+<p>Medicine, insurance, finance, law, and other domains contain characteristic abbreviations, entities, contractions, dates, citations, symbols, and phrases that need special boundaries.</p>
+<p>Representative financial examples:</p>
+<ul>
+<li><code>buy 500 AAPL @ $175.50</code></li>
+<li><code>31-Mar-25</code></li>
+<li><code>Q3 FY2024</code></li>
+</ul>
+<p>Representative domain entities:</p>
+<ul>
+<li>healthcare: <code>HbA1c</code>;</li>
+<li>finance: <code>NASDAQ-100</code>;</li>
+<li>manufacturing: <code>ISO-9001</code>.</li>
+</ul>
+<h3 id="10-2-data-first-workflow">10.2 Data-first workflow</h3>
+<p>Do not begin by inventing rules in isolation.</p>
+<ol>
+<li>Collect representative production examples.</li>
+<li>Record the expected token sequence for each input.</li>
+<li>Include abbreviations, contractions, punctuation, currencies, dates, hashtags, citations, and edge cases.</li>
+<li>Build a small regression test suite.</li>
+<li>Implement rules.</li>
+<li>Run the suite after every tokenizer modification.</li>
+</ol>
+<p>A test suite makes behavior explicit, repeatable, and safe to change. Without expected outputs, one cannot reliably tell whether a “fix” broke another pattern.</p>
+<h3 id="10-3-orth-special-cases">10.3 <code>ORTH</code> special cases</h3>
+<p>The videos customized <code>lemme</code> to become two tokens, conceptually <code>lem</code> and <code>me</code>:</p>
+<pre><code class="language-python">import spacy
+from spacy.symbols import ORTH
+
+nlp = spacy.load(&quot;en_core_web_md&quot;)
+
+special_case = [
+    {ORTH: &quot;lem&quot;},
+    {ORTH: &quot;me&quot;},
+]
+nlp.tokenizer.add_special_case(&quot;lemme&quot;, special_case)
+
+print([w.text for w in nlp(&quot;lemme that&quot;)])
+# ['lem', 'me', 'that']
+</code></pre>
+<p><code>ORTH</code> means the token&rsquo;s orthographic/surface text.</p>
+<p>With surrounding punctuation:</p>
+<pre><code class="language-python">print([w.text for w in nlp(&quot;lemme!&quot;)])
+# ['lem', 'me', '!']
+</code></pre>
+<p>The tokenizer incrementally strips applicable punctuation and applies special-case logic to the remaining substring. If the special case itself includes punctuation, it can take precedence:</p>
+<pre><code class="language-python">nlp.tokenizer.add_special_case(
+    &quot;lemme?&quot;,
+    [{ORTH: &quot;lemme?&quot;}],
+)
+</code></pre>
+<p>Now <code>lemme?</code> may remain one exact token according to the registered rule.</p>
+<h3 id="10-4-specific-versus-general-rules">10.4 Specific versus general rules</h3>
+<p>In rule systems, specific cases should take precedence over broad patterns. For example, preserve <code>Dr.</code> before applying a generic “split at period” rule. Otherwise, a broad rule may consume or damage a specialized expression.</p>
+<h3 id="10-5-orth-versus-norm">10.5 <code>ORTH</code> versus <code>NORM</code></h3>
+<ul>
+<li><strong><code>ORTH</code></strong> preserves the exact original surface form, e.g. <code>Dr.</code>.</li>
+<li><strong><code>NORM</code></strong> provides a standardized analysis form, e.g. <code>doctor</code>.</li>
+</ul>
+<p>This permits faithful display alongside normalized downstream matching. They do not store the same information.</p>
+<h3 id="10-6-debugging-with-tokenizer-explain">10.6 Debugging with <code>tokenizer.explain</code></h3>
+<pre><code class="language-python">text = &quot;Let's go!&quot;
+explanation = nlp.tokenizer.explain(text)
+
+for rule, token_text in explanation:
+    print(token_text, &quot;\t&quot;, rule)
+</code></pre>
+<p><code>nlp.tokenizer.explain(text)</code> returns tuples describing the rule/pattern responsible for each resulting token. Use it to diagnose why a contraction, prefix, suffix, infix, exception, or punctuation mark was treated in a particular way.</p>
+<hr>
+<h2 id="11-sentence-segmentation">11. Sentence segmentation</h2>
+<h3 id="11-1-accessing-sentences">11.1 Accessing sentences</h3>
+<pre><code class="language-python">doc = nlp(
+    &quot;This is the first sentence. &quot;
+    &quot;This is the second sentence. &quot;
+    &quot;This is the third sentence.&quot;
+)
+
+for sent in doc.sents:
+    print(sent.text)
+</code></pre>
+<p>Each item from <code>doc.sents</code> is a <code>Span</code>; boundaries are stored in the <code>Doc</code>.</p>
+<h3 id="11-2-why-segmentation-is-difficult">11.2 Why segmentation is difficult</h3>
+<p>Determining sentence boundaries is not merely splitting at every period. Periods may occur in abbreviations, decimals, citations, and domain expressions. spaCy commonly uses the dependency parser for sentence segmentation, allowing syntax to inform boundaries. This was presented as a sophisticated, generally accurate approach.</p>
+<p>Accuracy can decline on specialized genres, conversational data, or social-media text. When parsing is unnecessary or unavailable, a <code>Sentencizer</code> can implement rule-based boundaries without the dependency parser.</p>
+<p>Applications include summarization, translation, sentiment-by-sentence, document indexing, and long-text processing.</p>
+<hr>
+<h2 id="12-lemmatization-and-stemming">12. Lemmatization and stemming</h2>
+<h3 id="12-1-lemma-and-lemmatization">12.1 Lemma and lemmatization</h3>
+<p>A <strong>lemma</strong> is the dictionary/base form of a token. <strong>Lemmatization</strong> reduces inflected forms to their lemmas:</p>
+<pre><code class="language-text">eating → eat
+eats   → eat
+worked → work
+playing / played / plays → play
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-python">doc = nlp(&quot;I went there for working and worked for 3 years.&quot;)
+for token in doc:
+    print(token.text, token.lemma_)
+</code></pre>
+<p>Benefits:</p>
+<ul>
+<li>groups inflectional variants;</li>
+<li>reduces vocabulary variation;</li>
+<li>improves feature consistency and generalization;</li>
+<li>useful in information retrieval, semantic analysis, and sentiment analysis.</li>
+</ul>
+<h3 id="12-2-pronoun-caveat">12.2 Pronoun caveat</h3>
+<p>The lecture demonstrated a spaCy output/version in which personal-pronoun lemmas such as <code>I</code>, <code>you</code>, <code>me</code>, <code>him</code>, and <code>his</code> were represented by a special <code>PRON</code>/<code>-PRON-</code> lemma to group them semantically. Exact outputs depend on spaCy/model version; current models may preserve lowercase pronoun forms. For the exam, remember the conceptual point: <strong>models may use special normalized representations for pronouns</strong>.</p>
+<h3 id="12-3-lemmatization-versus-stemming">12.3 Lemmatization versus stemming</h3>
+<p>Both reduce word variation toward a base/root. Lemmatization aims for a linguistically valid dictionary form; stemming often applies crude affix-stripping rules and may produce a nonword. The live session introduced the distinction but did not develop stemming algorithms in detail.</p>
+<p>Lemmatization adds a normalized annotation; it does <strong>not</strong> overwrite <code>token.text</code>.</p>
+<hr>
+<h2 id="13-named-entities-and-document-annotations">13. Named entities and document annotations</h2>
+<pre><code class="language-python">for ent in doc.ents:
+    print(ent.text, ent.label_)
+
+for sent in doc.sents:
+    print(sent.text)
+</code></pre>
+<p>Typical entity types include person, organization, product, location/geopolitical entity, money, date, and time. A trained NER model automatically detects many general entities; a custom component or <code>EntityRuler</code> is required only when generic coverage is inadequate.</p>
+<p>Generic pretrained models learn from mixed-domain data. They may fail on specialized categories such as diseases, symptoms, medications, treatments, legal citations, or industry product codes. Fine-tuning or targeted rules supply the missing domain knowledge.</p>
+<hr>
+<h2 id="14-byte-pair-encoding-and-multilingual-tokenization">14. Byte Pair Encoding and multilingual tokenization</h2>
+<h3 id="14-1-bpe">14.1 BPE</h3>
+<p><strong>Byte Pair Encoding (BPE)</strong> is a subword-learning algorithm:</p>
+<ol>
+<li>begin with a small inventory such as characters;</li>
+<li>count adjacent symbol pairs;</li>
+<li>merge the most frequent pair;</li>
+<li>repeat, gradually learning frequent subword units.</li>
+</ol>
+<p>Illustration:</p>
+<pre><code class="language-text">l o w → lo w → low
+</code></pre>
+<p>BPE helps split an unseen form such as <code>playfulness</code> into known pieces such as <code>play</code> + <code>fulness</code>, whereas a word tokenizer might return an unknown token.</p>
+<h3 id="14-2-whitespace-caveat">14.2 Whitespace caveat</h3>
+<p>If training first splits text by whitespace and then applies BPE, the tokenizer inherits a whitespace assumption. That works reasonably for English but is harmful as a universal multilingual strategy because Chinese, Japanese, Thai, and other languages may omit or inconsistently use spaces.</p>
+<p>Desired language-agnostic idea:</p>
+<pre><code class="language-text">Raw text → subword learning/tokenization → subword units
+</code></pre>
+<p>rather than making whitespace a compulsory universal word boundary. The important principle is to align pre-tokenization with the target scripts and languages.</p>
+<hr>
+<h2 id="15-features-and-limitations-of-spacy-tokenization">15. Features and limitations of spaCy tokenization</h2>
+<h3 id="15-1-key-strengths">15.1 Key strengths</h3>
+<ol>
+<li><strong>Speed and efficiency:</strong> handles large volumes quickly without necessarily sacrificing general accuracy.</li>
+<li><strong>Punctuation awareness:</strong> goes beyond naive whitespace splitting and treats punctuation in linguistically useful ways.</li>
+<li><strong>Language-specific behavior:</strong> tokenization defaults can reflect the chosen language&rsquo;s conventions.</li>
+<li><strong>Customizability:</strong> developers can add special cases and rule-based behavior, or train/customize other components such as NER.</li>
+<li><strong>Pipeline integration:</strong> token boundaries directly support tagging, parsing, NER, and later tasks.</li>
+</ol>
+<h3 id="15-2-limitations">15.2 Limitations</h3>
+<ol>
+<li><strong>Memory consumption:</strong> pretrained packages—especially larger ones—and large documents may require significant RAM, making memory-constrained deployment difficult.</li>
+<li><strong>Dependence on pretrained models:</strong> models are powerful but generic; specialized domains often require fine-tuning or custom rules/data.</li>
+<li><strong>Uneven language support:</strong> resource-rich languages such as English tend to have stronger pipelines. Low-resource languages may lack robust pretrained models or complete components. The lecture specifically mentioned possible difficulty for Hindi, Kannada, Telugu, and Malayalam relative to English.</li>
+<li><strong>Genre sensitivity:</strong> conversations, social media, and highly specialized documents can reduce default sentence/token boundary accuracy.</li>
+<li><strong>Customization cost:</strong> more rules/components can raise latency, complexity, regression risk, and long-term maintenance.</li>
+</ol>
+<hr>
+<h2 id="16-real-world-case-studies-from-the-lecture">16. Real-world case studies from the lecture</h2>
+<h3 id="16-1-acme-brands-social-media-sentiment">16.1 Acme Brands — social-media sentiment</h3>
+<p><strong>Background:</strong> Acme Brands, a social-media marketing agency, analyzes conversations to understand sentiment toward client products.</p>
+<p><strong>Problem:</strong> its system splits on whitespace (spaces/tabs), causing inaccurate sentence segmentation.</p>
+<p><strong>Consequences:</strong></p>
+<ul>
+<li>sentences are broken incorrectly or in half;</li>
+<li>sentiment is misinterpreted;</li>
+<li>emojis and hashtags are incorrectly attached/handled and skew analysis.</li>
+</ul>
+<p><strong>Suggested solution: rule-based sentence tokenizer</strong></p>
+<ol>
+<li>preprocess data appropriately;</li>
+<li>use regular expressions to identify sentence-ending patterns;</li>
+<li>handle edge cases such as emojis, hashtags, abbreviations, and unconventional punctuation;</li>
+<li>test on a held-out/hand-annotated dataset;</li>
+<li>compare with the whitespace baseline.</li>
+</ol>
+<p>Practical extension: score boundary precision, recall, and F1, then measure whether better boundaries improve sentiment accuracy. Do not delete emojis indiscriminately; an emoji may itself carry sentiment.</p>
+<h3 id="16-2-chatty-corporation-chatbot-intent-understanding">16.2 Chatty Corporation — chatbot intent understanding</h3>
+<p><strong>Background:</strong> Chatty Corporation develops customer-service chatbots.</p>
+<p><strong>Problem:</strong> whitespace tokenization struggles with multi-sentence and compound customer messages, obscuring intent.</p>
+<p><strong>Suggested solution:</strong> rule-based sentence tokenization combined with POS tagging.</p>
+<ol>
+<li>convert text to lowercase and remove irrelevant special characters;</li>
+<li>use regex rules for conventional sentence endings;</li>
+<li>assign grammatical functions using a pretrained POS tagger;</li>
+<li>refine sentence splitting with POS information;</li>
+<li>test on customer messages annotated with dialogue acts.</li>
+</ol>
+<p>Caveat: lowercasing and special-character removal were the case-study proposal, not universal laws. Preserve casing or symbols if they distinguish products, urgency, order IDs, or intent.</p>
+<h3 id="16-3-lex-machina-legal-document-classification">16.3 Lex Machina — legal-document classification</h3>
+<p><strong>Background:</strong> Lex Machina is a legal research and analytics firm that classifies documents by subject matter.</p>
+<p><strong>Problem:</strong> whitespace tokenization mishandles contracted terms and legal citations.</p>
+<p><strong>Suggested solution: hybrid rule- and dictionary-based tokenizer</strong></p>
+<ol>
+<li>lowercase where appropriate and remove irrelevant special characters, preserving citation-relevant ones;</li>
+<li>use whitespace splitting only as an initial baseline;</li>
+<li>identify/join or appropriately decompose contractions using a legal contraction dictionary;</li>
+<li>recognize legal citation formats with regex and treat them as coherent units;</li>
+<li>apply additional rules for legal abbreviations and edge cases.</li>
+</ol>
+<p>The transcript&rsquo;s spoken “don&rsquo;t becomes don&rsquo;t” is evidently a transcription error; the substantive lesson is to recognize contracted forms as intended rather than blindly splitting at punctuation.</p>
+<hr>
+<h2 id="17-linguatech-case-study-architecture-and-trade-offs">17. LinguaTech case study — architecture and trade-offs</h2>
+<h3 id="17-1-scenario">17.1 Scenario</h3>
+<p>LinguaTech builds product-review sentiment tools. Mia explores spaCy annotations:</p>
+<pre><code class="language-python">import spacy
+
+nlp = spacy.load(&quot;en_core_web_md&quot;)
+doc = nlp(&quot;SpaCy is an excellent NLP library.&quot;)
+
+for token in doc:
+    print(token.text, token.pos_, token.dep_)
+</code></pre>
+<p>She can also inspect <code>lemma_</code>, <code>is_stop</code>, entities through <code>doc.ents</code>, and sentences through <code>doc.sents</code>. The case emphasizes that the <code>Doc</code> centralizes all results and references strings efficiently through the shared vocabulary.</p>
+<h3 id="17-2-three-design-options">17.2 Three design options</h3>
+<ol>
+<li>
+<p><strong>Default general pipeline:</strong> POS, dependency parse, NER, etc.
+   - strengths: optimized, tested, stable, maintainable, high throughput;
+   - weakness: generic models may miss industry-specific concepts.</p>
+</li>
+<li>
+<p><strong>Custom pipeline component:</strong> refine entity matching or add business/domain annotations.
+   - strengths: domain-specific intelligence, richer entity or contextual recognition;
+   - costs: runs on every document, adds latency, lowers throughput, and increases testing and maintenance.</p>
+</li>
+<li>
+<p><strong>Post-annotation filtering with <code>is_stop</code> and <code>lemma_</code>:</strong> remove selected stop words and use lemmas to reduce variation.
+   - strengths: cleaner, smaller feature space;
+   - weakness: cannot create new domain knowledge and may remove meaningful words such as <code>not</code>.</p>
+</li>
+</ol>
+<h3 id="17-3-performance-concepts">17.3 Performance concepts</h3>
+<ul>
+<li><strong>Throughput:</strong> documents processed per unit time, e.g. 1,000 reviews/second.</li>
+<li><strong>Latency:</strong> time needed to process one document.</li>
+<li>More enabled work per document normally increases latency and reduces throughput.</li>
+<li><strong>Maintainability:</strong> ease of testing, debugging, updating, adapting to new spaCy versions, and responding to new business requirements.</li>
+<li><strong>Scalability:</strong> ability to handle growing data volume and deployment load with acceptable resources.</li>
+</ul>
+<h3 id="17-4-correct-decision">17.4 Correct decision</h3>
+<p>If the explicit priority is <strong>maximum throughput on limited hardware</strong>, prefer the default/leanest pipeline that still supplies required annotations, and disable unnecessary components where appropriate. This is usually faster and easier to maintain.</p>
+<p>If <strong>domain-specific accuracy</strong> is more valuable, add a custom component only after measuring that its improvement justifies latency and maintenance. Pre-filtering may clean features but is not a substitute for domain recognition.</p>
+<p>There is no single best architecture. Balance:</p>
+<ul>
+<li>general accuracy;</li>
+<li>domain accuracy;</li>
+<li>throughput;</li>
+<li>latency;</li>
+<li>memory;</li>
+<li>maintainability;</li>
+<li>scalability;</li>
+<li>testing cost.</li>
+</ul>
+<h3 id="17-5-dependency-parsing-as-business-value">17.5 Dependency parsing as business value</h3>
+<p>Dependency relations are not merely grammar exercises. They enable aspect-based sentiment, relation extraction, and domain reasoning by linking an opinion to the correct product feature. A custom component can read these existing relations to determine which adjective modifies an entity or which verb refers to it.</p>
+<hr>
+<h2 id="18-common-misconceptions-and-corrections">18. Common misconceptions and corrections</h2>
+<ol>
+<li><strong>“There is one best tokenizer.”</strong> No—choice depends on task, language, data, and resource constraints.</li>
+<li><strong>“Humans read words, so word tokenization is always best.”</strong> Word tokenizers struggle with unseen words, rich morphology, noise, and multilingual text.</li>
+<li><strong>“Whitespace splitting is language independent.”</strong> It fails on punctuation-rich text and languages without reliable spaces.</li>
+<li><strong>“Lowercase, strip punctuation, and remove stop words every time.”</strong> These may destroy entity, sentiment, citation, or intent information.</li>
+<li><strong>“<code>spacy.blank('en')</code> includes a trained tagger/parser/NER.”</strong> It supplies a tokenizer and language defaults, not trained annotations.</li>
+<li><strong>“Call <code>nlp()</code> once per word.”</strong> Process the contextual text once and reuse its <code>Doc</code>.</li>
+<li><strong>“Write tokenizer rules immediately.”</strong> Analyze representative data, define expected tokens, and build regression tests first.</li>
+<li><strong>“<code>ORTH</code> and <code>NORM</code> are identical.”</strong> <code>ORTH</code> preserves the original form; <code>NORM</code> standardizes it.</li>
+<li><strong>“The <code>Doc</code> repeats every string.”</strong> Tokens reference shared <code>Vocab</code>/<code>StringStore</code> entries using hashes.</li>
+<li><strong>“Reading <code>pos_</code> or <code>dep_</code> triggers fresh processing.”</strong> Those values were computed when the pipeline created the <code>Doc</code>.</li>
+<li><strong>“NER always needs handwritten rules.”</strong> A trained model detects general entities; custom rules/components extend it for domain cases.</li>
+<li><strong>“Pre-filtering and custom components do the same thing.”</strong> Filtering reduces/normalizes existing information; a component can add new information.</li>
+<li><strong>“A custom component always improves the system.”</strong> It may improve domain accuracy but can hurt speed, simplicity, and maintainability.</li>
+<li><strong>“The fastest system is automatically best.”</strong> Business value may require accuracy or contextual interpretation that justifies extra cost.</li>
+<li><strong>“Sentence boundaries are separate from the <code>Doc</code>.”</strong> They are annotations accessed through <code>doc.sents</code>.</li>
+<li><strong>“Dependency parsing is only for grammar.”</strong> It enables contextual sentiment, relation extraction, and feature–opinion linking.</li>
+</ol>
+<hr>
+<h2 id="19-exam-focused-comparisons">19. Exam-focused comparisons</h2>
+<h3 id="19-1-token-lexeme-span-doc-and-vocab">19.1 Token, lexeme, span, Doc, and Vocab</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th style="text-align: right;">Contextual?</th>
+<th>Represents</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Token</td>
+<td style="text-align: right;">Yes</td>
+<td>One occurrence in a <code>Doc</code></td>
+<td>Has POS, dependency, lemma, etc.</td>
+</tr>
+<tr>
+<td>Lexeme</td>
+<td style="text-align: right;">No</td>
+<td>Vocabulary word type</td>
+<td>No sentence-dependent POS/dependency.</td>
+</tr>
+<tr>
+<td>Span</td>
+<td style="text-align: right;">Yes</td>
+<td>Slice of a <code>Doc</code></td>
+<td>Used for sentences and entities.</td>
+</tr>
+<tr>
+<td>Doc</td>
+<td style="text-align: right;">Yes</td>
+<td>Whole processed text</td>
+<td>Owns tokens and annotations.</td>
+</tr>
+<tr>
+<td>Vocab</td>
+<td style="text-align: right;">Shared</td>
+<td>Language vocabulary/string store</td>
+<td>Avoids duplicate linguistic data.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="19-2-pipeline-choices">19.2 Pipeline choices</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Choice</th>
+<th>Best when</th>
+<th>Benefit</th>
+<th>Main cost/risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blank pipeline</td>
+<td>Tokenization only or building from scratch</td>
+<td>Lightweight</td>
+<td>No trained POS/parser/NER.</td>
+</tr>
+<tr>
+<td>Default trained pipeline</td>
+<td>General NLP and maintainability</td>
+<td>Strong out-of-box annotations</td>
+<td>Generic domain knowledge; model memory.</td>
+</tr>
+<tr>
+<td>Custom tokenizer rule</td>
+<td>Stable, known boundary exception</td>
+<td>Precise handling</td>
+<td>Regression risk and rule maintenance.</td>
+</tr>
+<tr>
+<td>Custom component</td>
+<td>New domain annotations/business logic</td>
+<td>Domain accuracy</td>
+<td>Latency, complexity, testing.</td>
+</tr>
+<tr>
+<td>Lemma/stop-word filtering</td>
+<td>Feature simplification</td>
+<td>Reduced variation/noise</td>
+<td>May discard meaning; adds no new knowledge.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="19-3-rule-based-statistical-and-hybrid-approaches">19.3 Rule-based, statistical, and hybrid approaches</h3>
+<ul>
+<li><strong>Rule based:</strong> transparent and precise for known formats; brittle on unseen variation.</li>
+<li><strong>Statistical/pretrained:</strong> adaptable and contextual; depends on training data and may miss niche formats.</li>
+<li><strong>Hybrid:</strong> combines model context with exact rules/dictionaries; often best for legal, medical, or financial cases, but increases engineering complexity.</li>
+</ul>
+<hr>
+<h2 id="20-likely-exam-questions-and-model-answer-points">20. Likely exam questions and model-answer points</h2>
+<h3 id="q1-define-a-language-processing-pipeline">Q1. Define a language-processing pipeline.</h3>
+<p>An ordered sequence of NLP components in which each processes the same <code>Doc</code>, adds or modifies annotations, and passes it onward. In spaCy, raw text is tokenized first, then components such as the tagger, parser, lemmatizer, and NER run according to the loaded model.</p>
+<h3 id="q2-why-is-tokenization-foundational">Q2. Why is tokenization foundational?</h3>
+<p>It decides the atomic units seen by every later stage and therefore affects vocabulary, OOV behavior, feature extraction, embeddings, POS tagging, parsing, NER, memory, sequence length, and model accuracy.</p>
+<h3 id="q3-distinguish-word-subword-and-character-tokenization">Q3. Distinguish word, subword, and character tokenization.</h3>
+<p>Word tokenization is interpretable and produces short sequences but has a large vocabulary/OOV problem. Subword tokenization balances vocabulary and coverage and is common in Transformers. Character tokenization virtually removes OOVs and handles misspellings but produces very long, semantically weak sequences.</p>
+<h3 id="q4-why-does-spacy-use-doc-and-vocab">Q4. Why does spaCy use <code>Doc</code> and <code>Vocab</code>?</h3>
+<p><code>Doc</code> holds the contextual token sequence and annotations. <code>Vocab</code> centralizes strings and lexical attributes so repeated strings need not be stored separately, improving memory and lookup efficiency.</p>
+<h3 id="q5-how-do-you-customize-and-debug-a-tokenizer">Q5. How do you customize and debug a tokenizer?</h3>
+<p>Collect representative examples, define expected outputs, create tests, add exact special cases with <code>nlp.tokenizer.add_special_case</code>, apply specific rules before broad ones, and inspect behavior with <code>nlp.tokenizer.explain(text)</code>.</p>
+<h3 id="q6-why-is-sentence-segmentation-harder-than-splitting-on-periods">Q6. Why is sentence segmentation harder than splitting on periods?</h3>
+<p>Periods occur in abbreviations, decimals, citations, and other non-boundary contexts. spaCy can use syntactic/dependency information; a rule-based <code>Sentencizer</code> is an alternative when parsing is unavailable.</p>
+<h3 id="q7-explain-the-spacy-customization-trade-off">Q7. Explain the spaCy customization trade-off.</h3>
+<p>Custom rules/components may improve domain accuracy and entity coverage but add latency, memory/computation, regression testing, code complexity, and maintenance. Choose them based on measured business benefit.</p>
+<h3 id="q8-why-can-whitespace-pre-tokenization-harm-multilingual-bpe">Q8. Why can whitespace pre-tokenization harm multilingual BPE?</h3>
+<p>It assumes spaces mark words, which is not true for many scripts/languages. This restricts BPE&rsquo;s language independence and can yield poor segmentation for Chinese, Japanese, Thai, and similar cases.</p>
+<h3 id="q9-compare-lemmatization-and-stop-word-filtering">Q9. Compare lemmatization and stop-word filtering.</h3>
+<p>Lemmatization normalizes inflected words to dictionary forms; stop-word filtering removes selected common function words. Both may reduce feature complexity, but filtering can delete crucial meaning (especially negation), and neither substitutes for a domain-aware component.</p>
+<h3 id="q10-recommend-an-architecture-for-linguatech">Q10. Recommend an architecture for LinguaTech.</h3>
+<p>For highest throughput on limited hardware, use the default or lean required pipeline and avoid unnecessary custom work. If measured domain accuracy is insufficient, add a targeted custom component and accept/test the latency-maintenance trade-off. Use lemma/stop-word filtering only when validated for the sentiment task.</p>
+<hr>
+<h2 id="21-final-rapid-revision-checklist">21. Final rapid-revision checklist</h2>
+<ul>
+<li>spaCy is open-source, fast, production-oriented, and pretrained-model based.</li>
+<li><code>spacy.load()</code> returns the <code>Language</code> pipeline; <code>nlp(text)</code> returns a <code>Doc</code>.</li>
+<li>Load the appropriate model size and language; model capabilities determine annotations.</li>
+<li>Tokenization creates meaningful atomic units and occurs before most downstream analysis.</li>
+<li>Each component has a defined role and passes the annotated <code>Doc</code> onward.</li>
+<li><code>Doc</code> and <code>Vocab</code> are backbone data structures; <code>Token</code>, <code>Span</code>, and <code>Lexeme</code> have distinct meanings.</li>
+<li>Shared integer-hash string storage improves memory efficiency.</li>
+<li><code>spacy.blank()</code> does not supply trained tagger/parser/NER components.</li>
+<li>Use <code>doc.sents</code> for sentences and <code>doc.ents</code> for named entities.</li>
+<li>Lemmas are base forms; exact pronoun normalization can vary by model/version.</li>
+<li>Naive whitespace or period splitting is not robust.</li>
+<li>Tokenizer strategy must match task, language, noise, and resources.</li>
+<li>Special cases can override default punctuation behavior.</li>
+<li><code>ORTH</code> is original surface text; <code>NORM</code> is normalized text.</li>
+<li><code>tokenizer.explain()</code> reveals which rule created each token.</li>
+<li>Create representative expected-output tests before adding rules.</li>
+<li>BPE merges frequent adjacent units and reduces OOVs.</li>
+<li>Do not assume whitespace is universal in multilingual NLP.</li>
+<li>spaCy strengths: speed, punctuation handling, language-specific defaults, customization, pipeline integration.</li>
+<li>spaCy limits: RAM use, generic pretrained knowledge, uneven low-resource-language support, genre sensitivity, and customization cost.</li>
+<li>The correct production design balances accuracy, latency, throughput, memory, scalability, and maintainability.</li>
+</ul>
+<h3 id="references-mentioned-in-the-video">References mentioned in the video</h3>
+<ul>
+<li><em>Natural Language Processing with spaCy</em> (No Starch Press, 2020).</li>
+<li><em>Mastering spaCy</em> (Packt Publishing, 2021).</li>
+</ul>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<p>The review reinforces that tokenization is not a neutral preliminary step: it determines what token rules can see. A <code>Matcher</code> sequence such as <code>[{"IS_DIGIT": True}, {"IS_ALPHA": True}]</code> requires adjacent numeric and alphabetic tokens. Punctuation in <code>3:30 pm</code> or <code>10-12 people</code> may introduce intervening tokens, so inspect the <code>Doc</code> token-by-token before changing a failing pattern.</p>
+<p>Preprocessing must also be task-aware. Normalization can unify <code>REFUND</code>, <code>Refund</code>, and <code>refund</code>; lemmatization can unify <code>returned</code>, <code>returning</code>, and <code>returns</code> under <code>return</code>. However, indiscriminate stop-word removal is dangerous: removing <code>not</code> from “I have not received my package” destroys the distinction from “I have received my package.” More preprocessing is not automatically better; preserve information that changes intent.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-1.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 1: Foundations of Natural Language Processing</span>
+      </a>
+      <a href="week-3.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 3: Dependency Parsing, Named Entity…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>NLP · Week 8 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">NLP</span>
+      <span class="brand-title">Week 8</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html" selected>NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Foundations of Natural Language Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        spaCy Conventions, Text Preprocessing, and Tokenization
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Dependency Parsing, Named Entity Recognition, and Token Operations
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Token-Based Matching, Word Vectors, and Semantic Similarity
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Named Entities, Dependency-Based Intent Recognition, Semantic…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Annotation, Training spaCy NER Models, and an Airline-Review Case Study
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Text Classification and Sentiment Analysis
+      </a>
+      <a class="is-active" href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Text Classification, TF–IDF, SVM, Doc2Vec and Twitter Sentiment Analysis
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Topic Modelling
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        BERT and Modern Pre-trained Language Models
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Fine-Tuning Language Models, Efficient Transformers, Sentence…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Cross-Lingual NLP, Multilingual Models, Transformer Serving, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Transformers, Attention, Evaluation, Hugging Face, TensorBoard, and…
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Hugging Face, Fine-Tuning, Deployment, and Applied Case Studies
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Vision Transformers, DETR, Self-Supervised Vision, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">NLP · Week 8</p>
+        <h1 class="page-title">Text Classification, TF–IDF, SVM, Doc2Vec and Twitter Sentiment Analysis</h1>
+        <p class="page-meta">Week 8 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-week-overview-and-learning-objectives">1. Week overview and learning objectives</a></li>
+      <li><a href="#2-text-classification">2. Text classification</a></li>
+      <li><a href="#3-standard-end-to-end-text-classification-pipeline">3. Standard end-to-end text-classification pipeline</a></li>
+      <li><a href="#4-tf-idf-converting-text-to-informative-numerical-features">4. TF–IDF: converting text to informative numerical features</a></li>
+      <li><a href="#5-worked-implementation-20-newsgroups-tf-idf-linear-svm">5. Worked implementation: 20 Newsgroups + TF–IDF + linear SVM</a></li>
+      <li><a href="#6-support-vector-machines-for-text-classification">6. Support Vector Machines for text classification</a></li>
+      <li><a href="#7-evaluation-metrics">7. Evaluation metrics</a></li>
+      <li><a href="#8-word2vec-and-doc2vec">8. Word2Vec and Doc2Vec</a></li>
+      <li><a href="#9-concatenating-doc2vec-representations">9. Concatenating Doc2Vec representations</a></li>
+      <li><a href="#10-logistic-regression-on-concatenated-tweet-vectors">10. Logistic regression on concatenated tweet vectors</a></li>
+      <li><a href="#11-tf-idf-versus-embeddings">11. TF–IDF versus embeddings</a></li>
+      <li><a href="#12-case-study-socialbuzz-consumer-electronics-twitter-monitoring">12. Case study: SocialBuzz/consumer-electronics Twitter monitoring</a></li>
+      <li><a href="#13-class-imbalance-in-sentiment-classification">13. Class imbalance in sentiment classification</a></li>
+      <li><a href="#14-resource-aware-recommendation-for-the-case-study">14. Resource-aware recommendation for the case study</a></li>
+      <li><a href="#15-common-mistakes-caveats-and-exam-traps">15. Common mistakes, caveats and exam traps</a></li>
+      <li><a href="#16-exam-ready-comparisons">16. Exam-ready comparisons</a></li>
+      <li><a href="#17-likely-long-answer-questions-and-answer-skeletons">17. Likely long-answer questions and answer skeletons</a></li>
+      <li><a href="#18-rapid-revision-sheet">18. Rapid revision sheet</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-week-overview-and-learning-objectives">1. Week overview and learning objectives</h2>
+<p>Week 8 develops an end-to-end understanding of <strong>text classification</strong>: converting unstructured text into numerical features, training a classifier, evaluating it, and using the same fitted pipeline to classify new text. The week covers:</p>
+<ul>
+<li>the meaning, purpose and business applications of text classification;</li>
+<li>a complete <code>scikit-learn</code> pipeline using the 20 Newsgroups dataset, TF–IDF and a linear Support Vector Machine (SVM);</li>
+<li>the distinction between fitting and transforming a vectorizer, especially at prediction time;</li>
+<li>Word2Vec and Doc2Vec as dense semantic representations;</li>
+<li>concatenating complementary Doc2Vec representations and classifying tweets with logistic regression;</li>
+<li>a consumer-electronics social-media case study involving noisy Twitter data, class imbalance, TF–IDF versus embeddings, SMOTE versus class weighting, and evaluation with precision, recall and F1-score;</li>
+<li>live-session explanations of TF, IDF, the SVM margin, support vectors, and common practical applications.</li>
+</ul>
+<blockquote>
+<p><strong>Lecturer emphasis:</strong> do not learn the pipeline only as theory. Implement it in Google Colab, Visual Studio or another Python environment. Coding the data loading, vectorization, model fitting and prediction steps is the best way to understand how the parts connect.</p>
+</blockquote>
+<hr>
+<h2 id="2-text-classification">2. Text classification</h2>
+<h3 id="2-1-definition">2.1 Definition</h3>
+<p><strong>Text classification</strong> is the NLP task of assigning one or more <strong>predefined categories or labels</strong> to a text document. It automates the sorting and organization of large quantities of textual data and makes it possible to extract useful information and insights from otherwise unstructured content.</p>
+<p>The live-session explanation framed this as transforming massive <strong>unstructured text</strong> into a useful <strong>structured, labelled representation</strong>. Raw emails, feedback, reviews, posts and documents are called unstructured because they arrive as free sequences of words rather than rows with reliable predefined fields, features and category labels. A classifier learns underlying patterns from labelled examples and assigns a category such as A, B or C to unseen text with similar patterns.</p>
+<p>This is ordinarily a <strong>supervised-learning</strong> task:</p>
+<ol>
+<li>Training texts are supplied with known target labels.</li>
+<li>Text is converted into numerical features.</li>
+<li>A model learns the relationship between those features and labels.</li>
+<li>It predicts labels for new text.</li>
+</ol>
+<h3 id="2-2-why-classification-matters">2.2 Why classification matters</h3>
+<p>Manual classification does not scale to millions of emails, tweets, reports or reviews. Automated classification enables large organizations to:</p>
+<ul>
+<li>route and prioritize communications;</li>
+<li>monitor opinions and complaints in real time;</li>
+<li>organize news, research, legal or medical documents;</li>
+<li>remove irrelevant or dangerous content;</li>
+<li>discover business signals in large textual corpora.</li>
+</ul>
+<h3 id="2-3-main-applications-and-practical-use-cases">2.3 Main applications and practical use cases</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Application</th>
+<th>Classification goal</th>
+<th>Practical example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sentiment analysis</td>
+<td>Positive, negative or neutral</td>
+<td>A review platform immediately recognizes a negative product review and sends it to customer support.</td>
+</tr>
+<tr>
+<td>Spam detection</td>
+<td>Spam/fraud/irrelevant versus legitimate</td>
+<td>Gmail sends promotional or fraudulent messages to Spam while keeping valid mail in the inbox.</td>
+</tr>
+<tr>
+<td>Topic labelling</td>
+<td>Assign subject area</td>
+<td>An online newspaper groups articles under sports, politics, business and entertainment.</td>
+</tr>
+<tr>
+<td>Document categorization</td>
+<td>Assign document type/domain</td>
+<td>A records system routes files to business, college, medical or legal repositories.</td>
+</tr>
+<tr>
+<td>Intent classification</td>
+<td>Identify what a user wants</td>
+<td>A chatbot separates “track my order,” “request refund” and “technical support.”</td>
+</tr>
+<tr>
+<td>Social-media monitoring</td>
+<td>Sentiment/topic/intent around a brand</td>
+<td>A consumer-electronics firm tracks product complaints, competitor mentions and campaign response.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Text classification therefore appears in many daily applications even when the user does not see the model: email folders, content feeds, review systems, customer-service routing and search/news categorization.</p>
+<hr>
+<h2 id="3-standard-end-to-end-text-classification-pipeline">3. Standard end-to-end text-classification pipeline</h2>
+<p>The complete workflow is:</p>
+<ol>
+<li><strong>Collect or load data</strong> — obtain texts and, for supervised learning, known labels.</li>
+<li><strong>Explore and preprocess</strong> — inspect class distribution and clean/tokenize text as appropriate.</li>
+<li><strong>Split data</strong> — reserve unseen examples for validation/test evaluation.</li>
+<li><strong>Vectorize text</strong> — map strings to numeric feature vectors using BoW, TF–IDF or embeddings.</li>
+<li><strong>Train a classifier</strong> — e.g., linear SVM or logistic regression.</li>
+<li><strong>Predict</strong> on the held-out set.</li>
+<li><strong>Evaluate</strong> with appropriate metrics.</li>
+<li><strong>Deploy/infer</strong> — preserve the fitted preprocessing and model, transform new text, and return its category.</li>
+</ol>
+<h3 id="3-1-critical-pipeline-consistency-rule">3.1 Critical pipeline-consistency rule</h3>
+<p>Training and inference must use <strong>exactly the same learned representation</strong>. If a TF–IDF vectorizer learned the vocabulary/order</p>
+<p><code>[baseball, orbit, pitcher, shuttle]</code>,</p>
+<p>then column 0 must still mean <code>baseball</code> when new text is classified. Refitting on new text may create a different vocabulary and IDF values, causing dimension mismatch or, worse, silent semantic misalignment.</p>
+<ul>
+<li>Training: <code>fit_transform(training_text)</code> learns vocabulary/IDF and creates vectors.</li>
+<li>Validation/test/new input: <code>transform(text)</code> reuses the learned vocabulary/IDF.</li>
+<li>Never use <code>fit_transform()</code> independently on validation, test or production text.</li>
+<li>Save/deploy the <strong>vectorizer and classifier together</strong>.</li>
+<li>Previously unseen words are normally ignored by a fixed TF–IDF vocabulary; known terms remain in their original columns.</li>
+</ul>
+<p>This also prevents <strong>data leakage</strong>: the vectorizer must not learn document-frequency information from the held-out test set.</p>
+<hr>
+<h2 id="4-tf-idf-converting-text-to-informative-numerical-features">4. TF–IDF: converting text to informative numerical features</h2>
+<h3 id="4-1-why-raw-text-cannot-enter-a-conventional-classifier">4.1 Why raw text cannot enter a conventional classifier</h3>
+<p>Algorithms such as SVM and logistic regression operate on numeric coordinates, not strings. A vectorizer creates one feature dimension per term and represents every document in that shared feature space.</p>
+<h3 id="4-2-term-frequency-tf">4.2 Term Frequency (TF)</h3>
+<p>TF measures how strongly a term occurs inside a particular document. A common normalized definition is:</p>
+<p>\[
+TF(t,d)=\frac{\text{count of term }t\text{ in document }d}{\text{total number of terms in }d}
+\]</p>
+<p>If “NLP” occurs 5 times in a 100-word document, its normalized TF is \(5/100=0.05\). Some implementations use raw or sublinear/log-scaled counts, but the central meaning is <strong>within-document frequency</strong>.</p>
+<h3 id="4-3-inverse-document-frequency-idf">4.3 Inverse Document Frequency (IDF)</h3>
+<p>IDF measures how rare or discriminative a term is across the whole corpus:</p>
+<p>\[
+IDF(t)=\log\left(\frac{N}{df(t)}\right)
+\]</p>
+<p>where \(N\) is the total number of documents and \(df(t)\) is the number containing term \(t\). Implementations often add smoothing, for example <code>log((1+N)/(1+df)) + 1</code>, to avoid division by zero and stabilize values.</p>
+<ul>
+<li>A term present in nearly every document has low IDF and carries little class-specific information.</li>
+<li>A rarer term has higher IDF and may be more discriminative.</li>
+</ul>
+<h3 id="4-4-tf-idf-score">4.4 TF–IDF score</h3>
+<p>\[
+TFIDF(t,d)=TF(t,d)\times IDF(t)
+\]</p>
+<p>The product balances local importance and global rarity:</p>
+<ul>
+<li>frequent in the current document <strong>and</strong> rare across the corpus → high weight;</li>
+<li>frequent everywhere → down-weighted;</li>
+<li>absent from the document → zero.</li>
+</ul>
+<p>Example: suppose three reviews contain many occurrences of “product,” but only one contains “overheating.” “Product” receives low IDF because it occurs throughout the corpus; “overheating” receives a much higher weight in the affected review and can become a useful negative-sentiment/product-fault feature.</p>
+<p>The resulting matrix is generally <strong>high-dimensional and sparse</strong>: the vocabulary may contain thousands of terms, while each document uses only a small subset, so most entries are zero.</p>
+<h3 id="4-5-tfidfvectorizer-parameters-used-in-the-lecture">4.5 <code>TfidfVectorizer</code> parameters used in the lecture</h3>
+<pre><code class="language-python">from sklearn.feature_extraction.text import TfidfVectorizer
+
+vectorizer = TfidfVectorizer(stop_words=&quot;english&quot;, max_df=0.7)
+X = vectorizer.fit_transform(df[&quot;text&quot;])
+</code></pre>
+<ul>
+<li><code>stop_words="english"</code> removes common English function words that generally add little discrimination.</li>
+<li><code>max_df=0.7</code> ignores terms appearing in more than 70% of documents; these corpus-wide terms are unlikely to distinguish the classes.</li>
+<li><code>fit_transform</code> both learns the training vocabulary/IDF and returns its sparse matrix.</li>
+</ul>
+<h3 id="4-6-fit-transform-and-fit-transform">4.6 <code>fit</code>, <code>transform</code> and <code>fit_transform</code></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Operation</th>
+<th style="text-align: right;">Learns vocabulary and IDF?</th>
+<th style="text-align: right;">Returns vectors?</th>
+<th>Proper use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fit(texts)</code></td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">No</td>
+<td>Learn representation only.</td>
+</tr>
+<tr>
+<td><code>transform(texts)</code></td>
+<td style="text-align: right;">No</td>
+<td style="text-align: right;">Yes</td>
+<td>Convert test/new text with the already learned representation.</td>
+</tr>
+<tr>
+<td><code>fit_transform(texts)</code></td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Yes</td>
+<td>Efficiently fit and transform training text.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="4-7-strengths-and-limitations">4.7 Strengths and limitations</h3>
+<p><strong>Strengths</strong></p>
+<ul>
+<li>fast and computationally economical;</li>
+<li>interpretable—important feature terms can be inspected;</li>
+<li>excellent baseline for text classification;</li>
+<li>naturally compatible with linear models and sparse matrices;</li>
+<li>often strong when class membership is marked by particular words/phrases.</li>
+</ul>
+<p><strong>Limitations</strong></p>
+<ul>
+<li>treats different word forms and synonyms as different dimensions unless preprocessing helps;</li>
+<li>does not intrinsically understand semantic similarity, word order or context;</li>
+<li>“happy” and “joyful” are separate coordinates even though their meanings are close;</li>
+<li>vocabulary can become very high-dimensional;</li>
+<li>sarcasm, negation and polysemy may be difficult without n-grams or richer models.</li>
+</ul>
+<hr>
+<h2 id="5-worked-implementation-20-newsgroups-tf-idf-linear-svm">5. Worked implementation: 20 Newsgroups + TF–IDF + linear SVM</h2>
+<h3 id="5-1-dataset-and-objective">5.1 Dataset and objective</h3>
+<p>The lecture uses <code>fetch_20newsgroups</code>, a collection of newsgroup documents. Although the introduction mentions positive and negative movie reviews as an intuitive classification example, the actual code selects two topics:</p>
+<ul>
+<li><code>rec.sport.baseball</code></li>
+<li><code>sci.space</code></li>
+</ul>
+<p>The goal is binary topic classification. <code>subset="all"</code> includes both the dataset&rsquo;s train and test portions; the example then makes its own 70:30 split. <code>shuffle=True</code> randomizes order, and <code>random_state=42</code> makes the shuffle/split reproducible.</p>
+<h3 id="5-2-complete-corrected-code">5.2 Complete corrected code</h3>
+<pre><code class="language-python">from sklearn.datasets import fetch_20newsgroups
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score, classification_report
+import pandas as pd
+
+categories = [&quot;rec.sport.baseball&quot;, &quot;sci.space&quot;]
+newsgroups = fetch_20newsgroups(
+    subset=&quot;all&quot;,
+    categories=categories,
+    shuffle=True,
+    random_state=42,
+)
+
+df = pd.DataFrame({
+    &quot;text&quot;: newsgroups.data,
+    &quot;label&quot;: newsgroups.target,
+})
+
+vectorizer = TfidfVectorizer(stop_words=&quot;english&quot;, max_df=0.7)
+X = vectorizer.fit_transform(df[&quot;text&quot;])
+y = df[&quot;label&quot;]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.30, random_state=42
+)
+
+clf = SVC(kernel=&quot;linear&quot;)
+clf.fit(X_train, y_train)
+
+y_pred = clf.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+report = classification_report(
+    y_test,
+    y_pred,
+    target_names=newsgroups.target_names,
+)
+
+print(f&quot;Accuracy: {accuracy:.4f}&quot;)
+print(&quot;Classification report:\n&quot;, report)
+
+def predict_category(text):
+    text_vec = vectorizer.transform([text])
+    prediction = clf.predict(text_vec)
+    return newsgroups.target_names[prediction[0]]
+
+sample_text = &quot;NASA announced the discovery of new exoplanets.&quot;
+print(f&quot;Predicted category: {predict_category(sample_text)}&quot;)
+</code></pre>
+<h3 id="5-3-meaning-of-every-stage">5.3 Meaning of every stage</h3>
+<ol>
+<li>Imports bring in the dataset, tabular container, vectorizer, splitter, model and metrics.</li>
+<li><code>newsgroups.data</code> holds raw document strings; <code>newsgroups.target</code> holds numeric class IDs; <code>target_names</code> maps IDs back to names.</li>
+<li>A DataFrame with <code>text</code> and <code>label</code> columns makes inspection/manipulation easy; <code>df.head()</code> shows the first five rows.</li>
+<li>TF–IDF converts all documents to numerical vectors.</li>
+<li>A single 70:30 split is used for the instructional example.</li>
+<li><code>SVC(kernel="linear")</code> learns a linear separating boundary.</li>
+<li><code>clf.predict(X_test)</code> obtains held-out predictions.</li>
+<li>Accuracy and the classification report assess performance.</li>
+<li><code>predict_category</code> uses the <strong>already fitted</strong> vectorizer and classifier; <code>[text]</code> supplies one document as an iterable.</li>
+<li>The exoplanet sentence is predicted as <code>sci.space</code>.</li>
+</ol>
+<p>The lecture reported approximately <strong>99.6% accuracy</strong> on this demonstration and displayed the full classification report. This figure is an illustrative result for the selected data/split, not a guarantee for other datasets.</p>
+<h3 id="5-4-important-methodological-caveat">5.4 Important methodological caveat</h3>
+<p>For strict leakage-free practice, split raw texts <strong>before</strong> fitting TF–IDF:</p>
+<pre><code class="language-python">text_train, text_test, y_train, y_test = train_test_split(
+    df[&quot;text&quot;], y, test_size=0.30, random_state=42, stratify=y
+)
+X_train = vectorizer.fit_transform(text_train)
+X_test = vectorizer.transform(text_test)
+</code></pre>
+<p>The lecture code vectorizes the complete corpus before splitting, which allows test-set document frequencies to influence IDF. The exam-safe principle is: <strong>fit every learned preprocessing step on training data only</strong>.</p>
+<h3 id="5-5-adaptability">5.5 Adaptability</h3>
+<p>The same pipeline can be adapted by replacing the data and labels for sentiment analysis, spam detection, intent recognition, subject categorization or document routing. Hyperparameters, preprocessing and evaluation should be chosen for the new dataset and business objective.</p>
+<hr>
+<h2 id="6-support-vector-machines-for-text-classification">6. Support Vector Machines for text classification</h2>
+<h3 id="6-1-core-idea">6.1 Core idea</h3>
+<p>An SVM finds a decision boundary or <strong>hyperplane</strong> that separates classes in feature space. In two dimensions the boundary is a line; in higher dimensions it is a hyperplane. Many separating boundaries may classify the training points, but the SVM seeks the one with the <strong>maximum margin</strong>.</p>
+<p>For a linear decision function:</p>
+<p>\[
+f(x)=w^Tx+b
+\]</p>
+<p>the predicted class depends on which side of \(w^Tx+b=0\) the point lies. In the canonical hard-margin form, the margin width is \(2/\lVert w\rVert\), so maximizing margin corresponds to minimizing \(\lVert w\rVert\) subject to correct-separation constraints.</p>
+<p>The training points closest to the boundary are the <strong>support vectors</strong>. They determine the position of the optimal hyperplane. Maximizing the distance from the hyperplane to the closest point of each class generally improves robustness and generalization.</p>
+<p>Real datasets may overlap, so a soft-margin SVM allows some violations. The parameter <code>C</code> controls the trade-off:</p>
+<ul>
+<li>high <code>C</code>: penalizes violations strongly, narrower margin/more focus on training accuracy;</li>
+<li>low <code>C</code>: permits more violations, wider margin/stronger regularization.</li>
+</ul>
+<h3 id="6-2-why-linear-svm-works-well-for-text">6.2 Why linear SVM works well for text</h3>
+<ul>
+<li>TF–IDF creates <strong>high-dimensional sparse data</strong>, which linear SVM handles effectively.</li>
+<li>Text categories are often close to linearly separable in this feature space.</li>
+<li>Maximum-margin training tends to generalize well.</li>
+<li>A linear kernel is computationally more practical than complex nonlinear kernels for large sparse vocabularies.</li>
+<li>SVM has strong benchmark results, illustrated by the reported 99.6% result on the two-topic demonstration.</li>
+</ul>
+<blockquote>
+<p><strong>Precision correction:</strong> TF–IDF performs the vectorization; SVM performs the classification. The live transcript occasionally loosely attributes “vectorization” to the support vector method, but these are separate pipeline stages.</p>
+</blockquote>
+<h3 id="6-3-multi-class-classification">6.3 Multi-class classification</h3>
+<p>Although the worked example is binary, SVMs can handle multiple classes through strategies such as one-vs-rest or one-vs-one. Conceptually, multiple boundaries distinguish the classes, but the model still aims for well-separated maximum-margin decisions.</p>
+<hr>
+<h2 id="7-evaluation-metrics">7. Evaluation metrics</h2>
+<p>Let TP = true positives, FP = false positives, FN = false negatives and TN = true negatives. In a complaint-detection application, it can be useful to define the <strong>negative/complaint sentiment class as the operational “positive” event</strong> when computing class-specific metrics; always state which class is being measured.</p>
+<h3 id="7-1-accuracy">7.1 Accuracy</h3>
+<p>\[
+Accuracy=\frac{TP+TN}{TP+TN+FP+FN}
+\]</p>
+<p>Accuracy is the fraction of all correct predictions. It is intuitive but can be misleading under imbalance. A model predicting every tweet as neutral may obtain high accuracy while detecting almost no complaints.</p>
+<h3 id="7-2-precision">7.2 Precision</h3>
+<p>\[
+Precision=\frac{TP}{TP+FP}
+\]</p>
+<p>Precision answers: <strong>of the items predicted as the target class, how many really belong to it?</strong> High negative-class precision means few neutral/positive tweets become false complaint alerts. This reduces wasted investigation and increases stakeholder trust.</p>
+<h3 id="7-3-recall">7.3 Recall</h3>
+<p>\[
+Recall=\frac{TP}{TP+FN}
+\]</p>
+<p>Recall answers: <strong>of all actual target-class items, how many did the model find?</strong> High complaint recall means few genuine complaints are missed. This is crucial when failure to respond can cause escalation, churn or reputational harm.</p>
+<h3 id="7-4-f1-score">7.4 F1-score</h3>
+<p>\[
+F1=2\times\frac{Precision\times Recall}{Precision+Recall}
+\]</p>
+<p>F1 is the harmonic mean, so it becomes high only when both precision and recall are reasonably high. It is a better target than raw accuracy when the important class is rare. In the case study, the desired objective is <strong>negative-class F1</strong>, balancing false alarms against missed complaints.</p>
+<h3 id="7-5-classification-report">7.5 Classification report</h3>
+<p><code>classification_report</code> supplies precision, recall, F1 and support for each class, along with overall and averaged values. “Support” is the number of true examples in that class. Examine per-class scores, not only overall accuracy.</p>
+<hr>
+<h2 id="8-word2vec-and-doc2vec">8. Word2Vec and Doc2Vec</h2>
+<h3 id="8-1-word2vec">8.1 Word2Vec</h3>
+<p><strong>Word2Vec</strong> represents an individual word as a dense, continuous numeric vector. Unlike TF–IDF, its coordinates are learned from contextual co-occurrence and can encode semantic relationships: similar words tend to cluster in vector space.</p>
+<ul>
+<li>TF–IDF views <code>happy</code> and <code>joyful</code> as different vocabulary dimensions.</li>
+<li>Word2Vec can place them close together because they occur in similar contexts.</li>
+<li>Vector arithmetic can approximately reflect semantic relations, classically illustrated as <code>king − man + woman ≈ queen</code>.</li>
+</ul>
+<p>Word embeddings are useful for sentiment analysis because meaning and similarity often matter more than exact token identity. However, a word vector alone represents a token; a document classifier still needs a method to combine word information or learn a document representation.</p>
+<h3 id="8-2-doc2vec">8.2 Doc2Vec</h3>
+<p><strong>Doc2Vec</strong> extends the embedding idea to a sentence, tweet or whole document. It produces one fixed-length dense vector intended to capture the document&rsquo;s overall context and meaning. It is particularly useful when classification depends on the overall message rather than a few isolated terms.</p>
+<p>The lecture implementation uses the Gensim library and discusses three training approaches:</p>
+<ol>
+<li><strong>Distributed Bag of Words (DBOW):</strong> learns a document vector useful for predicting words in the document; it does not explicitly preserve word order and is analogous in spirit to skip-gram at document level.</li>
+<li><strong>Distributed Memory—Mean (DMM):</strong> predicts a target word from the document vector plus the mean of surrounding word vectors.</li>
+<li><strong>Distributed Memory—Concatenation (DMC):</strong> predicts from the document vector plus concatenated context-word vectors, preserving more positional/contextual distinction at greater dimensional/computational cost.</li>
+</ol>
+<h3 id="8-3-phrase-modelling">8.3 Phrase modelling</h3>
+<p>The demonstrated system applies phrase detection before Doc2Vec training:</p>
+<ul>
+<li><strong>unigrams</strong>: single words;</li>
+<li><strong>bigrams</strong>: two-word expressions such as <code>battery_life</code>;</li>
+<li><strong>trigrams</strong>: three-word expressions such as <code>out_of_stock</code>.</li>
+</ul>
+<p>Phrase modelling prevents meaningful multiword expressions from being treated only as unrelated single tokens and can improve sentiment or topic representation. The example compares combinations across n-gram preprocessing regimes.</p>
+<h3 id="8-4-training-configuration-reported-in-the-lecture">8.4 Training configuration reported in the lecture</h3>
+<ul>
+<li>approximately <strong>1.5 million tweets</strong>;</li>
+<li><strong>30 epochs</strong>;</li>
+<li>each Doc2Vec model outputs a <strong>100-dimensional vector</strong> per tweet;</li>
+<li>vectors from two complementary models are concatenated to produce <strong>200-dimensional</strong> document features.</li>
+</ul>
+<p>The chosen illustration combines a unigram DBOW model (<code>UG_DBOW</code>) and trigram DMM model (<code>TG_DMM</code>). DBOW and DMM learn different views, while unigram and trigram preprocessing capture different granularities.</p>
+<hr>
+<h2 id="9-concatenating-doc2vec-representations">9. Concatenating Doc2Vec representations</h2>
+<h3 id="9-1-why-concatenate">9.1 Why concatenate?</h3>
+<p>Different embedding models capture complementary information. Concatenation preserves all coordinates:</p>
+<p>\[
+x_{combined}=[x_{DBOW};x_{DMM}]
+\]</p>
+<p>Two 100-dimensional vectors become one 200-dimensional vector. A downstream classifier can learn which coordinates from each representation matter.</p>
+<p>Element-wise addition is usually inferior here because it:</p>
+<ul>
+<li>requires equal dimensions;</li>
+<li>merges unrelated coordinate systems;</li>
+<li>loses the identity of the source model;</li>
+<li>may cause cancellation;</li>
+<li>produces 100 rather than 200 features.</li>
+</ul>
+<p>Coordinates in separately trained embeddings do not necessarily have the same semantic axes, so adding coordinate 1 of one model to coordinate 1 of another has no assured meaning. Concatenation does not assume alignment.</p>
+<h3 id="9-2-reconstructed-vector-extraction-function">9.2 Reconstructed vector-extraction function</h3>
+<p>The transcript&rsquo;s code contains spoken/transcription errors; its intended logic is:</p>
+<pre><code class="language-python">import numpy as np
+from gensim.models import Doc2Vec
+
+def get_concat_vectors(model1, model2, corpus, size):
+    vectors = np.zeros((len(corpus), size))
+    n = 0
+    for i in corpus.index:
+        tag = &quot;all_&quot; + str(i)
+        vectors[n] = np.append(
+            model1.dv[tag],
+            model2.dv[tag],
+        )
+        n += 1
+    return vectors
+
+model_ug_dbow = Doc2Vec.load(&quot;d2v_model_ug_dbow.doc2vec&quot;)
+model_tg_dmm = Doc2Vec.load(&quot;d2v_model_tg_dmm.doc2vec&quot;)
+
+train_vecs = get_concat_vectors(
+    model_ug_dbow, model_tg_dmm, X_train, 200
+)
+validation_vecs = get_concat_vectors(
+    model_ug_dbow, model_tg_dmm, X_validation, 200
+)
+</code></pre>
+<p>Notes:</p>
+<ul>
+<li>Older Gensim versions used <code>model.docvecs[tag]</code>; newer versions use <code>model.dv[tag]</code>.</li>
+<li>The tag prefix and index must exactly match tags used during training.</li>
+<li><code>size</code> must equal the sum of model dimensions (100 + 100 = 200).</li>
+<li>The preallocated row order must remain aligned with <code>y_train</code>/<code>y_validation</code>.</li>
+<li>The lecture&rsquo;s execution failed because the pre-trained model files were not available locally; the conceptual code was being demonstrated and requires downloaded/saved model files.</li>
+</ul>
+<h3 id="9-3-removing-temporary-training-state">9.3 Removing temporary training state</h3>
+<p>The lecture used the older Gensim method:</p>
+<pre><code class="language-python">model.delete_temporary_training_data(
+    keep_doctags_vectors=True,
+    keep_inference=True,
+)
+</code></pre>
+<p>Its purpose is to reduce memory after training by deleting state needed only to continue training.</p>
+<ul>
+<li><code>keep_doctags_vectors=True</code> retains learned document/tag vectors so known training documents can still be retrieved.</li>
+<li><code>keep_inference=True</code> retains what is needed to infer vectors for unseen documents.</li>
+</ul>
+<p>Use both when the model must serve classification for known and new documents. This is version-specific legacy API; in current Gensim, save/load and lifecycle/memory behavior may differ.</p>
+<hr>
+<h2 id="10-logistic-regression-on-concatenated-tweet-vectors">10. Logistic regression on concatenated tweet vectors</h2>
+<pre><code class="language-python">from sklearn.linear_model import LogisticRegression
+
+clf = LogisticRegression(max_iter=1000)
+clf.fit(train_vecs, y_train)
+
+print(clf.score(train_vecs, y_train))
+print(clf.score(validation_vecs, y_validation))
+</code></pre>
+<p><code>fit</code> learns the relationship between the 200-dimensional tweet vectors and sentiment labels. <code>score</code> returns mean classification accuracy for logistic regression.</p>
+<p>The lecture reported approximately:</p>
+<ul>
+<li><strong>75.9% training accuracy</strong>;</li>
+<li><strong>75% validation accuracy</strong>.</li>
+</ul>
+<p>The small train–validation gap suggests limited overfitting in that experiment, though accuracy alone is not sufficient for an imbalanced sentiment task. Precision, recall, per-class F1 and the confusion matrix should also be checked.</p>
+<hr>
+<h2 id="11-tf-idf-versus-embeddings">11. TF–IDF versus embeddings</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>TF–IDF</th>
+<th>Word2Vec/Doc2Vec embeddings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Representation</td>
+<td>Sparse, vocabulary-sized</td>
+<td>Dense, fixed-dimensional</td>
+</tr>
+<tr>
+<td>Signal</td>
+<td>Term frequency × corpus rarity</td>
+<td>Learned contextual/semantic patterns</td>
+</tr>
+<tr>
+<td>Synonym similarity</td>
+<td>Not intrinsic</td>
+<td>Often captured</td>
+</tr>
+<tr>
+<td>Word order/context</td>
+<td>Mostly absent unless n-grams used</td>
+<td>More contextual information can be encoded</td>
+</tr>
+<tr>
+<td>Interpretability</td>
+<td>High</td>
+<td>Lower; dimensions are latent</td>
+</tr>
+<tr>
+<td>Compute/memory</td>
+<td>Usually cheaper</td>
+<td>Training/inference can be costly</td>
+</tr>
+<tr>
+<td>Data requirement</td>
+<td>Strong baseline on modest data</td>
+<td>Benefits from large representative corpora</td>
+</tr>
+<tr>
+<td>Best fit</td>
+<td>Lexically distinctive, resource-constrained tasks</td>
+<td>Tasks where semantic similarity/context justify cost</td>
+</tr>
+</tbody>
+</table></div>
+<p>Neither representation is universally superior. Model choice depends on dataset size, language/domain, required latency, compute budget, interpretability and the error metric that matters to the business.</p>
+<hr>
+<h2 id="12-case-study-socialbuzz-consumer-electronics-twitter-monitoring">12. Case study: SocialBuzz/consumer-electronics Twitter monitoring</h2>
+<h3 id="12-1-business-problem">12.1 Business problem</h3>
+<p>A popular consumer-electronics brand wants to monitor social-media conversations about its products and competitors. Twitter provides a large, current stream of user-generated content and an opportunity to understand audience response and engage quickly.</p>
+<p>Possible classification tasks include:</p>
+<ul>
+<li><strong>sentiment analysis</strong> — positive, negative or neutral;</li>
+<li><strong>topic labelling/modelling</strong> — product quality, delivery, customer support, pricing, etc.;</li>
+<li><strong>intent classification</strong> — complaint, purchase enquiry, help request or general mention.</li>
+</ul>
+<p>The operational priority is to identify important negative tweets quickly enough for a response, without overwhelming staff with false alerts.</p>
+<h3 id="12-2-stakeholder-perspectives">12.2 Stakeholder perspectives</h3>
+<ul>
+<li><strong>Kayla, social-media specialist:</strong> understands platform language and prioritizes lexical preprocessing, slang/emoji/hashtag handling and domain-specific sentiment expressions.</li>
+<li><strong>Marcus, data scientist:</strong> considers model quality, feature engineering, imbalance strategies, evaluation and computational feasibility.</li>
+<li><strong>Nina, brand manager:</strong> needs timely, reliable complaint signals, values business impact and expects an interpretable, cost-effective system.</li>
+</ul>
+<p>A good technical recommendation reconciles all three rather than optimizing an isolated model metric.</p>
+<h3 id="12-3-end-to-end-case-study-workflow">12.3 End-to-end case-study workflow</h3>
+<ol>
+<li><strong>Collect tweets through the Twitter API</strong> using brand names, product names and competitor names as keywords.</li>
+<li><strong>Clean and normalize</strong> noisy Twitter text.</li>
+<li><strong>Tokenize</strong> into words or phrase units.</li>
+<li><strong>Apply domain-aware lexical processing/lexicons</strong>.</li>
+<li><strong>Inspect and handle class imbalance</strong>.</li>
+<li><strong>Extract features</strong> using BoW, TF–IDF or embeddings.</li>
+<li><strong>Train candidate classifiers</strong>.</li>
+<li><strong>Evaluate the negative class</strong>, especially precision, recall and F1.</li>
+<li><strong>Select a resource-aware model</strong> and deploy for monitoring.</li>
+</ol>
+<h3 id="12-4-why-twitter-data-is-difficult">12.4 Why Twitter data is difficult</h3>
+<p>Tweets contain:</p>
+<ul>
+<li>slang and abbreviations;</li>
+<li>misspellings and creative spellings;</li>
+<li>hashtags and mentions;</li>
+<li>URLs and special characters;</li>
+<li>emojis/emoticons;</li>
+<li>inconsistent casing and punctuation;</li>
+<li>sarcasm and irony;</li>
+<li>short, context-poor messages;</li>
+<li>rapidly changing product/community vocabulary.</li>
+</ul>
+<p>Blindly deleting every punctuation mark, emoji or hashtag can remove sentiment. A repeated exclamation mark, angry emoji or hashtag such as <code>#NeverAgain</code> may be informative. Preprocessing should remove true noise while preserving or mapping sentiment-bearing cues.</p>
+<h3 id="12-5-lexical-normalization">12.5 Lexical normalization</h3>
+<p>Possible steps include:</p>
+<ul>
+<li>lowercase where capitalization is not meaningful;</li>
+<li>remove or replace URLs and user mentions with placeholders;</li>
+<li>normalize repeated characters (<code>soooo bad</code> → <code>soo bad</code> or <code>so bad</code>);</li>
+<li>expand contractions and common platform abbreviations;</li>
+<li>tokenize text;</li>
+<li>remove stop words selectively;</li>
+<li>lemmatize/stem when useful;</li>
+<li>retain hashtag words, emoji sentiment and negation;</li>
+<li>detect useful bigrams/trigrams such as <code>not good</code>, <code>battery life</code>, <code>customer service</code>.</li>
+</ul>
+<p>Negation must be treated carefully: dropping “not” converts “not good” into “good” and reverses sentiment.</p>
+<h3 id="12-6-domain-specific-sentiment-lexicons">12.6 Domain-specific sentiment lexicons</h3>
+<p>A general lexicon may know “good” and “bad” but fail to assign sufficient sentiment to electronics/customer-service terms such as:</p>
+<ul>
+<li><code>overheating</code>, <code>broken</code>, <code>refund</code>, <code>delay</code>, <code>crash</code>, <code>lag</code>, <code>dead battery</code>;</li>
+<li><code>fast charging</code>, <code>smooth</code>, <code>value for money</code>, <code>resolved</code>.</li>
+</ul>
+<p>A <strong>domain-specific lexicon</strong> maps such vocabulary to polarity or intensity in the business context. It improves feature quality and interpretability but requires maintenance as products, slang and campaigns change. Context still matters: “sick camera” may be praise, while “battery is sick” likely is not.</p>
+<hr>
+<h2 id="13-class-imbalance-in-sentiment-classification">13. Class imbalance in sentiment classification</h2>
+<h3 id="13-1-problem">13.1 Problem</h3>
+<p>Social datasets often contain many neutral posts and far fewer genuinely negative complaints. A learner minimizing overall error may favor the majority class. This can yield deceptively high accuracy but poor negative-class recall/F1, precisely failing the business objective.</p>
+<p>Business consequences of missed negatives include unresolved complaints, escalation, customer churn and reputational damage. Too many false negative alerts also matter: analysts waste time, response cost rises and trust in the system falls. Hence the goal is a precision–recall balance.</p>
+<h3 id="13-2-under-sampling">13.2 Under-sampling</h3>
+<p>Under-sampling removes majority-class examples to make classes more balanced.</p>
+<p><strong>Advantages:</strong> smaller dataset, faster training, low memory usage.</p>
+<p><strong>Limitations:</strong> discards genuine examples, may remove important majority-language diversity, can hurt generalization. It is risky when each tweet contains useful linguistic variation.</p>
+<h3 id="13-3-random-over-sampling">13.3 Random over-sampling</h3>
+<p>Over-sampling duplicates minority examples.</p>
+<p><strong>Advantage:</strong> preserves majority data and increases minority influence.</p>
+<p><strong>Limitations:</strong> duplicate examples may cause overfitting and increase training cost without adding new information.</p>
+<h3 id="13-4-smote">13.4 SMOTE</h3>
+<p><strong>Synthetic Minority Over-sampling Technique (SMOTE)</strong> constructs new minority feature vectors between nearby minority examples. A simplified interpolation is:</p>
+<p>\[
+x_{new}=x_i+\lambda(x_{neighbor}-x_i),\quad 0\le\lambda\le1
+\]</p>
+<p><strong>Advantages</strong></p>
+<ul>
+<li>improves minority representation without exact duplication;</li>
+<li>can increase recall and F1 when minority regions are underrepresented;</li>
+<li>keeps all majority examples.</li>
+</ul>
+<p><strong>Limitations/caveats</strong></p>
+<ul>
+<li>adds computation and memory;</li>
+<li>may generate ambiguous or noisy synthetic points near class boundaries;</li>
+<li>with sparse high-dimensional TF–IDF, interpolation creates synthetic <strong>feature vectors</strong>, not necessarily linguistically natural tweets;</li>
+<li>noisy labels or poor neighborhoods produce poor synthetic samples;</li>
+<li>sampling must occur only on training data, never before the split.</li>
+</ul>
+<h3 id="13-5-class-weighting">13.5 Class weighting</h3>
+<p>Class weighting keeps the original observations but increases the loss/penalty for errors on the minority class. In scikit-learn, many estimators accept:</p>
+<pre><code class="language-python">class_weight=&quot;balanced&quot;
+</code></pre>
+<p>Conceptually, the training objective becomes a weighted sum in which minority errors count more.</p>
+<p><strong>Advantages</strong></p>
+<ul>
+<li>preserves all original data;</li>
+<li>creates no synthetic examples;</li>
+<li>usually cheaper and simpler than SMOTE;</li>
+<li>integrates naturally with linear SVM/logistic regression;</li>
+<li>often suitable for real-time/resource-constrained systems.</li>
+</ul>
+<p><strong>Limitations</strong></p>
+<ul>
+<li>may be insufficient under extreme imbalance;</li>
+<li>excessive weights can reduce precision by overpredicting the minority class;</li>
+<li>weights still require validation/tuning.</li>
+</ul>
+<h3 id="13-6-choosing-an-imbalance-strategy">13.6 Choosing an imbalance strategy</h3>
+<p>Prefer <strong>class weighting</strong> when compute is constrained, the model supports it, synthetic social-media points are questionable, and the imbalance is significant but not extreme. Consider <strong>SMOTE</strong> when minority coverage is severely inadequate, sufficient compute is available, and validation shows a meaningful negative-class F1 improvement. Under-sampling is most defensible when the majority set is enormous/redundant and information loss is acceptable.</p>
+<p>Do not choose by theory alone: compare approaches using the same held-out data and target metric.</p>
+<hr>
+<h2 id="14-resource-aware-recommendation-for-the-case-study">14. Resource-aware recommendation for the case study</h2>
+<p>The strongest integrated recommendation in the supplied case-study material is:</p>
+<blockquote>
+<p><strong>Twitter collection → lexical preprocessing → domain-specific sentiment lexicon/features → TF–IDF → class-weighted linear classifier → optimize negative-class F1.</strong></p>
+</blockquote>
+<p>Why this combination is preferred:</p>
+<ul>
+<li>preprocessing addresses slang, spelling, hashtags, emojis and other platform noise;</li>
+<li>domain terms make product/customer-service sentiment more visible;</li>
+<li>TF–IDF is fast, interpretable and strong for phrase-driven complaints;</li>
+<li>class weighting improves minority learning without data synthesis;</li>
+<li>a linear SVM/logistic model suits sparse high-dimensional text and real-time constraints;</li>
+<li>negative-class F1 reflects the necessary balance between detecting complaints and limiting false alerts.</li>
+</ul>
+<p>Alternatives and why they may be less suitable initially:</p>
+<ul>
+<li><strong>Under-sampling + BoW:</strong> fast, but discards neutral-language diversity and BoW does not distinguish globally common from informative terms.</li>
+<li><strong>SMOTE + embeddings:</strong> potentially semantically richer and useful if validated, but costs more and may create questionable synthetic feature points.</li>
+<li><strong>No balancing:</strong> risks majority bias and missed complaints.</li>
+<li><strong>Embeddings without sufficient data/compute:</strong> may not justify complexity and lower interpretability.</li>
+</ul>
+<p>Embeddings become worthwhile when semantic generalization materially improves held-out performance, enough representative training data and compute exist, and the latency/maintenance cost is acceptable. SMOTE becomes worthwhile when class weighting does not achieve acceptable minority recall/F1 and carefully validated synthetic sampling improves results.</p>
+<hr>
+<h2 id="15-common-mistakes-caveats-and-exam-traps">15. Common mistakes, caveats and exam traps</h2>
+<ol>
+<li><strong>“Text classification is merely attaching any label.”</strong> It learns to assign predefined categories from patterns in labelled text, thereby structuring unstructured content.</li>
+<li><strong>Feeding raw strings to SVM.</strong> Classical SVM requires numerical vectors.</li>
+<li><strong>Fitting TF–IDF on all data before evaluation.</strong> This leaks test-set corpus statistics; fit on training only.</li>
+<li><strong>Calling <code>fit_transform</code> on a new sentence.</strong> It rebuilds the vocabulary/IDF and breaks feature alignment; call <code>transform</code>.</li>
+<li><strong>Saving only the classifier.</strong> The fitted vectorizer is part of the trained system and must also be saved.</li>
+<li><strong>Assuming TF–IDF understands meaning.</strong> It weights lexical dimensions; it does not know that “happy” and “joyful” are synonyms.</li>
+<li><strong>Assuming embeddings are always superior.</strong> They add semantic power but require data, computation and careful validation.</li>
+<li><strong>Confusing Word2Vec with Doc2Vec.</strong> Word2Vec represents words; Doc2Vec yields one fixed-length vector per document/tweet.</li>
+<li><strong>Adding independently trained embedding vectors.</strong> Their coordinate systems are not aligned; concatenation preserves both representations.</li>
+<li><strong>Using accuracy alone on imbalanced data.</strong> Always inspect class-specific precision, recall and F1.</li>
+<li><strong>Applying SMOTE before the train/test split.</strong> Synthetic neighbors can leak information; resample training data only.</li>
+<li><strong>Treating SMOTE output as natural language.</strong> It interpolates numeric feature space and does not literally write plausible tweets.</li>
+<li><strong>Dropping every stop word/punctuation mark blindly.</strong> Negation, emojis, hashtags and punctuation intensity may carry sentiment.</li>
+<li><strong>Interpreting the 99.6% and 75% results as universal.</strong> They are dataset/model demonstrations, not promised production performance.</li>
+<li><strong>Confusing vectorization and classification.</strong> TF–IDF/Doc2Vec produce features; SVM/logistic regression learn decision boundaries.</li>
+<li><strong>Ignoring label-to-row alignment in Doc2Vec extraction.</strong> Any reordering of document vectors without matching labels invalidates training/evaluation.</li>
+</ol>
+<hr>
+<h2 id="16-exam-ready-comparisons">16. Exam-ready comparisons</h2>
+<h3 id="16-1-bag-of-words-tf-idf-and-embeddings">16.1 Bag of Words, TF–IDF and embeddings</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Core operation</th>
+<th>Main strength</th>
+<th>Main weakness</th>
+<th>Typical use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BoW</td>
+<td>Counts tokens</td>
+<td>Simplest and fast</td>
+<td>Common words dominate; no semantics</td>
+<td>Quick baseline</td>
+</tr>
+<tr>
+<td>TF–IDF</td>
+<td>TF × inverse corpus frequency</td>
+<td>Informative, sparse, interpretable</td>
+<td>No intrinsic semantics/context</td>
+<td>Strong linear-classifier baseline</td>
+</tr>
+<tr>
+<td>Word2Vec</td>
+<td>Dense vector per word from context</td>
+<td>Captures semantic similarity</td>
+<td>Must aggregate for document classification</td>
+<td>Semantic word features</td>
+</tr>
+<tr>
+<td>Doc2Vec</td>
+<td>Dense vector per document</td>
+<td>Fixed-length overall document representation</td>
+<td>More training/data/compute; less interpretable</td>
+<td>Tweet/document classification</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="16-2-svm-versus-logistic-regression-in-this-week">16.2 SVM versus logistic regression in this week</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Linear SVM</th>
+<th>Logistic regression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Central idea</td>
+<td>Maximum-margin separating hyperplane</td>
+<td>Models class log-odds/probability through a linear function</td>
+</tr>
+<tr>
+<td>Lecture use</td>
+<td>TF–IDF 20 Newsgroups topic classification</td>
+<td>Concatenated Doc2Vec tweet sentiment vectors</td>
+</tr>
+<tr>
+<td>Strength</td>
+<td>Excellent for high-dimensional sparse text</td>
+<td>Simple, efficient, probability-friendly and suitable for dense/sparse features</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>Class decision; probabilities require extra configuration/calibration</td>
+<td>Probabilities naturally available via <code>predict_proba</code></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="16-3-smote-versus-class-weighting">16.3 SMOTE versus class weighting</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>SMOTE</th>
+<th>Class weighting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Changes dataset?</td>
+<td>Yes—adds synthetic minority vectors</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Compute/memory</td>
+<td>Higher</td>
+<td>Lower</td>
+</tr>
+<tr>
+<td>Main benefit</td>
+<td>Expands minority feature regions</td>
+<td>Penalizes minority errors more</td>
+</tr>
+<tr>
+<td>Main risk</td>
+<td>Synthetic noise/overlap</td>
+<td>Too much minority prediction if overweighted</td>
+</tr>
+<tr>
+<td>Case-study fit</td>
+<td>Consider if validated and resources allow</td>
+<td>Preferred initial resource-aware choice</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="17-likely-long-answer-questions-and-answer-skeletons">17. Likely long-answer questions and answer skeletons</h2>
+<h3 id="q1-explain-a-complete-text-classification-pipeline-using-tf-idf-and-svm">Q1. Explain a complete text-classification pipeline using TF–IDF and SVM.</h3>
+<p>Define supervised classification and unstructured text; describe collection/labels, preprocessing, raw-text split, training-only TF–IDF fit, transformation, linear SVM maximum-margin learning, prediction, accuracy plus class-specific precision/recall/F1, and inference with the same vectorizer. Add the 20 Newsgroups baseball-versus-space example and explain why <code>transform</code>, not <code>fit_transform</code>, is used for the exoplanet sentence.</p>
+<h3 id="q2-explain-tf-idf-with-formula-and-example">Q2. Explain TF–IDF with formula and example.</h3>
+<p>State TF, IDF and product formulas. Explain local frequency versus global rarity. Use “product” versus “overheating” to show why universally common words are down-weighted and class-specific rare words receive higher weights. Mention sparse high-dimensional output, strengths, semantic limitations and fit/transform discipline.</p>
+<h3 id="q3-why-is-svm-effective-for-text-classification">Q3. Why is SVM effective for text classification?</h3>
+<p>Explain hyperplane, support vectors and maximum margin; text vectors are sparse/high-dimensional and often approximately linearly separable; a linear kernel is efficient and generalizes well. Mention soft margin/<code>C</code>, the illustrative 99.6% result and the separation between TF–IDF vectorization and SVM classification.</p>
+<h3 id="q4-compare-tf-idf-word2vec-and-doc2vec">Q4. Compare TF–IDF, Word2Vec and Doc2Vec.</h3>
+<p>Contrast sparse lexical weighting with dense contextual embeddings. Word2Vec represents words and captures similarity; Doc2Vec creates a fixed-length document vector using DBOW/DM approaches. Explain happy/joyful, phrase modelling, data/compute/interpretability trade-offs, and why selection is task-dependent.</p>
+<h3 id="q5-describe-the-twitter-doc2vec-implementation">Q5. Describe the Twitter Doc2Vec implementation.</h3>
+<p>Mention 1.5 million tweets, 30 epochs, 100 dimensions per model, DBOW/DMM/DMC, unigram/trigram phrase variants, concatenation of UG-DBOW and TG-DMM to 200 dimensions, tag-based vector retrieval, logistic-regression fit, and reported 75.9% train/75% validation accuracy. Note missing model-file execution error and version-specific Gensim APIs.</p>
+<h3 id="q6-recommend-a-sentiment-analysis-solution-under-class-imbalance-and-compute-constraints">Q6. Recommend a sentiment-analysis solution under class imbalance and compute constraints.</h3>
+<p>Discuss Twitter noise and domain lexicons, neutral-majority bias, why accuracy is misleading, under-sampling/SMOTE/class-weight alternatives, and choose lexical preprocessing + domain features + TF–IDF + class-weighted linear classifier. Justify optimization of negative-class F1 as a balance of false alarms and missed complaints.</p>
+<hr>
+<h2 id="18-rapid-revision-sheet">18. Rapid revision sheet</h2>
+<ul>
+<li>Text classification = supervised assignment of predefined labels to unstructured text.</li>
+<li>Main uses = sentiment, spam, topic, intent and document categorization.</li>
+<li>Core pipeline = collect → clean → split → vectorize → train → predict → evaluate → deploy.</li>
+<li>TF measures within-document frequency; IDF rewards corpus rarity; TF–IDF is their product.</li>
+<li>Fit TF–IDF on training text only; transform all held-out/new text with the same fitted object.</li>
+<li>TF–IDF is sparse, efficient and interpretable but not semantic.</li>
+<li>Linear SVM finds the maximum-margin hyperplane; nearest points are support vectors.</li>
+<li>Linear SVM is strong for high-dimensional sparse text.</li>
+<li>Word2Vec = dense word vectors; Doc2Vec = fixed-length document vectors.</li>
+<li>Doc2Vec methods discussed = DBOW, DMM and DMC.</li>
+<li>Phrase modelling captures bigrams/trigrams before embedding training.</li>
+<li>Concatenating two 100-D Doc2Vec vectors yields 200-D features and preserves complementary coordinate systems.</li>
+<li>Tweet demonstration = 1.5M tweets, 30 epochs, ~75.9% train and ~75% validation accuracy with logistic regression.</li>
+<li>Imbalanced sentiment data makes accuracy unreliable; inspect negative-class precision, recall and F1.</li>
+<li>SMOTE synthesizes feature vectors; class weighting changes error costs without generating data.</li>
+<li>Resource-aware case-study recommendation = domain-aware preprocessing + TF–IDF + class weighting + linear classifier, tuned for negative-class F1.</li>
+<li>Implement the pipeline yourself: the lecturer explicitly emphasized practice in Colab/Visual Studio to understand vectorization and classification.</li>
+</ul>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<p>The e-commerce review supplies an end-to-end classification use case: preprocess the query carefully, extract dependency and entity features, build TF–IDF and/or embedding representations, train supervised candidates such as Multinomial Naive Bayes and Random Forest, apply a confidence threshold, and route low-confidence inputs to <code>UNKNOWN/HUMAN REVIEW</code>.</p>
+<p>Operational evaluation should connect model errors to cost. Poor precision creates wrong-queue routing; poor recall misses genuine cases. Confusion-matrix analysis can distinguish product state (“The headphones are broken”) from requested action (“I want to return these headphones”). Better intent classification should ultimately improve routing accuracy, handling time, and first-contact resolution—not merely an offline score.</p>
+<p>Production data should feed a validated retraining loop rather than blind self-training. New phrases such as “stuck at the hub” may indicate concept drift, but predictions need human/quality validation before they become labels.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-7.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 7: Text Classification and Sentiment Analysis</span>
+      </a>
+      <a href="week-9.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 9: Topic Modelling</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

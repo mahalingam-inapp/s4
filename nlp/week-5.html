@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>NLP · Week 5 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">NLP</span>
+      <span class="brand-title">Week 5</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html" selected>NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Foundations of Natural Language Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        spaCy Conventions, Text Preprocessing, and Tokenization
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Dependency Parsing, Named Entity Recognition, and Token Operations
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Token-Based Matching, Word Vectors, and Semantic Similarity
+      </a>
+      <a class="is-active" href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Named Entities, Dependency-Based Intent Recognition, Semantic…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Annotation, Training spaCy NER Models, and an Airline-Review Case Study
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Text Classification and Sentiment Analysis
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Text Classification, TF–IDF, SVM, Doc2Vec and Twitter Sentiment Analysis
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Topic Modelling
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        BERT and Modern Pre-trained Language Models
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Fine-Tuning Language Models, Efficient Transformers, Sentence…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Cross-Lingual NLP, Multilingual Models, Transformer Serving, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Transformers, Attention, Evaluation, Hugging Face, TensorBoard, and…
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Hugging Face, Fine-Tuning, Deployment, and Applied Case Studies
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Vision Transformers, DETR, Self-Supervised Vision, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">NLP · Week 5</p>
+        <h1 class="page-title">Named Entities, Dependency-Based Intent Recognition, Semantic Similarity, and Applied NLP</h1>
+        <p class="page-meta">Week 5 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-week-overview">1. Week overview</a></li>
+      <li><a href="#2-understanding-the-atis-corpus-before-modelling">2. Understanding the ATIS corpus before modelling</a></li>
+      <li><a href="#3-named-entity-recognition-ner">3. Named Entity Recognition (NER)</a></li>
+      <li><a href="#4-dependency-parsing-and-tree-walking">4. Dependency parsing and tree walking</a></li>
+      <li><a href="#5-intent-recognition-through-verbs-and-objects">5. Intent recognition through verbs and objects</a></li>
+      <li><a href="#6-semantic-matching-and-similarity">6. Semantic matching and similarity</a></li>
+      <li><a href="#7-case-studies">7. Case studies</a></li>
+      <li><a href="#8-hands-on-text-preprocessing-with-nltk-and-spacy">8. Hands-on text preprocessing with NLTK and spaCy</a></li>
+      <li><a href="#9-training-custom-ner">9. Training custom NER</a></li>
+      <li><a href="#10-evaluation-metrics">10. Evaluation metrics</a></li>
+      <li><a href="#11-review-augmentation-bionova-labs-biomedical-ner">11. Review augmentation: BioNova Labs biomedical NER</a></li>
+      <li><a href="#12-exam-focused-distinctions-and-likely-questions">12. Exam-focused distinctions and likely questions</a></li>
+      <li><a href="#13-final-revision-checklist">13. Final revision checklist</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-week-overview">1. Week overview</h2>
+<p>Week 5 applies earlier ideas—token matching, pretrained word vectors, and semantic similarity—to practical natural-language understanding (NLU). The central problem is to convert an utterance or document into a useful semantic representation containing:</p>
+<ul>
+<li>named entities and their types;</li>
+<li>the user&rsquo;s intent (action + object);</li>
+<li>semantic roles/slots such as source, destination, date, product, dosage, or measurement;</li>
+<li>relations among entities;</li>
+<li>similarity to known examples or intent descriptions.</li>
+</ul>
+<p>The main running example is the <strong>ATIS (Airline Travel Information System)</strong> corpus, a standard benchmark for intent classification. It contains customer utterances about booking flights and obtaining airfare, destination, schedule, and related information. The week then generalizes the methods to news, law, science, recommendation systems, customer support, e-commerce, and biomedical knowledge graphs.</p>
+<p>The recommended overall pipeline is:</p>
+<ol>
+<li>inspect and understand the corpus;</li>
+<li>preprocess only as much as the task requires;</li>
+<li>recognize entities;</li>
+<li>use dependency structure to determine relations and intent;</li>
+<li>use lexical lists and semantic similarity where exact matches fail;</li>
+<li>create a structured semantic representation;</li>
+<li>evaluate, deploy, monitor, and retrain.</li>
+</ol>
+<hr>
+<h2 id="2-understanding-the-atis-corpus-before-modelling">2. Understanding the ATIS corpus before modelling</h2>
+<h3 id="2-1-why-manual-corpus-inspection-matters">2.1 Why manual corpus inspection matters</h3>
+<p>Before coding, inspect raw examples “with the naked eye.” Observations must influence the pipeline. Check:</p>
+<ul>
+<li>what kinds of utterances occur;</li>
+<li>which entity types occur;</li>
+<li>how punctuation and capitalization are used;</li>
+<li>whether standard grammatical rules are followed;</li>
+<li>how labels are distributed;</li>
+<li>whether the file was loaded with the intended header and column names.</li>
+</ul>
+<p>ATIS utterances are frequently uncapitalized and unpunctuated because they originate from speech-to-text. A preprocessing or sentence-boundary method that depends on punctuation can therefore fail. Do <strong>not</strong> add synthetic punctuation merely to make the data look conventional; it changes the observed distribution and can introduce misleading features.</p>
+<h3 id="2-2-loading-and-inspecting-the-data">2.2 Loading and inspecting the data</h3>
+<p>The demonstrated file is a two-column CSV with <strong>4,977 rows</strong>: one column holds the intent and the other the user utterance.</p>
+<pre><code class="language-python">import pandas as pd
+
+dataset = pd.read_csv(&quot;atis_intents.csv&quot;)
+dataset.head()          # default: first five rows
+dataset.head(10)        # first ten rows
+dataset.columns         # verify actual column names
+</code></pre>
+<p>Typical utterances include:</p>
+<ul>
+<li>“what flights are available from pittsburgh to baltimore on thursday morning”;</li>
+<li>a request for the cheapest airfare from Tacoma to Orlando;</li>
+<li>“i need a flight tomorrow from columbus to minneapolis”.</li>
+</ul>
+<p>Print examples from the utterance column rather than assuming a numeric column key:</p>
+<pre><code class="language-python">for text in dataset.iloc[:5, 1]:
+    print(text)
+</code></pre>
+<p>The lecture&rsquo;s <code>KeyError</code> illustrates an important data-engineering lesson: inspect <code>dataset.columns</code> and use the real column name or <code>iloc</code>. If <code>read_csv</code> mistakenly treats the first record as a header, reload with <code>header=None</code> and supply names.</p>
+<p>Intent distribution can be checked with:</p>
+<pre><code class="language-python">dataset.groupby(&quot;intent&quot;).size().sort_values(ascending=False)
+# or, if unnamed:
+dataset.groupby(dataset.columns[0]).size()
+</code></pre>
+<p>This reveals class imbalance and establishes baselines. After inspection, the utterance column can be exported. The shell idea shown was <code>awk -F, '{print $2}' ... &gt; atis_utterances.txt</code>; in real CSVs, prefer pandas because commas may occur inside quoted fields.</p>
+<p><strong>Exam point:</strong> corpus inspection is not optional housekeeping. It prevents column/header mistakes and determines appropriate tokenization, punctuation handling, labels, and evaluation.</p>
+<hr>
+<h2 id="3-named-entity-recognition-ner">3. Named Entity Recognition (NER)</h2>
+<h3 id="3-1-meaning-and-role">3.1 Meaning and role</h3>
+<p>NER locates spans that refer to real-world or domain-specific entities and assigns labels. Common labels include:</p>
+<ul>
+<li><code>PERSON</code> — people;</li>
+<li><code>ORG</code> — organizations;</li>
+<li><code>GPE</code>/<code>LOC</code> — geopolitical entities and locations;</li>
+<li><code>DATE</code>/<code>TIME</code> — temporal expressions;</li>
+<li><code>MONEY</code> — monetary values.</li>
+</ul>
+<p>Domain applications need custom labels—for example <code>CHEMICAL</code>, <code>PROTEIN</code>, <code>DISEASE</code>, <code>DOSAGE</code>, and <code>MEASUREMENT</code> in biomedical text.</p>
+<p>Entities are central to semantic parsing: an airline bot must know not merely that “Boston” occurs, but whether it is an origin, destination, or unrelated location. Thus <strong>NER finds the span/type; dependency or relation analysis assigns its role</strong>.</p>
+<h3 id="3-2-rule-matching-versus-learned-ner">3.2 Rule matching versus learned NER</h3>
+<p>Two broad approaches are emphasized:</p>
+<ul>
+<li><strong>Rule/token matching:</strong> transparent and precise for stable formats or known vocabulary; useful for patterns such as a preposition plus a <code>GPE</code>, dates, dosages, and measurements.</li>
+<li><strong>Machine-learned NER:</strong> learns contextual patterns from annotated examples, generalizes beyond a fixed list, but requires representative labeled data and careful evaluation.</li>
+</ul>
+<p>In spaCy, rule-based matching can use <code>Matcher</code>, <code>PhraseMatcher</code>, or <code>EntityRuler</code>; statistical NER comes from the <code>ner</code> pipeline component. A hybrid system commonly gives the best production result.</p>
+<h3 id="3-3-why-a-simple-linear-pattern-can-fail">3.3 Why a simple linear pattern can fail</h3>
+<p>A tempting destination rule is <code>to + GPE</code>. It works for “fly <strong>to Munich</strong>,” but surface proximity does not guarantee a semantic relation:</p>
+<ul>
+<li>“I am going <strong>to a conference in Munich</strong>. I need an air ticket.” Here <code>to</code> attaches to <em>conference</em>, not directly to <em>Munich</em>.</li>
+<li>“My sister&rsquo;s wedding will be held <strong>in Munich</strong>. I&rsquo;d like to book a flight.” The destination is inferred across sentences; no local <code>to + GPE</code> exists.</li>
+<li>“I want to book a flight to my conference without stopping at Berlin.” Berlin is a stopover, not necessarily the requested destination.</li>
+</ul>
+<p>Allowing arbitrary words between <code>to</code> and a location increases false positives. The safer question is whether the preposition/action and location are <strong>syntactically connected</strong>.</p>
+<hr>
+<h2 id="4-dependency-parsing-and-tree-walking">4. Dependency parsing and tree walking</h2>
+<h3 id="4-1-core-concepts">4.1 Core concepts</h3>
+<p>A dependency parse represents syntax as directed head–dependent relations. For each token, spaCy exposes:</p>
+<ul>
+<li><code>token.text</code> — surface form;</li>
+<li><code>token.lemma_</code> — normalized form;</li>
+<li><code>token.pos_</code> — part of speech;</li>
+<li><code>token.dep_</code> — relation to its head;</li>
+<li><code>token.head</code> — governing token;</li>
+<li><code>token.children</code> — immediate dependents;</li>
+<li><code>token.subtree</code> — all descendants.</li>
+</ul>
+<p>Typical labels include <code>ROOT</code>, <code>nsubj</code>, <code>dobj</code>/<code>obj</code>, <code>prep</code>, <code>pobj</code>, <code>compound</code>, <code>amod</code>, and <code>neg</code>.</p>
+<p>The root has no incoming dependency arc and in spaCy <strong>its head is itself</strong>. This property is the essential termination condition in upward traversal.</p>
+<h3 id="4-2-walking-the-dependency-tree">4.2 Walking the dependency tree</h3>
+<p>Tree walking means visiting tokens according to syntactic links rather than strictly left-to-right. Starting from an entity and following <code>.head</code> upward can test whether a particular preposition or governing verb is its ancestor.</p>
+<pre><code class="language-python">def reach_parent(source_token, destination_token):
+    current = source_token
+    while current != destination_token:
+        if current.head == current:       # reached ROOT
+            return None
+        current = current.head
+    return current
+</code></pre>
+<p>For a parsed version of “I am going to a conference in Munich”:</p>
+<pre><code class="language-python">import spacy
+nlp = spacy.load(&quot;en_core_web_md&quot;)
+doc = nlp(&quot;I am going to a conference in Munich.&quot;)
+
+reach_parent(doc[-2], doc[3])  # starting at Munich; checks whether target is ancestor
+reach_parent(doc[-1], doc[3])  # punctuation is unrelated -&gt; None
+</code></pre>
+<p>The exact token indices depend on tokenization; production code should locate tokens by entity span and dependency, not hard-code indices.</p>
+<p>Algorithmically:</p>
+<ol>
+<li>set the source to the entity token;</li>
+<li>repeatedly replace it with its head;</li>
+<li>stop successfully on the target;</li>
+<li>stop unsuccessfully when <code>current.head == current</code>;</li>
+<li>stop early once the sought relation is found.</li>
+</ol>
+<p><strong>Caveat:</strong> do not claim that the first verb or even the sentence root always expresses the intended action. For a particular entity, its governing intent verb is found on the relevant dependency path. Parser errors, fragments, unusual grammar, and speech-recognition errors can still break the method.</p>
+<h3 id="4-3-practical-uses">4.3 Practical uses</h3>
+<ul>
+<li>deciding whether a city is origin, destination, or stopover;</li>
+<li>linking a drug to the protein it affects;</li>
+<li>attaching a dosage or measurement to the correct entity;</li>
+<li>detecting which product a return/refund action concerns;</li>
+<li>finding negation (“do <strong>not</strong> cancel”);</li>
+<li>extracting adjective/noun modifiers such as “vegetarian restaurant”;</li>
+<li>recognizing multiple intents by inspecting coordinated verbs and objects.</li>
+</ul>
+<hr>
+<h2 id="5-intent-recognition-through-verbs-and-objects">5. Intent recognition through verbs and objects</h2>
+<h3 id="5-1-transitivity">5.1 Transitivity</h3>
+<p>A <strong>verb</strong> expresses action/state. The <strong>object</strong> is the person or thing affected. A <strong>transitive verb</strong> requires an object to complete its meaning; a direct-object dependency (<code>dobj</code>, or <code>obj</code> in newer annotation schemes) is evidence that it is used transitively.</p>
+<p>An <strong>intransitive verb</strong> does not require an object. Examples given are:</p>
+<ul>
+<li>“I slept [for eight hours].”</li>
+<li>“The cat ran [towards me].”</li>
+<li>“The sun was shining.”</li>
+<li>“Her cat died [three days ago].”</li>
+</ul>
+<p>The core clauses remain meaningful without objects: “I slept,” “the cat ran,” “the sun was shining,” and “her cat died.” Pairings such as “die something” or “shine someone” are normally nonsensical in these senses.</p>
+<h3 id="5-2-intent-as-action-object">5.2 Intent as action–object</h3>
+<p>Many ATIS-style labels correspond to a verb and the object it acts on: <code>book + flight</code>, <code>reserve + hotel</code>, <code>order + meal</code>. A first pass is:</p>
+<pre><code class="language-python">direct_object = None
+transitive_verb = None
+for token in doc:
+    if token.dep_ in {&quot;dobj&quot;, &quot;obj&quot;}:
+        direct_object = token
+        transitive_verb = token.head
+        break
+</code></pre>
+<p>However, direct pairs are not always sufficient. In “I want to make a reservation for a flight,” the parse links:</p>
+<ul>
+<li><code>reservation</code> to <code>make</code>;</li>
+<li><code>make</code> to <code>want</code>;</li>
+<li><code>flight</code> through the preposition <code>for</code> to <code>reservation</code>.</li>
+</ul>
+<p>The desired semantic label is <strong>want flight</strong>, although those tokens are not directly adjacent or directly linked.</p>
+<h3 id="5-3-helper-verbs-and-object-expansion">5.3 Helper verbs and object expansion</h3>
+<p>Maintain domain lexicons, preferably using lemmas:</p>
+<pre><code class="language-python">helper_verbs = {&quot;want&quot;, &quot;like&quot;, &quot;need&quot;, &quot;order&quot;, &quot;book&quot;, &quot;make&quot;}
+target_objects = {&quot;flight&quot;, &quot;meal&quot;, &quot;booking&quot;, &quot;hotel&quot;, &quot;reservation&quot;}
+</code></pre>
+<p>Logic demonstrated:</p>
+<ol>
+<li>locate the direct object and its governing transitive verb;</li>
+<li>if that verb is a recognized intent/helper verb, use it;</li>
+<li>otherwise inspect the verb&rsquo;s head—especially when it is the sentence root or another recognized helper;</li>
+<li>if the direct object itself is a target object, use it;</li>
+<li>otherwise inspect its children:
+   - for a <code>prep</code> child, inspect that preposition&rsquo;s object/child (e.g., <code>reservation → for → flight</code>);
+   - for a <code>compound</code> child, include or use the compound noun;</li>
+<li>combine normalized verb and object into an intent label;</li>
+<li>check for <code>None</code> before reading <code>.text</code>.</li>
+</ol>
+<p>Illustrative robust skeleton:</p>
+<pre><code class="language-python">intent_verb = None
+intent_object = None
+
+if transitive_verb:
+    if transitive_verb.lemma_ in helper_verbs:
+        intent_verb = transitive_verb
+    elif transitive_verb.head.lemma_ in helper_verbs:
+        intent_verb = transitive_verb.head
+    elif transitive_verb.head.dep_ == &quot;ROOT&quot;:
+        intent_verb = transitive_verb.head
+
+if direct_object:
+    if direct_object.lemma_ in target_objects:
+        intent_object = direct_object
+    else:
+        for child in direct_object.children:
+            if child.dep_ == &quot;prep&quot;:
+                pobj = next((x for x in child.children
+                             if x.dep_ in {&quot;pobj&quot;, &quot;obj&quot;}), None)
+                if pobj and pobj.lemma_ in target_objects:
+                    intent_object = pobj
+                    break
+            elif child.dep_ == &quot;compound&quot; and child.lemma_ in target_objects:
+                intent_object = child
+                break
+
+if intent_verb and intent_object:
+    intent = f&quot;{intent_verb.lemma_}_{intent_object.lemma_}&quot;
+</code></pre>
+<p>The lecture&rsquo;s <code>NoneType has no attribute text</code> error is not merely a version/deprecation issue: it means extraction did not find a token. Defensive checks, inspection of the actual parse, dependency-label compatibility, and tests on many corpus sentences are necessary.</p>
+<h3 id="5-4-multiple-and-ambiguous-intents">5.4 Multiple and ambiguous intents</h3>
+<p>One query may contain coordinated goals: “track my order and cancel the replacement.” Walk each relevant verb/object branch rather than forcing a single root-based label. Ambiguous queries may require named entities, semantic similarity, sentiment, dialogue history, and user context. Use print checkpoints or dependency visualization to debug multiple representative examples.</p>
+<hr>
+<h2 id="6-semantic-matching-and-similarity">6. Semantic matching and similarity</h2>
+<p>Exact keyword lists miss paraphrases and synonyms. Week 5 therefore combines:</p>
+<ul>
+<li>manually curated synonyms/word lists;</li>
+<li>pretrained word vectors;</li>
+<li>sentence embeddings;</li>
+<li>cosine similarity;</li>
+<li>dependency and entity features.</li>
+</ul>
+<p>Dense word embeddings place semantically related words near one another, allowing similarity between different strings (e.g., <em>cat</em> and <em>dog</em>, or <em>refund</em> and <em>reimbursement</em>). <strong>TF–IDF</strong>, by contrast, measures term importance in a corpus; it is useful for classical text mining but does not intrinsically capture meaning.</p>
+<p>Cosine similarity is:</p>
+<p>\[
+\cos(\theta)=\frac{\mathbf{a}\cdot\mathbf{b}}
+{\|\mathbf{a}\|\,\|\mathbf{b}\|}
+\]</p>
+<p>It compares vector direction rather than magnitude. A standard intent workflow is:</p>
+<ol>
+<li>collect labeled queries and representative examples per intent;</li>
+<li>preprocess consistently;</li>
+<li>encode both the new query and intent examples as dense vectors (spaCy vectors, BERT, Universal Sentence Encoder, etc.);</li>
+<li>calculate cosine similarity to every intent/example;</li>
+<li>select the highest-scoring label only if it exceeds a confidence threshold;</li>
+<li>otherwise ask for clarification or route to a fallback;</li>
+<li>refine with entities, dependency features, sentiment, context, and dialogue history.</li>
+</ol>
+<pre><code class="language-python">from sklearn.metrics.pairwise import cosine_similarity
+
+def calculate_similarity(query_embedding, intent_embeddings):
+    return cosine_similarity(query_embedding, intent_embeddings)[0]
+
+scores = calculate_similarity(query_vec, intent_matrix)
+best = scores.argmax()
+label = intent_labels[best] if scores[best] &gt;= threshold else &quot;fallback&quot;
+</code></pre>
+<p>Challenges include data quality/quantity, subtle intent distinctions, domain shift, and threshold selection. A low threshold raises recall but can increase false positives; a high threshold raises precision but can reject valid queries.</p>
+<hr>
+<h2 id="7-case-studies">7. Case studies</h2>
+<h3 id="7-1-extracting-locations-from-news">7.1 Extracting locations from news</h3>
+<p><strong>Business goals:</strong> location-based summaries, geographical tracking of breaking news, and trend analysis of coverage.</p>
+<p>Workflow: collect archived articles → manually annotate locations → choose rule-based or learned NER → train → test on unseen articles using precision/recall/F1 → integrate into publishing workflow → monitor and retrain with new annotations.</p>
+<p>Benefits: greater efficiency, fewer manual errors, improved accuracy and geographic analysis. The framework extends to people, organizations, dates, and other entity types.</p>
+<h3 id="7-2-legal-contract-information-extraction">7.2 Legal-contract information extraction</h3>
+<p>Contracts are dense and domain-specific; manually extracting parties, clauses, effective/termination dates, obligations, and monetary values is slow and error-prone. Use a sufficiently large, diverse corpus from employment, real estate, and finance.</p>
+<pre><code class="language-python">import spacy
+from spacy import displacy
+import pandas as pd
+nlp = spacy.load(&quot;en_core_web_lg&quot;)
+</code></pre>
+<p>The large model was recommended because of the scale/complexity and its vector support, although model choice should be validated empirically. Preprocess, define/annotate domain labels, train custom NER, extract relations/clauses, visualize or inspect with displaCy, evaluate, and keep a human legal reviewer for high-risk decisions. Diverse drafting styles and definitions make context essential.</p>
+<h3 id="7-3-scientific-paper-extraction">7.3 Scientific-paper extraction</h3>
+<p>Target entities include chemicals, proteins, diseases, and numerical findings; target relations include interactions and outcome links. The workflow includes tokenization, optional stop-word removal, <strong>domain-specific stop words</strong> such as boilerplate scientific phrases (the lecture mentions terms such as “in vitro” and “et al.”), custom NER, dependency/rule-based relation extraction, and regular expressions or specialized libraries for measurements/statistics.</p>
+<p>Evaluate entity extraction with precision/recall/F1. Relations and numerical extraction may need custom exact-match or relation-level metrics. Performance depends heavily on annotation quality and coverage.</p>
+<h3 id="7-4-recommendation-query-dependency-parsing-improves-intent">7.4 Recommendation query: dependency parsing improves intent</h3>
+<p>Keyword matching can find “vegetarian” and a place name but miss how they modify the requested object/action. Parse the query with spaCy or Stanford CoreNLP; identify the action, object, modifiers, and locations; then send the structured intent to the recommendation engine. Benefits are better accuracy, flexibility, recommendations, and user experience.</p>
+<h3 id="7-5-customer-support-intent-recognition">7.5 Customer-support intent recognition</h3>
+<p>Possible labels: order status, return, refund, and technical issue. Pipeline:</p>
+<ol>
+<li>gather labeled queries;</li>
+<li>tokenize, remove noise, and define domain stop words carefully;</li>
+<li>extract dependency features—token, lemma, relation, head, children, root verb, entities, paths, and patterns;</li>
+<li>vectorize features;</li>
+<li>train Naive Bayes, SVM, Random Forest, or another classifier;</li>
+<li>evaluate with accuracy, precision, recall, and F1;</li>
+<li>integrate and monitor.</li>
+</ol>
+<p>Feature selection matters; inadequate/imbalanced data and ambiguous or multi-intent queries are major challenges.</p>
+<h3 id="7-6-e-commerce-customer-support">7.6 E-commerce customer support</h3>
+<p>Use a large, continuously updated labeled dataset. Candidate custom stop words mentioned include “customer support,” “help,” and “order,” but remove a domain word only if testing shows that it is not discriminative—“order” may itself distinguish intents.</p>
+<p>Extract root verbs/dependents, named entities and their relations, dependency labels/paths, and syntactic patterns. Train/evaluate alternatives such as Random Forest, SVM, LSTM, or BERT; use cross-validation; deploy the best model; monitor evolving customer language and retrain. Add sentiment/context features for ambiguous queries.</p>
+<h3 id="7-7-customer-support-with-semantic-parsing-and-similarity">7.7 Customer support with semantic parsing and similarity</h3>
+<p>Semantic parsing options include frame-based parsing and dependency parsing plus semantic-role labeling. Encode labeled examples with spaCy vectors or pretrained sentence models, compute cosine similarity, apply a confidence threshold, and enhance with NER/dependencies. Benefits include scalable automated routing and relevant responses; caveats are semantic gaps, subtle distinctions, threshold tuning, and insufficient examples.</p>
+<h3 id="7-8-enhanced-customer-service">7.8 Enhanced customer service</h3>
+<p>Use diverse data covering products, query complexity, and sentiment. Combine sentence embeddings and nearest-intent similarity with named entities and dependency parsing. Tune thresholds to balance precision/recall and use dialogue history/user context when a single turn is insufficient.</p>
+<h3 id="7-9-updating-an-existing-spacy-ner-component">7.9 Updating an existing spaCy NER component</h3>
+<p>Scenario: a news pipeline fails to identify a newly emerging entity type, such as a disease associated with a recent outbreak.</p>
+<p>Steps:</p>
+<ol>
+<li>gather articles containing the new type;</li>
+<li>annotate the entity in spaCy&rsquo;s required offset format, using annotation tools or reliable pre-annotated data;</li>
+<li>choose fine-tuning or adding a new label;</li>
+<li>update with <code>Example</code> objects via <code>nlp.update(...)</code> or revise the training configuration;</li>
+<li>evaluate on a test set containing <strong>both old and new labels</strong> to detect catastrophic forgetting;</li>
+<li>monitor and retrain continuously.</li>
+</ol>
+<p>This makes the pipeline adapt to evolving language while retaining its original abilities.</p>
+<hr>
+<h2 id="8-hands-on-text-preprocessing-with-nltk-and-spacy">8. Hands-on text preprocessing with NLTK and spaCy</h2>
+<h3 id="8-1-purpose">8.1 Purpose</h3>
+<p>Raw text comes from websites, social media, email, and books, with different languages, styles, formats, spelling, and grammar. It contains punctuation, numbers, symbols, emoticons, and abbreviations. Preprocessing reduces noise/variability, creates more uniform structure, improves computational efficiency, and helps a model focus on relevant information—but destructive normalization can also remove signal.</p>
+<p>The demo combines:</p>
+<ul>
+<li><strong>NLTK</strong> for classic tokenization, corpora, POS/NER resources, stemming, and lemmatization;</li>
+<li><strong>spaCy</strong>, a newer/faster pipeline library with statistical/neural models;</li>
+<li><strong>Gensim</strong> for topic modelling and summarization-related workflows;</li>
+<li><strong>TextBlob</strong> for convenient sentiment, translation, and word operations;</li>
+<li>pandas for data handling.</li>
+</ul>
+<p>Imports/resources shown (with corrected spellings):</p>
+<pre><code class="language-python">import pandas as pd
+import nltk, spacy, gensim, warnings
+from nltk.stem import WordNetLemmatizer, PorterStemmer
+from nltk.corpus import stopwords
+from textblob import Word, TextBlob
+from IPython.core.interactiveshell import InteractiveShell
+
+warnings.filterwarnings(&quot;ignore&quot;)
+InteractiveShell.ast_node_interactivity = &quot;all&quot;
+
+nltk.download(&quot;punkt&quot;)
+nltk.download(&quot;averaged_perceptron_tagger&quot;)
+nltk.download(&quot;maxent_ne_chunker&quot;)
+nltk.download(&quot;words&quot;)
+nltk.download(&quot;wordnet&quot;, quiet=True)
+nltk.download(&quot;omw-1.4&quot;, quiet=True)
+nltk.download(&quot;vader_lexicon&quot;, quiet=True)
+</code></pre>
+<p>Modern NLTK releases may use renamed packages such as <code>punkt_tab</code> or language-specific taggers; inspect the runtime error instead of assuming “Python deprecation.”</p>
+<h3 id="8-2-normalization-steps">8.2 Normalization steps</h3>
+<ol>
+<li><strong>Lowercasing:</strong> <code>text = text.lower()</code> reduces casing variants. Retain original casing when it carries NER information.</li>
+<li><strong>Punctuation removal:</strong> can simplify bag-of-words tasks, but punctuation may express sentence boundaries, negation scope, emoticons, decimals, abbreviations, or measurements. Apply task-aware rules.</li>
+<li><strong>Frequency filtering:</strong> remove extremely common or rare tokens only after choosing and validating thresholds. Rare technical terms may be the most valuable entities.</li>
+<li><strong>Tokenization:</strong> split into units that may be words, punctuation, numbers, or symbols.</li>
+</ol>
+<pre><code class="language-python">from nltk.tokenize import word_tokenize
+tokens = word_tokenize(text)
+
+nlp = spacy.load(&quot;en_core_web_sm&quot;)
+spacy_tokens = [t.text for t in nlp(text)]
+</code></pre>
+<p>NLTK&rsquo;s tokenizer uses rules around whitespace/punctuation; spaCy performs model/rule-aware tokenization. Outputs can differ, especially for punctuation, contractions, abbreviations, and measurements.</p>
+<ol start="5">
+<li><strong>Stop-word removal:</strong> removes frequent low-information words.</li>
+</ol>
+<pre><code class="language-python">stop_words = set(stopwords.words(&quot;english&quot;))
+filtered = [t for t in tokens if t.lower() not in stop_words]
+</code></pre>
+<p>Use custom domain lists, but remember that words such as “not,” prepositions, or “order” can be crucial for intent and relations. Stop words can improve TF–IDF by preventing ubiquitous terms from dominating weights, but should not be removed blindly before dependency parsing.</p>
+<ol start="6">
+<li><strong>Stemming:</strong> mechanically truncates tokens to roots that need not be valid words; fast and useful for grouping forms.</li>
+</ol>
+<pre><code class="language-python">stemmer = PorterStemmer()
+stems = [stemmer.stem(t) for t in filtered]
+</code></pre>
+<ol start="7">
+<li><strong>Lemmatization:</strong> maps inflected forms to valid dictionary base forms and benefits from part-of-speech information.</li>
+</ol>
+<pre><code class="language-python">lemmatizer = WordNetLemmatizer()
+lemmas = [lemmatizer.lemmatize(t) for t in filtered]
+
+spacy_lemmas = [t.lemma_ for t in nlp(text)]
+</code></pre>
+<p>Stemming and lemmatization normalize word forms; neither is stop-word removal. spaCy generally integrates tokenization, POS tagging, parsing, NER, and context-aware lemmas in one <code>Doc</code> pipeline.</p>
+<h3 id="8-3-choosing-nltk-versus-spacy">8.3 Choosing NLTK versus spaCy</h3>
+<ul>
+<li>NLTK is excellent for teaching, explicit algorithms, classic corpora, and configurable components.</li>
+<li>spaCy is optimized for production pipelines, speed, dependency parsing, NER, and consistent token objects.</li>
+<li>They can be compared, but repeatedly converting between incompatible tokenizations can cause alignment errors.</li>
+<li>Choose components based on the downstream task and validate on domain data.</li>
+</ul>
+<hr>
+<h2 id="9-training-custom-ner">9. Training custom NER</h2>
+<h3 id="9-1-annotation-comes-first">9.1 Annotation comes first</h3>
+<p>A supervised custom NER workflow is:</p>
+<p><strong>define labels → write guidelines → annotate representative text → validate offsets/agreement → split data → train → evaluate → error-analyze → deploy → monitor/retrain</strong>.</p>
+<p>Annotation is the ground truth for both training and evaluation. Evaluation cannot meaningfully precede labeled reference data.</p>
+<p>spaCy training examples conceptually look like:</p>
+<pre><code class="language-python">(&quot;Metformin 500 mg reduced HbA1c.&quot;, {
+    &quot;entities&quot;: [(0, 9, &quot;CHEMICAL&quot;), (10, 16, &quot;DOSAGE&quot;)]
+})
+</code></pre>
+<p>Use exact character offsets, non-overlapping spans unless the framework supports nesting, a held-out test set, and examples with confusing negatives. Labels must be consistent and domain-relevant.</p>
+<h3 id="9-2-relation-extraction-after-ner">9.2 Relation extraction after NER</h3>
+<p>NER identifies entities; relation extraction connects them. Dependency paths, semantic-role labeling, learned relation classifiers, or domain rules can identify relations such as:</p>
+<ul>
+<li>drug <strong>interacts-with</strong> protein;</li>
+<li>dosage <strong>applies-to</strong> drug;</li>
+<li>measurement <strong>supports</strong> trial outcome;</li>
+<li>party <strong>owes-obligation-to</strong> another party.</li>
+</ul>
+<p>Because entity errors propagate into relations, evaluate entities and relations separately and end-to-end.</p>
+<hr>
+<h2 id="10-evaluation-metrics">10. Evaluation metrics</h2>
+<p>Let <code>TP</code> be correct predicted entities, <code>FP</code> incorrect predicted entities, and <code>FN</code> missed gold entities.</p>
+<p>\[
+Precision=\frac{TP}{TP+FP}
+\]</p>
+<p>Precision asks: <strong>Of all predicted entities, how many were correct?</strong> High precision is important when false nodes/relations are costly.</p>
+<p>\[
+Recall=\frac{TP}{TP+FN}
+\]</p>
+<p>Recall asks: <strong>Of all true entities, how many were found?</strong> High recall is important when missing evidence is costly.</p>
+<p>\[
+F_1=2\frac{Precision\times Recall}{Precision+Recall}
+\]</p>
+<p>F1 is the harmonic—not arithmetic—mean and strongly penalizes imbalance. Report per-class and macro/micro averages, not only one overall number. For intent classification also use accuracy/confusion matrices; for imbalanced data, per-class precision/recall/F1 are more revealing.</p>
+<hr>
+<h2 id="11-review-augmentation-bionova-labs-biomedical-ner">11. Review augmentation: BioNova Labs biomedical NER</h2>
+<h3 id="11-1-problem-and-labels">11.1 Problem and labels</h3>
+<p>BioNova Labs needs to replace slow manual extraction from biomedical papers with a custom NER and knowledge-graph pipeline. Labels/examples are:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Examples</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CHEMICAL</code></td>
+<td>Ibuprofen, Metformin</td>
+<td>drugs/compounds</td>
+</tr>
+<tr>
+<td><code>PROTEIN</code></td>
+<td>BRCA1, p53</td>
+<td>molecular actors</td>
+</tr>
+<tr>
+<td><code>DISEASE</code></td>
+<td>Type 2 Diabetes, COVID-19</td>
+<td>conditions</td>
+</tr>
+<tr>
+<td><code>DOSAGE</code></td>
+<td>500 mg, 10 μg/mL</td>
+<td>administered quantities</td>
+</tr>
+<tr>
+<td><code>MEASUREMENT</code></td>
+<td>p &lt; 0.05, IC50 = 3.2 nM</td>
+<td>quantitative evidence/outcomes</td>
+</tr>
+</tbody>
+</table></div>
+<p>Measurements make the graph scientifically informative rather than merely descriptive. The target includes drug–protein interactions, dosages, and trial outcomes.</p>
+<p>Dr. Maya Chen coordinates manual annotation of <strong>50 sample papers</strong>; Alex Rivera trains and evaluates the spaCy model. The end-to-end workflow is:</p>
+<p><strong>manual annotation → curated data → custom spaCy NER → evaluation → deployment on new reports → relation validation → knowledge graph</strong>.</p>
+<h3 id="11-2-given-evaluation-and-interpretation">11.2 Given evaluation and interpretation</h3>
+<p>The model has precision <code>0.65</code> and recall <code>0.90</code>:</p>
+<p>\[
+F_1=2\frac{0.65\times0.90}{0.65+0.90}\approx0.755\approx0.75
+\]</p>
+<p>High recall means it finds most true proteins; low precision means it also labels many non-protein abbreviations as proteins. In a knowledge graph, low precision is especially dangerous because false entities produce false nodes and relationships, degrading downstream scientific analysis.</p>
+<h3 id="11-3-improvement-options">11.3 Improvement options</h3>
+<ul>
+<li><strong>Balance and expand training examples</strong>, especially hard negative examples of non-protein abbreviations. This directly addresses the observed systematic error and is the best first action.</li>
+<li><strong>Expand annotation guidelines/context windows</strong> to resolve polysemy and ambiguity (the review uses “apple” as an example). Context can improve precision but increases annotation time and is less direct if the dominant issue is abbreviation class imbalance.</li>
+<li><strong>Add post-processing/domain validation rules</strong> for biologically plausible entity and dosage–protein relationships. These are a secondary quality-control layer, not a substitute for fixing training data.</li>
+<li>Test relation extraction on long and nested sentences; dependency links may attach a drug to the wrong protein.</li>
+<li>Re-evaluate on both all entity classes and relations, then monitor drift.</li>
+</ul>
+<p>Strongest deployment sequence:</p>
+<p><strong>improve/balance annotations → retrain → evaluate/error-analyze → apply domain validation → construct the graph → monitor</strong>.</p>
+<p>Accurate NER alone is insufficient; correct relation extraction is also required because errors propagate directly into graph topology.</p>
+<hr>
+<h2 id="12-exam-focused-distinctions-and-likely-questions">12. Exam-focused distinctions and likely questions</h2>
+<h3 id="12-1-do-not-confuse-these-concepts">12.1 Do not confuse these concepts</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Answers</th>
+<th>Strength</th>
+<th>Main limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NER</td>
+<td>“What span/type is this?”</td>
+<td>extracts entities</td>
+<td>not the relation/role by itself</td>
+</tr>
+<tr>
+<td>Dependency parsing</td>
+<td>“How are tokens grammatically linked?”</td>
+<td>syntax, governing verbs, modifiers</td>
+<td>sensitive to parser/domain errors</td>
+</tr>
+<tr>
+<td>Tree walking</td>
+<td>“Is token A an ancestor/on the path of B?”</td>
+<td>relation-aware traversal</td>
+<td>requires root termination</td>
+</tr>
+<tr>
+<td>Intent classification</td>
+<td>“What does the user want?”</td>
+<td>routes system action</td>
+<td>ambiguity/multiple intents</td>
+</tr>
+<tr>
+<td>Slot filling</td>
+<td>“Which values complete the intent?”</td>
+<td>structured arguments</td>
+<td>depends on entity/role accuracy</td>
+</tr>
+<tr>
+<td>TF–IDF</td>
+<td>“Which terms are discriminative?”</td>
+<td>simple, strong baseline</td>
+<td>no intrinsic semantics</td>
+</tr>
+<tr>
+<td>Embeddings</td>
+<td>“Which expressions are semantically close?”</td>
+<td>paraphrase/synonym matching</td>
+<td>model/domain bias and thresholding</td>
+</tr>
+<tr>
+<td>Precision</td>
+<td>correctness of predictions</td>
+<td>penalizes false positives</td>
+<td>ignores misses</td>
+</tr>
+<tr>
+<td>Recall</td>
+<td>coverage of gold instances</td>
+<td>penalizes false negatives</td>
+<td>ignores incorrect predictions</td>
+</tr>
+<tr>
+<td>F1</td>
+<td>balance of precision and recall</td>
+<td>penalizes imbalance</td>
+<td>hides error type/class differences</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="12-2-high-value-exam-statements">12.2 High-value exam statements</h3>
+<ul>
+<li>Inspect the corpus before designing preprocessing or features.</li>
+<li>Speech-to-text intent corpora may lack capitalization and punctuation; the pipeline must not depend on them.</li>
+<li>NER should normally precede slot filling: first identify spans/types, then assign semantic roles.</li>
+<li>Surface patterns are brittle; dependency structure determines whether tokens are meaningfully related.</li>
+<li>The root&rsquo;s head is itself; upward tree traversal must test this to avoid an infinite loop.</li>
+<li>The first verb or root is <strong>not always</strong> the correct intent verb; follow the entity&rsquo;s dependency path.</li>
+<li>A direct object indicates a transitive use of a verb.</li>
+<li>Helper verbs and nested prepositional objects require deeper traversal.</li>
+<li>Lemmatization normalizes forms; stop-word removal removes frequent low-information words.</li>
+<li>TF–IDF measures importance, while embeddings support semantic similarity.</li>
+<li>F1 is the harmonic mean of precision and recall.</li>
+<li>Specialized domains require custom labels, annotated data, and representative negative examples.</li>
+<li>Evaluate before deployment and continue monitoring afterward; new language and entity types require updates.</li>
+<li>Hybrid systems—learned models plus targeted rules—often give the most reliable production result.</li>
+</ul>
+<h3 id="12-3-practice-questions">12.3 Practice questions</h3>
+<ol>
+<li>Explain why <code>to + GPE</code> can misidentify a destination and show how dependency traversal improves it.</li>
+<li>Trace “I want to make a reservation for a flight” and justify the semantic pair <code>want + flight</code>.</li>
+<li>Write safe pseudocode for following <code>.head</code> links and explain the stopping condition.</li>
+<li>Compare stemming and lemmatization with one example and one use case each.</li>
+<li>Distinguish NER, relation extraction, intent recognition, and slot filling in an airline query.</li>
+<li>Given TP, FP, and FN, compute precision, recall, and F1 and interpret which error type dominates.</li>
+<li>Design a custom NER pipeline for legal or biomedical text, including annotation, evaluation, deployment, and monitoring.</li>
+<li>Explain when exact keywords, dependency features, TF–IDF, and embeddings should be combined.</li>
+<li>For BioNova&rsquo;s 0.65 precision/0.90 recall model, explain why balancing hard-negative examples should precede deployment to a knowledge graph.</li>
+<li>Explain why removing punctuation/stop words indiscriminately can harm NER, negation, dependency parsing, and measurements.</li>
+</ol>
+<hr>
+<h2 id="13-final-revision-checklist">13. Final revision checklist</h2>
+<p>Be able to:</p>
+<ul>
+<li>reproduce the full ATIS workflow and corpus-inspection checks;</li>
+<li>define entity, intent, slot, dependency, head, child, root, transitive verb, and direct object;</li>
+<li>explain and write dependency-tree traversal safely;</li>
+<li>extract a nested action/object pair;</li>
+<li>explain custom NER annotation and model updating;</li>
+<li>compare NLTK and spaCy preprocessing;</li>
+<li>distinguish stemming, lemmatization, and stop-word removal;</li>
+<li>explain TF–IDF versus word/sentence embeddings and cosine similarity;</li>
+<li>state and calculate precision, recall, and F1;</li>
+<li>discuss class imbalance, hard negatives, polysemy, context windows, threshold trade-offs, parser errors, and continuous monitoring;</li>
+<li>translate each case study into data → preprocessing → model/features → evaluation → deployment → refinement.</li>
+</ul>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<p>The review&rsquo;s production-safe semantic intent rule is:</p>
+<p>\[
+Intent=\begin{cases}
+\arg\max_i(sim_i), & \max(sim_i)\geq T\\
+Unknown, & \max(sim_i)<T
+\end{cases}
+\]</p>
+<p>Never accept the nearest intent merely because it ranks first. If the maximum score is <code>0.31</code> and the threshold is <code>0.65</code>, return <code>UNKNOWN</code> and route to a human, generic queue, or clarification path. A higher threshold usually improves precision but increases unknowns and reduces coverage; a lower threshold increases coverage but risks misclassification. Validate the threshold empirically.</p>
+<p>The e-commerce case combines lexical, syntactic, semantic, and entity signals. “Please return the damaged headphones from order 12345” can yield action <code>return</code>, object <code>headphones</code>, modifier <code>damaged</code>, <code>PRODUCT=headphones</code>, <code>ORDER_ID=12345</code>, and semantic proximity to product-return templates. “Where is my refund?” and “I want a refund” show why a shared keyword does not imply a shared intent: the former may be <code>REFUND_STATUS</code>, the latter <code>REFUND_REQUEST</code>.</p>
+<p>Multiple goals may require richer output. “My laptop arrived broken. I want my money back” can be represented as primary intent <code>REFUND_REQUEST</code>, reason/secondary intent <code>DAMAGED_PRODUCT</code>, and entity <code>PRODUCT=laptop</code>, motivating multi-label or hierarchical taxonomies rather than one flat label.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-4.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 4: Token-Based Matching, Word Vectors, and…</span>
+      </a>
+      <a href="week-6.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 6: Annotation, Training spaCy NER Models, and…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

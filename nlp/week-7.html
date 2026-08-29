@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>NLP · Week 7 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">NLP</span>
+      <span class="brand-title">Week 7</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html" selected>NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Foundations of Natural Language Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        spaCy Conventions, Text Preprocessing, and Tokenization
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Dependency Parsing, Named Entity Recognition, and Token Operations
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Token-Based Matching, Word Vectors, and Semantic Similarity
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Named Entities, Dependency-Based Intent Recognition, Semantic…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Annotation, Training spaCy NER Models, and an Airline-Review Case Study
+      </a>
+      <a class="is-active" href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Text Classification and Sentiment Analysis
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Text Classification, TF–IDF, SVM, Doc2Vec and Twitter Sentiment Analysis
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Topic Modelling
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        BERT and Modern Pre-trained Language Models
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Fine-Tuning Language Models, Efficient Transformers, Sentence…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Cross-Lingual NLP, Multilingual Models, Transformer Serving, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Transformers, Attention, Evaluation, Hugging Face, TensorBoard, and…
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Hugging Face, Fine-Tuning, Deployment, and Applied Case Studies
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Vision Transformers, DETR, Self-Supervised Vision, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">NLP · Week 7</p>
+        <h1 class="page-title">Text Classification and Sentiment Analysis</h1>
+        <p class="page-meta">Week 7 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-week-overview">1. Week overview</a></li>
+      <li><a href="#2-feature-representation">2. Feature representation</a></li>
+      <li><a href="#3-text-preprocessing-and-normalisation">3. Text preprocessing and normalisation</a></li>
+      <li><a href="#4-basic-implementation-20-newsgroups-linear-svm">4. Basic implementation: 20 Newsgroups + linear SVM</a></li>
+      <li><a href="#5-imdb-sentiment-analysis-workflow">5. IMDb sentiment-analysis workflow</a></li>
+      <li><a href="#6-classifiers-compared">6. Classifiers compared</a></li>
+      <li><a href="#7-evaluation">7. Evaluation</a></li>
+      <li><a href="#8-shopvista-case-study">8. ShopVista case study</a></li>
+      <li><a href="#9-domain-case-studies-and-solution-blueprint">9. Domain case studies and solution blueprint</a></li>
+      <li><a href="#10-live-session-link-to-week-6">10. Live-session link to Week 6</a></li>
+      <li><a href="#11-high-value-exam-comparisons">11. High-value exam comparisons</a></li>
+      <li><a href="#12-likely-exam-questions-and-answer-points">12. Likely exam questions and answer points</a></li>
+      <li><a href="#13-final-memory-sheet">13. Final memory sheet</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-week-overview">1. Week overview</h2>
+<p>Week 7 develops the complete supervised text-classification pipeline: turn raw text into numerical features, learn a classifier from labelled examples, evaluate it correctly, interpret its mistakes, and deploy it for a practical business problem. The principal running examples are 20 Newsgroups topic classification, IMDb movie-review sentiment analysis, and customer-feedback/incident/document classification case studies.</p>
+<p>The core idea is:</p>
+<blockquote>
+<p>Raw text → cleaning/normalisation → feature representation → train/validation/test split → model training → prediction → evaluation, error analysis, refinement and deployment.</p>
+</blockquote>
+<p>Text classification assigns one or more predefined labels to a document. It is a supervised-learning task because training examples contain both the input text and the correct label. Prediction comes only after the model has learned from labelled examples.</p>
+<p>Typical applications mentioned in the week are:</p>
+<ul>
+<li><strong>Sentiment analysis:</strong> positive, negative or neutral mood in social-media posts, product/movie reviews or feedback.</li>
+<li><strong>Spam/fraud detection:</strong> classify mail or messages as wanted versus unsolicited/malicious.</li>
+<li><strong>Customer-query auto-tagging and routing:</strong> direct billing, technical, delivery or complaint queries to the correct team.</li>
+<li><strong>Topic/document categorisation:</strong> sports versus science news; policy, budget, legal or HR documents.</li>
+<li><strong>Intent detection:</strong> infer what a user wants in a chatbot or virtual assistant.</li>
+<li><strong>Public labelling and content organisation:</strong> impose useful categories on large collections of free-form text.</li>
+</ul>
+<h3 id="structured-versus-unstructured-data">Structured versus unstructured data</h3>
+<p>Free-form reviews, chats, posts, surveys, reports and message bodies are difficult for conventional ML models to consume directly. Classification gives them useful labels and therefore makes them easier to search, aggregate and analyse. Structured data normally has a consistent schema—rows, columns and aligned fields/labels—whereas unstructured text does not have a fixed feature layout.</p>
+<p><strong>Important caveat:</strong> the live lecture sometimes called an email or named customer feedback “structured” merely because metadata such as sender/name exists. More precisely, the metadata may be structured while the message/review body remains unstructured. Likewise, classification does not literally convert prose into a database table; it produces structured labels or numerical representations for the prose.</p>
+<h2 id="2-feature-representation">2. Feature representation</h2>
+<p>Machine-learning classifiers cannot use raw strings directly. Each document must be transformed into a numerical feature vector.</p>
+<h3 id="2-1-bag-of-words-bow">2.1 Bag of Words (BoW)</h3>
+<p>BoW constructs a corpus vocabulary and represents each document by token counts.</p>
+<p>Example: <code>delay delay broken</code> gives <code>delay = 2</code>, <code>broken = 1</code>.</p>
+<p><strong>Strengths:</strong> simple, fast, sparse, interpretable and often a useful baseline.<br>
+<strong>Limitations:</strong> ignores word order and context; treats synonyms such as <em>ship</em> and <em>vessel</em> as unrelated dimensions; raw counts can overemphasise words common everywhere.</p>
+<h3 id="2-2-tf-idf">2.2 TF–IDF</h3>
+<p>TF–IDF means <strong>Term Frequency × Inverse Document Frequency</strong>. It rewards a word that is frequent in a particular document but discounts a word that occurs in many documents.</p>
+<p>For term (t), document (d), and corpus (D):</p>
+<p>\[
+TF(t,d)=\frac{\text{count of }t\text{ in }d}{\text{total terms in }d}
+\]</p>
+<p>\[
+IDF(t,D)=\log\left(\frac{N}{df(t)}\right)
+\]</p>
+<p>where (N) is the number of documents and (df(t)) is the number containing (t). Implementations commonly add smoothing, for example \(\log((1+N)/(1+df))+1\), to avoid division/zero-edge problems.</p>
+<p>\[
+TFIDF(t,d,D)=TF(t,d)\times IDF(t,D)
+\]</p>
+<ul>
+<li>A term repeated within one document receives higher TF.</li>
+<li>A term present in nearly every document receives low IDF and is penalised.</li>
+<li>A rare, document-specific term receives high IDF.</li>
+<li>The resulting TF–IDF values form the feature vector fed into the classifier.</li>
+</ul>
+<p><strong>Lecture check:</strong> if <em>election</em> appears in 900 of 1,000 news documents, its IDF is low and it is less discriminative within that corpus. “Rare” does not always mean genuinely useful, however; typos and IDs can also be rare, so cleaning and frequency thresholds matter.</p>
+<p>Example: in SmartHome reviews, <em>the</em> should receive little weight, while <em>delay</em>, <em>broken</em> or <em>connectivity</em> can receive greater weight when they distinguish a subset of reviews.</p>
+<p><code>max_df=0.7</code> removes terms occurring in more than 70% of documents. Stopword removal and document-frequency filtering reduce vocabulary and noise before final weighting.</p>
+<h3 id="2-3-what-tf-idf-does-not-do">2.3 What TF–IDF does not do</h3>
+<p>TF–IDF represents statistical importance, not meaning. It does not inherently know that <em>ship</em> and <em>vessel</em> are related. Lowercasing and stemming reduce surface variation but still do not solve synonymy.</p>
+<p>For semantic similarity, use distributed word representations such as <strong>Word2Vec</strong> or <strong>GloVe</strong>, where semantically related words lie near one another in vector space. Pre-trained embeddings transfer relationships learned from a large external corpus. Contextual models can go further by representing a word differently according to its sentence context.</p>
+<h2 id="3-text-preprocessing-and-normalisation">3. Text preprocessing and normalisation</h2>
+<p>The demonstrated IMDb pipeline performs the following operations:</p>
+<ol>
+<li>Load the CSV and inspect <code>shape</code>, <code>head()</code> and <code>describe()</code>.</li>
+<li>Inspect <code>sentiment.value_counts()</code> to check class balance.</li>
+<li>Remove HTML with BeautifulSoup and <code>get_text()</code>.</li>
+<li>Remove bracketed content with a regular expression.</li>
+<li>Remove special characters and, optionally, digits.</li>
+<li>Tokenise (the lecture uses <code>ToktokTokenizer</code>; <code>word_tokenize</code>/<code>sent_tokenize</code> are also imported).</li>
+<li>Normalise case where appropriate.</li>
+<li>Stem with <code>PorterStemmer</code> (or use <code>LancasterStemmer</code>) and/or lemmatise with <code>WordNetLemmatizer</code>.</li>
+<li>Remove English stopwords.</li>
+<li>Apply the same learned transformation consistently to train, validation and test data.</li>
+</ol>
+<p>Illustrative corrected functions:</p>
+<pre><code class="language-python">import re
+from bs4 import BeautifulSoup
+from nltk.tokenize.toktok import ToktokTokenizer
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
+
+tokenizer = ToktokTokenizer()
+stopword_list = set(stopwords.words(&quot;english&quot;))
+
+def strip_html(text):
+    return BeautifulSoup(text, &quot;html.parser&quot;).get_text()
+
+def remove_between_square_brackets(text):
+    return re.sub(r&quot;\[[^]]*\]&quot;, &quot;&quot;, text)
+
+def denoise_text(text):
+    return remove_between_square_brackets(strip_html(text))
+
+def remove_special_characters(text, remove_digits=True):
+    pattern = r&quot;[^a-zA-Z\s]&quot; if remove_digits else r&quot;[^a-zA-Z0-9\s]&quot;
+    return re.sub(pattern, &quot;&quot;, text)
+
+def simple_stemmer(text):
+    stemmer = PorterStemmer()
+    return &quot; &quot;.join(stemmer.stem(word) for word in text.split())
+
+def remove_stopwords(text, preserve_case=True):
+    tokens = [token.strip() for token in tokenizer.tokenize(text)]
+    kept = [t for t in tokens if t.lower() not in stopword_list]
+    return &quot; &quot;.join(kept if preserve_case else [t.lower() for t in kept])
+</code></pre>
+<p>If original case must be preserved, lowercase only for stopword lookup and output the original token. Lowercasing everything reduces duplicate vocabulary (<code>Ship</code>/<code>ship</code>) but can destroy useful cues such as acronyms or named entities.</p>
+<p><strong>Stemming</strong> applies rules to strip affixes and may produce non-words; it is fast but crude. <strong>Lemmatisation</strong> maps a word to a dictionary base form, is linguistically cleaner, and may need part-of-speech information.</p>
+<p>Cleaning is important because a model can learn spurious HTML/noise patterns. But preprocessing must be task-aware: removing punctuation can erase sentiment (<code>!</code>), removing digits can erase model numbers/dates, and removing negators such as <em>not</em> can reverse sentiment. Never fit the vocabulary or IDF on the test set—doing so leaks information.</p>
+<h2 id="4-basic-implementation-20-newsgroups-linear-svm">4. Basic implementation: 20 Newsgroups + linear SVM</h2>
+<p>The first demonstration classifies two 20 Newsgroups categories: <code>rec.sport.baseball</code> and <code>sci.space</code>.</p>
+<pre><code class="language-python">import pandas as pd
+from sklearn.datasets import fetch_20newsgroups
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score, classification_report
+
+newsgroups = fetch_20newsgroups(
+    subset=&quot;all&quot;,
+    categories=[&quot;rec.sport.baseball&quot;, &quot;sci.space&quot;],
+    shuffle=True,
+    random_state=42,
+)
+
+df = pd.DataFrame({&quot;text&quot;: newsgroups.data, &quot;label&quot;: newsgroups.target})
+X_train_text, X_test_text, y_train, y_test = train_test_split(
+    df[&quot;text&quot;], df[&quot;label&quot;], test_size=0.30, random_state=42,
+    stratify=df[&quot;label&quot;],
+)
+
+vectorizer = TfidfVectorizer(stop_words=&quot;english&quot;, max_df=0.7)
+X_train = vectorizer.fit_transform(X_train_text)
+X_test = vectorizer.transform(X_test_text)
+
+clf = SVC(kernel=&quot;linear&quot;)
+clf.fit(X_train, y_train)
+y_pred = clf.predict(X_test)
+
+print(accuracy_score(y_test, y_pred))
+print(classification_report(
+    y_test, y_pred, target_names=newsgroups.target_names
+))
+</code></pre>
+<p><strong>Why this version is safer than the spoken ordering:</strong> split raw documents first; fit TF–IDF only on training text; merely transform test text. Fitting on all data before splitting allows test-document frequencies into training.</p>
+<p>The lecture’s five-step workflow is: (1) load/prepare data, (2) TF–IDF vectorisation, (3) train/test split, (4) train linear SVM, and (5) predict/evaluate. A linear decision boundary is effective for very high-dimensional sparse text. It does not itself “reduce dimensionality”; it handles sparse high-dimensional features efficiently. Common splits are 70:30 train:test or 60:20:20 train:validation:test, chosen according to dataset size and tuning needs.</p>
+<h2 id="5-imdb-sentiment-analysis-workflow">5. IMDb sentiment-analysis workflow</h2>
+<p>The IMDb CSV has <strong>50,000 reviews and two columns</strong>, with <strong>25,000 positive and 25,000 negative</strong> examples: a balanced binary-classification benchmark. The demonstration slices the first 40,000 for training and the final 10,000 for testing (80:20).</p>
+<p><strong>Caveat:</strong> contiguous slicing is safe only if row order is suitably random. Prefer a shuffled, stratified split with <code>random_state</code> for reproducibility.</p>
+<h3 id="libraries-and-their-roles">Libraries and their roles</h3>
+<ul>
+<li><strong>NumPy/Pandas:</strong> numerical work and tabular manipulation.</li>
+<li><strong>Matplotlib/Seaborn:</strong> EDA and plots.</li>
+<li><strong>NLTK:</strong> tokenisation, stopwords, stemming and lemmatisation.</li>
+<li><strong>scikit-learn:</strong> <code>CountVectorizer</code>, <code>TfidfVectorizer</code>, label encoding, model training and metrics.</li>
+<li><strong>BeautifulSoup, <code>re</code>, <code>string</code>:</strong> HTML and text cleaning.</li>
+<li><strong>TextBlob/spaCy:</strong> supplementary or advanced NLP utilities.</li>
+<li><strong>WordCloud:</strong> exploratory term visualisation.</li>
+</ul>
+<p>The transcript imports <code>LabelBinarizer</code>, <code>LogisticRegression</code>, <code>SGDClassifier</code>, <code>MultinomialNB</code>, <code>SVC</code>, <code>classification_report</code>, <code>confusion_matrix</code> and <code>accuracy_score</code>. It proposes comparing every chosen model on both BoW and TF–IDF features:</p>
+<ol>
+<li>Normalise train and test reviews consistently.</li>
+<li>Build BoW matrices with <code>CountVectorizer</code>.</li>
+<li>Build TF–IDF matrices with <code>TfidfVectorizer</code>.</li>
+<li>Binarise sentiment labels if the estimator needs numeric targets.</li>
+<li>Fit Logistic Regression on BoW and TF–IDF; predict test labels; compute accuracy, classification report and confusion matrix.</li>
+<li>Repeat with an SGD linear classifier/SVM.</li>
+<li>Repeat with Multinomial Naive Bayes.</li>
+<li>Compare results rather than assuming one algorithm is universally best.</li>
+<li>Generate separate positive- and negative-review word clouds and infer recurring themes.</li>
+</ol>
+<p>The practical recording stopped execution early because preprocessing 50,000 reviews was slow and contained naming/code errors (<code>is_lower_case</code> and <code>stopword_list</code> were not consistently defined, and an NLTK stopwords resource needed downloading). The intended pipeline—not the erroneous live typing—is examinable.</p>
+<h2 id="6-classifiers-compared">6. Classifiers compared</h2>
+<h3 id="logistic-regression">Logistic Regression</h3>
+<p>A linear probabilistic classifier. It estimates class probability through the logistic/sigmoid function:</p>
+<p>\[
+P(y=1\mid x)=\frac{1}{1+e^{-(w^Tx+b)}}
+\]</p>
+<p>It is fast on sparse features, interpretable through coefficients, naturally supplies probabilities, and often balances precision and recall well. Regularisation strength, solver, penalty and class weights are tunable.</p>
+<h3 id="multinomial-naive-bayes">Multinomial Naive Bayes</h3>
+<p>A fast probabilistic text classifier based on the conditional-independence assumption. It is especially natural for non-negative count/TF–IDF features, needs little memory and provides a strong baseline. Its simplifying independence assumption can limit accuracy.</p>
+<h3 id="sgd-based-linear-classifier-linear-svm">SGD-based linear classifier / linear SVM</h3>
+<p><code>SGDClassifier</code> optimises a linear model incrementally and scales to very large sparse datasets. With hinge loss it behaves as a linear SVM; with log loss it resembles logistic regression. Results depend on loss, regularisation, learning schedule, stopping and random seed.</p>
+<h3 id="linear-svc-svc-kernel-linear">Linear SVC / <code>SVC(kernel="linear")</code></h3>
+<p>SVM learns a maximum-margin separating hyperplane. Linear kernels are particularly suitable for sparse, high-dimensional text. Standard SVC may train more slowly and consume more resources than specialised linear/SGD implementations; probability estimates are not native unless enabled/calibrated.</p>
+<h3 id="random-forest-and-deep-learning-alternatives">Random Forest and deep-learning alternatives</h3>
+<p>The domain case studies also suggest Random Forest (an ensemble of decision trees) and, for sufficient data/complexity/resources, RNNs, LSTMs and CNNs. Model choice depends on data volume, label quality, sequence/context requirements, computational budget, latency and interpretability—not algorithm prestige.</p>
+<h2 id="7-evaluation">7. Evaluation</h2>
+<p>For a designated positive class:</p>
+<ul>
+<li><strong>TP:</strong> actual positive, predicted positive.</li>
+<li><strong>TN:</strong> actual negative, predicted negative.</li>
+<li><strong>FP:</strong> actual negative, predicted positive.</li>
+<li><strong>FN:</strong> actual positive, predicted negative.</li>
+</ul>
+<p>\[
+Accuracy=\frac{TP+TN}{TP+TN+FP+FN}
+\]</p>
+<p>\[
+Precision=\frac{TP}{TP+FP}
+\qquad
+Recall=\frac{TP}{TP+FN}
+\]</p>
+<p>\[
+F1=2\frac{Precision\times Recall}{Precision+Recall}
+\]</p>
+<ul>
+<li><strong>Accuracy:</strong> overall fraction correct; most meaningful when classes and error costs are reasonably balanced.</li>
+<li><strong>Precision:</strong> reliability of positive predictions; high precision means few false alarms.</li>
+<li><strong>Recall/sensitivity:</strong> coverage of actual positives; high recall means few missed cases.</li>
+<li><strong>F1:</strong> harmonic balance of precision and recall; useful when both error types matter.</li>
+<li><strong>Confusion matrix:</strong> exposes exact error counts and prevents an aggregate score from hiding failure modes.</li>
+</ul>
+<p>Always state which label is treated as “positive.” If “negative review” is the operational target, a false negative commonly means a genuine complaint predicted as non-negative; that missed complaint can cause dissatisfaction, support escalation and churn.</p>
+<h3 id="correct-model-development-discipline">Correct model-development discipline</h3>
+<ul>
+<li>Train on the training set.</li>
+<li>Select preprocessing, features and hyperparameters on a validation set or by cross-validation.</li>
+<li>Use the test set once for an unbiased final estimate.</li>
+<li>Do not repeatedly tune from test results; that is test leakage.</li>
+<li>After final evaluation, a production model may be retrained on all available labelled development data using the frozen choices.</li>
+<li>Conduct error analysis on misclassified examples, tune hyperparameters (e.g., regularisation/learning rate; epochs for iterative/neural models), consider ensembles, and monitor drift after deployment.</li>
+</ul>
+<h2 id="8-shopvista-case-study">8. ShopVista case study</h2>
+<p>ShopVista sells SmartHome devices. Nora analyses the latest <strong>5,000</strong> reviews after Liam notices more mentions of delays and connectivity issues. She compares TF–IDF with a BoW baseline using Logistic Regression, Multinomial NB, SGD-based Linear SVM and standard linear SVC.</p>
+<p>Observed results/details:</p>
+<ul>
+<li>Logistic Regression: negative-class <strong>F1 = 0.82</strong>, with balanced precision and recall.</li>
+<li>Multinomial NB: faster training but slightly lower negative-class <strong>F1 = 0.78</strong>.</li>
+<li>SGD-based SVM: <strong>15% fewer false positives</strong> than the BoW baseline but <strong>10% more false negatives</strong>, demonstrating a precision–recall trade-off.</li>
+<li>Linear SVC: highest precision option, but longer training and more computation.</li>
+<li>Positive word cloud (green): terms such as <em>durable</em> and <em>easy</em>.</li>
+<li>Negative word cloud (red): <em>delay</em> and <em>broken</em>.</li>
+</ul>
+<p>A word cloud is descriptive EDA, not a feature extractor, classifier or evaluation metric. It helps business teams notice themes but frequency can be misleading without context or negation.</p>
+<p><strong>Business decision:</strong> early detection of <em>delay</em> complaints may reduce support costs. Missing genuine negative feedback is likely costlier than investigating some false alarms, so negative-class recall and F1 deserve emphasis. With a two-week launch deadline, Logistic Regression is the most balanced recommendation: best stated F1, probability output, practical speed and balanced error profile. Choose NB if resource/training-time limits dominate; choose Linear SVC when minimising false positives/high precision is worth the added cost. Training occurs offline, so production inference latency, memory, calibration, reliability and monitoring also matter.</p>
+<h2 id="9-domain-case-studies-and-solution-blueprint">9. Domain case studies and solution blueprint</h2>
+<h3 id="e-commerce-feedback">E-commerce feedback</h3>
+<p><strong>Problem:</strong> inefficient service/product improvement because feedback sentiment is not understood.<br>
+<strong>Goal:</strong> positive/negative/neutral classification.<br>
+<strong>Data:</strong> product reviews, social-media comments and support tickets.<br>
+<strong>Method:</strong> remove HTML/special characters/stopwords, lowercase, stem/lemmatise; use BoW/TF–IDF and optionally Word2Vec/GloVe; compare NB, SVM and Random Forest; evaluate accuracy, precision and recall; split data, tune, analyse errors and deploy.</p>
+<h3 id="maritime-incident-reports">Maritime incident reports</h3>
+<p><strong>Problem:</strong> large report volumes obscure patterns, trends and root causes.<br>
+<strong>Labels:</strong> collisions, groundings, fires and equipment failure.<br>
+<strong>Data:</strong> maritime authorities, insurers and shipping organisations.<br>
+<strong>Domain processing:</strong> remove irrelevant/noisy/inconsistent data; lowercase, stem/lemmatise; explicitly handle maritime abbreviations and acronyms. Use TF–IDF and domain-sensitive embeddings. Compare NB, SVM, Random Forest and—where justified—RNN/LSTM/CNN. Select by dataset size, complexity and resources; evaluate, cross-validate, tune and ensemble for robustness. Integrate into the reporting system for real-time classification, rapid response, prevention and continuous monitoring.</p>
+<h3 id="government-documents">Government documents</h3>
+<p><strong>Problem:</strong> daily document volume slows retrieval and decisions.<br>
+<strong>Labels:</strong> policy, budget, legal and HR.<br>
+<strong>Data:</strong> official websites, internal databases and physical archives (after digitisation/OCR where needed).<br>
+<strong>Method:</strong> clean inconsistencies/noise; lowercase, stem/lemmatise; handle government abbreviations/acronyms; build word-frequency/TF–IDF features or Word2Vec/GloVe semantics; compare NB, SVM, Random Forest and data-appropriate deep models. Evaluate accuracy, precision, recall and F1; cross-validate, tune learning rate/epochs where relevant, inspect errors, consider ensembles, deploy for real-time retrieval and retrain when document patterns change.</p>
+<h3 id="reusable-practical-blueprint">Reusable practical blueprint</h3>
+<ol>
+<li>Define labels, operational action, latency and the costs of FP/FN.</li>
+<li>Collect a broad, representative, legally permissible dataset.</li>
+<li>Create consistent labelled examples and audit class balance/annotation quality.</li>
+<li>Split before learning corpus-dependent transformations.</li>
+<li>Clean and normalise with domain-aware rules.</li>
+<li>Establish BoW/TF–IDF linear baselines before more complex models.</li>
+<li>Tune by cross-validation and use metrics aligned to business cost.</li>
+<li>Analyse errors by class/source/language/time and fix data/labels/features where appropriate.</li>
+<li>Deploy the complete preprocessing-vectoriser-model pipeline, not just the estimator.</li>
+<li>Monitor accuracy proxies, latency, drift and label distribution; collect feedback and retrain.</li>
+</ol>
+<h2 id="10-live-session-link-to-week-6">10. Live-session link to Week 6</h2>
+<p>The live class recapped annotation tools because labelled data is a prerequisite for supervised classification:</p>
+<ul>
+<li><strong>Prodigy:</strong> paid annotation tool created by spaCy’s developers and closely integrated with spaCy.</li>
+<li><strong>brat:</strong> open-source annotation tool.</li>
+<li>Both can support annotation workflows used with spaCy; the session emphasised JSON-style outputs for pipeline ingestion. In practice, conversion may be needed because brat commonly uses its own standoff annotation format rather than JSON being its only possible output.</li>
+</ul>
+<p>This connection is exam-relevant: a classifier’s quality is bounded by annotation consistency, coverage and label definition (“garbage in, garbage out”).</p>
+<h2 id="11-high-value-exam-comparisons">11. High-value exam comparisons</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>What it does</th>
+<th>Strength</th>
+<th>Principal limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BoW</td>
+<td>Raw vocabulary counts</td>
+<td>Simple and interpretable</td>
+<td>No order, semantics or corpus rarity</td>
+</tr>
+<tr>
+<td>TF–IDF</td>
+<td>Weights local frequency by corpus rarity</td>
+<td>Strong sparse baseline</td>
+<td>No semantic understanding</td>
+</tr>
+<tr>
+<td>Word embeddings</td>
+<td>Dense semantic representation</td>
+<td>Captures similarity</td>
+<td>May lose document-specific weighting/context</td>
+</tr>
+<tr>
+<td>Logistic Regression</td>
+<td>Linear probabilistic classification</td>
+<td>Balanced, fast, probabilities</td>
+<td>Linear boundary</td>
+</tr>
+<tr>
+<td>Multinomial NB</td>
+<td>Generative probabilistic classification</td>
+<td>Extremely fast, sparse-friendly</td>
+<td>Independence assumption</td>
+</tr>
+<tr>
+<td>SGD linear model</td>
+<td>Incrementally optimised linear classifier</td>
+<td>Scalable</td>
+<td>Tuning-sensitive</td>
+</tr>
+<tr>
+<td>Linear SVM</td>
+<td>Maximum-margin classification</td>
+<td>Excellent for sparse high dimensions</td>
+<td>Cost/probability limitations</td>
+</tr>
+<tr>
+<td>Accuracy</td>
+<td>Total correctness</td>
+<td>Intuitive</td>
+<td>Misleading under imbalance/cost asymmetry</td>
+</tr>
+<tr>
+<td>Precision</td>
+<td>How trustworthy predicted positives are</td>
+<td>Controls FP</td>
+<td>Can sacrifice recall</td>
+</tr>
+<tr>
+<td>Recall</td>
+<td>How many actual positives are found</td>
+<td>Controls FN</td>
+<td>Can sacrifice precision</td>
+</tr>
+<tr>
+<td>F1</td>
+<td>Harmonic precision–recall balance</td>
+<td>Useful compact score</td>
+<td>Ignores TN and explicit costs</td>
+</tr>
+<tr>
+<td>Confusion matrix</td>
+<td>Counts each outcome type</td>
+<td>Diagnoses error pattern</td>
+<td>Requires class/business interpretation</td>
+</tr>
+<tr>
+<td>Word cloud</td>
+<td>Visual term-frequency summary</td>
+<td>Communicative EDA</td>
+<td>Not a model; loses context</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="12-likely-exam-questions-and-answer-points">12. Likely exam questions and answer points</h2>
+<ol>
+<li><strong>Define text classification and list applications.</strong> State supervised assignment of predefined labels; include sentiment, spam, query routing, topic and intent examples.</li>
+<li><strong>Explain TF–IDF with formula and example.</strong> Define TF, IDF and product; show why a corpus-common term gets low IDF and a distinctive term is emphasised.</li>
+<li><strong>Compare BoW, TF–IDF and embeddings.</strong> Counts versus importance weighting versus semantic geometry; clearly say TF–IDF does not learn meaning.</li>
+<li><strong>Describe the full sentiment-analysis pipeline.</strong> Data/labels → split → clean → vectorise → train → validate/tune → predict → metrics/confusion matrix → error analysis/deploy/monitor.</li>
+<li><strong>Why linear SVM for text?</strong> Sparse, high-dimensional features and an effective maximum-margin linear boundary; do not claim SVM automatically reduces dimensionality.</li>
+<li><strong>Precision versus recall.</strong> Give formulas and business costs; connect FP reduction to precision and FN reduction to recall.</li>
+<li><strong>Recommend a ShopVista model.</strong> Use the given numbers and two-week/business-error context; recommend Logistic Regression unless a different cost assumption is explicitly justified.</li>
+<li><strong>How do the three domain cases differ?</strong> Same general pipeline, but labels, sources, abbreviations, error costs, deployment and monitoring requirements are domain-specific.</li>
+<li><strong>Why not use the test set for tuning?</strong> It biases the final estimate; use validation/cross-validation and reserve the test set.</li>
+<li><strong>What is the role of preprocessing?</strong> Reduce irrelevant variability/noise without deleting task-relevant cues; transformations must be consistent and learned from training only.</li>
+</ol>
+<h2 id="13-final-memory-sheet">13. Final memory sheet</h2>
+<ul>
+<li>Labels first; prediction last.</li>
+<li>Split before fitting vocabulary/IDF.</li>
+<li>TF is within-document frequency; IDF is inverse corpus prevalence; TF–IDF is their product.</li>
+<li><code>max_df=0.7</code> discards terms in over 70% of documents.</li>
+<li>BoW/TF–IDF are sparse statistical features; embeddings encode semantic relationships.</li>
+<li>IMDb: 50,000 reviews, 25,000 per sentiment; demonstration uses 40,000/10,000.</li>
+<li>20 Newsgroups demo: baseball versus space; English stopwords, <code>max_df=.7</code>, 70:30, linear SVM, accuracy + classification report.</li>
+<li>Metrics: accuracy for total correctness, precision for FP control, recall for FN control, F1 for balance, confusion matrix for exact errors.</li>
+<li>ShopVista: LR F1 .82; NB F1 .78 and faster; SGD SVM FP −15%, FN +10%; Logistic Regression is the balanced deployment recommendation.</li>
+<li>Word clouds describe frequent words; they do not predict.</li>
+<li>Choose a model by data, resources, latency and error cost; monitor and retrain after deployment.</li>
+<li>Lecturer references: <em>Foundations of Statistical Natural Language Processing</em> (Manning &amp; Schütze) for a strong NLP foundation, and <em>Natural Language Processing with Python</em> (Bird, Klein &amp; Loper) for practical work.</li>
+</ul>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<p>The review case applies TF–IDF to customer-support intent classification:</p>
+<p>\[
+TF(t,d)=\frac{f(t,d)}{|d|},\qquad IDF(t)=\log\left(\frac{N}{df(t)}\right),\qquad TFIDF=TF\times IDF.
+\]</p>
+<p>TF–IDF makes discriminative words such as <code>refund</code> more influential than ubiquitous terms such as <code>order</code>, but it is lexical: it does not inherently know that <code>package ≈ parcel</code> or <code>money back ≈ refund</code>. Dense embeddings supply that semantic signal, and a hybrid model can combine both.</p>
+<p>Multinomial Naive Bayes is a fast probabilistic baseline naturally suited to count/TF–IDF features (<code>P(C|X) ∝ P(X|C)P(C)</code>). Random Forest aggregates many decision trees and may capture nonlinear interactions, though sparse high-dimensional text often favours linear/probabilistic models. Select empirically on the same held-out data.</p>
+<p>Evaluation must go beyond accuracy. Precision is <code>TP/(TP+FP)</code>, recall is <code>TP/(TP+FN)</code>, and F1 is <code>2PR/(P+R)</code>. The harmonic mean penalizes imbalance. Inspect per-class scores, macro/weighted averages, and a confusion matrix; a high overall accuracy can conceal minority-intent failure or repeated <code>refund ↔ return</code> confusion.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-6.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 6: Annotation, Training spaCy NER Models, and…</span>
+      </a>
+      <a href="week-8.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 8: Text Classification, TF–IDF, SVM, Doc2Vec…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

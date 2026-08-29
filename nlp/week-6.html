@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>NLP · Week 6 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">NLP</span>
+      <span class="brand-title">Week 6</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html" selected>NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Foundations of Natural Language Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        spaCy Conventions, Text Preprocessing, and Tokenization
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Dependency Parsing, Named Entity Recognition, and Token Operations
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Token-Based Matching, Word Vectors, and Semantic Similarity
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Named Entities, Dependency-Based Intent Recognition, Semantic…
+      </a>
+      <a class="is-active" href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Annotation, Training spaCy NER Models, and an Airline-Review Case Study
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Text Classification and Sentiment Analysis
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Text Classification, TF–IDF, SVM, Doc2Vec and Twitter Sentiment Analysis
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Topic Modelling
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        BERT and Modern Pre-trained Language Models
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Fine-Tuning Language Models, Efficient Transformers, Sentence…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Cross-Lingual NLP, Multilingual Models, Transformer Serving, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Transformers, Attention, Evaluation, Hugging Face, TensorBoard, and…
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Hugging Face, Fine-Tuning, Deployment, and Applied Case Studies
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Vision Transformers, DETR, Self-Supervised Vision, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">NLP · Week 6</p>
+        <h1 class="page-title">Annotation, Training spaCy NER Models, and an Airline-Review Case Study</h1>
+        <p class="page-meta">Week 6 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-week-objectives-and-conceptual-map">1. Week objectives and conceptual map</a></li>
+      <li><a href="#2-data-annotation">2. Data annotation</a></li>
+      <li><a href="#3-annotation-tools-prodigy-and-brat">3. Annotation tools: Prodigy and BRAT</a></li>
+      <li><a href="#4-spacy-objects-needed-for-training">4. spaCy objects needed for training</a></li>
+      <li><a href="#5-how-statistical-training-works">5. How statistical training works</a></li>
+      <li><a href="#6-updating-an-existing-ner-pipeline-navigation-domain">6. Updating an existing NER pipeline: navigation domain</a></li>
+      <li><a href="#7-training-a-blank-medical-ner-model-from-scratch">7. Training a blank medical NER model from scratch</a></li>
+      <li><a href="#8-case-study-named-entities-in-airline-reviews">8. Case study: named entities in airline reviews</a></li>
+      <li><a href="#9-from-raw-entity-counts-to-useful-business-insight">9. From raw entity counts to useful business insight</a></li>
+      <li><a href="#10-choosing-among-filtering-hardware-and-custom-training">10. Choosing among filtering, hardware, and custom training</a></li>
+      <li><a href="#11-common-errors-and-misconceptions">11. Common errors and misconceptions</a></li>
+      <li><a href="#12-high-yield-comparisons-for-the-exam">12. High-yield comparisons for the exam</a></li>
+      <li><a href="#13-likely-exam-questions-and-model-answer-points">13. Likely exam questions and model-answer points</a></li>
+      <li><a href="#14-rapid-revision-sheet">14. Rapid revision sheet</a></li>
+      <li><a href="#15-practical-mini-project-for-exam-preparation">15. Practical mini-project for exam preparation</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-week-objectives-and-conceptual-map">1. Week objectives and conceptual map</h2>
+<p>Week 6 moves from <em>using</em> a pretrained NLP pipeline to <em>preparing data and training it</em>. The stated objectives were:</p>
+<ol>
+<li>annotate and prepare data for spaCy models;</li>
+<li>update an existing statistical pipeline component, especially NER;</li>
+<li>train a new, domain-specific NER component from scratch;</li>
+<li>save, reload, test, and visualize the resulting model; and</li>
+<li>apply pretrained NER to an airline-review business problem, then distinguish raw NLP output from useful business insight.</li>
+</ol>
+<p>The end-to-end logic is:</p>
+<pre><code class="language-text">Raw customer logs/reviews
+        ↓
+clean and structure the text
+        ↓
+annotate relevant phenomena (entities, intents, POS, relations, etc.)
+        ↓
+convert annotations to spaCy training examples
+        ↓
+train/fine-tune only the required component
+        ↓
+evaluate on unseen positive and negative examples
+        ↓
+save and deploy the updated pipeline
+        ↓
+validate/filter model output before business interpretation
+</code></pre>
+<blockquote>
+<p><strong>Lecturer emphasis:</strong> Preparing good training data is always the first step in model training. The model learns what the examples point it toward; poor or narrow examples produce poor generalization.</p>
+</blockquote>
+<hr>
+<h2 id="2-data-annotation">2. Data annotation</h2>
+<h3 id="2-1-definition">2.1 Definition</h3>
+<p><strong>Data annotation</strong> is the preparation of labeled training data. It transforms unstructured raw text—customer logs, feedback, reviews, documents, and other noisy text—into examples from which a statistical NLP model can learn.</p>
+<p>Annotation can label:</p>
+<ul>
+<li>named entities and their types;</li>
+<li>intents;</li>
+<li>part-of-speech (POS) tags;</li>
+<li>dependency relationships;</li>
+<li>relations between entities; and</li>
+<li>any other target required by the application.</li>
+</ul>
+<p>Example conceptual annotation:</p>
+<pre><code class="language-json">{
+  &quot;sentence&quot;: &quot;I visited JFK Airport&quot;,
+  &quot;entities&quot;: [
+    {&quot;value&quot;: &quot;JFK Airport&quot;, &quot;label&quot;: &quot;LOC&quot;}
+  ]
+}
+</code></pre>
+<p>The labels explicitly tell the statistical algorithm what it should learn. If the objective is entity recognition, the training examples must mark the desired entity spans and labels.</p>
+<h3 id="2-2-why-annotation-matters">2.2 Why annotation matters</h3>
+<ul>
+<li>Raw text is not a sufficient supervised-learning signal. The model needs the expected output.</li>
+<li>Marked examples connect inputs to correct outputs.</li>
+<li>During NER training, the model learns to reproduce marked spans on unseen text.</li>
+<li>Annotation makes otherwise unstructured customer data machine-consumable.</li>
+<li>Consistent annotations determine the meaning of every label and therefore the behavior of the finished system.</li>
+<li>Writing large annotation files manually is slow and error-prone, motivating annotation tools.</li>
+</ul>
+<h3 id="2-3-structure-of-an-ner-annotation">2.3 Structure of an NER annotation</h3>
+<p>For each entity, spaCy-style NER data needs three values:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>start</code></td>
+<td>zero-based character index at which the entity begins</td>
+</tr>
+<tr>
+<td><code>end</code></td>
+<td>character index immediately after the final entity character</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td>entity class, e.g. <code>GPE</code>, <code>PERSON</code>, <code>DRUG</code>, <code>DIS</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Entity spans are therefore represented as:</p>
+<pre><code class="language-python">(start_character, end_character, &quot;LABEL&quot;)
+</code></pre>
+<p>The interval is <strong>half-open</strong>, <code>[start, end)</code>: <code>start</code> is included and <code>end</code> is excluded. This is why the slice <code>text[start:end]</code> should equal the annotated entity text.</p>
+<blockquote>
+<p><strong>Exam trap:</strong> Offsets are character positions, not word numbers. Misaligned offsets can cause warnings, ignored entities, or incorrect supervision.</p>
+</blockquote>
+<h3 id="2-4-training-data-format">2.4 Training-data format</h3>
+<p>A small NER training set is a list of <code>(text, annotation_dictionary)</code> pairs:</p>
+<pre><code class="language-python">TRAIN_DATA = [
+    (&quot;I will visit you in Munich.&quot;,
+     {&quot;entities&quot;: [(20, 26, &quot;GPE&quot;)]}),
+    (&quot;I am going to Victoria's house.&quot;,
+     {&quot;entities&quot;: [(14, 22, &quot;PERSON&quot;)]}),
+    (&quot;I go there.&quot;,
+     {&quot;entities&quot;: []}),
+]
+</code></pre>
+<p>The transcript&rsquo;s live typing contained several offset/label slips; the invariant to remember is:</p>
+<pre><code class="language-python">assert text[start:end] == intended_entity
+</code></pre>
+<p>Each pair contains:</p>
+<ol>
+<li>the original sentence; and</li>
+<li>a dictionary whose <code>entities</code> value is a list of labeled spans.</li>
+</ol>
+<p>If there are no entities, the correct form is:</p>
+<pre><code class="language-python">{&quot;entities&quot;: []}
+</code></pre>
+<p>It should not be omitted, written as <code>None</code>, or replaced by malformed brackets.</p>
+<h3 id="2-5-why-empty-entity-examples-are-essential">2.5 Why empty-entity examples are essential</h3>
+<p>An entity-free sentence is a <strong>negative example</strong>. It teaches the model that some text contains no target entity.</p>
+<p>If training includes only sentences containing entities, the model can overgeneralize and invent entities in ordinary text. Negative examples help it learn when <em>not</em> to predict a span and therefore reduce false positives.</p>
+<p>Practical examples:</p>
+<ul>
+<li>Navigation NER: <code>"Navigate home"</code> is positive if <code>home</code> is a destination; <code>"Navigate"</code> may be negative.</li>
+<li>Medical NER: <code>"Patients were followed for six months"</code> can be a negative example if the schema contains only <code>DRUG</code> and <code>DIS</code>.</li>
+<li>Support-ticket NER: <code>"Thanks, the problem is resolved"</code> may contain no product, fault code, or location.</li>
+</ul>
+<blockquote>
+<p><strong>Lecturer emphasis from the live session:</strong> Keep such examples. A system exposed only to one kind of labeled sentence may assume every real-world sentence must contain a label.</p>
+</blockquote>
+<h3 id="2-6-data-quality-and-annotation-policy">2.6 Data quality and annotation policy</h3>
+<p>For reliable learning:</p>
+<ul>
+<li>define every label precisely;</li>
+<li>decide whether boundary punctuation and modifiers belong inside a span;</li>
+<li>use the same policy across annotators;</li>
+<li>include diverse wording and both positive and negative examples;</li>
+<li>check character offsets programmatically;</li>
+<li>resolve ambiguous labels consistently;</li>
+<li>separate training, validation, and test examples; and</li>
+<li>represent scenarios expected in production, rather than merely repeating a few phrases.</li>
+</ul>
+<hr>
+<h2 id="3-annotation-tools-prodigy-and-brat">3. Annotation tools: Prodigy and BRAT</h2>
+<h3 id="3-1-why-use-a-tool">3.1 Why use a tool?</h3>
+<p>Hand-authoring JSON or span offsets is error-prone and impractical at scale. Annotation tools show text in an interface, allow spans and labels to be selected, record decisions, and export structured data.</p>
+<h3 id="3-2-prodigy">3.2 Prodigy</h3>
+<p><strong>Prodigy</strong> is a modern commercial annotation tool from the creators of spaCy. It is neither free nor open source, but it integrates tightly with the spaCy ecosystem and is intended for efficient, industrial annotation workflows. The lecture demonstrated its web demo to explain the general annotation process.</p>
+<p>Typical workflow:</p>
+<ol>
+<li>One text sample appears in a clean web interface.</li>
+<li>Available entity types appear in the top bar (the example used <code>PERSON</code> and <code>ORG</code>).</li>
+<li>Choose an entity type.</li>
+<li>Select the corresponding text span with the cursor.</li>
+<li>Mark all required spans, such as a person&rsquo;s name or <code>US Navy</code> as an organization.</li>
+<li>Decide whether to <strong>accept</strong>, <strong>reject</strong>, or <strong>ignore</strong> the sample.</li>
+<li>Save the session and export the annotations for training.</li>
+</ol>
+<p>Decision meanings:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accept</td>
+<td>text is relevant and the proposed/completed annotation is correct; add it to the dataset</td>
+</tr>
+<tr>
+<td>Reject</td>
+<td>proposed analysis is wrong or the presented example should be explicitly rejected</td>
+</tr>
+<tr>
+<td>Ignore</td>
+<td>example entered the pool but is irrelevant/uncertain and should not currently train the model</td>
+</tr>
+</tbody>
+</table></div>
+<p>Benefits discussed:</p>
+<ul>
+<li>tight spaCy integration;</li>
+<li>reduced manual effort;</li>
+<li>efficient annotation of large datasets;</li>
+<li>structured export usable in the training workflow; and</li>
+<li>an industry-oriented interface.</li>
+</ul>
+<p>Limitations discussed:</p>
+<ul>
+<li>paid commercial license;</li>
+<li>not open source; and</li>
+<li>licensing/seat requirements must be checked before organizational use.</li>
+</ul>
+<h3 id="3-3-brat">3.3 BRAT</h3>
+<p><strong>BRAT</strong> means <strong>Brat Rapid Annotation Tool</strong>. It is a free, open-source, web-based text annotation system and can also be installed locally.</p>
+<p>Capabilities discussed:</p>
+<ul>
+<li>named-entity/span annotation;</li>
+<li>relation annotation between two or more entities;</li>
+<li>demo datasets (the lecture referred to a CoNLL-style example);</li>
+<li>browser-based annotation;</li>
+<li>local installation, useful for private or restricted data; and</li>
+<li>structured export that can be converted for spaCy training.</li>
+</ul>
+<p>Basic workflow:</p>
+<ol>
+<li>Open the demo or install BRAT locally.</li>
+<li>Upload a small subset of the dataset.</li>
+<li>Select entity spans and labels.</li>
+<li>Optionally annotate relations.</li>
+<li>Export the results.</li>
+<li>Convert/validate them into the exact format expected by the spaCy training process.</li>
+</ol>
+<h3 id="3-4-prodigy-vs-brat">3.4 Prodigy vs BRAT</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Prodigy</th>
+<th>BRAT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cost</td>
+<td>Commercial</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>Source</td>
+<td>Closed</td>
+<td>Open source</td>
+</tr>
+<tr>
+<td>spaCy integration</td>
+<td>Very tight</td>
+<td>Compatible, often through conversion</td>
+</tr>
+<tr>
+<td>Entity annotation</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Relation annotation</td>
+<td>Supported by relevant recipes/workflows</td>
+<td>Yes; a notable core feature</td>
+</tr>
+<tr>
+<td>Local/private use</td>
+<td>Available under its license</td>
+<td>Easily locally installed</td>
+</tr>
+<tr>
+<td>Best fit</td>
+<td>production teams wanting an optimized spaCy workflow</td>
+<td>learning, research, budget-sensitive or privacy-controlled annotation</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Practical selection rule:</strong> Choose a tool based on the target model&rsquo;s input requirements, privacy constraints, scale, budget, collaboration needs, and export compatibility—not merely popularity.</p>
+</blockquote>
+<h3 id="3-5-file-format-caveat">3.5 File-format caveat</h3>
+<p>The lectures repeatedly describe spaCy training as consuming JSON. Conceptually, JSON is a convenient interchange/export format for annotations. In a current spaCy v3 project, training is commonly driven by a configuration file and serialized <code>DocBin</code> corpora (<code>.spacy</code> files), so exported JSON may require conversion. For exam answers tied to the lecture, state that annotation tools export structured labeled data/JSON for the spaCy training workflow; in implementation, verify the installed spaCy version&rsquo;s expected format.</p>
+<hr>
+<h2 id="4-spacy-objects-needed-for-training">4. spaCy objects needed for training</h2>
+<h3 id="4-1-pipeline-and-components">4.1 Pipeline and components</h3>
+<p>A spaCy language pipeline (<code>nlp</code>) includes components such as:</p>
+<ul>
+<li>tokenizer — segments text into tokens;</li>
+<li>tagger — predicts POS/morphological information;</li>
+<li>dependency parser — predicts syntactic relationships;</li>
+<li>named entity recognizer (<code>ner</code>) — predicts labeled entity spans.</li>
+</ul>
+<p>Some components are statistical/trainable. Updating one component can alter shared model behavior, so fine-tuning must be controlled.</p>
+<h3 id="4-2-doc">4.2 <code>Doc</code></h3>
+<p>Calling <code>nlp(text)</code> runs the pipeline and returns a <code>Doc</code>. For training examples, <code>nlp.make_doc(text)</code> is often preferable because it tokenizes without running all trained components.</p>
+<h3 id="4-3-example">4.3 <code>Example</code></h3>
+<p>Raw <code>(text, dictionary)</code> pairs are not passed directly to <code>nlp.update()</code> in modern spaCy. They are converted to <code>Example</code> objects:</p>
+<pre><code class="language-python">import spacy
+from spacy.training import Example
+
+nlp = spacy.load(&quot;en_core_web_md&quot;)
+text = &quot;I will visit you in Munich.&quot;
+annotations = {&quot;entities&quot;: [(20, 26, &quot;GPE&quot;)]}
+
+doc = nlp.make_doc(text)
+example = Example.from_dict(doc, annotations)
+</code></pre>
+<p><code>Example.from_dict()</code>:</p>
+<ul>
+<li>connects the text&rsquo;s tokenization to the gold annotation;</li>
+<li>creates aligned predicted/reference representations;</li>
+<li>translates character-offset supervision into a form used by the training machinery; and</li>
+<li>enables the model&rsquo;s output to be compared with the correct answer to compute loss.</li>
+</ul>
+<blockquote>
+<p><strong>Exam distinction:</strong> A <code>Doc</code> contains tokenized/processed text. An <code>Example</code> pairs the model-side document with reference (gold) annotations for training/evaluation.</p>
+</blockquote>
+<hr>
+<h2 id="5-how-statistical-training-works">5. How statistical training works</h2>
+<h3 id="5-1-epochs">5.1 Epochs</h3>
+<p>An <strong>epoch</strong> is one complete pass through the training dataset. The lecture examples used 20 epochs for navigation fine-tuning and 25 for the small medical model. These are demonstrations, not universal optimum values.</p>
+<h3 id="5-2-shuffling">5.2 Shuffling</h3>
+<p>At every epoch, shuffle the examples:</p>
+<pre><code class="language-python">random.shuffle(TRAIN_DATA)
+</code></pre>
+<p>Shuffling prevents a fixed ordering from systematically biasing the updates and helps stochastic optimization train more thoroughly. <code>random.shuffle()</code> changes the sequence in place. Python&rsquo;s <code>random</code> module supplies pseudo-random methods for distributions including uniform, gamma, and beta; this example specifically needs <code>shuffle</code>.</p>
+<h3 id="5-3-loss">5.3 Loss</h3>
+<p>The <strong>loss function</strong> measures disagreement between the gold annotation and the model&rsquo;s current output. Training seeks parameters that minimize this loss.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">prediction + gold label → loss → optimizer → adjusted weights
+</code></pre>
+<p><code>nlp.update()</code> returns/updates loss information each time it trains on examples. Exact loss values may differ between runs because of random initialization and shuffle order.</p>
+<h3 id="5-4-optimizer-and-stochastic-gradient-descent">5.4 Optimizer and stochastic gradient descent</h3>
+<p>An <strong>optimizer</strong> updates neural-network weights with respect to the loss. The lecture explains this through stochastic gradient descent (SGD): start at a point on the loss surface and take steps down the slope toward a lower value.</p>
+<p>Simplified rule:</p>
+<p>\[
+\theta_{t+1}=\theta_t-\eta\nabla_{\theta}L(\theta_t)
+\]</p>
+<p>where:</p>
+<ul>
+<li>\(\theta\) = parameters/weights;</li>
+<li>\(L\) = loss;</li>
+<li>\(\nabla L\) = direction of steepest increase;</li>
+<li>\(\eta\) = learning rate/step size.</li>
+</ul>
+<p>Because subtraction moves against the gradient, the update aims to reduce loss.</p>
+<h3 id="5-5-avoiding-catastrophic-forgetting">5.5 Avoiding catastrophic forgetting</h3>
+<p>When fine-tuning a pretrained NER model on a narrow domain, it may forget previously learned entity behavior. Risk-reduction measures include:</p>
+<ul>
+<li>disable unrelated components;</li>
+<li>continue from the existing optimizer/weights rather than reinitializing;</li>
+<li>include representative old/general examples where retaining prior capabilities matters;</li>
+<li>use diverse, balanced data; and</li>
+<li>evaluate both new-domain and original-domain behavior.</li>
+</ul>
+<hr>
+<h2 id="6-updating-an-existing-ner-pipeline-navigation-domain">6. Updating an existing NER pipeline: navigation domain</h2>
+<h3 id="6-1-goal">6.1 Goal</h3>
+<p>The first training exercise updates the NER component of pretrained <code>en_core_web_md</code> so it performs better on navigation-specific locations such as home, office, streets, and districts.</p>
+<p>The three stated steps were:</p>
+<ol>
+<li>disable all other statistical components, such as tagger and parser;</li>
+<li>train NER with domain examples; and</li>
+<li>evaluate the updated NER.</li>
+</ol>
+<p>The updated model is then saved to disk and loaded when needed.</p>
+<h3 id="6-2-why-disable-other-components">6.2 Why disable other components?</h3>
+<p>Only NER has gold supervision in this exercise. Leaving other statistical pipes active would:</p>
+<ul>
+<li>waste computation;</li>
+<li>expose components to updates without their own correct targets;</li>
+<li>risk degrading already useful POS/parser behavior; and</li>
+<li>make it harder to isolate the intended change.</li>
+</ul>
+<p>The tokenizer is not a regular statistical pipe to disable in this manner; it is required to create the <code>Doc</code>.</p>
+<h3 id="6-3-representative-training-data">6.3 Representative training data</h3>
+<pre><code class="language-python">TRAIN_SET = [
+    (&quot;Navigate home&quot;, {&quot;entities&quot;: [(9, 13, &quot;GPE&quot;)]}),
+    (&quot;Navigate to office&quot;, {&quot;entities&quot;: [(12, 18, &quot;GPE&quot;)]}),
+    (&quot;Navigate&quot;, {&quot;entities&quot;: []}),
+    (&quot;Navigate to Oxford Street&quot;, {&quot;entities&quot;: [(12, 25, &quot;GPE&quot;)]}),
+]
+</code></pre>
+<p>These examples illustrate destination entities and one negative command. In a real system, a more semantically precise custom label such as <code>DESTINATION</code> may be preferable to overloading <code>GPE</code>, because <code>home</code> and <code>office</code> are not geopolitical entities.</p>
+<h3 id="6-4-complete-fine-tuning-pattern">6.4 Complete fine-tuning pattern</h3>
+<pre><code class="language-python">import random
+import spacy
+from spacy.training import Example
+
+nlp = spacy.load(&quot;en_core_web_md&quot;)
+epochs = 20
+
+other_pipes = [pipe for pipe in nlp.pipe_names if pipe != &quot;ner&quot;]
+
+with nlp.disable_pipes(*other_pipes):
+    optimizer = nlp.create_optimizer()
+
+    for epoch in range(epochs):
+        random.shuffle(TRAIN_SET)
+        losses = {}
+        examples = []
+
+        for text, annotations in TRAIN_SET:
+            doc = nlp.make_doc(text)
+            examples.append(Example.from_dict(doc, annotations))
+
+        nlp.update(examples, sgd=optimizer, losses=losses)
+        print(epoch, losses)
+</code></pre>
+<p>Important mechanics:</p>
+<ul>
+<li><code>nlp.pipe_names</code> lists active pipeline components.</li>
+<li>The list comprehension retains every name other than <code>ner</code>.</li>
+<li><code>with nlp.disable_pipes(*other_pipes):</code> temporarily disables them as a context manager; the pipes are restored after the block.</li>
+<li><code>*other_pipes</code> unpacks the list into separate arguments.</li>
+<li><code>nlp.create_optimizer()</code> continues training an existing initialized pipeline.</li>
+<li>Each raw pair becomes an <code>Example</code>.</li>
+<li><code>nlp.update(...)</code> calculates loss, backpropagates, and lets the optimizer update weights.</li>
+</ul>
+<h3 id="6-5-save-and-reload">6.5 Save and reload</h3>
+<p>Save the complete pipeline, not merely a visualization:</p>
+<pre><code class="language-python">output_dir = &quot;navigation_ner&quot;
+nlp.to_disk(output_dir)
+
+reloaded_nlp = spacy.load(output_dir)
+</code></pre>
+<p><code>displaCy</code> only renders analysis; it does not save model parameters.</p>
+<h3 id="6-6-evaluation">6.6 Evaluation</h3>
+<p>Test on unseen variations:</p>
+<pre><code class="language-python">for text in [
+    &quot;Take me home&quot;,
+    &quot;Navigate to Oxford Street&quot;,
+    &quot;Please start navigation&quot;,       # expected negative
+    &quot;Meet me in London&quot;,             # checks retained general knowledge
+]:
+    doc = nlp(text)
+    print(text, [(ent.text, ent.label_) for ent in doc.ents])
+</code></pre>
+<p>For a proper evaluation, calculate precision, recall, and F1 on a held-out test set rather than treating falling training loss as proof of generalization.</p>
+<hr>
+<h2 id="7-training-a-blank-medical-ner-model-from-scratch">7. Training a blank medical NER model from scratch</h2>
+<h3 id="7-1-why-start-from-scratch">7.1 Why start from scratch?</h3>
+<p>The lecture&rsquo;s medical example assumes the general spaCy NER does not adequately recognize the required medical categories. Instead of adapting general labels, it creates a blank English pipeline and trains NER only for:</p>
+<ul>
+<li><code>DRUG</code> — drug names;</li>
+<li><code>DIS</code> — diseases.</li>
+</ul>
+<p>This is different from fine-tuning:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Fine-tuning existing model</th>
+<th>Training blank model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>begins with pretrained pipeline/NER weights</td>
+<td>begins with blank language pipeline/component</td>
+</tr>
+<tr>
+<td>tries to preserve prior knowledge</td>
+<td>deliberately learns only the supplied schema</td>
+</tr>
+<tr>
+<td>uses <code>create_optimizer()</code> in the lecture</td>
+<td>initializes training with <code>initialize()</code>/historically <code>begin_training()</code></td>
+</tr>
+<tr>
+<td>less data may be needed for modest adaptation</td>
+<td>requires enough labeled data to learn everything desired</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="7-2-demonstration-dataset">7.2 Demonstration dataset</h3>
+<p>The spoken transcript&rsquo;s drug names and offsets are noisy, but its intended structure is:</p>
+<pre><code class="language-python">TRAIN_DATA = [
+    (&quot;Methylphenidate is used in treating children with epilepsy.&quot;,
+     {&quot;entities&quot;: [
+         (0, 15, &quot;DRUG&quot;),
+         (51, 59, &quot;DIS&quot;)
+     ]}),
+    (&quot;Patients were followed up for six months.&quot;,
+     {&quot;entities&quot;: []}),
+    (&quot;An antibiotic may be useful for coronary artery disease.&quot;,
+     {&quot;entities&quot;: [
+         (3, 13, &quot;DRUG&quot;),
+         (32, 55, &quot;DIS&quot;)
+     ]}),
+]
+</code></pre>
+<p>Always recompute and validate actual offsets from the final exact strings. The learning points are the two-label schema and inclusion of an empty example.</p>
+<h3 id="7-3-blank-pipeline-and-labels">7.3 Blank pipeline and labels</h3>
+<pre><code class="language-python">import random
+import spacy
+from spacy.training import Example
+
+nlp = spacy.blank(&quot;en&quot;)
+ner = nlp.add_pipe(&quot;ner&quot;)
+
+for label in [&quot;DRUG&quot;, &quot;DIS&quot;]:
+    ner.add_label(label)
+</code></pre>
+<ul>
+<li><code>spacy.blank("en")</code> creates an English language object without pretrained statistical components.</li>
+<li><code>nlp.add_pipe("ner")</code> adds a new blank entity recognizer.</li>
+<li><code>ner.add_label(label)</code> declares every class it must predict.</li>
+</ul>
+<h3 id="7-4-initialization-and-training">7.4 Initialization and training</h3>
+<p>The lecture used the older <code>nlp.begin_training()</code> wording and explained that the blank model&rsquo;s weights are initialized so it learns from scratch. In current spaCy, the explicit initialization pattern is:</p>
+<pre><code class="language-python">def get_examples():
+    for text, annotations in TRAIN_DATA:
+        yield Example.from_dict(nlp.make_doc(text), annotations)
+
+optimizer = nlp.initialize(get_examples=get_examples)
+
+for epoch in range(25):
+    random.shuffle(TRAIN_DATA)
+    losses = {}
+
+    examples = [
+        Example.from_dict(nlp.make_doc(text), annotations)
+        for text, annotations in TRAIN_DATA
+    ]
+    nlp.update(examples, sgd=optimizer, losses=losses)
+    print(epoch, losses)
+</code></pre>
+<p>If other components exist, disable all except <code>ner</code> in the same context-manager pattern used above.</p>
+<h3 id="7-5-positive-and-negative-testing">7.5 Positive and negative testing</h3>
+<p>Positive medical test:</p>
+<pre><code class="language-python">doc = nlp(&quot;I had coronary artery disease.&quot;)
+print([(ent.text, ent.label_) for ent in doc.ents])
+</code></pre>
+<p>The lecture also checks the first entity&rsquo;s label through <code>doc.ents[0].label_</code>.</p>
+<p>Negative/general-domain tests:</p>
+<pre><code class="language-python">print(nlp(&quot;I met you at Trump Tower.&quot;).ents)
+print(nlp(&quot;I will meet you in San Francisco.&quot;).ents)
+</code></pre>
+<p>The expected result for this deliberately narrow blank model is no entity, because it learned only <code>DRUG</code> and <code>DIS</code>, not general <code>ORG</code>, <code>FAC</code>, or <code>GPE</code> knowledge.</p>
+<p>This demonstrates both the benefit and cost of training from scratch: the schema is controlled, but general pretrained capabilities are absent unless explicitly taught.</p>
+<h3 id="7-6-visualize-with-displacy">7.6 Visualize with displaCy</h3>
+<pre><code class="language-python">from spacy import displacy
+
+doc = nlp(&quot;I had coronary artery disease.&quot;)
+displacy.serve(doc, style=&quot;ent&quot;)
+</code></pre>
+<p>Use <code>style="ent"</code> for entity visualization. <code>displacy.render(..., jupyter=True)</code> is more convenient inside a notebook; <code>serve</code> starts a local visualization server.</p>
+<h3 id="7-7-real-production-caveat">7.7 Real-production caveat</h3>
+<p>Three examples are enough to demonstrate code, not to create a dependable medical system. A production model needs:</p>
+<ul>
+<li>substantially more expert-labeled data;</li>
+<li>clear clinical annotation guidelines;</li>
+<li>patient/privacy safeguards;</li>
+<li>held-out evaluation and error analysis;</li>
+<li>coverage of abbreviations, misspellings, multiword terms, negation contexts, and ambiguous names; and</li>
+<li>domain-expert validation before any clinical use.</li>
+</ul>
+<hr>
+<h2 id="8-case-study-named-entities-in-airline-reviews">8. Case study: named entities in airline reviews</h2>
+<h3 id="8-1-business-task">8.1 Business task</h3>
+<p>The case study processes an airline-review CSV to:</p>
+<ol>
+<li>inspect entities in the first 20 reviews;</li>
+<li>visualize them;</li>
+<li>process up to 5,000 reviews;</li>
+<li>find the 10 most frequent entity strings; and</li>
+<li>decide which extracted entities are actually relevant to travel/marketing analysis.</li>
+</ol>
+<p>This case distinguishes three layers:</p>
+<pre><code class="language-text">spaCy NER = linguistic extraction
+Counter    = frequency aggregation
+analyst    = relevance validation and business interpretation
+</code></pre>
+<h3 id="8-2-imports-and-model-loading">8.2 Imports and model loading</h3>
+<pre><code class="language-python">import pandas as pd
+import spacy
+from spacy import displacy
+
+nlp = spacy.load(&quot;en_core_web_md&quot;)
+df = pd.read_csv(&quot;AirlineReview.csv&quot;)
+</code></pre>
+<p>The lecture also showed importing <code>en_core_web_md</code> as a Python package and calling its <code>load()</code> method. <code>spacy.load("en_core_web_md")</code> is the usual compact equivalent.</p>
+<p>Inspect column names and missing values before assuming the review column is called <code>review</code>:</p>
+<pre><code class="language-python">print(df.columns)
+reviews = df[&quot;review&quot;].dropna().astype(str)
+</code></pre>
+<h3 id="8-3-inspect-the-first-20-reviews">8.3 Inspect the first 20 reviews</h3>
+<pre><code class="language-python">for i, review in enumerate(reviews.iloc[:20], start=1):
+    doc = nlp(review)
+    print(f&quot;Review #{i}: {review}&quot;)
+    for ent in doc.ents:
+        print(f&quot;  Entity: {ent.text} — Label: {ent.label_}&quot;)
+    print()
+</code></pre>
+<p>Key objects:</p>
+<ul>
+<li><code>nlp(review)</code> runs the full spaCy pipeline.</li>
+<li>The result is a <code>Doc</code> containing tokens, linguistic annotations, and entities.</li>
+<li><code>doc.ents</code> is the sequence of recognized entity spans.</li>
+<li><code>ent.text</code> gives the surface text.</li>
+<li><code>ent.label_</code> gives the readable category string.</li>
+</ul>
+<h3 id="8-4-visualization">8.4 Visualization</h3>
+<pre><code class="language-python">for review in reviews.iloc[:20]:
+    doc = nlp(review)
+    displacy.render(doc, style=&quot;ent&quot;, jupyter=True)
+</code></pre>
+<p>displaCy provides <strong>qualitative validation</strong>: it shows entity boundaries and types in context, making false positives, missing spans, and questionable labels easier to notice.</p>
+<p>It does <strong>not</strong>:</p>
+<ul>
+<li>perform NER itself;</li>
+<li>change model predictions;</li>
+<li>count frequencies; or</li>
+<li>save/retrain the model.</li>
+</ul>
+<h3 id="8-5-count-entities-over-5-000-reviews">8.5 Count entities over 5,000 reviews</h3>
+<pre><code class="language-python">from collections import Counter
+
+entity_counter = Counter()
+
+for review in reviews.iloc[:5000]:
+    doc = nlp(review)
+    for ent in doc.ents:
+        entity_counter[ent.text] += 1
+
+for entity, frequency in entity_counter.most_common(10):
+    print(f&quot;Entity: {entity}; Frequency: {frequency}&quot;)
+</code></pre>
+<p><code>Counter</code> is a dictionary-like frequency accumulator. It does no linguistic analysis; it counts what spaCy has already extracted. <code>most_common(10)</code> sorts and returns the ten largest counts.</p>
+<p>The classroom run reported a very frequent <code>first</code> (about 756 occurrences, labeled <code>ORDINAL</code>) and <code>Toronto</code> (about 200, a <code>GPE</code>). Exact results depend on the dataset slice, preprocessing, and model version.</p>
+<h3 id="8-6-efficient-batch-processing">8.6 Efficient batch processing</h3>
+<p>For larger data, use <code>nlp.pipe()</code> rather than repeatedly calling <code>nlp()</code> in Python:</p>
+<pre><code class="language-python">entity_counter = Counter()
+
+for doc in nlp.pipe(reviews.iloc[:5000], batch_size=64):
+    for ent in doc.ents:
+        entity_counter[(ent.text, ent.label_)] += 1
+</code></pre>
+<p>Counting <code>(text, label)</code> rather than text alone prevents two meanings/categories with the same surface form from being silently combined.</p>
+<p>Normalization can also improve aggregation:</p>
+<pre><code class="language-python">key = (ent.text.strip().casefold(), ent.label_)
+</code></pre>
+<p>But normalization must be chosen carefully; collapsing capitalization or aliases can sometimes merge distinct entities. For destination analysis, a curated alias map might combine <code>NYC</code>, <code>New York</code>, and <code>New York City</code>.</p>
+<hr>
+<h2 id="9-from-raw-entity-counts-to-useful-business-insight">9. From raw entity counts to useful business insight</h2>
+<h3 id="9-1-frequency-is-not-importance">9.1 Frequency is not importance</h3>
+<p>The most frequent extracted string is not automatically the most useful. <code>first</code> may be linguistically correct as <code>ORDINAL</code>, yet irrelevant to a campaign studying destinations. <code>Toronto</code> may occur less frequently but be far more actionable.</p>
+<p>Therefore:</p>
+<pre><code class="language-text">high frequency ≠ high business value
+correct linguistic label ≠ relevance to the project
+</code></pre>
+<h3 id="9-2-signal-and-noise">9.2 Signal and noise</h3>
+<ul>
+<li><strong>Signal:</strong> entities aligned with the objective, e.g. <code>GPE</code>, <code>LOC</code>, or possibly <code>FAC</code> for destination/airport analysis.</li>
+<li><strong>Noise:</strong> correct or incorrect extractions that do not answer the business question, e.g. <code>ORDINAL</code> values in a location campaign.</li>
+</ul>
+<p>Poorly filtered output can produce poor marketing decisions even when the model itself is behaving as designed.</p>
+<h3 id="9-3-immediate-solution-filter-by-label">9.3 Immediate solution: filter by label</h3>
+<p>If the pretrained model recognizes locations adequately, filter before counting:</p>
+<pre><code class="language-python">LOCATION_LABELS = {&quot;GPE&quot;, &quot;LOC&quot;, &quot;FAC&quot;}
+location_counter = Counter()
+
+for doc in nlp.pipe(reviews.iloc[:5000], batch_size=64):
+    for ent in doc.ents:
+        if ent.label_ in LOCATION_LABELS:
+            location_counter[ent.text] += 1
+
+print(location_counter.most_common(10))
+</code></pre>
+<p>Advantages:</p>
+<ul>
+<li>fast;</li>
+<li>cheap;</li>
+<li>easy to explain;</li>
+<li>immediately aligned with the business objective; and</li>
+<li>does not require retraining.</li>
+</ul>
+<p>Limitation: post-processing changes the <strong>analysis output</strong>, not the model. Any missed or wrongly labeled location remains wrong.</p>
+<h3 id="9-4-gpu-acceleration">9.4 GPU acceleration</h3>
+<p>A GPU/TPU may reduce processing time for large corpora and prevent impractically slow inference. It is relevant when throughput is the bottleneck.</p>
+<p>However:</p>
+<ul>
+<li>it does not decide which labels matter;</li>
+<li>it does not remove noisy entity categories;</li>
+<li>it does not improve the learned accuracy merely by running on a GPU; and</li>
+<li>hardware cost/availability can rise.</li>
+</ul>
+<blockquote>
+<p><strong>Exam distinction:</strong> GPU addresses <strong>speed and scale</strong>, not <strong>semantic relevance or model quality</strong>.</p>
+</blockquote>
+<h3 id="9-5-custom-ner-training">9.5 Custom NER training</h3>
+<p>Custom training is appropriate when the general model systematically fails to recognize domain entities, boundaries, aliases, airport codes, route names, product names, or organization-specific concepts.</p>
+<p>Benefits:</p>
+<ul>
+<li>domain-specific label schema;</li>
+<li>better long-term alignment;</li>
+<li>potential reduction in systematic false positives/negatives; and</li>
+<li>recognition of entities absent from generic models.</li>
+</ul>
+<p>Costs:</p>
+<ul>
+<li>annotation time and expert effort;</li>
+<li>compute and experimentation;</li>
+<li>validation and maintenance;</li>
+<li>model/version management; and</li>
+<li>risk of catastrophic forgetting during fine-tuning.</li>
+</ul>
+<p>For the immediate airline question, if <code>GPE</code> extraction is already usable and the main problem is that <code>ORDINAL</code> results pollute the top-ten list, filtering is preferable to retraining. Retraining becomes justified when filtering cannot recover missing or misclassified domain entities.</p>
+<h3 id="9-6-recommended-business-intelligence-pipeline">9.6 Recommended business-intelligence pipeline</h3>
+<pre><code class="language-text">Customer reviews
+      ↓
+NER inference
+      ↓
+qualitative validation with contextual samples/displaCy
+      ↓
+entity-type filtering and text normalization
+      ↓
+frequency aggregation
+      ↓
+human/business validation
+      ↓
+marketing insight and decision
+</code></pre>
+<p>The lecturer&rsquo;s broader data-science message is to validate before interpreting. Ask:</p>
+<ul>
+<li>Is the extraction correct?</li>
+<li>Is it relevant?</li>
+<li>Is it aligned with the project goal?</li>
+<li>Is the frequency driven by duplicates, boilerplate, or spelling variants?</li>
+<li>Does sentiment/context change the interpretation? A frequently named destination may be frequently criticized rather than preferred.</li>
+</ul>
+<p>Practical extension: join location entities with review sentiment and airline/route metadata to distinguish <code>popular and praised</code>, <code>popular and criticized</code>, and <code>merely mentioned</code> destinations.</p>
+<hr>
+<h2 id="10-choosing-among-filtering-hardware-and-custom-training">10. Choosing among filtering, hardware, and custom training</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Problem solved</th>
+<th>Advantages</th>
+<th>Limitations</th>
+<th>Choose when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Filter labels</td>
+<td>irrelevant entity categories in output</td>
+<td>immediate, simple, cheap</td>
+<td>does not change predictions</td>
+<td>model is mostly correct; only analysis scope is narrower</td>
+</tr>
+<tr>
+<td>GPU acceleration</td>
+<td>slow inference/large volume</td>
+<td>greater throughput</td>
+<td>no inherent accuracy/relevance gain</td>
+<td>speed is the actual bottleneck</td>
+</tr>
+<tr>
+<td>Fine-tune/custom NER</td>
+<td>domain mismatch</td>
+<td>improves domain recognition</td>
+<td>annotation, evaluation, compute, maintenance</td>
+<td>generic model repeatedly misses/mislabels important domain concepts</td>
+</tr>
+</tbody>
+</table></div>
+<p>Short-term recommendation for the case study: filter to relevant location labels and validate. Long-term recommendation: collect corrected examples and train a domain model only if recurring model errors justify the investment.</p>
+<hr>
+<h2 id="11-common-errors-and-misconceptions">11. Common errors and misconceptions</h2>
+<ol>
+<li><strong>“Raw text alone can train supervised NER.”</strong> False. NER requires gold spans/labels (or another explicit supervision strategy).</li>
+<li><strong>“Offsets are word indices.”</strong> False. They are zero-based character boundaries.</li>
+<li><strong>“The end offset is inclusive.”</strong> False. It is exclusive.</li>
+<li><strong>“Negative sentences should be deleted.”</strong> False. Correct empty examples teach the model not to hallucinate entities.</li>
+<li><strong>“A raw annotation dictionary can always be sent directly to <code>nlp.update()</code>.”</strong> In modern spaCy, create <code>Example</code> objects.</li>
+<li><strong>“Train every pipeline component at once.”</strong> Not when only NER is supervised; disable unrelated statistical components.</li>
+<li><strong>“<code>create_optimizer()</code> and initialization mean the same thing.”</strong> No. Continuing a pretrained model aims to preserve learned weights; initializing a blank model establishes new weights for learning from scratch.</li>
+<li><strong>“Training loss proves quality.”</strong> No. Evaluate on held-out unseen examples.</li>
+<li><strong>“displaCy performs NER.”</strong> No. The pipeline predicts; displaCy visualizes.</li>
+<li><strong>“Counter performs NLP.”</strong> No. It aggregates already extracted strings.</li>
+<li><strong>“The most common entity is the most important.”</strong> Not necessarily; relevance depends on the business objective.</li>
+<li><strong>“A GPU improves prediction accuracy.”</strong> It generally improves speed/throughput, not learned quality.</li>
+<li><strong>“Filtering retrains the model.”</strong> It only changes downstream output.</li>
+<li><strong>“Custom training is always best.”</strong> It is expensive and unnecessary if a simple filter solves the requirement.</li>
+<li><strong>“A three-sentence medical model is production-ready.”</strong> It is only a teaching demonstration.</li>
+<li><strong>“Saving a visualization saves the model.”</strong> Use <code>nlp.to_disk()</code> and reload with <code>spacy.load()</code>.</li>
+</ol>
+<hr>
+<h2 id="12-high-yield-comparisons-for-the-exam">12. High-yield comparisons for the exam</h2>
+<h3 id="12-1-nlp-text-vs-nlp-make-doc-text">12.1 <code>nlp(text)</code> vs <code>nlp.make_doc(text)</code></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th><code>nlp(text)</code></th>
+<th><code>nlp.make_doc(text)</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tokenizes and runs active pipeline components</td>
+<td>tokenizes only</td>
+</tr>
+<tr>
+<td>used for inference</td>
+<td>useful when constructing training examples</td>
+</tr>
+<tr>
+<td>produces predictions including <code>doc.ents</code></td>
+<td>avoids unnecessary/current predictions during example creation</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="12-2-updating-vs-training-from-scratch">12.2 Updating vs training from scratch</h3>
+<ul>
+<li><strong>Update/fine-tune:</strong> load <code>en_core_web_md</code>, isolate NER, continue optimizing with domain examples, test retention.</li>
+<li><strong>Scratch:</strong> <code>spacy.blank("en")</code>, add <code>ner</code>, add labels, initialize, train entirely from annotated examples, expect no general NER knowledge.</li>
+</ul>
+<h3 id="12-3-annotation-vs-inference-vs-analysis">12.3 Annotation vs inference vs analysis</h3>
+<ul>
+<li><strong>Annotation:</strong> humans/tools provide correct labels for learning.</li>
+<li><strong>Training:</strong> optimizer adjusts weights to reduce loss on examples.</li>
+<li><strong>Inference:</strong> <code>nlp(text)</code> predicts entities in unseen text.</li>
+<li><strong>Visualization:</strong> displaCy displays predictions.</li>
+<li><strong>Aggregation:</strong> Counter calculates frequencies.</li>
+<li><strong>Business analysis:</strong> filters, validates, contextualizes, and interprets results.</li>
+</ul>
+<hr>
+<h2 id="13-likely-exam-questions-and-model-answer-points">13. Likely exam questions and model-answer points</h2>
+<h3 id="q1-explain-the-ner-training-data-structure-in-spacy">Q1. Explain the NER training-data structure in spaCy.</h3>
+<p>State that each example pairs a sentence with an annotation dictionary. Each entity is <code>(start, end, label)</code>, using zero-based, end-exclusive character offsets. Empty-entity sentences use <code>{"entities": []}</code> and are valuable negative examples. Convert the data to <code>Example</code> objects before updating the model.</p>
+<h3 id="q2-why-are-other-spacy-pipes-disabled-while-training-ner">Q2. Why are other spaCy pipes disabled while training NER?</h3>
+<p>Only NER receives correct supervision. Disabling tagger/parser reduces computation and protects unrelated learned parameters. <code>disable_pipes</code> is used as a context manager, and the other pipes return afterward.</p>
+<h3 id="q3-differentiate-create-optimizer-and-training-initialization">Q3. Differentiate <code>create_optimizer()</code> and training initialization.</h3>
+<p><code>create_optimizer()</code> in the lecture continues from an existing pretrained pipeline to reduce forgetting. <code>begin_training()</code> was used for a blank model; current spaCy typically uses <code>nlp.initialize()</code>. Initialization prepares the blank model/optimizer using the supplied examples.</p>
+<h3 id="q4-why-include-an-example-with-no-entities">Q4. Why include an example with no entities?</h3>
+<p>It is negative supervision. It teaches the decision boundary and reduces the tendency to force an entity prediction into every sentence, improving precision and real-world generalization.</p>
+<h3 id="q5-compare-prodigy-and-brat">Q5. Compare Prodigy and BRAT.</h3>
+<p>Prodigy is commercial, from spaCy&rsquo;s creators, efficient, and tightly integrated. BRAT is free/open source, web-based/local, and supports entity and relation annotation. Both structure labels for a training workflow, but conversion/compatibility requirements must be verified.</p>
+<h3 id="q6-explain-the-airline-review-entity-frequency-pipeline">Q6. Explain the airline-review entity-frequency pipeline.</h3>
+<p>Load CSV with pandas; load the spaCy model; process sample reviews; inspect <code>doc.ents</code>, <code>ent.text</code>, and <code>ent.label_</code>; visualize with displaCy; process the larger corpus; count with Counter; obtain <code>most_common(10)</code>; validate and filter labels before interpreting the result.</p>
+<h3 id="q7-why-is-first-being-the-most-frequent-entity-not-necessarily-useful">Q7. Why is <code>first</code> being the most frequent entity not necessarily useful?</h3>
+<p>It may be a correct <code>ORDINAL</code>, but a destination campaign needs location entities. Frequency measures occurrence, not relevance. Filter to <code>GPE</code>/<code>LOC</code>/appropriate labels and validate context.</p>
+<h3 id="q8-when-should-filtering-a-gpu-or-custom-training-be-chosen">Q8. When should filtering, a GPU, or custom training be chosen?</h3>
+<ul>
+<li>Filter when predictions are broadly correct but irrelevant categories appear.</li>
+<li>Use a GPU when processing speed/volume is the bottleneck.</li>
+<li>Train custom NER when the generic model systematically fails on domain entities and the expected long-term value exceeds annotation and maintenance cost.</li>
+</ul>
+<h3 id="q9-how-is-a-trained-model-saved-and-used-later">Q9. How is a trained model saved and used later?</h3>
+<p>Call <code>nlp.to_disk(path)</code> to serialize the pipeline and <code>spacy.load(path)</code> to reload it. Test the reloaded model on held-out examples.</p>
+<hr>
+<h2 id="14-rapid-revision-sheet">14. Rapid revision sheet</h2>
+<ul>
+<li>Annotation = attach structured gold labels to raw text.</li>
+<li>NER span = <code>(start_char, end_char_exclusive, label)</code>.</li>
+<li>Check span integrity with <code>text[start:end]</code>.</li>
+<li>No-entity example = <code>{"entities": []}</code>; keep it as negative supervision.</li>
+<li><code>Example.from_dict(doc, annotations)</code> converts annotations for training.</li>
+<li>Shuffle examples each epoch.</li>
+<li>Loss compares prediction with gold output.</li>
+<li>Optimizer changes weights to reduce loss.</li>
+<li>Disable unrelated statistical pipes while updating NER.</li>
+<li>Fine-tuning starts from pretrained knowledge; scratch training does not.</li>
+<li><code>create_optimizer()</code> was used to continue training; blank training was initialized separately.</li>
+<li>Add every custom label with <code>ner.add_label()</code>.</li>
+<li>Test positive, negative, and retained-general-knowledge cases.</li>
+<li>Save with <code>nlp.to_disk()</code>; reload with <code>spacy.load()</code>.</li>
+<li><code>doc.ents</code> contains entities; <code>ent.text</code> is text; <code>ent.label_</code> is the label.</li>
+<li>displaCy visualizes; Counter counts.</li>
+<li><code>most_common(10)</code> returns frequency leaders, not automatically business priorities.</li>
+<li>Filter by business-relevant entity type before drawing conclusions.</li>
+<li>GPU improves throughput, not semantic correctness.</li>
+<li>Custom training is a long-term domain-adaptation investment, not the first answer to every noisy result.</li>
+<li>Production readiness requires adequate data, held-out evaluation, error analysis, and ongoing maintenance.</li>
+</ul>
+<hr>
+<h2 id="15-practical-mini-project-for-exam-preparation">15. Practical mini-project for exam preparation</h2>
+<p>To consolidate the week:</p>
+<ol>
+<li>Create ten navigation examples, including at least three with no entity.</li>
+<li>Validate every character span with slicing.</li>
+<li>Fine-tune a pretrained NER while disabling other pipes.</li>
+<li>Save, reload, and test it on unseen commands.</li>
+<li>Build a second blank model with two custom labels and observe that general entities disappear.</li>
+<li>Run pretrained NER over a review CSV with <code>nlp.pipe()</code>.</li>
+<li>Compare unfiltered top-ten entities with a location-only top ten.</li>
+<li>Inspect several outputs in displaCy and write down false positives, false negatives, boundary errors, and business-irrelevant correct predictions.</li>
+<li>Explain whether each error calls for post-processing, more data/custom training, or only faster hardware.</li>
+</ol>
+<p>If you can perform and explain those nine steps, you can answer both implementation and managerial-decision questions from Week 6.</p>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<p>The review links annotation quality to continuous production learning. Customer language changes with products, services, abbreviations, policies, and failure modes, so the lifecycle should be:</p>
+<p>\[
+\text{logs} \rightarrow \text{unknown/error analysis} \rightarrow \text{human-validated labels} \rightarrow \text{updated data} \rightarrow \text{retrain} \rightarrow \text{evaluate} \rightarrow \text{deploy}.
+\]</p>
+<p>Do not automatically treat model predictions as ground truth: an error can become a training label and be reinforced. Apply confidence filtering, human review where needed, duplicate detection, privacy controls, representative sampling, and annotation-quality checks. Unknown intents are valuable candidates for analysis and future annotation, but only after validation.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-5.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 5: Named Entities, Dependency-Based Intent…</span>
+      </a>
+      <a href="week-7.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 7: Text Classification and Sentiment Analysis</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

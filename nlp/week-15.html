@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>NLP · Week 15 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">NLP</span>
+      <span class="brand-title">Week 15</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html" selected>NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Foundations of Natural Language Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        spaCy Conventions, Text Preprocessing, and Tokenization
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Dependency Parsing, Named Entity Recognition, and Token Operations
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Token-Based Matching, Word Vectors, and Semantic Similarity
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Named Entities, Dependency-Based Intent Recognition, Semantic…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Annotation, Training spaCy NER Models, and an Airline-Review Case Study
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Text Classification and Sentiment Analysis
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Text Classification, TF–IDF, SVM, Doc2Vec and Twitter Sentiment Analysis
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Topic Modelling
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        BERT and Modern Pre-trained Language Models
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Fine-Tuning Language Models, Efficient Transformers, Sentence…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Cross-Lingual NLP, Multilingual Models, Transformer Serving, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Transformers, Attention, Evaluation, Hugging Face, TensorBoard, and…
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Hugging Face, Fine-Tuning, Deployment, and Applied Case Studies
+      </a>
+      <a class="is-active" href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Vision Transformers, DETR, Self-Supervised Vision, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">NLP · Week 15</p>
+        <h1 class="page-title">Vision Transformers, DETR, Self-Supervised Vision, and Medical-Imaging Case Study</h1>
+        <p class="page-meta">Week 15 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-week-map-and-exam-orientation">1. Week map and exam orientation</a></li>
+      <li><a href="#2-why-vision-transformers">2. Why Vision Transformers?</a></li>
+      <li><a href="#3-vit-architecture-turning-an-image-into-a-token-sequence">3. ViT architecture: turning an image into a token sequence</a></li>
+      <li><a href="#4-major-vit-variants">4. Major ViT variants</a></li>
+      <li><a href="#5-vision-applications-and-practical-use-cases">5. Vision applications and practical use cases</a></li>
+      <li><a href="#6-detr-end-to-end-object-detection-with-transformers">6. DETR: end-to-end object detection with Transformers</a></li>
+      <li><a href="#7-case-study-building-a-medical-image-vit-system">7. Case study: building a medical-image ViT system</a></li>
+      <li><a href="#8-hands-on-1-universal-image-embeddings-and-retrieval">8. Hands-on 1: universal image embeddings and retrieval</a></li>
+      <li><a href="#9-hands-on-2-detr-training-outline">9. Hands-on 2: DETR training outline</a></li>
+      <li><a href="#10-common-exam-traps-and-corrections">10. Common exam traps and corrections</a></li>
+      <li><a href="#11-high-yield-answer-templates">11. High-yield answer templates</a></li>
+      <li><a href="#12-lecturer-emphasized-references-and-forward-directions">12. Lecturer-emphasized references and forward directions</a></li>
+      <li><a href="#final-integrated-picture">Final integrated picture</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-week-map-and-exam-orientation">1. Week map and exam orientation</h2>
+<p>Week 15 moves the Transformer idea from language to images. The recorded material covers:</p>
+<ol>
+<li>the motivation, architecture, strengths, limitations, and major variants of the <strong>Vision Transformer (ViT)</strong>;</li>
+<li>practical case studies in classification, object detection, semantic segmentation, and medical imaging;</li>
+<li>hands-on outlines for universal image embeddings/image retrieval and end-to-end object detection with <strong>DETR</strong>; and</li>
+<li>a live revision session that sharpens the distinctions among CNNs, ViTs, self-supervised methods, and DETR, and develops the Radiomed diabetic-retinopathy case.</li>
+</ol>
+<p>The examination contains MCQs plus two scenario-based case studies. Both LMS videos and live-session material matter: some ideas are expanded in only one of the two. For a case answer, define the problem, justify the architecture, describe the data and workflow, select metrics that fit the business/clinical risk, discuss limitations, and propose a validation/deployment plan.</p>
+<hr>
+<h2 id="2-why-vision-transformers">2. Why Vision Transformers?</h2>
+<p>Before ViTs, image classification, object detection, visual question answering, image captioning, and segmentation were handled mainly by convolutional neural networks (CNNs) and related architectures. Computer-vision attention was usually attached to a CNN or used to replace selected CNN components while retaining the convolutional structure.</p>
+<p>The original ViT paper, <strong>“An Image Is Worth 16×16 Words: Transformers for Image Recognition at Scale”</strong> (Alexey Dosovitskiy et al.), demonstrated that this dependence on convolution is not necessary. A pure Transformer encoder can operate directly on a sequence of image patches and perform image classification. It was the first work highlighted in the lecture to train a Transformer encoder successfully on ImageNet and obtain results competitive with established convolutional architectures.</p>
+<h3 id="2-1-cnn-processing">2.1 CNN processing</h3>
+<p>A CNN processes an image hierarchically:</p>
+<ul>
+<li>early convolutional layers detect local primitives such as edges and corners;</li>
+<li>intermediate layers combine them into textures and shapes;</li>
+<li>deeper layers combine those into objects and higher-level patterns;</li>
+<li>pooling progressively aggregates information and expands the effective receptive field.</li>
+</ul>
+<p>This <strong>local, layer-by-layer inductive bias</strong> is excellent for local feature extraction. The weakness is not that CNNs cannot ever represent global context; rather, distant spatial regions communicate only through multiple layers or deliberately designed global mechanisms. Capturing a subtle relationship between far-apart regions may therefore be indirect, deep, and computationally demanding.</p>
+<h3 id="2-2-vit-processing">2.2 ViT processing</h3>
+<p>A ViT stacks self-attention layers that relate representations across all spatial regions. In principle, every patch can directly attend to every other patch from the first Transformer layer. This makes global context and long-range dependencies explicit and often more effective than the hierarchical route in a CNN.</p>
+<p>The central shift is:</p>
+<p>\[
+\text{pixels processed by local convolution}
+\quad\longrightarrow\quad
+\text{patch tokens related by global self-attention}.
+\]</p>
+<p><strong>Important caveat:</strong> patchification alone does not create global reasoning; multi-head self-attention across the patch sequence does. CNNs remain strong at local features and can model global information with sufficient depth or architectural additions. The comparison is about inductive bias and path length, not an absolute capability/no-capability distinction.</p>
+<hr>
+<h2 id="3-vit-architecture-turning-an-image-into-a-token-sequence">3. ViT architecture: turning an image into a token sequence</h2>
+<h3 id="3-1-patchification">3.1 Patchification</h3>
+<p>For an input image of height \(H\), width \(W\), and channels \(C\), divide it into non-overlapping square patches of size \(P\times P\). The number of patches is</p>
+<p>\[
+N=\frac{H}{P}\times\frac{W}{P}=\frac{HW}{P^2}.
+\]</p>
+<p>Example: a \(224\times224\) RGB image split into \(16\times16\) patches gives</p>
+<p>\[
+N=\frac{224}{16}\times\frac{224}{16}=14\times14=196
+\]</p>
+<p>patches. Each raw patch contains \(P^2C=16\times16\times3=768\) values.</p>
+<h3 id="3-2-flattening-and-linear-projection">3.2 Flattening and linear projection</h3>
+<p>Each 2-D patch is flattened into a vector and mapped through a learned linear projection to an embedding of dimension \(D\):</p>
+<p>\[
+\mathbf{x}_p\in\mathbb{R}^{P^2C}
+\quad\rightarrow\quad
+\mathbf{x}_p\mathbf{E}\in\mathbb{R}^{D}.
+\]</p>
+<p>The resulting patch embeddings play the role that word/token embeddings play in NLP. This is the lecture&rsquo;s central analogy:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>NLP Transformer</th>
+<th>Vision Transformer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sentence split into tokens</td>
+<td>Image split into patches</td>
+</tr>
+<tr>
+<td>Token embedded into a vector</td>
+<td>Flattened patch projected into a vector</td>
+</tr>
+<tr>
+<td>Positional encoding preserves word order</td>
+<td>Positional embedding preserves patch location</td>
+</tr>
+<tr>
+<td>Self-attention relates words</td>
+<td>Self-attention relates image regions</td>
+</tr>
+<tr>
+<td>Head predicts language/task output</td>
+<td>Classification head predicts image category</td>
+</tr>
+</tbody>
+</table></div>
+<p>Patch embedding also converts a 2-D spatial input into a 1-D sequence suitable for a standard Transformer encoder. Calling it “dimensionality reduction” is intuitive but incomplete: the learned projection primarily puts every patch into a common representation space.</p>
+<h3 id="3-3-position-and-classification-token">3.3 Position and classification token</h3>
+<p>Because attention by itself does not know spatial order, positional embeddings are added to patch embeddings. A learnable classification token (<code>[CLS]</code>) is commonly prepended. After encoding, its output representation summarizes the image for classification. Some variants instead pool patch representations.</p>
+<h3 id="3-4-transformer-encoder">3.4 Transformer encoder</h3>
+<p>The token sequence passes through repeated encoder blocks containing:</p>
+<ul>
+<li>layer normalization;</li>
+<li>multi-head self-attention;</li>
+<li>residual/skip connections;</li>
+<li>a feed-forward multilayer perceptron (MLP);</li>
+<li>another residual path and normalization according to implementation.</li>
+</ul>
+<p>Scaled dot-product attention is</p>
+<p>\[
+\operatorname{Attention}(Q,K,V)
+=\operatorname{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V.
+\]</p>
+<p>Queries ask what information a patch needs; keys describe what each patch offers; values contain the information aggregated. Multi-head attention learns several relationship types simultaneously—for example shape, texture, object part, or far-apart contextual relationships.</p>
+<h3 id="3-5-global-representation-and-classification-head">3.5 Global representation and classification head</h3>
+<p>The encoder produces globally informed representations. A classification head, often a fully connected layer, maps the learned image representation to output categories. The essential pipeline is:</p>
+<p>\[
+\text{image}\rightarrow\text{fixed patches}\rightarrow\text{flatten/project}
+\rightarrow\text{add position}\rightarrow\text{Transformer encoder}
+\rightarrow\text{global representation}\rightarrow\text{class head}.
+\]</p>
+<p>No convolution is required in a <strong>pure ViT</strong>. With large-scale pretraining, pure ViTs achieved state-of-the-art accuracy and transferred effectively to mid-sized or smaller benchmarks such as ImageNet, CIFAR-100, and VTAB, while the paper reported substantially fewer training resources than comparable state-of-the-art CNNs in that setting.</p>
+<h3 id="3-6-architectural-capability-versus-training-regime">3.6 Architectural capability versus training regime</h3>
+<p>Keep two questions separate:</p>
+<ul>
+<li><strong>Architectural capability:</strong> can global attention capture long-range relationships? Yes.</li>
+<li><strong>Training regime:</strong> does the model have enough suitable data, regularization, compute, and pretraining to learn useful attention? Not necessarily.</li>
+</ul>
+<p>ViTs have weaker built-in locality/translation inductive biases than CNNs and may perform poorly on small datasets when trained from scratch. Their strongest original results depended on pretraining on very large datasets followed by transfer learning. A hybrid CNN–Transformer can use a CNN front end for local features and a Transformer for global relationships, but this is not the definition of ViT.</p>
+<hr>
+<h2 id="4-major-vit-variants">4. Major ViT variants</h2>
+<h3 id="4-1-deit-data-efficient-image-transformers">4.1 DeiT — Data-efficient Image Transformers</h3>
+<p>Developed by Facebook AI/Meta AI, DeiT uses more efficient training and knowledge distillation so ViT-style models can learn effectively with less data. The released distilled models can be used with ViT/image-classification tooling.</p>
+<p>Lecture-listed variants:</p>
+<ul>
+<li><code>deit-tiny-patch16-224</code></li>
+<li><code>deit-small-patch16-224</code></li>
+<li><code>deit-base-patch16-224</code></li>
+<li><code>deit-base-patch16-384</code></li>
+</ul>
+<p>Use the <strong>DeiT image processor</strong> to prepare images in the expected format. DeiT is not the same as DINO: DeiT is data-efficient/distillation-oriented supervised training; DINO is self-supervised representation learning.</p>
+<h3 id="4-2-beit-bert-pre-training-of-image-transformers">4.2 BEiT — BERT Pre-Training of Image Transformers</h3>
+<p>Developed by Microsoft Research. BEiT adapts BERT-like masked modeling to images: image patches/tokens are masked and the model learns to predict discrete visual tokens, with tokenization linked to a VQ-VAE. The lecture states that this self-supervised method can outperform supervised-pretrained ViTs.</p>
+<h3 id="4-3-dino-self-distillation-with-no-labels">4.3 DINO — self-distillation with no labels</h3>
+<p>DINO is Facebook AI&rsquo;s self-supervised training method for ViTs. A student network learns to match a teacher network&rsquo;s output under different augmented views; teacher parameters are updated from the student rather than by ordinary labeled supervision. DINO representations show emergent properties not generally observed in conventional CNN training—notably, attention maps can delineate/segment objects even though the model was never explicitly trained for segmentation. Checkpoints are available on model hubs.</p>
+<h3 id="4-4-mae-masked-autoencoders">4.4 MAE — Masked Autoencoders</h3>
+<p>MAE pretrains a ViT by masking a high proportion of image patches (the lecture uses about <strong>75%</strong>) and reconstructing their pixel values. It uses an asymmetric design: the encoder processes visible patches while a lighter decoder performs reconstruction. After fine-tuning, this simple self-supervised method can outperform supervised pretraining.</p>
+<h3 id="4-5-swin-transformer">4.5 Swin Transformer</h3>
+<p>Mentioned in the diabetic-retinopathy case as a more recent alternative. Swin uses local/windowed attention and a hierarchical structure, reducing the quadratic cost of global attention and providing multi-scale features. It can be a good choice where fine detail and computational efficiency matter, though increased architectural complexity must be justified empirically.</p>
+<h3 id="4-6-comparison-worth-memorizing">4.6 Comparison worth memorizing</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Main training idea</th>
+<th style="text-align: right;">Labels required for pretraining?</th>
+<th>Characteristic strength</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ViT</td>
+<td>Patch tokens + Transformer encoder</td>
+<td style="text-align: right;">Usually in original supervised setup</td>
+<td>Global context without convolution</td>
+</tr>
+<tr>
+<td>DeiT</td>
+<td>Efficient training + distillation</td>
+<td style="text-align: right;">Generally yes/distillation signal</td>
+<td>Data-efficient ViT training</td>
+</tr>
+<tr>
+<td>BEiT</td>
+<td>Predict masked discrete image tokens</td>
+<td style="text-align: right;">No</td>
+<td>BERT-style visual pretraining</td>
+</tr>
+<tr>
+<td>DINO</td>
+<td>Teacher–student self-distillation</td>
+<td style="text-align: right;">No</td>
+<td>Strong semantic features; emergent segmentation</td>
+</tr>
+<tr>
+<td>MAE</td>
+<td>Reconstruct heavily masked patches</td>
+<td style="text-align: right;">No</td>
+<td>Efficient representation learning with ~75% masking</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="5-vision-applications-and-practical-use-cases">5. Vision applications and practical use cases</h2>
+<h3 id="5-1-image-classification">5.1 Image classification</h3>
+<p>Input: an image. Output: one or more image-level labels. Examples include normal/abnormal medical scans, disease severity from retinal fundus images, or product-category recognition. A classification head maps the global representation to class probabilities.</p>
+<h3 id="5-2-object-detection-with-detr">5.2 Object detection with DETR</h3>
+<p>Input: an image. Output: a set of object classes plus bounding boxes. Practical examples include localizing tumors or lesions, road users in autonomous driving, defects in manufacturing, or pests in crop images.</p>
+<h3 id="5-3-semantic-segmentation">5.3 Semantic segmentation</h3>
+<p>Input: an image. Output: a class for each pixel. The lecture names <strong>SETR</strong> (transcribed inconsistently as SCTR/SATR), a Transformer-based semantic-segmentation model:</p>
+<ol>
+<li>encode the image using patches;</li>
+<li>apply a Transformer encoder to learn global dependencies between patches;</li>
+<li>decode feature maps into pixel-level segmentation masks.</li>
+</ol>
+<p>It can be trained on a large dataset such as <strong>ADE20K</strong>. At inference, the model returns a mask predicting each pixel&rsquo;s class. Microsoft Research results were cited as attaining state-of-the-art performance on segmentation benchmarks. Medical uses include outlining anatomical structures, tumors, and pathological regions for diagnosis and treatment planning.</p>
+<h3 id="5-4-medical-image-analysis">5.4 Medical image analysis</h3>
+<p>Target modalities include X-ray, CT, MRI, and fundus images. Three task formulations are distinct:</p>
+<ul>
+<li><strong>classification:</strong> normal versus abnormal, disease type, or severity;</li>
+<li><strong>detection:</strong> identify/localize lesions or tumors with bounding boxes;</li>
+<li><strong>segmentation:</strong> trace anatomy or pathology at pixel level.</li>
+</ul>
+<p>Core challenges:</p>
+<ul>
+<li><strong>data scarcity:</strong> medical datasets are limited, yet AI models are data hungry;</li>
+<li><strong>labeling complexity:</strong> accurate annotation requires experts and is time-consuming;</li>
+<li><strong>class imbalance:</strong> rare severe disease may be clinically important but statistically scarce;</li>
+<li><strong>interpretability:</strong> clinicians must understand and trust model decisions;</li>
+<li><strong>domain shift:</strong> scanners, hospitals, populations, lighting, and acquisition protocols differ;</li>
+<li><strong>compute:</strong> ViTs can be demanding.</li>
+</ul>
+<p>Responses include data augmentation/synthetic data, transfer learning from large natural-image or medical-image datasets, domain-specific pretraining, explainable-AI/attention visualization, accelerator hardware, optimized implementations, and external validation.</p>
+<hr>
+<h2 id="6-detr-end-to-end-object-detection-with-transformers">6. DETR: end-to-end object detection with Transformers</h2>
+<h3 id="6-1-motivation">6.1 Motivation</h3>
+<p>Traditional detection is a complex pipeline with region/anchor generation, candidate scoring, box refinement, and <strong>non-maximum suppression (NMS)</strong> to remove duplicate overlapping boxes. These hand-designed components encode prior knowledge and increase engineering and computational complexity.</p>
+<p>DETR (<strong>DEtection TRansformer</strong>, from Facebook AI Research) reframes detection as <strong>direct set prediction</strong>. It uses a CNN backbone in the original implementation to create image features, plus a Transformer encoder–decoder and a fixed set of learned object queries. Thus, DETR is Transformer-based but the original DETR is not a pure patch-only ViT detector.</p>
+<p>The research motivation is especially intuitive for occluded or partially visible objects: correct detection may depend on relationships between one part of an image and distant parts. Global attention allows features from all regions to interact.</p>
+<h3 id="6-2-architecture-and-inference">6.2 Architecture and inference</h3>
+<ol>
+<li>An image enters the feature extractor/backbone.</li>
+<li>The Transformer encoder forms globally contextualized image features.</li>
+<li>A fixed number of learned <strong>object queries</strong> enters the decoder.</li>
+<li>Each query produces a class prediction and bounding-box prediction.</li>
+<li>Predictions form an unordered set; unused queries predict “no object”/background.</li>
+</ol>
+<p>The lecture implementation uses <strong>100 queries</strong>, hence up to 100 predicted boxes per image; this is configurable. Object queries are learned slots, not proposals generated by a region-proposal network.</p>
+<h3 id="6-3-bipartite-hungarian-matching">6.3 Bipartite/Hungarian matching</h3>
+<p>Training must decide which predicted slot corresponds to which ground-truth object. DETR computes a one-to-one assignment minimizing a matching cost:</p>
+<p>\[
+\hat\sigma=\arg\min_{\sigma}\sum_i
+\mathcal{C}(y_i,\hat y_{\sigma(i)}).
+\]</p>
+<p>The <strong>Hungarian algorithm</strong> solves the bipartite assignment. A prediction is matched to at most one ground-truth object and vice versa. Unmatched predictions learn the no-object class. This unique assignment discourages duplicate predictions and is a principal reason DETR can eliminate conventional NMS.</p>
+<p>Do not confuse stages:</p>
+<ul>
+<li>Hungarian matching is primarily a <strong>training-time assignment</strong> mechanism.</li>
+<li>NMS is conventionally an <strong>inference/post-processing</strong> mechanism.</li>
+<li>DETR&rsquo;s set-based training makes NMS unnecessary in its standard formulation.</li>
+</ul>
+<h3 id="6-4-losses">6.4 Losses</h3>
+<p>The hands-on material emphasizes three components:</p>
+<ol>
+<li>classification loss for object labels;</li>
+<li>bounding-box regression loss;</li>
+<li>loss/no-object coefficient for the background class.</li>
+</ol>
+<p>The lecture calls the combined objective a set-based global loss and uses <code>HungarianMatcher</code> plus <code>SetCriterion</code>. Bounding boxes must be normalized correctly, and the update log notes the main class should use label 0. An earlier demonstration accidentally visualized target boxes instead of predicted boxes; this was corrected—an important warning when validating output code.</p>
+<h3 id="6-5-detr-versus-traditional-detectors">6.5 DETR versus traditional detectors</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Traditional detector</th>
+<th>DETR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Candidate generation</td>
+<td>Anchors/region proposals</td>
+<td>Learned object queries</td>
+</tr>
+<tr>
+<td>Duplicate control</td>
+<td>NMS</td>
+<td>One-to-one matching/set loss</td>
+</tr>
+<tr>
+<td>Context</td>
+<td>Often local/hierarchical</td>
+<td>Transformer global context</td>
+</tr>
+<tr>
+<td>Pipeline</td>
+<td>Multiple designed stages</td>
+<td>End-to-end set prediction</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>Candidate boxes then filtering</td>
+<td>Fixed prediction set + no-object slots</td>
+</tr>
+</tbody>
+</table></div>
+<p>The LMS case suggests training on a large detection dataset such as <strong>COCO</strong> and reports competitive performance against approaches such as Faster R-CNN. COCO-pretrained DETR originally has 91 object classes plus a background/no-object class; adapt the classification head to the custom number of classes.</p>
+<hr>
+<h2 id="7-case-study-building-a-medical-image-vit-system">7. Case study: building a medical-image ViT system</h2>
+<h3 id="7-1-general-workflow">7.1 General workflow</h3>
+<p>For an organization such as Amrita Hospital:</p>
+<ol>
+<li><strong>Define the task and clinical consequence.</strong> Decide whether the system classifies disease, detects lesions, segments pathology, or combines tasks.</li>
+<li><strong>Assemble data.</strong> Collect a large, diverse dataset with pathologies and expert annotations.</li>
+<li><strong>Preprocess.</strong> Standardize image size, format, channels, and normalization.</li>
+<li><strong>Augment.</strong> Apply clinically safe transforms such as rotation, flipping, and cropping; use augmentation to increase diversity and help class imbalance.</li>
+<li><strong>Select architecture.</strong> Choose original ViT, Swin/hierarchical ViT, or another variant; tune layer count and attention heads to task complexity and compute.</li>
+<li><strong>Pretrain/transfer.</strong> Use large natural-image or medical-image pretraining to learn broad representations.</li>
+<li><strong>Fine-tune.</strong> Train on the target disease classification/detection task, e.g. cross-entropy with Adam.</li>
+<li><strong>Split properly.</strong> Maintain train, validation, and held-out test sets, preferably by patient rather than image to prevent leakage. The lecturer demonstrates trying a range of split proportions (from roughly 50:50 toward 99:1) and selecting empirically, but sound practice requires a sufficiently large untouched test set rather than choosing the split solely by maximum accuracy.</li>
+<li><strong>Evaluate.</strong> Report accuracy, precision, recall/sensitivity, F1, ROC-AUC, confusion matrix, and class-specific errors.</li>
+<li><strong>Compare baselines.</strong> Compare with a CNN on identical splits and evaluation rules.</li>
+<li><strong>Interpret and validate.</strong> Visualize attention/attributions, review errors with clinicians, and test on external data.</li>
+<li><strong>Deploy cautiously.</strong> Use optimized code/hardware acceleration and monitor safety, drift, latency, and resource cost.</li>
+</ol>
+<p>The lecture cites lung-cancer diagnosis from CT scans as an example where ViTs achieved performance comparable or superior to CNNs. The stated advantage is better capture of long-range dependencies, subtle visual patterns, and whole-image context; the caveat is greater computational demand.</p>
+<h3 id="7-2-diabetic-retinopathy-screening">7.2 Diabetic-retinopathy screening</h3>
+<p><strong>Objective:</strong> develop an accurate and efficient early-screening system using retinal fundus images and diabetic-retinopathy (DR) severity labels.</p>
+<p>Pipeline:</p>
+<ul>
+<li>gather fundus images with expert severity labels;</li>
+<li>standardize size, format, color/normalization, and image quality;</li>
+<li>augment with rotation, flipping, and cropping when these preserve clinical meaning;</li>
+<li>select a ViT or Swin Transformer and tune layers/heads based on task and compute;</li>
+<li>use pretrained representations;</li>
+<li>extract high-level features and attach a fully connected classification head for DR severity;</li>
+<li>train/validate/test with an appropriate loss and optimizer;</li>
+<li>evaluate class-wise, compare against a CNN, and assess operational cost.</li>
+</ul>
+<h3 id="7-3-radiomed-review-case-data-and-decision-problem">7.3 Radiomed review case: data and decision problem</h3>
+<p>The review case asks whether Radiomed Center should retain an efficient original ViT or move to a more expensive hierarchical-attention variant for DR grading. The key issue is not “which architecture is theoretically newer?” but which validated system meets the clinical requirement at acceptable cost.</p>
+<p>The data layer includes two sources:</p>
+<ul>
+<li>a smaller local dataset, valuable because it reflects the deployment population and equipment;</li>
+<li>a larger public dataset, useful for scale and representation learning but potentially different in labeling policy, prevalence, camera, image quality, or patient demographics.</li>
+</ul>
+<p>Combining sources without auditing them may create domain shift or inconsistent labels. Split by patient and, where possible, preserve site/source information. Evaluate local and public-domain performance separately as well as jointly.</p>
+<h3 id="7-4-why-accuracy-is-inadequate">7.4 Why accuracy is inadequate</h3>
+<p>DR severity is typically imbalanced. A model can score high overall accuracy by predicting common mild/normal categories while missing rare severe cases. In screening, a severe false negative may delay referral and treatment, so <strong>sensitivity/recall for clinically severe classes</strong> is usually more important than raw accuracy.</p>
+<p>For a positive/severe class:</p>
+<p>\[
+\text{Accuracy}=\frac{TP+TN}{TP+TN+FP+FN}
+\]</p>
+<p>\[
+\text{Precision}=\frac{TP}{TP+FP}
+\]</p>
+<p>\[
+\text{Recall/Sensitivity}=\frac{TP}{TP+FN}
+\]</p>
+<p>\[
+F_1=2\frac{\text{Precision}\cdot\text{Recall}}
+{\text{Precision}+\text{Recall}}
+\]</p>
+<p>Specificity is \(TN/(TN+FP)\). AUC summarizes ranking/discrimination across thresholds but does <strong>not</strong> choose the clinical threshold. Radiomed must select an operating threshold that gives acceptable severe-class sensitivity while keeping false-positive referrals operationally manageable.</p>
+<h3 id="7-5-class-weighted-loss">7.5 Class-weighted loss</h3>
+<p>One lower-cost intervention is to weight rare/severe classes more heavily in cross-entropy:</p>
+<p>\[
+\mathcal{L}_{weighted}=-\sum_c w_c y_c\log p_c.
+\]</p>
+<p>This makes errors on high-weight classes contribute more to optimization and can improve severe-class recall without changing the base architecture. But weighting cannot repair mislabeled images, absent visual evidence, poor-quality scans, or severe domain shift. Excessive weighting may also increase false positives or destabilize calibration.</p>
+<h3 id="7-6-label-noise-is-a-data-governance-problem">7.6 Label noise is a data-governance problem</h3>
+<p>If the public dataset contains noisy severity labels, a more complex model may learn that noise more confidently. Complexity should not hide unresolved data quality. Audit labels through:</p>
+<ul>
+<li>expert review of a stratified sample, especially severe cases and model disagreements;</li>
+<li>inter-rater agreement and adjudication;</li>
+<li>duplicate and leakage checks;</li>
+<li>image-quality checks;</li>
+<li>source-specific confusion matrices;</li>
+<li>review of high-loss and high-confidence disagreement cases.</li>
+</ul>
+<h3 id="7-7-augmentation-caveat">7.7 Augmentation caveat</h3>
+<p>Augmentation expands the effective training distribution and regularizes the model, but it does not create new pathology. A transformation is valid only when it preserves the diagnosis. Aggressive crop, blur, color alteration, or geometric distortion could remove lesions or change clinically relevant appearance. Validate augmentation policy with domain experts.</p>
+<h3 id="7-8-decision-workflow-for-radiomed">7.8 Decision workflow for Radiomed</h3>
+<ol>
+<li>establish a clinically reviewed evaluation set;</li>
+<li>evaluate current ViT class-wise, not only by overall accuracy;</li>
+<li>analyze severe false negatives and their causes;</li>
+<li>test class-weighted loss, threshold tuning, balanced sampling, and calibration;</li>
+<li>compare a hierarchical variant under identical data/splits;</li>
+<li>run a controlled pilot;</li>
+<li>measure clinical outcomes and computational outcomes (GPU cost, latency, training time, maintenance).</li>
+</ol>
+<p>If the efficient original ViT plus weighting/threshold tuning reaches the required sensitivity, retain it. If sensitivity remains clinically inadequate and the hierarchical model produces a reproducible improvement, its additional cost becomes justifiable. The governing principle is:</p>
+<blockquote>
+<p>Use the least resource-intensive validated solution that satisfies the clinical requirement.</p>
+</blockquote>
+<hr>
+<h2 id="8-hands-on-1-universal-image-embeddings-and-retrieval">8. Hands-on 1: universal image embeddings and retrieval</h2>
+<h3 id="8-1-environment-and-files">8.1 Environment and files</h3>
+<p>The exercise asks an NLP specialist to perform Google Universal Image Embedding/image retrieval with Python. In Colab, choose <strong>Runtime → Change runtime type → GPU</strong> (the demonstration mentions P4/T4 GPU and also TPU availability). In the Kaggle-style environment:</p>
+<ul>
+<li><code>/kaggle/input</code> is read-only input;</li>
+<li>up to roughly 20 GB can be written to <code>/kaggle/working</code>, preserved when a version is saved with “Save &amp; Run All”;</li>
+<li><code>/kaggle/temp</code> is session-temporary and is not retained.</li>
+</ul>
+<p>List available input files with:</p>
+<pre><code class="language-python">import os
+
+for dirname, _, filenames in os.walk('/kaggle/input'):
+    for filename in filenames:
+        print(os.path.join(dirname, filename))
+</code></pre>
+<p>Imports mentioned:</p>
+<pre><code class="language-python">import numpy as np          # numerical/linear algebra
+import pandas as pd         # tabular processing and CSV input
+from PIL import Image       # image loading/representation
+import pickle               # serialize/deserialize Python data
+</code></pre>
+<h3 id="8-2-retrieval-abstraction">8.2 Retrieval abstraction</h3>
+<p>The lecture sketches an <code>ImageRetrievalModel</code> initialized with an indexed image set. <code>retrieve_images(query_image)</code>:</p>
+<ol>
+<li>accepts a PIL query image;</li>
+<li>calls an <code>extract_features</code> method to obtain its embedding;</li>
+<li>compares the query embedding with indexed embeddings;</li>
+<li>returns the most similar images.</li>
+</ol>
+<p>Conceptually:</p>
+<pre><code class="language-python">class ImageRetrievalModel:
+    def __init__(self, index_set):
+        self.index_set = index_set
+
+    def retrieve_images(self, query_image):
+        query_features = self.extract_features(query_image)
+        # compute similarity to stored features, rank, return top matches
+</code></pre>
+<p>Cosine similarity is a practical comparison:</p>
+<p>\[
+\cos(\mathbf q,\mathbf x)=
+\frac{\mathbf q\cdot\mathbf x}{\|\mathbf q\|\|\mathbf x\|}.
+\]</p>
+<p>Use cases: reverse-image search, product matching, duplicate detection, visual catalog search, medical case retrieval, and content recommendation.</p>
+<hr>
+<h2 id="9-hands-on-2-detr-training-outline">9. Hands-on 2: DETR training outline</h2>
+<h3 id="9-1-demonstration-scope-and-data-caveats">9.1 Demonstration scope and data caveats</h3>
+<p>The notebook is a baseline intended to teach architecture and fine-tuning, not maximize leaderboard results. Images may occur under different lighting, so filters/augmentation may be needed. Bounding boxes can be noisy, ranging from giant to micro boxes. The presenter retains them because removing them reportedly harmed leaderboard performance and assumes similar noise in the test distribution; in a real project, verify this assumption rather than copying it blindly.</p>
+<p>The presentation also embeds a DETR explanatory YouTube video through <code>IPython.display</code> (ID transcribed approximately as <code>2T35BA_VXKMY</code>, width 600, height 400).</p>
+<h3 id="9-2-repository-and-imports">9.2 Repository and imports</h3>
+<p>Clone Facebook Research&rsquo;s DETR repository to reuse its matcher and set loss. Add the repository to <code>sys.path</code>, then import <code>HungarianMatcher</code> and <code>SetCriterion</code>.</p>
+<p>Library groups named in the walkthrough:</p>
+<ul>
+<li>standard: <code>os</code>, <code>sys</code>, <code>datetime</code>, <code>time</code>, <code>random</code>, <code>glob</code>;</li>
+<li>data/science: NumPy, pandas, <code>tqdm</code>;</li>
+<li>vision: OpenCV (<code>cv2</code>), Matplotlib;</li>
+<li>PyTorch: <code>torch</code>, <code>torch.nn</code>, <code>Dataset</code>, <code>DataLoader</code>, <code>SequentialSampler</code>, <code>RandomSampler</code>;</li>
+<li>validation: <code>StratifiedKFold</code> from <code>sklearn.model_selection</code>;</li>
+<li>augmentation: Albumentations (<code>albumentations as A</code>) and <code>ToTensorV2</code>.</li>
+</ul>
+<h3 id="9-3-averagemeter">9.3 AverageMeter</h3>
+<p>The helper stores current value, running sum, item count, and average:</p>
+<pre><code class="language-python">class AverageMeter:
+    def __init__(self):
+        self.reset()
+
+    def reset(self):
+        self.val = self.avg = self.sum = self.count = 0
+
+    def update(self, val, n=1):
+        self.val = val
+        self.sum += val * n
+        self.count += n
+        self.avg = self.sum / self.count
+</code></pre>
+<p>It is used to average losses/metrics across batches or epochs.</p>
+<h3 id="9-4-lecture-configuration">9.4 Lecture configuration</h3>
+<ul>
+<li>folds: 5</li>
+<li>random seed: 42</li>
+<li>classes: 2</li>
+<li>object queries: 100</li>
+<li>no-object/null-class coefficient: 0.5</li>
+<li>batch size: 8</li>
+<li>learning rate: \(2\times10^{-5}\)</li>
+<li>epochs: 2 for the demonstration</li>
+</ul>
+<p>These are baseline hyperparameters, not universal optima.</p>
+<h3 id="9-5-reproducibility">9.5 Reproducibility</h3>
+<p>Seed Python <code>random</code>, <code>PYTHONHASHSEED</code>, NumPy, PyTorch CPU, and CUDA RNGs. Configure cuDNN flags. The lecture sets both deterministic and benchmark flags to true; in practice those goals can conflict, so prioritize deterministic settings when strict reproducibility is required.</p>
+<h3 id="9-6-data-preparation-and-stratified-folds">9.6 Data preparation and stratified folds</h3>
+<p>Read <code>train.csv</code>. Bounding boxes are stored as strings; strip brackets, parse numeric values with <code>np.fromstring</code>, stack them, and assign columns such as <code>x</code>, <code>y</code>, <code>w</code>, <code>h</code>, then drop the original <code>bbox</code> column in place.</p>
+<p>Create image-level folds so boxes from the same image do not leak across train and validation:</p>
+<ol>
+<li>copy unique <code>image_id</code> values;</li>
+<li>count bounding boxes per image;</li>
+<li>attach the image source;</li>
+<li>form a stratification group combining source and a bucket derived from box count (the lecture uses box count modulo 15);</li>
+<li>apply <code>StratifiedKFold(n_splits=5, shuffle=True, random_state=42)</code>;</li>
+<li>assign each validation index its fold number.</li>
+</ol>
+<p>The purpose is to preserve both source distribution and approximate object-count distribution across folds.</p>
+<h3 id="9-7-augmentations">9.7 Augmentations</h3>
+<p>The training transform described includes spatial augmentation with maximum size around 64, fill value 0, probability 0.5, conversion via <code>ToTensorV2(p=1.0)</code>, and COCO-format bounding-box parameters with <code>min_area=0</code>, <code>min_visibility=0</code>, and label field <code>labels</code>. The exact first transform is unclear in the transcript, so reproduce it from the supplied notebook rather than guessing.</p>
+<p>Validation transforms are clearly outlined:</p>
+<pre><code class="language-python">A.Compose(
+    [A.Resize(height=512, width=512, p=1.0), ToTensorV2(p=1.0)],
+    bbox_params=A.BboxParams(
+        format='coco', min_area=0, min_visibility=0,
+        label_fields=['labels']
+    )
+)
+</code></pre>
+<p>Whenever a geometric transform is applied, transform boxes consistently with images.</p>
+<h3 id="9-8-model-adaptation-training-and-evaluation">9.8 Model adaptation, training, and evaluation</h3>
+<ol>
+<li>Build the custom dataset and data loaders.</li>
+<li>Load COCO-pretrained DETR.</li>
+<li>Replace/adapt the classification head for the target class count.</li>
+<li>Retain or change the 100-query setting.</li>
+<li>Define the Hungarian matcher and <code>SetCriterion</code> with classification, box, and no-object terms.</li>
+<li>Train the model <strong>and criterion</strong>, which the lecturer contrasts with Faster R-CNN/EfficientDet workflows.</li>
+<li>Run validation/evaluation and select the execution engine/device.</li>
+<li>Visualize <strong>predicted</strong>, not target, boxes.</li>
+</ol>
+<p>The lecturer reports that even one epoch on one fold gave surprisingly reasonable output, but this is a qualitative demonstration—not proof of generalization. Proper conclusions require all folds/epochs, quantitative metrics, error analysis, and a held-out test set.</p>
+<hr>
+<h2 id="10-common-exam-traps-and-corrections">10. Common exam traps and corrections</h2>
+<ol>
+<li><strong>“ViT is a CNN with attention.”</strong> False. A pure ViT patchifies pixels and uses Transformer encoders without convolution.</li>
+<li><strong>“ViT requires a CNN feature extractor.”</strong> False for pure ViT; true only for some hybrid designs.</li>
+<li><strong>“CNNs cannot capture global context.”</strong> Too strong. They capture it indirectly with depth/receptive-field growth; ViT provides shorter direct attention paths.</li>
+<li><strong>“CNNs are poor at local features.”</strong> False; locality is a CNN strength.</li>
+<li><strong>“Patch tokenization causes long-range reasoning.”</strong> False; self-attention across tokens does.</li>
+<li><strong>“ViT always beats CNN on small data.”</strong> False; ViTs often need large-scale pretraining/transfer.</li>
+<li><strong>“DINO is supervised classification.”</strong> False; it is self-supervised teacher–student distillation.</li>
+<li><strong>“MAE predicts labels for masked patches.”</strong> False; it reconstructs masked visual content/pixels.</li>
+<li><strong>“DETR is merely a Transformer after a traditional detector.”</strong> False; it reformulates detection as end-to-end set prediction, although original DETR does use a CNN image backbone.</li>
+<li><strong>“Object queries are region proposals.”</strong> False; they are learned decoder slots.</li>
+<li><strong>“DETR needs NMS.”</strong> Standard DETR avoids NMS through one-to-one set matching.</li>
+<li><strong>“Hungarian matching filters boxes at inference.”</strong> False; it assigns predictions to targets during training.</li>
+<li><strong>“High medical-image accuracy proves safety.”</strong> False under imbalance; inspect severe-class sensitivity and false negatives.</li>
+<li><strong>“AUC chooses the deployment threshold.”</strong> False; choose a clinically justified operating point.</li>
+<li><strong>“More model complexity fixes bad labels.”</strong> False; data-quality defects require auditing/adjudication.</li>
+</ol>
+<hr>
+<h2 id="11-high-yield-answer-templates">11. High-yield answer templates</h2>
+<h3 id="explain-vit-in-five-steps">Explain ViT in five steps</h3>
+<ol>
+<li>Divide the image into fixed-size patches.</li>
+<li>Flatten and linearly embed each patch; add position information and usually a class token.</li>
+<li>Apply repeated multi-head self-attention/MLP encoder blocks.</li>
+<li>Learn global relationships because every patch can attend to every other patch.</li>
+<li>Feed the global/class representation to a prediction head; note data/compute requirements and the value of pretraining.</li>
+</ol>
+<h3 id="explain-why-vit-can-outperform-a-cnn">Explain why ViT can outperform a CNN</h3>
+<p>Mention direct global attention, long-range dependencies, transfer from large-scale pretraining, rich global representations, and state-of-the-art benchmark performance. Then qualify: CNNs have beneficial locality biases and may be superior with limited data; attention cost and compute can be substantial.</p>
+<h3 id="explain-detr">Explain DETR</h3>
+<p>Define end-to-end set prediction; describe backbone, encoder, decoder, learned object queries, class/box heads; explain Hungarian one-to-one matching, no-object slots, and why NMS/anchor engineering are unnecessary; mention custom class-head adaptation and matching/class/box losses.</p>
+<h3 id="solve-a-medical-vit-case">Solve a medical-ViT case</h3>
+<p>State the clinical task and cost of errors; audit/collect data; prevent patient leakage; preprocess and clinically validate augmentation; use transfer learning; compare ViT/CNN/hierarchical choices; address imbalance with weighting/sampling; report class-wise sensitivity, precision, F1, AUC, calibration, and confusion matrices; tune threshold; explain predictions; conduct external validation and a controlled pilot; include compute and workflow impact.</p>
+<hr>
+<h2 id="12-lecturer-emphasized-references-and-forward-directions">12. Lecturer-emphasized references and forward directions</h2>
+<p>Primary references repeatedly recommended:</p>
+<ul>
+<li>Dosovitskiy et al., <strong>“An Image Is Worth 16×16 Words: Transformers for Image Recognition at Scale.”</strong></li>
+<li>Touvron et al., <strong>“Training Data-Efficient Image Transformers &amp; Distillation through Attention”</strong> (DeiT).</li>
+</ul>
+<p>Forward-looking themes explicitly named: scaling models, multimodality, instruction following, specialized/domain models, optimization and CNN–Transformer hybrids, and ethical considerations. For real-world use, connect these to fairness across populations, privacy, explainability, energy/compute cost, robustness, and human oversight.</p>
+<h2 id="final-integrated-picture">Final integrated picture</h2>
+<p>Week 15 presents three linked transitions:</p>
+<p>\[
+\boxed{\text{local convolution}\rightarrow\text{patch tokens + global attention}}
+\]</p>
+<p>\[
+\boxed{\text{label-dependent pretraining}\rightarrow\text{self-supervised visual learning}}
+\]</p>
+<p>\[
+\boxed{\text{multi-stage detection + NMS}\rightarrow\text{end-to-end set prediction}}
+\]</p>
+<p>Architecture alone does not determine success. A defensible system joins four layers:</p>
+<ul>
+<li><strong>data:</strong> label quality, image quality, class balance, source/domain, augmentation;</li>
+<li><strong>model:</strong> ViT/self-attention or hierarchical attention, transfer learning, loss design;</li>
+<li><strong>evaluation:</strong> accuracy plus class-wise precision, recall, F1, AUC, thresholding, and error analysis;</li>
+<li><strong>operations:</strong> safety, explainability, GPU cost, latency, training time, and deployment feasibility.</li>
+</ul>
+<p>For an exam case, the strongest conclusion is evidence-based and conditional: choose the simplest validated architecture that achieves the task&rsquo;s required clinical or business outcome, and never use model complexity to conceal unresolved data-quality or evaluation problems.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-14.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 14: Hugging Face, Fine-Tuning, Deployment, and…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

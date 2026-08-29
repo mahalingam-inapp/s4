@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>NLP · Week 1 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">NLP</span>
+      <span class="brand-title">Week 1</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html" selected>NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a class="is-active" href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Foundations of Natural Language Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        spaCy Conventions, Text Preprocessing, and Tokenization
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Dependency Parsing, Named Entity Recognition, and Token Operations
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Token-Based Matching, Word Vectors, and Semantic Similarity
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Named Entities, Dependency-Based Intent Recognition, Semantic…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Annotation, Training spaCy NER Models, and an Airline-Review Case Study
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Text Classification and Sentiment Analysis
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Text Classification, TF–IDF, SVM, Doc2Vec and Twitter Sentiment Analysis
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Topic Modelling
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        BERT and Modern Pre-trained Language Models
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Fine-Tuning Language Models, Efficient Transformers, Sentence…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Cross-Lingual NLP, Multilingual Models, Transformer Serving, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Transformers, Attention, Evaluation, Hugging Face, TensorBoard, and…
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Hugging Face, Fine-Tuning, Deployment, and Applied Case Studies
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Vision Transformers, DETR, Self-Supervised Vision, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">NLP · Week 1</p>
+        <h1 class="page-title">Foundations of Natural Language Processing</h1>
+        <p class="page-meta">Week 1 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-what-nlp-is-and-why-it-matters">1. What NLP is and why it matters</a></li>
+      <li><a href="#2-benefits-of-nlp">2. Benefits of NLP</a></li>
+      <li><a href="#3-why-python-is-preferred-for-nlp">3. Why Python is preferred for NLP</a></li>
+      <li><a href="#4-getting-started-with-spacy">4. Getting started with spaCy</a></li>
+      <li><a href="#5-core-nlp-workflow-and-techniques">5. Core NLP workflow and techniques</a></li>
+      <li><a href="#6-challenges-disadvantages-and-governance">6. Challenges, disadvantages, and governance</a></li>
+      <li><a href="#7-case-study-answer-framework">7. Case-study answer framework</a></li>
+      <li><a href="#8-detailed-case-studies">8. Detailed case studies</a></li>
+      <li><a href="#9-lexitech-conversational-ai-tokenization-case">9. LexiTech conversational-AI/tokenization case</a></li>
+      <li><a href="#10-generative-ai-extension-from-the-review-lecture">10. Generative AI extension from the review lecture</a></li>
+      <li><a href="#11-high-value-comparisons-for-the-exam">11. High-value comparisons for the exam</a></li>
+      <li><a href="#12-exam-preparation-checklist">12. Exam preparation checklist</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-what-nlp-is-and-why-it-matters">1. What NLP is and why it matters</h2>
+<p><strong>Natural Language Processing (NLP)</strong> is a subfield of Artificial Intelligence (AI) that enables computers to read, process, analyze, understand, and generate human language in text or speech form. Its core purpose is to bridge the gap between human communication and machine understanding so that people can interact with systems through ordinary language rather than rigid commands.</p>
+<p>Human language is difficult for machines because even a short paragraph can contain references to earlier words, pointers to real-world objects, cultural knowledge, personal experience, implied meaning, ambiguity, context, humor, and sarcasm. NLP addresses this complexity by representing language in structured, computable forms, often using statistical or machine-learning models and linguistic features.</p>
+<h3 id="data-to-intelligence-hierarchy">Data-to-intelligence hierarchy</h3>
+<ul>
+<li><strong>Data:</strong> raw facts or observations with no interpretation.</li>
+<li><strong>Information:</strong> data organized or processed to acquire meaning.</li>
+<li><strong>Knowledge:</strong> information understood in context and connected into usable patterns.</li>
+<li><strong>Intelligence:</strong> the ability to apply knowledge to reason, decide, predict, or act.</li>
+</ul>
+<p>NLP turns large volumes of language data into information, knowledge, and actionable intelligence.</p>
+<h3 id="forms-of-data">Forms of data</h3>
+<ul>
+<li><strong>Structured:</strong> fixed rows/columns and a defined schema, such as a relational database.</li>
+<li><strong>Semi-structured:</strong> some organization but no rigid table, such as JSON, XML, emails with headers, or logs.</li>
+<li><strong>Unstructured:</strong> free text, audio, video, social-media comments, reviews, clinical notes, and documents. NLP is especially important because much organizational data is unstructured.</li>
+</ul>
+<h3 id="three-broad-approaches-to-nlp">Three broad approaches to NLP</h3>
+<ol>
+<li><strong>Rule-based NLP:</strong> hand-written grammar, dictionaries, patterns, and rules. It is transparent and useful in narrow, predictable domains, but brittle and hard to scale.</li>
+<li><strong>Statistical NLP:</strong> probabilities learned from corpora; language is modeled statistically rather than only through rules.</li>
+<li><strong>Machine-learning/deep-learning NLP:</strong> models learn representations and decision boundaries from examples. Modern systems, including transformer-based generative AI, largely follow this approach.</li>
+</ol>
+<h3 id="major-real-world-applications">Major real-world applications</h3>
+<ul>
+<li>Search engines (Google, Yahoo, Bing), semantic search, query suggestions, and autocomplete.</li>
+<li>Machine translation and breaking language barriers.</li>
+<li>Voice assistants, conversational AI, question answering, and chatbots.</li>
+<li>Information extraction and <strong>Named Entity Recognition (NER)</strong>.</li>
+<li>Sentiment analysis of reviews and social media.</li>
+<li>Topic modeling over large document collections.</li>
+<li>Spam detection and content moderation.</li>
+<li>Document summarization and report generation.</li>
+<li>Recommendation systems and personalized learning/content.</li>
+<li>Customer-query routing and automated FAQ handling.</li>
+<li>Healthcare decision support, legal discovery, crisis monitoring, and fraud detection.</li>
+</ul>
+<p>Search engines illustrate sophisticated NLP: a query can be mapped into a semantic vector space where similar queries have similar vector representations. Autocomplete is not magic; it combines search, traversal of a tree-like data structure, and character-level distance calculation to propose completions after only a few typed characters.</p>
+<h2 id="2-benefits-of-nlp">2. Benefits of NLP</h2>
+<h3 id="2-1-benefits-for-technical-users">2.1 Benefits for technical users</h3>
+<ol>
+<li>
+<p><strong>Data extraction and analysis</strong>
+   - Extracts insight from unstructured sources such as research papers, patents, product reviews, and technical documents.
+   - Automates sentiment analysis, topic modeling, and NER, saving time and effort.</p>
+</li>
+<li>
+<p><strong>Text generation and summarization</strong>
+   - Generates readable summaries of long documents, reports, and email drafts.
+   - Automates product descriptions, technical documentation, and other routine content.</p>
+</li>
+<li>
+<p><strong>Machine translation</strong>
+   - Bridges language gaps between technical teams in different regions.
+   - Advances in NLP have significantly increased translation accuracy.</p>
+</li>
+<li>
+<p><strong>Chatbots and virtual assistants</strong>
+   - Automate customer support, answer FAQs, resolve routine issues, and provide personalized recommendations or assistance.</p>
+</li>
+<li>
+<p><strong>Search-engine optimization (SEO)</strong>
+   - Analyzes users&rsquo; search queries and intent, then helps optimize content and rankings to match specific needs.</p>
+</li>
+<li>
+<p><strong>Knowledge management</strong>
+   - Organizes and retrieves information from huge document repositories.
+   - Creates knowledge graphs that visualize relationships among concepts and entities.</p>
+</li>
+<li>
+<p><strong>Programming assistance</strong>
+   - Generates boilerplate code and documentation.
+   - Analyzes code quality and identifies potential bugs or security vulnerabilities.</p>
+</li>
+</ol>
+<p>Overall, technical users gain automation, faster insight extraction, improved productivity, and efficiency.</p>
+<h3 id="2-2-benefits-for-non-technical-users">2.2 Benefits for non-technical users</h3>
+<ul>
+<li><strong>Enhanced communication:</strong> translation tools such as Google Translate reduce language barriers.</li>
+<li><strong>Improved writing:</strong> grammar correction, alternative word choice, and style suggestions.</li>
+<li><strong>Efficient information retrieval:</strong> personalized search results matched to interests and preferences.</li>
+<li><strong>Summarization:</strong> rapid understanding of long articles and documents.</li>
+<li><strong>Accessibility:</strong> voice control; speech interfaces for users with disabilities; text-to-speech for visually impaired users.</li>
+<li><strong>Customer service:</strong> faster automated answers and issue resolution; sentiment analysis helps firms improve products/services.</li>
+<li><strong>Personalization:</strong> product, article, video, and music recommendations based on behavior and interests.</li>
+<li><strong>Education:</strong> foreign-language speaking/comprehension practice and tutoring customized to a learner&rsquo;s needs and style.</li>
+<li><strong>Simplified everyday tasks:</strong> voice-based device control, appointment scheduling, and email sending.</li>
+</ul>
+<h2 id="3-why-python-is-preferred-for-nlp">3. Why Python is preferred for NLP</h2>
+<ul>
+<li><strong>Readability and simplicity:</strong> clear syntax and easy learning.</li>
+<li><strong>Rapid prototyping:</strong> ideas can be implemented and tested quickly.</li>
+<li><strong>Rich library ecosystem:</strong> NLTK, spaCy, Gensim, TensorFlow, PyTorch, and scikit-learn.</li>
+<li><strong>Data integration:</strong> pandas and NumPy for manipulation and analysis.</li>
+<li><strong>Visualization:</strong> Matplotlib and Seaborn.</li>
+<li><strong>Strong community and support:</strong> extensive examples, documentation, and troubleshooting resources.</li>
+<li><strong>Easy integration:</strong> NLP can be combined with databases, APIs, machine learning, and production systems.</li>
+<li><strong>Versatility beyond NLP:</strong> the same language can handle preprocessing, modeling, deployment, and web development.</li>
+</ul>
+<p>The lecturer emphasizes that Python&rsquo;s combination of readability, powerful libraries, community support, and integration makes it well suited to the complexity of NLP.</p>
+<h2 id="4-getting-started-with-spacy">4. Getting started with spaCy</h2>
+<p>spaCy is presented as a state-of-the-art, next-generation Python NLP library. The introductory workflow has four heads: overview, installation and technical requirements, installation of statistical language models, and visualization with <strong>displaCy</strong>.</p>
+<h3 id="4-1-environment-and-hardware">4.1 Environment and hardware</h3>
+<ul>
+<li>The lecture uses <strong>Google Colab</strong>, accessed in a browser and signed into with a free or paid Gmail account.</li>
+<li>Colab provides access to hardware accelerators without buying a GPU/TPU card. The demonstrated setting is <strong>Runtime / Change runtime type / T4 GPU / Save</strong>.</li>
+<li>Lecturer&rsquo;s operational warning: many later NLP workloads may run very slowly or fail without an activated GPU or TPU.</li>
+<li>Privacy caveat: Colab is an online editor and code is stored by Google. This may be acceptable for training exercises, but confidential professional code/data requires appropriate governance.</li>
+</ul>
+<blockquote>
+<p>Accuracy caveat for practice: ordinary spaCy tokenization/POS/NER on small texts can run on a CPU; accelerators become important for large or transformer/deep-learning workloads. For an exam, reproduce the lecturer&rsquo;s emphasis on enabling the accelerator, but understand the practical nuance.</p>
+</blockquote>
+<h3 id="4-2-spacy-english-model-sizes">4.2 spaCy English model sizes</h3>
+<ul>
+<li><code>sm</code>: small; lecturer associates it with limited text such as a line or short paragraph.</li>
+<li><code>md</code>: medium; recommended by the lecturer when uncertain.</li>
+<li><code>lg</code>: large; lecturer associates it with streaming or high-volume data.</li>
+</ul>
+<p>All three were installed for first-time familiarization. In practice, model size primarily changes package size, available vectors, resource use, and often accuracy—not a strict maximum document length.</p>
+<p>Typical current installation syntax:</p>
+<pre><code class="language-python">!python -m spacy download en_core_web_sm
+!python -m spacy download en_core_web_md
+!python -m spacy download en_core_web_lg
+</code></pre>
+<p>A green tick beside a Colab cell indicates successful execution.</p>
+<h3 id="4-3-loading-and-testing-the-small-model">4.3 Loading and testing the small model</h3>
+<pre><code class="language-python">import spacy
+from spacy.lang.en.examples import sentences
+
+nlp = spacy.load(&quot;en_core_web_sm&quot;)
+doc = nlp(sentences[0])
+print(doc.text)
+
+for token in doc:
+    print(token.text, token.pos_, token.dep_)
+</code></pre>
+<ul>
+<li><code>nlp(...)</code> transforms input text into a processed <code>Doc</code> object.</li>
+<li>Iterating over <code>doc</code> yields tokens.</li>
+<li><code>token.text</code> is the surface word/token.</li>
+<li><code>token.pos_</code> is its part-of-speech label.</li>
+<li><code>token.dep_</code> is its syntactic dependency relation.</li>
+</ul>
+<p>The lecture example is similar to “Apple is looking at buying U.K. startup for $1 billion.” The system decomposes it into grammatical roles such as noun/proper noun, auxiliary, verb/root, preposition, and object. The key demonstration is that NLP converts a sentence into a structured linguistic representation. The lecturer explicitly asks learners to decipher the command word by word.</p>
+<h3 id="4-4-loading-medium-and-large-models">4.4 Loading medium and large models</h3>
+<pre><code class="language-python">import en_core_web_lg
+nlp = en_core_web_lg.load()
+
+import en_core_web_md
+nlp = en_core_web_md.load()
+doc = nlp(&quot;I have a ginger cat.&quot;)
+doc
+</code></pre>
+<p>Successfully returning the sentence verifies that the selected model loaded and processed the input.</p>
+<h3 id="4-5-dependency-visualization-with-displacy">4.5 Dependency visualization with displaCy</h3>
+<pre><code class="language-python">import spacy
+from spacy import displacy
+
+doc = nlp(&quot;I own a ginger cat.&quot;)
+displacy.serve(doc, style=&quot;dep&quot;)
+</code></pre>
+<p><code>style="dep"</code> displays dependency relations and parts of speech; for example, “I” is a pronoun, “own” a verb, “a” a determiner, and “ginger/cat” nominal elements. The lecture notes that Colab may run the server without giving the best physical visualization; Jupyter Notebook, Spyder, or Qt Console through Anaconda Navigator is suggested for clearer local display.</p>
+<p>Suggested lecture references: <em>NLP with Python and spaCy</em> (No Starch Press), <em>Mastering spaCy</em> (Packt, 2021), and <em>Mastering Python 3 Programming</em> (BPB, 2024).</p>
+<h2 id="5-core-nlp-workflow-and-techniques">5. Core NLP workflow and techniques</h2>
+<h3 id="5-1-typical-pipeline">5.1 Typical pipeline</h3>
+<ol>
+<li>Define the business/problem statement.</li>
+<li>Gather representative data.</li>
+<li>Clean, normalize, and preprocess it.</li>
+<li>Tokenize.</li>
+<li>Apply normalization such as lowercasing, stop-word removal, stemming, or lemmatization as appropriate.</li>
+<li>Extract/represent features (Bag of Words, TF-IDF, sequences, or embeddings).</li>
+<li>Train/select an algorithm or use a pretrained model.</li>
+<li>Evaluate with suitable metrics.</li>
+<li>Deploy and integrate into the workflow.</li>
+<li>Monitor interaction logs and feedback; refine continuously.</li>
+</ol>
+<p>The order matters: tokenization creates units; stemming or lemmatization operates on those units. Do not claim that stemming must precede tokenization.</p>
+<h3 id="5-2-tokenization">5.2 Tokenization</h3>
+<p>Tokenization divides text into processable units.</p>
+<ul>
+<li><strong>Word-level:</strong> fast, intuitive, and easy to interpret, but creates a large vocabulary and suffers from out-of-vocabulary (OOV) words, spelling variations, slang, and morphologically rich languages.</li>
+<li><strong>Subword:</strong> breaks words into reusable pieces; balances vocabulary size and sequence length, handles rare/new words, and is preferred by most modern language/translation systems. Its trade-off is additional segmentation and somewhat longer sequences.</li>
+<li><strong>Character-level:</strong> virtually eliminates OOV problems and handles spelling variation, but produces very long sequences, higher computation, and makes semantic learning harder.</li>
+</ul>
+<p><strong>OOV problem:</strong> a word absent from the training vocabulary cannot be represented as a known whole-word token. Subword and character methods can construct it from smaller known units.</p>
+<h3 id="5-3-stemming-and-lemmatization">5.3 Stemming and lemmatization</h3>
+<ul>
+<li><strong>Stemming:</strong> mechanically removes affixes to obtain a crude root; output need not be a dictionary word.</li>
+<li><strong>Lemmatization:</strong> uses vocabulary and morphological analysis to return the valid base form (lemma); generally more linguistically accurate but more computationally involved.</li>
+</ul>
+<h3 id="5-4-feature-extraction">5.4 Feature extraction</h3>
+<ul>
+<li><strong>Bag of Words (BoW):</strong> represents documents with token counts; simple but largely loses word order and context.</li>
+<li><strong>TF-IDF:</strong> raises the importance of terms frequent in one document but uncommon across the corpus.</li>
+</ul>
+<p>\[
+  TFIDF(t,d)=TF(t,d)\times IDF(t), \qquad IDF(t)=\log\left(\frac{N}{df(t)}\right)
+  \]</p>
+<p>where <code>N</code> is the number of documents and <code>df(t)</code> is the number containing term <code>t</code>.
+- <strong>Sequences of words:</strong> retain order and provide better context representation than BoW.
+- <strong>Word embeddings:</strong> dense vectors that encode aspects of semantic similarity.</p>
+<h3 id="5-5-sentiment-analysis">5.5 Sentiment analysis</h3>
+<p>Classifies opinion or emotion, often as <strong>positive, negative, or neutral</strong>. At scale it avoids manually reading hundreds, thousands, or millions of product reviews. It can also be aspect-based: “the battery is poor but the camera is good” is negative for battery and positive for camera.</p>
+<p>Applications include product/brand monitoring, campaign evaluation, customer support, public opinion, and retail promotions. Sentiment is not the same as keyword extraction: sentiment answers <em>how the writer feels</em>; keyword extraction answers <em>what important terms occur</em>.</p>
+<h3 id="5-6-keyword-extraction">5.6 Keyword extraction</h3>
+<p>Identifies salient terms or phrases for indexing, search, legal review, FAQ improvement, content organization, and quick document understanding.</p>
+<h3 id="5-7-named-entity-recognition-and-relation-extraction">5.7 Named Entity Recognition and relation extraction</h3>
+<p><strong>NER</strong> detects and categorizes specific entities such as people, organizations, locations, dates, medications, diagnoses, and procedures. <strong>Relation extraction</strong> determines how identified entities connect—for example, which dose and frequency belong to a medication, or whether two drugs have a potential interaction.</p>
+<p>NER is not topic modeling: NER locates specific named items; topic modeling discovers broad latent themes across a corpus.</p>
+<h3 id="5-8-topic-modeling">5.8 Topic modeling</h3>
+<p>A collection of algorithms that scans large quantities of text and groups/co-clusters words and documents into themes. A person can read a few pages and identify topics, but not gigabytes or terabytes manually. Example themes might concern computing, biology, and business. Topic modeling is therefore valuable for discovering what huge collections of unstructured documents discuss.</p>
+<h3 id="5-9-summarization">5.9 Summarization</h3>
+<ul>
+<li><strong>Extractive:</strong> selects and combines important existing sentences/passages.</li>
+<li><strong>Abstractive:</strong> generates a condensed paraphrase that preserves meaning rather than only copying sentences.</li>
+</ul>
+<p>A two-stage practical approach can score/select important content and then generate/refine a concise summary. In high-stakes settings, summaries should be explainable and traceable to source material.</p>
+<h3 id="5-10-question-answering-and-information-extraction">5.10 Question answering and information extraction</h3>
+<ul>
+<li><strong>Closed-domain QA:</strong> restricted to a narrow subject or controlled source.</li>
+<li><strong>Open-domain QA:</strong> can answer broad questions, as modern GPT-like assistants attempt.</li>
+<li>Information extraction and NER play a crucial role in locating the facts needed to answer questions.</li>
+</ul>
+<h3 id="5-11-spam-filtering">5.11 Spam filtering</h3>
+<p>An NLP filter analyzes message content/features to classify spam versus legitimate mail. Metadata-based methods instead use headers, sender, routing, or reputation. Content and metadata are complementary. Useful engineered features may include token/phrase frequency, suspicious URLs, capitalization, punctuation, and TF-IDF vectors. Evaluate the classification model rather than assuming keywords alone are sufficient.</p>
+<h3 id="5-12-explainable-nlp">5.12 Explainable NLP</h3>
+<p>Explainability makes model reasoning understandable through highlighted evidence, feature importance, attention/attribution, extracted supporting sentences, or rules. It improves trust, debugging, bias detection, governance, and professional acceptance. It is especially important for clinical, legal, financial, and other consequential decisions.</p>
+<h2 id="6-challenges-disadvantages-and-governance">6. Challenges, disadvantages, and governance</h2>
+<ul>
+<li><strong>Ambiguity:</strong> the same word/sentence can have several interpretations.</li>
+<li><strong>Context and cultural dependency:</strong> meaning depends on situation, geography, and shared knowledge.</li>
+<li><strong>Sarcasm and humor:</strong> humans infer nonliteral meaning more readily than machines.</li>
+<li><strong>Language variety:</strong> speed, vocabulary, dialect, slang, abbreviations, emojis, and informal writing vary even within one language.</li>
+<li><strong>Accuracy and misinterpretation:</strong> outputs can be wrong; important decisions need validation.</li>
+<li><strong>Training-data hunger:</strong> strong systems need large quantities of high-quality, relevant data. Available data is not automatically good training data.</li>
+<li><strong>Domain specificity:</strong> medical/legal terminology requires domain-representative corpora and evaluation.</li>
+<li><strong>Bias and representation:</strong> models can reproduce bias in their data; training sets should be diverse and representative of the target population.</li>
+<li><strong>Privacy/security:</strong> patient, customer, and organizational identifiers must be protected. Sensitive data should not be casually uploaded to public systems.</li>
+<li><strong>Low-resource languages:</strong> many languages lack enough labeled or high-quality data; geography-specific development remains necessary.</li>
+<li><strong>Scalability and real time:</strong> very high-volume streams require efficient algorithms and infrastructure.</li>
+<li><strong>Maintenance:</strong> language, user behavior, and business needs change; monitoring and continuous improvement are mandatory.</li>
+</ul>
+<p>Advantages remain substantial: natural human–machine interaction, automation of repetitive work, insight from unstructured data, and better informed decisions. The exam-ready balanced answer should always pair these benefits with the limitations above.</p>
+<h2 id="7-case-study-answer-framework">7. Case-study answer framework</h2>
+<p>For any exam case, write in this order:</p>
+<ol>
+<li>State the business problem and stakeholders.</li>
+<li>Identify available language data and expected output.</li>
+<li>Collect, clean, normalize, annotate, and govern data.</li>
+<li>Choose techniques (classification, NER, relations, sentiment, topics, summarization, dialogue).</li>
+<li>Select features/model and train or adapt it.</li>
+<li>Integrate and deploy in the actual workflow.</li>
+<li>Evaluate with metrics and user feedback.</li>
+<li>Monitor/refine continuously.</li>
+<li>State benefits.</li>
+<li>State domain-specific risks, privacy, bias, explainability, and scalability constraints.</li>
+</ol>
+<h2 id="8-detailed-case-studies">8. Detailed case studies</h2>
+<h3 id="8-1-medical-record-summarization">8.1 Medical-record summarization</h3>
+<p><strong>Problem:</strong> hospitals generate massive unstructured medical records. Doctors cannot quickly grasp a complete history, harming treatment efficiency and decisions.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Collect a large medical-record dataset.</li>
+<li>Clean errors/inconsistencies and annotate sections such as diagnoses, medications, allergies, and procedures.</li>
+<li>Apply domain-trained NER to identify clinical entities.</li>
+<li>Score sentences by relevance to overall health, considering medical-term frequency and past diagnoses.</li>
+<li>Cluster similar sentences to remove redundancy.</li>
+<li>Select high-value sentences and use abstractive summarization to condense them while preserving meaning.</li>
+</ol>
+<p><strong>Benefits:</strong> faster understanding, more efficient diagnosis/treatment planning, less risk of overlooking crucial history, and earlier identification of at-risk patients.</p>
+<p><strong>Challenges:</strong> domain-specific training data, strict data governance/privacy, and transparent explanations that clinicians can trust and verify. More data can help, but quality, representativeness, and correct labeling matter as much as quantity.</p>
+<h3 id="8-2-e-commerce-customer-service-chatbot">8.2 E-commerce customer-service chatbot</h3>
+<p><strong>Problem:</strong> a surge in inquiries overwhelms human agents, creates long waits, frustrates customers, and risks churn.</p>
+<p><strong>Process:</strong> gather emails, chat transcripts, and FAQs; identify common questions/issues and sentiment; use findings to define chatbot scope; build a framework integrated with the existing service platform; train for intent understanding/NLU and natural-language response generation; deploy on website and mobile app; monitor feedback and interaction logs; refine for more complex queries.</p>
+<p><strong>Benefits:</strong> reduced wait times, higher efficiency, 24/7 availability, and improved satisfaction. A responsible design also routes uncertain or sensitive cases to a human.</p>
+<h3 id="8-3-financial-fraud-detection">8.3 Financial fraud detection</h3>
+<p><strong>Problem:</strong> money laundering and unauthorized transactions cause losses; manual transaction review is slow and labor intensive.</p>
+<p><strong>Process stated in the transcript:</strong> collect financial transactions, customer information, and historical fraud cases; clean inconsistencies, normalize formats, identify relevant features; label a subset as fraudulent or legitimate. NLP can add value by analyzing transaction descriptions, communications, narratives, and other language evidence alongside structured transaction signals.</p>
+<h3 id="8-4-acme-customer-support">8.4 Acme customer support</h3>
+<p>The lecture proposes a three-pronged approach: <strong>chatbot development, sentiment analysis, and automated FAQ improvement</strong>. Expected outcomes are reduced call volume, improved customer satisfaction, and data-driven decisions. Effectiveness depends heavily on the quality and quantity of training data, and the system requires ongoing maintenance and improvement.</p>
+<h3 id="8-5-threads-social-media-analytics">8.5 Threads social-media analytics</h3>
+<p><strong>Problem:</strong> a rising fashion brand faces a constant stream of comments, reviews, and questions; manual insight extraction is tedious. Challenges are overwhelming data, limited customer understanding, and insufficient trend identification.</p>
+<p><strong>Solution:</strong> build/partner for an NLP social-media analytics platform using sentiment analysis, topic modeling, entity recognition, and style recognition.</p>
+<p><strong>Results:</strong> deeper customer understanding, data-driven trend identification, and better brand communication.</p>
+<p><strong>Risks:</strong> slang, emojis, informal language, sarcasm, and inherited training-data bias. Train on large, diverse, representative social-media datasets that reflect the target audience.</p>
+<h3 id="8-6-city-general-hospital-nlp-assistant">8.6 City General Hospital NLP assistant</h3>
+<p><strong>Problem:</strong> lengthy notes full of medical jargon and abbreviations slow nurses/pharmacists, cause extraction delays, invite medication/treatment errors, and lock valuable clinical insights in unstructured notes.</p>
+<p><strong>Solution:</strong> NER for diagnoses, medication, and allergies; relation extraction for medication dosage, frequency, and potential interactions; concise summaries of findings, recommendations, and follow-up actions; integration with the centralized <strong>Electronic Health Record (EHR)</strong>.</p>
+<p><strong>Results:</strong> increased efficiency, fewer errors, and improved communication.</p>
+<h3 id="8-7-threadbare-marketing-optimization">8.7 Threadbare marketing optimization</h3>
+<p><strong>Problem:</strong> an online clothing retailer gets inconsistent results from social/email campaigns and does not know what resonates. Challenges: limited performance insight, ineffective personalization, and difficulty identifying brand sentiment.</p>
+<p><strong>Platform functions:</strong> social listening and brand sentiment; customer segmentation/personas; topic modeling/trend identification; predictive analytics for campaign/customer optimization.</p>
+<p><strong>Modeling workflow:</strong> collect/preprocess; EDA with visualization, sentiment distributions, and word clouds by sentiment; feature engineering through BoW, TF-IDF, sequences, and embeddings; train Naive Bayes, SVM, random forest, logistic regression, or deep-learning models; tune hyperparameters.</p>
+<p><strong>Outcomes:</strong> measure sentiment by product category/brand, identify product strengths and weaknesses, generate business recommendations, create personalized messages, use a trend-driven content strategy, and improve campaign performance.</p>
+<h3 id="8-8-global-telecom-inquiry-automation">8.8 Global telecom inquiry automation</h3>
+<p><strong>Problem statement:</strong> automate routing, extract relevant information, and give intelligent responses across phone, email, and social media, improving satisfaction and agent efficiency while reducing response time.</p>
+<p><strong>Workflow:</strong> data collection/preprocessing → EDA → text classification → dialogue management → chatbot interface → refinement.</p>
+<p><strong>Benefits:</strong> faster and more accurate resolution, higher agent productivity through routine-task automation, lower support cost, and customer behavior/preference insight.</p>
+<h3 id="8-9-news-crisis-intelligence">8.9 News crisis intelligence</h3>
+<p><strong>Goal:</strong> identify potential crises, extract facts, track evolution, and provide actionable real-time insight to journalists/decision makers from high-volume, diverse sources.</p>
+<p><strong>Workflow:</strong> collect/clean; tokenize, stem/lemmatize, and remove stop words; anomaly detection and keyword filtering; crisis classification; NER for people, organizations, locations, and dates; relation extraction to reconstruct the crisis narrative; event extraction; live monitoring of news/social feeds; alert when predefined criteria are met.</p>
+<p><strong>Challenges:</strong> data quality/availability, ambiguity/context, and processing enormous volumes in real time. Efficient algorithms and infrastructure are required. Benefit: timely and accurate public reporting and stronger crisis management.</p>
+<h3 id="8-10-legal-e-discovery">8.10 Legal e-discovery</h3>
+<p><strong>Problem:</strong> a large law firm must process massive electronic evidence during litigation while reducing cost and improving accuracy/efficiency.</p>
+<p><strong>Workflow:</strong> collect from varied sources; standardize formats; tokenize, stem/lemmatize, and remove stop words; perform entity, relation, and keyword extraction; classify documents and assess privilege; run sentiment analysis where relevant; deduplicate and cluster documents.</p>
+<p><strong>Evaluation:</strong> precision, recall, F1 score, and accuracy, plus feedback from legal professionals.</p>
+<p>\[
+Precision=\frac{TP}{TP+FP},\quad Recall=\frac{TP}{TP+FN}
+\]</p>
+<p>\[
+F1=2\times\frac{Precision\times Recall}{Precision+Recall},\quad Accuracy=\frac{TP+TN}{TP+TN+FP+FN}
+\]</p>
+<p>In discovery, missing relevant evidence (false negatives) can be especially costly, so recall deserves explicit attention; excessive false positives increase lawyer review cost, so precision also matters.</p>
+<h3 id="8-11-additional-review-week-applications">8.11 Additional review-week applications</h3>
+<ul>
+<li><strong>Oncology/clinical decision support:</strong> mine EHR notes for symptoms, medication, treatment, diagnosis, names, and demographics, then present extracted facts so providers need not manually read every document. Identifiable patient information must be protected.</li>
+<li><strong>Retail promotions:</strong> analyze millions of reviews and social comments to show management positive/negative reactions and specific product issues.</li>
+<li><strong>EdTech:</strong> infer proficiency and learning gaps, then recommend an individualized pathway or course.</li>
+<li><strong>Airport/airline operations:</strong> read incoming incident reports or emails and route baggage claims, missing-bag cases, refunds, and general queries to the correct department.</li>
+</ul>
+<h2 id="9-lexitech-conversational-ai-tokenization-case">9. LexiTech conversational-AI/tokenization case</h2>
+<h3 id="purpose-and-stakeholders">Purpose and stakeholders</h3>
+<p>LexiTech is developing a voice-activated conversational assistant. NLP must convert natural user language into representations that support intent understanding and useful responses.</p>
+<ul>
+<li><strong>Emily, Product Manager:</strong> balances time, budget, user experience, and roadmap.</li>
+<li><strong>Raj, NLP Engineer:</strong> owns technical feasibility, model quality, tokenization, training, deployment, and maintenance.</li>
+<li><strong>Priya, Marketing Lead:</strong> needs customer/social insight, SEO insight, and differentiation.</li>
+</ul>
+<p>Business-intelligence uses include social-media monitoring (sentiment, complaints, praised features, emerging topics) and SEO analysis (query language, user intent, and content gaps).</p>
+<h3 id="separate-offline-training-from-online-runtime">Separate offline training from online runtime</h3>
+<ul>
+<li><strong>Offline:</strong> collect/clean data, build tokenizer/vocabulary, train and evaluate models, package/version artifacts.</li>
+<li><strong>Online:</strong> receive speech/text, apply the same tokenizer, run inference, manage dialogue, produce response, and log monitored interactions.</li>
+</ul>
+<p>Do not retrain the model on every user request. Runtime feedback may be reviewed and later incorporated into a controlled retraining cycle.</p>
+<h3 id="tokenization-strategy-trade-off">Tokenization strategy trade-off</h3>
+<ul>
+<li><strong>Option A — word-level:</strong> simplest and potentially fast initially, but high OOV risk and weak handling of new product names, slang, spelling variants, and multilingual input.</li>
+<li><strong>Option B — subword:</strong> best general balance of vocabulary size, semantic reuse, robustness, accuracy, and scalability; appropriate for modern assistants and translation.</li>
+<li><strong>Option C — character-level:</strong> most robust to unseen spellings, but sequence lengths and compute/latency are high and learning word-level semantics is harder.</li>
+</ul>
+<p><strong>Recommended:</strong> subword tokenization. A startup can begin with a pretrained model and controlled vocabulary/model version, then expand languages and domains in phases rather than build everything from scratch.</p>
+<h3 id="phased-strategy">Phased strategy</h3>
+<ol>
+<li>Minimum viable product: narrow use cases, pretrained components, subword tokenizer, defined fallback to humans.</li>
+<li>Improve from monitored errors and representative feedback; add domain vocabulary and intents.</li>
+<li>Scale to additional languages, channels, and more complex functions with versioned testing.</li>
+</ol>
+<p>A “dynamic vocabulary” must be governed: arbitrary production changes can make training and inference token mappings inconsistent. Update and version tokenizer/model artifacts together.</p>
+<h3 id="unified-pipeline">Unified pipeline</h3>
+<p>Speech/text input → speech recognition if needed → normalization → subword tokenization → embeddings/model → intent/entity extraction → dialogue management/business action → natural-language generation → text-to-speech if needed → monitoring and feedback.</p>
+<h2 id="10-generative-ai-extension-from-the-review-lecture">10. Generative AI extension from the review lecture</h2>
+<h3 id="traditional-discriminative-versus-generative-ai">Traditional/discriminative versus generative AI</h3>
+<ul>
+<li><strong>Traditional/discriminative AI:</strong> analyzes existing data, predicts, ranks, or classifies—for example spam/not spam, positive/negative, and recommendations.</li>
+<li><strong>Generative AI:</strong> creates new text, image, code, audio, or video in response to prompts rather than only selecting a class.</li>
+</ul>
+<p>Examples mentioned: ChatGPT; DALL-E; GitHub Copilot for code, debugging, and documentation; Gemini for research assistance; Claude for writing/research/analysis; and AI music/soundtrack generators.</p>
+<p>Although AI research dates to the 1950s, the modern boom was enabled by major NLP, machine-learning, and deep-learning advances from roughly 2017–2023, increased scale and investment, and especially the <strong>transformer architecture</strong> introduced in 2017. Transformers greatly improved contextual language processing and underpin systems such as ChatGPT and Gemini.</p>
+<h3 id="what-generative-ai-does-well">What generative AI does well</h3>
+<p>Content creation, analysis/summarization, coding and technical work, translation/editing, research and information gathering, and creative assistance.</p>
+<h3 id="limitations-and-responsible-use">Limitations and responsible use</h3>
+<ul>
+<li>Outputs may be inaccurate; verify factual claims.</li>
+<li>Internet-scale training data contains biases by people, geography, organization, race, and culture; model output can reproduce them.</li>
+<li>Sensitive personal or organizational data should not be uploaded casually to public models.</li>
+<li>Generated output still requires human review, domain expertise, and governance.</li>
+</ul>
+<h2 id="11-high-value-comparisons-for-the-exam">11. High-value comparisons for the exam</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pair</th>
+<th>Correct distinction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tokenization vs stemming</td>
+<td>Tokenization creates units; stemming reduces already-tokenized words to crude roots.</td>
+</tr>
+<tr>
+<td>Stemming vs lemmatization</td>
+<td>Stemming is mechanical and may yield nonwords; lemmatization returns linguistically valid base forms.</td>
+</tr>
+<tr>
+<td>Sentiment vs keywords</td>
+<td>Attitude/polarity versus salient terms.</td>
+</tr>
+<tr>
+<td>Topic modeling vs NER</td>
+<td>Broad latent themes versus explicit named entities.</td>
+</tr>
+<tr>
+<td>Extractive vs abstractive summary</td>
+<td>Select source sentences versus generate a condensed paraphrase.</td>
+</tr>
+<tr>
+<td>Word vs subword vs character tokens</td>
+<td>Simple/large-vocabulary/OOV-prone versus balanced/robust versus no OOV but long computational sequences.</td>
+</tr>
+<tr>
+<td>Rule-based vs statistical/ML NLP</td>
+<td>Explicit transparent rules versus patterns learned from data.</td>
+</tr>
+<tr>
+<td>Traditional vs generative AI</td>
+<td>Classify/predict/analyze existing data versus create new content.</td>
+</tr>
+<tr>
+<td>NLP content filter vs metadata filter</td>
+<td>Message language/content versus sender/header/routing signals.</td>
+</tr>
+<tr>
+<td>Training vs inference</td>
+<td>Periodic offline learning versus online use of a fixed versioned model.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="12-exam-preparation-checklist">12. Exam preparation checklist</h2>
+<p>Be able to:</p>
+<ul>
+<li>Define NLP and explain why human language is hard for computers.</li>
+<li>Explain structured, semi-structured, and unstructured data and the data→information→knowledge→intelligence progression.</li>
+<li>Compare rule-based, statistical, ML/deep-learning, and generative approaches.</li>
+<li>List technical and non-technical benefits with examples.</li>
+<li>Explain why Python/spaCy are used and reproduce the small-model POS/dependency example.</li>
+<li>Put the general NLP pipeline in the correct order.</li>
+<li>Distinguish tokenization methods, stemming/lemmatization, BoW/TF-IDF/embeddings, sentiment/keywords, NER/topics, and extractive/abstractive summaries.</li>
+<li>Apply the ten-step case-study framework to healthcare, retail, customer service, finance, news, or legal data.</li>
+<li>State precision, recall, F1, and accuracy and choose metrics based on the cost of false positives/negatives.</li>
+<li>Discuss privacy, bias, explainability, domain specificity, low-resource languages, real-time scalability, and continuous maintenance.</li>
+<li>Explain why subword tokenization is a sensible choice for LexiTech and why offline training must be separated from runtime inference.</li>
+<li>Compare traditional AI with generative AI and discuss transformers, uses, verification, privacy, and bias.</li>
+</ul>
+<h3 id="compact-long-answer-template">Compact long-answer template</h3>
+<blockquote>
+<p>NLP is an AI subfield that converts natural human language into representations a computer can process. For the stated problem, first define the output and stakeholders; collect, clean, normalize, annotate, and govern representative data; tokenize and extract suitable representations; apply the appropriate task model (classification/NER/sentiment/topic modeling/summarization/dialogue); evaluate with business-appropriate metrics; integrate and deploy; and continuously monitor feedback. The benefits are speed, automation, scale, and actionable insight, while the key controls are privacy, bias mitigation, explainability, domain accuracy, human escalation, and model maintenance.</p>
+</blockquote>
+<p>Suggested case-study reference from the lectures: <em>Recent Advances in Natural Language Processing</em> (Springer, 2020).</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-2.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 2: spaCy Conventions, Text Preprocessing, and…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

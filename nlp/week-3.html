@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>NLP · Week 3 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">NLP</span>
+      <span class="brand-title">Week 3</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html" selected>NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Foundations of Natural Language Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        spaCy Conventions, Text Preprocessing, and Tokenization
+      </a>
+      <a class="is-active" href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Dependency Parsing, Named Entity Recognition, and Token Operations
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Token-Based Matching, Word Vectors, and Semantic Similarity
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Named Entities, Dependency-Based Intent Recognition, Semantic…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Annotation, Training spaCy NER Models, and an Airline-Review Case Study
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Text Classification and Sentiment Analysis
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Text Classification, TF–IDF, SVM, Doc2Vec and Twitter Sentiment Analysis
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Topic Modelling
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        BERT and Modern Pre-trained Language Models
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Fine-Tuning Language Models, Efficient Transformers, Sentence…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Cross-Lingual NLP, Multilingual Models, Transformer Serving, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Transformers, Attention, Evaluation, Hugging Face, TensorBoard, and…
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Hugging Face, Fine-Tuning, Deployment, and Applied Case Studies
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Vision Transformers, DETR, Self-Supervised Vision, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">NLP · Week 3</p>
+        <h1 class="page-title">Dependency Parsing, Named Entity Recognition, and Token Operations</h1>
+        <p class="page-meta">Week 3 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#learning-map">Learning map</a></li>
+      <li><a href="#1-dependency-parsing">1. Dependency parsing</a></li>
+      <li><a href="#2-arc-standard-transition-parsing">2. Arc-standard transition parsing</a></li>
+      <li><a href="#3-implementing-dependency-parsing-in-python">3. Implementing dependency parsing in Python</a></li>
+      <li><a href="#4-named-entity-recognition-ner">4. Named Entity Recognition (NER)</a></li>
+      <li><a href="#5-sequence-labeling-schemes-for-ner">5. Sequence labeling schemes for NER</a></li>
+      <li><a href="#6-real-world-article-workflow-scraping-and-entity-analysis">6. Real-world article workflow: scraping and entity analysis</a></li>
+      <li><a href="#7-merging-and-splitting-tokens-in-spacy">7. Merging and splitting tokens in spaCy</a></li>
+      <li><a href="#8-dependency-vs-constituency-parsing-and-the-linguatech-case">8. Dependency vs constituency parsing and the LinguaTech case</a></li>
+      <li><a href="#9-integrated-practical-patterns">9. Integrated practical patterns</a></li>
+      <li><a href="#10-exam-focused-distinctions-and-pitfalls">10. Exam-focused distinctions and pitfalls</a></li>
+      <li><a href="#references-explicitly-suggested-in-the-sessions">References explicitly suggested in the sessions</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="learning-map">Learning map</h2>
+<p>This week connects three levels of NLP structure:</p>
+<ol>
+<li><strong>Tokens and entities:</strong> which spans of text refer to people, organizations, places, dates, quantities, etc.?</li>
+<li><strong>Dependencies:</strong> which word is grammatically related to which other word, and what is the relationship?</li>
+<li><strong>Retokenization:</strong> how can an already-created spaCy <code>Doc</code> be corrected by merging or splitting tokens while preserving linguistic structure?</li>
+</ol>
+<p>The central practical idea is that NER tells us <strong>what important things occur</strong>, while dependency parsing tells us <strong>how those things participate in the sentence</strong>. Together they support relation extraction, question answering, summarization, sentiment analysis, machine translation, knowledge graphs, search, and information retrieval.</p>
+<hr>
+<h2 id="1-dependency-parsing">1. Dependency parsing</h2>
+<h3 id="definition-and-representation">Definition and representation</h3>
+<p><strong>Dependency parsing</strong> analyzes a sentence&rsquo;s grammatical structure by finding related words and labeling the nature of every relationship. Each relation contains:</p>
+<ul>
+<li>a <strong>head</strong>: the controlling word;</li>
+<li>a <strong>dependent</strong>: a word that modifies, complements, or is subordinate to the head;</li>
+<li>a labeled, directed <strong>arc/edge</strong> describing the relation.</li>
+</ul>
+<p>The labels are standardized in frameworks such as <strong>Universal Dependencies (UD)</strong>. A dependency analysis is normally represented as a <strong>rooted directed tree</strong>:</p>
+<ul>
+<li>tokens are nodes;</li>
+<li>labeled arcs represent syntactic relations;</li>
+<li>there is one <code>ROOT</code>, usually the main verb or predicate;</li>
+<li>every other token has exactly one head (one incoming head relation);</li>
+<li>dependents may occur before or after their heads—dependency is grammatical, not merely positional.</li>
+</ul>
+<blockquote>
+<p>Direction convention caveat: linguistic diagrams and libraries may draw arrows differently. The course describes the dependent as pointing to its head, while some visualizers draw head-to-dependent arcs. The invariant exam idea is the labeled <strong>head–dependent relation</strong>, not the screen direction.</p>
+</blockquote>
+<p>Examples:</p>
+<ul>
+<li><strong>black car</strong>: <code>car</code> is the head; <code>black</code> is its dependent; <code>amod</code> means adjectival modifier.</li>
+<li><strong>She reads books</strong>: <code>reads</code> is <code>ROOT</code>, <code>She</code> is the nominal subject (<code>nsubj</code>), and <code>books</code> is the object (<code>obj</code>/direct object).</li>
+<li><strong>The cat sat on a mat</strong>: <code>sat</code> is the root; <code>cat</code> is the subject; the prepositional phrase attaches through the appropriate preposition/case and oblique relation in UD.</li>
+<li><strong>I saw a dog</strong>: <code>saw</code> is root, <code>I</code> is subject, and <code>dog</code> is object.</li>
+</ul>
+<h3 id="common-dependency-relations">Common dependency relations</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Label/concept</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>root</code></td>
+<td>Main sentence predicate</td>
+<td><code>bark</code> in “Dogs bark”</td>
+</tr>
+<tr>
+<td><code>nsubj</code></td>
+<td>Nominal subject</td>
+<td><code>Alice</code> in “Alice writes code”</td>
+</tr>
+<tr>
+<td><code>obj</code> / direct object</td>
+<td>Entity directly affected by action</td>
+<td><code>books</code> in “She reads books”</td>
+</tr>
+<tr>
+<td><code>iobj</code></td>
+<td>Indirect object</td>
+<td><code>Sam</code> in “Give Sam the file”</td>
+</tr>
+<tr>
+<td><code>amod</code></td>
+<td>Adjectival modifier of a noun</td>
+<td><code>blue</code> → <code>bike</code></td>
+</tr>
+<tr>
+<td><code>advmod</code></td>
+<td>Adverbial modifier</td>
+<td><code>quickly</code> modifying <code>ran</code></td>
+</tr>
+<tr>
+<td><code>obl</code></td>
+<td>Oblique nominal, often prepositional</td>
+<td><code>office</code> in “worked in the office”</td>
+</tr>
+<tr>
+<td><code>det</code></td>
+<td>Determiner</td>
+<td><code>the</code> modifying <code>cat</code></td>
+</tr>
+<tr>
+<td><code>neg</code></td>
+<td>Negation modifier</td>
+<td><code>not</code> modifying <code>good</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>The live session also referred generally to a <strong>prepositional modifier</strong>, illustrated by “sat on a mat.” Exact labels can vary by annotation scheme/version, so answer with the scheme requested.</p>
+<h3 id="why-dependency-trees-matter">Why dependency trees matter</h3>
+<p>Humans do more than read a word sequence: on reading “She reads books,” we infer who performs the action and what is acted upon. Dependency parsing is a computational representation of that understanding. It helps:</p>
+<ul>
+<li>identify subjects, objects, predicates, and modifiers;</li>
+<li>recover syntactic and semantic structure for NLU;</li>
+<li>answer questions and retrieve facts;</li>
+<li>translate between languages;</li>
+<li>extract relations/events and build knowledge graphs;</li>
+<li>preserve core meaning in summaries;</li>
+<li>determine sentiment scope, especially negation and aspect-specific opinion.</li>
+</ul>
+<h4 id="agent-action-patient-extraction">Agent–action–patient extraction</h4>
+<p>For “The engineer repaired the machine,” dependencies recover:</p>
+<p><code>engineer</code> (agent/subject) → <code>repaired</code> (action/root) → <code>machine</code> (patient/object).</p>
+<p>If an exam asks for exactly one triple:</p>
+<ol>
+<li>find the main-clause <code>ROOT</code> verb;</li>
+<li>find its subject dependency;</li>
+<li>find its object dependency;</li>
+<li>ignore embedded clauses unless the question asks for them.</li>
+</ol>
+<p>For “John said Mary repaired the bike,” the main-clause triple begins with <code>John–said–…</code>; <code>Mary–repaired–bike</code> belongs to an embedded clause. Never use “nearest noun + verb + next noun”: it fails with distance, embedding, and passive voice. In “The bike was repaired by John,” surface order changes but the grammatical roles remain recoverable.</p>
+<h3 id="projectivity">Projectivity</h3>
+<ul>
+<li>A <strong>projective</strong> dependency tree has no crossing arcs when drawn over the sentence. Most English constructions are projective.</li>
+<li>A <strong>non-projective</strong> tree permits crossing arcs. These occur more often in languages/constructions such as Czech, Dutch, German, and Turkish.</li>
+</ul>
+<p>Projective transition systems cannot correctly express genuinely non-projective analyses. Options include swap-based transition systems, graph-based parsers, and maximum-spanning-tree (MST) parsers. UD standardizes annotation; it does <strong>not</strong> eliminate non-projective structures.</p>
+<hr>
+<h2 id="2-arc-standard-transition-parsing">2. Arc-standard transition parsing</h2>
+<p>An <strong>arc-standard parser</strong> incrementally constructs a dependency tree using three data structures:</p>
+<ul>
+<li><strong>Stack:</strong> partially processed tokens.</li>
+<li><strong>Buffer:</strong> remaining input tokens.</li>
+<li><strong>Arc set:</strong> dependency relations constructed so far.</li>
+</ul>
+<p>It repeatedly chooses one of three operations:</p>
+<ul>
+<li><strong>SHIFT:</strong> move the next token from the buffer to the stack.</li>
+<li><strong>LEFT-ARC:</strong> create the appropriate leftward head–dependent arc and pop the completed dependent from the stack.</li>
+<li><strong>RIGHT-ARC:</strong> create the appropriate rightward head–dependent arc and pop the completed dependent from the stack.</li>
+</ul>
+<p>This process continues until the input has been consumed and a tree is built. The lecturer specifically emphasized practicing this on <strong>longer exam sentences</strong>, not only easy examples such as “I saw a dog”: identify the root, subject, object, and the sequence/structure of arcs.</p>
+<h3 id="major-parser-families">Major parser families</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Core idea</th>
+<th>Strengths</th>
+<th>Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rule-based</td>
+<td>Apply hand-written grammatical rules</td>
+<td>Precise in covered cases; no training data needed</td>
+<td>Time-consuming to build, brittle on unusual structures, no learning/adaptation</td>
+</tr>
+<tr>
+<td>Statistical</td>
+<td>Learn decisions from annotated corpora (e.g., treebanks)</td>
+<td>Handles variation and predicts from observed data</td>
+<td>Needs a large, accurately annotated corpus for training/testing/validation</td>
+</tr>
+<tr>
+<td>Transition-based</td>
+<td>Predict a sequence of actions such as SHIFT/ARC</td>
+<td>Very fast, efficient, suitable for modern/interactive applications</td>
+<td>Greedy errors can propagate; projectivity depends on transition set</td>
+</tr>
+<tr>
+<td>Graph-based</td>
+<td>Score candidate arcs/trees and select a high-scoring global tree</td>
+<td>Global optimization; can support non-projectivity</td>
+<td>Usually more computationally expensive</td>
+</tr>
+</tbody>
+</table></div>
+<p>“Corpus” means a collection of language data; a treebank is a corpus annotated with syntactic trees.</p>
+<hr>
+<h2 id="3-implementing-dependency-parsing-in-python">3. Implementing dependency parsing in Python</h2>
+<h3 id="method-1-spacy">Method 1 — spaCy</h3>
+<p>spaCy is an open-source Python NLP library. The lecture installed spaCy and downloaded its small English model (<code>en_core_web_sm</code>, described as roughly 12 MB), then restarted the notebook session so the new dependencies loaded.</p>
+<pre><code class="language-bash">pip install -U pip setuptools wheel
+pip install -U spacy
+python -m spacy download en_core_web_sm
+</code></pre>
+<pre><code class="language-python">import spacy
+from spacy import displacy
+
+nlp = spacy.load(&quot;en_core_web_sm&quot;)
+sentence = &quot;Deemed universities charge huge fees.&quot;
+doc = nlp(sentence)
+
+print(f&quot;{'TOKEN':&lt;15}|{'RELATION':&lt;10}|{'HEAD':&lt;15}|{'CHILDREN':&lt;20}&quot;)
+print(&quot;-&quot; * 70)
+for token in doc:
+    print(f&quot;{token.text:&lt;15}|{token.dep_:&lt;10}|{token.head.text:&lt;15}|&quot;
+          f&quot;{str([child.text for child in token.children]):&lt;20}&quot;)
+
+displacy.render(doc, style=&quot;dep&quot;, jupyter=True,
+                options={&quot;distance&quot;: 120})
+</code></pre>
+<p><code>nlp(sentence)</code> returns a <code>Doc</code> containing token-level linguistic features and relationships. Relevant attributes are <code>token.text</code>, <code>token.dep_</code>, <code>token.head.text</code>, and <code>token.children</code>. In the course example, <code>charge</code> is the root; <code>universities</code> is its subject; <code>fees</code> its object; <code>Deemed</code> and <code>huge</code> are adjectival modifiers. <code>displacy.render(..., style="dep")</code> generates the dependency graph.</p>
+<h3 id="method-2-nltk-with-stanford-corenlp">Method 2 — NLTK with Stanford CoreNLP</h3>
+<p>Stanford CoreNLP is a Java NLP toolkit that can be accessed from Python through NLTK. The demonstrated workflow was:</p>
+<ol>
+<li>download/unzip the CoreNLP distribution and English model JAR;</li>
+<li>import <code>StanfordDependencyParser</code>;</li>
+<li>provide the CoreNLP JAR and model-JAR paths;</li>
+<li>call <code>raw_parse(sentence)</code> and take the first parse;</li>
+<li>inspect <code>dependency.triples()</code>.</li>
+</ol>
+<p>Each dependency triple has the form:</p>
+<p><code>((head_word, head_POS), relation, (dependent_word, dependent_POS))</code>.</p>
+<p>The output for the running example includes relations connecting <code>charges/VBP</code> to <code>universities/NNS</code> and <code>fees/NNS</code>.</p>
+<p>Visualization options:</p>
+<ul>
+<li><code>dependency.nx_graph()</code> creates a labeled directed NetworkX graph;</li>
+<li><code>dependency.to_dot()</code> creates Graph Description Language/DOT output, viewable using Graphviz.</li>
+</ul>
+<p>The course reversed <code>nx_graph()</code> because it returned visually inverted edges, split the original sentence into words, mapped numeric nodes (starting at 1) back to words, and drew the graph with NetworkX/Matplotlib (<code>with_labels=True</code>, labels dictionary, node size around 2500, a chosen hexadecimal node color such as <code>#B5EAD7</code>, and font size 10).</p>
+<h3 id="method-3-stanza">Method 3 — Stanza</h3>
+<p>Stanza, developed by the Stanford NLP Group, supplies a neural NLP pipeline and a Python-friendly route to Stanford NLP features without manually managing CoreNLP JAR files.</p>
+<pre><code class="language-bash">pip install stanza
+</code></pre>
+<pre><code class="language-python">import stanza
+stanza.download(&quot;en&quot;)
+nlp = stanza.Pipeline(
+    &quot;en&quot;,
+    processors=&quot;tokenize,mwt,pos,lemma,depparse&quot;
+)
+doc = nlp(&quot;Deemed universities charge huge fees.&quot;)
+for sentence in doc.sentences:
+    sentence.print_dependencies()
+</code></pre>
+<p><code>processors</code> may be a dictionary or comma-separated string. Processor order/dependencies matter: for example, POS processing requires tokenization and MWT (multi-word-token) processing first. <code>doc.sentences</code> contains sentence objects with token data and linguistic features; <code>print_dependencies()</code> emits triples containing the token, head index, and dependency relation.</p>
+<h3 id="parser-tool-alternatives-discussed-in-the-live-session">Parser/tool alternatives discussed in the live session</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Advantages mentioned</th>
+<th>Limitations mentioned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>spaCy</td>
+<td>Fast, practical, easy pipeline integration</td>
+<td>Less phrase-level detail than constituency parsing</td>
+</tr>
+<tr>
+<td>Stanford NLP / Stanza</td>
+<td>State-of-the-art accuracy, robust multilingual coverage (60+ languages), UD framework; Java/Python ecosystem</td>
+<td>Slower than spaCy; Java route needs full CoreNLP backend</td>
+</tr>
+<tr>
+<td>AllenNLP</td>
+<td>Neural parsers, strong accuracy, integrates naturally with PyTorch/deep-learning models</td>
+<td>Heavy setup, large models, high computational/resource demand</td>
+</tr>
+<tr>
+<td>UDPipe</td>
+<td>Lightweight, fast, many pretrained multilingual models; no need to train from scratch</td>
+<td>Less active development and lower accuracy than spaCy/Stanza according to the lecture</td>
+</tr>
+<tr>
+<td>TextBlob / BERT-style tools</td>
+<td>Beginner-friendly; contextual embeddings can provide strong context sensitivity</td>
+<td>GPU may be needed; not necessarily a complete dependency parser; language/scale limitations depend on model</td>
+</tr>
+</tbody>
+</table></div>
+<p>Installation snippets mentioned: <code>stanza.download('en')</code>, <code>pip install allennlp allennlp-models</code>, and <code>pip install ufal.udpipe</code>. Treat TextBlob and BERT carefully in an exam: BERT supplies contextual representations and can support a parser, but is not by itself a complete dependency-parsing algorithm.</p>
+<hr>
+<h2 id="4-named-entity-recognition-ner">4. Named Entity Recognition (NER)</h2>
+<h3 id="definition-purpose-and-pipeline">Definition, purpose, and pipeline</h3>
+<p><strong>Named Entity Recognition</strong>—also called <strong>entity identification, entity chunking, or entity extraction</strong>—is an information-extraction task that:</p>
+<ol>
+<li>detects entity mentions in unstructured text;</li>
+<li>classifies them into predefined semantic categories.</li>
+</ol>
+<p>An entity is a consistently referenced thing or expression. Categories can include <code>PERSON</code>, <code>ORG</code>, <code>GPE</code>, <code>LOC</code>, <code>PRODUCT</code>, <code>EVENT</code>, <code>DATE</code>, <code>TIME</code>, money/quantities, and percentages. NER converts unstructured text into structured information and answers “who, what, where, and when?”</p>
+<p>A simplified pipeline is:</p>
+<p><code>tokenization → POS tagging/contextual representation → entity detection and classification</code>.</p>
+<p>Entity mentions are <strong>spans of one or more consecutive tokens</strong>, not isolated characters. “Google” has length 1; “New York” has length 2; “United States of America” has length 4. Spans preserve the full meaning of multiword names.</p>
+<h3 id="applications-and-practical-use-cases">Applications and practical use cases</h3>
+<ul>
+<li>question answering, search, and information retrieval;</li>
+<li>text summarization and machine translation;</li>
+<li>knowledge-graph construction and relation extraction;</li>
+<li>improving downstream POS tagging/parsing precision;</li>
+<li>résumé parsing: candidate name, experience, qualifications, skills;</li>
+<li>financial analysis: companies, percentages, monetary amounts, report facts;</li>
+<li>news/topic classification: “President Trump” suggests politics, while “Leonardo DiCaprio” suggests movies;</li>
+<li>customer/support analytics, document indexing, compliance, biomedical term extraction.</li>
+</ul>
+<h3 id="spacy-ner-implementation">spaCy NER implementation</h3>
+<p>The lecture used spaCy, pandas, Requests, and Beautiful Soup; set pandas display rows to 200; processed a sentence; printed entity text, character offsets, and predicted label; and visualized entities with colored highlights.</p>
+<pre><code class="language-python">import pandas as pd
+import spacy
+from spacy import displacy
+
+nlp = spacy.load(&quot;en_core_web_sm&quot;)
+pd.set_option(&quot;display.max_rows&quot;, 200)
+
+content = (&quot;Trinamool Congress leader Mahua Moitra has moved the &quot;
+           &quot;Supreme Court against her expulsion from the Lok Sabha.&quot;)
+doc = nlp(content)
+
+for ent in doc.ents:
+    print(ent.text, ent.start_char, ent.end_char, ent.label_)
+
+displacy.render(doc, style=&quot;ent&quot;, jupyter=True)
+</code></pre>
+<p><code>doc.ents</code> gives detected entity spans. Character offsets permit exact highlighting or linking back to the source. <code>displacy</code> uses colors to show recognized spans and categories. Colab was recommended for convenient free compute (GPU/TPU availability was mentioned), while a local environment may be preferable for some visualization workflows.</p>
+<h3 id="statistical-ner-vs-entityruler">Statistical NER vs <code>EntityRuler</code></h3>
+<p>Statistical NER learns from training data, generalizes to unseen names, and is flexible, but may miss fixed domain terms such as product codes or company abbreviations. spaCy&rsquo;s <strong><code>EntityRuler</code></strong> injects entities using explicit token/phrase patterns without retraining.</p>
+<p>Good <code>EntityRuler</code> cases: <code>ABC-204</code> as <code>PRODUCT</code>, <code>HbA1c</code> in medicine, <code>NASDAQ-100</code> in finance, <code>ISO-9001</code> in manufacturing, and <code>Section 302</code> in law. It is best when terminology is predictable and domain rules are reliable. It <strong>complements</strong>, rather than necessarily replaces, statistical NER; pattern coverage limits what it can recognize.</p>
+<hr>
+<h2 id="5-sequence-labeling-schemes-for-ner">5. Sequence labeling schemes for NER</h2>
+<p>NER is often formulated as sequence tagging: every token receives a boundary/category label.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Scheme</th>
+<th>Labels</th>
+<th>Single-token entity</th>
+<th>Multi-token example “New York”</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IO</td>
+<td><code>I</code>, <code>O</code></td>
+<td><code>I-GPE</code></td>
+<td><code>I-GPE I-GPE</code></td>
+</tr>
+<tr>
+<td>BIO / IOB2</td>
+<td><code>B</code>, <code>I</code>, <code>O</code></td>
+<td><code>B-GPE</code></td>
+<td><code>B-GPE I-GPE</code></td>
+</tr>
+<tr>
+<td>BILOU / BIOES</td>
+<td><code>B</code>, <code>I</code>, <code>L</code>, <code>O</code>, <code>U</code></td>
+<td><code>U-GPE</code></td>
+<td><code>B-GPE L-GPE</code></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><code>B</code>: beginning; <code>I</code>: inside; <code>L</code>: last; <code>O</code>: outside; <code>U</code>: unit/single-token entity.</li>
+<li>IO cannot explicitly distinguish beginnings of adjacent entities and is rarely preferred today.</li>
+<li>In BIO/IOB2, even a single-token entity receives <code>B</code>.</li>
+<li>BILOU gives richer boundary supervision by distinguishing final and unit tokens.</li>
+</ul>
+<p>Example, “Google opened an office in New York”:</p>
+<ul>
+<li>BIO: <code>Google/B-ORG</code>, <code>New/B-GPE</code>, <code>York/I-GPE</code>.</li>
+<li>BILOU: <code>Google/U-ORG</code>, <code>New/B-GPE</code>, <code>York/L-GPE</code>.</li>
+</ul>
+<p>Tag validity depends on tokenization. If tokens previously labeled <code>B-ORG I-ORG</code> are merged into one <code>Google</code> token, the BILOU label must become <code>U-ORG</code>. Merely converting annotations from BIO to BILOU does not automatically improve a model; the training pipeline and model must use the scheme correctly.</p>
+<hr>
+<h2 id="6-real-world-article-workflow-scraping-and-entity-analysis">6. Real-world article workflow: scraping and entity analysis</h2>
+<p>The course processed a New York Times opinion article about Trump and America/allies:</p>
+<ol>
+<li>import <code>BeautifulSoup</code> from <code>bs4</code>, <code>requests</code>, and <code>spacy</code>;</li>
+<li>download a URL with <code>requests.get(url_string)</code>;</li>
+<li>parse <code>response.text</code> with Beautiful Soup using the <code>html5lib</code> parser;</li>
+<li>remove <code>script</code>, <code>style</code>, and <code>aside</code> elements with <code>.extract()</code>;</li>
+<li>obtain text using <code>soup.get_text()</code> and normalize whitespace with <code>" ".join(text.split())</code>;</li>
+<li>load the medium spaCy English model (<code>en_core_web_md</code>);</li>
+<li>create <code>doc = nlp(article_text)</code>.</li>
+</ol>
+<p>Beautiful Soup extracts text from HTML and XML. Web scraping was presented as an integral way to obtain real NLP input, but production use must also respect site terms, copyright, and robots/access rules.</p>
+<p>Analysis steps:</p>
+<pre><code class="language-python">from collections import Counter
+
+len(doc.ents)                                  # number of entity spans
+labels = [ent.label_ for ent in doc.ents]
+Counter(labels)                               # frequency by entity type
+items = [ent.text for ent in doc.ents]
+Counter(items).most_common(10)                # most common entity mentions
+</code></pre>
+<p>In the discussed article, <code>GPE</code> (country/city/state) was the most frequent category, with people and <code>NORP</code> (nationalities, religious or political groups) also prominent. Entity/category frequencies can offer a quick topic summary. The live demonstration temporarily produced an empty list because the article/document load had failed (<code>len(doc.ents) == 0</code>); therefore validate fetching and parsing before interpreting counts.</p>
+<hr>
+<h2 id="7-merging-and-splitting-tokens-in-spacy">7. Merging and splitting tokens in spaCy</h2>
+<h3 id="why-retokenize">Why retokenize?</h3>
+<p>A tokenizer may split a multiword named entity when one application-level unit is desired, or keep an unusual/typo token together when it should be separated. spaCy&rsquo;s <code>Doc.retokenize()</code> context manager is the intended tool for merging and splitting spans. Retokenization is not restricted to entity spans.</p>
+<h3 id="merge-example-new-delhi">Merge example: “New Delhi”</h3>
+<p>Initial sentence: <code>She lived in New Delhi.</code></p>
+<p>The initial tokens are <code>She</code>, <code>lived</code>, <code>in</code>, <code>New</code>, <code>Delhi</code>, <code>.</code>—length 6; <code>doc.ents</code> can still contain the span “New Delhi.” The slice <code>doc[3:5]</code> includes indices 3 and 4 but excludes 5.</p>
+<pre><code class="language-python">doc = nlp(&quot;She lived in New Delhi.&quot;)
+
+with doc.retokenize() as retokenizer:
+    retokenizer.merge(doc[3:5], attrs={&quot;LEMMA&quot;: &quot;New Delhi&quot;})
+</code></pre>
+<p>After merging:</p>
+<ul>
+<li>“New Delhi” is one token;</li>
+<li>document length shrinks from 6 to 5;</li>
+<li>the entity remains “New Delhi”;</li>
+<li>the assigned lemma is “New Delhi.”</li>
+</ul>
+<p><code>attrs</code> is a dictionary of properties assigned to the new token and can include lemma, POS/tag, entity type, and other supported token attributes. Without an explicit lemma, the resulting lemma may not be what the application expects.</p>
+<p>Useful checks:</p>
+<pre><code class="language-python">[(t.text, t.i) for t in doc]
+len(doc)
+doc.ents
+[t.lemma_ for t in doc]
+</code></pre>
+<h3 id="split-example-correcting-newdelhi">Split example: correcting “NewDelhi”</h3>
+<p>Splitting is harder because it changes the dependency tree and requires new linguistic attributes. Given <code>She lived in NewDelhi.</code>, the uncorrected <code>Doc</code> has four word tokens before punctuation handling as shown in the lecture; introducing the conceptual split yields <code>New</code> and <code>Delhi</code> as distinct tokens.</p>
+<pre><code class="language-python">doc = nlp(&quot;She lived in NewDelhi.&quot;)
+
+heads = [(doc[3], 1), doc[2]]  # choose heads/subtoken as required
+attrs = {
+    &quot;TAG&quot;: [&quot;NNP&quot;, &quot;NNP&quot;],
+    &quot;DEP&quot;: [&quot;compound&quot;, &quot;pobj&quot;]
+}
+
+with doc.retokenize() as retokenizer:
+    retokenizer.split(
+        doc[3],
+        [&quot;New&quot;, &quot;Delhi&quot;],
+        heads=heads,
+        attrs=attrs
+    )
+</code></pre>
+<p>Important rules:</p>
+<ul>
+<li>the concatenated <code>orths</code>/new token texts must exactly match the original token text; attempting to split a token containing a space incorrectly triggers “newly split tokens must match the text of the original token”;</li>
+<li>assign a head to each new token, including subtoken index when the head lies within the split token;</li>
+<li>set appropriate POS/fine tags, dependency labels, lemmas, and entity attributes;</li>
+<li>inspect the new dependency tree after the operation.</li>
+</ul>
+<p>The lecture&rsquo;s intended analysis makes <code>New</code> a proper-noun compound and <code>Delhi</code> the object of the preposition (<code>pobj</code> in spaCy&rsquo;s scheme), with both fine tags <code>NNP</code>. Verify using <code>[(t.text, t.lemma_, t.i) ...]</code> and print <code>token.text</code>, <code>token.pos_</code>, <code>token.tag_</code>, and <code>token.dep_</code>.</p>
+<p><strong>Most important retokenization principle:</strong> merging is relatively straightforward; splitting requires deliberate reconstruction of linguistic attributes and dependency heads. A syntactically invalid split may silently degrade every downstream task.</p>
+<hr>
+<h2 id="8-dependency-vs-constituency-parsing-and-the-linguatech-case">8. Dependency vs constituency parsing and the LinguaTech case</h2>
+<h3 id="two-representations">Two representations</h3>
+<ul>
+<li><strong>Dependency parsing:</strong> word-to-word, labeled head–dependent arcs; answers “who depends on whom?” A compact tree has one root and is strong for relations, summaries, sentiment, and information extraction.</li>
+<li><strong>Constituency parsing:</strong> hierarchical phrase brackets/nodes such as <code>S</code>, noun phrase (<code>NP</code>), verb phrase (<code>VP</code>), prepositional phrase (<code>PP</code>), adjective phrase (<code>ADJP</code>), and adverb phrase (<code>ADVP</code>); answers “what phrases exist?” It explicitly represents nested phrases but is generally heavier and more language/grammar specific.</li>
+</ul>
+<p>For “The boy kicked the ball,” constituency parsing yields approximately <code>S → NP VP</code>, where <code>NP = The boy</code> and <code>VP = kicked the ball</code>. Dependency parsing instead links the subject and object directly to <code>kicked</code>.</p>
+<h3 id="negation-and-summary-sentiment-quality">Negation and summary/sentiment quality</h3>
+<p>LinguaTech&rsquo;s summarizer mishandles “The movie was <strong>not</strong> happy for critics,” potentially outputting “The movie was happy.” A dependency <code>not --neg→ happy</code> identifies the scope that reverses meaning. Ignoring negation causes incorrect sentiment, misleading summaries, bad answers, and faulty recommendations.</p>
+<p>Dependency trees also support aspect-based sentiment:</p>
+<ul>
+<li>“The battery is excellent but the screen is disappointing” attaches <code>excellent</code> to <code>battery</code> and <code>disappointing</code> to <code>screen</code>.</li>
+</ul>
+<p>For summarization, “The committee finally approved the revised proposal yesterday” has the core <code>committee–approved–proposal</code>; <code>finally</code>, <code>revised</code>, and <code>yesterday</code> may be secondary depending on summary goals.</p>
+<h3 id="architecture-options">Architecture options</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Design</th>
+<th>Best properties</th>
+<th>Costs/risks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>spaCy&rsquo;s default dependency parser</td>
+<td>Highest speed, low memory, easy maintenance, UD-based multilingual consistency and scale</td>
+<td>Less explicit nested phrase detail</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Dependency + constituency parser</td>
+<td>Richest syntax and nested phrase analysis</td>
+<td>Lowest throughput, higher latency/memory, language-specific grammar adaptation, integration and maintenance burden</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Dependency parser + custom negation rules</td>
+<td>Directly fixes the known sentiment/summary failure with modest overhead; retains speed and multilingual UD core</td>
+<td>Rules require design, testing, and maintenance; may miss unfamiliar negation patterns</td>
+</tr>
+</tbody>
+</table></div>
+<p>Stakeholder priorities: engineers Alice and Raj value speed, PM Sofia prioritizes sentiment accuracy, and QA lead Marcus wants cross-lingual robustness. Therefore:</p>
+<ul>
+<li>choose A for maximum throughput/scalability;</li>
+<li>choose B only when nested phrase structure materially improves the feature enough to justify its cost;</li>
+<li>choose C as the practical compromise for this identified negation problem.</li>
+</ul>
+<p>UD gives consistent labels such as <code>nsubj</code>, <code>obj</code>, <code>amod</code>, and <code>neg</code> across many languages and helps transfer/multilingual engineering. It standardizes labels and annotation conventions; it does not define every language&rsquo;s grammar or guarantee identical parser accuracy. Constituency grammars often require language-specific rules (e.g., an English-style <code>NP → Det + N</code> does not transfer unchanged everywhere).</p>
+<hr>
+<h2 id="9-integrated-practical-patterns">9. Integrated practical patterns</h2>
+<h3 id="relation-extraction-knowledge-graph">Relation extraction / knowledge graph</h3>
+<p>Sentence: “Google acquired DeepMind.”</p>
+<ul>
+<li>NER: <code>Google/ORG</code>, <code>DeepMind/ORG</code>.</li>
+<li>Dependencies: <code>Google/nsubj → acquired/ROOT ← DeepMind/obj</code>.</li>
+<li>Structured fact: <code>(Google, acquired, DeepMind)</code>.</li>
+</ul>
+<h3 id="domain-extraction-with-rules">Domain extraction with rules</h3>
+<p>Sentence: “ISO-9001 improves manufacturing quality.”</p>
+<ul>
+<li><code>EntityRuler</code>: <code>ISO-9001/STANDARD</code>.</li>
+<li>dependency parse: <code>ISO-9001</code> is connected through <code>improves</code> to <code>quality</code>.</li>
+<li>resulting domain fact can feed compliance search or a knowledge graph.</li>
+</ul>
+<h3 id="robust-production-workflow">Robust production workflow</h3>
+<ol>
+<li>acquire and clean text;</li>
+<li>tokenize and run linguistic pipeline;</li>
+<li>add domain entity rules where needed;</li>
+<li>validate entity spans and offsets;</li>
+<li>inspect dependency labels/heads;</li>
+<li>retokenize only when application semantics require it, preserving attributes;</li>
+<li>extract structured facts/sentiment/summaries;</li>
+<li>test passive voice, negation, embeddings, long dependencies, multilingual inputs, malformed HTML, and tokenization edge cases.</li>
+</ol>
+<hr>
+<h2 id="10-exam-focused-distinctions-and-pitfalls">10. Exam-focused distinctions and pitfalls</h2>
+<ol>
+<li><strong>NER vs parsing:</strong> NER classifies entity spans; parsing models grammatical relations. Neither substitutes for the other.</li>
+<li><strong>NER span:</strong> may contain one or many tokens; it is not a character label, although APIs expose character offsets.</li>
+<li><strong>EntityRuler:</strong> rule-based complement to statistical NER, especially useful for fixed domain vocabulary; it does not learn unseen forms beyond its patterns.</li>
+<li><strong>BIO vs BILOU:</strong> BIO single-token entity = <code>B-X</code>; BILOU single-token entity = <code>U-X</code>. Tokenization changes require relabeling.</li>
+<li><strong>Dependency tree:</strong> directed, one root, and one head per non-root token. Head order is not fixed.</li>
+<li><strong><code>amod</code>:</strong> adjective is dependent; noun is head (“blue” modifies “bike”).</li>
+<li><strong>Surface order is unsafe:</strong> use dependency roles for passive voice, embeddings, and distant arguments.</li>
+<li><strong>One root does not imply projectivity:</strong> crossing arcs can exist even with one root.</li>
+<li><strong>UD:</strong> standardized multilingual annotation, not a parser algorithm and not a cure for all language-specific syntax.</li>
+<li><strong>Dependency vs constituency:</strong> direct relations and efficiency versus explicit phrase hierarchy and added cost.</li>
+<li><strong>Negation:</strong> locate what <code>not</code>/<code>never</code> modifies; do not merely flip the sentiment of the whole sentence without scope analysis.</li>
+<li><strong>Retokenization:</strong> merge changes token count; split changes count plus heads/attributes. New split texts must concatenate exactly to the original token.</li>
+<li><strong>Tool choice:</strong> spaCy for fast practical work; Stanza/CoreNLP for strong multilingual neural pipelines; AllenNLP for deep-learning integration; UDPipe for lightweight multilingual processing. Benchmark on the actual language/domain.</li>
+<li><strong>Scraped data:</strong> an empty entity list may indicate failed fetching/cleaning, not that the article has no entities.</li>
+</ol>
+<h3 id="likely-long-answer-structure">Likely long-answer structure</h3>
+<p>For “Explain dependency parsing with applications”:</p>
+<ol>
+<li>define head, dependent, labeled arc, root, and directed tree;</li>
+<li>draw/analyze a sentence and name <code>nsubj</code>, <code>obj</code>, and one modifier;</li>
+<li>explain arc-standard stack, buffer, arc set, SHIFT, LEFT-ARC, RIGHT-ARC;</li>
+<li>compare parser families/projectivity;</li>
+<li>connect to QA, translation, extraction, summarization, and sentiment;</li>
+<li>add one passive/negation example and a limitation.</li>
+</ol>
+<p>For “Explain NER and implementation”:</p>
+<ol>
+<li>define two stages—detection and classification;</li>
+<li>explain spans and categories;</li>
+<li>contrast statistical NER with <code>EntityRuler</code>;</li>
+<li>explain BIO/BILOU;</li>
+<li>show <code>doc.ents</code>, offsets/labels, and <code>displacy</code>;</li>
+<li>give practical applications and combine NER with dependencies for relations.</li>
+</ol>
+<h3 id="rapid-recall">Rapid recall</h3>
+<ul>
+<li><strong>Head + dependent + labeled arc = dependency relation.</strong></li>
+<li><strong>One root; every other token has one head.</strong></li>
+<li><strong>Arc-standard = stack + buffer + arcs; SHIFT + LEFT-ARC + RIGHT-ARC.</strong></li>
+<li><strong>NER = detect mention + classify category.</strong></li>
+<li><strong>BIO:</strong> B/I/O; <strong>BILOU:</strong> B/I/L/O/U.</li>
+<li><strong><code>doc.ents</code></strong> returns entity spans; <strong><code>displacy</code></strong> visualizes entities/dependencies.</li>
+<li><strong><code>Doc.retokenize()</code></strong> merges/splits while maintaining <code>Doc</code> consistency.</li>
+<li><strong>UD labels enable cross-lingual consistency; they do not remove syntactic complexity.</strong></li>
+</ul>
+<h2 id="references-explicitly-suggested-in-the-sessions">References explicitly suggested in the sessions</h2>
+<ul>
+<li>spaCy documentation: <a href="https://spacy.io">https://spacy.io</a></li>
+<li><em>Natural Language Processing with Python and spaCy</em> (independently published, 2021), mentioned for further study.</li>
+<li>The dependency-parsing and NER slides each also pointed to two further reference materials, but their titles/URLs were not spoken in the transcript.</li>
+</ul>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<p>The review makes the syntax/entity distinction especially exam-relevant:</p>
+<ul>
+<li>Dependency parsing identifies grammatical relations: <code>ROOT</code>, <code>nsubj</code>, direct object (<code>dobj</code> in the course terminology), <code>prep</code>, <code>pobj</code>, and modifiers such as <code>amod</code>.</li>
+<li>NER extracts actionable information such as <code>ORDER_ID</code>, <code>PRODUCT</code>, location, date, or payment reference.</li>
+<li>Intent classification determines the user&rsquo;s goal. Thus “Cancel order AB12345” has intent <code>ORDER_CANCELLATION</code> and entity <code>ORDER_ID=AB12345</code>; “Track order AB12345” retains the entity but changes the intent.</li>
+</ul>
+<p>Action-object structure is often the strongest syntactic clue: <code>cancel + order</code>, <code>track + shipment</code>, <code>return + product</code>, and <code>refund + payment</code>. A transitive verb takes a direct object; an intransitive verb, as in “She slept,” need not. Syntax supplies evidence but does not by itself map a parse to a business intent.</p>
+<p>For upward tree walking, spaCy&rsquo;s root points to itself (<code>root.head == root</code>). A function such as <code>reach_parent()</code> repeatedly follows <code>token.head</code>; it succeeds if it encounters the destination ancestor and returns <code>None</code> when it reaches the root first. “No children” is irrelevant because traversal moves child → parent.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-2.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 2: spaCy Conventions, Text Preprocessing, and…</span>
+      </a>
+      <a href="week-4.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 4: Token-Based Matching, Word Vectors, and…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>MBA Semester 4 notes</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <a class="brand" href="index.html">
+      <span class="brand-kicker">MBA S4</span>
+      <span class="brand-title">Study notes</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <main id="main" class="home-wrap">
+    <section class="home-hero">
+      <h1>MBA Semester 4 notes</h1>
+      <p>Choose a subject, then move through each week from the sidebar. On a phone, open the menu to switch weeks.</p>
+      <p class="home-offline">This site works offline on GitHub Pages. Open it once on a network, wait until the header says <strong>Offline ready</strong>, then install it (or Add to Home Screen). The saved copy stays on this device for well over two days, and usually much longer.</p>
+    </section>
+    <div class="subject-grid">
+    <a class="subject-card" href="adv-ml/week-1.html">
+      <h2>Advanced ML</h2>
+      <p>Learning types, models, and algorithms.</p>
+      <span class="count">15 weeks</span>
+    </a>
+    <a class="subject-card" href="csr/week-1.html">
+      <h2>CSR</h2>
+      <p>Corporate social responsibility and sustainability.</p>
+      <span class="count">15 weeks</span>
+    </a>
+    <a class="subject-card" href="dl/week-1.html">
+      <h2>Deep Learning</h2>
+      <p>Neural networks and deep learning.</p>
+      <span class="count">15 weeks</span>
+    </a>
+    <a class="subject-card" href="efl/week-1.html">
+      <h2>EFL</h2>
+      <p>Leadership, governance, and ethical foundations.</p>
+      <span class="count">5 weeks</span>
+    </a>
+    <a class="subject-card" href="entrepreneurship/week-1.html">
+      <h2>Entrepreneurship</h2>
+      <p>Entrepreneurship, innovation, and venture practice.</p>
+      <span class="count">15 weeks</span>
+    </a>
+    <a class="subject-card" href="nlp/week-1.html">
+      <h2>NLP</h2>
+      <p>Natural language processing.</p>
+      <span class="count">15 weeks</span>
+    </a>
+    <a class="subject-card" href="project/week-1.html">
+      <h2>Project</h2>
+      <p>Business research methods and analysis.</p>
+      <span class="count">15 weeks</span>
+    </a>
+    <a class="subject-card" href="visualization/week-1.html">
+      <h2>Visualization</h2>
+      <p>Data visualization and visual storytelling.</p>
+      <span class="count">15 weeks</span>
+    </a>
+    </div>
+  </main>
+
+  <script src="assets/js/nav.js"></script>
+  <script defer src="assets/vendor/katex/katex.min.js"></script>
+  <script defer src="assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

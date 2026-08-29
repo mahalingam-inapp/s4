@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>NLP · Week 9 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">NLP</span>
+      <span class="brand-title">Week 9</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html" selected>NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Foundations of Natural Language Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        spaCy Conventions, Text Preprocessing, and Tokenization
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Dependency Parsing, Named Entity Recognition, and Token Operations
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Token-Based Matching, Word Vectors, and Semantic Similarity
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Named Entities, Dependency-Based Intent Recognition, Semantic…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Annotation, Training spaCy NER Models, and an Airline-Review Case Study
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Text Classification and Sentiment Analysis
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Text Classification, TF–IDF, SVM, Doc2Vec and Twitter Sentiment Analysis
+      </a>
+      <a class="is-active" href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Topic Modelling
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        BERT and Modern Pre-trained Language Models
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Fine-Tuning Language Models, Efficient Transformers, Sentence…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Cross-Lingual NLP, Multilingual Models, Transformer Serving, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Transformers, Attention, Evaluation, Hugging Face, TensorBoard, and…
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Hugging Face, Fine-Tuning, Deployment, and Applied Case Studies
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Vision Transformers, DETR, Self-Supervised Vision, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">NLP · Week 9</p>
+        <h1 class="page-title">Topic Modelling</h1>
+        <p class="page-meta">Week 9 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-week-overview-and-learning-objectives">1. Week overview and learning objectives</a></li>
+      <li><a href="#2-nlp-foundation">2. NLP foundation</a></li>
+      <li><a href="#3-what-a-topic-is">3. What a topic is</a></li>
+      <li><a href="#4-why-topic-modelling-matters">4. Why topic modelling matters</a></li>
+      <li><a href="#5-end-to-end-topic-modelling-workflow">5. End-to-end topic-modelling workflow</a></li>
+      <li><a href="#6-text-preprocessing-in-detail">6. Text preprocessing in detail</a></li>
+      <li><a href="#7-latent-semantic-analysis-lsa">7. Latent Semantic Analysis (LSA)</a></li>
+      <li><a href="#8-latent-dirichlet-allocation-lda">8. Latent Dirichlet Allocation (LDA)</a></li>
+      <li><a href="#9-non-negative-matrix-factorisation-nmf">9. Non-negative Matrix Factorisation (NMF)</a></li>
+      <li><a href="#10-lda-lsa-and-nmf-compared">10. LDA, LSA, and NMF compared</a></li>
+      <li><a href="#11-evaluation-and-interpretation">11. Evaluation and interpretation</a></li>
+      <li><a href="#12-topic-trends-and-business-decisions">12. Topic trends and business decisions</a></li>
+      <li><a href="#13-amazon-shopease-headphone-review-case-study">13. Amazon/ShopEase headphone-review case study</a></li>
+      <li><a href="#14-hands-on-python-workflow-from-the-lecture">14. Hands-on Python workflow from the lecture</a></li>
+      <li><a href="#15-topic-modelling-versus-related-concepts">15. Topic modelling versus related concepts</a></li>
+      <li><a href="#16-limitations-and-caveats">16. Limitations and caveats</a></li>
+      <li><a href="#17-common-misconceptions-corrected">17. Common misconceptions corrected</a></li>
+      <li><a href="#18-exam-focused-answer-frameworks">18. Exam-focused answer frameworks</a></li>
+      <li><a href="#19-quick-revision-sheet">19. Quick revision sheet</a></li>
+      <li><a href="#20-final-high-value-takeaways">20. Final high-value takeaways</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-week-overview-and-learning-objectives">1. Week overview and learning objectives</h2>
+<p>Week 9 studies how NLP can discover the hidden themes in a large, unlabeled text collection. The central task is <strong>topic modelling</strong>, supported by preprocessing, numerical text representation, probabilistic/matrix-factorisation methods, visualisation, and human interpretation.</p>
+<p>By the end of the week, you should be able to:</p>
+<ul>
+<li>define topic modelling and distinguish it from classification, clustering, Bag of Words (BoW), and TF–IDF;</li>
+<li>explain why topic modelling is an <strong>unsupervised</strong> learning problem;</li>
+<li>describe <strong>Latent Semantic Analysis (LSA)</strong>, <strong>Latent Dirichlet Allocation (LDA)</strong>, and <strong>Non-negative Matrix Factorisation (NMF)</strong>;</li>
+<li>explain the document–topic and topic–word distributions produced by a topic model;</li>
+<li>prepare text through punctuation/stop-word removal, tokenisation, stemming or lemmatisation, and vectorisation;</li>
+<li>implement the workflow using Gensim, spaCy, and scikit-learn;</li>
+<li>evaluate and interpret topics using coherence and visualisation;</li>
+<li>connect discovered topics to practical decisions such as search, content organisation, product improvement, and trend analysis.</li>
+</ul>
+<blockquote>
+<p><strong>Core exam definition:</strong> Topic modelling is an unsupervised NLP/text-mining technique that automatically uncovers latent (hidden) thematic structure in a corpus by identifying words that repeatedly co-occur and representing documents as mixtures of topics.</p>
+</blockquote>
+<hr>
+<h2 id="2-nlp-foundation">2. NLP foundation</h2>
+<p><strong>Natural Language Processing (NLP)</strong> is a branch of AI that gives computers the ability to understand, interpret, process, and generate human language. Raw text is passed through a pipeline that cuts/extracts useful units, transforms them, and produces structured numerical data from which a model can learn underlying patterns.</p>
+<p>Typical NLP applications mentioned in the week are:</p>
+<ul>
+<li>email spam filtering (predicting spam/not spam);</li>
+<li>chatbots;</li>
+<li>autocorrection;</li>
+<li>speech recognition;</li>
+<li>machine translation;</li>
+<li>social-media monitoring;</li>
+<li>hiring and recruitment analytics;</li>
+<li>email filtering and routing;</li>
+<li>text classification and theme discovery.</li>
+</ul>
+<p>Language tools operate only for languages/resources supported by their libraries or models. Processing a new language requires adding or installing the relevant tokenizer, vocabulary, rules, stop-word list, or trained language model.</p>
+<h3 id="recap-from-the-preceding-week">Recap from the preceding week</h3>
+<p>The live session connected topic modelling to the Week 8 text-classification pipeline built with scikit-learn. That pipeline included TF–IDF vectorisation and attention to vectoriser parameters. The contrast is important:</p>
+<ul>
+<li><strong>Classification</strong> learns predefined labels from labeled examples.</li>
+<li><strong>Topic modelling</strong> discovers recurring themes when labels are absent.</li>
+</ul>
+<hr>
+<h2 id="3-what-a-topic-is">3. What a topic is</h2>
+<p>A <strong>topic</strong> is a probability-weighted group of words that tend to occur together. It is not automatically a perfect human-readable label. For example:</p>
+<ul>
+<li><code>pizza, cheese, crust, restaurant</code> suggests a food/dining topic;</li>
+<li><code>dog, bark, puppy, leash</code> suggests a pet topic;</li>
+<li><code>battery, charge, hours, power</code> suggests a battery-life topic.</li>
+</ul>
+<p>The algorithm normally outputs important words and weights; a person assigns a meaningful name after inspecting the words and representative documents.</p>
+<p>A <strong>corpus</strong> is the complete collection of documents. A document may be a review, article, message, report, transcript, or any other unit of text.</p>
+<h3 id="documents-are-mixtures-not-necessarily-single-label-objects">Documents are mixtures, not necessarily single-label objects</h3>
+<p>A document can contain several themes. An article may be 60% politics, 25% economics, and 15% environment. Topic modelling therefore usually produces:</p>
+<ol>
+<li>a <strong>topic–word distribution</strong>: which words characterize each topic;</li>
+<li>a <strong>document–topic distribution</strong>: how strongly each topic occurs in each document.</li>
+</ol>
+<p>This “soft” representation preserves overlap that a single hard label would lose.</p>
+<hr>
+<h2 id="4-why-topic-modelling-matters">4. Why topic modelling matters</h2>
+<p>Manual reading becomes impractical for thousands or millions of documents. The lecture illustrates the computational intuition with 1,000 documents containing 500 words each: direct word-level consideration involves about <code>1,000 × 500 = 500,000</code> word instances. If the collection can instead be summarized through five topics, subsequent analysis can work with a much smaller topic representation. The numeric comparison is an intuition for dimensionality reduction, not a formal complexity guarantee.</p>
+<p>Topic modelling enables:</p>
+<ul>
+<li>discovery of themes without manual labels;</li>
+<li>rapid summarisation of large unstructured collections;</li>
+<li>document browsing and topic-based search;</li>
+<li>automatic organisation, indexing, tagging, and recommendation;</li>
+<li>customer-review and complaint analysis;</li>
+<li>identification of emerging and declining themes over time;</li>
+<li>content/editorial planning;</li>
+<li>market research and social-media intelligence;</li>
+<li>product-feature prioritisation;</li>
+<li>research-literature exploration.</li>
+</ul>
+<h3 id="practical-examples">Practical examples</h3>
+<p><strong>Amazon reviews:</strong> discover themes such as sound quality, battery life, comfort, delivery, and price. Customers can search by issue; product managers can prioritize recurring complaints.</p>
+<p><strong>News archive:</strong> identify politics, sport, economics, and environment without pre-labeling every article. Track each topic’s proportion by month to spot a growing issue.</p>
+<p><strong>Support tickets:</strong> group messages around login failure, billing, shipment delay, or product defect and route them to the appropriate team.</p>
+<p><strong>Research papers:</strong> reveal fields and subfields and help a researcher find semantically related work even when exact keywords differ.</p>
+<hr>
+<h2 id="5-end-to-end-topic-modelling-workflow">5. End-to-end topic-modelling workflow</h2>
+<pre><code class="language-text">Raw corpus
+  → inspect/clean missing or unusable records
+  → lowercase and tokenize
+  → remove punctuation and stop words
+  → form bigrams/trigrams where useful
+  → lemmatise (or stem)
+  → create dictionary/vocabulary
+  → encode as BoW/counts or TF–IDF
+  → fit LDA / LSA / NMF
+  → inspect topic words and document mixtures
+  → evaluate coherence and stability
+  → assign human labels
+  → visualise, search, monitor trends, or support decisions
+</code></pre>
+<p>Preprocessing is not merely housekeeping: it changes co-occurrence counts and therefore changes the topics learned.</p>
+<hr>
+<h2 id="6-text-preprocessing-in-detail">6. Text preprocessing in detail</h2>
+<h3 id="6-1-tokenisation">6.1 Tokenisation</h3>
+<p>Tokenisation splits text into processable units, usually words. Example:</p>
+<pre><code class="language-text">&quot;The headphones have clear sound and deep bass.&quot;
+→ [&quot;the&quot;, &quot;headphones&quot;, &quot;have&quot;, &quot;clear&quot;, &quot;sound&quot;, &quot;and&quot;, &quot;deep&quot;, &quot;bass&quot;]
+</code></pre>
+<p>Gensim’s <code>simple_preprocess</code> lowercases, tokenises, and discards unsuitable tokens. spaCy produces richer <code>Doc</code> and <code>Token</code> objects with lemmas, entities, parts of speech, and other annotations.</p>
+<h3 id="6-2-punctuation-removal">6.2 Punctuation removal</h3>
+<p>Punctuation usually contributes little to topic identity and can fragment tokens. Python’s <code>string.punctuation</code> can define the punctuation set. However, punctuation may carry meaning in specialised data (e.g., programming code, emoticons, or financial symbols), so removal should match the domain.</p>
+<h3 id="6-3-stop-word-removal">6.3 Stop-word removal</h3>
+<p><strong>Stop words</strong> are frequent, low-information function words such as “the,” “and,” “is,” and “it.” If retained, they can dominate frequency and co-occurrence patterns without distinguishing themes.</p>
+<p>Three strategies appear in the material:</p>
+<ol>
+<li><strong>Gensim-only list:</strong> simple and faster, but may leave corpus-specific noise.</li>
+<li><strong>Combined Gensim + spaCy lists:</strong> broader cleaning and often more coherent topics, but costs more processing and may remove useful context.</li>
+<li><strong>Custom hybrid list:</strong> start with a standard list, add corpus-specific noise, and protect context-bearing words. This is normally the best production compromise.</li>
+</ol>
+<p><strong>Domain-specific stop words</strong> are frequent words that are not universally meaningless but are uninformative in one corpus. In headphone reviews, <code>amazon</code>, <code>headphone</code>, <code>product</code>, and perhaps <code>buy</code> may occur in almost every review. They can obscure finer themes, although removing <code>headphone</code> or a brand name could also erase product context needed by a stakeholder.</p>
+<h3 id="6-4-stemming-versus-lemmatisation">6.4 Stemming versus lemmatisation</h3>
+<ul>
+<li><strong>Stemming</strong> applies mechanical truncation and may produce a non-word stem. It is usually fast but crude.</li>
+<li><strong>Lemmatisation</strong> uses vocabulary and linguistic analysis to return the dictionary base form (lemma). It is slower but more meaningful.</li>
+</ul>
+<p>Examples:</p>
+<pre><code class="language-text">running, ran, runs → run
+cars → car
+better → good  (when linguistic context/model supports it)
+</code></pre>
+<p>Combining inflected forms reduces vocabulary fragmentation. Counts formerly split across <code>run</code>, <code>running</code>, and <code>ran</code> reinforce one signal, often improving topic coherence.</p>
+<p>Lecture implementation:</p>
+<pre><code class="language-python">import spacy
+nlp = spacy.load(&quot;en_core_web_lg&quot;)
+doc = nlp(text)
+lemmatised = &quot; &quot;.join(token.lemma_ for token in doc)
+</code></pre>
+<p>The large English spaCy model uses more memory and runtime, but supports richer linguistic analysis and future tasks such as NER or similarity. A smaller model may be sufficient if only basic lemmatisation is required.</p>
+<h3 id="6-5-n-grams">6.5 N-grams</h3>
+<p>Bigrams and trigrams preserve phrases whose combined meaning is stronger than isolated words: <code>battery_life</code>, <code>customer_service</code>, <code>New_York</code>. Gensim’s <code>Phrases</code> and <code>Phraser</code> can learn frequent collocations. Phrase detection should occur after basic tokenisation and before final modelling.</p>
+<h3 id="6-6-numerical-representation">6.6 Numerical representation</h3>
+<p>Algorithms require numbers rather than raw strings.</p>
+<ul>
+<li><strong>CountVectorizer / BoW:</strong> each document becomes term counts. It preserves frequency but ignores order and context.</li>
+<li><strong>TF–IDF:</strong> increases the importance of a term frequent in one document but rare across the corpus and downweights corpus-wide common terms.</li>
+</ul>
+<p>For term (t) in document (d):</p>
+<p>\[
+\operatorname{TFIDF}(t,d)=\operatorname{TF}(t,d)\times \log\left(\frac{N}{\operatorname{DF}(t)}\right)
+\]</p>
+<p>where (N) is the number of documents and <code>DF(t)</code> is the number containing (t).</p>
+<p>TF–IDF alone is a weighting scheme, not LSA. <strong>LSA requires applying truncated SVD</strong> to a term–document matrix, often TF–IDF weighted.</p>
+<hr>
+<h2 id="7-latent-semantic-analysis-lsa">7. Latent Semantic Analysis (LSA)</h2>
+<p>LSA, also called Latent Semantic Indexing in information retrieval, finds a lower-dimensional semantic/concept space from a term–document matrix.</p>
+<p>Let (A) be the term–document matrix. Singular Value Decomposition factorises it as:</p>
+<p>\[
+A = U\Sigma V^T
+\]</p>
+<ul>
+<li>(U): term-to-latent-concept relationships;</li>
+<li>\(\Sigma\): singular values measuring concept strength;</li>
+<li>(V^T): document-to-latent-concept relationships.</li>
+</ul>
+<p><strong>Truncated SVD</strong> retains only the top (k) singular values/components:</p>
+<p>\[
+A \approx U_k\Sigma_kV_k^T
+\]</p>
+<p>This reduces noise and dimensionality and can connect semantically related terms even if they do not exactly match. In scikit-learn, <code>TruncatedSVD</code> is the relevant class.</p>
+<h3 id="strengths">Strengths</h3>
+<ul>
+<li>simple linear-algebraic dimensionality reduction;</li>
+<li>useful for semantic search, document similarity, and information retrieval;</li>
+<li>can reveal latent associations obscured by sparse term counts.</li>
+</ul>
+<h3 id="limitations">Limitations</h3>
+<ul>
+<li>component values may be positive or negative, making interpretation less intuitive;</li>
+<li>does not provide the explicit probabilistic generative story of LDA;</li>
+<li>the number of dimensions (k) must be selected;</li>
+<li>BoW-style inputs still ignore word order and polysemy can remain difficult.</li>
+</ul>
+<hr>
+<h2 id="8-latent-dirichlet-allocation-lda">8. Latent Dirichlet Allocation (LDA)</h2>
+<p>LDA is a <strong>generative probabilistic topic model</strong>. “Latent” means hidden, “Dirichlet” refers to the prior distribution over multinomial probabilities, and “allocation” refers to assigning words to latent topics.</p>
+<p>Do not confuse topic-model LDA with <strong>Linear Discriminant Analysis</strong>, a supervised dimensionality-reduction/classification technique that shares the acronym.</p>
+<h3 id="8-1-lda-assumptions">8.1 LDA assumptions</h3>
+<p>The lecturer emphasized three assumptions:</p>
+<ol>
+<li>Each document is a mixture of a small number of topics.</li>
+<li>Each topic is a probability distribution over the vocabulary.</li>
+<li>Each word/token in a document is attributable to one of that document’s topics.</li>
+</ol>
+<p>LDA also uses the <strong>bag-of-words assumption</strong>: within the model, word order is ignored; occurrence/co-occurrence patterns matter.</p>
+<h3 id="8-2-generative-intuition">8.2 Generative intuition</h3>
+<p>For every document:</p>
+<ol>
+<li>choose a distribution of topics for the document;</li>
+<li>for each word position, choose a topic from that document-topic distribution;</li>
+<li>choose a word from the selected topic’s word distribution.</li>
+</ol>
+<p>Inference reverses this story: given observed words, estimate the hidden topic assignments, topic–word distributions, and document–topic distributions.</p>
+<h3 id="8-3-lecturer-s-four-stage-working-procedure">8.3 Lecturer’s four-stage working procedure</h3>
+<ol>
+<li><strong>Initialise:</strong> randomly or provisionally assign a topic to each word.</li>
+<li><strong>Update/re-estimate:</strong> repeatedly reconsider each word’s topic based on:
+   - the topics already prevalent in that document (<strong>document–topic fit</strong>), and
+   - how strongly that word is associated with each topic (<strong>topic–word fit</strong>).</li>
+<li><strong>Converge:</strong> after many iterations, topic–word and document–topic distributions stabilise.</li>
+<li><strong>Output:</strong> produce the final topics, their word probabilities, and each document’s topic mixture.</li>
+</ol>
+<p>“Correct topic” in the lecture means the stable, best-supported inferred structure; because topic modelling is unsupervised, there is no guaranteed uniquely correct human interpretation.</p>
+<h3 id="8-4-hyperparameters-and-choices">8.4 Hyperparameters and choices</h3>
+<ul>
+<li><code>num_topics</code>: number of latent topics; too few merges themes, too many fragments them.</li>
+<li><code>passes</code> / iterations: repeated exposure to the corpus; more may improve convergence but increase runtime.</li>
+<li><code>alpha</code>: prior governing document–topic sparsity. Lower values generally encourage each document to use fewer topics.</li>
+<li><code>eta</code>/<code>beta</code>: prior governing topic–word sparsity. Lower values generally encourage each topic to emphasize fewer words.</li>
+<li><code>random_state</code>: supports reproducibility.</li>
+<li><code>chunksize</code>, <code>update_every</code>, and related training parameters affect performance and update behavior.</li>
+</ul>
+<p>The number of topics is not “discovered perfectly” by default. Compare candidate values using coherence, stability, interpretability, and business usefulness.</p>
+<h3 id="8-5-gensim-lda-data-structures">8.5 Gensim LDA data structures</h3>
+<pre><code class="language-python">from gensim import corpora
+
+id2word = corpora.Dictionary(processed_docs)
+corpus = [id2word.doc2bow(doc) for doc in processed_docs]
+</code></pre>
+<ul>
+<li><code>Dictionary</code> maps tokens to integer IDs.</li>
+<li><code>doc2bow</code> creates sparse <code>(token_id, count)</code> pairs for every document.</li>
+</ul>
+<p>Illustrative model:</p>
+<pre><code class="language-python">from gensim.models import LdaModel
+
+lda = LdaModel(
+    corpus=corpus,
+    id2word=id2word,
+    num_topics=5,
+    random_state=42,
+    passes=10,
+    alpha=&quot;auto&quot;,
+    per_word_topics=True,
+)
+for topic_id, terms in lda.print_topics():
+    print(topic_id, terms)
+</code></pre>
+<hr>
+<h2 id="9-non-negative-matrix-factorisation-nmf">9. Non-negative Matrix Factorisation (NMF)</h2>
+<p>NMF factorises a non-negative document–term matrix (X) into two non-negative matrices:</p>
+<p>\[
+X \approx WH
+\]</p>
+<ul>
+<li>(W): document–topic weights;</li>
+<li>(H): topic–term weights.</li>
+</ul>
+<p>Because all contributions are additive and non-negative, NMF topics are often easier to interpret than LSA components. It is commonly applied to a TF–IDF matrix.</p>
+<h3 id="strengths-2">Strengths</h3>
+<ul>
+<li>parts-based, additive representation;</li>
+<li>often produces sparse, coherent, interpretable topics;</li>
+<li>integrates directly with scikit-learn.</li>
+</ul>
+<h3 id="limitations-2">Limitations</h3>
+<ul>
+<li>is not the same probabilistic generative model as LDA;</li>
+<li>requires choosing the number of components/topics;</li>
+<li>can depend on initialisation and optimisation settings;</li>
+<li>still inherits the limitations of the input document–term representation.</li>
+</ul>
+<p>Illustrative code:</p>
+<pre><code class="language-python">from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.decomposition import NMF
+
+tfidf = TfidfVectorizer(stop_words=&quot;english&quot;, max_df=0.95, min_df=2)
+X = tfidf.fit_transform(documents)
+nmf = NMF(n_components=5, random_state=42)
+W = nmf.fit_transform(X)
+H = nmf.components_
+terms = tfidf.get_feature_names_out()
+</code></pre>
+<hr>
+<h2 id="10-lda-lsa-and-nmf-compared">10. LDA, LSA, and NMF compared</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>LDA</th>
+<th>LSA</th>
+<th>NMF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Core idea</td>
+<td>Probabilistic generative model</td>
+<td>SVD-based latent semantic space</td>
+<td>Non-negative matrix factorisation</td>
+</tr>
+<tr>
+<td>Typical input</td>
+<td>Count/BoW corpus</td>
+<td>Count or TF–IDF matrix</td>
+<td>Usually TF–IDF/non-negative matrix</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>Topic probabilities and document mixtures</td>
+<td>Latent components</td>
+<td>Additive topic/document weights</td>
+</tr>
+<tr>
+<td>Interpretability</td>
+<td>Usually good, but requires labeling</td>
+<td>Can be difficult due to negative values</td>
+<td>Often high due to non-negativity</td>
+</tr>
+<tr>
+<td>Main strength</td>
+<td>Explicit mixed-topic probabilistic representation</td>
+<td>Semantic dimensionality reduction/search</td>
+<td>Sparse, parts-based topics</td>
+</tr>
+<tr>
+<td>Main caveat</td>
+<td>Assumptions, stochasticity, topic-count choice</td>
+<td>Not probabilistic; components less intuitive</td>
+<td>Not a probabilistic language model</td>
+</tr>
+</tbody>
+</table></div>
+<p>All three are unsupervised latent-structure methods and all need human interpretation and validation.</p>
+<hr>
+<h2 id="11-evaluation-and-interpretation">11. Evaluation and interpretation</h2>
+<h3 id="11-1-topic-coherence">11.1 Topic coherence</h3>
+<p><strong>Topic coherence</strong> measures how semantically related the high-probability words in a topic are. A coherent topic such as <code>battery, charge, hours, power</code> is easier to interpret than an unrelated collection.</p>
+<p>Gensim provides <code>CoherenceModel</code>. Common coherence variants include <code>c_v</code>, <code>u_mass</code>, <code>c_uci</code>, and <code>c_npmi</code>; their values are not always directly comparable across measures or corpora.</p>
+<pre><code class="language-python">from gensim.models import CoherenceModel
+
+cm = CoherenceModel(
+    model=lda,
+    texts=processed_docs,
+    dictionary=id2word,
+    coherence=&quot;c_v&quot;,
+)
+score = cm.get_coherence()
+</code></pre>
+<p>High coherence is useful but is <strong>not the sole criterion</strong>. Also inspect:</p>
+<ul>
+<li>whether topics are distinct rather than duplicates;</li>
+<li>stability across random seeds/samples;</li>
+<li>representative documents;</li>
+<li>stakeholder understanding;</li>
+<li>retention of necessary domain context;</li>
+<li>downstream usefulness;</li>
+<li>runtime and maintenance cost.</li>
+</ul>
+<h3 id="11-2-human-labeling">11.2 Human labeling</h3>
+<p>Topic labels are interpretive summaries. A topic’s top words may suggest “battery life,” but analysts should read high-scoring documents before naming it. Labels can change when new data, a new topic count, or different preprocessing alters the model.</p>
+<h3 id="11-3-pyldavis">11.3 pyLDAvis</h3>
+<p><code>pyLDAvis</code> provides interactive topic visualisation. It helps inspect:</p>
+<ul>
+<li>relative topic prevalence;</li>
+<li>distance/overlap between topics;</li>
+<li>salient words for a selected topic;</li>
+<li>whether the model contains redundant or poorly separated topics.</li>
+</ul>
+<p>The lecture installed <code>pyLDAvis</code> after a “module not found” error and imported the relevant Gensim integration. Modern package APIs can differ by version, so a current environment may use <code>pyLDAvis.gensim_models</code> rather than older import names.</p>
+<h3 id="11-4-other-visual-tools">11.4 Other visual tools</h3>
+<ul>
+<li>Matplotlib for static plots (<code>%matplotlib inline</code> in notebooks).</li>
+<li>Plotly for interactive charts; the lecture encountered a deprecation of <code>plotly.plotly</code> and was directed toward Chart Studio/current APIs.</li>
+<li>t-SNE (<code>sklearn.manifold.TSNE</code>) to project high-dimensional document/topic representations into two dimensions for exploration. t-SNE is a visualisation method, not a topic model, and distances/global clusters should be interpreted cautiously.</li>
+</ul>
+<hr>
+<h2 id="12-topic-trends-and-business-decisions">12. Topic trends and business decisions</h2>
+<p>After fitting a consistent model, aggregate document-topic probabilities over a time period:</p>
+<p>\[
+\text{Topic share}_{k,t} = \frac{1}{N_t}\sum_{d\in t} P(z=k\mid d)
+\]</p>
+<p>Comparing shares over time reveals emerging, stable, and declining themes. A publisher may commission more content on a growing topic; marketing may change campaigns; a product team may prioritize a rapidly increasing complaint.</p>
+<p>Important caveat: a trend comparison requires consistent preprocessing, vocabulary/model alignment, and comparable samples across time. A model retrained independently each month may permute or redefine topics, making naive comparisons misleading.</p>
+<p>Topic prevalence alone does not determine importance. Combine it with growth rate, audience/business relevance, severity, strategic goals, and actionability.</p>
+<hr>
+<h2 id="13-amazon-shopease-headphone-review-case-study">13. Amazon/ShopEase headphone-review case study</h2>
+<h3 id="problem-and-objective">Problem and objective</h3>
+<p>Amazon/ShopEase has roughly 1.6K randomly sampled product reviews and wants to identify their principal themes for easier search and business analysis. The NLP professional must:</p>
+<ol>
+<li>understand and clean the dataset;</li>
+<li>construct a strong topic model;</li>
+<li>interpret and classify themes in the review corpus.</li>
+</ol>
+<p>The case’s tokenised sample is:</p>
+<pre><code class="language-python">data_words[3]
+# ['sound', 'quality', 'bass', 'volume', 'clear']
+</code></pre>
+<h3 id="stakeholders">Stakeholders</h3>
+<ul>
+<li><strong>Sarah, data analyst:</strong> uses a simpler Gensim stop-word approach.</li>
+<li><strong>Miguel, data analyst:</strong> combines Gensim and spaCy lists for broader cleaning.</li>
+<li><strong>Priya, marketing lead:</strong> wants focused, actionable themes for content strategy.</li>
+<li><strong>Marcel, product manager:</strong> worries aggressive filtering may remove product/brand context needed to interpret feedback.</li>
+</ul>
+<h3 id="observed-outputs">Observed outputs</h3>
+<p>With only generic Gensim stop words, topics still contain broad terms such as <code>amazon</code> and <code>headphone</code>. With combined removal and lemmatisation, clearer topics appear:</p>
+<ul>
+<li>Topic 1: <code>sound, bass, clarity</code></li>
+<li>Topic 2: <code>battery, life, charge</code></li>
+<li>Topic 3: <code>comfort, fit, wear</code></li>
+</ul>
+<p>The combined pipeline takes about <strong>20% more preprocessing time</strong> in the case. Cleaner output benefits marketing, while preserving contextual terms can benefit product management.</p>
+<h3 id="decision-alternatives">Decision alternatives</h3>
+<p><strong>Option A — combined stop words + full lemmatisation</strong></p>
+<ul>
+<li>Best when interpretability/coherence matters more than runtime.</li>
+<li>Removes more noise and merges inflections.</li>
+<li>Risks erasing useful brand/product context and costs more compute.</li>
+</ul>
+<p><strong>Option B — Gensim-only filtering, then post-hoc cleaning</strong></p>
+<ul>
+<li>Faster and preserves context.</li>
+<li>Useful for rapid/large-scale exploratory work.</li>
+<li>Leaves noise that may distort topics and adds manual interpretation work later.</li>
+</ul>
+<p><strong>Option C — custom hybrid stop-word list</strong></p>
+<ul>
+<li>Add recurring domain noise but retain strategically meaningful product terms.</li>
+<li>Usually provides the best balance of coherence, runtime, and stakeholder needs.</li>
+<li>Requires review, documentation, versioning, and maintenance as vocabulary changes.</li>
+</ul>
+<h3 id="recommended-production-design">Recommended production design</h3>
+<p>Use a curated hybrid list with an audit trail. Measure coherence and runtime, inspect representative documents, and let analysts toggle context terms rather than permanently deleting them from all views. Preserve raw text alongside cleaned text so any removed context is recoverable.</p>
+<blockquote>
+<p><strong>Exam argument:</strong> Preprocessing must be stakeholder- and task-driven. The statistically cleanest topic set is not automatically the most useful business representation.</p>
+</blockquote>
+<hr>
+<h2 id="14-hands-on-python-workflow-from-the-lecture">14. Hands-on Python workflow from the lecture</h2>
+<h3 id="14-1-environment-and-imports">14.1 Environment and imports</h3>
+<p>The notebooks used or discussed:</p>
+<pre><code class="language-python">import os, random, string, time, warnings
+import numpy as np
+import pandas as pd
+import nltk
+import matplotlib.pyplot as plt
+from pprint import pprint
+from tqdm import tqdm
+
+import gensim
+import gensim.corpora as corpora
+from gensim.utils import simple_preprocess
+from gensim.models import CoherenceModel
+
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+from sklearn.decomposition import NMF, LatentDirichletAllocation, TruncatedSVD
+from sklearn.manifold import TSNE
+</code></pre>
+<p>The lecture also used <code>concurrent.futures</code> for possible parallel work, Plotly/Chart Studio for interactive visualisation, <code>pyLDAvis</code>, and spaCy. Warnings were filtered to reduce notebook noise, especially deprecation warnings; in real development, warnings should be read before suppressing them.</p>
+<p>A Google Colab T4 GPU runtime was selected. Topic modelling with Gensim/scikit-learn is often CPU-bound, so a GPU is not automatically required; hardware acceleration depends on the actual library/operation.</p>
+<h3 id="14-2-installing-dependencies">14.2 Installing dependencies</h3>
+<p>When <code>pyLDAvis</code> was missing, the instructor installed it with <code>pip</code>, reran imports, and resolved later deprecated imports. The spaCy large English model was downloaded with:</p>
+<pre><code class="language-bash">python -m spacy download en_core_web_lg
+</code></pre>
+<p>Colab requested a runtime restart. A restart clears imported modules and variables, so all setup/import cells must be rerun; the lecture’s later <code>pd</code>, <code>spacy</code>, <code>string</code>, and stop-word “not defined” errors arose from this reset.</p>
+<h3 id="14-3-amazon-review-gensim-pipeline">14.3 Amazon review/Gensim pipeline</h3>
+<p>The topic-modelling notebook’s principal sequence was:</p>
+<ol>
+<li>import libraries;</li>
+<li>load/inspect review data;</li>
+<li>clean and tokenize text;</li>
+<li>remove punctuation and stop words;</li>
+<li>build bigram/trigram models where appropriate;</li>
+<li>lemmatise;</li>
+<li>create Gensim dictionary and BoW corpus;</li>
+<li>train LDA;</li>
+<li>print/interpret topics;</li>
+<li>calculate coherence;</li>
+<li>visualise topics using pyLDAvis.</li>
+</ol>
+<h3 id="14-4-wine-dataset-and-spacy-scikit-learn-demonstration">14.4 Wine dataset and spaCy/scikit-learn demonstration</h3>
+<p>The hands-on session uploaded <code>winemag-data_first150k.csv</code> and read it with <code>pd.read_csv(path)</code>, then inspected the first five records with <code>.head()</code>. A clearer variable name than the transcript’s inconsistent <code>points</code>/<code>wines</code> naming should be used in practice.</p>
+<pre><code class="language-python">wines = pd.read_csv(&quot;winemag-data_first150k.csv&quot;)
+wines.head()
+nlp = spacy.load(&quot;en_core_web_lg&quot;)
+doc = nlp(wines.loc[3, &quot;description&quot;])
+</code></pre>
+<p>The practical introduced the scikit-learn topic-modelling classes <code>NMF</code>, <code>LatentDirichletAllocation</code>, and <code>TruncatedSVD</code>, plus <code>CountVectorizer</code>, though the recorded session concentrated mainly on setup, spaCy processing, NER visualisation, and lemmatisation rather than completing a full fitted topic model.</p>
+<h3 id="14-5-named-entity-recognition-ner">14.5 Named Entity Recognition (NER)</h3>
+<p>NER is an information-extraction task that locates entities in unstructured text and classifies them into predefined types, including:</p>
+<ul>
+<li>person;</li>
+<li>organisation;</li>
+<li>location;</li>
+<li>date/time expression;</li>
+<li>quantity;</li>
+<li>monetary value;</li>
+<li>percentage;</li>
+<li>domain-specific codes such as medical codes.</li>
+</ul>
+<p>spaCy includes <code>displacy</code>, which can render predictions in a Jupyter/Colab notebook, export HTML, or support a local web view:</p>
+<pre><code class="language-python">from spacy import displacy
+displacy.render(doc, style=&quot;ent&quot;, jupyter=True)
+</code></pre>
+<p>NER is not itself topic modelling. It was demonstrated as a related spaCy capability and can enrich a topic workflow—for example, extracting wine regions or producers before topic analysis.</p>
+<h3 id="14-6-lemma-demonstration">14.6 Lemma demonstration</h3>
+<pre><code class="language-python">review = &quot; &quot;.join(token.lemma_ for token in doc)
+lemmatised_doc = nlp(review)
+displacy.render(lemmatised_doc, style=&quot;ent&quot;, jupyter=True)
+</code></pre>
+<p>The visible output changes because inflected words have been replaced by their lemmas. Note that running NER after replacing every token by its lemma may damage original entity surface forms; normally preserve raw text for NER and use a separately cleaned representation for topic modelling.</p>
+<h3 id="14-7-practical-troubleshooting-lessons">14.7 Practical troubleshooting lessons</h3>
+<ul>
+<li><code>ModuleNotFoundError</code>: install the package and confirm the correct current import path.</li>
+<li><code>NameError</code> after runtime restart: rerun all prerequisite cells in order.</li>
+<li>Deprecated API: use the supported replacement instead of repeatedly suppressing the warning.</li>
+<li>Missing data path: upload/mount the dataset and use the exact path.</li>
+<li>Keep notebook setup reproducible in one ordered section and pin compatible dependency versions.</li>
+</ul>
+<hr>
+<h2 id="15-topic-modelling-versus-related-concepts">15. Topic modelling versus related concepts</h2>
+<h3 id="topic-modelling-vs-classification">Topic modelling vs classification</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Topic modelling</th>
+<th>Classification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unsupervised</td>
+<td>Usually supervised</td>
+</tr>
+<tr>
+<td>No predefined labels required</td>
+<td>Requires labeled training examples</td>
+</tr>
+<tr>
+<td>Discovers hidden themes</td>
+<td>Predicts known categories</td>
+</tr>
+<tr>
+<td>Document can have a topic mixture</td>
+<td>Often outputs one label or label probabilities</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="topic-modelling-vs-clustering">Topic modelling vs clustering</h3>
+<p>Clustering groups similar documents, often into hard groups. Topic modelling instead describes reusable word themes and allows each document to combine several topics. A clustering method asks “which group does this document resemble?”; a topic model asks “which themes, in what proportions, compose this document?”</p>
+<h3 id="topic-modelling-vs-bow">Topic modelling vs BoW</h3>
+<p>BoW is a representation: counts of vocabulary words. It does not itself infer themes. LDA can consume a BoW corpus to infer latent topics.</p>
+<h3 id="topic-modelling-vs-tf-idf">Topic modelling vs TF–IDF</h3>
+<p>TF–IDF is a weighting scheme highlighting locally important, globally rarer terms. It does not automatically produce themes. LSA or NMF can factorise the resulting matrix into latent components.</p>
+<hr>
+<h2 id="16-limitations-and-caveats">16. Limitations and caveats</h2>
+<ul>
+<li>Topic models do not understand language like humans; they infer statistical patterns.</li>
+<li>BoW-based models ignore order, syntax, sarcasm, and much context.</li>
+<li>Topics may be unstable across random seeds, samples, preprocessing choices, and topic counts.</li>
+<li>The algorithm does not automatically supply perfect labels.</li>
+<li>A high-frequency word is not necessarily informative.</li>
+<li>Excessive stop-word removal can erase domain meaning.</li>
+<li>Lemmatisation can be inaccurate without correct language/context models.</li>
+<li>More topics do not automatically mean better modelling.</li>
+<li>More/larger NLP models do not automatically mean better task performance.</li>
+<li>Coherence measures semantic relatedness, but not complete business usefulness or truth.</li>
+<li>Topic prevalence is not the same as topic importance.</li>
+<li>Topic modelling reduces the need for labels, not the need for human judgment.</li>
+<li>Fairness, privacy, sampling bias, and representativeness matter when customer or employee text is analysed.</li>
+</ul>
+<hr>
+<h2 id="17-common-misconceptions-corrected">17. Common misconceptions corrected</h2>
+<ol>
+<li><strong>“Topic modelling requires labeled data.”</strong> False; its defining use is theme discovery in unlabeled corpora.</li>
+<li><strong>“Every document belongs to one topic.”</strong> False; probabilistic models represent mixtures.</li>
+<li><strong>“LDA means LSA.”</strong> False; LDA is probabilistic, LSA is SVD-based.</li>
+<li><strong>“TF–IDF is LSA.”</strong> False; truncated SVD must be applied to obtain LSA.</li>
+<li><strong>“BoW performs topic modelling.”</strong> False; it is only an input representation.</li>
+<li><strong>“Top words are ready-made topic names.”</strong> False; labels require human/contextual interpretation.</li>
+<li><strong>“The largest topic is the most strategically important.”</strong> False; growth, severity, audience, and objectives also matter.</li>
+<li><strong>“All stop words should always be removed.”</strong> False; a generic or domain word can contain necessary context.</li>
+<li><strong>“The highest coherence score guarantees the best model.”</strong> False; stability and business utility must also be tested.</li>
+<li><strong>“LDA topic assignments are fixed after one pass.”</strong> False; inference repeatedly updates assignments until distributions stabilise.</li>
+</ol>
+<hr>
+<h2 id="18-exam-focused-answer-frameworks">18. Exam-focused answer frameworks</h2>
+<h3 id="18-1-five-mark-define-and-explain-topic-modelling">18.1 Five-mark: Define and explain topic modelling</h3>
+<ol>
+<li>Define it as unsupervised latent-theme discovery.</li>
+<li>State that topics are distributions over words.</li>
+<li>State that documents are mixtures of topics.</li>
+<li>Mention preprocessing and numerical representation.</li>
+<li>Give one practical use case, such as review analysis.</li>
+</ol>
+<h3 id="18-2-ten-mark-explain-lda">18.2 Ten-mark: Explain LDA</h3>
+<p>Include:</p>
+<ul>
+<li>meaning of latent/Dirichlet/allocation;</li>
+<li>the three assumptions;</li>
+<li>document–topic and topic–word distributions;</li>
+<li>initialise → update/re-estimate → converge → output;</li>
+<li>role of <code>alpha</code>, <code>eta/beta</code>, and <code>num_topics</code>;</li>
+<li>output interpretation, coherence, and human labeling;</li>
+<li>one advantage and at least two limitations.</li>
+</ul>
+<h3 id="18-3-ten-mark-compare-lda-lsa-and-nmf">18.3 Ten-mark: Compare LDA, LSA, and NMF</h3>
+<p>State the mathematical basis of each, typical input, nature of output, interpretability, strengths, and limitations. Explicitly note that TF–IDF alone is not LSA and that non-negativity makes NMF additive and often interpretable.</p>
+<h3 id="18-4-case-study-answer-structure">18.4 Case-study answer structure</h3>
+<p>For a review corpus:</p>
+<ol>
+<li>state the business question and unit of analysis;</li>
+<li>inspect missing values, duplicates, language, and sample quality;</li>
+<li>preserve raw text, then tokenize, filter punctuation/stop words, build phrases, and lemmatise;</li>
+<li>construct BoW/TF–IDF and fit candidate LDA/NMF/LSA models;</li>
+<li>tune topic count and hyperparameters;</li>
+<li>compare coherence, stability, runtime, and representative documents;</li>
+<li>involve stakeholders in topic labeling;</li>
+<li>use topic mixtures for search, routing, trends, and decisions;</li>
+<li>monitor drift and maintain domain stop-word rules.</li>
+</ol>
+<hr>
+<h2 id="19-quick-revision-sheet">19. Quick revision sheet</h2>
+<ul>
+<li><strong>NLP:</strong> lets machines process, understand, interpret, and generate human language.</li>
+<li><strong>Corpus:</strong> complete document collection.</li>
+<li><strong>Topic:</strong> probability-weighted group of co-occurring words.</li>
+<li><strong>Topic modelling:</strong> unsupervised discovery of latent themes.</li>
+<li><strong>LDA:</strong> probabilistic model; document = mixture of topics; topic = distribution over words.</li>
+<li><strong>LSA:</strong> truncated SVD of a term–document matrix into a lower-dimensional concept space.</li>
+<li><strong>NMF:</strong> (X\approx WH) with non-negative, additive topic weights.</li>
+<li><strong>BoW:</strong> sparse term counts; representation, not model.</li>
+<li><strong>TF–IDF:</strong> term importance weighting; not a topic model by itself.</li>
+<li><strong>Lemmatisation:</strong> context-aware reduction to dictionary form.</li>
+<li><strong>Stemming:</strong> faster mechanical truncation.</li>
+<li><strong>Coherence:</strong> semantic relatedness among a topic’s important words.</li>
+<li><strong>pyLDAvis:</strong> interactive inspection of topic prevalence, separation, and salient terms.</li>
+<li><strong>NER:</strong> finds and categorises named entities; related spaCy task, not topic modelling.</li>
+<li><strong>Best practice:</strong> preserve raw data, customise preprocessing, validate quantitatively and qualitatively, and align topics with stakeholder needs.</li>
+</ul>
+<h2 id="20-final-high-value-takeaways">20. Final high-value takeaways</h2>
+<ol>
+<li>Topic modelling is valuable precisely when a corpus is too large to read manually and predefined labels are unavailable.</li>
+<li>Its main insight is dual: topics are distributions over vocabulary and documents are mixtures of topics.</li>
+<li>Preprocessing decisions directly influence topic quality; domain-specific stop-word handling is often decisive.</li>
+<li>LDA, LSA, and NMF uncover latent structure in different ways and should not be treated as synonyms.</li>
+<li>Coherence, visualisation, and stability help evaluate a model, but human interpretation and business utility remain essential.</li>
+<li>Topic trends turn an exploratory model into a decision tool, provided topics are consistently measured across time.</li>
+<li>In the ShopEase case, a maintained hybrid stop-word list best balances clear topics, preserved context, compute cost, and stakeholder priorities.</li>
+</ol>
+        </div>
+    <nav class="week-pager">
+      <a href="week-8.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 8: Text Classification, TF–IDF, SVM, Doc2Vec…</span>
+      </a>
+      <a href="week-10.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 10: BERT and Modern Pre-trained Language Models</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

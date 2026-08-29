@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>NLP · Week 4 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">NLP</span>
+      <span class="brand-title">Week 4</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html" selected>NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Foundations of Natural Language Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        spaCy Conventions, Text Preprocessing, and Tokenization
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Dependency Parsing, Named Entity Recognition, and Token Operations
+      </a>
+      <a class="is-active" href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Token-Based Matching, Word Vectors, and Semantic Similarity
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Named Entities, Dependency-Based Intent Recognition, Semantic…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Annotation, Training spaCy NER Models, and an Airline-Review Case Study
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Text Classification and Sentiment Analysis
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Text Classification, TF–IDF, SVM, Doc2Vec and Twitter Sentiment Analysis
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Topic Modelling
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        BERT and Modern Pre-trained Language Models
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Fine-Tuning Language Models, Efficient Transformers, Sentence…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Cross-Lingual NLP, Multilingual Models, Transformer Serving, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Transformers, Attention, Evaluation, Hugging Face, TensorBoard, and…
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Hugging Face, Fine-Tuning, Deployment, and Applied Case Studies
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Vision Transformers, DETR, Self-Supervised Vision, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">NLP · Week 4</p>
+        <h1 class="page-title">Token-Based Matching, Word Vectors, and Semantic Similarity</h1>
+        <p class="page-meta">Week 4 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-week-overview">1. Week overview</a></li>
+      <li><a href="#2-regular-expressions-and-why-token-matching-is-useful">2. Regular expressions and why token matching is useful</a></li>
+      <li><a href="#3-building-matcher-rules-in-spacy">3. Building matcher rules in spaCy</a></li>
+      <li><a href="#4-from-symbolic-word-identity-to-word-vectors">4. From symbolic word identity to word vectors</a></li>
+      <li><a href="#5-spacy-pre-trained-vectors">5. spaCy pre-trained vectors</a></li>
+      <li><a href="#6-semantic-similarity">6. Semantic similarity</a></li>
+      <li><a href="#7-visualizing-word-vector-structure-with-pca">7. Visualizing word-vector structure with PCA</a></li>
+      <li><a href="#8-practical-semantic-search-and-recommendation-pipeline">8. Practical semantic-search and recommendation pipeline</a></li>
+      <li><a href="#9-case-studies-from-the-lectures">9. Case studies from the lectures</a></li>
+      <li><a href="#10-common-pitfalls-and-corrections">10. Common pitfalls and corrections</a></li>
+      <li><a href="#11-exam-focused-comparisons">11. Exam-focused comparisons</a></li>
+      <li><a href="#12-high-value-exam-answers">12. High-value exam answers</a></li>
+      <li><a href="#13-quick-revision-checklist">13. Quick revision checklist</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-week-overview">1. Week overview</h2>
+<p>Week 4 connects two complementary approaches to language understanding:</p>
+<ol>
+<li><strong>Rule-based/token-based matching</strong>: explicitly describe the token sequence or linguistic properties that constitute a match.</li>
+<li><strong>Vector-based semantics</strong>: represent words, spans, sentences, products, users, tickets, or agents numerically and compare meanings rather than exact wording.</li>
+</ol>
+<p>The central practical lesson is that neither approach is universally sufficient. Exact rules are excellent for well-defined structures such as greetings, account identifiers, or domain keywords. Vectors are better when users express the same intent with different words. Production systems commonly combine both in a <strong>hybrid score or decision pipeline</strong>.</p>
+<hr>
+<h2 id="2-regular-expressions-and-why-token-matching-is-useful">2. Regular expressions and why token matching is useful</h2>
+<h3 id="2-1-regular-expressions">2.1 Regular expressions</h3>
+<p>A <strong>regular expression (regex)</strong> is a sequence of characters specifying a search pattern; it denotes a set of strings that follow that pattern. A regex may contain ordinary letters and digits plus metacharacters with special meanings. Python&rsquo;s built-in <code>re</code> library supports regular expressions; a separate third-party <code>regex</code> library provides extended support and has been positioned as a possible successor.</p>
+<p>Example idea from the lecture:</p>
+<pre><code class="language-python">r&quot;Barack\s(Hussein\s)?Obama&quot;
+</code></pre>
+<ul>
+<li><code>\s</code> matches whitespace, including spaces, tabs, and line breaks.</li>
+<li><code>(Hussein\s)?</code> makes the middle-name segment optional.</li>
+<li><code>?</code> means <strong>zero or one occurrence</strong>.</li>
+<li>Consequently, the pattern can match both <code>Barack Obama</code> and <code>Barack Hussein Obama</code> despite variations in whitespace.</li>
+</ul>
+<p>Regex is powerful for character-level structures, but even short expressions can be difficult to read, debug, and maintain. They are especially error-prone around whitespace, punctuation, and numbers. This is why NLP production systems often prefer a token-aware matcher when the rule naturally concerns words and their linguistic attributes.</p>
+<h3 id="2-2-spacy-s-matcher">2.2 spaCy&rsquo;s <code>Matcher</code></h3>
+<p>spaCy&rsquo;s <strong><code>Matcher</code></strong> is a rule-matching engine operating on sequences of tokens in <code>Doc</code> and <code>Span</code> objects. Rules may refer to token text or linguistic annotations, making them more readable and maintainable than equivalent character-level regexes.</p>
+<p>Important properties:</p>
+<ul>
+<li>A pattern is a list of dictionaries.</li>
+<li>Each dictionary describes <strong>one token</strong>.</li>
+<li>A pattern always describes a <strong>continuous sequence</strong> of tokens.</li>
+<li>The <code>Matcher</code> must be initialized with the <strong>same vocabulary</strong> used by the documents it processes.</li>
+<li>A rule can have one or more alternative patterns.</li>
+<li>Rules can invoke custom callbacks, merge spans, assign labels, and associate entity IDs for basic linking/disambiguation.</li>
+<li>For a large fixed terminology list, use <strong><code>PhraseMatcher</code></strong>, which accepts <code>Doc</code> objects as patterns and is more appropriate than writing many token rules.</li>
+</ul>
+<hr>
+<h2 id="3-building-matcher-rules-in-spacy">3. Building matcher rules in spaCy</h2>
+<h3 id="3-1-basic-greeting-example">3.1 Basic greeting example</h3>
+<pre><code class="language-python">import spacy
+from spacy.matcher import Matcher
+
+nlp = spacy.load(&quot;en_core_web_md&quot;)
+doc = nlp(&quot;Good morning. I want to reserve a ticket.&quot;)
+
+matcher = Matcher(nlp.vocab)
+pattern = [
+    {&quot;LOWER&quot;: &quot;good&quot;},
+    {&quot;LOWER&quot;: &quot;morning&quot;},
+    {&quot;IS_PUNCT&quot;: True},
+]
+matcher.add(&quot;MORNING_GREETING&quot;, [pattern])
+
+matches = matcher(doc)
+for match_id, start, end in matches:
+    span = doc[start:end]
+    rule_name = nlp.vocab.strings[match_id]
+    print(rule_name, start, end, span.text)
+</code></pre>
+<p>Conceptual reading of the pattern:</p>
+<ol>
+<li>a token whose lowercase form is <code>good</code>;</li>
+<li>followed by a token whose lowercase form is <code>morning</code>;</li>
+<li>followed by a punctuation token.</li>
+</ol>
+<p>The result of <code>matcher(doc)</code> is a list of triples:</p>
+<pre><code class="language-text">(match_id, start, end)
+</code></pre>
+<ul>
+<li><code>match_id</code> is an integer identifier stored in spaCy&rsquo;s string store.</li>
+<li>Recover its name with <code>nlp.vocab.strings[match_id]</code>.</li>
+<li><code>start</code> is the first matched token index.</li>
+<li><code>end</code> is <strong>exclusive</strong>, exactly like Python slicing, so the match is <code>doc[start:end]</code>.</li>
+</ul>
+<p>Whitespace between words does not need to be represented as a matcher token. One or even two spaces between <code>Good</code> and <code>morning</code> do not change the token rule, because the matcher compares tokens and token attributes rather than literal inter-word characters.</p>
+<blockquote>
+<p><strong>Version caveat:</strong> older spaCy examples used <code>matcher.add(name, None, pattern)</code>. Current spaCy uses <code>matcher.add(name, [pattern])</code>. The lecture encountered and corrected this API-version difference.</p>
+</blockquote>
+<h3 id="3-2-multiple-named-patterns">3.2 Multiple named patterns</h3>
+<pre><code class="language-python">morning = [
+    {&quot;LOWER&quot;: &quot;good&quot;}, {&quot;LOWER&quot;: &quot;morning&quot;}, {&quot;IS_PUNCT&quot;: True}
+]
+evening = [
+    {&quot;LOWER&quot;: &quot;good&quot;}, {&quot;LOWER&quot;: &quot;evening&quot;}, {&quot;IS_PUNCT&quot;: True}
+]
+
+matcher.add(&quot;MORNING_GREETING&quot;, [morning])
+matcher.add(&quot;EVENING_GREETING&quot;, [evening])
+</code></pre>
+<p>Applied to <code>Good morning. ... Good evening!</code>, the match list contains two items with distinct rule IDs. Patterns may differ by only one token, but can still be registered independently when separate downstream behavior is required.</p>
+<p>If both alternatives should trigger the same behavior, add both under one ID:</p>
+<pre><code class="language-python">matcher.add(&quot;GREETING&quot;, [morning, evening])
+</code></pre>
+<h3 id="3-3-common-token-attributes">3.3 Common token attributes</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Meaning</th>
+<th>Example use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LOWER</code></td>
+<td>Lowercased token text</td>
+<td>case-insensitive <code>hello</code>, <code>HELLO</code>, <code>Hello</code></td>
+</tr>
+<tr>
+<td><code>TEXT</code> / <code>ORTH</code></td>
+<td>Exact token text</td>
+<td>distinguish <code>Bill</code> from <code>bill</code></td>
+</tr>
+<tr>
+<td><code>LENGTH</code></td>
+<td>Token length</td>
+<td>find all one-character tokens</td>
+</tr>
+<tr>
+<td><code>IS_PUNCT</code></td>
+<td>Whether token is punctuation</td>
+<td>require <code>!</code>, <code>.</code>, <code>?</code>, etc.</td>
+</tr>
+<tr>
+<td><code>IS_DIGIT</code></td>
+<td>Whether token is numeric</td>
+<td>amounts, dates, identifiers</td>
+</tr>
+<tr>
+<td><code>IS_ALPHA</code></td>
+<td>Whether token consists of alphabetic characters</td>
+<td>require a word token</td>
+</tr>
+<tr>
+<td><code>SHAPE</code></td>
+<td>Abstract character pattern</td>
+<td>match forms such as two letters followed by two digits</td>
+</tr>
+<tr>
+<td><code>LEMMA</code></td>
+<td>Base form</td>
+<td>match <code>book</code>, <code>books</code>, <code>booked</code> through a lemma rule</td>
+</tr>
+<tr>
+<td><code>POS</code>, <code>TAG</code>, <code>DEP</code></td>
+<td>Part of speech, detailed tag, dependency label</td>
+<td>linguistic rules rather than literal words</td>
+</tr>
+<tr>
+<td><code>REGEX</code> under <code>TEXT</code></td>
+<td>Regex constrained to one token&rsquo;s text</td>
+<td>digit blocks within token-aware patterns</td>
+</tr>
+<tr>
+<td><code>OP</code></td>
+<td>Quantifier for a token pattern</td>
+<td>optional/repeated token specifications</td>
+</tr>
+</tbody>
+</table></div>
+<p>Matcher quantifiers mirror familiar regex ideas:</p>
+<ul>
+<li><code>"?"</code>: zero or one</li>
+<li><code>"*"</code>: zero or more</li>
+<li><code>"+"</code>: one or more</li>
+<li><code>"!"</code>: must not occur at this position</li>
+</ul>
+<h3 id="3-4-digit-plus-word-example-and-tokenizer-caveat">3.4 Digit-plus-word example and tokenizer caveat</h3>
+<pre><code class="language-python">pattern = [
+    {&quot;IS_DIGIT&quot;: True},
+    {&quot;IS_ALPHA&quot;: True},
+]
+</code></pre>
+<p>This can match <code>two apples</code> if spaCy marks <code>two</code> as digit-like and <code>apples</code> as alphabetic. It will not necessarily match the intended part of <code>2 o'clock</code>, because tokenization and the apostrophe mean the second token is not a plain alphabetic token. The general lesson is critical:</p>
+<blockquote>
+<p>Matcher correctness depends on spaCy&rsquo;s token boundaries and annotations. Always inspect tokens before diagnosing a failed rule.</p>
+</blockquote>
+<h3 id="3-5-combining-matcher-rules-with-token-level-regex-iban-example">3.5 Combining matcher rules with token-level regex: IBAN example</h3>
+<p>An <strong>IBAN (International Bank Account Number)</strong> is an international account-number format. The lecture&rsquo;s simplified pattern begins with two capital letters and two digits, followed by one or more numeric blocks. Examples included UK- and France-style identifiers such as <code>GB98 ...</code> and <code>FR76 ...</code>.</p>
+<pre><code class="language-python">iban_pattern = [
+    {&quot;SHAPE&quot;: &quot;XXdd&quot;},
+    {&quot;TEXT&quot;: {&quot;REGEX&quot;: r&quot;\d{1,4}&quot;}, &quot;OP&quot;: &quot;+&quot;},
+]
+
+matcher.add(&quot;IBAN&quot;, [iban_pattern])
+</code></pre>
+<ul>
+<li><code>SHAPE: "XXdd"</code> expresses two uppercase letters followed by two digits.</li>
+<li><code>r"\d{1,4}"</code> means a token consisting of one to four digits.</li>
+<li><code>OP: "+"</code> requires one or more such numeric blocks.</li>
+</ul>
+<p>This illustrates a useful hybrid: the overall structure is token-based, while regex checks the characters within particular tokens. In a real financial application, validation should additionally enforce official country-specific IBAN lengths and checksum rules; matching shape alone detects candidates, not guaranteed-valid accounts.</p>
+<h3 id="3-6-hello-punctuation-world-and-alternatives">3.6 <code>hello [punctuation] world</code> and alternatives</h3>
+<pre><code class="language-python">with_punct = [
+    {&quot;LOWER&quot;: &quot;hello&quot;},
+    {&quot;IS_PUNCT&quot;: True},
+    {&quot;LOWER&quot;: &quot;world&quot;},
+]
+without_punct = [
+    {&quot;LOWER&quot;: &quot;hello&quot;},
+    {&quot;LOWER&quot;: &quot;world&quot;},
+]
+matcher.add(&quot;HELLO_WORLD&quot;, [with_punct, without_punct])
+</code></pre>
+<p>This matches case variants and optionally supports the punctuation-free form by registering two alternatives. By default, matching only returns spans; it does not mutate the document. To merge matches or assign entities, pass an <code>on_match</code> callback to <code>add</code> and implement that behavior explicitly.</p>
+<h3 id="3-7-matcher-versus-regex-versus-phrasematcher">3.7 Matcher versus regex versus PhraseMatcher</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Best level</th>
+<th>Strength</th>
+<th>Limitation / risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regex</td>
+<td>Characters</td>
+<td>Precise raw-text formats</td>
+<td>readability and punctuation/spacing complexity</td>
+</tr>
+<tr>
+<td><code>Matcher</code></td>
+<td>Tokens + annotations</td>
+<td>maintainable linguistic rules, callbacks</td>
+<td>depends on tokenization and pipeline annotations</td>
+</tr>
+<tr>
+<td><code>PhraseMatcher</code></td>
+<td>Large phrase lists</td>
+<td>efficient terminology lookup</td>
+<td>less expressive for arbitrary linguistic constraints</td>
+</tr>
+</tbody>
+</table></div>
+<p>Practical uses include greetings, product attributes, order IDs, bank identifiers, clinical terms, skill names, intent cues, and structured phrases in contracts.</p>
+<hr>
+<h2 id="4-from-symbolic-word-identity-to-word-vectors">4. From symbolic word identity to word vectors</h2>
+<h3 id="4-1-why-text-needs-numerical-representation">4.1 Why text needs numerical representation</h3>
+<p>Machine-learning algorithms require numerical input. A simple representation assigns every vocabulary item an index and encodes it as a <strong>one-hot vector</strong>: all components are zero except the component corresponding to that word.</p>
+<p>If vocabulary size is <code>V</code>, each word vector has length <code>V</code>. A sentence of <code>N</code> words becomes an <code>N × V</code> matrix, one row per word. For example, <code>I want a pizza</code> becomes four one-hot rows.</p>
+<h3 id="4-2-limitations-of-one-hot-encoding">4.2 Limitations of one-hot encoding</h3>
+<ul>
+<li><strong>Sparse</strong>: almost all entries are zero.</li>
+<li><strong>High-dimensional</strong>: dimension equals vocabulary size.</li>
+<li><strong>Memory-heavy</strong> for large vocabularies.</li>
+<li><strong>No semantic geometry</strong>: <code>cat</code> is no closer to <code>dog</code> than to <code>aircraft</code>.</li>
+<li><strong>No learned relation</strong> between synonyms or concepts.</li>
+<li>Vocabulary growth changes the representation size and produces an OOV problem.</li>
+</ul>
+<h3 id="4-3-word-embeddings-word-vectors">4.3 Word embeddings / word vectors</h3>
+<p>A <strong>word vector</strong> is a fixed-size, dense, real-valued learned representation of a word. Semantically related words occupy nearby regions in vector space. Word vectors encode aspects of word meaning, hence the phrase <strong>distributed semantics</strong>: information about meaning is distributed over many dimensions rather than assigned to one explicit vocabulary coordinate.</p>
+<p>The underlying <strong>distributional hypothesis</strong> is that words appearing in similar contexts tend to have similar meanings. For example, <code>cat</code>, <code>dog</code>, and <code>tiger</code> occur in animal-related contexts; <code>pizza</code>, <code>burger</code>, and <code>salad</code> occur in food contexts. Training on large corpora learns such relationships without a hand-written synonym list.</p>
+<p>Word embeddings support:</p>
+<ul>
+<li>word/sentence semantic similarity;</li>
+<li>text classification;</li>
+<li>named-entity recognition (people, organizations, locations, etc.);</li>
+<li>semantic search and retrieval;</li>
+<li>intent recognition;</li>
+<li>clustering and visualization;</li>
+<li>recommendations;</li>
+<li>ticket routing and knowledge-base retrieval.</li>
+</ul>
+<hr>
+<h2 id="5-spacy-pre-trained-vectors">5. spaCy pre-trained vectors</h2>
+<h3 id="5-1-models-and-model-choice">5.1 Models and model choice</h3>
+<p>spaCy offers language pipelines of different sizes, conventionally including:</p>
+<ul>
+<li><code>en_core_web_sm</code> — small English pipeline;</li>
+<li><code>en_core_web_md</code> — medium English pipeline with static vectors;</li>
+<li><code>en_core_web_lg</code> — large English pipeline with broader vector vocabulary.</li>
+</ul>
+<p>The lecture cited approximately 300-dimensional vectors, about 20,000 vocabulary words for the medium model, and about 685,000 for the large model. Treat exact package statistics as model-version-dependent. spaCy also supports pipelines for other languages, including German and Spanish.</p>
+<p>Larger vector vocabularies improve coverage but require more disk space and memory. The lecture recommends the medium model as a practical default when text scale/coverage requirements are uncertain. A small pipeline may expose a vector-shaped representation from internal features, but for meaningful static lexical similarity one should verify that the installed pipeline actually contains word vectors.</p>
+<pre><code class="language-python">import spacy
+nlp = spacy.load(&quot;en_core_web_md&quot;)
+</code></pre>
+<p>If loading fails, install/download the relevant model in the target environment. Legacy generic model names may be deprecated; use explicit package names such as <code>en_core_web_md</code>.</p>
+<h3 id="5-2-accessing-vectors">5.2 Accessing vectors</h3>
+<pre><code class="language-python">doc = nlp(&quot;I ate a banana.&quot;)
+banana = doc[3]
+
+banana.vector          # NumPy ndarray
+type(banana.vector)    # numpy.ndarray
+banana.vector.shape    # commonly (300,) for md/lg static vectors
+</code></pre>
+<p><code>Token.vector</code> provides the word vector. <code>Doc.vector</code> and <code>Span.vector</code> are also available; in the static-vector setup discussed in class, a document/span vector is formed by averaging constituent token vectors.</p>
+<pre><code class="language-python">doc.vector
+doc[1:4].vector
+</code></pre>
+<p>Mean pooling is simple and fast but loses word order, syntactic structure, and some contextual nuance. Stop words can also dominate an unweighted average, so preprocessing or weighted pooling may help task-specific systems.</p>
+<h3 id="5-3-vocabulary-coverage-and-oov-words">5.3 Vocabulary coverage and OOV words</h3>
+<p>Words without a vector in the model are <strong>out of vocabulary (OOV)</strong>.</p>
+<pre><code class="language-python">for token in nlp(&quot;you went there afskfsd&quot;):
+    print(token.text, token.is_oov, token.has_vector)
+</code></pre>
+<ul>
+<li><code>token.is_oov</code> asks whether the token is absent from the vector vocabulary.</li>
+<li><code>token.has_vector</code> asks whether it has a usable vector.</li>
+</ul>
+<p>An OOV-based low similarity score does not prove that two words are semantically unrelated; it may simply indicate missing representations. Domain jargon, novel product codes, names, abbreviations, and misspellings are common OOV sources.</p>
+<h3 id="5-4-quality-considerations">5.4 Quality considerations</h3>
+<ul>
+<li><strong>Vector dimension</strong> controls representation capacity and computational/memory cost.</li>
+<li><strong>Training-data quality and diversity</strong> influence learned biases, vocabulary coverage, and downstream accuracy.</li>
+<li>Generic pre-trained vectors transfer broad semantic knowledge, especially useful when labeled data is scarce.</li>
+<li>A specialized task may benefit from fine-tuning or domain-specific embeddings.</li>
+<li>Static vectors assign one vector per word form, so polysemous words such as <code>bank</code> may conflate meanings. Contextual models address this better.</li>
+<li>Similar words are useful for retrieval but can be harmful when a task must separate fine-grained classes that appear in similar contexts.</li>
+</ul>
+<hr>
+<h2 id="6-semantic-similarity">6. Semantic similarity</h2>
+<h3 id="6-1-why-semantic-similarity-matters">6.1 Why semantic similarity matters</h3>
+<p>Natural language expresses one concept in many forms. Every language contains synonyms and semantically related words. An intent such as booking can appear as <code>book</code>, <code>reserve</code>, <code>make a reservation</code>, or <code>buy</code>; travel arrival may be expressed with <code>land</code>, <code>arrive</code>, or <code>fly to</code>, while departure may use <code>leave</code>, <code>depart</code>, or <code>fly from</code>.</p>
+<p>Chatbot and intent-classification platforms therefore request many utterance examples per intent: examples train the classifier to recognize varied phrasing. The lecture distinguishes two routes to semantic recognition:</p>
+<ol>
+<li>domain synonym dictionaries;</li>
+<li>word-vector-based semantic similarity.</li>
+</ol>
+<h3 id="6-2-domain-synonym-sets">6.2 Domain synonym sets</h3>
+<p>A <strong>synset</strong> means synonym set. Domain lists may mix general synonyms and domain-specific equivalences:</p>
+<pre><code class="language-python">verb_synsets = [
+    [&quot;show&quot;, &quot;list&quot;],
+    [&quot;book&quot;, &quot;make a reservation&quot;, &quot;buy&quot;, &quot;reserve&quot;],
+]
+object_synsets = [
+    [&quot;meal&quot;, &quot;food&quot;],
+    [&quot;aircraft&quot;, &quot;airplane&quot;, &quot;plane&quot;],
+]
+</code></pre>
+<p>One way to compare intent-bearing utterances is:</p>
+<ol>
+<li>parse both sentences;</li>
+<li>identify the transitive verb and direct object;</li>
+<li>compare their lemmas against relevant synsets;</li>
+<li>treat the utterances as the same intent only if the required semantic roles are compatible.</li>
+</ol>
+<p>For <code>Show me all aircrafts that CP uses</code> versus <code>List all meals on my flight</code>, the verbs <code>show</code> and <code>list</code> share a synset, but <code>aircraft</code> and <code>meal</code> do not. Therefore the complete intents differ.</p>
+<p>Dependency-based extraction illustrated in the lecture:</p>
+<pre><code class="language-python">def verb_and_object(doc):
+    for token in doc:
+        if token.dep_ == &quot;dobj&quot;:  # label/version can vary
+            return token.head.lemma_, token.lemma_
+    return None, None
+</code></pre>
+<p>The lecturer corrected coding slips in list comprehensions: the same loop variable must be used consistently, e.g. <code>[syn for syn in verb_synsets if verb in syn]</code>; undefined names such as <code>item</code>, <code>v2</code>, or misspelled variables cause errors.</p>
+<p><strong>Advantages of synonym lists</strong></p>
+<ul>
+<li>transparent and controllable;</li>
+<li>excellent for small, stable, domain-specific vocabularies;</li>
+<li>deterministic and easy to explain.</li>
+</ul>
+<p><strong>Limitations</strong></p>
+<ul>
+<li>extensive manual maintenance;</li>
+<li>incomplete coverage of paraphrases;</li>
+<li>repeated dictionary lookup can become inefficient for very large sets;</li>
+<li>phrases, morphology, context, and polysemy need careful handling;</li>
+<li>domain meaning can differ from general-language meaning.</li>
+</ul>
+<h3 id="6-3-vector-based-similarity-in-spacy">6.3 Vector-based similarity in spaCy</h3>
+<p>spaCy container types—including <code>Token</code>, <code>Span</code>, and <code>Doc</code>—provide <code>.similarity()</code>. Different container types can be compared, such as token-to-doc or doc-to-span, provided they are represented in a compatible embedding space.</p>
+<pre><code class="language-python">doc1 = nlp(&quot;I visited England.&quot;)
+doc2 = nlp(&quot;I went to London.&quot;)
+
+score = doc1.similarity(doc2)
+self_score = doc1.similarity(doc1)  # approximately 1
+</code></pre>
+<p>The first pair receives a relatively high score because of related travel/location semantics. Comparing an object with itself gives <code>1</code> (subject to ordinary floating-point behavior).</p>
+<p>For the earlier intent example, keep token objects rather than extracting only strings:</p>
+<pre><code class="language-python">def verb_and_object_tokens(doc):
+    for token in doc:
+        if token.dep_ == &quot;dobj&quot;:
+            return token.head, token
+    return None, None
+
+verb1, obj1 = verb_and_object_tokens(doc1)
+verb2, obj2 = verb_and_object_tokens(doc2)
+object_similarity = obj1.similarity(obj2)
+verb_similarity = verb1.similarity(verb2)
+</code></pre>
+<p>The lecture reported a very low object score (about <code>0.098</code>) and a low verb score (about <code>0.23</code>) for its processed example, supporting the conclusion that the utterances do not share an intent. Exact scores vary by model/version. A transcription slip said <code>obj.similarity(verb2)</code> at one point; conceptually, direct objects should be compared with direct objects and verbs with verbs.</p>
+<h3 id="6-4-cosine-similarity">6.4 Cosine similarity</h3>
+<p>The standard similarity measure for embeddings is <strong>cosine similarity</strong>, which compares direction rather than raw magnitude:</p>
+<p>$$
+\operatorname{cos}(\mathbf{a},\mathbf{b}) =
+\frac{\mathbf{a}\cdot\mathbf{b}}
+{\lVert\mathbf{a}\rVert\,\lVert\mathbf{b}\rVert}
+$$</p>
+<ul>
+<li><code>1</code>: same direction / maximally similar under the measure.</li>
+<li><code>0</code>: orthogonal / no directional similarity.</li>
+<li><code>-1</code>: opposite directions (possible mathematically).</li>
+</ul>
+<p>The lecture often describes practical spaCy similarity as ranging from 0 to 1, but cosine mathematically ranges from −1 to 1. Real embedding outputs and library behavior depend on the vectors. Do not interpret a threshold as universal.</p>
+<p>Cosine is preferred because vector magnitude may reflect frequency or pooling length, while direction more directly represents the learned semantic profile. Normalizing vectors to unit length makes cosine comparison a dot product and supports efficient nearest-neighbor search.</p>
+<p><strong>Critical rule:</strong> compare vectors produced by the same model/embedding space. Coordinates from unrelated models have no shared meaning.</p>
+<h3 id="6-5-similarity-thresholds">6.5 Similarity thresholds</h3>
+<p>A threshold turns a continuous score into an operational decision:</p>
+<pre><code class="language-text">if score ≥ high threshold: automate
+elif score ≥ lower threshold: suggest and request human confirmation
+else: send to manual handling / fallback
+</code></pre>
+<p>There is no globally correct threshold. Tune it on validation data according to the cost of false positives and false negatives. High thresholds improve precision but may reduce automation/recall; low thresholds increase coverage but risk incorrect matches.</p>
+<hr>
+<h2 id="7-visualizing-word-vector-structure-with-pca">7. Visualizing word-vector structure with PCA</h2>
+<p>Vectors in the lecture are 300-dimensional, so they cannot be plotted directly. <strong>Principal Component Analysis (PCA)</strong> projects them into two dimensions for visualization.</p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+
+vocab = nlp(
+    &quot;cat dog tiger elephant bird monkey lion cheetah &quot;
+    &quot;burger pizza food cheese wine salad noodles macaroni fruit vegetable&quot;
+)
+
+tokens = [t for t in vocab if t.has_vector]
+words = [t.text for t in tokens]
+vectors = np.vstack([t.vector for t in tokens])
+xy = PCA(n_components=2).fit_transform(vectors)
+
+plt.scatter(xy[:, 0], xy[:, 1])
+for word, (x, y) in zip(words, xy):
+    plt.text(x, y, word, fontsize=15)
+plt.show()
+</code></pre>
+<p>Procedure:</p>
+<ol>
+<li>load spaCy and the medium vector model;</li>
+<li>create a document containing animal and food vocabulary;</li>
+<li>retain tokens with vectors;</li>
+<li>vertically stack vectors into a matrix with <code>np.vstack</code>;</li>
+<li>fit PCA with two components and transform the matrix;</li>
+<li>scatter-plot coordinates and annotate each word.</li>
+</ol>
+<p>The plot formed two broad semantic groups: animals and food. Animal words were relatively close and uniformly distributed, while food words showed subgroups within the larger class. This demonstrates that learned vector geometry reflects semantics.</p>
+<p><strong>Caveat:</strong> PCA is a lossy linear projection. A visually close or distant pair in 2-D need not preserve its exact high-dimensional relation. Use the plot for exploration, not as proof of model quality.</p>
+<hr>
+<h2 id="8-practical-semantic-search-and-recommendation-pipeline">8. Practical semantic-search and recommendation pipeline</h2>
+<h3 id="8-1-general-pipeline">8.1 General pipeline</h3>
+<pre><code class="language-text">Raw query/item text
+  → tokenize and normalize
+  → apply exact/domain matcher rules
+  → generate token/document embeddings
+  → compare with cosine similarity
+  → combine exact and semantic scores
+  → rank candidates
+  → apply confidence threshold / human fallback
+  → monitor outcomes and improve
+</code></pre>
+<p>Possible hybrid score:</p>
+<p>$$
+S = \alpha S_{token} + \beta S_{semantic} + \gamma S_{business}
+$$</p>
+<p>where token match captures exact evidence, semantic score captures paraphrase/meaning, and business score can encode availability, popularity, agent workload, or other operational constraints. Coefficients must be tuned empirically rather than assumed.</p>
+<h3 id="8-2-phrase-aware-processing">8.2 Phrase-aware processing</h3>
+<p>Meaning may be carried by multiword phrases such as <code>make a reservation</code>, <code>credit card</code>, <code>order status</code>, or <code>first contact resolution</code>. Token-by-token synonym replacement can destroy these units. Use <code>PhraseMatcher</code>, noun chunks, entity spans, or explicit phrase rules before pooling/vector comparison.</p>
+<h3 id="8-3-query-expansion">8.3 Query expansion</h3>
+<p>Expand a user query with controlled synonyms, spelling variants, categories, or semantically nearby terms. This helps short or ambiguous queries retrieve candidates that exact token matching misses. Expansion must be domain constrained to avoid semantic drift.</p>
+<hr>
+<h2 id="9-case-studies-from-the-lectures">9. Case studies from the lectures</h2>
+<h3 id="9-1-e-commerce-product-discovery-and-recommendation">9.1 E-commerce product discovery and recommendation</h3>
+<p><strong>Situation:</strong> A platform has a huge catalog of product descriptions, categories, attributes, and sometimes images. Descriptions vary in length and quality; user queries are short and ambiguous. Existing recommendations rely mainly on purchase history and neglect product content.</p>
+<p><strong>Objective:</strong> identify relevant products through exact keyword evidence plus semantic similarity, improve product discovery, personalize recommendations, and increase satisfaction and sales.</p>
+<p><strong>Solution</strong></p>
+<ol>
+<li>Tokenize and normalize query/catalog text.</li>
+<li>Match important product tokens and attribute phrases (brand, category, color, size, material).</li>
+<li>Generate embeddings for products and queries.</li>
+<li>Compute semantic similarity.</li>
+<li>Combine exact-match and semantic scores.</li>
+<li>Rank search results or generate recommendations.</li>
+<li>Expand queries with synonyms/related phrases.</li>
+<li>Optionally incorporate user embeddings from preferences or interaction history.</li>
+<li>Continuously evaluate and personalize.</li>
+</ol>
+<p>The fashion-retail variant also includes <strong>visual search</strong>, connecting image-derived signals with textual descriptions and user preferences.</p>
+<p><strong>Metrics</strong></p>
+<ul>
+<li>click-through rate (CTR);</li>
+<li>conversion rate;</li>
+<li>average order value;</li>
+<li>average session duration;</li>
+<li>no-result rate;</li>
+<li>product discovery/engagement;</li>
+<li>user satisfaction.</li>
+</ul>
+<p><strong>Use case:</strong> <code>comfortable footwear for running</code> should retrieve <code>lightweight jogging shoes</code> even without exact word overlap, while token rules can preserve hard constraints such as size <code>9</code>, color <code>blue</code>, or brand.</p>
+<h3 id="9-2-search-relevance-with-spacy-vectors">9.2 Search relevance with spaCy vectors</h3>
+<p><strong>Problem:</strong> low search relevance produces dissatisfaction.</p>
+<p><strong>Workflow</strong></p>
+<ol>
+<li>collect product descriptions, categories, and search queries;</li>
+<li>clean and process text;</li>
+<li>convert descriptions and queries to vectors;</li>
+<li>compute query-product cosine similarities;</li>
+<li>rank products by score;</li>
+<li>monitor results and adjust vectorization and similarity logic.</li>
+</ol>
+<p><strong>Challenges and remedies</strong></p>
+<ul>
+<li>Vectorizing a very large catalog is computationally expensive: precompute catalog vectors, batch processing, index them with approximate nearest-neighbor search, and consider dimensionality reduction where justified.</li>
+<li>Poor/divergent training data reduces vector quality: improve data quality and use domain-representative embeddings.</li>
+<li>Static vectors may not capture full document context: introduce phrase-aware or contextual representations and re-ranking.</li>
+<li>Generic similarity can ignore hard filters: combine semantic retrieval with token/metadata constraints.</li>
+</ul>
+<h3 id="9-3-customer-support-ticket-routing">9.3 Customer-support ticket routing</h3>
+<p><strong>Situation:</strong> high volumes of diverse inquiries require accurate categorization, prioritization, and assignment to agents. The goal is lower handling time, higher first-contact resolution (FCR), and better customer/agent satisfaction.</p>
+<p><strong>Data</strong></p>
+<ul>
+<li>historical customer tickets and resolutions;</li>
+<li>agent profiles and demonstrated expertise;</li>
+<li>knowledge-base (KB) articles;</li>
+<li>categories, priorities, outcomes, and feedback.</li>
+</ul>
+<p><strong>Vector-based solution</strong></p>
+<ol>
+<li>preprocess tickets, profiles, and KB articles: lowercase as appropriate, handle punctuation/stop words carefully, normalize text;</li>
+<li>obtain word vectors;</li>
+<li>aggregate them into document embeddings;</li>
+<li>create each agent&rsquo;s expertise representation from profile/history;</li>
+<li>embed KB articles in the same space;</li>
+<li>calculate ticket-agent and ticket-article cosine similarity;</li>
+<li>route to the best qualified agent and retrieve the most relevant KB article;</li>
+<li>apply confidence thresholds and human override;</li>
+<li>feed confirmed decisions and outcomes back into evaluation.</li>
+</ol>
+<p>Semantic routing outperforms literal keywords when <code>money back</code>, <code>return payment</code>, and <code>refund</code> express the same intent. It can also reveal clusters of recurring inquiries, gaps in KB coverage, and how agent expertise evolves.</p>
+<p><strong>Business benefits</strong></p>
+<ul>
+<li>reduced handling time;</li>
+<li>better FCR;</li>
+<li>improved agent productivity;</li>
+<li>improved customer and agent satisfaction;</li>
+<li>better use and discovery of KB content;</li>
+<li>operational insight from semantic clusters.</li>
+</ul>
+<h3 id="9-4-shopease-style-deployment-strategy-review-augmentation">9.4 ShopEase-style deployment strategy (review augmentation)</h3>
+<p>The review case expands support routing into a deployment and governance problem.</p>
+<p><strong>Alternatives</strong></p>
+<ul>
+<li><strong>Full rollout:</strong> maximum immediate reach but high operational risk if thresholds or embeddings are wrong.</li>
+<li><strong>Pilot:</strong> limited deployment to selected categories/agents; slower coverage but safer measurement and tuning.</li>
+<li><strong>Manual override:</strong> agents can correct recommendations; improves trust and supplies labeled ground truth.</li>
+</ul>
+<p>Best practical strategy: launch a pilot with manual override, use tiered thresholds, monitor KPIs, then expand gradually.</p>
+<p><strong>Tiered logic</strong></p>
+<pre><code class="language-text">high confidence → automatic route / answer suggestion
+medium confidence → ranked recommendation for agent confirmation
+low confidence → manual triage
+</code></pre>
+<p>Manual choices create <strong>ground truth</strong> for threshold optimization and error analysis. The feedback loop should update agent profiles, identify missing knowledge articles, discover emerging inquiry clusters, and retest performance. Thresholds may differ by category because the cost of an incorrect billing route can differ from an incorrect product-information route.</p>
+<p><strong>Evaluation KPIs</strong></p>
+<ul>
+<li>routing accuracy;</li>
+<li>precision/recall by issue class;</li>
+<li>FCR;</li>
+<li>mean handling and resolution time;</li>
+<li>escalation/reassignment rate;</li>
+<li>agent acceptance/override rate;</li>
+<li>customer satisfaction;</li>
+<li>coverage at each confidence tier;</li>
+<li>computational cost and latency.</li>
+</ul>
+<h3 id="9-5-rule-based-customer-support-chatbot">9.5 Rule-based customer-support chatbot</h3>
+<p><strong>Common inquiry areas:</strong> order status, returns, refund, product information, size, and color.</p>
+<p><strong>Operation</strong></p>
+<ol>
+<li>identify frequent keywords and phrases;</li>
+<li>tokenize each submitted query;</li>
+<li>compare tokens/phrases to predefined patterns;</li>
+<li>if a match occurs, select and send the corresponding predefined response;</li>
+<li>otherwise use fallback/escalation.</li>
+</ol>
+<p><strong>Challenges</strong></p>
+<ul>
+<li>Exact tokens ignore context and can trigger inaccurate responses.</li>
+<li>Synonyms and <strong>polysemy</strong> (one word with multiple meanings) are difficult.</li>
+<li>Short queries are especially ambiguous.</li>
+</ul>
+<p><strong>Lecture remedies:</strong> expand patterns to include common phrases and idioms, and build a thesaurus mapping synonyms to canonical keywords. A stronger extension is a hybrid semantic fallback plus confidence-aware escalation.</p>
+<h3 id="9-6-word-vector-product-recommendations">9.6 Word-vector product recommendations</h3>
+<p>Collaborative filtering may show diminishing accuracy and engagement because it relies on user-item interactions rather than content. Vector-based recommendations add semantic and contextual relations among product descriptions and user preferences.</p>
+<p>Steps:</p>
+<ol>
+<li>preprocess text;</li>
+<li>generate word vectors;</li>
+<li>create product embeddings;</li>
+<li>create a user vector from the products/descriptions the user prefers;</li>
+<li>compare user and product vectors;</li>
+<li>recommend the highest-scoring eligible items.</li>
+</ol>
+<p>Normalize/average carefully so a user with a long interaction history does not receive a vector whose magnitude dominates merely because of count. Combine semantic relevance with availability, diversity, novelty, business constraints, and purchase-history signals. Expected outcomes are more relevant personalized suggestions, improved engagement and loyalty, higher satisfaction, and increased sales.</p>
+<hr>
+<h2 id="10-common-pitfalls-and-corrections">10. Common pitfalls and corrections</h2>
+<ol>
+<li><strong>“Regex and Matcher are the same.”</strong> Regex is character-based; Matcher is token/annotation-based.</li>
+<li><strong>“Spaces must appear in a matcher pattern.”</strong> Whitespace normally separates tokens and is not a token pattern item.</li>
+<li><strong>“The end index is included.”</strong> It is exclusive: use <code>doc[start:end]</code>.</li>
+<li><strong>“Matcher modifies the document automatically.”</strong> It returns matches; callbacks must implement merging or labeling.</li>
+<li><strong>“Any spaCy pipeline provides equally good static vectors.”</strong> Verify <code>has_vector</code>, OOV coverage, and pipeline metadata; medium/large vector packages generally provide better lexical coverage.</li>
+<li><strong>“All words have vectors.”</strong> Domain terms and noise may be OOV.</li>
+<li><strong>“A zero similarity proves unrelated meaning.”</strong> Missing vectors can also produce a weak score.</li>
+<li><strong>“Similarity means identity.”</strong> Similar meaning is not the same as being interchangeable in every intent or business rule.</li>
+<li><strong>“Cosine is always 0–1.”</strong> Its mathematical range is −1 to 1.</li>
+<li><strong>“One universal threshold works.”</strong> Thresholds depend on the model, domain, class, and error costs.</li>
+<li><strong>“Average word vectors understand syntax.”</strong> Averaging loses order and structure.</li>
+<li><strong>“PCA plot distances are exact.”</strong> A 2-D projection discards information.</li>
+<li><strong>“Embedding matching replaces exact constraints.”</strong> IDs, sizes, dates, negation, legal terms, and required attributes often need explicit rules.</li>
+<li><strong>“A synonym dictionary scales without cost.”</strong> Coverage and maintenance become difficult; large repeated lookups may be inefficient.</li>
+<li><strong>“Token rules work independently of tokenization.”</strong> Pattern behavior is determined by token boundaries and annotations.</li>
+<li><strong>“High semantic similarity guarantees the same intent.”</strong> Compare intent-bearing roles, not only whole-sentence averages; <code>show aircraft</code> and <code>list meals</code> share context but request different objects.</li>
+</ol>
+<hr>
+<h2 id="11-exam-focused-comparisons">11. Exam-focused comparisons</h2>
+<h3 id="11-1-one-hot-vectors-versus-embeddings">11.1 One-hot vectors versus embeddings</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>One-hot</th>
+<th>Learned embedding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dimension</td>
+<td>vocabulary size <code>V</code></td>
+<td>fixed, e.g. 300</td>
+</tr>
+<tr>
+<td>Values</td>
+<td>binary and sparse</td>
+<td>real-valued and dense</td>
+</tr>
+<tr>
+<td>Meaning</td>
+<td>identity only</td>
+<td>semantic/distributional information</td>
+</tr>
+<tr>
+<td>Similar words</td>
+<td>equally orthogonal</td>
+<td>often geometrically close</td>
+</tr>
+<tr>
+<td>Sentence representation</td>
+<td><code>N × V</code> matrix</td>
+<td>pooling/model-based vector</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="11-2-synsets-versus-vectors">11.2 Synsets versus vectors</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Synonym sets</th>
+<th>Word vectors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Construction</td>
+<td>hand-curated</td>
+<td>learned from corpora</td>
+</tr>
+<tr>
+<td>Explainability</td>
+<td>high</td>
+<td>lower</td>
+</tr>
+<tr>
+<td>Domain control</td>
+<td>excellent</td>
+<td>depends on training data</td>
+</tr>
+<tr>
+<td>Paraphrase coverage</td>
+<td>only listed forms</td>
+<td>can generalize by proximity</td>
+</tr>
+<tr>
+<td>Polysemy/context</td>
+<td>must be explicitly handled</td>
+<td>static vectors still limited</td>
+</tr>
+<tr>
+<td>Scale</td>
+<td>maintenance-heavy</td>
+<td>computation/indexing-heavy</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="11-3-rule-based-versus-semantic-systems">11.3 Rule-based versus semantic systems</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Rule-based matcher</th>
+<th>Embedding-based system</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deterministic and precise</td>
+<td>tolerant of varied wording</td>
+</tr>
+<tr>
+<td>easy to explain</td>
+<td>captures graded relatedness</td>
+</tr>
+<tr>
+<td>needs enumerated rules</td>
+<td>depends on training data/model quality</td>
+</tr>
+<tr>
+<td>good for identifiers and hard constraints</td>
+<td>good for retrieval, routing, clustering</td>
+</tr>
+<tr>
+<td>brittle to unseen paraphrases</td>
+<td>may produce plausible but wrong matches</td>
+</tr>
+</tbody>
+</table></div>
+<p>The exam-quality recommendation is usually a <strong>hybrid</strong>: exact rules create precision and enforce constraints; embeddings add recall and semantic generalization; thresholds and human review manage risk.</p>
+<hr>
+<h2 id="12-high-value-exam-answers">12. High-value exam answers</h2>
+<h3 id="define-token-based-matching">Define token-based matching</h3>
+<p>Token-based matching is rule-based detection of continuous token sequences where each pattern element specifies token text or annotations such as lowercase form, punctuation status, shape, lemma, POS, dependency, or a token-level regex. spaCy&rsquo;s <code>Matcher</code> returns <code>(match_id, start, end)</code> triples and can invoke pattern-specific callbacks.</p>
+<h3 id="define-a-word-vector">Define a word vector</h3>
+<p>A word vector is a fixed-size dense real-valued learned representation in which semantic and distributional relationships are encoded geometrically; semantically related words tend to have nearby vectors.</p>
+<h3 id="explain-why-embeddings-improve-upon-one-hot-encoding">Explain why embeddings improve upon one-hot encoding</h3>
+<p>One-hot encoding has vocabulary-sized sparse vectors and represents only word identity. Embeddings are compact, dense, and learned from contexts, so they support similarity, transfer, clustering, semantic search, and downstream classification.</p>
+<h3 id="explain-semantic-similarity-methods">Explain semantic similarity methods</h3>
+<p>Synonym-list methods compare extracted lemmas/roles against manually prepared equivalence classes; they are transparent but hard to scale. Vector methods compare learned representations, commonly through cosine similarity; they generalize to unseen wording but depend on vector quality, shared embedding space, OOV coverage, and suitable thresholds.</p>
+<h3 id="explain-cosine-similarity">Explain cosine similarity</h3>
+<p>Cosine similarity is the normalized dot product of two vectors. It measures directional alignment independently of magnitude, ranges mathematically from −1 to 1, and is widely used to rank words/documents represented in the same embedding space.</p>
+<h3 id="design-a-production-solution">Design a production solution</h3>
+<ol>
+<li>Frame the measurable business problem.</li>
+<li>Inspect text quality, labels, class balance, ambiguity, and vocabulary.</li>
+<li>Normalize/tokenize while retaining meaning-bearing phrases and negation.</li>
+<li>Apply token rules for exact entities and constraints.</li>
+<li>Embed queries and candidates in one shared space.</li>
+<li>calculate and combine token, semantic, and business scores.</li>
+<li>rank candidates and apply category-sensitive thresholds.</li>
+<li>pilot with manual override.</li>
+<li>measure task and business KPIs.</li>
+<li>use feedback as ground truth for threshold/rule/model improvement.</li>
+</ol>
+<hr>
+<h2 id="13-quick-revision-checklist">13. Quick revision checklist</h2>
+<ul>
+<li>Know regex notation <code>\s</code>, <code>?</code>, and token regex <code>\d{1,4}</code>.</li>
+<li>Know <code>Matcher(nlp.vocab)</code>, <code>matcher.add(name, [pattern])</code>, and match triples.</li>
+<li>Remember that each dictionary is one token and <code>end</code> is exclusive.</li>
+<li>Know <code>LOWER</code>, <code>TEXT</code>/<code>ORTH</code>, <code>LENGTH</code>, <code>IS_PUNCT</code>, <code>IS_DIGIT</code>, <code>IS_ALPHA</code>, <code>SHAPE</code>, <code>REGEX</code>, and <code>OP</code>.</li>
+<li>Explain why whitespace normally does not appear in Matcher rules.</li>
+<li>Know when to use <code>PhraseMatcher</code> and callbacks.</li>
+<li>Derive the one-hot sentence shape <code>N × V</code>.</li>
+<li>Define dense embeddings and the distributional hypothesis.</li>
+<li>Use <code>Token.vector</code>, <code>Doc.vector</code>, <code>Span.vector</code>, <code>has_vector</code>, and <code>is_oov</code>.</li>
+<li>State the cosine formula, mathematical range, and same-space requirement.</li>
+<li>Explain synonym-set comparison using verbs and direct objects.</li>
+<li>Explain PCA projection from 300-D to 2-D and its limitations.</li>
+<li>Contrast keyword routing with semantic routing.</li>
+<li>Propose hybrid scoring, confidence tiers, a pilot, manual override, feedback, and KPIs.</li>
+<li>For every application answer, connect the NLP method to business outcomes: CTR/conversion for retail; handling time/FCR/satisfaction for support.</li>
+</ul>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<p>High-yield matcher distinctions from the review:</p>
+<ul>
+<li>Regex operates on character patterns and is not inherently aware of tokens, lemmas, POS, dependencies, entities, or semantics.</li>
+<li>spaCy&rsquo;s <code>Matcher</code> operates on ordered tokens. Use <code>LOWER</code> for case-insensitive matching; <code>TEXT</code> preserves exact surface text, <code>ORTH</code> is orthographic form, and <code>SHAPE</code> captures structural character form.</li>
+<li>Successive pattern dictionaries normally constrain successive tokens. <code>IS_DIGIT → IS_ALPHA</code> matches <code>2 apples</code>, not arbitrarily separated number/word pairs, and its result depends on how punctuation is tokenized.</li>
+</ul>
+<p>The review contrasts one-hot vectors (sparse, vocabulary-sized, orthogonal even for related words) with dense embeddings (fixed-dimensional semantic representations). The course convention is that <code>en_core_web_md</code> provides 300-dimensional vectors. Cosine similarity is</p>
+<p>\[
+\cos(\theta)=\frac{A\cdot B}{\|A\|\|B\|}.
+\]</p>
+<p>The material treats roughly <code>0.6–0.9</code> as indicative of semantic similarity, but this is a model/domain-dependent guide, not a universal boundary. High similarity means relatedness, not necessarily exact synonymy: <code>doctor</code> and <code>nurse</code> may be close while remaining distinct.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-3.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 3: Dependency Parsing, Named Entity…</span>
+      </a>
+      <a href="week-5.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 5: Named Entities, Dependency-Based Intent…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

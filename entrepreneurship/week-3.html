@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Entrepreneurship · Week 3 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Entrepreneurship</span>
+      <span class="brand-title">Week 3</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html" selected>Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Entrepreneurship and Innovation — Week 1 Exam Notes
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Entrepreneurship, Innovation, Creativity, Service Innovation and…
+      </a>
+      <a class="is-active" href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Innovation Foundations, Process and Product Innovation, Design…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Entrepreneurial Journey, Execution, Creativity, Innovation and…
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Entrepreneurial Opportunities, Evaluation, Competition and Failure
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Entrepreneurial Problem Solving, Lean Processes and Revenue Models
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Entrepreneurial Storytelling, Vision, Mission, Pitching, IP and the…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Entrepreneurial Marketing, Sales, Research, Branding and Market Sizing
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        User Research, Entrepreneurial Finance, Accounting and Financial…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Managing Growth, Lean Execution, Failure, Adaptation, and Business…
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Business Planning, Feasibility Analysis and the Business Model Canvas
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Networks, Entrepreneurial Teams, Startup Operations and Readiness
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Resource Planning, Venture Launch, Learning and Execution
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Financial Assessment, Funding, Growth and Exit
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Comprehensive Exam-Preparation Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Entrepreneurship · Week 3</p>
+        <h1 class="page-title">Innovation Foundations, Process and Product Innovation, Design Thinking, Ethics and CSR</h1>
+        <p class="page-meta">Week 3 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#how-to-use-these-notes">How to use these notes</a></li>
+      <li><a href="#1-the-central-idea-of-innovation">1. The central idea of innovation</a></li>
+      <li><a href="#2-why-innovations-fail">2. Why innovations fail</a></li>
+      <li><a href="#3-doblin-s-ten-types-of-innovation">3. Doblin’s Ten Types of Innovation</a></li>
+      <li><a href="#4-process-improvement-and-process-innovation">4. Process improvement and process innovation</a></li>
+      <li><a href="#5-design-thinking">5. Design Thinking</a></li>
+      <li><a href="#6-product-innovation">6. Product innovation</a></li>
+      <li><a href="#7-identifying-innovation-opportunities">7. Identifying innovation opportunities</a></li>
+      <li><a href="#8-entrepreneurial-ethics-and-legal-responsibility">8. Entrepreneurial ethics and legal responsibility</a></li>
+      <li><a href="#9-corporate-social-responsibility-csr-and-social-entrepreneurship">9. Corporate Social Responsibility (CSR) and social entrepreneurship</a></li>
+      <li><a href="#10-integrated-case-analysis-templates">10. Integrated case-analysis templates</a></li>
+      <li><a href="#11-likely-examination-angles">11. Likely examination angles</a></li>
+      <li><a href="#12-rapid-revision">12. Rapid revision</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="how-to-use-these-notes">How to use these notes</h2>
+<p>These notes combine all ten recorded lessons, the quiz/case material, and the live-class discussion. They retain the instructor’s distinctions, examples, cautions, and examination emphasis. Where a classroom claim was informal, it is presented as the instructor’s teaching point rather than as an independently verified fact.</p>
+<hr>
+<h2 id="1-the-central-idea-of-innovation">1. The central idea of innovation</h2>
+<h3 id="what-innovation-is-and-is-not">What innovation is — and is not</h3>
+<p>Innovation is <strong>not a formula</strong>, a brainstorming session, a lone genius’s sudden “aha” moment, or an overnight success. That is the “romantic myth” of innovation. Real innovation is usually:</p>
+<ul>
+<li>effort-intensive and knowledge-driven;</li>
+<li>based on years of sustained work rather than days or weeks;</li>
+<li>grounded in deep customer immersion, not guesses about customers;</li>
+<li>iterative: test → fail/learn → refine → repeat;</li>
+<li>cross-functional: marketing, operations, finance, sales, technology, and leadership work together;</li>
+<li>supported by workflows, continuous feedback, structured experimentation, and organizational systems.</li>
+</ul>
+<p>Apple, Toyota, and Amazon do not merely wait for inspiration; they build systems that repeatedly produce and refine innovation.</p>
+<p>Innovation is also <strong>not identical to invention</strong>. It may include an invention, a redesign, or even a major business-model shift, but none is mandatory by itself. Innovation is a combination of changes that makes the business look and feel meaningfully different—and better—to the customer while creating value for the organization.</p>
+<h3 id="why-innovation-is-difficult">Why innovation is difficult</h3>
+<ul>
+<li>Understanding how buyers live, feel, decide, pay, use, and recommend takes specialist effort.</li>
+<li>The probability of producing a truly large-scale, leadership-creating innovation is small.</li>
+<li>Frameworks do not create “magic”; they direct attention to places where useful innovation is more likely and reduce wasted search time.</li>
+<li>The strongest innovations often combine several dimensions, making them difficult for competitors to copy.</li>
+</ul>
+<h3 id="the-value-principle">The value principle</h3>
+<p>The company should benefit <strong>by benefiting the customer even more</strong>. A restaurant, for example, may seek more customers and a price appropriate to the value of its superior biryani. An innovation in ordering, production timing, or pricing is useful only if it improves the value/profit logic rather than being change for its own sake.</p>
+<h3 id="product-improvement-versus-broader-innovation">Product improvement versus broader innovation</h3>
+<p>Thinking only about product features is a useful starting point but is too narrow. Innovation can occur in:</p>
+<ul>
+<li>how the firm earns money;</li>
+<li>its partnerships and ecosystem;</li>
+<li>its organizational structure;</li>
+<li>the methods by which work is done;</li>
+<li>the product and linked product system;</li>
+<li>service, channels, brand, and customer engagement.</li>
+</ul>
+<p>These cut across the whole organization; they are not simply “ask marketing” or “ask product development.”</p>
+<hr>
+<h2 id="2-why-innovations-fail">2. Why innovations fail</h2>
+<h3 id="reasons-raised-in-the-live-class">Reasons raised in the live class</h3>
+<ul>
+<li>The offering does not match market demand or customer expectations.</li>
+<li>The company does not understand the customer.</li>
+<li>The product is too complex to use, especially in electronics.</li>
+<li>Planning is poor even though the core idea is good.</li>
+<li>Customers resist or fail to adopt the change.</li>
+<li>Pricing is too high.</li>
+<li>Fear of risk and failure prevents progress.</li>
+<li>Execution is weak.</li>
+<li>Departments operate in silos and do not collaborate.</li>
+</ul>
+<h3 id="failure-through-silo-thinking-kodak">Failure through silo thinking: Kodak</h3>
+<p>Kodak invented a digital camera as early as 1975, but its highly profitable film business created internal conflict. The technology existed, yet innovation remained isolated; leadership did not align it with long-term strategy or adequately read the changing market. Without marketing, sales, customer, and leadership collaboration, Kodak missed the digital revolution it had helped begin.</p>
+<p><strong>Lesson:</strong> technical invention is insufficient. Cross-functional collaboration provides the “pulse of the market,” and leadership must align innovation with long-term direction.</p>
+<h3 id="failure-through-execution-and-positioning-tata-nano">Failure through execution and positioning: Tata Nano</h3>
+<p>The Nano’s idea—an affordable car for the middle class—was strong and initially relevant. But positioning it as the “world’s cheapest car,” execution difficulties, and safety concerns changed customer perception. Car purchase has an emotional and status dimension, not only a functional affordability dimension. Customers did not want the identity associated with “cheapest.”</p>
+<p><strong>Lesson:</strong> a real opportunity can still fail if selling, positioning, safety, market connection, or customer-perception execution is weak.</p>
+<h3 id="four-causes-of-bad-processes">Four causes of bad processes</h3>
+<ol>
+<li><strong>Bad assumptions:</strong> employees accept “we have always done it this way” without investigating why.</li>
+<li><strong>Unclear purpose:</strong> people do not know whether the goal is volume, quality, speed, customer care, or a combination.</li>
+<li><strong>Misunderstanding/poor communication and training:</strong> staff do not understand the intended customer experience. At a personalized-food outlet such as Subway, walking away mid-order undermines the very personalization the customer came for.</li>
+<li><strong>Misalignment:</strong> a process copied from a textbook or designed for another product/organization does not fit the current task.</li>
+</ol>
+<p>Manager turnover and poor communication can also cause a breakdown between company goals and innovation activity.</p>
+<hr>
+<h2 id="3-doblin-s-ten-types-of-innovation">3. Doblin’s Ten Types of Innovation</h2>
+<h3 id="origin-and-logic">Origin and logic</h3>
+<p>Doblin, an innovation consulting firm later associated with Deloitte, studied many successful firms and observed patterns: sustained winners commonly innovate in <strong>multiple dimensions at the same time</strong>, not only in the product. The framework is an “excellent summary of the field” and a map of where to look—not a requirement to use all ten types.</p>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> The 10 Types framework is very important for the examination. Learn the three categories, all ten types, their distinctions, and examples.</p>
+</blockquote>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>What it asks</th>
+<th>Types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Configuration</strong></td>
+<td>How does the business work internally?</td>
+<td>Profit Model, Network, Structure, Process</td>
+</tr>
+<tr>
+<td><strong>Offering</strong></td>
+<td>What does the organization provide?</td>
+<td>Product Performance, Product System</td>
+</tr>
+<tr>
+<td><strong>Experience</strong></td>
+<td>How does the customer encounter and relate to it?</td>
+<td>Service, Channel, Brand, Customer Engagement</td>
+</tr>
+</tbody>
+</table></div>
+<p>Configuration tends to be less visible to customers; offering is highly visible; experience covers the continuing relationship and emotional/interaction quality.</p>
+<h3 id="3-1-configuration-innovation">3.1 Configuration innovation</h3>
+<p>Configuration concerns internal design and long-term competitive advantage: headquarters and branches versus one location or work-from-anywhere; closeness to customers versus arm’s-length retail; allocation of people, assets, decisions, intellectual property, and work.</p>
+<h4 id="1-profit-model-how-the-organization-earns-money">1. Profit Model — how the organization earns money</h4>
+<p>Questions:</p>
+<ul>
+<li>What does the customer pay for, how much, how often, and through what mechanism?</li>
+<li>Can production timing, pricing, subscriptions, utilization, or avoided costs improve value and profit?</li>
+<li>Does the model support the company’s growth strategy?</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li><strong>Netflix:</strong> shifted entertainment consumption from buying/renting individual DVDs or cassettes to recurring monthly subscription access. Subscription models subsequently spread to platforms, fitness, delivery, and memberships.</li>
+<li><strong>Restaurant kiosk:</strong> automated ordering changes interaction and cost structure; people focus on preparing/serving food while customers order through a kiosk.</li>
+<li><strong>Toy production:</strong> instead of producing a year’s inventory in one month, spread manufacturing across several months and redesign the profit/cost logic. A major model redesign—not merely moving a machine—is the innovation target.</li>
+<li><strong>Ola/ride-hailing:</strong> avoided the conventional taxi-medallion/licensing cost structure, reducing entry costs and altering the revenue logic.</li>
+</ul>
+<h4 id="2-network-partnerships-and-the-wider-ecosystem">2. Network — partnerships and the wider ecosystem</h4>
+<p>Network innovation uses connections with suppliers, customers, universities, researchers, startups, external innovators, complementors, owners, and other partners to create value.</p>
+<p>Examples:</p>
+<ul>
+<li><strong>Airline frequent-flyer programmes:</strong> repeated use creates points and free benefits, strengthening the customer network. It was a major innovation when introduced but became easy to copy; therefore build innovations deeply enough to resist imitation.</li>
+<li><strong>P&amp;G “Connect + Develop”:</strong> went beyond internal R&amp;D to startups, universities, researchers, and external innovators, developing ideas faster and at comparatively lower cost.</li>
+<li><strong>Apple:</strong> relies on external networks for manufacturing components and app development in addition to internal R&amp;D.</li>
+<li><strong>Ola:</strong> success requires a dense, loyal network of drivers, car owners, customers, service shops, and cleaning partners. A thin driver network creates a 30-minute wait; density can reduce waits to roughly 2–5 minutes and makes on-demand service attractive. Repeat customers complete the network effect.</li>
+</ul>
+<h4 id="3-structure-organization-of-talent-assets-and-decision-making">3. Structure — organization of talent, assets and decision-making</h4>
+<p>Structure asks how teams are arranged, how decisions are made, how talent and assets are aligned, and how the firm gets the best from its people. It is not the same as process:</p>
+<ul>
+<li><strong>Structure:</strong> who decides, owns, coordinates, or performs; how the system and roles are organized.</li>
+<li><strong>Process:</strong> the step-by-step workflow or method.</li>
+</ul>
+<p>Ola illustration:</p>
+<ul>
+<li>drivers were contractors rather than conventional employees;</li>
+<li>the company initially treated them in ways intended to create employee-like support and loyalty;</li>
+<li>drivers/car owners effectively operated small businesses, choosing hours and when to work;</li>
+<li>maps and automation reduced the skill burden beyond competent driving;</li>
+<li>the lecture cited early driver earnings of approximately ₹4–6 lakh and sometimes ₹10 lakh per year as part of the attractiveness of the model.</li>
+</ul>
+<h4 id="4-process-superior-methods-for-doing-work">4. Process — superior methods for doing work</h4>
+<p>Process innovation redesigns how the firm creates, supports, and delivers value. It may involve operations, supply chain, quality, maintenance, customer journey, or management—not just minor rearrangement.</p>
+<p>Examples:</p>
+<ul>
+<li><strong>Amazon:</strong> interpreted customer desire as receiving a product soon after deciding to buy. It transformed delivery using warehouses near major cities for commonly purchased goods, regional facilities for less-frequent items, rapid delivery (e.g., two hours), and in some contexts drone delivery. The scale is “warehouse/delivery-system redesign,” not a small warehouse switch.</li>
+<li><strong>Ola:</strong> linked registered cars with mechanics and service/cleaning shops to keep vehicles reliable, clean, pleasant-smelling, untorn, cool, and with working AC. Consistent quality across the full service is the process innovation.</li>
+<li><strong>Toyota:</strong> designs quality into every assembly step using accumulated data rather than guesswork—such as sequence of seat installation, hood closing, and precise wheel-tightening patterns. Competitors invited to observe a factory could see actions but not easily copy the learning system and quality mindset behind them.</li>
+<li><strong>McDonald’s:</strong> highly standardized operations create broadly consistent execution across countries.</li>
+</ul>
+<h3 id="3-2-offering-innovation">3.2 Offering innovation</h3>
+<h4 id="5-product-performance-superior-features-and-functions">5. Product Performance — superior features and functions</h4>
+<p>Product performance improves functionality, quality, reliability, speed, weight, comfort, taste, or another benefit the customer values. A ₹40 small chocolate bar must explain why it beats a larger ₹20 alternative; a feature matters only when translated into customer value.</p>
+<p>Examples:</p>
+<ul>
+<li><strong>NVIDIA:</strong> moved from graphics/video chips into components suited to AI computing and used a market/technology shift to create enormous value.</li>
+<li><strong>Bicycles:</strong> lighter alloys, frames that flex appropriately over potholes, suspension, Shimano gears, specialized tyres and frames for dirt roads, and computer-aided rider simulations created premium performance. The lecture contrasted high-performance bikes of roughly ₹1–2 lakh with good lower-performance bikes near ₹20,000.</li>
+<li><strong>Dyson:</strong> ordinary vacuum bags clog, reduce airflow, and weaken suction. Cyclonic technology creates fast-spinning airflow that separates dust/dirt from air and directs debris to a separate chamber, preserving suction and eliminating a recurring frustration. It improved an existing category rather than inventing vacuum cleaning.</li>
+<li><strong>Tesla:</strong> improved battery efficiency, EV technology, software integration, and acceleration in the existing car category.</li>
+<li><strong>Computers/phones:</strong> faster video conversion (e.g., reducing a 30-second wait to 5 seconds), realistic gaming, advanced phone cameras replacing compact cameras, and phone GPS replacing separate car navigation devices.</li>
+</ul>
+<h4 id="6-product-system-connected-products-and-complements">6. Product System — connected products and complements</h4>
+<p>A product system makes products/services fit together as an ecosystem. Value arises not only from one item but from compatibility, software, accessories, warranties, repairs, applications, data, and complementary services.</p>
+<p>Examples:</p>
+<ul>
+<li><strong>Apple ecosystem:</strong> phone, watch, computer, camera/media, synchronization, software, and AppleCare work together. Easy repair and integrated use support device sales.</li>
+<li><strong>Dell:</strong> paid support can bring repair to the customer’s home, making service part of the total offering.</li>
+<li><strong>Nike+:</strong> footwear connects with steps/fitness tracking, mobile applications, smart devices, and training programmes, turning a shoe into part of a fitness ecosystem.</li>
+<li><strong>Amazon Prime and similar ecosystems:</strong> once customers enjoy the convenience and personalization of an integrated system, switching becomes less attractive.</li>
+<li><strong>Meeting/office software:</strong> calendar, Zoom/meeting tools, recording, and information systems connect so the user does not manually move among separate systems.</li>
+</ul>
+<h3 id="3-3-experience-innovation">3.3 Experience innovation</h3>
+<p>Experience is often among today’s most powerful innovation areas. Customers compare not only products but also access, ease, emotion, comfort, interaction, continuity, and support over time.</p>
+<h4 id="7-service-support-before-during-and-after-purchase">7. Service — support before, during and after purchase</h4>
+<ul>
+<li>Covers advice, onboarding, responsiveness, maintenance, refund handling, repairs, and other enhancements.</li>
+<li><strong>Laptop example:</strong> a display may flicker after years of use; quick, pleasant repair becomes part of the perceived product.</li>
+<li><strong>Swiggy/Zomato-type platforms:</strong> fast delivery, real-time tracking, easy refunds, and responsive support differentiate otherwise similar delivery offerings.</li>
+<li><strong>Toyota/Mercedes or other premium service:</strong> respectful, knowledgeable treatment can itself be innovative.</li>
+</ul>
+<h4 id="8-channel-how-the-offering-reaches-the-customer">8. Channel — how the offering reaches the customer</h4>
+<p>The channel includes physical and digital paths of discovery, evaluation, purchase, delivery, and service.</p>
+<ul>
+<li>A well-trained store employee behaves like a consultant: allows browsing, answers questions, and treats the visitor as a person rather than following them aggressively.</li>
+<li>Apple-style stores illustrate a polished, knowledgeable channel.</li>
+<li>Amazon’s e-commerce and rapid delivery transformed channel access.</li>
+<li>A channel innovation should reduce customer effort and improve decision quality.</li>
+</ul>
+<h4 id="9-brand-meaning-identity-and-trust">9. Brand — meaning, identity and trust</h4>
+<p>Brand innovation changes what buying from the firm signifies.</p>
+<ul>
+<li><strong>Coach bags:</strong> materials alone do not explain value; reputation and meaning contribute.</li>
+<li><strong>Decathlon:</strong> the customer enters a “sports paradise,” learns about equipment and brands, becomes immersed in sport, and may buy more than originally planned.</li>
+<li><strong>Tata:</strong> ethical reputation causes customers and other stakeholders to treat the group differently.</li>
+<li>Brand must be backed by real quality and conduct; it is not merely a promotional claim.</li>
+</ul>
+<h4 id="10-customer-engagement-meaningful-ongoing-participation">10. Customer Engagement — meaningful ongoing participation</h4>
+<p>Customer engagement builds an interactive, repeated relationship: rewards, feedback, personalization, communities, challenges, content, or benefits that cause customers to reconnect. Loyalty/reward mechanisms give customers a reason to return because each interaction may create additional value.</p>
+<h3 id="how-to-apply-the-framework">How to apply the framework</h3>
+<ul>
+<li>Do not force all ten types into every case; identify the most relevant.</li>
+<li>The recorded lesson suggests scanning from the left: profit model and network are often highly significant, then customer engagement/brand, then the middle offering types. Treat this as a search priority, not a universal law.</li>
+<li>Strong innovations combine several types. Ola combined profit model, structure, network, process, technology, regulation, customer experience, vehicle quality, and service. The combined system is harder to copy than a single feature.</li>
+<li>Use metrics appropriate to the type. A process innovation needs operational measures, not only a customer feature survey.</li>
+</ul>
+<hr>
+<h2 id="4-process-improvement-and-process-innovation">4. Process improvement and process innovation</h2>
+<h3 id="meaning-and-scale">Meaning and scale</h3>
+<p>Process concerns <strong>how work is done</strong>. The course focuses on large, mission-driven redesign—not merely shifting a machine. Examples include modular rather than conventional assembly, Dell-style build-to-order computer customization after components arrive, or redesigning an entire hotel journey.</p>
+<p>Process improvement becomes process innovation when many coordinated changes support a clear strategic theme and create a substantial new level of value.</p>
+<h3 id="three-places-to-look">Three places to look</h3>
+<ol>
+<li><strong>Management processes:</strong> how people are directed, decisions made, sales monitored, and responsibility allocated. Ola’s driver-as-entrepreneur model is an example.</li>
+<li><strong>Operational processes:</strong> how inputs are bought and products/services are made and delivered. A chocolate company such as Cadbury could buy milk directly rather than through two intermediaries to obtain fresher ingredients at lower cost and improve taste.</li>
+<li><strong>Supporting processes:</strong> quality, finance, HR, maintenance, information, and other support. Inspect quality at each step rather than waiting until the final product fails and must be discarded.</li>
+</ol>
+<h3 id="toyota-quality-as-a-system">Toyota: quality as a system</h3>
+<p>Toyota studied every component and assembly action, accumulated data throughout organizational learning, and designed quality into each step. The innovation is not one wheel-tightening motion; it is the disciplined system that learns the best method, standardizes it, and improves continuously.</p>
+<h3 id="taj-customer-journey-as-a-process">Taj: customer journey as a process</h3>
+<p>The Taj illustration maps the customer’s mind and experience from deciding among hotels through travel, arrival, registration, stay, eating, sleeping, checkout, departure, and return home.</p>
+<ul>
+<li>If arrival time and repeat-customer information are known, a guard can greet the person by name.</li>
+<li>A preferred guest’s key can be ready; registration staff can complete paperwork in the room/lobby rather than making a tired guest queue.</li>
+<li>Every step is examined from the customer’s point of view.</li>
+</ul>
+<p>Many small improvements become a large process innovation because they share the mission of making the customer feel exceptionally special. Toyota’s unifying mission is quality; Taj’s is personalized hospitality.</p>
+<h3 id="finding-process-innovation-opportunities">Finding process-innovation opportunities</h3>
+<ul>
+<li>Study exceptional success: can the method be generalized?</li>
+<li>Study failure: why did it fail and what can be learned?</li>
+<li>Listen when customers identify a competitor’s advantage; “we do not care” is not a valid response if customers care.</li>
+<li>Identify a process need, including new raw-material requirements.</li>
+<li>Track industry/market changes: post-pandemic work-from-home created needs for long-sitting furniture, extended meetings, suitable backgrounds, and lighting.</li>
+<li>Track demographic realities: India’s relatively young, smartphone-driven, interrupt-driven audience may require shorter and differently designed experiences.</li>
+<li>Ensure every innovation supports the growth strategy. If the goal is two-hour e-commerce delivery, studying nationwide car sales is misaligned.</li>
+</ul>
+<h3 id="implementation-process">Implementation process</h3>
+<ol>
+<li>Understand company direction and the growth strategy.</li>
+<li>Select a relevant problem/opportunity.</li>
+<li>Form an innovation plan.</li>
+<li>Gain organizational support.</li>
+<li>Try it on a limited scale.</li>
+<li>Learn and refine.</li>
+<li>Launch step by step.</li>
+<li>Measure and continuously improve.</li>
+</ol>
+<h3 id="measuring-process-quality">Measuring process quality</h3>
+<p>A single metric is rarely adequate. An automobile line could be evaluated by:</p>
+<ul>
+<li>speed/throughput (cars completed);</li>
+<li>defect rate and reliability;</li>
+<li>consistency and standard compliance;</li>
+<li>cost, waste and rework;</li>
+<li>downtime and maintenance;</li>
+<li>safety;</li>
+<li>customer waiting time and satisfaction.</li>
+</ul>
+<p>The right choice may be a combination of speed and quality. Customer-facing feature feedback cannot replace operational measurement.</p>
+<h3 id="related-methods-mentioned">Related methods mentioned</h3>
+<ul>
+<li><strong>BPMN (Business Process Model and Notation):</strong> a visual method for representing process steps, flows, decisions and participants; mentioned briefly, not taught in depth.</li>
+<li><strong>Six Sigma:</strong> data-driven reduction of defects and variation.</li>
+<li><strong>Kaizen:</strong> continuous, often small, improvements with employee/frontline involvement.</li>
+</ul>
+<p>These belong to a deeper process-improvement course but form part of the innovation toolkit.</p>
+<hr>
+<h2 id="5-design-thinking">5. Design Thinking</h2>
+<h3 id="definition-and-importance">Definition and importance</h3>
+<p>Design Thinking is a <strong>human-centered, iterative method</strong> for understanding people as psychologically rich individuals, defining their real problems, creating possibilities, and learning through prototypes and tests. The instructor called it the “single richest area” for innovation because it understands the consumer in the consumer’s own way.</p>
+<p>People share some needs but also use products personally. Aloe-vera gel may be used on the face by one person and arms by another. The designer must understand actual contexts rather than impose an assumed “correct” use.</p>
+<h3 id="the-five-stage-cycle">The five-stage cycle</h3>
+<ol>
+<li><strong>Empathize</strong></li>
+<li><strong>Define</strong></li>
+<li><strong>Ideate</strong></li>
+<li><strong>Prototype</strong></li>
+<li><strong>Test</strong></li>
+</ol>
+<p>It is not strictly linear. Testing can send the team back to re-empathize, redefine, generate new ideas, and prototype again.</p>
+<h3 id="1-empathize">1. Empathize</h3>
+<p>Identify every relevant customer/user:</p>
+<ul>
+<li>Who uses the product?</li>
+<li>Who pays?</li>
+<li>Who recommends or approves it?</li>
+<li>In B2B, which multiple people in the customer organization influence the decision?</li>
+<li>Who supplies/maintains the solution?</li>
+</ul>
+<p>Empathy means “living in their shoes”: observe, participate, ask questions, and record sight, sound, smell, temperature, physical strain, emotion, anxiety, and social context.</p>
+<p>Examples:</p>
+<ul>
+<li><strong>Taxi:</strong> ride in it and notice the full sensory and psychological experience.</li>
+<li><strong>Wheelbarrow:</strong> repeatedly perform the work of transporting and tipping rocks. Observing strain suggests adding a wheel/pivot at the end so the user can rotate rather than lift/twist with the arms.</li>
+<li><strong>Shopping cart:</strong> users include the shopper, a child/baby, and the store that buys and maintains the cart. Long IKEA/hypermarket trips create different needs from buying two or three items.</li>
+</ul>
+<h3 id="2-define">2. Define</h3>
+<p>Frame the problem from the customer’s point of view after empathy.</p>
+<ul>
+<li>Weak/solution-first: “I want a faster watch.”</li>
+<li>Better need statement: “I need a convenient way to monitor my health because I am worried about it.”</li>
+<li>Shopping-cart problem: carts are heavy/cumbersome, poorly accommodate a child, and force the shopper to worry while the child moves around.</li>
+</ul>
+<p>The problem definition should express a meaningful need, not merely a desired feature.</p>
+<h3 id="3-ideate">3. Ideate</h3>
+<p>Use a diverse product-planning group. Generate many possibilities, place them visibly on a board, discuss and visualize them. Brainstorming contributes here but is not innovation by itself; ideas must arise from evidence and continue into experimentation.</p>
+<h3 id="4-prototype">4. Prototype</h3>
+<p>A prototype is a quick, incomplete and inexpensive representation that lets people experience the essential idea without building the final product.</p>
+<p>Possible forms:</p>
+<ul>
+<li>sketch or storyboard;</li>
+<li>simple mock-up;</li>
+<li>3D-printed object;</li>
+<li>small plastic model;</li>
+<li>role-play/service simulation;</li>
+<li>limited digital interface or minimum-feature product.</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>show a wearable band around the neck for health monitoring;</li>
+<li>show adhesive “bandage” sensors on different body parts;</li>
+<li>an apartment-scale model helps a buyer visualize a building that does not yet exist.</li>
+</ul>
+<p>Customers cannot magically describe a product they have never imagined. Showing something concrete produces richer feedback than asking an abstract question.</p>
+<h3 id="5-test-and-iterate">5. Test and iterate</h3>
+<p>Test with real customers. Observe their use and reaction; ask whether it fits their need. Treat negative feedback and failure as information. Return to earlier stages and repeat until the problem-solution fit improves.</p>
+<h3 id="why-prototyping-matters">Why prototyping matters</h3>
+<ul>
+<li>makes an abstract concept tangible;</li>
+<li>reveals misunderstanding, usability, physical, emotional, and operational problems early;</li>
+<li>gathers customer learning before full investment;</li>
+<li>reduces development and market risk;</li>
+<li>prevents attachment to a first idea;</li>
+<li>accelerates refinement.</li>
+</ul>
+<h3 id="familiar-design-thinking-outcomes">Familiar design-thinking outcomes</h3>
+<ul>
+<li><strong>Wheelbarrow tipping mechanism:</strong> a seemingly obvious improvement emerges from embodied observation.</li>
+<li><strong>Paytm/digital payment:</strong> removes cash carrying, change calculation, and accumulated coins.</li>
+<li>Innovations often look like “common sense” only after someone has uncovered and solved the latent problem.</li>
+</ul>
+<hr>
+<h2 id="6-product-innovation">6. Product innovation</h2>
+<h3 id="definition">Definition</h3>
+<p>Product innovation creates a new product/use or significantly improves an existing product’s performance in a way that changes customer value or a market—not merely size or cosmetics.</p>
+<p>Examples:</p>
+<ul>
+<li><strong>Kindle:</strong> its innovation is not tablet size; it enables textbook-like reading and carriage of thousands of books.</li>
+<li><strong>Fitbit:</strong> provides personal health data immediately and continuously.</li>
+<li><strong>iPod/iPhone:</strong> made large music libraries portable and combined many functions.</li>
+<li><strong>Phone cameras:</strong> became good enough to eliminate much of the compact-camera category.</li>
+<li><strong>Phone GPS:</strong> replaced separate car/walking GPS and can support trails, forests, and—in some devices/contexts—satellite emergency communication.</li>
+<li><strong>Electric cars:</strong> power-source and system changes can be major innovation; a small feature such as power windows counts only if it creates meaningful customer value.</li>
+<li><strong>3M/Post-it notes:</strong> an adhesive developed for another problem found a valuable sticky-note application.</li>
+</ul>
+<h3 id="new-product-versus-innovation">New product versus innovation</h3>
+<p>A different size alone is usually irrelevant. Ask:</p>
+<ul>
+<li>Is it used differently?</li>
+<li>Does it solve a meaningful problem?</li>
+<li>Does it open or reshape a market?</li>
+<li>Does the performance improvement replace another category or behavior?</li>
+</ul>
+<h3 id="three-types-of-product-innovation">Three types of product innovation</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Nature</th>
+<th>Risk/growth</th>
+<th>Examples and notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Incremental</strong></td>
+<td>Small, continuous improvements to an existing offering</td>
+<td>Lower risk; stable growth</td>
+<td>Annual iPhone improvements to camera, design, feel, convenience, AI features; continuous performance refinement</td>
+</tr>
+<tr>
+<td><strong>Radical</strong></td>
+<td>Fundamentally different technology, business model, or way of solving a problem</td>
+<td>High uncertainty/risk and potentially high impact</td>
+<td>Tesla pushing electric mobility into mainstream discussion; ChatGPT making generative AI broadly accessible and changing how business, marketing, and education approach information/work</td>
+</tr>
+<tr>
+<td><strong>Disruptive</strong></td>
+<td>Creates a new trajectory or use pattern that displaces established solutions/markets</td>
+<td>Often begins differently from incumbents and can reorganize an industry</td>
+<td>Laptops versus desktops, desktops versus minicomputers, and minicomputers versus mainframes were the lecture’s path illustration</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> all three names are examination-important. The live class explained incremental and radical in detail and explicitly deferred the detailed disruptive-innovation explanation to the next class; do not invent missing lecture criteria.</p>
+</blockquote>
+<h3 id="why-firms-pursue-product-innovation">Why firms pursue product innovation</h3>
+<ul>
+<li>growth and profit;</li>
+<li>competitive differentiation;</li>
+<li>response to evolving customer needs, including post-pandemic changes;</li>
+<li>replacement of obsolete solutions;</li>
+<li>leadership in a new/reshaped category;</li>
+<li>prestige and strategic positioning.</li>
+</ul>
+<h3 id="success-conditions">Success conditions</h3>
+<ul>
+<li>internal/senior-team support;</li>
+<li>genuine customer need;</li>
+<li>fit with growth plans and capabilities;</li>
+<li>contribution to the company’s positioning/prestige;</li>
+<li>strong execution;</li>
+<li>combination with other innovation types.</li>
+</ul>
+<p>Innovations are additive, not mutually exclusive. A product quality improvement combined with process, service, brand, and system improvements can produce Toyota/Taj-like advantage.</p>
+<hr>
+<h2 id="7-identifying-innovation-opportunities">7. Identifying innovation opportunities</h2>
+<h3 id="food-delivery-poll-case">Food-delivery poll case</h3>
+<p>A food-delivery platform observes over six months:</p>
+<ul>
+<li>demand for healthier food;</li>
+<li>complaints about delivery charges;</li>
+<li>more Gen Z late-night ordering;</li>
+<li>government discussion of sustainable packaging;</li>
+<li>competitors introducing AI recommendations.</li>
+</ul>
+<p>Students mostly prioritized customer behavior (about 92–94% in later poll readings), with a small share choosing technology and about 3% regulatory/sustainability pressure. The instructor agreed that customer frustration is urgent but stressed that <strong>all signals matter</strong> and often must be handled simultaneously:</p>
+<ul>
+<li>healthier options and charges = customer insight/pain points;</li>
+<li>late-night ordering = demographic/behavior opportunity and potential revenue;</li>
+<li>sustainable packaging = regulation and environmental pressure;</li>
+<li>AI recommendations = technology/competitive trend.</li>
+</ul>
+<p>There may be no single correct first answer. The purpose is to reason from the business’s perspective and justify prioritization.</p>
+<h3 id="four-opportunity-lenses">Four opportunity lenses</h3>
+<h4 id="1-strategic-alignment">1. Strategic alignment</h4>
+<p>Not every attractive idea is a good opportunity for a particular company. It should align with customer need, firm strength, long-term vision, capabilities, growth, and positioning.</p>
+<p>Ask:</p>
+<ul>
+<li>Does this fit our strategy?</li>
+<li>Can we execute effectively?</li>
+<li>Does it strengthen or weaken positioning?</li>
+</ul>
+<p>Tesla investing in batteries or charging infrastructure fits its mission/capabilities; Tesla launching a global fast-food chain may be an interesting idea but is strategically misaligned.</p>
+<h4 id="2-customer-insight">2. Customer insight</h4>
+<p>Innovation often begins with frustration or pain points. Sources include:</p>
+<ul>
+<li>NPS (<strong>Net Promoter Score</strong>): likelihood of recommending the product/service;</li>
+<li>customer reviews;</li>
+<li>panels;</li>
+<li>ethnographic observation/research;</li>
+<li>live usage tracking;</li>
+<li>direct interviews and complaints.</li>
+</ul>
+<p>The objective is to remove/reduce a pain and make the experience better.</p>
+<h4 id="3-environmental-scanning">3. Environmental scanning</h4>
+<p>Continuously examine external change:</p>
+<ul>
+<li>government policy and regulation;</li>
+<li>technology shifts such as AI;</li>
+<li>competitor actions;</li>
+<li>social, economic, sustainability, and market trends;</li>
+<li>rate and direction of change—whether the firm must accelerate or can proceed more slowly.</li>
+</ul>
+<h4 id="4-demographic-trends">4. Demographic trends</h4>
+<p>Track different generations and population patterns:</p>
+<ul>
+<li>aging populations;</li>
+<li>teenagers/younger generations;</li>
+<li>digital behavior;</li>
+<li>urbanization;</li>
+<li>generation-specific expectations.</li>
+</ul>
+<p>The firm cannot please everybody simultaneously, but it cannot ignore emerging groups.</p>
+<h3 id="integration-principle">Integration principle</h3>
+<p>The four lenses connect. A customer pain may be solved by a new technology; regulation may create both constraint and opportunity; demographics may explain behavior; every response still needs strategic fit. Opportunities come from disciplined observation, not imagination alone.</p>
+<hr>
+<h2 id="8-entrepreneurial-ethics-and-legal-responsibility">8. Entrepreneurial ethics and legal responsibility</h2>
+<h3 id="why-ethics-matters-especially-in-entrepreneurship">Why ethics matters especially in entrepreneurship</h3>
+<p>Startups face uncertainty and may not know whether they will survive the next month. Pressure can tempt founders to break rules. Ethical and legal shortcuts can destroy the entrepreneur, employees, customers, society, and future opportunity. The instructor’s direct caution: do not choose theft, deception, or law-breaking; life and reputation are too valuable.</p>
+<p>Ethical and legal wrongs can overlap: stealing savers’ funds is both a moral wrong and a serious legal offense.</p>
+<h3 id="key-legal-areas">Key legal areas</h3>
+<p>The figure referenced six legal areas, while the transcript explicitly explains the following:</p>
+<ul>
+<li><strong>Intellectual property:</strong> confirm that material, ideas, designs, marks, and content are legitimately yours or licensed. Do not copy McDonald’s “M” with a tiny alteration or imitate a known hotel/restaurant name with a one-letter spelling change.</li>
+<li><strong>Contracts:</strong> use written agreements that are clear and fairly protect both sides, reducing future disputes.</li>
+<li><strong>Employment law and equality:</strong> avoid discrimination; create lawful and ethical gender policies.</li>
+<li><strong>Multi-level compliance:</strong> national/central, state, local, and commercial/business rules may all apply.</li>
+</ul>
+<p>An entrepreneur need not personally be a legal expert but should know the risk areas and keep competent legal advice available. Good lawyers can pay for themselves by preventing expensive mistakes. When an employment or IP issue arises, obtain advice on seriousness and response.</p>
+<h3 id="personal-mission-and-values">Personal mission and values</h3>
+<p>Develop a personal and corporate mission statement before money and power create pressure to stray.</p>
+<ol>
+<li>Identify values such as honesty and integrity.</li>
+<li>Write them for both founder and company.</li>
+<li>Practice them; words alone are insufficient.</li>
+<li>Discuss ethical challenges openly.</li>
+<li>Take action consistent with the values.</li>
+<li>Use difficult decisions to build solidarity.</li>
+</ol>
+<p>Infosys and N. R. Narayana Murthy were presented as models of building a company through principled conduct; the instructor emphasized that this ethical way of building, not merely founding the company, underpins his reputation.</p>
+<hr>
+<h2 id="9-corporate-social-responsibility-csr-and-social-entrepreneurship">9. Corporate Social Responsibility (CSR) and social entrepreneurship</h2>
+<h3 id="meaning">Meaning</h3>
+<p>CSR extends ethical responsibility to the corporation, whose scale makes its duties and consequences greater. CSR is <strong>not just donating money</strong> or conducting public relations; it means acting as part of society and embedding responsibility into normal operations.</p>
+<p>Core responsibilities:</p>
+<ul>
+<li>comply with laws and regulations;</li>
+<li>act ethically beyond the bare legal minimum;</li>
+<li>protect employees and support gender equality;</li>
+<li>treat customers, suppliers, partners, contractors, communities, and government as stakeholders;</li>
+<li>avoid environmental and social harm;</li>
+<li>be a good corporate citizen;</li>
+<li>practice philanthropy, beginning with employee welfare but not ending there;</li>
+<li>balance ethics, sound finance/profit, operations, society, and environmental responsibility.</li>
+</ul>
+<h3 id="csr-through-operations-and-stakeholders">CSR through operations and stakeholders</h3>
+<p>CSR is strongest when designed into everyday processes:</p>
+<ul>
+<li>fair pricing and transparent terms;</li>
+<li>safe, reliable products and services;</li>
+<li>fair pay/treatment of service partners;</li>
+<li>maintained vehicles/equipment and customer safety;</li>
+<li>gender equality and nondiscrimination;</li>
+<li>responsible sourcing and waste control;</li>
+<li>truthful communication and complaint handling;</li>
+<li>consistent service quality.</li>
+</ul>
+<p>In a ride-hailing system, drivers, car owners, customers, mechanics, cleaners, communities, and regulators are all stakeholders. Treating service partners well and maintaining safe vehicles can be both process innovation and CSR.</p>
+<h3 id="csr-versus-public-relations">CSR versus public relations</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>CSR integrated into the business</th>
+<th>Superficial PR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Changes decisions and everyday processes</td>
+<td>Mainly changes messages/image</td>
+</tr>
+<tr>
+<td>Treats stakeholders fairly even when inconvenient</td>
+<td>Selects visible charitable acts</td>
+</tr>
+<tr>
+<td>Builds durable capability and trust</td>
+<td>May disappear after a campaign</td>
+</tr>
+<tr>
+<td>Balances profit, people, planet and operations</td>
+<td>Treats “doing good” as separate from business</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="cases-of-corporate-harm">Cases of corporate harm</h3>
+<ul>
+<li><strong>Chevron/Amazon region:</strong> the lecture cites toxic dumping in the Amazon forest/river as an example of shifting environmental costs to society while reducing company cost.</li>
+<li><strong>Enron:</strong> used improper/illegal accounting to make profit appear much larger, demonstrating governance and truthfulness failure.</li>
+<li><strong>Union Carbide/Bhopal:</strong> many deaths from the chemical disaster illustrate the immense human consequence of corporate irresponsibility.</li>
+</ul>
+<p>The instructor argued that penalties are often inadequate and criticized incentives that reward short-term profit or wealth while transferring harm to society and the planet.</p>
+<h3 id="positive-cases">Positive cases</h3>
+<ul>
+<li><strong>Tata Group:</strong> ethical reputation and quality cause customers, employees, and society to perceive and trust the brand differently.</li>
+<li><strong>Unilever Project Shakti:</strong> helped women improve livelihoods while also strengthening the company and profits. This shows that a social programme need not be a giveaway; shared value can produce both social and business benefit.</li>
+<li><strong>Infosys:</strong> principled values can become an enduring organizational identity.</li>
+</ul>
+<h3 id="building-an-ethical-culture">Building an ethical culture</h3>
+<ul>
+<li>Make ethics a practiced workplace norm, not “how can we manipulate or steal?”</li>
+<li>Take proactive steps toward gender equality.</li>
+<li>Build truthfulness into organizational capability.</li>
+<li>Publicly reinforce good actions.</li>
+<li>When conduct is wrong, address it, teach the employee, and make the lesson visible as “what not to do.”</li>
+<li>Provide consistent, meaningful mechanisms—not occasional slogans.</li>
+</ul>
+<p>Ethics and quality can yield business benefits: stronger sales, better recruitment, valuable relationships, trust, and resilient brand equity.</p>
+<h3 id="creative-commons-reminder">Creative Commons reminder</h3>
+<p>The lesson materials/books referenced were presented as open/Creative Commons resources. Students were encouraged to read, retain, use, and contribute back or otherwise give fair recognition/reward to authors who shared them voluntarily. This itself reflects respect for intellectual contribution.</p>
+<hr>
+<h2 id="10-integrated-case-analysis-templates">10. Integrated case-analysis templates</h2>
+<h3 id="a-how-to-analyze-any-innovation-case">A. How to analyze any innovation case</h3>
+<ol>
+<li>State the customer/stakeholder problem without jumping to a solution.</li>
+<li>Identify evidence: reviews, NPS, ethnography, operations data, regulation, demographics, technology.</li>
+<li>Test strategic alignment and execution capability.</li>
+<li>Classify relevant Doblin types; justify each classification.</li>
+<li>Identify whether product change is incremental, radical, or disruptive.</li>
+<li>Map process implications and the end-to-end customer journey.</li>
+<li>Prototype and test before full rollout.</li>
+<li>Identify legal, ethical, stakeholder, and CSR consequences.</li>
+<li>Choose type-appropriate measures.</li>
+<li>Explain how multiple innovations reinforce one another and create imitation barriers.</li>
+</ol>
+<h3 id="b-ecofresh-sustainable-snack-pouch-case-from-the-quiz-material">B. EcoFresh sustainable snack-pouch case from the quiz material</h3>
+<p>EcoFresh wants sustainable snack pouches and describes innovation as effort-intensive, knowledge-driven, and customer-focused. The case integrates ethics with the business model:</p>
+<ul>
+<li><strong>Profit Model:</strong> transparent pricing and economics that can sustain responsible sourcing.</li>
+<li><strong>Network:</strong> fair-trade suppliers and partners; supplier relationships become part of the innovation.</li>
+<li><strong>Process:</strong> traceable, ethical sourcing and production standards.</li>
+<li><strong>Product Performance:</strong> compostable films improve packaging’s environmental function.</li>
+<li><strong>Brand/engagement:</strong> credible transparency can convert ethical practice into a market advantage.</li>
+</ul>
+<p>Exam insight: do not label this only a “green product.” It is a system-level combination of configuration, offering, experience, and CSR.</p>
+<h3 id="c-ride-hailing-as-a-combined-innovation">C. Ride-hailing as a combined innovation</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Illustration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Profit Model</td>
+<td>Avoid conventional taxi-medallion/licensing cost structure</td>
+</tr>
+<tr>
+<td>Structure</td>
+<td>Contractor/driver-owner model with flexible work decisions</td>
+</tr>
+<tr>
+<td>Network</td>
+<td>Dense driver, owner, customer, repair and cleaning ecosystem</td>
+</tr>
+<tr>
+<td>Process</td>
+<td>App dispatch, maps, standardized maintenance and cleaning</td>
+</tr>
+<tr>
+<td>Service</td>
+<td>Short waits, less haggling, predictable support</td>
+</tr>
+<tr>
+<td>Channel</td>
+<td>Mobile app connects demand and supply</td>
+</tr>
+<tr>
+<td>Brand/Engagement</td>
+<td>Reliability, repeat use, trust and on-demand habit</td>
+</tr>
+<tr>
+<td>CSR</td>
+<td>Fair partner treatment, safety, vehicle quality, stakeholder responsibility</td>
+</tr>
+</tbody>
+</table></div>
+<p>The competitive advantage comes from the interacting system, not only the app.</p>
+<hr>
+<h2 id="11-likely-examination-angles">11. Likely examination angles</h2>
+<h3 id="very-likely-long-short-questions">Very likely long/short questions</h3>
+<ol>
+<li>Explain Doblin’s 10 Types of Innovation with categories and examples.</li>
+<li>Distinguish configuration, offering, and experience innovation.</li>
+<li>Distinguish structure from process; product performance from product system; service from channel.</li>
+<li>Explain why successful firms combine multiple innovation types.</li>
+<li>Debunk the “lone genius/aha moment” myth of innovation.</li>
+<li>Explain why innovations fail using Kodak and Tata Nano.</li>
+<li>Describe the five Design Thinking stages and the purpose of rapid prototyping.</li>
+<li>Explain the three sources/types of process improvement: management, operational, supporting.</li>
+<li>Show how Toyota or Taj converts coordinated improvements into process innovation.</li>
+<li>Explain the four lenses for identifying innovation opportunities.</li>
+<li>Compare incremental, radical and disruptive product innovation.</li>
+<li>Discuss the ethical/legal responsibilities of entrepreneurs.</li>
+<li>Define CSR and distinguish operational CSR from charity/PR.</li>
+<li>Use Project Shakti, Tata, Infosys, Enron, Chevron, or Bhopal to discuss responsible/irresponsible business.</li>
+<li>Apply the framework to food delivery, ride-hailing, sustainable packaging, or another case.</li>
+</ol>
+<h3 id="high-value-distinctions">High-value distinctions</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pair</th>
+<th>Essential distinction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Invention vs innovation</td>
+<td>Invention creates something; innovation produces adopted value through a broader system and may or may not include invention.</td>
+</tr>
+<tr>
+<td>Brainstorming vs innovation</td>
+<td>Brainstorming generates ideas; innovation requires customer evidence, testing, execution and value creation.</td>
+</tr>
+<tr>
+<td>Product Performance vs Product System</td>
+<td>Better item/function versus a connected ecosystem of complements and services.</td>
+</tr>
+<tr>
+<td>Structure vs Process</td>
+<td>Arrangement of roles/assets/decisions versus step-by-step method.</td>
+</tr>
+<tr>
+<td>Service vs Channel</td>
+<td>Support/enhancement around use versus route through which customers discover, buy, receive and access the offering.</td>
+</tr>
+<tr>
+<td>Incremental vs Radical</td>
+<td>Small continuous improvement/lower risk versus fundamentally different approach/high uncertainty and impact.</td>
+</tr>
+<tr>
+<td>CSR vs philanthropy/PR</td>
+<td>Responsibility embedded in decisions and operations versus a donation or image campaign alone.</td>
+</tr>
+<tr>
+<td>Prototype vs final product</td>
+<td>Low-cost learning representation versus complete commercial implementation.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="common-mistakes-to-avoid">Common mistakes to avoid</h3>
+<ul>
+<li>Equating innovation with a new product or a clever idea.</li>
+<li>Listing the ten types without explaining the three categories.</li>
+<li>Calling any small operational adjustment “process innovation.”</li>
+<li>Treating all metrics as customer-satisfaction metrics.</li>
+<li>Beginning Design Thinking with technology rather than empathy.</li>
+<li>Asking customers to imagine an unfamiliar product without showing a prototype.</li>
+<li>Assuming one poll choice/opportunity lens makes the others irrelevant.</li>
+<li>Calling a product radical only because it is new to the company.</li>
+<li>Presenting CSR as giving money after profit is earned.</li>
+<li>Ignoring implementation, perception, legal risk, or stakeholder effects.</li>
+</ul>
+<hr>
+<h2 id="12-rapid-revision">12. Rapid revision</h2>
+<h3 id="one-page-memory-sheet">One-page memory sheet</h3>
+<p><strong>Reality of innovation:</strong> sustained effort + customer immersion + iteration + failure/learning + cross-functional collaboration + systems.</p>
+<p><strong>Why it fails:</strong> no market need; weak customer understanding; complexity; price; poor planning/adoption/execution; silo thinking; strategic misalignment.</p>
+<p><strong>Doblin 10 — mnemonic structure:</strong></p>
+<ul>
+<li><strong>Configuration (4):</strong> Profit Model, Network, Structure, Process.</li>
+<li><strong>Offering (2):</strong> Product Performance, Product System.</li>
+<li><strong>Experience (4):</strong> Service, Channel, Brand, Customer Engagement.</li>
+</ul>
+<p><strong>Design Thinking:</strong> Empathize → Define → Ideate → Prototype → Test → iterate.</p>
+<p><strong>Process-search areas:</strong> Management + Operational + Supporting.</p>
+<p><strong>Opportunity lenses:</strong> Strategic alignment + Customer insight + Environmental scanning + Demographics.</p>
+<p><strong>Product types:</strong></p>
+<ul>
+<li>Incremental = small, continuous, lower risk/stable growth.</li>
+<li>Radical = fundamentally different, high risk/high impact.</li>
+<li>Disruptive = new trajectory that can displace established solutions; detailed treatment deferred in the live class.</li>
+</ul>
+<p><strong>Ethics/CSR:</strong> obey law; protect IP; use fair contracts; avoid discrimination; write and practice values; integrate responsibility into operations; treat all stakeholders fairly; balance profit, society, environment and quality.</p>
+<h3 id="example-flash-map">Example flash map</h3>
+<ul>
+<li>Netflix → Profit Model.</li>
+<li>P&amp;G Connect + Develop / frequent flyer → Network.</li>
+<li>Ola contractors and flexible work → Structure.</li>
+<li>Amazon rapid delivery / Toyota quality / Taj journey → Process.</li>
+<li>Dyson cyclone / bicycle components / Tesla performance → Product Performance.</li>
+<li>Apple, Dell support, Nike+ → Product System.</li>
+<li>Swiggy refunds/tracking → Service.</li>
+<li>Apple store/e-commerce route → Channel.</li>
+<li>Decathlon/Tata/Coach → Brand.</li>
+<li>Rewards and repeat interaction → Customer Engagement.</li>
+<li>Kodak → silo/strategy failure.</li>
+<li>Nano → execution, safety, status and positioning failure.</li>
+<li>Project Shakti → shared social and business value.</li>
+<li>Enron/Chevron/Bhopal → governance, environmental and human-cost warnings.</li>
+</ul>
+<h3 id="final-exam-ready-thesis">Final exam-ready thesis</h3>
+<blockquote>
+<p>Sustainable innovation is a disciplined, customer-centered and ethically governed organizational capability. It succeeds when the firm discovers real needs, aligns opportunities with strategy, combines several innovation dimensions, prototypes and learns rapidly, executes through robust processes, measures the right outcomes, and creates value for customers, the company, and society together.</p>
+</blockquote>
+<h1 id="review-week-augmentation">Review Week Augmentation</h1>
+<ul>
+<li>Design thinking remains iterative: <strong>Empathize → Define → Ideate → Prototype → Test</strong>. Ideation should not precede understanding people in context.</li>
+<li>Empathy investigates needs, experience, frustration, motivation, behavior and latent problems through observation, interviews, contextual research and engagement.</li>
+<li>Creativity generates ideas; innovation requires their valuable implementation. Brainstorming alone is not innovation.</li>
+<li>Analyze innovation as an ecosystem and across product, process, experience, business-model and partnership dimensions. Competitive advantage may lie in integration rather than one feature.</li>
+<li>FreshLoop&rsquo;s clearest innovations are process, experience, business-model and partnership innovations; do not label every improvement radical.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-2.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 2: Entrepreneurship, Innovation, Creativity,…</span>
+      </a>
+      <a href="week-4.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 4: Entrepreneurial Journey, Execution,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

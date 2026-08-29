@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>NLP · Week 12 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">NLP</span>
+      <span class="brand-title">Week 12</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html" selected>NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Foundations of Natural Language Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        spaCy Conventions, Text Preprocessing, and Tokenization
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Dependency Parsing, Named Entity Recognition, and Token Operations
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Token-Based Matching, Word Vectors, and Semantic Similarity
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Named Entities, Dependency-Based Intent Recognition, Semantic…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Annotation, Training spaCy NER Models, and an Airline-Review Case Study
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Text Classification and Sentiment Analysis
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Text Classification, TF–IDF, SVM, Doc2Vec and Twitter Sentiment Analysis
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Topic Modelling
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        BERT and Modern Pre-trained Language Models
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Fine-Tuning Language Models, Efficient Transformers, Sentence…
+      </a>
+      <a class="is-active" href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Cross-Lingual NLP, Multilingual Models, Transformer Serving, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Transformers, Attention, Evaluation, Hugging Face, TensorBoard, and…
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Hugging Face, Fine-Tuning, Deployment, and Applied Case Studies
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Vision Transformers, DETR, Self-Supervised Vision, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">NLP · Week 12</p>
+        <h1 class="page-title">Cross-Lingual NLP, Multilingual Models, Transformer Serving, and Case Studies</h1>
+        <p class="page-meta">Week 12 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#learning-map">Learning map</a></li>
+      <li><a href="#1-cross-lingual-and-multilingual-nlp">1. Cross-lingual and multilingual NLP</a></li>
+      <li><a href="#2-xlm-roberta-xlm-r">2. XLM-RoBERTa (XLM-R)</a></li>
+      <li><a href="#3-serving-transformer-models">3. Serving Transformer models</a></li>
+      <li><a href="#4-fastapi-transformer-serving">4. FastAPI Transformer serving</a></li>
+      <li><a href="#5-end-to-end-multilingual-system-development">5. End-to-end multilingual system development</a></li>
+      <li><a href="#6-case-study-a-global-e-commerce-expansion">6. Case study A — Global e-commerce expansion</a></li>
+      <li><a href="#7-case-study-b-global-healthcare-organisation">7. Case study B — Global healthcare organisation</a></li>
+      <li><a href="#8-quiz-revision-case-lingualink-multilingual-travel-assistant">8. Quiz/revision case — LinguaLink multilingual travel assistant</a></li>
+      <li><a href="#9-common-misconceptions-and-corrections">9. Common misconceptions and corrections</a></li>
+      <li><a href="#10-exam-focused-takeaways">10. Exam-focused takeaways</a></li>
+      <li><a href="#references-named-by-the-lecturer">References named by the lecturer</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="learning-map">Learning map</h2>
+<p>Week 12 joins two parts of an NLP solution that are often studied separately:</p>
+<ol>
+<li><strong>Multilingual intelligence:</strong> machine translation (MT), cross-lingual transfer, XLM-R, translation faithfulness, domain adaptation, evaluation, fairness.</li>
+<li><strong>Production delivery:</strong> exposing a Transformer through an API, choosing serving infrastructure, and controlling latency, throughput, scalability, and cost.</li>
+</ol>
+<p>The case studies then apply the complete lifecycle:</p>
+<blockquote>
+<p>Acquire multilingual data → clean/normalize/tokenize → align parallel corpora → select/pretrain/fine-tune a model → tune hyperparameters → evaluate → iteratively refine → expose through a REST API → integrate with business systems → monitor outcomes.</p>
+</blockquote>
+<hr>
+<h2 id="1-cross-lingual-and-multilingual-nlp">1. Cross-lingual and multilingual NLP</h2>
+<h3 id="1-1-key-distinctions">1.1 Key distinctions</h3>
+<ul>
+<li>A <strong>multilingual model</strong> processes more than one language, normally through a shared model and shared representation space.</li>
+<li><strong>Cross-lingual learning/transfer</strong> uses knowledge learned in one language to perform a task in another. A major use case is <strong>zero-shot transfer</strong>: train the task head using labelled English data and apply it to another language without labelled examples in that language.</li>
+<li><strong>Machine translation</strong> maps a source-language sequence to a target-language sequence while attempting to preserve meaning and produce natural target text.</li>
+<li>A <strong>parallel corpus</strong> contains aligned source and target passages that express the same content. Alignment may be at sentence, passage, or document level.</li>
+</ul>
+<p>Practical example: an English-trained sentiment model can classify a Spanish review if multilingual pretraining has placed semantically equivalent expressions in a shared representation space.</p>
+<h3 id="1-2-evolution-of-machine-translation">1.2 Evolution of machine translation</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Generation</th>
+<th>Basic idea</th>
+<th>Main limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rule-based MT</td>
+<td>Human-written linguistic rules and dictionaries</td>
+<td>Expensive to build/maintain; brittle coverage</td>
+</tr>
+<tr>
+<td>Statistical MT</td>
+<td>Learns translation probabilities from aligned data</td>
+<td>Fragmented output and limited contextual modelling</td>
+</tr>
+<tr>
+<td>Neural MT (NMT)</td>
+<td>A deep neural network directly learns the mapping from input to output sequences</td>
+<td>Data/compute intensive; can be fluent but unfaithful</td>
+</tr>
+<tr>
+<td>LLM-enhanced MT</td>
+<td>Uses broad pretrained language knowledge, instruction following, and cross-lingual supervision</td>
+<td>Bias, hallucination, uneven low-resource performance, and cost remain</td>
+</tr>
+</tbody>
+</table></div>
+<p>NMT was a significant leap because it learns contextual mappings directly rather than relying only on separately engineered rules or phrase statistics. With abundant training data, its output may approach professional human quality. Performance is nevertheless uneven across language pairs, especially for low-resource languages; mistranslation and fluency problems remain.</p>
+<h3 id="1-3-how-llms-enhance-mt">1.3 How LLMs enhance MT</h3>
+<p>LLMs contribute broad semantic, contextual, and instruction-following ability. The lecture highlights combining:</p>
+<ul>
+<li><strong>Cross-lingual supervision:</strong> learning signals across languages so the model generalizes beyond a single language pair.</li>
+<li><strong>Segment-Weighted Instruction Embedding (SWIE):</strong> described as weighting/representing instruction segments so attention captures and retains the instruction more effectively, reducing language bias and improving in-context learning.</li>
+</ul>
+<p>The intended logic is:</p>
+<blockquote>
+<p>broad multilingual supervision + strong instruction retention → better transfer across languages and more reliable adherence to translation instructions.</p>
+</blockquote>
+<h3 id="1-4-translation-faithfulness">1.4 Translation faithfulness</h3>
+<p><strong>Faithfulness/fidelity</strong> asks whether the target preserves the source meaning. It is distinct from <strong>fluency</strong>, which asks whether the target sounds natural.</p>
+<p>Unfaithful translation includes:</p>
+<ul>
+<li><strong>Over-translation:</strong> adding/repeating information not justified by the source.</li>
+<li><strong>Mistranslation:</strong> changing the meaning, relation, polarity, entity, quantity, or terminology.</li>
+<li>By implication, omission/under-translation is also a risk even though the lecture chiefly names over-translation and mistranslation.</li>
+</ul>
+<p>The lecture names <strong>OverMiss</strong> as a dataset specifically constructed to tackle over-translation and mistranslation. Combined with techniques such as SWIE, it is presented as a way to improve translation faithfulness.</p>
+<p>Example: “Do not take this drug with food” rendered as “Take this drug with food” may be grammatically perfect but reverses a safety-critical instruction. Fluency alone therefore cannot establish correctness.</p>
+<h3 id="1-5-organisational-implications">1.5 Organisational implications</h3>
+<p>Combining NMT and LLMs can provide robust, customizable translation services, but deployment requires explicit decisions about:</p>
+<ul>
+<li>supported languages and language pairs;</li>
+<li>expected quality per language, especially low-resource ones;</li>
+<li>domain-specific training corpora and terminology;</li>
+<li>cost, latency, privacy, and integration with the existing text/technology stack;</li>
+<li>a quality-assurance process before dissemination.</li>
+</ul>
+<p><strong>Domain-specific corpora</strong> improve accuracy and fluency because general web text may not teach the meanings used in medicine, travel, law, customer support, or e-commerce. For example, “charge” has different meanings in payments, law, and electronics.</p>
+<p>Raw machine output is normally <strong>not immediately publication-ready</strong>. Bilingual reviewers should post-edit it because they can compare source and target for meaning, terminology, compliance, and cultural appropriateness. A monolingual reviewer can assess grammar/style but cannot reliably verify fidelity.</p>
+<h3 id="1-6-ethics-fairness-and-bias">1.6 Ethics, fairness, and bias</h3>
+<p>NMT and LLMs can inherit social biases present in their training data. The risk is amplified when a system is used across communities and languages whose representation in training data is unequal.</p>
+<p>Responsible practice includes:</p>
+<ul>
+<li>evaluate quality separately by language, dialect, demographic group, and domain;</li>
+<li>inspect stereotyped or harmful associations;</li>
+<li>include low-resource communities and native speakers in evaluation;</li>
+<li>protect sensitive data and obtain appropriate consent;</li>
+<li>provide human escalation for high-stakes outputs;</li>
+<li>continuously monitor and actively mitigate inherited bias rather than assuming multilingual coverage implies fairness.</li>
+</ul>
+<hr>
+<h2 id="2-xlm-roberta-xlm-r">2. XLM-RoBERTa (XLM-R)</h2>
+<h3 id="2-1-what-it-is">2.1 What it is</h3>
+<p>XLM-R is a Transformer-based <strong>masked language model</strong> built for multilingual/cross-lingual representation learning. The lecture describes it as pretrained at scale on roughly <strong>100 languages</strong> and <strong>more than 2 TB of filtered Common Crawl data</strong>. It significantly outperformed multilingual BERT (mBERT) on a range of cross-lingual benchmarks.</p>
+<p>Central lesson:</p>
+<blockquote>
+<p>Scaling multilingual pretraining produces substantial gains across many cross-lingual transfer tasks.</p>
+</blockquote>
+<p>Why it transfers:</p>
+<ul>
+<li>one model learns patterns from many languages;</li>
+<li>a shared subword vocabulary connects recurring forms;</li>
+<li>shared parameters create a common semantic space;</li>
+<li>high-resource languages can provide learning signal that transfers to lower-resource languages;</li>
+<li>fine-tuning can adapt general representations to a specific domain/task.</li>
+</ul>
+<p>Example: “heart disease treatment” and its French equivalent can be embedded into related regions of representation space, enabling English-labelled medical classification examples to benefit French inference.</p>
+<h3 id="2-2-xlm-r-configuration">2.2 XLM-R configuration</h3>
+<p>The verbal example corresponds conceptually to a configuration with these special-token IDs:</p>
+<pre><code class="language-python">from transformers import XLMRobertaConfig
+
+config = XLMRobertaConfig(
+    bos_token_id=0,
+    pad_token_id=1,
+    eos_token_id=2,
+)
+</code></pre>
+<p><code>XLMRobertaConfig</code> extends/uses RoBERTa-style configuration. <code>**kwargs</code> in a class/API signature captures additional keyword configuration values.</p>
+<h3 id="2-3-tokenizer-and-special-tokens">2.3 Tokenizer and special tokens</h3>
+<p>XLM-R uses a <strong>SentencePiece-based tokenizer</strong>, adapted from RoBERTa/XLNet tokenizer ideas and inheriting common methods from the pretrained-tokenizer superclass. <code>vocab_file</code> is the path to the SentencePiece vocabulary/model file.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default token</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bos_token</code></td>
+<td><code>&lt;s&gt;</code></td>
+<td>Beginning of sequence; also used as classification token</td>
+</tr>
+<tr>
+<td><code>eos_token</code></td>
+<td><code>&lt;/s&gt;</code></td>
+<td>End-of-sequence token concept</td>
+</tr>
+<tr>
+<td><code>sep_token</code></td>
+<td><code>&lt;/s&gt;</code></td>
+<td>Separates sequences and is used as the last special token in a built sequence</td>
+</tr>
+<tr>
+<td><code>cls_token</code></td>
+<td><code>&lt;s&gt;</code></td>
+<td>First token for whole-sequence classification</td>
+</tr>
+<tr>
+<td><code>unk_token</code></td>
+<td><code>&lt;unk&gt;</code></td>
+<td>Unknown/out-of-vocabulary representation</td>
+</tr>
+<tr>
+<td><code>pad_token</code></td>
+<td><code>&lt;pad&gt;</code></td>
+<td>Pads unequal-length sequences in a batch</td>
+</tr>
+</tbody>
+</table></div>
+<p>Conceptual constructor:</p>
+<pre><code class="language-python">from transformers import XLMRobertaTokenizer
+
+tokenizer = XLMRobertaTokenizer(
+    vocab_file=&quot;sentencepiece.bpe.model&quot;,
+    bos_token=&quot;&lt;s&gt;&quot;,
+    eos_token=&quot;&lt;/s&gt;&quot;,
+    sep_token=&quot;&lt;/s&gt;&quot;,
+    cls_token=&quot;&lt;s&gt;&quot;,
+    unk_token=&quot;&lt;unk&gt;&quot;,
+    pad_token=&quot;&lt;pad&gt;&quot;,
+)
+</code></pre>
+<p>Important nuance from the lecture: when sequences are assembled with special tokens, <code>sep_token</code> is used at the end. It also separates multiple sequences, such as sentence-pair classification or a passage and question in question answering. <code>cls_token</code> appears first when classifying a whole sequence, unlike per-token classification.</p>
+<hr>
+<h2 id="3-serving-transformer-models">3. Serving Transformer models</h2>
+<h3 id="3-1-meaning-of-model-serving">3.1 Meaning of model serving</h3>
+<p><strong>Serving</strong> deploys a trained model into a production environment so applications can request inference. A typical path is:</p>
+<blockquote>
+<p>Client request → API layer → validation → tokenizer → tensors → Transformer → logits/output → post-processing → JSON response.</p>
+</blockquote>
+<p>A good model alone is insufficient: the serving design determines whether it meets real-world latency, throughput, reliability, and cost requirements.</p>
+<h3 id="3-2-key-design-considerations">3.2 Key design considerations</h3>
+<ol>
+<li><strong>Model size:</strong> larger models often improve quality but require more memory, storage, compute, and money and usually increase latency.</li>
+<li><strong>Latency:</strong> interactive applications need fast responses. Low-latency targets may require optimized runtimes and specialized hardware.</li>
+<li><strong>Scalability:</strong> the service must handle a growing or bursty workload without unacceptable degradation.</li>
+<li><strong>Hardware:</strong> CPU, GPU, and TPU choices materially affect speed and cost. Select infrastructure for workload and model architecture.</li>
+<li><strong>Framework:</strong> choose a serving system compatible with model format and operational requirements.</li>
+</ol>
+<h3 id="3-3-serving-frameworks">3.3 Serving frameworks</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Best fit</th>
+<th>Important capabilities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TensorFlow Serving</td>
+<td>TensorFlow models</td>
+<td>Batching, dynamic shapes, model versioning, rollback/A-B/gradual rollout</td>
+</tr>
+<tr>
+<td>TorchServe</td>
+<td>PyTorch models</td>
+<td>Flexible, scalable PyTorch deployment across scenarios</td>
+</tr>
+<tr>
+<td>NVIDIA Triton Inference Server</td>
+<td>Mixed model ecosystems/high performance</td>
+<td>Serves TensorFlow, PyTorch, ONNX and other backends; dynamic batching and accelerator-oriented inference</td>
+</tr>
+<tr>
+<td>FastAPI + Uvicorn</td>
+<td>Lightweight/custom Python API</td>
+<td>Validation, async request handling, automatic OpenAPI docs, easy Hugging Face integration</td>
+</tr>
+</tbody>
+</table></div>
+<p>The live session characterized Triton as high-performance and suggested checking its availability/licensing for the intended environment; TensorFlow Serving and TorchServe were presented as frameworks students could explore directly.</p>
+<h3 id="3-4-optimisation-and-scaling-strategies">3.4 Optimisation and scaling strategies</h3>
+<ul>
+<li><strong>Batching:</strong> combine requests into one forward pass. GPUs perform parallel tensor operations efficiently, so batching raises throughput and reduces per-request overhead.</li>
+<li><strong>Dynamic batching:</strong> briefly queue requests arriving close together, then automatically form a batch. The trade-off is a small waiting delay for better throughput.</li>
+<li><strong>Caching:</strong> reuse results or intermediate results for repeated inputs. It is valuable for frequent identical FAQs but offers little for unique customer messages.</li>
+<li><strong>Quantization:</strong> reduce numeric precision, e.g. FP32 → INT8, to lower memory and often speed inference; validate any accuracy loss.</li>
+<li><strong>Pruning:</strong> remove less important weights/connections to reduce model size and work; it may require retraining/fine-tuning.</li>
+<li><strong>Knowledge distillation:</strong> train a smaller student to imitate a larger teacher (e.g. a DistilBERT-like approach), trading some capacity for speed and cost.</li>
+<li><strong>Hardware acceleration:</strong> GPUs/TPUs can greatly accelerate parallel inference.</li>
+<li><strong>Horizontal/distributed scaling:</strong> distribute high-throughput workloads across servers/replicas.</li>
+</ul>
+<p>For bursty traffic, batching is usually more direct than merely increasing API workers. Extra Uvicorn workers improve web/CPU concurrency, but if all workers contend for one GPU they do not remove the GPU inference bottleneck and can duplicate model memory. Caching is also not a universal latency solution because it depends on input repetition.</p>
+<h3 id="3-5-throughput-latency-and-cost-trade-off">3.5 Throughput, latency, and cost trade-off</h3>
+<ul>
+<li>Larger batch → normally higher throughput, but requests may wait longer and require more accelerator memory.</li>
+<li>Larger model → often higher accuracy/capability, but greater compute, latency, memory, and scaling cost.</li>
+<li>More replicas → more aggregate capacity and resilience, but higher infrastructure cost.</li>
+<li>Aggressive compression → cheaper/faster serving, but must be evaluated for task-quality regression.</li>
+</ul>
+<p>An exam answer should therefore avoid “largest model is always best.” Production design balances <strong>accuracy, latency, throughput, memory, reliability, and cost</strong>.</p>
+<hr>
+<h2 id="4-fastapi-transformer-serving">4. FastAPI Transformer serving</h2>
+<h3 id="4-1-why-fastapi">4.1 Why FastAPI</h3>
+<p>FastAPI is a modern Python web framework suited to APIs. The lecture emphasizes:</p>
+<ul>
+<li>high performance and efficient request handling;</li>
+<li>asynchronous endpoints and concurrent handling without blocking the main event loop during suitable I/O work;</li>
+<li>intuitive syntax and documentation;</li>
+<li>built-in input validation;</li>
+<li>automatic OpenAPI/API documentation.</li>
+</ul>
+<p><strong>Caveat:</strong> <code>async</code> does not make a compute-heavy model forward pass magically parallel or faster. GPU scheduling, batching, workers, queues, or offloading must still be designed deliberately.</p>
+<h3 id="4-2-installation">4.2 Installation</h3>
+<p>The spoken command is conventionally written:</p>
+<pre><code class="language-bash">pip install fastapi uvicorn transformers torch
+</code></pre>
+<p>(<code>torch</code> is needed for the PyTorch model used below; installation may vary by hardware.)</p>
+<h3 id="4-3-complete-corrected-example">4.3 Complete corrected example</h3>
+<pre><code class="language-python"># main.py
+from fastapi import FastAPI
+from pydantic import BaseModel
+import torch
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
+
+MODEL_NAME = &quot;bert-base-uncased&quot;
+
+app = FastAPI()
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME)
+model.eval()
+
+class PredictionRequest(BaseModel):
+    text: str
+
+@app.post(&quot;/predict&quot;)
+async def predict(request: PredictionRequest):
+    inputs = tokenizer(
+        request.text,
+        return_tensors=&quot;pt&quot;,
+        truncation=True,
+        padding=True,
+    )
+    with torch.no_grad():
+        outputs = model(**inputs)
+    prediction = outputs.logits.argmax(dim=-1).item()
+    return {&quot;prediction&quot;: prediction}
+</code></pre>
+<p>Run it with:</p>
+<pre><code class="language-bash">uvicorn main:app --reload
+</code></pre>
+<p>Development URL: <code>http://127.0.0.1:8000</code>. <code>main:app</code> means “import the object named <code>app</code> from <code>main.py</code>.” <code>--reload</code> is helpful in development, not the normal production setting.</p>
+<h3 id="4-4-explanation-of-every-stage">4.4 Explanation of every stage</h3>
+<ol>
+<li><code>FastAPI()</code> creates the application object. The lecture’s initial “app is not defined” error occurred because this initialization was missing.</li>
+<li><code>AutoTokenizer.from_pretrained(...)</code> loads the tokenizer corresponding to the checkpoint.</li>
+<li><code>AutoModelForSequenceClassification.from_pretrained(...)</code> loads a model with a sequence-classification head.</li>
+<li><code>@app.post("/predict")</code> creates a POST endpoint.</li>
+<li>Pydantic validates incoming JSON such as <code>{"text": "Example"}</code>.</li>
+<li>The tokenizer converts raw text into tensors. Typical outputs are:
+   - <code>input_ids</code>: numerical token identifiers;
+   - <code>attention_mask</code>: identifies real tokens versus padding.</li>
+<li><code>model(**inputs)</code> unpacks the tokenizer dictionary into the model’s expected named arguments.</li>
+<li><code>outputs.logits</code> are unnormalized class scores; <code>argmax(dim=-1)</code> selects the highest-scoring class.</li>
+<li><code>.item()</code> converts the one-value tensor into a JSON-serializable Python scalar.</li>
+<li>The dictionary is returned as JSON.</li>
+</ol>
+<p>Do not call <code>model("hello")</code> directly: Transformer forward methods expect token tensors, not a raw string. Correct order is <strong>raw text → tokenizer → tensor inputs → forward pass → logits → prediction</strong>.</p>
+<p><strong>Model caveat:</strong> a bare <code>bert-base-uncased</code> sequence-classification head may be randomly initialized for the downstream labels. A real service should load a checkpoint already fine-tuned for its task and map the predicted ID to a meaningful label.</p>
+<hr>
+<h2 id="5-end-to-end-multilingual-system-development">5. End-to-end multilingual system development</h2>
+<h3 id="5-1-data-acquisition-and-preparation">5.1 Data acquisition and preparation</h3>
+<p>Collect a large, diverse multilingual corpus appropriate to the problem. Sources named in the lectures include:</p>
+<ul>
+<li>product descriptions, customer reviews, social-media posts, and news articles for e-commerce;</li>
+<li>medical records, clinical notes, patient–doctor conversations, and medical literature for healthcare.</li>
+</ul>
+<p>Then:</p>
+<ol>
+<li><strong>Clean:</strong> remove corruption, duplicates, irrelevant markup, and obvious noise.</li>
+<li><strong>Normalize:</strong> standardize encoding, whitespace, punctuation, and chosen case/format conventions without destroying meaningful distinctions.</li>
+<li><strong>Tokenize:</strong> map text into the subword units expected by the model.</li>
+<li><strong>Align parallel text:</strong> pair passages across languages that express the same content/concept/procedure.</li>
+<li><strong>Check quality and representativeness:</strong> cover relevant languages, terminology, user groups, and task scenarios.</li>
+</ol>
+<h3 id="5-2-architecture-and-training">5.2 Architecture and training</h3>
+<p>The lecture proposes Transformer-based architectures because of their strong NLP performance, naming BERT, GPT-2, and multilingual variants. For translation, select an architecture actually designed/fine-tuned for sequence generation; BERT/XLM-R are primarily encoder masked-language models, while GPT-2 is decoder-only.</p>
+<p>Training strategy:</p>
+<ol>
+<li>Pretrain on a large multilingual corpus to learn general language representations.</li>
+<li>Fine-tune the pretrained model on domain-specific/parallel data to adapt translation, understanding, and terminology.</li>
+<li>Tune <strong>learning rate, batch size, and number of epochs</strong>.</li>
+<li>Evaluate and iteratively modify architecture, hyperparameters, and/or training data.</li>
+</ol>
+<p>Why pretraining precedes fine-tuning: pretraining supplies broad vocabulary, grammar, and semantics; fine-tuning specializes those representations using much less task-labelled data.</p>
+<h3 id="5-3-evaluation">5.3 Evaluation</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What it measures/where used</th>
+<th>Caveat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BLEU (Bilingual Evaluation Understudy)</td>
+<td>Modified n-gram precision against reference translations, with a brevity penalty</td>
+<td>Can miss valid paraphrases and does not guarantee meaning preservation</td>
+</tr>
+<tr>
+<td>ROUGE</td>
+<td>Reference overlap, commonly recall-oriented; ROUGE-L uses longest common subsequence</td>
+<td>Designed/popularized for summarization; overlap is not full semantic quality</td>
+</tr>
+<tr>
+<td>METEOR</td>
+<td>Alignment-based similarity incorporating word matches and typically stemming/synonymy</td>
+<td>Still reference-dependent</td>
+</tr>
+<tr>
+<td>Accuracy</td>
+<td>Fraction of correct discrete predictions; lecture examples: sentiment, product categorization, medical QA/information extraction</td>
+<td>May hide class imbalance and unequal subgroup performance</td>
+</tr>
+</tbody>
+</table></div>
+<p>BLEU’s corpus-level form is commonly represented as:</p>
+<p>$$
+BLEU = BP \times \exp\left(\sum_{n=1}^{N} w_n \log p_n\right)
+$$</p>
+<p>where $p_n$ is modified n-gram precision, $w_n$ is its weight, and $BP$ penalizes overly short output.</p>
+<p>Do not confuse translation metrics with downstream task metrics. BLEU/ROUGE/METEOR assess reference similarity; sentiment accuracy assesses usefulness for a classification task. Automatic scores are <strong>intrinsic evaluation</strong>; real effects such as customer satisfaction, diagnostic safety, successful searches, and completed bookings are <strong>extrinsic/business evaluation</strong>.</p>
+<p>Human bilingual assessment remains essential for fidelity, fluency, terminology, safety, and cultural acceptability.</p>
+<hr>
+<h2 id="6-case-study-a-global-e-commerce-expansion">6. Case study A — Global e-commerce expansion</h2>
+<h3 id="problem">Problem</h3>
+<p>The firm cannot communicate effectively in customers’ native languages. This restricts personalized support, understanding of local market trends, and sales in new international markets.</p>
+<h3 id="proposed-solution">Proposed solution</h3>
+<p>Develop a cross-lingual language model and:</p>
+<ol>
+<li>Gather multilingual product descriptions, reviews, social posts, and news.</li>
+<li>Clean, normalize, and tokenize for consistency and quality.</li>
+<li>Create parallel corpora by aligning equivalent content across languages.</li>
+<li>Select a suitable Transformer/multilingual pretrained model.</li>
+<li>Pretrain broadly, then fine-tune on e-commerce parallel/domain data.</li>
+<li>Optimize learning rate, batch size, and epochs.</li>
+<li>Evaluate translation with BLEU/ROUGE/METEOR and downstream tasks such as sentiment/product categorization with accuracy; refine data/model/hyperparameters.</li>
+<li>Expose the model through a RESTful API.</li>
+<li>Integrate real-time translation into customer support.</li>
+<li>Improve product search by understanding multilingual queries.</li>
+</ol>
+<h3 id="expected-outcomes">Expected outcomes</h3>
+<ul>
+<li>improved customer experience;</li>
+<li>expanded market reach and sales opportunity;</li>
+<li>better multilingual product search;</li>
+<li>data-driven insights into local demand and sentiment.</li>
+</ul>
+<p>Practical example: a Tamil query for a “water-resistant trekking shoe” can retrieve an English-catalogue product, while translated reviews and sentiment reveal region-specific complaints.</p>
+<hr>
+<h2 id="7-case-study-b-global-healthcare-organisation">7. Case study B — Global healthcare organisation</h2>
+<h3 id="problem-2">Problem</h3>
+<p>Language barriers impair equitable care and provider–patient communication, contributing to misdiagnosis, treatment errors, reduced satisfaction, and limited access.</p>
+<h3 id="proposed-solution-2">Proposed solution</h3>
+<p>Develop a multilingual healthcare language model and:</p>
+<ol>
+<li>Collect multilingual records, clinical notes, patient–doctor dialogue, and medical literature.</li>
+<li>Clean, normalize, and tokenize the data.</li>
+<li>Align parallel corpora describing the same medical concepts/procedures.</li>
+<li>Use a suitable Transformer/multilingual model.</li>
+<li>Pretrain on general multilingual data and fine-tune on the specialized medical parallel corpus.</li>
+<li>Tune learning rate, batch size, and epochs.</li>
+<li>Evaluate translation with BLEU/ROUGE/METEOR and tasks such as medical QA/information extraction with accuracy, then iteratively refine.</li>
+<li>Expose the system through a REST API.</li>
+<li>Integrate with <strong>electronic health records (EHRs)</strong> for real-time translation of medical information and with telehealth platforms.</li>
+</ol>
+<h3 id="expected-outcomes-and-safeguards">Expected outcomes and safeguards</h3>
+<ul>
+<li>better patient communication and access;</li>
+<li>improved diagnostic accuracy;</li>
+<li>fewer medical errors;</li>
+<li>greater patient satisfaction.</li>
+</ul>
+<p>Because this is high stakes, automatic translation should support rather than silently replace qualified clinical interpreters. Validate drug names, dosage, negation, units, allergies, privacy, and clinical terminology; log and escalate uncertain outputs.</p>
+<hr>
+<h2 id="8-quiz-revision-case-lingualink-multilingual-travel-assistant">8. Quiz/revision case — LinguaLink multilingual travel assistant</h2>
+<p>The revision material describes a travel application needing cross-lingual translation, multilingual intent understanding, sentiment analysis, and recommendations. The core strategic tension is among <strong>quality, launch speed, cost, and user trust</strong>.</p>
+<h3 id="data-and-model-needs">Data and model needs</h3>
+<ul>
+<li>multilingual travel reviews, destination descriptions, booking/support dialogue, and query–result interactions;</li>
+<li>cleaning, normalization, tokenization, language/quality checks;</li>
+<li>parallel travel corpora containing terms such as room type, cancellation, transfers, landmarks, food, and itinerary constraints;</li>
+<li>general multilingual pretraining followed by task/domain fine-tuning;</li>
+<li>translation metrics plus downstream sentiment/recommendation/business evaluation.</li>
+</ul>
+<h3 id="three-decision-options">Three decision options</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Benefit</th>
+<th>Limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tune architecture/hyperparameters</td>
+<td>Improves learning efficiency and may extract more from current data</td>
+<td>Cannot manufacture missing travel knowledge or language coverage</td>
+</tr>
+<tr>
+<td>Expand travel-specific parallel corpus</td>
+<td>Improves terminology, relevance, rare-case coverage, and cross-language grounding</td>
+<td>Collection/alignment/annotation cost and time</td>
+</tr>
+<tr>
+<td>Deploy REST API early</td>
+<td>Produces real user feedback and reduces time-to-market</td>
+<td>Premature errors can harm experience, trust, and brand</td>
+</tr>
+</tbody>
+</table></div>
+<p>Stakeholder perspectives:</p>
+<ul>
+<li><strong>NLP engineer (Alex):</strong> improve model/technical performance.</li>
+<li><strong>Product manager (Maya):</strong> optimize user and business impact and learn from use.</li>
+<li><strong>CFO:</strong> control cost and time-to-market.</li>
+<li><strong>Customer support:</strong> require seamless, reliable multilingual interaction.</li>
+</ul>
+<p>The strongest synthesis is a <strong>two-track, controlled-beta strategy</strong>:</p>
+<ol>
+<li>expand domain-specific parallel data;</li>
+<li>fine-tune and evaluate;</li>
+<li>deploy to a limited cohort/language set with monitoring and human fallback;</li>
+<li>feed errors and user outcomes back into data/model improvement;</li>
+<li>expand only after quality thresholds are met.</li>
+</ol>
+<p>If–then reasoning:</p>
+<ul>
+<li>If hyperparameters improve, optimization may improve, but gaps caused by absent domain examples remain.</li>
+<li>If domain-specific data grows, terminology and scenario coverage improve, assuming alignment/annotation quality is high.</li>
+<li>If deployment occurs early, feedback arrives sooner, but failure risk rises; a controlled beta limits blast radius.</li>
+</ul>
+<hr>
+<h2 id="9-common-misconceptions-and-corrections">9. Common misconceptions and corrections</h2>
+<ol>
+<li><strong>“Fluent translation is correct translation.”</strong> Fluency does not prove fidelity.</li>
+<li><strong>“A monolingual reviewer is sufficient.”</strong> They cannot compare meaning with the source.</li>
+<li><strong>“More hyperparameter tuning fixes missing knowledge.”</strong> It optimizes learning from available data; it does not replace missing domain coverage.</li>
+<li><strong>“Automatic metrics equal business success.”</strong> Reference overlap does not establish user satisfaction, safety, or conversion.</li>
+<li><strong>“Deploying early is always agile.”</strong> Uncontrolled early deployment can destroy trust; prefer gated rollout and feedback loops.</li>
+<li><strong>“The largest model is best.”</strong> Deployment must balance accuracy with latency, memory, throughput, and cost.</li>
+<li><strong>“More Uvicorn workers solve GPU saturation.”</strong> They may only create more contention for the same accelerator.</li>
+<li><strong>“Caching fixes latency.”</strong> It works principally when requests/results repeat.</li>
+<li><strong>“FastAPI improves model accuracy.”</strong> It improves interface/serving ergonomics, not learned intelligence.</li>
+<li><strong>“A Transformer consumes raw strings.”</strong> It consumes tokenizer-produced tensors.</li>
+<li><strong>“Multilingual coverage guarantees fairness.”</strong> training representation and performance can still be unequal by language/community.</li>
+</ol>
+<hr>
+<h2 id="10-exam-focused-takeaways">10. Exam-focused takeaways</h2>
+<h3 id="high-probability-short-answers">High-probability short answers</h3>
+<ul>
+<li><strong>Why XLM-R beats mBERT in cross-lingual transfer:</strong> larger and more diverse multilingual pretraining, shared representations, and scale across roughly 100 languages/2+ TB filtered Common Crawl.</li>
+<li><strong>Why parallel corpora matter:</strong> they give explicit cross-language alignment for learning meaning-preserving mappings.</li>
+<li><strong>Pretraining vs fine-tuning:</strong> pretraining learns general representations; fine-tuning adapts them to task/domain labels and terminology.</li>
+<li><strong>Faithfulness vs fluency:</strong> fidelity preserves source meaning; fluency is natural target-language form.</li>
+<li><strong>Why bilingual post-editing:</strong> only a source-and-target language reader can verify fidelity and terminology.</li>
+<li><strong>TensorFlow Serving vs TorchServe vs Triton:</strong> TensorFlow-specific vs PyTorch-specific vs multi-framework high-performance serving.</li>
+<li><strong>FastAPI vs Uvicorn:</strong> FastAPI defines the API application; Uvicorn is the ASGI server that runs it.</li>
+<li><strong>Batching vs caching:</strong> batching combines different requests to use compute efficiently; caching reuses prior work for repeated inputs.</li>
+<li><strong>Quantization/pruning/distillation:</strong> complementary ways to reduce serving cost/model size and improve speed, with quality trade-offs to validate.</li>
+</ul>
+<h3 id="long-answer-blueprint-design-a-cross-lingual-nlp-solution">Long-answer blueprint: “Design a cross-lingual NLP solution”</h3>
+<ol>
+<li>Define users, languages, domain, task, latency, and quality/safety requirements.</li>
+<li>Collect representative multilingual and parallel/domain data.</li>
+<li>Clean, normalize, tokenize, align, and audit bias/privacy.</li>
+<li>Choose a multilingual Transformer; leverage large-scale pretraining.</li>
+<li>Fine-tune on aligned domain/task data; tune learning rate, batch size, and epochs.</li>
+<li>Evaluate using BLEU/ROUGE/METEOR where relevant, downstream metrics, bilingual human review, subgroup analysis, and business outcomes.</li>
+<li>Iteratively refine data, architecture, and hyperparameters.</li>
+<li>Serve through a REST API using an appropriate framework/hardware stack.</li>
+<li>Optimize with batching, caching where applicable, compression, acceleration, and horizontal scaling.</li>
+<li>Roll out in stages; monitor latency, quality, fairness, drift, failures, and user outcomes; retain human escalation.</li>
+</ol>
+<h3 id="final-synthesis">Final synthesis</h3>
+<p>Production multilingual NLP is a joint <strong>data–model–system–governance</strong> problem. Strong exam responses should connect:</p>
+<ul>
+<li>representative multilingual/parallel data;</li>
+<li>scaled pretraining and domain-specific fine-tuning;</li>
+<li>fidelity-aware evaluation and bilingual review;</li>
+<li>ethical/fair deployment;</li>
+<li>correctly tokenized inference;</li>
+<li>a serving architecture optimized for latency, throughput, scalability, and cost;</li>
+<li>controlled real-world feedback and iterative improvement.</li>
+</ul>
+<h2 id="references-named-by-the-lecturer">References named by the lecturer</h2>
+<ul>
+<li>Steven Bird, Ewan Klein, and Edward Loper, <em>Natural Language Processing with Python</em>.</li>
+<li>Daniel Jurafsky and James H. Martin, <em>Speech and Language Processing</em>.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-11.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 11: Fine-Tuning Language Models, Efficient…</span>
+      </a>
+      <a href="week-13.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 13: Transformers, Attention, Evaluation, Hugging…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

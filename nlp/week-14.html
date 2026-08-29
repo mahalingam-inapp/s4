@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>NLP · Week 14 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">NLP</span>
+      <span class="brand-title">Week 14</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html" selected>NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Foundations of Natural Language Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        spaCy Conventions, Text Preprocessing, and Tokenization
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Dependency Parsing, Named Entity Recognition, and Token Operations
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Token-Based Matching, Word Vectors, and Semantic Similarity
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Named Entities, Dependency-Based Intent Recognition, Semantic…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Annotation, Training spaCy NER Models, and an Airline-Review Case Study
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Text Classification and Sentiment Analysis
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Text Classification, TF–IDF, SVM, Doc2Vec and Twitter Sentiment Analysis
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Topic Modelling
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        BERT and Modern Pre-trained Language Models
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Fine-Tuning Language Models, Efficient Transformers, Sentence…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Cross-Lingual NLP, Multilingual Models, Transformer Serving, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Transformers, Attention, Evaluation, Hugging Face, TensorBoard, and…
+      </a>
+      <a class="is-active" href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Hugging Face, Fine-Tuning, Deployment, and Applied Case Studies
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Vision Transformers, DETR, Self-Supervised Vision, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">NLP · Week 14</p>
+        <h1 class="page-title">Hugging Face, Fine-Tuning, Deployment, and Applied Case Studies</h1>
+        <p class="page-meta">Week 14 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#learning-map">Learning map</a></li>
+      <li><a href="#1-hugging-face-spaces">1. Hugging Face Spaces</a></li>
+      <li><a href="#2-checkpoints-auto-classes-and-task-suitability">2. Checkpoints, Auto classes, and task suitability</a></li>
+      <li><a href="#3-inference-choices-pipeline-versus-direct-model-use">3. Inference choices: pipeline() versus direct model use</a></li>
+      <li><a href="#4-zero-shot-one-shot-and-few-shot-learning">4. Zero-shot, one-shot, and few-shot learning</a></li>
+      <li><a href="#5-fine-tuning-pretrained-transformers">5. Fine-tuning pretrained transformers</a></li>
+      <li><a href="#6-financial-news-sentiment-with-llama-2">6. Financial-news sentiment with Llama 2</a></li>
+      <li><a href="#7-case-study-complete-financial-sentiment-system-design">7. Case study: complete financial-sentiment system design</a></li>
+      <li><a href="#8-case-study-abstractive-summarization-with-t5">8. Case study: abstractive summarization with T5</a></li>
+      <li><a href="#9-common-errors-and-misconceptions">9. Common errors and misconceptions</a></li>
+      <li><a href="#10-exam-focused-synthesis">10. Exam-focused synthesis</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="learning-map">Learning map</h2>
+<p>Week 14 connects the complete applied NLP workflow:</p>
+<ol>
+<li>choose a pretrained checkpoint appropriate to a task;</li>
+<li>prepare and tokenize task-specific data;</li>
+<li>use a high-level pipeline for quick inference or a model/tokenizer pair for control;</li>
+<li>fine-tune efficiently rather than train a large model from scratch;</li>
+<li>evaluate with overall and class-wise metrics;</li>
+<li>diagnose errors before spending more compute;</li>
+<li>deploy an interactive demonstration through Hugging Face Spaces.</li>
+</ol>
+<p>The examples cover Yelp review classification, financial-news sentiment with Llama 2, abstractive summarization with T5, and deployment through Spaces.</p>
+<hr>
+<h2 id="1-hugging-face-spaces">1. Hugging Face Spaces</h2>
+<h3 id="definition-and-purpose">Definition and purpose</h3>
+<p>A <strong>Hugging Face Space</strong> hosts an ML demonstration application directly on a personal or organization profile. It is useful for:</p>
+<ul>
+<li>building an ML portfolio;</li>
+<li>demonstrating work at conferences;</li>
+<li>presenting models to business stakeholders;</li>
+<li>sharing reproducible applications rather than only source code;</li>
+<li>collaborating with the wider ML community.</li>
+</ul>
+<p>Users visit a browser-based application; they ordinarily do not need to clone the repository, install packages, or run the model locally. A normal repository mainly exposes files, whereas a Space builds and runs an application from the repository.</p>
+<h3 id="supported-application-types">Supported application types</h3>
+<ul>
+<li><strong>Gradio</strong>: rapid Python interfaces for model inputs and outputs.</li>
+<li><strong>Streamlit</strong>: interactive Python data/ML applications.</li>
+<li><strong>Docker</strong>: arbitrary applications and custom system environments through a Dockerfile.</li>
+<li><strong>Static</strong>: HTML and JavaScript applications.</li>
+</ul>
+<p>Spaces can be forked. A fork creates a separate copy that can be modified without altering the original, which is valuable for experimentation and collaboration.</p>
+<h3 id="default-environment-and-dependencies">Default environment and dependencies</h3>
+<p>The Space environment includes several useful components:</p>
+<ul>
+<li><code>huggingface_hub</code>: manage Hub repositories/files and programmatically access inference APIs;</li>
+<li><code>requests</code>: call third-party APIs;</li>
+<li><code>datasets</code>: fetch and display Hub datasets;</li>
+<li>the chosen SDK, such as Gradio or Streamlit;</li>
+<li>common Debian packages such as FFmpeg, CMake, and <code>libsm6</code>.</li>
+</ul>
+<p>Using the hosted inference API can exploit built-in acceleration, avoid instantiating a large model inside the app, and reduce local compute/resource consumption.</p>
+<p>Dependency files have distinct roles:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+<th>Installation mechanism</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pre-requirements.txt</code></td>
+<td>Dependencies needed before the main environment; e.g., upgrade <code>pip</code></td>
+<td>Python package installation first</td>
+</tr>
+<tr>
+<td><code>requirements.txt</code></td>
+<td>Python libraries needed by the application</td>
+<td><code>pip</code></td>
+</tr>
+<tr>
+<td><code>packages.txt</code></td>
+<td>Debian/system packages, one package per line</td>
+<td><code>apt-get install</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>These files must be at the repository root. <code>requirements.txt</code> and <code>packages.txt</code> are not interchangeable.</p>
+<h3 id="space-configuration">Space configuration</h3>
+<p>Appearance and runtime settings are placed in a YAML front-matter block at the top of the root <code>README.md</code>. A typical Gradio Space may specify:</p>
+<pre><code class="language-yaml">---
+title: Demo Space
+emoji: 🤗
+colorFrom: yellow
+colorTo: orange
+sdk: gradio
+app_file: app.py
+pinned: false
+---
+</code></pre>
+<p>The runtime reads this metadata to determine the SDK and application entry point.</p>
+<h3 id="practical-use-case">Practical use case</h3>
+<p>A bank&rsquo;s NLP team can publish a financial-news sentiment demo. An analyst pastes a headline, the hosted app runs the classifier, and the browser displays positive/neutral/negative sentiment. A Space makes the artifact immediately demonstrable to stakeholders while preserving the model and app code in a versioned repository.</p>
+<hr>
+<h2 id="2-checkpoints-auto-classes-and-task-suitability">2. Checkpoints, Auto classes, and task suitability</h2>
+<p>Hugging Face Transformers exposes thousands of pretrained models for tasks such as:</p>
+<ul>
+<li>sequence classification and sentiment analysis;</li>
+<li>question answering;</li>
+<li>named-entity recognition/token classification;</li>
+<li>summarization;</li>
+<li>translation and other sequence-to-sequence tasks;</li>
+<li>zero-shot classification.</li>
+</ul>
+<p><strong>Auto classes</strong> select the correct architecture from a checkpoint, e.g. <code>AutoTokenizer</code>, <code>AutoModelForSequenceClassification</code>, and <code>AutoModelForSeq2SeqLM</code>.</p>
+<h3 id="critical-checkpoint-rule">Critical checkpoint rule</h3>
+<p>A model performs well only when the checkpoint is appropriate for the task. Most checkpoints are:</p>
+<ol>
+<li>pretrained on a large corpus to learn general language patterns; and then</li>
+<li>fine-tuned on a specific task and dataset.</li>
+</ol>
+<p>Therefore:</p>
+<ul>
+<li>not every model has been fine-tuned for every task;</li>
+<li>a task-fine-tuned checkpoint may still mismatch the user&rsquo;s domain;</li>
+<li>the checkpoint&rsquo;s original dataset may or may not overlap with the deployment use case;</li>
+<li>use the task example scripts (often <code>run_$TASK.py</code>) or a custom training script when adaptation is required.</li>
+</ul>
+<p>Example: a general sentiment model trained on product reviews may misunderstand “liability increased” or “guidance was cut” in financial news. Domain-specific fine-tuning is justified even though both problems are called sentiment analysis.</p>
+<hr>
+<h2 id="3-inference-choices-pipeline-versus-direct-model-use">3. Inference choices: <code>pipeline()</code> versus direct model use</h2>
+<h3 id="pipeline"><code>pipeline()</code></h3>
+<p><code>pipeline()</code> is a high-level inference abstraction. It combines preprocessing, model execution, and output postprocessing, often in about two lines:</p>
+<pre><code class="language-python">from transformers import pipeline
+
+classifier = pipeline(&quot;sentiment-analysis&quot;)
+classifier(&quot;The company raised its earnings forecast.&quot;)
+</code></pre>
+<p>Best for quick prototypes, standard tasks, demonstrations, and applications where default tokenization/output behavior is adequate.</p>
+<h3 id="model-plus-tokenizer">Model plus tokenizer</h3>
+<p>Direct usage provides access to token IDs, attention masks, padding/truncation, devices, logits, hidden states, batching, PyTorch/TensorFlow tensors, and custom postprocessing:</p>
+<pre><code class="language-python">from transformers import AutoTokenizer, AutoModelForSequenceClassification
+
+checkpoint = &quot;google-bert/bert-base-cased&quot;
+tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+model = AutoModelForSequenceClassification.from_pretrained(checkpoint, num_labels=5)
+
+batch = tokenizer(texts, padding=True, truncation=True, return_tensors=&quot;pt&quot;)
+outputs = model(**batch)
+logits = outputs.logits
+</code></pre>
+<h3 id="exam-comparison">Exam comparison</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Prefer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fast standard inference</td>
+<td><code>pipeline()</code></td>
+</tr>
+<tr>
+<td>Minimum code</td>
+<td><code>pipeline()</code></td>
+</tr>
+<tr>
+<td>Raw logits/hidden states</td>
+<td>model + tokenizer</td>
+</tr>
+<tr>
+<td>Custom tokenization/batching</td>
+<td>model + tokenizer</td>
+</tr>
+<tr>
+<td>Fine-tuning</td>
+<td>Trainer/custom loop, not <code>pipeline()</code></td>
+</tr>
+<tr>
+<td>Detailed model control</td>
+<td>model + tokenizer</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>pipeline()</code> performs inference; it does <strong>not</strong> itself fine-tune a model.</p>
+<hr>
+<h2 id="4-zero-shot-one-shot-and-few-shot-learning">4. Zero-shot, one-shot, and few-shot learning</h2>
+<h3 id="supervised-learning">Supervised learning</h3>
+<p>In standard supervised classification/regression, labels define both the possible outputs and the ground truth for each training instance. Learning adjusts weights to minimize prediction error relative to ground truth. It commonly requires many labeled examples and repeated updates.</p>
+<p>Large-scale annotation is expensive and slow. Some classes—rare diseases, newly discovered species, rare financial events—may have few or no examples. Humans can distinguish roughly 30,000 object categories, making explicit labeled training for every possible class impractical in time, cost, and compute.</p>
+<h3 id="n-shot-spectrum">N-shot spectrum</h3>
+<ul>
+<li><strong>Zero-shot learning (ZSL):</strong> predict an unseen class without any labeled training example for that class.</li>
+<li><strong>One-shot learning:</strong> use one labeled example.</li>
+<li><strong>Few-shot learning (FSL):</strong> use a small number of labeled examples, often through transfer learning or meta-learning.</li>
+</ul>
+<p>“Zero-shot” describes the learning problem, not one particular algorithm or architecture. It does not necessarily mean that the concept never appeared in pretraining; it means the model received no labeled examples for that unseen class in task training. Large language models are suited to ZSL because self-supervised pretraining over massive corpora may provide incidental knowledge of the concepts.</p>
+<p>Without task labels, ZSL relies on <strong>auxiliary semantic knowledge</strong>, such as natural-language class descriptions or relationships between seen and unseen classes. It is important in computer vision and NLP.</p>
+<p>Fluent zero-shot output is not proof of benchmark alignment. Evaluate against labeled data before trusting it in a domain-sensitive application.</p>
+<hr>
+<h2 id="5-fine-tuning-pretrained-transformers">5. Fine-tuning pretrained transformers</h2>
+<h3 id="definition-and-benefits">Definition and benefits</h3>
+<p><strong>Fine-tuning</strong> continues training a pretrained model on a dataset specific to the target task. It reduces computation cost, carbon footprint, time, and data needs, while providing access to state-of-the-art representations. It is different from:</p>
+<ul>
+<li><strong>training from scratch</strong>, which initializes all model weights without pretrained knowledge;</li>
+<li><strong>prompting</strong>, which changes the input but does not update weights;</li>
+<li><strong>frozen feature extraction</strong>, where pretrained weights remain fixed and only a new head or downstream model is learned.</li>
+</ul>
+<p>Fine-tuning is appropriate when prompting or a generic checkpoint does not reliably align outputs with the task, label definitions, or domain language.</p>
+<h3 id="yelp-review-sequence-classification-workflow">Yelp review sequence-classification workflow</h3>
+<p>The transcript demonstrates five-class Yelp review classification.</p>
+<h4 id="1-load-and-inspect-data">1. Load and inspect data</h4>
+<pre><code class="language-python">from datasets import load_dataset
+
+dataset = load_dataset(&quot;yelp_review_full&quot;)
+dataset[&quot;train&quot;][0]
+</code></pre>
+<p>The dataset contains review <code>text</code> and a label. The lecturer first examines a small portion and later creates compact train/evaluation subsets to shorten training time.</p>
+<h4 id="2-load-tokenizer-and-preprocess">2. Load tokenizer and preprocess</h4>
+<pre><code class="language-python">from transformers import AutoTokenizer
+
+checkpoint = &quot;google-bert/bert-base-cased&quot;
+tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+
+def tokenize_function(examples):
+    return tokenizer(
+        examples[&quot;text&quot;],
+        padding=&quot;max_length&quot;,
+        truncation=True,
+    )
+
+tokenized_datasets = dataset.map(tokenize_function, batched=True)
+</code></pre>
+<ul>
+<li><strong>Padding</strong> makes variable-length examples compatible within a batch.</li>
+<li><strong>Truncation</strong> prevents examples from exceeding the model&rsquo;s supported/selected maximum length.</li>
+<li><code>map()</code> applies the same transformation over the dataset.</li>
+<li><code>batched=True</code> processes multiple records at once and improves preprocessing throughput.</li>
+</ul>
+<h4 id="3-make-reproducible-small-subsets">3. Make reproducible small subsets</h4>
+<pre><code class="language-python">small_train_dataset = (
+    tokenized_datasets[&quot;train&quot;].shuffle(seed=42).select(range(1000))
+)
+small_eval_dataset = (
+    tokenized_datasets[&quot;test&quot;].shuffle(seed=42).select(range(1000))
+)
+</code></pre>
+<p>The same fixed seed gives reproducible sampling. A smaller subset speeds demonstration but may reduce representativeness and should not be confused with a production-quality experiment.</p>
+<h4 id="4-load-a-task-head">4. Load a task head</h4>
+<pre><code class="language-python">from transformers import AutoModelForSequenceClassification
+
+model = AutoModelForSequenceClassification.from_pretrained(
+    checkpoint,
+    num_labels=5,
+)
+</code></pre>
+<p>The Yelp dataset has five labels. When loading base BERT into a sequence classifier, warnings that some pretrained weights are unused and classification-head weights are newly/randomly initialized are normal: the pretraining head is discarded and a task-specific classification head is attached. That new head must be trained.</p>
+<p>Use exact API spelling: <code>from_pretrained</code>, not <code>from_pre_trained</code>, <code>from_pretrainer</code>, or similar transcript typos.</p>
+<h4 id="5-train-with-the-pytorch-trainer">5. Train with the PyTorch <code>Trainer</code></h4>
+<p><code>Trainer</code> avoids manually writing the complete training loop. Its API supports logging, gradient accumulation, mixed precision, evaluation, checkpointing, and other training options. Conceptually:</p>
+<pre><code class="language-python">from transformers import TrainingArguments, Trainer
+
+args = TrainingArguments(
+    output_dir=&quot;yelp_model&quot;,
+    evaluation_strategy=&quot;epoch&quot;,
+    num_train_epochs=3,
+)
+
+trainer = Trainer(
+    model=model,
+    args=args,
+    train_dataset=small_train_dataset,
+    eval_dataset=small_eval_dataset,
+    tokenizer=tokenizer,
+)
+trainer.train()
+</code></pre>
+<p>Exact keyword names can vary by installed Transformers version; the underlying concepts are model, training arguments, train data, evaluation data, tokenizer/data collator, and metrics.</p>
+<hr>
+<h2 id="6-financial-news-sentiment-with-llama-2">6. Financial-news sentiment with Llama 2</h2>
+<h3 id="business-problem">Business problem</h3>
+<p>Classify a financial sentence as <strong>positive, neutral, or negative from an investor&rsquo;s perspective</strong>, i.e. by its likely impact on stock price. Applications include:</p>
+<ul>
+<li>market monitoring;</li>
+<li>investment decisions;</li>
+<li>risk management;</li>
+<li>alert prioritization;</li>
+<li>portfolio/news dashboards.</li>
+</ul>
+<p>The example uses the <strong>Financial PhraseBank</strong>, introduced by Aalto University School of Business researchers in 2014. It contains about 5,000 human-annotated financial sentences. Annotators judge likely positive, neutral, or negative stock-price impact from an investor viewpoint. Such domain-annotated data is scarce because much financial data is proprietary.</p>
+<h3 id="hardware-and-model-constraints">Hardware and model constraints</h3>
+<p>In Colab, select <code>Runtime -&gt; Change runtime type -&gt; T4 GPU</code> when available. A 7B-parameter model is costly to hold and train at full precision. Resource-aware options include:</p>
+<ul>
+<li>quantization to reduce weight memory;</li>
+<li>parameter-efficient fine-tuning (PEFT);</li>
+<li>LoRA adapters;</li>
+<li>small controlled subsets/runs;</li>
+<li>gradient accumulation or mixed precision;</li>
+<li>targeted rather than exhaustive hyperparameter search.</li>
+</ul>
+<h3 id="quantization-versus-lora">Quantization versus LoRA</h3>
+<p><strong>Quantization</strong> stores/computes weights at reduced precision, commonly through <code>bitsandbytes</code>, primarily reducing memory and sometimes improving feasible throughput. It does not by itself perform task adaptation.</p>
+<p><strong>LoRA (Low-Rank Adaptation)</strong> freezes the base weight matrix and learns low-rank updates:</p>
+<p>\[
+W' = W + BA
+\]</p>
+<p>where the rank \(r\) controls adapter capacity. Higher rank can model more complex task-specific changes but increases trainable parameters, memory, and computation. Quantization and LoRA solve different problems and can be combined (often called QLoRA).</p>
+<h3 id="data-preparation-and-schema-discipline">Data preparation and schema discipline</h3>
+<p>An end-to-end preparation workflow should:</p>
+<ol>
+<li>load data into Pandas;</li>
+<li>inspect columns, types, missing values, and label values;</li>
+<li>clean/rename columns deliberately;</li>
+<li>map labels into the required representation;</li>
+<li>split train/test before any leakage-prone resampling;</li>
+<li>create instruction-style prompts;</li>
+<li>convert the validated DataFrame to a Hugging Face <code>Dataset</code>.</li>
+</ol>
+<p>A Pandas <code>KeyError: 'sentiment'</code> means that the referenced column is absent at that point—perhaps it was named differently, renamed, dropped, misspelled, or whitespace/case differs. Diagnose with:</p>
+<pre><code class="language-python">print(df.columns.tolist())
+print(df.head())
+print(df.dtypes)
+</code></pre>
+<p>Then use the actual column name or rename it once. Quantization, model loading, and <code>Dataset.from_pandas()</code> cannot repair an invalid DataFrame schema. Treat column names as a schema contract across preprocessing, prompt creation, training, and evaluation.</p>
+<h3 id="balanced-sampling-and-replacement">Balanced sampling and replacement</h3>
+<p>If each sentiment is sampled to create a balanced set, distinguish:</p>
+<ul>
+<li><code>replace=False</code>: an original row can be selected at most once; impossible to request more rows than a class contains.</li>
+<li><code>replace=True</code>: the same row may be selected multiple times; permits oversampling but creates duplicates, not new information.</li>
+</ul>
+<p>Balancing makes each class contribute similarly to training/evaluation, but it does not ensure qualitative diversity or match real deployment prevalence. Duplicate evaluation records can narrow confidence and distort an estimate. Most importantly, replacement does <strong>not</strong> prevent data leakage.</p>
+<p><strong>Leakage</strong> occurs when identical/near-identical examples or information derived from the test set enters training. Split original unique records first, then oversample only the training partition. Keep test records untouched and check overlap using stable row IDs or normalized text hashes.</p>
+<h3 id="prompt-construction">Prompt construction</h3>
+<p>Instruction prompts should define:</p>
+<ul>
+<li>the role/task: classify financial sentiment;</li>
+<li>allowed labels: positive, neutral, negative;</li>
+<li>the investor/stock-price perspective;</li>
+<li>strict desired output format;</li>
+<li>the input sentence;</li>
+<li>optionally representative demonstrations.</li>
+</ul>
+<p>Training and inference formatting should remain consistent. Prompting changes context only; supervised fine-tuning updates weights. Begin with a zero/few-shot baseline and fine-tune when measured errors show inadequate alignment.</p>
+<h3 id="evaluation-function">Evaluation function</h3>
+<p>The transcript proposes mapping labels to numeric values (positive <code>2</code>, neutral <code>1</code>, negative <code>0</code>), then computing accuracy, a per-class classification report, and a confusion matrix.</p>
+<p>\[
+\text{Accuracy}=\frac{\text{correct predictions}}{\text{all predictions}}
+\]</p>
+<p>\[
+\text{Precision}=\frac{TP}{TP+FP},\qquad
+\text{Recall}=\frac{TP}{TP+FN}
+\]</p>
+<p>\[
+F_1=2\frac{\text{Precision}\times\text{Recall}}
+{\text{Precision}+\text{Recall}}
+\]</p>
+<ul>
+<li><strong>Precision:</strong> when the model predicts a class, how often is it correct?</li>
+<li><strong>Recall:</strong> of all true members of a class, how many were found?</li>
+<li><strong>F1:</strong> harmonic balance between precision and recall.</li>
+<li><strong>Confusion matrix:</strong> shows which true classes are being confused with which predicted classes.</li>
+</ul>
+<p>For risk-sensitive financial sentiment, low negative recall is especially serious because truly negative news is missed (false negatives). Accuracy can hide this failure, particularly under imbalance.</p>
+<h3 id="review-live-session-case-capital-insights-ltd">Review/live-session case: Capital Insights Ltd.</h3>
+<p>The review case describes a team adapting a quantized 7B Llama 2 model with supervised fine-tuning, PEFT, and LoRA. The dataset is numerically balanced among positive, neutral, and negative labels, and instruction prompts define task/output structure.</p>
+<p>A baseline reveals weak negative-class recall. After five epochs:</p>
+<ul>
+<li>overall accuracy improves by eight percentage points;</li>
+<li>positive and neutral F1 scores improve;</li>
+<li>false positives decrease;</li>
+<li>negative sentiment remains the weakest class.</li>
+</ul>
+<p>This proves that balanced class counts do not guarantee balanced class-wise performance. Negative examples may lack qualitative diversity or may contain subtler linguistic patterns.</p>
+<p>Two proposed changes are examined:</p>
+<ul>
+<li><strong>Increase LoRA rank:</strong> raises adaptation capacity, but also parameter count/memory/compute; useful only if adapter capacity is the bottleneck.</li>
+<li><strong>Increase batch size:</strong> may improve hardware utilization/training throughput and help meet a deadline, but needs more memory and does not directly solve poor negative recall.</li>
+</ul>
+<p>Neither should be accepted automatically. The preferred method is:</p>
+<p>\[
+\text{Evaluate} \rightarrow \text{find false negatives} \rightarrow
+\text{qualitative error analysis} \rightarrow \text{targeted data/prompt improvement}
+\rightarrow \text{controlled experiment} \rightarrow \text{reevaluate}
+\]</p>
+<p>A resource-efficient intervention is to inspect missed negative examples, identify recurring patterns (negation, guidance cuts, weak outlook, litigation, indirect loss language), add representative examples or clearer prompt guidance, keep LoRA rank and batch size fixed, run a short controlled experiment, and measure negative recall/F1. Escalate to broader rank/hyperparameter experiments only if the targeted intervention fails.</p>
+<p><strong>Lecturer/review emphasis:</strong> do not spend more compute until the error is understood. Choose the smallest measurable intervention that addresses the actual bottleneck under accuracy, memory, cost, and deadline constraints.</p>
+<hr>
+<h2 id="7-case-study-complete-financial-sentiment-system-design">7. Case study: complete financial-sentiment system design</h2>
+<h3 id="data-and-preprocessing">Data and preprocessing</h3>
+<ol>
+<li>Acquire a large dataset from reliable sources such as Reuters, Bloomberg, and the Financial Times.</li>
+<li>Remove relevant noise such as HTML markup; consider punctuation and stop-word handling only when compatible with the model and task. Transformer tokenizers often preserve useful punctuation/negation, so do not clean blindly.</li>
+<li>Tokenize text.</li>
+<li>Normalize when appropriate through stemming or lemmatization; again, aggressive normalization may be unnecessary for pretrained transformers.</li>
+<li>audit data quality, bias, duplicates, missing values, label consistency, and class imbalance.</li>
+</ol>
+<h3 id="modeling">Modeling</h3>
+<ul>
+<li>Choose BERT, RoBERTa, ALBERT, or another architecture based on data size, latency, and compute.</li>
+<li>Start from large-scale language-model pretraining to capture general linguistic patterns.</li>
+<li>Fine-tune on financial news for task/domain adaptation.</li>
+<li>Tune learning rate, batch size, and epochs through controlled experiments.</li>
+<li>If imbalance is present, consider over/undersampling or class-aware loss, while preserving a realistic untouched test set.</li>
+<li>Add domain-specific signals such as financial indicators or market sentiment where justified.</li>
+<li>Ensembles using voting or stacking may improve accuracy/robustness, at additional complexity and latency.</li>
+</ul>
+<h3 id="evaluation-and-explainability">Evaluation and explainability</h3>
+<ul>
+<li>Report accuracy, precision, recall, F1, and confusion matrix.</li>
+<li>Use cross-validation where feasible to estimate generalization rather than relying on one favorable split.</li>
+<li>Inspect attention or other explanation/error-analysis tools cautiously to understand influential features; attention is not automatically a complete causal explanation.</li>
+</ul>
+<hr>
+<h2 id="8-case-study-abstractive-summarization-with-t5">8. Case study: abstractive summarization with T5</h2>
+<h3 id="summarization-types">Summarization types</h3>
+<ul>
+<li><strong>Extractive summarization:</strong> selects the most relevant existing passages/sentences.</li>
+<li><strong>Abstractive summarization:</strong> generates new text that expresses the important information.</li>
+</ul>
+<p>Summarization and translation can be formulated as <strong>sequence-to-sequence</strong> tasks. The demonstration fine-tunes T5-small for abstractive summarization on the California (<code>ca_test</code>) subset of BillSum, a legislative-bill summarization dataset.</p>
+<h3 id="installation-and-optional-hub-login">Installation and optional Hub login</h3>
+<pre><code class="language-bash">pip install transformers datasets evaluate rouge_score
+</code></pre>
+<pre><code class="language-python">from huggingface_hub import notebook_login
+notebook_login()
+</code></pre>
+<p>Login is useful for uploading/sharing the trained model. Use an access token securely; never hard-code or publish it.</p>
+<h3 id="load-and-split-billsum">Load and split BillSum</h3>
+<pre><code class="language-python">from datasets import load_dataset
+
+billsum = load_dataset(&quot;billsum&quot;, split=&quot;ca_test&quot;)
+billsum = billsum.train_test_split(test_size=0.2, seed=42)
+</code></pre>
+<p>This creates an 80:20 train/test split. The transcript reports roughly 989 records in the selected subset during preprocessing.</p>
+<h3 id="load-t5-tokenizer">Load T5 tokenizer</h3>
+<pre><code class="language-python">from transformers import AutoTokenizer
+
+checkpoint = &quot;google-t5/t5-small&quot;
+tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+</code></pre>
+<h3 id="required-preprocessing-behavior">Required preprocessing behavior</h3>
+<p>The preprocessing function must:</p>
+<ol>
+<li>prefix each input with <code>summarize:</code> so a multitask T5 model knows the intended task;</li>
+<li>tokenize source bill text;</li>
+<li>tokenize target summaries with <code>text_target=</code>;</li>
+<li>truncate source and target to their selected maximum lengths;</li>
+<li>assign target token IDs to <code>labels</code>.</li>
+</ol>
+<pre><code class="language-python">prefix = &quot;summarize: &quot;
+
+def preprocess_function(examples):
+    inputs = [prefix + doc for doc in examples[&quot;text&quot;]]
+    model_inputs = tokenizer(inputs, max_length=1024, truncation=True)
+
+    labels = tokenizer(
+        text_target=examples[&quot;summary&quot;],
+        max_length=128,
+        truncation=True,
+    )
+    model_inputs[&quot;labels&quot;] = labels[&quot;input_ids&quot;]
+    return model_inputs
+
+tokenized_billsum = billsum.map(preprocess_function, batched=True)
+</code></pre>
+<p>The transcript&rsquo;s phrase “2 raised to 10” corresponds to a source maximum length of 1024. Targets use 128 tokens. <code>batched=True</code> speeds the mapping operation.</p>
+<p>After preprocessing, the remaining workflow is to load a sequence-to-sequence model (<code>AutoModelForSeq2SeqLM</code>), choose a seq2seq data collator/training arguments, fine-tune, evaluate generation using ROUGE, and use the trained model for inference.</p>
+<h3 id="practical-use-cases">Practical use cases</h3>
+<ul>
+<li>summarize legislation for policy analysts;</li>
+<li>generate executive summaries of long reports;</li>
+<li>summarize customer-support histories before agent handoff;</li>
+<li>condense research or legal documents, with human review for factual omissions/hallucinations.</li>
+</ul>
+<hr>
+<h2 id="9-common-errors-and-misconceptions">9. Common errors and misconceptions</h2>
+<ol>
+<li><strong>A Space is only documentation.</strong> False: it builds and hosts an executable application.</li>
+<li><strong>Users must install a Space locally.</strong> False for normal hosted use.</li>
+<li><strong>External hosting is always required.</strong> False: Spaces supplies hosted runtime infrastructure, subject to its resource tier.</li>
+<li><strong>All dependencies belong in <code>requirements.txt</code>.</strong> False: system packages belong in <code>packages.txt</code>; pre-install needs may belong in <code>pre-requirements.txt</code>.</li>
+<li><strong>Any checkpoint can solve any task.</strong> False: architecture, task head, fine-tuning, and domain fit matter.</li>
+<li><strong><code>pipeline()</code> fine-tunes the model.</strong> False: it is primarily an inference abstraction.</li>
+<li><strong>A small labeled set implies training from scratch.</strong> False: it strongly favors transfer learning/fine-tuning.</li>
+<li><strong>Good-looking zero-shot text proves accuracy.</strong> False: benchmark it.</li>
+<li><strong>Prompting always replaces fine-tuning.</strong> False: prompting does not update weights and may fail on stable domain alignment.</li>
+<li><strong>A DataFrame <code>KeyError</code> is a model problem.</strong> False: inspect and correct the data schema.</li>
+<li><strong>Conversion to <code>Dataset</code> fixes bad column names.</strong> False: validate first.</li>
+<li><strong>Sampling with replacement creates new unique information.</strong> False: it creates duplicates.</li>
+<li><strong>Replacement prevents leakage.</strong> False: split discipline and overlap checks prevent leakage.</li>
+<li><strong>A balanced test set represents production prevalence.</strong> Not necessarily; report performance on both diagnostic-balanced and realistic-distribution test sets when possible.</li>
+<li><strong>Higher LoRA rank or batch size automatically improves the weak class.</strong> False: determine the bottleneck experimentally.</li>
+<li><strong>Warnings about a newly initialized classifier head always indicate failure.</strong> False: they are expected when attaching a new task head to a base model.</li>
+</ol>
+<hr>
+<h2 id="10-exam-focused-synthesis">10. Exam-focused synthesis</h2>
+<h3 id="high-yield-contrasts">High-yield contrasts</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pair</th>
+<th>Core distinction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pretraining vs fine-tuning</td>
+<td>General representation learning vs task/domain adaptation</td>
+</tr>
+<tr>
+<td>Prompting vs fine-tuning</td>
+<td>Change context vs update parameters</td>
+</tr>
+<tr>
+<td>Quantization vs LoRA</td>
+<td>Reduce numerical precision/memory vs learn low-rank task updates</td>
+</tr>
+<tr>
+<td><code>pipeline()</code> vs model + tokenizer</td>
+<td>Convenience vs detailed control</td>
+</tr>
+<tr>
+<td>Extractive vs abstractive summary</td>
+<td>Select existing text vs generate new text</td>
+</tr>
+<tr>
+<td>Oversampling vs leakage</td>
+<td>Duplicate minority training rows vs improper train/test information overlap</td>
+</tr>
+<tr>
+<td>Accuracy vs recall</td>
+<td>Overall correctness vs coverage of actual class members</td>
+</tr>
+<tr>
+<td>Balanced quantity vs diverse data</td>
+<td>Equal counts do not ensure varied or representative linguistic patterns</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="likely-long-answer-structure-how-would-you-build-a-transformer-nlp-solution">Likely long-answer structure: “How would you build a transformer NLP solution?”</h3>
+<ol>
+<li>Define task, label semantics, stakeholder cost of errors, and deployment constraints.</li>
+<li>Acquire reliable labeled data and audit schema, quality, bias, imbalance, duplication, and leakage.</li>
+<li>Split before training-only resampling/augmentation.</li>
+<li>Select a compatible pretrained checkpoint and tokenizer.</li>
+<li>establish a zero/few-shot or frozen-model baseline.</li>
+<li>preprocess consistently with padding/truncation and correct target handling.</li>
+<li>fine-tune using Trainer/custom training; use PEFT/LoRA and quantization when resources require it.</li>
+<li>tune only justified hyperparameters through controlled experiments.</li>
+<li>evaluate overall and per class using accuracy, precision, recall, F1, and confusion matrix; use cross-validation where useful.</li>
+<li>perform qualitative error analysis, especially on the business-critical class.</li>
+<li>choose the smallest intervention supported by evidence, retrain, and reevaluate.</li>
+<li>deploy through a Space with correct README metadata and dependency files.</li>
+<li>monitor drift, latency, cost, and class-specific errors after deployment.</li>
+</ol>
+<h3 id="final-memory-hooks">Final memory hooks</h3>
+<ul>
+<li><strong>Checkpoint fit first:</strong> task and domain determine whether adaptation is needed.</li>
+<li><strong>Schema before model:</strong> a broken column contract cannot be repaired by a larger model.</li>
+<li><strong>Split before oversampling:</strong> duplicates are not new information, and replacement is not leakage protection.</li>
+<li><strong>Accuracy alone is insufficient:</strong> inspect per-class recall/F1 and the confusion matrix.</li>
+<li><strong>Quantization saves memory; LoRA learns adaptation.</strong></li>
+<li><strong>Understand the error before increasing compute.</strong></li>
+<li><strong>A Space turns a model repository into a shareable interactive application.</strong></li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-13.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 13: Transformers, Attention, Evaluation, Hugging…</span>
+      </a>
+      <a href="week-15.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 15: Vision Transformers, DETR, Self-Supervised…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

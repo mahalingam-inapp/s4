@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>NLP · Week 10 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">NLP</span>
+      <span class="brand-title">Week 10</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html" selected>NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Foundations of Natural Language Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        spaCy Conventions, Text Preprocessing, and Tokenization
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Dependency Parsing, Named Entity Recognition, and Token Operations
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Token-Based Matching, Word Vectors, and Semantic Similarity
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Named Entities, Dependency-Based Intent Recognition, Semantic…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Annotation, Training spaCy NER Models, and an Airline-Review Case Study
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Text Classification and Sentiment Analysis
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Text Classification, TF–IDF, SVM, Doc2Vec and Twitter Sentiment Analysis
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Topic Modelling
+      </a>
+      <a class="is-active" href="week-10.html">
+        <span class="week-num">Week 10</span>
+        BERT and Modern Pre-trained Language Models
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Fine-Tuning Language Models, Efficient Transformers, Sentence…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Cross-Lingual NLP, Multilingual Models, Transformer Serving, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Transformers, Attention, Evaluation, Hugging Face, TensorBoard, and…
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Hugging Face, Fine-Tuning, Deployment, and Applied Case Studies
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Vision Transformers, DETR, Self-Supervised Vision, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">NLP · Week 10</p>
+        <h1 class="page-title">BERT and Modern Pre-trained Language Models</h1>
+        <p class="page-meta">Week 10 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-week-overview">1. Week overview</a></li>
+      <li><a href="#2-bert-fundamentals">2. BERT fundamentals</a></li>
+      <li><a href="#3-how-bert-learns">3. How BERT learns</a></li>
+      <li><a href="#4-bert-applications-benefits-and-limitations">4. BERT applications, benefits, and limitations</a></li>
+      <li><a href="#5-practical-workflow-contextual-bert-embeddings-and-fine-tuning">5. Practical workflow: contextual BERT embeddings and fine-tuning</a></li>
+      <li><a href="#6-albert-a-lite-bert">6. ALBERT: A Lite BERT</a></li>
+      <li><a href="#7-roberta-robustly-optimized-bert-pretraining-approach">7. RoBERTa: Robustly Optimized BERT Pretraining Approach</a></li>
+      <li><a href="#8-autoregressive-modelling">8. Autoregressive modelling</a></li>
+      <li><a href="#9-gpt-generative-pre-trained-transformer">9. GPT: Generative Pre-trained Transformer</a></li>
+      <li><a href="#10-xlnet">10. XLNet</a></li>
+      <li><a href="#11-case-studies-and-practical-business-use">11. Case studies and practical business use</a></li>
+      <li><a href="#12-evaluation-metrics-and-novasupport-decision">12. Evaluation metrics and NovaSupport decision</a></li>
+      <li><a href="#13-review-session-augmentation-high-yield-distinctions">13. Review-session augmentation: high-yield distinctions</a></li>
+      <li><a href="#14-common-misconceptions-and-corrections">14. Common misconceptions and corrections</a></li>
+      <li><a href="#15-exam-focused-preparation">15. Exam-focused preparation</a></li>
+      <li><a href="#16-suggested-practical-exercises">16. Suggested practical exercises</a></li>
+      <li><a href="#17-references-mentioned-in-the-lectures">17. References mentioned in the lectures</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-week-overview">1. Week overview</h2>
+<p>Week 10 moves from classical NLP/topic modelling to modern Transformer language models. It covers BERT in depth, the efficient BERT variants ALBERT and RoBERTa, autoregressive modelling and GPT, XLNet, implementation workflows, model fine-tuning, evaluation, and business case studies.</p>
+<p>The central exam idea is that the models differ mainly in <strong>architecture, context direction, pre-training objective, efficiency strategy, and intended use</strong>:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Main architecture/context</th>
+<th>Pre-training objective</th>
+<th>Principal strength</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BERT</td>
+<td>Transformer encoder; bidirectional</td>
+<td>Masked Language Modelling (MLM) + Next Sentence Prediction (NSP)</td>
+<td>Language understanding</td>
+</tr>
+<tr>
+<td>RoBERTa</td>
+<td>BERT-like encoder</td>
+<td>Better-optimized MLM; NSP removed</td>
+<td>Stronger BERT training</td>
+</tr>
+<tr>
+<td>ALBERT</td>
+<td>Parameter-efficient BERT encoder</td>
+<td>MLM + Sentence Order Prediction (SOP)</td>
+<td>Lower parameter/memory cost</td>
+</tr>
+<tr>
+<td>GPT</td>
+<td>Transformer decoder; causal/left-to-right</td>
+<td>Next-token prediction</td>
+<td>Fluent generation</td>
+</tr>
+<tr>
+<td>XLNet</td>
+<td>Autoregressive Transformer with permutation orders</td>
+<td>Permutation Language Modelling</td>
+<td>Bidirectional information without <code>[MASK]</code> mismatch</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Terminology correction:</strong> the transcript&rsquo;s speech-to-text frequently writes “Bird/Bert/BUT”; all refer to <strong>BERT, Bidirectional Encoder Representations from Transformers</strong>. “PPU” generally refers to <strong>TPU</strong>. “Excel net” refers to <strong>XLNet</strong>.</p>
+</blockquote>
+<h2 id="2-bert-fundamentals">2. BERT fundamentals</h2>
+<h3 id="2-1-definition-origin-and-importance">2.1 Definition, origin, and importance</h3>
+<p>BERT is a pre-trained language model released by Google AI in 2018. It was trained on a massive unlabelled text corpus (billions of words) to learn general semantic and syntactic language representations. Its representations can then be adapted to a downstream task using comparatively little labelled task data.</p>
+<p>BERT was a major turning point in NLP because it achieved state-of-the-art results across many tasks and made high-quality contextual representations broadly reusable. Pre-trained checkpoints are available, so practitioners need not train from scratch. Soon after BERT, rapid progress in models such as GPT-2 highlighted the intense development in pre-trained language modelling.</p>
+<h3 id="2-2-why-bidirectional-matters">2.2 Why “bidirectional” matters</h3>
+<p>Earlier left-to-right models condition a word only on earlier words; right-to-left models condition only on later words. BERT considers <strong>both the left and right context simultaneously</strong>. Therefore, the vector for a word changes with the sentence in which it appears: it is a <strong>contextualized word embedding</strong>, not a fixed dictionary-like vector.</p>
+<p>Example of polysemy:</p>
+<ul>
+<li>“The <strong>bank</strong> of the river is flooded.” → <em>bank</em> means river edge.</li>
+<li>“The <strong>bank</strong> increased the interest rate.” → <em>bank</em> means financial institution.</li>
+</ul>
+<p>Self-attention relates <em>bank</em> to the other positions in each sequence, allowing BERT to infer the intended sense. This context sensitivity is why BERT performs well on ambiguity, sentiment, question answering, entity recognition, and classification.</p>
+<h3 id="2-3-transformer-architecture-and-self-attention">2.3 Transformer architecture and self-attention</h3>
+<p>BERT is built on the Transformer encoder. Self-attention permits every input position to relate to other relevant positions, including distant ones, and supports parallel processing. The lecture associates Transformers with effective sequence-to-sequence work such as translation and summarization; more precisely, BERT itself is encoder-only, while full encoder-decoder Transformers are normally used for direct sequence generation.</p>
+<p>Contextual representation conceptually follows:</p>
+<ol>
+<li>Tokenize the sentence into tokens/subwords.</li>
+<li>Map tokens to IDs and embeddings.</li>
+<li>Add position and segment information.</li>
+<li>Apply repeated self-attention and feed-forward layers.</li>
+<li>Produce a context-dependent vector for every token and an aggregate sequence representation.</li>
+</ol>
+<h3 id="2-4-unsupervised-self-supervised-pre-training-and-transfer-learning">2.4 Unsupervised/self-supervised pre-training and transfer learning</h3>
+<p>BERT is pre-trained without manual labels. Its labels are generated from the text itself—for example, hide a word and use the original word as the target. This is more precisely called <strong>self-supervised learning</strong>. It allows learning from very large corpora, captures general underlying patterns, and supports transfer learning:</p>
+<ul>
+<li><strong>Pre-training:</strong> learn general-purpose language representations.</li>
+<li><strong>Fine-tuning:</strong> adapt those representations and/or a new task head to a specific labelled task.</li>
+<li><strong>Downstream use:</strong> classification, NER, QA, sentiment, and so forth.</li>
+</ul>
+<h2 id="3-how-bert-learns">3. How BERT learns</h2>
+<h3 id="3-1-masked-language-modelling-mlm">3.1 Masked Language Modelling (MLM)</h3>
+<p>A proportion of input tokens is randomly masked, and BERT predicts each masked token using its surrounding context.</p>
+<p>Example:</p>
+<p><code>The cat sat on the [MASK].</code> → predicted word: <code>mat</code></p>
+<p>The prediction can exploit “The cat sat on the” and, when the mask occurs internally, words on both sides. MLM therefore forces BERT to learn deep word relationships and bidirectional contextual meaning.</p>
+<p>Important distinctions:</p>
+<ul>
+<li>MLM predicts <strong>missing tokens</strong> using surrounding context.</li>
+<li>It is not the same as GPT&rsquo;s sequential next-token prediction.</li>
+<li>BERT&rsquo;s <code>[MASK]</code> appears in pre-training but normally not in downstream input; this creates a pre-train/fine-tune mismatch that XLNet tries to avoid.</li>
+</ul>
+<h3 id="3-2-next-sentence-prediction-nsp">3.2 Next Sentence Prediction (NSP)</h3>
+<p>BERT is shown two sentences and predicts whether the second is the actual continuation of the first. It is intended to learn inter-sentence coherence and relationships useful in sentence-pair problems.</p>
+<p>Example:</p>
+<ul>
+<li>A: “The passenger missed the connection.”</li>
+<li>B: “The airline rebooked her on the next flight.” → likely continuation.</li>
+<li>An unrelated B sentence should be classified as not the next sentence.</li>
+</ul>
+<p>RoBERTa later showed that NSP was not essential to its improved performance and removed it. ALBERT replaces NSP with <strong>Sentence Order Prediction</strong>, which asks whether two related segments are in the correct order and focuses more directly on discourse coherence.</p>
+<h3 id="3-3-attention-masks-and-padding">3.3 Attention masks and padding</h3>
+<p>Batched sequences are padded to a common length. An attention mask marks real tokens with <code>1</code> and padding positions with <code>0</code>, preventing <code>[PAD]</code> positions from participating as meaningful information.</p>
+<p>Example:</p>
+<pre><code class="language-text">tokens:         I  love  NLP  [PAD] [PAD]
+attention_mask: 1    1    1      0     0
+</code></pre>
+<p>Attention masks control <strong>which positions are attended to</strong>; they do not change token meanings or replace padding. In GPT, a separate causal mask also prevents looking at future tokens.</p>
+<h2 id="4-bert-applications-benefits-and-limitations">4. BERT applications, benefits, and limitations</h2>
+<h3 id="4-1-applications">4.1 Applications</h3>
+<ul>
+<li><strong>Question answering:</strong> locate or formulate answers grounded in a supplied passage.</li>
+<li><strong>Text classification:</strong> sentiment, topic, intent, spam, urgency, or complaint category.</li>
+<li><strong>Named Entity Recognition:</strong> people, organizations, locations, dates, times, products, and identifiers.</li>
+<li><strong>Summarization:</strong> encode a long document so a summarization system can generate or select a concise version.</li>
+<li><strong>Machine translation:</strong> supply contextual representations within a translation system.</li>
+<li><strong>Customer-support routing:</strong> identify issue intent and extract details before drafting or selecting a response.</li>
+</ul>
+<h3 id="4-2-advantages">4.2 Advantages</h3>
+<ul>
+<li>Strong contextual understanding from bidirectional training.</li>
+<li>State-of-the-art performance across diverse NLP tasks at its introduction.</li>
+<li>Versatility through fine-tuning.</li>
+<li>Transfer learning reduces labelled-data requirements relative to training from scratch.</li>
+<li>Publicly available pre-trained models lower the entry barrier.</li>
+</ul>
+<h3 id="4-3-caveats">4.3 Caveats</h3>
+<ul>
+<li>Large BERT models are computationally and memory intensive; GPU/TPU acceleration is useful.</li>
+<li>Output quality depends strongly on clean, representative, relevant training data.</li>
+<li>Hyperparameters require experimentation.</li>
+<li>Fine-tuning can overfit, so validation performance must be monitored.</li>
+<li>BERT is primarily an <strong>understanding/encoding model</strong>, not a natural left-to-right generator.</li>
+<li>Large or unrepresentative pre-training corpora can carry bias into downstream systems.</li>
+</ul>
+<h2 id="5-practical-workflow-contextual-bert-embeddings-and-fine-tuning">5. Practical workflow: contextual BERT embeddings and fine-tuning</h2>
+<h3 id="5-1-legacy-google-colab-demonstration">5.1 Legacy Google Colab demonstration</h3>
+<p>The recorded demonstration uses the original Google Research BERT repository, TensorFlow, and a Colab GPU/TPU runtime. The essential sequence was:</p>
+<pre><code class="language-python"># Notebook shell commands
+!rm -rf bert
+!git clone https://github.com/google-research/bert
+
+import sys
+sys.path.append(&quot;bert&quot;)
+
+from __future__ import absolute_import, division, print_function
+import codecs, collections, json, re, os, pprint
+import numpy as np
+import tensorflow as tf
+import modeling
+import tokenization
+</code></pre>
+<ul>
+<li><code>modeling</code> contains the original BERT model implementation.</li>
+<li><code>tokenization</code> converts raw text into BERT-compatible tokens/IDs.</li>
+<li>The lecture attempted to obtain <code>COLAB_TPU_ADDR</code>, build a <code>grpc://...</code> TPU address, authenticate the Colab user, open a TensorFlow session, list TPU devices, read credentials from <code>/content/adc.json</code>, and configure Google Cloud Storage access.</li>
+<li>These TPU setup cells apply to Colab and are unnecessary locally. The failed <code>COLAB_TPU_ADDR</code> assertion in the demonstration simply indicated that the runtime was not connected to a TPU; a TPU runtime must be selected for TPU-specific code.</li>
+<li>The demo began by selecting a T4 GPU but also discussed TPU configuration; in practice, choose one compatible runtime and API stack.</li>
+</ul>
+<p>The original code is historically useful, but modern work commonly uses Hugging Face <code>transformers</code> with TensorFlow or PyTorch.</p>
+<h3 id="5-2-end-to-end-bert-adaptation-process">5.2 End-to-end BERT adaptation process</h3>
+<ol>
+<li><strong>Collect data:</strong> gather a sufficiently large dataset relevant to the task; AI models are “data hungry.”</li>
+<li><strong>Preprocess:</strong> clean, tokenize, and normalize for consistency and quality.</li>
+<li><strong>Construct model input:</strong> token IDs, attention masks, and where relevant token-type/segment IDs.</li>
+<li><strong>Choose a checkpoint:</strong> e.g., from Hugging Face; balance task complexity, latency, memory, and available compute.</li>
+<li><strong>Load pre-trained weights.</strong></li>
+<li><strong>Add the task head:</strong> classification head, token-classification/NER head, QA head, or a generation component for an encoder-decoder system.</li>
+<li><strong>Choose hyperparameters:</strong> learning rate, batch size, epoch count, optimizer, maximum sequence length, and regularization.</li>
+<li><strong>Train iteratively:</strong> feed batches, calculate task loss, backpropagate, and update parameters using Adam/AdamW or SGD.</li>
+<li><strong>Validate:</strong> monitor held-out performance and loss to detect overfitting.</li>
+<li><strong>Fine-tune strategically:</strong> update all weights for maximum adaptation, or freeze the encoder and train only the new head when compute or policy constrains changes.</li>
+<li><strong>Test and deploy:</strong> assess both model metrics and operational/business effects.</li>
+</ol>
+<p>Full fine-tuning offers stronger adaptation but costs more memory and computation. Feature extraction (frozen encoder) is faster and cheaper but can be less adaptable.</p>
+<h2 id="6-albert-a-lite-bert">6. ALBERT: A Lite BERT</h2>
+<h3 id="6-1-motivation">6.1 Motivation</h3>
+<p>Increasing model size often improves downstream performance, but eventually creates GPU/TPU memory limits, long training times, and sometimes unexpected degradation. ALBERT was proposed in <strong>“ALBERT: A Lite BERT for Self-supervised Learning of Language Representations”</strong> to scale more efficiently while retaining strong benchmark performance.</p>
+<h3 id="6-2-two-parameter-reduction-techniques">6.2 Two parameter-reduction techniques</h3>
+<ol>
+<li><strong>Factorized embedding parameterization:</strong> instead of directly using a large <code>vocabulary_size × hidden_size</code> embedding matrix, map vocabulary items into a smaller embedding space and project them to the hidden size. Embedding parameter count is therefore decoupled from the large hidden dimension.</li>
+<li><strong>Cross-layer parameter sharing:</strong> repeated Transformer layers share parameters rather than each layer storing an entirely independent set. This sharply reduces model parameters and memory, although it may reduce layer-specific flexibility.</li>
+</ol>
+<p>The transcript describes “splitting the embedding matrix into two smaller matrices” and “repeating layers/shared groups”; these correspond to the two techniques above.</p>
+<p>ALBERT also uses a sentence-coherence self-supervised loss—<strong>Sentence Order Prediction (SOP)</strong>—and reported strong results on GLUE, RACE, and SQuAD with fewer parameters than BERT-Large.</p>
+<h3 id="6-3-demonstrated-python-configuration">6.3 Demonstrated Python configuration</h3>
+<pre><code class="language-python">from transformers import AlbertConfig, AlbertModel
+
+albert_xxlarge_configuration = AlbertConfig()  # lecturer's large-style example
+
+albert_base_configuration = AlbertConfig(
+    hidden_size=768,
+    num_attention_heads=12,
+    intermediate_size=3072,
+)
+
+# Random weights: this does not load a pretrained checkpoint.
+model = AlbertModel(albert_base_configuration)
+configuration = model.config
+</code></pre>
+<p>The recording verbally mixed the xxlarge and base configuration variable when instantiating the model. Exam principle: passing a config constructs a model with <strong>random weights</strong>; <code>from_pretrained(...)</code> is required to load trained weights.</p>
+<h2 id="7-roberta-robustly-optimized-bert-pretraining-approach">7. RoBERTa: Robustly Optimized BERT Pretraining Approach</h2>
+<p>RoBERTa is a replication and optimization study showing that original BERT was significantly under-trained and that training choices matter. It retains the BERT-style encoder but changes the training recipe:</p>
+<ul>
+<li>removes NSP;</li>
+<li>trains with much larger mini-batches;</li>
+<li>uses suitably larger learning rates;</li>
+<li>trains longer and on more data;</li>
+<li>uses <strong>dynamic masking</strong>, generating new mask patterns across epochs rather than repeatedly presenting the same masked positions.</li>
+</ul>
+<p>These changes improve data utilization, robustness, optimization/convergence, and benchmark performance. The paper emphasized that differences in private dataset sizes and hyperparameters make model comparisons difficult; careful experimental control is needed before attributing gains to architecture alone.</p>
+<h3 id="7-1-tokenization-demonstration-and-prefix-space-caveat">7.1 Tokenization demonstration and prefix-space caveat</h3>
+<pre><code class="language-python">from transformers import RobertaTokenizer
+
+tokenizer = RobertaTokenizer.from_pretrained(&quot;FacebookAI/roberta-base&quot;)
+ids = tokenizer(&quot;Hello world&quot;)[&quot;input_ids&quot;]
+</code></pre>
+<p>RoBERTa&rsquo;s byte-level BPE tokenization treats a token differently depending on whether it occurs with a preceding space. <code>add_prefix_space=True</code> can make word-initial handling more consistent for pre-tokenized input, but because the model was not trained under every altered setup, inappropriate use can reduce performance. Token IDs are deterministic for identical text, tokenizer, settings, and vocabulary—the transcript&rsquo;s suggestion that repeated identical calls normally produce changing IDs is a demonstration error.</p>
+<h2 id="8-autoregressive-modelling">8. Autoregressive modelling</h2>
+<h3 id="8-1-time-series-foundation">8.1 Time-series foundation</h3>
+<p>A time series is a sequence of measurements of the same variable(s) over time, commonly at evenly spaced intervals such as hourly, monthly, or yearly. Examples include monthly airline passenger counts, daily stock prices, and hourly temperature.</p>
+<p>An autoregression predicts a present value from past values of the same series. A first-order autoregression, AR(1), is:</p>
+<p>\[
+y_t = c + \phi y_{t-1} + \varepsilon_t
+\]</p>
+<p>where:</p>
+<ul>
+<li>\(y_t\): value at time \(t\);</li>
+<li>\(c\): constant/intercept;</li>
+<li>\(\phi\): coefficient on the lagged value;</li>
+<li>\(y_{t-1}\): immediately previous value;</li>
+<li>\(\varepsilon_t\): error/innovation, subject to the usual regression assumptions.</li>
+</ul>
+<p>An AR(\(p\)) model uses \(p\) preceding values. <strong>Autocorrelation</strong> measures how strongly a series correlates with lagged versions of itself. Strong temporal correlation makes forecasting possible; pure white noise has no useful autocorrelation and cannot be predicted from its past. A purely deterministic linear process can, in principle, be predicted exactly when its relationship is known.</p>
+<h3 id="8-2-connection-to-language-modelling">8.2 Connection to language modelling</h3>
+<p>Autoregressive language models factor the probability of a token sequence as:</p>
+<p>\[
+P(x_1,\ldots,x_T)=\prod_{t=1}^{T}P(x_t\mid x_1,\ldots,x_{t-1})
+\]</p>
+<p>Each next word is predicted from earlier words. The time-series analogy is useful, but language models use a nonlinear Transformer rather than a simple linear AR equation.</p>
+<h2 id="9-gpt-generative-pre-trained-transformer">9. GPT: Generative Pre-trained Transformer</h2>
+<p>GPT is a decoder-only Transformer trained to predict the next token. It uses <strong>causal attention</strong>: a position may attend to previous/current positions but cannot see future tokens. This matches real generation, in which future text does not yet exist.</p>
+<p>Example: given <code>The weather today is</code>, the model assigns probabilities to possible next tokens such as <code>sunny</code>.</p>
+<h3 id="9-1-why-gpt-works">9.1 Why GPT works</h3>
+<p>Large-scale text training helps the model discover relationships among words, phrases, and sentences. The Transformer processes training tokens efficiently in parallel while causal masks preserve the next-token constraint. At inference time it generates sequentially, appending a selected token and predicting the next.</p>
+<p>Applications include text completion, content generation, QA/dialogue, chatbots and conversational agents, classification via prompting/fine-tuning, translation, marketing copy, education support, and healthcare language applications. A classifier that merely distinguishes real tokens from padding learns padding detection—not continuation—so it is not a valid GPT generation objective.</p>
+<h3 id="9-2-training-gpt-from-scratch">9.2 Training GPT from scratch</h3>
+<p>The lecture&rsquo;s process:</p>
+<ol>
+<li>Collect a large, diverse text corpus relevant to the desired domain.</li>
+<li>Clean and preprocess it; tokenize text into a model vocabulary.</li>
+<li>Choose Transformer depth, hidden size, attention heads, context length, and other hyperparameters.</li>
+<li>Initialize and train on next-token prediction, minimizing cross-entropy loss.</li>
+<li>Tune learning rate, batch size, epochs/steps, and regularization.</li>
+<li>Validate to monitor generalization, loss, and overfitting.</li>
+<li>Fine-tune on the intended domain/task.</li>
+<li>Evaluate fluency, factuality, safety, and task performance before deployment.</li>
+</ol>
+<p>Training is computationally demanding and sensitive to data and hyperparameters. Practical projects usually start from a pre-trained checkpoint.</p>
+<h2 id="10-xlnet">10. XLNet</h2>
+<p>XLNet combines autoregressive training with access to information from different context directions through <strong>Permutation Language Modelling</strong>. Rather than inserting <code>[MASK]</code>, it maximizes expected log-likelihood across different factorization/permutation orders. Across permutations, a token can learn from tokens that occur on either side in the original sequence, while each particular prediction remains autoregressive.</p>
+<p>Why it was introduced:</p>
+<ul>
+<li>BERT predicts multiple masks somewhat independently and may not model dependencies among masked positions perfectly.</li>
+<li><code>[MASK]</code> occurs in BERT pre-training but not ordinary fine-tuning/inference data.</li>
+<li>Standard left-to-right GPT cannot use right context during training representations.</li>
+</ul>
+<p>XLNet also integrates Transformer-XL mechanisms:</p>
+<ul>
+<li><strong>segment-level recurrence</strong>, which carries useful state across segments;</li>
+<li><strong>relative positional encoding</strong>, which represents relative rather than only absolute positions.</li>
+</ul>
+<p>These help model longer sequences efficiently. XLNet is therefore described as taking advantages from both BERT-like context learning and GPT-like autoregression, not simply running both models together.</p>
+<h2 id="11-case-studies-and-practical-business-use">11. Case studies and practical business use</h2>
+<h3 id="11-1-bert-across-domains">11.1 BERT across domains</h3>
+<p>The case-study lecture emphasizes that contextual models can convert unstructured customer language into actionable signals:</p>
+<ul>
+<li>detect emotion/sentiment in social posts, reviews, calls, or complaints;</li>
+<li>categorize and route requests;</li>
+<li>extract products, locations, dates, times, booking numbers, and other entities;</li>
+<li>answer common questions immediately;</li>
+<li>summarize policies and lengthy documents;</li>
+<li>personalize recommendations using stated preferences and prior behavior;</li>
+<li>identify unusual refund requests/disputes as possible fraud indicators.</li>
+</ul>
+<h3 id="11-2-airline-customer-support">11.2 Airline customer support</h3>
+<p>Airline support is competitive and time-sensitive; traditional manual support can create long waits and frustration. A BERT-based system can:</p>
+<ul>
+<li>analyze feedback from social media and reviews to recognize emotions;</li>
+<li>identify negative sentiment early and trigger proactive issue resolution;</li>
+<li>track sentiment trends to gauge satisfaction and find improvement areas;</li>
+<li>power a chatbot/virtual assistant for schedules, baggage policies, flight status, and travel queries;</li>
+<li>summarize flight policies and terms and conditions;</li>
+<li>recommend upgrades or hotel packages from preferences and past behavior, increasing ancillary purchase likelihood;</li>
+<li>automate flight-status and baggage-tracking queries so agents focus on complex, personalized cases.</li>
+</ul>
+<p>The discussed airline chatbot was trained on a large dataset of customer enquiries and responses and reportedly achieved reduced response time, improved satisfaction, and increased operational efficiency.</p>
+<h3 id="11-3-novasupport-case">11.3 NovaSupport case</h3>
+<p>NovaSupport receives over <strong>3,000 queries per day</strong>. The proposed fine-tuned BERT pipeline is:</p>
+<p><code>query → intent classification → entity extraction → draft/selected response → customer/agent review</code></p>
+<p>Example:</p>
+<ul>
+<li>Query: “I cannot log into my account.”</li>
+<li>Intent: <code>Login Assistance</code>.</li>
+<li>Another query may yield entities such as product <code>Model X130</code> and location <code>New York</code>.</li>
+</ul>
+<p>Intent classification finds the user&rsquo;s goal; entity extraction finds the details needed to fulfil it. Intent often comes first because it can determine which domain-specific entities and business workflow matter. However, this sequential design risks <strong>error propagation</strong>: a wrong intent may invoke the wrong entity schema or response flow.</p>
+<h2 id="12-evaluation-metrics-and-novasupport-decision">12. Evaluation metrics and NovaSupport decision</h2>
+<p>For binary or one-vs-rest evaluation:</p>
+<p>\[
+\text{Accuracy}=\frac{TP+TN}{TP+TN+FP+FN}
+\]</p>
+<p>\[
+\text{Precision}=\frac{TP}{TP+FP},\qquad
+\text{Recall}=\frac{TP}{TP+FN}
+\]</p>
+<p>\[
+F_1=2\cdot\frac{\text{Precision}\cdot\text{Recall}}{\text{Precision}+\text{Recall}}
+\]</p>
+<ul>
+<li><strong>Accuracy:</strong> overall proportion correct; misleading under class imbalance.</li>
+<li><strong>Precision:</strong> among predicted positives, how many are correct; important when false alarms are costly.</li>
+<li><strong>Recall:</strong> among actual positives, how many are found; important when missing relevant cases is costly.</li>
+<li><strong>F1:</strong> harmonic balance of precision and recall; useful when both matter or classes are imbalanced.</li>
+</ul>
+<p>NovaSupport results:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Task</th>
+<th style="text-align: right;">Accuracy</th>
+<th style="text-align: right;">Precision</th>
+<th style="text-align: right;">Recall</th>
+<th style="text-align: right;">F1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intent classification</td>
+<td style="text-align: right;">92%</td>
+<td style="text-align: right;">85%</td>
+<td style="text-align: right;">78%</td>
+<td style="text-align: right;">0.80</td>
+</tr>
+<tr>
+<td>Entity extraction</td>
+<td style="text-align: right;">Not stated</td>
+<td style="text-align: right;">82%</td>
+<td style="text-align: right;">65%</td>
+<td style="text-align: right;">Not stated</td>
+</tr>
+</tbody>
+</table></div>
+<p>The main operational weakness is entity recall: 35% of true entities are missed. Missing a product, date, or location can prevent automation and create manual handoffs even when the intent is correct.</p>
+<h3 id="12-1-competing-resource-priorities">12.1 Competing resource priorities</h3>
+<ul>
+<li><strong>Jordan&rsquo;s view—expand entity annotations:</strong> more diverse positive entity examples, hard cases, spelling variants, and domain terms should improve recall and directly reduce handoffs. Possible cost: false positives may rise, lowering precision.</li>
+<li><strong>Alex&rsquo;s view—refine intent categories:</strong> more nuanced labels can improve routing and precision. Risk: splitting categories fragments the training data; each new class gets fewer examples, increases annotation complexity, and may hurt recall or stability.</li>
+<li><strong>Recommended phased strategy:</strong> first address the measurable bottleneck by expanding entity examples and improving entity recall while setting a precision guardrail; then use confusion/error analysis to refine only genuinely conflated intent labels. Re-evaluate the complete pipeline on business metrics such as manual handoff rate, resolution time, and escalation rate.</li>
+</ul>
+<p>Do not optimize a metric in isolation. The best allocation depends on the cost of false positives versus false negatives and the business goal. High overall accuracy does not guarantee usable automation.</p>
+<h2 id="13-review-session-augmentation-high-yield-distinctions">13. Review-session augmentation: high-yield distinctions</h2>
+<h3 id="13-1-encoder-decoder-and-encoder-decoder">13.1 Encoder, decoder, and encoder-decoder</h3>
+<ul>
+<li><strong>Encoder-only (BERT/RoBERTa/ALBERT):</strong> full-context understanding; classification, NER, extractive QA.</li>
+<li><strong>Decoder-only (GPT):</strong> causal next-token generation; completion and dialogue.</li>
+<li><strong>Encoder-decoder (e.g., T5/BART):</strong> input-to-output sequence transformation; translation and abstractive summarization.</li>
+</ul>
+<h3 id="13-2-static-vs-dynamic-masking">13.2 Static vs dynamic masking</h3>
+<ul>
+<li><strong>Static:</strong> the same mask locations recur; fewer distinct prediction problems.</li>
+<li><strong>Dynamic:</strong> masks are regenerated across epochs; more varied supervision and better data use. An epoch is one pass through the training data (or, informally in the lecture, a repeated training cycle).</li>
+</ul>
+<h3 id="13-3-bert-roberta-albert-xlnet-gpt-in-one-answer">13.3 BERT, RoBERTa, ALBERT, XLNet, GPT in one answer</h3>
+<ul>
+<li>BERT introduced reusable bidirectional encoder representations using MLM and NSP.</li>
+<li>RoBERTa showed that a better recipe—more data/steps, larger batches, dynamic masking, and no NSP—could outperform under-trained BERT.</li>
+<li>ALBERT reduced parameters through factorized embeddings and cross-layer sharing and replaced NSP with SOP.</li>
+<li>GPT uses causal autoregression for natural generation.</li>
+<li>XLNet uses permutation autoregression to capture context from different directions without a mask token.</li>
+</ul>
+<h2 id="14-common-misconceptions-and-corrections">14. Common misconceptions and corrections</h2>
+<ol>
+<li><strong>“BERT is naturally a text generator.”</strong> It is primarily an encoder/understanding model; generation usually needs a decoder or encoder-decoder design.</li>
+<li><strong>“GPT is bidirectional.”</strong> Standard GPT attention is causal and left-to-right.</li>
+<li><strong>“RoBERTa invented MLM.”</strong> BERT used MLM; RoBERTa optimized its training.</li>
+<li><strong>“ALBERT is smaller only because of its vocabulary.”</strong> Its key mechanisms are factorized embeddings and layer parameter sharing.</li>
+<li><strong>“Attention masks define token meaning.”</strong> They control attention participation; embeddings/context define meaning.</li>
+<li><strong>“MLM and next-token prediction are the same.”</strong> MLM reconstructs hidden tokens with surrounding context; autoregression predicts the next token from the prefix.</li>
+<li><strong>“More parameters always mean better results.”</strong> Training quality, data, objectives, and parameter efficiency matter; ALBERT demonstrates this.</li>
+<li><strong>“Identical RoBERTa tokenizer calls normally give different IDs.”</strong> They are deterministic under identical inputs/settings.</li>
+<li><strong>“Accuracy alone proves deployment quality.”</strong> Imbalance, recall gaps, downstream error propagation, and business costs can make a high-accuracy model operationally weak.</li>
+<li><strong>“A pre-trained config automatically loads weights.”</strong> Creating <code>AlbertModel(config)</code> initializes random weights; use <code>from_pretrained</code> for a checkpoint.</li>
+</ol>
+<h2 id="15-exam-focused-preparation">15. Exam-focused preparation</h2>
+<h3 id="15-1-likely-long-answer-structures">15.1 Likely long-answer structures</h3>
+<p><strong>Explain BERT:</strong> definition/origin → Transformer encoder → bidirectionality/self-attention → MLM → NSP → transfer learning/fine-tuning → applications → benefits and limitations → context example.</p>
+<p><strong>Compare BERT and GPT:</strong> encoder vs decoder → both-side vs causal context → MLM/NSP vs next-token objective → understanding vs generation → <code>[MASK]</code> vs no <code>[MASK]</code> → example applications.</p>
+<p><strong>Explain ALBERT and RoBERTa:</strong> start from BERT scalability/under-training → ALBERT&rsquo;s two parameter reductions and SOP → RoBERTa&rsquo;s removal of NSP, larger batches/learning rates, longer training/more data, dynamic masking → trade-offs.</p>
+<p><strong>Evaluate a support case:</strong> state pipeline → define metrics/formulas → locate weakest metric → translate technical error into business cost → recommend annotation/model action → preserve guardrails → measure end-to-end outcomes.</p>
+<h3 id="15-2-rapid-recall-checklist">15.2 Rapid-recall checklist</h3>
+<ul>
+<li>Expand BERT, ALBERT, GPT, MLM, NSP, SOP, and AR.</li>
+<li>Be able to write and explain AR(1), autoregressive factorization, precision, recall, and F1.</li>
+<li>Explain contextual embeddings using the two meanings of <em>bank</em>.</li>
+<li>Explain MLM using <code>The cat sat on the [MASK]</code>.</li>
+<li>State why padding needs an attention mask.</li>
+<li>Name ALBERT&rsquo;s two parameter-reduction methods.</li>
+<li>State all RoBERTa training modifications from the lecture.</li>
+<li>Explain why XLNet avoids the <code>[MASK]</code> mismatch.</li>
+<li>Distinguish full fine-tuning from frozen feature extraction.</li>
+<li>Link entity recall to missed automation/manual handoffs in NovaSupport.</li>
+</ul>
+<h2 id="16-suggested-practical-exercises">16. Suggested practical exercises</h2>
+<ol>
+<li>Tokenize the two <em>bank</em> sentences with BERT and compare contextual token vectors.</li>
+<li>Fine-tune a small BERT/DistilBERT model for support intent classification; report a confusion matrix and per-class precision/recall/F1.</li>
+<li>Add NER to the pipeline and measure entity-level exact-match precision and recall.</li>
+<li>Run an ablation: static versus dynamic masking, or frozen encoder versus full fine-tuning.</li>
+<li>Generate text with GPT and contrast its causal continuation with BERT&rsquo;s masked-word reconstruction.</li>
+<li>For NovaSupport, inspect false negatives, annotate missing entity types, retrain, and test whether manual handoffs fall without an unacceptable precision loss.</li>
+</ol>
+<h2 id="17-references-mentioned-in-the-lectures">17. References mentioned in the lectures</h2>
+<ul>
+<li>Google Research BERT materials and the original BERT repository.</li>
+<li>Hugging Face Transformers documentation/models.</li>
+<li><em>Natural Language Processing with Python</em> by Steven Bird, Ewan Klein, and Edward Loper.</li>
+<li><em>Speech and Language Processing</em> by Daniel Jurafsky and James H. Martin.</li>
+<li>The ALBERT and RoBERTa research papers; GLUE, RACE, and SQuAD are the repeatedly cited evaluation benchmarks.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-9.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 9: Topic Modelling</span>
+      </a>
+      <a href="week-11.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 11: Fine-Tuning Language Models, Efficient…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

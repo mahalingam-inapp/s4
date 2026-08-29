@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>NLP · Week 11 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">NLP</span>
+      <span class="brand-title">Week 11</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html" selected>NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Foundations of Natural Language Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        spaCy Conventions, Text Preprocessing, and Tokenization
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Dependency Parsing, Named Entity Recognition, and Token Operations
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Token-Based Matching, Word Vectors, and Semantic Similarity
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Named Entities, Dependency-Based Intent Recognition, Semantic…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Annotation, Training spaCy NER Models, and an Airline-Review Case Study
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Text Classification and Sentiment Analysis
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Text Classification, TF–IDF, SVM, Doc2Vec and Twitter Sentiment Analysis
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Topic Modelling
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        BERT and Modern Pre-trained Language Models
+      </a>
+      <a class="is-active" href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Fine-Tuning Language Models, Efficient Transformers, Sentence…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Cross-Lingual NLP, Multilingual Models, Transformer Serving, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Transformers, Attention, Evaluation, Hugging Face, TensorBoard, and…
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Hugging Face, Fine-Tuning, Deployment, and Applied Case Studies
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Vision Transformers, DETR, Self-Supervised Vision, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">NLP · Week 11</p>
+        <h1 class="page-title">Fine-Tuning Language Models, Efficient Transformers, Sentence Embeddings, and Applied NLP</h1>
+        <p class="page-meta">Week 11 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-week-overview">1. Week overview</a></li>
+      <li><a href="#2-named-entity-recognition-ner">2. Named Entity Recognition (NER)</a></li>
+      <li><a href="#3-contextual-word-representations-elmo">3. Contextual word representations: ELMo</a></li>
+      <li><a href="#4-fine-tuning-pretrained-language-models">4. Fine-tuning pretrained language models</a></li>
+      <li><a href="#5-practical-hindi-ner-dataset-preparation-workflow">5. Practical Hindi NER dataset-preparation workflow</a></li>
+      <li><a href="#6-sentence-embeddings">6. Sentence embeddings</a></li>
+      <li><a href="#7-passage-ranking-and-retrieval-evaluation">7. Passage ranking and retrieval evaluation</a></li>
+      <li><a href="#8-efficient-transformers">8. Efficient Transformers</a></li>
+      <li><a href="#9-distilbert-and-knowledge-distillation">9. DistilBERT and knowledge distillation</a></li>
+      <li><a href="#10-flashattention-2">10. FlashAttention 2</a></li>
+      <li><a href="#11-evaluation-formulas">11. Evaluation formulas</a></li>
+      <li><a href="#12-case-study-1-pharmaceutical-literature-and-patent-mining">12. Case study 1 — Pharmaceutical literature and patent mining</a></li>
+      <li><a href="#13-case-study-2-legal-document-summarization">13. Case study 2 — Legal-document summarization</a></li>
+      <li><a href="#14-live-session-practical-mini-project-instructions">14. Live-session practical mini-project instructions</a></li>
+      <li><a href="#15-misconceptions-and-corrections">15. Misconceptions and corrections</a></li>
+      <li><a href="#16-exam-focused-comparison-table">16. Exam-focused comparison table</a></li>
+      <li><a href="#17-likely-exam-questions-and-answer-skeletons">17. Likely exam questions and answer skeletons</a></li>
+      <li><a href="#18-final-rapid-revision-checklist">18. Final rapid-revision checklist</a></li>
+      <li><a href="#19-references-named-in-the-lectures">19. References named in the lectures</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-week-overview">1. Week overview</h2>
+<p>Week 11 connects four ideas:</p>
+<ol>
+<li><strong>Named Entity Recognition (NER)</strong> and why it needs contextual sequence modelling.</li>
+<li><strong>Fine-tuning pretrained language models</strong> for a particular task, industry, or language.</li>
+<li><strong>Efficient Transformers</strong>, especially DistilBERT, knowledge distillation, and FlashAttention 2.</li>
+<li><strong>Sentence embeddings and retrieval</strong>, including similarity, passage ranking, and Mean Reciprocal Rank (MRR).</li>
+</ol>
+<p>The unifying engineering question is: <strong>How do we retain useful language understanding while controlling training cost, memory, latency, and deployment complexity?</strong></p>
+<hr>
+<h2 id="2-named-entity-recognition-ner">2. Named Entity Recognition (NER)</h2>
+<h3 id="2-1-definition-and-alternative-names">2.1 Definition and alternative names</h3>
+<p><strong>Named Entity Recognition</strong> is a subtask of information extraction that <strong>locates spans in unstructured text and classifies them into predefined entity categories</strong>. It is also called:</p>
+<ul>
+<li>entity identification;</li>
+<li>entity chunking;</li>
+<li>entity extraction.</li>
+</ul>
+<p>Typical classes include:</p>
+<ul>
+<li>person;</li>
+<li>organization;</li>
+<li>location;</li>
+<li>product;</li>
+<li>date and time expressions;</li>
+<li>quantities;</li>
+<li>money;</li>
+<li>percentages;</li>
+<li>medical or clinical codes.</li>
+</ul>
+<p>NER adds a layer of semantic knowledge to otherwise unstructured text. It helps a person or system quickly identify the subjects, actors, places, amounts, dates, and other important concepts in a document.</p>
+<p><strong>Example</strong></p>
+<blockquote>
+<p>Apple released iPhone 15 in California in September 2023.</p>
+</blockquote>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Span</th>
+<th>Possible label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apple</td>
+<td>ORGANIZATION</td>
+</tr>
+<tr>
+<td>iPhone 15</td>
+<td>PRODUCT</td>
+</tr>
+<tr>
+<td>California</td>
+<td>LOCATION</td>
+</tr>
+<tr>
+<td>September 2023</td>
+<td>DATE</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="2-2-applications">2.2 Applications</h3>
+<ul>
+<li><strong>Legal documents:</strong> extract parties, courts, statutes, dates, contract values, and jurisdictions.</li>
+<li><strong>Financial documents:</strong> extract companies, currencies, money, percentages, executives, and reporting periods.</li>
+<li><strong>Medical documents:</strong> extract diseases, medicines, symptoms, procedures, anatomy, and medical codes.</li>
+<li><strong>News classification:</strong> infer a story&rsquo;s topic from the people, organizations, locations, and events mentioned; generate or support headings and categories.</li>
+<li><strong>Search:</strong> recognize entities in queries and indexed documents to improve relevance and accuracy. A search for “Apple revenue India” should distinguish the company from the fruit.</li>
+<li><strong>Drug discovery:</strong> mine scientific papers and patents for drugs, proteins, diseases, relationships, and patent claims.</li>
+</ul>
+<h3 id="2-3-ner-is-sequence-labelling-not-sentence-classification">2.3 NER is sequence labelling, not sentence classification</h3>
+<p>NER returns <strong>one label per token or token span</strong>, whereas sentence classification returns one label for a whole sentence.</p>
+<p>Example using an IOB-style scheme:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>John</td>
+<td>B-PER</td>
+</tr>
+<tr>
+<td>works</td>
+<td>O</td>
+</tr>
+<tr>
+<td>at</td>
+<td>O</td>
+</tr>
+<tr>
+<td>Google</td>
+<td>B-ORG</td>
+</tr>
+</tbody>
+</table></div>
+<p>An independent token classifier may generate inconsistent labels because it ignores both linguistic context and relationships among neighbouring labels.</p>
+<h3 id="2-4-machine-learning-approach">2.4 Machine-learning approach</h3>
+<p>The classical approach treats NER as <strong>multiclass classification</strong>, with entity categories serving as labels.</p>
+<p>Main limitation: if each word is classified independently, the model ignores:</p>
+<ul>
+<li>word order;</li>
+<li>preceding and following words;</li>
+<li>label dependencies;</li>
+<li>long-sentence context.</li>
+</ul>
+<p>This is especially damaging when meaning is contextual. “Apple” may mean a fruit or the company. In “I put an apple in my pocket,” it is a fruit; in “I bought an Apple from a mobile shop,” it refers to a company/product. Context resolves the ambiguity.</p>
+<h3 id="2-5-deep-learning-approach-bilstm">2.5 Deep-learning approach: BiLSTM</h3>
+<p>A <strong>Bidirectional Long Short-Term Memory network (BiLSTM)</strong> uses two LSTMs:</p>
+<ul>
+<li>a forward LSTM reads left to right;</li>
+<li>a backward LSTM reads right to left.</li>
+</ul>
+<p>For token (t), the representation combines both directions:</p>
+<p>\[
+h_t = [\overrightarrow{h_t};\overleftarrow{h_t}]
+\]</p>
+<p>The resulting label decision has access to preceding and following context. This improves entity disambiguation and makes labels across a sequence more coherent.</p>
+<p><strong>Benefits</strong></p>
+<ul>
+<li>captures the full surrounding context;</li>
+<li>handles longer sentences better than independent token classification;</li>
+<li>improves semantic understanding and token labelling accuracy.</li>
+</ul>
+<p><strong>Trade-off:</strong> bidirectional processing requires more computation and latency than a one-way or independent classifier, and is less natural for strict streaming where future words are unavailable.</p>
+<blockquote>
+<p><strong>Lecturer emphasis:</strong> NER meaning depends on sequence context; deep sequence models are therefore generally preferable to independent multiclass token classification.</p>
+</blockquote>
+<hr>
+<h2 id="3-contextual-word-representations-elmo">3. Contextual word representations: ELMo</h2>
+<h3 id="3-1-definition">3.1 Definition</h3>
+<p><strong>ELMo</strong> stands for <strong>Embeddings from Language Models</strong>. It creates <strong>deep contextualized word representations</strong> that model:</p>
+<ul>
+<li>complex syntax;</li>
+<li>semantics of a word in its current use;</li>
+<li>how a word&rsquo;s meaning changes across contexts.</li>
+</ul>
+<p>Unlike a static embedding, ELMo can assign different representations to the same spelling in different sentences.</p>
+<h3 id="3-2-polysemy">3.2 Polysemy</h3>
+<p><strong>Polysemy</strong> means that a word has multiple related/context-dependent meanings. The live lesson used “Apple” as an intuitive ambiguity example:</p>
+<ul>
+<li>“I bought an Apple from a mobile shop” → company/product sense;</li>
+<li>“I plucked an apple from a tree” → fruit sense.</li>
+</ul>
+<p>ELMo builds the representation from surrounding words, so the two occurrences receive different contextual vectors.</p>
+<h3 id="3-3-architecture-and-oov-handling">3.3 Architecture and OOV handling</h3>
+<ul>
+<li>ELMo is learned from a pretrained <strong>bidirectional language model (biLM)</strong> trained on a very large text corpus.</li>
+<li>It uses <strong>character-level representations</strong> to construct word representations.</li>
+<li>Consequently, it can embed words unseen during training; no separate special <strong>out-of-vocabulary (OOV)</strong> strategy is required in the manner needed by a fixed word lookup table.</li>
+</ul>
+<p>ELMo representations can be added to existing NLP models and were presented as improving state-of-the-art performance across tasks such as textual entailment/alignment and sentiment analysis.</p>
+<hr>
+<h2 id="4-fine-tuning-pretrained-language-models">4. Fine-tuning pretrained language models</h2>
+<h3 id="4-1-why-fine-tune">4.1 Why fine-tune?</h3>
+<p>Large pretrained models learn broad language patterns from billions of words. Training such a model from scratch needs huge datasets, long training time, and expensive compute. Fine-tuning instead adapts general language knowledge to:</p>
+<ul>
+<li>an industry (legal, pharmaceutical, financial);</li>
+<li>a language or low-resource language;</li>
+<li>a downstream task (NER, summarization, classification, retrieval);</li>
+<li>a particular organization&rsquo;s data and terminology.</li>
+</ul>
+<p><strong>General pipeline</strong></p>
+<ol>
+<li>Select a suitable pretrained model.</li>
+<li>Prepare and label domain/task data.</li>
+<li>Align tokens and labels.</li>
+<li>Add or configure the task head.</li>
+<li>Fine-tune with a smaller learning rate.</li>
+<li>Validate using task-specific metrics.</li>
+<li>deploy and monitor on real data.</li>
+</ol>
+<h3 id="4-2-models-discussed">4.2 Models discussed</h3>
+<ul>
+<li><strong>BERT:</strong> Bidirectional Encoder Representations from Transformers, developed by Google and introduced in 2018. It learns contextual representations from both left and right context.</li>
+<li><strong>RoBERTa:</strong> a BERT-family model with a refined training methodology; it can be fine-tuned effectively for entity extraction and many other NLP tasks.</li>
+<li><strong>mBERT:</strong> multilingual BERT, useful for contextual understanding across languages and for low-resource or specialized language settings.</li>
+<li><strong>DistilBERT:</strong> a smaller BERT-family student model trained by knowledge distillation.</li>
+</ul>
+<p>Fine-tuning RoBERTa or mBERT on custom data can specialize the model for an industry, application, or language. A highlighted use case is a <strong>custom multilingual NER system for a low-resource language</strong>.</p>
+<hr>
+<h2 id="5-practical-hindi-ner-dataset-preparation-workflow">5. Practical Hindi NER dataset-preparation workflow</h2>
+<p>The demonstration combines Hindi NER data from <strong>HiNER Original</strong> and AI4Bharat&rsquo;s <strong>Naamapadam</strong>.</p>
+<h3 id="5-1-install-and-import">5.1 Install and import</h3>
+<pre><code class="language-bash">pip install datasets
+</code></pre>
+<pre><code class="language-python">import pandas as pd
+from datasets import load_dataset
+
+hiner = load_dataset(&quot;cfilt/HiNER-original&quot;)
+naamapadam = load_dataset(&quot;ai4bharat/naamapadam&quot;, &quot;hi&quot;)
+</code></pre>
+<p>Use a GPU/TPU where available, especially for later model fine-tuning.</p>
+<h3 id="5-2-access-splits-and-normalize-schema">5.2 Access splits and normalize schema</h3>
+<p>The demonstration accesses training/validation splits, removes an <code>id</code> column from HiNER, and converts the splits to pandas DataFrames for inspection and manipulation.</p>
+<pre><code class="language-python">hiner_train = hiner[&quot;train&quot;].remove_columns(&quot;id&quot;)
+naamapadam_train = naamapadam[&quot;train&quot;]
+naamapadam_val = naamapadam[&quot;validation&quot;]
+
+hiner_train_df = pd.DataFrame(hiner_train)
+naamapadam_train_df = pd.DataFrame(naamapadam_train)
+naamapadam_val_df = pd.DataFrame(naamapadam_val)
+</code></pre>
+<p>Removing the ID field maintains <strong>consistency and uniformity</strong> between datasets before concatenation. In real work, also verify that column names, tokenization, and label-ID meanings are identical; equal-looking integers do not guarantee equal label semantics.</p>
+<h3 id="5-3-inspect-unique-ner-tags">5.3 Inspect unique NER tags</h3>
+<p>The lesson iterates through the validation <code>ner_tags</code> lists and creates a list of unique tag IDs. A clearer equivalent is:</p>
+<pre><code class="language-python">unique_tags_naamapadam = sorted({
+    tag
+    for tags in naamapadam_val_df[&quot;ner_tags&quot;]
+    for tag in tags
+})
+</code></pre>
+<p>This reveals the dataset&rsquo;s label inventory. Before combining datasets, create a <strong>single canonical label map</strong> and remap both datasets if necessary.</p>
+<h3 id="5-4-combine-and-filter-meaningful-rows">5.4 Combine and filter meaningful rows</h3>
+<p>The transcript&rsquo;s filtering logic computes the number of “relevant” tags by subtracting counts of two non-target IDs (<code>0</code> and <code>22</code>) from the sequence length, retains rows with more than three relevant tags, and writes them to <code>hi_data.csv</code> without an index:</p>
+<pre><code class="language-python">rows = []
+
+for _, row in combined_train_df.iterrows():
+    tags = row[&quot;ner_tags&quot;]
+    relevant_count = len(tags) - tags.count(0) - tags.count(22)
+    if relevant_count &gt; 3:
+        rows.append(row)
+
+clean_data = pd.DataFrame(rows)
+clean_data.to_csv(&quot;hi_data.csv&quot;, index=False)
+</code></pre>
+<p>Interpretation: retain sentences containing <strong>more than three entity-bearing/relevant tags</strong>, rather than rows dominated by outside/padding-like labels.</p>
+<p><strong>Important caveats</strong></p>
+<ul>
+<li>Confirm what IDs <code>0</code> and <code>22</code> actually mean in each dataset; never assume they are equivalent across corpora.</li>
+<li>The original notebook used <code>DataFrame.append</code>, which now raises an error in modern pandas because it is deprecated/removed. Collect rows in a list or use <code>pd.concat</code>.</li>
+<li>A missing <code>naamapadam_val_df</code> variable caused another demonstration error; explicitly create it from the validation split.</li>
+<li>Saving as CSV may serialize token/tag lists as strings. Hugging Face <code>Dataset</code>, JSONL, or Parquet may preserve structure more reliably.</li>
+<li>Filtering for many entities can bias the training distribution away from realistic sentences containing no entity or only one entity. Retain some negative and sparse-entity examples for a deployable model.</li>
+</ul>
+<h3 id="5-5-token-label-alignment-for-subword-tokenizers">5.5 Token–label alignment for subword tokenizers</h3>
+<p>The transcript focuses on dataset cleaning, but exam answers should connect this to the actual token-classification requirement. BERT-family tokenizers may split a word into subwords. Labels must be aligned using <code>word_ids()</code>:</p>
+<pre><code class="language-python">def tokenize_and_align(example, tokenizer):
+    encoded = tokenizer(
+        example[&quot;tokens&quot;],
+        is_split_into_words=True,
+        truncation=True
+    )
+    word_ids = encoded.word_ids()
+    labels = []
+    previous = None
+
+    for word_id in word_ids:
+        if word_id is None:
+            labels.append(-100)       # ignore special tokens in loss
+        elif word_id != previous:
+            labels.append(example[&quot;ner_tags&quot;][word_id])
+        else:
+            labels.append(-100)       # or propagate an I- tag by policy
+        previous = word_id
+
+    encoded[&quot;labels&quot;] = labels
+    return encoded
+</code></pre>
+<p>Use <code>AutoModelForTokenClassification</code>; evaluate at the <strong>entity/span level</strong>, commonly with precision, recall, and F1.</p>
+<hr>
+<h2 id="6-sentence-embeddings">6. Sentence embeddings</h2>
+<h3 id="6-1-definition">6.1 Definition</h3>
+<p>A <strong>sentence embedding</strong> is a numeric, fixed-size vector of real numbers representing the meaning of an entire sentence.</p>
+<p>\[
+s \longrightarrow \mathbf{e}_s \in \mathbb{R}^d
+\]</p>
+<p>Semantically similar sentences should lie close together in the embedding space. Similarity can be measured by cosine similarity:</p>
+<p>\[
+\cos(\mathbf{u},\mathbf{v}) =
+\frac{\mathbf{u}\cdot\mathbf{v}}
+{\lVert\mathbf{u}\rVert\lVert\mathbf{v}\rVert}
+\]</p>
+<h3 id="6-2-why-sentence-rather-than-word-embeddings">6.2 Why sentence rather than word embeddings?</h3>
+<p>Word-only representations become tedious and incomplete for long text because they do not directly encode whole-sentence intent or cross-word relationships.</p>
+<p>Live-session example:</p>
+<blockquote>
+<p>“I don&rsquo;t like crowded places. However, I like one of the busiest cities, New York.”</p>
+</blockquote>
+<p>A useful representation should relate <strong>crowded</strong> and <strong>busy/busiest</strong>, while also representing the sentence-level contrast and intent. Bag-of-words and one-hot representations do not adequately capture these subtleties.</p>
+<p>Applications include:</p>
+<ul>
+<li>semantic similarity;</li>
+<li>semantic search and information retrieval;</li>
+<li>text classification;</li>
+<li>clustering/grouping;</li>
+<li>duplicate or paraphrase detection;</li>
+<li>recommendation;</li>
+<li>cross-lingual matching;</li>
+<li>passage ranking.</li>
+</ul>
+<h3 id="6-3-ways-to-generate-sentence-embeddings">6.3 Ways to generate sentence embeddings</h3>
+<h4 id="a-average-word-embeddings">A. Average word embeddings</h4>
+<p>\[
+\mathbf{s}=\frac{1}{n}\sum_{i=1}^{n}\mathbf{w}_i
+\]</p>
+<p>This is simple and inexpensive but ignores word order and may lose negation, syntax, and complex contextual nuance.</p>
+<h4 id="b-pretrained-transformer-representations">B. Pretrained Transformer representations</h4>
+<p>BERT-family models consider each word in context and create richer contextual representations than averaging. However, raw BERT is mainly optimized for token-level contextualization/fine-tuning, not automatically for cosine-based sentence similarity; pooling and task-specific training matter.</p>
+<h4 id="c-neural-sentence-models">C. Neural sentence models</h4>
+<ul>
+<li><strong>Skip-Thought vectors:</strong> learn by predicting surrounding sentences.</li>
+<li><strong>InferSent:</strong> learns sentence-level semantics using neural training objectives.</li>
+</ul>
+<p>These objectives encourage the model to encode information useful for predicting or relating complete sentences.</p>
+<h3 id="6-4-major-models-libraries">6.4 Major models/libraries</h3>
+<ul>
+<li><strong>BERT:</strong> rich contextual token representations; a benchmark backbone for many NLP tasks.</li>
+<li><strong>RoBERTa:</strong> improved BERT training methodology and strong performance on multiple tasks.</li>
+<li><strong>Sentence-BERT (SBERT):</strong> adapts BERT into a siamese/triplet-style model producing sentence vectors that can be compared efficiently; strong for semantic search and similarity ranking.</li>
+<li><strong>Universal Sentence Encoder (USE):</strong> developed by Google; produces reusable general-purpose sentence embeddings and supports applications including cross-lingual tasks.</li>
+<li><strong>InferSent</strong>, <strong>Skip-Thought</strong>, and <strong>Doc2Vec</strong> were also identified as sentence/document representation approaches.</li>
+</ul>
+<h3 id="6-5-cross-lingual-embeddings">6.5 Cross-lingual embeddings</h3>
+<p>Equivalent meanings in different languages should be placed near one another:</p>
+<blockquote>
+<p>“Where is the train station?”<br>
+“Où est la gare?”</p>
+</blockquote>
+<p>USE/multilingual sentence models are appropriate when reusable embeddings and cross-language semantic comparison are required.</p>
+<h3 id="6-6-bert-versus-a-sentence-embedding-model">6.6 BERT versus a sentence-embedding model</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>BERT-family encoder</th>
+<th>SBERT / USE-like sentence encoder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primarily contextual token understanding and downstream fine-tuning</td>
+<td>Explicitly useful sentence-level vector</td>
+</tr>
+<tr>
+<td>Strong for NER/classification after task fine-tuning</td>
+<td>Strong for similarity, retrieval, clustering</td>
+</tr>
+<tr>
+<td>Pairwise cross-encoding can be accurate but expensive</td>
+<td>Precompute embeddings; cheap vector comparisons</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Exam trap:</strong> BERT is not automatically an optimized sentence-similarity model merely because it produces hidden states.</p>
+</blockquote>
+<hr>
+<h2 id="7-passage-ranking-and-retrieval-evaluation">7. Passage ranking and retrieval evaluation</h2>
+<h3 id="7-1-passage-ranking">7.1 Passage ranking</h3>
+<p>Passage ranking orders candidate documents/passages by relevance to a query. A ranking model receives:</p>
+<ul>
+<li>one query;</li>
+<li>multiple candidate documents/sentences;</li>
+</ul>
+<p>and returns relevance scores used to sort the candidates.</p>
+<p>Practical uses: search engines, FAQ retrieval, customer support, scientific literature search, and question answering.</p>
+<h3 id="7-2-hugging-face-inference-endpoint-example">7.2 Hugging Face inference-endpoint example</h3>
+<p>The recorded lesson uses the model <code>sentence-transformers/msmarco-distilbert-base-tas-b</code> through a Hugging Face inference endpoint.</p>
+<pre><code class="language-python">import requests
+
+API_URL = (
+    &quot;https://api-inference.huggingface.co/models/&quot;
+    &quot;sentence-transformers/msmarco-distilbert-base-tas-b&quot;
+)
+API_TOKEN = &quot;&lt;your-hugging-face-token&gt;&quot;
+headers = {&quot;Authorization&quot;: f&quot;Bearer {API_TOKEN}&quot;}
+
+def query(payload):
+    response = requests.post(API_URL, headers=headers, json=payload)
+    response.raise_for_status()
+    return response.json()
+
+scores = query({
+    &quot;inputs&quot;: {
+        &quot;source_sentence&quot;: &quot;That is a happy person&quot;,
+        &quot;sentences&quot;: [
+            &quot;That is a happy dog&quot;,
+            &quot;That is a very happy person&quot;,
+            &quot;Today is a sunny day&quot;
+        ]
+    }
+})
+</code></pre>
+<p>The model should give the greatest relevance score to the closest candidate (“That is a very happy person”). The demonstration could not execute without creating a Hugging Face account and supplying an actual API token; the token must be kept secret rather than committed to a notebook.</p>
+<h3 id="7-3-ranking-metrics">7.3 Ranking metrics</h3>
+<ul>
+<li><strong>Recall:</strong> how many relevant items are retrieved.</li>
+<li><strong>MAP (Mean Average Precision):</strong> averages precision across ranks and queries; accounts for multiple relevant results.</li>
+<li><strong>nDCG:</strong> discounts lower-ranked results and can use graded relevance.</li>
+<li><strong>MRR (Mean Reciprocal Rank):</strong> focuses on the rank of the <strong>first</strong> relevant result.</li>
+</ul>
+<p>For (N) queries:</p>
+<p>\[
+MRR=\frac{1}{N}\sum_{i=1}^{N}\frac{1}{rank_i}
+\]</p>
+<p>Example: if first relevant results occur at ranks 1 and 5:</p>
+<p>\[
+MRR=\frac{1+0.2}{2}=0.6
+\]</p>
+<p>Use MRR when the first correct answer matters most, such as a support article, QA answer, or navigational search result. Use MAP when several relevant results matter; use nDCG when relevance has levels.</p>
+<hr>
+<h2 id="8-efficient-transformers">8. Efficient Transformers</h2>
+<h3 id="8-1-definition-and-motivation">8.1 Definition and motivation</h3>
+<p><strong>Efficient Transformers</strong> are architectures or implementations designed to reduce the computational cost and memory footprint of traditional Transformers while maintaining useful performance.</p>
+<p>They matter because standard self-attention is expensive for long sequences:</p>
+<p>\[
+\text{attention time/memory} \approx O(n^2)
+\]</p>
+<p>where (n) is sequence length. Doubling sequence length can roughly quadruple the attention matrix size.</p>
+<p>Key motivations:</p>
+<ul>
+<li><strong>computational efficiency:</strong> fewer operations and lower inference latency;</li>
+<li><strong>memory efficiency:</strong> operation on limited-memory hardware;</li>
+<li><strong>real-time applications:</strong> speech recognition, machine translation, search, and interactive systems;</li>
+<li><strong>edge/resource-constrained deployment.</strong></li>
+</ul>
+<h3 id="8-2-efficient-architecture-versus-model-compression">8.2 Efficient architecture versus model compression</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>What changes</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Efficient Transformer</td>
+<td>Architecture or computation</td>
+<td>efficient attention, parameter sharing, FlashAttention</td>
+</tr>
+<tr>
+<td>Model compression</td>
+<td>An already trained model/model representation</td>
+<td>distillation, pruning, quantization</td>
+</tr>
+</tbody>
+</table></div>
+<p>The ideas can be combined, but they are not synonyms.</p>
+<hr>
+<h2 id="9-distilbert-and-knowledge-distillation">9. DistilBERT and knowledge distillation</h2>
+<h3 id="9-1-distilbert">9.1 DistilBERT</h3>
+<p>DistilBERT is a smaller, faster BERT-family model trained by <strong>knowledge distillation</strong> from a pretrained BERT teacher. The lesson associates it with the work/blog “Smaller, Faster, Cheaper, Lighter,” and notes that the Hugging Face implementation was contributed by Victor Sanh and a JAX version by Kamal K. Raj.</p>
+<p>Architecture/interface details stressed in the lecture:</p>
+<ul>
+<li>DistilBERT does <strong>not use token-type IDs</strong>; separate segments using the tokenizer&rsquo;s separator token (<code>tokenizer.sep_token</code>, conventionally <code>[SEP]</code>).</li>
+<li>The standard interface does not expose selectable input <code>position_ids</code> in the same manner; these could be added if a specialized implementation required them, but this was not emphasized as ordinarily necessary.</li>
+</ul>
+<h3 id="9-2-teacher-student-learning">9.2 Teacher–student learning</h3>
+<ul>
+<li><strong>Teacher:</strong> large, accurate, computationally costly model.</li>
+<li><strong>Student:</strong> smaller, faster model trained to imitate the teacher.</li>
+</ul>
+<p>Hard target:</p>
+<pre><code class="language-text">Positive = 1
+</code></pre>
+<p>Soft teacher target:</p>
+<pre><code class="language-text">Positive 0.85, Neutral 0.10, Negative 0.05
+</code></pre>
+<p>Soft targets preserve uncertainty and similarities among classes (“dark knowledge”) that a one-hot label discards.</p>
+<p>At a high level, DistilBERT&rsquo;s training objective combines:</p>
+<ol>
+<li>matching the teacher&rsquo;s probability distribution (distillation loss);</li>
+<li>predicting masked tokens correctly (masked-language-model loss);</li>
+<li>cosine alignment between student and teacher hidden states.</li>
+</ol>
+<p>A conceptual combined loss is:</p>
+<p>\[
+\mathcal{L}=\alpha\mathcal{L}_{KD}
++\beta\mathcal{L}_{MLM}
++\gamma\mathcal{L}_{cos}
+\]</p>
+<h3 id="9-3-benefits-and-limitation">9.3 Benefits and limitation</h3>
+<p>Benefits:</p>
+<ul>
+<li>smaller memory footprint;</li>
+<li>lower inference latency;</li>
+<li>reduced training/fine-tuning cost;</li>
+<li>easier production and edge deployment;</li>
+<li>often retains most teacher performance.</li>
+</ul>
+<p>Limitation: some model capacity/accuracy may be lost. The quiz case used an illustrative F1 change from <strong>0.92 to 0.89</strong>, while also describing approximately 97% retained performance, about half the size, and latency reductions up to 60%. Treat these as case-study values rather than universal guarantees.</p>
+<hr>
+<h2 id="10-flashattention-2">10. FlashAttention 2</h2>
+<h3 id="10-1-what-it-does">10.1 What it does</h3>
+<p>FlashAttention 2 is an optimized implementation of attention that improves:</p>
+<ul>
+<li>memory efficiency;</li>
+<li>computation speed;</li>
+<li>GPU utilization and throughput.</li>
+</ul>
+<p>It changes how attention is computed on hardware while preserving the attention result/mathematics.</p>
+<p>It does <strong>not</strong>:</p>
+<ul>
+<li>compress model parameters;</li>
+<li>restore knowledge lost by distillation;</li>
+<li>automatically increase F1/accuracy;</li>
+<li>make incompatible hardware compatible.</li>
+</ul>
+<h3 id="10-2-installation-and-requirements">10.2 Installation and requirements</h3>
+<p>The lecture command was:</p>
+<pre><code class="language-bash">pip install -U flash-attn --no-build-isolation
+</code></pre>
+<p>Use a recent version to support features such as sliding-window attention. Hardware/software must be compatible, and the model should be loaded in half precision (<code>torch.float16</code>) as demonstrated.</p>
+<h3 id="10-3-model-loading-pattern">10.3 Model-loading pattern</h3>
+<pre><code class="language-python">import torch
+from transformers import AutoTokenizer, AutoModel
+
+device = &quot;cuda&quot;
+model_name = &quot;distilbert-base-uncased&quot;
+
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModel.from_pretrained(
+    model_name,
+    torch_dtype=torch.float16,
+    attn_implementation=&quot;flash_attention_2&quot;
+).to(device)
+
+text = &quot;I am a member of Amrita.&quot;
+encoded_input = tokenizer(text, return_tensors=&quot;pt&quot;).to(device)
+
+with torch.no_grad():
+    output = model(**encoded_input)
+</code></pre>
+<p>The classroom environment reported that FlashAttention 2 was unavailable because the required hardware/package support was absent. This is an environment limitation, not evidence that the syntax or technique is conceptually invalid. In practice, verify that the chosen model/backend actually supports the requested attention implementation.</p>
+<h3 id="10-4-device-placement">10.4 Device placement</h3>
+<p>Inputs and model weights should be on the same device. CPU/GPU mismatch creates transfers or errors. If both are already colocated and latency still grows with longer input, likely causes include model size and quadratic attention cost.</p>
+<h3 id="10-5-distilbert-flashattention-2">10.5 DistilBERT + FlashAttention 2</h3>
+<ul>
+<li>DistilBERT improves efficiency by reducing model capacity/size.</li>
+<li>FlashAttention improves the attention kernel/computation.</li>
+</ul>
+<p>Together they can lower latency and memory usage, especially for production and batched inference. However, FlashAttention does not “recover” accuracy lost through distillation.</p>
+<hr>
+<h2 id="11-evaluation-formulas">11. Evaluation formulas</h2>
+<p>For true positives (TP), false positives (FP), and false negatives (FN):</p>
+<p>\[
+Precision=\frac{TP}{TP+FP}
+\]</p>
+<p>Precision asks: <strong>Of the items extracted/predicted as positive, how many were correct?</strong> High precision means fewer false discoveries.</p>
+<p>\[
+Recall=\frac{TP}{TP+FN}
+\]</p>
+<p>Recall asks: <strong>Of all relevant items, how many did the model find?</strong> High recall means fewer missed findings.</p>
+<p>\[
+F_1=2\frac{Precision\times Recall}{Precision+Recall}
+\]</p>
+<p>F1 is their harmonic mean and is valuable when both false positives and false negatives matter. For NER, compute metrics on complete entity spans, not merely token accuracy.</p>
+<p><strong>Pharmaceutical example</strong></p>
+<ul>
+<li>Low precision wastes scientists&rsquo; time on incorrect drug relationships.</li>
+<li>Low recall misses potentially important relationships.</li>
+<li>F1 balances both concerns, although the final operating point must reflect scientific risk.</li>
+</ul>
+<hr>
+<h2 id="12-case-study-1-pharmaceutical-literature-and-patent-mining">12. Case study 1 — Pharmaceutical literature and patent mining</h2>
+<h3 id="12-1-problem">12.1 Problem</h3>
+<p>A pharmaceutical firm wants to extract relevant information from huge volumes of scientific literature and patent data to accelerate drug discovery. Full BERT training on proprietary data is computationally expensive and slow.</p>
+<h3 id="12-2-proposed-knowledge-distillation-workflow">12.2 Proposed knowledge-distillation workflow</h3>
+<ol>
+<li>Use pretrained <strong>DistilBERT</strong> as the student.</li>
+<li>Train/fine-tune a larger BERT teacher on scientific literature and patent data.</li>
+<li>Transfer knowledge using teacher outputs:
+   - <strong>soft-label transfer:</strong> use full predicted probability distributions;
+   - <strong>hard-label transfer:</strong> use the teacher&rsquo;s most likely class.</li>
+<li>Fine-tune the student on the company&rsquo;s proprietary pharmaceutical dataset.</li>
+<li>Evaluate accuracy, precision, recall, and F1.</li>
+<li>Deploy only after validating scientific usefulness and failure modes.</li>
+</ol>
+<p>Expected benefits: lower computational cost, improved efficiency, faster inference, faster research iteration, and better research productivity.</p>
+<h3 id="12-3-biogenix-decision-analysis-from-the-quiz">12.3 BioGenix decision analysis from the quiz</h3>
+<p>Stakeholders:</p>
+<ul>
+<li><strong>Dr. Maya Rao, lead ML engineer:</strong> prioritizes compute efficiency and real-time responsiveness.</li>
+<li><strong>Elena Petrova, R&amp;D director:</strong> prioritizes precision, F1, and scientific reliability.</li>
+<li><strong>Carlos Chen, bioinformatics manager:</strong> balances lab throughput, budget, GPU cost, and milestones.</li>
+</ul>
+<p>Options:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Strength</th>
+<th>Cost/risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. Fine-tune DistilBERT now</td>
+<td>fastest time-to-result, low memory/cost</td>
+<td>small accuracy reduction</td>
+</tr>
+<tr>
+<td>B. DistilBERT + FlashAttention 2</td>
+<td>best runtime/batch efficiency if supported</td>
+<td>integration complexity; no guaranteed accuracy recovery</td>
+</tr>
+<tr>
+<td>C. Full BERT + more GPUs</td>
+<td>maximum accuracy potential</td>
+<td>cost, setup time, queueing, slow iteration</td>
+</tr>
+</tbody>
+</table></div>
+<p>The quiz&rsquo;s strategic recommendation is to deploy DistilBERT quickly and optionally add FlashAttention 2, rather than delay the project for a marginal accuracy increase from full BERT. The rationale is that the business goal is <strong>accelerating discovery</strong>, not maximizing one offline metric in isolation.</p>
+<p>Important qualification: for safety-critical scientific extraction, the organization must define the acceptable precision/recall threshold, add human review, and test domain shift. A small average F1 decline could conceal unacceptable errors on rare but important entity types.</p>
+<hr>
+<h2 id="13-case-study-2-legal-document-summarization">13. Case study 2 — Legal-document summarization</h2>
+<h3 id="13-1-problem">13.1 Problem</h3>
+<p>A law firm processes many lengthy contracts, court filings, and other legal documents. Manual review consumes attorney time and reduces productivity. The goal is automatic summarization so attorneys can focus on higher-value work.</p>
+<h3 id="13-2-end-to-end-solution">13.2 End-to-end solution</h3>
+<h4 id="data-preparation">Data preparation</h4>
+<ol>
+<li>Gather a diverse dataset covering contract law, corporate law, intellectual-property law, and other relevant domains.</li>
+<li>Have human legal experts manually create high-quality reference summaries.</li>
+<li>Clean noise and inconsistencies.</li>
+<li>remove sensitive information where required.</li>
+<li>Normalize text for consistency.</li>
+</ol>
+<h4 id="model-selection-and-fine-tuning">Model selection and fine-tuning</h4>
+<ul>
+<li>The lecture selects BERT as a strong base because of its performance across NLP tasks.</li>
+<li>Fine-tune the pretrained model on the legal summarization dataset using transfer learning, adapting parameters to the target task.</li>
+</ul>
+<p>Practical caveat: base BERT is an encoder rather than a native autoregressive generator. A production abstractive summarizer commonly uses an encoder–decoder model or adds a compatible decoder; BERT alone can support extractive summarization.</p>
+<h4 id="training-and-optimization">Training and optimization</h4>
+<p>Tune:</p>
+<ul>
+<li>learning rate;</li>
+<li>batch size;</li>
+<li>number of epochs.</li>
+</ul>
+<p>Use dropout and L2 regularization to reduce overfitting and improve generalization.</p>
+<h4 id="evaluation">Evaluation</h4>
+<ul>
+<li><strong>ROUGE</strong> (Recall-Oriented Understudy for Gisting Evaluation): overlap between generated and human reference summaries; often recall-oriented.</li>
+<li><strong>BLEU</strong> (Bilingual Evaluation Understudy): n-gram precision-oriented comparison between candidate and reference.</li>
+<li><strong>METEOR</strong> (Metric for Evaluation of Translation with Explicit ORdering): combines unigram precision, recall, and word-level alignment.</li>
+</ul>
+<p>Metrics should be supplemented with human legal review for factuality, omitted clauses, hallucination, and confidentiality.</p>
+<h4 id="deployment">Deployment</h4>
+<ul>
+<li>Expose the trained model through a RESTful API for integration with existing firm systems.</li>
+<li>Create a user interface allowing attorneys to upload documents and receive summaries.</li>
+</ul>
+<p>Expected outcomes: time savings, improved efficiency, enhanced accuracy/consistency, and scalability.</p>
+<hr>
+<h2 id="14-live-session-practical-mini-project-instructions">14. Live-session practical mini-project instructions</h2>
+<p>These are course logistics rather than theory, but they provide a useful practical application of the week&rsquo;s ideas.</p>
+<ul>
+<li>Complete either the mini project or the experimental project and submit a report.</li>
+<li>The live session stated <strong>29 July</strong> as the deadline and said late reports would not be accepted; verify the current LMS instruction because dates can change.</li>
+<li>The project was described as ungraded but expected for everyone; strong reports may be invited to a 15–20 minute presentation during Review Week 3.</li>
+<li>Implementation is emphasized because encountering and resolving errors builds practical understanding beyond theory.</li>
+</ul>
+<h3 id="suggested-basic-project">Suggested basic project</h3>
+<ol>
+<li>Choose a core NLP technique: tokenization, sentiment analysis, NER, etc.</li>
+<li>Collect roughly <strong>30–50 product/service reviews</strong> from Amazon, Flipkart, Google/Google Maps, or another feedback platform.</li>
+<li>Manually label each review positive, negative, or neutral in a structured spreadsheet.</li>
+<li>Identify the five most repeated words or phrases.</li>
+<li>Note sarcasm in reviews.</li>
+<li>Note code-switching, such as English mixed with Malayalam, Hindi, or Tamil.</li>
+<li>Summarize findings.</li>
+<li><strong>Propose</strong>—not necessarily build—a chatbot response strategy for the most common complaints/negative feedback. Positive feedback may need only acknowledgement; negative feedback needs a helpful response path.</li>
+<li>Include evidence/screenshots of the review dataset and analysis so the work can be evaluated.</li>
+</ol>
+<p>The experimental variant uses a similar review dataset but adds a more advanced <strong>rule-based approach</strong> for testing/comparison.</p>
+<hr>
+<h2 id="15-misconceptions-and-corrections">15. Misconceptions and corrections</h2>
+<ol>
+<li>
+<p><strong>“Efficient Transformer” means only a smaller model.</strong><br>
+   Efficiency may come from architecture, efficient attention, parameter sharing, compression, quantization, or pruning.</p>
+</li>
+<li>
+<p><strong>Knowledge distillation copies only labels.</strong><br>
+   Its key value is transferring soft probability information and/or internal representations from teacher to student.</p>
+</li>
+<li>
+<p><strong>DistilBERT merely deletes BERT layers.</strong><br>
+   The student is explicitly trained to imitate a teacher with a multi-part objective.</p>
+</li>
+<li>
+<p><strong>FlashAttention reduces parameter count or restores accuracy.</strong><br>
+   It optimizes attention computation and memory access; it does not compress the model or recreate lost knowledge.</p>
+</li>
+<li>
+<p><strong>BERT is automatically an ideal sentence embedding model.</strong><br>
+   Raw BERT hidden states are contextual token representations. SBERT/USE-like models are trained for efficient sentence comparison.</p>
+</li>
+<li>
+<p><strong>NER is ordinary sentence classification.</strong><br>
+   It is context-sensitive sequence/span labelling.</p>
+</li>
+<li>
+<p><strong>BiLSTM reads only forward.</strong><br>
+   It combines forward and backward context.</p>
+</li>
+<li>
+<p><strong>MRR considers every relevant result.</strong><br>
+   MRR uses only the first relevant result&rsquo;s rank.</p>
+</li>
+<li>
+<p><strong>The highest F1 model is always the best business choice.</strong><br>
+   The correct choice also depends on latency, cost, throughput, time-to-result, risk, and deployment constraints.</p>
+</li>
+<li>
+<p><strong>More GPUs automatically solve the business problem.</strong><br>
+    Hardware may improve capacity but adds cost, setup complexity, queue dependence, and operational burden.</p>
+</li>
+</ol>
+<hr>
+<h2 id="16-exam-focused-comparison-table">16. Exam-focused comparison table</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Primary purpose</th>
+<th>Key advantage</th>
+<th>Key caveat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NER</td>
+<td>locate and classify entities</td>
+<td>structures unstructured text</td>
+<td>needs contextual/span-aware evaluation</td>
+</tr>
+<tr>
+<td>BiLSTM</td>
+<td>contextual sequence labelling</td>
+<td>past + future context</td>
+<td>sequential compute/latency</td>
+</tr>
+<tr>
+<td>ELMo</td>
+<td>contextual word embedding</td>
+<td>handles polysemy and unseen words via characters</td>
+<td>older/heavier than simple static embeddings</td>
+</tr>
+<tr>
+<td>BERT</td>
+<td>bidirectional contextual encoder</td>
+<td>high-capacity language understanding</td>
+<td>costly; not inherently optimized for sentence similarity</td>
+</tr>
+<tr>
+<td>RoBERTa</td>
+<td>refined BERT training</td>
+<td>strong fine-tuning performance</td>
+<td>still resource-intensive</td>
+</tr>
+<tr>
+<td>mBERT</td>
+<td>multilingual contextual encoder</td>
+<td>cross-language/low-resource adaptation</td>
+<td>multilingual coverage and domain quality vary</td>
+</tr>
+<tr>
+<td>DistilBERT</td>
+<td>compressed BERT student</td>
+<td>smaller, faster, lower memory</td>
+<td>possible accuracy/capacity loss</td>
+</tr>
+<tr>
+<td>Knowledge distillation</td>
+<td>transfer teacher behaviour</td>
+<td>rich soft-target supervision</td>
+<td>depends on teacher/student/objective quality</td>
+</tr>
+<tr>
+<td>USE</td>
+<td>reusable sentence embeddings</td>
+<td>general and multilingual similarity</td>
+<td>may need domain adaptation</td>
+</tr>
+<tr>
+<td>SBERT</td>
+<td>efficient sentence similarity</td>
+<td>precompute vectors and rank cheaply</td>
+<td>bi-encoder can lose fine pairwise interactions</td>
+</tr>
+<tr>
+<td>FlashAttention 2</td>
+<td>optimized attention kernel</td>
+<td>speed and memory efficiency</td>
+<td>hardware/backend compatibility; no parameter reduction</td>
+</tr>
+<tr>
+<td>MRR</td>
+<td>rank first relevant result</td>
+<td>simple first-answer metric</td>
+<td>ignores later relevant results</td>
+</tr>
+<tr>
+<td>ROUGE</td>
+<td>summary/reference overlap</td>
+<td>standard summarization comparison</td>
+<td>overlap is not factuality</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="17-likely-exam-questions-and-answer-skeletons">17. Likely exam questions and answer skeletons</h2>
+<h3 id="q1-why-is-a-bilstm-better-than-independent-multiclass-classification-for-ner">Q1. Why is a BiLSTM better than independent multiclass classification for NER?</h3>
+<p>Define NER as sequence labelling; explain that entity meaning and labels depend on surrounding tokens; describe forward and backward LSTMs; show how concatenated context disambiguates “Apple”; state the compute/latency trade-off.</p>
+<h3 id="q2-explain-knowledge-distillation-in-distilbert">Q2. Explain knowledge distillation in DistilBERT.</h3>
+<p>Define teacher and student; distinguish hard and soft targets; explain probability matching, masked-token prediction, and hidden-state cosine alignment; conclude with smaller size/faster inference versus possible accuracy loss.</p>
+<h3 id="q3-distilbert-versus-flashattention-2">Q3. DistilBERT versus FlashAttention 2.</h3>
+<p>DistilBERT compresses/changes the model through distillation; FlashAttention optimizes the attention computation. They are complementary. FlashAttention neither reduces parameter count nor guarantees improved accuracy.</p>
+<h3 id="q4-explain-sentence-embeddings-and-their-generation-methods">Q4. Explain sentence embeddings and their generation methods.</h3>
+<p>Define fixed-size semantic vector; give cosine similarity and applications; compare average word embeddings, contextual Transformer representations, and neural predictive approaches; mention BERT, SBERT, USE, InferSent, and Skip-Thought.</p>
+<h3 id="q5-explain-and-calculate-mrr">Q5. Explain and calculate MRR.</h3>
+<p>State that only the first relevant result matters; write the reciprocal-rank average formula; calculate each query&rsquo;s reciprocal rank and average; contrast MAP and nDCG.</p>
+<h3 id="q6-design-a-domain-specific-ner-fine-tuning-pipeline">Q6. Design a domain-specific NER fine-tuning pipeline.</h3>
+<p>Select a pretrained model; acquire and label domain data; normalize label maps across sources; tokenize and align word/subword labels; fine-tune token classifier; evaluate entity-level precision/recall/F1; validate failures; deploy and monitor.</p>
+<h3 id="q7-recommend-a-solution-for-the-pharmaceutical-case">Q7. Recommend a solution for the pharmaceutical case.</h3>
+<p>Frame accuracy–speed–cost trade-offs; describe teacher/student distillation and domain fine-tuning; compare the three options; recommend DistilBERT first and FlashAttention if supported, subject to domain-specific precision/recall thresholds and human review.</p>
+<h3 id="q8-build-a-legal-summarization-solution">Q8. Build a legal summarization solution.</h3>
+<p>Cover diverse data collection, expert annotation, cleaning/privacy, model/task choice, hyperparameter tuning, dropout/L2, ROUGE/BLEU/METEOR plus human factuality review, REST API, UI, and outcomes.</p>
+<hr>
+<h2 id="18-final-rapid-revision-checklist">18. Final rapid-revision checklist</h2>
+<ul>
+<li>NER = locate + classify entity spans in unstructured text.</li>
+<li>NER is sequence labelling; context and label order matter.</li>
+<li>BiLSTM reads both directions and combines past/future context.</li>
+<li>ELMo gives contextual word vectors, handles polysemy, and uses character-level construction for unseen words.</li>
+<li>Fine-tuning adapts general pretrained knowledge to a task, domain, or language.</li>
+<li>Sentence embeddings represent whole-sentence meaning as vectors.</li>
+<li>Averaging is simple but ignores order; contextual models capture richer meaning.</li>
+<li>SBERT/USE are better aligned with sentence similarity than raw BERT pooling.</li>
+<li>Passage ranking scores candidate relevance to a query.</li>
+<li>MRR rewards a high-ranked first relevant result.</li>
+<li>Standard attention cost grows roughly quadratically with sequence length.</li>
+<li>DistilBERT = model compression through teacher–student knowledge transfer.</li>
+<li>FlashAttention 2 = faster, memory-efficient attention implementation, not compression.</li>
+<li>Precision controls false positives; recall controls misses; F1 balances both.</li>
+<li>In real projects, optimize for business/scientific objectives, not a single metric alone.</li>
+</ul>
+<h2 id="19-references-named-in-the-lectures">19. References named in the lectures</h2>
+<ul>
+<li>Steven Bird, Ewan Klein, and Edward Loper, <em>Natural Language Processing with Python</em>.</li>
+<li>Daniel Jurafsky and James H. Martin, <em>Speech and Language Processing</em>.</li>
+</ul>
+        </div>
+    <nav class="week-pager">
+      <a href="week-10.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 10: BERT and Modern Pre-trained Language Models</span>
+      </a>
+      <a href="week-12.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 12: Cross-Lingual NLP, Multilingual Models,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>
