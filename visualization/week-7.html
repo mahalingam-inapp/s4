@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Visualization · Week 7 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Visualization</span>
+      <span class="brand-title">Week 7</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html" selected>Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Data Visualization, Visual Perception, and Preattentive Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Visual Perception, Better Visualization, Form–Function, Tables and…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Visualizing and Comparing Categories
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Charts That Show Change Over Time
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Distribution and Relationship Visualizations
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Data Visualization: Exhaustive Exam Notes
+      </a>
+      <a class="is-active" href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Data Visualization with Python, Jupyter, Python Basics, and Chart…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Python Data Visualization, Matplotlib Plotting, Interpretation, and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Data Visualization with Matplotlib, Seaborn, and Jupyter Notebook
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Exam-Focused Study Notes
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Seaborn, Matplotlib, Heatmaps, Styling, and Dashboard Design
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Dashboards, Dashboard Design, Grammar of Graphics, and Matplotlib
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Dashboard Design, Visual Encoding, Matplotlib, and Dashboard Analytics
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Storytelling with Data
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Storytelling with Data: Exam-Focused Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Visualization · Week 7</p>
+        <h1 class="page-title">Data Visualization with Python, Jupyter, Python Basics, and Chart Selection</h1>
+        <p class="page-meta">Week 7 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#scope-and-exam-orientation">Scope and exam orientation</a></li>
+      <li><a href="#1-python-and-jupyter-environment-setup">1. Python and Jupyter environment setup</a></li>
+      <li><a href="#2-jupyter-notebook-interface-and-cells">2. Jupyter Notebook interface and cells</a></li>
+      <li><a href="#3-python-foundations">3. Python foundations</a></li>
+      <li><a href="#4-quiz-concepts-and-likely-exam-traps">4. Quiz concepts and likely exam traps</a></li>
+      <li><a href="#5-greentech-analytics-case-study-data-ingestion-and-variable-design">5. GreenTech Analytics case study: data ingestion and variable design</a></li>
+      <li><a href="#6-live-session-chart-review">6. Live-session chart review</a></li>
+      <li><a href="#7-high-probability-exam-questions-and-answer-cues">7. High-probability exam questions and answer cues</a></li>
+      <li><a href="#8-rapid-revision-checklist">8. Rapid revision checklist</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="scope-and-exam-orientation">Scope and exam orientation</h2>
+<p>Week 7 marks the transition from visualization theory to practical work with Python. The material covers: setting up Anaconda, Python, and Jupyter Notebook; working with the Jupyter interface; basic Python data types, operators, conditions, and loops; quiz concepts; a data-ingestion case study; and a live review of distribution, part-to-whole, relationship, qualitative, and tabular visualizations.</p>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> Knowing only how to create a chart is insufficient. Know the purpose of each chart, its terminology, how humans perceive it, and the circumstances in which it can mislead.</p>
+</blockquote>
+<hr>
+<h2 id="1-python-and-jupyter-environment-setup">1. Python and Jupyter environment setup</h2>
+<h3 id="1-1-prerequisites">1.1 Prerequisites</h3>
+<p>The practical visualization work assumes a beginner level and requires:</p>
+<ul>
+<li>A working Python environment.</li>
+<li>Jupyter Notebook, the computational notebook used throughout the course.</li>
+<li>Basic familiarity with Python and the Jupyter interface.</li>
+</ul>
+<p>The recommended way to obtain Python and Jupyter together is the <strong>Anaconda distribution</strong>. Anaconda bundles Python, Jupyter, package-management tools, and many data-science packages.</p>
+<h3 id="1-2-installing-anaconda">1.2 Installing Anaconda</h3>
+<p>Procedure demonstrated (Windows):</p>
+<ol>
+<li>Visit the Anaconda download page (<code>anaconda.com/download</code>). Registration may be skipped.</li>
+<li>Choose the installer for the computer&rsquo;s operating system: Windows, macOS, or Linux. The demonstration used the Windows 64-bit graphical installer (about 912 MB at the time of recording).</li>
+<li>Wait for the installer to download and run the executable.</li>
+<li>Select <strong>Next</strong>, accept the terms, and use the recommended single-user/<strong>Just Me</strong> installation.</li>
+<li>Retain the default installation location unless there is a specific reason to change it.</li>
+<li>Keep the default options. In particular, adding Anaconda to the system <code>PATH</code> can cause conflicts and was marked <strong>not recommended</strong>; registering Anaconda/Python is sufficient.</li>
+<li>Select <strong>Install</strong>, wait for completion, and select <strong>Finish</strong>.</li>
+<li>The final screen can optionally launch Anaconda Navigator; leave the checkbox selected if immediate launch is desired.</li>
+</ol>
+<h3 id="1-3-anaconda-navigator">1.3 Anaconda Navigator</h3>
+<p><strong>Anaconda Navigator</strong> is the graphical interface included with Anaconda. It lets a user install and launch Jupyter Notebook, Spyder, and other applications and manage environments without using the command line. This is especially useful for beginners uncomfortable with a command-line interface.</p>
+<p>To install Jupyter through Navigator:</p>
+<ol>
+<li>Open Anaconda Navigator.</li>
+<li>Find <strong>Jupyter Notebook</strong> among the available applications/packages.</li>
+<li>Select <strong>Install</strong>.</li>
+<li>After installation, Jupyter can be launched from Navigator or from the operating-system search.</li>
+</ol>
+<h3 id="1-4-what-jupyter-notebook-is-and-why-it-is-used">1.4 What Jupyter Notebook is and why it is used</h3>
+<p>Jupyter Notebook is a web-browser-based notebook-authoring application: a digital notebook or advanced word processor in which code, explanation, output, and visualization coexist.</p>
+<p>It supports:</p>
+<ul>
+<li>Writing code with syntax assistance and indentation.</li>
+<li>Executing small pieces of code interactively.</li>
+<li>Displaying results directly below the code.</li>
+<li>Writing explanatory notes beside or below code.</li>
+<li>Exploring and visualizing data.</li>
+<li>Sharing the complete notebook through an LMS or with collaborators.</li>
+</ul>
+<p>This combination makes code easier to teach, test, explain, and reproduce.</p>
+<h3 id="1-5-launch-sequence-and-the-local-server">1.5 Launch sequence and the local server</h3>
+<ol>
+<li>Search for <strong>Jupyter Notebook</strong> in the operating system and launch it. Pinning it to the taskbar is recommended because it will be used frequently.</li>
+<li>A terminal/console opens first; then the browser opens the Jupyter dashboard, commonly at a local address such as <code>http://localhost:8888/tree</code>.</li>
+<li><code>localhost</code> means the service is being delivered by the user&rsquo;s own computer, not by a remote website.</li>
+<li>The console is the background Jupyter server. It handles browser requests and notebook execution and acts as the bridge between notebook and server.</li>
+</ol>
+<blockquote>
+<p><strong>Critical caveat:</strong> Do not close the Jupyter terminal while using the notebook. Closing it stops the server and the notebook will cease to function.</p>
+</blockquote>
+<p>The terminal also reveals the <strong>notebook serving/startup directory</strong>. Note this path: the dashboard initially exposes only files and subfolders under that directory. The startup directory can be changed, but that was outside the lesson&rsquo;s scope.</p>
+<h3 id="1-6-dashboard-versus-notebook">1.6 Dashboard versus notebook</h3>
+<ul>
+<li><strong>Jupyter dashboard:</strong> the launchpad/file manager used to browse, create, rename, and open notebooks and folders. It is not itself a notebook.</li>
+<li><strong>Jupyter notebook:</strong> an individual <code>.ipynb</code> document containing executable and explanatory cells.</li>
+<li><strong>Kernel:</strong> the computational engine/back end connected to a notebook. A Python 3 kernel understands and executes Python code. The instructor&rsquo;s analogy was that the notebook is like a book while the kernel/back-end package provides the working capability behind it.</li>
+</ul>
+<h3 id="1-7-creating-the-course-folder-and-first-notebook">1.7 Creating the course folder and first notebook</h3>
+<ol>
+<li>From the dashboard, select <strong>New → Folder</strong>.</li>
+<li>Rename it as a dedicated course folder (the demonstration used a name similar to <code>Amrita Data Vis Folder</code>). Dedicated storage keeps course files organized.</li>
+<li>Open that folder.</li>
+<li>Select <strong>New → Python 3</strong> to create a notebook connected to the Python 3 kernel.</li>
+<li>The notebook initially appears as <code>Untitled</code>. Click the title, enter a meaningful name such as <code>My First Jupyter</code>, and select <strong>Rename</strong>.</li>
+<li>The notebook file extension is <code>.ipynb</code>.</li>
+</ol>
+<p><strong>Practical use case:</strong> Keep every week&rsquo;s code and charts in separate subfolders under one course directory so notebooks, datasets, and exported images remain easy to locate.</p>
+<hr>
+<h2 id="2-jupyter-notebook-interface-and-cells">2. Jupyter Notebook interface and cells</h2>
+<h3 id="2-1-cells-and-kernel">2.1 Cells and kernel</h3>
+<p>A <strong>cell</strong> is the basic body/block of a notebook. It can contain code, text, or raw content. Cells organize work into small chunks so that code can be tested incrementally and accompanied by explanations.</p>
+<p>The <strong>kernel</strong> is the notebook&rsquo;s brain/computational engine. When a cell is run, the kernel processes its code and returns the result. Each notebook is connected to a particular kernel/language.</p>
+<h3 id="2-2-three-cell-types">2.2 Three cell types</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Cell type</th>
+<th>Purpose</th>
+<th>Result when run</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Code</strong></td>
+<td>Python instructions</td>
+<td>Kernel executes the code and displays output/errors</td>
+</tr>
+<tr>
+<td><strong>Markdown</strong></td>
+<td>Formatted explanations, headings, notes</td>
+<td>Markdown is rendered as formatted text</td>
+</tr>
+<tr>
+<td><strong>Raw</strong></td>
+<td>Unprocessed content</td>
+<td>Content is retained without normal code execution or Markdown rendering</td>
+</tr>
+</tbody>
+</table></div>
+<p>New cells are code cells by default. Use the toolbar cell-type dropdown to change a selected cell to Markdown or Raw.</p>
+<h3 id="2-3-command-mode-and-edit-mode">2.3 Command mode and edit mode</h3>
+<ul>
+<li><strong>Command mode:</strong> the cell as an object is selected; notebook-level shortcuts apply. The demonstrated cell background appeared grey.</li>
+<li><strong>Edit mode:</strong> the cursor is inside the cell; typing edits cell contents. Clicking inside changed the cell area to white in the demonstration.</li>
+</ul>
+<p>Useful commands demonstrated:</p>
+<ul>
+<li><code>A</code> in command mode: insert a cell <strong>above</strong>.</li>
+<li><code>B</code> in command mode: insert a cell <strong>below</strong>.</li>
+<li>Toolbar <code>+</code>: add a new cell.</li>
+<li><code>Ctrl+Enter</code>: run the selected cell and keep the selection on it.</li>
+</ul>
+<h3 id="2-4-first-program-and-execution-indicators">2.4 First program and execution indicators</h3>
+<pre><code class="language-python">print(&quot;Hello world&quot;)
+</code></pre>
+<p>Running the code cell with <code>Ctrl+Enter</code> displays <code>Hello world</code> below it.</p>
+<p>The square brackets to the left indicate execution state/order:</p>
+<ul>
+<li><code>[*]</code>: the code is still executing.</li>
+<li><code>[n]</code>: execution finished; <code>n</code> records the execution count/order.</li>
+</ul>
+<p>Because notebooks can run cells out of top-to-bottom order, execution counts help reveal the actual order in which the kernel processed cells.</p>
+<h3 id="2-5-markdown-formatting">2.5 Markdown formatting</h3>
+<p>After changing a cell to Markdown, enter text and run it to render it.</p>
+<pre><code class="language-markdown"># Heading 1
+## Heading 2
+### Heading 3
+
+This is **bold text**.
+This is *italic text*.
+</code></pre>
+<ul>
+<li>One <code>#</code> creates the largest heading; additional <code>#</code> characters create progressively smaller heading levels.</li>
+<li><code>**text**</code> makes text bold.</li>
+<li><code>*text*</code> makes text italic.</li>
+<li>A Markdown reference/cheat sheet can be used for additional formatting.</li>
+</ul>
+<blockquote>
+<p><strong>Common error:</strong> Markdown syntax placed in a code cell will be treated as code, not rendered formatting. Convert the cell to Markdown first.</p>
+</blockquote>
+<hr>
+<h2 id="3-python-foundations">3. Python foundations</h2>
+<h3 id="3-1-data-type-and-variable">3.1 Data type and variable</h3>
+<p>A <strong>data type</strong> identifies the kind of value a language can process and therefore which operations are valid for it.</p>
+<p>A <strong>variable</strong> is an alias/name for a memory location where a value is stored. The variable name lets the program access or update that value.</p>
+<p>Python is <strong>loosely/dynamically typed</strong>: unlike languages such as C++, Java, or C#, the programmer does not declare a variable&rsquo;s type in advance. Python evaluates the type from the assigned value at runtime.</p>
+<p>Use <code>print()</code> to display a value and <code>type()</code> to inspect its type.</p>
+<h3 id="3-2-seven-data-types-demonstrated">3.2 Seven data types demonstrated</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Meaning and syntax</th>
+<th>Lesson example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>str</code></td>
+<td>Text in quotes</td>
+<td><code>first_name = "Santosh"</code></td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td>Whole number</td>
+<td><code>age = 20</code></td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>Number with a fractional/decimal part</td>
+<td><code>weight = 70.25</code></td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td>Logical <code>True</code> or <code>False</code></td>
+<td><code>married = False</code></td>
+</tr>
+<tr>
+<td><code>list</code></td>
+<td>Ordered collection in square brackets</td>
+<td><code>cars = ["Honda", "Toyota", "Suzuki"]</code></td>
+</tr>
+<tr>
+<td><code>tuple</code></td>
+<td>Ordered collection in parentheses</td>
+<td><code>days = ("Sunday", "Monday", "Tuesday")</code></td>
+</tr>
+<tr>
+<td><code>dict</code></td>
+<td>Key-value mapping in curly braces</td>
+<td><code>days2 = {1: "Sunday", 2: "Monday", 3: "Tuesday"}</code></td>
+</tr>
+</tbody>
+</table></div>
+<pre><code class="language-python">print(first_name)
+print(type(first_name))
+</code></pre>
+<p>No explicit <code>str</code> declaration is needed; Python infers it from the quoted value.</p>
+<h3 id="3-3-quantitative-and-qualitative-data">3.3 Quantitative and qualitative data</h3>
+<ul>
+<li><strong>Quantitative data:</strong> measurable numbers on which arithmetic/statistics are meaningful, e.g., distance, dollars/cost, speed, and time. Store as <code>int</code> or <code>float</code> depending on whether fractional values are possible.</li>
+<li><strong>Qualitative data:</strong> labels/categories such as yes/no or satisfied/dissatisfied. Store as <code>str</code>, or as <code>bool</code> when there are exactly two stable logical states and that encoding is clear.</li>
+</ul>
+<p>This distinction controls downstream analysis:</p>
+<ul>
+<li>Quantitative values support totals, averages, rates, regression, line/scatter plots, and histograms.</li>
+<li>Qualitative values support grouping, counts, frequency tables, and category-based charts.</li>
+</ul>
+<h3 id="3-4-arithmetic-operators">3.4 Arithmetic operators</h3>
+<p>With <code>x = 20</code> and <code>y = 10</code>:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Operation</th>
+<th style="text-align: right;">Operator</th>
+<th>Example/result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Addition</td>
+<td style="text-align: right;"><code>+</code></td>
+<td><code>x + y</code> → <code>30</code></td>
+</tr>
+<tr>
+<td>Subtraction</td>
+<td style="text-align: right;"><code>-</code></td>
+<td><code>x - y</code> → <code>10</code></td>
+</tr>
+<tr>
+<td>Multiplication</td>
+<td style="text-align: right;"><code>*</code></td>
+<td><code>x * y</code> → <code>200</code></td>
+</tr>
+<tr>
+<td>Division</td>
+<td style="text-align: right;"><code>/</code></td>
+<td><code>x / y</code> → <code>2.0</code></td>
+</tr>
+<tr>
+<td>Modulus/remainder</td>
+<td style="text-align: right;"><code>%</code></td>
+<td><code>x % y</code> → <code>0</code></td>
+</tr>
+<tr>
+<td>Exponentiation</td>
+<td style="text-align: right;"><code>**</code></td>
+<td><code>x ** y</code> → <code>20</code> raised to <code>10</code></td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> Pay special attention to <code>%</code> (modulus, not percentage here) and <code>**</code> (exponentiation), because their symbols are less intuitive than the other arithmetic operators.</p>
+</blockquote>
+<h3 id="3-5-logical-operators">3.5 Logical operators</h3>
+<p>Logical operators combine or invert Boolean conditions:</p>
+<ul>
+<li><code>x and y</code>: true only if both operands are true.</li>
+<li><code>x or y</code>: true if at least one operand is true.</li>
+<li><code>not x</code>: reverses the Boolean value.</li>
+</ul>
+<p>For <code>x = True</code>, <code>y = False</code>:</p>
+<ul>
+<li><code>x and y</code> → <code>False</code></li>
+<li><code>x or y</code> → <code>True</code></li>
+<li><code>not y</code> → <code>True</code></li>
+</ul>
+<p><strong>Business-rule example:</strong> Login is allowed if the user is an admin <strong>or</strong> has paid, but never if suspended:</p>
+<pre><code class="language-python">can_login = (admin or paid) and (not suspended)
+</code></pre>
+<p>Parentheses make the intended grouping explicit. A logical AND audit rule such as <code>logged_in and is_admin</code> records only cases where both are true; in the quiz&rsquo;s five-user table, only Users 1 and 4 qualified, producing two log entries.</p>
+<h3 id="3-6-comparison-operators">3.6 Comparison operators</h3>
+<p>Comparison operators compare operands and return a Boolean:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Meaning</th>
+<th>Operator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equal</td>
+<td><code>==</code></td>
+</tr>
+<tr>
+<td>Not equal</td>
+<td><code>!=</code></td>
+</tr>
+<tr>
+<td>Greater than</td>
+<td><code>&gt;</code></td>
+</tr>
+<tr>
+<td>Less than</td>
+<td><code>&lt;</code></td>
+</tr>
+<tr>
+<td>Greater than or equal</td>
+<td><code>&gt;=</code></td>
+</tr>
+<tr>
+<td>Less than or equal</td>
+<td><code>&lt;=</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>For <code>x = 20</code>, <code>y = 35</code>: <code>x == y</code> is false, <code>x != y</code> is true, <code>x &gt; y</code> is false, and <code>x &lt; y</code> is true.</p>
+<h3 id="3-7-assignment-operators">3.7 Assignment operators</h3>
+<p>Assignment stores or updates values:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Form</th>
+<th>Equivalent meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>r = x + y</code></td>
+<td>assign computed result to <code>r</code></td>
+</tr>
+<tr>
+<td><code>x += y</code></td>
+<td><code>x = x + y</code></td>
+</tr>
+<tr>
+<td><code>x -= y</code></td>
+<td><code>x = x - y</code></td>
+</tr>
+<tr>
+<td><code>x *= y</code></td>
+<td><code>x = x * y</code></td>
+</tr>
+<tr>
+<td><code>x /= y</code></td>
+<td><code>x = x / y</code></td>
+</tr>
+<tr>
+<td><code>x %= y</code></td>
+<td><code>x = x % y</code></td>
+</tr>
+<tr>
+<td><code>x **= y</code></td>
+<td><code>x = x ** y</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>The lesson reset <code>x = 20</code> and <code>y = 10</code> before demonstrating each compound operator because one assignment changes <code>x</code> and would otherwise affect later examples.</p>
+<h3 id="3-8-membership-operators">3.8 Membership operators</h3>
+<p>Membership tests whether an item belongs to a collection:</p>
+<ul>
+<li><code>item in collection</code></li>
+<li><code>item not in collection</code></li>
+</ul>
+<pre><code class="language-python">days = (&quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;)
+&quot;Sunday&quot; in days       # True
+&quot;Xunday&quot; not in days   # True
+</code></pre>
+<p>For exact day validation, use <code>item in days</code>. Avoid <code>day in item</code> or searching in <code>" ".join(days)</code>, because those perform substring tests and can wrongly accept inputs such as <code>"Sunday!"</code>. <code>item == days</code> is also wrong because it compares one string with the whole tuple.</p>
+<h3 id="3-9-conditional-statements">3.9 Conditional statements</h3>
+<p>Conditional statements implement decision logic and determine whether code blocks execute. Indentation defines the block.</p>
+<h4 id="if-one-condition-no-required-alternative"><code>if</code>: one condition, no required alternative</h4>
+<pre><code class="language-python">if 10 &gt; 5:
+    print(&quot;10 is greater than 5&quot;)
+</code></pre>
+<h4 id="if-else-two-alternatives"><code>if ... else</code>: two alternatives</h4>
+<pre><code class="language-python">if 5 &gt; 10:
+    print(&quot;5 is greater than 10&quot;)
+else:
+    print(&quot;5 is not greater than 10&quot;)
+</code></pre>
+<h4 id="if-elif-else-multiple-mutually-exclusive-alternatives"><code>if ... elif ... else</code>: multiple mutually exclusive alternatives</h4>
+<pre><code class="language-python">if x &gt; 10:
+    print(&quot;over&quot;)
+elif x &lt; 0:
+    print(&quot;under&quot;)
+else:
+    print(&quot;range&quot;)
+</code></pre>
+<p>Only the first matching branch executes. Multiple independent <code>if</code> statements do <strong>not</strong> form one chain. For example, with <code>x = 12</code>, an <code>if x &gt; 10</code> followed by a separate <code>if x &lt; 0 ... else</code> can print both <code>over</code> and <code>range</code>, because the <code>else</code> belongs only to the second <code>if</code>.</p>
+<h3 id="3-10-iteration-loops">3.10 Iteration/loops</h3>
+<p>Iteration statements repeatedly execute a block.</p>
+<h4 id="for-loop"><code>for</code> loop</h4>
+<p>Use when the collection or number of repetitions is known.</p>
+<pre><code class="language-python">for item in range(5):
+    print(item)
+</code></pre>
+<p>Output: <code>0, 1, 2, 3, 4</code>. <code>range(5)</code> starts at zero and excludes the stop value five.</p>
+<h4 id="while-loop"><code>while</code> loop</h4>
+<p>Use when repetition should continue while a condition remains true; it stops when the condition becomes false.</p>
+<pre><code class="language-python">c = 0
+while c &lt; 10:
+    print(c)
+    c += 1
+</code></pre>
+<p>Output: <code>0</code> through <code>9</code>. The update is essential; without it, the condition may never become false and the loop can be infinite.</p>
+<p>For output <code>0</code> through <code>4</code>, both <code>c &lt; 5</code> and <code>c &lt;= 4</code> work, but <code>c &lt; 5</code> is the clearer conventional boundary. <code>c &lt;= 5</code> would include <code>5</code>.</p>
+<hr>
+<h2 id="4-quiz-concepts-and-likely-exam-traps">4. Quiz concepts and likely exam traps</h2>
+<h3 id="4-1-square-root-function-value-versus-rate-of-growth">4.1 Square-root function: value versus rate of growth</h3>
+<p>For <code>y = √x</code>, values increase as <code>x</code> increases, but the <strong>rate</strong> of increase decreases. Equal changes in <code>x</code> produce progressively smaller changes in <code>y</code> (diminishing growth).</p>
+<ul>
+<li>From <code>x = 1</code> to <code>4</code>: <code>√4 − √1 = 2 − 1 = 1</code>.</li>
+<li>From <code>x = 16</code> to <code>19</code>: <code>√19 − √16 ≈ 4.359 − 4 = 0.359</code>.</li>
+</ul>
+<p>Both intervals have width 3, but the second vertical change is smaller. <strong>Exam trap:</strong> larger output values do not imply a larger increase or steeper slope.</p>
+<h3 id="4-2-open-source-software">4.2 Open-source software</h3>
+<p>Open-source software makes source code available under a license that may permit inspection, modification, redistribution, and derivative works/forks.</p>
+<p>Permissive licenses such as MIT, BSD, and Apache 2.0 support broad reuse, modification, redistribution, and commercial products. Consequently, community contributions, libraries, innovation, and competing forks can grow. Matplotlib&rsquo;s ecosystem illustrates how an open tool can inspire related visualization tools.</p>
+<h3 id="4-3-entity-attribute-relationship-and-table">4.3 Entity, attribute, relationship, and table</h3>
+<ul>
+<li><strong>Entity/item:</strong> object being described, e.g., a student.</li>
+<li><strong>Attribute:</strong> property of an entity, e.g., student age, height, name, or grade.</li>
+<li><strong>Relationship:</strong> connection between entities, e.g., student <em>enrolled in</em> course.</li>
+<li><strong>Table:</strong> a structure that stores the records and their fields.</li>
+</ul>
+<p><strong>Exam trap:</strong> In “student age,” the student is the entity and age is the attribute.</p>
+<h3 id="4-4-f-strings">4.4 f-strings</h3>
+<p>Formatted string literals were introduced in Python 3.6.</p>
+<pre><code class="language-python">name = &quot;Alice&quot;
+score = 90
+print(f&quot;{name} scored {score}&quot;)
+print(f&quot;Total: {price * quantity:.2f}&quot;)
+</code></pre>
+<p>They are more concise/readable and often faster than <code>str.format()</code>, and can evaluate expressions such as <code>len(items)</code>, <code>price * quantity</code>, or numeric format specifications like <code>.2f</code>.</p>
+<h3 id="4-5-visualization-development-is-iterative">4.5 Visualization development is iterative</h3>
+<p>The recommended process is:</p>
+<p><strong>Idea → Prototype → Test → Improve → Final chart</strong></p>
+<p>Do not abandon a sound visualization idea merely because implementation is initially difficult, wait until mastering every Python feature, or avoid help. Experiment, simplify, consult classmates/colleagues, and improve iteratively.</p>
+<hr>
+<h2 id="5-greentech-analytics-case-study-data-ingestion-and-variable-design">5. GreenTech Analytics case study: data ingestion and variable design</h2>
+<h3 id="5-1-scenario-and-stakeholders">5.1 Scenario and stakeholders</h3>
+<p>GreenTech receives:</p>
+<ul>
+<li>Field-sensor measurements: distance, dollars/cost, speed, and time.</li>
+<li>Survey responses: yes/no and satisfied/dissatisfied.</li>
+</ul>
+<p>Stakeholder priorities:</p>
+<ul>
+<li><strong>Alex (developer):</strong> simple collection logic, proper variables, and few runtime errors.</li>
+<li><strong>Priya (project lead):</strong> a quick prototype that can demonstrate dollars-spent-versus-time trends.</li>
+<li><strong>Dr. Chen (data scientist):</strong> explicit separation of quantitative and qualitative data before visualization.</li>
+</ul>
+<h3 id="5-2-why-correct-typing-matters">5.2 Why correct typing matters</h3>
+<pre><code class="language-python">price = &quot;150&quot;
+time = &quot;25&quot;
+price + time          # &quot;15025&quot;, concatenation rather than 175
+
+price = 150
+time = 25
+price + time          # 175
+</code></pre>
+<p>Mixing a string and number, such as <code>"150" + 20</code>, raises a <code>TypeError</code>. Bad typing causes wrong calculations, repeated conversions, runtime failures, misleading charts, and unreliable statistics.</p>
+<p>Recommended semantic types:</p>
+<ul>
+<li>Dollars/cost: <code>float</code> for totals, averages, and financial charts.</li>
+<li>Time: numeric (<code>int</code>/<code>float</code>, depending on measurement) for trends, regression, and rates.</li>
+<li>Distance and speed: usually <code>float</code> for averages, comparisons, and models.</li>
+<li>Satisfaction/response: <code>str</code> for categories or <code>bool</code> for a clear binary response.</li>
+</ul>
+<h3 id="5-3-strategy-comparison">5.3 Strategy comparison</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>1. Everything as strings</th>
+<th>2. Type at ingestion</th>
+<th>3. Generic dictionaries, parse later</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initial speed</td>
+<td>Fastest</td>
+<td>Fast with modest validation</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Runtime safety</td>
+<td>Poor</td>
+<td>Best</td>
+<td>Depends on later parsing</td>
+</tr>
+<tr>
+<td>Analysis readiness</td>
+<td>Poor</td>
+<td>Best</td>
+<td>Moderate/poor initially</td>
+</tr>
+<tr>
+<td>Repeated conversion</td>
+<td>Yes</td>
+<td>No</td>
+<td>Usually yes</td>
+</tr>
+<tr>
+<td>Clarity of quantitative vs qualitative</td>
+<td>Weak</td>
+<td>Strong</td>
+<td>Can be obscured</td>
+</tr>
+<tr>
+<td>Best context</td>
+<td>Disposable proof of concept</td>
+<td>Normal analytics/prod. pipeline</td>
+<td>Dynamic schemas, APIs, JSON, ETL</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="strategy-1-store-everything-as-raw-strings">Strategy 1: store everything as raw strings</h4>
+<p>Advantages: very easy, flexible with unstable formats, and fastest for a temporary mock-up. Disadvantages: every calculation needs conversion, conversions may be forgotten, invalid input fails at runtime, string concatenation can silently create wrong values, and code becomes repetitive.</p>
+<p>Use only for an early, temporary proof of concept when calculations are not yet required and input formats are still changing. Convert before analysis/reporting.</p>
+<h4 id="strategy-2-detect-validate-type-at-ingestion">Strategy 2: detect/validate type at ingestion</h4>
+<p>Convert numeric input immediately to <code>int</code>/<code>float</code> and retain categorical input as <code>str</code>/<code>bool</code>. It requires slightly more ingestion logic, but yields immediate calculation ability, cleaner analytics, less repeated work, lower runtime risk, and clearer semantics.</p>
+<p><strong>Recommended answer:</strong> Strategy 2 best balances Priya&rsquo;s delivery deadline and Dr. Chen&rsquo;s data-quality requirement.</p>
+<h4 id="strategy-3-generic-list-dictionaries-and-delayed-parsing">Strategy 3: generic list/dictionaries and delayed parsing</h4>
+<p>Example raw record:</p>
+<pre><code class="language-python">{&quot;distance&quot;: &quot;24&quot;, &quot;speed&quot;: &quot;50&quot;, &quot;response&quot;: &quot;Satisfied&quot;}
+</code></pre>
+<p>This preserves field context and is flexible for unknown/dynamic schemas, APIs, JSON, or larger ETL systems. However, a dictionary is only a container; it does not solve typing. Delayed conversion adds complexity, can produce inconsistent record types, and postpones the quantitative/qualitative distinction. It is unnecessary for a simple prototype unless schema flexibility is genuinely required.</p>
+<h3 id="5-4-recommended-implementation-plan">5.4 Recommended implementation plan</h3>
+<ol>
+<li>Read each incoming value and retain its field meaning.</li>
+<li>Validate whether fields expected to be numeric contain valid numbers; do not rely solely on guessing from appearance when the schema is known.</li>
+<li>Convert whole-number fields to <code>int</code> and decimal measurements to <code>float</code>.</li>
+<li>Normalize categorical answers (e.g., consistent capitalization/spelling) and store them as <code>str</code>, or map an unambiguous binary answer to <code>bool</code>.</li>
+<li>Reject, flag, or separately record invalid/missing input rather than allowing it to contaminate analysis.</li>
+<li>Calculate and visualize directly from the clean, typed values.</li>
+</ol>
+<p><strong>Practical use case:</strong> Convert sensor strings such as <code>"24.6"</code> to <code>24.6</code> at ingestion, but normalize a survey response such as <code>" satisfied "</code> to <code>"Satisfied"</code>. Then a scatter plot of cost against time and a bar chart of satisfaction counts can be generated without later repair.</p>
+<h3 id="5-5-prototype-versus-production">5.5 Prototype versus production</h3>
+<ul>
+<li><strong>Prototype:</strong> temporary string storage/minimal validation can be acceptable if the purpose is only to demonstrate flow and no numerical calculation is performed.</li>
+<li><strong>Production/analytical code:</strong> validate early, assign consistent types, document variable meaning, and minimize runtime conversion.</li>
+</ul>
+<p>Good data engineering balances speed, flexibility, and correctness. Clean foundations become more valuable than a quick but unreliable prototype as soon as analytics begins.</p>
+<hr>
+<h2 id="6-live-session-chart-review">6. Live-session chart review</h2>
+<h3 id="6-1-central-principle-match-chart-to-purpose">6.1 Central principle: match chart to purpose</h3>
+<p>Visualization depends on familiarity with available charts <strong>and</strong> selecting the right chart for the message. Earlier course categories included:</p>
+<ul>
+<li>Comparing categories.</li>
+<li>Showing change over time (line and area charts).</li>
+<li>Showing distributions (histogram and box-and-whisker plot).</li>
+<li>Showing part-to-whole.</li>
+<li>Showing relationships.</li>
+<li>Showing qualitative data.</li>
+<li>Showing exact individual values (tables).</li>
+</ul>
+<p>The instructor stressed learning a broad chart vocabulary—pie, donut, treemap, scatter plot, sunburst, word cloud, bubble chart, etc.—so the choice is not constrained to bar/line/pie. However, variety is not a goal in itself: always use the most appropriate option. Practice creating charts in Excel, Python, or R so tool unfamiliarity does not discourage the correct choice later.</p>
+<h3 id="6-2-histograms">6.2 Histograms</h3>
+<p>A histogram reveals the <strong>shape of a numerical distribution</strong>. Each bar represents a value interval/bin; its height represents the number or proportion of observations within that bin.</p>
+<h4 id="bin-selection">Bin selection</h4>
+<ul>
+<li><strong>Too few/wide bins:</strong> oversimplifies and flattens the distribution, hiding peaks and internal patterns.</li>
+<li><strong>Too many/narrow bins:</strong> makes individual values/noise appear as spikes and dips, obscuring the general shape and encouraging misleading conclusions.</li>
+<li>Seek a result that is neither oversimplified nor noisy.</li>
+<li>A stated rule of thumb is the <strong>square-root rule</strong>: number of bins ≈ <code>√n</code>, where <code>n</code> is the number of observations. It is a starting point, not a substitute for judgment.</li>
+</ul>
+<h4 id="construction-rules">Construction rules</h4>
+<ul>
+<li>Keep bin widths consistent (e.g., 0–10, 10–20, 20–30). The instructor explicitly warned against varying widths in the standard histogram being discussed.</li>
+<li>Put bin ranges on the <strong>x-axis</strong>.</li>
+<li>Put frequency, count, relative frequency, or percentage on the <strong>y-axis</strong>.</li>
+<li>Ensure the bins cover the relevant data range and the scale communicates the intended pattern.</li>
+</ul>
+<h4 id="comparing-datasets">Comparing datasets</h4>
+<p>Normalize before comparing distributions with different sample sizes. A group with 1,000 readings and another with 10,000 readings should be made comparable, such as by plotting relative percentages rather than raw counts.</p>
+<h4 id="exploratory-use">Exploratory use</h4>
+<p>Define the analytical goal before drawing the histogram. Try different reasonable bin counts/ranges until the chart satisfactorily addresses that goal. This is legitimate exploratory analysis, not arbitrary manipulation, provided the objective remains explicit.</p>
+<h3 id="6-3-box-and-whisker-plot">6.3 Box-and-whisker plot</h3>
+<p>A box plot compactly summarizes distribution through quartiles, median, spread, whiskers, and outliers.</p>
+<ul>
+<li><strong>Median (Q2):</strong> value below which 50% of observations lie; 50% lie above.</li>
+<li><strong>First quartile (Q1):</strong> value below which 25% lie; 75% lie above.</li>
+<li><strong>Third quartile (Q3):</strong> value below which 75% lie; 25% lie above.</li>
+<li><strong>Interquartile range:</strong> <code>IQR = Q3 − Q1</code>; the box contains the middle 50% of observations.</li>
+<li><strong>Whiskers:</strong> extend toward the lower and upper non-outlying values; long whiskers indicate extended spread/tails.</li>
+<li><strong>Outliers:</strong> unusually distant observations, possibly genuine extremes or “freak”/erroneous readings, shown separately beyond the fences.</li>
+</ul>
+<p>Standard outlier fences:</p>
+<pre><code class="language-text">Lower fence = Q1 − 1.5 × IQR
+Upper fence = Q3 + 1.5 × IQR
+</code></pre>
+<p><strong>Worked example from class:</strong> If <code>Q1 = 30</code> and <code>Q3 = 90</code>, then <code>IQR = 60</code>; <code>1.5 × IQR = 90</code>. The lower fence is <code>30 − 90 = −60</code>, and the upper fence is <code>90 + 90 = 180</code>. Values below −60 or above 180 are plotted as outliers. The instructor strongly emphasized knowing how Excel/software calculates this, even if the tool performs it automatically.</p>
+<blockquote>
+<p><strong>Important correction of phrasing:</strong> “1.5 times the IQR” means 1.5 × IQR beyond Q1 or Q3, not simply 1.5 times an observation and not 1.5 times Q1/Q3.</p>
+</blockquote>
+<h3 id="6-4-part-to-whole-charts-pie-and-donut">6.4 Part-to-whole charts: pie and donut</h3>
+<p>A pie chart is a circle divided into <strong>slices</strong>, each representing a component&rsquo;s proportion of the whole. A donut chart removes the center of the pie. Examples include male/female share, age groups in a population, product contribution to profit, or proportions of components in a liquid.</p>
+<p>Technical terminology matters, especially when prompting AI: saying “slice” precisely identifies a pie-chart component and avoids ambiguous descriptions. AI can generate the visual, but the analyst must specify correctly and review its work.</p>
+<p>Rules/caveats:</p>
+<ul>
+<li>Components must collectively represent the intended whole—normally 100%, or the complete total count. Missing categories yield an incomplete or misleading whole.</li>
+<li>Pie charts are popular and familiar; general audiences can quickly understand a broad dominant-versus-small-share message.</li>
+<li>Small proportions (e.g., 0.5%, 1%, 2%) become narrow, hard-to-read slices.</li>
+<li>Humans are poor at comparing similar angles, arcs, and areas. Near-equal slices make precise ranking difficult.</li>
+<li>Labels/percentages help, but without them color and shape may not communicate exact values.</li>
+<li>A bar chart provides a common baseline and usually makes close comparisons much more accurate.</li>
+<li>Rotating a pie can align a slice with familiar fractions such as a quarter and sometimes improve rough perception, but does not remove the fundamental limitation.</li>
+<li>Donut charts remove the central angle but remain similarly weak for precise quantitative comparison.</li>
+</ul>
+<p><strong>Instructor recommendation:</strong> Pie/donut charts may work for a simple, general-audience overview with few clearly different shares. Avoid them for expert/professional analysis or close comparisons; prefer bars. If the audience disagrees with the presenter&rsquo;s claimed ranking, attention shifts from the message to debating the chart.</p>
+<h3 id="6-5-treemap-and-sunburst">6.5 Treemap and sunburst</h3>
+<ul>
+<li><strong>Treemap:</strong> nested rectangles show hierarchical part-to-whole structure. Large colored regions can contain smaller subdivisions, so both higher-level groups and their components are visible.</li>
+<li><strong>Sunburst chart:</strong> concentric rings/sectors show multiple hierarchy levels—a “multi-level pie” appearance, but the correct chart name is sunburst.</li>
+</ul>
+<p>Know these options, but choose them only when the hierarchy/part-to-whole message warrants them.</p>
+<h3 id="6-6-relationship-charts">6.6 Relationship charts</h3>
+<ul>
+<li><strong>Scatter plot:</strong> plots paired <code>(x, y)</code> observations and makes correlation/relationship visible. An upward pattern—<code>y</code> tending to increase as <code>x</code> increases—indicates positive correlation.</li>
+<li><strong>Bubble chart:</strong> extends a scatter plot; x-position and y-position represent two variables, while bubble size encodes a third (e.g., GDP, another measure, and population size).</li>
+</ul>
+<p>The instructor specifically encouraged learning to create bubble charts; ordinary XY scatter plots are already widely familiar.</p>
+<h3 id="6-7-word-clouds-and-qualitative-displays">6.7 Word clouds and qualitative displays</h3>
+<p>A <strong>word cloud</strong> sizes words mainly according to frequency in a text: a larger word appeared more often after processing. It does not inherently “read” the article and determine conceptual importance as a human would.</p>
+<p>Typical processing described:</p>
+<ol>
+<li>Break text into words/tokens.</li>
+<li>Remove punctuation and common connecting/stop words.</li>
+<li>Reduce variants toward root/stem forms where applicable.</li>
+<li>Count occurrences.</li>
+<li>Encode higher frequency with larger font size (and sometimes color).</li>
+</ol>
+<p>Frequency is used as a proxy for importance, so interpretation must be cautious. The session connected this logic to keyword frequency, older search-engine optimization practices, and modern natural-language preprocessing.</p>
+<p>Other qualitative displays include:</p>
+<ul>
+<li>Repeated icons/pictograms (e.g., male/female icons) to convey category counts.</li>
+<li>3D models/icons where appropriate.</li>
+<li>Quotations paired with the speaker&rsquo;s image.</li>
+<li>Word trees.</li>
+</ul>
+<h3 id="6-8-special-purpose-diagrams">6.8 Special-purpose diagrams</h3>
+<p>Data visualization also includes displays designed to communicate structure or process:</p>
+<ul>
+<li>Network diagrams.</li>
+<li>Hierarchy diagrams.</li>
+<li>Project activity diagrams.</li>
+<li>Flowcharts, including flowcharts that explain program logic before coding.</li>
+</ul>
+<p>They qualify as visualization because they communicate a message or relationship visually.</p>
+<h3 id="6-9-tables-are-visualization-tools">6.9 Tables are visualization tools</h3>
+<p>Use a table when <strong>individual exact values matter</strong> and the audience must inspect them. Tables are not inferior to charts; their bad reputation often comes from careless default formatting.</p>
+<p>Guidelines mentioned:</p>
+<ol>
+<li>Visually separate/offset the header from the body.</li>
+<li>Use gridlines judiciously; avoid Excel&rsquo;s indiscriminate “all borders,” which adds cognitive load.</li>
+<li>Right-align numbers so magnitudes/decimal places compare cleanly.</li>
+<li>Left-align text for natural reading.</li>
+<li>Highlight important outliers with color or another deliberate cue.</li>
+<li>Put a shared unit in the header rather than repeating <code>₹</code>/unit text in every cell when all values use the same unit.</li>
+<li>Use an appropriate precision; avoid meaningless excess decimal places.</li>
+<li>Guide horizontal or vertical reading through spacing and layout.</li>
+<li>Group similar items and demarcate groups with whitespace.</li>
+<li>Add in-cell visualizations where appropriate, without obscuring the values.</li>
+</ol>
+<p><strong>Core principle:</strong> Every line, decimal, unit label, and highlight should earn its place by helping the audience. Remove visual clutter that increases cognitive load without adding information.</p>
+<hr>
+<h2 id="7-high-probability-exam-questions-and-answer-cues">7. High-probability exam questions and answer cues</h2>
+<ol>
+<li><strong>Differentiate dashboard, notebook, cell, kernel, and server.</strong> Dashboard manages files; notebook is the <code>.ipynb</code> document; cells hold code/text/raw content; kernel executes language code; the local server/terminal connects browser and execution and must remain running.</li>
+<li><strong>Why Anaconda?</strong> Convenient bundled Python/data-science environment plus Navigator-based application/environment management.</li>
+<li><strong>Explain Python&rsquo;s typing.</strong> Type is inferred from the runtime value; no advance type declaration is required.</li>
+<li><strong>Name and exemplify the seven lesson data types.</strong> String, integer, float, Boolean, list, tuple, dictionary.</li>
+<li><strong>Differentiate <code>=</code>, <code>==</code>, and <code>in</code>.</strong> Assignment, equality comparison, and membership test.</li>
+<li><strong>Differentiate <code>if</code>, <code>if–else</code>, and <code>if–elif–else</code>.</strong> One optional action, two alternatives, and a mutually exclusive multi-branch chain.</li>
+<li><strong>When use <code>for</code> versus <code>while</code>?</strong> Known iterable/count versus condition-controlled repetition.</li>
+<li><strong>Why type data at ingestion?</strong> Prevent runtime/type errors, repeated conversion, silent concatenation, and unreliable analytics.</li>
+<li><strong>Why can histogram bin choice mislead?</strong> Too few bins hide structure; too many amplify noise. State the square-root rule and the need for exploratory judgment.</li>
+<li><strong>Define Q1, median, Q3, IQR, and outlier fences.</strong> Include <code>IQR = Q3 − Q1</code> and <code>Q1 − 1.5IQR</code>, <code>Q3 + 1.5IQR</code>.</li>
+<li><strong>Why avoid pie/donut charts for precise comparison?</strong> Human angle/arc/area comparison is weak, especially for similar or tiny slices; bars offer a common baseline.</li>
+<li><strong>What does bubble size mean?</strong> A third variable in a scatter-type chart.</li>
+<li><strong>How does a word cloud decide size?</strong> Primarily token frequency after text preprocessing, not deep semantic understanding.</li>
+<li><strong>When prefer a table?</strong> When exact individual values matter; format to minimize cognitive load.</li>
+</ol>
+<hr>
+<h2 id="8-rapid-revision-checklist">8. Rapid revision checklist</h2>
+<h3 id="environment-and-jupyter">Environment and Jupyter</h3>
+<ul>
+<li>[ ] Install Anaconda; avoid adding it to <code>PATH</code> when the installer warns of conflicts.</li>
+<li>[ ] Use Navigator to install/launch Jupyter without command-line work.</li>
+<li>[ ] Keep the Jupyter terminal/server open.</li>
+<li>[ ] Recognize <code>localhost:8888/tree</code> as a local service.</li>
+<li>[ ] Distinguish dashboard from notebook and kernel.</li>
+<li>[ ] Create a dedicated folder and a Python 3 <code>.ipynb</code> notebook.</li>
+<li>[ ] Know Code, Markdown, and Raw cells; command mode versus edit mode.</li>
+<li>[ ] Know <code>A</code>, <code>B</code>, toolbar <code>+</code>, and <code>Ctrl+Enter</code>.</li>
+<li>[ ] Interpret <code>[*]</code> as running and <code>[n]</code> as execution order.</li>
+<li>[ ] Know Markdown headings, bold, and italics.</li>
+</ul>
+<h3 id="python">Python</h3>
+<ul>
+<li>[ ] Define variable and dynamic/loose typing.</li>
+<li>[ ] Recall <code>str</code>, <code>int</code>, <code>float</code>, <code>bool</code>, <code>list</code>, <code>tuple</code>, and <code>dict</code> with delimiters.</li>
+<li>[ ] Use <code>print()</code> and <code>type()</code>.</li>
+<li>[ ] Recall arithmetic (<code>+ - * / % **</code>), logical (<code>and or not</code>), comparison, assignment, and membership operators.</li>
+<li>[ ] Remember <code>%</code> is remainder and <code>**</code> is exponentiation.</li>
+<li>[ ] Use exact collection membership: <code>item in collection</code>.</li>
+<li>[ ] Use <code>if–elif–else</code> when exactly one branch should execute.</li>
+<li>[ ] Use <code>for</code> for known iterations and <code>while</code> for condition-controlled repetition; update loop state.</li>
+<li>[ ] Know f-string syntax and expression/precision support.</li>
+</ul>
+<h3 id="data-and-case-study">Data and case study</h3>
+<ul>
+<li>[ ] Distinguish entity, attribute, relationship, and table.</li>
+<li>[ ] Store calculation variables as numeric, categorical variables as string/Boolean.</li>
+<li>[ ] Explain why <code>"150" + "25"</code> is not numerical addition.</li>
+<li>[ ] Recommend Strategy 2: validate/type at ingestion.</li>
+<li>[ ] State when deferred parsing is temporarily acceptable.</li>
+<li>[ ] Explain why a dictionary preserves context but does not itself guarantee correct types.</li>
+</ul>
+<h3 id="visualization">Visualization</h3>
+<ul>
+<li>[ ] Match chart to analytical purpose, not novelty.</li>
+<li>[ ] Histogram: consistent bins, x = ranges, y = count/frequency, normalize unequal datasets, explore bin choices.</li>
+<li>[ ] Box plot: Q1, median, Q3, IQR, whiskers, outlier fences.</li>
+<li>[ ] Pie/donut: complete whole, slices, popularity versus poor precision; bars for close comparison.</li>
+<li>[ ] Treemap and sunburst: hierarchical part-to-whole.</li>
+<li>[ ] Scatter: relationship/correlation; bubble: third variable through size.</li>
+<li>[ ] Word cloud: frequency-based sizing after token cleaning.</li>
+<li>[ ] Tables: exact values; purposeful alignment, precision, spacing, units, highlights, and minimal gridlines.</li>
+<li>[ ] Remember the instructor&rsquo;s overarching rule: become familiar with many options, then use the chart that best serves the message.</li>
+</ul>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<h3 id="data-type-classification-for-chart-choice">Data-type classification for chart choice</h3>
+<ul>
+<li><strong>Qualitative/categorical:</strong> labels such as product category, department, country, customer name, or service type; arithmetic on the labels is not meaningful.</li>
+<li><strong>Quantitative:</strong> measurable values such as sales revenue, profit, temperature, population, or salary; arithmetic and numerical summaries are meaningful. <strong>Monthly Sales Revenue</strong> is the explicit review example.</li>
+<li><strong>Continuous quantitative:</strong> may take any value in a range, such as height, weight, or temperature.</li>
+<li><strong>Discrete quantitative:</strong> countable values, such as customers, products, or defects.</li>
+<li><strong>Ratio:</strong> has a meaningful zero, such as revenue, distance, or weight; zero represents absence of the quantity.</li>
+</ul>
+<h3 id="year-caveat-likely-exam-trap">Year caveat — likely exam trap</h3>
+<p>A year is stored as a number but often functions in visualization as an <strong>ordered temporal category/discrete time variable</strong>. Its sequence may matter more than ordinary arithmetic treatment. Classify a field by its analytical role and context, not merely its storage type or numeric appearance.</p>
+<p><strong>Cross-week link:</strong> data type (Week 7) determines the candidate encoding; chart selection (Week 8) then matches that encoding to the business question.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-6.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 6: Data Visualization: Exhaustive Exam Notes</span>
+      </a>
+      <a href="week-8.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 8: Python Data Visualization, Matplotlib…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

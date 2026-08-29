@@ -1,0 +1,3037 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Project · Week 10 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Project</span>
+      <span class="brand-title">Week 10</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html" selected>Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Business Research Process, Research Problems, and Research Approaches
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Research Planning, Theoretical Frameworks, Measurement, and Data…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Systematic Literature Review (SLR), Literature Review Methods,…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Theoretical Frameworks, Variables, Moderators, Mediators, and…
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Measurement Models, Scale Development, Reflective vs Formative…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Questionnaire Design, Data Collection Methods, Measurement Scales,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Research Inference, Sampling, Regression, Correlation, Mediation,…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Business Research Process — Management Problems, Research Problems,…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Jamovi Data Management, Measurement Levels, Scale Construction,…
+      </a>
+      <a class="is-active" href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Jamovi Factor Analysis, EFA, CFA, SEM, Validity Assessment, and…
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Regression, Mediation, Moderation, t-tests, ANOVA, and Descriptive…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Regression Modelling, Controls, Composite Indices, Moderation, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Time Series, Forecasting, and Panel Data
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        PLS-SEM — Measurement Quality, Structural Models, Controls,…
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Logistic Regression — Model Fit, Interpretation, Prediction, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Project · Week 10</p>
+        <h1 class="page-title">Jamovi Factor Analysis, EFA, CFA, SEM, Validity Assessment, and Common Method Bias</h1>
+        <p class="page-meta">Week 10 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#definition">Definition</a></li>
+      <li><a href="#purpose">Purpose</a></li>
+      <li><a href="#kaiser-meyer-olkin-kmo">Kaiser-Meyer-Olkin (KMO)</a></li>
+      <li><a href="#purpose-2">Purpose</a></li>
+      <li><a href="#simply-changing-rotation">Simply changing rotation</a></li>
+      <li><a href="#ignoring-bartlett">Ignoring Bartlett</a></li>
+      <li><a href="#only-collecting-more-data">Only collecting more data</a></li>
+      <li><a href="#eigenvalue-1-rule">Eigenvalue &amp;gt; 1 rule</a></li>
+      <li><a href="#parallel-analysis">Parallel Analysis</a></li>
+      <li><a href="#orthogonal-rotation">Orthogonal Rotation</a></li>
+      <li><a href="#oblique-rotation">Oblique Rotation</a></li>
+      <li><a href="#definition-2">Definition</a></li>
+      <li><a href="#using-rotated-pca">Using rotated PCA</a></li>
+      <li><a href="#extracting-only-one-component">Extracting only one component</a></li>
+      <li><a href="#purpose-3">Purpose</a></li>
+      <li><a href="#1-standardised-path-estimates-beta">1. Standardised path estimates (Beta)</a></li>
+      <li><a href="#2-model-fit-indices">2. Model fit indices</a></li>
+      <li><a href="#3-reliability-measures">3. Reliability measures</a></li>
+      <li><a href="#4-validity-measures">4. Validity measures</a></li>
+      <li><a href="#purpose-4">Purpose</a></li>
+      <li><a href="#purpose-5">Purpose</a></li>
+      <li><a href="#reliability">Reliability</a></li>
+      <li><a href="#validity">Validity</a></li>
+      <li><a href="#regression">Regression</a></li>
+      <li><a href="#sem">SEM</a></li>
+      <li><a href="#stage-1-data-preparation">Stage 1: Data Preparation</a></li>
+      <li><a href="#stage-2-exploratory-analysis">Stage 2: Exploratory Analysis</a></li>
+      <li><a href="#stage-3-measurement-assessment">Stage 3: Measurement Assessment</a></li>
+      <li><a href="#stage-4-structural-analysis">Stage 4: Structural Analysis</a></li>
+      <li><a href="#stage-5-interpretation">Stage 5: Interpretation</a></li>
+      <li><a href="#misconception-1">Misconception 1:</a></li>
+      <li><a href="#misconception-2">Misconception 2:</a></li>
+      <li><a href="#misconception-3">Misconception 3:</a></li>
+      <li><a href="#misconception-4">Misconception 4:</a></li>
+      <li><a href="#misconception-5">Misconception 5:</a></li>
+      <li><a href="#misconception-6">Misconception 6:</a></li>
+      <li><a href="#efa">EFA</a></li>
+      <li><a href="#cfa">CFA</a></li>
+      <li><a href="#sem-2">SEM</a></li>
+      <li><a href="#cmb">CMB</a></li>
+      <li><a href="#case-study">Case Study</a></li>
+      <li><a href="#purpose-6">Purpose</a></li>
+      <li><a href="#purpose-7">Purpose</a></li>
+      <li><a href="#purpose-8">Purpose</a></li>
+      <li><a href="#definition-3">Definition</a></li>
+      <li><a href="#definition-4">Definition</a></li>
+      <li><a href="#argument-for-dropping-items">Argument for Dropping Items</a></li>
+      <li><a href="#argument-for-retaining-items">Argument for Retaining Items</a></li>
+      <li><a href="#purpose-9">Purpose</a></li>
+      <li><a href="#purpose-10">Purpose</a></li>
+      <li><a href="#purpose-11">Purpose</a></li>
+      <li><a href="#purpose-12">Purpose</a></li>
+      <li><a href="#definition-5">Definition</a></li>
+      <li><a href="#purpose-13">Purpose</a></li>
+      <li><a href="#definition-6">Definition</a></li>
+      <li><a href="#purpose-14">Purpose</a></li>
+      <li><a href="#review-item-wording">Review item wording</a></li>
+      <li><a href="#remove-redundant-items">Remove redundant items</a></li>
+      <li><a href="#reconsider-construct-definitions">Reconsider construct definitions</a></li>
+      <li><a href="#purpose-15">Purpose</a></li>
+      <li><a href="#purpose-16">Purpose</a></li>
+      <li><a href="#purpose-17">Purpose</a></li>
+      <li><a href="#purpose-18">Purpose</a></li>
+      <li><a href="#step-1">Step 1</a></li>
+      <li><a href="#step-2">Step 2</a></li>
+      <li><a href="#step-3">Step 3</a></li>
+      <li><a href="#step-4">Step 4</a></li>
+      <li><a href="#step-5">Step 5</a></li>
+      <li><a href="#statistical-improvement">Statistical improvement</a></li>
+      <li><a href="#content-validity">Content validity</a></li>
+      <li><a href="#misconception-1-2">Misconception 1:</a></li>
+      <li><a href="#misconception-2-2">Misconception 2:</a></li>
+      <li><a href="#misconception-3-2">Misconception 3:</a></li>
+      <li><a href="#misconception-4-2">Misconception 4:</a></li>
+      <li><a href="#misconception-5-2">Misconception 5:</a></li>
+      <li><a href="#phase-1-efa">Phase 1: EFA</a></li>
+      <li><a href="#phase-2-cfa">Phase 2: CFA</a></li>
+      <li><a href="#phase-3-reliability">Phase 3: Reliability</a></li>
+      <li><a href="#phase-4-validity">Phase 4: Validity</a></li>
+      <li><a href="#phase-5-refinement">Phase 5: Refinement</a></li>
+      <li><a href="#efa-2">EFA</a></li>
+      <li><a href="#cfa-2">CFA</a></li>
+      <li><a href="#reliability-2">Reliability</a></li>
+      <li><a href="#validity-2">Validity</a></li>
+      <li><a href="#model-improvement-principle">Model Improvement Principle</a></li>
+      <li><a href="#low-reliability">Low reliability</a></li>
+      <li><a href="#low-validity">Low validity</a></li>
+      <li><a href="#purpose-of-efa">Purpose of EFA</a></li>
+      <li><a href="#purpose-19">Purpose</a></li>
+      <li><a href="#purpose-20">Purpose</a></li>
+      <li><a href="#definition-7">Definition</a></li>
+      <li><a href="#problem-1-weak-factor-representation">Problem 1: Weak factor representation</a></li>
+      <li><a href="#problem-2-cross-loading">Problem 2: Cross-loading</a></li>
+      <li><a href="#statistical-quality">Statistical quality</a></li>
+      <li><a href="#content-validity-2">Content validity</a></li>
+      <li><a href="#purpose-21">Purpose</a></li>
+      <li><a href="#purpose-22">Purpose</a></li>
+      <li><a href="#purpose-23">Purpose</a></li>
+      <li><a href="#purpose-24">Purpose</a></li>
+      <li><a href="#definition-8">Definition</a></li>
+      <li><a href="#purpose-25">Purpose</a></li>
+      <li><a href="#definition-9">Definition</a></li>
+      <li><a href="#purpose-26">Purpose</a></li>
+      <li><a href="#improve-item-wording">Improve item wording</a></li>
+      <li><a href="#review-construct-definitions">Review construct definitions</a></li>
+      <li><a href="#remove-overlapping-items">Remove overlapping items</a></li>
+      <li><a href="#purpose-27">Purpose</a></li>
+      <li><a href="#purpose-28">Purpose</a></li>
+      <li><a href="#purpose-29">Purpose</a></li>
+      <li><a href="#purpose-30">Purpose</a></li>
+      <li><a href="#step-1-2">Step 1</a></li>
+      <li><a href="#step-2-2">Step 2</a></li>
+      <li><a href="#step-3-2">Step 3</a></li>
+      <li><a href="#step-4-2">Step 4</a></li>
+      <li><a href="#step-5-2">Step 5</a></li>
+      <li><a href="#misconception-1-3">Misconception 1:</a></li>
+      <li><a href="#misconception-2-3">Misconception 2:</a></li>
+      <li><a href="#misconception-3-3">Misconception 3:</a></li>
+      <li><a href="#misconception-4-3">Misconception 4:</a></li>
+      <li><a href="#misconception-5-3">Misconception 5:</a></li>
+      <li><a href="#phase-1-efa-2">Phase 1: EFA</a></li>
+      <li><a href="#phase-2-cfa-2">Phase 2: CFA</a></li>
+      <li><a href="#phase-3-reliability-2">Phase 3: Reliability</a></li>
+      <li><a href="#phase-4-validity-2">Phase 4: Validity</a></li>
+      <li><a href="#phase-5-refinement-2">Phase 5: Refinement</a></li>
+      <li><a href="#efa-discovers">EFA discovers.</a></li>
+      <li><a href="#cfa-confirms">CFA confirms.</a></li>
+      <li><a href="#reliability-asks">Reliability asks:</a></li>
+      <li><a href="#validity-asks">Validity asks:</a></li>
+      <li><a href="#model-fit-asks">Model fit asks:</a></li>
+      <li><a href="#rapid-recall-workflow">Rapid-recall workflow</a></li>
+      <li><a href="#high-value-distinctions">High-value distinctions</a></li>
+      <li><a href="#preliminary-jamovi-data-checks">Preliminary Jamovi/data checks</a></li>
+      <li><a href="#exploratory-factor-analysis-efa-2">Exploratory Factor Analysis (EFA)</a></li>
+      <li><a href="#cfa-reliability-and-validity">CFA, reliability, and validity</a></li>
+      <li><a href="#cfa-model-fit">CFA model fit</a></li>
+      <li><a href="#freshcaf-decision-framework">FreshCafé decision framework</a></li>
+      <li><a href="#frequent-mistakes-to-avoid">Frequent mistakes to avoid</a></li>
+      <li><a href="#likely-exam-questions">Likely exam questions</a></li>
+      <li><a href="#source-coverage-checklist">Source-coverage checklist</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h1 id="1-overview"><strong>1. Overview</strong></h1>
+<p>This quiz focuses on the measurement stage of quantitative research using <strong>Jamovi</strong>, particularly:</p>
+<ul>
+<li>Exploratory Factor Analysis (EFA).  </li>
+<li>Confirmatory Factor Analysis (CFA).  </li>
+<li>Structural Equation Modelling (SEM).  </li>
+<li>Measurement assessment.  </li>
+<li>Reliability and validity.  </li>
+<li>Common Method Bias (CMB).  </li>
+<li>Data suitability checks.</li>
+</ul>
+<p>The central principle:</p>
+<blockquote>
+<p>Before testing relationships between constructs, researchers must first establish that the constructs are measured correctly.</p>
+</blockquote>
+<p>A good research workflow is:</p>
+<p><strong>Data preparation → Exploratory analysis → Measurement validation → Structural modelling → Hypothesis testing</strong></p>
+<hr>
+<h1 id="2-measurement-assessment"><strong>2. Measurement Assessment</strong></h1>
+<h2 id="definition"><strong>Definition</strong></h2>
+<p>Measurement assessment evaluates whether survey items properly represent the intended constructs.</p>
+<p>Example:</p>
+<p>A researcher wants to measure:</p>
+<ul>
+<li>Service quality.  </li>
+<li>Customer satisfaction.  </li>
+<li>Purchase intention.</li>
+</ul>
+<p>Each construct is represented by multiple questionnaire items.</p>
+<hr>
+<p>Questions answered during measurement assessment:</p>
+<ol>
+<li>Do the items group together as expected?  </li>
+<li>Are items reliable?  </li>
+<li>Are constructs distinct from each other?</li>
+</ol>
+<hr>
+<p>Main techniques:</p>
+<ul>
+<li>EFA.  </li>
+<li>CFA.  </li>
+<li>Reliability analysis.  </li>
+<li>Validity assessment.</li>
+</ul>
+<hr>
+<h1 id="3-exploratory-factor-analysis-efa"><strong>3. Exploratory Factor Analysis (EFA)</strong></h1>
+<h2 id="purpose"><strong>Purpose</strong></h2>
+<p>EFA is used when the underlying factor structure is uncertain.</p>
+<p>It explores:</p>
+<ul>
+<li>How many factors exist.  </li>
+<li>Which items belong together.  </li>
+<li>Possible latent dimensions.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>A questionnaire contains 20 items.</p>
+<p>Researcher does not know whether they represent:</p>
+<ul>
+<li>3 factors.  </li>
+<li>4 factors.  </li>
+<li>5 factors.</li>
+</ul>
+<p>EFA discovers the structure.</p>
+<hr>
+<h1 id="4-when-to-use-efa"><strong>4. When to Use EFA</strong></h1>
+<p>Use EFA when:</p>
+<ul>
+<li>Developing a new scale.  </li>
+<li>Adapting items from different sources.  </li>
+<li>Exploring unknown dimensions.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>A new student engagement questionnaire.</p>
+<p>The researcher wants to discover:</p>
+<ul>
+<li>Motivation factor.  </li>
+<li>Participation factor.  </li>
+<li>Technology acceptance factor.</li>
+</ul>
+<hr>
+<h1 id="5-efa-process"><strong>5. EFA Process</strong></h1>
+<p>Typical EFA workflow:</p>
+<ol>
+<li>Check data suitability.  </li>
+<li>Extract factors.  </li>
+<li>Decide number of factors.  </li>
+<li>Rotate factors.  </li>
+<li>Interpret loadings.</li>
+</ol>
+<hr>
+<h1 id="6-kmo-test"><strong>6. KMO Test</strong></h1>
+<h2 id="kaiser-meyer-olkin-kmo"><strong>Kaiser-Meyer-Olkin (KMO)</strong></h2>
+<p>Measures sampling adequacy.</p>
+<p>It evaluates whether correlations among items are suitable for factor analysis.</p>
+<hr>
+<p>Interpretation:</p>
+<p>Higher KMO \= better factorability.</p>
+<p>Common guidelines:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>KMO</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\&lt;0.5</td>
+<td>Poor</td>
+</tr>
+<tr>
+<td>0.5–0.7</td>
+<td>Acceptable</td>
+</tr>
+<tr>
+<td>0.7–0.8</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>0.8+</td>
+<td>Very good</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<p>Example:</p>
+<p>KMO \= 0.84</p>
+<p>Interpretation:</p>
+<p>Very good suitability.</p>
+<hr>
+<h1 id="7-bartlett-s-test-of-sphericity"><strong>7. Bartlett’s Test of Sphericity</strong></h1>
+<h2 id="purpose-2"><strong>Purpose</strong></h2>
+<p>Tests whether the correlation matrix contains sufficient relationships for factor analysis.</p>
+<hr>
+<p>Null hypothesis:</p>
+<p>Items are uncorrelated.</p>
+<hr>
+<p>Desired result:</p>
+<p>p \&lt; 0.05</p>
+<p>Meaning:</p>
+<p>Significant correlations exist.</p>
+<hr>
+<p>Example:</p>
+<p>p \= 0.30</p>
+<p>Interpretation:</p>
+<p>Not significant.</p>
+<p>Problem:</p>
+<p>Items may not correlate enough for meaningful factors.</p>
+<hr>
+<h1 id="8-kmo-and-bartlett-together"><strong>8. KMO and Bartlett Together</strong></h1>
+<p>Both should be considered.</p>
+<hr>
+<p>Example 1:</p>
+<p>KMO \= 0.84</p>
+<p>Bartlett p \&lt; 0.001</p>
+<p>Conclusion:</p>
+<p>Suitable for EFA.</p>
+<hr>
+<p>Example 2:</p>
+<p>KMO \= 0.84</p>
+<p>Bartlett p \= 0.30</p>
+<p>Conclusion:</p>
+<p>Sampling adequacy is good, but correlations may be insufficient.</p>
+<p>Need to review:</p>
+<ul>
+<li>Item correlations.  </li>
+<li>Poor items.  </li>
+<li>Measurement design.</li>
+</ul>
+<hr>
+<h1 id="9-handling-poor-bartlett-results"><strong>9. Handling Poor Bartlett Results</strong></h1>
+<p>Correct approach:</p>
+<p>Review the correlation matrix.</p>
+<p>Look for:</p>
+<ul>
+<li>Near-zero correlations.  </li>
+<li>Items unrelated to others.  </li>
+<li>Poorly worded questions.</li>
+</ul>
+<hr>
+<p>Possible action:</p>
+<p>Remove or revise problematic items.</p>
+<p>Then rerun EFA.</p>
+<hr>
+<p>Incorrect approaches:</p>
+<h2 id="simply-changing-rotation"><strong>Simply changing rotation</strong></h2>
+<p>Rotation changes interpretation, not whether correlations exist.</p>
+<hr>
+<h2 id="ignoring-bartlett"><strong>Ignoring Bartlett</strong></h2>
+<p>A factor solution does not automatically mean meaningful factors.</p>
+<hr>
+<h2 id="only-collecting-more-data"><strong>Only collecting more data</strong></h2>
+<p>Larger samples may increase statistical power, but weak relationships among items remain a conceptual problem.</p>
+<hr>
+<h1 id="10-factor-retention"><strong>10. Factor Retention</strong></h1>
+<p>A key EFA decision:</p>
+<p>How many factors should be retained?</p>
+<hr>
+<p>Common approaches:</p>
+<h2 id="eigenvalue-1-rule"><strong>Eigenvalue &gt; 1 rule</strong></h2>
+<p>Traditional method.</p>
+<p>Limitation:</p>
+<p>Can overestimate factors.</p>
+<hr>
+<h2 id="parallel-analysis"><strong>Parallel Analysis</strong></h2>
+<p>More recommended.</p>
+<p>Compares observed eigenvalues with random data.</p>
+<p>Advantages:</p>
+<p>More accurate factor retention.</p>
+<hr>
+<h1 id="11-factor-rotation"><strong>11. Factor Rotation</strong></h1>
+<p>Rotation improves interpretation.</p>
+<hr>
+<p>Two major types:</p>
+<h2 id="orthogonal-rotation"><strong>Orthogonal Rotation</strong></h2>
+<p>Example:</p>
+<p>Varimax.</p>
+<p>Assumes factors are unrelated.</p>
+<hr>
+<h2 id="oblique-rotation"><strong>Oblique Rotation</strong></h2>
+<p>Allows factors to correlate.</p>
+<p>Often appropriate for social science constructs.</p>
+<hr>
+<p>Important:</p>
+<p>Rotation does not create correlations.</p>
+<p>It only improves interpretability.</p>
+<hr>
+<h1 id="12-pca-vs-efa"><strong>12. PCA vs EFA</strong></h1>
+<p>These are often confused.</p>
+<hr>
+<h1 id="principal-component-analysis-pca"><strong>Principal Component Analysis (PCA)</strong></h1>
+<p>Purpose:</p>
+<p>Data reduction.</p>
+<p>Creates components explaining maximum variance.</p>
+<hr>
+<p>Question:</p>
+<p>&ldquo;How can I summarize many variables?&rdquo;</p>
+<hr>
+<h1 id="exploratory-factor-analysis-efa"><strong>Exploratory Factor Analysis (EFA)</strong></h1>
+<p>Purpose:</p>
+<p>Discover latent constructs.</p>
+<hr>
+<p>Question:</p>
+<p>&ldquo;What hidden factors explain item relationships?&rdquo;</p>
+<hr>
+<p>Difference:</p>
+<p>PCA focuses on observed variance.</p>
+<p>EFA focuses on underlying constructs.</p>
+<hr>
+<h1 id="13-common-method-bias-cmb"><strong>13. Common Method Bias (CMB)</strong></h1>
+<h2 id="definition-2"><strong>Definition</strong></h2>
+<p>Common Method Bias occurs when the measurement method creates artificial relationships among variables.</p>
+<hr>
+<p>Example:</p>
+<p>Same questionnaire.</p>
+<p>Same respondent.</p>
+<p>Same time.</p>
+<p>May inflate correlations.</p>
+<hr>
+<h1 id="14-harman-s-single-factor-test"><strong>14. Harman’s Single Factor Test</strong></h1>
+<p>A traditional CMB screening approach.</p>
+<p>Procedure:</p>
+<ol>
+<li>Put all items into PCA.  </li>
+<li>Do not rotate.  </li>
+<li>Allow all components to emerge.  </li>
+<li>Examine first unrotated component variance.</li>
+</ol>
+<hr>
+<p>Interpretation:</p>
+<p>If one factor dominates heavily, common method bias may be a concern.</p>
+<hr>
+<h1 id="15-correct-pca-setup-for-cmb"><strong>15. Correct PCA Setup for CMB</strong></h1>
+<p>Correct:</p>
+<ul>
+<li>PCA.  </li>
+<li>No rotation.  </li>
+<li>No forced number of components.  </li>
+<li>Examine first unrotated component.</li>
+</ul>
+<hr>
+<p>Incorrect:</p>
+<h2 id="using-rotated-pca"><strong>Using rotated PCA</strong></h2>
+<p>Rotation redistributes variance.</p>
+<p>Not suitable for single-factor bias assessment.</p>
+<hr>
+<h2 id="extracting-only-one-component"><strong>Extracting only one component</strong></h2>
+<p>This forces a one-factor solution.</p>
+<p>It does not test whether one factor naturally dominates.</p>
+<hr>
+<h1 id="16-vif-and-cmb"><strong>16. VIF and CMB</strong></h1>
+<p>Variance Inflation Factor (VIF):</p>
+<p>Measures multicollinearity.</p>
+<hr>
+<p>Low VIF:</p>
+<p>Suggests predictors are not highly redundant.</p>
+<hr>
+<p>However:</p>
+<p>VIF does not directly prove absence of CMB.</p>
+<hr>
+<p>Correct interpretation:</p>
+<p>Low VIF supports analysis quality but does not replace CMB testing.</p>
+<hr>
+<h1 id="17-confirmatory-factor-analysis-cfa"><strong>17. Confirmatory Factor Analysis (CFA)</strong></h1>
+<h2 id="purpose-3"><strong>Purpose</strong></h2>
+<p>CFA tests a predefined measurement structure.</p>
+<hr>
+<p>Unlike EFA:</p>
+<p>EFA asks:</p>
+<p>&ldquo;What structure exists?&rdquo;</p>
+<p>CFA asks:</p>
+<p>&ldquo;Does my proposed structure fit?&rdquo;</p>
+<hr>
+<p>Example:</p>
+<p>Theory states:</p>
+<p>Customer satisfaction has five items:</p>
+<p>SA1–SA5.</p>
+<hr>
+<p>CFA tests:</p>
+<p>Do these five items load onto one satisfaction factor?</p>
+<hr>
+<h1 id="18-efa-vs-cfa"><strong>18. EFA vs CFA</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>EFA</th>
+<th>CFA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exploratory</td>
+<td>Confirmatory</td>
+</tr>
+<tr>
+<td>No fixed structure</td>
+<td>Predefined model</td>
+</tr>
+<tr>
+<td>Discovers factors</td>
+<td>Tests factors</td>
+</tr>
+<tr>
+<td>Early scale development</td>
+<td>Validation stage</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="19-example"><strong>19. Example</strong></h1>
+<p>Researcher has 25 items.</p>
+<p>Unknown structure.</p>
+<p>Use:</p>
+<p>EFA.</p>
+<hr>
+<p>Researcher finds:</p>
+<p>5 factors.</p>
+<p>New sample collected.</p>
+<p>Test whether the five-factor model works.</p>
+<p>Use:</p>
+<p>CFA.</p>
+<hr>
+<h1 id="20-cfa-model-specification"><strong>20. CFA Model Specification</strong></h1>
+<p>CFA requires:</p>
+<ul>
+<li>Number of factors.  </li>
+<li>Which items load on which factors.  </li>
+<li>Expected relationships.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Factor:</p>
+<p>Customer Satisfaction</p>
+<p>Indicators:</p>
+<p>SA1</p>
+<p>SA2</p>
+<p>SA3</p>
+<p>SA4</p>
+<p>SA5</p>
+<hr>
+<h1 id="21-sem-and-cfa-in-jamovi"><strong>21. SEM and CFA in Jamovi</strong></h1>
+<p>Jamovi modules:</p>
+<p>Basic analyses do not always include full SEM functionality.</p>
+<p>For advanced SEM:</p>
+<p>Use SEM-related modules.</p>
+<hr>
+<p>SEM can provide:</p>
+<ul>
+<li>Path estimates.  </li>
+<li>Model fit.  </li>
+<li>Reliability.  </li>
+<li>Validity.</li>
+</ul>
+<hr>
+<h1 id="22-sem-output-interpretation"><strong>22. SEM Output Interpretation</strong></h1>
+<p>A complete SEM assessment includes:</p>
+<h2 id="1-standardised-path-estimates-beta"><strong>1. Standardised path estimates (Beta)</strong></h2>
+<p>Shows relationship strength.</p>
+<p>Example:</p>
+<p>Service Quality → Satisfaction</p>
+<p>β \= 0.65</p>
+<hr>
+<h2 id="2-model-fit-indices"><strong>2. Model fit indices</strong></h2>
+<p>Evaluate whether the proposed model fits the data.</p>
+<p>Examples:</p>
+<ul>
+<li>CFI.  </li>
+<li>TLI.  </li>
+<li>GFI.</li>
+</ul>
+<hr>
+<h2 id="3-reliability-measures"><strong>3. Reliability measures</strong></h2>
+<p>Assess consistency.</p>
+<p>Examples:</p>
+<ul>
+<li>Cronbach&rsquo;s Alpha.  </li>
+<li>Composite Reliability.</li>
+</ul>
+<hr>
+<h2 id="4-validity-measures"><strong>4. Validity measures</strong></h2>
+<p>Assess construct quality.</p>
+<p>Examples:</p>
+<ul>
+<li>AVE.  </li>
+<li>HTMT.</li>
+</ul>
+<hr>
+<h1 id="23-ave-average-variance-extracted"><strong>23. AVE (Average Variance Extracted)</strong></h1>
+<h2 id="purpose-4"><strong>Purpose</strong></h2>
+<p>Measures convergent validity.</p>
+<p>Question:</p>
+<p>Do items strongly represent their construct?</p>
+<hr>
+<p>Higher AVE indicates:</p>
+<p>The construct explains more variance in its indicators.</p>
+<hr>
+<h1 id="24-htmt-heterotrait-monotrait-ratio"><strong>24. HTMT (Heterotrait-Monotrait Ratio)</strong></h1>
+<h2 id="purpose-5"><strong>Purpose</strong></h2>
+<p>Tests discriminant validity.</p>
+<p>Question:</p>
+<p>Are different constructs actually distinct?</p>
+<hr>
+<p>Example:</p>
+<p>Customer satisfaction and service quality should not be identical constructs.</p>
+<p>HTMT helps verify separation.</p>
+<hr>
+<h1 id="25-reliability-vs-validity"><strong>25. Reliability vs Validity</strong></h1>
+<h2 id="reliability"><strong>Reliability</strong></h2>
+<p>Question:</p>
+<p>Are items consistent?</p>
+<p>Example:</p>
+<p>Do satisfaction items behave similarly?</p>
+<hr>
+<h2 id="validity"><strong>Validity</strong></h2>
+<p>Question:</p>
+<p>Are we measuring the correct concept?</p>
+<hr>
+<p>A scale can be:</p>
+<p>Reliable but invalid.</p>
+<p>Example:</p>
+<p>A consistently wrong measurement.</p>
+<hr>
+<h1 id="26-measurement-assessment-phase"><strong>26. Measurement Assessment Phase</strong></h1>
+<p>The correct phase name:</p>
+<p><strong>Measurement assessment</strong></p>
+<hr>
+<p>It includes:</p>
+<ul>
+<li>EFA.  </li>
+<li>CFA.  </li>
+<li>Reliability.  </li>
+<li>Validity checks.</li>
+</ul>
+<hr>
+<p>Not:</p>
+<p>Data preparation.</p>
+<p>Not:</p>
+<p>Assumption testing.</p>
+<hr>
+<h1 id="27-sem-vs-regression"><strong>27. SEM vs Regression</strong></h1>
+<h2 id="regression"><strong>Regression</strong></h2>
+<p>Tests relationships among observed variables.</p>
+<p>Example:</p>
+<p>Advertising → Sales.</p>
+<hr>
+<h2 id="sem"><strong>SEM</strong></h2>
+<p>Tests:</p>
+<ul>
+<li>Measurement model.  </li>
+<li>Structural relationships.</li>
+</ul>
+<p>Allows:</p>
+<p>Latent variables.</p>
+<p>Example:</p>
+<p>Service Quality → Satisfaction.</p>
+<hr>
+<h1 id="28-jamovi-analysis-workflow"><strong>28. Jamovi Analysis Workflow</strong></h1>
+<h2 id="stage-1-data-preparation"><strong>Stage 1: Data Preparation</strong></h2>
+<ul>
+<li>Import data.  </li>
+<li>Set measurement levels.  </li>
+<li>Clean data.</li>
+</ul>
+<p>↓</p>
+<h2 id="stage-2-exploratory-analysis"><strong>Stage 2: Exploratory Analysis</strong></h2>
+<ul>
+<li>Descriptives.  </li>
+<li>EFA.</li>
+</ul>
+<p>↓</p>
+<h2 id="stage-3-measurement-assessment"><strong>Stage 3: Measurement Assessment</strong></h2>
+<ul>
+<li>Reliability.  </li>
+<li>CFA.  </li>
+<li>Validity.</li>
+</ul>
+<p>↓</p>
+<h2 id="stage-4-structural-analysis"><strong>Stage 4: Structural Analysis</strong></h2>
+<ul>
+<li>SEM.  </li>
+<li>Regression.  </li>
+<li>Mediation/moderation.</li>
+</ul>
+<p>↓</p>
+<h2 id="stage-5-interpretation"><strong>Stage 5: Interpretation</strong></h2>
+<ul>
+<li>Evaluate theory.  </li>
+<li>Report findings.</li>
+</ul>
+<hr>
+<h1 id="29-common-misconceptions"><strong>29. Common Misconceptions</strong></h1>
+<h2 id="misconception-1"><strong>Misconception 1:</strong></h2>
+<p>EFA proves the model is correct.</p>
+<p>Reality:</p>
+<p>EFA only explores.</p>
+<p>CFA is required for confirmation.</p>
+<hr>
+<h2 id="misconception-2"><strong>Misconception 2:</strong></h2>
+<p>Good KMO means EFA is automatically valid.</p>
+<p>Reality:</p>
+<p>Bartlett’s test and correlations must also be considered.</p>
+<hr>
+<h2 id="misconception-3"><strong>Misconception 3:</strong></h2>
+<p>Rotation determines factor existence.</p>
+<p>Reality:</p>
+<p>Rotation only improves interpretation.</p>
+<hr>
+<h2 id="misconception-4"><strong>Misconception 4:</strong></h2>
+<p>PCA and EFA are the same.</p>
+<p>Reality:</p>
+<p>PCA reduces data.</p>
+<p>EFA identifies latent constructs.</p>
+<hr>
+<h2 id="misconception-5"><strong>Misconception 5:</strong></h2>
+<p>Low VIF proves no common method bias.</p>
+<p>Reality:</p>
+<p>VIF only addresses multicollinearity.</p>
+<hr>
+<h2 id="misconception-6"><strong>Misconception 6:</strong></h2>
+<p>Significant paths prove good measurement.</p>
+<p>Reality:</p>
+<p>Measurement validity must be established separately.</p>
+<hr>
+<h1 id="30-final-revision-summary"><strong>30. Final Revision Summary</strong></h1>
+<h2 id="efa"><strong>EFA</strong></h2>
+<p>Used for discovery.</p>
+<p>Checks:</p>
+<ul>
+<li>Factor structure.  </li>
+<li>Item grouping.</li>
+</ul>
+<p>Important checks:</p>
+<ul>
+<li>KMO.  </li>
+<li>Bartlett.  </li>
+<li>Parallel analysis.  </li>
+<li>Rotation.</li>
+</ul>
+<hr>
+<h2 id="cfa"><strong>CFA</strong></h2>
+<p>Used for confirmation.</p>
+<p>Checks:</p>
+<ul>
+<li>Proposed factor structure.  </li>
+<li>Model fit.</li>
+</ul>
+<hr>
+<h2 id="sem-2"><strong>SEM</strong></h2>
+<p>Combines:</p>
+<p>Measurement model + structural model.</p>
+<p>Provides:</p>
+<ul>
+<li>Paths.  </li>
+<li>Fit.  </li>
+<li>Reliability.  </li>
+<li>Validity.</li>
+</ul>
+<hr>
+<h2 id="cmb"><strong>CMB</strong></h2>
+<p>Screen using:</p>
+<ul>
+<li>Unrotated PCA.  </li>
+<li>No forced factors.  </li>
+<li>First component variance.</li>
+</ul>
+<p>Support with:</p>
+<ul>
+<li>VIF checks.</li>
+</ul>
+<hr>
+<h1 id="core-principle"><strong>Core Principle</strong></h1>
+<p>A rigorous measurement process follows:</p>
+<p><strong>Explore → Validate → Test relationships</strong></p>
+<p>or:</p>
+<p><strong>EFA discovers the structure → CFA confirms the structure → SEM tests the relationships between constructs.</strong></p>
+<h2 id="case-study"><strong>Case Study</strong></h2>
+<p>Mei Chen, a data analyst at FreshCafé Foods, is tasked with refining a customer satisfaction survey. Using Jamovi, she begins with Exploratory Factor Analysis (EFA) to assess sample-level measurement quality. The Kaiser-Meyer-Olkin measure is 0.58 (above the required 0.5), and Bartlett&rsquo;s test is significant. Most factor loadings exceed 0.5, but one item loads at 0.28, below the acceptable threshold of 0.3. Cross-loading on another factor is 0.35, above the 0.3 concern level. The team must decide whether to drop or retain this item. Next, Dr. Patel runs Confirmatory Factor Analysis (CFA) in Jamovi&rsquo;s SEM module. Two items show standardized loadings under 0.5. Cronbach&rsquo;s alpha for each construct is above 0.7, and composite reliability exceeds 0.7. Average Variance Extracted (AVE) for brand image is 0.47, below the required 0.5. The HTMT ratio between service and product quality is 0.87, exceeding the 0.85 threshold. Fit indices report RMSEA \= 0.09 (target \&lt; 0.08), CFI \= 0.88 (&gt; 0.90), TLI \= 0.89 (&gt; 0.90), and SRMR \= 0.07 (\&lt; 0.06). James Lopez, the marketing manager, worries that removing items may overlook customer insights, while Mei emphasizes improving model fit. Dr. Patel suggests an iterative approach: if items with loadings below 0.5 are dropped, then rerun CFA and reassess AVE and fit indices. If HTMT remains above 0.85, they might refine item wording. Students must recommend which adjustments to prioritize, balancing content validity, reliability benchmarks, and project deadlines.</p>
+<h1 id="comprehensive-notes-freshcaf-foods-case-study-efa-cfa-reliability-validity-model-fit-and-measurement-refinement"><strong>Comprehensive Notes: FreshCafé Foods Case Study — EFA, CFA, Reliability, Validity, Model Fit, and Measurement Refinement</strong></h1>
+<h1 id="1-case-overview"><strong>1. Case Overview</strong></h1>
+<p>Mei Chen, a data analyst at <strong>FreshCafé Foods</strong>, is refining a customer satisfaction survey.</p>
+<p>The objective is to ensure that the survey:</p>
+<ul>
+<li>Measures customer satisfaction constructs accurately.  </li>
+<li>Contains reliable items.  </li>
+<li>Has valid measurement properties.  </li>
+<li>Produces a statistically acceptable model.</li>
+</ul>
+<p>The analysis follows the measurement validation workflow:</p>
+<p><strong>Exploratory Factor Analysis (EFA) → Confirmatory Factor Analysis (CFA) → Reliability and Validity Assessment → Model Refinement</strong></p>
+<hr>
+<h1 id="2-importance-of-measurement-quality"><strong>2. Importance of Measurement Quality</strong></h1>
+<p>Before using survey constructs for decision-making, researchers must verify that the questionnaire actually measures what it intends to measure.</p>
+<p>A survey may produce statistically significant relationships but still be poor if:</p>
+<ul>
+<li>Items do not represent the construct.  </li>
+<li>Constructs overlap too much.  </li>
+<li>The measurement model fits poorly.</li>
+</ul>
+<p>Measurement quality has three major dimensions:</p>
+<ol>
+<li>Reliability.  </li>
+<li>Convergent validity.  </li>
+<li>Discriminant validity.</li>
+</ol>
+<hr>
+<h1 id="3-exploratory-factor-analysis-efa-2"><strong>3. Exploratory Factor Analysis (EFA)</strong></h1>
+<h2 id="purpose-6"><strong>Purpose</strong></h2>
+<p>EFA is used during early measurement development to discover the underlying structure of survey items.</p>
+<p>It answers:</p>
+<ul>
+<li>How many factors exist?  </li>
+<li>Which items belong to each factor?  </li>
+<li>Do items group according to expectations?</li>
+</ul>
+<hr>
+<p>In FreshCafé:</p>
+<p>Mei first uses EFA to assess whether survey items naturally form meaningful customer satisfaction dimensions.</p>
+<hr>
+<h1 id="4-efa-suitability-checks"><strong>4. EFA Suitability Checks</strong></h1>
+<p>Before interpreting factor loadings, researchers must verify that data is suitable for factor analysis.</p>
+<p>Two major checks:</p>
+<ol>
+<li>Kaiser-Meyer-Olkin (KMO).  </li>
+<li>Bartlett’s Test of Sphericity.</li>
+</ol>
+<hr>
+<h1 id="5-kaiser-meyer-olkin-kmo"><strong>5. Kaiser-Meyer-Olkin (KMO)</strong></h1>
+<h2 id="purpose-7"><strong>Purpose</strong></h2>
+<p>KMO measures sampling adequacy.</p>
+<p>It evaluates whether the correlation pattern among items is suitable for factor extraction.</p>
+<hr>
+<p>General interpretation:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>KMO Value</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Below 0.5</td>
+<td>Unsuitable</td>
+</tr>
+<tr>
+<td>0.5–0.7</td>
+<td>Acceptable</td>
+</tr>
+<tr>
+<td>0.7–0.8</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>Above 0.8</td>
+<td>Very good</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<p>FreshCafé result:</p>
+<p>KMO \= 0.58</p>
+<hr>
+<p>Interpretation:</p>
+<p>The data is acceptable for EFA.</p>
+<p>However:</p>
+<p>It is only moderately adequate.</p>
+<hr>
+<p>Important:</p>
+<p>A good KMO does not guarantee good factors.</p>
+<p>Other criteria must also be checked.</p>
+<hr>
+<h1 id="6-bartlett-s-test-of-sphericity"><strong>6. Bartlett’s Test of Sphericity</strong></h1>
+<h2 id="purpose-8"><strong>Purpose</strong></h2>
+<p>Tests whether variables have sufficient correlations.</p>
+<hr>
+<p>Null hypothesis:</p>
+<p>The correlation matrix is an identity matrix.</p>
+<p>Meaning:</p>
+<p>Items are unrelated.</p>
+<hr>
+<p>Desired result:</p>
+<p>p \&lt; 0.05</p>
+<hr>
+<p>FreshCafé:</p>
+<p>Bartlett’s test significant.</p>
+<hr>
+<p>Interpretation:</p>
+<p>The correlations are strong enough to proceed with EFA.</p>
+<hr>
+<h1 id="7-factor-loadings"><strong>7. Factor Loadings</strong></h1>
+<h2 id="definition-3"><strong>Definition</strong></h2>
+<p>A factor loading represents how strongly an item relates to a factor.</p>
+<p>It is similar to a correlation between:</p>
+<ul>
+<li>Survey item.  </li>
+<li>Underlying construct.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Service Quality factor:</p>
+<p>Item:</p>
+<p>&ldquo;Staff are helpful.&rdquo;</p>
+<p>Loading:</p>
+<p>0.75</p>
+<hr>
+<p>Interpretation:</p>
+<p>The item strongly represents service quality.</p>
+<hr>
+<h1 id="8-loading-thresholds"><strong>8. Loading Thresholds</strong></h1>
+<p>Common guidelines:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Loading</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt;0.7</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>0.5–0.7</td>
+<td>Acceptable</td>
+</tr>
+<tr>
+<td>0.3–0.5</td>
+<td>Weak/moderate</td>
+</tr>
+<tr>
+<td>\&lt;0.3</td>
+<td>Problematic</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<p>FreshCafé issue:</p>
+<p>One item loading:</p>
+<p>0.28</p>
+<hr>
+<p>Interpretation:</p>
+<p>The item does not sufficiently represent its intended factor.</p>
+<hr>
+<h1 id="9-cross-loadings"><strong>9. Cross-Loadings</strong></h1>
+<h2 id="definition-4"><strong>Definition</strong></h2>
+<p>Cross-loading occurs when an item loads on multiple factors.</p>
+<hr>
+<p>Example:</p>
+<p>Item:</p>
+<p>Service quality question.</p>
+<p>Loads:</p>
+<p>Service factor \= 0.45</p>
+<p>Product quality factor \= 0.35</p>
+<hr>
+<p>Problem:</p>
+<p>The item may not clearly measure one construct.</p>
+<hr>
+<p>FreshCafé:</p>
+<p>Cross-loading \= 0.35</p>
+<hr>
+<p>Since it exceeds the 0.3 concern threshold:</p>
+<p>The item requires review.</p>
+<hr>
+<h1 id="10-decision-drop-or-retain-problematic-items"><strong>10. Decision: Drop or Retain Problematic Items</strong></h1>
+<p>The team faces a trade-off.</p>
+<hr>
+<h2 id="argument-for-dropping-items"><strong>Argument for Dropping Items</strong></h2>
+<p>Advantages:</p>
+<ul>
+<li>Improves factor clarity.  </li>
+<li>Improves model fit.  </li>
+<li>Increases construct validity.</li>
+</ul>
+<hr>
+<h2 id="argument-for-retaining-items"><strong>Argument for Retaining Items</strong></h2>
+<p>Advantages:</p>
+<ul>
+<li>Preserves customer insights.  </li>
+<li>Maintains content coverage.  </li>
+<li>Avoids losing important aspects of the construct.</li>
+</ul>
+<hr>
+<h1 id="11-content-validity-vs-statistical-improvement"><strong>11. Content Validity vs Statistical Improvement</strong></h1>
+<p>Important balance:</p>
+<p>A statistically cleaner model is not always better.</p>
+<hr>
+<p>Example:</p>
+<p>Removing an item may improve CFA fit.</p>
+<p>But:</p>
+<p>If the removed item captures an important customer experience, the construct becomes incomplete.</p>
+<hr>
+<p>The decision should consider:</p>
+<ul>
+<li>Loading strength.  </li>
+<li>Cross-loading.  </li>
+<li>Theoretical importance.  </li>
+<li>Managerial relevance.</li>
+</ul>
+<hr>
+<h1 id="12-confirmatory-factor-analysis-cfa"><strong>12. Confirmatory Factor Analysis (CFA)</strong></h1>
+<h2 id="purpose-9"><strong>Purpose</strong></h2>
+<p>CFA tests whether the proposed measurement structure fits the data.</p>
+<p>Unlike EFA:</p>
+<p>EFA discovers.</p>
+<p>CFA confirms.</p>
+<hr>
+<p>FreshCafé:</p>
+<p>Dr. Patel uses Jamovi SEM module to test the factor model.</p>
+<hr>
+<h1 id="13-cfa-standardized-loadings"><strong>13. CFA Standardized Loadings</strong></h1>
+<h2 id="purpose-10"><strong>Purpose</strong></h2>
+<p>Evaluate how strongly indicators represent constructs.</p>
+<hr>
+<p>Common benchmark:</p>
+<p>Loading ≥ 0.5</p>
+<hr>
+<p>FreshCafé:</p>
+<p>Two items have loadings below 0.5.</p>
+<hr>
+<p>Interpretation:</p>
+<p>These items may weaken the measurement model.</p>
+<hr>
+<p>Possible action:</p>
+<p>Review or remove weak indicators.</p>
+<hr>
+<h1 id="14-reliability-assessment"><strong>14. Reliability Assessment</strong></h1>
+<p>Reliability asks:</p>
+<blockquote>
+<p>Are items measuring the construct consistently?</p>
+</blockquote>
+<p>Two common measures:</p>
+<ol>
+<li>Cronbach’s alpha.  </li>
+<li>Composite reliability.</li>
+</ol>
+<hr>
+<h1 id="15-cronbach-s-alpha"><strong>15. Cronbach’s Alpha</strong></h1>
+<h2 id="purpose-11"><strong>Purpose</strong></h2>
+<p>Measures internal consistency.</p>
+<hr>
+<p>Benchmark:</p>
+<p>Alpha &gt; 0.7</p>
+<hr>
+<p>FreshCafé:</p>
+<p>All constructs have alpha &gt; 0.7.</p>
+<hr>
+<p>Interpretation:</p>
+<p>The constructs are internally consistent.</p>
+<hr>
+<h1 id="16-composite-reliability-cr"><strong>16. Composite Reliability (CR)</strong></h1>
+<h2 id="purpose-12"><strong>Purpose</strong></h2>
+<p>Another measure of construct reliability, especially in SEM.</p>
+<hr>
+<p>Benchmark:</p>
+<p>CR &gt; 0.7</p>
+<hr>
+<p>FreshCafé:</p>
+<p>CR exceeds 0.7.</p>
+<hr>
+<p>Interpretation:</p>
+<p>Reliability requirements are satisfied.</p>
+<hr>
+<h1 id="17-important-insight"><strong>17. Important Insight</strong></h1>
+<p>Reliability alone is not enough.</p>
+<p>A construct can be reliable but invalid.</p>
+<p>Example:</p>
+<p>A scale consistently measures the wrong concept.</p>
+<p>Therefore:</p>
+<p>Reliability must be evaluated with validity.</p>
+<hr>
+<h1 id="18-convergent-validity"><strong>18. Convergent Validity</strong></h1>
+<h2 id="definition-5"><strong>Definition</strong></h2>
+<p>Determines whether items representing the same construct actually converge.</p>
+<hr>
+<p>Main measure:</p>
+<p>Average Variance Extracted (AVE).</p>
+<hr>
+<h1 id="19-average-variance-extracted-ave"><strong>19. Average Variance Extracted (AVE)</strong></h1>
+<h2 id="purpose-13"><strong>Purpose</strong></h2>
+<p>Measures how much variance a construct captures from its indicators.</p>
+<hr>
+<p>Benchmark:</p>
+<p>AVE ≥ 0.5</p>
+<hr>
+<p>Meaning:</p>
+<p>The construct explains at least half of the variance in its items.</p>
+<hr>
+<p>FreshCafé:</p>
+<p>Brand Image AVE:</p>
+<p>0.47</p>
+<hr>
+<p>Interpretation:</p>
+<p>Slightly below acceptable threshold.</p>
+<hr>
+<p>Possible solutions:</p>
+<ul>
+<li>Remove weak items.  </li>
+<li>Improve indicators.  </li>
+<li>Re-estimate model.</li>
+</ul>
+<hr>
+<h1 id="20-discriminant-validity"><strong>20. Discriminant Validity</strong></h1>
+<h2 id="definition-6"><strong>Definition</strong></h2>
+<p>Tests whether different constructs are actually distinct.</p>
+<hr>
+<p>Example:</p>
+<p>Service Quality and Product Quality should not measure the exact same thing.</p>
+<hr>
+<p>Main measure:</p>
+<p>HTMT ratio.</p>
+<hr>
+<h1 id="21-htmt-ratio"><strong>21. HTMT Ratio</strong></h1>
+<h2 id="purpose-14"><strong>Purpose</strong></h2>
+<p>Measures similarity between constructs.</p>
+<hr>
+<p>Benchmark:</p>
+<p>HTMT \&lt; 0.85</p>
+<p>(Some contexts allow \&lt;0.90)</p>
+<hr>
+<p>FreshCafé:</p>
+<p>Service vs Product Quality:</p>
+<p>HTMT \= 0.87</p>
+<hr>
+<p>Interpretation:</p>
+<p>Possible discriminant validity problem.</p>
+<hr>
+<p>Meaning:</p>
+<p>Customers may not clearly distinguish between service quality and product quality.</p>
+<hr>
+<h1 id="22-improving-htmt-problems"><strong>22. Improving HTMT Problems</strong></h1>
+<p>Possible solutions:</p>
+<h2 id="review-item-wording"><strong>Review item wording</strong></h2>
+<p>Some items may overlap.</p>
+<p>Example:</p>
+<p>Service quality item:</p>
+<p>&ldquo;The café provides excellent products.&rdquo;</p>
+<p>This may actually measure product quality.</p>
+<hr>
+<h2 id="remove-redundant-items"><strong>Remove redundant items</strong></h2>
+<p>Items that are too similar may inflate construct overlap.</p>
+<hr>
+<h2 id="reconsider-construct-definitions"><strong>Reconsider construct definitions</strong></h2>
+<p>Maybe two constructs are conceptually too close.</p>
+<hr>
+<h1 id="23-model-fit-in-cfa"><strong>23. Model Fit in CFA</strong></h1>
+<p>Model fit indicates whether the proposed measurement model matches observed data.</p>
+<p>Common indices:</p>
+<ul>
+<li>RMSEA.  </li>
+<li>CFI.  </li>
+<li>TLI.  </li>
+<li>SRMR.</li>
+</ul>
+<hr>
+<h1 id="24-rmsea"><strong>24. RMSEA</strong></h1>
+<h2 id="purpose-15"><strong>Purpose</strong></h2>
+<p>Measures approximation error.</p>
+<hr>
+<p>Desired:</p>
+<p>RMSEA \&lt; 0.08</p>
+<hr>
+<p>FreshCafé:</p>
+<p>RMSEA \= 0.09</p>
+<hr>
+<p>Interpretation:</p>
+<p>Model fit is weaker than desired.</p>
+<hr>
+<h1 id="25-cfi-comparative-fit-index"><strong>25. CFI (Comparative Fit Index)</strong></h1>
+<h2 id="purpose-16"><strong>Purpose</strong></h2>
+<p>Compares proposed model with a baseline model.</p>
+<hr>
+<p>Desired:</p>
+<p>CFI &gt; 0.90</p>
+<hr>
+<p>FreshCafé:</p>
+<p>CFI \= 0.88</p>
+<hr>
+<p>Interpretation:</p>
+<p>Below acceptable fit.</p>
+<hr>
+<h1 id="26-tli-tucker-lewis-index"><strong>26. TLI (Tucker-Lewis Index)</strong></h1>
+<h2 id="purpose-17"><strong>Purpose</strong></h2>
+<p>Another incremental fit measure.</p>
+<hr>
+<p>Desired:</p>
+<p>TLI &gt; 0.90</p>
+<hr>
+<p>FreshCafé:</p>
+<p>TLI \= 0.89</p>
+<hr>
+<p>Interpretation:</p>
+<p>Slightly below target.</p>
+<hr>
+<h1 id="27-srmr"><strong>27. SRMR</strong></h1>
+<h2 id="purpose-18"><strong>Purpose</strong></h2>
+<p>Measures average residual difference.</p>
+<hr>
+<p>Desired:</p>
+<p>SRMR \&lt; 0.06</p>
+<hr>
+<p>FreshCafé:</p>
+<p>SRMR \= 0.07</p>
+<hr>
+<p>Interpretation:</p>
+<p>Slightly poor fit.</p>
+<hr>
+<h1 id="28-overall-cfa-interpretation"><strong>28. Overall CFA Interpretation</strong></h1>
+<p>FreshCafé results:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>Result</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reliability</td>
+<td>Good</td>
+<td>Alpha and CR &gt;0.7</td>
+</tr>
+<tr>
+<td>Factor loadings</td>
+<td>Some issues</td>
+<td>Two items \&lt;0.5</td>
+</tr>
+<tr>
+<td>AVE</td>
+<td>Weak for Brand Image</td>
+<td>0.47</td>
+</tr>
+<tr>
+<td>HTMT</td>
+<td>Concern</td>
+<td>0.87</td>
+</tr>
+<tr>
+<td>RMSEA</td>
+<td>Weak</td>
+<td>0.09</td>
+</tr>
+<tr>
+<td>CFI</td>
+<td>Weak</td>
+<td>0.88</td>
+</tr>
+<tr>
+<td>TLI</td>
+<td>Weak</td>
+<td>0.89</td>
+</tr>
+<tr>
+<td>SRMR</td>
+<td>Weak</td>
+<td>0.07</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<p>Conclusion:</p>
+<p>The model is acceptable in some areas but requires refinement.</p>
+<hr>
+<h1 id="29-iterative-measurement-refinement-approach"><strong>29. Iterative Measurement Refinement Approach</strong></h1>
+<p>Dr. Patel recommends an iterative process.</p>
+<p>Correct workflow:</p>
+<h2 id="step-1"><strong>Step 1</strong></h2>
+<p>Identify weak items.</p>
+<p>Examples:</p>
+<ul>
+<li>Loading \&lt;0.5.  </li>
+<li>High cross-loading.</li>
+</ul>
+<p>↓</p>
+<h2 id="step-2"><strong>Step 2</strong></h2>
+<p>Review theoretical importance.</p>
+<p>Do not automatically delete.</p>
+<p>↓</p>
+<h2 id="step-3"><strong>Step 3</strong></h2>
+<p>Remove or revise problematic items.</p>
+<p>↓</p>
+<h2 id="step-4"><strong>Step 4</strong></h2>
+<p>Rerun CFA.</p>
+<p>↓</p>
+<h2 id="step-5"><strong>Step 5</strong></h2>
+<p>Reassess:</p>
+<ul>
+<li>Model fit.  </li>
+<li>AVE.  </li>
+<li>Reliability.  </li>
+<li>HTMT.</li>
+</ul>
+<hr>
+<h1 id="30-balancing-statistical-and-practical-considerations"><strong>30. Balancing Statistical and Practical Considerations</strong></h1>
+<p>A good measurement model requires balance.</p>
+<hr>
+<h2 id="statistical-improvement"><strong>Statistical improvement</strong></h2>
+<p>Goal:</p>
+<p>Better:</p>
+<ul>
+<li>Fit indices.  </li>
+<li>Loadings.  </li>
+<li>Validity.</li>
+</ul>
+<hr>
+<h2 id="content-validity"><strong>Content validity</strong></h2>
+<p>Goal:</p>
+<p>Ensure the construct still represents the real-world concept.</p>
+<hr>
+<p>Example:</p>
+<p>Removing a product quality question may improve fit but remove an important customer perspective.</p>
+<hr>
+<h1 id="31-common-misconceptions"><strong>31. Common Misconceptions</strong></h1>
+<h2 id="misconception-1-2"><strong>Misconception 1:</strong></h2>
+<p>High reliability means the scale is valid.</p>
+<p>Reality:</p>
+<p>Reliability only means consistency.</p>
+<p>Validity must also be checked.</p>
+<hr>
+<h2 id="misconception-2-2"><strong>Misconception 2:</strong></h2>
+<p>Every item below 0.5 must immediately be removed.</p>
+<p>Reality:</p>
+<p>Consider:</p>
+<ul>
+<li>Theoretical importance.  </li>
+<li>Content validity.  </li>
+<li>Overall model impact.</li>
+</ul>
+<hr>
+<h2 id="misconception-3-2"><strong>Misconception 3:</strong></h2>
+<p>Good KMO means the factor model is good.</p>
+<p>Reality:</p>
+<p>KMO only checks suitability for factor analysis.</p>
+<hr>
+<h2 id="misconception-4-2"><strong>Misconception 4:</strong></h2>
+<p>Fit indices alone determine model quality.</p>
+<p>Reality:</p>
+<p>Need combined evaluation:</p>
+<ul>
+<li>Reliability.  </li>
+<li>Validity.  </li>
+<li>Fit.  </li>
+<li>Theory.</li>
+</ul>
+<hr>
+<h2 id="misconception-5-2"><strong>Misconception 5:</strong></h2>
+<p>Removing items always improves the survey.</p>
+<p>Reality:</p>
+<p>Over-removal can damage construct meaning.</p>
+<hr>
+<h1 id="32-complete-measurement-validation-workflow"><strong>32. Complete Measurement Validation Workflow</strong></h1>
+<h2 id="phase-1-efa"><strong>Phase 1: EFA</strong></h2>
+<p>Purpose:</p>
+<p>Discover structure.</p>
+<p>Check:</p>
+<ul>
+<li>KMO.  </li>
+<li>Bartlett.  </li>
+<li>Factor loadings.  </li>
+<li>Cross-loadings.</li>
+</ul>
+<p>↓</p>
+<h2 id="phase-2-cfa"><strong>Phase 2: CFA</strong></h2>
+<p>Purpose:</p>
+<p>Confirm structure.</p>
+<p>Check:</p>
+<ul>
+<li>Standardized loadings.  </li>
+<li>Model fit.</li>
+</ul>
+<p>↓</p>
+<h2 id="phase-3-reliability"><strong>Phase 3: Reliability</strong></h2>
+<p>Check:</p>
+<ul>
+<li>Cronbach’s alpha.  </li>
+<li>Composite reliability.</li>
+</ul>
+<p>↓</p>
+<h2 id="phase-4-validity"><strong>Phase 4: Validity</strong></h2>
+<p>Convergent validity:</p>
+<ul>
+<li>AVE.</li>
+</ul>
+<p>Discriminant validity:</p>
+<ul>
+<li>HTMT.</li>
+</ul>
+<p>↓</p>
+<h2 id="phase-5-refinement"><strong>Phase 5: Refinement</strong></h2>
+<p>Modify carefully.</p>
+<p>Maintain:</p>
+<ul>
+<li>Statistical quality.  </li>
+<li>Theoretical meaning.</li>
+</ul>
+<hr>
+<h1 id="final-revision-summary"><strong>Final Revision Summary</strong></h1>
+<h2 id="efa-2"><strong>EFA</strong></h2>
+<p>Used to discover factor structure.</p>
+<p>Important checks:</p>
+<ul>
+<li>KMO &gt; 0.5.  </li>
+<li>Significant Bartlett test.  </li>
+<li>Loadings generally &gt;0.5.  </li>
+<li>Low cross-loadings.</li>
+</ul>
+<hr>
+<h2 id="cfa-2"><strong>CFA</strong></h2>
+<p>Used to confirm factor structure.</p>
+<p>Check:</p>
+<ul>
+<li>Factor loadings.  </li>
+<li>Fit indices.</li>
+</ul>
+<hr>
+<h2 id="reliability-2"><strong>Reliability</strong></h2>
+<p>Measures consistency.</p>
+<p>Benchmarks:</p>
+<ul>
+<li>Cronbach’s alpha &gt;0.7.  </li>
+<li>Composite reliability &gt;0.7.</li>
+</ul>
+<hr>
+<h2 id="validity-2"><strong>Validity</strong></h2>
+<p>Convergent validity:</p>
+<p>AVE &gt;0.5.</p>
+<p>Discriminant validity:</p>
+<p>HTMT \&lt;0.85.</p>
+<hr>
+<h2 id="model-improvement-principle"><strong>Model Improvement Principle</strong></h2>
+<p>The goal is not simply to achieve perfect statistics.</p>
+<p>The goal is:</p>
+<p><strong>A statistically acceptable model that still accurately represents the real-world customer experience.</strong></p>
+<p>A strong researcher balances:</p>
+<p><strong>Measurement quality + Theoretical meaning + Practical usefulness + Project constraints.</strong></p>
+<h1 id="comprehensive-notes-freshcaf-foods-case-study-survey-refinement-using-efa-cfa-reliability-validity-and-model-improvement"><strong>Comprehensive Notes: FreshCafé Foods Case Study — Survey Refinement Using EFA, CFA, Reliability, Validity, and Model Improvement</strong></h1>
+<h1 id="1-case-overview-2"><strong>1. Case Overview</strong></h1>
+<p>FreshCafé Foods wants to refine its customer satisfaction survey to ensure that it produces reliable and valid measurements.</p>
+<p>The key objective is not merely to collect responses but to ensure that:</p>
+<ul>
+<li>Survey items measure the intended constructs.  </li>
+<li>Constructs are statistically sound.  </li>
+<li>The measurement model represents customer perceptions accurately.</li>
+</ul>
+<p>The analysis follows a structured measurement validation process:</p>
+<p><strong>Exploratory Factor Analysis (EFA) → Confirmatory Factor Analysis (CFA) → Reliability Assessment → Validity Assessment → Model Refinement</strong></p>
+<hr>
+<h1 id="2-why-measurement-quality-matters"><strong>2. Why Measurement Quality Matters</strong></h1>
+<p>A survey instrument can fail in two ways:</p>
+<h2 id="low-reliability"><strong>Low reliability</strong></h2>
+<p>The items are inconsistent.</p>
+<p>Example:</p>
+<p>Five service quality questions produce unrelated responses.</p>
+<hr>
+<h2 id="low-validity"><strong>Low validity</strong></h2>
+<p>The items do not measure the intended concept.</p>
+<p>Example:</p>
+<p>A service quality item actually measures product quality.</p>
+<hr>
+<p>A good measurement model requires both:</p>
+<ul>
+<li>Reliability.  </li>
+<li>Validity.</li>
+</ul>
+<hr>
+<h1 id="3-exploratory-factor-analysis-efa-3"><strong>3. Exploratory Factor Analysis (EFA)</strong></h1>
+<h2 id="purpose-of-efa"><strong>Purpose of EFA</strong></h2>
+<p>EFA is used when researchers want to discover the underlying structure of survey items.</p>
+<p>It answers:</p>
+<ul>
+<li>How many factors exist?  </li>
+<li>Which items belong to which factors?  </li>
+<li>Are items grouping logically?</li>
+</ul>
+<hr>
+<p>FreshCafé uses EFA first because Mei needs to assess whether customer satisfaction items naturally form meaningful dimensions.</p>
+<hr>
+<h1 id="4-assessing-whether-data-is-suitable-for-efa"><strong>4. Assessing Whether Data is Suitable for EFA</strong></h1>
+<p>Before interpreting factors, researchers must verify whether factor analysis is appropriate.</p>
+<p>Two major tests:</p>
+<ol>
+<li>Kaiser-Meyer-Olkin (KMO).  </li>
+<li>Bartlett’s Test of Sphericity.</li>
+</ol>
+<hr>
+<h1 id="5-kaiser-meyer-olkin-kmo-2"><strong>5. Kaiser-Meyer-Olkin (KMO)</strong></h1>
+<h2 id="purpose-19"><strong>Purpose</strong></h2>
+<p>KMO measures sampling adequacy.</p>
+<p>It evaluates whether the correlations among items are sufficient for identifying factors.</p>
+<hr>
+<p>Typical interpretation:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>KMO Value</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\&lt;0.5</td>
+<td>Poor</td>
+</tr>
+<tr>
+<td>0.5–0.7</td>
+<td>Acceptable</td>
+</tr>
+<tr>
+<td>0.7–0.8</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>&gt;0.8</td>
+<td>Very good</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<p>FreshCafé:</p>
+<p>KMO \= 0.58</p>
+<hr>
+<p>Interpretation:</p>
+<p>The data is acceptable for EFA.</p>
+<p>However:</p>
+<p>It is only moderately suitable.</p>
+<hr>
+<p>Important:</p>
+<p>A good KMO alone does not prove the factor structure is good.</p>
+<hr>
+<h1 id="6-bartlett-s-test-of-sphericity-2"><strong>6. Bartlett’s Test of Sphericity</strong></h1>
+<h2 id="purpose-20"><strong>Purpose</strong></h2>
+<p>Tests whether variables are sufficiently correlated.</p>
+<hr>
+<p>Null hypothesis:</p>
+<p>The correlation matrix is an identity matrix.</p>
+<p>Meaning:</p>
+<p>Items are unrelated.</p>
+<hr>
+<p>Desired result:</p>
+<p>Significant p-value.</p>
+<hr>
+<p>FreshCafé:</p>
+<p>Bartlett’s test is significant.</p>
+<hr>
+<p>Conclusion:</p>
+<p>There are sufficient relationships among items to proceed with EFA.</p>
+<hr>
+<h1 id="7-factor-loadings-2"><strong>7. Factor Loadings</strong></h1>
+<h2 id="definition-7"><strong>Definition</strong></h2>
+<p>A factor loading represents how strongly an item represents a factor.</p>
+<p>It indicates the relationship between:</p>
+<ul>
+<li>Survey item.  </li>
+<li>Latent construct.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Brand image item:</p>
+<p>Loading \= 0.75</p>
+<p>Meaning:</p>
+<p>Strong representation.</p>
+<hr>
+<p>General guidelines:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Loading</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt;0.7</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>&gt;0.5</td>
+<td>Acceptable</td>
+</tr>
+<tr>
+<td>0.3–0.5</td>
+<td>Weak</td>
+</tr>
+<tr>
+<td>\&lt;0.3</td>
+<td>Problematic</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="8-problematic-efa-item"><strong>8. Problematic EFA Item</strong></h1>
+<p>FreshCafé identified:</p>
+<p>Primary loading:</p>
+<p>0.28</p>
+<p>Cross-loading:</p>
+<p>0.35</p>
+<hr>
+<p>This creates two problems.</p>
+<hr>
+<h2 id="problem-1-weak-factor-representation"><strong>Problem 1: Weak factor representation</strong></h2>
+<p>Loading:</p>
+<p>0.28</p>
+<p>Below 0.3.</p>
+<p>Meaning:</p>
+<p>The item does not strongly measure its intended construct.</p>
+<hr>
+<h2 id="problem-2-cross-loading"><strong>Problem 2: Cross-loading</strong></h2>
+<p>Cross-loading:</p>
+<p>0.35</p>
+<p>Above concern threshold.</p>
+<p>Meaning:</p>
+<p>The item relates to another factor too strongly.</p>
+<hr>
+<p>Conclusion:</p>
+<p>The item creates ambiguity and weakens the factor structure.</p>
+<hr>
+<h1 id="9-should-weak-items-always-be-removed"><strong>9. Should Weak Items Always Be Removed?</strong></h1>
+<p>Not automatically.</p>
+<p>Researchers must balance:</p>
+<h2 id="statistical-quality"><strong>Statistical quality</strong></h2>
+<p>Removing weak items can improve:</p>
+<ul>
+<li>Factor clarity.  </li>
+<li>CFA fit.  </li>
+<li>Validity.</li>
+</ul>
+<hr>
+<h2 id="content-validity-2"><strong>Content validity</strong></h2>
+<p>Keeping items may preserve:</p>
+<ul>
+<li>Important customer insights.  </li>
+<li>Real-world meaning.  </li>
+<li>Construct coverage.</li>
+</ul>
+<hr>
+<p>Correct approach:</p>
+<p>Review the item&rsquo;s:</p>
+<ul>
+<li>Statistical performance.  </li>
+<li>Theoretical importance.  </li>
+<li>Practical meaning.</li>
+</ul>
+<hr>
+<h1 id="10-confirmatory-factor-analysis-cfa"><strong>10. Confirmatory Factor Analysis (CFA)</strong></h1>
+<h2 id="purpose-21"><strong>Purpose</strong></h2>
+<p>CFA tests whether a proposed measurement structure fits the data.</p>
+<hr>
+<p>Difference:</p>
+<p>EFA:</p>
+<p>&ldquo;What factors exist?&rdquo;</p>
+<p>CFA:</p>
+<p>&ldquo;Does my proposed factor model fit?&rdquo;</p>
+<hr>
+<p>FreshCafé:</p>
+<p>Dr. Patel uses CFA through Jamovi SEM module.</p>
+<hr>
+<h1 id="11-cfa-standardized-loadings"><strong>11. CFA Standardized Loadings</strong></h1>
+<h2 id="purpose-22"><strong>Purpose</strong></h2>
+<p>Measure how strongly each item represents its construct.</p>
+<hr>
+<p>Common benchmark:</p>
+<p>Loading ≥ 0.5</p>
+<hr>
+<p>FreshCafé:</p>
+<p>Two items have loadings below 0.5.</p>
+<hr>
+<p>Interpretation:</p>
+<p>These items may weaken:</p>
+<ul>
+<li>Convergent validity.  </li>
+<li>Model fit.</li>
+</ul>
+<hr>
+<p>Recommended action:</p>
+<p>Review and possibly remove weak items.</p>
+<hr>
+<h1 id="12-reliability-assessment"><strong>12. Reliability Assessment</strong></h1>
+<p>Reliability asks:</p>
+<blockquote>
+<p>Are items consistently measuring the same construct?</p>
+</blockquote>
+<p>Two measures:</p>
+<ol>
+<li>Cronbach’s alpha.  </li>
+<li>Composite reliability.</li>
+</ol>
+<hr>
+<h1 id="13-cronbach-s-alpha"><strong>13. Cronbach’s Alpha</strong></h1>
+<h2 id="purpose-23"><strong>Purpose</strong></h2>
+<p>Measures internal consistency.</p>
+<hr>
+<p>Benchmark:</p>
+<p>Alpha &gt; 0.7</p>
+<hr>
+<p>FreshCafé:</p>
+<p>All constructs exceed 0.7.</p>
+<hr>
+<p>Interpretation:</p>
+<p>Items within constructs are consistent.</p>
+<hr>
+<h1 id="14-composite-reliability-cr"><strong>14. Composite Reliability (CR)</strong></h1>
+<h2 id="purpose-24"><strong>Purpose</strong></h2>
+<p>Measures reliability in SEM models.</p>
+<hr>
+<p>Benchmark:</p>
+<p>CR &gt; 0.7</p>
+<hr>
+<p>FreshCafé:</p>
+<p>CR exceeds 0.7.</p>
+<hr>
+<p>Conclusion:</p>
+<p>Reliability is acceptable.</p>
+<hr>
+<h1 id="15-reliability-does-not-equal-validity"><strong>15. Reliability Does Not Equal Validity</strong></h1>
+<p>Important principle:</p>
+<p>A scale can be reliable but invalid.</p>
+<hr>
+<p>Example:</p>
+<p>A bathroom scale that always shows weight incorrectly.</p>
+<p>It is consistent but inaccurate.</p>
+<hr>
+<p>Therefore:</p>
+<p>High reliability alone does not prove a good measurement model.</p>
+<hr>
+<h1 id="16-convergent-validity"><strong>16. Convergent Validity</strong></h1>
+<h2 id="definition-8"><strong>Definition</strong></h2>
+<p>Tests whether items measuring the same construct actually converge.</p>
+<hr>
+<p>Main measure:</p>
+<p>Average Variance Extracted (AVE).</p>
+<hr>
+<h1 id="17-average-variance-extracted-ave"><strong>17. Average Variance Extracted (AVE)</strong></h1>
+<h2 id="purpose-25"><strong>Purpose</strong></h2>
+<p>Measures how much variance a construct explains in its indicators.</p>
+<hr>
+<p>Benchmark:</p>
+<p>AVE ≥ 0.5</p>
+<hr>
+<p>FreshCafé:</p>
+<p>Brand image AVE:</p>
+<p>0.47</p>
+<hr>
+<p>Interpretation:</p>
+<p>Below acceptable level.</p>
+<p>Meaning:</p>
+<p>Brand image items explain slightly less variance than desired.</p>
+<hr>
+<p>Possible solutions:</p>
+<ul>
+<li>Remove weak items.  </li>
+<li>Improve item wording.  </li>
+<li>Re-estimate CFA.</li>
+</ul>
+<hr>
+<h1 id="18-discriminant-validity"><strong>18. Discriminant Validity</strong></h1>
+<h2 id="definition-9"><strong>Definition</strong></h2>
+<p>Tests whether different constructs are truly distinct.</p>
+<hr>
+<p>Example:</p>
+<p>Customers should distinguish:</p>
+<ul>
+<li>Service quality.  </li>
+<li>Product quality.</li>
+</ul>
+<hr>
+<p>If constructs overlap too much:</p>
+<p>The survey may not be measuring separate concepts.</p>
+<hr>
+<h1 id="19-htmt-ratio"><strong>19. HTMT Ratio</strong></h1>
+<h2 id="purpose-26"><strong>Purpose</strong></h2>
+<p>Measures discriminant validity.</p>
+<hr>
+<p>Benchmark:</p>
+<p>HTMT \&lt; 0.85</p>
+<p>(Some contexts use \&lt;0.90)</p>
+<hr>
+<p>FreshCafé:</p>
+<p>Service quality vs Product quality:</p>
+<p>HTMT \= 0.87</p>
+<hr>
+<p>Interpretation:</p>
+<p>Potential discriminant validity problem.</p>
+<hr>
+<p>Meaning:</p>
+<p>Respondents may not clearly distinguish between service quality and product quality.</p>
+<hr>
+<h1 id="20-addressing-htmt-problems"><strong>20. Addressing HTMT Problems</strong></h1>
+<p>Possible solutions:</p>
+<h2 id="improve-item-wording"><strong>Improve item wording</strong></h2>
+<p>Example:</p>
+<p>Poor item:</p>
+<p>&ldquo;The café provides excellent products and service.&rdquo;</p>
+<p>Problem:</p>
+<p>Measures two concepts simultaneously.</p>
+<hr>
+<p>Better:</p>
+<p>Separate:</p>
+<p>&ldquo;The café provides high-quality products.&rdquo;</p>
+<p>&ldquo;The staff provide excellent service.&rdquo;</p>
+<hr>
+<h2 id="review-construct-definitions"><strong>Review construct definitions</strong></h2>
+<p>Maybe two constructs are conceptually too similar.</p>
+<hr>
+<h2 id="remove-overlapping-items"><strong>Remove overlapping items</strong></h2>
+<p>Redundant items may inflate HTMT.</p>
+<hr>
+<h1 id="21-cfa-model-fit"><strong>21. CFA Model Fit</strong></h1>
+<p>Model fit evaluates whether the proposed measurement model matches observed data.</p>
+<p>Important indices:</p>
+<ul>
+<li>RMSEA.  </li>
+<li>CFI.  </li>
+<li>TLI.  </li>
+<li>SRMR.</li>
+</ul>
+<hr>
+<h1 id="22-rmsea"><strong>22. RMSEA</strong></h1>
+<h2 id="purpose-27"><strong>Purpose</strong></h2>
+<p>Measures approximation error.</p>
+<hr>
+<p>Target:</p>
+<p>\&lt;0.08</p>
+<hr>
+<p>FreshCafé:</p>
+<p>0.09</p>
+<hr>
+<p>Interpretation:</p>
+<p>Poorer than desired fit.</p>
+<hr>
+<h1 id="23-cfi"><strong>23. CFI</strong></h1>
+<h2 id="purpose-28"><strong>Purpose</strong></h2>
+<p>Compares proposed model against a baseline model.</p>
+<hr>
+<p>Target:</p>
+<blockquote>
+<p>0.90</p>
+</blockquote>
+<hr>
+<p>FreshCafé:</p>
+<p>0.88</p>
+<hr>
+<p>Interpretation:</p>
+<p>Below acceptable fit.</p>
+<hr>
+<h1 id="24-tli"><strong>24. TLI</strong></h1>
+<h2 id="purpose-29"><strong>Purpose</strong></h2>
+<p>Another incremental fit measure.</p>
+<hr>
+<p>Target:</p>
+<blockquote>
+<p>0.90</p>
+</blockquote>
+<hr>
+<p>FreshCafé:</p>
+<p>0.89</p>
+<hr>
+<p>Interpretation:</p>
+<p>Slightly below desired level.</p>
+<hr>
+<h1 id="25-srmr"><strong>25. SRMR</strong></h1>
+<h2 id="purpose-30"><strong>Purpose</strong></h2>
+<p>Measures residual differences between observed and predicted relationships.</p>
+<hr>
+<p>Target:</p>
+<p>\&lt;0.06</p>
+<hr>
+<p>FreshCafé:</p>
+<p>0.07</p>
+<hr>
+<p>Interpretation:</p>
+<p>Fit is weaker than desired.</p>
+<hr>
+<h1 id="26-overall-interpretation-of-freshcaf-results"><strong>26. Overall Interpretation of FreshCafé Results</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Result</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KMO</td>
+<td>0.58</td>
+<td>EFA acceptable</td>
+</tr>
+<tr>
+<td>Bartlett</td>
+<td>Significant</td>
+<td>Correlations adequate</td>
+</tr>
+<tr>
+<td>Reliability</td>
+<td>Good</td>
+<td>Alpha and CR &gt;0.7</td>
+</tr>
+<tr>
+<td>Weak items</td>
+<td>Present</td>
+<td>Need review</td>
+</tr>
+<tr>
+<td>AVE</td>
+<td>0.47</td>
+<td>Poor convergent validity</td>
+</tr>
+<tr>
+<td>HTMT</td>
+<td>0.87</td>
+<td>Discriminant validity concern</td>
+</tr>
+<tr>
+<td>RMSEA</td>
+<td>0.09</td>
+<td>Poor fit</td>
+</tr>
+<tr>
+<td>CFI</td>
+<td>0.88</td>
+<td>Poor fit</td>
+</tr>
+<tr>
+<td>TLI</td>
+<td>0.89</td>
+<td>Poor fit</td>
+</tr>
+<tr>
+<td>SRMR</td>
+<td>0.07</td>
+<td>Poor fit</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<p>Conclusion:</p>
+<p>The survey is reliable but requires validity and model improvement.</p>
+<hr>
+<h1 id="27-dr-patel-s-iterative-improvement-strategy"><strong>27. Dr. Patel’s Iterative Improvement Strategy</strong></h1>
+<p>The recommended approach:</p>
+<h2 id="step-1-2"><strong>Step 1</strong></h2>
+<p>Identify weak CFA items.</p>
+<p>Focus on:</p>
+<ul>
+<li>Standardized loading \&lt;0.5.</li>
+</ul>
+<hr>
+<h2 id="step-2-2"><strong>Step 2</strong></h2>
+<p>Remove or revise weak items.</p>
+<hr>
+<h2 id="step-3-2"><strong>Step 3</strong></h2>
+<p>Run CFA again.</p>
+<hr>
+<h2 id="step-4-2"><strong>Step 4</strong></h2>
+<p>Reassess:</p>
+<ul>
+<li>Fit indices.  </li>
+<li>AVE.  </li>
+<li>HTMT.  </li>
+<li>Reliability.</li>
+</ul>
+<hr>
+<h2 id="step-5-2"><strong>Step 5</strong></h2>
+<p>If HTMT remains high:</p>
+<p>Improve wording or reconsider construct boundaries.</p>
+<hr>
+<h1 id="28-why-iteration-is-important"><strong>28. Why Iteration Is Important</strong></h1>
+<p>Measurement refinement is rarely a one-step process.</p>
+<p>A researcher must balance:</p>
+<ul>
+<li>Statistical improvement.  </li>
+<li>Theoretical meaning.  </li>
+<li>Business usefulness.</li>
+</ul>
+<hr>
+<p>Blind deletion can create:</p>
+<ul>
+<li>Better statistics.  </li>
+<li>Worse measurement.</li>
+</ul>
+<hr>
+<h1 id="29-common-misconceptions-2"><strong>29. Common Misconceptions</strong></h1>
+<h2 id="misconception-1-3"><strong>Misconception 1:</strong></h2>
+<p>High reliability means the survey is good.</p>
+<p>Reality:</p>
+<p>Reliability is necessary but not sufficient.</p>
+<p>Validity must also be established.</p>
+<hr>
+<h2 id="misconception-2-3"><strong>Misconception 2:</strong></h2>
+<p>Every item below 0.5 loading must be deleted.</p>
+<p>Reality:</p>
+<p>Consider theoretical importance and content validity.</p>
+<hr>
+<h2 id="misconception-3-3"><strong>Misconception 3:</strong></h2>
+<p>Poor fit means the entire survey is useless.</p>
+<p>Reality:</p>
+<p>Fit problems guide refinement.</p>
+<hr>
+<h2 id="misconception-4-3"><strong>Misconception 4:</strong></h2>
+<p>HTMT measures reliability.</p>
+<p>Reality:</p>
+<p>HTMT measures discriminant validity.</p>
+<hr>
+<h2 id="misconception-5-3"><strong>Misconception 5:</strong></h2>
+<p>AVE measures overall model fit.</p>
+<p>Reality:</p>
+<p>AVE measures convergent validity.</p>
+<hr>
+<h1 id="30-complete-measurement-validation-workflow"><strong>30. Complete Measurement Validation Workflow</strong></h1>
+<h2 id="phase-1-efa-2"><strong>Phase 1: EFA</strong></h2>
+<p>Purpose:</p>
+<p>Discover structure.</p>
+<p>Check:</p>
+<ul>
+<li>KMO.  </li>
+<li>Bartlett.  </li>
+<li>Loadings.  </li>
+<li>Cross-loadings.</li>
+</ul>
+<p>↓</p>
+<h2 id="phase-2-cfa-2"><strong>Phase 2: CFA</strong></h2>
+<p>Purpose:</p>
+<p>Confirm structure.</p>
+<p>Check:</p>
+<ul>
+<li>Standardized loadings.  </li>
+<li>Model fit.</li>
+</ul>
+<p>↓</p>
+<h2 id="phase-3-reliability-2"><strong>Phase 3: Reliability</strong></h2>
+<p>Check:</p>
+<ul>
+<li>Cronbach’s alpha.  </li>
+<li>Composite reliability.</li>
+</ul>
+<p>↓</p>
+<h2 id="phase-4-validity-2"><strong>Phase 4: Validity</strong></h2>
+<p>Convergent validity:</p>
+<ul>
+<li>AVE.</li>
+</ul>
+<p>Discriminant validity:</p>
+<ul>
+<li>HTMT.</li>
+</ul>
+<p>↓</p>
+<h2 id="phase-5-refinement-2"><strong>Phase 5: Refinement</strong></h2>
+<p>Modify carefully.</p>
+<p>Maintain:</p>
+<ul>
+<li>Statistical quality.  </li>
+<li>Construct meaning.</li>
+</ul>
+<hr>
+<h1 id="final-key-takeaways"><strong>Final Key Takeaways</strong></h1>
+<h2 id="efa-discovers"><strong>EFA discovers.</strong></h2>
+<p>It identifies possible factor structures.</p>
+<hr>
+<h2 id="cfa-confirms"><strong>CFA confirms.</strong></h2>
+<p>It tests whether the proposed structure fits.</p>
+<hr>
+<h2 id="reliability-asks"><strong>Reliability asks:</strong></h2>
+<p>&ldquo;Are items consistent?&rdquo;</p>
+<p>Measures:</p>
+<ul>
+<li>Alpha.  </li>
+<li>Composite reliability.</li>
+</ul>
+<hr>
+<h2 id="validity-asks"><strong>Validity asks:</strong></h2>
+<p>&ldquo;Are we measuring the right thing?&rdquo;</p>
+<p>Measures:</p>
+<ul>
+<li>AVE.  </li>
+<li>HTMT.</li>
+</ul>
+<hr>
+<h2 id="model-fit-asks"><strong>Model fit asks:</strong></h2>
+<p>&ldquo;Does the theoretical model match the data?&rdquo;</p>
+<p>Measures:</p>
+<ul>
+<li>RMSEA.  </li>
+<li>CFI.  </li>
+<li>TLI.  </li>
+<li>SRMR.</li>
+</ul>
+<hr>
+<h1 id="core-principle-2"><strong>Core Principle</strong></h1>
+<p>A strong survey instrument is not created by maximizing statistical indicators alone.</p>
+<p>The goal is:</p>
+<p><strong>A reliable, valid, interpretable measurement model that accurately represents customer experiences while preserving meaningful insights.</strong></p>
+<p><strong>Live</strong></p>
+<p>Stream</p>
+<p>Amrita Online MBA  Semester 4  Batch OCT 2024  Live Session  Project-20260710_190038-Meeting Recording - View-only</p>
+<p>This document is shared with others</p>
+<p>Mahalingam P R - \[AA.BU.P2MBA24075126\]</p>
+<p>M</p>
+<p>Sign in</p>
+<p>Record</p>
+<p>Upload</p>
+<p>Favorite</p>
+<p>Playlist</p>
+<p>Teams</p>
+<p>Share</p>
+<p>Volume slider is at 100%</p>
+<p>0 minutes of 59 minutes 51 seconds</p>
+<p>0:00 / 59:51</p>
+<p>1</p>
+<p>x</p>
+<p>Read transcript</p>
+<p>Transcript</p>
+<p>Close</p>
+<p>Download</p>
+<p>You don&rsquo;t have permission to download the transcript. Contact Amrita Online - LMS File Server to request access.</p>
+<p>You don&rsquo;t have permission to download the transcript. Contact</p>
+<p>Amrita Online - LMS File Server</p>
+<p>to request access.</p>
+<p>Transcript. Use arrow keys to navigate between transcript entries. Select an entry to navigate the media to the time of the entry.</p>
+<p>AI-generated content may be incorrect</p>
+<p>Ms Shinta Idicula - MBA - Amrita Online</p>
+<p>started transcription</p>
+<p>M</p>
+<p>Ms Shinta Idicula - MBA - Amrita Online</p>
+<p>0 minutes 5 seconds</p>
+<p>0:05</p>
+<p>Ms Shinta Idicula - MBA - Amrita Online 0 minutes 5 seconds</p>
+<p>Namshavaya, a very warm welcome to the week 10 live session of project. I am Shinta, teaching assistant for this course, and it gives me great pleasure to welcome you all to today&rsquo;s session. Please note that the session has been recorded for academic purposes. I kindly request all participants to turn on your cameras if.</p>
+<p>Ms Shinta Idicula - MBA - Amrita Online 0 minutes 24 seconds</p>
+<p>Possible Your microphones will remain muted throughout the session to avoid background disturbances. If you have any questions or wish to share your thoughts, please use the raise hand option and I will unmute you at appropriate time. You may also use the chat box to share your comments or queries during the session.</p>
+<p>Ms Shinta Idicula - MBA - Amrita Online 0 minutes 43 seconds</p>
+<p>Now, without further delay, I would like to hand over the session to Doctor Rij Kumarji, who will be leading today&rsquo;s discussion. Over to you, Sir.</p>
+<p>D</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi</p>
+<p>0 minutes 53 seconds</p>
+<p>0:53</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 0 minutes 53 seconds</p>
+<p>Yeah, thank you. Good evening. So, I mean, we have reached up to data analysis, the end of story.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 6 seconds</p>
+<p>The project was to find reasons for customer decline in customer footfalls in a retail shop.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 15 seconds</p>
+<p>So we have explained the problem, we have explained the theory we have developed to find a solution to the problem or to understand the reasons behind the problem.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 29 seconds</p>
+<p>Then we decided what should be the data.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 33 seconds</p>
+<p>It decided what are the variables to be included and how the variables need to be measured.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 40 seconds</p>
+<p>We decided to collect the opinion of customers who are visiting the shop, they&rsquo;ve been a sample unit for this study.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 49 seconds</p>
+<p>We have fixed certain sample size and you have decided a methodology to collect that data by personally interacting with the customers who are visiting the shop. Then of course, we have collected the data. Then I said after collecting the data, the next important steps are to verify the quality of data.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 2 minutes 10 seconds</p>
+<p>To have a clarity, what all analysis we need to perform in the data to answer the questions we have as part of our project.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 2 minutes 20 seconds</p>
+<p>So I explained.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 2 minutes 22 seconds</p>
+<p>The data data need to satisfy 3 specific set of quality checks or 3 specific set of evaluations before proceeding with the final analysis. Number one, the general quality of data with respect to missing values, outliers, certain conditions like normality.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 2 minutes 43 seconds</p>
+<p>Data independence, etcetera.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 2 minutes 46 seconds</p>
+<p>Then, of course, we have some kind of a, I mean, assumption with regard to how measurement is going to happen. We have identified certain statements or certain items which we believe that will measure the phenomena under investigation. So we need to check.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 3 minutes 5 seconds</p>
+<p>The second type of evaluations are like how good we measured the variables which are not directly measurable. So in this case the most of the or almost all variables are perception based variables. So we ask certain questions to the respondent and from the answers we are trying to measure.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 3 minutes 25 seconds</p>
+<p>The magnitude of the variables, so we need to check whether measurement has taken appropriately or adequately or not. And lastly, we have to carry out certain analysis, like we want relationship mapping, we want comparisons across groups, categories, etcetera,. in the population.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 3 minutes 45 seconds</p>
+<p>So for each type of this analysis, the data should satisfy certain specific assumptions. So these 3 steps are the preliminary activities as part of the analysis. So I explained that also.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 4 minutes</p>
+<p>Then I have introduced an open source software called Jamovi and I have shown you how you can upload the data and do the preliminary adjustments.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 4 minutes 16 seconds</p>
+<p>To get valid understanding about the data or the tool to have, I mean clearly I mean capture the data and give valid reports. So since we have different type of variables, some of them are categorical variables, some of them are scale items, some of them are continuous variables.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 4 minutes 39 seconds</p>
+<p>So we need to do some initial adjustments and we need to define the variables correctly. That&rsquo;s the part, that&rsquo;s the area where we stopped in the last class. So now I will share the remaining part. I will give little more explanation about how to verify the fundamental assumptions and proceed with the full.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 5 minutes</p>
+<p>Flooded analysis. Before that, I would like to verify from your side you got any doubts at this point. you. I have just give a summary of what we have completed till dull last interaction session. Any questions to me at this point or shall I proceed to the next?</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 5 minutes 20 seconds</p>
+<p>11.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 5 minutes 22 seconds</p>
+<p>Any questions?</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 5 minutes 31 seconds</p>
+<p>Okay, since I have not received any questions, I will still continue with my lecture, so I will share my screen.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 5 minutes 45 seconds</p>
+<p>So I said.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 5 minutes 49 seconds</p>
+<p>All the adjustments need to be done on the data. Now this tool has got different views: variable view, data view, analysis view, and of course to do editing. Also, I have informed everyone to spend some time on the data sheet and upload it into the tool and do the preliminary adjustments required.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 6 minutes 9 seconds</p>
+<p>For proceeding with the full fledged analysis. So here I have I have just shown one or 2 cases in the last class. I have corrected, I have edited all the fields. So here gender, shop preference, age, education, qualification, income, all are categorical variables. That&rsquo;s why we defined it as nominal variables and that&rsquo;s.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 6 minutes 30 seconds</p>
+<p>How we define them, that is why these 3 circles are showing as symbols. All other we can we have defined as ordinal variables because it speaks about an order strongly disagree to strongly agrees. So if you look at the, I mean.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 6 minutes 48 seconds</p>
+<p>I mean variable view.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 6 minutes 51 seconds</p>
+<p>So things have come and here, I mean, I have defined what one stands for, what 2 stands for. That&rsquo;s why we are getting textual description of categories with respect to the categorical or nominal variables in the data sheet. So all groups like income.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 7 minutes 11 seconds</p>
+<p>Education, qualification, age, shop preference, preferred shopping mode, shop preference and gender all are grouped into same gender we are grouped into male and female. So this is the initial adjustment. Now everything is done, the data is ready for statistical verification now to verify.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 7 minutes 31 seconds</p>
+<p>To perform the statistical analysis, we need to click on analysis button. So when you click on analysis button on the top, multiple I mean analysis app I mean types will appear. I said this will be there in the module. If something is missing, you can verify the library and we can install it.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 7 minutes 54 seconds</p>
+<p>Sir, installed ones will be available or visible in the top ribbon. So this is what. So this is how the tool looks. Now we need to the first step in the quality assessment is.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 8 minutes 9 seconds</p>
+<p>General quality assessment.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 8 minutes 12 seconds</p>
+<p>So in general quality assessment, I said various assumptions we need to check out whether the data follows normality, data independence is there or not, whether missing values, outliers, etcetera, are prevalent in the data. If so, we need to correct it. Then there is something called sample size adequacy whether the data has got.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 8 minutes 34 seconds</p>
+<p>Adequate sample size because when estimations are involved in the analysis, we need to capture data from an adequate number of samples, that&rsquo;s called sample size, whether it is adequate or not. Then I said that we collect data using a method like survey and all, it&rsquo;s a common method. So there can be bias due to common method.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 8 minutes 55 seconds</p>
+<p>Can come. So we need to verify whether such buys are coming or not. So these are the very preliminary quality assessments. So all this we have can do in a very simple way. Say first, we will check how we can verify normality. See statistically when you if some faculty or someone is explaining.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 9 minutes 16 seconds</p>
+<p>Naturally, there is an assumption related to the normality of the sample. So we are and that assumption we train like a hypothesis. Hypothesis is nothing but a logical assumption a researcher takes in the beginning about a possible outcome. Now we have collected the data, so genuinely we will have some assumption about the normality or this.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 9 minutes 39 seconds</p>
+<p>Contribution of the data.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 9 minutes 42 seconds</p>
+<p>And when you have some assumption, that assumption can be written in a hypothesis form, and a hypothesis will have a null form as well as an alternate form. So what is the hypothesis? So I&rsquo;m not, I will not be elaborating this null hyper alternate portion for every test, but in as a.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 10 minutes 2 seconds</p>
+<p>Sample or as a beginning in the first instant, I will explain that also. So with respect to normality, we have a data collected. We want the data to have a distribution in an assumed manner. So what we like, we like the data to be normally distributed. Why? Because.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 10 minutes 20 seconds</p>
+<p>Why? Because we know that if it is normally distributed, parametric estimations are possible and estimation process will come about with the robust or trustworthy findings. That&rsquo;s why we are interested in normal distribution. But to get a normal distribution with most of the data, it&rsquo;s not that easy.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 10 minutes 41 seconds</p>
+<p>Because people, when you are collecting people&rsquo;s opinion like perceptions and all, it can be biased towards one side or biased towards another side, and majority of them will follow towards the main that bias to direction. So there so we cannot get a perfect normality in many survey datas. So what we need to verify.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 11 minutes 2 seconds</p>
+<p>OK, I didn&rsquo;t get a perfect normality, but to what extent my collected data is deviating from normality? If the deviations are within certain acceptable limit proposed by statisticians, we will consider that the deviations are not.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 11 minutes 22 seconds</p>
+<p>Problematic and we will proceed with the parametric estimation. So we will first verify whether the data follows perfect normality or not. If we are not getting perfect normality, we will check to what extent the data or the variable described in the data is deviating.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 11 minutes 42 seconds</p>
+<p>From the normality and if the deviations are within permissible limit, we will not consider it as a problem for parametric or statistical estimation. This is an important point now hypothesis as I said, it will have a null form and an alternate form. So how to write the?</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 12 minutes 3 seconds</p>
+<p>Hypothesis related to normality, null hypothesis here only null always speaks about different or negation. I mean it&rsquo;s equal, there&rsquo;s no difference. It always speaks about nothing, no difference between X or y or it speaks about that equality part.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 12 minutes 23 seconds</p>
+<p>So what is the null here? There is no difference between distribution of the data collected and in the sample sample only we are checking with the normal and what we can call as a normal. There is no difference that means both are same. That is the null. So what will be the alternate? There is a difference.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 12 minutes 42 seconds</p>
+<p>It&rsquo;s not equal to. There is a difference between distribution of the sample data in the sample and normal distribution. So what we want, we want null to be. That means we don&rsquo;t want to have a difference between distribution of the data in the sample and what we can call like a normal distribution.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 13 minutes 3 seconds</p>
+<p>So we need to check. So the hypothesis is between distribution of the data in the sample and a normal distributed sample. In all of that speaks, there is no difference. Alternative of that speaks, there is a difference.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 13 minutes 21 seconds</p>
+<p>Okay, and how we verify, we will conduct a statistical test. There are certain tests specified to verify the normality. One such test is Sharpiavilkes, another is Colomogos muno. Sharpiavilkes is much more popular in bigger sample sizes. So as part of this sample, this statistical test.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 13 minutes 43 seconds</p>
+<p>We will be getting a P value reported by the tool after we conduct an this analysis. Then if the P is less than 0.05, classically if we get a P value from a statistical analysis as more than 0.05.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 14 minutes 4 seconds</p>
+<p>We are not going to reject the null, but if it is less than 0.05, we will reject the null. So that is a Bible kind of a rule. If P value from a test is less than 0.05, null is rejected. If it is more than 0.05, we fail to reject the.</p>
+<p>Sync to video</p>
+<p>Transcript</p>
+<p>\[3:39:02 PM\] Transcript watcher started. Scroll the content manually.</p>
+<p>\[3:39:07 PM\] Timestamp: 0:05</p>
+<p>\[3:39:07 PM\] Timestamp: 0:53</p>
+<p>🟥 Stop &amp; Extract Transcript</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 31 seconds</p>
+<p>I hope things are clear, so I mean everything is written here also. I&rsquo;ll show how you can do it.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 38 seconds</p>
+<p>See where we will do, we will go to in analysis. There are multiple buttons. First is exploration button. In exploration you when you click there are some other commands coming out of that. The first one is a descriptive descript. In descriptives, we get lot.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 58 seconds</p>
+<p>Of details, if you want to split the data into male, I mean male data, female data or any group and all, we can put that variable here. But here we don&rsquo;t want to split you see again. I&rsquo;ll tell you all this normality and all is relevant for scale items only. That means this essay was this.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 18 minutes 19 seconds</p>
+<p>Measurement items, the other one is categorical. You cannot have normality there. We look for variance, equality of variance only in the across the group. So here we look for normality in scale items, the items which we have measured. So we take all the items how we take just.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 18 minutes 38 seconds</p>
+<p>Plus shift and just put downward arrow till all the variables are selected. All the variables means we have questions for 5 variable 5 construct. For 5 construct there are multiple statements and each statement is an item.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 18 minutes 57 seconds</p>
+<p>We can call that item also as a minor variable. So put all the variables into the variable box so everything is smooth. See everything is smooth nowhere. What all things we need to verify? Since lot of come, I mean analysis are coming in the single window itself, we can choose what all one because I said earlier also whether we.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 19 minutes 21 seconds</p>
+<p>If missing values are there, that&rsquo;s not good. So we need to we can check missing values. So if missing values are there, it will be see on the right side the reports will be I mean provided. So here missing value you can see 000 nowhere also if you want to change, say if you want your variables to be in.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 19 minutes 43 seconds</p>
+<p>Rows you can click here so everything will come in a little more easily to follow manner. Then of course you want median you don&rsquo;t want so you can eliminate it. I mean some and all not important here then standard deviation of course you want maximum and minimum value you know it is one and 5 because.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 6 seconds</p>
+<p>One is strongly disagree and 5 is strongly agree. Then you want skewness and kurtosis. Since why we want it because I said if normality is not obtained, we want to know the deviation from normality. Normality. Here there is a button so the sharp row will test is performed so you can click here.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 27 seconds</p>
+<p>So, that&rsquo;s this much outliers also. But again, you know that here we are categorised into groups, so outliers doesn&rsquo;t have a very big impact in this data because you know what is the maximum value and what is the minimum value in scaled item here. In this case, we ask the opinion of the customers in a white 5 point scale, so maximum it can be 5 points only how the.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 49 seconds</p>
+<p>That what can be outlined, nothing can be outlined. But if there is a continuous say, for example, age we captured on a continuous as a continuous variable. So some people can have an age as slow as maybe 10 years and that someone, some people can have a age like 90 and all and if own person is very much far away from the average age of other customers that need to be treated as an outlier. But in this.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 14 seconds</p>
+<p>In this particular case, since we have been classified all the I mean observations into certain groups and we know the lower limit and upper limit of the groups, outliers doesn&rsquo;t doesn&rsquo;t have a significant I mean growth, but other things missing values of course we need to know.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 34 seconds</p>
+<p>More missing values means measurement may not have taken place correctly. Then normality we need to know for that. We click at Shakovich&rsquo;s test. You just click here. Then again, if we don&rsquo;t get a normal distributor, we should verify to what extent the normality deviations are there to verify the normality deviations.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 53 seconds</p>
+<p>We should know skewness and ketosis, so click on that. Then mean, of course, you can to get a general understanding about what is the general feeling of people with respect to that item, we can pick the mean value and, of course, standard deviation wider the deviation or broader the deviation, that means people&rsquo;s.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 22 minutes 12 seconds</p>
+<p>Opinion are not converging smaller the deviation means people&rsquo;s opinion are more focused, so that way some interpretations are possible. So here we get the mean value missing value we check we found that none of the missing values are there. So in that aspect of data is perfect. Mean values range from 3.37I could see here the lowest value 3.2.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 22 minutes 37 seconds</p>
+<p>6 itself anyway out of 5 because we have maximum 5 only because strongly there is agree one and strongly agree 5 so out of 5 this is the mean for each of the items used in our scale and this is the standard deviation. More the standard deviation means opinion are more scattered, lesser the standard deviation opinion.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 22 minutes 58 seconds</p>
+<p>Are more focused then skewness and value skewness should be less than to be perfect plus or -1.96 or 2 so here. But before that we can verify the sharpio Wills test one minute.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 23 minutes 18 seconds</p>
+<p>So here, so this is the result of Sharpio will stress W is the statistics Sharpio will statistics and the P value corresponding to that here it is less than 0.05. That means we have to reject the dull. The null is there is no difference between.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 23 minutes 37 seconds</p>
+<p>Between the distribution of the, I mean data in the sample and normal distribution that we are rejecting, that means the reject distribution, that means the normality assumption is challenged, then none of our items or none of our measurement items are normal because everywhere the P value is less than.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 23 minutes 56 seconds</p>
+<p>10.05 now since we find that none of in social sciences as I said when you are mapping the perception on all getting normality is not that easy. Okay, but don&rsquo;t worry about that. Now we need to check to what extent the deviations are.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 24 minutes 16 seconds</p>
+<p>To what extent the deviations are? So you look at the skewness absolute values. S is standard error. Standard error is not what we are looking. You are looking at the measure of skewness and measure of keratosis. When you look down we find that majority or all maximum value is 1.25 only 1.25.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 24 minutes 35 seconds</p>
+<p>So there is no value more than minus plus or minus absolute 2. So that means that even though it is not perfectly normal, the deviations are not of great magnitude and hence are not very much problematic for parametric estimation. Kurtosis value also this is.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 24 minutes 55 seconds</p>
+<p>All the values maximize 1.4, 1.4 it is again less than 55 up to 5 kurtosis we will allow but it is less than absolute 5. So anyway we are happy even though our data is not perfectly normal, the deviation from normality are within limits.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 25 minutes 16 seconds</p>
+<p>Within permissible limit so we can proceed with the parametric estimation. So this is how we are checking normality. OK, now I&rsquo;m not going to look for all the test, but I&rsquo;m just showing as a sample only important test. I will give a demonstration here itself.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 25 minutes 38 seconds</p>
+<p>Or other thing, you can just go through this not I mean note and try to do it independent of observation. I can do missing values and outliers also we have shown independence of observation how we can verify. I will show you this is available in the regression view. I said independence of observation we can.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 25 minutes 59 seconds</p>
+<p>Verify if we look at the Durbin Watson statistics, there are 23 ways to look at 1:00 is Durbin Watson statistics. Otherwise, you can look at variance inflation factor VIF as which is available as part of the collinearity diagnosis test. These all are available in the regression menu.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 20 seconds</p>
+<p>So you should know in which menu what commands are available. Your normality test is available in the descriptive menu, outliers are available in the descriptive menu. This came comes as part of the descriptives now independence. I said why it is important nowhere to do.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 40 seconds</p>
+<p>that analysis, go to the regression menu, you just go to linear regression. There are multiple types of regression. So in regression menu, always you need to see here the analysis comes on the right side one after the other. So the entire thing will be there and if you want to copy it for port and all, you can simply copy it or you can export.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes</p>
+<p>All options are available and if you want to give some citation about the references and all every every after every test the references, citations, all such things will come. So you create some model. Model is not very relevant here. Model means you play some variable and as a dependent variable and all the.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes 20 seconds</p>
+<p>Items for which you need to verify data independence. You put it like covariates. Covariates are here independent variables. In Jamovi, independent variables are represented as covariates. So I&rsquo;m simply say I&rsquo;m creating a model like shop preference.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes 39 seconds</p>
+<p>This is depended on all these factors. I am moving everything here, everything here, and now what I am interested here in the assumptions checkout. This model is not what I am very much interested. I am interested in our Durbin Watson statistics. It will come.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes 59 seconds</p>
+<p>In collier autocorrelation test and autocorrelation test will provide you Darwin Watson statistics and collinearity statistics will provide you VIF values. So we will see.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 28 minutes 15 seconds</p>
+<p>Yes.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 28 minutes 17 seconds</p>
+<p>See we got a Dublin Watson statistics of 1.88. This is the this value as per condition it should be less than 1.5 to 2.5. All other will come automatically. Okay then. So here we got a value of 1.88 that rules out.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 28 minutes 38 seconds</p>
+<p>Autocorrelation and proves that data independence is there. Second check as I said is we have verification here all the VF should be less than ideally 3.3 or 5 at the most. That&rsquo;s the condition one or 2 values are above 3.3 but everything is under 5.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 28 minutes 57 seconds</p>
+<p>So this satisfies that data independence exist in our data set or in the collective data. So Darwin Watson statistics and VI value. So the not so this is ideally it should be less than 3.3, VF should be less than 3.3 or at least.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 29 minutes 17 seconds</p>
+<p>This is further proof Dublin Watson should be in between 1.5 to 2.5. We got it 1.8. So this is how we check it. Okay, so these are some important tests now sample adequacy we can check.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 29 minutes 31 seconds</p>
+<p>Because we have identified a sample based on sample size calculator where the sample size is decided based on the confidence interval and confidence level. We prefer for the study and for the effect size also in case of structural equation modeling since we go with all those assumptions.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 29 minutes 51 seconds</p>
+<p>Normally we don&rsquo;t have to worry about the sample size, but if you want to do there is a power analysis module and in the power analysis you can create a power of, I mean you can give a desired power of 0.8 and the tool will give you whether the desired power is obtained in that sample size or not in the sample size.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 30 minutes 14 seconds</p>
+<p>Gives the desired power of 0.8 then you can go with it. Similarly, common method bias. So this comes as part of exploratory factor analysis. This we will be again performing to verify the measurement quality. So while explaining the verification of measurement quality, I will tell you.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 30 minutes 33 seconds</p>
+<p>How to do an EFA? EFA means exploratory factor analysis and check whether common method bias that is CMV common method bias is existing or not. Again, this is verified in an alternate way. Also, you just check that the VI value and if every VI value.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 30 minutes 55 seconds</p>
+<p>Is within limits 3.3 or at least 5 we can assume that common method bias may not be proven, but there is another way to look at it that also I will tell you. So this is the first round of analysis required to check whether the collected data.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 31 minutes 14 seconds</p>
+<p>Is good for statistical analysis. Now again, I&rsquo;ll tell you in with respect to perception data, the measurement aspect comes little more important. But even if it is not perception like metric data also, then also you need to check all these type of preliminary.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 31 minutes 33 seconds</p>
+<p>Call it, check now.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 31 minutes 36 seconds</p>
+<p>I will come to I will try to explain this part also because this part is little critical and it requires a little I mean understand I mean clarity also see here with respect in this particular study with respect to measurement first thing all the variables we are using are all the construct we are using are latent in nature, they are not directly measure.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 32 minutes 1 second</p>
+<p>So to measure them we can have to approach either we can use perceptions of certain metric we used for you used in this case certain perceptions to measure these variables and perception when you are capturing we will be trying to capture lots of themes which we are now call like items.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 32 minutes 22 seconds</p>
+<p>We capture the opinion or feeling about these items. We believe that these items can be in one group or it can be in different group. It can be grouped differently. So accordingly, we define it as unidimensional or multidimensional. If the items used to measure a phenomena are like are possible to be classified.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 32 minutes 46 seconds</p>
+<p>Providing to different groups, then we call it like multi dimensional. And if you believe that there is no further classification possible and all will be together as one group, all the items will be together as one group in measuring the phenomena, we consider them as unit.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 33 minutes 7 seconds</p>
+<p>Here in our particular case, we assume that all construct will be unit dimension, that means they are not further divideable. So first we need to check all this assumptions. For checking all assumptions related to measurement, we conduct an analysis called.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 33 minutes 27 seconds</p>
+<p>Exploratory pooled means we pooled all the items, all the measured items together. We conduct an analysis called exploratory factor analysis. We call it pooled exploratory factor analysis because we are pooling all the items together and doing the analysis and check whether items are.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 33 minutes 47 seconds</p>
+<p>Loading to the corresponding variables or corresponding factors in a pre assumed manner. For example, say we have items for store attributes, we have items for product attributes, we have items for satisfaction, but based on the after collecting the perception of the.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 34 minutes 6 seconds</p>
+<p>Respondent based on the perception also an item we thought that it will measure store attribute should measure store attribute itself. So it should statistically should the way item should be associated to the fact.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 34 minutes 25 seconds</p>
+<p>So that&rsquo;s why we have some assumption about OK, these items are for this factor, another set of items are for another factor. But whether after our analysis or after our EFA, also whether the combination will come in a same manner that we assumed or not.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 34 minutes 44 seconds</p>
+<p>So that&rsquo;s the first check. If it is happening in the same manner, we can say that item combinations are similar to or are same as we assume. So that&rsquo;s the first check. So for that, would you what we will do here, we will I will go to so here.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 4 seconds</p>
+<p>The factor this is factor analysis. All type of factor analysis are available in factor menu. You click on factor analysis, we go with exploratory factor analysis. So click on exploratory factor analysis and you move all the items different items used for.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 24 seconds</p>
+<p>Measuring different phenom all are moved together. Why all are moved together? Because we want to know whether the groupings are also as similar to what we assumed or not. So all the items move.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 39 seconds</p>
+<p>Now we have multiple extraction methods. Please read and understand these things more. We are going with the principle, sorry, maximal likelihood analysis. This is more robust in case where there are little bit of normality, deviations and all similarly rotation. See there is a mechanism behind how this factor analysis is all works on a.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 36 minutes 2 seconds</p>
+<p>Distance algorithm. So those item which are closer will be put together and those who are not closer will be clubbed to differently. So like that different groups are created. We For rotation, we use Worry Max. To extract the factors, we use parallel analysis. Earlier it was used on eigenvalue, but now the parallel analysis is come.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 36 minutes 24 seconds</p>
+<p>Has been come, I mean incorporated in tools. This is little more robust on this type of analysis. So we are going with the parallel analysis. Then we will check for sampling adequacy because for conducting factor analysis we need to verify Butler&rsquo;s test of sphericity and KMO. KMO speaks about Kaiser, Meyer, Ohli.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 36 minutes 48 seconds</p>
+<p>Measure of sampling adequate whether your sample is adequately good enough for factorization. Now this command I will show you later on, so I&rsquo;m not hiding anything. So now.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 37 minutes 1 second</p>
+<p>When you conduct an analysis assumption, so if you get a P value less than 0.05, that means that sphericity assumption is met. Similarly, KMO stress measure of sampling adequacy every value value for every item should be more than 0.550% should be captured. So here when you look.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 37 minutes 21 seconds</p>
+<p>Everything is more than 0.5 so that assumption is met. So we have adequately good number of sample to do factorization. Now we look at the rotation, we look at the rotation nowhere is by default they are not showing value say just one to.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 37 minutes 42 seconds</p>
+<p>Delete this.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 37 minutes 44 seconds</p>
+<p>Okay, it&rsquo;s or by default it is fixed like 0.3. 0.3 means these values now see.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 37 minutes 53 seconds</p>
+<p>For towards set this is store attribute item number one there is a value reported that is called 0.572. This value we called like loading and if this item is showing a value towards any other factor see on store.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 15 seconds</p>
+<p>Term store attribute items are coming together here under one factor. That factor we know it is store attribute, but here that name is not coming, but it is coming together. So that means that our assumption that all store attribute item 12345 together measures a factor.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 34 seconds</p>
+<p>That factor we know it is store attribute factor, but if we get a loading for SA one or SA 2 or any of this item higher towards any other factor other than this, I mean common factor or this factor 2B, it may be treated like.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 54 seconds</p>
+<p>And error. Why? Because we thought all this SA one items are going to measure one phenomena called store attribute. If it is measuring one phenomena, all the items should load towards that particular factory itself. So loading means the magnitude of the loading.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 39 minutes 14 seconds</p>
+<p>That means how much association this item is having to the factor that&rsquo;s referred by loading. That loading should be high and cross loading means if an item is having an association to any other factor, it is called cross loading. Cross loading should be smaller or very low.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 39 minutes 32 seconds</p>
+<p>Here we have hidden all loadings less than 0.3, so any loading less than 0.3 is not reported. It is hidden because otherwise all the table will be with a lot of values and they will be having confusion. Say one example here CPB 3 take the case of PV 3 all the.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 39 minutes 52 seconds</p>
+<p>Other item CPV one PV 2 PV 3 PV 4 PV 5 all items are coming in a group okay but PV 3 is showing some loading its 0.326. Since it is more than 0.2 it is shown it is showing a higher value more than point.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 40 minutes 12 seconds</p>
+<p>3 towards another factor which is a combination of product attribute item. So one statement PV 3, if you look at the questionnaire, you&rsquo;ll understand what question it is, what item is mentioned in the cost statement, etcetera, that among the respondents, among the people, among the customers who responded to this question.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 40 minutes 33 seconds</p>
+<p>Some of the customers have some kind of a doubt about whether this item is related to product aspects or whether it is something related to value. So that&rsquo;s why it&rsquo;s showing a little little high cross loading. So this PV 3 to first factor PV.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 40 minutes 53 seconds</p>
+<p>3 to the first factor, this PA one group is called the cross loading and all other are called loading. So that&rsquo;s the difference between loading if an item is showing an association with the.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 10 seconds</p>
+<p>Factor to which that item group is capturing or explaining it is called loading. If it is showing an association with another factor, it&rsquo;s called cross loading. The condition is loading should be maximum and cross loading should be as low, then only we have this.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 30 seconds</p>
+<p>Discrimination the item will measure the exactly the same thing we plan to measure other here you see in the case of PV 3 there is a confusion that&rsquo;s way based on the responses of the customers or the respondents we some people have a doubt whether PV 3 is an item related to product attribute and majority of the people because here the loading is maximum.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 55 seconds</p>
+<p>Cross loading is small, even though it little bigger than 0.3, it is not as big as the loading factor. So we can say that PB 3 is loading to the corresponding factor itself, but the magnitude of cross loading also is little bit. So that means there is some kind of ambiguity.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 42 minutes 16 seconds</p>
+<p>Occurred in the mind of the respondents while measuring with respect to this factor. See, we will one come down, we will come down. Okay, so this is it. So otherwise, when you look everything the grouping, see what else we need to check multiple things here.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 42 minutes 34 seconds</p>
+<p>first, in our data or in our theory, in our there are there were 5 factors: product attribute, store attribute, then came what is that value, then came verity seeking, then satisfaction.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 42 minutes 55 seconds</p>
+<p>Now after classifying after grouping the items into exploratory factor analysis, do that activity, how many factors emerged again? 12345, okay, 55. We assume to be or 5 different groupings we.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 43 minutes 15 seconds</p>
+<p>We assumed to be there in the data structure and we got fine, so that way we are happy. So our assumption about factor combinations partly correct. Now second thing, we assumed certain items to be grouped together. Say for example, all SA on item, SA items to be together, all PA items to be together.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 43 minutes 36 seconds</p>
+<p>All VS item to be together. Now we are checking, are they coming together? Yes, all SI items are coming together, all PA items are coming together. All several time go to the top, so we need to drag down say all.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 43 minutes 53 seconds</p>
+<p>VS items coming together or PV items also coming together but one issue we noticed that among those items one item PV 3 is loading little higher. I mean little higher in the sense I mean something which is reportable more than 0.3 loading to a PA item but higher loading.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 44 minutes 14 seconds</p>
+<p>Is towards the group we assumed itself, so every in that aspect also it&rsquo;s good. So our initial assumption about dimensional structure is generally okay. Now if you click on factor summary.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 44 minutes 31 seconds</p>
+<p>We will get some results like one minute we will come down. So here we get to what extent each of the factor is capturing the variance in the measurement. So here this is a verification for our common method bias. So here the first factor captures 15.97%.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 44 minutes 51 seconds</p>
+<p>This is cumulative adding second factor capture 10.95 based on the variance we can understand in the entire investigation which factor is the most important here the factor number one. Factor number one here is a group of.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 45 minutes 9 seconds</p>
+<p>Here it refers to group of product attributes. So this is the most important one in predicting the main, maybe the behaviour of the respondents. OK.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 45 minutes 22 seconds</p>
+<p>Okay, so factor one and now the condition for common method biases, don&rsquo;t forget that this is another assumption I said that I will explain as part of the model verification, common method bias. So here what it is saying if the first factor account for 50% of the variance, then there is an issue with the common method bias because one factor.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 45 minutes 41 seconds</p>
+<p>Becomes more prominent than other factors included in the study. But here that portion, that issue is not gone. The first factor captures only 15.97%. If this becomes more than 50%, that means that becomes the dominant factor and all other factors becomes irrelevant. So there is may be a doubt that.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 46 minutes 2 seconds</p>
+<p>The measurement measurement of other factors may not have happened in the proper manner, so that speaks about an error called common method bias. But here we are ruling out that table. So what are the things we check? We check now whether the dimension structure is correct, common method bias exist or not.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 46 minutes 23 seconds</p>
+<p>Then one more thing we can check whether the items are now there is another way to check it, but here also you can check if the items are loading more than 0.5 with its significance. You can test in another a confirmatory factor analysis or some approach only, but here.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 46 minutes 42 seconds</p>
+<p>To certain extent you can check one more thing whether the items are loading more than 0.5. So here everything you can see more than 0.5 except for one of the loading. Loading means correspond in the same group say 0.5, 0.6, 0.8, 0.7. So everywhere if it is more loading more than point.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 47 minutes 3 seconds</p>
+<p>5 we can general here one item is coming little less PV 5, VS 2 and SAC 5 all others are loading more than 0.5. So if it is capturing a this 50% of the loading that is 0.5.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 47 minutes 22 seconds</p>
+<p>We can say items are valued. That means they are contributing in measurements. That&rsquo;s why it speaks about item validity. Now the other type of validity in this menu we may not get. We have to go for another type of analysis. But now generally we can check here one thing item validity.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 47 minutes 42 seconds</p>
+<p>When we have a loading value, generally majority, say 90% of the items are loading more than 0.5 here. Similarly, instances of cross loading, high cross loadings are also very less here in this data. So that speaks that generally the measurement is valid.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 48 minutes 2 seconds</p>
+<p>Whether math measurement happened to the adequate level or not, we need to check with AVE average variance extracted in this menu. It is not reported directly, so you need to capture AVE or we can calculate AVE based on the loadings. It will be the sum of the square of the loadings divided by.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 48 minutes 23 seconds</p>
+<p>Number of items say for example in VS this is 4.77 square + 0.39 square + 0.8 square + 0.87 square divided by 4. This value should be more than 0.5 ABE ABE should be more than 0.5 then we.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 48 minutes 42 seconds</p>
+<p>are sure that the variable or the construct is adequately measured by the items used. But there is another way to look at it that also that I will tell you. So by conducting exploratory factor analysis, we are in a way verifying.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 49 minutes 2 seconds</p>
+<p>Major aspects related to measurement. Number one we have measured is whether the items are contributing in measurement or not. Then item combination is correct or not. Items are loading or not. Now to check the reliability also there is a mechanism here that&rsquo;s called reliability analysis.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 49 minutes 21 seconds</p>
+<p>So here in reliability analysis, you need to move the items in family, say all SA one items together. You can check for Chromvac alpha. That&rsquo;s only if this value should be more than 0.7, that is a condition. Say SA one all the items use all the items who are valid that we find.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 49 minutes 42 seconds</p>
+<p>When we conducted EFA, now we conduct the reliability. Reliabilities repeatability of measurement. So we get something called Cromback. We need to verify something called Cromback alpha and if we get a value of more than 0.7, we conclude that reliability exists. So we need to do this.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 50 minutes 3 seconds</p>
+<p>Family wise, that means each variable wise SA one we check now we can check for PA one.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 50 minutes 12 seconds</p>
+<p>Yeah, one.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 50 minutes 14 seconds</p>
+<p>So the 0.936 but there is another way to interpret also because if it is more than 0.9 or something we need to doubt little bit of multiple because whether people fail to really understand the difference between the items or not that we can check other way also. But now it is OK because it is more than point.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 50 minutes 34 seconds</p>
+<p>7 So item like we can check. So this is how we check the measurement quantity. Some more additional verifications are there. So those things we I will tell you how to look at it. So just perform this analysis, read them.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 50 minutes 54 seconds</p>
+<p>Content and verify now to look everything together like reliability, validity, and how you can do in same structural equation modeling tag that I will show you in the next session.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 14 seconds</p>
+<p>Now, any questions to what I have shown today? I have shown today how to check the general assumptions, how to check measurement, measurement related assumptions, then some more, few more tests are there like con I mean.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 36 seconds</p>
+<p>Discriminant validity and construct validity. Construct validity AVE. Like I said, we can square the loadings and divided by the number of items if we get it more than 0.5, that&rsquo;s condition. Otherwise, it will be directly reported. But that menu or that option is available not in the factor analysis.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 55 seconds</p>
+<p>Tab in the structural equation modelling analysis tab. So we will be doing in the next class the entire structural analysis related I mean modelling using that menu and as part of while doing that analysis, I will explain how the other.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 14 seconds</p>
+<p>Verifications can also be done. Okay, now any questions from your side? Today, nobody has raised any questions, now only 5 more minutes left. Any questions? How many of you really started doing some analysis? How many?</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 29 seconds</p>
+<p>If you collected the data and&hellip;</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 34 seconds</p>
+<p>I mean, among those who are present, how many are really doing the project based on a survey data?</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 43 seconds</p>
+<p>Please raise your hand or just.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 48 seconds</p>
+<p>How many of you, are you people there? 4040, at least 40 people are here today among this 40 people data collection process. But Smita, is it a survey data or what is the data for your studies? Smitha, please unmute Smitha for only one one of the participant has responded.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 9 seconds</p>
+<p>Smita.</p>
+<p>SB</p>
+<p>Smitha Balakrishnan - \[AA.BU.P2MBA24070087\]</p>
+<p>53 minutes 11 seconds</p>
+<p>53:11</p>
+<p>Smitha Balakrishnan - \[AA.BU.P2MBA24070087\] 53 minutes 11 seconds</p>
+<p>Yes, sir.</p>
+<p>D</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi</p>
+<p>53 minutes 12 seconds</p>
+<p>53:12</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 12 seconds</p>
+<p>What is the data for your study?</p>
+<p>SB</p>
+<p>Smitha Balakrishnan - \[AA.BU.P2MBA24070087\]</p>
+<p>53 minutes 16 seconds</p>
+<p>53:16</p>
+<p>Smitha Balakrishnan - \[AA.BU.P2MBA24070087\] 53 minutes 16 seconds</p>
+<p>I am collecting the impact of financial literacy on mutual fund federation among women.</p>
+<p>D</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi</p>
+<p>53 minutes 22 seconds</p>
+<p>53:22</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 22 seconds</p>
+<p>Okay, that is a topic, but the data will be is it the data collected from people based on their perceptions like feelings or anything or any performance of mutual funds related secondary data? What is the data that you are going to use in your study?</p>
+<p>SB</p>
+<p>Smitha Balakrishnan - \[AA.BU.P2MBA24070087\]</p>
+<p>53 minutes 25 seconds</p>
+<p>53:25</p>
+<p>Smitha Balakrishnan - \[AA.BU.P2MBA24070087\] 53 minutes 25 seconds</p>
+<p>Yeah.</p>
+<p>Smitha Balakrishnan - \[AA.BU.P2MBA24070087\] 53 minutes 38 seconds</p>
+<p>How it is behavioural study, Sir, whether they are in investing in mutual funds or what is prohibiting them fund doing, Sir?</p>
+<p>\[3:39:22 PM\] Timestamp: 53:11</p>
+<p>\[3:39:22 PM\] Timestamp: 53:12</p>
+<p>\[3:39:22 PM\] Timestamp: 53:16</p>
+<p>\[3:39:22 PM\] Timestamp: 53:22</p>
+<p>\[3:39:22 PM\] Timestamp: 53:25</p>
+<p>D</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi</p>
+<p>53 minutes 41 seconds</p>
+<p>53:41</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 41 seconds</p>
+<p>Oh.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 45 seconds</p>
+<p>Okay, so you will, okay, so you will be like what we are explaining, you will have some variables that preventing them to invest in mutual funds or whatever financial institu, I mean instruments you are suggesting, the risk perception, the maybe return expectations.</p>
+<p>SB</p>
+<p>Smitha Balakrishnan - \[AA.BU.P2MBA24070087\]</p>
+<p>54 minutes</p>
+<p>54:00</p>
+<p>Smitha Balakrishnan - \[AA.BU.P2MBA24070087\] 54 minutes</p>
+<p>Yeah.</p>
+<p>D</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi</p>
+<p>54 minutes 5 seconds</p>
+<p>54:05</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 5 seconds</p>
+<p>Their procedural mean, I mean challenge or complications they are feeling, all such things. So again, the data will be related to perception, right?</p>
+<p>SB</p>
+<p>Smitha Balakrishnan - \[AA.BU.P2MBA24070087\]</p>
+<p>54 minutes 15 seconds</p>
+<p>54:15</p>
+<p>Smitha Balakrishnan - \[AA.BU.P2MBA24070087\] 54 minutes 15 seconds</p>
+<p>Yes, sir.</p>
+<p>D</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi</p>
+<p>54 minutes 16 seconds</p>
+<p>54:16</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 16 seconds</p>
+<p>Okay, whenever you are having perception based data, naturally you have to follow all the steps that I am try I am explaining right now. How many any data any survey mean that survey happened or yet to collect the data, yet to start the survey.</p>
+<p>SB</p>
+<p>Smitha Balakrishnan - \[AA.BU.P2MBA24070087\]</p>
+<p>54 minutes 35 seconds</p>
+<p>54:35</p>
+<p>Smitha Balakrishnan - \[AA.BU.P2MBA24070087\] 54 minutes 35 seconds</p>
+<p>No sir, it is in process. I have collected around 90 responses already.</p>
+<p>D</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi</p>
+<p>54 minutes 40 seconds</p>
+<p>54:40</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 40 seconds</p>
+<p>Okay, in that case, I will again tell you, see if you have collected some data, immediately try to code the data and arrange it in a spreadsheet like I explained. Then start, I mean trying to do the analysis even if the sample size is less because once you do the procedure, know it is easy when you get additional data, you can increase your.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 4 seconds</p>
+<p>I mean Excel file or increase columns in your rows in your Excel file and you can do further analysis, but do analysis also parallel so you will learn the analysis and you can also get an idea whether you are getting your results as you assumed or not. Some assumptions or from hypothesis you will have.</p>
+<p>SB</p>
+<p>Smitha Balakrishnan - \[AA.BU.P2MBA24070087\]</p>
+<p>55 minutes 16 seconds</p>
+<p>55:16</p>
+<p>Smitha Balakrishnan - \[AA.BU.P2MBA24070087\] 55 minutes 16 seconds</p>
+<p>Sanshu.</p>
+<p>D</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi</p>
+<p>55 minutes 27 seconds</p>
+<p>55:27</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 27 seconds</p>
+<p>Developed at the beginning of your study so you can get an idea whether your hypothesis are going to be, I mean, verified correctly or not. Also, that also you can check. OK, thank you, Smitha, for sharing this.</p>
+<p>SB</p>
+<p>Smitha Balakrishnan - \[AA.BU.P2MBA24070087\]</p>
+<p>55 minutes 40 seconds</p>
+<p>55:40</p>
+<p>Smitha Balakrishnan - \[AA.BU.P2MBA24070087\] 55 minutes 40 seconds</p>
+<p>Yes, sir. Thank you. Yeah.</p>
+<p>D</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi</p>
+<p>55 minutes 42 seconds</p>
+<p>55:42</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 42 seconds</p>
+<p>Okay, any anyone else started collecting data?</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 49 seconds</p>
+<p>Kritika, what is your speech?</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 56 seconds</p>
+<p>Ritika, are you there?</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 59 seconds</p>
+<p>Kevin.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 6 seconds</p>
+<p>Kevin, nobody is responding.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 11 seconds</p>
+<p>Sethu, Pidha, these are the names I can see here. Khadiga is collecting for quality TM. Okay, for quality analysis, what kind of data you are collecting? You are asking some interview questions and I mean noting down the response, the answers, right?</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 31 seconds</p>
+<p>Pratikya.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 34 seconds</p>
+<p>Okay, how to do okay. Anyway, I will have a session on how to do text mining or I mean text analysis and all. I will maybe after completing this topics, I will come to that also sentiment analysis and all okay.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 52 seconds</p>
+<p>OK, any other questions?</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 57 minutes 10 seconds</p>
+<p>Any more question now? 2 more minutes, love.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 57 minutes 21 seconds</p>
+<p>Okay, then Shila, we will wind up.</p>
+<p>M</p>
+<p>Ms Shinta Idicula - MBA - Amrita Online</p>
+<p>57 minutes 26 seconds</p>
+<p>57:26</p>
+<p>Ms Shinta Idicula - MBA - Amrita Online 57 minutes 26 seconds</p>
+<p>Okay, sir.</p>
+<p>D</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi</p>
+<p>57 minutes 26 seconds</p>
+<p>57:26</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 57 minutes 26 seconds</p>
+<p>After doing the interview, yes, naturally, yes, you are supposed to do thematic analysis. You want you have to understand major themes as well as stuff themes. Then you need to map the sentiments across the themes. These are the typical, I mean, ingredients of a qualitative analysis.</p>
+<p>AM</p>
+<p>Anusha P M - \[AA.BU.P2MBA24073076\]</p>
+<p>57 minutes 44 seconds</p>
+<p>57:44</p>
+<p>Anusha P M - \[AA.BU.P2MBA24073076\] 57 minutes 44 seconds</p>
+<p>Yeah.</p>
+<p>D</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi</p>
+<p>57 minutes 47 seconds</p>
+<p>57:47</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 57 minutes 47 seconds</p>
+<p>I have a I have prepared a video on qualitative analysis you can before my interaction session. If you are interested, you can go through that video may be in the 12th week or 13th week.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 58 minutes 6 seconds</p>
+<p>Yeah.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 58 minutes 18 seconds</p>
+<p>I will be more happy if people more people interact and ask few questions everyday or every interaction session I am thinking or I am dedicating at least 5 to 10 minutes to talk, but response from your side are really disappointing.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 58 minutes 36 seconds</p>
+<p>And.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 58 minutes 38 seconds</p>
+<p>in analysis, when you really do then only when you start doing the analysis, then only you will have doubts because every data is different and every data will have some hidden components which make analysis little bit complex. You may not get every time the results as you wondered or you like.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 58 minutes 58 seconds</p>
+<p>Together, so in that case, you may have to sometimes clean the data and that can become little troublesome also. So please try to I mean complete your data collection at the earliest so that we can have few discussion specific to you all.</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 59 minutes 21 seconds</p>
+<p>Research issues. Okay, then we will conclude conclude for today.</p>
+<p>M</p>
+<p>Ms Shinta Idicula - MBA - Amrita Online</p>
+<p>59 minutes 28 seconds</p>
+<p>59:28</p>
+<p>Ms Shinta Idicula - MBA - Amrita Online 59 minutes 28 seconds</p>
+<p>Yes, sir. Thank you all for joining and contributing to today&rsquo;s session. A heartful thanks to Raji Sir for the insightful session. Thank you.</p>
+<p>D</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi</p>
+<p>59 minutes 37 seconds</p>
+<p>59:37</p>
+<p>Dr. Rejikumar G - Amrita School of Business - Kochi 59 minutes 37 seconds</p>
+<p>Thank you.</p>
+<hr>
+<h1 id="exam-study-guide-appendix">Exam Study Guide Appendix</h1>
+<hr>
+<h1 id="week-10-exam-appendix">Week 10 Exam Appendix</h1>
+<h2 id="rapid-recall-workflow">Rapid-recall workflow</h2>
+<blockquote>
+<p><strong>Prepare and label data → inspect missing values/outliers/distribution → test independence and multicollinearity → check sample-size adequacy and common-method bias → explore measurement structure (EFA) → confirm it (CFA) → establish reliability and convergent/discriminant validity → judge overall model fit → refine with theory and content validity intact → test structural relationships</strong></p>
+</blockquote>
+<p>The central lesson is that relationships between constructs should not be interpreted until the <strong>data and measurement model</strong> are sufficiently trustworthy. A statistically improved model is not necessarily a better substantive instrument if important content has been deleted.</p>
+<h2 id="high-value-distinctions">High-value distinctions</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Distinction</th>
+<th>Exam-ready answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>General data quality vs. measurement quality vs. analysis-specific assumptions</td>
+<td>General checks concern missingness, outliers, distribution, independence, sample adequacy, etc.; measurement checks ask whether items measure latent constructs reliably/validly; analysis-specific checks depend on the final test/model.</td>
+</tr>
+<tr>
+<td>PCA vs. EFA</td>
+<td>PCA reduces total observed variance into components; EFA models shared/common variance to discover latent factors. PCA can be used for Harman&rsquo;s diagnostic, but EFA is conceptually appropriate for latent measurement exploration.</td>
+</tr>
+<tr>
+<td>EFA vs. CFA</td>
+<td>EFA discovers a plausible factor structure when it is uncertain; CFA tests a prespecified theory-based item–factor structure. “EFA explores; CFA confirms.”</td>
+</tr>
+<tr>
+<td>CFA vs. SEM</td>
+<td>CFA evaluates the measurement model (constructs and indicators); SEM combines measurement with structural paths among constructs.</td>
+</tr>
+<tr>
+<td>Reliability vs. validity</td>
+<td>Reliability is consistency; validity is whether the intended construct is actually measured. Reliability is necessary but does not guarantee validity.</td>
+</tr>
+<tr>
+<td>Convergent vs. discriminant validity</td>
+<td>Convergent: indicators of the same construct share sufficient variance. Discriminant: theoretically different constructs remain empirically distinct.</td>
+</tr>
+<tr>
+<td>Cronbach&rsquo;s alpha vs. composite reliability</td>
+<td>Both assess internal consistency; alpha makes stronger equal-loading assumptions, whereas CR uses estimated CFA loadings/error and is often preferred in SEM.</td>
+</tr>
+<tr>
+<td>Factor loading vs. cross-loading</td>
+<td>Loading is an item&rsquo;s strength on its intended factor; cross-loading means it also loads materially on another factor, weakening interpretability/discriminant separation.</td>
+</tr>
+<tr>
+<td>KMO vs. Bartlett</td>
+<td>KMO assesses whether correlation patterns/sample adequacy suit factor analysis; Bartlett tests whether the correlation matrix differs from an identity matrix. Neither proves the final factor solution is good.</td>
+</tr>
+<tr>
+<td>Model fit vs. path significance</td>
+<td>Fit indices judge the model as a whole; a significant loading/path judges an individual parameter. Good paths can coexist with poor overall fit and vice versa.</td>
+</tr>
+<tr>
+<td>CMB vs. multicollinearity</td>
+<td>Common-method bias is systematic covariance caused by the shared measurement method; multicollinearity is excessive association among predictors/items. High VIF may be a warning, but is not a complete CMB test.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="preliminary-jamovi-data-checks">Preliminary Jamovi/data checks</h2>
+<h3 id="1-define-variables-correctly">1. Define variables correctly</h3>
+<p>Before analysis, assign measurement types and value labels. Demographic/group fields such as gender, shopping mode, education, income category, and shop preference are categorical/nominal as defined in the case; Likert responses from strongly disagree to strongly agree are ordinal items (even if later treated approximately as continuous under justified practice). Incorrect typing produces inappropriate menus/results.</p>
+<h3 id="2-missing-values-and-outliers">2. Missing values and outliers</h3>
+<p>Use descriptives to report <code>N</code>, missing values, minima/maxima, and extreme observations. In bounded 1–5 Likert items, extreme allowed responses are not automatically erroneous outliers. Continuous values such as monthly sales can contain unusual observations that materially distort means and models; investigate their validity before retaining, correcting, transforming, or excluding them.</p>
+<h3 id="3-normality">3. Normality</h3>
+<p>Shapiro–Wilk tests:</p>
+<ul>
+<li>H₀: sample distribution does not significantly depart from normality.</li>
+<li><code>p &lt; .05</code>: reject H₀; evidence of non-normality.</li>
+<li><code>p ≥ .05</code>: fail to reject H₀; normality is not contradicted (not proof of perfect normality).</li>
+</ul>
+<p>With social-science samples, Shapiro–Wilk can detect small departures. Inspect skewness, kurtosis, plots, residuals, sample size, and the robustness of the intended estimator. The lecture&rsquo;s practical thumb rules are approximately <code>|skewness| &lt; 2</code> and <code>|kurtosis| &lt; 5</code>; its case had all items within those bounds even though Shapiro–Wilk was significant, so parametric analysis proceeded cautiously.</p>
+<h3 id="4-independence-and-multicollinearity">4. Independence and multicollinearity</h3>
+<ul>
+<li>Durbin–Watson near 2 indicates little residual autocorrelation; the lecture uses roughly <strong>1.5–2.5</strong> as acceptable (case ≈1.8).</li>
+<li>Tolerance should exceed approximately <strong>.20</strong>.</li>
+<li>VIF should remain low; a large VIF indicates overlapping predictors and unstable coefficient estimates. Report the rule used rather than treating one cutoff as universal.</li>
+</ul>
+<h3 id="5-sample-size-adequacy-power">5. Sample-size adequacy/power</h3>
+<p>Use power analysis rather than only a rule of thumb. Inputs include alpha, desired power, smallest effect worth detecting, predictors/model complexity, and analysis type. The demonstration used effect ≈.20 and found minimum <code>n≈191</code> for power .80 and <code>n≈255</code> for power .90; the actual <code>n=385</code> was adequate for the demonstrated general linear model assumptions. A larger SEM may require different planning.</p>
+<h3 id="6-common-method-bias-cmb">6. Common-method bias (CMB)</h3>
+<p>CMB can occur when one respondent provides all variables with one questionnaire at one time using similar response formats.</p>
+<p><strong>Harman single-factor diagnostic:</strong> place all measurement items in an <strong>unrotated</strong> PCA/EFA-style extraction and inspect variance explained by the first factor. If the first factor exceeds about 50%, CMB is a concern; in the case it explained only <strong>17.2%</strong>, so the basic diagnostic did not indicate a dominant common factor.</p>
+<p>Do not rotate the solution or force a one-component extraction and then misapply the rule. Harman&rsquo;s test and VIF are only diagnostics, not definitive proof of absence. Prefer procedural prevention too: clear wording, anonymity, separating predictor/outcome sections or collection times/sources when feasible.</p>
+<h2 id="exploratory-factor-analysis-efa-2">Exploratory Factor Analysis (EFA)</h2>
+<h3 id="suitability-checks">Suitability checks</h3>
+<ul>
+<li><strong>KMO:</strong> below .50 unsuitable; .50–.70 acceptable/marginal; .70–.80 good; above .80 very good.</li>
+<li><strong>Bartlett&rsquo;s test:</strong> <code>p &lt; .05</code> indicates correlations are collectively sufficient to reject an identity matrix.</li>
+</ul>
+<p>FreshCafé: <code>KMO=.58</code> (only marginal/acceptable) and significant Bartlett. Factor analysis may proceed cautiously, but item correlations/sample adequacy warrant scrutiny. Increasing sample size alone will not always fix poor inter-item structure; changing rotation does not repair a nonsignificant Bartlett test.</p>
+<h3 id="factor-retention">Factor retention</h3>
+<p>Do not rely exclusively on eigenvalue &gt;1. Use theory, scree plot, <strong>parallel analysis</strong>, interpretability, and expected construct count. Parallel analysis compares observed eigenvalues with those generated from random data and generally offers a stronger retention rule.</p>
+<h3 id="rotation">Rotation</h3>
+<ul>
+<li><strong>Orthogonal</strong> rotation assumes factors are uncorrelated.</li>
+<li><strong>Oblique</strong> rotation allows factors to correlate and is often realistic for business/behavioral constructs such as service quality, satisfaction, and brand image.</li>
+</ul>
+<h3 id="items-and-loadings">Items and loadings</h3>
+<p>Useful heuristics in the source:</p>
+<ul>
+<li><code>&gt;.70</code>: strong loading;</li>
+<li><code>.50–.70</code>: acceptable;</li>
+<li><code>.30–.50</code>: weak/moderate;</li>
+<li><code>&lt;.30</code>: problematic.</li>
+</ul>
+<p>FreshCafé had a weak item loading <strong>.28</strong> and another cross-loading <strong>.35</strong> (e.g., .45 on service and .35 on product quality). These are review flags—not automatic deletion commands.</p>
+<p>Before deletion, ask:</p>
+<ol>
+<li>Is the item poorly or ambiguously worded?</li>
+<li>Is it reverse-coded incorrectly?</li>
+<li>Does it measure a unique, theoretically essential facet?</li>
+<li>Does removal improve reliability/validity/fit materially?</li>
+<li>Would deletion narrow the construct and damage content validity?</li>
+</ol>
+<h2 id="cfa-reliability-and-validity">CFA, reliability, and validity</h2>
+<h3 id="cfa-specification">CFA specification</h3>
+<p>Assign each indicator to its hypothesized construct; estimate standardized loadings and errors; check individual significance/CI; then evaluate reliability, validity, and global fit. Standardized loadings generally should be about <strong>.50 or higher</strong>, preferably .70+, though theoretical/content considerations remain essential.</p>
+<p>For a constrained reference indicator, software may not report a p-value because its unstandardized loading is fixed for scale identification. Its standardized loading/CI can still be inspected; an interval excluding zero supports a nonzero loading.</p>
+<h3 id="reliability-3">Reliability</h3>
+<ul>
+<li><strong>Cronbach&rsquo;s alpha &gt;.70</strong>: common internal-consistency guideline.</li>
+<li><strong>Composite reliability &gt;.70</strong>: common SEM guideline.</li>
+</ul>
+<p>FreshCafé met both. Yet reliability alone cannot establish that the right construct is measured or that different constructs are distinct.</p>
+<h3 id="convergent-validity">Convergent validity</h3>
+<p><strong>Average Variance Extracted (AVE)</strong> is the average proportion of indicator variance captured by its construct. Guideline: <code>AVE ≥ .50</code>.</p>
+<p>FreshCafé&rsquo;s Brand Image AVE was <strong>.47</strong>, slightly low: indicators collectively contain more error than ideal. Review weak indicators and theory rather than mechanically deleting until .50 is reached.</p>
+<h3 id="discriminant-validity">Discriminant validity</h3>
+<p><strong>HTMT</strong> estimates similarity between constructs. Guideline: <code>&lt;.85</code> (some contexts use <code>&lt;.90</code>). FreshCafé&rsquo;s <strong>.87</strong> fails the stricter criterion and suggests overlap. Remedies: inspect wording, remove genuinely redundant items, reconsider whether constructs are conceptually distinct, or re-specify theory. Do not hide overlap through arbitrary deletion.</p>
+<h2 id="cfa-model-fit">CFA model fit</h2>
+<p>Interpret a <strong>bundle</strong> of indices, not a single pass/fail number:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Index</th>
+<th style="text-align: right;">Common Week 10 guideline</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RMSEA</td>
+<td style="text-align: right;"><code>&lt;.08</code> acceptable; lower is better</td>
+<td>Approximation error per degree of freedom</td>
+</tr>
+<tr>
+<td>CFI</td>
+<td style="text-align: right;"><code>&gt;.90</code> acceptable</td>
+<td>Improvement over an independence/null model</td>
+</tr>
+<tr>
+<td>TLI</td>
+<td style="text-align: right;"><code>&gt;.90</code> acceptable</td>
+<td>Comparative fit with complexity penalty</td>
+</tr>
+<tr>
+<td>SRMR</td>
+<td style="text-align: right;">lecture emphasizes <code>&lt;.06</code> (many references use <code>&lt;.08</code>)</td>
+<td>Average standardized residual discrepancy</td>
+</tr>
+</tbody>
+</table></div>
+<p>FreshCafé: RMSEA=.09, CFI=.88, TLI=.89, SRMR=.07—each indicates some weakness under the case criteria. This does not authorize blind item deletion. Identify theoretically meaningful sources of misfit, revise one defensible element at a time, re-estimate, and disclose changes.</p>
+<p>The lecture&rsquo;s separate demonstration produced SRMR=.044, CFI=.994, and TLI=.988, while RMSEA remained slightly above the desired cutoff. Removing a weaker item made fit worse, so it was restored—an important example of evidence-based iteration rather than automatic pruning.</p>
+<h2 id="freshcaf-decision-framework">FreshCafé decision framework</h2>
+<p><strong>Scenario:</strong> FreshCafé Foods wants a reliable and valid customer-experience/satisfaction survey. Results show acceptable but marginal factorability, some weak/cross-loading items, good alpha/CR, Brand Image AVE=.47, HTMT=.87, and weak overall CFA fit.</p>
+<p>Recommended sequence:</p>
+<ol>
+<li>Recheck data coding, reverse items, missingness, distribution, and wording.</li>
+<li>Review the .28 item and cross-loading item against construct definitions.</li>
+<li>Remove/rewrite only if statistical weakness and substantive ambiguity align.</li>
+<li>Rerun EFA when the structure is genuinely exploratory.</li>
+<li>Specify CFA from theory, ideally validate on a separate sample or split sample.</li>
+<li>Reassess loadings, alpha/CR, AVE, HTMT, and multiple fit indices.</li>
+<li>Compare before/after models and preserve content coverage.</li>
+<li>Only after measurement is defensible, interpret structural effects and managerial conclusions.</li>
+</ol>
+<p><strong>Practical use case:</strong> If an item “The café feels modern and serves high-quality food” loads on Brand Image and Product Quality, it may be double-barreled. Reword into two single-focus items rather than deleting the customer insight entirely.</p>
+<h2 id="frequent-mistakes-to-avoid">Frequent mistakes to avoid</h2>
+<ul>
+<li>Treating significant Shapiro–Wilk as a ban on all parametric methods without judging magnitude/robustness.</li>
+<li>Calling an allowed endpoint on a Likert scale an outlier merely because it is extreme.</li>
+<li>Using an arbitrary regression only to claim all assumptions are satisfied without matching the final model.</li>
+<li>Treating Harman&rsquo;s test as conclusive proof that CMB is absent.</li>
+<li>Using rotated PCA or a forced single factor incorrectly for Harman&rsquo;s diagnostic.</li>
+<li>Assuming good KMO guarantees a good factor solution.</li>
+<li>Switching rotation to “fix” poor factorability.</li>
+<li>Treating PCA and EFA as synonyms.</li>
+<li>Running CFA merely to explore an unknown structure.</li>
+<li>Removing every loading below .50 regardless of content validity.</li>
+<li>Equating high alpha with unidimensionality or validity.</li>
+<li>Reporting AVE without CR/loadings or HTMT without theory.</li>
+<li>Accepting/rejecting CFA from one fit index.</li>
+<li>Adding correlated errors or modification-index paths without theoretical justification.</li>
+<li>Testing structural hypotheses before validating measurement.</li>
+</ul>
+<h2 id="likely-exam-questions">Likely exam questions</h2>
+<ol>
+<li>Explain the complete sequence of data, measurement, and structural assessment in Jamovi.</li>
+<li>State and interpret Shapiro–Wilk, skewness/kurtosis, Durbin–Watson, tolerance/VIF, missing-value, outlier, and power checks.</li>
+<li>Define common-method bias and explain Harman&rsquo;s single-factor test and its limitations.</li>
+<li>Compare PCA, EFA, CFA, and SEM.</li>
+<li>Explain KMO and Bartlett&rsquo;s test and interpret KMO=.58 with significant Bartlett.</li>
+<li>Discuss factor retention and orthogonal versus oblique rotation.</li>
+<li>Interpret weak loadings and cross-loadings; should an item always be dropped?</li>
+<li>Distinguish reliability, convergent validity, and discriminant validity using alpha, CR, AVE, and HTMT.</li>
+<li>Interpret RMSEA, CFI, TLI, and SRMR together.</li>
+<li>Diagnose and propose a theory-sensitive refinement plan for FreshCafé.</li>
+<li>Why can removing an item improve one index but weaken content validity or model fit?</li>
+<li>Contrast SEM with ordinary regression and explain why measurement assessment comes first.</li>
+</ol>
+<h2 id="source-coverage-checklist">Source-coverage checklist</h2>
+<ul>
+<li>[x] Video 1 / case Part 7: Jamovi preparation; variable typing/value labels; missing values and outliers; normality hypotheses/Shapiro–Wilk; skewness/kurtosis; data independence/Durbin–Watson; tolerance/VIF; sample-size power; common-method bias/Harman diagnostic.</li>
+<li>[x] Video 1: case values and guidelines—n=385, Shapiro significance with manageable deviation, DW≈1.8, power examples, first component 17.2%.</li>
+<li>[x] Video 2 / case Part 8: EFA purpose/workflow; KMO; Bartlett; factor extraction/retention; PCA distinction; rotations; factor loadings/cross-loadings; item review; preliminary measurement assessment.</li>
+<li>[x] Video 3 / case Part 9: CFA/SEM specification in Jamovi; standardized loadings and significance/CIs; fit indices; reliability; convergent/discriminant validity; measurement refinement before structural analysis.</li>
+<li>[x] Consolidated factor-analysis notes: EFA, CFA, SEM, PCA, CMB, Harman test, VIF, AVE, HTMT, Jamovi workflow, misconceptions.</li>
+<li>[x] FreshCafé case: KMO=.58, significant Bartlett, loading=.28, cross-loading=.35, alpha/CR&gt;.70, Brand Image AVE=.47, HTMT=.87, RMSEA=.09, CFI=.88, TLI=.89, SRMR=.07, and theory/content-sensitive iterative refinement.</li>
+<li>[x] Separate lecture-fit example: SRMR=.044, CFI=.994, TLI=.988, marginal RMSEA, reference loading/CI logic, unsuccessful item deletion and restoration.</li>
+<li>[x] Live-session additions: retail footfall case progression; three layers of preliminary checks; Jamovi views/modules; categorical versus Likert setup; reporting/export; interpretation cautions and analysis sequence.</li>
+</ul>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<p>Apply EFA/CFA to TechNova satisfaction, leadership, growth, work-life-balance, pay, and intention items before SEM/regression. A strong structural coefficient is not meaningful if the underlying composites lack reliability or validity.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-9.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 9: Jamovi Data Management, Measurement Levels,…</span>
+      </a>
+      <a href="week-11.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 11: Regression, Mediation, Moderation, t-tests,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

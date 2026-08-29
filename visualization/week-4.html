@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Visualization · Week 4 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Visualization</span>
+      <span class="brand-title">Week 4</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html" selected>Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Data Visualization, Visual Perception, and Preattentive Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Visual Perception, Better Visualization, Form–Function, Tables and…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Visualizing and Comparing Categories
+      </a>
+      <a class="is-active" href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Charts That Show Change Over Time
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Distribution and Relationship Visualizations
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Data Visualization: Exhaustive Exam Notes
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Data Visualization with Python, Jupyter, Python Basics, and Chart…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Python Data Visualization, Matplotlib Plotting, Interpretation, and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Data Visualization with Matplotlib, Seaborn, and Jupyter Notebook
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Exam-Focused Study Notes
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Seaborn, Matplotlib, Heatmaps, Styling, and Dashboard Design
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Dashboards, Dashboard Design, Grammar of Graphics, and Matplotlib
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Dashboard Design, Visual Encoding, Matplotlib, and Dashboard Analytics
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Storytelling with Data
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Storytelling with Data: Exam-Focused Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Visualization · Week 4</p>
+        <h1 class="page-title">Charts That Show Change Over Time</h1>
+        <p class="page-meta">Week 4 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#exam-focused-comprehensive-notes">Exam-focused comprehensive notes</a></li>
+      <li><a href="#1-the-central-design-principle-choose-the-chart-for-the-question">1. The central design principle: choose the chart for the question</a></li>
+      <li><a href="#2-foundations-revised-from-category-comparison-charts">2. Foundations revised from category-comparison charts</a></li>
+      <li><a href="#3-line-charts">3. Line charts</a></li>
+      <li><a href="#4-circular-or-radial-line-charts">4. Circular or radial line charts</a></li>
+      <li><a href="#5-slope-charts">5. Slope charts</a></li>
+      <li><a href="#6-govthink-statepolicy-hub-case-study-slope-chart-design">6. GovThink/StatePolicy Hub case study: slope-chart design</a></li>
+      <li><a href="#7-sparklines">7. Sparklines</a></li>
+      <li><a href="#8-cycle-charts">8. Cycle charts</a></li>
+      <li><a href="#9-area-charts">9. Area charts</a></li>
+      <li><a href="#10-stacked-area-charts">10. Stacked area charts</a></li>
+      <li><a href="#11-stream-graphs">11. Stream graphs</a></li>
+      <li><a href="#12-gantt-charts">12. Gantt charts</a></li>
+      <li><a href="#13-timelines">13. Timelines</a></li>
+      <li><a href="#14-flow-charts">14. Flow charts</a></li>
+      <li><a href="#15-nightingale-radial-area-charts-from-quiz-material">15. Nightingale/radial area charts from quiz material</a></li>
+      <li><a href="#16-practical-excel-skill-dynamic-gauge-chart">16. Practical Excel skill: dynamic gauge chart</a></li>
+      <li><a href="#17-visual-perception-and-ethical-emphasis">17. Visual perception and ethical emphasis</a></li>
+      <li><a href="#18-high-value-comparisons-for-exams">18. High-value comparisons for exams</a></li>
+      <li><a href="#19-likely-exam-questions-and-model-points">19. Likely exam questions and model points</a></li>
+      <li><a href="#20-rapid-revision-checklist">20. Rapid revision checklist</a></li>
+      <li><a href="#one-minute-memory-map">One-minute memory map</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="exam-focused-comprehensive-notes">Exam-focused comprehensive notes</h2>
+<p>Week 4 focuses mainly on choosing, designing, and interpreting visualizations that show change over time. It also revises important category-comparison principles and includes a practical Excel procedure for building a dynamic gauge chart.</p>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> Data visualization is a skill, not just knowledge. Learning becomes useful only when it is converted into performance—for example, by applying Excel features and chart principles to make day-to-day work clearer, more informative, and more engaging.</p>
+</blockquote>
+<hr>
+<h2 id="1-the-central-design-principle-choose-the-chart-for-the-question">1. The central design principle: choose the chart for the question</h2>
+<p>A chart should be chosen according to the information and relationship to be communicated, not merely for novelty or aesthetic variety.</p>
+<ul>
+<li>Use <strong>bar/column charts and related forms</strong> to compare categories.</li>
+<li>Use <strong>line, area, and related time-series charts</strong> to show trends or movement over time.</li>
+<li>Use <strong>slope charts</strong> when only two time points or conditions matter.</li>
+<li>Use <strong>cycle charts</strong> when seasonality across recurring small time units matters.</li>
+<li>Use <strong>Gantt charts</strong> when task duration, scheduling, overlap, and progress matter.</li>
+<li>Use <strong>timelines</strong> for chronological events.</li>
+<li>Use <strong>flow charts</strong> for processes, decisions, and branching paths.</li>
+</ul>
+<p>The best visualization minimizes unnecessary cognitive effort while representing the data honestly. Never choose an unsuitable chart merely because the familiar chart seems repetitive. The aim is to make a familiar chart engaging <strong>without sacrificing accuracy</strong>.</p>
+<h3 id="the-main-time-oriented-chart-types-listed-in-the-lectures">The main time-oriented chart types listed in the lectures</h3>
+<ol>
+<li>Line chart</li>
+<li>Circular/radial line chart</li>
+<li>Slope chart</li>
+<li>Sparkline</li>
+<li>Cycle chart</li>
+<li>Area chart</li>
+<li>Stacked area chart</li>
+<li>Gantt chart</li>
+<li>Stream graph</li>
+<li>Flow chart</li>
+<li>Timeline</li>
+</ol>
+<p>The list is important but not exhaustive. Each chart has unique characteristics, advantages, and limitations and must therefore be used judiciously. Some accommodate unusually large amounts of data; some combine change over time with another view of the data; and some, such as timelines and flow charts, may combine qualitative data, narrative text, and visual cues.</p>
+<hr>
+<h2 id="2-foundations-revised-from-category-comparison-charts">2. Foundations revised from category-comparison charts</h2>
+<p>Although Week 4 concentrates on time, the live class revises earlier principles because they clarify why line-chart rules differ from bar-chart rules.</p>
+<h3 id="2-1-when-a-chart-may-be-unnecessary">2.1 When a chart may be unnecessary</h3>
+<p>Do not assume that every dataset needs a chart. If there are only one or two precise, easily understood values—for example, 30 million and 19 million—putting the numbers clearly in boxes or a simple table may communicate better than a chart. A chart should reduce effort, not disturb the audience unnecessarily.</p>
+<h3 id="2-2-category-comparison-forms-briefly-revised">2.2 Category-comparison forms briefly revised</h3>
+<ul>
+<li><strong>Bar/column charts:</strong> compare category magnitudes.</li>
+<li><strong>Isotype charts:</strong> use repeated icons, such as people icons, to represent quantities or proportions.</li>
+<li><strong>Heat maps:</strong> use color saturation/intensity to encode value; high and low values appear visually “hotter” or “colder.”</li>
+<li><strong>Waffle charts:</strong> use grids of small squares to show proportions and category comparisons.</li>
+<li><strong>Waterfall charts:</strong> explain how a starting value changes through sequential positive and negative contributions to reach a final value. Unlike a normal column chart, each new bar begins where the previous bar ended. Example: monthly profits and losses accumulate to an annual profit of ₹100 crore.</li>
+</ul>
+<h3 id="2-3-bar-charts-must-start-at-zero">2.3 Bar charts must start at zero</h3>
+<p>Bar and column values are perceived through <strong>length</strong>. Therefore, their quantitative axis must start at zero. Truncating the axis can make a small difference appear very large or a real difference appear misleadingly small.</p>
+<p>Example: if values are 60 and 70 but the axis begins at 50, the visible bar lengths are 10 and 20. The second bar may look twice as large even though 70 is only about 16.7% higher than 60.</p>
+<h3 id="2-4-one-extremely-large-category-among-small-categories">2.4 One extremely large category among small categories</h3>
+<p>Suppose one value is 100 million while all the others are below 10 million. Starting at zero is still required, but the smaller bars may become almost unreadable.</p>
+<p><strong>Recommended solution:</strong></p>
+<ol>
+<li>Show the complete, honest, full-scale chart so the true magnitude difference is visible.</li>
+<li>Add a nearby zoomed chart of the smaller values, clearly linked or annotated as a magnified view.</li>
+</ol>
+<p><strong>Do not break or shorten the large bar with a jagged axis break.</strong> That distorts the length comparison and can falsely imply that the difference is modest. Even a spoken warning is insufficient because viewers may miss it and interpret the visible bar lengths. The visual itself must leave no reasonable opportunity for misinterpretation.</p>
+<p>Also, do not casually call a valid large value an “outlier” if it genuinely belongs to the comparison. A large country&rsquo;s GDP may be far above the others yet still be correct and meaningful rather than an erroneous observation to ignore.</p>
+<h3 id="2-5-other-bar-chart-reminders">2.5 Other bar-chart reminders</h3>
+<ul>
+<li>Rotate or angle long category labels when necessary for legibility.</li>
+<li>Remove unnecessary gridlines, break points, and visual clutter.</li>
+<li>The information displayed must remain honest, correct, and difficult to misinterpret.</li>
+</ul>
+<hr>
+<h2 id="3-line-charts">3. Line charts</h2>
+<h3 id="3-1-definition-and-purpose">3.1 Definition and purpose</h3>
+<p>A <strong>line chart</strong> connects data values with lines, normally across a continuous time axis, to reveal trends and patterns. It is among the world&rsquo;s most common, clearest, and easiest charts to draw and read.</p>
+<p>The lecture example plots SUVs as a percentage of all cars produced from 2014 to 2024. Because lines are compared relative to the same horizontal axis, line charts rank high in perceptual accuracy and make comparison within and between series relatively easy.</p>
+<p>The principal question answered is not merely “What is each absolute value?” but “How did the value move?”—increasing, decreasing, stable, increasing then decreasing, or decreasing then increasing.</p>
+<h3 id="3-2-six-major-design-considerations">3.2 Six major design considerations</h3>
+<ol>
+<li>There is no fixed maximum number of lines.</li>
+<li>The vertical axis need not always start at zero.</li>
+<li>Beware the line-width/gap illusion.</li>
+<li>Use data markers judiciously to mark specific values.</li>
+<li>Signal missing data visually.</li>
+<li>Avoid dual-axis line charts.</li>
+</ol>
+<h3 id="3-3-how-many-lines-can-a-line-chart-contain">3.3 How many lines can a line chart contain?</h3>
+<p>There is no hard rule. Decide from the chart&rsquo;s purpose and the audience&rsquo;s needed focus, not from the sheer amount of data.</p>
+<p>When there are many series:</p>
+<ul>
+<li>Use <strong>start with gray</strong>: render contextual lines in light gray and use distinct colors for the few important series.</li>
+<li>Increase the line width of important series as an additional emphasis.</li>
+<li>Color and line width are <strong>preattentive attributes</strong>; readers notice them before conscious analysis.</li>
+<li>Preserve the overall pattern while directing attention to two or three lines of interest.</li>
+<li>Break the chart into <strong>small multiples</strong> when individual detail is more important.</li>
+</ul>
+<p>Lecture example: in a many-country line chart, India is green, Pakistan blue, China red, and all other countries light gray. The audience can see the general sample pattern and still focus on selected countries.</p>
+<h4 id="small-multiple-trade-off">Small-multiple trade-off</h4>
+<p>Giving each country its own panel creates more room for labels, annotations, and detail. However, separation can weaken the reader&rsquo;s perspective of relative values across countries. A small multiple may show only one series per panel, or may retain all lines in gray and highlight one line in each panel.</p>
+<h3 id="3-4-must-a-line-chart-axis-begin-at-zero">3.4 Must a line-chart axis begin at zero?</h3>
+<p>No. Unlike a bar chart, a line chart is read primarily through <strong>position, shape, direction, and slope</strong>, not the length of a rectangle from zero. Its vertical axis may be truncated when that better serves the analytical goal.</p>
+<p>However, the selected range strongly influences perceived drama. In the healthcare-spending example, the same data appears as:</p>
+<ul>
+<li>a slight increase with a 0–25% range;</li>
+<li>a progressively more dramatic increase as the range narrows;</li>
+<li>a clearer period of stagnation when the scale focuses closely on the later values.</li>
+</ul>
+<p>There is no universally correct range. Choose it from the data and the story:</p>
+<ul>
+<li>A broad range suits a general story of gradual long-term increase.</li>
+<li>A narrower range may suit detailed annual comparison or show stagnation around 17% of GDP.</li>
+<li>The chart must not exaggerate change beyond what the intended analysis justifies.</li>
+</ul>
+<h4 id="make-zero-explicit-when-it-matters">Make zero explicit when it matters</h4>
+<p>Viewers often assume the bottom of a vertical axis is zero. This becomes especially important when a series contains both positive and negative values. In a year-to-year fractional-change chart, darkening the zero baseline made it immediately clear that:</p>
+<ul>
+<li>2016 had no change; and</li>
+<li>2021 and 2022 had declines in healthcare spending as a share of GDP.</li>
+</ul>
+<p>Thus, when zero has analytical meaning, delineate it clearly even if it is not the chart&rsquo;s lower boundary.</p>
+<h3 id="3-5-the-line-width-or-gap-illusion">3.5 The line-width or gap illusion</h3>
+<p>In charts with two curves, viewers can misestimate the changing difference between them, particularly where slopes and vertical separation interact. If the <strong>gap</strong> is the analytical subject, do not force the reader to infer it from two absolute-value lines. Plot the difference itself.</p>
+<p>Example: imports form the upper line and exports the lower line. The vertical distance is the trade gap. A standard plot shows the gap generally widening from 2004 and peaking in 2016, but a separate line of <code>imports − exports</code> makes a 2020 bump much more obvious.</p>
+<blockquote>
+<p><strong>Exam rule:</strong> If the area/distance between two curves is important, plot the distance or difference directly rather than relying only on the two absolute series.</p>
+</blockquote>
+<h3 id="3-6-data-markers">3.6 Data markers</h3>
+<p>Data markers are symbols placed on a line at specific observations.</p>
+<p>Use them when:</p>
+<ul>
+<li>the chart has few lines or few points;</li>
+<li>changes are subtle and the line needs visual weight;</li>
+<li>particular values require labeling or annotation.</li>
+</ul>
+<p>The instructor generally prefers circular markers because a circle has no extra directional meaning. Triangles may imply rising or falling, while squares and other shapes can add unwanted meaning. This is partly aesthetic, but also semantic.</p>
+<p>Accessibility caveat: identical marker shapes may be difficult for screen readers or other assistive interpretation, even when colors differ. If accessibility or organizational standards require it, use different marker shapes for different series.</p>
+<h3 id="3-7-missing-data">3.7 Missing data</h3>
+<p>At some level, most real datasets contain gaps. Events occur continuously even when official data are published only periodically. Connecting observations with an ordinary solid line can falsely imply known values throughout the gap.</p>
+<p>Ways to signal missing data:</p>
+<ul>
+<li>use a dashed/differently formatted connecting segment;</li>
+<li>leave the segment unconnected;</li>
+<li>annotate the chart or add a note below it.</li>
+</ul>
+<p>Lecture example: data for 2022 are unavailable. The 2021 and 2023 points are joined with a dashed line and a note explains that the dashed segment denotes missing data.</p>
+<h3 id="3-8-why-dual-axis-charts-should-be-avoided">3.8 Why dual-axis charts should be avoided</h3>
+<p>A dual-axis chart plots different measures, often with different units and scales, against separate vertical axes. The lecture example combines housing-debt share on the left axis and unemployment rate on the right axis.</p>
+<p>Problems include:</p>
+<ul>
+<li>It may not be obvious which line belongs to which axis.</li>
+<li>Matching axis labels to line colors does not fully solve the interpretive burden.</li>
+<li>Independent scale choices can change where lines cross, touch, or diverge.</li>
+<li>The same underlying data can be made to look correlated or uncorrelated.</li>
+<li>The designer can deliberately or accidentally imply a false relationship.</li>
+<li>Combining chart types—for example, an area series plus a line—does not solve the ambiguity.</li>
+</ul>
+<p>In the demonstration, alternative axis ranges made the same two series intersect twice, intersect once, or merely brush before crossing elsewhere. These visual relationships were artifacts of scale rather than changes in the data.</p>
+<h4 id="better-alternatives-to-a-dual-axis">Better alternatives to a dual axis</h4>
+<ol>
+<li><strong>Side-by-side charts:</strong> separate the measures. Equal axes are normally desirable for comparison, but if units make that impossible, clearly separated charts with different ranges are still safer than two axes in one plot.</li>
+<li><strong>Vertically aligned charts:</strong> stack charts with a shared horizontal time axis. Draw a common vertical reference line across them when a particular year/event needs annotation.</li>
+<li><strong>Index or percentage change:</strong> convert both series to change from a shared base year (the lecture illustrates 2020). The reader can then compare both on the same metric and axis.</li>
+</ol>
+<p>The index/percentage-change solution sacrifices original levels: it shows relative change, not the initial magnitudes. That trade-off must be understood and disclosed.</p>
+<hr>
+<h2 id="4-circular-or-radial-line-charts">4. Circular or radial line charts</h2>
+<p>A <strong>circular line chart</strong> is essentially a line chart wrapped around a circle.</p>
+<h3 id="strengths">Strengths</h3>
+<ul>
+<li>Can improve a cyclical visual metaphor.</li>
+<li>Compact.</li>
+<li>Can make repeated seasons or cycles feel intuitive.</li>
+</ul>
+<h3 id="limitations">Limitations</h3>
+<ul>
+<li>Less perceptually accurate than a conventional line chart.</li>
+<li>Values do not share one straight horizontal baseline.</li>
+<li>Precise comparison is harder.</li>
+</ul>
+<p>Lecture example: emergency-room visits for fever from 2020–2024, with the fever season beginning around the June monsoon. The conventional line chart clearly shows fever rising during rainy months and fading afterward. The radial version communicates a seasonal “lean” toward the clock position associated with rainy months and fewer infections on the dry-month side, but sacrifices precise comparison.</p>
+<blockquote>
+<p><strong>Decision rule:</strong> Use the circular form when the cyclical metaphor materially helps the story; use a standard line chart when precision is more important.</p>
+</blockquote>
+<hr>
+<h2 id="5-slope-charts">5. Slope charts</h2>
+<h3 id="5-1-definition">5.1 Definition</h3>
+<p>A <strong>slope chart</strong> is a simplified line chart that connects values at exactly two time points or conditions. It is appropriate when the intermediate observations are unnecessary.</p>
+<p>Each category has:</p>
+<ul>
+<li>a left endpoint: starting value/time;</li>
+<li>a right endpoint: ending value/time;</li>
+<li>a connecting line: direction and magnitude of change.</li>
+</ul>
+<h3 id="5-2-why-use-a-slope-chart-instead-of-paired-bars">5.2 Why use a slope chart instead of paired bars?</h3>
+<p>A paired/clustered bar chart can show two observations for each category, but the viewer must repeatedly locate matching bars, compare their heights, infer direction, estimate the difference, and repeat the calculation for every category. This uses more ink and demands more mental arithmetic.</p>
+<p>A slope chart makes the comparison visually explicit:</p>
+<ul>
+<li>upward line = increase;</li>
+<li>downward line = decrease;</li>
+<li>flatter line = smaller change;</li>
+<li>steeper line = larger change;</li>
+<li>endpoint position = relative rank at each time.</li>
+</ul>
+<p>It simultaneously shows level, change, and ranking in a compact display.</p>
+<h3 id="5-3-lecture-example-indian-states">5.3 Lecture example: Indian states</h3>
+<p>The illustration compares fictional unemployment values for six Indian states from January 2010 to December 2020. State names are real, but the values are not actual data.</p>
+<ul>
+<li>Tamil Nadu begins with the highest unemployment rate.</li>
+<li>Karnataka begins with the lowest.</li>
+<li>Tamil Nadu, Maharashtra, Kerala, and Karnataka decline.</li>
+<li>Telangana and Odisha rise.</li>
+</ul>
+<h3 id="5-4-styling-choices">5.4 Styling choices</h3>
+<ul>
+<li>Use two colors to classify increases and decreases.</li>
+<li>Include or omit level/change labels according to the audience&rsquo;s need for precision.</li>
+<li>Use “start with gray” to provide context and highlight selected states.</li>
+<li>A taller chart may provide room to separate endpoints, labels, annotations, and colors.</li>
+<li>Line thickness can encode a third variable, but only with caution.</li>
+</ul>
+<h3 id="5-5-central-limitation">5.5 Central limitation</h3>
+<p>A slope chart summarizes only endpoints. It can hide important intervening fluctuations, reversals, peaks, or troughs. The same limitation applies to paired bars. Do not use a two-point summary when the path between the points is analytically important.</p>
+<hr>
+<h2 id="6-govthink-statepolicy-hub-case-study-slope-chart-design">6. GovThink/StatePolicy Hub case study: slope-chart design</h2>
+<h3 id="6-1-scenario-and-analytical-goal">6.1 Scenario and analytical goal</h3>
+<p>The GovThink team at StatePolicy Hub compares unemployment in six U.S. states between 2000 and 2018 for policymakers. They want readers to identify improvement, deterioration, magnitude of change, and rankings with minimal effort.</p>
+<p>Case facts:</p>
+<ul>
+<li>Montana has the highest initial unemployment.</li>
+<li>Connecticut has the lowest initial unemployment.</li>
+<li>Montana, Hawaii, and Idaho decline.</li>
+<li>The remaining three states rise.</li>
+</ul>
+<p>The case is a classic two-point comparison, so a slope chart is better than paired bars.</p>
+<h3 id="6-2-visual-encodings">6.2 Visual encodings</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Visual feature</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vertical position</td>
+<td>Unemployment rate</td>
+</tr>
+<tr>
+<td>Left endpoint</td>
+<td>2000 value</td>
+</tr>
+<tr>
+<td>Right endpoint</td>
+<td>2018 value</td>
+</tr>
+<tr>
+<td>Direction</td>
+<td>Increase or decrease</td>
+</tr>
+<tr>
+<td>Slope/angle</td>
+<td>Magnitude of change</td>
+</tr>
+<tr>
+<td>Color</td>
+<td>Optional grouping into increase/decrease</td>
+</tr>
+<tr>
+<td>Thickness</td>
+<td>Optional third variable, such as population</td>
+</tr>
+</tbody>
+</table></div>
+<p>The connecting line is not decorative. It visualizes trajectory, comparison, direction, and magnitude, reducing the need for mental arithmetic.</p>
+<h3 id="6-3-cognitive-load">6.3 Cognitive load</h3>
+<p><strong>Cognitive load</strong> is the mental effort required to interpret information. A well-designed chart performs comparisons for the reader. Every additional visual encoding adds something to decode and can reduce clarity.</p>
+<h3 id="6-4-three-proposed-designs">6.4 Three proposed designs</h3>
+<h4 id="option-1-monochrome-with-detailed-labels">Option 1: Monochrome with detailed labels</h4>
+<p><strong>Advantages:</strong> precise, exact values visible, little ambiguity, numerically complete.</p>
+<p><strong>Disadvantages:</strong> visually busy, slower to scan, overlapping labels possible, and overall trends require more conscious reading.</p>
+<h4 id="option-2-two-colors-for-direction-without-detailed-labels">Option 2: Two colors for direction, without detailed labels</h4>
+<p>Color is preattentive, allowing readers to classify improving and worsening states almost immediately. This produces low cognitive load, quick pattern recognition, and a clean display.</p>
+<p><strong>Caveat:</strong> exact values are less accessible, and color must not be the only cue where accessibility matters. Use accessible colors and, if needed, direct labels, symbols, or a supporting table.</p>
+<h4 id="option-3-variable-line-thickness-for-population">Option 3: Variable line thickness for population</h4>
+<p>Thickness adds contextual information: a thicker line can represent a more populous state and therefore potentially more people affected.</p>
+<p>However, readers must now decode position, direction, slope, and thickness simultaneously. Thick lines can overlap, dominate attention, and falsely make a small unemployment change feel more important. Population answers a secondary question and can compete with the primary story.</p>
+<h3 id="6-5-recommended-choice-for-policymakers">6.5 Recommended choice for policymakers</h3>
+<p>For rapid trend communication, the <strong>color-coded slope chart</strong> is the best of the three options because it directly reinforces increase versus decrease and keeps cognitive load low. Selective endpoint/key-state labels can restore necessary precision without labeling everything.</p>
+<p>The variable-thickness version is least suitable when unemployment change is the primary objective. Add population only when that second question is essential and the audience can interpret the extra encoding.</p>
+<blockquote>
+<p><strong>General principle:</strong> More information is valuable only when it does not compromise the reader&rsquo;s ability to answer the intended question quickly.</p>
+</blockquote>
+<hr>
+<h2 id="7-sparklines">7. Sparklines</h2>
+<h3 id="definition">Definition</h3>
+<p>Invented/popularized by statistician and author <strong>Edward Tufte</strong>, sparklines are “small, intense, simple, word-sized graphics with typographic resolution.” They are miniature charts embedded in text or data-rich tables, often at the end of a row or column.</p>
+<h3 id="purpose-and-properties">Purpose and properties</h3>
+<ul>
+<li>Show a general pattern or trend rather than precise values.</li>
+<li>Occupy very little space.</li>
+<li>Usually have minimal or no axes, labels, and decoration.</li>
+<li>Work well beside explicit starting/ending numbers.</li>
+</ul>
+<p>Lecture example: a table gives country values for 2014 and 2024, while a sparkline shows the full ten-year trajectory. The reader therefore gets exact endpoints and an immediate pattern. All countries rise except Indonesia, which is highlighted in another color.</p>
+<h3 id="caveat-from-quiz-material">Caveat from quiz material</h3>
+<p>A tiny graphic with no values may be <strong>illustrative rather than quantitative</strong>. It may demonstrate what a sparkline looks like but should not be read as measured data unless numbers or a scale are supplied.</p>
+<hr>
+<h2 id="8-cycle-charts">8. Cycle charts</h2>
+<p>A <strong>cycle chart</strong> compares recurring small time units—such as weeks or months—across a multi-year period. It is especially useful for strong seasonal trends.</p>
+<p>It can combine:</p>
+<ul>
+<li>the individual values over years within each month/period;</li>
+<li>an average reference, shown in the lecture in yellow;</li>
+<li>a marker for the latest observation.</li>
+</ul>
+<h3 id="why-use-one">Why use one?</h3>
+<ul>
+<li>Separates seasonal components and long-term movement.</li>
+<li>Gives each period more space, much like small multiples.</li>
+<li>Can be less busy than a standard line chart even when it contains more information.</li>
+</ul>
+<h3 id="accident-example">Accident example</h3>
+<p>Monthly accidents from 2014–2018 show a general downward trend. The cycle chart marks the latest-year point with a dot and makes the recurring monthly spikes identifiable. A conventional line chart shows annual spikes, but without more labeling it is unclear which month produces each spike.</p>
+<h3 id="product-failure-example">Product-failure example</h3>
+<p>A dense bar chart compares failure percentages for product classes A–D over several years. Within-year and across-year comparison is difficult. The cycle chart gives each class its own panel and sorts panels by the most recent year&rsquo;s values. It resembles a small-multiple line chart, but its organization around recurring cycles makes it a cycle chart.</p>
+<hr>
+<h2 id="9-area-charts">9. Area charts</h2>
+<p>An <strong>area chart</strong> is a line chart with the region below the line filled. Filling gives the series greater visual weight and emphasizes its magnitude.</p>
+<p>The lecture compares line and area versions of heroin-overdose deaths from 2014–2024.</p>
+<h3 id="zero-baseline">Zero baseline</h3>
+<p>An area chart can be understood as a bar chart with infinitely thin bars. Because viewers perceive the filled magnitude from the baseline, its vertical axis should start at zero.</p>
+<h3 id="multiple-series-problem">Multiple-series problem</h3>
+<p>With two or more independent area series, one can hide or occlude another. Reordering only changes which series is hidden. Readers may also misinterpret separate overlapping areas as parts summing to a total.</p>
+<p>Possible responses:</p>
+<ul>
+<li>add transparency to one or both series;</li>
+<li>clearly explain with title and annotation that they are distinct;</li>
+<li>preferably switch to a line chart for cleaner independent comparison.</li>
+</ul>
+<p>Transparency must be applied carefully. Making only one area transparent can deemphasize it and imply lower importance.</p>
+<hr>
+<h2 id="10-stacked-area-charts">10. Stacked area charts</h2>
+<h3 id="10-1-definition-and-forms">10.1 Definition and forms</h3>
+<p>A <strong>stacked area chart</strong> displays multiple series whose vertical thicknesses sum to a total or percentage.</p>
+<ul>
+<li><strong>Absolute stacked area:</strong> shows the changing total and contributions.</li>
+<li><strong>100% stacked area:</strong> normalizes each time point to 100%, emphasizing changing shares/composition.</li>
+</ul>
+<p>Overdose example:</p>
+<ul>
+<li>The absolute version draws attention to the large increase in total deaths.</li>
+<li>The 100% version draws attention to distributional change, such as cocaine&rsquo;s declining share and heroin&rsquo;s increasing share.</li>
+</ul>
+<h3 id="10-2-advantages">10.2 Advantages</h3>
+<ul>
+<li>Shows total growth or decline.</li>
+<li>Shows contribution of categories to the whole.</li>
+<li>Packs total and composition into one compact view.</li>
+</ul>
+<h3 id="10-3-limitations">10.3 Limitations</h3>
+<ol>
+<li><strong>Line-width/steepness illusion:</strong> steep boundaries can appear to represent larger changes than they do.</li>
+<li><strong>Unstable baselines:</strong> only the bottom series has a common zero baseline; upper series float on changing layers and are harder to compare accurately.</li>
+<li><strong>Order affects perception:</strong> moving a series to the bottom makes its pattern easier to read and changes what attracts attention.</li>
+<li><strong>Too many categories:</strong> colors become difficult to distinguish, small layers disappear, and clutter grows.</li>
+</ol>
+<h3 id="10-4-ordering-is-a-storytelling-decision">10.4 Ordering is a storytelling decision</h3>
+<p>There is no universally correct bottom category, nor must the most important or largest category always be placed there. Choose the order according to the message.</p>
+<p>In the lecture, heroin is easiest to compare when placed at the baseline; cocaine is easiest when it is placed there. If the story concerns cocaine&rsquo;s steady or declining share, putting cocaine on the bottom is sensible.</p>
+<p>The quiz stresses perceptual bias: a large or popular category placed at the stable bottom may appear even more important because humans notice large continuous areas, stable shapes, and uninterrupted boundaries.</p>
+<h3 id="10-5-small-multiples-as-an-alternative">10.5 Small multiples as an alternative</h3>
+<p>Separate each category into its own line/area panel:</p>
+<ul>
+<li><strong>Benefit:</strong> each has a common horizontal baseline; its exact pattern is perceptually more accurate; more annotation is possible.</li>
+<li><strong>Cost:</strong> consumes more space, weakens direct part-to-whole reading, and can make category-to-category comparison harder.</li>
+</ul>
+<p>Use a stacked chart when compact composition is central; use small multiples or lines when individual pattern accuracy is central.</p>
+<hr>
+<h2 id="11-stream-graphs">11. Stream graphs</h2>
+<p>A <strong>stream graph</strong> stacks time-series layers around a central baseline. Unlike a conventional stacked area chart, the central horizontal line does not necessarily represent zero; positive thickness may extend on both sides.</p>
+<h3 id="characteristics-and-purpose">Characteristics and purpose</h3>
+<ul>
+<li>Smooth, centered layers create an organic, flowing appearance.</li>
+<li>Designed to reduce accumulated baseline distortion across layers.</li>
+<li>Well suited to volatile series with noticeable peaks and troughs.</li>
+<li>Highlights overall flow and category contributions over time.</li>
+<li>Common examples include music-genre popularity and website traffic sources.</li>
+</ul>
+<p>Compared with a stacked area chart of overdose deaths, a stream graph may pull attention toward the overall increase rather than exact movement of one category.</p>
+<h3 id="trade-off">Trade-off</h3>
+<p>Stream graphs can include much data and be visually engaging, but they are not ideal for detailed, precise comparison. Their unfamiliar shape may initially confuse or overwhelm some readers, though the colors and forms may ultimately increase engagement. Suitability depends on audience and purpose.</p>
+<hr>
+<h2 id="12-gantt-charts">12. Gantt charts</h2>
+<h3 id="12-1-definition-and-construction">12.1 Definition and construction</h3>
+<p>A <strong>Gantt chart</strong> is a project-management chart for planning, scheduling, and tracking tasks over time.</p>
+<ul>
+<li>Tasks/activities are listed vertically.</li>
+<li>Time—days, weeks, or months—runs horizontally.</li>
+<li>Bar position gives start and end.</li>
+<li>Bar length gives duration.</li>
+</ul>
+<p>It was developed by engineer <strong>Henry Lawrence Gantt</strong> around the turn of the twentieth century and was first used by production foremen and supervisors to track production schedules.</p>
+<h3 id="12-2-uses">12.2 Uses</h3>
+<ul>
+<li>Visualize project workflows.</li>
+<li>Identify overlapping tasks.</li>
+<li>Monitor what is on track, delayed, or completed.</li>
+<li>Display phases, subtasks, and deadlines.</li>
+<li>Track percentage completion with progress bars.</li>
+<li>Support resource allocation and priority decisions.</li>
+</ul>
+<p>Industries include construction, software development, and event planning. Tools mentioned include Microsoft Project, Excel, Trello, Asana, and other online project platforms.</p>
+<h3 id="12-3-lecture-example">12.3 Lecture example</h3>
+<p>A ten-day project uses dark bars for major tasks and gray bars for subtasks. The chart makes it clear that Task 2 begins on Day 5 and all Task 1 subtasks finish on Day 6.</p>
+<h3 id="12-4-encoding-additional-variables">12.4 Encoding additional variables</h3>
+<p>Bar thickness can encode a third variable:</p>
+<ul>
+<li>thicker bar = more resources, effort, team members, or hours;</li>
+<li>thinner bar = fewer resources or possibly lower priority.</li>
+</ul>
+<p>Color can add another categorical cue—for example, red for high priority and green for lower priority. Used carefully, these encodings turn the Gantt chart from a simple timeline into a multidimensional representation of project dynamics. As always, extra encoding must remain easy to interpret.</p>
+<hr>
+<h2 id="13-timelines">13. Timelines</h2>
+<p>A <strong>timeline</strong> shows when events occur in chronological order.</p>
+<p>It can be:</p>
+<ul>
+<li>basic, with lines, icons, or event markers;</li>
+<li>detailed, with annotations, images, or graphs;</li>
+<li>horizontal, vertical, or another shape.</li>
+</ul>
+<p>Use timelines for schedules, historical events, milestones, and release plans. A horizontal layout is common; a vertical timeline can suit online pages because it follows natural scrolling. Compact layouts are preferable on mobile.</p>
+<p><strong>Core question:</strong> “When does something happen?” It shows before/after relationships, temporal sequence, and possibly duration.</p>
+<hr>
+<h2 id="14-flow-charts">14. Flow charts</h2>
+<h3 id="14-1-definition">14.1 Definition</h3>
+<p>A <strong>flow chart</strong> maps a process, often step by step. It is not necessarily tied to calendar time. It helps readers understand process components more easily than long prose or a convoluted table.</p>
+<p><strong>Core question:</strong> “What happens next?” It represents actions, decisions, conditions, branches, and alternative paths.</p>
+<h3 id="14-2-symbolic-encoding">14.2 Symbolic encoding</h3>
+<p>Shapes should be used consistently and strategically. In the lecture fulfillment example:</p>
+<ul>
+<li>red circles indicate start/stop;</li>
+<li>green ovals indicate an activity/procedure;</li>
+<li>a yellow diamond/rhombus indicates a decision;</li>
+<li>arrows indicate direction and branching from decisions.</li>
+</ul>
+<p>Rounded rectangles or circles may denote start/end, while other shapes can denote procedures, choke points, or decision points. Color can further distinguish process components.</p>
+<h3 id="14-3-main-types">14.3 Main types</h3>
+<ol>
+<li><strong>Process flow chart:</strong> maps steps from start to finish; useful for workflow analysis and efficiency improvement.</li>
+<li><strong>Swimlane flow chart:</strong> divides steps into lanes to show responsibility across teams or departments.</li>
+<li><strong>Workflow diagram:</strong> emphasizes the sequence of tasks/activities in a business process.</li>
+<li><strong>Data-flow diagram:</strong> shows inputs, outputs, storage, and the movement of data through a system/process.</li>
+<li><strong>Decision flow chart:</strong> highlights decision points and alternative paths based on choices or outcomes.</li>
+<li><strong>System flow chart:</strong> represents process flow within a system; common in IT and software development.</li>
+</ol>
+<h3 id="14-4-design-principles">14.4 Design principles</h3>
+<ul>
+<li>Amount of content is not the objective; reader need is.</li>
+<li>Include notes, text, icons, and details only when they help the intended reader.</li>
+<li>Ask whether each point needs detail and whether an image would anchor it in memory.</li>
+<li>Provide necessary information as engagingly as possible without clutter.</li>
+<li>PowerPoint SmartArt offers many illustrative process and hierarchy layouts, but selection should still be governed by the analytical need.</li>
+</ul>
+<h3 id="14-5-timeline-versus-flow-chart">14.5 Timeline versus flow chart</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Timeline</th>
+<th>Flow chart</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shows chronological occurrence</td>
+<td>Shows logical/process progression</td>
+</tr>
+<tr>
+<td>Answers when/before/after/duration</td>
+<td>Answers next step/decision/condition/path</td>
+</tr>
+<tr>
+<td>Best for project milestones or history</td>
+<td>Best for approval processes, algorithms, and workflow logic</td>
+</tr>
+<tr>
+<td>Weak for branching decisions</td>
+<td>Weak for exact calendar duration unless explicitly added</td>
+</tr>
+</tbody>
+</table></div>
+<p>Software-project example: use a <strong>timeline</strong> for the project schedule and a <strong>flow chart</strong> for the code-review or approval process.</p>
+<hr>
+<h2 id="15-nightingale-radial-area-charts-from-quiz-material">15. Nightingale/radial area charts from quiz material</h2>
+<p>A <strong>Nightingale chart</strong>, also called a <strong>coxcomb</strong> or <strong>polar area chart</strong>, uses angle, radius, and sector area in a radial layout.</p>
+<h3 id="major-perceptual-limitation">Major perceptual limitation</h3>
+<p>Equal radial increases do not create equal area increases. Because area grows with the square of radius, changes near the outside appear much larger than equivalent radial changes near the center. Human vision tends to compare sector area rather than radius, producing an area-perception illusion.</p>
+<p>For faithful comparison of contribution over time, a linear stacked area or line chart may be better because it uses a consistent axis and avoids radial exaggeration.</p>
+<hr>
+<h2 id="16-practical-excel-skill-dynamic-gauge-chart">16. Practical Excel skill: dynamic gauge chart</h2>
+<h3 id="16-1-purpose-and-structure">16.1 Purpose and structure</h3>
+<p>A gauge chart resembles a speedometer and can show levels such as very low, low, moderate, high, and very high. A needle moves when the input percentage changes, making it useful in dashboards or presentations.</p>
+<p>It is built from a <strong>combo chart</strong>:</p>
+<ul>
+<li>a <strong>doughnut chart</strong> creates the colored dial;</li>
+<li>a <strong>pie chart</strong> creates the needle.</li>
+</ul>
+<h3 id="16-2-prepare-the-dial-data">16.2 Prepare the dial data</h3>
+<p>Create the following series:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dial component</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blank</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr>
+<td>Very low</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr>
+<td>Low</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr>
+<td>Moderate</td>
+<td style="text-align: right;">35</td>
+</tr>
+<tr>
+<td>High</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr>
+<td>Very high</td>
+<td style="text-align: right;">10</td>
+</tr>
+</tbody>
+</table></div>
+<p>The five visible bands total 100, and the blank half is another 100. The complete doughnut therefore totals 200. The blank 100 becomes the invisible lower semicircle.</p>
+<p>The instructor notes that the category boundaries may be changed. The essential condition is that visible dial categories sum to 100 and the hidden blank equals 100. (In one oral example of only low/moderate/high, the transcript momentarily says these should add to 200; the surrounding explanation and working dataset consistently establish the intended half-dial structure as <strong>blank 100 + visible bands totaling 100 = 200</strong>.)</p>
+<h3 id="16-3-prepare-the-needle-data">16.3 Prepare the needle data</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Needle component</th>
+<th style="text-align: right;">Example value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Percentage</td>
+<td style="text-align: right;">75</td>
+</tr>
+<tr>
+<td>Needle</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>Blank</td>
+<td style="text-align: right;"><code>=200 - PercentageCell - NeedleCell</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>For 75 and 2, blank is 123. The three pie values always total 200. Changing Percentage automatically changes Blank and rotates the needle position.</p>
+<h3 id="16-4-build-the-combination-chart">16.4 Build the combination chart</h3>
+<ol>
+<li>Select the dial values.</li>
+<li>Hold Ctrl and also select the percentage, needle, and formula-driven blank values.</li>
+<li>Go to <strong>Insert → Charts → All Charts → Combo</strong>.</li>
+<li>Assign the dial series to <strong>Doughnut</strong>.</li>
+<li>Assign the needle series to <strong>Pie</strong>.</li>
+<li>If the series appear reversed, switch their chart types so the colored ranges are the doughnut and the narrow pointer is the pie.</li>
+</ol>
+<h3 id="16-5-format-the-dial">16.5 Format the dial</h3>
+<ol>
+<li>Remove unnecessary title and legend.</li>
+<li>Right-click the doughnut and choose <strong>Format Data Series</strong>.</li>
+<li>Set <strong>Angle of first slice = 270°</strong> so the blank half moves to the bottom.</li>
+<li>Select the blank slice alone (click the series, then the individual slice) and set <strong>No Fill</strong>.</li>
+<li>Color the visible bands. The lecture uses:
+   - very low: gray;
+   - low: yellow;
+   - moderate: green;
+   - high: orange;
+   - very high: dark red.</li>
+</ol>
+<h3 id="16-6-format-the-needle">16.6 Format the needle</h3>
+<ol>
+<li>Bring the pie series into focus using Change Chart Type or series selection.</li>
+<li>Set its angle of first slice to <strong>270°</strong>.</li>
+<li>Set the large blank portions to <strong>No Fill</strong>.</li>
+<li>Set only the narrow needle slice to black.</li>
+</ol>
+<h3 id="16-7-test-and-present">16.7 Test and present</h3>
+<p>Change the percentage input—for example 75, 40, 30, or 85. The needle should move automatically. Place the finished chart over or near its data and display the percentage-completion figure clearly.</p>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> The chart may not work perfectly on the first attempt. Re-create it while following the steps; practical repetition is the point of the exercise.</p>
+</blockquote>
+<h3 id="16-8-gauge-chart-logic-to-remember">16.8 Gauge-chart logic to remember</h3>
+<ul>
+<li>Dial = doughnut.</li>
+<li>Needle = pie.</li>
+<li>Both complete circles total 200.</li>
+<li>Half of each circle is made invisible.</li>
+<li>Both series rotate to 270°.</li>
+<li>The input percentage changes the formula blank and therefore moves the needle.</li>
+</ul>
+<hr>
+<h2 id="17-visual-perception-and-ethical-emphasis">17. Visual perception and ethical emphasis</h2>
+<p>Human attention is naturally drawn to:</p>
+<ul>
+<li>stronger color contrast;</li>
+<li>thicker lines;</li>
+<li>larger areas;</li>
+<li>stable baselines;</li>
+<li>uninterrupted shapes;</li>
+<li>position and orientation.</li>
+</ul>
+<p>These preattentive properties are powerful, but they must support genuine analytical importance.</p>
+<h3 id="appropriate-emphasis">Appropriate emphasis</h3>
+<ul>
+<li>color;</li>
+<li>line width;</li>
+<li>transparency;</li>
+<li>selective labels;</li>
+<li>annotation;</li>
+<li>start-with-gray context.</li>
+</ul>
+<h3 id="misleading-manipulation">Misleading manipulation</h3>
+<ul>
+<li>changing the scale merely to dramatize a result;</li>
+<li>truncating bar axes;</li>
+<li>breaking bars and destroying length comparability;</li>
+<li>using dual axes to manufacture apparent correlation;</li>
+<li>hiding missing observations behind ordinary solid connections;</li>
+<li>allowing radial area or stacked-layer order to imply unsupported importance.</li>
+</ul>
+<p>Changing visual emphasis is honest when the underlying values remain unchanged and the emphasis corresponds to the stated analytical goal.</p>
+<hr>
+<h2 id="18-high-value-comparisons-for-exams">18. High-value comparisons for exams</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Need</th>
+<th>Preferred chart</th>
+<th>Main reason</th>
+<th>Main caveat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compare independent trends over time</td>
+<td>Line chart</td>
+<td>Common baseline and clear slopes</td>
+<td>Too many unstyled lines clutter</td>
+</tr>
+<tr>
+<td>Show magnitude with filled weight</td>
+<td>Area chart</td>
+<td>Emphasizes level</td>
+<td>Must start at zero; series can occlude</td>
+</tr>
+<tr>
+<td>Show total and component contributions</td>
+<td>Stacked area</td>
+<td>Compact composition over time</td>
+<td>Upper layers lack stable baseline; order biases attention</td>
+</tr>
+<tr>
+<td>Show changing percentage composition</td>
+<td>100% stacked area</td>
+<td>Makes shares/distribution prominent</td>
+<td>Hides absolute-total change</td>
+</tr>
+<tr>
+<td>Show volatile category flow</td>
+<td>Stream graph</td>
+<td>Engaging peaks/troughs and contribution</td>
+<td>Weak for exact comparisons</td>
+</tr>
+<tr>
+<td>Compare exactly two observations</td>
+<td>Slope chart</td>
+<td>Directly encodes direction, magnitude, ranking</td>
+<td>Hides intervening variation</td>
+</tr>
+<tr>
+<td>Show compact row-level trend</td>
+<td>Sparkline</td>
+<td>Extremely space-efficient</td>
+<td>Not for exact values by itself</td>
+</tr>
+<tr>
+<td>Compare recurring months/weeks across years</td>
+<td>Cycle chart</td>
+<td>Separates seasonality from long-term pattern</td>
+<td>More specialized and less familiar</td>
+</tr>
+<tr>
+<td>Emphasize cyclical metaphor</td>
+<td>Circular line</td>
+<td>Compact, visually cyclical</td>
+<td>Less perceptually precise</td>
+</tr>
+<tr>
+<td>Show project scheduling and duration</td>
+<td>Gantt</td>
+<td>Start, end, overlap, progress</td>
+<td>Can become dense with tasks/encodings</td>
+</tr>
+<tr>
+<td>Show chronological events</td>
+<td>Timeline</td>
+<td>Clear event order</td>
+<td>Not suited to branching logic</td>
+</tr>
+<tr>
+<td>Show process/decisions</td>
+<td>Flow chart</td>
+<td>Explicit next steps and paths</td>
+<td>Not inherently tied to calendar time</td>
+</tr>
+<tr>
+<td>Show radial category areas</td>
+<td>Nightingale</td>
+<td>Visually striking part-to-whole display</td>
+<td>Outer area exaggeration</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="19-likely-exam-questions-and-model-points">19. Likely exam questions and model points</h2>
+<h3 id="why-must-bar-charts-begin-at-zero-but-line-charts-need-not">Why must bar charts begin at zero but line charts need not?</h3>
+<p>Bars encode value by length from a baseline, so truncation distorts proportional comparison. Lines are primarily read by position, direction, shape, and slope; a nonzero range can reveal meaningful variation. Nevertheless, line-scale selection changes perceived drama and must match the analytical goal honestly.</p>
+<h3 id="how-should-many-line-series-be-handled">How should many line series be handled?</h3>
+<p>There is no fixed limit. Use start with gray, distinctive color and thickness for key lines, selective annotation, or small multiples. Choose according to purpose and audience.</p>
+<h3 id="what-is-the-line-gap-illusion-and-its-remedy">What is the line-gap illusion and its remedy?</h3>
+<p>Readers may misjudge differences between two curves. If their separation is the subject, directly plot the difference/distance series rather than making the reader infer it.</p>
+<h3 id="why-avoid-a-dual-axis-line-chart">Why avoid a dual-axis line chart?</h3>
+<p>Separate axes create ambiguity and allow independent scales to manufacture crossings or apparent correlations. Prefer aligned small multiples or transform both series to a common index/percentage-change metric, while acknowledging the loss of level information.</p>
+<h3 id="why-does-order-matter-in-a-stacked-area-chart">Why does order matter in a stacked area chart?</h3>
+<p>Only the bottom category has a stable baseline. Moving a series there improves its readability and increases perceptual prominence. Order should follow the story, not a supposedly universal rule.</p>
+<h3 id="when-is-a-slope-chart-best-and-when-is-it-risky">When is a slope chart best, and when is it risky?</h3>
+<p>It is best for exactly two points/conditions when direction, magnitude, and ranking changes matter. It is risky when intervening movement could change the interpretation.</p>
+<h3 id="why-are-sparklines-not-substitutes-for-full-charts">Why are sparklines not substitutes for full charts?</h3>
+<p>They provide compact trend summaries, not exact lookup. Pair them with endpoint values or a detailed chart when precision matters.</p>
+<h3 id="timeline-versus-flow-chart">Timeline versus flow chart?</h3>
+<p>A timeline answers <strong>when</strong>; a flow chart answers <strong>what next/under what condition</strong>.</p>
+<h3 id="what-makes-a-stream-graph-distinctive">What makes a stream graph distinctive?</h3>
+<p>Its stacked layers are smoothed and centered around a baseline, producing a flowing organic form suited to volatile series and overall contribution patterns, but not precise comparisons.</p>
+<h3 id="what-are-the-two-parts-of-an-excel-gauge-chart">What are the two parts of an Excel gauge chart?</h3>
+<p>A doughnut dial and a pie-chart needle, each totaling 200 with an invisible lower half, rotated to 270°.</p>
+<hr>
+<h2 id="20-rapid-revision-checklist">20. Rapid revision checklist</h2>
+<h3 id="concepts">Concepts</h3>
+<ul>
+<li>[ ] Match chart type to analytical question, never to novelty.</li>
+<li>[ ] Bar = category comparison; line = movement/trend over time.</li>
+<li>[ ] A simple number or table can be better than a chart for very little data.</li>
+<li>[ ] Preattentive cues include color, thickness, size, orientation, and position.</li>
+<li>[ ] Cognitive load is the mental effort required to decode a visualization.</li>
+</ul>
+<h3 id="line-charts">Line charts</h3>
+<ul>
+<li>[ ] No fixed maximum number of lines; purpose governs density.</li>
+<li>[ ] Use start with gray, color, thickness, or small multiples.</li>
+<li>[ ] A zero baseline is not compulsory, but the scale changes perceived drama.</li>
+<li>[ ] Highlight zero when positive/negative distinction matters.</li>
+<li>[ ] Plot the gap directly when the gap between curves is the story.</li>
+<li>[ ] Use markers for few/subtle/important points; circles avoid directional implication.</li>
+<li>[ ] Signal missing data with dashes, breaks, and notes.</li>
+<li>[ ] Avoid dual axes; use separated aligned charts or common-base percentage change.</li>
+</ul>
+<h3 id="specialized-charts">Specialized charts</h3>
+<ul>
+<li>[ ] Circular line = strong cyclical metaphor, weaker precision.</li>
+<li>[ ] Slope = exactly two points; upward increase, downward decrease, steepness magnitude.</li>
+<li>[ ] Slope charts can hide intermediate reversals.</li>
+<li>[ ] Sparkline = word-sized pattern summary, not precise lookup.</li>
+<li>[ ] Cycle chart = recurring months/weeks across years; strong seasonality.</li>
+<li>[ ] Area chart = filled line, more visual weight, zero baseline.</li>
+<li>[ ] Multiple independent areas can hide one another; line chart is often better.</li>
+<li>[ ] Stacked area = total plus composition; 100% form = distribution only.</li>
+<li>[ ] Stacked order changes accuracy and attention; only bottom layer has a stable baseline.</li>
+<li>[ ] Stream graph = smooth centered stacked layers, volatile peaks/troughs, visually engaging.</li>
+<li>[ ] Gantt = tasks vertically, time horizontally, bar position and length show schedule/duration.</li>
+<li>[ ] Timeline answers “when”; flow chart answers “what next.”</li>
+<li>[ ] Nightingale charts exaggerate outer sectors because area grows with radius squared.</li>
+</ul>
+<h3 id="ethics-and-design">Ethics and design</h3>
+<ul>
+<li>[ ] Never truncate bar axes or break a large bar to make small bars readable.</li>
+<li>[ ] Show a full-scale chart plus a clearly identified zoom when magnitudes differ greatly.</li>
+<li>[ ] Do not call a correct extreme value an error simply because it is large.</li>
+<li>[ ] Avoid chart scale or encoding choices that invite false correlation or importance.</li>
+<li>[ ] Include only the detail, notes, icons, and labels the audience needs.</li>
+</ul>
+<h3 id="gauge-chart-procedure">Gauge-chart procedure</h3>
+<ul>
+<li>[ ] Dial series: blank 100 + visible bands totaling 100.</li>
+<li>[ ] Needle series: percentage + needle width + formula blank = 200.</li>
+<li>[ ] Formula blank: <code>200 − percentage − needle</code>.</li>
+<li>[ ] Combo chart: doughnut dial + pie needle.</li>
+<li>[ ] Set first-slice angle of both to 270°.</li>
+<li>[ ] Hide lower-half blanks with No Fill.</li>
+<li>[ ] Color dial bands; make only the needle black.</li>
+<li>[ ] Change percentage and confirm dynamic movement.</li>
+</ul>
+<hr>
+<h2 id="one-minute-memory-map">One-minute memory map</h2>
+<p><strong>Compare categories → bar/column (zero baseline).</strong><br>
+<strong>Show a trend → line (zero not compulsory).</strong><br>
+<strong>Two endpoints → slope.</strong><br>
+<strong>Tiny inline trend → sparkline.</strong><br>
+<strong>Seasonal recurrence → cycle chart.</strong><br>
+<strong>Magnitude with fill → area (zero baseline).</strong><br>
+<strong>Total plus composition → stacked area.</strong><br>
+<strong>Organic volatile composition → stream graph.</strong><br>
+<strong>Task duration/progress → Gantt.</strong><br>
+<strong>Chronological events → timeline.</strong><br>
+<strong>Process and decisions → flow chart.</strong><br>
+<strong>Dashboard speedometer → doughnut dial + pie needle.</strong></p>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<h3 id="line-versus-area-and-the-continuity-connection">Line versus area and the continuity connection</h3>
+<p>A <strong>line chart</strong> prioritizes direction, rate of change, turning points, and seasonal patterns across ordered time. Its connected path invokes Gestalt continuity. Do not connect unordered categories merely to create a line: that falsely implies sequence.</p>
+<p>An <strong>area chart</strong> adds filled magnitude and suits cumulative volume or total magnitude. The fill adds emphasis but reduces exact-comparison precision. In stacked area charts, only the bottom series has a stable baseline; middle and upper series are hard to compare.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Better default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Precise trend comparison</td>
+<td>Line chart</td>
+</tr>
+<tr>
+<td>Trend plus cumulative magnitude</td>
+<td>Area chart</td>
+</tr>
+<tr>
+<td>Multiple independent time series</td>
+<td>Lines or small multiples</td>
+</tr>
+<tr>
+<td>Total plus changing composition</td>
+<td>Stacked area, with baseline caveat</td>
+</tr>
+<tr>
+<td>Unordered category comparison</td>
+<td>Bar/dot chart, not line</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Cross-week link:</strong> Week 2 explains continuity; Week 11 applies line charts in dashboards; Week 14 uses ordered flow in explanatory storytelling.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-3.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 3: Visualizing and Comparing Categories</span>
+      </a>
+      <a href="week-5.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 5: Distribution and Relationship Visualizations</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

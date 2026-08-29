@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Visualization · Week 5 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Visualization</span>
+      <span class="brand-title">Week 5</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html" selected>Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Data Visualization, Visual Perception, and Preattentive Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Visual Perception, Better Visualization, Form–Function, Tables and…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Visualizing and Comparing Categories
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Charts That Show Change Over Time
+      </a>
+      <a class="is-active" href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Distribution and Relationship Visualizations
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Data Visualization: Exhaustive Exam Notes
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Data Visualization with Python, Jupyter, Python Basics, and Chart…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Python Data Visualization, Matplotlib Plotting, Interpretation, and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Data Visualization with Matplotlib, Seaborn, and Jupyter Notebook
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Exam-Focused Study Notes
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Seaborn, Matplotlib, Heatmaps, Styling, and Dashboard Design
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Dashboards, Dashboard Design, Grammar of Graphics, and Matplotlib
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Dashboard Design, Visual Encoding, Matplotlib, and Dashboard Analytics
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Storytelling with Data
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Storytelling with Data: Exam-Focused Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Visualization · Week 5</p>
+        <h1 class="page-title">Distribution and Relationship Visualizations</h1>
+        <p class="page-meta">Week 5 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#scope-and-central-idea">Scope and central idea</a></li>
+      <li><a href="#1-data-distribution">1. Data distribution</a></li>
+      <li><a href="#2-histogram">2. Histogram</a></li>
+      <li><a href="#3-pareto-chart">3. Pareto chart</a></li>
+      <li><a href="#4-pyramid-chart">4. Pyramid chart</a></li>
+      <li><a href="#5-statistical-uncertainty">5. Statistical uncertainty</a></li>
+      <li><a href="#6-error-bars">6. Error bars</a></li>
+      <li><a href="#7-confidence-interval-charts-and-fan-charts">7. Confidence-interval charts and fan charts</a></li>
+      <li><a href="#8-box-and-whisker-plot-box-plot">8. Box-and-whisker plot (box plot)</a></li>
+      <li><a href="#9-candlestick-chart">9. Candlestick chart</a></li>
+      <li><a href="#10-violin-plot">10. Violin plot</a></li>
+      <li><a href="#11-wilkinson-dot-plot-and-wheat-plot">11. Wilkinson dot plot and wheat plot</a></li>
+      <li><a href="#12-stem-and-leaf-plot">12. Stem-and-leaf plot</a></li>
+      <li><a href="#13-ridgeline-plot-and-zephyr-marketing-case">13. Ridgeline plot and Zephyr Marketing case</a></li>
+      <li><a href="#14-charts-that-show-relationships">14. Charts that show relationships</a></li>
+      <li><a href="#15-scatter-plot-correlation-and-causation">15. Scatter plot, correlation, and causation</a></li>
+      <li><a href="#16-bubble-chart">16. Bubble chart</a></li>
+      <li><a href="#17-radar-chart">17. Radar chart</a></li>
+      <li><a href="#18-correlation-matrix-and-correlation-matrix-graph">18. Correlation matrix and correlation-matrix graph</a></li>
+      <li><a href="#19-network-diagrams">19. Network diagrams</a></li>
+      <li><a href="#20-tree-diagrams-and-word-trees">20. Tree diagrams and word trees</a></li>
+      <li><a href="#21-table-lens-and-in-cell-graphics-quiz-material">21. Table Lens and in-cell graphics (quiz material)</a></li>
+      <li><a href="#22-live-class-review-gauge-chart">22. Live-class review: gauge chart</a></li>
+      <li><a href="#23-live-class-review-line-and-area-charts">23. Live-class review: line and area charts</a></li>
+      <li><a href="#24-data-preparation-before-visualization">24. Data preparation before visualization</a></li>
+      <li><a href="#25-high-value-comparisons">25. High-value comparisons</a></li>
+      <li><a href="#26-likely-exam-questions-and-answer-frames">26. Likely exam questions and answer frames</a></li>
+      <li><a href="#27-rapid-revision-and-checklist">27. Rapid revision and checklist</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="scope-and-central-idea">Scope and central idea</h2>
+<p>Week 5 studies how to select, construct, read, and explain charts that show:</p>
+<ol>
+<li><strong>Distributions</strong> — how values are spread over a range.</li>
+<li><strong>Statistical uncertainty</strong> — variability, randomness, measurement limitations, or plausible ranges around estimates.</li>
+<li><strong>Relationships</strong> — association among variables, people, groups, events, or activities.</li>
+<li><strong>Changes over time</strong> — reviewed and extended in the live class through line- and area-chart practice.</li>
+</ol>
+<p>The recurring design principle is:</p>
+<blockquote>
+<p>Choose the visual according to the analytical purpose and audience. Preserve important statistical information while minimizing cognitive effort. Unfamiliar charts are not inherently bad, but they require good labels, annotations, active titles, and explanation.</p>
+</blockquote>
+<p>Planning, testing, and conceptualizing a visualization improves communication. A statistically sophisticated audience may understand confidence intervals or variance without definitions; a general audience needs those concepts defined and annotated. This is not “dumbing down” the analysis—it is teaching readers how to read it.</p>
+<hr>
+<h2 id="1-data-distribution">1. Data distribution</h2>
+<h3 id="definition-and-importance">Definition and importance</h3>
+<p>A <strong>data distribution</strong> describes how values in a dataset are spread across a range: whether they are widely dispersed, clustered, or otherwise arranged. It reveals:</p>
+<ul>
+<li>concentration and spread;</li>
+<li>patterns and trends;</li>
+<li>gaps;</li>
+<li>extreme or unusual values;</li>
+<li>anomalies and outliers;</li>
+<li>skewness and number of peaks.</li>
+</ul>
+<p>Visualizing a distribution helps people interpret data quickly, identify outliers, choose suitable statistical tests, and make informed decisions. Mean and median alone are insufficient: two very different distributions can have the same mean and median while having very different spreads and structures.</p>
+<h3 id="classification-used-in-the-lectures">Classification used in the lectures</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Broad purpose</th>
+<th>Subtype</th>
+<th>Charts named in the course</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Show the distribution itself</td>
+<td>Aggregate/summary</td>
+<td>Histogram, Pareto chart, pyramid chart</td>
+</tr>
+<tr>
+<td>Show uncertainty</td>
+<td>Summary measures rather than every observation</td>
+<td>Error bars, confidence-interval chart, fan chart, box-and-whisker plot, candlestick chart, violin plot</td>
+</tr>
+<tr>
+<td>Show uncertainty/distribution while displaying observations</td>
+<td>Individual data visible</td>
+<td>Wilkinson dot plot, wheat plot, stem-and-leaf plot</td>
+</tr>
+</tbody>
+</table></div>
+<p>This is the instructor’s course classification. Some charts can reasonably belong to more than one family. A candlestick chart, for example, can be treated as a time-series or comparison chart, but it is placed here because it visually resembles a box plot.</p>
+<hr>
+<h2 id="2-histogram">2. Histogram</h2>
+<h3 id="definition-and-construction">Definition and construction</h3>
+<p>A <strong>histogram</strong> is the most basic distribution visual. It is a specialized bar chart showing the tabulated frequency of numerical data across distinct intervals called <strong>bins</strong>.</p>
+<ul>
+<li>The complete sample is divided into bins.</li>
+<li>The horizontal axis contains value intervals.</li>
+<li>The height of each bar is the number (or frequency) of observations in that interval.</li>
+<li>The bars collectively represent the total distribution.</li>
+</ul>
+<p>Unlike a categorical bar chart, a histogram groups a continuous numerical variable into intervals. It summarizes the observations and therefore does <strong>not</strong> retain each exact value.</p>
+<h3 id="what-it-reveals">What it reveals</h3>
+<p>A histogram can show:</p>
+<ul>
+<li>where values are concentrated;</li>
+<li>where extreme values lie;</li>
+<li>gaps in the observations;</li>
+<li>unusual values;</li>
+<li>spread;</li>
+<li>skewness;</li>
+<li>one, two, or multiple peaks;</li>
+<li>approximate overall shape.</li>
+</ul>
+<h3 id="bin-width-a-critical-design-decision">Bin width: a critical design decision</h3>
+<ul>
+<li><strong>Bins too wide:</strong> important patterns, peaks, gaps, or subgroups may be hidden.</li>
+<li><strong>Bins too narrow:</strong> local noise dominates and the overall shape becomes hard to perceive.</li>
+<li>There is no single universally correct number of bins. Statistical rules based on square roots, logarithms, cube roots, and related calculations can help select a useful width.</li>
+<li>The same data can appear very different as bin width changes; the lecture illustrates widths declining from about 20,000 to 2,000.</li>
+</ul>
+<p><strong>Exam point:</strong> bin selection changes the apparent story without changing the underlying data.</p>
+<h3 id="distribution-shapes">Distribution shapes</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Shape</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Right-skewed (positively skewed)</strong></td>
+<td>Most observations are toward the left/lower values, with a tail extending right.</td>
+</tr>
+<tr>
+<td><strong>Left-skewed (negatively skewed)</strong></td>
+<td>Most observations are toward the right/higher values, with a tail extending left.</td>
+</tr>
+<tr>
+<td><strong>Bimodal</strong></td>
+<td>Two distinct peaks.</td>
+</tr>
+<tr>
+<td><strong>Multimodal</strong></td>
+<td>More than two peaks.</td>
+</tr>
+<tr>
+<td><strong>Symmetric</strong></td>
+<td>Roughly equal numbers/patterns on either side of a central value.</td>
+</tr>
+<tr>
+<td><strong>Uniform</strong></td>
+<td>Observations are roughly equally frequent across the range.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The direction of skew is named for the <strong>tail</strong>, not the side containing most observations.</p>
+<h3 id="comparing-histograms">Comparing histograms</h3>
+<p>Multiple histograms can be layered or superimposed:</p>
+<ul>
+<li>Two translucent column layers let both remain visible, but overlap can still obscure values.</li>
+<li>Combining one column series with one line series avoids transparency, but treats the groups unequally.</li>
+<li>In a column-plus-line design, the line intersects the middle of each bin while a column spans the whole interval—small but conceptually important.</li>
+</ul>
+<p><strong>Lecture example:</strong> fictitious male and female earnings. The histograms support comparison of the maximum earnings, counts near the maximum, and how quickly frequencies increase toward the peak. In the example, men have a higher maximum earning and more observations at the maximum; the rise toward maximum earnings is described as faster for women.</p>
+<h3 id="strengths-and-limitations">Strengths and limitations</h3>
+<p><strong>Strengths:</strong> familiar, compact, suitable for large datasets, good for shape and frequency.</p>
+<p><strong>Limitations:</strong> loses exact observations and subgroup identity. An aggregate histogram combining several groups can create apparent multimodality even when each group is individually unimodal.</p>
+<h3 id="practical-use-case">Practical use case</h3>
+<p>For customer ages, place age intervals on the x-axis and customer counts on the y-axis. This quickly shows common age bands, tails, gaps, and multiple market segments. If regional identity matters, do not rely only on one combined histogram; add faceting, small multiples, or another comparative distribution chart.</p>
+<hr>
+<h2 id="3-pareto-chart">3. Pareto chart</h2>
+<h3 id="definition">Definition</h3>
+<p>A <strong>Pareto chart</strong>, named after Italian engineer and economist <strong>Vilfredo Pareto</strong>, is a descending bar chart combined with a cumulative-percentage line. It is based on the <strong>Pareto Principle/80–20 rule</strong>: approximately 80% of effects may arise from 20% of causes.</p>
+<h3 id="components">Components</h3>
+<ol>
+<li><strong>Bars:</strong> categories such as defect types, complaints, issues, or failure causes, sorted from highest to lowest frequency/importance.</li>
+<li><strong>Bar height:</strong> count or value for each category.</li>
+<li><strong>Cumulative line:</strong> cumulative share/percentage of the total as categories are added.</li>
+</ol>
+<h3 id="purpose-and-applications">Purpose and applications</h3>
+<p>It identifies the <strong>critical few</strong> causes contributing most of the outcome, allowing attention and resources to be prioritized. Common uses include quality control, problem solving, failure analysis, complaint management, and decision-making.</p>
+<p><strong>Lecture example:</strong> eight failure causes. Bars show failures attributable to each cause; the line shows how their shares accumulate toward the annual total.</p>
+<p><strong>Exam contrast:</strong> a histogram groups a quantitative range into bins; a Pareto chart ranks categorical causes and adds a cumulative line.</p>
+<hr>
+<h2 id="4-pyramid-chart">4. Pyramid chart</h2>
+<h3 id="definition-and-structure">Definition and structure</h3>
+<p>A <strong>pyramid chart</strong> represents hierarchy, distribution, or proportion in a structured pyramid shape:</p>
+<ul>
+<li>the broad base represents the largest, most significant, or most numerous category;</li>
+<li>progressively smaller levels are stacked above it;</li>
+<li>the top represents the smallest or least significant category.</li>
+</ul>
+<h3 id="uses">Uses</h3>
+<ul>
+<li><strong>Population pyramid:</strong> demographic age groups, often with male and female distributions placed symmetrically around a common vertical baseline.</li>
+<li><strong>Organizational hierarchy:</strong> large workforce at the base and senior leadership at the top.</li>
+<li><strong>Proportional funnel/hierarchy:</strong> total customers at the base, then repeat buyers, then top spenders.</li>
+<li>Business and educational communication of relative contributions or levels.</li>
+</ul>
+<h3 id="advantages-and-design-notes">Advantages and design notes</h3>
+<ul>
+<li>Gives a rapid view of proportions, hierarchy, or trends.</li>
+<li>Simplifies complex relationships.</li>
+<li>Makes contributions to a whole easy to compare.</li>
+<li>Can be symmetrical or single-sided.</li>
+<li>A common baseline supports overall shape comparison.</li>
+<li>Different colors for two groups are optional, not defining.</li>
+</ul>
+<hr>
+<h2 id="5-statistical-uncertainty">5. Statistical uncertainty</h2>
+<h3 id="meaning">Meaning</h3>
+<p>Statistical uncertainty is inherent in analysis because of variability, randomness, sampling, and limitations in measurement. Exact-looking numbers can hide this uncertainty. Visualizing uncertainty communicates:</p>
+<ul>
+<li>reliability of an estimate;</li>
+<li>range and distribution;</li>
+<li>variability;</li>
+<li>potential error;</li>
+<li>the difference between a point estimate and plausible alternatives.</li>
+</ul>
+<p>It adds transparency, reduces overconfidence and misinterpretation, and improves decisions.</p>
+<hr>
+<h2 id="6-error-bars">6. Error bars</h2>
+<h3 id="definition-2">Definition</h3>
+<p><strong>Error bars</strong> graphically show a margin of error or variability around a central value. They are not normally a complete visualization by themselves; they are added to bar or line charts.</p>
+<p>Their endpoints can represent different quantities:</p>
+<ul>
+<li>standard deviation;</li>
+<li>standard error;</li>
+<li>a confidence interval (often 95%);</li>
+<li>percentiles;</li>
+<li>a fixed amount;</li>
+<li>another stated dispersion measure.</li>
+</ul>
+<h3 id="essential-caveat">Essential caveat</h3>
+<p>Because identical-looking bars can encode different statistics, they can easily confuse readers. Always state what the interval represents, preferably directly on the chart and otherwise in a chart note.</p>
+<p><strong>Lecture example:</strong> bars show average class marks; the error-bar endpoints show the 25th and 75th percentiles. The slide deliberately uses thicker-than-necessary error bars only for emphasis.</p>
+<p>Although error bars are familiar and require relatively little data, studies suggest people are not always good at judging uncertainty from them.</p>
+<hr>
+<h2 id="7-confidence-interval-charts-and-fan-charts">7. Confidence-interval charts and fan charts</h2>
+<h3 id="confidence-interval-chart">Confidence-interval chart</h3>
+<p>A <strong>confidence-interval chart</strong> uses lines or shaded regions to show the range/amount of uncertainty around an estimate. A thicker central line represents the estimate of interest.</p>
+<p>A confidence interval is a statistically derived plausible range for a parameter; it is not an absolute guarantee that a particular realized value must lie within it.</p>
+<h3 id="fan-chart">Fan chart</h3>
+<p>A <strong>fan chart</strong> is a specialized confidence-interval chart in which nested interval bands change shade or saturation according to probability/confidence.</p>
+<ul>
+<li>The central estimate is a dark line.</li>
+<li>Values/bands nearest it are darkest.</li>
+<li>Bands become lighter moving outward, signaling decreasing certainty.</li>
+<li>The bands often widen with time.</li>
+</ul>
+<p>Fan charts are particularly valuable for forecasts because long-term estimates usually become less precise. The widening “fan” communicates increasing uncertainty as the forecast horizon grows.</p>
+<p><strong>Exam contrast:</strong> an ordinary confidence interval may show one range; a fan chart uses multiple graded bands and is especially effective for uncertainty over time.</p>
+<hr>
+<h2 id="8-box-and-whisker-plot-box-plot">8. Box-and-whisker plot (box plot)</h2>
+<h3 id="definition-3">Definition</h3>
+<p>The box plot was originally called a <strong>schematic plot</strong> and was developed by <strong>John W. Tukey</strong>. It compactly summarizes selected positions/percentiles of a distribution with a box, lines, whiskers, and optional outlier points. It shows less detail than a histogram or violin plot but is excellent for compact comparisons.</p>
+<h3 id="standard-elements">Standard elements</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Median line</td>
+<td>Horizontal line within the box; the 50th percentile.</td>
+</tr>
+<tr>
+<td>Lower hinge</td>
+<td>Q1, normally the 25th percentile.</td>
+</tr>
+<tr>
+<td>Upper hinge</td>
+<td>Q3, normally the 75th percentile.</td>
+</tr>
+<tr>
+<td>Box</td>
+<td>Middle 50% of the observations.</td>
+</tr>
+<tr>
+<td>IQR</td>
+<td><code>Q3 − Q1</code>; the height/length of the box.</td>
+</tr>
+<tr>
+<td>Whiskers</td>
+<td>Connect hinges to chosen non-outlying observations/percentiles.</td>
+</tr>
+<tr>
+<td>Outliers</td>
+<td>Individual observations beyond the whisker rule, shown separately as dots.</td>
+</tr>
+</tbody>
+</table></div>
+<p>A widespread convention sets fences at:</p>
+<ul>
+<li>lower fence: <code>Q1 − 1.5 × IQR</code></li>
+<li>upper fence: <code>Q3 + 1.5 × IQR</code></li>
+</ul>
+<p>The whiskers normally extend to the most extreme observations within those fences; observations beyond are plotted as outliers. The transcript sometimes describes the extremes loosely as minimum/maximum, but emphasizes that conventions can vary.</p>
+<h3 id="variations-and-caveat">Variations and caveat</h3>
+<p>Creators may instead use:</p>
+<ul>
+<li>actual minimum and maximum;</li>
+<li>1st and 99th percentiles;</li>
+<li>other fixed percentile endpoints;</li>
+<li>semi-quartile-based/asymmetric whiskers;</li>
+<li>additional markers for mean or standard deviation;</li>
+<li>varying line thicknesses and colors.</li>
+</ul>
+<p>Therefore, determine the convention and label it when necessary.</p>
+<h3 id="lecture-example">Lecture example</h3>
+<p>For entity A: higher extreme = 19, lower extreme = 10, median = 14.5, mean = 14.5, Q3 = 18, and Q1 = 11. The learner is asked to infer the same properties for B from the shown plot.</p>
+<h3 id="ordering-comparative-box-plots">Ordering comparative box plots</h3>
+<p>When comparing categories, sorting plots by <strong>median</strong> often reveals ranking of typical values more effectively than alphabetical ordering. The median is robust to very high or low outliers and is therefore a useful center for comparison.</p>
+<hr>
+<h2 id="9-candlestick-chart">9. Candlestick chart</h2>
+<h3 id="purpose-and-components">Purpose and components</h3>
+<p>A <strong>candlestick/stock chart</strong> shows price change over a trading period for a stock, bond, security, or commodity.</p>
+<ul>
+<li><strong>Real body:</strong> gap between opening and closing price.</li>
+<li><strong>Upper and lower wick/shadow:</strong> high and low during the period.</li>
+<li>Together these encode <strong>Open, High, Low, Close (OHLC)</strong>.</li>
+<li>Time is on the horizontal axis.</li>
+<li>Color distinguishes a rise (<code>close &gt; open</code>) from a fall (<code>close &lt; open</code>).</li>
+</ul>
+<p>Icons or symbols can additionally mark high and low values.</p>
+<h3 id="limitation-and-classification">Limitation and classification</h3>
+<p>A candlestick records selected points, not every intraday movement or full price volatility. It resembles a box plot but encodes different semantics:</p>
+<ul>
+<li>box plot: distribution percentiles and outliers;</li>
+<li>candlestick: OHLC values over time.</li>
+</ul>
+<p><strong>Lecture example:</strong> prices rise on January 1 and 2, fall on January 3, rise January 4, fall January 5, then close at 140 after touching an intraday high of 150.</p>
+<h3 id="trading-volume">Trading volume</h3>
+<p>Volume gives context about participation and conviction:</p>
+<ul>
+<li>large price move + high volume may indicate stronger market conviction;</li>
+<li>large price move + low volume may be a weaker signal.</li>
+</ul>
+<p>Volume supports interpretation; it does <strong>not</strong> guarantee or predict future prices.</p>
+<hr>
+<h2 id="10-violin-plot">10. Violin plot</h2>
+<h3 id="definition-and-reading">Definition and reading</h3>
+<p>A <strong>violin plot</strong> displays the shape of the entire distribution rather than only selected percentiles.</p>
+<ul>
+<li>Thick sections indicate many observations/high density.</li>
+<li>Thin sections indicate fewer observations/low density.</li>
+<li>It may include a central average marker and error bars for standard deviation.</li>
+<li>Kernel-density estimates are mirrored around an invisible centerline, producing the violin shape.</li>
+</ul>
+<h3 id="kernel-density">Kernel density</h3>
+<p><strong>Kernel-density estimation (KDE)</strong> estimates a variable’s distribution in a smooth, continuous-looking form. Conceptually:</p>
+<blockquote>
+<p>A histogram summarizes density along one axis; a violin plot mirrors a smoothed version of that histogram on both sides of a central axis.</p>
+</blockquote>
+<h3 id="comparison-and-limitations">Comparison and limitations</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Box plot</th>
+<th>Violin plot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Selected summary positions</td>
+<td>Entire estimated density shape</td>
+</tr>
+<tr>
+<td>Compact and familiar</td>
+<td>Richer shape information</td>
+</tr>
+<tr>
+<td>Easier to create/read</td>
+<td>Harder to create and may require explanation</td>
+</tr>
+</tbody>
+</table></div>
+<p>Modern Excel includes box plots by default but not violin plots. The instructor’s example was manually built by calculating probability densities using functions such as <code>BYROW</code>, <code>LAMBDA</code>, a normal-distribution function, and <code>SUM</code>, followed by a graphical solution.</p>
+<hr>
+<h2 id="11-wilkinson-dot-plot-and-wheat-plot">11. Wilkinson dot plot and wheat plot</h2>
+<h3 id="wilkinson-dot-plot">Wilkinson dot plot</h3>
+<p>Named for <strong>Leland Wilkinson</strong>, author of <em>The Grammar of Graphics</em>. Wilkinson called it a <strong>histo-dot plot</strong>, but “Wilkinson dot plot” became the standard name.</p>
+<ul>
+<li>Like a histogram, observations are grouped into bins.</li>
+<li>Instead of one bar encoding the bin count, one dot represents each observation.</li>
+<li>Dots are stacked in a single column within each bin.</li>
+<li>Dot count conveys frequency.</li>
+<li>The horizontal dot position represents the bin, not necessarily the exact observation value.</li>
+</ul>
+<p>It can be understood as a blend of histogram, scatter plot, and unit chart.</p>
+<h3 id="wheat-plot">Wheat plot</h3>
+<p>The <strong>wheat plot</strong>, developed and named by <strong>Stephen Few</strong>, enriches the Wilkinson dot plot:</p>
+<ul>
+<li>it retains histogram-like bins;</li>
+<li>every dot represents an observation;</li>
+<li>a dot’s relative horizontal position within its bin preserves its actual value;</li>
+<li>dots stack vertically to show frequency.</li>
+</ul>
+<p>Few’s key point is that the curved/relative alignment of dots is meaningful because it displays within-bin distribution.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Wilkinson dot plot</th>
+<th>Wheat plot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exact horizontal value is lost within the bin</td>
+<td>Exact/relative value is preserved within the bin</td>
+</tr>
+<tr>
+<td>Dot count shows frequency</td>
+<td>Dot count and within-bin positions show frequency and value</td>
+</tr>
+</tbody>
+</table></div>
+<p>Both become crowded when too many observations overlap. A wheat plot may look unusual initially, but its reading logic is quick to learn.</p>
+<hr>
+<h2 id="12-stem-and-leaf-plot">12. Stem-and-leaf plot</h2>
+<h3 id="construction">Construction</h3>
+<p>A <strong>stem-and-leaf plot</strong> is essentially a table preserving place value and every observation.</p>
+<ul>
+<li>The <strong>stem</strong> contains the leading digit(s).</li>
+<li>The <strong>leaf</strong> contains the final digit(s).</li>
+<li>Values are arranged in ascending order.</li>
+</ul>
+<p>Example: <code>4 | 1 3 7</code> represents 41, 43, and 47 when stems are tens and leaves are units.</p>
+<p>The length of each leaf row provides a basic impression of frequency and distribution.</p>
+<h3 id="uses-and-limitations">Uses and limitations</h3>
+<p>Useful for:</p>
+<ul>
+<li>small or moderately sized datasets;</li>
+<li>retaining exact values;</li>
+<li>seeing spread, clusters, and outliers;</li>
+<li>reference tools such as transport schedules;</li>
+<li><strong>back-to-back stem-and-leaf plots</strong>, where two groups share stems and leaves extend left/right for comparison.</li>
+</ul>
+<p>Not well suited to complex or very large data. Because it is table-like, it loses some immediate perceptual advantages of conventional graphics. It is not intended to establish causation, forecast, or show chronological trends.</p>
+<hr>
+<h2 id="13-ridgeline-plot-and-zephyr-marketing-case">13. Ridgeline plot and Zephyr Marketing case</h2>
+<h3 id="ridgeline-plot">Ridgeline plot</h3>
+<p>A <strong>ridgeline plot</strong> vertically stacks density curves to compare many distributions across groups, regions, categories, or periods. It emphasizes shape, peak position, skew, and spread while retaining group identity. A narrow distribution implies greater consistency; a wide distribution implies greater variability.</p>
+<p>It offers more comparative depth than one aggregate histogram but can be unfamiliar, dense, or cluttered for nontechnical readers. The case material notes that points may be added, although the standard emphasis is distribution shape rather than exact observations.</p>
+<h3 id="zephyr-marketing-case">Zephyr Marketing case</h3>
+<p>Dataset: <strong>260 weekly email-open-rate records</strong> for <strong>five campaigns</strong> across one year.</p>
+<p>Open rate:</p>
+<p><code>Open rate = Emails opened / Emails delivered × 100</code></p>
+<p>Questions include typical open rate, clustering, skew, unusual weeks, campaign consistency, and campaign-level performance.</p>
+<h4 id="alternatives">Alternatives</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Benefit</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A: aggregate histogram only</td>
+<td>Simple overview, executive-friendly, shows common ranges and overall shape</td>
+<td>Hides campaign identity, variability, and group-specific peaks</td>
+</tr>
+<tr>
+<td>B: all-campaign ridgeline only</td>
+<td>Shows each campaign’s shape, spread, peaks, consistency, and relative performance</td>
+<td>Higher cognitive load; overlaps/density may overwhelm clients</td>
+</tr>
+<tr>
+<td>C: histogram, then simplified ridgeline</td>
+<td>Combines context with focused detail</td>
+<td>Requires careful campaign selection and annotation</td>
+</tr>
+</tbody>
+</table></div>
+<p>Option C is strongest for a mixed audience because it uses <strong>progressive disclosure</strong>: overview first, detail second. Show two representative campaigns—such as best versus worst or most consistent versus most variable—and annotate the important differences.</p>
+<p><strong>Aggregation risk:</strong> if Campaign A clusters at 15% and Campaign B at 35%, a combined histogram appears bimodal. It cannot tell the reader whether one campaign has two modes or two campaigns have different centers.</p>
+<p><strong>Decision rule:</strong> if simplicity is the priority, use a histogram; if campaign comparison is the priority, use ridgelines; if both matter, sequence them.</p>
+<p>The business goal is not visual novelty but defensible decisions, such as reallocating marketing budget. A technically accurate chart that stakeholders cannot understand can reduce trust and lead to poor decisions.</p>
+<hr>
+<h2 id="14-charts-that-show-relationships">14. Charts that show relationships</h2>
+<p>These charts display association among two or more variables or among individuals/groups. They may communicate correlation shifts and, only with sufficient evidence, causal relationships.</p>
+<h3 id="hans-rosling-gapminder-illustration">Hans Rosling/Gapminder illustration</h3>
+<p>The instructor strongly recommends Hans Rosling’s bubble-chart presentation. It contrasts <strong>mindset</strong> with <strong>dataset</strong>. A common outdated mindset associated Western countries with long lives/small families and developing countries with short lives/large families. Data on life expectancy and family size showed that this pattern described the world many decades earlier but no longer captured current reality. Effective visualization can therefore correct an erroneous mental model.</p>
+<hr>
+<h2 id="15-scatter-plot-correlation-and-causation">15. Scatter plot, correlation, and causation</h2>
+<h3 id="scatter-plot">Scatter plot</h3>
+<p>A <strong>scatter plot</strong> places one quantitative variable on the horizontal axis and another on the vertical axis; each observation becomes a point in the resulting coordinate space. It reveals whether two variables appear associated.</p>
+<ul>
+<li>Axes do not necessarily have to begin at zero, particularly when zero is impossible or irrelevant.</li>
+<li>A regression/trend/<strong>line of best fit</strong> can show the general direction of a relationship.</li>
+<li>Despite its familiarity, one cited study found only about 60% of people correctly interpreted a scatter plot. Never assume universal understanding.</li>
+</ul>
+<h3 id="correlation">Correlation</h3>
+<p><strong>Correlation</strong> measures the strength and direction of the <strong>linear association</strong> between two quantitative variables. The common measure is the <strong>Pearson correlation coefficient</strong>, typically written <code>r</code> for a sample or <code>ρ</code> (rho) for a population.</p>
+<p><code>−1 ≤ correlation coefficient ≤ +1</code></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Coefficient/shape</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+1</code></td>
+<td>Perfect positive linear association</td>
+</tr>
+<tr>
+<td>Positive</td>
+<td>As one variable increases, the other tends to increase</td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td>No linear correlation (a nonlinear relationship may still exist)</td>
+</tr>
+<tr>
+<td>Negative</td>
+<td>As one variable increases, the other tends to decrease</td>
+</tr>
+<tr>
+<td><code>−1</code></td>
+<td>Perfect negative linear association</td>
+</tr>
+</tbody>
+</table></div>
+<p>Magnitude indicates strength; sign indicates direction.</p>
+<h3 id="correlation-is-not-causation">Correlation is not causation</h3>
+<p>Association alone cannot establish a causal mechanism. Ice-cream consumption and outdoor temperature rise together, but eating ice cream does not cause hot weather; temperature influences consumption. Confounding factors, coincidence, reverse causality, or common causes may explain correlation.</p>
+<p><strong>Instructor emphasis:</strong> clearly understand relationships before presenting them. The less contextual knowledge available, the safer claim is correlation rather than causation.</p>
+<hr>
+<h2 id="16-bubble-chart">16. Bubble chart</h2>
+<p>A <strong>bubble plot/bubble scatter plot</strong> extends a scatter plot with a third variable encoded by mark size.</p>
+<ul>
+<li>x-position = first variable;</li>
+<li>y-position = second variable;</li>
+<li>bubble area = third variable;</li>
+<li>color may encode a category or fourth distinction.</li>
+</ul>
+<p>Circles must be scaled by <strong>area</strong>, not radius; otherwise magnitude is visually distorted. Other shapes are possible if they do not distort perception.</p>
+<h3 id="design-guidance">Design guidance</h3>
+<ul>
+<li>Label both axes and, if helpful, show the direction of increase.</li>
+<li>Use text, color, or enclosing shapes to identify important points/groups.</li>
+<li>If bubble size shows population, color might show region.</li>
+<li>For a focal region, color it and gray out the others.</li>
+<li>Annotate carefully because bubble plots are less familiar.</li>
+</ul>
+<p>Humans are not very accurate at estimating quantities from circle areas. Too many bubbles, colors, or overlaps reduce clarity; transparency may help but does not remove the basic perceptual limitation.</p>
+<hr>
+<h2 id="17-radar-chart">17. Radar chart</h2>
+<p>A <strong>radar chart</strong>, also called a <strong>spider</strong> or <strong>star chart</strong>, shows several variables compactly on axes radiating from a common center. Data points on the axes are connected by lines or filled areas. The axes may be visible or suppressed.</p>
+<p><strong>Lecture example:</strong> six economic-wellbeing indicators for four countries, with the overall average shown by a black dotted line.</p>
+<h3 id="strengths">Strengths</h3>
+<ul>
+<li>Compact multiple-variable comparison.</li>
+<li>Can make unusual profiles/outliers visible.</li>
+<li>Shows each entity relative to a benchmark/average.</li>
+</ul>
+<h3 id="problems-and-remedy">Problems and remedy</h3>
+<ul>
+<li>More series create crossing lines and perceptual difficulty.</li>
+<li>Equal values can cause lines to bunch together at one axis.</li>
+<li>Small multiples—one radar chart per country with the same average reference—reduce crossings and clarify each country, but occupy more space and make direct cross-country comparison less immediate.</li>
+</ul>
+<hr>
+<h2 id="18-correlation-matrix-and-correlation-matrix-graph">18. Correlation matrix and correlation-matrix graph</h2>
+<p>A <strong>correlation matrix</strong> is a table listing variables on both axes; each cell contains a relationship measure, commonly Pearson’s coefficient.</p>
+<p>A <strong>correlation-matrix graph</strong> replaces or supplements numbers with visual encodings such as:</p>
+<ul>
+<li>color gradients/heat-map cells;</li>
+<li>varying circle size;</li>
+<li>circle color;</li>
+<li>numbers plus color.</li>
+</ul>
+<p>It is related to a heat map and adds visual structure to a table.</p>
+<h3 id="trade-offs">Trade-offs</h3>
+<ul>
+<li>Numeric matrix: precise detail, slower pattern detection.</li>
+<li>Heat-map matrix: strong/positive/negative patterns become prominent, but exact values are lost.</li>
+<li>Numbers plus color: preserves both, but can become busy; make numbers unobtrusive.</li>
+<li>Circle size/color: compact, but people judge circle area poorly and too many colors confuse.</li>
+</ul>
+<p>Remove redundant clutter where possible. In a migration origin–destination matrix, the diagonal can represent same-country “migration,” naturally zero. Leaving those zero cells blank may be cleaner. (For a conventional correlation matrix, self-correlations are normally 1; this migration example is a flow matrix despite the transcript’s loose terminology.)</p>
+<hr>
+<h2 id="19-network-diagrams">19. Network diagrams</h2>
+<h3 id="definition-and-vocabulary">Definition and vocabulary</h3>
+<p>Network diagrams show connections within/across groups and systems. They are called <strong>diagrams</strong> because layout is not always determined solely by mathematics or data; visual clarity strongly affects node placement.</p>
+<ul>
+<li><strong>Node/vertex:</strong> an individual person, object, event, or observation.</li>
+<li><strong>Edge/link:</strong> a line connecting nodes to show a relationship.</li>
+<li>Arrow direction can show movement or asymmetric relation.</li>
+<li>Edge thickness and sometimes node size can encode magnitude/strength.</li>
+<li>Nodes may be circles, icons, symbols, or pictures.</li>
+</ul>
+<p>Avoid crossing edges and overlapping nodes. Seek meaningful/uniform edge lengths, symmetry, and visual harmony where possible.</p>
+<h3 id="four-types">Four types</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Meaning</th>
+<th>Lecture example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Undirected, unweighted</td>
+<td>Connection has no direction or strength</td>
+<td>Friendship network among Suresh, Ramesh, Abha, Shyam, and Radha</td>
+</tr>
+<tr>
+<td>Undirected, weighted</td>
+<td>No direction; edge thickness/value shows strength</td>
+<td>Researchers connected by coauthorship; thickness = number of joint papers</td>
+</tr>
+<tr>
+<td>Directed, unweighted</td>
+<td>Arrow direction matters; all links treated equally</td>
+<td>Social-media following relationships</td>
+</tr>
+<tr>
+<td>Directed, weighted</td>
+<td>Both direction and magnitude matter</td>
+<td>Migration: arrow = origin/destination; thickness = number of migrants</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="20-tree-diagrams-and-word-trees">20. Tree diagrams and word trees</h2>
+<h3 id="tree-diagram">Tree diagram</h3>
+<p>A <strong>tree diagram</strong> shows hierarchical levels, like an organization chart.</p>
+<ul>
+<li><strong>Root:</strong> initial/top node and ancestor of all others.</li>
+<li><strong>Parent:</strong> a node with child nodes.</li>
+<li><strong>Child:</strong> node descended from a parent.</li>
+<li><strong>Branch/link:</strong> connecting line.</li>
+<li><strong>Leaf:</strong> terminal node with no children.</li>
+</ul>
+<p>Trees can branch downward, upward (e.g., some family trees), or horizontally. Orientation should serve the purpose rather than follow a rigid convention.</p>
+<p>Design matters especially where little quantitative data determines visual form. A designation-only organization chart may suit a formal board presentation; one containing employee photographs/icons may suit marketing or a website.</p>
+<h3 id="word-tree">Word tree</h3>
+<p>Developed by <strong>Martin Wattenberg and Fernanda Viégas (2007)</strong>, a <strong>word tree</strong> visualizes contexts in which a word occurs in a book, article, or passage.</p>
+<ul>
+<li>Usually arranged horizontally.</li>
+<li>A selected word branches into phrases/contexts.</li>
+<li>Words act as nodes.</li>
+<li>Word size can encode occurrence frequency.</li>
+</ul>
+<p><strong>Lecture example:</strong> “cats” branches into phrases such as “cats are better than dogs/hamsters/kittens” and “cats eat fish/mice/lizard,” revealing themes and recurrent wording.</p>
+<p>Trees can show qualitative or quantitative structure, from country–region taxonomies to the human genome. A tree may be less compact/efficient than a network but easier for an audience to navigate. The central trade-off across relationship charts is among <strong>clarity, order, and compactness</strong>.</p>
+<hr>
+<h2 id="21-table-lens-and-in-cell-graphics-quiz-material">21. Table Lens and in-cell graphics (quiz material)</h2>
+<p>A <strong>Table Lens</strong> combines the precision of a table with miniature graphics that reveal patterns. Exact values remain available while in-cell glyphs—such as sparklines or tiny candlesticks—support rapid scanning.</p>
+<h3 id="in-cell-candlestick-procedure">In-cell candlestick procedure</h3>
+<ol>
+<li>Retain starting and ending period columns.</li>
+<li>Retrieve the detailed period/year values.</li>
+<li>Compute Open, High, Low, and Close.</li>
+<li>Insert the miniature candlestick glyph into the table.</li>
+</ol>
+<p>The blurry Excel box plot mentioned in the tutorial was an <strong>intermediate construction graphic</strong>, not the final Table Lens and not a violin plot.</p>
+<hr>
+<h2 id="22-live-class-review-gauge-chart">22. Live-class review: gauge chart</h2>
+<p>A <strong>gauge chart</strong> is built by combining:</p>
+<ul>
+<li>a <strong>doughnut chart</strong> for the stationary dial/background; and</li>
+<li>a <strong>pie chart</strong> for the moving needle.</li>
+</ul>
+<p>Changing the completion percentage or measured value moves the pointer while the gauge stays fixed. To align a semicircular gauge correctly, rotate the first sector to <strong>270°</strong> (equivalent to −90°) so it starts at the lower-left rather than at the standard top position.</p>
+<p><strong>Instructor emphasis:</strong> actually build it in Excel. One successful practice attempt makes later reconstruction far easier than passively rewatching a lecture.</p>
+<hr>
+<h2 id="23-live-class-review-line-and-area-charts">23. Live-class review: line and area charts</h2>
+<p>Line and area charts show change over time. One axis is time and the other is the changing measure. A line chart is the preferred basic chart for a trend.</p>
+<h3 id="six-key-line-chart-principles">Six key line-chart principles</h3>
+<ol>
+<li><strong>Many lines are technically possible.</strong> Unlike clustered columns, multiple thin lines can fit, though perception still limits usefulness.</li>
+<li><strong>A line-chart axis need not begin at zero.</strong> The key visual cue is slope/trend, not bar length. Starting at zero is allowed, but not compulsory.</li>
+<li><strong>Beware the illusion of the gap between lines.</strong> If the actual message is the difference between two series, compute and plot that difference directly.</li>
+<li><strong>Use data markers to identify important values.</strong> Do so judiciously.</li>
+<li><strong>Signal missing data visually.</strong> Never silently bridge or omit missing periods.</li>
+<li><strong>Avoid dual-axis line charts.</strong> Different scales make values, trends, and intersections ambiguous or misleading.</li>
+</ol>
+<h3 id="multiple-series-and-start-gray">Multiple series and “start gray”</h3>
+<p>There is no strict numerical limit on lines, but coloring every country/series creates a mess. Begin with all series in gray, then color only the <strong>hero lines/points</strong> needed for the message.</p>
+<blockquote>
+<p>Every element should earn its color.</p>
+</blockquote>
+<p>Examples:</p>
+<ul>
+<li>To focus on convergence of US and China GDP, color those series.</li>
+<li>To discuss India approaching major economies, color India and the relevant comparison countries.</li>
+</ul>
+<p>An alternative is small multiples/subplots. When splitting series, keep axis ranges identical so slopes and growth rates remain comparable.</p>
+<h3 id="zero-baseline-line-versus-bar">Zero baseline: line versus bar</h3>
+<ul>
+<li>Bar/column charts compare lengths/heights and should start at zero; truncation exaggerates or diminishes differences and may be unethical.</li>
+<li>Line charts compare direction and slope, so a meaningful nonzero baseline is permitted. If all values are around 10,000, starting near 9,000 can be reasonable.</li>
+<li><strong>Exception:</strong> when positive and negative values occur, emphasize the zero line. Readers otherwise tend to assume the bottom boundary is zero and may miss the crucial transition across zero.</li>
+</ul>
+<h3 id="do-not-ask-readers-to-judge-gaps">Do not ask readers to judge gaps</h3>
+<p>If the question is how exports differ from imports, do not merely plot both absolute series and ask readers to infer vertical separation. Calculate <code>exports − imports</code> (or the clearly defined desired difference) and plot that series. Use the two absolute trends only when the analytical question genuinely concerns their separate trajectories.</p>
+<h3 id="data-markers-and-labels">Data markers and labels</h3>
+<ul>
+<li>Mark all observations only when useful and uncluttered.</li>
+<li>Prefer marking specific story points: the beginning of a COVID-related tourist decline or the start of a stock-price rise.</li>
+<li>Add an annotation explaining the event.</li>
+<li>In Excel, selecting labels/markers once selects the whole series; selecting the desired item again isolates it, allowing one marker/label to be deleted.</li>
+<li>A <strong>data label</strong> is the displayed value associated with a data point; a <strong>data marker</strong> is the graphical symbol at the point.</li>
+</ul>
+<h3 id="missing-data">Missing data</h3>
+<p>Do not delete the period, connect a solid line as though the value exists, or pretend the year never occurred. Use:</p>
+<ul>
+<li>a dashed connecting segment;</li>
+<li>a visible break/unconnected segment; and/or</li>
+<li>an annotation that the value is unavailable.</li>
+</ul>
+<p>This is both a clarity and integrity requirement.</p>
+<h3 id="why-dual-axes-mislead">Why dual axes mislead</h3>
+<p>The live example plots housing debt and unemployment with different left/right y-scales. Problems:</p>
+<ul>
+<li>readers may not know which scale belongs to which series;</li>
+<li>different ranges independently magnify/compress the lines;</li>
+<li>trends are not genuinely comparable;</li>
+<li>apparent intersections do not indicate equality and may occur only because of arbitrary scaling;</li>
+<li>the graph effectively compares “apples with oranges.”</li>
+</ul>
+<p>The embedded quiz permits only a narrow exception: two axes expressing the <strong>same data through a fixed unit conversion</strong>, such as °C and °F. Two unrelated measures on independently chosen scales should not share a dual-axis chart.</p>
+<h3 id="ethics-reminder">Ethics reminder</h3>
+<p>Visualization choices can mislead deliberately or accidentally. Unethical practices include truncating bar baselines, skipping a poor-performing year, hiding missing data, shrinking labels so omissions go unnoticed, and manipulating scales to exaggerate or suppress change. Starting bars at zero and visibly acknowledging missing periods are ethical as well as technical practices.</p>
+<hr>
+<h2 id="24-data-preparation-before-visualization">24. Data preparation before visualization</h2>
+<p>The instructor’s sequence is: <strong>clean first, understand second, analyze/visualize third</strong>.</p>
+<h3 id="step-1-clean-the-data">Step 1: clean the data</h3>
+<p>Check:</p>
+<ul>
+<li>whether numeric-looking entries are genuinely stored as numbers;</li>
+<li>embedded characters, commas, and leading/trailing/internal spaces;</li>
+<li>correct data types;</li>
+<li>impossible values (e.g., 10.5 indivisible units sold);</li>
+<li>uniform capitalization/case for names and categories;</li>
+<li>gaps, blanks, and missing records;</li>
+<li>whether zero means a genuine measured zero or an incorrectly encoded missing value;</li>
+<li>time completeness (e.g., every year from 2010–2026).</li>
+</ul>
+<h3 id="step-2-understand-the-data">Step 2: understand the data</h3>
+<p>Inspect:</p>
+<ul>
+<li>column/attribute names and meanings;</li>
+<li>what each row represents;</li>
+<li>data types;</li>
+<li>head and tail rows;</li>
+<li>minimum and maximum;</li>
+<li>mean, median, and mode;</li>
+<li>Q1 and Q3;</li>
+<li>standard deviation;</li>
+<li>spread and distribution shape.</li>
+</ul>
+<p>This initial descriptive/exploratory examination determines which distribution visual is appropriate and exposes quality problems before conclusions are drawn.</p>
+<hr>
+<h2 id="25-high-value-comparisons">25. High-value comparisons</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Need</th>
+<th>Prefer</th>
+<th>Why / warning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Overall continuous distribution</td>
+<td>Histogram</td>
+<td>Familiar summary; exact values lost</td>
+</tr>
+<tr>
+<td>Distribution plus exact observations</td>
+<td>Wheat plot</td>
+<td>Retains within-bin positions; can overlap</td>
+</tr>
+<tr>
+<td>Compact comparison across groups</td>
+<td>Box plot</td>
+<td>Excellent summary; hides density shape</td>
+</tr>
+<tr>
+<td>Entire smoothed shape</td>
+<td>Violin plot</td>
+<td>Rich but less familiar and harder to create</td>
+</tr>
+<tr>
+<td>Several group distributions</td>
+<td>Ridgeline</td>
+<td>Preserves group identity; may overload readers</td>
+</tr>
+<tr>
+<td>Preserve all values in a small dataset</td>
+<td>Stem-and-leaf</td>
+<td>Exact and interpretable; poor scalability</td>
+</tr>
+<tr>
+<td>Prioritize categorical causes</td>
+<td>Pareto</td>
+<td>Descending causes plus cumulative impact</td>
+</tr>
+<tr>
+<td>Forecast uncertainty over time</td>
+<td>Fan chart</td>
+<td>Graded bands convey widening uncertainty</td>
+</tr>
+<tr>
+<td>OHLC financial movement</td>
+<td>Candlestick</td>
+<td>Selected price points, not full intraday activity</td>
+</tr>
+<tr>
+<td>Two-variable association</td>
+<td>Scatter plot</td>
+<td>Shows correlation; does not prove causation</td>
+</tr>
+<tr>
+<td>Add a third quantitative variable</td>
+<td>Bubble plot</td>
+<td>Size encodes it; area judgments are imprecise</td>
+</tr>
+<tr>
+<td>Multi-attribute profile</td>
+<td>Radar</td>
+<td>Compact; crossings and bunching hurt perception</td>
+</tr>
+<tr>
+<td>Many pairwise correlations</td>
+<td>Correlation matrix</td>
+<td>Numerical precision or heat-map pattern trade-off</td>
+</tr>
+<tr>
+<td>General connections</td>
+<td>Network</td>
+<td>Flexible and compact; can become tangled</td>
+</tr>
+<tr>
+<td>Strict hierarchy</td>
+<td>Tree</td>
+<td>Easy navigation of parent–child structure</td>
+</tr>
+<tr>
+<td>Exact table plus rapid patterns</td>
+<td>Table Lens</td>
+<td>Combines precision with small graphics</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="26-likely-exam-questions-and-answer-frames">26. Likely exam questions and answer frames</h2>
+<h3 id="explain-how-bin-width-affects-a-histogram">“Explain how bin width affects a histogram.”</h3>
+<p>Define bins, then state that wide bins hide structure while narrow bins emphasize noise and obscure overall shape. Conclude that different widths can change the apparent message and that statistical rules assist but do not provide one universally correct choice.</p>
+<h3 id="differentiate-a-wilkinson-dot-plot-and-a-wheat-plot">“Differentiate a Wilkinson dot plot and a wheat plot.”</h3>
+<p>Both use bins and dots for individual observations. Wilkinson stacks dots at a common bin position, so exact within-bin values are lost; wheat preserves each dot’s relative horizontal value within the bin.</p>
+<h3 id="explain-a-box-plot">“Explain a box plot.”</h3>
+<p>Define median, Q1, Q3, IQR, whiskers, and outliers; give the common <code>1.5 × IQR</code> rule; mention that conventions vary and must be stated.</p>
+<h3 id="why-is-correlation-not-causation">“Why is correlation not causation?”</h3>
+<p>Define correlation as linear association, explain coefficient sign/magnitude, then discuss confounding/coincidence/reverse direction using the ice-cream–temperature example.</p>
+<h3 id="classify-network-diagrams">“Classify network diagrams.”</h3>
+<p>Use the two binary dimensions—directed/undirected and weighted/unweighted—and provide one example for each of the four combinations.</p>
+<h3 id="why-avoid-dual-axes">“Why avoid dual axes?”</h3>
+<p>Explain scale ambiguity, artificial slope/intersection, poor comparability, and misleading appearance. State the narrow same-data/unit-conversion exception.</p>
+<h3 id="how-should-a-visual-be-adapted-for-its-audience">“How should a visual be adapted for its audience?”</h3>
+<p>Do not omit valid statistical content merely because it is unfamiliar. Add definitions, direct labels, annotations, active titles, and pointers. For mixed audiences, use progressive disclosure: simple overview first, targeted detail second.</p>
+<hr>
+<h2 id="27-rapid-revision-and-checklist">27. Rapid revision and checklist</h2>
+<h3 id="definitions-to-know">Definitions to know</h3>
+<ul>
+<li>[ ] Distribution = arrangement/spread of values across a range.</li>
+<li>[ ] Bin = numerical interval in a histogram.</li>
+<li>[ ] Right skew = mass left, tail right; left skew = mass right, tail left.</li>
+<li>[ ] IQR = <code>Q3 − Q1</code>.</li>
+<li>[ ] Correlation range = <code>−1</code> to <code>+1</code>; zero means no <strong>linear</strong> association.</li>
+<li>[ ] Node/vertex = network entity; edge/link = relationship.</li>
+<li>[ ] Root, parent, child, branch, and leaf terminology for trees.</li>
+<li>[ ] OHLC = Open, High, Low, Close.</li>
+</ul>
+<h3 id="chart-distinctions">Chart distinctions</h3>
+<ul>
+<li>[ ] Histogram summarizes bins; wheat retains exact/relative values.</li>
+<li>[ ] Box plot shows selected summaries; violin shows the full estimated density.</li>
+<li>[ ] Pareto ranks causes; histogram bins a quantitative variable.</li>
+<li>[ ] Candlestick resembles a box plot but represents price movements, not quartiles.</li>
+<li>[ ] Scatter uses two quantitative variables; bubble adds a third through area.</li>
+<li>[ ] Matrix emphasizes all pairwise relationships; network emphasizes entities and links; tree emphasizes hierarchy.</li>
+</ul>
+<h3 id="design-and-ethics">Design and ethics</h3>
+<ul>
+<li>[ ] Label what every error bar represents.</li>
+<li>[ ] Match complexity and explanation to the audience.</li>
+<li>[ ] Start bar/column charts at zero.</li>
+<li>[ ] Line charts may use a nonzero baseline, but highlight zero when signs change.</li>
+<li>[ ] Start multiple lines in gray; color only hero series—each element must earn color.</li>
+<li>[ ] Keep identical scales across line-chart small multiples.</li>
+<li>[ ] Plot a computed difference when difference is the message.</li>
+<li>[ ] Mark only story-relevant points; annotate their meaning.</li>
+<li>[ ] Show missing data with a gap, dash, and/or note.</li>
+<li>[ ] Avoid unrelated dual axes.</li>
+<li>[ ] Scale bubbles by area, not radius.</li>
+<li>[ ] Reduce clutter, including redundant matrix diagonal entries where appropriate.</li>
+<li>[ ] Never infer causation from correlation alone.</li>
+</ul>
+<h3 id="data-analysis-sequence">Data-analysis sequence</h3>
+<ul>
+<li>[ ] Clean values, types, spaces, case, impossible entries, and missing/zero coding.</li>
+<li>[ ] Inspect rows, columns, head/tail, and meanings.</li>
+<li>[ ] Calculate min, max, mean, median, mode, Q1, Q3, standard deviation, and spread.</li>
+<li>[ ] Inspect distribution shape before selecting a chart or statistical test.</li>
+</ul>
+<h3 id="instructor-emphasis-recap">Instructor-emphasis recap</h3>
+<ul>
+<li>[ ] Practice building the Excel gauge; it combines doughnut dial + pie needle and uses a 270° start angle.</li>
+<li>[ ] Know your audience and teach readers how to read unfamiliar charts.</li>
+<li>[ ] Visual integrity is an ethical responsibility.</li>
+<li>[ ] For Zephyr: histogram for overview, ridgeline for campaign detail, and both in sequence for a mixed audience.</li>
+<li>[ ] The best chart is the chart that answers the intended question clearly—not the one that merely displays the most information.</li>
+</ul>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<h3 id="histogram-recap-and-correction">Histogram recap and correction</h3>
+<p>A histogram answers: Where is the centre? How wide is the spread? Is the distribution skewed? Are there multiple peaks or gaps? How frequent are values in each range? Adjacent bars represent ordered numeric bins for one quantitative variable. A histogram is not for unrelated categories.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Histogram</th>
+<th>Bar chart</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data</td>
+<td>Continuous quantitative</td>
+<td>Categorical</td>
+</tr>
+<tr>
+<td>Bars</td>
+<td>Touching numeric bins</td>
+<td>Separated categories</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>Inherent numeric order</td>
+<td>Task-dependent order</td>
+</tr>
+<tr>
+<td>Question</td>
+<td>Distribution/frequency</td>
+<td>Magnitude/ranking</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="review-selection-sequence">Review selection sequence</h3>
+<p>State the business question → classify variables → choose the encoding → check perceptual precision, labels, scale, audience, and accessibility → state the chart limitation. For Zephyr, use a histogram for overview and a ridgeline for campaign detail, sequenced through progressive disclosure for a mixed audience.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-4.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 4: Charts That Show Change Over Time</span>
+      </a>
+      <a href="week-6.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 6: Data Visualization: Exhaustive Exam Notes</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,2884 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Project · Week 9 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Project</span>
+      <span class="brand-title">Week 9</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html" selected>Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Business Research Process, Research Problems, and Research Approaches
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Research Planning, Theoretical Frameworks, Measurement, and Data…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Systematic Literature Review (SLR), Literature Review Methods,…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Theoretical Frameworks, Variables, Moderators, Mediators, and…
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Measurement Models, Scale Development, Reflective vs Formative…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Questionnaire Design, Data Collection Methods, Measurement Scales,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Research Inference, Sampling, Regression, Correlation, Mediation,…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Business Research Process — Management Problems, Research Problems,…
+      </a>
+      <a class="is-active" href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Jamovi Data Management, Measurement Levels, Scale Construction,…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Jamovi Factor Analysis, EFA, CFA, SEM, Validity Assessment, and…
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Regression, Mediation, Moderation, t-tests, ANOVA, and Descriptive…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Regression Modelling, Controls, Composite Indices, Moderation, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Time Series, Forecasting, and Panel Data
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        PLS-SEM — Measurement Quality, Structural Models, Controls,…
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Logistic Regression — Model Fit, Interpretation, Prediction, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Project · Week 9</p>
+        <h1 class="page-title">Jamovi Data Management, Measurement Levels, Scale Construction, Regression, CFA, and Research Analysis Workflow</h1>
+        <p class="page-meta">Week 9 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#purpose">Purpose</a></li>
+      <li><a href="#example">Example</a></li>
+      <li><a href="#definition">Definition</a></li>
+      <li><a href="#definition-2">Definition</a></li>
+      <li><a href="#definition-3">Definition</a></li>
+      <li><a href="#definition-4">Definition</a></li>
+      <li><a href="#categorizing-items-too-early">Categorizing items too early</a></li>
+      <li><a href="#normalizing-before-combining">Normalizing before combining</a></li>
+      <li><a href="#correlation">Correlation</a></li>
+      <li><a href="#regression">Regression</a></li>
+      <li><a href="#measurement-model">Measurement Model</a></li>
+      <li><a href="#structural-model">Structural Model</a></li>
+      <li><a href="#reliability">Reliability</a></li>
+      <li><a href="#validity">Validity</a></li>
+      <li><a href="#purpose-2">Purpose</a></li>
+      <li><a href="#exploratory-factor-analysis-efa">Exploratory Factor Analysis (EFA)</a></li>
+      <li><a href="#confirmatory-factor-analysis-cfa">Confirmatory Factor Analysis (CFA)</a></li>
+      <li><a href="#step-1-import-data">Step 1: Import Data</a></li>
+      <li><a href="#step-2-check-variables">Step 2: Check Variables</a></li>
+      <li><a href="#step-3-clean-data">Step 3: Clean Data</a></li>
+      <li><a href="#step-4-create-composite-scores">Step 4: Create Composite Scores</a></li>
+      <li><a href="#step-5-check-reliability">Step 5: Check Reliability</a></li>
+      <li><a href="#step-6-validate-constructs">Step 6: Validate Constructs</a></li>
+      <li><a href="#step-7-test-relationships">Step 7: Test Relationships</a></li>
+      <li><a href="#misconception-1">Misconception 1:</a></li>
+      <li><a href="#misconception-2">Misconception 2:</a></li>
+      <li><a href="#misconception-3">Misconception 3:</a></li>
+      <li><a href="#misconception-4">Misconception 4:</a></li>
+      <li><a href="#misconception-5">Misconception 5:</a></li>
+      <li><a href="#data-management">Data Management</a></li>
+      <li><a href="#variable-types">Variable Types</a></li>
+      <li><a href="#scale-construction">Scale Construction</a></li>
+      <li><a href="#regression-2">Regression</a></li>
+      <li><a href="#measurement-vs-structural-models">Measurement vs Structural Models</a></li>
+      <li><a href="#cfa">CFA</a></li>
+      <li><a href="#case-study">Case Study</a></li>
+      <li><a href="#definition-5">Definition</a></li>
+      <li><a href="#definition-6">Definition</a></li>
+      <li><a href="#definition-7">Definition</a></li>
+      <li><a href="#integer">Integer</a></li>
+      <li><a href="#decimal">Decimal</a></li>
+      <li><a href="#definition-8">Definition</a></li>
+      <li><a href="#definition-9">Definition</a></li>
+      <li><a href="#purpose-3">Purpose</a></li>
+      <li><a href="#purpose-4">Purpose</a></li>
+      <li><a href="#between-group-variation">Between-group variation</a></li>
+      <li><a href="#within-group-variation">Within-group variation</a></li>
+      <li><a href="#purpose-5">Purpose</a></li>
+      <li><a href="#purpose-6">Purpose</a></li>
+      <li><a href="#purpose-7">Purpose</a></li>
+      <li><a href="#simultaneous-assessment">Simultaneous assessment</a></li>
+      <li><a href="#control-variables">Control variables</a></li>
+      <li><a href="#prediction">Prediction</a></li>
+      <li><a href="#purpose-8">Purpose</a></li>
+      <li><a href="#if-the-question-is">If the question is:</a></li>
+      <li><a href="#if-the-question-is-2">If the question is:</a></li>
+      <li><a href="#if-the-question-is-3">If the question is:</a></li>
+      <li><a href="#if-the-question-is-4">If the question is:</a></li>
+      <li><a href="#misconception-1-2">Misconception 1:</a></li>
+      <li><a href="#misconception-2-2">Misconception 2:</a></li>
+      <li><a href="#misconception-3-2">Misconception 3:</a></li>
+      <li><a href="#misconception-4-2">Misconception 4:</a></li>
+      <li><a href="#misconception-5-2">Misconception 5:</a></li>
+      <li><a href="#step-1-prepare-data">Step 1: Prepare Data</a></li>
+      <li><a href="#step-2-explore-data">Step 2: Explore Data</a></li>
+      <li><a href="#step-3-test-differences">Step 3: Test Differences</a></li>
+      <li><a href="#step-4-build-predictive-models">Step 4: Build Predictive Models</a></li>
+      <li><a href="#step-5-check-diagnostics">Step 5: Check Diagnostics</a></li>
+      <li><a href="#step-6-interpret-results">Step 6: Interpret Results</a></li>
+      <li><a href="#variable-setup">Variable Setup</a></li>
+      <li><a href="#descriptive-statistics">Descriptive Statistics</a></li>
+      <li><a href="#hypothesis-testing">Hypothesis Testing</a></li>
+      <li><a href="#predictive-analysis">Predictive Analysis</a></li>
+      <li><a href="#advanced-analysis">Advanced Analysis</a></li>
+      <li><a href="#variable-name">Variable Name</a></li>
+      <li><a href="#measurement-level">Measurement Level</a></li>
+      <li><a href="#data-type">Data Type</a></li>
+      <li><a href="#definition-10">Definition</a></li>
+      <li><a href="#gender">Gender</a></li>
+      <li><a href="#shoppref">ShopPref</a></li>
+      <li><a href="#definition-11">Definition</a></li>
+      <li><a href="#definition-12">Definition</a></li>
+      <li><a href="#definition-13">Definition</a></li>
+      <li><a href="#definition-14">Definition</a></li>
+      <li><a href="#purpose-9">Purpose</a></li>
+      <li><a href="#purpose-10">Purpose</a></li>
+      <li><a href="#purpose-11">Purpose</a></li>
+      <li><a href="#purpose-12">Purpose</a></li>
+      <li><a href="#main-effects">Main effects</a></li>
+      <li><a href="#interaction-effect">Interaction effect</a></li>
+      <li><a href="#purpose-13">Purpose</a></li>
+      <li><a href="#simultaneous-analysis">Simultaneous analysis</a></li>
+      <li><a href="#control-variables-2">Control variables</a></li>
+      <li><a href="#unique-contribution">Unique contribution</a></li>
+      <li><a href="#satisfaction-variable">Satisfaction variable</a></li>
+      <li><a href="#shoppref-variable">ShopPref variable</a></li>
+      <li><a href="#missing-values">Missing values</a></li>
+      <li><a href="#misconception-1-3">Misconception 1:</a></li>
+      <li><a href="#misconception-2-3">Misconception 2:</a></li>
+      <li><a href="#misconception-3-3">Misconception 3:</a></li>
+      <li><a href="#misconception-4-3">Misconception 4:</a></li>
+      <li><a href="#misconception-5-3">Misconception 5:</a></li>
+      <li><a href="#step-1-prepare-data-2">Step 1: Prepare Data</a></li>
+      <li><a href="#step-2-explore-data-2">Step 2: Explore Data</a></li>
+      <li><a href="#step-3-test-differences-2">Step 3: Test Differences</a></li>
+      <li><a href="#step-4-build-predictive-models-2">Step 4: Build Predictive Models</a></li>
+      <li><a href="#step-5-advanced-designs">Step 5: Advanced Designs</a></li>
+      <li><a href="#step-6-diagnose-and-interpret">Step 6: Diagnose and Interpret</a></li>
+      <li><a href="#variable-types-2">Variable Types</a></li>
+      <li><a href="#tests">Tests</a></li>
+      <li><a href="#core-principle-3">Core Principle</a></li>
+      <li><a href="#a-practical-examples-and-use-cases">A. Practical examples and use cases</a></li>
+      <li><a href="#b-high-yield-distinctions">B. High-yield distinctions</a></li>
+      <li><a href="#c-likely-exam-questions-and-answer-cues">C. Likely exam questions and answer cues</a></li>
+      <li><a href="#d-rapid-revision-traps">D. Rapid revision traps</a></li>
+      <li><a href="#e-source-coverage-checklist">E. Source-coverage checklist</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h1 id="1-overview"><strong>1. Overview</strong></h1>
+<p>This quiz focuses on preparing and analysing survey data using <strong>Jamovi</strong>.</p>
+<p>The key concepts covered are:</p>
+<ul>
+<li>Data cleaning and validation.  </li>
+<li>Measurement levels.  </li>
+<li>Coding categorical variables.  </li>
+<li>Missing values.  </li>
+<li>Composite scale creation.  </li>
+<li>Regression variable setup.  </li>
+<li>Jamovi interface.  </li>
+<li>Measurement models vs structural models.  </li>
+<li>Confirmatory Factor Analysis (CFA).  </li>
+<li>SEM tools.</li>
+</ul>
+<p>The overall principle:</p>
+<blockquote>
+<p>Correct statistical analysis depends on correctly prepared data and correctly specified variables.</p>
+</blockquote>
+<hr>
+<h1 id="2-data-management-before-analysis"><strong>2. Data Management Before Analysis</strong></h1>
+<p>Before performing any statistical test, researchers must ensure that:</p>
+<ol>
+<li>Data values are valid.  </li>
+<li>Variables are correctly coded.  </li>
+<li>Missing values are identified.  </li>
+<li>Measurement levels are correctly assigned.</li>
+</ol>
+<hr>
+<h1 id="3-data-screening-and-cleaning"><strong>3. Data Screening and Cleaning</strong></h1>
+<h2 id="purpose"><strong>Purpose</strong></h2>
+<p>Data screening identifies errors before analysis.</p>
+<p>Examples:</p>
+<ul>
+<li>Impossible values.  </li>
+<li>Incorrect coding.  </li>
+<li>Missing entries.  </li>
+<li>Outliers.</li>
+</ul>
+<hr>
+<h2 id="example"><strong>Example</strong></h2>
+<p>A Likert item uses:</p>
+<p>1 \= Strongly Disagree<br>
+5 \= Strongly Agree</p>
+<p>A respondent enters:</p>
+<p>50</p>
+<p>This is invalid.</p>
+<hr>
+<p>Correct action:</p>
+<ol>
+<li>Identify the error.  </li>
+<li>Check the original response.  </li>
+<li>Correct the value or mark it as missing.</li>
+</ol>
+<hr>
+<p>Incorrect approaches:</p>
+<h3 id="creating-averages-immediately"><strong>Creating averages immediately</strong></h3>
+<p>Why incorrect?</p>
+<p>The invalid value should be fixed before scale construction.</p>
+<hr>
+<h3 id="standardizing-values"><strong>Standardizing values</strong></h3>
+<p>Why incorrect?</p>
+<p>A z-score transformation does not correct incorrect data.</p>
+<hr>
+<h3 id="recode-during-import"><strong>Recode during import</strong></h3>
+<p>Why incorrect?</p>
+<p>The problem is not coding format but invalid data.</p>
+<hr>
+<h1 id="4-variable-measurement-levels-in-jamovi"><strong>4. Variable Measurement Levels in Jamovi</strong></h1>
+<p>Jamovi requires researchers to define how variables should be treated.</p>
+<p>Common measurement levels:</p>
+<ol>
+<li>Nominal.  </li>
+<li>Ordinal.  </li>
+<li>Continuous.  </li>
+<li>ID.</li>
+</ol>
+<hr>
+<h1 id="5-nominal-variables"><strong>5. Nominal Variables</strong></h1>
+<h2 id="definition"><strong>Definition</strong></h2>
+<p>Categories with no natural order.</p>
+<hr>
+<p>Examples:</p>
+<ul>
+<li>Gender.  </li>
+<li>Department.  </li>
+<li>Country.  </li>
+<li>Customer type.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Gender:</p>
+<p>1 \= Male<br>
+2 \= Female</p>
+<p>Although numbers are used, they do not represent quantity.</p>
+<p>Correct setting:</p>
+<p><strong>Nominal</strong></p>
+<hr>
+<p>Incorrect:</p>
+<p>Continuous.</p>
+<p>Reason:</p>
+<p>A value of 2 does not mean &ldquo;twice&rdquo; value 1.</p>
+<hr>
+<h1 id="6-ordinal-variables"><strong>6. Ordinal Variables</strong></h1>
+<h2 id="definition-2"><strong>Definition</strong></h2>
+<p>Categories with meaningful order but unequal intervals.</p>
+<hr>
+<p>Examples:</p>
+<ul>
+<li>Satisfaction levels.  </li>
+<li>Likert responses.  </li>
+<li>Education levels.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Customer satisfaction:</p>
+<p>1 \= Very dissatisfied</p>
+<p>5 \= Very satisfied</p>
+<hr>
+<p>The order matters:</p>
+<p>5 &gt; 4 &gt; 3 &gt; 2 &gt; 1</p>
+<p>But the distance between categories is not guaranteed equal.</p>
+<hr>
+<p>Correct Jamovi setting:</p>
+<p><strong>Ordinal</strong></p>
+<hr>
+<h1 id="7-likert-scale-measurement"><strong>7. Likert Scale Measurement</strong></h1>
+<p>A Likert item:</p>
+<p>Example:</p>
+<p>&ldquo;I am satisfied with the service.&rdquo;</p>
+<p>Responses:</p>
+<p>1–5</p>
+<hr>
+<p>Traditional measurement:</p>
+<p>Ordinal.</p>
+<p>Reason:</p>
+<p>Responses represent ordered categories.</p>
+<hr>
+<p>However:</p>
+<p>In many practical analyses, multiple Likert items combined into a scale may be treated as approximately continuous.</p>
+<p>Example:</p>
+<p>Five satisfaction items averaged into:</p>
+<p>Customer Satisfaction Score.</p>
+<hr>
+<p>Important distinction:</p>
+<p>Single Likert item:</p>
+<p>Usually ordinal.</p>
+<p>Composite scale:</p>
+<p>Often treated as continuous.</p>
+<hr>
+<h1 id="8-continuous-variables"><strong>8. Continuous Variables</strong></h1>
+<h2 id="definition-3"><strong>Definition</strong></h2>
+<p>Variables measured numerically with meaningful distances.</p>
+<hr>
+<p>Examples:</p>
+<ul>
+<li>Age.  </li>
+<li>Income.  </li>
+<li>Sales.  </li>
+<li>Satisfaction composite score.</li>
+</ul>
+<hr>
+<p>Values can be averaged and mathematically compared.</p>
+<hr>
+<h1 id="9-id-variables"><strong>9. ID Variables</strong></h1>
+<h2 id="definition-4"><strong>Definition</strong></h2>
+<p>Identifiers used only for records.</p>
+<p>Examples:</p>
+<ul>
+<li>Student ID.  </li>
+<li>Customer ID.  </li>
+<li>Respondent number.</li>
+</ul>
+<hr>
+<p>They are not analysed as measurement variables.</p>
+<hr>
+<h1 id="10-defining-value-labels"><strong>10. Defining Value Labels</strong></h1>
+<p>Numeric coding should include labels.</p>
+<p>Example:</p>
+<p>Gender:</p>
+<p>1 \= Male</p>
+<p>2 \= Female</p>
+<hr>
+<p>Without labels:</p>
+<p>The analysis output becomes difficult to interpret.</p>
+<hr>
+<p>Correct setup:</p>
+<p>Measurement level:</p>
+<p>Nominal.</p>
+<p>Labels:</p>
+<p>1 Male</p>
+<p>2 Female.</p>
+<hr>
+<h1 id="11-handling-missing-values"><strong>11. Handling Missing Values</strong></h1>
+<p>Missing responses must be identified.</p>
+<p>Example:</p>
+<p>999 \= No response.</p>
+<hr>
+<p>Correct setup:</p>
+<p>Measurement:</p>
+<p>Nominal.</p>
+<p>Labels:</p>
+<p>1 \= Male</p>
+<p>2 \= Female.</p>
+<p>Missing value:</p>
+<ol start="999">
+<li></li>
+</ol>
+<hr>
+<p>Why?</p>
+<p>Jamovi will exclude missing values from analysis.</p>
+<hr>
+<p>Incorrect:</p>
+<p>Leaving 999 as a valid category.</p>
+<p>Problem:</p>
+<p>The software thinks &ldquo;999&rdquo; is a real group.</p>
+<hr>
+<h1 id="12-composite-scale-construction"><strong>12. Composite Scale Construction</strong></h1>
+<p>Many psychological and business concepts cannot be measured with one question.</p>
+<p>Examples:</p>
+<ul>
+<li>Customer satisfaction.  </li>
+<li>Service quality.  </li>
+<li>Engagement.</li>
+</ul>
+<p>Researchers use multiple items.</p>
+<hr>
+<p>Example:</p>
+<p>Customer Satisfaction:</p>
+<p>CS1</p>
+<p>CS2</p>
+<p>CS3</p>
+<p>CS4</p>
+<p>CS5</p>
+<hr>
+<p>A combined score is created:</p>
+<p>Customer Satisfaction Average:</p>
+<p>(CS1 + CS2 + CS3 + CS4 + CS5) / 5</p>
+<hr>
+<h1 id="13-why-create-composite-scores"><strong>13. Why Create Composite Scores?</strong></h1>
+<p>Advantages:</p>
+<ul>
+<li>More reliable measurement.  </li>
+<li>Reduces effect of individual item errors.  </li>
+<li>Represents the overall construct.</li>
+</ul>
+<hr>
+<p>Incorrect approaches:</p>
+<h2 id="categorizing-items-too-early"><strong>Categorizing items too early</strong></h2>
+<p>Example:</p>
+<p>Convert satisfaction into:</p>
+<p>Low / Medium / High.</p>
+<p>Problem:</p>
+<p>Loss of information.</p>
+<hr>
+<h2 id="normalizing-before-combining"><strong>Normalizing before combining</strong></h2>
+<p>Problem:</p>
+<p>Not usually required for simple scale creation.</p>
+<hr>
+<h1 id="14-regression-variable-setup"><strong>14. Regression Variable Setup</strong></h1>
+<p>Regression examines prediction relationships.</p>
+<p>Basic structure:</p>
+<p>Dependent Variable (Outcome)</p>
+<p>←</p>
+<p>Independent Variables (Predictors)</p>
+<hr>
+<p>Example:</p>
+<p>Research question:</p>
+<p>Do product attributes and store attributes predict customer satisfaction?</p>
+<hr>
+<p>Correct model:</p>
+<p>Outcome:</p>
+<p>Customer Satisfaction.</p>
+<p>Predictors:</p>
+<ul>
+<li>Product Attributes.  </li>
+<li>Store Attributes.</li>
+</ul>
+<hr>
+<p>Incorrect:</p>
+<p>Customer Satisfaction predicting Product Attributes.</p>
+<p>That reverses the model.</p>
+<hr>
+<h1 id="15-regression-vs-correlation"><strong>15. Regression vs Correlation</strong></h1>
+<h2 id="correlation"><strong>Correlation</strong></h2>
+<p>Question:</p>
+<p>Are two variables related?</p>
+<p>Example:</p>
+<p>Product quality and satisfaction.</p>
+<hr>
+<h2 id="regression"><strong>Regression</strong></h2>
+<p>Question:</p>
+<p>Can one or more variables predict an outcome?</p>
+<p>Example:</p>
+<p>Do product and store attributes predict satisfaction?</p>
+<hr>
+<p>Regression identifies:</p>
+<ul>
+<li>Predictors.  </li>
+<li>Outcome.  </li>
+<li>Effect strength.</li>
+</ul>
+<hr>
+<h1 id="16-jamovi-interface"><strong>16. Jamovi Interface</strong></h1>
+<p>Jamovi provides an integrated workspace.</p>
+<p>A useful feature:</p>
+<p>Data and analysis results can appear together.</p>
+<hr>
+<p>This allows:</p>
+<ul>
+<li>Viewing data.  </li>
+<li>Checking results.  </li>
+<li>Reviewing changes.</li>
+</ul>
+<p>without constantly switching screens.</p>
+<hr>
+<h1 id="17-measurement-model-vs-structural-model"><strong>17. Measurement Model vs Structural Model</strong></h1>
+<p>A critical research concept:</p>
+<h2 id="measurement-model"><strong>Measurement Model</strong></h2>
+<p>Question:</p>
+<p>&ldquo;Are we measuring the constructs correctly?&rdquo;</p>
+<hr>
+<p>Example:</p>
+<p>Do survey items correctly measure:</p>
+<ul>
+<li>Customer satisfaction?  </li>
+<li>Service quality?</li>
+</ul>
+<hr>
+<p>Methods:</p>
+<ul>
+<li>Reliability analysis.  </li>
+<li>CFA.</li>
+</ul>
+<hr>
+<h2 id="structural-model"><strong>Structural Model</strong></h2>
+<p>Question:</p>
+<p>&ldquo;Are relationships between constructs supported?&rdquo;</p>
+<hr>
+<p>Example:</p>
+<p>Does service quality influence satisfaction?</p>
+<hr>
+<p>Methods:</p>
+<ul>
+<li>Regression.  </li>
+<li>SEM paths.  </li>
+<li>Mediation.  </li>
+<li>Moderation.</li>
+</ul>
+<hr>
+<h1 id="18-important-methodological-mistake"><strong>18. Important Methodological Mistake</strong></h1>
+<p>A common error:</p>
+<p>Testing relationships before verifying measurement quality.</p>
+<hr>
+<p>Example:</p>
+<p>A researcher runs:</p>
+<p>Customer Quality → Satisfaction</p>
+<p>and finds significance.</p>
+<hr>
+<p>But:</p>
+<p>Are the items actually measuring customer quality?</p>
+<p>Unknown.</p>
+<hr>
+<p>Correct order:</p>
+<ol>
+<li>Validate measurement.  </li>
+<li>Test relationships.</li>
+</ol>
+<hr>
+<h1 id="19-reliability-and-validity"><strong>19. Reliability and Validity</strong></h1>
+<h2 id="reliability"><strong>Reliability</strong></h2>
+<p>Question:</p>
+<p>Are items consistent with each other?</p>
+<p>Example:</p>
+<p>Cronbach&rsquo;s Alpha.</p>
+<hr>
+<h2 id="validity"><strong>Validity</strong></h2>
+<p>Question:</p>
+<p>Are we measuring the correct concept?</p>
+<p>Examples:</p>
+<ul>
+<li>Content validity.  </li>
+<li>Construct validity.  </li>
+<li>CFA.</li>
+</ul>
+<hr>
+<p>A significant relationship does not prove valid measurement.</p>
+<hr>
+<h1 id="20-confirmatory-factor-analysis-cfa"><strong>20. Confirmatory Factor Analysis (CFA)</strong></h1>
+<h2 id="purpose-2"><strong>Purpose</strong></h2>
+<p>Tests whether data fits a proposed measurement model.</p>
+<hr>
+<p>Example:</p>
+<p>Theory says:</p>
+<p>Customer Satisfaction has five indicators.</p>
+<p>CFA tests:</p>
+<p>Do CS1–CS5 actually represent satisfaction?</p>
+<hr>
+<p>CFA evaluates:</p>
+<ul>
+<li>Factor loadings.  </li>
+<li>Model fit.  </li>
+<li>Construct validity.</li>
+</ul>
+<hr>
+<h1 id="21-cfa-in-jamovi"><strong>21. CFA in Jamovi</strong></h1>
+<p>Basic Jamovi does not provide full CFA functionality.</p>
+<p>Required:</p>
+<p>SEMLj module/plugin.</p>
+<hr>
+<p>Correct workflow:</p>
+<ol>
+<li>Open Jamovi library.  </li>
+<li>Install SEMLj.  </li>
+<li>Access CFA and SEM analyses.</li>
+</ol>
+<hr>
+<h1 id="22-factor-analysis-modules"><strong>22. Factor Analysis Modules</strong></h1>
+<p>Important distinction:</p>
+<h2 id="exploratory-factor-analysis-efa"><strong>Exploratory Factor Analysis (EFA)</strong></h2>
+<p>Purpose:</p>
+<p>Discover underlying factors.</p>
+<p>Question:</p>
+<p>&ldquo;What factors exist?&rdquo;</p>
+<hr>
+<h2 id="confirmatory-factor-analysis-cfa"><strong>Confirmatory Factor Analysis (CFA)</strong></h2>
+<p>Purpose:</p>
+<p>Test predefined factor structure.</p>
+<p>Question:</p>
+<p>&ldquo;Does my proposed model fit?&rdquo;</p>
+<hr>
+<p>Although both involve factors, CFA requires SEM functionality.</p>
+<hr>
+<h1 id="23-cfa-vs-regression"><strong>23. CFA vs Regression</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>CFA</th>
+<th>Regression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Validates measurement</td>
+<td>Tests prediction</td>
+</tr>
+<tr>
+<td>Uses latent constructs</td>
+<td>Uses variables</td>
+</tr>
+<tr>
+<td>Measurement model</td>
+<td>Structural model</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<p>Example:</p>
+<p>CFA:</p>
+<p>Do five items measure satisfaction?</p>
+<p>Regression:</p>
+<p>Does satisfaction predict loyalty?</p>
+<hr>
+<h1 id="24-analysis-workflow-in-jamovi"><strong>24. Analysis Workflow in Jamovi</strong></h1>
+<p>A proper workflow:</p>
+<h2 id="step-1-import-data"><strong>Step 1: Import Data</strong></h2>
+<p>CSV/XLSX.</p>
+<hr>
+<h2 id="step-2-check-variables"><strong>Step 2: Check Variables</strong></h2>
+<p>Set:</p>
+<ul>
+<li>Measurement levels.  </li>
+<li>Labels.  </li>
+<li>Missing values.</li>
+</ul>
+<hr>
+<h2 id="step-3-clean-data"><strong>Step 3: Clean Data</strong></h2>
+<p>Check:</p>
+<ul>
+<li>Invalid values.  </li>
+<li>Missing entries.  </li>
+<li>Coding errors.</li>
+</ul>
+<hr>
+<h2 id="step-4-create-composite-scores"><strong>Step 4: Create Composite Scores</strong></h2>
+<p>Combine scale items.</p>
+<hr>
+<h2 id="step-5-check-reliability"><strong>Step 5: Check Reliability</strong></h2>
+<p>Example:</p>
+<p>Cronbach&rsquo;s Alpha.</p>
+<hr>
+<h2 id="step-6-validate-constructs"><strong>Step 6: Validate Constructs</strong></h2>
+<p>Use:</p>
+<ul>
+<li>CFA.</li>
+</ul>
+<hr>
+<h2 id="step-7-test-relationships"><strong>Step 7: Test Relationships</strong></h2>
+<p>Use:</p>
+<ul>
+<li>Regression.  </li>
+<li>SEM.  </li>
+<li>Mediation.  </li>
+<li>Moderation.</li>
+</ul>
+<hr>
+<h1 id="25-common-misconceptions"><strong>25. Common Misconceptions</strong></h1>
+<h2 id="misconception-1"><strong>Misconception 1:</strong></h2>
+<p>Numbers always mean continuous data.</p>
+<p>Reality:</p>
+<p>Numbers can represent categories.</p>
+<p>Example:</p>
+<p>Gender:</p>
+<p>1 and 2 are labels, not quantities.</p>
+<hr>
+<h2 id="misconception-2"><strong>Misconception 2:</strong></h2>
+<p>Invalid values can be fixed by transformation.</p>
+<p>Reality:</p>
+<p>Errors must be corrected first.</p>
+<hr>
+<h2 id="misconception-3"><strong>Misconception 3:</strong></h2>
+<p>Significant relationships prove good measurement.</p>
+<p>Reality:</p>
+<p>Measurement validity must be established separately.</p>
+<hr>
+<h2 id="misconception-4"><strong>Misconception 4:</strong></h2>
+<p>All Likert data is continuous.</p>
+<p>Reality:</p>
+<p>Individual Likert items are usually ordinal.</p>
+<p>Composite scales may be treated as continuous.</p>
+<hr>
+<h2 id="misconception-5"><strong>Misconception 5:</strong></h2>
+<p>Factor analysis automatically means CFA.</p>
+<p>Reality:</p>
+<p>EFA explores; CFA confirms.</p>
+<hr>
+<h1 id="26-final-revision-summary"><strong>26. Final Revision Summary</strong></h1>
+<h2 id="data-management"><strong>Data Management</strong></h2>
+<ul>
+<li>Clean data before analysis.  </li>
+<li>Check impossible values.  </li>
+<li>Define missing values.</li>
+</ul>
+<hr>
+<h2 id="variable-types"><strong>Variable Types</strong></h2>
+<p>Nominal:</p>
+<p>Categories without order.</p>
+<p>Example:</p>
+<p>Gender.</p>
+<hr>
+<p>Ordinal:</p>
+<p>Ordered categories.</p>
+<p>Example:</p>
+<p>Likert items.</p>
+<hr>
+<p>Continuous:</p>
+<p>Numerical measurements.</p>
+<p>Example:</p>
+<p>Age.</p>
+<hr>
+<h2 id="scale-construction"><strong>Scale Construction</strong></h2>
+<p>Combine related items into composite scores.</p>
+<p>Example:</p>
+<p>CS1–CS5 → Customer Satisfaction Score.</p>
+<hr>
+<h2 id="regression-2"><strong>Regression</strong></h2>
+<p>Outcome:</p>
+<p>What is predicted.</p>
+<p>Predictors:</p>
+<p>What explains variation.</p>
+<hr>
+<h2 id="measurement-vs-structural-models"><strong>Measurement vs Structural Models</strong></h2>
+<p>Measurement:</p>
+<p>Are constructs measured correctly?</p>
+<p>Structural:</p>
+<p>Do constructs relate as expected?</p>
+<hr>
+<h2 id="cfa"><strong>CFA</strong></h2>
+<p>Used to validate measurement models.</p>
+<p>Jamovi:</p>
+<p>Install SEMLj for CFA.</p>
+<hr>
+<h1 id="core-principle"><strong>Core Principle</strong></h1>
+<p>A successful analysis follows:</p>
+<p><strong>Clean data → Correct variable setup → Reliable measurement → Valid constructs → Relationship testing → Interpretation</strong></p>
+<p>Correct statistical conclusions depend on correct data preparation and correct model specification.</p>
+<h2 id="case-study"><strong>Case Study</strong></h2>
+<p>Maria and James work in Prof Lee&rsquo;s marketing lab at Apex University. They have collected survey data from 120 participants, including variables: ID (continuous), Gender (nominal: 1=Male, 2=Female), ShopPref (nominal: 1=Offline, 2=Online), Satisfaction (continuous), AgeGroup (ordinal: 1–4). In Jamovi they click the Variables tab, assign each variable a short name (e.g., SAT, SEX), specify measurement types (Nominal / Continuous / Ordinal), set data types (Integer / Decimal), define levels for categorical variables, and assign missing values (e.g., 999). This ensures proper application of statistical methods.After importing the data, they run descriptive statistics: mean, SD, skewness, kurtosis for SAT (mean=3.8, SD=0.9, skewness=0.4, kurtosis=–0.2), and frequency counts for ShopPref (Offline=70, Online=50). To test whether satisfaction differs by ShopPref, they conduct an independent samples t-test yielding t(118)=2.15, p=0.034. They also set up a one-way ANOVA to compare SAT across AgeGroup categories and review Levene&rsquo;s test for homogeneity of variance before interpreting results.At the decision point, the team must choose among three paths: a factorial ANOVA including a Gender×ShopPref interaction, a multiple regression with dummy-coded AgeGroup and Gender predictors, or installing the GAMLj module to run a mixed linear model if repeated measures are added. Maria prefers the straightforward ANOVA for clear group comparisons, James argues that regression will allow simultaneous assessment of predictors, and Prof Lee emphasizes checking diagnostic outputs and interpretability in the final report. Students must weigh trade-offs and select the most informative analysis approach.</p>
+<h1 id="comprehensive-notes-apex-university-case-study-jamovi-data-preparation-descriptive-statistics-t-test-anova-regression-and-model-selection"><strong>Comprehensive Notes: Apex University Case Study — Jamovi Data Preparation, Descriptive Statistics, t-Test, ANOVA, Regression, and Model Selection</strong></h1>
+<h1 id="1-case-overview"><strong>1. Case Overview</strong></h1>
+<p>Maria and James, researchers in Prof Lee’s marketing lab at Apex University, analyse survey data from <strong>120 participants</strong>.</p>
+<p>The study includes:</p>
+<ul>
+<li>Demographic variables.  </li>
+<li>Shopping preferences.  </li>
+<li>Satisfaction ratings.</li>
+</ul>
+<p>The main objective is to understand:</p>
+<ol>
+<li>How satisfaction varies across groups.  </li>
+<li>Whether shopping preference influences satisfaction.  </li>
+<li>Whether demographic factors explain satisfaction differences.</li>
+</ol>
+<p>The case focuses on:</p>
+<ul>
+<li>Data preparation in Jamovi.  </li>
+<li>Variable measurement levels.  </li>
+<li>Descriptive analysis.  </li>
+<li>Hypothesis testing.  </li>
+<li>Choosing appropriate statistical models.</li>
+</ul>
+<hr>
+<h1 id="2-importance-of-data-preparation"><strong>2. Importance of Data Preparation</strong></h1>
+<p>Before running statistical tests, researchers must correctly define variables.</p>
+<p>Incorrect variable setup can produce:</p>
+<ul>
+<li>Invalid analyses.  </li>
+<li>Misleading results.  </li>
+<li>Incorrect interpretations.</li>
+</ul>
+<p>A statistical program does not understand the meaning of variables automatically.</p>
+<p>Researchers must specify:</p>
+<ul>
+<li>Variable names.  </li>
+<li>Measurement levels.  </li>
+<li>Data types.  </li>
+<li>Category labels.  </li>
+<li>Missing values.</li>
+</ul>
+<hr>
+<h1 id="3-variables-in-the-apex-university-study"><strong>3. Variables in the Apex University Study</strong></h1>
+<p>The dataset contains:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Meaning</th>
+<th>Measurement Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>Participant identifier</td>
+<td>Continuous/ID</td>
+</tr>
+<tr>
+<td>Gender</td>
+<td>Participant gender</td>
+<td>Nominal</td>
+</tr>
+<tr>
+<td>ShopPref</td>
+<td>Offline vs Online preference</td>
+<td>Nominal</td>
+</tr>
+<tr>
+<td>Satisfaction</td>
+<td>Satisfaction score</td>
+<td>Continuous</td>
+</tr>
+<tr>
+<td>AgeGroup</td>
+<td>Age categories</td>
+<td>Ordinal</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="4-variable-naming-in-jamovi"><strong>4. Variable Naming in Jamovi</strong></h1>
+<p>Researchers assign short meaningful names.</p>
+<p>Examples:</p>
+<p>Original:</p>
+<p>Satisfaction</p>
+<p>Jamovi name:</p>
+<p>SAT</p>
+<hr>
+<p>Gender:</p>
+<p>SEX</p>
+<hr>
+<p>Purpose:</p>
+<ul>
+<li>Easier analysis.  </li>
+<li>Cleaner output.  </li>
+<li>Better interpretation.</li>
+</ul>
+<hr>
+<h1 id="5-measurement-levels"><strong>5. Measurement Levels</strong></h1>
+<p>Measurement level determines what statistical operations are appropriate.</p>
+<p>The main types:</p>
+<ol>
+<li>Nominal.  </li>
+<li>Ordinal.  </li>
+<li>Continuous.</li>
+</ol>
+<hr>
+<h1 id="6-nominal-variables"><strong>6. Nominal Variables</strong></h1>
+<h2 id="definition-5"><strong>Definition</strong></h2>
+<p>Categories without any natural order.</p>
+<hr>
+<p>Examples:</p>
+<ul>
+<li>Gender.  </li>
+<li>Shopping preference.  </li>
+<li>Department.  </li>
+<li>Location.</li>
+</ul>
+<hr>
+<p>Apex Examples:</p>
+<p>Gender:</p>
+<p>1 \= Male</p>
+<p>2 \= Female</p>
+<hr>
+<p>ShopPref:</p>
+<p>1 \= Offline</p>
+<p>2 \= Online</p>
+<hr>
+<p>Important:</p>
+<p>The numbers are only labels.</p>
+<p>Male is not &ldquo;less than&rdquo; Female.</p>
+<p>Online is not &ldquo;twice&rdquo; Offline.</p>
+<hr>
+<h1 id="7-ordinal-variables"><strong>7. Ordinal Variables</strong></h1>
+<h2 id="definition-6"><strong>Definition</strong></h2>
+<p>Categories with a meaningful order.</p>
+<hr>
+<p>Example:</p>
+<p>AgeGroup:</p>
+<p>1 → youngest group</p>
+<p>2 → older group</p>
+<p>3 → older group</p>
+<p>4 → oldest group</p>
+<hr>
+<p>The order matters.</p>
+<p>However:</p>
+<p>The distance between groups may not be equal.</p>
+<hr>
+<p>Example:</p>
+<p>Difference between:</p>
+<p>AgeGroup 1 and 2</p>
+<p>may not equal</p>
+<p>Difference between:</p>
+<p>AgeGroup 3 and 4.</p>
+<hr>
+<h1 id="8-continuous-variables-2"><strong>8. Continuous Variables</strong></h1>
+<h2 id="definition-7"><strong>Definition</strong></h2>
+<p>Numeric variables where differences have meaningful interpretation.</p>
+<hr>
+<p>Examples:</p>
+<ul>
+<li>Satisfaction score.  </li>
+<li>Income.  </li>
+<li>Age.  </li>
+<li>Sales.</li>
+</ul>
+<hr>
+<p>Apex Example:</p>
+<p>SAT:</p>
+<p>Mean \= 3.8</p>
+<p>SD \= 0.9</p>
+<hr>
+<p>Continuous variables allow:</p>
+<ul>
+<li>Mean calculation.  </li>
+<li>Standard deviation.  </li>
+<li>Correlation.  </li>
+<li>Regression.</li>
+</ul>
+<hr>
+<h1 id="9-data-types-in-jamovi"><strong>9. Data Types in Jamovi</strong></h1>
+<p>Jamovi allows:</p>
+<h2 id="integer"><strong>Integer</strong></h2>
+<p>Whole numbers.</p>
+<p>Examples:</p>
+<ul>
+<li>Gender codes.  </li>
+<li>Age categories.</li>
+</ul>
+<hr>
+<h2 id="decimal"><strong>Decimal</strong></h2>
+<p>Numbers with fractional values.</p>
+<p>Examples:</p>
+<ul>
+<li>Satisfaction score.  </li>
+<li>Income.</li>
+</ul>
+<hr>
+<h1 id="10-defining-category-levels"><strong>10. Defining Category Levels</strong></h1>
+<p>Categorical variables need labels.</p>
+<p>Example:</p>
+<p>Gender:</p>
+<p>1 \= Male</p>
+<p>2 \= Female</p>
+<hr>
+<p>Without labels:</p>
+<p>Output may display:</p>
+<p>Gender \= 1</p>
+<p>Gender \= 2</p>
+<p>which is difficult to interpret.</p>
+<hr>
+<h1 id="11-missing-values"><strong>11. Missing Values</strong></h1>
+<p>Researchers must identify missing responses.</p>
+<p>Example:</p>
+<p>999 \= No response.</p>
+<hr>
+<p>Purpose:</p>
+<p>Prevent missing codes from being analysed as real values.</p>
+<hr>
+<p>Incorrect:</p>
+<p>Treating 999 as a satisfaction score.</p>
+<hr>
+<p>Correct:</p>
+<p>Define 999 as missing.</p>
+<hr>
+<h1 id="12-descriptive-statistics"><strong>12. Descriptive Statistics</strong></h1>
+<p>After data preparation, researchers examine basic characteristics.</p>
+<p>Descriptive statistics summarize data.</p>
+<hr>
+<p>For continuous variables:</p>
+<p>Common measures:</p>
+<ul>
+<li>Mean.  </li>
+<li>Standard deviation.  </li>
+<li>Skewness.  </li>
+<li>Kurtosis.</li>
+</ul>
+<hr>
+<p>For categorical variables:</p>
+<p>Use:</p>
+<ul>
+<li>Frequencies.  </li>
+<li>Percentages.</li>
+</ul>
+<hr>
+<h1 id="13-satisfaction-descriptive-statistics"><strong>13. Satisfaction Descriptive Statistics</strong></h1>
+<p>SAT results:</p>
+<p>Mean:</p>
+<p>3.8</p>
+<hr>
+<p>Interpretation:</p>
+<p>Average satisfaction is relatively high on the measurement scale.</p>
+<hr>
+<p>Standard deviation:</p>
+<p>0.9</p>
+<hr>
+<p>Interpretation:</p>
+<p>Responses vary moderately around the average.</p>
+<hr>
+<h1 id="14-skewness"><strong>14. Skewness</strong></h1>
+<h2 id="definition-8"><strong>Definition</strong></h2>
+<p>Measures distribution asymmetry.</p>
+<hr>
+<p>SAT:</p>
+<p>Skewness \= 0.4</p>
+<hr>
+<p>Interpretation:</p>
+<p>Slight positive skew.</p>
+<p>Meaning:</p>
+<p>Some more satisfied responses may exist.</p>
+<hr>
+<p>General interpretation:</p>
+<p>Positive skew:</p>
+<p>Longer right tail.</p>
+<p>Negative skew:</p>
+<p>Longer left tail.</p>
+<hr>
+<h1 id="15-kurtosis"><strong>15. Kurtosis</strong></h1>
+<h2 id="definition-9"><strong>Definition</strong></h2>
+<p>Measures distribution shape and tail heaviness.</p>
+<hr>
+<p>SAT:</p>
+<p>Kurtosis \= -0.2</p>
+<hr>
+<p>Interpretation:</p>
+<p>Close to normal distribution.</p>
+<hr>
+<h1 id="16-shop-preference-frequencies"><strong>16. Shop Preference Frequencies</strong></h1>
+<p>Results:</p>
+<p>Offline:</p>
+<p>70 participants.</p>
+<p>Online:</p>
+<p>50 participants.</p>
+<p>Total:</p>
+<p>120 participants.</p>
+<hr>
+<p>Purpose:</p>
+<p>Understand group distribution.</p>
+<hr>
+<p>Percentage:</p>
+<p>Offline:</p>
+<p>58.3%</p>
+<p>Online:</p>
+<p>41.7%</p>
+<hr>
+<h1 id="17-independent-samples-t-test"><strong>17. Independent Samples t-Test</strong></h1>
+<h2 id="purpose-3"><strong>Purpose</strong></h2>
+<p>Compares mean differences between two independent groups.</p>
+<hr>
+<p>Research question:</p>
+<blockquote>
+<p>Does satisfaction differ between Offline and Online shoppers?</p>
+</blockquote>
+<hr>
+<p>Groups:</p>
+<p>Group 1:</p>
+<p>Offline shoppers.</p>
+<p>Group 2:</p>
+<p>Online shoppers.</p>
+<hr>
+<p>Outcome:</p>
+<p>Satisfaction score.</p>
+<hr>
+<h1 id="18-t-test-results"><strong>18. t-Test Results</strong></h1>
+<p>Result:</p>
+<p>t(118) \= 2.15</p>
+<p>p \= 0.034</p>
+<hr>
+<p>Interpretation:</p>
+<p>Because:</p>
+<p>p \&lt; 0.05</p>
+<p>the difference is statistically significant.</p>
+<hr>
+<p>Conclusion:</p>
+<p>Satisfaction differs between Offline and Online preference groups.</p>
+<hr>
+<h1 id="19-understanding-p-value"><strong>19. Understanding p-value</strong></h1>
+<p>The p-value indicates:</p>
+<p>How likely the observed difference would occur if there were actually no group difference.</p>
+<hr>
+<p>Common rule:</p>
+<p>p \&lt; 0.05:</p>
+<p>Statistically significant.</p>
+<hr>
+<p>p &gt; 0.05:</p>
+<p>Not statistically significant.</p>
+<hr>
+<p>Important:</p>
+<p>Statistical significance does not indicate practical importance.</p>
+<hr>
+<h1 id="20-one-way-anova"><strong>20. One-Way ANOVA</strong></h1>
+<h2 id="purpose-4"><strong>Purpose</strong></h2>
+<p>Compares means across three or more groups.</p>
+<hr>
+<p>Apex Example:</p>
+<p>Compare satisfaction across:</p>
+<p>AgeGroup 1</p>
+<p>AgeGroup 2</p>
+<p>AgeGroup 3</p>
+<p>AgeGroup 4</p>
+<hr>
+<p>Why not multiple t-tests?</p>
+<p>Multiple tests increase the chance of false positives.</p>
+<p>ANOVA compares groups together.</p>
+<hr>
+<h1 id="21-anova-logic"><strong>21. ANOVA Logic</strong></h1>
+<p>ANOVA compares:</p>
+<h2 id="between-group-variation"><strong>Between-group variation</strong></h2>
+<p>Differences between age groups.</p>
+<hr>
+<h2 id="within-group-variation"><strong>Within-group variation</strong></h2>
+<p>Differences among individuals in the same group.</p>
+<hr>
+<p>The F-statistic evaluates whether group differences are larger than expected by chance.</p>
+<hr>
+<h1 id="22-levene-s-test"><strong>22. Levene&rsquo;s Test</strong></h1>
+<h2 id="purpose-5"><strong>Purpose</strong></h2>
+<p>Checks homogeneity of variance.</p>
+<hr>
+<p>Assumption:</p>
+<p>Groups should have similar variance.</p>
+<hr>
+<p>Interpretation:</p>
+<p>If Levene&rsquo;s test is not significant:</p>
+<p>Variance assumption is satisfied.</p>
+<hr>
+<p>If significant:</p>
+<p>Variances differ.</p>
+<p>Alternative methods may be needed.</p>
+<hr>
+<h1 id="23-model-selection-decision"><strong>23. Model Selection Decision</strong></h1>
+<p>The team considers three approaches:</p>
+<ol>
+<li>Factorial ANOVA.  </li>
+<li>Multiple regression.  </li>
+<li>Mixed linear model.</li>
+</ol>
+<p>Each serves different purposes.</p>
+<hr>
+<h1 id="24-factorial-anova"><strong>24. Factorial ANOVA</strong></h1>
+<h2 id="purpose-6"><strong>Purpose</strong></h2>
+<p>Examines effects of multiple categorical variables and interactions.</p>
+<hr>
+<p>Apex Example:</p>
+<p>Gender × ShopPref interaction.</p>
+<hr>
+<p>Questions:</p>
+<ol>
+<li>Does Gender affect satisfaction?  </li>
+<li>Does ShopPref affect satisfaction?  </li>
+<li>Does the effect of ShopPref depend on Gender?</li>
+</ol>
+<hr>
+<p>Example:</p>
+<p>Maybe online shopping improves satisfaction for males but not females.</p>
+<p>That is an interaction effect.</p>
+<hr>
+<h1 id="25-advantages-of-factorial-anova"><strong>25. Advantages of Factorial ANOVA</strong></h1>
+<p>Useful for:</p>
+<ul>
+<li>Group comparisons.  </li>
+<li>Testing interactions.  </li>
+<li>Clear interpretation.</li>
+</ul>
+<hr>
+<p>Maria&rsquo;s preference:</p>
+<p>Straightforward group comparison.</p>
+<hr>
+<h1 id="26-limitations-of-factorial-anova"><strong>26. Limitations of Factorial ANOVA</strong></h1>
+<p>Less flexible when:</p>
+<ul>
+<li>Many predictors exist.  </li>
+<li>Continuous predictors are included.  </li>
+<li>Prediction is the goal.</li>
+</ul>
+<hr>
+<h1 id="27-multiple-regression"><strong>27. Multiple Regression</strong></h1>
+<h2 id="purpose-7"><strong>Purpose</strong></h2>
+<p>Predict an outcome using multiple predictors simultaneously.</p>
+<hr>
+<p>Model:</p>
+<p>Satisfaction \=</p>
+<p>Gender + AgeGroup + ShopPref</p>
+<hr>
+<p>Questions:</p>
+<ul>
+<li>Which variables predict satisfaction?  </li>
+<li>Which predictor has the strongest effect?  </li>
+<li>What happens when controlling for other variables?</li>
+</ul>
+<hr>
+<h1 id="28-dummy-coding-in-regression"><strong>28. Dummy Coding in Regression</strong></h1>
+<p>Categorical variables must be converted into numeric predictors.</p>
+<p>Example:</p>
+<p>ShopPref:</p>
+<p>Offline \= 0</p>
+<p>Online \= 1</p>
+<hr>
+<p>Gender:</p>
+<p>Male \= 0</p>
+<p>Female \= 1</p>
+<hr>
+<p>This allows regression analysis.</p>
+<hr>
+<h1 id="29-advantages-of-regression"><strong>29. Advantages of Regression</strong></h1>
+<p>Regression allows:</p>
+<h2 id="simultaneous-assessment"><strong>Simultaneous assessment</strong></h2>
+<p>Multiple factors can be tested together.</p>
+<hr>
+<h2 id="control-variables"><strong>Control variables</strong></h2>
+<p>Example:</p>
+<p>Does ShopPref affect satisfaction after controlling for Gender?</p>
+<hr>
+<h2 id="prediction"><strong>Prediction</strong></h2>
+<p>Estimate satisfaction based on predictors.</p>
+<hr>
+<h1 id="30-limitations-of-regression"><strong>30. Limitations of Regression</strong></h1>
+<p>Requires checking:</p>
+<ul>
+<li>Linearity.  </li>
+<li>Multicollinearity.  </li>
+<li>Residual assumptions.</li>
+</ul>
+<hr>
+<h1 id="31-mixed-linear-models"><strong>31. Mixed Linear Models</strong></h1>
+<h2 id="purpose-8"><strong>Purpose</strong></h2>
+<p>Used when data has repeated measurements or hierarchical structure.</p>
+<hr>
+<p>Examples:</p>
+<p>Repeated satisfaction ratings:</p>
+<p>Same customer measured multiple times.</p>
+<hr>
+<p>Students grouped within schools.</p>
+<hr>
+<h1 id="32-gamlj-module-in-jamovi"><strong>32. GAMLj Module in Jamovi</strong></h1>
+<p>GAMLj provides advanced models including:</p>
+<ul>
+<li>Generalized linear models.  </li>
+<li>Mixed models.</li>
+</ul>
+<hr>
+<p>Useful when:</p>
+<p>Repeated measures are added.</p>
+<hr>
+<p>Not necessary for simple cross-sectional data.</p>
+<hr>
+<h1 id="33-choosing-the-best-analysis"><strong>33. Choosing the Best Analysis</strong></h1>
+<p>The correct method depends on the research question.</p>
+<hr>
+<h2 id="if-the-question-is"><strong>If the question is:</strong></h2>
+<p>&ldquo;Do groups differ?&rdquo;</p>
+<p>Use:</p>
+<ul>
+<li>t-test.  </li>
+<li>ANOVA.</li>
+</ul>
+<hr>
+<h2 id="if-the-question-is-2"><strong>If the question is:</strong></h2>
+<p>&ldquo;Which variables predict satisfaction?&rdquo;</p>
+<p>Use:</p>
+<ul>
+<li>Regression.</li>
+</ul>
+<hr>
+<h2 id="if-the-question-is-3"><strong>If the question is:</strong></h2>
+<p>&ldquo;Do effects differ between groups?&rdquo;</p>
+<p>Use:</p>
+<ul>
+<li>Factorial ANOVA.</li>
+</ul>
+<hr>
+<h2 id="if-the-question-is-4"><strong>If the question is:</strong></h2>
+<p>&ldquo;Are measurements repeated over time?&rdquo;</p>
+<p>Use:</p>
+<ul>
+<li>Mixed models.</li>
+</ul>
+<hr>
+<h1 id="34-role-of-diagnostics"><strong>34. Role of Diagnostics</strong></h1>
+<p>Prof Lee emphasizes checking diagnostic outputs.</p>
+<p>Before interpreting results, researchers should examine:</p>
+<ul>
+<li>Assumptions.  </li>
+<li>Residuals.  </li>
+<li>Variance equality.  </li>
+<li>Model fit.</li>
+</ul>
+<hr>
+<p>A significant result alone is insufficient.</p>
+<hr>
+<h1 id="35-interpretability"><strong>35. Interpretability</strong></h1>
+<p>A good analysis should be:</p>
+<ul>
+<li>Statistically appropriate.  </li>
+<li>Easy to explain.  </li>
+<li>Relevant to decisions.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Regression may be statistically powerful but harder to communicate.</p>
+<p>ANOVA may provide clearer group comparisons.</p>
+<hr>
+<h1 id="36-common-misconceptions"><strong>36. Common Misconceptions</strong></h1>
+<h2 id="misconception-1-2"><strong>Misconception 1:</strong></h2>
+<p>Numbers automatically mean continuous data.</p>
+<p>Reality:</p>
+<p>Numbers can represent categories.</p>
+<p>Example:</p>
+<p>Gender codes.</p>
+<hr>
+<h2 id="misconception-2-2"><strong>Misconception 2:</strong></h2>
+<p>A significant p-value proves one group is better.</p>
+<p>Reality:</p>
+<p>It only indicates a statistical difference.</p>
+<hr>
+<h2 id="misconception-3-2"><strong>Misconception 3:</strong></h2>
+<p>ANOVA and regression are completely different.</p>
+<p>Reality:</p>
+<p>Both can analyse relationships but answer different questions.</p>
+<hr>
+<h2 id="misconception-4-2"><strong>Misconception 4:</strong></h2>
+<p>More complex models are always better.</p>
+<p>Reality:</p>
+<p>Choose the simplest model that answers the research question.</p>
+<hr>
+<h2 id="misconception-5-2"><strong>Misconception 5:</strong></h2>
+<p>Data analysis starts after importing data.</p>
+<p>Reality:</p>
+<p>Correct variable setup is part of analysis.</p>
+<hr>
+<h1 id="37-complete-research-workflow"><strong>37. Complete Research Workflow</strong></h1>
+<h2 id="step-1-prepare-data"><strong>Step 1: Prepare Data</strong></h2>
+<ul>
+<li>Name variables.  </li>
+<li>Set measurement levels.  </li>
+<li>Define labels.  </li>
+<li>Handle missing values.</li>
+</ul>
+<p>↓</p>
+<h2 id="step-2-explore-data"><strong>Step 2: Explore Data</strong></h2>
+<ul>
+<li>Frequencies.  </li>
+<li>Means.  </li>
+<li>Standard deviations.  </li>
+<li>Distribution checks.</li>
+</ul>
+<p>↓</p>
+<h2 id="step-3-test-differences"><strong>Step 3: Test Differences</strong></h2>
+<ul>
+<li>t-tests.  </li>
+<li>ANOVA.</li>
+</ul>
+<p>↓</p>
+<h2 id="step-4-build-predictive-models"><strong>Step 4: Build Predictive Models</strong></h2>
+<ul>
+<li>Regression.  </li>
+<li>Advanced models.</li>
+</ul>
+<p>↓</p>
+<h2 id="step-5-check-diagnostics"><strong>Step 5: Check Diagnostics</strong></h2>
+<ul>
+<li>Assumptions.  </li>
+<li>Model quality.</li>
+</ul>
+<p>↓</p>
+<h2 id="step-6-interpret-results"><strong>Step 6: Interpret Results</strong></h2>
+<p>Connect findings to research questions.</p>
+<hr>
+<h1 id="final-revision-summary"><strong>Final Revision Summary</strong></h1>
+<h2 id="variable-setup"><strong>Variable Setup</strong></h2>
+<p>Nominal:</p>
+<p>Categories.</p>
+<p>Ordinal:</p>
+<p>Ordered categories.</p>
+<p>Continuous:</p>
+<p>Numeric measurements.</p>
+<hr>
+<h2 id="descriptive-statistics"><strong>Descriptive Statistics</strong></h2>
+<p>Continuous:</p>
+<p>Mean, SD, skewness, kurtosis.</p>
+<p>Categorical:</p>
+<p>Frequency counts.</p>
+<hr>
+<h2 id="hypothesis-testing"><strong>Hypothesis Testing</strong></h2>
+<p>Two groups:</p>
+<p>Independent samples t-test.</p>
+<p>Three or more groups:</p>
+<p>ANOVA.</p>
+<hr>
+<h2 id="predictive-analysis"><strong>Predictive Analysis</strong></h2>
+<p>Regression:</p>
+<p>Multiple predictors predicting one outcome.</p>
+<hr>
+<h2 id="advanced-analysis"><strong>Advanced Analysis</strong></h2>
+<p>Factorial ANOVA:</p>
+<p>Group effects + interactions.</p>
+<p>Mixed models:</p>
+<p>Repeated measures or hierarchical data.</p>
+<hr>
+<h1 id="core-principle-2"><strong>Core Principle</strong></h1>
+<p>A strong statistical analysis follows:</p>
+<p><strong>Correct data setup → Appropriate method selection → Assumption checking → Meaningful interpretation</strong></p>
+<p>The best method is not the most complex one; it is the method that best matches the research question and produces interpretable evidence for decision-making.</p>
+<h1 id="comprehensive-notes-apex-university-marketing-lab-case-study-jamovi-setup-descriptive-analysis-t-test-anova-regression-mixed-models-and-diagnostic-thinking"><strong>Comprehensive Notes: Apex University Marketing Lab Case Study — Jamovi Setup, Descriptive Analysis, t-Test, ANOVA, Regression, Mixed Models, and Diagnostic Thinking</strong></h1>
+<h1 id="1-case-overview-2"><strong>1. Case Overview</strong></h1>
+<p>Maria and James are researchers in Prof Lee’s marketing lab at Apex University.</p>
+<p>They analyse survey data from <strong>120 participants</strong> containing:</p>
+<ul>
+<li>Gender.  </li>
+<li>Shopping preference.  </li>
+<li>Satisfaction.  </li>
+<li>Age groups.</li>
+</ul>
+<p>The study aims to understand:</p>
+<ol>
+<li>How satisfaction differs across groups.  </li>
+<li>Whether shopping preference influences satisfaction.  </li>
+<li>How multiple demographic variables explain satisfaction.</li>
+</ol>
+<p>The case demonstrates the complete statistical workflow:</p>
+<p><strong>Data preparation → Descriptive analysis → Hypothesis testing → Model selection → Diagnostics</strong></p>
+<hr>
+<h1 id="2-importance-of-data-preparation-in-jamovi"><strong>2. Importance of Data Preparation in Jamovi</strong></h1>
+<p>Before conducting statistical tests, researchers must correctly configure the dataset.</p>
+<p>Jamovi needs information about:</p>
+<ul>
+<li>Variable names.  </li>
+<li>Measurement levels.  </li>
+<li>Data types.  </li>
+<li>Category labels.  </li>
+<li>Missing values.</li>
+</ul>
+<p>Incorrect setup can lead to:</p>
+<ul>
+<li>Wrong statistical tests.  </li>
+<li>Invalid conclusions.  </li>
+<li>Misleading reports.</li>
+</ul>
+<hr>
+<h1 id="3-variable-setup-in-jamovi"><strong>3. Variable Setup in Jamovi</strong></h1>
+<p>The Variables tab is used to define how Jamovi should interpret each variable.</p>
+<p>Important settings:</p>
+<h2 id="variable-name"><strong>Variable Name</strong></h2>
+<p>A short meaningful identifier.</p>
+<p>Examples:</p>
+<p>Satisfaction → SAT</p>
+<p>Gender → SEX</p>
+<p>Shop Preference → SHOP</p>
+<hr>
+<h2 id="measurement-level"><strong>Measurement Level</strong></h2>
+<p>Defines the nature of the variable.</p>
+<p>Main types:</p>
+<ul>
+<li>Nominal.  </li>
+<li>Ordinal.  </li>
+<li>Continuous.</li>
+</ul>
+<hr>
+<h2 id="data-type"><strong>Data Type</strong></h2>
+<p>Defines how values are stored.</p>
+<p>Examples:</p>
+<p>Integer:</p>
+<ul>
+<li>Category codes.  </li>
+<li>Whole numbers.</li>
+</ul>
+<p>Decimal:</p>
+<ul>
+<li>Satisfaction scores.  </li>
+<li>Continuous measurements.</li>
+</ul>
+<hr>
+<h1 id="4-nominal-variables"><strong>4. Nominal Variables</strong></h1>
+<h2 id="definition-10"><strong>Definition</strong></h2>
+<p>Variables with categories but no natural ranking.</p>
+<p>Examples:</p>
+<ul>
+<li>Gender.  </li>
+<li>Shopping preference.  </li>
+<li>Department.</li>
+</ul>
+<hr>
+<p>Apex examples:</p>
+<h2 id="gender"><strong>Gender</strong></h2>
+<p>1 \= Male</p>
+<p>2 \= Female</p>
+<hr>
+<h2 id="shoppref"><strong>ShopPref</strong></h2>
+<p>1 \= Offline</p>
+<p>2 \= Online</p>
+<hr>
+<p>Important:</p>
+<p>The numbers are labels only.</p>
+<p>They do not represent quantity.</p>
+<hr>
+<p>Incorrect interpretation:</p>
+<p>Female (2) is greater than Male (1).</p>
+<hr>
+<h1 id="5-ordinal-variables"><strong>5. Ordinal Variables</strong></h1>
+<h2 id="definition-11"><strong>Definition</strong></h2>
+<p>Variables with ordered categories.</p>
+<p>The order matters, but distances between categories may not be equal.</p>
+<hr>
+<p>Example:</p>
+<p>AgeGroup:</p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<hr>
+<p>Meaning:</p>
+<p>Group 4 is older than Group 1.</p>
+<p>However:</p>
+<p>The difference between groups may not be equal.</p>
+<hr>
+<p>Correct Jamovi setting:</p>
+<p>Ordinal.</p>
+<hr>
+<h1 id="6-continuous-variables"><strong>6. Continuous Variables</strong></h1>
+<h2 id="definition-12"><strong>Definition</strong></h2>
+<p>Numeric variables where differences have meaningful interpretation.</p>
+<p>Examples:</p>
+<ul>
+<li>Satisfaction score.  </li>
+<li>Income.  </li>
+<li>Sales.</li>
+</ul>
+<hr>
+<p>Apex example:</p>
+<p>SAT:</p>
+<p>Mean \= 3.8</p>
+<p>SD \= 0.9</p>
+<hr>
+<p>Continuous variables support:</p>
+<ul>
+<li>Mean.  </li>
+<li>Standard deviation.  </li>
+<li>Correlation.  </li>
+<li>Regression.</li>
+</ul>
+<hr>
+<h1 id="7-missing-value-handling"><strong>7. Missing Value Handling</strong></h1>
+<p>Missing values must be explicitly defined.</p>
+<p>Example:</p>
+<p>999 \= No response.</p>
+<hr>
+<p>Correct setup:</p>
+<p>Tell Jamovi:</p>
+<p>999 is missing.</p>
+<hr>
+<p>Why?</p>
+<p>Otherwise Jamovi may calculate:</p>
+<p>Mean including 999.</p>
+<p>Example:</p>
+<p>Normal scores:</p>
+<p>3,4,5,4</p>
+<p>with accidental 999:</p>
+<p>Mean becomes meaningless.</p>
+<hr>
+<h1 id="8-category-levels"><strong>8. Category Levels</strong></h1>
+<p>Categorical variables require labels.</p>
+<p>Example:</p>
+<p>ShopPref:</p>
+<p>1 \= Offline</p>
+<p>2 \= Online</p>
+<hr>
+<p>Purpose:</p>
+<p>Makes output understandable.</p>
+<p>Without labels:</p>
+<p>Output shows:</p>
+<p>Group 1</p>
+<p>Group 2</p>
+<p>instead of:</p>
+<p>Offline</p>
+<p>Online.</p>
+<hr>
+<h1 id="9-descriptive-statistics"><strong>9. Descriptive Statistics</strong></h1>
+<p>Descriptive statistics summarize the dataset.</p>
+<p>They answer:</p>
+<p>&ldquo;What does the data look like?&rdquo;</p>
+<hr>
+<p>For continuous variables:</p>
+<ul>
+<li>Mean.  </li>
+<li>Standard deviation.  </li>
+<li>Skewness.  </li>
+<li>Kurtosis.</li>
+</ul>
+<hr>
+<p>For categorical variables:</p>
+<ul>
+<li>Frequency.  </li>
+<li>Percentage.</li>
+</ul>
+<hr>
+<h1 id="10-satisfaction-descriptive-results"><strong>10. Satisfaction Descriptive Results</strong></h1>
+<p>Given:</p>
+<p>Mean \= 3.8</p>
+<p>Interpretation:</p>
+<p>Average satisfaction is relatively high.</p>
+<hr>
+<p>SD \= 0.9</p>
+<p>Interpretation:</p>
+<p>Responses show moderate variation.</p>
+<hr>
+<h1 id="11-skewness"><strong>11. Skewness</strong></h1>
+<h2 id="definition-13"><strong>Definition</strong></h2>
+<p>Measures asymmetry of distribution.</p>
+<hr>
+<p>Value:</p>
+<p>0.4</p>
+<hr>
+<p>Interpretation:</p>
+<p>Slight positive skew.</p>
+<p>Meaning:</p>
+<p>A small number of high satisfaction scores extend the right tail.</p>
+<hr>
+<p>General interpretation:</p>
+<p>Positive skew:</p>
+<p>Longer right tail.</p>
+<p>Negative skew:</p>
+<p>Longer left tail.</p>
+<hr>
+<p>A value close to zero generally indicates approximate symmetry.</p>
+<hr>
+<h1 id="12-kurtosis"><strong>12. Kurtosis</strong></h1>
+<h2 id="definition-14"><strong>Definition</strong></h2>
+<p>Measures distribution shape and tail behaviour.</p>
+<hr>
+<p>Value:</p>
+<p>-0.2</p>
+<hr>
+<p>Interpretation:</p>
+<p>Very close to normal.</p>
+<p>The distribution is slightly flatter than normal but not concerning.</p>
+<hr>
+<p>Important:</p>
+<p>Skewness measures symmetry.</p>
+<p>Kurtosis measures tail/peak characteristics.</p>
+<hr>
+<h1 id="13-frequency-analysis"><strong>13. Frequency Analysis</strong></h1>
+<p>For ShopPref:</p>
+<p>Offline:</p>
+<p>70 participants.</p>
+<p>Online:</p>
+<p>50 participants.</p>
+<hr>
+<p>Purpose:</p>
+<p>Understand group composition.</p>
+<hr>
+<p>Percentage:</p>
+<p>Offline:</p>
+<p>58.3%</p>
+<p>Online:</p>
+<p>41.7%</p>
+<hr>
+<h1 id="14-independent-samples-t-test"><strong>14. Independent Samples t-Test</strong></h1>
+<h2 id="purpose-9"><strong>Purpose</strong></h2>
+<p>Compares the means of two independent groups.</p>
+<hr>
+<p>Apex research question:</p>
+<blockquote>
+<p>Do Offline and Online shoppers have different satisfaction levels?</p>
+</blockquote>
+<hr>
+<p>Variables:</p>
+<p>Grouping variable:</p>
+<p>ShopPref.</p>
+<p>Outcome:</p>
+<p>Satisfaction.</p>
+<hr>
+<h1 id="15-t-test-result-interpretation"><strong>15. t-Test Result Interpretation</strong></h1>
+<p>Result:</p>
+<p>t(118)=2.15</p>
+<p>p=0.034</p>
+<hr>
+<p>Since:</p>
+<p>p \&lt; 0.05</p>
+<p>the result is statistically significant.</p>
+<hr>
+<p>Conclusion:</p>
+<p>Average satisfaction differs between Offline and Online groups.</p>
+<hr>
+<h1 id="16-meaning-of-statistical-significance"><strong>16. Meaning of Statistical Significance</strong></h1>
+<p>A significant result means:</p>
+<p>The observed difference is unlikely to be caused only by random sampling variation.</p>
+<hr>
+<p>It does not automatically mean:</p>
+<ul>
+<li>The effect is large.  </li>
+<li>One group is practically better.  </li>
+<li>Cause-and-effect exists.</li>
+</ul>
+<hr>
+<h1 id="17-one-way-anova"><strong>17. One-Way ANOVA</strong></h1>
+<h2 id="purpose-10"><strong>Purpose</strong></h2>
+<p>Compare means across three or more groups.</p>
+<hr>
+<p>Apex example:</p>
+<p>Compare satisfaction across:</p>
+<p>AgeGroup 1</p>
+<p>AgeGroup 2</p>
+<p>AgeGroup 3</p>
+<p>AgeGroup 4</p>
+<hr>
+<p>Why not multiple t-tests?</p>
+<p>Multiple tests increase the probability of false positives.</p>
+<hr>
+<h1 id="18-anova-assumptions"><strong>18. ANOVA Assumptions</strong></h1>
+<p>Important assumptions:</p>
+<ol>
+<li>Independence.  </li>
+<li>Normality.  </li>
+<li>Homogeneity of variance.</li>
+</ol>
+<hr>
+<h1 id="19-levene-s-test"><strong>19. Levene’s Test</strong></h1>
+<h2 id="purpose-11"><strong>Purpose</strong></h2>
+<p>Tests equality of variances across groups.</p>
+<hr>
+<p>Question:</p>
+<p>Do different age groups have similar variability in satisfaction?</p>
+<hr>
+<p>If assumption is satisfied:</p>
+<p>ANOVA results are more reliable.</p>
+<hr>
+<p>Important:</p>
+<p>Levene’s test does NOT test:</p>
+<ul>
+<li>Normality.  </li>
+<li>Group size equality.  </li>
+<li>Interaction effects.</li>
+</ul>
+<hr>
+<h1 id="20-factorial-anova"><strong>20. Factorial ANOVA</strong></h1>
+<p>Maria prefers factorial ANOVA.</p>
+<h2 id="purpose-12"><strong>Purpose</strong></h2>
+<p>Compare group differences involving multiple categorical factors.</p>
+<hr>
+<p>Example:</p>
+<p>Gender × ShopPref</p>
+<p>Outcome:</p>
+<p>Satisfaction.</p>
+<hr>
+<p>It can test:</p>
+<h2 id="main-effects"><strong>Main effects</strong></h2>
+<p>Does Gender affect satisfaction?</p>
+<p>Does ShopPref affect satisfaction?</p>
+<hr>
+<h2 id="interaction-effect"><strong>Interaction effect</strong></h2>
+<p>Does the effect of ShopPref depend on Gender?</p>
+<hr>
+<p>Example:</p>
+<p>Online shopping may improve satisfaction more for one gender group than another.</p>
+<hr>
+<h1 id="21-why-maria-prefers-factorial-anova"><strong>21. Why Maria Prefers Factorial ANOVA</strong></h1>
+<p>Her reason:</p>
+<p>Clear group comparisons.</p>
+<p>Advantages:</p>
+<ul>
+<li>Easy interpretation.  </li>
+<li>Direct comparison of means.  </li>
+<li>Useful for categorical predictors.</li>
+</ul>
+<hr>
+<p>It answers:</p>
+<p>&ldquo;How do groups differ?&rdquo;</p>
+<hr>
+<h1 id="22-multiple-regression"><strong>22. Multiple Regression</strong></h1>
+<p>James proposes regression.</p>
+<h2 id="purpose-13"><strong>Purpose</strong></h2>
+<p>Predict a continuous outcome using multiple predictors.</p>
+<hr>
+<p>Example:</p>
+<p>Satisfaction predicted by:</p>
+<ul>
+<li>Gender.  </li>
+<li>AgeGroup.  </li>
+<li>ShopPref.</li>
+</ul>
+<hr>
+<p>Model:</p>
+<p>Satisfaction \=</p>
+<p>Gender + AgeGroup + ShopPref</p>
+<hr>
+<h1 id="23-dummy-coding-in-regression"><strong>23. Dummy Coding in Regression</strong></h1>
+<p>Categorical variables cannot directly enter regression.</p>
+<p>They must be coded numerically.</p>
+<p>Example:</p>
+<p>ShopPref:</p>
+<p>Offline \= 0</p>
+<p>Online \= 1</p>
+<hr>
+<p>Gender:</p>
+<p>Male \= 0</p>
+<p>Female \= 1</p>
+<hr>
+<h1 id="24-advantages-of-regression"><strong>24. Advantages of Regression</strong></h1>
+<p>Regression allows:</p>
+<h2 id="simultaneous-analysis"><strong>Simultaneous analysis</strong></h2>
+<p>Multiple predictors together.</p>
+<hr>
+<h2 id="control-variables-2"><strong>Control variables</strong></h2>
+<p>Example:</p>
+<p>Does ShopPref predict satisfaction after controlling for Gender?</p>
+<hr>
+<h2 id="unique-contribution"><strong>Unique contribution</strong></h2>
+<p>Estimate the effect of each predictor.</p>
+<hr>
+<h1 id="25-anova-vs-regression"><strong>25. ANOVA vs Regression</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ANOVA</th>
+<th>Regression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Group comparison</td>
+<td>Prediction</td>
+</tr>
+<tr>
+<td>Categorical predictors</td>
+<td>Multiple predictors</td>
+</tr>
+<tr>
+<td>Focus on mean differences</td>
+<td>Focus on contribution</td>
+</tr>
+<tr>
+<td>Easier interpretation</td>
+<td>More flexible</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="26-mixed-linear-models"><strong>26. Mixed Linear Models</strong></h1>
+<p>The GAMLj module becomes useful when the data structure changes.</p>
+<hr>
+<p>Example:</p>
+<p>Repeated satisfaction measurement:</p>
+<p>Before campaign.</p>
+<p>After campaign.</p>
+<hr>
+<p>Problem:</p>
+<p>Same participant provides multiple responses.</p>
+<p>Observations are not independent.</p>
+<hr>
+<p>Mixed models handle:</p>
+<ul>
+<li>Repeated measures.  </li>
+<li>Individual differences.  </li>
+<li>Correlated observations.</li>
+</ul>
+<hr>
+<h1 id="27-when-not-to-use-mixed-models"><strong>27. When NOT to Use Mixed Models</strong></h1>
+<p>Do not use mixed models simply because:</p>
+<ul>
+<li>Data is complex.  </li>
+<li>There are multiple predictors.  </li>
+<li>ANOVA has interactions.</li>
+</ul>
+<hr>
+<p>Mixed models are mainly needed for:</p>
+<p>Repeated or hierarchical data.</p>
+<hr>
+<h1 id="28-statistical-diagnostics"><strong>28. Statistical Diagnostics</strong></h1>
+<p>Prof Lee emphasizes checking diagnostics.</p>
+<p>Before trusting results:</p>
+<p>Check:</p>
+<ul>
+<li>Variable setup.  </li>
+<li>Missing values.  </li>
+<li>Assumptions.  </li>
+<li>Distribution.  </li>
+<li>Model fit.</li>
+</ul>
+<hr>
+<h1 id="29-diagnosing-impossible-results"><strong>29. Diagnosing Impossible Results</strong></h1>
+<p>Example:</p>
+<p>Mean satisfaction \= 150.</p>
+<p>Expected:</p>
+<p>Satisfaction scale around 1–5.</p>
+<hr>
+<p>Possible causes:</p>
+<ul>
+<li>Incorrect variable setup.  </li>
+<li>Invalid values.  </li>
+<li>Missing value code included.  </li>
+<li>Wrong measurement type.</li>
+</ul>
+<hr>
+<h1 id="30-correct-diagnostic-approach"><strong>30. Correct Diagnostic Approach</strong></h1>
+<p>First verify:</p>
+<h2 id="satisfaction-variable"><strong>Satisfaction variable</strong></h2>
+<p>Should be:</p>
+<p>Continuous.</p>
+<hr>
+<h2 id="shoppref-variable"><strong>ShopPref variable</strong></h2>
+<p>Should be:</p>
+<p>Nominal.</p>
+<hr>
+<h2 id="missing-values"><strong>Missing values</strong></h2>
+<p>Check:</p>
+<p>999 is excluded.</p>
+<hr>
+<p>Why?</p>
+<p>A value like 999 included in satisfaction will inflate:</p>
+<ul>
+<li>Mean.  </li>
+<li>Variance.  </li>
+<li>Test results.</li>
+</ul>
+<hr>
+<h1 id="31-common-misconceptions"><strong>31. Common Misconceptions</strong></h1>
+<h2 id="misconception-1-3"><strong>Misconception 1:</strong></h2>
+<p>Numbers automatically mean continuous variables.</p>
+<p>Reality:</p>
+<p>Numbers can be category codes.</p>
+<p>Example:</p>
+<p>Gender:</p>
+<p>1 and 2 are labels.</p>
+<hr>
+<h2 id="misconception-2-3"><strong>Misconception 2:</strong></h2>
+<p>Levene’s test checks normality.</p>
+<p>Reality:</p>
+<p>Levene checks variance equality.</p>
+<hr>
+<h2 id="misconception-3-3"><strong>Misconception 3:</strong></h2>
+<p>A p-value measures effect size.</p>
+<p>Reality:</p>
+<p>p-value measures evidence against the null hypothesis.</p>
+<hr>
+<h2 id="misconception-4-3"><strong>Misconception 4:</strong></h2>
+<p>Regression is always better than ANOVA.</p>
+<p>Reality:</p>
+<p>Choose based on research question.</p>
+<hr>
+<h2 id="misconception-5-3"><strong>Misconception 5:</strong></h2>
+<p>More complex models provide better answers.</p>
+<p>Reality:</p>
+<p>The simplest appropriate model is usually preferred.</p>
+<hr>
+<h1 id="32-complete-analysis-workflow"><strong>32. Complete Analysis Workflow</strong></h1>
+<h2 id="step-1-prepare-data-2"><strong>Step 1: Prepare Data</strong></h2>
+<ul>
+<li>Define variables.  </li>
+<li>Set measurement levels.  </li>
+<li>Add labels.  </li>
+<li>Mark missing values.</li>
+</ul>
+<p>↓</p>
+<h2 id="step-2-explore-data-2"><strong>Step 2: Explore Data</strong></h2>
+<ul>
+<li>Mean.  </li>
+<li>SD.  </li>
+<li>Distribution.  </li>
+<li>Frequencies.</li>
+</ul>
+<p>↓</p>
+<h2 id="step-3-test-differences-2"><strong>Step 3: Test Differences</strong></h2>
+<p>Two groups:</p>
+<p>t-test.</p>
+<p>Multiple groups:</p>
+<p>ANOVA.</p>
+<p>↓</p>
+<h2 id="step-4-build-predictive-models-2"><strong>Step 4: Build Predictive Models</strong></h2>
+<p>Regression.</p>
+<p>↓</p>
+<h2 id="step-5-advanced-designs"><strong>Step 5: Advanced Designs</strong></h2>
+<p>Mixed models for repeated measurements.</p>
+<p>↓</p>
+<h2 id="step-6-diagnose-and-interpret"><strong>Step 6: Diagnose and Interpret</strong></h2>
+<p>Check assumptions and explain results.</p>
+<hr>
+<h1 id="final-revision-summary-2"><strong>Final Revision Summary</strong></h1>
+<h2 id="variable-types-2"><strong>Variable Types</strong></h2>
+<p>Nominal:</p>
+<p>Categories without order.</p>
+<p>Ordinal:</p>
+<p>Ordered categories.</p>
+<p>Continuous:</p>
+<p>Numeric measurements.</p>
+<hr>
+<h2 id="tests"><strong>Tests</strong></h2>
+<p>Two groups:</p>
+<p>Independent samples t-test.</p>
+<p>Three or more groups:</p>
+<p>ANOVA.</p>
+<p>Multiple predictors:</p>
+<p>Regression.</p>
+<p>Repeated measures:</p>
+<p>Mixed linear model.</p>
+<hr>
+<h2 id="core-principle-3"><strong>Core Principle</strong></h2>
+<p>A reliable statistical analysis requires:</p>
+<p><strong>Correct data setup → Appropriate method selection → Assumption checking → Meaningful interpretation</strong></p>
+<p>The best analysis is not the most complicated one; it is the one that correctly answers the research question while producing understandable evidence for decision-making.</p>
+<p><strong>Live</strong></p>
+<p>Stream<br>
+Amrita Online MBA  Semester 4  Batch OCT 2024  Live Session  Project-20260703_190034-Meeting Recording - View-only</p>
+<p>This document is shared with others</p>
+<p>Mahalingam P R - \[AA.BU.P2MBA24075126\]<br>
+M<br>
+Sign in</p>
+<p>Record</p>
+<p>Upload</p>
+<p>Favorite</p>
+<p>Playlist</p>
+<p>Teams</p>
+<p>Share</p>
+<p>Volume slider is at 100%<br>
+0 minutes of 1 hour 1 minute 24 seconds<br>
+0:00 / 1:01:24<br>
+1<br>
+x<br>
+Read transcript<br>
+Transcript</p>
+<p>Close</p>
+<p>Download<br>
+You don&rsquo;t have permission to download the transcript. Contact Amrita Online - LMS File Server to request access.</p>
+<p>You don&rsquo;t have permission to download the transcript. Contact<br>
+Amrita Online - LMS File Server<br>
+to request access.<br>
+Transcript. Use arrow keys to navigate between transcript entries. Select an entry to navigate the media to the time of the entry.</p>
+<p>AI-generated content may be incorrect</p>
+<p>Ms Shinta Idicula - MBA - Amrita Online<br>
+started transcription<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+0 minutes 3 seconds<br>
+0:03<br>
+Ms Shinta Idicula - MBA - Amrita Online 0 minutes 3 seconds<br>
+Recorded for academic purposes. I kindly request all participants to turn on your cameras if possible. Your microphones will remain muted throughout the session to avoid background disturbances. If you have any questions or wish to share your thoughts, please use the raise hand option and I will unmute you at appropriate time.<br>
+Ms Shinta Idicula - MBA - Amrita Online 0 minutes 24 seconds<br>
+You may also use the chat box to share your comments or queries during the session. Now, without further delay, I would like to hand over the session to Doctor Riji Kumar Ji, who will be leading today&rsquo;s discussion. Over to you, Sir.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+0 minutes 38 seconds<br>
+0:38<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 0 minutes 38 seconds<br>
+Yeah, thank you, Shinda. Good evening everyone. I hope we are, I mean, you are thorough with the introduction I have given given about the business quiz that we are going to discuss today and maybe in next 2 to 3 sessions also. In fact, we have developed, we had a business problem.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 0 minutes 59 seconds<br>
+Like customer traffic is getting very low in a retail format, so the in business want to know the reasons behind customer I mean defections or customers not coming.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 14 seconds<br>
+For that purpose, we have developed a kind of theory. We decided that we need to understand more details about the satisfaction level, the feeling about various product related aspects I mean available within the shop, similarly other store related.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 36 seconds<br>
+Aspects like convenience, risk quality of the people, all such things we need to get an idea.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 43 seconds<br>
+Also, we want to know whether the customer is really feeling a value out of shopping in our shop.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 51 seconds<br>
+And we also heard or we also interested that now the customers are of late have become highly variety seekers, so there can be a tendency for them to shift shops. So we just want to inquire to what extent our customers who is visiting our shop are variety seekers.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 2 minutes 11 seconds<br>
+So keeping all this objective in our mind, we created a framework also. I have explained that in the last class and then we decided, okay, we need to get the feedback from the customers because they are the most eligible people to give a comment about the I mean various reasons.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 2 minutes 30 seconds<br>
+That prevent them to come again and again, or various reasons that make them happy about visiting our shop. So we prepared a questioner. We discuss decided that a perception based study will be better in this case because perceptions are something very difficult to capture and that is little bit hidden also. So if we can capture them.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 2 minutes 55 seconds<br>
+In a better way, we will be in a position to understand the mindset of the customers, and by analysing their mindset, we will be in a position to find solution to the problem business problem we are facing.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 3 minutes 8 seconds<br>
+So we have, I mean, developed a framework, then we developed a questionnaire. I have explained the various insights we took from the literature to develop a questionnaire also.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 3 minutes 24 seconds<br>
+Then that&rsquo;s what I have explained in the last interaction. Now, in this interaction, I&rsquo;ll be trying to explain. I have also introduced the tool. I said there are lot of statistical tools available to perform various analysis required for your investigation.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 3 minutes 44 seconds<br>
+Among them, many are paid and many are free. Also, I have introduced or I have just explained, I mean told about a tool called Jamovi. It is an open source. It works in R background. So I have just told how to download it and all. So today I will be showing more about.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 4 minutes 3 seconds<br>
+The tool and also some other details about the research design design in the sense we need to take a decision how many people should be contacted, how these people should be contacted, what way the data should be collected, and what we need to do with the data you have collected for the purpose of answering certain questions in your mind.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 4 minutes 22 seconds<br>
+So all such things comes up as part of the design. So today I will be giving an overview about such things. Of course, please listen to my video lectures also. Let me share the notes portion.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 4 minutes 40 seconds<br>
+I hope the notes everybody received the notes. So the questionnaire part we have explained how we developed the questionnaire and all I have requested you people to go through the questionnaire also. It is there in this write up. Now the next important stage is data collection. Now here.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 4 minutes 59 seconds<br>
+As we are collecting data by way of perceptions of the customers who are visiting this retail shop and we plan to collect at 1:00 point of time. So this is mostly this is going to be a cross sectional study. At 1:00 point of time we try to collect from a.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 5 minutes 18 seconds<br>
+Group of customers, that group, how many need to be, I mean, approached and from how many people or how many customers the data need to be collected. That depends on the sampling design that I will tell. But now we have decided that we don&rsquo;t we have to collect at 1:00 point of time because when time changes, the perceptions can also change. So as far as possible in a uniform.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 5 minutes 42 seconds<br>
+Or in a single point of time, we need to collect from multiple people. So we opted to go for a cross sectional survey design for this study and the data inputs, the certain details about the customers who come and shop in our retail shop and their perceptions or feelings with respect to certain variables we have included in our investigation.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 6 minutes 5 seconds<br>
+Like product attributes, PA stands for product attributes, store attributes, value field, then variety seeking nature and general satisfaction level. So these variables why I have taken why we have chosen, I have explained at earlier. Now we will be asking the perceptions of certain customers, some of the customers.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 6 minutes 25 seconds<br>
+With respect to these variables, and that forms the data for this investigation. Okay, so every research will be using certain data. Sometimes the data will be secondary, maybe in a finance related project the data can be I mean financial reports or maybe stock price changes stock price.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 6 minutes 44 seconds<br>
+Movement in a operation maybe the performance of a machine or performance related to a process. So data will be different, but here we are going for a customer related investigation. So we are capturing the data by way of their perceptions with respect to certain variables we have considered as important in our study.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 7 minutes 3 seconds<br>
+And now it comes to the sample design. In a sampling design, what are the major decision to begin? One, what? Who is the sample unit? So here we know the sample unit is the customer who visits the shop because he is the eligible person, most eligible person to give an opinion about various aspects.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 7 minutes 23 seconds<br>
+Related to the shop. So he is the sample unit. Now how we are going to collect or choose the sample. There will be hundreds of customer coming to this shop. You cannot go and meet all the customers coming to a particular shop. So there should be an approach whom should be collected, maybe on a rand, maybe on a particular random.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 7 minutes 43 seconds<br>
+Many chosen day all the customers are coming to shop or from the list of customers the shop owner is having from that can be pick randomly some customers. So there should be a strategy to choose the sample and that&rsquo;s called sampling method. Classically, there are 2 type of sampling method: random sampling method and non random sampling method. random sampling method.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 8 minutes 8 seconds<br>
+Is preferred just because it brings randomness and it prevents bias to certain extent because you are not selecting an customer with a prejudice or a prejudgment. It is every customer is given has an equal opportunity of getting selected.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 8 minutes 28 seconds<br>
+So mostly random sampling approaches are good when you are going to do an estimation. Here also we will be doing an estimation because we are not getting all the customers. We are taking a sample and we study the sample and from the sample behaviour we try to predict the behaviour of the population. So that&rsquo;s called estimation. That&rsquo;s it.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 8 minutes 48 seconds<br>
+Done here also. So we will be choosing a random sampling method since the shop owner has a list of customers who regularly visit the shop, may be from that by simple lottery method or a systematic sampling method. That means in the serial number 1510 like that we can choose the sample.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 9 minutes 8 seconds<br>
+Because I mean the customer will the customers list will be mostly available with the shop or otherwise we can have another approach. Also, we can choose a random day where the customers are customers are more likely to come like a weekend or Friday or something. And on that particular day, also all the customers who come to the shop, we can.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 9 minutes 30 seconds<br>
+Conduct the survey that all our approach and researcher has the freedom to choose the approach. But the only thing is that researcher should not have any prejudice or bias towards choosing a particular sample or not. He should be open to every customer, everyone who should be treated equally, everybody should.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 9 minutes 48 seconds<br>
+Be given equal opportunity to participate in the investigation. That&rsquo;s the that&rsquo;s related to the sampling method. Number 2 is sampling sample size. How many need to be selected? That&rsquo;s what meant by sample size. We have 2 type of calculator since in our study in various.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 10 minutes 8 seconds<br>
+A lot of latent variables are involved and we use an approach called structural equation modelling where multiple relationship are analysed at a single stretch. So in such cases the first calculator Daniel Soper calculator is ideal. But if you are.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 10 minutes 27 seconds<br>
+Not having any SEM related, I mean estimations or anything, you simply do normal, I mean statistical investigations like your one way ANOVA or independent sample t test or chi square test and all. You can go with the second calculator. I have given this, I mean video in my video, I have shown how these calculators work.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 10 minutes 50 seconds<br>
+The first one I will show once again. I&rsquo;m just clicking that. So this calculator will look like, I mean it&rsquo;s available in free statistics calculator. There are many stat calculators available. It&rsquo;s an easy form. There is a formula to calculate the sample size and it automatically do those calculation gives you the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 11 minutes 10 seconds<br>
+Sample size. Now you see anticipated effect size 0.3 is okay at least 30% you should capture. So here 0.1, 0.3 and 0.5, 0.3 at least we need to capture some medium size. So that&rsquo;s why we keep and power 0.8 is okay one is best one.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 11 minutes 29 seconds<br>
+0.8 or ABO is accepted. Now in our study we have product attributes, store attributes, perceived value, variety seeking and customer satisfaction. 5 Latin variables are there 5 variables 5 so we give that number 5 and each of them I believe that each for each statement there are around.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 11 minutes 51 seconds<br>
+5 questions, so 5 * 525 observed indicators plus 23 other questions are also there. So we have something around 25 or 27 one or 2. It doesn&rsquo;t make some I mean issue, but around 27 observed variables are there that statements or the questions included in the questionnaire and you give a probability level of point.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 12 minutes 11 seconds<br>
+5 because that 0.05 because we want this is the level of significance we want. That&rsquo;s why we keep it 0.5. Now if we calculate, if we click on calculate, you will get a number. See what is the number of minimum sample size to detect an effect. Effect is something similar to me.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 12 minutes 32 seconds<br>
+Beta value I explained about effect also size of the effect is something which caused by this 0.3 and all. So minimum sample 120, but recommended minimum sample size is 150. So this is the so minimum we should collect from 150 customers to get some I mean effect.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 12 minutes 52 seconds<br>
+Size of 0.3 If you want a little more better affect size naturally you need to go for a high level of sample size. Similarly, if you want your significance to be 0.1 level 1% I mean level then naturally again your sample size is going to increase. See 193 has increased.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 13 minutes 11 seconds<br>
+Now if you have more latent variables, naturally it can increase. So this is a simple calculator. You can use this calculator to get the sample size. Now one minute. Oh yeah, I just closed it here. Where is the note? One minute. Let me open the note once again.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 13 minutes 33 seconds<br>
+So this is how we have calculated. The other calculator is also a simple 1i can show you that calculator also one minute. So here we are, I mean calculating the sample size based on 2 things. One, how much confidence you need to have 95% is normally accepted.</p>
+<p>Sync to video<br>
+Transcript</p>
+<p>\[3:38:06 PM\] Transcript watcher started. Scroll the content manually.<br>
+\[3:38:11 PM\] Timestamp: 0:03<br>
+\[3:38:11 PM\] Timestamp: 0:38<br>
+🟥 Stop &amp; Extract Transcript<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 13 minutes 51 seconds<br>
+In social science and error confidence interval plus or 5% so we give 5 and it is 50% that is a default value population proposal. So I mean so how we are trying to split the population that&rsquo;s why if not sure about that you can give it 50. So now what is the population size population science if we.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 14 minutes 14 seconds<br>
+You are not sure you can give a very big number. Yeah, I am giving a very big number because I don&rsquo;t know what how many customers I mean. But of course, the shop owner will have an idea how many customers are normally coming to the shop and all. But if you don&rsquo;t have a give a just.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 14 minutes 33 seconds<br>
+You have very big number, so you will get a sample size 385. So this is one interesting observation. So even if the population size is very big, then also now you see up, say I have given 1000, assuming that we have 1000 customers coming, then the sample size required is 278.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 14 minutes 52 seconds<br>
+I increase it to 10,000. The sample size required is 370 to 1,00,000 it becomes 383 to I make it more 10,00,000 385. I like make it again bigger.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 15 minutes 8 seconds<br>
+So after certain point the number doesn&rsquo;t increase. So we can say that to get a results confident with having confidence level of 95% and a margin of error or confidence interval of plus or -5%, you need to have 385. So this becomes a magic number also.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 15 minutes 28 seconds<br>
+In normal statistical investigation, but now we are going with the same so we can go with the 190 or something that we calculate. So anyway, this is the way you are calculating the sample size. So that&rsquo;s again we have covered now how we are going to collect the data.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 15 minutes 47 seconds<br>
+Nowhere. We thought that face to face data collection, there are multiple ways of data collection. We can personally meet the customer and collect them after giving the questionnaires or we can mail to them or can do a telephonic or through a 3rd person or numerator, we can conduct the survey. So here we created the questionnaire, we give the questionnaire to the customer and they have.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 16 minutes 9 seconds<br>
+I mean, mark the responses in individually. That&rsquo;s why it is called self administrated manner using a structured questionnaire. Now you collected data from around, I don&rsquo;t know, around 300 plus customers. We have collected the data. So now after collecting the data, next important tasks.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 16 minutes 29 seconds<br>
+Or a researcher is to manage the data. So we will be trying to now we can collect if you are manually filling the customers and all naturally we need to feed the data into a spreadsheet like Excel. But if you are using an online survey, Google form or something automatically it will be.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 16 minutes 48 seconds<br>
+Captured in a Google format, so only you need to do the coding or little bit of editing and all. But whatever way you can do that. So I mean if you are collecting manually using a Questioner, enter the data into a spreadsheet, otherwise download the spreadsheet containing the data, but naturally you know it is not coded. What do you mean by call?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 9 seconds<br>
+Because for variables, say for example, there is a question on gender: there can be male, female. So we need to give some code male equals one, female equals 2. Similarly, strongly disagree equals one, strongly agree is equal to 51 to 5. These were the these are called the coding mechanism. Similarly, there is a question on satisfaction.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 29 seconds<br>
+There are 5 questions so we can give each question some called like SAT one, SAT 2, SAT 3, etcetera. So these are different ways of coding coding. Why you are doing it to make the tool to easily understand and we are converting certain categories to number numeric because if you convert to numeric only.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 52 seconds<br>
+Calculations are possible strongly agree and strongly disagree. You cannot convert into a strong convert into a score, but if you give strongly disagree a numeric value of one at the end, you can calculate some scores for each variable or for with respect to.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 18 minutes 10 seconds<br>
+Any variable under investigation and similarly there in your data, if you are manually collected, there can be missing values. There can be some outlet or unusual, say for example, one person instead of writing strongly agree or marking 5, they might have put 50 some or age, it should have correctly put like a 29.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 18 minutes 31 seconds<br>
+Instead of that, it may become reverse like 92 so we can see that these are certain, I mean, unusual values or some inconsistent responses. Some people have given responses for every question, put the number 9 neutral. That means it is a non responsiveness, he is not interested to answer so.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 18 minutes 51 seconds<br>
+You need to discard such I mean responses and nutic clean the data. After cleaning the data, and one more step is involved if the data is collected in different scales. That means, say for example, it is one to you are captured on one to 5 and another scale you have captured on one to 7.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 19 minutes 11 seconds<br>
+Some of the weight, I mean you have asked for the height of the customer, so it will be in centimetres. Somewhere else you ask the weight of the customer, it will be in kg. So if there are different scales or different I mean units are used naturally, we need to transform them to something we call like EZ score.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 19 minutes 33 seconds<br>
+Because we need to normalise or standardise it. Otherwise, in estimation time, this mean entries having different values can create, you cannot interpret them properly. So we will try to transfer. But luckily, in our case, we are we have captured responses on.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 19 minutes 52 seconds<br>
+One to 5 scale for most of the questions, so there is no issue of standardising required here. But again, I will tell you some the normality is an important assumption for data. If normality is not met, one of the mechanism to I mean reach at a normal.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 12 seconds<br>
+Normality for the data is to use the standardised scores or research schools. So then you will do the, I mean, I mean standardization. All such things I will explain while I will do the analysis. Then similarly, there will be certain computations required in the data, for example here.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 31 seconds<br>
+For satisfaction or for any store attribute or product, there are multiple questions. So the score for that particular variable will be naturally sum or average. Either you can take the sum or average or whatever formula you find equal useful to capture the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 51 seconds<br>
+Enter a concept in its totality, so that way so that&rsquo;s the data management part. So after managing the data, this is the data sheet. I hope you can see the data. See here first column know all the data are entered.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 10 seconds<br>
+Coded and now this looks like very much easy to understand in numeric data set. So here gender sex stands for gender one here used for male and 2 used for female.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 29 seconds<br>
+Shop preference one for offline and 2 for online age we have classified into 4 groups less than 2525 to 4040 to 60 above 60. Like that we have made a classification educational qualification also we have classified matriculate graduate.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 48 seconds<br>
+Postgraduate professional the 4 classification I have given income level also we have 4 classification each group we are given the code one one to 4. Then with respect to store attribute, we have 5 questions. We have given the code store attribute one, store attribute 2, store attribute 3.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 22 minutes 9 seconds<br>
+Store attribute 4 and store attribute. So these are the 5 questions used to capture store attributes. I hope you have seen the questions. So these are the questions. Store attribute 5 questions are there. Each question we have given the code SA one SA 2.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 22 minutes 28 seconds<br>
+SA 3, SA 4, and SA 5 and the responses are cornered like one to 51 stands for strongly disagree, and 5 stands for strongly agree. So all the variables are cornered like that. PA one stands for product attribute, VS ones to VS 4 stands for variety seeking.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 22 minutes 48 seconds<br>
+PV one to PV 5 stands for value, SAT one to SAT 5 stands for satisfaction, customer satisfaction. So all the variables are there. Now you are clear with the data. Okay, now we will be trying to.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 23 minutes 7 seconds<br>
+I mean, so go to the statistical analysis. So when after collecting the data and after entering the data in a spreadsheet or make the data ready for analysis, there are 3 levels of analysis normally.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 23 minutes 27 seconds<br>
+Whatever we say, there&rsquo;s a perception data, any data for that matter, any analysis or any statistical investigation for that matter, any data you have collected need to be analysed for at maybe 3 levels, 3 levels, the quality of.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 23 minutes 46 seconds<br>
+Data need to be assessed. One general quality, whether your data is generally good for statistical estimation. So there are certain, I mean certain stuff to be conducted to verify the quality of the data for statistical estimation, that&rsquo;s general quality.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 24 minutes 7 seconds<br>
+Number 2, here there are some assumptions related to measurement. You have taken certain statements, you have. I mean, in fact, the variables are perception based variables. So you have, I mean, made an indirect approach to measure them using the perceptions of the customers.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 24 minutes 27 seconds<br>
+So if your measurement has come good.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 24 minutes 31 seconds<br>
+Then you are happy how to verify whether the measurement quality has come good or or measurement quality has achieved or not. For that, there are 2 statistical assumptions I have said once again earlier in my class also. Otherwise, please listen to my video lecture one called validity assessment.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 24 minutes 50 seconds<br>
+And number 2 called reliability assessment. Validity speaks about exactly we have measured exactly what we planned to measure. That is called validity reliability because we have created some statements to measure a phenomena. So now I measured, I got the value, but if I measure it again.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 25 minutes 10 seconds<br>
+Will it give the same or a similar or a consistent answer? That&rsquo;s called a reliability. Or I took one sample from the population and used this instrument and measured the satisfaction and got an answer. Now if I take another sample from the population and measure it, will it produce a same trustworthy reliable result? So consistency?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 25 minutes 31 seconds<br>
+In giving similar results in repeated administration, that&rsquo;s called reliability and exactness of the feeling of the phenomena which we have measured, that&rsquo;s called validity. So these 2 things need to be verified. There are different type of validity and different type of reliabilities.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 25 minutes 50 seconds<br>
+Please listen to my video lecture on this topic now. So, measurement quality assessment means we will be verifying how the measurement has come, whether it has come reliable as well as valid, and whether the items or statements used to measure exactly measured the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 11 seconds<br>
+Feeling we wanted to measure, we wanted to measure the feeling about satisfaction. We should not measure the feeling about something else. So that way whether it has come. So there are certain statistical indicators for this quality and reliability I will explain while we go forward. Then we have to perform certain statistical.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 31 seconds<br>
+Verification now in this particular case, we want to know whether store attribute is predicting value value in turn whether it is predicting satisfaction. So there are lot of relationship mapping out there. Similarly, our customers are classified into different groups, so there are group comparisons.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 53 seconds<br>
+Required for that we need to do ANOVAs or T test. For relationship mapping we need to do regressions, we need to do moderation analysis, mediation analysis, all such things are there. These are highly, I mean impactful statistical tests for conducting this test your data should meet certain specific data assumptions. So.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes 17 seconds<br>
+Mean, so these are the 3rd 3rd set of test we need to do on the data. Whether our data is good for the specific statistical analysis we are conducting as part of the hypothesis testing. Okay, so 3 levels of.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes 36 seconds<br>
+Call data quality verification one general quality, number 2 measurement quality, number 3 specific data quality for the chosen statistical analysis. So these 3 things we need to verify in the beginning itself, and if our data.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes 56 seconds<br>
+Not found good to conduct the specific analysis we wanted. Naturally, either we need to clean the data, maybe some responses will be causing error in the data set, or we may have to collect additional data even if we have selected the statistically reliable or correct sample size. If your data is not.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 28 minutes 18 seconds<br>
+Coming good. Naturally, we need to increase the sample size. So these are certain preliminary things I need to explain about I mean data quality related things. Now what are the general quality assumptions? Very simple. I am just touching this words only I will just show.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 28 minutes 37 seconds<br>
+In tool also how to do this. My videos are clearly explaining all this steps. Please if I am not getting time to go through the entire topic today, please spend time and try to understand the YouTube. I mean the what is that our video we have uploaded and parallel.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 28 minutes 57 seconds<br>
+You please try to do the analysis in the tool also, so it will be clear for you. Number one, normality for every statistical investigation where the kind of estimation activity is involved. That means looking at the sample, predicting the population their data should be.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 29 minutes 16 seconds<br>
+It is otherwise said if data is not following at is a residual because we feel that with respect to every observation there can be an error in observation outflow. So the true value will be measured value plus the corresponding error. Lesser the lower the error, better will be the measurement. Okay, so.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 29 minutes 35 seconds<br>
+The assumption is that data should be normal, normal, you know, that&rsquo;s a standard well plan. And it said that if data is not perfectly normal, at least the residuals the error should follow a normal distribution. This I mean, this is very much essential and for.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 29 minutes 54 seconds<br>
+Verifying that there are multiple ways: Sharpio Willks Test, Kolmogrov, Smirnov Test, or by simply verifying skewness and kertosis. Skewness and kertosis. As I said, these are 2 metrics which speaks about distribution of the data. So skewness value and kurtosis value less than absolute 1.96.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 30 minutes 16 seconds<br>
+Tells that I mean of the data can be considered generally normal or the deviation is not problematic for parametric or random number based estimation. So that&rsquo;s a condition. So normality is first general quality that independent of.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 30 minutes 35 seconds<br>
+Observe independence of observation is an important point. See, each data must be collected independently. See, if you are conducting a survey, you ask the first person, another person is observing the way the data is collected and his answers. And then later on, if you go and ask him the same question, naturally the answers he listen from the first person will have an influence on his answers.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 30 minutes 57 seconds<br>
+So, I mean naturally, you cannot say that he is sharing his own personal opinion. He is biased by or he is somehow influenced by the I mean opinions of another person. So that&rsquo;s why we call data points should be collected independently. So that&rsquo;s why independence of observation.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 31 minutes 18 seconds<br>
+So, study design through design, we can bring such things. You don&rsquo;t collect data in a group or something, or you will not allow the respondent to interact each other before answering your question. But statistically, to do that, there is a test called RANS test.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 31 minutes 37 seconds<br>
+Or otherwise we have something called a Durbin Watson statistic. Durbin Watson between 1.5 to 2.5 this is statistic. This is a measure calculated. Durbin Watson 2 statisticians they have come about with the measure and that measure gives a value that value if it is between 1.5 to 2.5 we can rule out.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 31 minutes 58 seconds<br>
+Data dependence or you can say that errors are not correlated. Autocorrelation of errors is explained in another way then scale of measurement. So data should be measured in interval. See always see that&rsquo;s why I said nice different I mean levels or different way of.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 32 minutes 18 seconds<br>
+Scales are used in measuring that either you should standardise it otherwise, you it is very difficult to interpret interpret then absence of missing values, outliers or something we can check missing values by outliers or by I mean, I mean is that scores we can get outliers also.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 32 minutes 38 seconds<br>
+They said scores between less than absolute 2.5 can be considered as within the acceptable range. Beyond that can be that need to be considered as an outlier. So these things in my video lectures I have explained in detail. Similarly, even though we have taken.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 32 minutes 58 seconds<br>
+Sample size based on sample size calculator, we need to again cross check whether we have got the adequate sample size in statistical ground also. So for that we have to case of Mayor Olin test if this is conducted as part of exploratory factor.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 33 minutes 18 seconds<br>
+Analysis, I could perform it while we do. So that&rsquo;s again a general assumption. Then the common method by, say, if you&rsquo;re collecting, especially in the case of survey data, if you&rsquo;re collecting data using a common method, naturally it will develop an artificial correlation or covariance among us.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 33 minutes 38 seconds<br>
+Items so that will affect the validity as well as ability to you may get biased estimates for that there is an statistical way to verify Harman single factor trust or single factor should not explain more than 5050% or in a single way. You might have heard about variance inflation fact.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 33 minutes 58 seconds<br>
+This is a variance means artificial, I mean difference boosting, so it should be less than 3.3. So these are certain steps and how to perform this I will explain maybe today it is not possible in the next class. Otherwise my please listen to my video lectures on this now.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 34 minutes 17 seconds<br>
+So in this particular study, there are multiple statistical investigations required. So every researcher, when you have your questions in your mind, your objective of your study, in your mind, you know what are the probable statistical verifications required or statistical analysis required.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 34 minutes 39 seconds<br>
+So if you have such an idea, naturally you can from theory what are the assumptions required for those type of analysis and how we can do it. So this research requires we need to know the descriptives, how mean value of each variable, what is the frequency of each group.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 34 minutes 57 seconds<br>
+All such things. So descriptive covers all these things. Then validation of scales using reliability validity verification. So you have used a lot of items to measure certain phenomena&rsquo;s which are latent in nature, store attribute, product attribute satisfaction, all such things we have measured using certain items. So what&rsquo;s the guarantee that the exact measurement have happened and these items were formed in measure?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 20 seconds<br>
+In measuring the phenomena, so that&rsquo;s that&rsquo;s the validity reliability verification that&rsquo;s required. Then comparison of variables across groups, see how satisfaction differs across age group, across gender, across income levels. All of such things are essential for our research.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 39 seconds<br>
+Over this investigation, then correlations, of course, that&rsquo;s again some variables, whether they are connected or not. Regression or structural equation modelling. Regression deals with one to one or many to one relation. Structural equation modelling explains multiple relations at a stretch which can capture the mediator or moderator impacts also.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 36 minutes 1 second<br>
+All such things are included in our exam, our status, our analysis. So for descriptive, what we need to know, we know we need to know mean, median mode, standard division, frequency, skewness, Purtasis, etcetera. No strict assumptions. However, mean and standard divisions are meaningful only to interval and ratio.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 36 minutes 23 seconds<br>
+Scales and approximately normal data, that&rsquo;s all scale validation. You have 2 things: one reliability, another validity. For reliability, you will be checking some metric called Crompack ALF. The tool will calculate it, but for that assumption is that the items are continuous or treated as continuous. Continuous means one to 5 is continuous.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 36 minutes 45 seconds<br>
+Absence of common method bias and reasonably normal distribution. So these are the assumptions required for checking from back alpha or composite reliability, another measure of reliability. Similarly, validity. There are multiple validity measures, most of them you will get in EFA.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 37 minutes 3 seconds<br>
+One of EFA full form is exploratory factor analysis and next is confirmatory factor analysis. Exploratory factor analysis is done in the sample. Confirmatory factor analysis verify whether the factor structure or whether the observation or whether the readings you observed after conducting EFA will.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 37 minutes 23 seconds<br>
+Can be generalizable in the population also. So one is more of a confirmatory, another is a sample explanation. So we need to look into metrics like AVE means average variance extracted. Average variance extracted speaks about construct validity. Then factor loadings that again.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 37 minutes 43 seconds<br>
+That is, speaking about item validity, then discriminate validity, whether when even when even when all the variables or all the items together are measuring a phenomena, then also they should be adequately separate enough or the customer should be in a position or the respondent should be in a position to.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 4 seconds<br>
+Realise the difference in the meaning of the statements. That&rsquo;s what got measured using discriminant validity. We used either former lack of criteria or HTMT values. These are all tools we will calculate and give you. Analysis is very simple, but only thing is you should know these are the things we need to check.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 26 seconds<br>
+AVE means average variance extracted, AVE average variance extracted, factor loading item or item loading, each item to what extent it loads in measuring the phenomena under investigation. So here the assumptions are we need to have a good sample size, linear linearity should exist and multivariate normality in the case of.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 45 seconds<br>
+CFF or thing then group comparison. If there are only 2 group, we will do be doing independent sample t test. If there are more than 2 group, we will be doing one way ANOVA or ANOVAS. If you are doing multiple things together in all such things, normality of the dependent variable is an assumption. Then homogeneity because.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 39 minutes 6 seconds<br>
+The Within the group, the variance should be equal. See, male and female we are comparing for satisfaction. So male we have some number, and female we have some number of respondents. So the assumption is that there&rsquo;s the variance.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 39 minutes 24 seconds<br>
+The difference in the opinion variance means with respect to any item under measurement there can be some dispersion in the observed values, so that variance should be equal. Otherwise, we cannot consider the group as homogeneous group if groups are not homogeneous.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 39 minutes 45 seconds<br>
+Naturally, comparisons are not statistically trustworthy, that is right. For verifying homogeneity, we have a test called Lebanese test. Of course, we can do in. It is only you need to click as tick in the statistical tool, that&rsquo;s all. Then the next condition, independent of frustration, we will do in the beginning itself by.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 40 minutes 5 seconds<br>
+Darwin Watson statistics or Anstrust, then association in chi correlation, naturally linearity and normality are the assumption. Then even regression, of course, linearity between linearity, of course, it is not that strict nowadays. Now there are many tools we will.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 40 minutes 25 seconds<br>
+Understand the relationship between 2 variables even when they have a non linear relationship. So don&rsquo;t worry about that. Even some there is a tool called warp PLS. I will try to give a demo. I think I have a video I have created a video about warp warp PLS which is capable of handling non linear relationship also. So linearity was earlier a very big.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 40 minutes 49 seconds<br>
+Assumption, but now we can do I mean non linear regression also. Okay, so here also there are certain assumption then in complex models like what we are going to do here, there are 2 assumption: covariance based and PLS based covariance based structural equation modeling which uses the tools such as AMOS, LSRA, Landoff.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 11 seconds<br>
+And PLS based which use the tools called Warp PLS, Smart PLS etcetera. The general condition is that multivariate normality for CBC SEM it is a condition for PLSM does not have much of a statistical I mean assumptions requirement. It works on small samples also, but of course there should be.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 32 seconds<br>
+A clear theoretical rationale for using these of these approaches. I will explain that when we come to model building or model analysis. Then of course, there is something called chi square we will be doing when there are 2 categorical variables we need to understand whether they&rsquo;re associated or not. For example, here the preference with online.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 52 seconds<br>
+Offline offline or online preference of shopping, whether it has an association with gender or age group. So for understanding such relations, we will be using chi square test of I mean independence here. Only one assumption is the mutual exclusiveness.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 42 minutes 11 seconds<br>
+So now when it come to specific test, specific test one is homogeneity. I said Lebanese test, but this test there are multiple there are plots also. You can get linearity, multicollinearity when you do regression or structural equation. Multicollinearity should be absent. That means 2 or more predictive variables in a regression model are highly correlated. When they are highly correlated, you will find it difficult to.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 42 minutes 34 seconds<br>
+Understand the individual predictive power of each of the variables. For that we look VIF variation variance inflation factor and if it is less than 3.3 or at least 5 then we rule out multicollinearity. So these are assumptions so I have covered what are the things I have covered now see.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 42 minutes 54 seconds<br>
+How to collect the data, how to decide the sampling strategy, how to manage the data and create a spreadsheet.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 43 minutes 6 seconds<br>
+Which includes the data how after giving proper coding as well as I mean converting to numeric things and all. Then I said about what are the levels of quality verification required. The number one was with respect to general quality assumptions where we need to look into.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 43 minutes 27 seconds<br>
+Normality, then we need to look for common method bias. We need to look for data independence. Similarly, if you are there then second, we need to look about the quality of our measurement. For that, we need to look into various reliability and validity criterias. Then thirdly, we need to verify further.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 43 minutes 50 seconds<br>
+Our data is good to perform certain statistical analysis requested or required for the investigation. So in this particular case, we need descriptives, we need comparisons, we need measurement validity, reliability verifications, we need a structural equation modeling kind of an analysis to understand the relationship between the variables.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 44 minutes 12 seconds<br>
+So all such things require certain specific assumptions. Also, wherever group comparisons are coming, homogeneity of variance is an essential condition where all our relationship mapping or relationship investig, I mean mapping is done. Linearity, linearity. Now it&rsquo;s not that serious in requirement, but.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 44 minutes 33 seconds<br>
+Linearity as well as multicollinearity is an essential condition. So I have go in the notes, I have given the detailed description. Please go ahead and read and understand. Now analysis will start in the next class. Before that, today I will again explain the tool and I will tell what are the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 44 minutes 52 seconds<br>
+Initial adjustments you need to do when you enter the data. I will open a fresh sheet in new see J movie. I hope you might have downloaded J movie by now and in J movie there are a lot of things are there in the top ribbon which speaks about various type of analysis if you something is not coming on.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 45 minutes 16 seconds<br>
+As in the default mode itself, you can click on the module and in the module there is something called a Jamobi library. So if you can install the library, it will give lot of additional modules. So depending on what type of analysis you want to do, see for every investigation there is an analysis required.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 45 minutes 38 seconds<br>
+Now it is easy if you are not very clear about what analysis is required in that you can ask Google now ChatGPT or Gemini will immediately tell you what type of an analysis is required in this case. As a research student, you should be familiar with a few popular analysis we can do in survey data. These are the analysis in time series panel data.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 45 minutes 58 seconds<br>
+Or sentiment analysis, topic modelling. We will be trying to address few of them, but of course, as you know, there will be lot of analysis available.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 46 minutes 11 seconds<br>
+Moral search analysis may not be possible and it is not required. Also, depending on your investigation, your purpose of study, your hypothesis, you need to have the smartness to understand what analysis you may require, you may have to perform and how to conduct it, which tool performs it, and after getting the result, how to interpret the result. These are the minimum.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 46 minutes 33 seconds<br>
+Knowledge required for researchers nowadays. So there are lot of I mean some are installed, installed are I mean shown here and available are here. If you want any of them you can install it by simply double click here there is a button called install. You can install it now what all minimum required have been installed here.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 50 minutes 10 seconds<br>
+Okay, now the first was serial number. Nowhere the second variable is gender. So here when I look I know it&rsquo;s there are 3 type of categories here ID when you are giving a specific ID or something. So here it&rsquo;s a categorical variable.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 50 minutes 28 seconds<br>
+Ordinary if it goes not, I mean speaks about some order continuous if it is like one to 10 like age and all, if you are not classifying, if you are simply capturing it, it will be continuous. Now gender, sex we have taken as an nominal variable and there are 2 levels in our data only.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 50 minutes 48 seconds<br>
+And that one is male, so you can simply type here male and go to second type here female.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 50 minutes 58 seconds<br>
+And then put an enter and go to the next variable. So now I&rsquo;ll show you in the data. When you look see here male, male, female, but when you calculate it will automatically take one for male and 2 for female.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 18 seconds<br>
+See all the values have changed. Similarly, shop preference again, this is a category and there are 2 type. First is offline and another is online. I can type offline here.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 33 seconds<br>
+On online here. So one those who prefer off then after put an enter it will come here again similar to this you need to give age. So what the 1231 is less than 25 years 20 so you need to give the levels otherwise you have to keep in your mind you should have a parallel code sheet.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 54 seconds<br>
+And in the card sheet you can main remember so I&rsquo;m not going to do everything it will take some time. I&rsquo;m not we don&rsquo;t have and my purpose is just to give a demo. So similarly all the variables education called is also category we categorised it. So we have 4 categories what each category give you can enter and change.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 14 seconds<br>
+Income also we categorise, but store attributes we know that this is an ordinal variable and one stands for strongly disagree, 2 stands for disagree. So like that you can type, then you can change and after doing everything you can move to enter data sheet.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 33 seconds<br>
+So you can drag this big also. So here the analysis will come. If you want to see that you can see this also. Now the analysis one by one we will be doing the note clearly explains how the analysis can be done. I have introduced the tool also and I have.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 52 seconds<br>
+Explain how the initial adjustments need to be done on the tool. Please go through the notes and try to perform it. data is given to you and next session don&rsquo;t allow don&rsquo;t ask. I mean, request me to do the entire analysis again. Please, we&rsquo;ll have interactions that will be better while doing what was the difficulty you have faced like that we can.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 13 seconds<br>
+Discuss. Okay, so that&rsquo;s what I have to tell for today. I am concluding for time being. Hope at least you are little comfortable with the tool by now. Please try to do now. Today also the numbers are very less. No, I don&rsquo;t know why 38 we will try to do.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 32 seconds<br>
+Take class from 8 onwards. I think some people are not coming from the office Friday evening they will be travelling home, right? That may be the reason people are less.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 44 seconds<br>
+Okay, Shinta, I have concluded for today. Any questions from anyone?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 59 seconds<br>
+Any questions?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 5 seconds<br>
+So please keep it in mind today what we have discussed is how to collect the data, how to decide the sample size.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 15 seconds<br>
+Then after collecting the data, how to arrange the data in a spreadsheet or how to I mean manage it in a spreadsheet. Then after that, I just said what are the different levels of verifications required to see whether your data is good for statistical purposes or for the for your investigation.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 36 seconds<br>
+For that, you need to check the general quality of data. You need to verify whether your measurement quality is good. You need to again measure verify whether the data is good for the required statistical I mean analysis to be carried out as part of your investigation. So all such things I have explained, I have explained.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 56 seconds<br>
+How we can feed the data in the tool and do the initial adjustments. Now I request all of you to kindly do analysis by yourself and come about to some sensible queries next class. OK.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 16 seconds<br>
+Any questions?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 22 seconds<br>
+Hello, are you people listening?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 26 seconds<br>
+Nobody is responding.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 32 seconds<br>
+Aparna Namboodri.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 36 seconds<br>
+Okay, thank you.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 38 seconds<br>
+Okay, but how many of you really started, I mean, started doing the analysis and all?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 48 seconds<br>
+Any one?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 50 seconds<br>
+I mean, inch, I mean, begin to analyse or collected the data and have started analysing.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 2 seconds<br>
+Selecting data, okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 5 seconds<br>
+Okay, now I think Shila, you want to tell something to okay.<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+56 minutes 13 seconds<br>
+56:13<br>
+Ms Shinta Idicula - MBA - Amrita Online 56 minutes 13 seconds<br>
+Yeah, so.<br>
+Ms Shinta Idicula - MBA - Amrita Online 56 minutes 17 seconds<br>
+If no doubts are there, I would like to give some instruction regarding activating your tour meeting. Just a second, I will share my screen.<br>
+Ms Shinta Idicula - MBA - Amrita Online 56 minutes 42 seconds<br>
+Hope my screen is visible. So for project, yeah for project, when you are submitting your final report, you need to submit a similarity report. Also, for that a turnitin account is needed. We have already created a class and added all of you to our turnitin account. So the first step you need to.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+56 minutes 45 seconds<br>
+56:45<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 45 seconds<br>
+Yes.<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+57 minutes 2 seconds<br>
+57:02<br>
+Ms Shinta Idicula - MBA - Amrita Online 57 minutes 2 seconds<br>
+To check your official Amrita ID both in your inbox and also in the spam folder. A mail has been sent from Turnitin no reply account. Please note that the mail has been sent from Turnitin account. Once you have found your email, there will be link available. You have to click on the link.<br>
+Ms Shinta Idicula - MBA - Amrita Online 57 minutes 22 seconds<br>
+Then you can find a page like this. Once you get this link, click on the setup account.<br>
+Ms Shinta Idicula - MBA - Amrita Online 57 minutes 30 seconds<br>
+A pop up message will be like this. Click on the visit link.<br>
+Ms Shinta Idicula - MBA - Amrita Online 57 minutes 36 seconds<br>
+Then you have to enter your email address and also your last name. Then click on next.<br>
+Ms Shinta Idicula - MBA - Amrita Online 57 minutes 44 seconds<br>
+Once you have entered your email address and also your last name, if it is match, then another email will be sent to your ahead ID. So once you have completed your email ID and last name, if the new mail is&hellip;<br>
+Ms Shinta Idicula - MBA - Amrita Online 58 minutes 2 seconds<br>
+Sent to you have to set up the account within 24 hours. After 24 hours, the link will be expired. Please note that also in the second link you receive, click on the create password, then you have to give a new password and also give it again to confirm.<br>
+Ms Shinta Idicula - MBA - Amrita Online 58 minutes 21 seconds<br>
+Then click on the create password.<br>
+Ms Shinta Idicula - MBA - Amrita Online 58 minutes 25 seconds<br>
+Some questions will be asked here like that in secret question some in the drop down there will be some questions you can select any of the question and can give an answer to the question. Then type your first name and also your last name. Then click on next. Your account setup has been created. Click on login.<br>
+Ms Shinta Idicula - MBA - Amrita Online 58 minutes 46 seconds<br>
+Once you are login, your Turnitin interface is like this. Here you can see your class ID, class name, and also the instructor name. This is the process of how you are going to enroll your Turnitin account. Please check your mail and also do the enrollment process.<br>
+Ms Shinta Idicula - MBA - Amrita Online 59 minutes 3 seconds<br>
+The further steps we will share with you once your enrollment process is completed. Hope you are clear with this while you are doing. If you are having any doubt, please do mail to MBA Project.<br>
+Ms Shinta Idicula - MBA - Amrita Online 59 minutes 23 seconds<br>
+Any doubts?<br>
+Ms Shinta Idicula - MBA - Amrita Online 59 minutes 52 seconds<br>
+Yeah, once your project final project report is ready, you have to do the similarity report. Also, along with your final project, you have to submit the similarity report through your third agent. For that first step, you have to enroll this.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+1 hour 11 seconds<br>
+1:00:11<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 hour 11 seconds<br>
+This is not a platform, right?<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+1 hour 18 seconds<br>
+1:00:18<br>
+Ms Shinta Idicula - MBA - Amrita Online 1 hour 18 seconds<br>
+The mail is already sent, so please check your inbox as well as your spam mail. It will be, you will receive it as turn it in all reply mail. So please do check that if you haven&rsquo;t received, please go, please check thoroughly and if you haven&rsquo;t received it, please send a mail to project ID.<br>
+Ms Shinta Idicula - MBA - Amrita Online 1 hour 46 seconds<br>
+Yeah, those who haven&rsquo;t received, please send a mail to project ID. We will look into that. We are running out of time, so hope it is clear to you. Shall we wind up, Sir?<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+1 hour 59 seconds<br>
+1:00:59<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 hour 59 seconds<br>
+Okay.<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+1 hour 1 minute 3 seconds<br>
+1:01:03<br>
+Ms Shinta Idicula - MBA - Amrita Online 1 hour 1 minute 3 seconds<br>
+Thank you all for joining and a heartful thanks to Register for the session. Thank you.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+1 hour 1 minute 8 seconds<br>
+1:01:08<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 hour 1 minute 8 seconds<br>
+Thank you.</p>
+<p>Ms Shinta Idicula - MBA - Amrita Online<br>
+stopped transcription<br>
+\[3:38:31 PM\] Timestamp: 56:13<br>
+\[3:38:31 PM\] Timestamp: 56:45<br>
+\[3:38:31 PM\] Timestamp: 57:02<br>
+\[3:38:31 PM\] Timestamp: 1:00:11<br>
+\[3:38:31 PM\] Timestamp: 1:00:18<br>
+\[3:38:31 PM\] Timestamp: 1:00:59<br>
+\[3:38:31 PM\] Timestamp: 1:01:03<br>
+\[3:38:31 PM\] Timestamp: 1:01:08</p>
+<hr>
+<h1 id="exam-study-guide-appendix">Exam Study Guide Appendix</h1>
+<hr>
+<h1 id="exam-oriented-appendix">Exam-Oriented Appendix</h1>
+<h2 id="a-practical-examples-and-use-cases">A. Practical examples and use cases</h2>
+<h3 id="1-end-to-end-retail-research-case">1. End-to-end retail research case</h3>
+<p><strong>Management problem:</strong> footfall at a small retail shop is declining.</p>
+<p><strong>Research logic:</strong> Customer satisfaction is the focal dependent variable. Product attributes and store attributes are independent variables; perceived value is a mediator explaining how attributes create satisfaction; variety-seeking may change relevant effects. Hypotheses cover (a) measurement, (b) relationships among constructs, and (c) differences among customer groups.</p>
+<p><strong>Data plan:</strong> A cross-sectional questionnaire collects customer demographics, online/offline shopping preference, and five-point agreement responses for product attributes, store attributes, perceived value, variety-seeking, and satisfaction. Customers who have visited the shop are the sampling units.</p>
+<p><strong>Sampling:</strong> If the retailer has a customer list, it is the <strong>sampling frame</strong>. Simple random/lottery or systematic selection can give listed customers a known selection probability. Random selection is preferable for statistical representation but only represents the frame’s actual coverage.</p>
+<p><strong>Data sheet:</strong> One row per customer; one column per variable/item. Use short codes such as <code>PA1–PA5</code>, <code>SA1–SA5</code>, <code>PV1–PV5</code>, <code>VS1–VS5</code>, and <code>CS1–CS5</code>; code categories with labels (e.g., <code>1 = Male</code>, <code>2 = Female</code>) and retain a separate codebook.</p>
+<p><strong>Workflow:</strong> collect → code/import → define variable types and labels → screen missing/invalid/straight-line cases and outliers → check assumptions → verify reliability/validity → form composite scores → describe sample → compare groups → estimate relationships → interpret against the business problem.</p>
+<h3 id="2-sample-size-use-case">2. Sample-size use case</h3>
+<p>Two approaches were illustrated:</p>
+<ul>
+<li>For an SEM-type model with five latent constructs and about 29 observed variables, a calculator using anticipated effect size and power suggested a minimum around <strong>172</strong> in the lecture example.</li>
+<li>For estimating a proportion at approximately <strong>95% confidence</strong> with <strong>±5% margin of error</strong> and conservative proportion <code>p = .50</code>, a very large/unknown population gives about <strong>385</strong> responses. Finite examples cited were about 278 for <code>N = 1,000</code>, 370 for <code>N = 10,000</code>, and 383 for <code>N = 100,000</code>.</li>
+</ul>
+<p>These are not magic universal numbers. Required sample depends on objective, population size, design, effect size, power, number of parameters/constructs, desired precision, anticipated non-response, and estimator. Larger samples generally improve precision but cannot repair biased sampling or bad measurement.</p>
+<h3 id="3-data-cleaning-and-transformation-use-case">3. Data cleaning and transformation use case</h3>
+<ul>
+<li>A value of <code>50</code> in a 1–5 item is invalid and should be traced to source/corrected or treated as missing—not automatically retained as an outlier.</li>
+<li>A respondent selecting “neutral” for every item may be a straight-line response; investigate using predefined quality rules rather than deleting solely because answers are identical.</li>
+<li>A missing-value code such as <code>999</code> must be declared to Jamovi as missing; otherwise it corrupts means and models.</li>
+<li>Standardise values with <code>z = (x − mean)/SD</code> when variables measured in unlike units must be combined/compared. Do not standardise mechanically when all items already share an appropriate scale.</li>
+<li>Compute a satisfaction average only after checking item direction, reverse scoring, reliability, and validity. Creating a composite immediately can conceal a poor measurement model.</li>
+</ul>
+<h3 id="4-jamovi-variable-setup-example">4. Jamovi variable setup example</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Meaning</th>
+<th>Measurement level</th>
+<th>Storage type</th>
+<th>Analysis role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>Respondent identifier</td>
+<td>ID/Nominal identifier</td>
+<td>Integer/text</td>
+<td>Never a substantive predictor merely because numeric</td>
+</tr>
+<tr>
+<td>Gender</td>
+<td>1 Male, 2 Female</td>
+<td>Nominal</td>
+<td>Integer</td>
+<td>Group/predictor after coding</td>
+</tr>
+<tr>
+<td>ShopPref</td>
+<td>1 Offline, 2 Online</td>
+<td>Nominal</td>
+<td>Integer</td>
+<td>Group/predictor</td>
+</tr>
+<tr>
+<td>AgeGroup</td>
+<td>Ordered groups 1–4</td>
+<td>Ordinal</td>
+<td>Integer</td>
+<td>Ordered group/predictor</td>
+</tr>
+<tr>
+<td>SAT</td>
+<td>Satisfaction composite</td>
+<td>Continuous</td>
+<td>Decimal</td>
+<td>Outcome</td>
+</tr>
+<tr>
+<td>CS1–CS5</td>
+<td>Satisfaction items</td>
+<td>Ordinal individually</td>
+<td>Integer</td>
+<td>Indicators used to build/validate SAT</td>
+</tr>
+</tbody>
+</table></div>
+<p>In Jamovi, verify name, label, measurement level, data type, levels/value labels, and missing-value definition. A numeric code does not make a categorical variable continuous.</p>
+<h3 id="5-apex-university-case-descriptive-and-inferential-workflow">5. Apex University case: descriptive and inferential workflow</h3>
+<p>The case uses 120 participants. Satisfaction has mean <code>3.8</code>, SD <code>0.9</code>, skewness <code>0.4</code>, and kurtosis <code>−0.2</code>; shopping preference frequencies are Offline <code>70</code>, Online <code>50</code>.</p>
+<ul>
+<li>Frequencies describe nominal ShopPref; mean/SD and distribution shape describe continuous SAT.</li>
+<li>An independent-samples t-test comparing satisfaction by ShopPref reports <code>t(118) = 2.15, p = .034</code>. At α = .05, reject the equal-means null, but report group means/difference and confidence interval/effect size before claiming practical importance. The p-value neither measures effect size nor proves one mode is “better.”</li>
+<li>One-way ANOVA compares satisfaction across more than two AgeGroup categories. A significant omnibus F only shows at least one mean differs; post-hoc comparisons locate the difference.</li>
+<li>Levene’s test assesses equality of variances, not normality. A nonsignificant result generally supports the homogeneity assumption.</li>
+</ul>
+<h3 id="6-choosing-among-factorial-anova-regression-and-mixed-models">6. Choosing among factorial ANOVA, regression, and mixed models</h3>
+<p><strong>Factorial ANOVA</strong> is ideal when the main question is group means and interactions, e.g.:</p>
+<ul>
+<li>Does Gender affect satisfaction?</li>
+<li>Does ShopPref affect satisfaction?</li>
+<li>Does the effect of ShopPref depend on Gender (<code>Gender × ShopPref</code>)?</li>
+</ul>
+<p><strong>Multiple regression</strong> is ideal for simultaneous prediction/control:</p>
+<p><code>Satisfaction = b₀ + b₁(ShopPref) + b₂(Gender) + b₃…(AgeGroup dummies) + error</code></p>
+<p>It estimates each predictor’s unique contribution while holding others constant. Nominal predictors require dummy/indicator coding with a reference category.</p>
+<p><strong>Mixed linear models</strong> are needed when observations are dependent/nested or repeated—e.g., multiple satisfaction measurements from the same customer or customers nested within stores. Jamovi’s GAMLj module can support such models. Do not install/use a mixed model merely because it is advanced; ordinary ANOVA/regression is clearer when observations are independent and there is no multilevel/repeated structure.</p>
+<h3 id="7-measurement-model-and-structural-model-use-case">7. Measurement model and structural model use case</h3>
+<ul>
+<li><strong>Measurement model:</strong> Do <code>CS1–CS5</code> adequately measure customer satisfaction? Check item loadings, reliability, convergent validity, and discriminant validity.</li>
+<li><strong>Structural model:</strong> Do product/store attributes and perceived value predict satisfaction, and does variety-seeking alter a path?</li>
+</ul>
+<p>Do not average items and run regression before testing the measurement model. A structurally significant relationship between invalid composites is not trustworthy.</p>
+<h3 id="8-efa-and-cfa-use-case">8. EFA and CFA use case</h3>
+<ul>
+<li><strong>EFA:</strong> used when the factor structure is not sufficiently established; explores how items group in the sample.</li>
+<li><strong>CFA:</strong> tests a pre-specified measurement structure derived from theory—for example, five satisfaction items loading on one latent satisfaction factor.</li>
+</ul>
+<p>The source describes EFA as exploring a sample structure and CFA as confirming whether the proposed structure fits. Ideally, explore and confirm on independent samples/split samples to avoid confirming a structure on the same evidence that generated it.</p>
+<h3 id="9-three-layers-of-quality-assessment">9. Three layers of quality assessment</h3>
+<ol>
+<li><strong>General data quality:</strong> distribution/normality where relevant, independent observations, correct measurement levels, adequate sample, missing values/outliers, and common-method concerns.</li>
+<li><strong>Measurement quality:</strong> reliability and validity of multi-item constructs.</li>
+<li><strong>Test-specific assumptions:</strong> e.g., homogeneity for group comparisons; linearity, residual assumptions, and multicollinearity for regression.</li>
+</ol>
+<p><strong>Practical rule:</strong> Check the assumptions of the specific estimator, not a ritual checklist applied identically to every test.</p>
+<h3 id="10-assumption-diagnostics-in-context">10. Assumption diagnostics in context</h3>
+<ul>
+<li><strong>Normality:</strong> inspect histograms/Q–Q plots, skewness/kurtosis, and where appropriate Shapiro–Wilk or Kolmogorov–Smirnov. The lecture’s rough tolerance was absolute skewness/kurtosis around 2, but no cutoff is universal. For regression/t-tests the distribution of residuals or within-group outcome is usually more relevant than demanding every raw predictor be normal.</li>
+<li><strong>Independence:</strong> secure through design; participants should not coordinate answers. For ordered regression residuals, Durbin–Watson around 1.5–2.5 was given as a rule of thumb. Durbin–Watson is not a substitute for modelling known clustering/repeated measures.</li>
+<li><strong>Missing/outliers:</strong> identify codes, patterns, causes, and influence; choose deletion, imputation, correction, robust method, or sensitivity analysis transparently.</li>
+<li><strong>Homogeneity/homoscedasticity:</strong> Levene for group variance equality; residual plots for regression variance. If unequal, consider Welch tests/robust SEs rather than forcing equality.</li>
+<li><strong>Linearity:</strong> scatterplots/residual plots; required for linear correlation/regression paths.</li>
+<li><strong>Multicollinearity:</strong> predictors highly correlated make unique coefficients unstable. The lecture cited VIF below about 3.3 (or at least below 5) as a rule of thumb; interpret with tolerance/correlation and theory.</li>
+</ul>
+<h3 id="11-common-method-bias-example">11. Common-method-bias example</h3>
+<p>When the same respondent, questionnaire, scale format, and collection moment measure all predictors and outcomes, shared method can inflate covariance. Procedural controls—separating sections/times/sources, neutral wording, anonymity, varying scale formats where justified—are preferable to relying only on a statistical test.</p>
+<p>The lecture mentions Harman’s single-factor test (first unrotated factor should not dominate, often &lt;50%) and a full-collinearity VIF threshold around 3.3/3.5. Treat these as diagnostics, not conclusive proof that common-method bias is absent.</p>
+<hr>
+<h2 id="b-high-yield-distinctions">B. High-yield distinctions</h2>
+<h3 id="data-management-vs-data-analysis">Data management vs data analysis</h3>
+<ul>
+<li>Management: coding, import, type/label definition, missing/outlier screening, transformation, computation.</li>
+<li>Analysis: description, reliability/validity, hypothesis tests, group comparisons, prediction, modelling.</li>
+</ul>
+<h3 id="nominal-vs-ordinal-vs-continuous-vs-id-in-jamovi">Nominal vs ordinal vs continuous vs ID in Jamovi</h3>
+<ul>
+<li>Nominal: unordered categories.</li>
+<li>Ordinal: ordered categories with unknown/unequal gaps.</li>
+<li>Continuous: interval/ratio-like numeric measurement where differences are meaningful.</li>
+<li>ID: unique case label; excluded from substantive summaries/models.</li>
+</ul>
+<h3 id="likert-item-vs-likert-composite">Likert item vs Likert composite</h3>
+<p>A single 1–5 Likert item is ordinal. A validated sum/mean of multiple similarly directed items is commonly treated as approximately continuous for parametric analysis. It is not a ratio scale: “4” is not twice the attitude of “2,” and there is no true zero.</p>
+<h3 id="missing-value-vs-outlier-vs-invalid-value">Missing value vs outlier vs invalid value</h3>
+<ul>
+<li>Missing: no usable observation.</li>
+<li>Outlier: valid but unusually distant observation.</li>
+<li>Invalid: impossible/out-of-range/error value.</li>
+</ul>
+<p>Each needs a different decision; never delete all three under one automatic rule.</p>
+<h3 id="sum-vs-mean-composite">Sum vs mean composite</h3>
+<p>Both preserve relative standing when every respondent answers the same items. A mean retains the original response metric; a sum has a wider range. Missing-item rules must be declared, and reverse-coded items must be corrected first.</p>
+<h3 id="correlation-vs-regression">Correlation vs regression</h3>
+<ul>
+<li>Correlation symmetrically measures association between two variables.</li>
+<li>Regression specifies an outcome and predictors, supports adjustment and prediction, and estimates unique coefficients.</li>
+<li>Neither establishes causality without appropriate design and identification.</li>
+</ul>
+<h3 id="reliability-vs-validity">Reliability vs validity</h3>
+<ul>
+<li>Reliability: consistency of measurement (e.g., Cronbach’s alpha/composite reliability).</li>
+<li>Validity: whether it measures the intended construct.</li>
+<li>Reliability is necessary but not sufficient; consistently measuring the wrong concept is reliable but invalid.</li>
+</ul>
+<h3 id="convergent-vs-discriminant-validity">Convergent vs discriminant validity</h3>
+<ul>
+<li>Convergent: indicators intended for the same construct share sufficient variance; factor loadings and AVE are common evidence.</li>
+<li>Discriminant: theoretically different constructs are empirically distinct; Fornell–Larcker and HTMT were mentioned.</li>
+</ul>
+<h3 id="efa-vs-cfa">EFA vs CFA</h3>
+<ul>
+<li>EFA discovers a plausible factor pattern with fewer prior restrictions.</li>
+<li>CFA tests a theory-specified item–factor pattern and overall fit.</li>
+</ul>
+<h3 id="measurement-model-vs-structural-model">Measurement model vs structural model</h3>
+<ul>
+<li>Measurement: construct ↔ indicators; “Are variables measured well?”</li>
+<li>Structural: construct ↔ construct; “Are hypothesised relationships supported?”</li>
+</ul>
+<h3 id="t-test-vs-one-way-anova-vs-factorial-anova">t-test vs one-way ANOVA vs factorial ANOVA</h3>
+<ul>
+<li>t-test: one two-level grouping variable.</li>
+<li>one-way ANOVA: one grouping variable with 3+ levels.</li>
+<li>factorial ANOVA: two or more factors; estimates main and interaction effects.</li>
+</ul>
+<h3 id="anova-vs-multiple-regression">ANOVA vs multiple regression</h3>
+<p>Both are general linear-model methods. ANOVA frames the problem around categorical group effects; regression naturally combines continuous and dummy-coded categorical predictors and controls. Choose the formulation clearest for the question.</p>
+<h3 id="fixed-effects-regression-anova-vs-mixed-model">Fixed-effects regression/ANOVA vs mixed model</h3>
+<p>A mixed model includes random effects to represent dependence from repeated measurements or clustering. Without that structure, the extra complexity is unnecessary.</p>
+<h3 id="p-value-vs-effect-size-vs-confidence-interval">p-value vs effect size vs confidence interval</h3>
+<ul>
+<li>p-value: compatibility/evidence against a null model under assumptions.</li>
+<li>effect size: magnitude of difference/association.</li>
+<li>confidence interval: precision and plausible range for the parameter.</li>
+</ul>
+<p>All three answer different questions.</p>
+<hr>
+<h2 id="c-likely-exam-questions-and-answer-cues">C. Likely exam questions and answer cues</h2>
+<ol>
+<li><strong>Trace data collection and management in the retail case.</strong> State design, unit/frame/method/size, data types, questionnaire coding, spreadsheet structure, cleaning, assumptions, transformations, and composites.</li>
+<li><strong>Explain how sample size was selected.</strong> Contrast power/effect/model-complexity calculation (about 172 in the example) with confidence/margin-of-error estimation (about 385 for large population at 95%/±5%); reject universal magic numbers.</li>
+<li><strong>Explain three levels of data-quality assessment.</strong> General, measurement, and test-specific, with two examples each.</li>
+<li><strong>Discuss normality assessment.</strong> Meaning, residual relevance, graphical/tests/skewness-kurtosis evidence, consequences, and alternatives/transformations.</li>
+<li><strong>How is independence assessed and protected?</strong> Design first, no coordinated responses, runs test where applicable, Durbin–Watson for ordered regression residuals, mixed models for known dependence.</li>
+<li><strong>Explain common method bias and controls.</strong> Cause, inflated covariance risk, procedural remedies, Harman/VIF limitations.</li>
+<li><strong>Describe Jamovi data setup.</strong> Variable names/labels, NOIR-like levels, storage type, categorical levels, ID designation, missing codes; use Apex examples.</li>
+<li><strong>Why validate a scale before averaging items?</strong> Invalid dimensionality or weak items contaminate composite/regression; reliability, EFA/CFA, AVE/loadings/discriminant validity.</li>
+<li><strong>Differentiate EFA and CFA.</strong> Purpose, prior theory, output, sample use, and relationship to construct validation.</li>
+<li><strong>Differentiate measurement and structural models.</strong> Indicators versus construct paths; show with <code>CS1–CS5</code> and attributes → satisfaction.</li>
+<li><strong>Interpret <code>t(118)=2.15, p=.034</code>.</strong> Reject H₀ at .05, evidence of mean difference; require direction, group means, CI/effect size, assumptions; not proof of superiority.</li>
+<li><strong>Explain one-way and factorial ANOVA.</strong> Omnibus mean comparison; main effects and interaction; post-hoc tests and Levene/diagnostics.</li>
+<li><strong>When is regression preferable to ANOVA?</strong> Simultaneous mixed predictor types, controls, unique contribution, prediction; explain dummy coding/reference category.</li>
+<li><strong>When is a mixed linear model necessary?</strong> Repeated/nested observations; random effects; why not for a simple independent cross-section.</li>
+<li><strong>Explain multicollinearity.</strong> Highly related predictors obscure unique effects; diagnose via VIF/correlations; address using theory, measurement refinement, removal/combination, or alternative modelling.</li>
+<li><strong>Distinguish skewness and kurtosis.</strong> Skewness concerns asymmetry; kurtosis concerns tail weight/peakedness relative to a reference—not simply “bad distribution.”</li>
+<li><strong>Choose the best Apex analysis.</strong> Factorial ANOVA for Gender×ShopPref interaction; regression for simultaneous controls; GAMLj mixed model only if repeated/nested data are introduced. Tie choice to question/design/interpretability.</li>
+</ol>
+<h3 id="10-mark-answer-pattern">10-mark answer pattern</h3>
+<ol>
+<li>Define the method/concept.</li>
+<li>State the question it answers.</li>
+<li>Identify variables and design.</li>
+<li>List key assumptions/diagnostics.</li>
+<li>Interpret output with effect size and uncertainty.</li>
+<li>Give a business use and limitation.</li>
+</ol>
+<hr>
+<h2 id="d-rapid-revision-traps">D. Rapid revision traps</h2>
+<ul>
+<li><code>ID = 1,2,3…</code> is not continuous analysis data.</li>
+<li>Category codes are labels, not quantities.</li>
+<li>A single Likert item is not ratio-level merely because numbered 1–5.</li>
+<li><code>999</code> is not missing until software is told it is missing.</li>
+<li>Data cleaning should precede composite construction and hypothesis testing.</li>
+<li>Do not standardise or categorise variables automatically during import.</li>
+<li>A 1 or 5 on a legitimate 1–5 item is not an outlier merely because extreme on that scale.</li>
+<li>Large sample size does not cure non-representative sampling.</li>
+<li>Shapiro–Wilk significance in a large sample should not be interpreted without plots/effect of departure.</li>
+<li>Levene tests variance equality, not normality.</li>
+<li>Nonsignificant Levene does not prove every ANOVA assumption.</li>
+<li>p &lt; .05 does not measure magnitude, importance, causality, or model quality.</li>
+<li>A significant ANOVA does not identify which groups differ; use planned contrasts/post-hoc tests.</li>
+<li>Regression direction does not alone prove causal direction.</li>
+<li>High alpha can reflect redundant items; reliability does not guarantee validity.</li>
+<li>Harman’s one-factor result cannot “prove” absence of common-method bias.</li>
+<li>EFA and CFA on the same unpartitioned data provide weaker confirmation.</li>
+<li>CFA validates measurement; regression tests observed/composite relationships. They are not substitutes.</li>
+<li>Do not use a mixed model without repeated/nested dependence.</li>
+<li>Diagnostics and interpretability are part of analysis, not optional decoration after obtaining p-values.</li>
+</ul>
+<hr>
+<h2 id="e-source-coverage-checklist">E. Source-coverage checklist</h2>
+<ul>
+<li>[x] <strong>Video 01 — Case Part 4:</strong> declining-footfall model; variable roles and hypothesis families; perception-based cross-sectional data; demographics and shopping preference; sampling unit/frame; random/systematic selection; sample-size calculators, effect/power and confidence/margin logic; 172/385 examples; coding and spreadsheet entry; invalid/missing/outlier/pattern responses; transformations/z-scores; computed sum/average variables; data-management sequence.</li>
+<li>[x] <strong>Video 02 — Case Part 5:</strong> three tiers of quality; normality/residuals, Shapiro–Wilk/Kolmogorov–Smirnov, skewness/kurtosis; independence, runs and Durbin–Watson; scale levels; missing/outlier/sample adequacy; common-method bias/Harman/VIF; descriptives; reliability and validity; EFA/CFA, KMO, AVE, loadings, Fornell–Larcker/HTMT; t-test/ANOVA assumptions; correlation/regression; linearity, homogeneity/homoscedasticity and multicollinearity.</li>
+<li>[x] <strong>Video 03 — Case Part 6:</strong> Jamovi purpose/interface; importing spreadsheets; variable names, labels, measurement and data types; ID/nominal/ordinal/continuous setup; categorical level labels; missing codes; individual Likert-item setup; data preparation for later analyses.</li>
+<li>[x] <strong>Jamovi comprehensive review:</strong> screening/cleaning; composite construction; regression setup; correlation distinction; interface; measurement versus structural model; reliability/validity; CFA and factor modules; correct workflow from import to relationship testing; misconceptions.</li>
+<li>[x] <strong>Apex University case and duplicate review:</strong> 120-participant variable setup; integer/decimal storage; descriptive SAT and ShopPref values; skewness/kurtosis/frequencies; t-test output and p-value; one-way ANOVA and Levene; factorial main/interaction effects; multiple regression/dummy coding; GAMLj mixed models; analysis selection, diagnostics, impossible-result checks, interpretation, and complete workflow.</li>
+</ul>
+<h3 id="transcript-terminology-normalised-cautions">Transcript terminology normalised / cautions</h3>
+<ul>
+<li>Speech-to-text variants were normalised to <strong>Jamovi, Likert, latent, Shapiro–Wilk, Kolmogorov–Smirnov, skewness, kurtosis, Durbin–Watson, Cronbach’s alpha, Kaiser–Meyer–Olkin (KMO), Levene’s test, variance inflation factor (VIF), average variance extracted (AVE), Fornell–Larcker, HTMT, EFA, CFA, and SEM</strong>.</li>
+<li>The transcript says Likert data may be treated as “ratio.” For exam precision: an individual Likert item is ordinal; an appropriately validated multi-item composite is often treated as approximately continuous, not true ratio data.</li>
+<li>Thresholds in the lectures (skewness/kurtosis ≈ ±2, KMO &gt; .50, Durbin–Watson 1.5–2.5, VIF &lt;3.3 or &lt;5, Harman factor &lt;50%) are rules of thumb whose suitability depends on method, sample, and disciplinary convention.</li>
+</ul>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<p>A TechNova codebook would include an ID field, nominal Department, ordinal item responses for five construct blocks, explicit missing-value codes, and a turnover-intention composite. Validate items and data quality before creating and modelling composites.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-8.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 8: Business Research Process — Management…</span>
+      </a>
+      <a href="week-10.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 10: Jamovi Factor Analysis, EFA, CFA, SEM,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

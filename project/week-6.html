@@ -1,0 +1,3381 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Project · Week 6 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Project</span>
+      <span class="brand-title">Week 6</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html" selected>Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Business Research Process, Research Problems, and Research Approaches
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Research Planning, Theoretical Frameworks, Measurement, and Data…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Systematic Literature Review (SLR), Literature Review Methods,…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Theoretical Frameworks, Variables, Moderators, Mediators, and…
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Measurement Models, Scale Development, Reflective vs Formative…
+      </a>
+      <a class="is-active" href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Questionnaire Design, Data Collection Methods, Measurement Scales,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Research Inference, Sampling, Regression, Correlation, Mediation,…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Business Research Process — Management Problems, Research Problems,…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Jamovi Data Management, Measurement Levels, Scale Construction,…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Jamovi Factor Analysis, EFA, CFA, SEM, Validity Assessment, and…
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Regression, Mediation, Moderation, t-tests, ANOVA, and Descriptive…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Regression Modelling, Controls, Composite Indices, Moderation, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Time Series, Forecasting, and Panel Data
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        PLS-SEM — Measurement Quality, Structural Models, Controls,…
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Logistic Regression — Model Fit, Interpretation, Prediction, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Project · Week 6</p>
+        <h1 class="page-title">Questionnaire Design, Data Collection Methods, Measurement Scales, and Survey Administration</h1>
+        <p class="page-meta">Week 6 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#definition">Definition</a></li>
+      <li><a href="#when-suitable">When Suitable</a></li>
+      <li><a href="#advantages">Advantages</a></li>
+      <li><a href="#limitation">Limitation</a></li>
+      <li><a href="#definition-2">Definition</a></li>
+      <li><a href="#advantages-2">Advantages</a></li>
+      <li><a href="#limitations">Limitations</a></li>
+      <li><a href="#definition-3">Definition</a></li>
+      <li><a href="#advantages-3">Advantages</a></li>
+      <li><a href="#limitations-2">Limitations</a></li>
+      <li><a href="#definition-4">Definition</a></li>
+      <li><a href="#advantages-4">Advantages</a></li>
+      <li><a href="#limitations-3">Limitations</a></li>
+      <li><a href="#definition-5">Definition</a></li>
+      <li><a href="#purpose">Purpose</a></li>
+      <li><a href="#example">Example</a></li>
+      <li><a href="#benefits">Benefits</a></li>
+      <li><a href="#question">Question:</a></li>
+      <li><a href="#who-evaluates">Who Evaluates?</a></li>
+      <li><a href="#example-2">Example</a></li>
+      <li><a href="#question-2">Question:</a></li>
+      <li><a href="#who-evaluates-2">Who Evaluates?</a></li>
+      <li><a href="#example-3">Example</a></li>
+      <li><a href="#definition-6">Definition</a></li>
+      <li><a href="#example-4">Example</a></li>
+      <li><a href="#definition-7">Definition</a></li>
+      <li><a href="#definition-8">Definition</a></li>
+      <li><a href="#definition-9">Definition</a></li>
+      <li><a href="#department">Department</a></li>
+      <li><a href="#satisfaction">Satisfaction</a></li>
+      <li><a href="#age">Age</a></li>
+      <li><a href="#definition-10">Definition</a></li>
+      <li><a href="#advantages-5">Advantages</a></li>
+      <li><a href="#definition-11">Definition</a></li>
+      <li><a href="#definition-12">Definition</a></li>
+      <li><a href="#definition-13">Definition</a></li>
+      <li><a href="#definition-14">Definition</a></li>
+      <li><a href="#purpose-2">Purpose</a></li>
+      <li><a href="#placement">Placement</a></li>
+      <li><a href="#placement-2">Placement</a></li>
+      <li><a href="#definition-15">Definition</a></li>
+      <li><a href="#placement-3">Placement</a></li>
+      <li><a href="#reason">Reason</a></li>
+      <li><a href="#1-study-title">1. Study Title</a></li>
+      <li><a href="#2-purpose">2. Purpose</a></li>
+      <li><a href="#3-instructions">3. Instructions</a></li>
+      <li><a href="#4-confidentiality-statement">4. Confidentiality Statement</a></li>
+      <li><a href="#importance">Importance</a></li>
+      <li><a href="#mistake-1">Mistake 1:</a></li>
+      <li><a href="#mistake-2">Mistake 2:</a></li>
+      <li><a href="#mistake-3">Mistake 3:</a></li>
+      <li><a href="#mistake-4">Mistake 4:</a></li>
+      <li><a href="#mistake-5">Mistake 5:</a></li>
+      <li><a href="#survey-mode-selection">Survey Mode Selection</a></li>
+      <li><a href="#pilot-testing">Pilot Testing</a></li>
+      <li><a href="#face-validity">Face Validity</a></li>
+      <li><a href="#measurement-scales">Measurement Scales</a></li>
+      <li><a href="#data-types">Data Types</a></li>
+      <li><a href="#questionnaire-design-principles">Questionnaire Design Principles</a></li>
+      <li><a href="#case-study">Case Study</a></li>
+      <li><a href="#definition-16">Definition</a></li>
+      <li><a href="#definition-17">Definition</a></li>
+      <li><a href="#healthtrack-example">HealthTrack Example</a></li>
+      <li><a href="#advantages-6">Advantages</a></li>
+      <li><a href="#limitation-2">Limitation</a></li>
+      <li><a href="#definition-18">Definition</a></li>
+      <li><a href="#healthtrack-example-2">HealthTrack Example</a></li>
+      <li><a href="#advantages-7">Advantages</a></li>
+      <li><a href="#limitation-3">Limitation</a></li>
+      <li><a href="#definition-19">Definition</a></li>
+      <li><a href="#advantages-8">Advantages</a></li>
+      <li><a href="#advantages-9">Advantages</a></li>
+      <li><a href="#limitations-4">Limitations</a></li>
+      <li><a href="#quantitative-data">Quantitative Data</a></li>
+      <li><a href="#qualitative-data">Qualitative Data</a></li>
+      <li><a href="#purpose-3">Purpose</a></li>
+      <li><a href="#strengths">Strengths</a></li>
+      <li><a href="#weaknesses">Weaknesses</a></li>
+      <li><a href="#definition-20">Definition</a></li>
+      <li><a href="#advantages-10">Advantages</a></li>
+      <li><a href="#limitations-5">Limitations</a></li>
+      <li><a href="#definition-21">Definition</a></li>
+      <li><a href="#advantages-11">Advantages</a></li>
+      <li><a href="#limitations-6">Limitations</a></li>
+      <li><a href="#definition-22">Definition</a></li>
+      <li><a href="#advantages-12">Advantages</a></li>
+      <li><a href="#limitations-7">Limitations</a></li>
+      <li><a href="#definition-23">Definition</a></li>
+      <li><a href="#advantages-13">Advantages</a></li>
+      <li><a href="#limitations-8">Limitations</a></li>
+      <li><a href="#survey">Survey</a></li>
+      <li><a href="#interviews">Interviews</a></li>
+      <li><a href="#observation">Observation</a></li>
+      <li><a href="#analytics">Analytics</a></li>
+      <li><a href="#definition-24">Definition</a></li>
+      <li><a href="#control-methods">Control Methods</a></li>
+      <li><a href="#definition-25">Definition</a></li>
+      <li><a href="#control-methods-2">Control Methods</a></li>
+      <li><a href="#definition-26">Definition</a></li>
+      <li><a href="#control-methods-3">Control Methods</a></li>
+      <li><a href="#online-mixed-questionnaire-stratified-sampling-diaries">Online Mixed Questionnaire + Stratified Sampling + Diaries</a></li>
+      <li><a href="#strengths-2">Strengths</a></li>
+      <li><a href="#weaknesses-2">Weaknesses</a></li>
+      <li><a href="#questionnaire-semi-structured-interviews-clinic-observation-cluster-sampling">Questionnaire + Semi-Structured Interviews + Clinic Observation + Cluster Sampling</a></li>
+      <li><a href="#strengths-3">Strengths</a></li>
+      <li><a href="#weaknesses-3">Weaknesses</a></li>
+      <li><a href="#analytics-diaries-limited-questioning">Analytics + Diaries + Limited Questioning</a></li>
+      <li><a href="#strengths-4">Strengths</a></li>
+      <li><a href="#weaknesses-4">Weaknesses</a></li>
+      <li><a href="#option-b-2">Option B:</a></li>
+      <li><a href="#data-richness">Data Richness</a></li>
+      <li><a href="#bias-control">Bias Control</a></li>
+      <li><a href="#practical-constraints">Practical Constraints</a></li>
+      <li><a href="#definition-27">Definition</a></li>
+      <li><a href="#definition-28">Definition</a></li>
+      <li><a href="#misconception-1">Misconception 1:</a></li>
+      <li><a href="#misconception-2">Misconception 2:</a></li>
+      <li><a href="#misconception-3">Misconception 3:</a></li>
+      <li><a href="#misconception-4">Misconception 4:</a></li>
+      <li><a href="#misconception-5">Misconception 5:</a></li>
+      <li><a href="#sampling">Sampling</a></li>
+      <li><a href="#data-collection">Data Collection</a></li>
+      <li><a href="#bias-management">Bias Management</a></li>
+      <li><a href="#stratified-random-sampling">Stratified Random Sampling</a></li>
+      <li><a href="#cluster-sampling">Cluster Sampling</a></li>
+      <li><a href="#mixed-questionnaire">Mixed Questionnaire</a></li>
+      <li><a href="#interviews-2">Interviews</a></li>
+      <li><a href="#observation-2">Observation</a></li>
+      <li><a href="#diaries">Diaries</a></li>
+      <li><a href="#analytics-2">Analytics</a></li>
+      <li><a href="#best-overall-strategy">Best Overall Strategy</a></li>
+      <li><a href="#behavioural-aspects">Behavioural aspects</a></li>
+      <li><a href="#attitudinal-aspects">Attitudinal aspects</a></li>
+      <li><a href="#experiential-aspects">Experiential aspects</a></li>
+      <li><a href="#definition-29">Definition</a></li>
+      <li><a href="#healthtrack-example-3">HealthTrack Example</a></li>
+      <li><a href="#purpose-4">Purpose</a></li>
+      <li><a href="#advantages-14">Advantages</a></li>
+      <li><a href="#limitation-4">Limitation</a></li>
+      <li><a href="#definition-30">Definition</a></li>
+      <li><a href="#healthtrack-example-4">HealthTrack Example</a></li>
+      <li><a href="#primary-advantage">Primary Advantage</a></li>
+      <li><a href="#limitation-5">Limitation</a></li>
+      <li><a href="#definition-31">Definition</a></li>
+      <li><a href="#advantages-15">Advantages</a></li>
+      <li><a href="#advantages-16">Advantages</a></li>
+      <li><a href="#limitations-9">Limitations</a></li>
+      <li><a href="#quantitative-understanding">Quantitative Understanding</a></li>
+      <li><a href="#qualitative-understanding">Qualitative Understanding</a></li>
+      <li><a href="#purpose-5">Purpose</a></li>
+      <li><a href="#strengths-5">Strengths</a></li>
+      <li><a href="#weaknesses-5">Weaknesses</a></li>
+      <li><a href="#definition-32">Definition</a></li>
+      <li><a href="#purpose-6">Purpose</a></li>
+      <li><a href="#advantages-17">Advantages</a></li>
+      <li><a href="#limitations-10">Limitations</a></li>
+      <li><a href="#definition-33">Definition</a></li>
+      <li><a href="#advantages-18">Advantages</a></li>
+      <li><a href="#limitation-6">Limitation</a></li>
+      <li><a href="#definition-34">Definition</a></li>
+      <li><a href="#purpose-7">Purpose</a></li>
+      <li><a href="#advantages-19">Advantages</a></li>
+      <li><a href="#limitations-11">Limitations</a></li>
+      <li><a href="#definition-35">Definition</a></li>
+      <li><a href="#strengths-6">Strengths</a></li>
+      <li><a href="#limitations-12">Limitations</a></li>
+      <li><a href="#definition-36">Definition</a></li>
+      <li><a href="#benefit">Benefit</a></li>
+      <li><a href="#definition-37">Definition</a></li>
+      <li><a href="#solutions">Solutions</a></li>
+      <li><a href="#definition-38">Definition</a></li>
+      <li><a href="#solutions-2">Solutions</a></li>
+      <li><a href="#definition-39">Definition</a></li>
+      <li><a href="#definition-40">Definition</a></li>
+      <li><a href="#online-mixed-questionnaire-stratified-sampling-diaries-2">Online Mixed Questionnaire + Stratified Sampling + Diaries</a></li>
+      <li><a href="#strategic-value">Strategic Value</a></li>
+      <li><a href="#questionnaire-semi-structured-interviews-observation-cluster-sampling">Questionnaire + Semi-Structured Interviews + Observation + Cluster Sampling</a></li>
+      <li><a href="#analytics-diaries-limited-direct-questioning">Analytics + Diaries + Limited Direct Questioning</a></li>
+      <li><a href="#option-a-3">Option A</a></li>
+      <li><a href="#representation">Representation</a></li>
+      <li><a href="#quantitative-measurement">Quantitative Measurement</a></li>
+      <li><a href="#qualitative-depth">Qualitative Depth</a></li>
+      <li><a href="#lower-cost">Lower Cost</a></li>
+      <li><a href="#breadth">Breadth</a></li>
+      <li><a href="#depth">Depth</a></li>
+      <li><a href="#objectivity">Objectivity</a></li>
+      <li><a href="#sampling-2">Sampling</a></li>
+      <li><a href="#data-collection-2">Data Collection</a></li>
+      <li><a href="#bias-control-2">Bias Control</a></li>
+      <li><a href="#core-research-principle">Core Research Principle</a></li>
+      <li><a href="#a-practical-examples-and-use-cases">A. Practical examples and use cases</a></li>
+      <li><a href="#b-high-yield-distinctions">B. High-yield distinctions</a></li>
+      <li><a href="#c-likely-exam-questions-and-answer-cues">C. Likely exam questions and answer cues</a></li>
+      <li><a href="#d-rapid-revision-traps">D. Rapid revision traps</a></li>
+      <li><a href="#e-source-coverage-checklist">E. Source-coverage checklist</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h1 id="1-overview"><strong>1. Overview</strong></h1>
+<p>This quiz focuses on the practical design of questionnaires and selecting appropriate data collection approaches.</p>
+<p>A good questionnaire must balance:</p>
+<ul>
+<li>Research objectives.  </li>
+<li>Respondent characteristics.  </li>
+<li>Data quality.  </li>
+<li>Ease of completion.  </li>
+<li>Measurement accuracy.  </li>
+<li>Ethical considerations.</li>
+</ul>
+<p>The main concepts covered:</p>
+<ol>
+<li>Survey modes.  </li>
+<li>Questionnaire testing.  </li>
+<li>Measurement scales.  </li>
+<li>Data collection tools.  </li>
+<li>Data types.  </li>
+<li>Questionnaire structure.  </li>
+<li>Introduction and confidentiality.  </li>
+<li>Placement of questions.</li>
+</ol>
+<hr>
+<h1 id="2-selecting-the-right-survey-mode"><strong>2. Selecting the Right Survey Mode</strong></h1>
+<p>A survey mode determines how respondents provide answers.</p>
+<p>Common modes:</p>
+<ul>
+<li>Web-based questionnaires.  </li>
+<li>Mail surveys.  </li>
+<li>Telephone interviews.  </li>
+<li>Face-to-face interviews.</li>
+</ul>
+<p>The correct choice depends on:</p>
+<ul>
+<li>Population characteristics.  </li>
+<li>Accessibility.  </li>
+<li>Cost.  </li>
+<li>Interviewer influence.  </li>
+<li>Required depth.</li>
+</ul>
+<hr>
+<h1 id="3-web-based-self-administered-questionnaires"><strong>3. Web-Based Self-Administered Questionnaires</strong></h1>
+<h2 id="definition"><strong>Definition</strong></h2>
+<p>A questionnaire completed independently by respondents online.</p>
+<p>Examples:</p>
+<ul>
+<li>Website survey.  </li>
+<li>Email survey.  </li>
+<li>In-app questionnaire.</li>
+</ul>
+<hr>
+<h2 id="when-suitable"><strong>When Suitable</strong></h2>
+<p>Best when:</p>
+<ul>
+<li>Population is literate.  </li>
+<li>Respondents are geographically dispersed.  </li>
+<li>Interviewer influence should be minimized.</li>
+</ul>
+<hr>
+<h2 id="advantages"><strong>Advantages</strong></h2>
+<h3 id="1-low-interviewer-bias"><strong>1. Low Interviewer Bias</strong></h3>
+<p>Because no interviewer is present:</p>
+<ul>
+<li>Respondents are less influenced.  </li>
+<li>Answers may be more honest.</li>
+</ul>
+<hr>
+<h3 id="2-geographic-reach"><strong>2. Geographic Reach</strong></h3>
+<p>Can reach people across many locations.</p>
+<hr>
+<h3 id="3-efficient-data-collection"><strong>3. Efficient Data Collection</strong></h3>
+<p>Responses can be collected automatically.</p>
+<hr>
+<h2 id="limitation"><strong>Limitation</strong></h2>
+<p>Uneven internet access can reduce coverage.</p>
+<hr>
+<h1 id="4-mail-out-self-administered-questionnaires"><strong>4. Mail-Out Self-Administered Questionnaires</strong></h1>
+<h2 id="definition-2"><strong>Definition</strong></h2>
+<p>Paper questionnaires sent by mail.</p>
+<hr>
+<h2 id="advantages-2"><strong>Advantages</strong></h2>
+<ul>
+<li>No interviewer influence.  </li>
+<li>Useful where internet access is limited.</li>
+</ul>
+<hr>
+<h2 id="limitations"><strong>Limitations</strong></h2>
+<ul>
+<li>Slow response.  </li>
+<li>Printing and postage costs.  </li>
+<li>Lower response rates.</li>
+</ul>
+<hr>
+<h1 id="5-telephone-interviews"><strong>5. Telephone Interviews</strong></h1>
+<h2 id="definition-3"><strong>Definition</strong></h2>
+<p>Researchers ask questions verbally over the phone.</p>
+<hr>
+<h2 id="advantages-3"><strong>Advantages</strong></h2>
+<ul>
+<li>Clarification possible.  </li>
+<li>Higher completion rates than some self-administered methods.</li>
+</ul>
+<hr>
+<h2 id="limitations-2"><strong>Limitations</strong></h2>
+<ul>
+<li>Interviewer influence.  </li>
+<li>Limited questionnaire length.  </li>
+<li>Requires phone access.</li>
+</ul>
+<hr>
+<h1 id="6-face-to-face-interviews"><strong>6. Face-to-Face Interviews</strong></h1>
+<h2 id="definition-4"><strong>Definition</strong></h2>
+<p>An interviewer collects responses directly.</p>
+<hr>
+<h2 id="advantages-4"><strong>Advantages</strong></h2>
+<ul>
+<li>Detailed information.  </li>
+<li>Can clarify questions.  </li>
+<li>Useful for complex topics.</li>
+</ul>
+<hr>
+<h2 id="limitations-3"><strong>Limitations</strong></h2>
+<h3 id="interviewer-bias"><strong>Interviewer Bias</strong></h3>
+<p>The interviewer may influence:</p>
+<ul>
+<li>Responses.  </li>
+<li>Interpretation.  </li>
+<li>Social desirability.</li>
+</ul>
+<hr>
+<h1 id="7-questionnaire-testing"><strong>7. Questionnaire Testing</strong></h1>
+<p>Before full deployment, questionnaires should be tested.</p>
+<p>The main process:</p>
+<ol>
+<li>Draft questionnaire.  </li>
+<li>Pilot test.  </li>
+<li>Identify problems.  </li>
+<li>Refine questions.  </li>
+<li>Conduct final survey.</li>
+</ol>
+<hr>
+<h1 id="8-pilot-testing"><strong>8. Pilot Testing</strong></h1>
+<h2 id="definition-5"><strong>Definition</strong></h2>
+<p>Testing a questionnaire on a small group before the main study.</p>
+<hr>
+<h2 id="purpose"><strong>Purpose</strong></h2>
+<p>To identify:</p>
+<ul>
+<li>Confusing wording.  </li>
+<li>Poor question flow.  </li>
+<li>Technical problems.  </li>
+<li>Response issues.</li>
+</ul>
+<hr>
+<h2 id="example"><strong>Example</strong></h2>
+<p>A company tests a customer survey with 20 users before sending it to thousands.</p>
+<hr>
+<h2 id="benefits"><strong>Benefits</strong></h2>
+<p>Improves:</p>
+<ul>
+<li>Reliability.  </li>
+<li>Validity.  </li>
+<li>Respondent experience.</li>
+</ul>
+<hr>
+<h1 id="9-face-validity-vs-content-validity"><strong>9. Face Validity vs Content Validity</strong></h1>
+<p>These concepts are related but different.</p>
+<hr>
+<h1 id="9-1-face-validity"><strong>9.1 Face Validity</strong></h1>
+<h2 id="question"><strong>Question:</strong></h2>
+<blockquote>
+<p>Does the questionnaire appear clear and relevant to ordinary respondents?</p>
+</blockquote>
+<hr>
+<h2 id="who-evaluates"><strong>Who Evaluates?</strong></h2>
+<p>Typical members of the target population.</p>
+<hr>
+<h2 id="example-2"><strong>Example</strong></h2>
+<p>Customers say:</p>
+<p>&ldquo;I understand what this question is asking.&rdquo;</p>
+<hr>
+<h1 id="9-2-content-validity"><strong>9.2 Content Validity</strong></h1>
+<h2 id="question-2"><strong>Question:</strong></h2>
+<blockquote>
+<p>Do the items adequately cover the entire concept?</p>
+</blockquote>
+<hr>
+<h2 id="who-evaluates-2"><strong>Who Evaluates?</strong></h2>
+<p>Usually:</p>
+<ul>
+<li>Subject experts.  </li>
+<li>Researchers.</li>
+</ul>
+<hr>
+<h2 id="example-3"><strong>Example</strong></h2>
+<p>Experts check whether service quality questions cover:</p>
+<ul>
+<li>Reliability.  </li>
+<li>Responsiveness.  </li>
+<li>Assurance.</li>
+</ul>
+<hr>
+<h1 id="10-measurement-scales"><strong>10. Measurement Scales</strong></h1>
+<p>Different variables require different measurement levels.</p>
+<p>The main scales:</p>
+<ol>
+<li>Nominal.  </li>
+<li>Ordinal.  </li>
+<li>Interval.  </li>
+<li>Ratio.</li>
+</ol>
+<hr>
+<h1 id="11-nominal-scale"><strong>11. Nominal Scale</strong></h1>
+<h2 id="definition-6"><strong>Definition</strong></h2>
+<p>Categories with no order.</p>
+<hr>
+<p>Examples:</p>
+<ul>
+<li>Department.  </li>
+<li>Gender.  </li>
+<li>Location.  </li>
+<li>Product category.</li>
+</ul>
+<hr>
+<h2 id="example-4"><strong>Example</strong></h2>
+<p>Department codes:</p>
+<p>10 \= Finance</p>
+<p>20 \= Operations</p>
+<p>30 \= HR</p>
+<p>The numbers are only labels.</p>
+<hr>
+<p>Important:</p>
+<p>Higher number does not mean more.</p>
+<p>30 is not greater than 10.</p>
+<hr>
+<h1 id="12-ordinal-scale"><strong>12. Ordinal Scale</strong></h1>
+<h2 id="definition-7"><strong>Definition</strong></h2>
+<p>Categories with meaningful order but unequal intervals.</p>
+<hr>
+<p>Examples:</p>
+<ul>
+<li>Satisfaction level.  </li>
+<li>Rankings.  </li>
+<li>Education level.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Low</p>
+<p>↓</p>
+<p>Medium</p>
+<p>↓</p>
+<p>High</p>
+<hr>
+<p>The order matters, but differences are not measurable.</p>
+<hr>
+<h1 id="13-interval-scale"><strong>13. Interval Scale</strong></h1>
+<h2 id="definition-8"><strong>Definition</strong></h2>
+<p>Numbers have equal intervals but no true zero.</p>
+<hr>
+<p>Examples:</p>
+<ul>
+<li>Temperature in Celsius.  </li>
+<li>Some attitude scales treated statistically as interval.</li>
+</ul>
+<hr>
+<p>Difference between values is meaningful.</p>
+<hr>
+<h1 id="14-ratio-scale"><strong>14. Ratio Scale</strong></h1>
+<h2 id="definition-9"><strong>Definition</strong></h2>
+<p>Has:</p>
+<ul>
+<li>Equal intervals.  </li>
+<li>True zero.</li>
+</ul>
+<hr>
+<p>Examples:</p>
+<ul>
+<li>Age.  </li>
+<li>Income.  </li>
+<li>Weight.  </li>
+<li>Distance.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Age:</p>
+<p>0 years has real meaning.</p>
+<p>A person aged 40 is twice as old as someone aged 20.</p>
+<hr>
+<h1 id="15-example-classification"><strong>15. Example Classification</strong></h1>
+<h2 id="department"><strong>Department</strong></h2>
+<p>Nominal.</p>
+<p>Reason:</p>
+<p>Categories only.</p>
+<hr>
+<h2 id="satisfaction"><strong>Satisfaction</strong></h2>
+<p>Ordinal.</p>
+<p>Reason:</p>
+<p>Low/Medium/High has order.</p>
+<hr>
+<h2 id="age"><strong>Age</strong></h2>
+<p>Ratio.</p>
+<p>Reason:</p>
+<p>True zero and meaningful differences.</p>
+<hr>
+<h1 id="16-structured-interview-schedule"><strong>16. Structured Interview Schedule</strong></h1>
+<h2 id="definition-10"><strong>Definition</strong></h2>
+<p>A fixed set of questions asked verbally in the same order.</p>
+<hr>
+<p>Useful when:</p>
+<ul>
+<li>Respondents have difficulty reading.  </li>
+<li>Consistency is required.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Researcher asks every participant:</p>
+<ol>
+<li>How satisfied are you?  </li>
+<li>How often do you use the service?</li>
+</ol>
+<hr>
+<h2 id="advantages-5"><strong>Advantages</strong></h2>
+<ul>
+<li>Standardized data.  </li>
+<li>Reduced variation between interviews.  </li>
+<li>Easier coding.</li>
+</ul>
+<hr>
+<h1 id="17-questionnaire-vs-interview-schedule"><strong>17. Questionnaire vs Interview Schedule</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Questionnaire</th>
+<th>Structured Interview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Respondent reads questions</td>
+<td>Interviewer asks questions</td>
+</tr>
+<tr>
+<td>Self-administered</td>
+<td>Researcher administered</td>
+</tr>
+<tr>
+<td>Less interviewer influence</td>
+<td>More interaction</td>
+</tr>
+<tr>
+<td>Suitable for literate users</td>
+<td>Suitable when literacy is limited</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="18-types-of-data-collected"><strong>18. Types of Data Collected</strong></h1>
+<p>Research data can be classified as:</p>
+<ol>
+<li>Perceptual data.  </li>
+<li>Behavioural data.  </li>
+<li>Demographic data.  </li>
+<li>Performance data.</li>
+</ol>
+<hr>
+<h1 id="19-perceptual-data"><strong>19. Perceptual Data</strong></h1>
+<h2 id="definition-11"><strong>Definition</strong></h2>
+<p>Measures opinions, feelings, beliefs, and attitudes.</p>
+<hr>
+<p>Examples:</p>
+<ul>
+<li>Ease of use.  </li>
+<li>Trust.  </li>
+<li>Satisfaction.  </li>
+<li>Fear of job loss.</li>
+</ul>
+<hr>
+<p>Best collection method:</p>
+<p>Questionnaires.</p>
+<hr>
+<p>Example:</p>
+<p>&ldquo;AI tools are easy to use.&rdquo;</p>
+<p>Respondent rates agreement.</p>
+<hr>
+<h1 id="20-behavioural-data"><strong>20. Behavioural Data</strong></h1>
+<h2 id="definition-12"><strong>Definition</strong></h2>
+<p>Measures actual actions.</p>
+<hr>
+<p>Examples:</p>
+<ul>
+<li>System usage.  </li>
+<li>Purchase frequency.  </li>
+<li>Login records.</li>
+</ul>
+<hr>
+<p>Collection methods:</p>
+<ul>
+<li>Observation.  </li>
+<li>System logs.  </li>
+<li>Records.</li>
+</ul>
+<hr>
+<h1 id="21-demographic-data"><strong>21. Demographic Data</strong></h1>
+<h2 id="definition-13"><strong>Definition</strong></h2>
+<p>Describes respondent characteristics.</p>
+<p>Examples:</p>
+<ul>
+<li>Age.  </li>
+<li>Gender.  </li>
+<li>Education.  </li>
+<li>Department.</li>
+</ul>
+<hr>
+<p>Purpose:</p>
+<p>Compare groups.</p>
+<p>Example:</p>
+<p>Compare satisfaction across departments.</p>
+<hr>
+<h1 id="22-performance-data"><strong>22. Performance Data</strong></h1>
+<h2 id="definition-14"><strong>Definition</strong></h2>
+<p>Measures outcomes or results.</p>
+<p>Examples:</p>
+<ul>
+<li>Productivity.  </li>
+<li>Sales.  </li>
+<li>Performance scores.</li>
+</ul>
+<hr>
+<hr>
+<h1 id="23-questionnaire-length-and-method-choice"><strong>23. Questionnaire Length and Method Choice</strong></h1>
+<p>Short surveys are often better for:</p>
+<ul>
+<li>Mobile users.  </li>
+<li>Busy respondents.  </li>
+<li>High-response environments.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>5–6 questions:</p>
+<p>Best option:</p>
+<p>Short electronic questionnaire.</p>
+<hr>
+<p>Avoid:</p>
+<ul>
+<li>Long surveys.  </li>
+<li>Time-consuming interviews.</li>
+</ul>
+<hr>
+<h1 id="24-questionnaire-structure"><strong>24. Questionnaire Structure</strong></h1>
+<p>A questionnaire should have logical sections.</p>
+<p>Typical order:</p>
+<ol>
+<li>Introduction.  </li>
+<li>Screening questions.  </li>
+<li>Background questions.  </li>
+<li>Main questions.  </li>
+<li>Open-ended questions.</li>
+</ol>
+<hr>
+<h1 id="25-screening-questions"><strong>25. Screening Questions</strong></h1>
+<h2 id="purpose-2"><strong>Purpose</strong></h2>
+<p>Determine whether respondents qualify.</p>
+<hr>
+<p>Example:</p>
+<p>&ldquo;Have you purchased online before?&rdquo;</p>
+<p>Yes → Continue.</p>
+<p>No → Exit.</p>
+<hr>
+<h2 id="placement"><strong>Placement</strong></h2>
+<p>Usually near the beginning.</p>
+<hr>
+<p>Reason:</p>
+<p>Avoid collecting unnecessary answers from ineligible participants.</p>
+<hr>
+<h1 id="26-demographic-questions"><strong>26. Demographic Questions</strong></h1>
+<p>Examples:</p>
+<ul>
+<li>Age.  </li>
+<li>Department.  </li>
+<li>Education.</li>
+</ul>
+<hr>
+<h2 id="placement-2"><strong>Placement</strong></h2>
+<p>Often early or near background section.</p>
+<hr>
+<p>Purpose:</p>
+<p>Allow subgroup comparisons.</p>
+<p>Example:</p>
+<p>Compare satisfaction:</p>
+<ul>
+<li>By age.  </li>
+<li>By department.</li>
+</ul>
+<hr>
+<h1 id="27-open-ended-questions"><strong>27. Open-Ended Questions</strong></h1>
+<h2 id="definition-15"><strong>Definition</strong></h2>
+<p>Questions allowing free responses.</p>
+<p>Example:</p>
+<p>&ldquo;What improvements would you suggest?&rdquo;</p>
+<hr>
+<h2 id="placement-3"><strong>Placement</strong></h2>
+<p>Usually at the end.</p>
+<hr>
+<h2 id="reason"><strong>Reason</strong></h2>
+<p>Open-ended questions can influence later responses.</p>
+<p>If placed early:</p>
+<ul>
+<li>Respondents may think deeply about issues.  </li>
+<li>Later ratings may become biased.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Open comment first:</p>
+<p>&ldquo;The service is terrible because&hellip;&rdquo;</p>
+<p>Then:</p>
+<p>Rate satisfaction.</p>
+<p>The rating may be influenced.</p>
+<hr>
+<h1 id="28-questionnaire-introduction"><strong>28. Questionnaire Introduction</strong></h1>
+<p>A good introduction includes:</p>
+<h2 id="1-study-title"><strong>1. Study Title</strong></h2>
+<p>Identifies topic.</p>
+<hr>
+<h2 id="2-purpose"><strong>2. Purpose</strong></h2>
+<p>Explains why research is conducted.</p>
+<hr>
+<h2 id="3-instructions"><strong>3. Instructions</strong></h2>
+<p>Explains how to answer.</p>
+<p>Example:</p>
+<p>&ldquo;Select one option from 1 to 5.&rdquo;</p>
+<hr>
+<h2 id="4-confidentiality-statement"><strong>4. Confidentiality Statement</strong></h2>
+<p>Addresses privacy concerns.</p>
+<hr>
+<h1 id="29-confidentiality-and-privacy"><strong>29. Confidentiality and Privacy</strong></h1>
+<p>Respondents may worry:</p>
+<p>&ldquo;Can my answers be linked to me?&rdquo;</p>
+<p>A questionnaire should state:</p>
+<ul>
+<li>Responses are confidential.  </li>
+<li>Identifying information is not collected.  </li>
+<li>Data will be used only for research purposes.</li>
+</ul>
+<hr>
+<h2 id="importance"><strong>Importance</strong></h2>
+<p>Improves:</p>
+<ul>
+<li>Trust.  </li>
+<li>Participation.  </li>
+<li>Honest responses.</li>
+</ul>
+<hr>
+<h1 id="30-consent-statement"><strong>30. Consent Statement</strong></h1>
+<p>Consent ensures:</p>
+<ul>
+<li>Participants understand participation.  </li>
+<li>Participation is voluntary.  </li>
+<li>Ethical requirements are followed.</li>
+</ul>
+<hr>
+<p>Difference:</p>
+<p>Confidentiality:</p>
+<p>Protects information.</p>
+<p>Consent:</p>
+<p>Obtains permission.</p>
+<hr>
+<h1 id="31-common-questionnaire-design-mistakes"><strong>31. Common Questionnaire Design Mistakes</strong></h1>
+<h2 id="mistake-1"><strong>Mistake 1:</strong></h2>
+<p>Using the wrong survey mode.</p>
+<p>Example:</p>
+<p>Using online surveys for a population without internet access.</p>
+<hr>
+<h2 id="mistake-2"><strong>Mistake 2:</strong></h2>
+<p>Skipping pilot testing.</p>
+<p>Result:</p>
+<p>Confusing questions reach the full sample.</p>
+<hr>
+<h2 id="mistake-3"><strong>Mistake 3:</strong></h2>
+<p>Poor question order.</p>
+<p>Example:</p>
+<p>Asking sensitive questions too early.</p>
+<hr>
+<h2 id="mistake-4"><strong>Mistake 4:</strong></h2>
+<p>Mixing eligibility and main questions.</p>
+<p>Example:</p>
+<p>Allowing non-users to answer user satisfaction questions.</p>
+<hr>
+<h2 id="mistake-5"><strong>Mistake 5:</strong></h2>
+<p>Ignoring confidentiality concerns.</p>
+<p>Result:</p>
+<p>Less honest answers.</p>
+<hr>
+<h1 id="32-final-revision-summary"><strong>32. Final Revision Summary</strong></h1>
+<h2 id="survey-mode-selection"><strong>Survey Mode Selection</strong></h2>
+<p>Choose based on:</p>
+<ul>
+<li>Literacy.  </li>
+<li>Internet access.  </li>
+<li>Interviewer influence.  </li>
+<li>Cost.</li>
+</ul>
+<hr>
+<h2 id="pilot-testing"><strong>Pilot Testing</strong></h2>
+<p>Tests questionnaire before full deployment.</p>
+<hr>
+<h2 id="face-validity"><strong>Face Validity</strong></h2>
+<p>Checks whether respondents find items clear and relevant.</p>
+<hr>
+<h2 id="measurement-scales"><strong>Measurement Scales</strong></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Scale</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nominal</td>
+<td>Department</td>
+</tr>
+<tr>
+<td>Ordinal</td>
+<td>Satisfaction level</td>
+</tr>
+<tr>
+<td>Interval</td>
+<td>Temperature</td>
+</tr>
+<tr>
+<td>Ratio</td>
+<td>Age</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="data-types"><strong>Data Types</strong></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Example</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Perceptual</td>
+<td>Opinions</td>
+<td>Questionnaire</td>
+</tr>
+<tr>
+<td>Behavioural</td>
+<td>Usage</td>
+<td>Logs/Observation</td>
+</tr>
+<tr>
+<td>Demographic</td>
+<td>Age</td>
+<td>Background questions</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>Productivity</td>
+<td>Records</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="questionnaire-design-principles"><strong>Questionnaire Design Principles</strong></h2>
+<p>Good questionnaires:</p>
+<ul>
+<li>Use clear wording.  </li>
+<li>Follow logical order.  </li>
+<li>Protect confidentiality.  </li>
+<li>Avoid unnecessary bias.  </li>
+<li>Are tested before deployment.</li>
+</ul>
+<hr>
+<h1 id="core-principle"><strong>Core Principle</strong></h1>
+<p>A successful survey is not just a list of questions. It is a carefully designed measurement instrument where:</p>
+<p><strong>The right respondents → receive the right questions → through the right method → in the right order → producing reliable and meaningful data.</strong></p>
+<h2 id="case-study"><strong>Case Study</strong></h2>
+<p>Sara, the project lead at HealthTrack Institute, is tasked with evaluating user engagement for a new health-tracking app. The team needs a clear sampling design to ensure diverse representation across age groups, regions, and usage patterns. They consider stratified random sampling to cover key demographics and cluster sampling in major cities. To capture different response styles, they plan a Mixed Questionnaire with both closed-ended scales and open-ended prompts, allowing them to quantify satisfaction and gather user stories in one instrument.Daniel, the data analyst, evaluates several data collection tools. He recommends deploying the &ldquo;Mixed Questionnaire&rdquo; online for broad reach, supplemented by an &ldquo;Interview Schedule (Unstructured/Semi-structured)&rdquo; for in-depth feedback from a smaller group. Mia, the field researcher, proposes an &ldquo;Observation Schedule&rdquo; to record real-time interactions at health clinics and inviting participants to keep &ldquo;Diaries, Journals &amp; Field Notes&rdquo; over a week. They will also integrate &ldquo;Online Analytics Tools&rdquo; to track clickstreams and feature usage continuously. The team anticipates challenges such as non-response bias if certain users ignore the survey, social desirability effect in interviews, and survey fatigue from repeated contact.At the decision point, the team must choose a final plan. Option A: Launch the online mixed questionnaire with stratified sampling and add diaries for longitudinal depth. Option B: Combine the questionnaire with semi-structured interviews and on-site observation at clinics, using cluster sampling by region. Option C: Prioritize analytics and diaries for passive data while limiting direct questioning to reduce respondent burden. Which approach best balances data richness, bias control, and resource constraints?</p>
+<h1 id="comprehensive-notes-healthtrack-institute-case-study-sampling-design-data-collection-methods-mixed-questionnaires-bias-control-and-research-design-trade-offs"><strong>Comprehensive Notes: HealthTrack Institute Case Study — Sampling Design, Data Collection Methods, Mixed Questionnaires, Bias Control, and Research Design Trade-offs</strong></h1>
+<h1 id="1-case-overview"><strong>1. Case Overview</strong></h1>
+<p>HealthTrack Institute wants to evaluate <strong>user engagement</strong> for a new health-tracking application.</p>
+<p>The research challenge is to design a study that captures:</p>
+<ul>
+<li>How users interact with the app.  </li>
+<li>How satisfied users are.  </li>
+<li>Why users behave in certain ways.  </li>
+<li>Differences across user groups.</li>
+</ul>
+<p>The project requires decisions about:</p>
+<ol>
+<li>Sampling design.  </li>
+<li>Questionnaire design.  </li>
+<li>Data collection methods.  </li>
+<li>Bias management.  </li>
+<li>Balancing research depth with available resources.</li>
+</ol>
+<hr>
+<h1 id="2-research-objective"><strong>2. Research Objective</strong></h1>
+<p>The main objective:</p>
+<blockquote>
+<p>Understand user engagement with the health-tracking app.</p>
+</blockquote>
+<p>User engagement is a broad concept involving:</p>
+<ul>
+<li>Frequency of use.  </li>
+<li>Feature interaction.  </li>
+<li>Satisfaction.  </li>
+<li>Motivation.  </li>
+<li>Barriers to adoption.  </li>
+<li>Long-term behaviour.</li>
+</ul>
+<p>Because engagement has both measurable and experiential aspects, multiple data sources may be required.</p>
+<hr>
+<h1 id="3-sampling-design"><strong>3. Sampling Design</strong></h1>
+<h2 id="definition-16"><strong>Definition</strong></h2>
+<p>Sampling design determines:</p>
+<ul>
+<li>Who will participate.  </li>
+<li>How participants are selected.  </li>
+<li>How representative the sample is.</li>
+</ul>
+<hr>
+<p>A good sampling strategy ensures that findings can be applied beyond the participants studied.</p>
+<hr>
+<h1 id="4-importance-of-representation"><strong>4. Importance of Representation</strong></h1>
+<p>HealthTrack wants representation across:</p>
+<ul>
+<li>Age groups.  </li>
+<li>Regions.  </li>
+<li>Usage patterns.</li>
+</ul>
+<p>Why?</p>
+<p>Because different users may behave differently.</p>
+<p>Example:</p>
+<p>Young users:</p>
+<ul>
+<li>May use fitness features frequently.</li>
+</ul>
+<p>Older users:</p>
+<ul>
+<li>May focus more on health monitoring.</li>
+</ul>
+<p>Urban users:</p>
+<ul>
+<li>May have better connectivity.</li>
+</ul>
+<p>Rural users:</p>
+<ul>
+<li>May face access challenges.</li>
+</ul>
+<hr>
+<h1 id="5-stratified-random-sampling"><strong>5. Stratified Random Sampling</strong></h1>
+<h2 id="definition-17"><strong>Definition</strong></h2>
+<p>A probability sampling method where the population is divided into meaningful subgroups (strata), and samples are randomly selected from each group.</p>
+<hr>
+<h2 id="healthtrack-example"><strong>HealthTrack Example</strong></h2>
+<p>Population divided by:</p>
+<ul>
+<li>Age.  </li>
+<li>Region.  </li>
+<li>Usage frequency.</li>
+</ul>
+<p>Then users are randomly selected from each category.</p>
+<hr>
+<h2 id="advantages-6"><strong>Advantages</strong></h2>
+<h3 id="1-better-representation"><strong>1. Better Representation</strong></h3>
+<p>Ensures important groups are included.</p>
+<p>Example:</p>
+<p>Without stratification:</p>
+<p>Young urban users may dominate.</p>
+<p>With stratification:</p>
+<p>Older and rural users are represented.</p>
+<hr>
+<h3 id="2-improved-comparisons"><strong>2. Improved Comparisons</strong></h3>
+<p>Allows analysis between groups.</p>
+<p>Example:</p>
+<p>Compare engagement:</p>
+<ul>
+<li>Age groups.  </li>
+<li>Regions.</li>
+</ul>
+<hr>
+<h2 id="limitation-2"><strong>Limitation</strong></h2>
+<p>Requires knowledge of population characteristics.</p>
+<hr>
+<h1 id="6-cluster-sampling"><strong>6. Cluster Sampling</strong></h1>
+<h2 id="definition-18"><strong>Definition</strong></h2>
+<p>Population is divided into natural groups (clusters), and entire clusters or samples within clusters are selected.</p>
+<hr>
+<h2 id="healthtrack-example-2"><strong>HealthTrack Example</strong></h2>
+<p>Cities are clusters.</p>
+<p>Example:</p>
+<p>Select:</p>
+<ul>
+<li>Chennai.  </li>
+<li>Mumbai.  </li>
+<li>Delhi.</li>
+</ul>
+<p>Then survey users in those cities.</p>
+<hr>
+<h2 id="advantages-7"><strong>Advantages</strong></h2>
+<h3 id="1-lower-cost"><strong>1. Lower Cost</strong></h3>
+<p>Useful when population is geographically spread.</p>
+<hr>
+<h3 id="2-practical-field-operations"><strong>2. Practical Field Operations</strong></h3>
+<p>Researchers can focus resources in selected locations.</p>
+<hr>
+<h2 id="limitation-3"><strong>Limitation</strong></h2>
+<p>Selected clusters may not represent the whole population.</p>
+<hr>
+<h1 id="7-stratified-vs-cluster-sampling"><strong>7. Stratified vs Cluster Sampling</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Stratified Sampling</th>
+<th>Cluster Sampling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Division basis</td>
+<td>Important characteristics</td>
+<td>Natural groups/locations</td>
+</tr>
+<tr>
+<td>Goal</td>
+<td>Representation</td>
+<td>Efficiency</td>
+</tr>
+<tr>
+<td>Example</td>
+<td>Age groups</td>
+<td>Cities</td>
+</tr>
+<tr>
+<td>Main benefit</td>
+<td>Accuracy</td>
+<td>Lower cost</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="8-mixed-questionnaire"><strong>8. Mixed Questionnaire</strong></h1>
+<h2 id="definition-19"><strong>Definition</strong></h2>
+<p>A questionnaire combining:</p>
+<ol>
+<li>Closed-ended questions.  </li>
+<li>Open-ended questions.</li>
+</ol>
+<hr>
+<h1 id="8-1-closed-ended-questions"><strong>8.1 Closed-Ended Questions</strong></h1>
+<p>Examples:</p>
+<p>Rating scales:</p>
+<p>&ldquo;How satisfied are you?&rdquo;</p>
+<p>1–5 scale.</p>
+<hr>
+<h2 id="advantages-8"><strong>Advantages</strong></h2>
+<ul>
+<li>Easy analysis.  </li>
+<li>Quantitative comparison.  </li>
+<li>Statistical testing.</li>
+</ul>
+<hr>
+<h1 id="8-2-open-ended-questions"><strong>8.2 Open-Ended Questions</strong></h1>
+<p>Example:</p>
+<p>&ldquo;What improvements would you suggest?&rdquo;</p>
+<hr>
+<h2 id="advantages-9"><strong>Advantages</strong></h2>
+<ul>
+<li>Rich explanations.  </li>
+<li>User stories.  </li>
+<li>Unexpected insights.</li>
+</ul>
+<hr>
+<h2 id="limitations-4"><strong>Limitations</strong></h2>
+<ul>
+<li>Harder analysis.  </li>
+<li>More respondent effort.</li>
+</ul>
+<hr>
+<h1 id="9-why-use-a-mixed-questionnaire"><strong>9. Why Use a Mixed Questionnaire?</strong></h1>
+<p>HealthTrack wants both:</p>
+<h2 id="quantitative-data"><strong>Quantitative Data</strong></h2>
+<p>Examples:</p>
+<ul>
+<li>Satisfaction score.  </li>
+<li>Usage frequency.  </li>
+<li>Feature ratings.</li>
+</ul>
+<hr>
+<h2 id="qualitative-data"><strong>Qualitative Data</strong></h2>
+<p>Examples:</p>
+<ul>
+<li>Reasons for engagement.  </li>
+<li>Problems users experience.  </li>
+<li>Suggestions.</li>
+</ul>
+<hr>
+<p>A mixed questionnaire combines breadth and depth.</p>
+<hr>
+<h1 id="10-data-collection-tools"><strong>10. Data Collection Tools</strong></h1>
+<p>The team considers multiple tools.</p>
+<p>Each tool provides different types of information.</p>
+<hr>
+<h1 id="11-online-mixed-questionnaire"><strong>11. Online Mixed Questionnaire</strong></h1>
+<h2 id="purpose-3"><strong>Purpose</strong></h2>
+<p>Collect structured and open-ended responses digitally.</p>
+<hr>
+<h2 id="strengths"><strong>Strengths</strong></h2>
+<ul>
+<li>Large reach.  </li>
+<li>Low cost.  </li>
+<li>Fast collection.  </li>
+<li>Automated data capture.</li>
+</ul>
+<hr>
+<h2 id="weaknesses"><strong>Weaknesses</strong></h2>
+<ul>
+<li>Non-response bias.  </li>
+<li>Digital access limitations.  </li>
+<li>Less personal depth.</li>
+</ul>
+<hr>
+<h1 id="12-interview-schedule"><strong>12. Interview Schedule</strong></h1>
+<h2 id="definition-20"><strong>Definition</strong></h2>
+<p>A structured guide used during interviews.</p>
+<p>HealthTrack uses:</p>
+<p><strong>Unstructured/Semi-structured interviews</strong></p>
+<hr>
+<h1 id="12-1-semi-structured-interviews"><strong>12.1 Semi-Structured Interviews</strong></h1>
+<p>Combination of:</p>
+<ul>
+<li>Prepared questions.  </li>
+<li>Flexible discussion.</li>
+</ul>
+<hr>
+<h2 id="advantages-10"><strong>Advantages</strong></h2>
+<p>Provides:</p>
+<ul>
+<li>Detailed explanations.  </li>
+<li>Personal experiences.  </li>
+<li>Reasons behind behaviour.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Question:</p>
+<p>&ldquo;How do you use the app?&rdquo;</p>
+<p>Follow-up:</p>
+<p>&ldquo;What prevents you from using it daily?&rdquo;</p>
+<hr>
+<h2 id="limitations-5"><strong>Limitations</strong></h2>
+<h3 id="social-desirability-bias"><strong>Social Desirability Bias</strong></h3>
+<p>Participants may provide socially acceptable answers.</p>
+<p>Example:</p>
+<p>&ldquo;I always exercise regularly.&rdquo;</p>
+<p>even if actual usage differs.</p>
+<hr>
+<h3 id="resource-intensive"><strong>Resource Intensive</strong></h3>
+<p>Requires:</p>
+<ul>
+<li>Interviewers.  </li>
+<li>Time.  </li>
+<li>Analysis effort.</li>
+</ul>
+<hr>
+<h1 id="13-observation-schedule"><strong>13. Observation Schedule</strong></h1>
+<h2 id="definition-21"><strong>Definition</strong></h2>
+<p>A structured method to record observed behaviour.</p>
+<hr>
+<p>HealthTrack example:</p>
+<p>Observe:</p>
+<ul>
+<li>User interactions at health clinics.  </li>
+<li>How users interact with technology.</li>
+</ul>
+<hr>
+<h2 id="advantages-11"><strong>Advantages</strong></h2>
+<p>Captures actual behaviour.</p>
+<p>Not just what people say.</p>
+<hr>
+<p>Example:</p>
+<p>User claims:</p>
+<p>&ldquo;I use the app daily.&rdquo;</p>
+<p>Observation may show:</p>
+<p>Occasional usage.</p>
+<hr>
+<h2 id="limitations-6"><strong>Limitations</strong></h2>
+<ul>
+<li>Observer influence.  </li>
+<li>Limited context.  </li>
+<li>Time consuming.</li>
+</ul>
+<hr>
+<h1 id="14-diaries-journals-and-field-notes"><strong>14. Diaries, Journals, and Field Notes</strong></h1>
+<h2 id="definition-22"><strong>Definition</strong></h2>
+<p>Participants record experiences over time.</p>
+<hr>
+<p>HealthTrack example:</p>
+<p>Users maintain:</p>
+<ul>
+<li>Weekly usage diary.  </li>
+<li>Health tracking experiences.  </li>
+<li>Challenges faced.</li>
+</ul>
+<hr>
+<h2 id="advantages-12"><strong>Advantages</strong></h2>
+<p>Captures:</p>
+<ul>
+<li>Longitudinal behaviour.  </li>
+<li>Changes over time.  </li>
+<li>Personal experiences.</li>
+</ul>
+<hr>
+<h2 id="limitations-7"><strong>Limitations</strong></h2>
+<ul>
+<li>Participant burden.  </li>
+<li>Incomplete entries.  </li>
+<li>Dropout risk.</li>
+</ul>
+<hr>
+<h1 id="15-online-analytics-tools"><strong>15. Online Analytics Tools</strong></h1>
+<h2 id="definition-23"><strong>Definition</strong></h2>
+<p>Automatically collect digital behaviour data.</p>
+<p>Examples:</p>
+<ul>
+<li>Clickstreams.  </li>
+<li>Feature usage.  </li>
+<li>Session duration.  </li>
+<li>Login frequency.</li>
+</ul>
+<hr>
+<h2 id="advantages-13"><strong>Advantages</strong></h2>
+<h3 id="1-objective-behaviour-data"><strong>1. Objective Behaviour Data</strong></h3>
+<p>Measures actual usage.</p>
+<hr>
+<h3 id="2-continuous-monitoring"><strong>2. Continuous Monitoring</strong></h3>
+<p>Can track engagement over time.</p>
+<hr>
+<h2 id="limitations-8"><strong>Limitations</strong></h2>
+<p>Cannot explain:</p>
+<ul>
+<li>Why users behave this way.  </li>
+<li>User feelings.  </li>
+<li>Motivation.</li>
+</ul>
+<hr>
+<h1 id="16-combining-data-sources"><strong>16. Combining Data Sources</strong></h1>
+<p>A strong research design may combine:</p>
+<h2 id="survey"><strong>Survey</strong></h2>
+<p>Answers:</p>
+<p>&ldquo;What do users think?&rdquo;</p>
+<hr>
+<h2 id="interviews"><strong>Interviews</strong></h2>
+<p>Answers:</p>
+<p>&ldquo;Why do users think this?&rdquo;</p>
+<hr>
+<h2 id="observation"><strong>Observation</strong></h2>
+<p>Answers:</p>
+<p>&ldquo;What do users actually do?&rdquo;</p>
+<hr>
+<h2 id="analytics"><strong>Analytics</strong></h2>
+<p>Answers:</p>
+<p>&ldquo;What behaviours occur digitally?&rdquo;</p>
+<hr>
+<p>This creates methodological triangulation.</p>
+<hr>
+<h1 id="17-research-bias-challenges"><strong>17. Research Bias Challenges</strong></h1>
+<p>The case identifies several possible biases.</p>
+<hr>
+<h1 id="18-non-response-bias"><strong>18. Non-Response Bias</strong></h1>
+<h2 id="definition-24"><strong>Definition</strong></h2>
+<p>Occurs when people who do not respond differ from those who respond.</p>
+<hr>
+<p>Example:</p>
+<p>Highly satisfied users complete surveys.</p>
+<p>Frustrated users ignore them.</p>
+<p>Result:</p>
+<p>Survey overestimates satisfaction.</p>
+<hr>
+<h2 id="control-methods"><strong>Control Methods</strong></h2>
+<ul>
+<li>Reminders.  </li>
+<li>Incentives.  </li>
+<li>Multiple contact methods.  </li>
+<li>Comparing respondents and non-respondents.</li>
+</ul>
+<hr>
+<h1 id="19-social-desirability-bias"><strong>19. Social Desirability Bias</strong></h1>
+<h2 id="definition-25"><strong>Definition</strong></h2>
+<p>Participants answer in a way that appears socially acceptable.</p>
+<hr>
+<p>Example:</p>
+<p>Interview response:</p>
+<p>&ldquo;I always follow healthy habits.&rdquo;</p>
+<p>Actual behaviour:</p>
+<p>Irregular usage.</p>
+<hr>
+<h2 id="control-methods-2"><strong>Control Methods</strong></h2>
+<ul>
+<li>Confidentiality.  </li>
+<li>Neutral wording.  </li>
+<li>Self-administered surveys.</li>
+</ul>
+<hr>
+<h1 id="20-survey-fatigue"><strong>20. Survey Fatigue</strong></h1>
+<h2 id="definition-26"><strong>Definition</strong></h2>
+<p>Respondent tiredness due to repeated or lengthy surveys.</p>
+<hr>
+<p>Effects:</p>
+<ul>
+<li>Short answers.  </li>
+<li>Random responses.  </li>
+<li>Dropout.</li>
+</ul>
+<hr>
+<h2 id="control-methods-3"><strong>Control Methods</strong></h2>
+<ul>
+<li>Short questionnaires.  </li>
+<li>Avoid unnecessary questions.  </li>
+<li>Reduce contact frequency.</li>
+</ul>
+<hr>
+<h1 id="21-option-evaluation"><strong>21. Option Evaluation</strong></h1>
+<p>The team considers three strategies.</p>
+<hr>
+<h1 id="option-a"><strong>Option A</strong></h1>
+<h2 id="online-mixed-questionnaire-stratified-sampling-diaries"><strong>Online Mixed Questionnaire + Stratified Sampling + Diaries</strong></h2>
+<p>Components:</p>
+<ul>
+<li>Broad survey.  </li>
+<li>Representative sampling.  </li>
+<li>Longitudinal depth.</li>
+</ul>
+<hr>
+<h2 id="strengths-2"><strong>Strengths</strong></h2>
+<ul>
+<li>Good representation.  </li>
+<li>Quantitative measurement.  </li>
+<li>Some qualitative depth.</li>
+</ul>
+<hr>
+<h2 id="weaknesses-2"><strong>Weaknesses</strong></h2>
+<ul>
+<li>Diaries increase respondent burden.  </li>
+<li>Still depends on self-reported data.  </li>
+<li>Limited explanation compared with interviews.</li>
+</ul>
+<hr>
+<h1 id="option-b"><strong>Option B</strong></h1>
+<h2 id="questionnaire-semi-structured-interviews-clinic-observation-cluster-sampling"><strong>Questionnaire + Semi-Structured Interviews + Clinic Observation + Cluster Sampling</strong></h2>
+<p>Components:</p>
+<ul>
+<li>Survey.  </li>
+<li>Interviews.  </li>
+<li>Observation.  </li>
+<li>Regional clusters.</li>
+</ul>
+<hr>
+<h2 id="strengths-3"><strong>Strengths</strong></h2>
+<h3 id="1-rich-data"><strong>1. Rich Data</strong></h3>
+<p>Captures:</p>
+<ul>
+<li>Opinions.  </li>
+<li>Experiences.  </li>
+<li>Behaviour.</li>
+</ul>
+<hr>
+<h3 id="2-triangulation"><strong>2. Triangulation</strong></h3>
+<p>Multiple methods validate findings.</p>
+<hr>
+<h3 id="3-bias-reduction"><strong>3. Bias Reduction</strong></h3>
+<p>Observation reduces dependence on self-report.</p>
+<hr>
+<h2 id="weaknesses-3"><strong>Weaknesses</strong></h2>
+<ul>
+<li>More expensive.  </li>
+<li>More complex.  </li>
+<li>Cluster sampling may reduce generalisability.</li>
+</ul>
+<hr>
+<h1 id="option-c"><strong>Option C</strong></h1>
+<h2 id="analytics-diaries-limited-questioning"><strong>Analytics + Diaries + Limited Questioning</strong></h2>
+<p>Components:</p>
+<ul>
+<li>Passive data.  </li>
+<li>Longitudinal records.</li>
+</ul>
+<hr>
+<h2 id="strengths-4"><strong>Strengths</strong></h2>
+<ul>
+<li>Low respondent burden.  </li>
+<li>Objective behavioural information.</li>
+</ul>
+<hr>
+<h2 id="weaknesses-4"><strong>Weaknesses</strong></h2>
+<p>Misses:</p>
+<ul>
+<li>User motivations.  </li>
+<li>Satisfaction.  </li>
+<li>Perceptions.</li>
+</ul>
+<hr>
+<h1 id="22-best-strategic-approach"><strong>22. Best Strategic Approach</strong></h1>
+<p>The strongest balanced approach is generally:</p>
+<h2 id="option-b-2"><strong>Option B:</strong></h2>
+<p>Combine questionnaire with semi-structured interviews and observation.</p>
+<hr>
+<p>Reason:</p>
+<p>It balances:</p>
+<h2 id="data-richness"><strong>Data Richness</strong></h2>
+<p>From:</p>
+<ul>
+<li>Interviews.  </li>
+<li>Observation.  </li>
+<li>Open-ended responses.</li>
+</ul>
+<hr>
+<h2 id="bias-control"><strong>Bias Control</strong></h2>
+<p>Through:</p>
+<ul>
+<li>Behavioural observation.  </li>
+<li>Multiple sources.</li>
+</ul>
+<hr>
+<h2 id="practical-constraints"><strong>Practical Constraints</strong></h2>
+<p>Cluster sampling makes fieldwork manageable.</p>
+<hr>
+<h1 id="23-triangulation-principle"><strong>23. Triangulation Principle</strong></h1>
+<h2 id="definition-27"><strong>Definition</strong></h2>
+<p>Using multiple methods to study the same phenomenon.</p>
+<hr>
+<p>Example:</p>
+<p>User engagement:</p>
+<p>Survey:</p>
+<p>&ldquo;I am satisfied.&rdquo;</p>
+<p>Analytics:</p>
+<p>User logs in frequently.</p>
+<p>Interview:</p>
+<p>&ldquo;I use the app because it helps manage my health.&rdquo;</p>
+<hr>
+<p>When all agree:</p>
+<p>Confidence increases.</p>
+<hr>
+<h1 id="24-mixed-methods-research"><strong>24. Mixed Methods Research</strong></h1>
+<h2 id="definition-28"><strong>Definition</strong></h2>
+<p>Combines quantitative and qualitative approaches.</p>
+<hr>
+<p>Quantitative:</p>
+<p>Measures:</p>
+<ul>
+<li>How much?  </li>
+<li>How often?</li>
+</ul>
+<hr>
+<p>Qualitative:</p>
+<p>Explains:</p>
+<ul>
+<li>Why?  </li>
+<li>How?</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Survey:</p>
+<p>80% users are satisfied.</p>
+<p>Interview:</p>
+<p>Users explain why.</p>
+<hr>
+<h1 id="25-common-misconceptions"><strong>25. Common Misconceptions</strong></h1>
+<h2 id="misconception-1"><strong>Misconception 1:</strong></h2>
+<p>Analytics alone can explain engagement.</p>
+<p>Reality:</p>
+<p>Analytics shows behaviour, not motivation.</p>
+<hr>
+<h2 id="misconception-2"><strong>Misconception 2:</strong></h2>
+<p>Surveys always represent users.</p>
+<p>Reality:</p>
+<p>Non-response bias may distort results.</p>
+<hr>
+<h2 id="misconception-3"><strong>Misconception 3:</strong></h2>
+<p>More methods always mean better research.</p>
+<p>Reality:</p>
+<p>Methods should match objectives and resources.</p>
+<hr>
+<h2 id="misconception-4"><strong>Misconception 4:</strong></h2>
+<p>Cluster sampling is always inferior.</p>
+<p>Reality:</p>
+<p>Cluster sampling is useful when geography and cost are important.</p>
+<hr>
+<h2 id="misconception-5"><strong>Misconception 5:</strong></h2>
+<p>Interviews provide completely accurate answers.</p>
+<p>Reality:</p>
+<p>Social desirability bias can affect responses.</p>
+<hr>
+<h1 id="26-final-research-design-framework"><strong>26. Final Research Design Framework</strong></h1>
+<p>A strong user engagement study should combine:</p>
+<h2 id="sampling"><strong>Sampling</strong></h2>
+<p>Use:</p>
+<ul>
+<li>Stratified sampling for representation.  </li>
+<li>Cluster sampling for practical field collection.</li>
+</ul>
+<hr>
+<h2 id="data-collection"><strong>Data Collection</strong></h2>
+<p>Combine:</p>
+<ul>
+<li>Mixed questionnaire.  </li>
+<li>Interviews.  </li>
+<li>Observation.  </li>
+<li>Analytics.</li>
+</ul>
+<hr>
+<h2 id="bias-management"><strong>Bias Management</strong></h2>
+<p>Address:</p>
+<ul>
+<li>Non-response bias.  </li>
+<li>Social desirability.  </li>
+<li>Survey fatigue.</li>
+</ul>
+<hr>
+<h1 id="27-final-revision-summary"><strong>27. Final Revision Summary</strong></h1>
+<h2 id="stratified-random-sampling"><strong>Stratified Random Sampling</strong></h2>
+<p>Ensures important groups are represented.</p>
+<hr>
+<h2 id="cluster-sampling"><strong>Cluster Sampling</strong></h2>
+<p>Reduces cost by sampling natural groups.</p>
+<hr>
+<h2 id="mixed-questionnaire"><strong>Mixed Questionnaire</strong></h2>
+<p>Combines:</p>
+<ul>
+<li>Quantitative scales.  </li>
+<li>Qualitative feedback.</li>
+</ul>
+<hr>
+<h2 id="interviews-2"><strong>Interviews</strong></h2>
+<p>Provide depth and explanations.</p>
+<hr>
+<h2 id="observation-2"><strong>Observation</strong></h2>
+<p>Captures actual behaviour.</p>
+<hr>
+<h2 id="diaries"><strong>Diaries</strong></h2>
+<p>Capture experiences over time.</p>
+<hr>
+<h2 id="analytics-2"><strong>Analytics</strong></h2>
+<p>Provides objective usage patterns.</p>
+<hr>
+<h2 id="best-overall-strategy"><strong>Best Overall Strategy</strong></h2>
+<p>The ideal research design balances:</p>
+<p><strong>Representation + Richness + Bias Control + Practical Constraints</strong></p>
+<p>For HealthTrack Institute, combining questionnaires with interviews and observation provides the strongest understanding of user engagement because it captures not only <strong>what users do</strong>, but also <strong>what they think and why they behave that way</strong>.</p>
+<h1 id="comprehensive-notes-healthtrack-institute-case-study-sampling-design-mixed-methods-data-collection-tools-bias-management-and-research-strategy"><strong>Comprehensive Notes: HealthTrack Institute Case Study — Sampling Design, Mixed Methods, Data Collection Tools, Bias Management, and Research Strategy</strong></h1>
+<h1 id="1-case-overview-2"><strong>1. Case Overview</strong></h1>
+<p>HealthTrack Institute is evaluating <strong>user engagement</strong> for a new health-tracking application.</p>
+<p>The research team must design a study capable of answering:</p>
+<ul>
+<li>How frequently users engage with the app.  </li>
+<li>How satisfied users are.  </li>
+<li>Why users engage or disengage.  </li>
+<li>How engagement differs across demographic groups.  </li>
+<li>What improvements users need.</li>
+</ul>
+<p>The challenge is balancing:</p>
+<ol>
+<li><strong>Representative data</strong>  </li>
+<li><strong>Rich user insights</strong>  </li>
+<li><strong>Bias reduction</strong>  </li>
+<li><strong>Resource limitations</strong></li>
+</ol>
+<p>The case introduces multiple research methods:</p>
+<ul>
+<li>Stratified random sampling.  </li>
+<li>Cluster sampling.  </li>
+<li>Mixed questionnaires.  </li>
+<li>Semi-structured interviews.  </li>
+<li>Observation schedules.  </li>
+<li>Diaries/journals.  </li>
+<li>Online analytics.</li>
+</ul>
+<hr>
+<h1 id="2-understanding-user-engagement-as-a-research-construct"><strong>2. Understanding User Engagement as a Research Construct</strong></h1>
+<p>User engagement is a complex concept.</p>
+<p>It includes:</p>
+<h2 id="behavioural-aspects"><strong>Behavioural aspects</strong></h2>
+<p>What users do:</p>
+<ul>
+<li>Number of app sessions.  </li>
+<li>Features used.  </li>
+<li>Time spent.  </li>
+<li>Frequency of interaction.</li>
+</ul>
+<p>Measured through:</p>
+<ul>
+<li>Analytics.  </li>
+<li>Usage logs.  </li>
+<li>Observation.</li>
+</ul>
+<hr>
+<h2 id="attitudinal-aspects"><strong>Attitudinal aspects</strong></h2>
+<p>What users think and feel:</p>
+<ul>
+<li>Satisfaction.  </li>
+<li>Motivation.  </li>
+<li>Perceived usefulness.  </li>
+<li>Frustrations.</li>
+</ul>
+<p>Measured through:</p>
+<ul>
+<li>Questionnaires.  </li>
+<li>Interviews.</li>
+</ul>
+<hr>
+<h2 id="experiential-aspects"><strong>Experiential aspects</strong></h2>
+<p>How users experience the product over time:</p>
+<ul>
+<li>Challenges.  </li>
+<li>Health journeys.  </li>
+<li>Changing needs.</li>
+</ul>
+<p>Measured through:</p>
+<ul>
+<li>Diaries.  </li>
+<li>Journals.</li>
+</ul>
+<hr>
+<p>A single method cannot fully capture all aspects of engagement.</p>
+<hr>
+<h1 id="3-sampling-design-2"><strong>3. Sampling Design</strong></h1>
+<p>Sampling design determines how participants are selected.</p>
+<p>A good sampling design improves:</p>
+<ul>
+<li>Representativeness.  </li>
+<li>Generalisability.  </li>
+<li>Research validity.</li>
+</ul>
+<hr>
+<h1 id="4-stratified-random-sampling"><strong>4. Stratified Random Sampling</strong></h1>
+<h2 id="definition-29"><strong>Definition</strong></h2>
+<p>A probability sampling method where the population is divided into important subgroups (strata), and samples are selected from each group.</p>
+<hr>
+<h2 id="healthtrack-example-3"><strong>HealthTrack Example</strong></h2>
+<p>Users divided by:</p>
+<ul>
+<li>Age.  </li>
+<li>Region.  </li>
+<li>Usage pattern.</li>
+</ul>
+<p>Then participants are randomly selected from each category.</p>
+<hr>
+<h2 id="purpose-4"><strong>Purpose</strong></h2>
+<p>To ensure important groups are represented.</p>
+<hr>
+<p>Example:</p>
+<p>Without stratification:</p>
+<p>A sample may contain mostly young urban users.</p>
+<p>With stratification:</p>
+<p>The sample includes:</p>
+<ul>
+<li>Young users.  </li>
+<li>Older users.  </li>
+<li>Rural users.  </li>
+<li>Urban users.</li>
+</ul>
+<hr>
+<h2 id="advantages-14"><strong>Advantages</strong></h2>
+<h3 id="1-better-representation-2"><strong>1. Better Representation</strong></h3>
+<p>Important segments are not ignored.</p>
+<hr>
+<h3 id="2-group-comparisons"><strong>2. Group Comparisons</strong></h3>
+<p>Researchers can compare:</p>
+<ul>
+<li>Older vs younger users.  </li>
+<li>Frequent vs occasional users.</li>
+</ul>
+<hr>
+<h2 id="limitation-4"><strong>Limitation</strong></h2>
+<p>Requires information about the population structure.</p>
+<hr>
+<h1 id="5-cluster-sampling"><strong>5. Cluster Sampling</strong></h1>
+<h2 id="definition-30"><strong>Definition</strong></h2>
+<p>A probability sampling method where natural groups are treated as clusters, and selected clusters are studied.</p>
+<hr>
+<h2 id="healthtrack-example-4"><strong>HealthTrack Example</strong></h2>
+<p>Cities become clusters.</p>
+<p>Example:</p>
+<p>Select:</p>
+<ul>
+<li>Chennai.  </li>
+<li>Mumbai.  </li>
+<li>Delhi.</li>
+</ul>
+<p>Collect data within those locations.</p>
+<hr>
+<h2 id="primary-advantage"><strong>Primary Advantage</strong></h2>
+<h3 id="efficiency"><strong>Efficiency</strong></h3>
+<p>Reduces:</p>
+<ul>
+<li>Travel cost.  </li>
+<li>Fieldwork complexity.  </li>
+<li>Logistics.</li>
+</ul>
+<hr>
+<h2 id="limitation-5"><strong>Limitation</strong></h2>
+<p>Clusters may not represent the entire population.</p>
+<p>Example:</p>
+<p>Users in selected cities may differ from rural users.</p>
+<hr>
+<h1 id="6-stratified-sampling-vs-cluster-sampling"><strong>6. Stratified Sampling vs Cluster Sampling</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Stratified Sampling</th>
+<th>Cluster Sampling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Purpose</td>
+<td>Ensure representation</td>
+<td>Improve efficiency</td>
+</tr>
+<tr>
+<td>Grouping basis</td>
+<td>Important characteristics</td>
+<td>Natural groups</td>
+</tr>
+<tr>
+<td>Example</td>
+<td>Age groups</td>
+<td>Cities</td>
+</tr>
+<tr>
+<td>Main benefit</td>
+<td>Accuracy</td>
+<td>Lower cost</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="7-mixed-questionnaire"><strong>7. Mixed Questionnaire</strong></h1>
+<h2 id="definition-31"><strong>Definition</strong></h2>
+<p>A questionnaire containing:</p>
+<ol>
+<li>Closed-ended questions.  </li>
+<li>Open-ended questions.</li>
+</ol>
+<hr>
+<h1 id="8-closed-ended-questions"><strong>8. Closed-Ended Questions</strong></h1>
+<p>Examples:</p>
+<p>Rating scales:</p>
+<p>&ldquo;How satisfied are you?&rdquo;</p>
+<p>1 \= Very dissatisfied<br>
+5 \= Very satisfied</p>
+<hr>
+<h2 id="advantages-15"><strong>Advantages</strong></h2>
+<p>Produces:</p>
+<ul>
+<li>Numerical data.  </li>
+<li>Easy comparison.  </li>
+<li>Statistical analysis.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>80% users satisfied.</p>
+<hr>
+<h1 id="9-open-ended-questions"><strong>9. Open-Ended Questions</strong></h1>
+<p>Examples:</p>
+<p>&ldquo;What improvements would you suggest?&rdquo;</p>
+<hr>
+<h2 id="advantages-16"><strong>Advantages</strong></h2>
+<p>Provides:</p>
+<ul>
+<li>User stories.  </li>
+<li>Explanations.  </li>
+<li>Unexpected insights.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>&ldquo;The app helps me remember medication because I often forget.&rdquo;</p>
+<hr>
+<h2 id="limitations-9"><strong>Limitations</strong></h2>
+<ul>
+<li>Harder analysis.  </li>
+<li>Requires more effort.</li>
+</ul>
+<hr>
+<h1 id="10-why-use-a-mixed-questionnaire"><strong>10. Why Use a Mixed Questionnaire?</strong></h1>
+<p>A mixed questionnaire provides both:</p>
+<h2 id="quantitative-understanding"><strong>Quantitative Understanding</strong></h2>
+<p>Answers:</p>
+<p>&ldquo;How many users are satisfied?&rdquo;</p>
+<hr>
+<h2 id="qualitative-understanding"><strong>Qualitative Understanding</strong></h2>
+<p>Answers:</p>
+<p>&ldquo;Why are users satisfied?&rdquo;</p>
+<hr>
+<p>It combines:</p>
+<p>Breadth + Depth.</p>
+<hr>
+<h1 id="11-data-collection-tools"><strong>11. Data Collection Tools</strong></h1>
+<p>Different tools answer different research questions.</p>
+<hr>
+<h1 id="12-online-questionnaire"><strong>12. Online Questionnaire</strong></h1>
+<h2 id="purpose-5"><strong>Purpose</strong></h2>
+<p>Large-scale data collection.</p>
+<hr>
+<h2 id="strengths-5"><strong>Strengths</strong></h2>
+<ul>
+<li>Wide reach.  </li>
+<li>Low cost.  </li>
+<li>Fast collection.  </li>
+<li>Easy analysis.</li>
+</ul>
+<hr>
+<h2 id="weaknesses-5"><strong>Weaknesses</strong></h2>
+<h3 id="non-response-bias"><strong>Non-response Bias</strong></h3>
+<p>Some groups may ignore the survey.</p>
+<p>Example:</p>
+<p>Inactive users may not respond.</p>
+<p>Result:</p>
+<p>Highly engaged users become overrepresented.</p>
+<hr>
+<h1 id="13-semi-structured-interviews"><strong>13. Semi-Structured Interviews</strong></h1>
+<h2 id="definition-32"><strong>Definition</strong></h2>
+<p>Interviews with:</p>
+<ul>
+<li>Prepared questions.  </li>
+<li>Flexible follow-up discussion.</li>
+</ul>
+<hr>
+<h2 id="purpose-6"><strong>Purpose</strong></h2>
+<p>Understand:</p>
+<ul>
+<li>Motivations.  </li>
+<li>Experiences.  </li>
+<li>Reasons behind behaviour.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Survey:</p>
+<p>&ldquo;User engagement decreased.&rdquo;</p>
+<p>Interview:</p>
+<p>&ldquo;Why did engagement decrease?&rdquo;</p>
+<p>Answer:</p>
+<p>&ldquo;The app became difficult after the update.&rdquo;</p>
+<hr>
+<h2 id="advantages-17"><strong>Advantages</strong></h2>
+<p>Provides deep insights.</p>
+<hr>
+<h2 id="limitations-10"><strong>Limitations</strong></h2>
+<h3 id="social-desirability-bias-2"><strong>Social Desirability Bias</strong></h3>
+<p>Participants may answer in socially acceptable ways.</p>
+<p>Example:</p>
+<p>&ldquo;I use the app every day.&rdquo;</p>
+<p>when actual usage is low.</p>
+<hr>
+<h1 id="14-observation-schedule"><strong>14. Observation Schedule</strong></h1>
+<h2 id="definition-33"><strong>Definition</strong></h2>
+<p>A structured method for recording actual behaviour.</p>
+<hr>
+<p>HealthTrack example:</p>
+<p>Observe:</p>
+<ul>
+<li>App usage at clinics.  </li>
+<li>User interactions.</li>
+</ul>
+<hr>
+<h2 id="advantages-18"><strong>Advantages</strong></h2>
+<p>Captures real behaviour.</p>
+<hr>
+<h2 id="limitation-6"><strong>Limitation</strong></h2>
+<h3 id="observer-effect-hawthorne-effect"><strong>Observer Effect / Hawthorne Effect</strong></h3>
+<p>People may change behaviour because they know they are observed.</p>
+<hr>
+<p>Example:</p>
+<p>Users interact more carefully during observation.</p>
+<hr>
+<h1 id="15-diaries-journals-and-field-notes"><strong>15. Diaries, Journals, and Field Notes</strong></h1>
+<h2 id="definition-34"><strong>Definition</strong></h2>
+<p>Participants record experiences over a period.</p>
+<hr>
+<p>HealthTrack example:</p>
+<p>Users maintain a one-week diary.</p>
+<hr>
+<h2 id="purpose-7"><strong>Purpose</strong></h2>
+<p>Capture:</p>
+<ul>
+<li>Changes over time.  </li>
+<li>Personal experiences.  </li>
+<li>Context.</li>
+</ul>
+<hr>
+<h2 id="advantages-19"><strong>Advantages</strong></h2>
+<p>Provides longitudinal insight.</p>
+<hr>
+<p>Example:</p>
+<p>A user records:</p>
+<p>&ldquo;Initially I used the app daily, but after two weeks reminders became repetitive.&rdquo;</p>
+<hr>
+<h2 id="limitations-11"><strong>Limitations</strong></h2>
+<ul>
+<li>Participant burden.  </li>
+<li>Dropout.  </li>
+<li>Incomplete entries.</li>
+</ul>
+<hr>
+<h1 id="16-online-analytics-tools"><strong>16. Online Analytics Tools</strong></h1>
+<h2 id="definition-35"><strong>Definition</strong></h2>
+<p>Automatically collects behavioural data.</p>
+<p>Examples:</p>
+<ul>
+<li>Clickstreams.  </li>
+<li>Feature usage.  </li>
+<li>Session duration.</li>
+</ul>
+<hr>
+<h2 id="strengths-6"><strong>Strengths</strong></h2>
+<h3 id="objective-behaviour-data"><strong>Objective Behaviour Data</strong></h3>
+<p>Shows what users actually do.</p>
+<hr>
+<p>Example:</p>
+<p>Users opened medication reminders 50 times.</p>
+<hr>
+<h2 id="limitations-12"><strong>Limitations</strong></h2>
+<p>Cannot explain:</p>
+<p>Why users behave that way.</p>
+<hr>
+<p>Example:</p>
+<p>Analytics:</p>
+<p>&ldquo;Users stopped using feature X.&rdquo;</p>
+<p>Does not explain:</p>
+<ul>
+<li>Feature was confusing.  </li>
+<li>Feature was unnecessary.  </li>
+<li>Users found alternatives.</li>
+</ul>
+<hr>
+<h1 id="17-quantitative-vs-qualitative-data"><strong>17. Quantitative vs Qualitative Data</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Answers</th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quantitative</td>
+<td>How much/how many?</td>
+<td>Surveys, analytics</td>
+</tr>
+<tr>
+<td>Qualitative</td>
+<td>Why/how?</td>
+<td>Interviews, diaries</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<p>A strong study often combines both.</p>
+<hr>
+<h1 id="18-mixed-methods-research"><strong>18. Mixed Methods Research</strong></h1>
+<h2 id="definition-36"><strong>Definition</strong></h2>
+<p>Combining quantitative and qualitative approaches.</p>
+<hr>
+<p>HealthTrack example:</p>
+<p>Questionnaire:</p>
+<p>Measures satisfaction.</p>
+<ul>
+<li></li>
+</ul>
+<p>Interviews:</p>
+<p>Explain experiences.</p>
+<ul>
+<li></li>
+</ul>
+<p>Analytics:</p>
+<p>Measure actual usage.</p>
+<hr>
+<h2 id="benefit"><strong>Benefit</strong></h2>
+<p>Creates a complete understanding.</p>
+<hr>
+<h1 id="19-research-biases"><strong>19. Research Biases</strong></h1>
+<p>The case highlights three major biases.</p>
+<hr>
+<h1 id="20-non-response-bias"><strong>20. Non-Response Bias</strong></h1>
+<h2 id="definition-37"><strong>Definition</strong></h2>
+<p>Occurs when respondents differ from non-respondents.</p>
+<hr>
+<p>Example:</p>
+<p>Active users respond.</p>
+<p>Inactive users ignore surveys.</p>
+<hr>
+<p>Effect:</p>
+<p>Results become overly positive.</p>
+<hr>
+<h2 id="solutions"><strong>Solutions</strong></h2>
+<ul>
+<li>Reminders.  </li>
+<li>Incentives.  </li>
+<li>Multiple contact methods.  </li>
+<li>Compare respondents and population.</li>
+</ul>
+<hr>
+<h1 id="21-social-desirability-bias"><strong>21. Social Desirability Bias</strong></h1>
+<h2 id="definition-38"><strong>Definition</strong></h2>
+<p>Respondents provide answers that make them appear better.</p>
+<hr>
+<p>Example:</p>
+<p>&ldquo;I always follow healthy habits.&rdquo;</p>
+<hr>
+<p>Common in:</p>
+<ul>
+<li>Interviews.  </li>
+<li>Sensitive topics.</li>
+</ul>
+<hr>
+<h2 id="solutions-2"><strong>Solutions</strong></h2>
+<ul>
+<li>Confidentiality.  </li>
+<li>Neutral wording.  </li>
+<li>Anonymous surveys.</li>
+</ul>
+<hr>
+<h1 id="22-survey-fatigue"><strong>22. Survey Fatigue</strong></h1>
+<h2 id="definition-39"><strong>Definition</strong></h2>
+<p>Respondent tiredness caused by excessive questioning.</p>
+<hr>
+<p>Effects:</p>
+<ul>
+<li>Incomplete responses.  </li>
+<li>Lower quality answers.  </li>
+<li>Dropouts.</li>
+</ul>
+<hr>
+<p>Solutions:</p>
+<ul>
+<li>Short surveys.  </li>
+<li>Avoid unnecessary questions.  </li>
+<li>Limit repeated contact.</li>
+</ul>
+<hr>
+<h1 id="23-hawthorne-effect"><strong>23. Hawthorne Effect</strong></h1>
+<h2 id="definition-40"><strong>Definition</strong></h2>
+<p>People change behaviour because they know they are being observed.</p>
+<hr>
+<p>Example:</p>
+<p>Users increase app usage during observation.</p>
+<hr>
+<p>Common in:</p>
+<ul>
+<li>Observation studies.  </li>
+<li>Tracking studies.</li>
+</ul>
+<hr>
+<h1 id="24-evaluating-the-three-options"><strong>24. Evaluating the Three Options</strong></h1>
+<hr>
+<h1 id="option-a-2"><strong>Option A</strong></h1>
+<h2 id="online-mixed-questionnaire-stratified-sampling-diaries-2"><strong>Online Mixed Questionnaire + Stratified Sampling + Diaries</strong></h2>
+<h3 id="strengths-7"><strong>Strengths</strong></h3>
+<ul>
+<li>Strong representation.  </li>
+<li>Quantitative measurement.  </li>
+<li>Longitudinal insights.</li>
+</ul>
+<h3 id="weaknesses-6"><strong>Weaknesses</strong></h3>
+<ul>
+<li>Diary burden.  </li>
+<li>Limited explanation compared with interviews.</li>
+</ul>
+<hr>
+<h2 id="strategic-value"><strong>Strategic Value</strong></h2>
+<p>Good balance between:</p>
+<ul>
+<li>Data quality.  </li>
+<li>Cost.  </li>
+<li>Coverage.</li>
+</ul>
+<hr>
+<h1 id="option-b-3"><strong>Option B</strong></h1>
+<h2 id="questionnaire-semi-structured-interviews-observation-cluster-sampling"><strong>Questionnaire + Semi-Structured Interviews + Observation + Cluster Sampling</strong></h2>
+<h3 id="strengths-8"><strong>Strengths</strong></h3>
+<p>Very rich data.</p>
+<p>Captures:</p>
+<ul>
+<li>What users do.  </li>
+<li>What users think.  </li>
+<li>Why users behave.</li>
+</ul>
+<hr>
+<h3 id="weaknesses-7"><strong>Weaknesses</strong></h3>
+<p>Higher:</p>
+<ul>
+<li>Cost.  </li>
+<li>Time.  </li>
+<li>Complexity.</li>
+</ul>
+<p>Potential biases:</p>
+<ul>
+<li>Observer effect.  </li>
+<li>Social desirability.</li>
+</ul>
+<hr>
+<h1 id="option-c-2"><strong>Option C</strong></h1>
+<h2 id="analytics-diaries-limited-direct-questioning"><strong>Analytics + Diaries + Limited Direct Questioning</strong></h2>
+<h3 id="strengths-9"><strong>Strengths</strong></h3>
+<ul>
+<li>Lower respondent burden.  </li>
+<li>Objective behavioural data.</li>
+</ul>
+<hr>
+<h3 id="weaknesses-8"><strong>Weaknesses</strong></h3>
+<p>Major problem:</p>
+<p>Lacks user explanations.</p>
+<p>Analytics shows:</p>
+<p>&ldquo;What happened?&rdquo;</p>
+<p>but not:</p>
+<p>&ldquo;Why it happened?&rdquo;</p>
+<hr>
+<h1 id="25-best-strategic-choice"><strong>25. Best Strategic Choice</strong></h1>
+<p>The preferred approach depends on priorities.</p>
+<p>For this case, the strongest balanced solution is:</p>
+<h2 id="option-a-3"><strong>Option A</strong></h2>
+<h3 id="why"><strong>Why?</strong></h3>
+<p>It provides:</p>
+<h2 id="representation"><strong>Representation</strong></h2>
+<p>Through stratified sampling.</p>
+<hr>
+<h2 id="quantitative-measurement"><strong>Quantitative Measurement</strong></h2>
+<p>Through questionnaire scales.</p>
+<hr>
+<h2 id="qualitative-depth"><strong>Qualitative Depth</strong></h2>
+<p>Through diaries.</p>
+<hr>
+<h2 id="lower-cost"><strong>Lower Cost</strong></h2>
+<p>Compared with extensive interviews and observations.</p>
+<hr>
+<h1 id="26-why-not-analytics-alone"><strong>26. Why Not Analytics Alone?</strong></h1>
+<p>Analytics are valuable but incomplete.</p>
+<p>Example:</p>
+<p>Analytics:</p>
+<p>&ldquo;Users stop using the app after 30 days.&rdquo;</p>
+<p>Possible explanations:</p>
+<ul>
+<li>App is difficult.  </li>
+<li>Users achieved their goal.  </li>
+<li>Notifications are annoying.  </li>
+<li>Features are insufficient.</li>
+</ul>
+<p>Only direct feedback explains the cause.</p>
+<hr>
+<h1 id="27-why-not-only-interviews"><strong>27. Why Not Only Interviews?</strong></h1>
+<p>Interviews provide depth but:</p>
+<ul>
+<li>Small samples.  </li>
+<li>Limited generalisability.  </li>
+<li>Expensive.</li>
+</ul>
+<hr>
+<h1 id="28-why-not-only-surveys"><strong>28. Why Not Only Surveys?</strong></h1>
+<p>Surveys provide scale but:</p>
+<ul>
+<li>Limited explanations.  </li>
+<li>Possible response bias.</li>
+</ul>
+<hr>
+<h1 id="29-research-design-principle"><strong>29. Research Design Principle</strong></h1>
+<p>The best research design balances:</p>
+<h2 id="breadth"><strong>Breadth</strong></h2>
+<p>Large representative sample.</p>
+<p>Provided by:</p>
+<ul>
+<li>Surveys.  </li>
+<li>Stratified sampling.</li>
+</ul>
+<hr>
+<h2 id="depth"><strong>Depth</strong></h2>
+<p>Detailed understanding.</p>
+<p>Provided by:</p>
+<ul>
+<li>Interviews.  </li>
+<li>Diaries.</li>
+</ul>
+<hr>
+<h2 id="objectivity"><strong>Objectivity</strong></h2>
+<p>Actual behaviour.</p>
+<p>Provided by:</p>
+<ul>
+<li>Analytics.  </li>
+<li>Observation.</li>
+</ul>
+<hr>
+<h1 id="30-final-revision-summary"><strong>30. Final Revision Summary</strong></h1>
+<h2 id="sampling-2"><strong>Sampling</strong></h2>
+<ul>
+<li>Stratified sampling → representation.  </li>
+<li>Cluster sampling → efficiency.</li>
+</ul>
+<hr>
+<h2 id="data-collection-2"><strong>Data Collection</strong></h2>
+<ul>
+<li>Questionnaire → measurable opinions.  </li>
+<li>Interview → explanations.  </li>
+<li>Observation → actual behaviour.  </li>
+<li>Diaries → experiences over time.  </li>
+<li>Analytics → actual digital behaviour.</li>
+</ul>
+<hr>
+<h2 id="bias-control-2"><strong>Bias Control</strong></h2>
+<ul>
+<li>Non-response bias → improve participation.  </li>
+<li>Social desirability → confidentiality and neutral methods.  </li>
+<li>Hawthorne effect → reduce observation influence.  </li>
+<li>Survey fatigue → reduce burden.</li>
+</ul>
+<hr>
+<h2 id="core-research-principle"><strong>Core Research Principle</strong></h2>
+<p>No single method captures the complete user experience.</p>
+<p>A strong research design combines:</p>
+<p><strong>Representative sampling + quantitative measurement + qualitative understanding + behavioural evidence</strong></p>
+<p>to produce findings that are both reliable and actionable.</p>
+<p><strong>Live</strong></p>
+<p>Stream<br>
+Amrita Online MBA  Semester 4  Batch OCT 2024  Live Session  Project-20260612_190045-Meeting Recording - View-only</p>
+<p>This document is shared with others</p>
+<p>Mahalingam P R - \[AA.BU.P2MBA24075126\]<br>
+M<br>
+Sign in</p>
+<p>Record</p>
+<p>Upload</p>
+<p>Favorite</p>
+<p>Playlist</p>
+<p>Teams</p>
+<p>Share</p>
+<p>Volume slider is at 100%<br>
+0 minutes of 1 hour 1 minute 30 seconds<br>
+0:00 / 1:01:30<br>
+1<br>
+x<br>
+Read transcript<br>
+Transcript</p>
+<p>Close</p>
+<p>Download<br>
+You don&rsquo;t have permission to download the transcript. Contact Amrita Online - LMS File Server to request access.</p>
+<p>You don&rsquo;t have permission to download the transcript. Contact<br>
+Amrita Online - LMS File Server<br>
+to request access.<br>
+Transcript. Use arrow keys to navigate between transcript entries. Select an entry to navigate the media to the time of the entry.</p>
+<p>AI-generated content may be incorrect</p>
+<p>MBA Batch OCT 2024 - Amrita Online<br>
+started transcription<br>
+M<br>
+MBA Batch OCT 2024 - Amrita Online<br>
+0 minutes 7 seconds<br>
+0:07<br>
+MBA Batch OCT 2024 - Amrita Online 0 minutes 7 seconds<br>
+Hello everyone, a warm welcome to the week 6 live session of project myself, Namita, and I will be assisting you in today&rsquo;s class. Please note that this session is being recorded for the academic use. Thank you all for joining, and we truly appreciate your cooperation throughout the session. Today&rsquo;s session will be handed by Doctor. Raiji Kumar Ji.<br>
+MBA Batch OCT 2024 - Amrita Online 0 minutes 26 seconds<br>
+Welcome, sir, and now the session is yours.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+0 minutes 33 seconds<br>
+0:33<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 0 minutes 33 seconds<br>
+Okay, good evening. So I got a question the beginning itself. The question is like if you are collecting primary data for the project, should we put the report category as direct or I didn&rsquo;t understand?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 0 minutes 48 seconds<br>
+What do you mean by direct?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 0 minutes 55 seconds<br>
+Is there a classification based on the data you are using for the project? I am not very sure, please send a mail to Shinta and ask maybe some internal classification given by the I mean our university. As far as research is considered, whatever be the data, whether primary or secondary, you can use it and it both will qualify for a good project. work.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 18 seconds<br>
+But maybe for our internal purpose, we might have classified I mean through search taking place based on primary data and based on secondary data. That&rsquo;s why there will be a column in the schedule or the report you have to submit. Okay, direct or virtual I mean.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 37 seconds<br>
+I was essentially, essentially it&rsquo;s if I told, this kind of a classification is just for practical, I mean internal purpose only. Direct mean when you go to a field directly, I mean be in the firm and directly collect data for your purpose, it will be direct project. Virtual means you&rsquo;re not going to the firm directly, but.<br>
+Georgekutty Stanly - \[AA.BU.P2MBA24075077\]<br>
+1 minute 54 seconds<br>
+1:54<br>
+Georgekutty Stanly - \[AA.BU.P2MBA24075077\] 1 minute 54 seconds<br>
+Stop.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+1 minute 59 seconds<br>
+1:59<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 59 seconds<br>
+From secondary sources, you get the data related to the firm and you do the proper analysis and submit the report. Me. But both in both cases, the project is equally good. Only thing is in direct, you are using more primary data which you directly collect from the organization by spending time with the organization.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 2 minutes 18 seconds<br>
+But in virtual you are not going to the organization, you&rsquo;re sitting at a distant place from secondary sources you collect data related to your research problem and you&rsquo;re doing it. So you got I mean since you said you&rsquo;re collecting primary data means you&rsquo;ll be going see again that again I will tell you now to be frank and to collect the primary data you don&rsquo;t have to go to the firm and all you can create a.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 2 minutes 42 seconds<br>
+Link and you can send to the mail so the employees or who are participating in the survey and they can respond to your, I mean survey. So sitting at your home also or not going to the office or not going to the firm also, you can collect primary data. So primary data and secondary data, you should understand the conceptual difference.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 3 minutes 2 seconds<br>
+If a researcher collects certain data for his studies for the first time, it will be primary data for that particular researcher, and if the same data is used by another researcher in his study, it will be secondary data for the researcher. So data as such doesn&rsquo;t take.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 3 minutes 23 seconds<br>
+Take the role of primary or take the title of primary or secondary. It is with the perspective of the researcher, it becomes primary or secondary. For a researcher, if he is by himself collecting the data from the field by some means, it will be primary for.<br>
+Georgekutty Stanly - \[AA.BU.P2MBA24075077\]<br>
+3 minutes 35 seconds<br>
+3:35<br>
+Georgekutty Stanly - \[AA.BU.P2MBA24075077\] 3 minutes 35 seconds<br>
+Okay.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+3 minutes 42 seconds<br>
+3:42<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 3 minutes 42 seconds<br>
+That particular researcher. But that doesn&rsquo;t mean that the same same data may not be used by another researcher. When another researcher use the same data, it will become secondary data for him.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 3 minutes 58 seconds<br>
+Somebody is not mute.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 4 minutes 2 seconds<br>
+Okay, so that&rsquo;s the classic difference between primary and secondary. See, Government of India collect the economic indicator data, GDPL related data, inflation related data for certain, I mean specific purpose. And if that is collected by Government of India, then.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 4 minutes 20 seconds<br>
+For Government of India, it is primary data, but you as independent researchers, you will be depending on many portion of that big data set for your research. So you will be you considering this Government of India collected data like census data or economic data as a secondary data. That&rsquo;s all.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 4 minutes 40 seconds<br>
+OK, so I think in last week, last week was I think review week before the week before the last we were discussing about yeah, scale development. Of course, it is again topic related to the data collection and all and I said.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 5 minutes<br>
+Mostly in research, we came across variables which are many times which many times are not directly measurable, like feelings, perceptions, attitude, all these things are.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 5 minutes 19 seconds<br>
+Approach and these type of variables for which measurement is not easy or not direct, we call them Latin variables. Say for example, customer satisfaction is a Latin variable, employee satisfaction is a Latin variable, purchase intention is a Latin variable. So many variables we discuss as part of marketing or HR.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 5 minutes 42 seconds<br>
+Or in behavioral finance, which capture human feeling, sentiments, etcetera, are latent in nature. So to measure such latent variables, we have certain scale development procedure. That&rsquo;s what I explained in the last class, last, I mean interaction.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 6 minutes 1 second<br>
+But in at the same time, many variables are directly measurable. For example, if you want to measure the weight of a product, there is an equipment so you can directly measure it. If you want to measure time spent by a person in a retail shop, you can measure it easily if you want to.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 6 minutes 21 seconds<br>
+Weigh the quality of a product by matching with the specifications. It&rsquo;s possible because specifications are clearly mentioned on the product, and you can personally verify whether all the features related to the product are specific are exactly matching with the specifications to which it is created. for which.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 6 minutes 41 seconds<br>
+So that way measurement becomes little easy. There is a direct approach to measure human body temperature we can measure, but your anger or your feeling of animosity you cannot measure with an equipment. So that way the feeling of animosity becomes.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 7 minutes<br>
+I mean latent and body temperature become non latent. In research you came across both latent phenomena and non latent phenomena. For non latent phenomena, there will be some data collection equipment or methodology which is readily available and it systematically capture the data.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 7 minutes 20 seconds<br>
+And it is kept as records. By referring the records you will get the data and if you want to use that record or that data you can find directly take from the database and use it. And many times this type of recorded data are secondary in nature.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 7 minutes 40 seconds<br>
+Maybe with the tools or maybe you got some other researchers for some other say rainfall data. Rainfall data is captured by meteorological department. It is readily available. Global warming data readily available. Export data World Bank is collecting and they are maintaining inflation data.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 7 minutes 59 seconds<br>
+Our Reserve Bank of India is preparing and keeping. So similarly, company stock market data it is readily available. So many data are readily available. So we can call them it secondary also because someone else is collecting for you when you are doing a research using that data for you that data will be secondary. So.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 8 minutes 18 seconds<br>
+We said about scale development. Scale development procedures are mostly used to come about with a measurement strategy for latin variables and I hope I have explained those areas and I&rsquo;m not going to those areas today. Our effort will be and again I explained different a questionnaire. What&rsquo;s a questionnaire? It&rsquo;s a data collection tool.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 8 minutes 41 seconds<br>
+For data collection, multiple tools are useful, so that also I think I have explained towards the end of last interaction session. Today I will be explaining little further about maybe different type of data, then I may be explaining.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 9 minutes 2 seconds<br>
+What is the role of statistics in research? Because now we are coming to the fundamental aspects related to the research, like what is a research problem, what is a research question, what is the literature review, how we can conduct a literature review, what is the variables involved in your research, what is the hypothesis, what is the theoretical framework?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 9 minutes 23 seconds<br>
+And of course, I have said what&rsquo;s a data and of course how we can do measurement also. Now different type of data and then we will be slowly coming to data collection as well as analysis. Various analysis with respect to data for gaining insights useful for solving your research problem.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 9 minutes 45 seconds<br>
+So now we need to know what way the statistics is going to help a researcher. Why a researcher need to have some basic understanding about principles of statistics? Statistics you might have studied as a separate subject, but here I will be.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 10 minutes 5 seconds<br>
+Trying to explain how researchers can benefit from statistics. So these are the purpose of today&rsquo;s discussion. So I have few slides only with the help of slide, I will try to summarise one minute, let me share it.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 10 minutes 29 seconds<br>
+Is it visible?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 10 minutes 33 seconds<br>
+Is it okay?<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+10 minutes 34 seconds<br>
+10:34<br>
+Ms Shinta Idicula - MBA - Amrita Online 10 minutes 34 seconds<br>
+Yes, sir, yes, sir, it&rsquo;s visible.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+10 minutes 35 seconds<br>
+10:35<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 10 minutes 35 seconds<br>
+OK, yeah, so I said what&rsquo;s a data? Data is I mean a description of what a fact or an observation collected if using a standard method and used for some analysis to gain insights. Now, what are the basic different data collection?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 10 minutes 55 seconds<br>
+I mean, approaches normally in research, we collect data. One minute, I will just go to the previous slide also and come back.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 11 minutes 7 seconds<br>
+One minute.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 11 minutes 10 seconds<br>
+Yep, here I&rsquo;ll start.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 11 minutes 14 seconds<br>
+So this is what we said. Data is it refers to facts, figures, observations, information collected systematically over a period of time to answer certain research questions, hypothesis or support findings. Proper analysis will give you a lot of insights useful for addressing your research.</p>
+<p>Sync to video<br>
+Transcript</p>
+<p>\[3:34:55 PM\] Transcript watcher started. Scroll the content manually.<br>
+\[3:35:00 PM\] Timestamp: 0:07<br>
+\[3:35:00 PM\] Timestamp: 0:33<br>
+\[3:35:00 PM\] Timestamp: 1:54<br>
+\[3:35:00 PM\] Timestamp: 1:59<br>
+\[3:35:00 PM\] Timestamp: 3:35<br>
+\[3:35:00 PM\] Timestamp: 3:42<br>
+\[3:35:00 PM\] Timestamp: 10:34<br>
+\[3:35:00 PM\] Timestamp: 10:35<br>
+🟥 Stop &amp; Extract Transcript<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 15 minutes 11 seconds<br>
+Many time points, so that&rsquo;s panel data. So these are different type of data. Now for collecting data we use, say if you want to collect from multiple people at a particular point of time, we use survey and for survey we use something we call like a.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 15 minutes 30 seconds<br>
+Okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 15 minutes 33 seconds<br>
+Call like an a questioner. Then if you are collecting qualitative data from different people, different respondent, then we use interviews. We can observe and we can note down, say for example, I am mapping the traffic.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 15 minutes 50 seconds<br>
+At a particular junction or the I mean nature of road accidents occurring. So here as an enumerator or as a as a I mean researcher, I can simply observe and study. So from observation also you can collect data, then you can conduct some experiments and results of the experiments you can.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 16 minutes 9 seconds<br>
+I Note down using certain equipments or certain devices and those can also become data. So all this data collection methods use certain instruments. Mostly these instruments are questioners questionnaires class 2 interaction. I said about different contents of a questioner.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 16 minutes 33 seconds<br>
+So questionnaires are mostly used for cross sectional survey surveys. Then schedule schedule is a I mean a document which contain list of questions to be asked during an interview. So schedules can be used then of course.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 16 minutes 51 seconds<br>
+To get certain experiment results from the experiment, you need to conduct experiments. So experiments is are also data collection method. So these are different tools used to collect data. So survey interviews, observations, experiments, results of experiments all are.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 11 seconds<br>
+Data collection methods and these data collection methods use questionnaires, schedules, experiments, etcetera. I said what are different parts of a questionnaire? A questionnaire will have an introduction then naturally we will be trying to or will be including certain questions to understand the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 31 seconds<br>
+Demographic as otherwise and other background of the respondents who are participating in the survey or interview. So certain questions related to demographic or background information of the respondents will be there like age, income, their educational level, their gender or I mean the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 52 seconds<br>
+Income level. Such questions will be there. Then there will be set of set questions related to the preference mapping with related to the problem or the area under research. If it is a shopping behaviour mapping questions, what are the normal patterns of shopping whether we where he prefers to shop online or offline with whom he prefers to shop? What is his frequency of shopping?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 18 minutes 16 seconds<br>
+What are the items you want to buy online and offline like that certain preference mapping questions the questions will be there. Then as I said, there will be for every research, there will be certain theories, certain variables will be discussed and to measure these variables, we will be developing certain scales so all scale.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 18 minutes 35 seconds<br>
+Items will be coming in the questionnaire and maybe at the end we will have some open ended questions. Closed end question means you are not allowing the respondents to give an answer. I mean apart from the choice we have given, we will be giving specific choices and the respondent need to answer as I mean one of the choice we have given.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 18 minutes 58 seconds<br>
+But in open ended question, the respondent can openly write his comments or views because we don&rsquo;t restrict them to answer within a particular within a given set of answers. So that&rsquo;s open ended questions and at the end there can be a thank you note and contact details and some if required in the introduction we will be including.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 19 minutes 21 seconds<br>
+Certain DT is like this data may not be used against him. It will be used only for academic purpose. So some description to give him confidence that he can share his viewpoints openly and freely. So these are the contents of the questionnaire. So this much we have discussed and I think some points omitted in last class also discussed now.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 19 minutes 41 seconds<br>
+No.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 19 minutes 43 seconds<br>
+Now we have decided some data we need to we require. We know what is the data we require and we know from where we can collect it and we know what tool we need to use to collect the data. Now the next important question is from whom you need to collect, how many of such people we need to meet?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 3 seconds<br>
+And what is the method of choosing that particular person from whom you want to collect the data? So these things together we call the sampling design for a study. So sampling design consists of 3 things. Number one, who?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 22 seconds<br>
+Or who will be the decision on who will be the sample? Number 2, how this particular sample can be selected from a big group of samples available or that big group we call like population.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 41 seconds<br>
+And 3rd, what should be the size of the sample? So these 3 things, one, who is the sample unit?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 49 seconds<br>
+An individual in the sample or individual member of the sample is called sample unit.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 56 seconds<br>
+So, decision on who is the sample unit then.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 1 second<br>
+What is the size of the sample?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 6 seconds<br>
+Then, how we can select the sample from the population? So, these 3 things are coming see. To decide who should be the sample unit, you have to think about the critical stakeholders related to your research. I said in the beginning, itself, when you have identified a problem.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 26 seconds<br>
+You will be naturally checking who are all affected by the problem and you will try to classify them the various stakeholders who have or directly or indirectly associated with the problem. Then from that set of stakeholders, you choose the best, most eligible.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 48 seconds<br>
+Set stakeholder who are good for you to inquire more to find a certain solution to the problem here and that fellow becomes your sample unit or respondent.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 22 minutes 2 seconds<br>
+And the big set of or that the universe of such respondents or ideal sample units for your study becomes the population for your study.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 22 minutes 15 seconds<br>
+Now from the population you are taking a sample, you cannot go and meet every element of the population because the population will be infinite in nature and your research span is too or research time frame is too short and in such a short.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 22 minutes 34 seconds<br>
+Period of time, you may not be in a position to go and meet every member of the population or every sampled unit. So you will be forced to take a small subset. So that process of selecting a subset called sample from the big population or big universe is called sample.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 22 minutes 57 seconds<br>
+There are 2 classic methods of sampling. One is called a random or probability based sampling where every element or every unit in the population gets equal opportunity of being selected to the sample. And this is an essential condition because in all.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 23 minutes 18 seconds<br>
+Research, we need general findings.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 23 minutes 22 seconds<br>
+That means we are not interested in finding about the sample alone we are interested to know how the population will behave. So based on the sample findings, we are or we will be generalising it to population.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 23 minutes 41 seconds<br>
+So then we should get our generalization correctly. For that, we need to go with the random procedure, that is as per the principles of statistics. So here are the small areas in which statistics starts coming. If you are going to meet the entire population, then there is no mean need to look for, I mean, probability sampling error because you are.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 24 minutes 6 seconds<br>
+Everybody and the research will be for the entire population. Don&rsquo;t worry, no, nothing to worry. But in reality, you are not in a position to meet every element of the population. So you will be taking a sample and the sample should reflect the population. And when you study the sample, the results should be compatible to the population also. That&rsquo;s why we need to go with a.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 24 minutes 27 seconds<br>
+Random procedure. The second type of prop I mean sampling method is nonrandom procedure. Many times for convenience purpose, certain purposes and all, we go with the nonrandom sampling. But when you go for statistical estimation, we need to verify even if we went for nonrandom sampling.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 24 minutes 46 seconds<br>
+The data has come or data is having adequate element of randomness. So randomness verification becomes an essential thing in every research which which which which we are doing to generalise the findings.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 25 minutes 5 seconds<br>
+Okay, so random sampling procedures there are 4 types: one simple random, systematic random, stratified random, and cluster I mean random sampling. So for all random sampling, there should be naturally prevailing condition. For example, in simple and systematic, we need to have something called a sample frame.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 25 minutes 29 seconds<br>
+Sample frame is the list containing the names or elements of the population. For example, telephone directory or maybe details list. This contains every people details about every people who are staying in an area. So this can be considered as a problem as a I mean sample frame and.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 25 minutes 51 seconds<br>
+Sample frame which gives the details about the population and from the population we can pick on a random sample. Simple random sampling approach means like in a lottery method. Systematic means where the specific intervals uniform intervals you are choosing the sample stratas and clusters are some naturally prevailing.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 11 seconds<br>
+Things stratas called which are homogeneous within and heterogeneous across, and clusters are heterogeneous within and homogeneous across. If such things are prevailing, you can use cluster based or strata based to sample non random. It can be purposive, judgmental, convenience, or snowboard. Snowboard means you ask.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 31 seconds<br>
+So you have purpose and you find out one person. Then you ask the same person, can you find another person? Say you want to conduct a survey among people who went to Ladakh in bike. So you have somehow found out one person who travelled to Ladakh in a 2 wheeler. So then you ask that particular fellow, can you find, tell me or can you give the details of another person you know?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 53 seconds<br>
+Who has travelled in this? And then he said, okay, one of my friend also went like this, so he will give the reference of the second. So as it as the process goes on, you will get more samples or new samples. and So this is how snowball sampling happens. So these are 2 classic approaches of 2 way sample.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes 11 seconds<br>
+2 types and in each type there are different. Please read or please refer to my video lectures on this topic. Now the second next important criteria one, who is the sample unit number 2, how to select the sample and 3rd, how many need to be selected? Sample size decision. These 3 things are critical to sampling design.<br>
+Devara Sasireka - \[AA.BU.P2MBA24072041\]<br>
+27 minutes 29 seconds<br>
+27:29<br>
+Devara Sasireka - \[AA.BU.P2MBA24072041\] 27 minutes 29 seconds<br>
+Cool.<br>
+Devara Sasireka - \[AA.BU.P2MBA24072041\] 27 minutes 31 seconds<br>
+Yeah.<br>
+\[3:35:05 PM\] Timestamp: 27:29<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 30 minutes 19 seconds<br>
+A result which can be considered good for the population. Now one interesting point with this calculator, if you are allowing or if you want only 95% level of confidence and 5% error is acceptable even if you increase the population size. No, I made it 1,00,000, the number become 383.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 30 minutes 41 seconds<br>
+Now even if I increase it further, see I am making a big number, then also it will become something slight change will leak up. So in a thumb as a thumb rule, we can say that 385 so even if you I mean give an unlimited huge enormous number here then also.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 31 minutes 2 seconds<br>
+If you are looking at a result looking at the result which is confident, which has a confidence level of 95% and margin of error of 5%, that&rsquo;s accepted in social science. But in biology or in pharmaceuticals you may require more clear, maybe 99.99 and all and you may not tolerate this much error also you may have to reduce.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 31 minutes 23 seconds<br>
+This to maybe 1% or 0.5%, but in social sciences this is an accepted 1385 is considered as a ideally accepted sample size for social science research. This is the first calculator for univariate simple statistical verifications and all. Now if you are going with the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 31 minutes 43 seconds<br>
+Structural equation modeling or multi model multiple models including multiple variables. So this is Daniel Soper is a research statistician by name Daniel Soper. He has come about with the a priori sample size for structural equation modeling.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 32 minutes 2 seconds<br>
+Effect size is something similar to our beta. We will come in detail with respect to what&rsquo;s an effect size. So we may be happy if we can get us effect size of 0.220% effect at least power 0.1 is best, but 0.8 is accepted if you latent variables like I have shown you a model 9 that model we were having.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 32 minutes 25 seconds<br>
+Product attribute, store attribute, value, variety seeking and satisfaction. So 5 latent variables are there if there are 5 latent variables and for each latent variable we have 5 questions each all to the 25 items observed variables are there. These are your questions you have asked.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 32 minutes 43 seconds<br>
+And you allow again here like 95% confidence, 1 - 95% is probability of significance level. So if you calculate you will get.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 32 minutes 54 seconds<br>
+A value say here you want to minimum sample size to dictate an effect is 376, just if you are looking at the model structure, but that&rsquo;s not sufficient. Recommended will be 376. So these 2 calculators are very much useful for.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 33 minutes 14 seconds<br>
+Your research. So now I come to any questions till now?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 33 minutes 23 seconds<br>
+Or otherwise, I will call to the any questions till now. What we have discussed is data, types of data, then data collection method, then tools used for data collection. Then I said about sampling.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 33 minutes 42 seconds<br>
+3 considerations in sampling design. One decision about who is your sample unit, that&rsquo;s more of a conceptual decision. Who is the stakeholder important for your study? From that, only you&rsquo;ll be choosing. And again, please keep in mind that sample unit you don&rsquo;t think that it should always be introduced. It can be machines, it can be organizations, it can be countries, it can be.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 34 minutes 4 seconds<br>
+Maybe automobiles. So I mean, what is your, I mean, I mean point or unit of observation that becomes the sample unit. Okay, now second is how you are going to collect the sample sampling method, then comes the sample size, these things we have discussed.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 34 minutes 25 seconds<br>
+Any questions till now or can I go to the next? Now I am going to the very important topic, the role of statistics, because this is one area where every researcher is little bit, I mean, I mean little bit worrying and maybe one of the major handicap for many researchers is.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 34 minutes 46 seconds<br>
+About effectively using statistics in the research activity because without analysing the data collected, you cannot reach any conclusions useful for solving your research problem. So for proper analysis and proper interpretation you require you have to apply.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 6 seconds<br>
+Statistics. So maybe I will try to explain. So can I proceed or any questions to me right now till now?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 18 seconds<br>
+Hello.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 20 seconds<br>
+Krithika is one or 2 person who used to interact.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 25 seconds<br>
+Krithika, can we go further?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 32 seconds<br>
+Please responding. I don&rsquo;t know. Yeah, okay then. Okay, so again, I am coming to my slides.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 48 seconds<br>
+So, role of statistics, why statistics is required in a research.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 54 seconds<br>
+Statistics, as you know, is the science behind numbers to be precise, or science behind generalizations. In that way also we can one purpose is as I said, we are studying a sample.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 36 minutes 11 seconds<br>
+The sample means a cross section of the population, but our interest is in population. We study the sample and predict the behaviour of population.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 36 minutes 25 seconds<br>
+For sample, there are many characteristics. This characteristics we call in simple statistic.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 36 minutes 34 seconds<br>
+Statistic means a characteristics related to the sample. And what&rsquo;s the characteristic?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 36 minutes 41 seconds<br>
+characteristics with respect to certain number, I mean maybe a set of numbers or something.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 36 minutes 49 seconds<br>
+Are metrics or measures used to describe the data? Because for a sample you collected data, so the data has got certain characteristics that in turn we call sample characteristics. So to describe a data we can use lot of measures. So each of this measure becomes a statistic.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 37 minutes 8 seconds<br>
+That is the logic. So in describing a data or describing certain numbers, what are the various family of measures used? You know these things number one, measures of central tendency, there are 3 measures in it, mean, medium, mode.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 37 minutes 28 seconds<br>
+Then measures of dispersion. There are again 3 measures in it: range, variance, and standard deviation. Then measures of position you call like median is a positional average, percentiles, quartiles, then.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 37 minutes 47 seconds<br>
+Sendil, I mean what is 10% percentiles or tail, then sendil, then of course mode, sorry, median is a position average. So these are measures of position. You can divide the data into 2 half with respect to this point. The median divides the data into 250% on one side and 50% on other side.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 10 seconds<br>
+90 percentage divide the data into 290% on one side and 10% on other side. Then there are measures of symmetry, that is the 4th family of measure. The statistics in fact are discussing about 5 measures and lot of assumptions. 4 measures are to describe the data.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 29 seconds<br>
+Number one, measure of central tendency. Number 2, measure of position. Number 3, measure of position. Sorry. Number 2, measure of dispersion. Number 3, measure of shape or symmetry.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 47 seconds<br>
+You can add 2 measures in it, kurtosis and skewness, which does which describes how the data is distributed. So it can otherwise call like a distributional I mean measures. There are 2 measures, kurtosis and skewness. and if.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 39 minutes 6 seconds<br>
+Both side of it, I mean distribution, if it is uniform or similar, we call it normally distributed. So the skewness and kurtosis values decides whether it is normally distributed or not normally distributed. So these are all we. So any of this.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 39 minutes 26 seconds<br>
+Mostly for representing a data&rsquo;s characteristics, we use one measure of central tendency and one measure of, I mean dispersion at least. That is why we take mean and standard deviation. So there can be for statistics, there can be sample mean, sample distribution, sample kurtosis, sample.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 39 minutes 48 seconds<br>
+Skewness sample median, lot many things. Now similar to this in population also there is something called a population characteristics and that&rsquo;s called a parameter. The other one is statistics. Here it is parameter. Parameter mean population mean population standard deviation, etcetera. Now what we are researcher is doing.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 40 minutes 8 seconds<br>
+Researchers studies the sample and predict the behaviour of the population or predict from the sample characteristics. We are predicting population characteristics. In sample you got say when I analysed to 50 students for my paper, they scored 45 mark out of 100 50.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 40 minutes 28 seconds<br>
+909090% so but it is I checked only 50 students. My class or my students are 500 in number. So from the sample I got a mean value of 45. So in population, what will be my mean?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 40 minutes 49 seconds<br>
+Value that&rsquo;s the that as a student teacher, I will be interested in that only because sample I got 50 only 50 sample only I got or 50 people&rsquo;s mark I got. I took the average so 500 people have written my paper. So what will be the mean? So from the sample mean I need to calculate the population mean for that.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 9 seconds<br>
+The process we call is estimation. Estimation is the process of predicting population characteristics from the sample characteristics. Now the big problem is.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 21 seconds<br>
+When you are predicting from a small data reference to a bigger, I mean data, naturally errors can come.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 31 seconds<br>
+So there will be some errors, so we need to understand the magnitude of the error also. So anyway, so this for this prediction we use statistics when we are predicting naturally, we will be very we will be interested to know how.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 50 seconds<br>
+Correct is our prediction or since we after estimation we get this population value, so we can call them estimates too. So how precise or how correct you estimates are for that researcher brings brings certain metrics such as confidence, CI means confidence interval.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 42 minutes 12 seconds<br>
+Confidence level, significance, etcetera. Significance is one minus confidence level.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 49 minutes 37 seconds<br>
+Verifications are there for data reduction, to understand the pattern, to predict, to understand association, to do forecastings. So in all such cases, there are certain specific assumptions related to data. To verify all this general assumptions as well as specific assumptions, you need to depend on statistics.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 49 minutes 58 seconds<br>
+Now the next important area where you need the statistics is in verifying the quality of measurement. As I said, measurement is a complex phenomenon. Many variables we discuss as part of our research are not directly measurable. They are Latin measure, they are called latin variables and for latin variable measurement, we have a measurement approach.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 50 minutes 20 seconds<br>
+Now, how can we sure that the measurement have come about good? For that, there are 2 measures. One is called reliability and 2 concepts. One is called reliability and validity. Reliability speaks about repetitiveness or consistency in measurement, quality of measurement, and validity, exactness in measurement.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 50 minutes 40 seconds<br>
+And there are different type of reliability and different type of validity and all this are how to calculate all this. There are a lot of metrics which gives different type of reliability aspects and different type of validity aspects. So how this metric can be calculated against statistical?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 1 second<br>
+Approaches or statistical steps come into picture. So in verifying the quality of measurement, you need statistics. Then of course, in every research we will be looking for associations, predictions, forecasting, correlations, regressions, type series analysis, then panel data regressions.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 22 seconds<br>
+These are all required because understanding or performing this analysis only can give insights which are useful for problem solving. So for all this analysis we will be depending on various statistical concepts and principles and also and assumptions testings. Then in data reduction like we do in factor analysis, factor when we have.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 47 seconds<br>
+A lot of data collected with respect to multiple variables, there can be groupings of variables present. So when the groupings have identified underlying, I mean common feelings are identified, the data become produced. So in all such things, that&rsquo;s factor analysis or cluster analysis, they&rsquo;re all.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 6 seconds<br>
+We request statistics. So these are the general applications of statistics and research. So in today&rsquo;s session I&rsquo;m in discussing only these aspects. So we discussed about data, types of data, then data collection tools used for data collection.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 24 seconds<br>
+Parts of a questionnaire. Then we discussed about sampling design 3 aspects: one sample unit decision, number 2 sample decision, and sampling method decision. Sample and sampling comes together, then 3rd the sample size decision. Then I explained the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 44 seconds<br>
+Role of statistics in research. As I said, we are always taking a sample, studying the sample, and predicting the behavior of the population. So, whenever this prediction is coming, then statistics comes in between. Similarly, whenever the collected data need to be described, statistics come in between. Whenever you want to gain some insights.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 4 seconds<br>
+By I mean doing some kind of analysis in the data, statistics comes into picture. So statistics is something which researchers cannot forgo. It is an important support for researchers to gain useful insights for decision making. So these are the topics I thought I will discuss today.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 26 seconds<br>
+Any questions? We have 5 more minutes left.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 33 seconds<br>
+Costumes.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 36 seconds<br>
+I don&rsquo;t know why nobody is asking any questions. I mean, Shinta, have you come or?<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+53 minutes 44 seconds<br>
+53:44<br>
+Ms Shinta Idicula - MBA - Amrita Online 53 minutes 44 seconds<br>
+Yes, sir, I am here.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+53 minutes 45 seconds<br>
+53:45<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 45 seconds<br>
+Yeah, okay, so please unmute some people because I have a doubt whether people are not raising any questions because they are we are they are under the impression certainly.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 57 seconds<br>
+I mean, you can raise your hand and ask questions. See how many of what is your stage in research, Krithika, what where you have reached in your research?<br>
+Krithika B - \[AA.BU.P2MBA24073106\]<br>
+54 minutes 9 seconds<br>
+54:09<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 54 minutes 9 seconds<br>
+Good evening, sir. This is Krithika here.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+54 minutes 11 seconds<br>
+54:11<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 11 seconds<br>
+Yeah, please.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 13 seconds<br>
+Hello.<br>
+Krithika B - \[AA.BU.P2MBA24073106\]<br>
+54 minutes 14 seconds<br>
+54:14<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 54 minutes 14 seconds<br>
+Sir, Sir, I am doing my questionnaire preparation now so that I can get some data from the people for my project.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+54 minutes 22 seconds<br>
+54:22<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 22 seconds<br>
+So, questioner you started questioner means you are sure you are I mean now clear about the theory or the variables of interest in your study. What are the variables you have considered?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 35 seconds<br>
+Because first decision is variables, right? From variables only measurement of the variables and question comes. So what are the variables you are trying to explorer?<br>
+Krithika B - \[AA.BU.P2MBA24073106\]<br>
+54 minutes 35 seconds<br>
+54:35<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 54 minutes 35 seconds<br>
+Just a minute.<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 54 minutes 38 seconds<br>
+yes.<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 54 minutes 42 seconds<br>
+Yes.<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 54 minutes 45 seconds<br>
+So do you want me to say the variables that I&rsquo;ve used, sir? Should I?<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+54 minutes 51 seconds<br>
+54:51<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 51 seconds<br>
+Okay, reviews reviews means from after analysing the review only, you will come across certain themes. Themes later on becomes the variables useful for further theory development and all.<br>
+Krithika B - \[AA.BU.P2MBA24073106\]<br>
+55 minutes<br>
+55:00<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 55 minutes<br>
+Yes, that&rsquo;s what Shall I say the variables now?<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+55 minutes 4 seconds<br>
+55:04<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 4 seconds<br>
+OK, now I understood. I thought now you are going for a developing a questionnaire and going for a data collection. That&rsquo;s why I asked about the variables. Yeah, OK, but the still you can tell about the data. What is your data review data?<br>
+Krithika B - \[AA.BU.P2MBA24073106\]<br>
+55 minutes 14 seconds<br>
+55:14<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 55 minutes 14 seconds<br>
+Yes, sir, I am.<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 55 minutes 18 seconds<br>
+So I will tell about the variables that I have taken now, Sir, for my question. I will tell it now, just a minute, Sir, just a minute.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+55 minutes 21 seconds<br>
+55:21<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 21 seconds<br>
+Okay, please.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 25 seconds<br>
+okay.<br>
+Krithika B - \[AA.BU.P2MBA24073106\]<br>
+55 minutes 40 seconds<br>
+55:40<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 55 minutes 40 seconds<br>
+Hello, am I audible, sir?<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+55 minutes 41 seconds<br>
+55:41<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 41 seconds<br>
+Yeah, please.<br>
+Krithika B - \[AA.BU.P2MBA24073106\]<br>
+55 minutes 43 seconds<br>
+55:43<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 55 minutes 43 seconds<br>
+Yes, so the date, the variables like independent variables they have taken the sector type, I&rsquo;ll say in a project first.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+55 minutes 52 seconds<br>
+55:52<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 52 seconds<br>
+Okay.<br>
+Krithika B - \[AA.BU.P2MBA24073106\]<br>
+55 minutes 54 seconds<br>
+55:54<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 55 minutes 54 seconds<br>
+The mid care, the career break for women, that is my project. Okay, so whether the women are re entering or not, if they are re entering, are they re entering in their own field or they are changing their field? So that is that also I am going to study so.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+55 minutes 59 seconds<br>
+55:59<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 59 seconds<br>
+Okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 3 seconds<br>
+Oh.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 9 seconds<br>
+Okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 12 seconds<br>
+Okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 14 seconds<br>
+So what is the data for this?<br>
+\[3:35:15 PM\] Timestamp: 53:44<br>
+\[3:35:15 PM\] Timestamp: 53:45<br>
+\[3:35:15 PM\] Timestamp: 54:09<br>
+\[3:35:15 PM\] Timestamp: 54:11<br>
+\[3:35:15 PM\] Timestamp: 54:14<br>
+\[3:35:15 PM\] Timestamp: 54:22<br>
+\[3:35:15 PM\] Timestamp: 54:35<br>
+\[3:35:15 PM\] Timestamp: 54:51<br>
+\[3:35:15 PM\] Timestamp: 55:00<br>
+\[3:35:15 PM\] Timestamp: 55:04<br>
+\[3:35:15 PM\] Timestamp: 55:14<br>
+\[3:35:15 PM\] Timestamp: 55:21<br>
+\[3:35:15 PM\] Timestamp: 55:40<br>
+\[3:35:15 PM\] Timestamp: 55:41<br>
+\[3:35:15 PM\] Timestamp: 55:43<br>
+\[3:35:15 PM\] Timestamp: 55:52<br>
+\[3:35:15 PM\] Timestamp: 55:54<br>
+\[3:35:15 PM\] Timestamp: 55:59<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+57 minutes 34 seconds<br>
+57:34<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 57 minutes 34 seconds<br>
+OK, because now you have included organization support variables and all those who have come back only can know about the organization support. Those who are planning to come back, how they can tell about the organization support. So anyway.<br>
+Krithika B - \[AA.BU.P2MBA24073106\]<br>
+57 minutes 41 seconds<br>
+57:41<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 57 minutes 41 seconds<br>
+yes.<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 57 minutes 44 seconds<br>
+Yes, I am including them also.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+57 minutes 47 seconds<br>
+57:47<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 57 minutes 47 seconds<br>
+OK, anyway, see each question.<br>
+Krithika B - \[AA.BU.P2MBA24073106\]<br>
+57 minutes 48 seconds<br>
+57:48<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 57 minutes 48 seconds<br>
+Because I will not be able to get that 300 plus data, Sir, if I don&rsquo;t include the people those who are going again to the organization, I doubt whether I will get 300 samples or not.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+57 minutes 57 seconds<br>
+57:57<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 57 minutes 57 seconds<br>
+Yeah, but this type of these type of inquiries, qualitative research may be good because you can find 4 or 5 to 10 or maximum 15 people who with in depth interview try to identify their concerns and from that you develop a theory what prevents them, what supports them.<br>
+Krithika B - \[AA.BU.P2MBA24073106\]<br>
+58 minutes 10 seconds<br>
+58:10<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 58 minutes 10 seconds<br>
+Okay.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+58 minutes 16 seconds<br>
+58:16<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 58 minutes 16 seconds<br>
+Maybe parental support or partner support or skill deficit. What is preventing them? So you can come about with a good theory. Validating a theory using quantitative means can be another future research potential. Okay.<br>
+Krithika B - \[AA.BU.P2MBA24073106\]<br>
+58 minutes 17 seconds<br>
+58:17<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 58 minutes 17 seconds<br>
+Okay.<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 58 minutes 31 seconds<br>
+Okay, so qualitative approach alone is sufficient for this, no sir, then.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+58 minutes 32 seconds<br>
+58:32<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 58 minutes 32 seconds<br>
+Just think about it.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 58 minutes 35 seconds<br>
+Yeah, why not qualitative good qualitative papers are good qualitative papers helps in theory development. Others is theory building and theory development. Qualitative papers are very much useful in theory confirmation, theory validation, theory extension and all qualitative papers will be useful. Theory extension also we may require qualitative phase then only you will understand what are the emerging phenomena.<br>
+Krithika B - \[AA.BU.P2MBA24073106\]<br>
+58 minutes 44 seconds<br>
+58:44<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 58 minutes 44 seconds<br>
+It.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+58 minutes 59 seconds<br>
+58:59<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 58 minutes 59 seconds<br>
+Then only you can expand or extend the theory, right?<br>
+Krithika B - \[AA.BU.P2MBA24073106\]<br>
+59 minutes 3 seconds<br>
+59:03<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 59 minutes 3 seconds<br>
+Okay, so how I should go about only for quantitative, sir? How should I go about this only if I take this only as a qualitative approach? How should I go for hypothesis and all? It is not required, no sir.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+59 minutes 3 seconds<br>
+59:03<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 59 minutes 3 seconds<br>
+Quantitative means are mostly for confirmation.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 59 minutes 14 seconds<br>
+So same same research question, no hypothesis and all will not come. You will be developing a schedule interview schedule and meeting some eligible sample units and ask I mean go for in depth interview. You ask them these questions, why you break the career? What were the factors?<br>
+Krithika B - \[AA.BU.P2MBA24073106\]<br>
+59 minutes 31 seconds<br>
+59:31<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 59 minutes 31 seconds<br>
+Okay.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+59 minutes 35 seconds<br>
+59:35<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 59 minutes 35 seconds<br>
+Which disturbed you while you are not working? What made you think that you lost your significance because of not working? Like that, you go for in depth interview and then all the interview excerpts you can conduct some text mining and you can get the hidden themes in it. and.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 59 minutes 55 seconds<br>
+Please down that you can complete your research, then you can develop a theory. Also, what are the major driving force, what are the major inhibitors? All those things you can list down by analysing the interview I mean data given by the responders. Okay.<br>
+Krithika B - \[AA.BU.P2MBA24073106\]<br>
+1 hour 12 seconds<br>
+1:00:12<br>
+Krithika B - \[AA.BU.P2MBA24073106\] 1 hour 12 seconds<br>
+Okay, Sir, see you then.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+1 hour 15 seconds<br>
+1:00:15<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 hour 15 seconds<br>
+Okay, now it is a time, but I at least everybody, I mean, I just I will be happy if everyone raise some questions in between. Since no questions are coming, I am again repeatedly. Anyway, what all discuss here in the interaction session I have already shared in the video.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 hour 34 seconds<br>
+So interaction sessions can be made more useful for discussions. That&rsquo;s my opinion. Okay, then shall we conclude Shinta?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 hour 49 seconds<br>
+Hello.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 hour 51 seconds<br>
+Shall we conclude? Shall we conclude?<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+1 hour 52 seconds<br>
+1:00:52<br>
+Ms Shinta Idicula - MBA - Amrita Online 1 hour 52 seconds<br>
+Hello, Sir. Yes, Sir, we can wind up. Yes, Sir, we can wind up.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+1 hour 55 seconds<br>
+1:00:55<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 hour 55 seconds<br>
+Okay, thank you.<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+1 hour 59 seconds<br>
+1:00:59<br>
+Ms Shinta Idicula - MBA - Amrita Online 1 hour 59 seconds<br>
+Thank you all for joining and contributing to today&rsquo;s session. A heartfelt thanks to Rachel Sir for the session. Thank you.</p>
+<p>MBA Batch OCT 2024 - Amrita Online<br>
+stopped transcription<br>
+\[3:35:20 PM\] Timestamp: 57:34<br>
+\[3:35:20 PM\] Timestamp: 57:41<br>
+\[3:35:20 PM\] Timestamp: 57:47<br>
+\[3:35:20 PM\] Timestamp: 57:48<br>
+\[3:35:20 PM\] Timestamp: 57:57<br>
+\[3:35:20 PM\] Timestamp: 58:10<br>
+\[3:35:20 PM\] Timestamp: 58:16<br>
+\[3:35:20 PM\] Timestamp: 58:17<br>
+\[3:35:20 PM\] Timestamp: 58:32<br>
+\[3:35:20 PM\] Timestamp: 58:44<br>
+\[3:35:20 PM\] Timestamp: 58:59<br>
+\[3:35:20 PM\] Timestamp: 59:03<br>
+\[3:35:20 PM\] Timestamp: 59:03<br>
+\[3:35:20 PM\] Timestamp: 59:31<br>
+\[3:35:20 PM\] Timestamp: 59:35<br>
+\[3:35:20 PM\] Timestamp: 1:00:12<br>
+\[3:35:20 PM\] Timestamp: 1:00:15<br>
+\[3:35:20 PM\] Timestamp: 1:00:52<br>
+\[3:35:20 PM\] Timestamp: 1:00:55<br>
+\[3:35:20 PM\] Timestamp: 1:00:59</p>
+<hr>
+<h1 id="exam-study-guide-appendix">Exam Study Guide Appendix</h1>
+<hr>
+<h1 id="exam-oriented-appendix">Exam-Oriented Appendix</h1>
+<h2 id="a-practical-examples-and-use-cases">A. Practical examples and use cases</h2>
+<h3 id="1-defining-and-operationalising-a-construct">1. Defining and operationalising a construct</h3>
+<p><strong>Business problem:</strong> An organisation wants to study employee motivation.</p>
+<ul>
+<li><strong>Conceptual definition:</strong> internal and external forces that stimulate employees’ energy, interest, and commitment toward work.</li>
+<li><strong>Contextual definition:</strong> a nonprofit employee’s self-reported work drive, with emphasis on mission-oriented rather than financial motivation.</li>
+<li><strong>Operational definition:</strong> the summed score on ten Likert-scale statements measuring interest, energy, persistence, and commitment.</li>
+</ul>
+<p>The conceptual definition establishes meaning; the contextual definition fixes the study boundary; the operational definition states exactly how data will represent the construct.</p>
+<h3 id="2-developing-a-new-construct-digital-well-being">2. Developing a new construct: digital well-being</h3>
+<ol>
+<li>Give the phenomenon a clear, non-jargon label and provisional conceptual definition.</li>
+<li>Delineate its conceptual space: distinguish digital well-being from physical well-being, digital literacy, satisfaction, and technology addiction.</li>
+<li>Build a theoretical canvas of dimensions/indicators.</li>
+<li>Decide whether indicators are <strong>reflective</strong> (effects/reflections of the construct) or <strong>formative</strong> (jointly create the construct).</li>
+<li>Establish discrimination from related constructs.</li>
+<li>Test whether it can be measured reliably in practice.</li>
+<li>Refine the definition and locate it in a theoretical model by specifying antecedents and outcomes.</li>
+</ol>
+<p><strong>Use case:</strong> A platform studies whether notification overload and loss of control reduce digital well-being, which then predicts discontinuance intention.</p>
+<h3 id="3-servqual-as-construct-development-illustration">3. SERVQUAL as construct-development illustration</h3>
+<p>Service quality was created to capture intangible quality that product-quality concepts did not adequately represent. Its developers separated the construct from tangible product quality, identified five dimensions represented by 22 items, tested it across settings such as banking, insurance, and audit services, and linked perceived service quality to satisfaction. The well-known definition compares a customer’s service expectations with perceptions of service received.</p>
+<p><strong>Exam lesson:</strong> A useful construct must be conceptually distinct, measurable, and theoretically connected to meaningful outcomes.</p>
+<h3 id="4-selecting-the-right-data-classification">4. Selecting the right data classification</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Research question/data</th>
+<th>Classification</th>
+<th>Appropriate use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interview narrative about why staff resist AI</td>
+<td>Qualitative, primary, perceptual</td>
+<td>Thematic analysis</td>
+</tr>
+<tr>
+<td>Five-point satisfaction response</td>
+<td>Quantitative-coded, primary, ordinal</td>
+<td>Frequencies/medians; often modelled cautiously as scale data when multi-item</td>
+</tr>
+<tr>
+<td>Department name</td>
+<td>Nominal</td>
+<td>Categories and proportions</td>
+</tr>
+<tr>
+<td>Education level/rank</td>
+<td>Ordinal</td>
+<td>Ordered comparison</td>
+</tr>
+<tr>
+<td>Temperature in °C</td>
+<td>Interval</td>
+<td>Differences meaningful; ratios not meaningful</td>
+</tr>
+<tr>
+<td>Age, revenue, purchase count</td>
+<td>Ratio</td>
+<td>Full arithmetic; true zero</td>
+</tr>
+<tr>
+<td>Monthly sales for five years</td>
+<td>Time series</td>
+<td>Trend/seasonality/forecasting</td>
+</tr>
+<tr>
+<td>Sales of 100 stores at one date</td>
+<td>Cross-sectional</td>
+<td>Store comparison</td>
+</tr>
+<tr>
+<td>The same stores followed monthly</td>
+<td>Panel/longitudinal</td>
+<td>Change within entities over time</td>
+</tr>
+<tr>
+<td>Existing RBI/CPI series</td>
+<td>Secondary, metric/performance</td>
+<td>Inflation or cost analysis</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="5-questionnaire-development-example">5. Questionnaire development example</h3>
+<p><strong>Study:</strong> adoption of online banking.</p>
+<ul>
+<li>Define constructs from theory: perceived usefulness, perceived ease of use, trust, and intention.</li>
+<li>Generate/adapt several scale items for every latent construct plus preference-mapping questions.</li>
+<li>Ask subject experts to evaluate whether items are essential and cover the construct (<strong>content validity</strong>).</li>
+<li>Ask target respondents whether wording appears clear and relevant (<strong>face validity</strong>).</li>
+<li>Pilot the draft on a small group resembling the target population.</li>
+<li>Inspect ambiguity, completion time, missing answers, weak items, reliability, and preliminary validity.</li>
+<li>Revise/drop weak items, then administer to the full sample.</li>
+</ul>
+<p>If five constructs each use five indicators, the construct section contains 25 statements. The exact questionnaire length is driven by objectives and respondent burden, not a universal rule.</p>
+<h3 id="6-questionnaire-structure-in-practice">6. Questionnaire structure in practice</h3>
+<ol>
+<li>Introduction: study title/purpose, researcher identity where appropriate, estimated time, instructions, voluntary participation/consent, confidentiality/privacy, and contact/ethical information.</li>
+<li>Screening questions: establish eligibility early.</li>
+<li>General behaviour and preference-mapping questions.</li>
+<li>Scale items measuring theoretical constructs.</li>
+<li>Sensitive/demographic questions, usually later unless needed for screening.</li>
+<li>Open-ended comments, normally near the end.</li>
+</ol>
+<p>Avoid leading, loaded, ambiguous, technical, double-barrelled, double-negative, excessively long, and overlapping-response questions.</p>
+<h3 id="7-survey-mode-choice">7. Survey-mode choice</h3>
+<ul>
+<li><strong>Web self-administered:</strong> geographically dispersed, digitally reachable population; inexpensive, fast, low interviewer bias, but affected by coverage and non-response bias.</li>
+<li><strong>Mail-out questionnaire:</strong> useful where postal lists are available or internet access is weak; no interviewer pressure, but slow, costly, and commonly low response.</li>
+<li><strong>Telephone interview:</strong> quick clarification and moderate reach; excludes inaccessible numbers and may be constrained by brevity, interruption, and interviewer effects.</li>
+<li><strong>Face-to-face interview:</strong> best for complex questions, probing, low-literacy populations, or visual aids; richer and often more complete, but expensive, slow, and susceptible to interviewer/social-desirability bias.</li>
+</ul>
+<h3 id="8-matching-tools-to-data-needs">8. Matching tools to data needs</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Best contribution</th>
+<th>Typical limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Structured questionnaire</td>
+<td>Standardised quantitative breadth</td>
+<td>Limited explanation; survey fatigue</td>
+</tr>
+<tr>
+<td>Structured interview schedule</td>
+<td>Same questions/order recorded by interviewer</td>
+<td>Interviewer bias and cost</td>
+</tr>
+<tr>
+<td>Semi-structured interview</td>
+<td>Comparable core questions plus probing</td>
+<td>Time, skill, transcription, social desirability</td>
+</tr>
+<tr>
+<td>Observation schedule</td>
+<td>Actual behaviour in a defined setting</td>
+<td>Hawthorne/observer effect; motives remain unclear</td>
+</tr>
+<tr>
+<td>Diary/journal/field notes</td>
+<td>Behaviour and experience close to occurrence over time</td>
+<td>Participant burden, missing entries, reactivity</td>
+</tr>
+<tr>
+<td>Experiment</td>
+<td>Causal effect by manipulating an IV under control</td>
+<td>Artificiality, ethics, feasibility</td>
+</tr>
+<tr>
+<td>Focus group</td>
+<td>Interaction, shared meanings, rapid idea generation</td>
+<td>Dominant voices and conformity</td>
+</tr>
+<tr>
+<td>Online analytics</td>
+<td>Continuous, relatively objective click/use behaviour</td>
+<td>Cannot by itself explain perceptions or reasons; privacy issues</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="9-healthtrack-mixed-methods-use-case">9. HealthTrack mixed-methods use case</h3>
+<p><strong>Objective:</strong> understand engagement with a digital health service across age, gender, location, socioeconomic status, and clinics.</p>
+<ul>
+<li><strong>Stratified random sampling</strong> is preferable when representation and subgroup comparison are the priority: split the population into relevant strata and randomly sample within each.</li>
+<li><strong>Cluster sampling</strong> is preferable when travel/field cost dominates: randomly select clinics/geographic clusters and study people within them, accepting potentially greater sampling error because members of a cluster may resemble each other.</li>
+<li>Closed-ended questionnaire items quantify use, satisfaction, barriers, and attitudes.</li>
+<li>Open-ended questions/interviews explain motives and experiences.</li>
+<li>Observation captures clinic behaviour.</li>
+<li>Diaries record engagement over time.</li>
+<li>Analytics show actual logins, feature use, and duration.</li>
+</ul>
+<p>The duplicated review material recommends different “best” options under different assumed priorities. The defensible exam answer is conditional: choose the stratified online-questionnaire/diary design when representation and lower cost dominate; choose questionnaire + interviews + observation with selected clinics when depth, triangulation, and practical field access dominate. State the trade-off instead of claiming a universally superior option.</p>
+<h3 id="10-bias-control-applications">10. Bias-control applications</h3>
+<ul>
+<li><strong>Non-response bias:</strong> reminders, multiple contact modes/times, short accessible survey, incentives where ethical, compare respondents with known population characteristics, and report response rates.</li>
+<li><strong>Social-desirability bias:</strong> anonymity/confidentiality, neutral indirect wording, self-administration for sensitive items, trained neutral interviewers.</li>
+<li><strong>Survey fatigue:</strong> keep only purpose-relevant items, use clear sections/progress indication, pilot completion time, avoid repetitive items.</li>
+<li><strong>Hawthorne effect:</strong> unobtrusive or repeated observation, allow acclimatisation, avoid signalling desired behaviour, triangulate with routine analytics.</li>
+<li><strong>Interviewer bias:</strong> standard schedule, training, neutral probes, consistent recording.</li>
+</ul>
+<hr>
+<h2 id="b-high-yield-distinctions">B. High-yield distinctions</h2>
+<h3 id="construct-vs-concept-vs-variable-vs-indicator">Construct vs concept vs variable vs indicator</h3>
+<ul>
+<li>A <strong>concept</strong> is a general abstract idea.</li>
+<li>A <strong>construct</strong> is deliberately defined for theoretical/scientific use, often latent and multidimensional.</li>
+<li>A <strong>variable</strong> is a characteristic capable of taking different values in a study.</li>
+<li>An <strong>indicator/item</strong> is an observable response used to measure a construct.</li>
+</ul>
+<h3 id="conceptual-vs-contextual-vs-operational-definition">Conceptual vs contextual vs operational definition</h3>
+<ul>
+<li><strong>Conceptual:</strong> what the construct means generally.</li>
+<li><strong>Contextual:</strong> what it means within this population, place, sector, or situation.</li>
+<li><strong>Operational:</strong> exactly how it will be observed, scored, or calculated.</li>
+</ul>
+<h3 id="reflective-vs-formative-measurement">Reflective vs formative measurement</h3>
+<ul>
+<li>Reflective: construct → indicators; indicators are manifestations and should generally covary. Satisfaction causes respondents to endorse several satisfaction statements.</li>
+<li>Formative: indicators → construct; indicators jointly form it and need not covary. Income, education, and occupation may form a socioeconomic-status index.</li>
+</ul>
+<h3 id="qualitative-vs-quantitative-data">Qualitative vs quantitative data</h3>
+<ul>
+<li>Qualitative data records meanings, experiences, explanations, text, images, or categories.</li>
+<li>Quantitative data records numbers suitable for mathematical/statistical analysis.</li>
+<li>A coded number is not automatically continuous quantitative measurement: <code>1 = HR, 2 = Finance</code> remains nominal.</li>
+</ul>
+<h3 id="primary-vs-secondary-data">Primary vs secondary data</h3>
+<ul>
+<li>Primary is collected specifically for the present study.</li>
+<li>Secondary already exists and is reused. Secondary data is efficient but must be checked for relevance, definitions, quality, period, coverage, access, and ethics.</li>
+</ul>
+<h3 id="perceptual-vs-behavioural-vs-demographic-vs-performance-data">Perceptual vs behavioural vs demographic vs performance data</h3>
+<ul>
+<li>Perceptual: attitudes, beliefs, satisfaction, intention.</li>
+<li>Behavioural: actions, purchase/usage frequency, choice.</li>
+<li>Demographic: age, gender, education, income, location.</li>
+<li>Performance: sales, profit, productivity, service time, conversion.</li>
+</ul>
+<h3 id="nominal-ordinal-interval-and-ratio-scales">Nominal, ordinal, interval, and ratio scales</h3>
+<ul>
+<li>Nominal: identity only; no order.</li>
+<li>Ordinal: order exists; gaps are not demonstrably equal.</li>
+<li>Interval: equal intervals; no true zero.</li>
+<li>Ratio: equal intervals and true zero; meaningful ratios.</li>
+</ul>
+<p>Mnemonic: <strong>N-O-I-R = Name, Order, equal Intervals, real zero</strong> (each level adds a property).</p>
+<h3 id="questionnaire-vs-interview-schedule">Questionnaire vs interview schedule</h3>
+<p>A questionnaire is generally completed by the respondent; an interview schedule is administered and recorded by an interviewer. Both may be structured, but the schedule permits clarification while creating interviewer effects and higher cost.</p>
+<h3 id="open-ended-vs-closed-ended-questions">Open-ended vs closed-ended questions</h3>
+<ul>
+<li>Closed: fast, standardised, easy to code/compare; may constrain answers.</li>
+<li>Open: depth and unexpected insight; greater effort, non-response, coding time, and subjectivity.</li>
+<li>A mixed questionnaire combines both to obtain breadth and depth.</li>
+</ul>
+<h3 id="face-validity-vs-content-validity-vs-pilot-testing">Face validity vs content validity vs pilot testing</h3>
+<ul>
+<li>Face validity: does the item appear clear and appropriate, especially to target respondents?</li>
+<li>Content validity: do experts judge that the item set adequately and relevantly covers the construct domain?</li>
+<li>Pilot test: does the complete instrument and administration process work with a small target-like sample?</li>
+</ul>
+<p>The source mentions an expert-based content-validity score/ratio and a tentative threshold around 0.60; the acceptable critical value depends on the number of experts and chosen method, so state the method rather than treating 0.60 as universal.</p>
+<h3 id="stratified-vs-cluster-sampling">Stratified vs cluster sampling</h3>
+<ul>
+<li>Stratified: sample <strong>from every stratum</strong>; improves representation and subgroup precision.</li>
+<li>Cluster: select <strong>some clusters</strong> and study members within them; improves operational efficiency but can reduce precision.</li>
+<li>Strata should be internally relatively homogeneous and differ across strata; clusters ideally resemble mini-populations but often contain correlated members.</li>
+</ul>
+<h3 id="mixed-questionnaire-vs-mixed-methods-vs-triangulation">Mixed questionnaire vs mixed methods vs triangulation</h3>
+<ul>
+<li>Mixed questionnaire: closed and open questions in one instrument.</li>
+<li>Mixed methods: intentionally integrates quantitative and qualitative approaches/data.</li>
+<li>Triangulation: compares evidence from multiple methods/sources/observers/theories to improve credibility and reveal convergence or contradiction.</li>
+</ul>
+<hr>
+<h2 id="c-likely-exam-questions-and-answer-cues">C. Likely exam questions and answer cues</h2>
+<ol>
+<li><strong>Explain the three definitions of a construct.</strong> Define conceptual, contextual, and operational; use one construct consistently across all three; explain why operationalisation depends on definition.</li>
+<li><strong>Describe the stages in creating a new construct.</strong> Label/core meaning → conceptual boundary → theoretical canvas/indicator direction → discrimination → operational potential → measurement items/refinement → theoretical linkages.</li>
+<li><strong>Explain SERVQUAL as construct development.</strong> Intangibility gap, distinct domain, five dimensions/22 items, testing across service contexts, expectation–perception logic, satisfaction link.</li>
+<li><strong>Classify research data in different ways.</strong> Nature (qualitative/quantitative), source (primary/secondary), measurement level (NOIR), time (cross-sectional/time series/panel), and context (perceptual/behavioural/demographic/performance).</li>
+<li><strong>Why does scale type matter?</strong> It determines valid summaries and analysis; labels cannot be averaged merely because they have numeric codes.</li>
+<li><strong>Describe questionnaire-development steps.</strong> Constructs/theory → item pool and preference questions → expert content validation → respondent face validation → pilot → reliability/validity checks → revise/finalise → full administration.</li>
+<li><strong>Differentiate face and content validity.</strong> Evaluator, question answered, and example.</li>
+<li><strong>Design a questionnaire introduction and order.</strong> Purpose, instructions, confidentiality/privacy, consent/voluntariness, eligibility screening, logical sections, sensitive demographics later, optional open comment at end.</li>
+<li><strong>Compare web, mail, telephone, and face-to-face collection.</strong> Reach, cost, speed, clarification, digital/literacy requirements, response, and interviewer bias.</li>
+<li><strong>Compare questionnaire and interview schedule.</strong> Who records responses, standardisation, clarification, cost, and bias.</li>
+<li><strong>Explain quantitative and qualitative collection tools.</strong> Surveys/structured schedules/experiments versus interviews/focus groups/observation/diaries; note mixed designs.</li>
+<li><strong>Stratified versus cluster sampling in HealthTrack.</strong> Define selection unit, show application, compare representation/precision with cost/logistics.</li>
+<li><strong>Why use a mixed questionnaire or mixed methods?</strong> Quantitative breadth plus qualitative depth; integration and triangulation; not simply “more data.”</li>
+<li><strong>Discuss four biases and controls.</strong> Non-response, social desirability, survey fatigue, Hawthorne/interviewer effect; pair each with specific mitigation.</li>
+<li><strong>Evaluate the HealthTrack options.</strong> Link choice to objective, representation, richness, behavioural objectivity, bias, cost, time, and ethics; justify a conditional recommendation.</li>
+<li><strong>Can analytics replace surveys/interviews?</strong> No: analytics reveals what users do but usually not why, their unobserved attitudes, offline behaviour, or unmet needs.</li>
+<li><strong>Explain ethics in questionnaire/data collection.</strong> informed voluntary consent, privacy/confidentiality, limited purpose, secure handling, right to withdraw, minimising burden/harm, and transparent instructions.</li>
+</ol>
+<h3 id="mini-answer-template-for-a-10-mark-method-question">Mini answer template for a 10-mark method question</h3>
+<ol>
+<li>Definition (1–2 marks).</li>
+<li>Components/process (3–4 marks).</li>
+<li>Advantages and limitations (2 marks).</li>
+<li>Practical business application (1–2 marks).</li>
+<li>Concluding selection principle tied to the research objective (1 mark).</li>
+</ol>
+<hr>
+<h2 id="d-rapid-revision-traps">D. Rapid revision traps</h2>
+<ul>
+<li>A construct is not adequately defined by giving only its measurement items.</li>
+<li>Operationalisation before conceptual boundary-setting risks measuring the wrong phenomenon.</li>
+<li>Numeric codes do not change nominal categories into interval data.</li>
+<li>Ordinal categories have rank but not guaranteed equal distances.</li>
+<li>A Likert <strong>item</strong> is ordinal; a carefully validated multi-item scale is often treated as approximately continuous, but this requires justification.</li>
+<li>A pilot test is not the full study and not merely proofreading.</li>
+<li>Face validity alone does not prove actual construct validity.</li>
+<li>Open-ended questions do not automatically make an entire study qualitative.</li>
+<li>Closed-ended questions do not automatically eliminate bias.</li>
+<li>Online surveys reduce interviewer bias but may increase coverage/non-response bias.</li>
+<li>Observation captures behaviour, not necessarily motive; observed people may alter behaviour.</li>
+<li>Analytics is behavioural trace data, not direct evidence of satisfaction or meaning.</li>
+<li>Cluster sampling and stratified sampling are not interchangeable.</li>
+<li>More methods are not automatically better: every method must answer a defined question and be feasibly integrated.</li>
+<li>Confidentiality means identities are protected; anonymity means identities are not collected/linkable. Do not promise anonymity if follow-up identifiers exist.</li>
+</ul>
+<hr>
+<h2 id="e-source-coverage-checklist">E. Source-coverage checklist</h2>
+<ul>
+<li>[x] <strong>Video 01 — Defining a Construct:</strong> importance of definition for scale development; conceptual/contextual/operational definitions and motivation examples; origins of new constructs; complete new-construct development sequence; conceptual boundaries; reflective/formative direction; discrimination and operational potential; digital well-being; SERVQUAL development and cross-context use.</li>
+<li>[x] <strong>Video 02 — Data Used in Research:</strong> purpose of data in measuring variables/testing theories; qualitative/quantitative; primary/secondary; nominal/ordinal/interval/ratio; cross-sectional, time-series and longitudinal/panel ideas; perceptual, behavioural, demographic and performance data; data-choice relevance.</li>
+<li>[x] <strong>Video 03 — Questionnaire Development:</strong> definition/purpose; respondent background, preference mapping and construct measurement; introduction, instructions, confidentiality, consent/ethics; screening/demographic/open items; construct and item selection; Likert examples; content and face validity; content-validity scoring; pilot testing; preliminary reliability/validity; item revision and final administration.</li>
+<li>[x] <strong>Video 04 — Data Collection Tools:</strong> perceptual versus metric data; tool choice based on question, design, participants, resources, feasibility and ethics; closed/open and mixed questionnaires; self-administered and interviewer-administered modes; structured/semi-structured/unstructured interviews; focus groups, observation, experiments, diaries/field notes and analytics; advantages/limitations.</li>
+<li>[x] <strong>Questionnaire/survey review notes:</strong> web, mail, telephone and face-to-face comparisons; NOIR scales; structured interview schedules; questionnaire length/order; privacy; consent; common design mistakes.</li>
+<li>[x] <strong>HealthTrack case/review:</strong> engagement as behavioural/attitudinal/experiential construct; stratified and cluster sampling; mixed questionnaire; interviews; observation; diaries; analytics; non-response/social-desirability/survey-fatigue/Hawthorne biases; triangulation/mixed methods; Options A/B/C and conditional recommendation; breadth/depth/objectivity framework.</li>
+</ul>
+<h3 id="source-ambiguity-noted">Source ambiguity noted</h3>
+<p>The duplicated HealthTrack case notes name different options as the “best” choice (one version favours Option B for depth/triangulation; another favours Option A for representation/cost). This appendix preserves both rationales and resolves the conflict by making the recommendation conditional on the stated research priority and constraints.</p>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<p>TechNova illustrates conceptual-to-operational translation: define employee perceptions, create structured five-point Likert items, code responses, and form justified composites. Individual Likert items are ordinal; validated multi-item composites are often analysed approximately continuously with stated assumptions.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-5.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 5: Measurement Models, Scale Development,…</span>
+      </a>
+      <a href="week-7.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 7: Research Inference, Sampling, Regression,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

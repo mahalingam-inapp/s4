@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Visualization · Week 11 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Visualization</span>
+      <span class="brand-title">Week 11</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html" selected>Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Data Visualization, Visual Perception, and Preattentive Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Visual Perception, Better Visualization, Form–Function, Tables and…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Visualizing and Comparing Categories
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Charts That Show Change Over Time
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Distribution and Relationship Visualizations
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Data Visualization: Exhaustive Exam Notes
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Data Visualization with Python, Jupyter, Python Basics, and Chart…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Python Data Visualization, Matplotlib Plotting, Interpretation, and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Data Visualization with Matplotlib, Seaborn, and Jupyter Notebook
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Exam-Focused Study Notes
+      </a>
+      <a class="is-active" href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Seaborn, Matplotlib, Heatmaps, Styling, and Dashboard Design
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Dashboards, Dashboard Design, Grammar of Graphics, and Matplotlib
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Dashboard Design, Visual Encoding, Matplotlib, and Dashboard Analytics
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Storytelling with Data
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Storytelling with Data: Exam-Focused Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Visualization · Week 11</p>
+        <h1 class="page-title">Seaborn, Matplotlib, Heatmaps, Styling, and Dashboard Design</h1>
+        <p class="page-meta">Week 11 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#scope-of-the-week">Scope of the week</a></li>
+      <li><a href="#1-meaning-and-purpose">1. Meaning and purpose</a></li>
+      <li><a href="#2-core-scatterplot-parameters">2. Core scatterplot() parameters</a></li>
+      <li><a href="#3-demonstration-using-the-tips-dataset">3. Demonstration using the tips dataset</a></li>
+      <li><a href="#4-multiple-scatter-plots-with-relplot">4. Multiple scatter plots with relplot()</a></li>
+      <li><a href="#5-definition-purpose-and-data-requirement">5. Definition, purpose, and data requirement</a></li>
+      <li><a href="#6-important-sns-heatmap-parameters">6. Important sns.heatmap() parameters</a></li>
+      <li><a href="#7-titanic-correlation-heatmap-workflow">7. Titanic correlation heatmap workflow</a></li>
+      <li><a href="#8-flights-pivot-table-heatmap-workflow">8. Flights pivot-table heatmap workflow</a></li>
+      <li><a href="#9-correlation-versus-pivot-preparation">9. Correlation versus pivot preparation</a></li>
+      <li><a href="#10-why-seaborn-styling-exists">10. Why Seaborn styling exists</a></li>
+      <li><a href="#11-function-pairs">11. Function pairs</a></li>
+      <li><a href="#12-five-preset-styles">12. Five preset styles</a></li>
+      <li><a href="#13-plotting-contexts">13. Plotting contexts</a></li>
+      <li><a href="#14-inspecting-and-resetting-settings">14. Inspecting and resetting settings</a></li>
+      <li><a href="#15-decluttering-with-despine">15. Decluttering with despine()</a></li>
+      <li><a href="#16-seaborn-versus-matplotlib">16. Seaborn versus Matplotlib</a></li>
+      <li><a href="#17-scatter-patterns-and-linear-regression-suitability">17. Scatter patterns and linear regression suitability</a></li>
+      <li><a href="#18-pair-plots-for-variable-selection">18. Pair plots for variable selection</a></li>
+      <li><a href="#19-lmplot-hue-and-col">19. lmplot(), hue, and col</a></li>
+      <li><a href="#20-matplotlib-figure-and-axes-creation">20. Matplotlib figure and axes creation</a></li>
+      <li><a href="#21-heatmap-axis-clipping-and-misleading-plots">21. Heatmap/axis clipping and misleading plots</a></li>
+      <li><a href="#22-business-requirement">22. Business requirement</a></li>
+      <li><a href="#23-proposed-2-2-structure">23. Proposed 2×2 structure</a></li>
+      <li><a href="#24-choosing-each-chart">24. Choosing each chart</a></li>
+      <li><a href="#25-one-dashboard-versus-split-figures">25. One dashboard versus split figures</a></li>
+      <li><a href="#26-recommended-decision">26. Recommended decision</a></li>
+      <li><a href="#27-practical-course-emphasis">27. Practical/course emphasis</a></li>
+      <li><a href="#28-python-operator-review">28. Python operator review</a></li>
+      <li><a href="#29-variables-and-dynamic-typing">29. Variables and dynamic typing</a></li>
+      <li><a href="#30-what-is-a-python-library">30. What is a Python library?</a></li>
+      <li><a href="#31-library-hierarchy">31. Library hierarchy</a></li>
+      <li><a href="#32-imports-aliases-and-the-matplotlib-demonstration">32. Imports, aliases, and the Matplotlib demonstration</a></li>
+      <li><a href="#33-jupyter-notebook-and-kernel">33. Jupyter Notebook and kernel</a></li>
+      <li><a href="#34-visualization-libraries-mentioned">34. Visualization libraries mentioned</a></li>
+      <li><a href="#35-theory-must-guide-tool-output">35. Theory must guide tool output</a></li>
+      <li><a href="#use-case-1-restaurant-tipping-analysis">Use case 1 — Restaurant tipping analysis</a></li>
+      <li><a href="#use-case-2-feature-screening-before-regression">Use case 2 — Feature screening before regression</a></li>
+      <li><a href="#use-case-3-customer-operational-correlation-audit">Use case 3 — Customer/operational correlation audit</a></li>
+      <li><a href="#use-case-4-seasonal-demand-matrix">Use case 4 — Seasonal demand matrix</a></li>
+      <li><a href="#use-case-5-executive-dashboard-design">Use case 5 — Executive dashboard design</a></li>
+      <li><a href="#definitions-to-know">Definitions to know</a></li>
+      <li><a href="#functions-and-parameters">Functions and parameters</a></li>
+      <li><a href="#interpretation-questions">Interpretation questions</a></li>
+      <li><a href="#dashboard-decisions">Dashboard decisions</a></li>
+      <li><a href="#python-live-session-traps">Python/live-session traps</a></li>
+      <li><a href="#one-sentence-final-takeaway">One-sentence final takeaway</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="scope-of-the-week">Scope of the week</h2>
+<p>Week 11 moves from visualization theory into practical Python visualization. It covers:</p>
+<ul>
+<li>Seaborn scatter plots and semantic mappings.</li>
+<li>Multiple scatter plots with <code>relplot()</code> and why it is safer than directly using <code>FacetGrid</code>.</li>
+<li>Heatmaps, their parameters, and the data transformations required before plotting them.</li>
+<li>Seaborn themes, contexts, inspection/reset functions, and decluttering with <code>despine()</code>.</li>
+<li>Quiz concepts: Seaborn versus Matplotlib, relationship assessment, pair plots, regression panels, figure/axes management, heatmap clipping, and misleading axes.</li>
+<li>A multi-visualization Matplotlib dashboard case study.</li>
+<li>Live-session foundations: Python operators and variables, the Python library hierarchy, Jupyter workflow, and the role of major visualization libraries.</li>
+</ul>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> A plotting tool produces a default chart quickly, but the analyst must decide whether every visual element, color, scale, and layout choice communicates the data correctly to the intended audience.</p>
+</blockquote>
+<hr>
+<h1 id="part-i-seaborn-scatter-plots">Part I — Seaborn Scatter Plots</h1>
+<h2 id="1-meaning-and-purpose">1. Meaning and purpose</h2>
+<p>A scatter plot is a mainstay of statistical visualization. It depicts the <strong>joint distribution of two variables</strong> as a cloud of points. Each point represents one observation, and its horizontal and vertical positions represent that observation&rsquo;s values for two variables.</p>
+<p>Scatter plots help the eye infer:</p>
+<ul>
+<li>Whether a meaningful relationship exists.</li>
+<li>Direction: positive, negative, or absent.</li>
+<li>Form: linear, curved, clustered, or irregular.</li>
+<li>Strength: tight or diffuse pattern.</li>
+<li>Outliers and unusual subgroups.</li>
+</ul>
+<p>When both variables are numeric, Seaborn&rsquo;s basic function is <code>sns.scatterplot()</code>.</p>
+<h2 id="2-core-scatterplot-parameters">2. Core <code>scatterplot()</code> parameters</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Meaning</th>
+<th>Important behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td>Input data structure</td>
+<td>Accepts a Pandas DataFrame, NumPy array, mapping, or sequence. It may be long-form vectors referenced by name or wide-form data internally reshaped by Seaborn.</td>
+</tr>
+<tr>
+<td><code>x</code>, <code>y</code></td>
+<td>Variables determining x- and y-axis positions</td>
+<td>May be vectors or keys/column names in <code>data</code>.</td>
+</tr>
+<tr>
+<td><code>hue</code></td>
+<td>Maps a grouping variable to point color</td>
+<td>Can be categorical or numeric. Categorical values receive distinct colors; numeric values normally receive a quantitative/continuous color mapping.</td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td>Maps a grouping variable to marker area</td>
+<td>Can be categorical or numeric; mapping behavior differs between these cases.</td>
+</tr>
+<tr>
+<td><code>style</code></td>
+<td>Maps groups to marker shapes</td>
+<td>Always interpreted categorically, even if the source variable has a numeric dtype.</td>
+</tr>
+<tr>
+<td><code>palette</code></td>
+<td>Controls colors used for <code>hue</code></td>
+<td>Can be a palette name/string, list, or dictionary mapping levels to colors. It can force a chosen categorical palette.</td>
+</tr>
+<tr>
+<td><code>markers</code> / <code>marker</code></td>
+<td>Controls marker forms</td>
+<td>A single <code>marker</code> changes all points. With <code>style</code>, marker specifications can be Boolean, a list, or a mapping from style levels to markers.</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>Sets one color for all points</td>
+<td>A color name or abbreviation may be used when no semantic color distinction is required.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="semantic-encoding-distinction">Semantic encoding distinction</h3>
+<ul>
+<li><strong>Position</strong> (<code>x</code>, <code>y</code>) encodes the two principal quantitative variables.</li>
+<li><strong>Color</strong> (<code>hue</code>) can encode a third variable.</li>
+<li><strong>Area</strong> (<code>size</code>) can encode another variable.</li>
+<li><strong>Shape</strong> (<code>style</code>) can encode a category and improves accessibility when color alone is insufficient.</li>
+</ul>
+<p>Using both <code>hue</code> and <code>style</code> for the same category creates redundant encoding. This often makes a chart easier to interpret, including for viewers who cannot reliably distinguish colors.</p>
+<h2 id="3-demonstration-using-the-tips-dataset">3. Demonstration using the <code>tips</code> dataset</h2>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import seaborn as sns
+
+tips = sns.load_dataset(&quot;tips&quot;)
+tips.head()
+</code></pre>
+<p>Important columns mentioned: <code>total_bill</code>, <code>tip</code>, <code>sex</code>, <code>smoker</code>, <code>day</code>, <code>time</code>, and <code>size</code>.</p>
+<h3 id="basic-plot">Basic plot</h3>
+<pre><code class="language-python">sns.scatterplot(data=tips, x=&quot;total_bill&quot;, y=&quot;tip&quot;)
+</code></pre>
+<p>Interpretation: total bill is plotted on the x-axis and tip on the y-axis. This is the plain plot before semantic/aesthetic parameters are added.</p>
+<h3 id="one-fixed-color-and-marker">One fixed color and marker</h3>
+<pre><code class="language-python">sns.scatterplot(
+    data=tips, x=&quot;total_bill&quot;, y=&quot;tip&quot;,
+    color=&quot;red&quot;, marker=&quot;x&quot;
+)
+</code></pre>
+<p>Changing <code>color</code> changes all points; changing <code>marker</code> changes their common shape.</p>
+<h3 id="categorical-hue">Categorical <code>hue</code></h3>
+<pre><code class="language-python">sns.scatterplot(data=tips, x=&quot;total_bill&quot;, y=&quot;tip&quot;, hue=&quot;time&quot;)
+</code></pre>
+<p>Lunch and dinner observations are differentiated by color.</p>
+<h3 id="same-variable-for-hue-and-style">Same variable for <code>hue</code> and <code>style</code></h3>
+<pre><code class="language-python">sns.scatterplot(
+    data=tips, x=&quot;total_bill&quot;, y=&quot;tip&quot;,
+    hue=&quot;time&quot;, style=&quot;time&quot;
+)
+</code></pre>
+<p>Each time category receives both a color and marker form. This is more accessible than color alone.</p>
+<h3 id="different-variables-for-hue-and-style">Different variables for <code>hue</code> and <code>style</code></h3>
+<pre><code class="language-python">sns.scatterplot(
+    data=tips, x=&quot;total_bill&quot;, y=&quot;tip&quot;,
+    hue=&quot;day&quot;, style=&quot;time&quot;
+)
+</code></pre>
+<p>Color and marker now vary independently. This communicates two categorical dimensions but also increases cognitive load; legends and category counts must remain manageable.</p>
+<h3 id="numeric-hue">Numeric <code>hue</code></h3>
+<pre><code class="language-python">sns.scatterplot(
+    data=tips, x=&quot;total_bill&quot;, y=&quot;tip&quot;,
+    hue=&quot;size&quot;, style=&quot;time&quot;
+)
+</code></pre>
+<p>Because <code>size</code> is numeric, the default hue mapping is quantitative rather than a set of unrelated category colors.</p>
+<h3 id="force-a-categorical-palette">Force a categorical palette</h3>
+<pre><code class="language-python">sns.scatterplot(
+    data=tips, x=&quot;total_bill&quot;, y=&quot;tip&quot;,
+    hue=&quot;size&quot;, style=&quot;time&quot;, palette=&quot;deep&quot;
+)
+</code></pre>
+<p>The lecture uses <code>palette="deep"</code> to demonstrate forcing a selected palette. Exam point: a numeric hue normally uses a quantitative palette, whereas a named categorical palette changes that presentation.</p>
+<h3 id="numeric-marker-size">Numeric marker size</h3>
+<pre><code class="language-python">sns.scatterplot(
+    data=tips, x=&quot;total_bill&quot;, y=&quot;tip&quot;,
+    hue=&quot;size&quot;, size=&quot;size&quot;, style=&quot;time&quot;
+)
+</code></pre>
+<p>Marker areas now vary with party size. Do not confuse the dataset column <code>size</code> with the plotting parameter <code>size</code>; here the parameter maps that column to point area.</p>
+<h2 id="4-multiple-scatter-plots-with-relplot">4. Multiple scatter plots with <code>relplot()</code></h2>
+<p><code>sns.relplot()</code> is a <strong>figure-level relational plotting function</strong>. It combines a relational plot such as a scatter plot with faceting across categories.</p>
+<pre><code class="language-python">sns.relplot(
+    data=tips,
+    x=&quot;total_bill&quot;,
+    y=&quot;tip&quot;,
+    col=&quot;time&quot;,
+    hue=&quot;day&quot;,
+    style=&quot;day&quot;,
+    kind=&quot;scatter&quot;
+)
+</code></pre>
+<p>Here:</p>
+<ul>
+<li><code>col="time"</code> creates separate column panels for Lunch and Dinner.</li>
+<li><code>hue="day"</code> colors observations by day.</li>
+<li><code>style="day"</code> varies marker shape by day.</li>
+<li><code>kind="scatter"</code> explicitly requests scatter plots.</li>
+<li>With no <code>row</code>, categories are laid out as columns in one row.</li>
+</ul>
+<h3 id="why-relplot-is-described-as-safer-than-direct-facetgrid">Why <code>relplot()</code> is described as safer than direct <code>FacetGrid</code></h3>
+<p><code>FacetGrid</code> is powerful but lower-level and requires more manual setup. If semantic mappings are configured separately, the same category could accidentally receive different colors or markers in different facets.</p>
+<p><code>relplot()</code> sits on top of a facet grid and automatically synchronizes semantics—color/hue, size, and marker style—across the entire grid. Therefore:</p>
+<ul>
+<li>The same category has the same visual meaning in every panel.</li>
+<li>Legends and category mappings remain consistent.</li>
+<li>The chance of accidental mismatch and reader confusion is reduced.</li>
+</ul>
+<blockquote>
+<p><strong>Likely exam point:</strong> “Safer” does not mean that <code>FacetGrid</code> is incorrect. It means <code>relplot()</code> automatically manages consistent semantic mappings, whereas direct <code>FacetGrid</code> use may require manual synchronization.</p>
+</blockquote>
+<hr>
+<h1 id="part-ii-heatmaps">Part II — Heatmaps</h1>
+<h2 id="5-definition-purpose-and-data-requirement">5. Definition, purpose, and data requirement</h2>
+<p>A heatmap is a matrix-style graphical representation in which individual data values are represented by color intensity. It is widely used to reveal:</p>
+<ul>
+<li>Patterns.</li>
+<li>Correlations.</li>
+<li>Trends.</li>
+<li>High/low-value regions in a matrix.</li>
+</ul>
+<blockquote>
+<p><strong>Critical prerequisite emphasized by the instructor:</strong> Both rows and columns must carry meaningful information. A raw observation index such as 0, 1, 2, … usually does not create a meaningful matrix for a heatmap.</p>
+</blockquote>
+<h2 id="6-important-sns-heatmap-parameters">6. Important <code>sns.heatmap()</code> parameters</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td>Any rectangular dataset to visualize.</td>
+</tr>
+<tr>
+<td><code>vmin</code>, <code>vmax</code></td>
+<td>Anchor the lower and upper values mapped into the colormap; control the color scale&rsquo;s numeric range.</td>
+</tr>
+<tr>
+<td><code>cmap</code></td>
+<td>Maps data values into color space. Accepts a Matplotlib colormap name/object or suitable color specification. Optional.</td>
+</tr>
+<tr>
+<td><code>annot</code></td>
+<td>If <code>True</code>, writes the value inside each cell; a rectangular annotation dataset may also be supplied.</td>
+</tr>
+<tr>
+<td><code>linewidths</code></td>
+<td>Width of lines separating cells.</td>
+</tr>
+<tr>
+<td><code>linecolor</code></td>
+<td>Color of cell-separating lines.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="practical-caution">Practical caution</h3>
+<p>For comparable heatmaps, use consistent <code>vmin</code> and <code>vmax</code>. Otherwise identical colors in separate charts might represent different values.</p>
+<h2 id="7-titanic-correlation-heatmap-workflow">7. Titanic correlation heatmap workflow</h2>
+<h3 id="step-1-load-and-inspect">Step 1: Load and inspect</h3>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import seaborn as sns
+
+titanic_data = sns.load_dataset(&quot;titanic&quot;)
+titanic_data.head()
+</code></pre>
+<p>The raw dataset has meaningful column names but observation-number rows. It also contains strings/categories such as sex, class, embarked, and Boolean-like values.</p>
+<h3 id="step-2-understand-the-failed-direct-correlation">Step 2: Understand the failed direct correlation</h3>
+<p>Calling <code>.corr()</code> on mixed text and numeric data can fail because correlation requires numeric values and strings cannot simply be converted to floating-point values.</p>
+<h3 id="step-3-select-numeric-columns">Step 3: Select numeric columns</h3>
+<pre><code class="language-python">titanic_numeric = titanic_data.select_dtypes(include=&quot;number&quot;)
+</code></pre>
+<p>The transcript identifies numeric variables such as <code>survived</code>, <code>pclass</code>, <code>age</code>, <code>sibsp</code>, <code>parch</code>, and <code>fare</code> (subject to the dataset/version).</p>
+<h3 id="step-4-create-the-correlation-matrix">Step 4: Create the correlation matrix</h3>
+<pre><code class="language-python">corr = titanic_numeric.corr()
+</code></pre>
+<p>This creates meaningful variable names on both axes. Diagonal values are 1 because each variable is perfectly correlated with itself.</p>
+<h3 id="step-5-plot-and-customize">Step 5: Plot and customize</h3>
+<pre><code class="language-python">sns.heatmap(corr)
+</code></pre>
+<pre><code class="language-python">sns.heatmap(corr, annot=True)
+</code></pre>
+<p><code>annot=True</code> displays correlation coefficients in cells.</p>
+<pre><code class="language-python">sns.heatmap(
+    corr,
+    annot=True,
+    linewidths=5,
+    linecolor=&quot;white&quot;
+)
+</code></pre>
+<p>This adds clearly separated cell borders.</p>
+<pre><code class="language-python">sns.heatmap(corr, annot=True, cmap=&quot;coolwarm&quot;)
+</code></pre>
+<p>The lecture also demonstrates <code>icefire</code>. A diverging palette such as <code>coolwarm</code> is useful for correlations because it can distinguish values on opposite sides of a meaningful center.</p>
+<h2 id="8-flights-pivot-table-heatmap-workflow">8. Flights pivot-table heatmap workflow</h2>
+<p>Correlation is one way to form a meaningful matrix; pivoting is another.</p>
+<h3 id="load-data">Load data</h3>
+<pre><code class="language-python">flights = sns.load_dataset(&quot;flights&quot;)
+flights.head()
+</code></pre>
+<p>Columns are <code>year</code>, <code>month</code>, and <code>passengers</code>. Raw observation rows are not the desired heatmap structure.</p>
+<h3 id="pivot-into-meaningful-axes">Pivot into meaningful axes</h3>
+<pre><code class="language-python">flights_pivot = flights.pivot_table(
+    index=&quot;month&quot;,
+    columns=&quot;year&quot;,
+    values=&quot;passengers&quot;,
+    observed=False
+)
+</code></pre>
+<ul>
+<li>Rows become months.</li>
+<li>Columns become years.</li>
+<li>Cells contain passenger counts.</li>
+<li><code>observed=False</code> was added because Pandas warned that its default was deprecated and would change; reading warnings is important because they often specify the corrective action.</li>
+</ul>
+<h3 id="plot">Plot</h3>
+<pre><code class="language-python">sns.heatmap(flights_pivot, cmap=&quot;coolwarm&quot;)
+</code></pre>
+<p>The heatmap makes growth patterns easy to see—for example, high passenger numbers in July/August and growth toward later years.</p>
+<h3 id="reverse-month-order-by-reindexing">Reverse month order by reindexing</h3>
+<p>The initial table places January at the top and December at the bottom. To make January appear at the bottom of the plotted y-axis, reorder the source matrix:</p>
+<pre><code class="language-python">month_order = [
+    &quot;Dec&quot;, &quot;Nov&quot;, &quot;Oct&quot;, &quot;Sep&quot;, &quot;Aug&quot;, &quot;Jul&quot;,
+    &quot;Jun&quot;, &quot;May&quot;, &quot;Apr&quot;, &quot;Mar&quot;, &quot;Feb&quot;, &quot;Jan&quot;
+]
+
+flights_reordered = flights_pivot.reindex(month_order)
+sns.heatmap(flights_reordered, cmap=&quot;coolwarm&quot;)
+</code></pre>
+<p>The exact month labels must match the dataset values (full names may be needed in some versions). The conceptual point is that plot order can be changed by transforming/reindexing the data before plotting.</p>
+<h2 id="9-correlation-versus-pivot-preparation">9. Correlation versus pivot preparation</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Use when</th>
+<th>Output meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Numeric selection + <code>.corr()</code></td>
+<td>Comparing relationships among numeric variables</td>
+<td>Same variables on rows and columns; cells are correlation coefficients.</td>
+</tr>
+<tr>
+<td><code>.pivot_table()</code></td>
+<td>Turning long/tabular observations into a two-dimensional business matrix</td>
+<td>One categorical/time dimension on rows, another on columns, and a measure in cells.</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="part-iii-styling-seaborn-figures">Part III — Styling Seaborn Figures</h1>
+<h2 id="10-why-seaborn-styling-exists">10. Why Seaborn styling exists</h2>
+<p>Matplotlib is highly customizable, but it may be difficult to know which low-level settings to change to produce an attractive chart. Seaborn provides customized themes and high-level interfaces that control Matplotlib figure appearance.</p>
+<p>Calling <code>sns.set_theme()</code> switches to Seaborn defaults. Seaborn conceptually divides Matplotlib parameters into two independent groups:</p>
+<ol>
+<li><strong>Style</strong> — aesthetic appearance, such as background, grid, and axis details.</li>
+<li><strong>Context</strong> — scaling of plot elements so the figure suits its display setting.</li>
+</ol>
+<h2 id="11-function-pairs">11. Function pairs</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>Inspect/return dictionary</th>
+<th>Set defaults</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aesthetic style</td>
+<td><code>sns.axes_style()</code></td>
+<td><code>sns.set_style()</code></td>
+</tr>
+<tr>
+<td>Scale/context</td>
+<td><code>sns.plotting_context()</code></td>
+<td><code>sns.set_context()</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>The first function in each pair returns a dictionary of parameters. The second updates Matplotlib defaults used by subsequent plots.</p>
+<h2 id="12-five-preset-styles">12. Five preset styles</h2>
+<ol>
+<li><code>darkgrid</code> — default Seaborn theme in the lecture; white/gray background with grid lines.</li>
+<li><code>whitegrid</code> — similar grid support on white; useful when data elements are visually heavy.</li>
+<li><code>dark</code> — dark/gray background without the full grid emphasis.</li>
+<li><code>white</code> — clean white background.</li>
+<li><code>ticks</code> — white style emphasizing tick marks.</li>
+</ol>
+<p>Grid lines can make a plot function as a lookup table for quantitative values. In <code>darkgrid</code>, the subdued grid should not compete with the data marks.</p>
+<h2 id="13-plotting-contexts">13. Plotting contexts</h2>
+<p>Seaborn contexts scale fonts, markers, and line widths for use conditions:</p>
+<ul>
+<li><code>paper</code> — compact output.</li>
+<li><code>notebook</code> — default general notebook use.</li>
+<li><code>talk</code> — presentations; larger text and marks.</li>
+<li><code>poster</code> — largest scale for distance viewing.</li>
+</ul>
+<pre><code class="language-python">sns.set_style(&quot;darkgrid&quot;)
+sns.set_context(&quot;talk&quot;)
+
+sns.scatterplot(
+    data=tips,
+    x=&quot;total_bill&quot;,
+    y=&quot;tip&quot;,
+    hue=&quot;day&quot;
+)
+plt.title(&quot;Scatter plot with precise style and context settings&quot;)
+</code></pre>
+<p>Compared with the unstyled/default plot, the example has a visible dark grid plus larger fonts and points appropriate for a talk.</p>
+<blockquote>
+<p><strong>Exam distinction:</strong> Style changes <em>what the plot looks like</em>; context changes <em>the scale of plot elements for the viewing situation</em>.</p>
+</blockquote>
+<h2 id="14-inspecting-and-resetting-settings">14. Inspecting and resetting settings</h2>
+<pre><code class="language-python">sns.reset_defaults()
+
+default_style = sns.axes_style()
+default_context = sns.plotting_context()
+
+print(default_style)
+print(default_context)
+</code></pre>
+<p>The demonstration observes a white face color and a default font size around 10 after reset.</p>
+<pre><code class="language-python">sns.set_style(&quot;darkgrid&quot;)
+sns.set_context(&quot;poster&quot;)
+
+current_style = sns.axes_style()
+current_context = sns.plotting_context()
+</code></pre>
+<p>The changed style reports a light-gray/hexadecimal face color; the poster context shows a much larger font size (about 24 in the lecture). The dictionary does not necessarily print the human-readable preset name, so infer the setting from its parameter values.</p>
+<h2 id="15-decluttering-with-despine">15. Decluttering with <code>despine()</code></h2>
+<p>Spines are the borders around a plot. All four borders may add visual clutter and are not always necessary.</p>
+<pre><code class="language-python">sns.scatterplot(data=tips, x=&quot;total_bill&quot;, y=&quot;tip&quot;, hue=&quot;day&quot;)
+sns.despine()
+</code></pre>
+<p>Default <code>sns.despine()</code> removes the <strong>top and right</strong> spines while retaining the left and bottom axes.</p>
+<h3 id="offset">Offset</h3>
+<pre><code class="language-python">sns.despine(offset=10)
+</code></pre>
+<p><code>offset</code> moves the surviving spines away from the data/plot area, creating a small visual gap.</p>
+<h3 id="trim">Trim</h3>
+<p>The <code>trim</code> parameter limits surviving spines to the tick range rather than letting them span the full axis length.</p>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> Decluttering is not deletion for its own sake. Remove borders or lines when they do not contribute meaning; retain them where multiple plots or the reading task makes boundaries useful.</p>
+</blockquote>
+<hr>
+<h1 id="part-iv-quiz-concepts-and-likely-exam-questions">Part IV — Quiz Concepts and Likely Exam Questions</h1>
+<h2 id="16-seaborn-versus-matplotlib">16. Seaborn versus Matplotlib</h2>
+<h3 id="matplotlib">Matplotlib</h3>
+<ul>
+<li>Foundational/static Python visualization library.</li>
+<li>Provides figure creation, axes management, line/scatter plotting, and detailed low-level customization.</li>
+<li>Popular for simplicity, versatility, and integration with other libraries.</li>
+</ul>
+<h3 id="seaborn">Seaborn</h3>
+<ul>
+<li>Built on top of Matplotlib; Matplotlib is needed underneath it.</li>
+<li>Offers attractive defaults, statistical visualizations, themes, semantic mappings, and strong DataFrame integration.</li>
+<li>Does not replace Matplotlib. Seaborn creates/manages Matplotlib figures and axes, so Matplotlib commands can still set titles, labels, limits, and save output.</li>
+</ul>
+<h3 id="why-seaborn-is-often-preferred-for-appearance">Why Seaborn is often preferred for appearance</h3>
+<ul>
+<li>Better default color palettes and themes.</li>
+<li>Less code for grouped/statistical plots.</li>
+<li>Direct mapping of DataFrame column names.</li>
+<li>Convenient regression, categorical, pairwise, and faceted plots.</li>
+</ul>
+<p>Pandas plotting is convenient for quick DataFrame plots but provides a thinner high-level interface. MATLAB is a separate numerical computing environment, not a Python visualization layer built over Matplotlib.</p>
+<h2 id="17-scatter-patterns-and-linear-regression-suitability">17. Scatter patterns and linear regression suitability</h2>
+<h3 id="good-candidate">Good candidate</h3>
+<p>If the points follow an approximate straight line:</p>
+<ul>
+<li>A positive slope means y tends to increase with x.</li>
+<li>A negative slope means y tends to decrease with x.</li>
+<li>A tight line-like cloud indicates a stronger linear relationship.</li>
+</ul>
+<p>Such variables may be reasonable candidates for a linear regression model, subject to proper diagnostics.</p>
+<h3 id="poor-candidates-or-warning-patterns">Poor candidates or warning patterns</h3>
+<ul>
+<li>A curved pattern suggests a nonlinear relation.</li>
+<li>A random cloud suggests little/no systematic association.</li>
+<li>Clusters may indicate an unmodeled categorical factor.</li>
+<li>Outliers may distort a fitted line.</li>
+<li>Changing vertical spread may signal nonconstant variance.</li>
+</ul>
+<blockquote>
+<p>A scatter plot suggests suitability; it does not by itself prove causality or validate every regression assumption.</p>
+</blockquote>
+<h2 id="18-pair-plots-for-variable-selection">18. Pair plots for variable selection</h2>
+<p><code>sns.pairplot()</code> displays pairwise relationships among several numeric variables.</p>
+<ul>
+<li><strong>Off-diagonal cells:</strong> scatter plots for each variable pair; use them to inspect direction, form, strength, clusters, and outliers.</li>
+<li><strong>Diagonal cells:</strong> each variable&rsquo;s own distribution, commonly a histogram or density curve.</li>
+</ul>
+<p>For preliminary regression selection, identify the predictor–outcome pairs whose off-diagonal points most closely follow a straight line. A pair plot is exploratory evidence, not a substitute for correlation values, domain logic, feature leakage checks, or model diagnostics.</p>
+<h2 id="19-lmplot-hue-and-col">19. <code>lmplot()</code>, <code>hue</code>, and <code>col</code></h2>
+<p><code>sns.lmplot()</code> displays a scatter plot with a fitted linear regression relationship.</p>
+<pre><code class="language-python">sns.lmplot(data=df, x=&quot;x&quot;, y=&quot;y&quot;, hue=&quot;group&quot;)
+</code></pre>
+<p><code>hue</code> keeps groups in the <strong>same panel</strong> and distinguishes them by color. This supports direct visual comparison but can overlap.</p>
+<pre><code class="language-python">sns.lmplot(data=df, x=&quot;x&quot;, y=&quot;y&quot;, col=&quot;group&quot;)
+</code></pre>
+<p><code>col</code> creates <strong>separate side-by-side regression panels</strong> for each group. This reduces overlap and enables group-specific inspection.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th><code>hue</code></th>
+<th><code>col</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Groups share one coordinate system/panel.</td>
+<td>Each category gets a separate panel.</td>
+</tr>
+<tr>
+<td>Color distinguishes groups.</td>
+<td>Spatial separation distinguishes groups.</td>
+</tr>
+<tr>
+<td>Good for direct comparison; may become crowded.</td>
+<td>Good for clarity; requires more space.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="20-matplotlib-figure-and-axes-creation">20. Matplotlib figure and axes creation</h2>
+<pre><code class="language-python">fig, axs = plt.subplots(2, 2, figsize=(10, 8), sharex=False)
+</code></pre>
+<p>This creates:</p>
+<ul>
+<li>One <code>Figure</code>: the complete canvas/container.</li>
+<li>Four <code>Axes</code>: individual plotting regions, accessed as <code>axs[0,0]</code>, <code>axs[0,1]</code>, <code>axs[1,0]</code>, and <code>axs[1,1]</code>.</li>
+</ul>
+<p><code>plt.subplots()</code> is preferred for organized multi-panel layouts because it creates the figure and axes together.</p>
+<h3 id="global-figure-size">Global figure size</h3>
+<pre><code class="language-python">plt.rcParams[&quot;figure.figsize&quot;] = (8, 4)
+</code></pre>
+<p>This sets the default width and height, in inches, for <strong>future</strong> figures. It does not resize an already-created figure and does not set axis data limits.</p>
+<p>For a single explicit figure, use <code>figsize=(width, height)</code> in <code>plt.subplots()</code> or <code>plt.figure()</code>.</p>
+<h2 id="21-heatmap-axis-clipping-and-misleading-plots">21. Heatmap/axis clipping and misleading plots</h2>
+<p>A clipped plot displays only part of the available data range. Changing a colormap, removing variables, or merely increasing figure size does not correct a data-range clipping problem.</p>
+<p>The correct response is to inspect and correct axis limits, for example with <code>ax.set_ylim(...)</code> or <code>plt.ylim(...)</code>, while preserving the underlying data. In some Seaborn/Matplotlib heatmap rendering situations, explicitly resetting limits to cover the full matrix prevents first/last rows from appearing cut off.</p>
+<h3 id="sqrt-x-versus-x-example"><code>sqrt(x)</code> versus <code>x³</code> example</h3>
+<ul>
+<li><code>sqrt(x)</code> grows slowly and is defined over nonnegative real x in the usual real-number plot.</li>
+<li><code>x³</code> grows quickly and may leave a narrow y-range almost immediately.</li>
+<li>If the y-axis is clipped, only a small visible segment of <code>x³</code> may appear and can be falsely interpreted as the function&rsquo;s complete behavior.</li>
+</ul>
+<p>Always examine:</p>
+<ul>
+<li>x- and y-axis limits.</li>
+<li>Whether the plotted domain is complete.</li>
+<li>Labels and units.</li>
+<li>Missing or hidden data.</li>
+<li>Whether encodings preserve the intended meaning.</li>
+<li>Whether visible evidence supports the conclusion.</li>
+</ul>
+<blockquote>
+<p><strong>Core quiz principle:</strong> Fix the visualization without altering/removing valid underlying data, and never interpret a clipped view as complete evidence.</p>
+</blockquote>
+<hr>
+<h1 id="part-v-urbantrend-retail-dashboard-case-study">Part V — UrbanTrend Retail Dashboard Case Study</h1>
+<h2 id="22-business-requirement">22. Business requirement</h2>
+<p>Maria must create an executive sales dashboard in Jupyter using monthly data across products and regions. It should communicate:</p>
+<ul>
+<li>Product A and Product B revenue trends.</li>
+<li>Change in product mix across three categories.</li>
+<li>Regional sales distribution.</li>
+<li>A coherent executive summary that remains readable in print.</li>
+</ul>
+<p>Tools: Pandas for data handling, NumPy for numerical operations, and Matplotlib for visualization.</p>
+<h2 id="23-proposed-2-2-structure">23. Proposed 2×2 structure</h2>
+<pre><code class="language-python">fig, axs = plt.subplots(
+    2, 2,
+    figsize=(10, 8),
+    sharex=False
+)
+
+axs[0, 0].plot(months, product_a)
+axs[0, 1].plot(months, product_b)
+
+axs[1, 0].stackplot(
+    months, cat_X, cat_Y, cat_Z,
+    labels=[&quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;],
+    alpha=0.7
+)
+
+axs[1, 1].pie(
+    region_sales,
+    labels=regions,
+    autopct=&quot;%1.1f%%&quot;,
+    startangle=90
+)
+
+plt.tight_layout()
+plt.savefig(&quot;dashboard.png&quot;)
+</code></pre>
+<h3 id="parameter-meanings">Parameter meanings</h3>
+<ul>
+<li><code>figsize=(10, 8)</code>: overall canvas width and height; it does not change the data or the number of subplots.</li>
+<li><code>sharex=False</code>: each subplot keeps an independent x-axis. This is appropriate because the pie chart has no month axis.</li>
+<li><code>tight_layout()</code>: adjusts subplot spacing to reduce overlapping titles, labels, ticks, and legends.</li>
+<li><code>alpha=0.7</code>: makes stackplot areas partially transparent.</li>
+<li><code>labels</code>: supplies category/region names.</li>
+<li><code>autopct="%1.1f%%"</code>: writes percentages to one decimal place in the pie.</li>
+<li><code>startangle=90</code>: rotates the starting slice to 90 degrees for a more deliberate orientation.</li>
+</ul>
+<h2 id="24-choosing-each-chart">24. Choosing each chart</h2>
+<h3 id="line-charts">Line charts</h3>
+<p>Best for ordered time-series data. They reveal direction, growth/decline, peaks, dips, volatility, seasonality, and differences between products.</p>
+<h3 id="stacked-area-plot">Stacked area plot</h3>
+<p>Shows both:</p>
+<ul>
+<li>Overall total over time (top boundary).</li>
+<li>How categories X, Y, and Z contribute to the total/product mix.</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li>Only the bottom band has a stable zero baseline.</li>
+<li>Middle/upper categories are harder to compare precisely.</li>
+<li>Too many categories cause clutter.</li>
+</ul>
+<p>Use a legend because color identifies category meaning.</p>
+<h3 id="pie-chart">Pie chart</h3>
+<p>Shows regional part-to-whole composition at a point in time. It is suitable for a small number of distinct categories and an approximate share story.</p>
+<p>Limitations:</p>
+<ul>
+<li>Small slices and similar angles are difficult to compare.</li>
+<li>Detailed ranking is easier with a bar chart.</li>
+<li>A pie chart may become too small inside a four-panel printed dashboard.</li>
+</ul>
+<h2 id="25-one-dashboard-versus-split-figures">25. One dashboard versus split figures</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>One 2×2 figure</th>
+<th>Split into trend dashboard + regional figure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single executive overview.</td>
+<td>Larger, clearer charts.</td>
+</tr>
+<tr>
+<td>Easy file management and one <code>savefig()</code> call.</td>
+<td>Better print quality and focused storytelling.</td>
+</tr>
+<tr>
+<td>Related time trends can be viewed together.</td>
+<td>Regional composition receives appropriate emphasis.</td>
+</tr>
+<tr>
+<td>Pie may be too small; overall page may feel crowded.</td>
+<td>More output files must be named and managed.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Jamal&rsquo;s “easy cross-comparison” argument is only partly valid. Product line charts and the stackplot share a time dimension and are directly comparable. The pie chart represents composition at one point and has no time axis; its comparison with the other charts is conceptual rather than direct. <code>sharex=False</code> reinforces that not all four charts share a common horizontal meaning.</p>
+<h2 id="26-recommended-decision">26. Recommended decision</h2>
+<p>Create two outputs:</p>
+<ol>
+<li><strong>Sales performance dashboard:</strong> Product A trend, Product B trend, and product-category mix.</li>
+<li><strong>Regional sales breakdown:</strong> an enlarged regional composition plot.</li>
+</ol>
+<pre><code class="language-python">fig1.savefig(&quot;sales_trends.png&quot;, dpi=300, bbox_inches=&quot;tight&quot;)
+fig2.savefig(&quot;regional_sales.png&quot;, dpi=300, bbox_inches=&quot;tight&quot;)
+</code></pre>
+<p>This balances analytical flow, executive clarity, print readability, and implementation simplicity. If case constraints permit, replace the pie with a horizontal bar chart for easier ranking and label reading.</p>
+<h3 id="common-dashboard-mistakes">Common dashboard mistakes</h3>
+<ul>
+<li>Maximizing chart count rather than communication.</li>
+<li>Assuming proximity automatically creates meaningful comparison.</li>
+<li>Using a pie chart for detailed ranking.</li>
+<li>Omitting titles, units, or legends.</li>
+<li>Ignoring whether output is for a laptop, print report, or executive slide.</li>
+<li>Allowing labels to overlap rather than using layout adjustment.</li>
+</ul>
+<hr>
+<h1 id="part-vi-live-session-foundations">Part VI — Live Session Foundations</h1>
+<h2 id="27-practical-course-emphasis">27. Practical/course emphasis</h2>
+<ul>
+<li>Students need an eligible level of course participation before the end-term examination; the instructor emphasized completing the required week/video/live-session engagement early rather than handling missing eligibility links at the last moment.</li>
+<li>Mini/experiential projects were described as optional but valuable portfolio evidence that can improve employability or promotion prospects. Instructions and deliverables were said to be in the Week 10 announcement.</li>
+<li>Jupyter Notebook was the instructor&rsquo;s demonstration environment, but VS Code, PyCharm, IPython, or another environment is acceptable if Python code produces the required plots.</li>
+<li>Students should retype and execute code from supplied PDFs, not merely run a ready-made notebook. After reproducing the result, vary values, colors, dimensions, axes, and formatting to learn experimentally.</li>
+</ul>
+<h2 id="28-python-operator-review">28. Python operator review</h2>
+<h3 id="arithmetic-and-logic">Arithmetic and logic</h3>
+<ul>
+<li>Arithmetic includes addition <code>+</code>, subtraction <code>-</code>, multiplication <code>*</code>, division <code>/</code>, and exponentiation <code>**</code>.</li>
+<li>Logical operators are <code>and</code>, <code>or</code>, and <code>not</code>.</li>
+<li>Comparison operators include <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, and <code>&lt;=</code>.</li>
+</ul>
+<h3 id="assignment-versus-equality-strongly-emphasized">Assignment versus equality — strongly emphasized</h3>
+<ul>
+<li><code>a = 5</code> assigns the right-hand value to the left-hand variable. It does <strong>not</strong> test equality.</li>
+<li><code>a == 5</code> tests equality.</li>
+<li><code>a += b</code> means <code>a = a + b</code>; if <code>a=5</code> and <code>b=4</code>, <code>a</code> becomes 9.</li>
+<li>Analogous augmented assignments include <code>-=</code>, <code>*=</code>, <code>/=</code>, and <code>**=</code>.</li>
+</ul>
+<h3 id="membership">Membership</h3>
+<ul>
+<li><code>item in collection</code> returns <code>True</code> if the item is present.</li>
+<li><code>item not in collection</code> returns <code>True</code> if it is absent.</li>
+<li>Practical example: checking whether a roll number occurs in a very large result list.</li>
+</ul>
+<h2 id="29-variables-and-dynamic-typing">29. Variables and dynamic typing</h2>
+<p>Types mentioned include strings, integers, floating-point numbers, Booleans, lists, tuples, dictionaries, and objects/arrays.</p>
+<p>Python normally infers a variable&rsquo;s type from the assigned value; it does not require a prior declaration such as “integer” or “float.” For example, <code>weight = 5.9</code> is inferred as floating-point, whereas <code>roll_number = 10</code> is inferred as integer.</p>
+<p>Students should know how to create and manipulate collections, including adding elements to lists, because visualization work relies on data preparation.</p>
+<h2 id="30-what-is-a-python-library">30. What is a Python library?</h2>
+<p>A library is a collection of prewritten Python code that provides useful functionality. Libraries prevent every user from reimplementing, testing, and debugging common operations such as a square-root calculation.</p>
+<p>Typical use:</p>
+<ol>
+<li>Install a third-party library if it is not already available.</li>
+<li>Import the required library/module/class.</li>
+<li>Call a function.</li>
+<li>Pass required and optional arguments.</li>
+<li>Receive/plot the result.</li>
+</ol>
+<p>Examples named: <code>math</code>, <code>os</code>, NumPy, Pandas, Matplotlib, Seaborn, Requests, scikit-learn, and NLTK.</p>
+<h2 id="31-library-hierarchy">31. Library hierarchy</h2>
+<p>Conceptual hierarchy:</p>
+<pre><code class="language-text">Python language/runtime
+└── library or package
+    └── module/subpackage
+        ├── functions
+        ├── classes
+        ├── variables
+        └── constants
+            └── user code calls/instantiates/reads them
+</code></pre>
+<ul>
+<li><strong>Runtime/environment:</strong> where Python code executes.</li>
+<li><strong>Library/package:</strong> collection of related modules.</li>
+<li><strong>Module/subpackage:</strong> organized file/unit within a library.</li>
+<li><strong>Function:</strong> reusable behavior invoked with arguments.</li>
+<li><strong>Class:</strong> blueprint used to construct objects.</li>
+<li><strong>Variable:</strong> named stored value.</li>
+<li><strong>Constant:</strong> value intended not to change.</li>
+<li><strong>Argument/property:</strong> input or setting controlling function behavior.</li>
+</ul>
+<blockquote>
+<p><strong>Transcript correction:</strong> <code>pyplot</code> is a module of <strong>Matplotlib</strong>, not Pandas.</p>
+</blockquote>
+<h2 id="32-imports-aliases-and-the-matplotlib-demonstration">32. Imports, aliases, and the Matplotlib demonstration</h2>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+from matplotlib.figure import Figure
+
+plt.rcParams[&quot;figure.figsize&quot;] = (8, 4)
+
+plt.plot([1, 2, 3], [10, 20, 30])
+plt.title(&quot;Sample Plot&quot;)
+plt.show()
+</code></pre>
+<ul>
+<li><code>import matplotlib.pyplot as plt</code> imports the <code>pyplot</code> module and gives it the alias <code>plt</code>, avoiding repeated use of the full name.</li>
+<li><code>from matplotlib.figure import Figure</code> imports a specific class.</li>
+<li><code>rcParams</code> stores Matplotlib runtime configuration settings.</li>
+<li><code>figure.figsize</code> controls default figure width and height.</li>
+<li><code>plt.plot(x, y)</code> requires x and y sequences; these are the central positional arguments.</li>
+<li>Optional arguments/properties can control color, line width, and other styling.</li>
+<li><code>plt.title()</code> adds a title; <code>plt.show()</code> renders the plot.</li>
+</ul>
+<p>The sample demonstrates library → module → class/function/variable use in real code.</p>
+<h2 id="33-jupyter-notebook-and-kernel">33. Jupyter Notebook and kernel</h2>
+<ul>
+<li>A notebook combines Markdown notes, images, executable code cells, and outputs.</li>
+<li><code>Shift+Enter</code> executes the current code cell and moves forward; a Markdown cell is rendered rather than numerically executed.</li>
+<li>Restarting the kernel and clearing outputs resets the current computational state/output display.</li>
+<li>The <strong>kernel</strong> is the backend engine performing calculations. The browser is the frontend displaying the notebook and results.</li>
+<li>Shutting down the kernel leaves a visible frontend that can no longer compute until connected to a running kernel.</li>
+<li>The instructor recommended maintaining an organized course folder for practice notebooks/files.</li>
+</ul>
+<h2 id="34-visualization-libraries-mentioned">34. Visualization libraries mentioned</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Library/tool</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Matplotlib</td>
+<td>Standard, popular static visualization library; simple, versatile, and highly customizable.</td>
+</tr>
+<tr>
+<td>Seaborn</td>
+<td>Higher-level statistical visualization built on Matplotlib; aesthetically pleasing and DataFrame-friendly.</td>
+</tr>
+<tr>
+<td>Cartopy</td>
+<td>Geospatial/geographical mapping.</td>
+</tr>
+<tr>
+<td>Pandas plotting</td>
+<td>Data manipulation plus convenient plots through integration with visualization backends.</td>
+</tr>
+<tr>
+<td>Plotly</td>
+<td>Interactive plotting library.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The course mainly uses Matplotlib and Seaborn, with Pandas for data manipulation.</p>
+<h2 id="35-theory-must-guide-tool-output">35. Theory must guide tool output</h2>
+<p>The instructor explicitly connects earlier theory—clutter reduction, color, preattentive processing, and Gestalt principles—to Python plotting:</p>
+<ul>
+<li>Defaults are only starting points.</li>
+<li>Inspect every border, line, label, and axis.</li>
+<li>Remove unnecessary pixels if they do not convey information.</li>
+<li>Borders may be unnecessary in one chart but helpful for separating multiple plots.</li>
+<li>A color&rsquo;s meaning is contextual and cultural. Red may imply danger in many Western contexts but auspiciousness/prosperity in Chinese contexts.</li>
+<li>Know the audience before encoding positive/negative meaning through color.</li>
+<li>AI or software output still requires analyst judgment.</li>
+</ul>
+<hr>
+<h1 id="practical-use-cases">Practical Use Cases</h1>
+<h2 id="use-case-1-restaurant-tipping-analysis">Use case 1 — Restaurant tipping analysis</h2>
+<p>Use a scatter plot of <code>total_bill</code> against <code>tip</code>, then map <code>time</code> to style and <code>day</code> to hue. This can show whether the bill–tip relation differs across lunch/dinner or days. Use <code>relplot(col="time")</code> when a shared panel is crowded.</p>
+<h2 id="use-case-2-feature-screening-before-regression">Use case 2 — Feature screening before regression</h2>
+<p>Create a pair plot for numeric variables, identify approximately linear predictor–target pairs, inspect distributions and outliers, and then use <code>lmplot()</code> to compare fitted relationships by group. Follow with numerical diagnostics before model selection.</p>
+<h2 id="use-case-3-customer-operational-correlation-audit">Use case 3 — Customer/operational correlation audit</h2>
+<p>Select numeric columns, calculate a correlation matrix, and plot an annotated diverging heatmap. Use fixed <code>vmin=-1</code>, <code>vmax=1</code>, and a centered diverging palette when comparing correlation heatmaps.</p>
+<h2 id="use-case-4-seasonal-demand-matrix">Use case 4 — Seasonal demand matrix</h2>
+<p>Pivot long-form monthly sales or passenger data into month × year form. A heatmap reveals seasonality and year-over-year growth faster than reading the raw table. Reindex months into the desired calendar/fiscal order.</p>
+<h2 id="use-case-5-executive-dashboard-design">Use case 5 — Executive dashboard design</h2>
+<p>Group directly comparable time-based charts into one figure and separate a composition-only chart if print size makes it unreadable. Save figures with clear filenames and appropriate resolution.</p>
+<hr>
+<h1 id="rapid-revision-and-exam-checklist">Rapid Revision and Exam Checklist</h1>
+<h2 id="definitions-to-know">Definitions to know</h2>
+<ul>
+<li>[ ] Scatter plot = joint distribution of two variables using one point per observation.</li>
+<li>[ ] Heatmap = matrix plot where color intensity represents cell values.</li>
+<li>[ ] Figure = complete Matplotlib canvas; Axes = individual plotting area.</li>
+<li>[ ] Style controls aesthetics; context scales elements for paper/notebook/talk/poster.</li>
+<li>[ ] Spines are plot borders.</li>
+<li>[ ] Library = collection of prewritten code; module = organized component within it.</li>
+<li>[ ] Kernel = backend computation engine for Jupyter.</li>
+</ul>
+<h2 id="functions-and-parameters">Functions and parameters</h2>
+<ul>
+<li>[ ] <code>sns.scatterplot(data, x, y, hue, size, style, palette, marker/color)</code>.</li>
+<li>[ ] Numeric and categorical <code>hue</code> behave differently.</li>
+<li>[ ] <code>style</code> is categorical even if its source dtype is numeric.</li>
+<li>[ ] Same variable in <code>hue</code> + <code>style</code> gives accessible redundant encoding.</li>
+<li>[ ] <code>sns.relplot(..., col=..., kind="scatter")</code> makes faceted scatter plots.</li>
+<li>[ ] <code>relplot()</code> synchronizes semantic mappings across facets.</li>
+<li>[ ] <code>sns.heatmap(data, vmin, vmax, cmap, annot, linewidths, linecolor)</code>.</li>
+<li>[ ] Raw data may require numeric selection + <code>.corr()</code> or <code>.pivot_table()</code>.</li>
+<li>[ ] <code>sns.set_theme()</code>, <code>set_style()</code>, <code>set_context()</code> set appearance.</li>
+<li>[ ] <code>axes_style()</code> and <code>plotting_context()</code> inspect current dictionaries.</li>
+<li>[ ] <code>reset_defaults()</code> returns to defaults.</li>
+<li>[ ] <code>despine()</code> removes top/right spines; <code>offset</code> separates surviving spines; <code>trim</code> limits their range.</li>
+<li>[ ] <code>plt.subplots()</code> creates figure and axes together.</li>
+<li>[ ] <code>plt.rcParams["figure.figsize"]</code> affects future default figures.</li>
+<li>[ ] <code>tight_layout()</code> reduces layout overlap.</li>
+<li>[ ] <code>savefig()</code> saves the figure; use clear filenames for multiple outputs.</li>
+</ul>
+<h2 id="interpretation-questions">Interpretation questions</h2>
+<ul>
+<li>[ ] Straight-line scatter pattern suggests possible linear-regression suitability.</li>
+<li>[ ] Curves, random clouds, clusters, outliers, or changing spread require caution.</li>
+<li>[ ] Pair-plot off-diagonal = pair relationships; diagonal = individual distributions.</li>
+<li>[ ] <code>hue</code> overlays colored groups; <code>col</code> creates separate panels.</li>
+<li>[ ] Clipping is corrected by axis/range handling, not by removing data or changing colors.</li>
+<li>[ ] Never treat the visible portion of a clipped plot as the full function/data behavior.</li>
+<li>[ ] Heatmap rows and columns must both be meaningful.</li>
+<li>[ ] Correlation diagonals equal 1.</li>
+</ul>
+<h2 id="dashboard-decisions">Dashboard decisions</h2>
+<ul>
+<li>[ ] Line chart → trends over ordered time.</li>
+<li>[ ] Stackplot → overall total plus changing composition; upper bands are harder to compare precisely.</li>
+<li>[ ] Pie → approximate part-to-whole; bar chart is better for precise ranking.</li>
+<li>[ ] Related time charts can be grouped; unrelated composition charts may deserve separation.</li>
+<li>[ ] Optimize for audience, medium, labels, print size, and business question—not maximum chart count.</li>
+</ul>
+<h2 id="python-live-session-traps">Python/live-session traps</h2>
+<ul>
+<li>[ ] <code>=</code> assigns; <code>==</code> tests equality.</li>
+<li>[ ] <code>a += b</code> means <code>a = a + b</code>.</li>
+<li>[ ] Exponentiation is <code>**</code>.</li>
+<li>[ ] Membership uses <code>in</code> and <code>not in</code>.</li>
+<li>[ ] Python infers types from assigned values.</li>
+<li>[ ] <code>pyplot</code> belongs to Matplotlib.</li>
+<li>[ ] Retype, run, modify, and inspect code; passive viewing is insufficient for practical mastery.</li>
+</ul>
+<h2 id="one-sentence-final-takeaway">One-sentence final takeaway</h2>
+<p><strong>A good visualization preserves the meaning and completeness of the data, applies consistent and audience-appropriate encodings, and removes only those visual elements that do not help the reader answer the intended question.</strong></p>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<h3 id="priority-topic-line-charts-for-time">Priority topic: line charts for time</h3>
+<p>The review repeatedly emphasizes the <strong>line chart as the default for change over ordered time</strong>: monthly revenue, stock price, population growth, temperature, and website traffic. It answers whether a measure is increasing/decreasing, where direction changes, and whether seasonality or recurring patterns exist. The connection communicates continuity; never connect unordered categories simply for appearance.</p>
+<h3 id="dashboard-chart-caveats">Dashboard chart caveats</h3>
+<ul>
+<li>A stacked area plot shows overall growth, mix, and contribution, but middle/upper bands have changing baselines and are less precise than separate lines.</li>
+<li>A pie chart may show one regional-sales snapshot only when the categories form one whole; it does not show a trend.</li>
+<li>One 2×2 dashboard supports cross-comparison only if panels remain legible and follow a logical scan path. Split figures when print size, labels, or audience focus require it.</li>
+<li>Consistent colour and direct labelling reduce repeated legend lookup; <code>tight_layout()</code> addresses spacing but cannot fix a conceptually poor layout.</li>
+</ul>
+<h3 id="business-question-frame">Business-question frame</h3>
+<p>Trend over time → line. Total plus changing mix → stacked area with caveat. One small part-to-whole snapshot → pie. Relationship between two numeric variables → scatter. State the audience, task, and limitation before defending the dashboard arrangement.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-10.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 10: Exam-Focused Study Notes</span>
+      </a>
+      <a href="week-12.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 12: Dashboards, Dashboard Design, Grammar of…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

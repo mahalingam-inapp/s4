@@ -1,0 +1,3818 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Project · Week 14 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Project</span>
+      <span class="brand-title">Week 14</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html" selected>Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Business Research Process, Research Problems, and Research Approaches
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Research Planning, Theoretical Frameworks, Measurement, and Data…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Systematic Literature Review (SLR), Literature Review Methods,…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Theoretical Frameworks, Variables, Moderators, Mediators, and…
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Measurement Models, Scale Development, Reflective vs Formative…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Questionnaire Design, Data Collection Methods, Measurement Scales,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Research Inference, Sampling, Regression, Correlation, Mediation,…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Business Research Process — Management Problems, Research Problems,…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Jamovi Data Management, Measurement Levels, Scale Construction,…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Jamovi Factor Analysis, EFA, CFA, SEM, Validity Assessment, and…
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Regression, Mediation, Moderation, t-tests, ANOVA, and Descriptive…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Regression Modelling, Controls, Composite Indices, Moderation, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Time Series, Forecasting, and Panel Data
+      </a>
+      <a class="is-active" href="week-14.html">
+        <span class="week-num">Week 14</span>
+        PLS-SEM — Measurement Quality, Structural Models, Controls,…
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Logistic Regression — Model Fit, Interpretation, Prediction, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Project · Week 14</p>
+        <h1 class="page-title">PLS-SEM — Measurement Quality, Structural Models, Controls, Moderation, and Diagnostics</h1>
+        <p class="page-meta">Week 14 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-overview">1. Overview</a></li>
+      <li><a href="#misconception-1-high-gof-means-the-model-is-automatically-valid">Misconception 1: High GoF means the model is automatically valid</a></li>
+      <li><a href="#misconception-2-a-significant-loading-means-an-indicator-is-automatically-good">Misconception 2: A significant loading means an indicator is automatically good</a></li>
+      <li><a href="#misconception-3-a-high-loading-automatically-establishes-discriminant-validity">Misconception 3: A high loading automatically establishes discriminant validity</a></li>
+      <li><a href="#misconception-4-a-p-value-below-0-05-means-an-item-should-always-be-retained">Misconception 4: A p-value below 0.05 means an item should always be retained</a></li>
+      <li><a href="#misconception-5-ave-is-a-multicollinearity-diagnostic">Misconception 5: AVE is a multicollinearity diagnostic</a></li>
+      <li><a href="#misconception-6-vif-establishes-discriminant-validity">Misconception 6: VIF establishes discriminant validity</a></li>
+      <li><a href="#misconception-7-every-row-in-a-fornell-larcker-matrix-must-be-treated-identically">Misconception 7: Every row in a Fornell–Larcker matrix must be treated identically</a></li>
+      <li><a href="#misconception-8-standardizing-a-categorical-group-code-improves-the-analysis">Misconception 8: Standardizing a categorical group code improves the analysis</a></li>
+      <li><a href="#misconception-9-low-vif-means-there-is-no-simpson-s-paradox">Misconception 9: Low VIF means there is no Simpson&amp;rsquo;s paradox</a></li>
+      <li><a href="#misconception-10-gof-can-detect-simpson-s-paradox">Misconception 10: GoF can detect Simpson&amp;rsquo;s paradox</a></li>
+      <li><a href="#misconception-11-dynamic-warpped-relationships-are-controlled-by-the-outer-model">Misconception 11: Dynamic/Warpped relationships are controlled by the outer model</a></li>
+      <li><a href="#case-study">Case Study</a></li>
+      <li><a href="#1-case-overview">1. Case Overview</a></li>
+      <li><a href="#measurement-model-2">Measurement model</a></li>
+      <li><a href="#structural-model-2">Structural model</a></li>
+      <li><a href="#control-variable">Control variable</a></li>
+      <li><a href="#moderator">Moderator</a></li>
+      <li><a href="#misconception-1-more-variables-automatically-make-sem-better">Misconception 1: More variables automatically make SEM better</a></li>
+      <li><a href="#misconception-2-a-moderator-is-just-another-control-variable">Misconception 2: A moderator is just another control variable</a></li>
+      <li><a href="#misconception-3-adding-moderation-requires-making-the-model-linear">Misconception 3: Adding moderation requires making the model linear</a></li>
+      <li><a href="#misconception-4-bootstrapping-automatically-makes-a-complex-model-reliable">Misconception 4: Bootstrapping automatically makes a complex model reliable</a></li>
+      <li><a href="#misconception-5-stable1-and-bootstrapping-perform-the-same-function-as-the-inner-model-algorithm">Misconception 5: Stable1 and Bootstrapping perform the same function as the inner model algorithm</a></li>
+      <li><a href="#misconception-6-pls-regression-and-warp2-basic-operate-at-the-same-level">Misconception 6: PLS Regression and Warp2 Basic operate at the same level</a></li>
+      <li><a href="#misconception-7-productivity-is-adequately-represented-by-units-produced-alone">Misconception 7: Productivity is adequately represented by units produced alone</a></li>
+      <li><a href="#misconception-8-statistical-complexity-is-always-preferable">Misconception 8: Statistical complexity is always preferable</a></li>
+      <li><a href="#central-takeaway">Central takeaway</a></li>
+      <li><a href="#1-case-study-overview">1. Case Study Overview</a></li>
+      <li><a href="#measurement-model-3">Measurement model</a></li>
+      <li><a href="#structural-model-3">Structural model</a></li>
+      <li><a href="#option-a-3">Option A</a></li>
+      <li><a href="#option-b-3">Option B</a></li>
+      <li><a href="#1-more-complex-models-are-always-better">1. More complex models are always better</a></li>
+      <li><a href="#2-a-moderator-is-just-another-control-variable">2. A moderator is just another control variable</a></li>
+      <li><a href="#3-adding-a-moderator-requires-a-linear-model">3. Adding a moderator requires a linear model</a></li>
+      <li><a href="#4-bootstrapping-automatically-solves-small-sample-problems">4. Bootstrapping automatically solves small-sample problems</a></li>
+      <li><a href="#5-stable1-is-part-of-the-measurement-model">5. Stable1 is part of the measurement model</a></li>
+      <li><a href="#6-pls-regression-is-the-algorithm-for-training-productivity">6. PLS Regression is the algorithm for Training → Productivity</a></li>
+      <li><a href="#7-edit-direct-link-creates-the-structural-relationship">7. Edit direct link creates the structural relationship</a></li>
+      <li><a href="#8-work-experience-is-a-productivity-indicator">8. Work Experience is a Productivity indicator</a></li>
+      <li><a href="#9-job-motivation-moderation-means-motivation-simply-predicts-productivity">9. Job Motivation moderation means motivation simply predicts productivity</a></li>
+      <li><a href="#10-a-nonlinear-model-is-justified-merely-because-productivity-has-multiple-indicators">10. A nonlinear model is justified merely because Productivity has multiple indicators</a></li>
+      <li><a href="#a-sentiment-analysis-as-business-research">A. Sentiment analysis as business research</a></li>
+      <li><a href="#b-pls-sem-warppls-workflow">B. PLS-SEM/WarpPLS workflow</a></li>
+      <li><a href="#c-measurement-model-diagnostics">C. Measurement-model diagnostics</a></li>
+      <li><a href="#d-structural-model-diagnostics">D. Structural/model diagnostics</a></li>
+      <li><a href="#e-structural-path-interpretation">E. Structural-path interpretation</a></li>
+      <li><a href="#f-controls-moderators-and-the-greentech-pilot">F. Controls, moderators, and the GreenTech pilot</a></li>
+      <li><a href="#g-time-series-analysis-and-forecasting">G. Time-series analysis and forecasting</a></li>
+      <li><a href="#h-high-yield-distinctions">H. High-yield distinctions</a></li>
+      <li><a href="#i-likely-exam-questions-with-answer-points">I. Likely exam questions with answer points</a></li>
+      <li><a href="#j-source-coverage-checklist">J. Source-coverage checklist</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-overview"><strong>1. Overview</strong></h2>
+<p>This quiz focused on <strong>Partial Least Squares Structural Equation Modeling (PLS-SEM)</strong>, particularly the workflow for evaluating a model after adding control variables.</p>
+<p>The major concepts covered were:</p>
+<ol>
+<li>PLS-SEM model evaluation sequence  </li>
+<li>Measurement model vs structural model  </li>
+<li>Reliability and validity  </li>
+<li>Variance Inflation Factor (VIF)  </li>
+<li>Average Block VIF (AVIF)  </li>
+<li>Average Variance Extracted (AVE)  </li>
+<li>Fornell–Larcker discriminant validity  </li>
+<li>Cross-loadings  </li>
+<li>Moderation and interaction terms  </li>
+<li>Multi-group analysis  </li>
+<li>Categorical control variables  </li>
+<li>Sympson&rsquo;s Paradox  </li>
+<li>Sympson&rsquo;s Paradox Ratio (SPR)  </li>
+<li>Inner vs outer model algorithms  </li>
+<li>Linear vs nonlinear/Warp relationships  </li>
+<li>Overall model fit  </li>
+<li>R² and related structural measures</li>
+</ol>
+<p>The most important overarching principle is:</p>
+<blockquote>
+<p><strong>In PLS-SEM, establish that the constructs are measured adequately before interpreting the structural relationships among those constructs.</strong></p>
+</blockquote>
+<hr>
+<h1 id="2-pls-sem-two-major-parts-of-the-model"><strong>2. PLS-SEM: Two Major Parts of the Model</strong></h1>
+<p>A PLS-SEM model can broadly be divided into:</p>
+<h3 id="measurement-model"><strong>Measurement model</strong></h3>
+<p>The measurement model concerns:</p>
+<blockquote>
+<p><strong>Indicators → Constructs</strong></p>
+</blockquote>
+<p>It asks whether the observed questionnaire items adequately measure the intended latent constructs.</p>
+<p>Examples:</p>
+<ul>
+<li>Reliability  </li>
+<li>Convergent validity  </li>
+<li>Discriminant validity  </li>
+<li>Indicator loadings  </li>
+<li>Cross-loadings  </li>
+<li>AVE</li>
+</ul>
+<h3 id="structural-model"><strong>Structural model</strong></h3>
+<p>The structural model concerns:</p>
+<blockquote>
+<p><strong>Construct → Construct</strong></p>
+</blockquote>
+<p>It asks how the latent constructs relate to one another.</p>
+<p>Examples:</p>
+<ul>
+<li>Path coefficients  </li>
+<li>R²  </li>
+<li>Effect sizes  </li>
+<li>Predictive relevance  </li>
+<li>Moderation  </li>
+<li>Control variables  </li>
+<li>Structural paths</li>
+</ul>
+<h3 id="memory-aid"><strong>Memory aid</strong></h3>
+<blockquote>
+<p><strong>Outer model \= indicators and constructs</strong></p>
+<p><strong>Inner model \= relationships among constructs</strong></p>
+</blockquote>
+<hr>
+<h1 id="3-correct-pls-sem-evaluation-sequence"><strong>3. Correct PLS-SEM Evaluation Sequence</strong></h1>
+<p>Suppose control variables have been added and initial diagnostics look good.</p>
+<p>The correct sequence is:</p>
+<blockquote>
+<p><strong>Assess measurement quality → interpret structural paths</strong></p>
+</blockquote>
+<p>The researcher should first establish that the constructs themselves are being measured reliably and validly.</p>
+<p>Only after measurement quality is acceptable should the researcher draw substantive conclusions about the structural relationships.</p>
+<hr>
+<h1 id="4-why-measurement-quality-comes-first"><strong>4. Why Measurement Quality Comes First</strong></h1>
+<p>Imagine a path:</p>
+<blockquote>
+<p>Job satisfaction → Turnover intention</p>
+</blockquote>
+<p>If the questionnaire items measuring job satisfaction are poor, then the estimated relationship may not meaningfully represent the relationship between the underlying constructs.</p>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Good structural statistics cannot compensate for poor measurement.</strong></p>
+</blockquote>
+<p>This is a fundamental SEM principle.</p>
+<hr>
+<h1 id="5-reliability"><strong>5. Reliability</strong></h1>
+<p>Reliability asks whether the indicators measuring a construct are sufficiently consistent.</p>
+<p>A commonly used measure in PLS-SEM is:</p>
+<blockquote>
+<p><strong>Composite Reliability (CR)</strong></p>
+</blockquote>
+<p>A commonly used rule of thumb is approximately:</p>
+<blockquote>
+<p><strong>CR ≥ 0.70</strong></p>
+</blockquote>
+<p>Although thresholds should be interpreted in context rather than treated as absolute laws.</p>
+<hr>
+<h1 id="6-convergent-validity"><strong>6. Convergent Validity</strong></h1>
+<p>Convergent validity asks whether indicators intended to measure the same construct actually converge on that construct.</p>
+<p>Important measures include:</p>
+<ul>
+<li>Indicator loadings  </li>
+<li>Average Variance Extracted (AVE)</li>
+</ul>
+<p>A common rule of thumb for AVE is:</p>
+<blockquote>
+<p><strong>AVE ≥ 0.50</strong></p>
+</blockquote>
+<p>This means the construct explains at least approximately half of the variance in its indicators, under the usual interpretation.</p>
+<hr>
+<h1 id="7-average-variance-extracted-ave"><strong>7. Average Variance Extracted (AVE)</strong></h1>
+<p>AVE is primarily a measure associated with <strong>convergent validity</strong>.</p>
+<p>Conceptually:</p>
+<blockquote>
+<p>How much variance in the indicators is captured by the latent construct?</p>
+</blockquote>
+<p>A common guideline:</p>
+<blockquote>
+<p><strong>AVE &gt; 0.50</strong></p>
+</blockquote>
+<h3 id="important-distinction"><strong>Important distinction</strong></h3>
+<p>AVE is <strong>not</strong> the primary diagnostic for multicollinearity.</p>
+<p>If the question asks:</p>
+<blockquote>
+<p>“Are predictors too highly correlated?”</p>
+</blockquote>
+<p>think:</p>
+<blockquote>
+<p><strong>VIF</strong></p>
+</blockquote>
+<p>If the question asks:</p>
+<blockquote>
+<p>“Does the construct adequately explain variance in its indicators?”</p>
+</blockquote>
+<p>think:</p>
+<blockquote>
+<p><strong>AVE</strong></p>
+</blockquote>
+<hr>
+<h1 id="8-composite-reliability-cr"><strong>8. Composite Reliability (CR)</strong></h1>
+<p>Composite Reliability evaluates internal consistency reliability.</p>
+<p>A common guideline is:</p>
+<blockquote>
+<p><strong>CR ≥ 0.70</strong></p>
+</blockquote>
+<p>CR should not be confused with:</p>
+<ul>
+<li>AVE  </li>
+<li>VIF  </li>
+<li>Q²  </li>
+<li>GoF  </li>
+<li>SPR</li>
+</ul>
+<p>Each addresses a different aspect of model evaluation.</p>
+<hr>
+<h1 id="9-indicator-loadings"><strong>9. Indicator Loadings</strong></h1>
+<p>Indicator loadings describe how strongly an observed item relates to its intended latent construct.</p>
+<p>For example:</p>
+<blockquote>
+<p>Item X → Construct A \= 0.72</p>
+</blockquote>
+<p>A loading around or above 0.70 is commonly viewed as acceptable in many PLS-SEM applications.</p>
+<p>However, <strong>the loading alone is not enough</strong>.</p>
+<p>The researcher should also consider:</p>
+<ul>
+<li>Cross-loadings  </li>
+<li>Construct reliability  </li>
+<li>AVE  </li>
+<li>Content validity  </li>
+<li>Theoretical importance of the item</li>
+</ul>
+<hr>
+<h1 id="10-cross-loadings"><strong>10. Cross-Loadings</strong></h1>
+<p>A cross-loading occurs when an indicator loads substantially on a construct other than its intended construct.</p>
+<p>Example:</p>
+<blockquote>
+<p>Intended construct loading \= 0.72</p>
+</blockquote>
+<p>but:</p>
+<blockquote>
+<p>Other construct loading \= 0.68</p>
+</blockquote>
+<p>This is concerning because the difference is small.</p>
+<p>The item appears to measure both constructs relatively strongly.</p>
+<p>This raises a discriminant-validity concern.</p>
+<hr>
+<h1 id="11-what-to-do-with-a-high-cross-loading"><strong>11. What to Do with a High Cross-Loading</strong></h1>
+<p>The correct response is:</p>
+<blockquote>
+<p><strong>Review or consider removing the item.</strong></p>
+</blockquote>
+<p>Do not automatically remove it merely because a p-value is below 0.05.</p>
+<p>The issue is not:</p>
+<blockquote>
+<p>“Is the loading statistically significant?”</p>
+</blockquote>
+<p>The issue is:</p>
+<blockquote>
+<p><strong>Does the indicator clearly represent its intended construct rather than another construct?</strong></p>
+</blockquote>
+<hr>
+<h1 id="12-statistical-significance-vs-measurement-quality"><strong>12. Statistical Significance vs Measurement Quality</strong></h1>
+<p>A common misconception is:</p>
+<blockquote>
+<p>“If the loading has p \&lt; 0.05, the item is good.”</p>
+</blockquote>
+<p>This is incorrect.</p>
+<p>Statistical significance indicates that the estimated relationship is unlikely to be zero under the specified test assumptions.</p>
+<p>It does <strong>not</strong> establish:</p>
+<ul>
+<li>Reliability  </li>
+<li>Convergent validity  </li>
+<li>Discriminant validity  </li>
+<li>Theoretical appropriateness</li>
+</ul>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Significance ≠ measurement quality.</strong></p>
+</blockquote>
+<hr>
+<h1 id="13-discriminant-validity"><strong>13. Discriminant Validity</strong></h1>
+<p>Discriminant validity asks:</p>
+<blockquote>
+<p><strong>Are theoretically distinct constructs actually distinct from one another?</strong></p>
+</blockquote>
+<p>For example, suppose a model contains:</p>
+<ul>
+<li>Satisfaction  </li>
+<li>Engagement  </li>
+<li>Commitment</li>
+</ul>
+<p>The researcher needs evidence that these are not effectively measuring the same thing.</p>
+<p>One traditional method discussed in the quiz is:</p>
+<blockquote>
+<p><strong>Fornell–Larcker criterion</strong></p>
+</blockquote>
+<hr>
+<h1 id="14-fornell-larcker-criterion"><strong>14. Fornell–Larcker Criterion</strong></h1>
+<p>In a Fornell–Larcker matrix:</p>
+<ul>
+<li>Diagonal entries contain the <strong>square root of AVE</strong>  </li>
+<li>Off-diagonal entries contain correlations between constructs</li>
+</ul>
+<p>The basic rule is:</p>
+<blockquote>
+<p>The square root of AVE for a construct should be greater than its correlations with the other substantive latent constructs.</p>
+</blockquote>
+<p>For example:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th>Construct A</th>
+<th>Construct B</th>
+<th>Construct C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Construct A</td>
+<td><strong>0.80</strong></td>
+<td>0.55</td>
+<td>0.60</td>
+</tr>
+<tr>
+<td>Construct B</td>
+<td>0.55</td>
+<td><strong>0.78</strong></td>
+<td>0.62</td>
+</tr>
+<tr>
+<td>Construct C</td>
+<td>0.60</td>
+<td>0.62</td>
+<td><strong>0.82</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Construct A satisfies the criterion because:</p>
+<blockquote>
+<p>0.80 &gt; 0.55</p>
+</blockquote>
+<p>and:</p>
+<blockquote>
+<p>0.80 &gt; 0.60</p>
+</blockquote>
+<hr>
+<h1 id="15-interaction-terms-and-fornell-larcker"><strong>15. Interaction Terms and Fornell–Larcker</strong></h1>
+<p>The quiz emphasized an important complication.</p>
+<p>A PLS-SEM model may include an interaction/product term such as:</p>
+<blockquote>
+<p><strong>X × Z</strong></p>
+</blockquote>
+<p>This is introduced specifically to test moderation.</p>
+<p>It may appear as an additional row and column in a discriminant-validity matrix.</p>
+<p>The researcher should <strong>not automatically treat this interaction artifact as an ordinary substantive latent construct when applying the standard Fornell–Larcker comparison.</strong></p>
+<p>Therefore, when assessing the main constructs:</p>
+<blockquote>
+<p>Compare each main construct&rsquo;s diagonal value with correlations among the <strong>original substantive constructs</strong>.</p>
+</blockquote>
+<p>The moderation product-term row/column should not create a false Fornell–Larcker “violation.”</p>
+<hr>
+<h1 id="16-why-interaction-terms-cause-confusion"><strong>16. Why Interaction Terms Cause Confusion</strong></h1>
+<p>Suppose:</p>
+<blockquote>
+<p>X \= Job Satisfaction</p>
+<p>Z \= Leadership Style</p>
+</blockquote>
+<p>and:</p>
+<blockquote>
+<p>X × Z \= interaction term</p>
+</blockquote>
+<p>The interaction term is not simply another theoretical construct like X or Z.</p>
+<p>It is introduced to test:</p>
+<blockquote>
+<p><strong>Whether the effect of X changes depending on Z.</strong></p>
+</blockquote>
+<p>Therefore, treating the interaction term identically to the original constructs in every discriminant-validity diagnostic can create misleading conclusions.</p>
+<hr>
+<h1 id="17-important-distinction-discriminant-validity-vs-multicollinearity"><strong>17. Important Distinction: Discriminant Validity vs Multicollinearity</strong></h1>
+<p>These concepts are related but not identical.</p>
+<h3 id="discriminant-validity"><strong>Discriminant validity</strong></h3>
+<p>Asks:</p>
+<blockquote>
+<p>Are different constructs empirically distinct?</p>
+</blockquote>
+<p>Tools include:</p>
+<ul>
+<li>Fornell–Larcker  </li>
+<li>Cross-loadings  </li>
+<li>HTMT in modern practice</li>
+</ul>
+<h3 id="multicollinearity"><strong>Multicollinearity</strong></h3>
+<p>Asks:</p>
+<blockquote>
+<p>Are predictors too highly correlated for their individual effects to be estimated precisely?</p>
+</blockquote>
+<p>Tools include:</p>
+<ul>
+<li>VIF  </li>
+<li>AVIF</li>
+</ul>
+<h3 id="memory-aid-2"><strong>Memory aid</strong></h3>
+<blockquote>
+<p><strong>Discriminant validity \= Are constructs distinct?</strong></p>
+<p><strong>Multicollinearity \= Are predictors too redundant?</strong></p>
+</blockquote>
+<hr>
+<h1 id="18-variance-inflation-factor-vif"><strong>18. Variance Inflation Factor (VIF)</strong></h1>
+<p>VIF measures the degree to which a predictor&rsquo;s variance is inflated because of its relationship with other predictors.</p>
+<p>A common rule-of-thumb threshold in the quiz context is:</p>
+<blockquote>
+<p><strong>VIF \&lt; 3.3</strong></p>
+</blockquote>
+<p>Lower values generally indicate less concern.</p>
+<p>The quiz example gave:</p>
+<blockquote>
+<p>VIF ≈ 1.2–1.4</p>
+</blockquote>
+<p>These are comfortably below 3.3 and therefore indicate low multicollinearity.</p>
+<hr>
+<h1 id="19-average-block-vif-avif"><strong>19. Average Block VIF (AVIF)</strong></h1>
+<p>The quiz specifically asked about:</p>
+<blockquote>
+<p><strong>Average Block VIF (AVIF)</strong></p>
+</blockquote>
+<p>AVIF is used as an overall indicator of multicollinearity in the model&rsquo;s blocks/predictor structure.</p>
+<p>The quiz&rsquo;s preferred guideline was:</p>
+<blockquote>
+<p><strong>AVIF ≤ 3.3</strong></p>
+</blockquote>
+<p>Another broader threshold sometimes encountered is 5.0, but the quiz specifically emphasized the stricter <strong>3.3</strong> guideline as the ideal cutoff.</p>
+<p>Thus, when the question asks for the <strong>ideal</strong> cutoff in this context:</p>
+<blockquote>
+<p><strong>AVIF ≤ 3.3</strong></p>
+</blockquote>
+<hr>
+<h1 id="20-ave-vs-avif"><strong>20. AVE vs AVIF</strong></h1>
+<p>These are easy to confuse because their names are similar.</p>
+<h3 id="ave"><strong>AVE</strong></h3>
+<blockquote>
+<p><strong>Average Variance Extracted</strong></p>
+</blockquote>
+<p>Used primarily for:</p>
+<blockquote>
+<p><strong>Convergent validity</strong></p>
+</blockquote>
+<p>Typical guideline:</p>
+<blockquote>
+<p><strong>&gt; 0.50</strong></p>
+</blockquote>
+<h3 id="avif"><strong>AVIF</strong></h3>
+<blockquote>
+<p><strong>Average Block Variance Inflation Factor</strong></p>
+</blockquote>
+<p>Used for:</p>
+<blockquote>
+<p><strong>Multicollinearity</strong></p>
+</blockquote>
+<p>Quiz guideline:</p>
+<blockquote>
+<p><strong>≤ 3.3 ideally</strong></p>
+</blockquote>
+<h3 id="memory-aid-3"><strong>Memory aid</strong></h3>
+<blockquote>
+<p><strong>AVE → measurement</strong></p>
+<p><strong>AVIF → multicollinearity</strong></p>
+</blockquote>
+<hr>
+<h1 id="21-overall-model-fit"><strong>21. Overall Model Fit</strong></h1>
+<p>The quiz mentioned an overall fit index around:</p>
+<blockquote>
+<p><strong>0.50</strong></p>
+</blockquote>
+<p>and described it as above the “large” cutoff.</p>
+<p>In the PLS-SEM/WarpPLS context of the quiz, this refers to the <strong>Tenenhaus Goodness of Fit (GoF)</strong> measure.</p>
+<p>A commonly cited rule-of-thumb is:</p>
+<ul>
+<li>0.10 \= small  </li>
+<li>0.25 \= medium  </li>
+<li>0.36 \= large</li>
+</ul>
+<p>Thus:</p>
+<blockquote>
+<p><strong>GoF &gt; 0.36</strong></p>
+</blockquote>
+<p>is commonly described as a large effect/good fit under this traditional guideline.</p>
+<hr>
+<h1 id="22-important-caution-about-gof"><strong>22. Important Caution About GoF</strong></h1>
+<p>GoF should not be treated as the only evidence that a PLS-SEM model is good.</p>
+<p>A strong overall fit value does not eliminate the need to examine:</p>
+<ul>
+<li>Measurement reliability  </li>
+<li>Convergent validity  </li>
+<li>Discriminant validity  </li>
+<li>Collinearity  </li>
+<li>Structural paths  </li>
+<li>Predictive relevance  </li>
+<li>Effect sizes  </li>
+<li>Model assumptions</li>
+</ul>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Good overall fit ≠ automatically valid constructs and relationships.</strong></p>
+</blockquote>
+<p>This explains why the quiz&rsquo;s first question still required measurement-quality assessment before interpreting paths.</p>
+<hr>
+<h1 id="23-sympson-s-paradox"><strong>23. Sympson&rsquo;s Paradox</strong></h1>
+<p>Sympson&rsquo;s Paradox occurs when the direction of an observed relationship changes after the data are divided into subgroups.</p>
+<p>For example:</p>
+<h3 id="pooled-data"><strong>Pooled data</strong></h3>
+<blockquote>
+<p>X → Y \= positive</p>
+</blockquote>
+<p>But after splitting by gender:</p>
+<blockquote>
+<p>Male: X → Y \= negative</p>
+<p>Female: X → Y \= negative</p>
+</blockquote>
+<p>The pooled positive relationship conflicts with the subgroup relationships.</p>
+<p>This is a <strong>sign reversal caused by aggregation/pooling</strong>.</p>
+<hr>
+<h1 id="24-why-sympson-s-paradox-matters"><strong>24. Why Sympson&rsquo;s Paradox Matters</strong></h1>
+<p>A pooled relationship can be misleading when a control/grouping variable changes the relationship across subgroups.</p>
+<p>Therefore, researchers should sometimes examine:</p>
+<ul>
+<li>Overall relationship  </li>
+<li>Subgroup relationships  </li>
+<li>Potential confounding/grouping effects</li>
+</ul>
+<p>This is especially relevant when adding control variables.</p>
+<hr>
+<h1 id="25-sympson-s-paradox-ratio-spr"><strong>25. Sympson&rsquo;s Paradox Ratio (SPR)</strong></h1>
+<p>The quiz identifies:</p>
+<blockquote>
+<p><strong>Sympson&rsquo;s Paradox Ratio (SPR)</strong></p>
+</blockquote>
+<p>as the relevant diagnostic for this type of sign reversal.</p>
+<p>The commonly recommended threshold used in the quiz is:</p>
+<blockquote>
+<p><strong>SPR ≥ 0.70</strong></p>
+</blockquote>
+<p>Thus:</p>
+<blockquote>
+<p><strong>SPR ≥ 0.70 → evidence that the pooled relationship is not substantially distorted by a Simpson&rsquo;s paradox reversal.</strong></p>
+</blockquote>
+<hr>
+<h1 id="26-spr-vs-gof"><strong>26. SPR vs GoF</strong></h1>
+<p>These metrics answer completely different questions.</p>
+<h3 id="spr"><strong>SPR</strong></h3>
+<blockquote>
+<p>Is the pooled relationship potentially being distorted/reversed across subgroups?</p>
+</blockquote>
+<h3 id="gof"><strong>GoF</strong></h3>
+<blockquote>
+<p>How well does the overall model perform under the relevant fit framework?</p>
+</blockquote>
+<p>Therefore, a high GoF does <strong>not</strong> establish the absence of Simpson&rsquo;s paradox.</p>
+<hr>
+<h1 id="27-spr-vs-vif"><strong>27. SPR vs VIF</strong></h1>
+<p>Again, these address different problems.</p>
+<h3 id="vif"><strong>VIF</strong></h3>
+<blockquote>
+<p>Multicollinearity among predictors.</p>
+</blockquote>
+<h3 id="spr-2"><strong>SPR</strong></h3>
+<blockquote>
+<p>Sign/direction reversal caused by pooling across groups.</p>
+</blockquote>
+<p>A low VIF does not prove that a pooled relationship is free of Simpson&rsquo;s paradox.</p>
+<hr>
+<h1 id="28-multi-group-analysis"><strong>28. Multi-Group Analysis</strong></h1>
+<p>The quiz considered a male-vs-female comparison.</p>
+<p>This is an example of:</p>
+<blockquote>
+<p><strong>Multi-Group Analysis (MGA)</strong></p>
+</blockquote>
+<p>The objective is to determine whether relationships in the structural model differ across groups.</p>
+<p>For example:</p>
+<blockquote>
+<p>Does X → Y have the same strength for males and females?</p>
+</blockquote>
+<hr>
+<h1 id="29-categorical-group-variables"><strong>29. Categorical Group Variables</strong></h1>
+<p>Suppose gender is coded:</p>
+<blockquote>
+<p><strong>1 \= Male</strong></p>
+<p><strong>2 \= Female</strong></p>
+</blockquote>
+<p>The group variable is being used to identify membership.</p>
+<p>When standardizing other variables:</p>
+<blockquote>
+<p><strong>Do not standardize the group-membership variable.</strong></p>
+</blockquote>
+<p>Keep:</p>
+<blockquote>
+<p><strong>1 and 2</strong></p>
+</blockquote>
+<p>as their original category codes.</p>
+<p>Standardizing the gender variable would transform the codes into continuous numerical values and could interfere with the intended grouping mechanism.</p>
+<hr>
+<h1 id="30-why-group-codes-should-remain-unchanged"><strong>30. Why Group Codes Should Remain Unchanged</strong></h1>
+<p>A categorical variable is fundamentally different from a continuous measurement.</p>
+<p>For example:</p>
+<blockquote>
+<p>Gender \= 1 or 2</p>
+</blockquote>
+<p>The numerical values are <strong>labels</strong>, not measurements on a meaningful continuous scale.</p>
+<p>Therefore:</p>
+<blockquote>
+<p>2 is not “twice” 1 in the substantive sense.</p>
+</blockquote>
+<p>Standardization is appropriate for many continuous analytical variables but is not required for a categorical grouping code.</p>
+<hr>
+<h1 id="31-control-variables"><strong>31. Control Variables</strong></h1>
+<p>Control variables are included to account for additional factors that may influence the dependent variable.</p>
+<p>Examples might include:</p>
+<ul>
+<li>Age  </li>
+<li>Gender  </li>
+<li>Experience  </li>
+<li>Firm size  </li>
+<li>Education</li>
+</ul>
+<p>The purpose is to estimate the focal relationships while accounting for relevant additional influences.</p>
+<hr>
+<h1 id="32-adding-controls-creates-a-new-diagnostic-concern"><strong>32. Adding Controls Creates a New Diagnostic Concern</strong></h1>
+<p>Adding controls can introduce:</p>
+<ul>
+<li>More predictors  </li>
+<li>Greater model complexity  </li>
+<li>Potential multicollinearity  </li>
+<li>Possible suppression effects  </li>
+<li>Potential changes in path coefficients  </li>
+<li>Potential sign reversals</li>
+</ul>
+<p>Therefore, controls should not be added mechanically.</p>
+<p>Researchers should have a theoretical reason for including them.</p>
+<hr>
+<h1 id="33-measurement-quality-before-structural-interpretation"><strong>33. Measurement Quality Before Structural Interpretation</strong></h1>
+<p>After adding controls, a good analytical sequence is:</p>
+<h3 id="step-1"><strong>Step 1</strong></h3>
+<p>Check:</p>
+<blockquote>
+<p><strong>Collinearity</strong></p>
+</blockquote>
+<h3 id="step-2"><strong>Step 2</strong></h3>
+<p>Evaluate:</p>
+<blockquote>
+<p><strong>Measurement quality</strong></p>
+</blockquote>
+<p>including:</p>
+<ul>
+<li>Reliability  </li>
+<li>Convergent validity  </li>
+<li>Discriminant validity</li>
+</ul>
+<h3 id="step-3"><strong>Step 3</strong></h3>
+<p>Evaluate:</p>
+<blockquote>
+<p><strong>Structural relationships</strong></p>
+</blockquote>
+<p>including:</p>
+<ul>
+<li>Path coefficients  </li>
+<li>Significance  </li>
+<li>Effect sizes  </li>
+<li>R²  </li>
+<li>Predictive measures  </li>
+<li>Moderation effects</li>
+</ul>
+<h3 id="step-4"><strong>Step 4</strong></h3>
+<p>Consider:</p>
+<blockquote>
+<p><strong>Robustness and subgroup effects</strong></p>
+</blockquote>
+<p>including possible Simpson&rsquo;s paradox.</p>
+<hr>
+<h1 id="34-inner-model-algorithm"><strong>34. Inner Model Algorithm</strong></h1>
+<p>The quiz asked which setting determines whether paths are estimated using:</p>
+<ul>
+<li>Linear relationships  </li>
+<li>Nonlinear “Warp” relationships</li>
+</ul>
+<p>The correct setting is:</p>
+<blockquote>
+<p><strong>Inner model algorithm</strong></p>
+</blockquote>
+<p>Why?</p>
+<p>Because the <strong>inner model</strong> represents:</p>
+<blockquote>
+<p><strong>Construct → Construct relationships</strong></p>
+</blockquote>
+<p>Therefore, changing the inner model algorithm changes how structural paths are estimated.</p>
+<hr>
+<h1 id="35-outer-model-algorithm"><strong>35. Outer Model Algorithm</strong></h1>
+<p>The outer model concerns:</p>
+<blockquote>
+<p><strong>Indicator → Construct relationships</strong></p>
+</blockquote>
+<p>It is associated with measurement-model estimation.</p>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Outer model \= measurement</strong></p>
+<p><strong>Inner model \= structural relationships</strong></p>
+</blockquote>
+<p>This distinction is essential.</p>
+<hr>
+<h1 id="36-linear-vs-nonlinear-relationships"><strong>36. Linear vs Nonlinear Relationships</strong></h1>
+<p>A standard linear structural relationship assumes:</p>
+<blockquote>
+<p>A constant marginal relationship between constructs.</p>
+</blockquote>
+<p>A nonlinear/Warp approach allows more complex forms of relationships.</p>
+<p>For example, the effect of X on Y might:</p>
+<ul>
+<li>Increase initially  </li>
+<li>Plateau  </li>
+<li>Accelerate  </li>
+<li>Decline after a threshold</li>
+</ul>
+<p>The relevant setting is the:</p>
+<blockquote>
+<p><strong>Inner model algorithm</strong></p>
+</blockquote>
+<hr>
+<h1 id="37-resampling-methods-are-different"><strong>37. Resampling Methods Are Different</strong></h1>
+<p>Bootstrapping and jackknifing are <strong>resampling methods</strong>.</p>
+<p>They are used for purposes such as:</p>
+<ul>
+<li>Estimating sampling distributions  </li>
+<li>Testing path significance  </li>
+<li>Constructing confidence intervals</li>
+</ul>
+<p>They do <strong>not</strong> determine whether structural paths are modeled as linear or nonlinear.</p>
+<hr>
+<h1 id="38-canvas-link-editing-is-not-the-model-algorithm"><strong>38. Canvas Link Editing Is Not the Model Algorithm</strong></h1>
+<p>Changing or drawing a path on a diagram simply changes the model structure.</p>
+<p>It does not determine whether the mathematical relationship is:</p>
+<ul>
+<li>Linear  </li>
+<li>Nonlinear/Warp</li>
+</ul>
+<p>That is controlled by the relevant inner-model estimation setting.</p>
+<hr>
+<h1 id="39-key-metrics-and-what-they-mean"><strong>39. Key Metrics and What They Mean</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Primary purpose</th>
+<th>Quiz guideline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>VIF</strong></td>
+<td>Predictor multicollinearity</td>
+<td>\&lt; 3.3</td>
+</tr>
+<tr>
+<td><strong>AVIF</strong></td>
+<td>Overall/block multicollinearity</td>
+<td>≤ 3.3 ideally</td>
+</tr>
+<tr>
+<td><strong>AVE</strong></td>
+<td>Convergent validity</td>
+<td>&gt; 0.50</td>
+</tr>
+<tr>
+<td><strong>CR</strong></td>
+<td>Reliability</td>
+<td>≥ 0.70</td>
+</tr>
+<tr>
+<td><strong>GoF</strong></td>
+<td>Overall model fit in traditional PLS context</td>
+<td>&gt; 0.36 \= large</td>
+</tr>
+<tr>
+<td><strong>SPR</strong></td>
+<td>Simpson&rsquo;s paradox/sign reversal</td>
+<td>≥ 0.70</td>
+</tr>
+<tr>
+<td><strong>Q²</strong></td>
+<td>Predictive relevance</td>
+<td>Positive values generally indicate predictive relevance</td>
+</tr>
+<tr>
+<td><strong>R²</strong></td>
+<td>Explained variance in endogenous construct</td>
+<td>Context dependent</td>
+</tr>
+<tr>
+<td><strong>Path coefficient</strong></td>
+<td>Strength/direction of structural relationship</td>
+<td>Interpret with significance/context</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="40-common-misconceptions"><strong>40. Common Misconceptions</strong></h1>
+<h2 id="misconception-1-high-gof-means-the-model-is-automatically-valid"><strong>Misconception 1: High GoF means the model is automatically valid</strong></h2>
+<p>False.</p>
+<p>Measurement quality must still be evaluated.</p>
+<hr>
+<h2 id="misconception-2-a-significant-loading-means-an-indicator-is-automatically-good"><strong>Misconception 2: A significant loading means an indicator is automatically good</strong></h2>
+<p>False.</p>
+<p>An item can be statistically significant yet have problematic cross-loadings.</p>
+<hr>
+<h2 id="misconception-3-a-high-loading-automatically-establishes-discriminant-validity"><strong>Misconception 3: A high loading automatically establishes discriminant validity</strong></h2>
+<p>False.</p>
+<p>An indicator can load strongly on its intended construct while also loading strongly on another construct.</p>
+<hr>
+<h2 id="misconception-4-a-p-value-below-0-05-means-an-item-should-always-be-retained"><strong>Misconception 4: A p-value below 0.05 means an item should always be retained</strong></h2>
+<p>False.</p>
+<p>Statistical significance does not determine measurement validity.</p>
+<hr>
+<h2 id="misconception-5-ave-is-a-multicollinearity-diagnostic"><strong>Misconception 5: AVE is a multicollinearity diagnostic</strong></h2>
+<p>False.</p>
+<p>AVE primarily addresses <strong>convergent validity</strong>.</p>
+<p>Use VIF/AVIF for multicollinearity.</p>
+<hr>
+<h2 id="misconception-6-vif-establishes-discriminant-validity"><strong>Misconception 6: VIF establishes discriminant validity</strong></h2>
+<p>Not directly.</p>
+<p>VIF measures predictor redundancy/multicollinearity.</p>
+<p>Fornell–Larcker and related approaches address discriminant validity.</p>
+<hr>
+<h2 id="misconception-7-every-row-in-a-fornell-larcker-matrix-must-be-treated-identically"><strong>Misconception 7: Every row in a Fornell–Larcker matrix must be treated identically</strong></h2>
+<p>Not necessarily.</p>
+<p>Moderation product terms are analytical artifacts introduced to model interactions and should not automatically be interpreted as ordinary substantive constructs in the standard Fornell–Larcker comparison.</p>
+<hr>
+<h2 id="misconception-8-standardizing-a-categorical-group-code-improves-the-analysis"><strong>Misconception 8: Standardizing a categorical group code improves the analysis</strong></h2>
+<p>False.</p>
+<p>If gender is coded 1 and 2 for group identification, preserve those codes when they are needed for group splitting.</p>
+<hr>
+<h2 id="misconception-9-low-vif-means-there-is-no-simpson-s-paradox"><strong>Misconception 9: Low VIF means there is no Simpson&rsquo;s paradox</strong></h2>
+<p>False.</p>
+<p>VIF and SPR address different phenomena.</p>
+<hr>
+<h2 id="misconception-10-gof-can-detect-simpson-s-paradox"><strong>Misconception 10: GoF can detect Simpson&rsquo;s paradox</strong></h2>
+<p>False.</p>
+<p>The quiz associates:</p>
+<blockquote>
+<p><strong>SPR → Simpson&rsquo;s paradox</strong></p>
+</blockquote>
+<hr>
+<h2 id="misconception-11-dynamic-warpped-relationships-are-controlled-by-the-outer-model"><strong>Misconception 11: Dynamic/Warpped relationships are controlled by the outer model</strong></h2>
+<p>False.</p>
+<p>The relevant setting is:</p>
+<blockquote>
+<p><strong>Inner model algorithm</strong></p>
+</blockquote>
+<p>because the issue concerns construct-to-construct paths.</p>
+<hr>
+<h1 id="41-practical-pls-sem-workflow"><strong>41. Practical PLS-SEM Workflow</strong></h1>
+<p>A useful overall workflow is:</p>
+<h3 id="phase-1-model-specification"><strong>Phase 1 — Model specification</strong></h3>
+<p>Define:</p>
+<ul>
+<li>Constructs  </li>
+<li>Indicators  </li>
+<li>Hypothesized relationships  </li>
+<li>Control variables  </li>
+<li>Moderators  </li>
+<li>Interaction terms</li>
+</ul>
+<p>↓</p>
+<h3 id="phase-2-data-preparation"><strong>Phase 2 — Data preparation</strong></h3>
+<p>Check:</p>
+<ul>
+<li>Missing values  </li>
+<li>Coding  </li>
+<li>Group variables  </li>
+<li>Outliers  </li>
+<li>Variable types</li>
+</ul>
+<p>↓</p>
+<h3 id="phase-3-collinearity"><strong>Phase 3 — Collinearity</strong></h3>
+<p>Check:</p>
+<ul>
+<li>VIF  </li>
+<li>AVIF</li>
+</ul>
+<p>↓</p>
+<h3 id="phase-4-measurement-model"><strong>Phase 4 — Measurement model</strong></h3>
+<p>Assess:</p>
+<ul>
+<li>Indicator loadings  </li>
+<li>Reliability  </li>
+<li>CR  </li>
+<li>AVE  </li>
+<li>Convergent validity  </li>
+<li>Discriminant validity  </li>
+<li>Cross-loadings</li>
+</ul>
+<p>↓</p>
+<h3 id="phase-5-structural-model"><strong>Phase 5 — Structural model</strong></h3>
+<p>Assess:</p>
+<ul>
+<li>Path coefficients  </li>
+<li>Significance  </li>
+<li>R²  </li>
+<li>Effect sizes  </li>
+<li>Predictive relevance  </li>
+<li>Structural diagnostics</li>
+</ul>
+<p>↓</p>
+<h3 id="phase-6-moderation-mga"><strong>Phase 6 — Moderation/MGA</strong></h3>
+<p>Assess:</p>
+<ul>
+<li>Interaction terms  </li>
+<li>Group differences  </li>
+<li>Relevant subgroup relationships  </li>
+<li>SPR where appropriate</li>
+</ul>
+<p>↓</p>
+<h3 id="phase-7-interpretation"><strong>Phase 7 — Interpretation</strong></h3>
+<p>Integrate:</p>
+<ul>
+<li>Statistical evidence  </li>
+<li>Theoretical expectations  </li>
+<li>Practical significance  </li>
+<li>Managerial implications</li>
+</ul>
+<hr>
+<h1 id="42-a-compact-decision-tree"><strong>42. A Compact Decision Tree</strong></h1>
+<h3 id="are-the-constructs-measured-adequately"><strong>Are the constructs measured adequately?</strong></h3>
+<p>If <strong>no</strong>:</p>
+<blockquote>
+<p>Fix measurement model first.</p>
+</blockquote>
+<p>If <strong>yes</strong>:</p>
+<blockquote>
+<p>Continue.</p>
+</blockquote>
+<h3 id="is-there-problematic-multicollinearity"><strong>Is there problematic multicollinearity?</strong></h3>
+<p>Check:</p>
+<blockquote>
+<p>VIF / AVIF</p>
+</blockquote>
+<p>If problematic:</p>
+<blockquote>
+<p>Reconsider predictors/specification.</p>
+</blockquote>
+<h3 id="is-convergent-validity-adequate"><strong>Is convergent validity adequate?</strong></h3>
+<p>Check:</p>
+<blockquote>
+<p>AVE + loadings.</p>
+</blockquote>
+<h3 id="is-discriminant-validity-adequate"><strong>Is discriminant validity adequate?</strong></h3>
+<p>Check:</p>
+<blockquote>
+<p>Fornell–Larcker/cross-loadings and preferably modern complementary methods such as HTMT where appropriate.</p>
+</blockquote>
+<h3 id="are-structural-relationships-meaningful"><strong>Are structural relationships meaningful?</strong></h3>
+<p>Evaluate:</p>
+<blockquote>
+<p>Paths + significance + effect sizes + R²/predictive relevance.</p>
+</blockquote>
+<h3 id="could-aggregation-hide-subgroup-reversals"><strong>Could aggregation hide subgroup reversals?</strong></h3>
+<p>Check:</p>
+<blockquote>
+<p><strong>SPR / subgroup analysis</strong></p>
+</blockquote>
+<h3 id="is-there-moderation"><strong>Is there moderation?</strong></h3>
+<p>Include:</p>
+<blockquote>
+<p><strong>Interaction term</strong></p>
+</blockquote>
+<p>and interpret it appropriately rather than treating it as an ordinary substantive construct.</p>
+<hr>
+<h1 id="43-high-value-comparison-table"><strong>43. High-Value Comparison Table</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pair</th>
+<th>Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Measurement vs structural model</td>
+<td>Indicators→constructs vs constructs→constructs</td>
+</tr>
+<tr>
+<td>Outer vs inner model</td>
+<td>Measurement vs structural</td>
+</tr>
+<tr>
+<td>AVE vs AVIF</td>
+<td>Convergent validity vs multicollinearity</td>
+</tr>
+<tr>
+<td>CR vs AVE</td>
+<td>Reliability vs convergent validity</td>
+</tr>
+<tr>
+<td>VIF vs SPR</td>
+<td>Collinearity vs pooling/sign reversal</td>
+</tr>
+<tr>
+<td>GoF vs SPR</td>
+<td>Overall fit vs Simpson&rsquo;s paradox</td>
+</tr>
+<tr>
+<td>Main construct vs interaction term</td>
+<td>Substantive latent variable vs moderation artifact</td>
+</tr>
+<tr>
+<td>Linear vs Warp</td>
+<td>Linear structural paths vs nonlinear structural paths</td>
+</tr>
+<tr>
+<td>Continuous variable vs group code</td>
+<td>Measured quantity vs categorical membership label</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="44-final-revision-summary"><strong>44. Final Revision Summary</strong></h1>
+<p>The most important points from this quiz are:</p>
+<h3 id="measurement-before-structural-interpretation"><strong>Measurement before structural interpretation</strong></h3>
+<blockquote>
+<p><strong>Assess reliability and validity before interpreting paths.</strong></p>
+</blockquote>
+<h3 id="multicollinearity-2"><strong>Multicollinearity</strong></h3>
+<blockquote>
+<p><strong>VIF/AVIF</strong></p>
+</blockquote>
+<p>Quiz guideline:</p>
+<blockquote>
+<p><strong>VIF \&lt; 3.3</strong></p>
+<p><strong>AVIF ≤ 3.3 ideally</strong></p>
+</blockquote>
+<h3 id="convergent-validity"><strong>Convergent validity</strong></h3>
+<blockquote>
+<p><strong>AVE &gt; 0.50</strong></p>
+</blockquote>
+<h3 id="reliability"><strong>Reliability</strong></h3>
+<blockquote>
+<p><strong>CR ≥ 0.70</strong></p>
+</blockquote>
+<h3 id="discriminant-validity-2"><strong>Discriminant validity</strong></h3>
+<blockquote>
+<p>Use the <strong>Fornell–Larcker criterion</strong> by comparing each main construct&rsquo;s √AVE with correlations among the substantive constructs.</p>
+</blockquote>
+<h3 id="interaction-terms"><strong>Interaction terms</strong></h3>
+<blockquote>
+<p>Do not automatically treat a moderation product term as an ordinary substantive construct in the Fornell–Larcker comparison.</p>
+</blockquote>
+<h3 id="cross-loadings"><strong>Cross-loadings</strong></h3>
+<blockquote>
+<p>A high loading on another construct can indicate poor discriminant validity; review the item rather than relying solely on p-values.</p>
+</blockquote>
+<h3 id="multi-group-analysis"><strong>Multi-group analysis</strong></h3>
+<blockquote>
+<p>Preserve categorical group codes such as <strong>1 and 2</strong> when they are used to identify groups; standardize the other analytical variables as appropriate.</p>
+</blockquote>
+<h3 id="simpson-s-paradox"><strong>Simpson&rsquo;s paradox</strong></h3>
+<blockquote>
+<p>Pooled relationship changes direction after splitting into groups.</p>
+</blockquote>
+<p>Diagnostic:</p>
+<blockquote>
+<p><strong>SPR ≥ 0.70</strong> is the quiz&rsquo;s recommended threshold.</p>
+</blockquote>
+<h3 id="structural-path-algorithm"><strong>Structural path algorithm</strong></h3>
+<blockquote>
+<p><strong>Inner model algorithm</strong> controls linear vs nonlinear/Warp structural relationships.</p>
+</blockquote>
+<h3 id="overall-fit"><strong>Overall fit</strong></h3>
+<blockquote>
+<p>Traditional PLS-SEM/WarpPLS GoF guideline: <strong>&gt; 0.36 \= large</strong>.</p>
+</blockquote>
+<hr>
+<h1 id="45-core-mental-model"><strong>45. Core Mental Model</strong></h1>
+<p>The entire quiz can be remembered as:</p>
+<blockquote>
+<p><strong>Specify the model</strong></p>
+<p>↓</p>
+<p><strong>Check collinearity</strong></p>
+<p>↓</p>
+<p><strong>Validate measurement</strong></p>
+<p>↓</p>
+<p><strong>Validate discriminant/convergent properties</strong></p>
+<p>↓</p>
+<p><strong>Interpret structural paths</strong></p>
+<p>↓</p>
+<p><strong>Check moderation and subgroup behavior</strong></p>
+<p>↓</p>
+<p><strong>Rule out pooling artifacts such as Simpson&rsquo;s paradox</strong></p>
+<p>↓</p>
+<p><strong>Draw substantive conclusions</strong></p>
+</blockquote>
+<p>The central lesson is:</p>
+<blockquote>
+<p><strong>A statistically impressive structural model is meaningful only when the underlying constructs have first been shown to be measured reliably and validly.</strong></p>
+</blockquote>
+<h2 id="case-study"><strong>Case Study</strong></h2>
+<p>GreenTech Innovations has launched a pilot to measure how employee training influences productivity. The data science team, led by Dr. Lee, sets up a structural equation model with constructs for Training Intensity and Productivity, each measured by relevant indicators. Using the &ldquo;Edit direct link&rdquo; feature, they assign indicators—hours of instruction, test scores, output per hour—to their respective constructs. For the measurement model, they select PLS Regression as the outer model algorithm to relate each construct to its indicators, and choose Warp2 Basic (non-linear) for the inner model algorithm to capture potential non-linear effects between constructs.Human Resources analyst Alex proposes including Work Experience as a control variable to isolate training effects. Dr. Lee configures the tool&rsquo;s resampling method to Stable1 (100 resamples) to address the small sample size and ensure stable parameter estimates. Project Manager Maria considers adding a moderating link from Job Motivation to the Training–Productivity path but worries this may overcomplicate the model. The team reviews metric definitions: Productivity in units produced, quality scores, and time utilization rate.Decision Point: Should the team include Work Experience and Job Motivation in the inner model? Which analysis settings best balance complexity and reliability? Option A: Retain only Work Experience as a control variable, use PLS Regression, Warp2 Basic, and Stable1. Option B: Add Job Motivation as a moderating link, switch inner model algorithm to a linear method, and use Bootstrapping. Analyze trade-offs in model stability, interpretability, and resource constraints to recommend the optimal approach.</p>
+<h1 id="comprehensive-notes-greentech-innovations-pls-sem-model-specification-controls-moderation-and-resampling"><strong>Comprehensive Notes: GreenTech Innovations — PLS-SEM Model Specification, Controls, Moderation, and Resampling</strong></h1>
+<h2 id="1-case-overview"><strong>1. Case Overview</strong></h2>
+<p>GreenTech Innovations is conducting a pilot study to understand whether <strong>employee training influences productivity</strong>.</p>
+<p>The data science team, led by Dr. Lee, develops a <strong>Structural Equation Model (SEM)</strong> containing constructs for:</p>
+<ul>
+<li><strong>Training Intensity</strong>  </li>
+<li><strong>Productivity</strong></li>
+</ul>
+<p>The case also considers:</p>
+<ul>
+<li><strong>Work Experience</strong> as a control variable  </li>
+<li><strong>Job Motivation</strong> as a potential moderator  </li>
+<li><strong>PLS Regression</strong> as the outer model algorithm  </li>
+<li><strong>Warp2 Basic</strong> as the inner model algorithm  </li>
+<li><strong>Stable1 with 100 resamples</strong> as the resampling method</li>
+</ul>
+<p>The key decision is whether the additional complexity introduced by Job Motivation is justified, given the pilot&rsquo;s:</p>
+<ul>
+<li>Small sample size  </li>
+<li>Resource constraints  </li>
+<li>Need for stability  </li>
+<li>Need for interpretability</li>
+</ul>
+<p>The case ultimately contrasts:</p>
+<h3 id="option-a"><strong>Option A</strong></h3>
+<blockquote>
+<p>Retain Work Experience as a control variable, use PLS Regression, Warp2 Basic, and Stable1.</p>
+</blockquote>
+<h3 id="option-b"><strong>Option B</strong></h3>
+<blockquote>
+<p>Add Job Motivation as a moderator, switch to a linear inner model, and use Bootstrapping.</p>
+</blockquote>
+<p>The core methodological lesson is:</p>
+<blockquote>
+<p><strong>A good SEM specification should balance theoretical completeness with model stability, interpretability, sample limitations, and practical constraints.</strong></p>
+</blockquote>
+<hr>
+<h1 id="2-basic-conceptual-model"><strong>2. Basic Conceptual Model</strong></h1>
+<p>The central relationship is:</p>
+<blockquote>
+<p><strong>Training Intensity → Productivity</strong></p>
+</blockquote>
+<p>The research question is essentially:</p>
+<blockquote>
+<p>Does greater training intensity influence employee productivity?</p>
+</blockquote>
+<p>Training Intensity and Productivity are treated as <strong>latent constructs</strong> measured through indicators.</p>
+<p>The model can therefore be viewed as:</p>
+<p><strong>Indicators → Training Intensity → Productivity ← Indicators</strong></p>
+<p>The team then considers whether other variables should be incorporated into this basic relationship.</p>
+<hr>
+<h1 id="3-latent-constructs"><strong>3. Latent Constructs</strong></h1>
+<p>A <strong>latent construct</strong> is a theoretical concept that is not necessarily observed directly.</p>
+<p>Examples in this case include:</p>
+<h3 id="training-intensity"><strong>Training Intensity</strong></h3>
+<p>A conceptual measure of how much training employees receive.</p>
+<p>Possible indicators include:</p>
+<ul>
+<li>Hours of instruction  </li>
+<li>Training/test performance  </li>
+<li>Other training-related measures</li>
+</ul>
+<h3 id="productivity"><strong>Productivity</strong></h3>
+<p>A conceptual measure of employee productivity.</p>
+<p>Possible indicators include:</p>
+<ul>
+<li>Units produced  </li>
+<li>Quality scores  </li>
+<li>Time utilization rate</li>
+</ul>
+<p>The purpose of SEM is to model these underlying constructs using their observed indicators.</p>
+<hr>
+<h1 id="4-indicators"><strong>4. Indicators</strong></h1>
+<p>Indicators are observed variables used to measure a latent construct.</p>
+<p>For example:</p>
+<blockquote>
+<p><strong>Training Intensity</strong></p>
+<p>→ Hours of instruction<br>
+→ Test scores</p>
+</blockquote>
+<p>and:</p>
+<blockquote>
+<p><strong>Productivity</strong></p>
+<p>→ Units produced<br>
+→ Quality scores<br>
+→ Time utilization rate</p>
+</blockquote>
+<p>The indicators provide measurable evidence about the underlying constructs.</p>
+<hr>
+<h1 id="5-measurement-model-vs-structural-model"><strong>5. Measurement Model vs Structural Model</strong></h1>
+<p>This distinction is fundamental to understanding the case.</p>
+<h2 id="measurement-model-2"><strong>Measurement model</strong></h2>
+<p>The measurement model asks:</p>
+<blockquote>
+<p><strong>How do indicators represent their constructs?</strong></p>
+</blockquote>
+<p>Conceptually:</p>
+<blockquote>
+<p>Indicators → Latent Construct</p>
+</blockquote>
+<p>Examples:</p>
+<blockquote>
+<p>Hours of instruction → Training Intensity</p>
+<p>Units produced → Productivity</p>
+</blockquote>
+<hr>
+<h2 id="structural-model-2"><strong>Structural model</strong></h2>
+<p>The structural model asks:</p>
+<blockquote>
+<p><strong>How do the constructs relate to each other?</strong></p>
+</blockquote>
+<p>Conceptually:</p>
+<blockquote>
+<p>Training Intensity → Productivity</p>
+</blockquote>
+<p>This is the substantive relationship the researchers want to investigate.</p>
+<hr>
+<h1 id="6-outer-model"><strong>6. Outer Model</strong></h1>
+<p>The <strong>outer model</strong> represents the measurement relationship between:</p>
+<blockquote>
+<p><strong>Indicators and constructs</strong></p>
+</blockquote>
+<p>In this case, the team selects:</p>
+<blockquote>
+<p><strong>PLS Regression</strong></p>
+</blockquote>
+<p>as the outer model algorithm.</p>
+<p>The purpose is to estimate the relationship between the constructs and their indicators.</p>
+<h3 id="memory-aid-4"><strong>Memory aid</strong></h3>
+<blockquote>
+<p><strong>Outer \= measurement</strong></p>
+<p><strong>Inner \= structural</strong></p>
+</blockquote>
+<hr>
+<h1 id="7-inner-model"><strong>7. Inner Model</strong></h1>
+<p>The <strong>inner model</strong> represents relationships:</p>
+<blockquote>
+<p><strong>Construct → Construct</strong></p>
+</blockquote>
+<p>The central relationship is:</p>
+<blockquote>
+<p>Training Intensity → Productivity</p>
+</blockquote>
+<p>The team chooses:</p>
+<blockquote>
+<p><strong>Warp2 Basic</strong></p>
+</blockquote>
+<p>as the inner model algorithm.</p>
+<p>This is a <strong>non-linear</strong> approach.</p>
+<p>The rationale is that the effect of training on productivity may not necessarily be a straight-line relationship.</p>
+<hr>
+<h1 id="8-linear-vs-non-linear-relationships"><strong>8. Linear vs Non-Linear Relationships</strong></h1>
+<p>A linear relationship assumes that the effect of one construct on another is approximately constant across the relevant range.</p>
+<p>For example:</p>
+<blockquote>
+<p>Every additional increase in training intensity produces approximately the same incremental effect on productivity.</p>
+</blockquote>
+<p>A nonlinear relationship allows the effect to change.</p>
+<p>For example:</p>
+<blockquote>
+<p>Initial training produces large productivity gains, but additional training produces progressively smaller gains.</p>
+</blockquote>
+<p>This could represent a <strong>diminishing-return relationship</strong>.</p>
+<p>Alternatively, productivity could initially rise slowly and then accelerate after sufficient training.</p>
+<p>Therefore, a nonlinear model can be useful when theory suggests that:</p>
+<blockquote>
+<p><strong>The effect of training may change depending on the level of training.</strong></p>
+</blockquote>
+<hr>
+<h1 id="9-warp2-basic"><strong>9. Warp2 Basic</strong></h1>
+<p>The case specifies:</p>
+<blockquote>
+<p><strong>Warp2 Basic</strong></p>
+</blockquote>
+<p>as the inner model algorithm.</p>
+<p>Its role is to model potential nonlinear relationships between constructs.</p>
+<p>The key conceptual distinction is:</p>
+<blockquote>
+<p><strong>PLS Regression → outer/measurement model</strong></p>
+<p><strong>Warp2 Basic → inner/structural model</strong></p>
+</blockquote>
+<p>This is important because the two algorithms operate at different levels of the SEM.</p>
+<hr>
+<h1 id="10-edit-direct-link"><strong>10. Edit Direct Link</strong></h1>
+<p>The team uses the <strong>Edit direct link</strong> feature to assign indicators to constructs.</p>
+<p>This is essentially part of <strong>model specification</strong>.</p>
+<p>For example:</p>
+<blockquote>
+<p>Hours of instruction → Training Intensity</p>
+</blockquote>
+<p>and:</p>
+<blockquote>
+<p>Units produced → Productivity</p>
+</blockquote>
+<p>The direct-link operation establishes which observed variables belong to which constructs.</p>
+<p>It should not be confused with choosing the mathematical algorithm used to estimate the relationship.</p>
+<hr>
+<h1 id="11-work-experience-as-a-control-variable"><strong>11. Work Experience as a Control Variable</strong></h1>
+<p>Alex proposes:</p>
+<blockquote>
+<p><strong>Work Experience</strong></p>
+</blockquote>
+<p>as a control variable.</p>
+<p>This is theoretically sensible because employees with greater experience may already be more productive independent of training.</p>
+<p>For example:</p>
+<blockquote>
+<p>Work Experience → Productivity</p>
+</blockquote>
+<p>At the same time:</p>
+<blockquote>
+<p>Training Intensity → Productivity</p>
+</blockquote>
+<p>If experience is ignored, some of the observed productivity difference might incorrectly be attributed to training.</p>
+<hr>
+<h1 id="12-why-controls-are-useful"><strong>12. Why Controls Are Useful</strong></h1>
+<p>A control variable is included to account for an additional factor that may influence the dependent construct.</p>
+<p>The purpose is to make the focal relationship more informative.</p>
+<p>Without the control:</p>
+<blockquote>
+<p>Training → Productivity</p>
+</blockquote>
+<p>With the control:</p>
+<blockquote>
+<p>Training → Productivity</p>
+</blockquote>
+<p>while also accounting for:</p>
+<blockquote>
+<p>Work Experience → Productivity</p>
+</blockquote>
+<p>The goal is to better isolate the relationship between training and productivity.</p>
+<hr>
+<h1 id="13-control-variable-vs-moderator"><strong>13. Control Variable vs Moderator</strong></h1>
+<p>This is one of the most important distinctions in the case.</p>
+<h2 id="control-variable"><strong>Control variable</strong></h2>
+<p>A control variable accounts for another factor that may influence the outcome.</p>
+<p>Example:</p>
+<blockquote>
+<p>Work Experience → Productivity</p>
+</blockquote>
+<p>The focus remains on:</p>
+<blockquote>
+<p>Training → Productivity</p>
+</blockquote>
+<hr>
+<h2 id="moderator"><strong>Moderator</strong></h2>
+<p>A moderator changes the strength or direction of another relationship.</p>
+<p>If Job Motivation moderates the Training → Productivity relationship:</p>
+<blockquote>
+<p>The effect of Training on Productivity depends on Job Motivation.</p>
+</blockquote>
+<p>Conceptually:</p>
+<blockquote>
+<p><strong>Training × Job Motivation → Productivity</strong></p>
+</blockquote>
+<p>The interaction term represents the moderation effect.</p>
+<hr>
+<h1 id="14-job-motivation-as-a-moderator"><strong>14. Job Motivation as a Moderator</strong></h1>
+<p>Maria considers adding:</p>
+<blockquote>
+<p><strong>Job Motivation</strong></p>
+</blockquote>
+<p>as a moderator.</p>
+<p>The proposed relationship is:</p>
+<blockquote>
+<p>Training Intensity → Productivity</p>
+</blockquote>
+<p>with:</p>
+<blockquote>
+<p>Job Motivation</p>
+</blockquote>
+<p>changing the strength of that relationship.</p>
+<p>For example:</p>
+<h3 id="high-motivation"><strong>High motivation</strong></h3>
+<p>Training may produce a strong productivity improvement.</p>
+<h3 id="low-motivation"><strong>Low motivation</strong></h3>
+<p>The same amount of training may produce a smaller improvement.</p>
+<p>This is fundamentally different from simply controlling for motivation.</p>
+<hr>
+<h1 id="15-control-vs-moderation-comparison"><strong>15. Control vs Moderation — Comparison</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Control Variable</th>
+<th>Moderator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Purpose</td>
+<td>Account for another influence</td>
+<td>Change the strength/direction of a relationship</td>
+</tr>
+<tr>
+<td>Example</td>
+<td>Work Experience → Productivity</td>
+<td>Job Motivation changes Training → Productivity</td>
+</tr>
+<tr>
+<td>Interaction term required?</td>
+<td>Usually no</td>
+<td>Yes, for interaction-based moderation</td>
+</tr>
+<tr>
+<td>Main question</td>
+<td>“What else affects productivity?”</td>
+<td>“When/for whom is training more effective?”</td>
+</tr>
+<tr>
+<td>Model complexity</td>
+<td>Lower</td>
+<td>Higher</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="16-why-job-motivation-adds-complexity"><strong>16. Why Job Motivation Adds Complexity</strong></h1>
+<p>Adding a moderator requires:</p>
+<ul>
+<li>An additional construct  </li>
+<li>Additional indicators  </li>
+<li>An interaction term  </li>
+<li>Additional parameter estimation  </li>
+<li>More complex interpretation  </li>
+<li>Additional validity considerations</li>
+</ul>
+<p>The team therefore needs to ask:</p>
+<blockquote>
+<p>Does the expected analytical benefit justify the additional complexity?</p>
+</blockquote>
+<p>For a small pilot study, this question is particularly important.</p>
+<hr>
+<h1 id="17-small-sample-size"><strong>17. Small Sample Size</strong></h1>
+<p>The case explicitly states that the sample is small.</p>
+<p>Small samples create concerns about:</p>
+<ul>
+<li>Parameter stability  </li>
+<li>Sampling variability  </li>
+<li>Statistical power  </li>
+<li>Reliability of estimates  </li>
+<li>Model complexity</li>
+</ul>
+<p>Adding more constructs and interaction terms can make these problems worse.</p>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Model complexity should be appropriate to the available sample size.</strong></p>
+</blockquote>
+<hr>
+<h1 id="18-stable1-resampling"><strong>18. Stable1 Resampling</strong></h1>
+<p>Dr. Lee chooses:</p>
+<blockquote>
+<p><strong>Stable1 with 100 resamples</strong></p>
+</blockquote>
+<p>The purpose is to improve the stability of parameter estimation in the context described by the case.</p>
+<p>Resampling methods help assess the variability and stability of estimated parameters.</p>
+<p>The key idea is:</p>
+<blockquote>
+<p>Repeatedly resampling the available data provides information about how stable the estimates are across resamples.</p>
+</blockquote>
+<hr>
+<h1 id="19-resampling-is-not-the-same-as-the-inner-model"><strong>19. Resampling Is Not the Same as the Inner Model</strong></h1>
+<p>Another important distinction:</p>
+<h3 id="inner-model-algorithm"><strong>Inner model algorithm</strong></h3>
+<p>Determines how construct-to-construct relationships are modeled.</p>
+<p>Examples:</p>
+<blockquote>
+<p>Linear vs nonlinear/Warp</p>
+</blockquote>
+<h3 id="resampling-method"><strong>Resampling method</strong></h3>
+<p>Helps assess parameter stability and inferential behavior.</p>
+<p>Examples:</p>
+<blockquote>
+<p>Stable resampling / bootstrapping / jackknifing</p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Warp2 Basic does not perform the same role as Stable1.</strong></p>
+</blockquote>
+<hr>
+<h1 id="20-bootstrapping"><strong>20. Bootstrapping</strong></h1>
+<p>Bootstrapping is a widely used resampling approach.</p>
+<p>It repeatedly draws samples, typically with replacement, from the observed dataset to approximate the sampling distribution of estimated parameters.</p>
+<p>It can be used to evaluate:</p>
+<ul>
+<li>Standard errors  </li>
+<li>Confidence intervals  </li>
+<li>Statistical significance  </li>
+<li>Stability of path estimates</li>
+</ul>
+<p>However, the most appropriate resampling approach depends on:</p>
+<ul>
+<li>Sample size  </li>
+<li>Software implementation  </li>
+<li>Research objective  </li>
+<li>Model complexity</li>
+</ul>
+<hr>
+<h1 id="21-stable-resampling-vs-bootstrapping-in-this-case"><strong>21. Stable Resampling vs Bootstrapping in This Case</strong></h1>
+<p>The case intentionally presents a trade-off.</p>
+<h3 id="stable1"><strong>Stable1</strong></h3>
+<p>Advantages in the case:</p>
+<ul>
+<li>Designed around stability  </li>
+<li>Appropriate to the stated small-sample concern  </li>
+<li>Simpler within the proposed analytical setup  </li>
+<li>Aligns with the team&rsquo;s resource constraints</li>
+</ul>
+<h3 id="bootstrapping"><strong>Bootstrapping</strong></h3>
+<p>Advantages:</p>
+<ul>
+<li>Widely recognized  </li>
+<li>Useful for inferential assessment  </li>
+<li>Provides empirical sampling distributions  </li>
+<li>Useful for testing paths and interaction effects</li>
+</ul>
+<p>But introducing Bootstrapping does not automatically make Option B superior.</p>
+<p>The question is whether the <strong>additional moderation complexity</strong> is justified.</p>
+<hr>
+<h1 id="22-complexity-stability-trade-off"><strong>22. Complexity–Stability Trade-Off</strong></h1>
+<p>The case is fundamentally about balancing:</p>
+<blockquote>
+<p><strong>Model richness vs model stability</strong></p>
+</blockquote>
+<p>A more complex model can potentially explain more.</p>
+<p>But it also requires:</p>
+<ul>
+<li>More data  </li>
+<li>More parameters  </li>
+<li>More assumptions  </li>
+<li>More computation  </li>
+<li>More interpretation</li>
+</ul>
+<p>With a small pilot dataset, complexity can quickly become a liability.</p>
+<hr>
+<h1 id="23-option-a"><strong>23. Option A</strong></h1>
+<h3 id="option-a-2"><strong>Option A:</strong></h3>
+<blockquote>
+<p>Retain only Work Experience as a control variable, use PLS Regression, Warp2 Basic, and Stable1.</p>
+</blockquote>
+<p>This approach has several advantages.</p>
+<h3 id="1-retains-an-important-control"><strong>1. Retains an important control</strong></h3>
+<p>Work Experience has a clear theoretical justification.</p>
+<h3 id="2-preserves-nonlinear-modeling"><strong>2. Preserves nonlinear modeling</strong></h3>
+<p>Warp2 Basic allows the team to investigate potential nonlinear training effects.</p>
+<h3 id="3-limits-structural-complexity"><strong>3. Limits structural complexity</strong></h3>
+<p>It avoids adding an additional moderation construct and interaction term.</p>
+<h3 id="4-supports-stability"><strong>4. Supports stability</strong></h3>
+<p>Stable1 aligns with the stated small-sample concern.</p>
+<h3 id="5-easier-interpretation"><strong>5. Easier interpretation</strong></h3>
+<p>Management can understand:</p>
+<blockquote>
+<p>Training → Productivity</p>
+</blockquote>
+<p>while accounting for:</p>
+<blockquote>
+<p>Work Experience</p>
+</blockquote>
+<p>without needing to interpret an additional interaction.</p>
+<hr>
+<h1 id="24-option-b"><strong>24. Option B</strong></h1>
+<h3 id="option-b-2"><strong>Option B:</strong></h3>
+<blockquote>
+<p>Add Job Motivation as a moderator, switch the inner model to a linear method, and use Bootstrapping.</p>
+</blockquote>
+<p>This approach has potential benefits.</p>
+<h3 id="potential-benefit-1"><strong>Potential benefit 1</strong></h3>
+<p>It investigates an interesting strategic question:</p>
+<blockquote>
+<p>Does motivation change the effectiveness of training?</p>
+</blockquote>
+<h3 id="potential-benefit-2"><strong>Potential benefit 2</strong></h3>
+<p>Bootstrapping provides useful inferential information.</p>
+<h3 id="potential-problem-1"><strong>Potential problem 1</strong></h3>
+<p>The model becomes more complex.</p>
+<h3 id="potential-problem-2"><strong>Potential problem 2</strong></h3>
+<p>The case does not provide a strong theoretical reason for why the relationship should be linear.</p>
+<h3 id="potential-problem-3"><strong>Potential problem 3</strong></h3>
+<p>Adding moderation can be demanding for a small sample.</p>
+<h3 id="potential-problem-4"><strong>Potential problem 4</strong></h3>
+<p>It changes two things simultaneously:</p>
+<ul>
+<li>Adds moderation  </li>
+<li>Changes nonlinear inner model to linear</li>
+</ul>
+<p>This makes the analytical comparison less straightforward.</p>
+<hr>
+<h1 id="25-why-switching-to-a-linear-model-is-not-automatically-justified"><strong>25. Why Switching to a Linear Model Is Not Automatically Justified</strong></h1>
+<p>The fact that Job Motivation is added does not logically imply that the Training → Productivity relationship should become linear.</p>
+<p>These are separate modeling decisions.</p>
+<p>The researcher should ask:</p>
+<blockquote>
+<p>Does theory or empirical evidence suggest linearity?</p>
+</blockquote>
+<p>If the team originally selected Warp2 Basic because nonlinear training effects are plausible, removing the nonlinear specification merely to accommodate a moderator may discard useful information.</p>
+<hr>
+<h1 id="26-interpretability"><strong>26. Interpretability</strong></h1>
+<p>Option A is easier to communicate.</p>
+<p>Management can understand:</p>
+<blockquote>
+<p>Training affects productivity, while Work Experience is controlled.</p>
+</blockquote>
+<p>With moderation:</p>
+<blockquote>
+<p>The effect of training depends on Job Motivation.</p>
+</blockquote>
+<p>That is potentially more insightful, but also more complicated.</p>
+<p>The team must explain:</p>
+<ul>
+<li>Main effect of training  </li>
+<li>Main effect of motivation  </li>
+<li>Interaction effect  </li>
+<li>Meaning of the interaction at different motivation levels</li>
+</ul>
+<p>For a pilot with limited data, that complexity may not be justified.</p>
+<hr>
+<h1 id="27-strategic-value-of-moderation"><strong>27. Strategic Value of Moderation</strong></h1>
+<p>Despite its complexity, moderation can be strategically valuable.</p>
+<p>If Job Motivation strongly moderates training effectiveness, management could learn:</p>
+<blockquote>
+<p>Training should be accompanied by motivation-enhancing interventions.</p>
+</blockquote>
+<p>For example:</p>
+<blockquote>
+<p>High-motivation employees may benefit more from training.</p>
+</blockquote>
+<p>This could affect:</p>
+<ul>
+<li>Training design  </li>
+<li>Incentives  </li>
+<li>Employee engagement  </li>
+<li>Training targeting  </li>
+<li>HR interventions</li>
+</ul>
+<p>Therefore, moderation is not inherently bad.</p>
+<p>The question is whether the <strong>current study is sufficiently large and mature to support it reliably</strong>.</p>
+<hr>
+<h1 id="28-pilot-study-considerations"><strong>28. Pilot Study Considerations</strong></h1>
+<p>Because this is explicitly a <strong>pilot</strong>, a simpler model may be particularly appropriate.</p>
+<p>A pilot often aims to:</p>
+<ul>
+<li>Establish initial relationships  </li>
+<li>Test measurement instruments  </li>
+<li>Identify promising predictors  </li>
+<li>Understand feasibility  </li>
+<li>Generate hypotheses for future research</li>
+</ul>
+<p>The first study does not necessarily need to include every theoretically conceivable variable.</p>
+<hr>
+<h1 id="29-model-parsimony"><strong>29. Model Parsimony</strong></h1>
+<p><strong>Parsimony</strong> means avoiding unnecessary complexity.</p>
+<p>A parsimonious model:</p>
+<ul>
+<li>Contains theoretically important variables  </li>
+<li>Avoids unnecessary predictors  </li>
+<li>Is easier to interpret  </li>
+<li>Requires fewer parameters  </li>
+<li>Can be more stable with limited data</li>
+</ul>
+<p>This case strongly illustrates the principle:</p>
+<blockquote>
+<p><strong>Do not add complexity simply because the software allows it.</strong></p>
+</blockquote>
+<hr>
+<h1 id="30-resource-constraints"><strong>30. Resource Constraints</strong></h1>
+<p>The team must consider:</p>
+<ul>
+<li>Small sample  </li>
+<li>Limited computational resources  </li>
+<li>Need for reliable estimates  </li>
+<li>Management interpretability  </li>
+<li>Time available for analysis</li>
+</ul>
+<p>This means the optimal model is not necessarily the model with the maximum number of constructs.</p>
+<p>A useful principle is:</p>
+<blockquote>
+<p><strong>Complexity should be proportional to the evidence and resources available.</strong></p>
+</blockquote>
+<hr>
+<h1 id="31-productivity-construct"><strong>31. Productivity Construct</strong></h1>
+<p>The case identifies three productivity indicators:</p>
+<ol>
+<li><strong>Units produced</strong>  </li>
+<li><strong>Quality scores</strong>  </li>
+<li><strong>Time utilization rate</strong></li>
+</ol>
+<p>This illustrates that productivity is treated as a <strong>multidimensional construct</strong>.</p>
+<p>Productivity is not necessarily captured by a single number.</p>
+<p>For example:</p>
+<blockquote>
+<p>High production volume with poor quality is not necessarily high productivity.</p>
+</blockquote>
+<p>Similarly:</p>
+<blockquote>
+<p>High quality with extremely poor time utilization may not represent optimal productivity.</p>
+</blockquote>
+<p>Using multiple indicators allows the construct to capture different aspects of the concept.</p>
+<hr>
+<h1 id="32-potential-measurement-considerations"><strong>32. Potential Measurement Considerations</strong></h1>
+<p>Before interpreting:</p>
+<blockquote>
+<p>Training → Productivity</p>
+</blockquote>
+<p>the team should establish that the Productivity construct is measured adequately.</p>
+<p>Relevant questions include:</p>
+<ul>
+<li>Do the indicators load appropriately?  </li>
+<li>Is internal consistency adequate?  </li>
+<li>Is convergent validity supported?  </li>
+<li>Is discriminant validity supported?  </li>
+<li>Are there problematic cross-loadings?  </li>
+<li>Are the constructs distinct?</li>
+</ul>
+<p>The same applies to Training Intensity.</p>
+<hr>
+<h1 id="33-measurement-model-evaluation"><strong>33. Measurement Model Evaluation</strong></h1>
+<p>A sensible measurement-model evaluation includes:</p>
+<h3 id="indicator-loadings"><strong>Indicator loadings</strong></h3>
+<p>Assess whether indicators represent their intended constructs.</p>
+<h3 id="reliability-2"><strong>Reliability</strong></h3>
+<p>For example:</p>
+<blockquote>
+<p>Composite Reliability</p>
+</blockquote>
+<h3 id="convergent-validity-2"><strong>Convergent validity</strong></h3>
+<p>For example:</p>
+<blockquote>
+<p>AVE</p>
+</blockquote>
+<h3 id="discriminant-validity-3"><strong>Discriminant validity</strong></h3>
+<p>Possible approaches include:</p>
+<ul>
+<li>Fornell–Larcker  </li>
+<li>Cross-loadings  </li>
+<li>HTMT</li>
+</ul>
+<p>Only after measurement quality is acceptable should the structural relationships be interpreted confidently.</p>
+<hr>
+<h1 id="34-structural-model-evaluation"><strong>34. Structural Model Evaluation</strong></h1>
+<p>After measurement quality is established, assess:</p>
+<ul>
+<li>Path coefficients  </li>
+<li>Significance  </li>
+<li>Effect sizes  </li>
+<li>R²  </li>
+<li>Predictive relevance  </li>
+<li>Potential nonlinear relationships  </li>
+<li>Moderation, if included  </li>
+<li>Collinearity</li>
+</ul>
+<p>The central structural relationship is:</p>
+<blockquote>
+<p><strong>Training Intensity → Productivity</strong></p>
+</blockquote>
+<hr>
+<h1 id="35-if-job-motivation-is-added"><strong>35. If Job Motivation Is Added</strong></h1>
+<p>If the team eventually adds Job Motivation as a moderator, the structural model becomes conceptually:</p>
+<blockquote>
+<p>Training → Productivity</p>
+<p>Job Motivation → Productivity</p>
+<p>Training × Job Motivation → Productivity</p>
+</blockquote>
+<p>The interaction term:</p>
+<blockquote>
+<p><strong>Training × Job Motivation</strong></p>
+</blockquote>
+<p>tests whether the training effect changes as motivation changes.</p>
+<hr>
+<h1 id="36-interpreting-a-moderation-effect"><strong>36. Interpreting a Moderation Effect</strong></h1>
+<p>Suppose the interaction is positive and significant.</p>
+<p>This could mean:</p>
+<blockquote>
+<p>As Job Motivation increases, the positive effect of Training Intensity on Productivity becomes stronger.</p>
+</blockquote>
+<p>If the interaction is negative:</p>
+<blockquote>
+<p>As Job Motivation increases, the effect of Training Intensity becomes weaker.</p>
+</blockquote>
+<p>The interaction should not be interpreted simply as:</p>
+<blockquote>
+<p>“Motivation increases productivity.”</p>
+</blockquote>
+<p>That would confuse a moderation effect with a main effect.</p>
+<hr>
+<h1 id="37-main-effect-vs-interaction-effect"><strong>37. Main Effect vs Interaction Effect</strong></h1>
+<h3 id="main-effect"><strong>Main effect</strong></h3>
+<blockquote>
+<p>Job Motivation → Productivity</p>
+</blockquote>
+<p>asks:</p>
+<blockquote>
+<p>Does motivation itself relate to productivity?</p>
+</blockquote>
+<h3 id="interaction-effect"><strong>Interaction effect</strong></h3>
+<blockquote>
+<p>Training × Job Motivation → Productivity</p>
+</blockquote>
+<p>asks:</p>
+<blockquote>
+<p>Does motivation change the effect of training on productivity?</p>
+</blockquote>
+<p>These are different questions.</p>
+<hr>
+<h1 id="38-recommended-analytical-path"><strong>38. Recommended Analytical Path</strong></h1>
+<p>Given the information in the case, the most defensible approach is <strong>Option A</strong>.</p>
+<p>The reasoning is based on:</p>
+<h3 id="1-strong-theoretical-justification-for-work-experience"><strong>1. Strong theoretical justification for Work Experience</strong></h3>
+<p>Experience is a plausible confounder of the Training → Productivity relationship.</p>
+<h3 id="2-small-sample"><strong>2. Small sample</strong></h3>
+<p>Avoid unnecessary structural complexity.</p>
+<h3 id="3-nonlinear-relationship-remains-theoretically-plausible"><strong>3. Nonlinear relationship remains theoretically plausible</strong></h3>
+<p>There is no reason given to discard Warp2 Basic simply because moderation is being considered.</p>
+<h3 id="4-stability-is-important"><strong>4. Stability is important</strong></h3>
+<p>Stable1 addresses the case&rsquo;s stated concern about stable parameter estimates.</p>
+<h3 id="5-interpretability"><strong>5. Interpretability</strong></h3>
+<p>The simpler model is easier for stakeholders to understand.</p>
+<h3 id="6-resource-constraints"><strong>6. Resource constraints</strong></h3>
+<p>The simpler model places fewer demands on the analytical workflow.</p>
+<hr>
+<h1 id="39-why-job-motivation-should-not-necessarily-be-included-yet"><strong>39. Why Job Motivation Should Not Necessarily Be Included Yet</strong></h1>
+<p>This does <strong>not</strong> mean Job Motivation is unimportant.</p>
+<p>It means:</p>
+<blockquote>
+<p>Its moderation role may be better treated as a subsequent research question.</p>
+</blockquote>
+<p>A sensible progression could be:</p>
+<h3 id="pilot-phase"><strong>Pilot phase</strong></h3>
+<blockquote>
+<p>Training + Work Experience → Productivity</p>
+</blockquote>
+<h3 id="follow-up-research"><strong>Follow-up research</strong></h3>
+<p>If the pilot provides sufficient evidence and sample size:</p>
+<blockquote>
+<p>Training × Job Motivation → Productivity</p>
+</blockquote>
+<p>This allows the team to progressively increase model complexity as the evidence base improves.</p>
+<hr>
+<h1 id="40-a-better-long-term-research-strategy"><strong>40. A Better Long-Term Research Strategy</strong></h1>
+<p>A staged research strategy could be:</p>
+<h3 id="phase-1-measurement-validation"><strong>Phase 1 — Measurement validation</strong></h3>
+<p>Establish reliable measures of:</p>
+<ul>
+<li>Training Intensity  </li>
+<li>Productivity</li>
+</ul>
+<h3 id="phase-2-baseline-structural-model"><strong>Phase 2 — Baseline structural model</strong></h3>
+<p>Test:</p>
+<blockquote>
+<p>Training → Productivity</p>
+</blockquote>
+<p>while controlling for:</p>
+<blockquote>
+<p>Work Experience</p>
+</blockquote>
+<h3 id="phase-3-nonlinearity"><strong>Phase 3 — Nonlinearity</strong></h3>
+<p>Assess whether:</p>
+<blockquote>
+<p>Training → Productivity</p>
+</blockquote>
+<p>is nonlinear.</p>
+<h3 id="phase-4-moderation"><strong>Phase 4 — Moderation</strong></h3>
+<p>If theoretically justified and adequately powered:</p>
+<blockquote>
+<p>Training × Job Motivation → Productivity</p>
+</blockquote>
+<h3 id="phase-5-replication"><strong>Phase 5 — Replication</strong></h3>
+<p>Test the expanded model using a larger independent sample.</p>
+<p>This is often more defensible than placing every possible variable into a small pilot model immediately.</p>
+<hr>
+<h1 id="41-common-misconceptions"><strong>41. Common Misconceptions</strong></h1>
+<h2 id="misconception-1-more-variables-automatically-make-sem-better"><strong>Misconception 1: More variables automatically make SEM better</strong></h2>
+<p>False.</p>
+<p>Additional variables increase complexity and may reduce stability.</p>
+<hr>
+<h2 id="misconception-2-a-moderator-is-just-another-control-variable"><strong>Misconception 2: A moderator is just another control variable</strong></h2>
+<p>False.</p>
+<p>A control accounts for another influence.</p>
+<p>A moderator changes the strength or direction of a focal relationship.</p>
+<hr>
+<h2 id="misconception-3-adding-moderation-requires-making-the-model-linear"><strong>Misconception 3: Adding moderation requires making the model linear</strong></h2>
+<p>False.</p>
+<p>Linearity/nonlinearity and moderation are separate modeling decisions.</p>
+<hr>
+<h2 id="misconception-4-bootstrapping-automatically-makes-a-complex-model-reliable"><strong>Misconception 4: Bootstrapping automatically makes a complex model reliable</strong></h2>
+<p>False.</p>
+<p>Resampling cannot compensate for:</p>
+<ul>
+<li>Insufficient sample information  </li>
+<li>Poor measurement  </li>
+<li>Bad model specification  </li>
+<li>Weak theoretical justification</li>
+</ul>
+<hr>
+<h2 id="misconception-5-stable1-and-bootstrapping-perform-the-same-function-as-the-inner-model-algorithm"><strong>Misconception 5: Stable1 and Bootstrapping perform the same function as the inner model algorithm</strong></h2>
+<p>False.</p>
+<p>The inner model algorithm determines how structural paths are modeled.</p>
+<p>Resampling methods assess parameter variability and inferential stability.</p>
+<hr>
+<h2 id="misconception-6-pls-regression-and-warp2-basic-operate-at-the-same-level"><strong>Misconception 6: PLS Regression and Warp2 Basic operate at the same level</strong></h2>
+<p>False.</p>
+<p>In the case:</p>
+<blockquote>
+<p><strong>PLS Regression → outer/measurement model</strong></p>
+<p><strong>Warp2 Basic → inner/structural model</strong></p>
+</blockquote>
+<hr>
+<h2 id="misconception-7-productivity-is-adequately-represented-by-units-produced-alone"><strong>Misconception 7: Productivity is adequately represented by units produced alone</strong></h2>
+<p>Not necessarily.</p>
+<p>The case deliberately uses multiple productivity dimensions:</p>
+<ul>
+<li>Output quantity  </li>
+<li>Quality  </li>
+<li>Time utilization</li>
+</ul>
+<hr>
+<h2 id="misconception-8-statistical-complexity-is-always-preferable"><strong>Misconception 8: Statistical complexity is always preferable</strong></h2>
+<p>False.</p>
+<p>A model should be:</p>
+<blockquote>
+<p><strong>Appropriate, stable, interpretable, and useful.</strong></p>
+</blockquote>
+<hr>
+<h1 id="42-key-comparison-table"><strong>42. Key Comparison Table</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Role in GreenTech case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Training Intensity</td>
+<td>Main predictor construct</td>
+</tr>
+<tr>
+<td>Productivity</td>
+<td>Main outcome construct</td>
+</tr>
+<tr>
+<td>Work Experience</td>
+<td>Control variable</td>
+</tr>
+<tr>
+<td>Job Motivation</td>
+<td>Potential moderator</td>
+</tr>
+<tr>
+<td>PLS Regression</td>
+<td>Outer/measurement model algorithm</td>
+</tr>
+<tr>
+<td>Warp2 Basic</td>
+<td>Nonlinear inner/structural model algorithm</td>
+</tr>
+<tr>
+<td>Stable1</td>
+<td>Resampling/stability procedure</td>
+</tr>
+<tr>
+<td>Bootstrapping</td>
+<td>Alternative resampling method</td>
+</tr>
+<tr>
+<td>Edit direct link</td>
+<td>Assign indicators to constructs</td>
+</tr>
+<tr>
+<td>Units produced</td>
+<td>Productivity indicator</td>
+</tr>
+<tr>
+<td>Quality score</td>
+<td>Productivity indicator</td>
+</tr>
+<tr>
+<td>Time utilization</td>
+<td>Productivity indicator</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="43-option-a-vs-option-b"><strong>43. Option A vs Option B</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Option A</th>
+<th>Option B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Work Experience control</td>
+<td>Yes</td>
+<td>Not emphasized</td>
+</tr>
+<tr>
+<td>Job Motivation moderation</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Inner model</td>
+<td>Warp2 Basic, nonlinear</td>
+<td>Linear</td>
+</tr>
+<tr>
+<td>Resampling</td>
+<td>Stable1</td>
+<td>Bootstrapping</td>
+</tr>
+<tr>
+<td>Complexity</td>
+<td>Lower</td>
+<td>Higher</td>
+</tr>
+<tr>
+<td>Interpretability</td>
+<td>Higher</td>
+<td>Lower</td>
+</tr>
+<tr>
+<td>Small-sample suitability</td>
+<td>Better</td>
+<td>More challenging</td>
+</tr>
+<tr>
+<td>Strategic richness</td>
+<td>Moderate</td>
+<td>Potentially higher</td>
+</tr>
+<tr>
+<td>Computational burden</td>
+<td>Lower</td>
+<td>Higher</td>
+</tr>
+<tr>
+<td>Pilot suitability</td>
+<td><strong>Strong</strong></td>
+<td>More demanding</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="44-decision-framework"><strong>44. Decision Framework</strong></h1>
+<p>When deciding whether to add a variable or interaction, ask:</p>
+<h3 id="question-1"><strong>Question 1</strong></h3>
+<p>Is there a strong theoretical reason?</p>
+<p>If yes → consider inclusion.</p>
+<h3 id="question-2"><strong>Question 2</strong></h3>
+<p>Does the sample support the additional complexity?</p>
+<p>If no → defer it.</p>
+<h3 id="question-3"><strong>Question 3</strong></h3>
+<p>Does it materially improve the research question?</p>
+<p>If yes → consider it.</p>
+<h3 id="question-4"><strong>Question 4</strong></h3>
+<p>Can management interpret the resulting model?</p>
+<p>If no → simplify or improve communication.</p>
+<h3 id="question-5"><strong>Question 5</strong></h3>
+<p>Does it add information beyond existing variables?</p>
+<p>If no → avoid unnecessary complexity.</p>
+<hr>
+<h1 id="45-recommended-model"><strong>45. Recommended Model</strong></h1>
+<p>For the pilot described in the case, the recommended baseline is:</p>
+<blockquote>
+<p><strong>Training Intensity → Productivity</strong></p>
+</blockquote>
+<p>with:</p>
+<blockquote>
+<p><strong>Work Experience as a control variable</strong></p>
+</blockquote>
+<p>using:</p>
+<blockquote>
+<p><strong>PLS Regression for the outer model</strong></p>
+<p><strong>Warp2 Basic for the nonlinear inner model</strong></p>
+<p><strong>Stable1 with 100 resamples for the stated stability objective</strong></p>
+</blockquote>
+<p>This corresponds to:</p>
+<blockquote>
+<p><strong>Option A</strong></p>
+</blockquote>
+<hr>
+<h1 id="46-important-qualification"><strong>46. Important Qualification</strong></h1>
+<p>The recommendation should not be interpreted as:</p>
+<blockquote>
+<p>“Job Motivation should never be included.”</p>
+</blockquote>
+<p>Rather:</p>
+<blockquote>
+<p><strong>Job Motivation moderation is better treated as a later, theoretically justified extension when the sample and research design can support the additional complexity.</strong></p>
+</blockquote>
+<p>Similarly, the choice of Stable1 over Bootstrapping is contextual to the case&rsquo;s stated constraints and software setup. In a real research project, the exact resampling method should be selected based on the estimator, sample characteristics, inferential objective, and software documentation.</p>
+<hr>
+<h1 id="47-ideal-analytical-workflow"><strong>47. Ideal Analytical Workflow</strong></h1>
+<p>The complete GreenTech workflow can be summarized as:</p>
+<h3 id="1-define-constructs"><strong>1. Define constructs</strong></h3>
+<blockquote>
+<p>Training Intensity<br>
+Productivity</p>
+</blockquote>
+<p>↓</p>
+<h3 id="2-assign-indicators"><strong>2. Assign indicators</strong></h3>
+<blockquote>
+<p>Training indicators → Training Intensity</p>
+<p>Productivity indicators → Productivity</p>
+</blockquote>
+<p>↓</p>
+<h3 id="3-specify-measurement-model"><strong>3. Specify measurement model</strong></h3>
+<blockquote>
+<p>PLS Regression / outer model</p>
+</blockquote>
+<p>↓</p>
+<h3 id="4-specify-structural-model"><strong>4. Specify structural model</strong></h3>
+<blockquote>
+<p>Training → Productivity</p>
+</blockquote>
+<p>↓</p>
+<h3 id="5-consider-controls"><strong>5. Consider controls</strong></h3>
+<blockquote>
+<p>Work Experience → Productivity</p>
+</blockquote>
+<p>↓</p>
+<h3 id="6-select-appropriate-inner-model"><strong>6. Select appropriate inner model</strong></h3>
+<blockquote>
+<p>Warp2 Basic if nonlinear effects are theoretically/empirically justified</p>
+</blockquote>
+<p>↓</p>
+<h3 id="7-select-resampling-method"><strong>7. Select resampling method</strong></h3>
+<blockquote>
+<p>Stable1 under the case&rsquo;s small-sample/stability constraints</p>
+</blockquote>
+<p>↓</p>
+<h3 id="8-evaluate-measurement-quality"><strong>8. Evaluate measurement quality</strong></h3>
+<ul>
+<li>Loadings  </li>
+<li>Reliability  </li>
+<li>AVE  </li>
+<li>Discriminant validity</li>
+</ul>
+<p>↓</p>
+<h3 id="9-evaluate-structural-model"><strong>9. Evaluate structural model</strong></h3>
+<ul>
+<li>Paths  </li>
+<li>Significance  </li>
+<li>R²  </li>
+<li>Effect sizes  </li>
+<li>Predictive relevance</li>
+</ul>
+<p>↓</p>
+<h3 id="10-consider-moderation-separately"><strong>10. Consider moderation separately</strong></h3>
+<blockquote>
+<p>Job Motivation × Training</p>
+</blockquote>
+<p>only if justified by theory and sample adequacy</p>
+<p>↓</p>
+<h3 id="11-translate-findings"><strong>11. Translate findings</strong></h3>
+<blockquote>
+<p>Training strategy + employee development + productivity improvement</p>
+</blockquote>
+<hr>
+<h1 id="48-final-revision-summary"><strong>48. Final Revision Summary</strong></h1>
+<h3 id="core-relationship"><strong>Core relationship</strong></h3>
+<blockquote>
+<p><strong>Training Intensity → Productivity</strong></p>
+</blockquote>
+<h3 id="control"><strong>Control</strong></h3>
+<blockquote>
+<p><strong>Work Experience</strong></p>
+</blockquote>
+<p>Used to account for another factor that may influence productivity.</p>
+<h3 id="moderator-under-consideration"><strong>Moderator under consideration</strong></h3>
+<blockquote>
+<p><strong>Job Motivation</strong></p>
+</blockquote>
+<p>Would answer:</p>
+<blockquote>
+<p>Does motivation change how strongly training affects productivity?</p>
+</blockquote>
+<h3 id="outer-model"><strong>Outer model</strong></h3>
+<blockquote>
+<p><strong>PLS Regression</strong></p>
+</blockquote>
+<p>Deals with:</p>
+<blockquote>
+<p><strong>Indicators → Constructs</strong></p>
+</blockquote>
+<h3 id="inner-model"><strong>Inner model</strong></h3>
+<blockquote>
+<p><strong>Warp2 Basic</strong></p>
+</blockquote>
+<p>Deals with:</p>
+<blockquote>
+<p><strong>Construct → Construct</strong></p>
+</blockquote>
+<p>and allows nonlinear relationships in the case.</p>
+<h3 id="resampling"><strong>Resampling</strong></h3>
+<blockquote>
+<p><strong>Stable1, 100 resamples</strong></p>
+</blockquote>
+<p>Used in the case to address the stated concern about parameter stability with a small sample.</p>
+<h3 id="recommended-approach"><strong>Recommended approach</strong></h3>
+<blockquote>
+<p><strong>Option A</strong></p>
+</blockquote>
+<p>because it offers the best balance of:</p>
+<ul>
+<li>Model stability  </li>
+<li>Interpretability  </li>
+<li>Theoretical justification  </li>
+<li>Computational/resource constraints  </li>
+<li>Appropriate complexity for a pilot</li>
+</ul>
+<hr>
+<h1 id="49-core-mental-model"><strong>49. Core Mental Model</strong></h1>
+<p>The entire case can be remembered as:</p>
+<blockquote>
+<p><strong>Indicators</strong></p>
+<p>↓</p>
+<p><strong>Measurement model — PLS Regression</strong></p>
+<p>↓</p>
+<p><strong>Training Intensity → Productivity</strong></p>
+<p>↓</p>
+<p><strong>Inner model — Warp2 Basic</strong></p>
+<p>↓</p>
+<p><strong>Control for Work Experience</strong></p>
+<p>↓</p>
+<p><strong>Stable1 resampling for stability</strong></p>
+<p>↓</p>
+<p><strong>Validate measurement + structural model</strong></p>
+<p>↓</p>
+<p><strong>Consider Job Motivation moderation later if sample/theory support it</strong></p>
+<p>↓</p>
+<p><strong>Use results to guide training and productivity decisions</strong></p>
+</blockquote>
+<h2 id="central-takeaway"><strong>Central takeaway</strong></h2>
+<p>The strongest methodological choice for this <strong>small pilot</strong> is not to maximize the number of variables. It is to build a <strong>parsimonious, theoretically defensible, stable, and interpretable model</strong> first.</p>
+<p><strong>Work Experience</strong> has a clear role as a control variable. <strong>Job Motivation</strong> may be strategically interesting as a moderator, but introducing it immediately adds an interaction and substantially increases model complexity. Therefore, the case supports <strong>Option A as the preferred baseline</strong>, while leaving Job Motivation moderation as a potential extension for a larger or follow-up study.</p>
+<h1 id="comprehensive-notes-greentech-innovations-pls-sem-model-design-controls-nonlinearity-moderation-and-resampling"><strong>Comprehensive Notes: GreenTech Innovations — PLS-SEM Model Design, Controls, Nonlinearity, Moderation, and Resampling</strong></h1>
+<h2 id="1-case-study-overview"><strong>1. Case Study Overview</strong></h2>
+<p>GreenTech Innovations is conducting a <strong>pilot study</strong> to examine whether employee training influences productivity.</p>
+<p>The research team, led by Dr. Lee, builds a <strong>PLS-SEM model</strong> containing two primary latent constructs:</p>
+<ul>
+<li><strong>Training Intensity</strong>  </li>
+<li><strong>Productivity</strong></li>
+</ul>
+<p>The model also considers:</p>
+<ul>
+<li><strong>Work Experience</strong> as a control variable  </li>
+<li><strong>Job Motivation</strong> as a possible moderator</li>
+</ul>
+<p>The analytical configuration includes:</p>
+<ul>
+<li><strong>PLS Regression</strong> → outer/measurement model  </li>
+<li><strong>Warp2 Basic</strong> → inner/structural model  </li>
+<li><strong>Stable1 with 100 resamples</strong> → resampling procedure</li>
+</ul>
+<p>The central decision is whether the team should maintain a relatively simple baseline model or introduce a moderation effect while changing other analytical settings.</p>
+<p>The key methodological lesson is:</p>
+<blockquote>
+<p><strong>Model complexity should be justified by theory and supported by the available data, while preserving the most appropriate representation of the primary relationship.</strong></p>
+</blockquote>
+<hr>
+<h1 id="2-the-core-research-relationship"><strong>2. The Core Research Relationship</strong></h1>
+<p>The fundamental relationship is:</p>
+<blockquote>
+<p><strong>Training Intensity → Productivity</strong></p>
+</blockquote>
+<p>The team wants to determine whether differences in employee training are associated with differences in productivity.</p>
+<p>Productivity is represented using multiple indicators:</p>
+<ul>
+<li>Units produced  </li>
+<li>Quality scores  </li>
+<li>Time utilization rate</li>
+</ul>
+<p>This makes Productivity a latent construct rather than simply a single observed measure.</p>
+<hr>
+<h1 id="3-latent-constructs-and-indicators"><strong>3. Latent Constructs and Indicators</strong></h1>
+<p>A <strong>latent construct</strong> is an abstract concept that cannot necessarily be observed directly.</p>
+<h3 id="training-intensity-2"><strong>Training Intensity</strong></h3>
+<p>Potential indicators include:</p>
+<ul>
+<li>Hours of instruction  </li>
+<li>Training/test scores</li>
+</ul>
+<h3 id="productivity-2"><strong>Productivity</strong></h3>
+<p>Indicators include:</p>
+<ul>
+<li>Units produced  </li>
+<li>Quality scores  </li>
+<li>Time utilization rate</li>
+</ul>
+<p>The indicators provide observable evidence from which the underlying constructs are measured.</p>
+<hr>
+<h1 id="4-measurement-model-vs-structural-model"><strong>4. Measurement Model vs Structural Model</strong></h1>
+<p>This distinction is fundamental.</p>
+<h2 id="measurement-model-3"><strong>Measurement model</strong></h2>
+<p>The measurement model describes:</p>
+<blockquote>
+<p><strong>Indicators → Constructs</strong></p>
+</blockquote>
+<p>Examples:</p>
+<blockquote>
+<p>Hours of instruction → Training Intensity</p>
+<p>Quality score → Productivity</p>
+</blockquote>
+<p>It asks:</p>
+<blockquote>
+<p>Are these indicators valid and reliable measures of the constructs?</p>
+</blockquote>
+<hr>
+<h2 id="structural-model-3"><strong>Structural model</strong></h2>
+<p>The structural model describes:</p>
+<blockquote>
+<p><strong>Construct → Construct</strong></p>
+</blockquote>
+<p>Example:</p>
+<blockquote>
+<p>Training Intensity → Productivity</p>
+</blockquote>
+<p>It asks:</p>
+<blockquote>
+<p>What is the relationship between the underlying constructs?</p>
+</blockquote>
+<h3 id="memory-aid-5"><strong>Memory aid</strong></h3>
+<blockquote>
+<p><strong>Outer model \= measurement</strong></p>
+<p><strong>Inner model \= structural</strong></p>
+</blockquote>
+<hr>
+<h1 id="5-pls-regression-as-the-outer-model-algorithm"><strong>5. PLS Regression as the Outer Model Algorithm</strong></h1>
+<p>The case specifies:</p>
+<blockquote>
+<p><strong>PLS Regression</strong></p>
+</blockquote>
+<p>for the outer model.</p>
+<p>Its role is to establish the relationship between:</p>
+<blockquote>
+<p><strong>Observed indicators and latent constructs</strong></p>
+</blockquote>
+<p>Thus, PLS Regression is involved in the measurement side of the model.</p>
+<p>It is <strong>not</strong> primarily responsible for:</p>
+<ul>
+<li>Testing the Training → Productivity structural path  </li>
+<li>Handling the control variable  </li>
+<li>Choosing the resampling method  </li>
+<li>Modeling nonlinearity between constructs</li>
+</ul>
+<hr>
+<h1 id="6-edit-direct-link"><strong>6. Edit Direct Link</strong></h1>
+<p>The team uses:</p>
+<blockquote>
+<p><strong>Edit direct link</strong></p>
+</blockquote>
+<p>to assign indicators to their respective constructs.</p>
+<p>For example:</p>
+<blockquote>
+<p>Hours of instruction → Training Intensity</p>
+</blockquote>
+<p>and:</p>
+<blockquote>
+<p>Output per hour → Productivity</p>
+</blockquote>
+<p>The immediate outcome is therefore:</p>
+<blockquote>
+<p><strong>Correct assignment of measurable indicators to their latent constructs.</strong></p>
+</blockquote>
+<p>This creates the foundation for the measurement model.</p>
+<hr>
+<h1 id="7-warp2-basic-as-the-inner-model-algorithm"><strong>7. Warp2 Basic as the Inner Model Algorithm</strong></h1>
+<p>The team selects:</p>
+<blockquote>
+<p><strong>Warp2 Basic</strong></p>
+</blockquote>
+<p>for the inner model.</p>
+<p>Its purpose is to model:</p>
+<blockquote>
+<p><strong>Construct-to-construct relationships</strong></p>
+</blockquote>
+<p>while allowing nonlinear relationships.</p>
+<p>The central path is:</p>
+<blockquote>
+<p><strong>Training Intensity → Productivity</strong></p>
+</blockquote>
+<hr>
+<h1 id="8-why-nonlinearity-may-matter"><strong>8. Why Nonlinearity May Matter</strong></h1>
+<p>A linear model assumes approximately:</p>
+<blockquote>
+<p>A constant change in Productivity for a given change in Training Intensity.</p>
+</blockquote>
+<p>But training may have diminishing or changing returns.</p>
+<p>For example:</p>
+<h3 id="early-training"><strong>Early training</strong></h3>
+<p>Employees may experience substantial productivity gains.</p>
+<h3 id="additional-training"><strong>Additional training</strong></h3>
+<p>The incremental gain may become smaller.</p>
+<p>This produces a possible:</p>
+<blockquote>
+<p><strong>Diminishing returns relationship</strong></p>
+</blockquote>
+<p>A nonlinear method can potentially represent this pattern better than a simple straight-line relationship.</p>
+<hr>
+<h1 id="9-why-the-productivity-indicators-support-considering-nonlinearity"><strong>9. Why the Productivity Indicators Support Considering Nonlinearity</strong></h1>
+<p>Productivity is measured through:</p>
+<ul>
+<li>Quantity  </li>
+<li>Quality  </li>
+<li>Efficiency</li>
+</ul>
+<p>These dimensions may not respond to training in exactly the same way.</p>
+<p>For example:</p>
+<ul>
+<li>Output might show diminishing returns.  </li>
+<li>Quality might continue improving.  </li>
+<li>Efficiency might improve sharply initially and then plateau.</li>
+</ul>
+<p>Thus, the relationship between the <strong>overall Productivity construct</strong> and Training Intensity may not necessarily be simple or linear.</p>
+<p>The diversity of indicators therefore provides a theoretical reason to investigate nonlinear relationships.</p>
+<p>However:</p>
+<blockquote>
+<p>The indicators themselves do not mathematically require a nonlinear model.</p>
+</blockquote>
+<p>The nonlinear specification should ultimately be supported by theory and/or empirical evidence.</p>
+<hr>
+<h1 id="10-work-experience-as-a-control-variable"><strong>10. Work Experience as a Control Variable</strong></h1>
+<p>Alex proposes:</p>
+<blockquote>
+<p><strong>Work Experience</strong></p>
+</blockquote>
+<p>as a control variable.</p>
+<p>The rationale is that employees may have different baseline productivity because of their prior experience.</p>
+<p>For example:</p>
+<blockquote>
+<p>Experienced employee → potentially higher productivity</p>
+</blockquote>
+<p>independent of:</p>
+<blockquote>
+<p>Training Intensity</p>
+</blockquote>
+<p>If experience is ignored, part of the productivity difference associated with experience could be incorrectly attributed to training.</p>
+<p>Therefore, Work Experience can help:</p>
+<blockquote>
+<p><strong>Account for pre-existing differences and better isolate the training-productivity relationship.</strong></p>
+</blockquote>
+<hr>
+<h1 id="11-control-variable-vs-measurement-indicator"><strong>11. Control Variable vs Measurement Indicator</strong></h1>
+<p>Work Experience is <strong>not</strong> an indicator of Productivity simply because it may predict productivity.</p>
+<p>It serves a different purpose.</p>
+<h3 id="productivity-indicators"><strong>Productivity indicators</strong></h3>
+<p>Measure:</p>
+<blockquote>
+<p><strong>What Productivity is</strong></p>
+</blockquote>
+<h3 id="work-experience"><strong>Work Experience</strong></h3>
+<p>Helps explain:</p>
+<blockquote>
+<p><strong>Why Productivity may differ</strong></p>
+</blockquote>
+<p>This distinction is important in SEM.</p>
+<hr>
+<h1 id="12-why-work-experience-is-a-stronger-initial-addition"><strong>12. Why Work Experience Is a Stronger Initial Addition</strong></h1>
+<p>Work Experience has a direct theoretical justification as a potential confounding factor.</p>
+<p>The baseline model can therefore be conceptualized as:</p>
+<blockquote>
+<p>Training Intensity → Productivity</p>
+</blockquote>
+<p>while also accounting for:</p>
+<blockquote>
+<p>Work Experience → Productivity</p>
+</blockquote>
+<p>This retains focus on the central research question.</p>
+<hr>
+<h1 id="13-job-motivation-as-a-moderator"><strong>13. Job Motivation as a Moderator</strong></h1>
+<p>Maria considers:</p>
+<blockquote>
+<p><strong>Job Motivation</strong></p>
+</blockquote>
+<p>as a moderator.</p>
+<p>A moderator asks:</p>
+<blockquote>
+<p><strong>Does the effect of Training Intensity on Productivity depend on the level of Job Motivation?</strong></p>
+</blockquote>
+<p>This is different from asking whether motivation itself predicts productivity.</p>
+<hr>
+<h1 id="14-control-vs-moderator"><strong>14. Control vs Moderator</strong></h1>
+<h3 id="control-variable-2"><strong>Control variable</strong></h3>
+<p>Accounts for another factor affecting the outcome.</p>
+<p>Example:</p>
+<blockquote>
+<p>Work Experience → Productivity</p>
+</blockquote>
+<h3 id="moderator-2"><strong>Moderator</strong></h3>
+<p>Changes the strength or direction of the focal relationship.</p>
+<p>Example:</p>
+<blockquote>
+<p>Job Motivation changes the strength of Training → Productivity.</p>
+</blockquote>
+<p>A moderation model can conceptually contain:</p>
+<blockquote>
+<p>Training → Productivity</p>
+<p>Job Motivation → Productivity</p>
+<p>Training × Job Motivation → Productivity</p>
+</blockquote>
+<p>The interaction term represents the moderation effect.</p>
+<hr>
+<h1 id="15-why-moderation-adds-complexity"><strong>15. Why Moderation Adds Complexity</strong></h1>
+<p>Adding Job Motivation as a moderator introduces:</p>
+<ul>
+<li>Another construct  </li>
+<li>Additional indicators  </li>
+<li>Additional paths  </li>
+<li>An interaction term  </li>
+<li>More parameters  </li>
+<li>More interpretation  </li>
+<li>More potential collinearity  </li>
+<li>Greater sample-size requirements</li>
+</ul>
+<p>This matters because GreenTech is conducting a:</p>
+<blockquote>
+<p><strong>Pilot study</strong></p>
+</blockquote>
+<p>and has:</p>
+<blockquote>
+<p><strong>A small sample</strong></p>
+</blockquote>
+<p>Therefore, the cost of additional complexity is significant.</p>
+<hr>
+<h1 id="16-the-pilot-study-principle"><strong>16. The Pilot-Study Principle</strong></h1>
+<p>A pilot study does not necessarily need the most elaborate possible model.</p>
+<p>It may be more appropriate to:</p>
+<ol>
+<li>Establish the basic relationship.  </li>
+<li>Validate the measurement.  </li>
+<li>Control for obvious confounding factors.  </li>
+<li>Examine whether the primary relationship is nonlinear.  </li>
+<li>Extend the model later when more data become available.</li>
+</ol>
+<p>This is an example of:</p>
+<blockquote>
+<p><strong>Model parsimony</strong></p>
+</blockquote>
+<hr>
+<h1 id="17-model-parsimony"><strong>17. Model Parsimony</strong></h1>
+<p>Parsimony means using a model that is sufficiently rich to answer the research question without unnecessary complexity.</p>
+<p>A parsimonious model is often:</p>
+<ul>
+<li>Easier to interpret  </li>
+<li>Easier to validate  </li>
+<li>More stable  </li>
+<li>Less computationally demanding  </li>
+<li>More appropriate for small samples</li>
+</ul>
+<p>The goal is not:</p>
+<blockquote>
+<p>“Fewest variables possible.”</p>
+</blockquote>
+<p>The goal is:</p>
+<blockquote>
+<p><strong>Fewest unnecessary variables while retaining the theoretically important structure.</strong></p>
+</blockquote>
+<hr>
+<h1 id="18-stable1-resampling-2"><strong>18. Stable1 Resampling</strong></h1>
+<p>The case specifies:</p>
+<blockquote>
+<p><strong>Stable1 with 100 resamples</strong></p>
+</blockquote>
+<p>The direct rationale is the:</p>
+<blockquote>
+<p><strong>Small sample size</strong></p>
+</blockquote>
+<p>The team wants more stable parameter estimates.</p>
+<p>Resampling repeatedly evaluates the model using resampled versions of the available data, providing information about parameter variability and stability.</p>
+<hr>
+<h1 id="19-what-stable1-does-not-do"><strong>19. What Stable1 Does Not Do</strong></h1>
+<p>Stable1 is not primarily used to:</p>
+<ul>
+<li>Define the measurement model  </li>
+<li>Assign indicators  </li>
+<li>Model nonlinearity  </li>
+<li>Create the Training → Productivity path  </li>
+<li>Decide whether Work Experience is a control</li>
+</ul>
+<p>It is a:</p>
+<blockquote>
+<p><strong>Resampling/stability procedure</strong></p>
+</blockquote>
+<hr>
+<h1 id="20-bootstrapping-2"><strong>20. Bootstrapping</strong></h1>
+<p>Bootstrapping is another resampling technique.</p>
+<p>It can be used to estimate:</p>
+<ul>
+<li>Sampling variability  </li>
+<li>Standard errors  </li>
+<li>Confidence intervals  </li>
+<li>Statistical significance</li>
+</ul>
+<p>It is widely used in PLS-SEM.</p>
+<p>However:</p>
+<blockquote>
+<p><strong>Bootstrapping does not automatically make a complex model appropriate for a small sample.</strong></p>
+</blockquote>
+<p>A sophisticated resampling procedure cannot compensate for a poorly specified or over-complex model.</p>
+<hr>
+<h1 id="21-stable1-vs-bootstrapping"><strong>21. Stable1 vs Bootstrapping</strong></h1>
+<p>The case frames a choice between them, but the deeper issue is not simply:</p>
+<blockquote>
+<p>“Which resampling method is universally better?”</p>
+</blockquote>
+<p>The real question is:</p>
+<blockquote>
+<p><strong>Which resampling method is appropriate for the model, software implementation, sample characteristics, and inferential objective?</strong></p>
+</blockquote>
+<p>For this specific pilot case, Stable1 is aligned with the stated objective of obtaining stable estimates with limited data.</p>
+<hr>
+<h1 id="22-the-two-analytical-paths"><strong>22. The Two Analytical Paths</strong></h1>
+<h2 id="option-a-3"><strong>Option A</strong></h2>
+<blockquote>
+<p>Work Experience control<br>
+PLS Regression<br>
+Warp2 Basic<br>
+Stable1</p>
+</blockquote>
+<h3 id="characteristics"><strong>Characteristics</strong></h3>
+<ul>
+<li>Focused  </li>
+<li>Parsimonious  </li>
+<li>Nonlinear  </li>
+<li>Stability-oriented  </li>
+<li>Easier to interpret</li>
+</ul>
+<hr>
+<h2 id="option-b-3"><strong>Option B</strong></h2>
+<blockquote>
+<p>Job Motivation moderator<br>
+Linear inner model<br>
+Bootstrapping</p>
+</blockquote>
+<h3 id="characteristics-2"><strong>Characteristics</strong></h3>
+<ul>
+<li>More complex  </li>
+<li>Includes interaction effects  </li>
+<li>Changes the structural specification  </li>
+<li>Uses a different resampling method  </li>
+<li>Potentially richer, but potentially less stable</li>
+</ul>
+<hr>
+<h1 id="23-the-major-problem-with-option-b"><strong>23. The Major Problem with Option B</strong></h1>
+<p>The most important weakness is not simply:</p>
+<blockquote>
+<p>“Bootstrapping is bad.”</p>
+</blockquote>
+<p>Nor is it:</p>
+<blockquote>
+<p>“Job Motivation is subjective.”</p>
+</blockquote>
+<p>The deeper problem is:</p>
+<blockquote>
+<p><strong>The model abandons the theoretically motivated nonlinear specification simply to accommodate a secondary moderation analysis.</strong></p>
+</blockquote>
+<p>If the team has reason to believe that Training → Productivity is nonlinear, replacing Warp2 Basic with a linear model may result in:</p>
+<blockquote>
+<p><strong>Structural model misspecification.</strong></p>
+</blockquote>
+<hr>
+<h1 id="24-why-this-is-methodologically-important"><strong>24. Why This Is Methodologically Important</strong></h1>
+<p>The primary research question is:</p>
+<blockquote>
+<p><strong>How does Training Intensity influence Productivity?</strong></p>
+</blockquote>
+<p>If the team believes this relationship may be nonlinear, accurately modeling that relationship should remain a priority.</p>
+<p>Adding Job Motivation is an extension.</p>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>The secondary moderation analysis should not automatically override the theoretically appropriate specification of the primary relationship.</strong></p>
+</blockquote>
+<hr>
+<h1 id="25-nonlinearity-and-moderation-are-separate-questions"><strong>25. Nonlinearity and Moderation Are Separate Questions</strong></h1>
+<p>This is a critical conceptual distinction.</p>
+<h3 id="nonlinearity-asks"><strong>Nonlinearity asks:</strong></h3>
+<blockquote>
+<p>Is the effect of Training Intensity on Productivity curved or otherwise non-straight?</p>
+</blockquote>
+<h3 id="moderation-asks"><strong>Moderation asks:</strong></h3>
+<blockquote>
+<p>Does the effect of Training Intensity on Productivity differ depending on Job Motivation?</p>
+</blockquote>
+<p>These are different phenomena.</p>
+<p>A model could theoretically contain:</p>
+<blockquote>
+<p><strong>Nonlinear Training → Productivity</strong></p>
+</blockquote>
+<p>and:</p>
+<blockquote>
+<p><strong>Job Motivation moderation</strong></p>
+</blockquote>
+<p>simultaneously, if the software, data, theory, and sample size support it.</p>
+<p>Therefore:</p>
+<blockquote>
+<p>Adding a moderator does not inherently require switching from nonlinear to linear modeling.</p>
+</blockquote>
+<hr>
+<h1 id="26-why-option-b-is-potentially-mis-specified"><strong>26. Why Option B Is Potentially Mis-specified</strong></h1>
+<p>Option B makes several changes simultaneously:</p>
+<ol>
+<li>Adds Job Motivation.  </li>
+<li>Introduces moderation.  </li>
+<li>Changes nonlinear modeling to linear modeling.  </li>
+<li>Changes the resampling approach.</li>
+</ol>
+<p>This makes the model substantially different from the original specification.</p>
+<p>The concern is:</p>
+<blockquote>
+<p>The team may be sacrificing the quality of the primary structural specification to investigate a secondary effect.</p>
+</blockquote>
+<hr>
+<h1 id="27-interpretability-trade-off"><strong>27. Interpretability Trade-Off</strong></h1>
+<h3 id="option-a-4"><strong>Option A</strong></h3>
+<p>The message is relatively straightforward:</p>
+<blockquote>
+<p>Training affects productivity, while accounting for work experience.</p>
+</blockquote>
+<p>This is easy to communicate.</p>
+<h3 id="option-b-4"><strong>Option B</strong></h3>
+<p>The interpretation becomes:</p>
+<blockquote>
+<p>Training affects productivity, but the effect depends on motivation, under a linear structural specification.</p>
+</blockquote>
+<p>This is more nuanced.</p>
+<p>The model may be strategically valuable, but interpretation becomes harder.</p>
+<hr>
+<h1 id="28-statistical-stability-trade-off"><strong>28. Statistical Stability Trade-Off</strong></h1>
+<p>With a small sample:</p>
+<blockquote>
+<p>More parameters → greater risk of unstable estimates.</p>
+</blockquote>
+<p>Moderation is particularly demanding because interaction effects can be harder to estimate precisely than main effects.</p>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Small sample + additional interaction + additional construct \= greater stability concern.</strong></p>
+</blockquote>
+<hr>
+<h1 id="29-resource-trade-off"><strong>29. Resource Trade-Off</strong></h1>
+<p>The team has resource constraints.</p>
+<p>A more complex model requires:</p>
+<ul>
+<li>More computation  </li>
+<li>More diagnostics  </li>
+<li>More interpretation  </li>
+<li>More validation  </li>
+<li>More explanation to stakeholders</li>
+</ul>
+<p>Option A is therefore more aligned with a constrained pilot environment.</p>
+<hr>
+<h1 id="30-measurement-quality-still-comes-first"><strong>30. Measurement Quality Still Comes First</strong></h1>
+<p>Regardless of whether Option A or B is used, the team should not jump directly to structural conclusions.</p>
+<p>The measurement model should first be evaluated for:</p>
+<h3 id="reliability-3"><strong>Reliability</strong></h3>
+<p>For example:</p>
+<blockquote>
+<p>Composite Reliability</p>
+</blockquote>
+<h3 id="convergent-validity-3"><strong>Convergent validity</strong></h3>
+<p>For example:</p>
+<blockquote>
+<p>AVE</p>
+</blockquote>
+<h3 id="indicator-quality"><strong>Indicator quality</strong></h3>
+<p>For example:</p>
+<blockquote>
+<p>Indicator loadings</p>
+</blockquote>
+<h3 id="discriminant-validity-4"><strong>Discriminant validity</strong></h3>
+<p>For example:</p>
+<blockquote>
+<p>Fornell–Larcker / HTMT / cross-loadings</p>
+</blockquote>
+<p>Only after measurement quality is satisfactory should structural paths be interpreted confidently.</p>
+<hr>
+<h1 id="31-multicollinearity"><strong>31. Multicollinearity</strong></h1>
+<p>When adding controls or moderators, the team should also examine collinearity.</p>
+<p>Relevant diagnostics include:</p>
+<blockquote>
+<p><strong>VIF</strong></p>
+</blockquote>
+<p>and, in the quiz context:</p>
+<blockquote>
+<p><strong>AVIF</strong></p>
+</blockquote>
+<p>Typical guidelines from the earlier material include:</p>
+<blockquote>
+<p>VIF \&lt; 3.3</p>
+<p>AVIF ≤ 3.3 ideally</p>
+</blockquote>
+<p>This becomes particularly relevant when interaction terms and additional constructs are introduced.</p>
+<hr>
+<h1 id="32-interaction-terms"><strong>32. Interaction Terms</strong></h1>
+<p>A moderation model generally introduces an interaction term:</p>
+<blockquote>
+<p><strong>Training × Job Motivation</strong></p>
+</blockquote>
+<p>This interaction tests whether the Training → Productivity path changes with Motivation.</p>
+<p>The interaction term should not be confused with an ordinary substantive construct.</p>
+<p>It is a modeling device used to represent moderation.</p>
+<hr>
+<h1 id="33-measurement-of-job-motivation"><strong>33. Measurement of Job Motivation</strong></h1>
+<p>If Job Motivation is eventually included, the team must first establish that it is adequately measured.</p>
+<p>Because it is a psychological construct, appropriate indicators need to be:</p>
+<ul>
+<li>Conceptually valid  </li>
+<li>Reliable  </li>
+<li>Relevant  </li>
+<li>Distinct from other constructs</li>
+</ul>
+<p>The fact that a variable is subjective does not make it invalid.</p>
+<p>The key issue is:</p>
+<blockquote>
+<p><strong>Quality of its measurement.</strong></p>
+</blockquote>
+<hr>
+<h1 id="34-why-option-a-is-preferred-for-the-pilot"><strong>34. Why Option A Is Preferred for the Pilot</strong></h1>
+<p>The case supports Option A because it:</p>
+<h3 id="maintains-theoretical-focus"><strong>Maintains theoretical focus</strong></h3>
+<p>The central Training → Productivity relationship remains the priority.</p>
+<h3 id="preserves-the-nonlinear-hypothesis"><strong>Preserves the nonlinear hypothesis</strong></h3>
+<p>Warp2 Basic allows potential nonlinear effects to be investigated.</p>
+<h3 id="controls-a-plausible-confounder"><strong>Controls a plausible confounder</strong></h3>
+<p>Work Experience accounts for pre-existing differences.</p>
+<h3 id="supports-stability"><strong>Supports stability</strong></h3>
+<p>Stable1 is selected specifically in response to the small sample.</p>
+<h3 id="limits-unnecessary-complexity"><strong>Limits unnecessary complexity</strong></h3>
+<p>No additional moderation interaction is introduced.</p>
+<h3 id="improves-interpretability"><strong>Improves interpretability</strong></h3>
+<p>Management receives a clearer baseline result.</p>
+<hr>
+<h1 id="35-why-job-motivation-should-not-necessarily-be-rejected-permanently"><strong>35. Why Job Motivation Should Not Necessarily Be Rejected Permanently</strong></h1>
+<p>The recommendation is not:</p>
+<blockquote>
+<p>“Never use Job Motivation.”</p>
+</blockquote>
+<p>Instead:</p>
+<blockquote>
+<p><strong>Treat it as a potential second-stage research question.</strong></p>
+</blockquote>
+<p>Once the team has:</p>
+<ul>
+<li>A larger sample  </li>
+<li>Better measurement evidence  </li>
+<li>A validated baseline model  </li>
+<li>More resources</li>
+</ul>
+<p>it could investigate:</p>
+<blockquote>
+<p><strong>Training × Job Motivation → Productivity</strong></p>
+</blockquote>
+<p>This creates a staged research strategy.</p>
+<hr>
+<h1 id="36-recommended-research-progression"><strong>36. Recommended Research Progression</strong></h1>
+<h3 id="stage-1-measurement-validation"><strong>Stage 1 — Measurement validation</strong></h3>
+<p>Validate:</p>
+<ul>
+<li>Training Intensity  </li>
+<li>Productivity</li>
+</ul>
+<h3 id="stage-2-baseline-structural-model"><strong>Stage 2 — Baseline structural model</strong></h3>
+<p>Estimate:</p>
+<blockquote>
+<p>Training → Productivity</p>
+</blockquote>
+<p>with:</p>
+<blockquote>
+<p>Work Experience</p>
+</blockquote>
+<p>as a control.</p>
+<h3 id="stage-3-examine-nonlinearity"><strong>Stage 3 — Examine nonlinearity</strong></h3>
+<p>Determine whether:</p>
+<blockquote>
+<p>Training → Productivity</p>
+</blockquote>
+<p>is better represented nonlinearly.</p>
+<h3 id="stage-4-expanded-moderation-study"><strong>Stage 4 — Expanded moderation study</strong></h3>
+<p>With sufficient data:</p>
+<blockquote>
+<p>Training × Job Motivation → Productivity</p>
+</blockquote>
+<h3 id="stage-5-replication"><strong>Stage 5 — Replication</strong></h3>
+<p>Test the expanded model with a larger independent sample.</p>
+<hr>
+<h1 id="37-common-misconceptions"><strong>37. Common Misconceptions</strong></h1>
+<h2 id="1-more-complex-models-are-always-better"><strong>1. More complex models are always better</strong></h2>
+<p>False.</p>
+<p>Complexity must be justified.</p>
+<hr>
+<h2 id="2-a-moderator-is-just-another-control-variable"><strong>2. A moderator is just another control variable</strong></h2>
+<p>False.</p>
+<p>A moderator changes the effect of another variable.</p>
+<hr>
+<h2 id="3-adding-a-moderator-requires-a-linear-model"><strong>3. Adding a moderator requires a linear model</strong></h2>
+<p>False.</p>
+<p>Moderation and nonlinearity address different questions.</p>
+<hr>
+<h2 id="4-bootstrapping-automatically-solves-small-sample-problems"><strong>4. Bootstrapping automatically solves small-sample problems</strong></h2>
+<p>False.</p>
+<p>Resampling cannot manufacture information that the sample does not contain.</p>
+<hr>
+<h2 id="5-stable1-is-part-of-the-measurement-model"><strong>5. Stable1 is part of the measurement model</strong></h2>
+<p>False.</p>
+<p>It is a resampling/stability procedure.</p>
+<hr>
+<h2 id="6-pls-regression-is-the-algorithm-for-training-productivity"><strong>6. PLS Regression is the algorithm for Training → Productivity</strong></h2>
+<p>Not in this case.</p>
+<p>The case assigns:</p>
+<blockquote>
+<p><strong>PLS Regression → outer model</strong></p>
+</blockquote>
+<p>while:</p>
+<blockquote>
+<p><strong>Warp2 Basic → inner model</strong></p>
+</blockquote>
+<hr>
+<h2 id="7-edit-direct-link-creates-the-structural-relationship"><strong>7. Edit direct link creates the structural relationship</strong></h2>
+<p>False.</p>
+<p>It assigns indicators to constructs.</p>
+<hr>
+<h2 id="8-work-experience-is-a-productivity-indicator"><strong>8. Work Experience is a Productivity indicator</strong></h2>
+<p>False.</p>
+<p>It is a control variable.</p>
+<hr>
+<h2 id="9-job-motivation-moderation-means-motivation-simply-predicts-productivity"><strong>9. Job Motivation moderation means motivation simply predicts productivity</strong></h2>
+<p>Not necessarily.</p>
+<p>The key question is whether:</p>
+<blockquote>
+<p><strong>Motivation changes the Training → Productivity relationship.</strong></p>
+</blockquote>
+<hr>
+<h2 id="10-a-nonlinear-model-is-justified-merely-because-productivity-has-multiple-indicators"><strong>10. A nonlinear model is justified merely because Productivity has multiple indicators</strong></h2>
+<p>Not automatically.</p>
+<p>The multiple dimensions provide a reason to consider different responses, but the nonlinear structural specification should still be theoretically and empirically justified.</p>
+<hr>
+<h1 id="38-high-value-concept-comparison"><strong>38. High-Value Concept Comparison</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PLS Regression</strong></td>
+<td>Measurement/outer model</td>
+</tr>
+<tr>
+<td><strong>Warp2 Basic</strong></td>
+<td>Nonlinear structural/inner model</td>
+</tr>
+<tr>
+<td><strong>Stable1</strong></td>
+<td>Resampling/stability</td>
+</tr>
+<tr>
+<td><strong>Bootstrapping</strong></td>
+<td>Resampling/inference</td>
+</tr>
+<tr>
+<td><strong>Work Experience</strong></td>
+<td>Control variable</td>
+</tr>
+<tr>
+<td><strong>Job Motivation</strong></td>
+<td>Potential moderator</td>
+</tr>
+<tr>
+<td><strong>Edit direct link</strong></td>
+<td>Assign indicators to constructs</td>
+</tr>
+<tr>
+<td><strong>Productivity indicators</strong></td>
+<td>Operationalize Productivity</td>
+</tr>
+<tr>
+<td><strong>Training → Productivity</strong></td>
+<td>Main structural relationship</td>
+</tr>
+<tr>
+<td><strong>Training × Motivation</strong></td>
+<td>Moderation relationship</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="39-decision-matrix"><strong>39. Decision Matrix</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Option A</th>
+<th>Option B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model complexity</td>
+<td>Lower</td>
+<td>Higher</td>
+</tr>
+<tr>
+<td>Pilot suitability</td>
+<td><strong>High</strong></td>
+<td>Lower</td>
+</tr>
+<tr>
+<td>Interpretability</td>
+<td><strong>High</strong></td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Small-sample stability</td>
+<td><strong>Better</strong></td>
+<td>More challenging</td>
+</tr>
+<tr>
+<td>Nonlinear effects</td>
+<td><strong>Retained</strong></td>
+<td>Removed</td>
+</tr>
+<tr>
+<td>Moderation</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Control for experience</td>
+<td><strong>Yes</strong></td>
+<td>Not emphasized</td>
+</tr>
+<tr>
+<td>Resource burden</td>
+<td><strong>Lower</strong></td>
+<td>Higher</td>
+</tr>
+<tr>
+<td>Strategic nuance</td>
+<td>Moderate</td>
+<td>Higher</td>
+</tr>
+<tr>
+<td>Risk of misspecifying primary relationship</td>
+<td><strong>Lower</strong></td>
+<td>Higher</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="40-practical-decision-rule"><strong>40. Practical Decision Rule</strong></h1>
+<p>When evaluating an SEM extension, ask:</p>
+<h3 id="is-the-variable-theoretically-important"><strong>Is the variable theoretically important?</strong></h3>
+<p>If yes, consider it.</p>
+<h3 id="is-it-a-control-or-moderator"><strong>Is it a control or moderator?</strong></h3>
+<p>Identify its precise role.</p>
+<h3 id="does-it-require-an-interaction"><strong>Does it require an interaction?</strong></h3>
+<p>If yes, recognize the additional complexity.</p>
+<h3 id="is-the-sample-large-enough"><strong>Is the sample large enough?</strong></h3>
+<p>If no, be cautious.</p>
+<h3 id="does-the-new-specification-alter-the-primary-model"><strong>Does the new specification alter the primary model?</strong></h3>
+<p>If yes, determine whether the change is theoretically justified.</p>
+<h3 id="does-it-improve-the-primary-research-question"><strong>Does it improve the primary research question?</strong></h3>
+<p>If no, defer it.</p>
+<hr>
+<h1 id="41-final-recommended-analytical-configuration"><strong>41. Final Recommended Analytical Configuration</strong></h1>
+<p>For the GreenTech pilot, the preferred baseline is:</p>
+<h3 id="measurement-model-4"><strong>Measurement model</strong></h3>
+<blockquote>
+<p><strong>PLS Regression</strong></p>
+</blockquote>
+<h3 id="structural-model-4"><strong>Structural model</strong></h3>
+<blockquote>
+<p><strong>Warp2 Basic</strong></p>
+</blockquote>
+<h3 id="control-2"><strong>Control</strong></h3>
+<blockquote>
+<p><strong>Work Experience</strong></p>
+</blockquote>
+<h3 id="resampling-2"><strong>Resampling</strong></h3>
+<blockquote>
+<p><strong>Stable1 — 100 resamples</strong></p>
+</blockquote>
+<h3 id="main-relationship"><strong>Main relationship</strong></h3>
+<blockquote>
+<p><strong>Training Intensity → Productivity</strong></p>
+</blockquote>
+<h3 id="job-motivation"><strong>Job Motivation</strong></h3>
+<blockquote>
+<p><strong>Do not add as a moderator in the initial pilot model unless stronger theoretical and empirical justification and adequate sample support become available.</strong></p>
+</blockquote>
+<p>This corresponds to:</p>
+<blockquote>
+<p><strong>Option A</strong></p>
+</blockquote>
+<hr>
+<h1 id="42-core-mental-model"><strong>42. Core Mental Model</strong></h1>
+<p>The case can be reduced to the following sequence:</p>
+<blockquote>
+<p><strong>Observed indicators</strong></p>
+<p>↓</p>
+<p><strong>PLS Regression / Outer Model</strong></p>
+<p>↓</p>
+<p><strong>Training Intensity + Productivity constructs</strong></p>
+<p>↓</p>
+<p><strong>Work Experience as control</strong></p>
+<p>↓</p>
+<p><strong>Warp2 Basic / Inner Model</strong></p>
+<p>↓</p>
+<p><strong>Potential nonlinear Training → Productivity relationship</strong></p>
+<p>↓</p>
+<p><strong>Stable1 resampling for small-sample stability</strong></p>
+<p>↓</p>
+<p><strong>Measurement + structural validation</strong></p>
+<p>↓</p>
+<p><strong>Consider Job Motivation moderation later</strong></p>
+<p>↓</p>
+<p><strong>Translate findings into training strategy</strong></p>
+</blockquote>
+<hr>
+<h1 id="43-central-takeaway"><strong>43. Central Takeaway</strong></h1>
+<p>The most important lesson from the GreenTech case is <strong>not simply that Option A is simpler</strong>.</p>
+<p>It is that:</p>
+<blockquote>
+<p><strong>The analytical specification should preserve the theoretically important primary relationship while adding complexity only when the research question, sample size, measurement quality, and resources can support it.</strong></p>
+</blockquote>
+<p>Work Experience has a clear role as a <strong>control variable</strong> because it can account for pre-existing differences in productivity.</p>
+<p>Job Motivation is potentially valuable as a <strong>moderator</strong>, but moderation introduces additional complexity and requires a sufficiently strong theoretical and empirical basis.</p>
+<p>Most importantly, switching from <strong>Warp2 Basic to a linear model merely because a moderator is being added</strong> is methodologically questionable if the original nonlinear relationship was theoretically motivated.</p>
+<p>Therefore, for this small pilot:</p>
+<blockquote>
+<p><strong>A focused, nonlinear baseline model with Work Experience as a control and Stable1 resampling provides the strongest balance of stability, interpretability, and analytical rigor.</strong></p>
+</blockquote>
+<hr>
+<h1 id="exam-study-guide-appendix">Exam Study Guide Appendix</h1>
+<hr>
+<h1 id="week-14-exam-appendix-sentiment-analysis-pls-sem-warppls-and-time-series-forecasting">Week 14 Exam Appendix — Sentiment Analysis, PLS-SEM/WarpPLS, and Time-Series Forecasting</h1>
+<h2 id="a-sentiment-analysis-as-business-research">A. Sentiment analysis as business research</h2>
+<h3 id="1-what-it-answers">1. What it answers</h3>
+<p>Sentiment analysis converts unstructured text—reviews, interviews, complaints, social posts or open-ended survey answers—into evidence about <strong>what stakeholders feel, why they feel it and which aspects require action</strong>.</p>
+<p>Basic classification is:</p>
+<ul>
+<li>positive;</li>
+<li>neutral;</li>
+<li>negative.</li>
+</ul>
+<p>Advanced analysis may identify joy, anger, disappointment, trust or fear and associate sentiment with specific aspects such as app, driver, price or service.</p>
+<h3 id="2-text-mining-pipeline">2. Text-mining pipeline</h3>
+<p>A defensible workflow is:</p>
+<ol>
+<li>define the business question and unit of analysis (review, sentence or aspect);</li>
+<li>acquire text ethically and preserve metadata such as date/product/segment;</li>
+<li>clean duplicates, spam, encoding errors and irrelevant records;</li>
+<li>preprocess appropriately: tokenize, normalize case, handle stopwords, lemmatize/stem, preserve negation and domain terms;</li>
+<li>extract keywords/key phrases, entities and aspects;</li>
+<li>calculate polarity/class/emotion/intensity;</li>
+<li>validate results on a human-coded sample;</li>
+<li>compare aspects, segments, competitors and time trends;</li>
+<li>drill into negative/neutral/extreme cases;</li>
+<li>translate themes into operational action and monitor later sentiment.</li>
+</ol>
+<p>Other text-mining operations mentioned include part-of-speech tagging, named-entity recognition, keyword extraction, topic/theme analysis and emotion analysis.</p>
+<h3 id="3-key-metrics-and-use-cases">3. Key metrics and use cases</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Meaning/use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Polarity/sentiment score</td>
+<td>Direction, often scaled −1 (very negative) to +1 (very positive), with near zero neutral.</td>
+</tr>
+<tr>
+<td>Sentiment class/share</td>
+<td>Count/percentage positive, neutral and negative.</td>
+</tr>
+<tr>
+<td>Intensity</td>
+<td>Strength of sentiment/emotional language.</td>
+</tr>
+<tr>
+<td>Aspect frequency</td>
+<td>How often an issue is mentioned.</td>
+</tr>
+<tr>
+<td>Aspect polarity/share</td>
+<td>Feeling attached to an aspect and its positive/negative proportion.</td>
+</tr>
+<tr>
+<td>Aspect weight</td>
+<td>Relative importance/salience of an aspect.</td>
+</tr>
+<tr>
+<td>Sentiment trend</td>
+<td>How sentiment changes over time.</td>
+</tr>
+<tr>
+<td>Burst detection</td>
+<td>Sudden rise in complaints/negative sentiment after an event or service change.</td>
+</tr>
+<tr>
+<td>Keyword salience</td>
+<td>Influential terms, beyond raw frequency where possible.</td>
+</tr>
+<tr>
+<td>Sarcasm rate</td>
+<td>Positive-looking words used with negative meaning.</td>
+</tr>
+<tr>
+<td>Spam/fake-review rate</td>
+<td>Repetitive or suspicious content.</td>
+</tr>
+<tr>
+<td>Critical-incidents index</td>
+<td>Frequency/severity of extreme anger or failure language.</td>
+</tr>
+<tr>
+<td>Reputation risk</td>
+<td>Weighted negative-emotion exposure.</td>
+</tr>
+<tr>
+<td>Competitive sentiment gap</td>
+<td>Brand sentiment relative to competitors.</td>
+</tr>
+<tr>
+<td>Aspect parity index</td>
+<td>Dimensions on which the brand trails rivals.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="4-uber-review-demonstration">4. Uber review demonstration</h3>
+<p>The Google Colab/Gemini exercise:</p>
+<ul>
+<li>uploaded Uber review data;</li>
+<li>produced score and positive/neutral/negative classes;</li>
+<li>extracted prominent aspects/terms;</li>
+<li>generated a word cloud and sentiment-distribution chart;</li>
+<li>summarized insights;</li>
+<li>filtered negative reviews for deeper preprocessing, frequency/aspect analysis and improvement recommendations.</li>
+</ul>
+<p>Reported counts were approximately:</p>
+<ul>
+<li>positive: <strong>10,792</strong>;</li>
+<li>neutral: <strong>1,180</strong>;</li>
+<li>negative: <strong>1,029</strong>.</li>
+</ul>
+<p>Prominent terms included driver, ride, app, service, time, price, nice and great. The overall distribution was strongly positive, but the negative subset pointed to app/interface, customer-service responsiveness, operations and support as attention areas.</p>
+<p><strong>Critical exam point:</strong> A word cloud shows prominence/frequency, not direction or causation. “Driver” being large does not tell whether drivers were praised or criticized. Use aspect-conditioned sentiment, representative quotations and human checks.</p>
+<h3 id="5-practical-applications">5. Practical applications</h3>
+<ul>
+<li><strong>Post-release monitoring:</strong> detect a negative burst after an app update; isolate login/payment/crash themes.</li>
+<li><strong>Service recovery:</strong> identify anger-heavy complaint categories and prioritize resolution standards.</li>
+<li><strong>Competitive benchmarking:</strong> compare price, support and reliability sentiment against a rival.</li>
+<li><strong>HR research:</strong> classify open-ended exit interviews into workload, supervisor, pay and culture, then relate themes to attrition.</li>
+<li><strong>Interview research:</strong> supplement thematic coding with sentiment/emotion patterns; sentiment cannot replace contextual interpretation.</li>
+</ul>
+<h3 id="6-limitations">6. Limitations</h3>
+<p>Lexicon/model scores can fail on sarcasm, negation (“not bad”), mixed sentiment, multilingual/code-mixed text, domain slang, emojis and fake reviews. Review samples are often self-selected and not representative of all customers. AI-generated code/output must be inspected, documented and validated; automated summaries are leads, not unquestionable findings.</p>
+<h2 id="b-pls-sem-warppls-workflow">B. PLS-SEM/WarpPLS workflow</h2>
+<h3 id="1-measurement-model-versus-structural-model">1. Measurement model versus structural model</h3>
+<ul>
+<li><strong>Outer/measurement model:</strong> constructs and their indicators—loadings/weights, reliability, convergent and discriminant validity.</li>
+<li><strong>Inner/structural model:</strong> relationships among constructs—direct, indirect, moderated, controlled and possibly nonlinear effects.</li>
+</ul>
+<p>Memory aid: <strong>outer = how variables are measured; inner = how constructs affect one another.</strong> Never interpret structural paths before acceptable measurement quality.</p>
+<h3 id="2-warppls-model-building-demonstration">2. WarpPLS model-building demonstration</h3>
+<p>For the retail model:</p>
+<ul>
+<li>create latent constructs SA, PA, PV, VS and SAT;</li>
+<li>assign each indicator family to its construct;</li>
+<li>draw direct structural links;</li>
+<li>specify PV as mediator through the relevant paths;</li>
+<li>create VS moderation by attaching the moderating link to a <strong>path</strong>, not merely to an outcome construct;</li>
+<li>select algorithms and resampling deliberately;</li>
+<li>run, inspect model-level diagnostics, measurement quality and structural effects.</li>
+</ul>
+<p>“Edit direct link” changes a connection on the canvas; it is not itself the mathematical algorithm.</p>
+<h3 id="3-algorithms-and-resampling">3. Algorithms and resampling</h3>
+<ul>
+<li><strong>PLS Regression</strong> was selected as the outer-model algorithm for construct–indicator estimation.</li>
+<li><strong>Warp2 Basic</strong> was used as the inner-model algorithm to permit a nonlinear/warped structural relationship.</li>
+<li><strong>Stable1</strong> with about 100 resamples was used in the demonstration/pilot context.</li>
+<li><strong>Bootstrapping</strong> repeatedly samples with replacement to estimate sampling variability/CIs; it does not magically enlarge the information content of a small original sample or fix misspecification.</li>
+</ul>
+<p>Inner-model choice determines how structural paths (linear/nonlinear) are estimated. Outer-model choice concerns measurement. Stable resampling, bootstrapping and jackknifing are uncertainty/stability procedures, not substitutes for either model algorithm.</p>
+<h3 id="4-model-evaluation-sequence">4. Model-evaluation sequence</h3>
+<ol>
+<li>justify constructs, indicator direction and structural paths theoretically;</li>
+<li>clean/format data and treat categorical group codes appropriately;</li>
+<li>examine collinearity;</li>
+<li>evaluate indicator loadings/weights and cross-loadings;</li>
+<li>evaluate reliability and convergent validity;</li>
+<li>evaluate discriminant validity;</li>
+<li>inspect overall/quality diagnostics without relying on one fit index;</li>
+<li>interpret path coefficients, p-values/CIs, R², Q² and effect sizes;</li>
+<li>examine mediation, moderation, controls and group differences;</li>
+<li>check robustness to algorithms/resampling only with methodological justification;</li>
+<li>translate results into the business problem.</li>
+</ol>
+<h2 id="c-measurement-model-diagnostics">C. Measurement-model diagnostics</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What it evaluates</th>
+<th>Common guideline/caution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Indicator loading</td>
+<td>strength of reflective indicator on intended construct</td>
+<td>around ≥.70 desirable; .40–.70 needs theory/CR/AVE review, not automatic deletion</td>
+</tr>
+<tr>
+<td>p-value/CI of loading</td>
+<td>sampling evidence</td>
+<td>significance alone does not establish quality</td>
+</tr>
+<tr>
+<td>Cross-loading</td>
+<td>loading on non-target construct</td>
+<td>target loading should be clearly larger; high cross-loading threatens discriminant validity</td>
+</tr>
+<tr>
+<td>Cronbach’s alpha</td>
+<td>internal consistency</td>
+<td>often ≥.70; affected by number/redundancy of items</td>
+</tr>
+<tr>
+<td>Composite reliability</td>
+<td>construct-score reliability</td>
+<td>often .70–.95; extremely high values may signal redundant items</td>
+</tr>
+<tr>
+<td>AVE</td>
+<td>convergent validity/variance captured by construct</td>
+<td>≥.50 commonly sought</td>
+</tr>
+<tr>
+<td>Fornell–Larcker</td>
+<td>discriminant validity</td>
+<td>√AVE on diagonal should exceed correlations with other substantive constructs</td>
+</tr>
+<tr>
+<td>HTMT (complementary modern check)</td>
+<td>discriminant validity</td>
+<td>commonly &lt;.85 or &lt;.90 by field</td>
+</tr>
+</tbody>
+</table></div>
+<p>An indicator can load <code>.72</code> on its intended construct and <code>.68</code> elsewhere: its intended loading is significant/high, yet distinctiveness is poor. Review wording/domain overlap and theory; do not retain only because p &lt; .05.</p>
+<p>Moderation product terms are analytical interaction artifacts, not ordinary substantive latent constructs. Do not automatically apply the normal Fornell–Larcker interpretation to their row/column and invent a false violation.</p>
+<h3 id="ave-versus-avif">AVE versus AVIF</h3>
+<ul>
+<li><strong>AVE:</strong> measurement/convergent validity—does a construct explain sufficient indicator variance?</li>
+<li><strong>AVIF:</strong> average block multicollinearity—are predictor blocks excessively redundant?</li>
+</ul>
+<p>Memory aid: <strong>AVE = extracted measurement variance; AVIF = inflated predictor variance.</strong></p>
+<h2 id="d-structural-model-diagnostics">D. Structural/model diagnostics</h2>
+<h3 id="1-collinearity">1. Collinearity</h3>
+<ul>
+<li><strong>VIF:</strong> predictor-level multicollinearity; the quiz uses <code>&lt; 3.3</code> as an ideal guideline (other fields often accept &lt;5).</li>
+<li><strong>AVIF:</strong> overall/block collinearity; ideally ≤3.3.</li>
+<li><strong>AFVIF:</strong> full-collinearity diagnostic including vertical/lateral concerns.</li>
+</ul>
+<p>Low VIF does not establish discriminant validity and does not rule out Simpson’s paradox.</p>
+<h3 id="2-fit-quality-indices-in-warppls">2. Fit/quality indices in WarpPLS</h3>
+<p>The demonstration listed:</p>
+<ul>
+<li>APC (average path coefficient);</li>
+<li>ARS (average R²);</li>
+<li>AARS (average adjusted R²);</li>
+<li>AVIF/AFVIF;</li>
+<li>Tenenhaus GoF;</li>
+<li>SPR (Simpson’s paradox ratio), with other quality ratios in the tool.</li>
+</ul>
+<p>The transcript expects APC/ARS/AARS p &lt; .05; the quiz uses GoF &gt; .36 as a traditionally “large” guideline and SPR ≥ .70. These are supporting diagnostics—not a certificate that the model, measures, causality and theory are correct. PLS-SEM evaluation should prioritize measurement quality, explanatory/predictive performance and path evidence; traditional GoF is controversial and never sufficient alone.</p>
+<h3 id="3-r-and-q">3. R² and Q²</h3>
+<p>The retail demonstration reported roughly <strong>28% of PV variance</strong> and <strong>34% of satisfaction variance</strong> explained. A positive Q² supports out-of-sample predictive relevance under the tool’s procedure. Interpret magnitude in the business domain; “positive” is not the same as “high.”</p>
+<h3 id="4-simpson-s-paradox">4. Simpson’s paradox</h3>
+<p>A pooled relationship can reverse subgroup relationships—for example, pooled X→Y positive while male and female paths are both negative because group composition confounds aggregation.</p>
+<ul>
+<li><strong>SPR:</strong> sign-reversal/pooling diagnostic; quiz guideline ≥.70.</li>
+<li><strong>Multi-group analysis:</strong> directly compare structural paths across categories.</li>
+</ul>
+<p>SPR is not GoF and is not VIF. A model can fit well and have low collinearity while pooled conclusions remain misleading.</p>
+<h3 id="5-categorical-groups">5. Categorical groups</h3>
+<p>Maintain categorical codes/labels consistently for multi-group analysis; arbitrary standardization can destroy category meaning. Check adequate group sizes, measurement comparability/invariance and whether path differences—not merely within-group significance—are formally tested.</p>
+<h2 id="e-structural-path-interpretation">E. Structural-path interpretation</h2>
+<p>For each path report:</p>
+<ul>
+<li>sign/direction;</li>
+<li>standardized/unstandardized magnitude;</li>
+<li>p-value/CI;</li>
+<li>effect size and outcome R²/Q²;</li>
+<li>theoretical and managerial interpretation.</li>
+</ul>
+<p>The demonstration illustrates a positive SA→PV path around <code>.25</code>: a one-SD improvement in SA is associated with about <code>.25 SD</code> higher PV. A significant VS interaction around <code>−.13</code> means the focal relationship weakens as VS rises, conditional on the precise modeled path. Inspect a moderation plot/simple slopes rather than describing the main effect alone.</p>
+<p>Mediation/moderation outputs are conveniently produced by WarpPLS, but convenience does not validate their causal ordering. Changing algorithms until desired significance appears is specification searching; compare theoretically defensible alternatives and report sensitivity transparently.</p>
+<h2 id="f-controls-moderators-and-the-greentech-pilot">F. Controls, moderators, and the GreenTech pilot</h2>
+<h3 id="1-greentech-constructs">1. GreenTech constructs</h3>
+<p>Core question: does <strong>Training Intensity</strong> influence <strong>Productivity</strong>?</p>
+<ul>
+<li>Training indicators may include instruction hours and training/test scores.</li>
+<li>Productivity should not be represented by units alone; include output per hour, quality scores and time utilization where conceptually appropriate.</li>
+</ul>
+<h3 id="2-control-versus-moderator">2. Control versus moderator</h3>
+<ul>
+<li><strong>Work Experience as control:</strong> accounts for a plausible alternative predictor of productivity, helping estimate training’s unique association. It has a direct path to Productivity but is not a productivity indicator.</li>
+<li><strong>Job Motivation as moderator:</strong> tests whether Training→Productivity changes at low/high motivation; requires a Training×Motivation interaction. A motivation main effect is not moderation.</li>
+</ul>
+<p>Adding controls can alter collinearity, pooled/subgroup behavior and interpretation; add only with theoretical justification.</p>
+<h3 id="3-nonlinearity">3. Nonlinearity</h3>
+<p>Training may have diminishing returns: early instruction creates large productivity gains, later hours add little or can cause fatigue. Warp2 Basic can model a nonlinear structural relation. Nonlinearity and moderation are separate:</p>
+<ul>
+<li>nonlinearity: the Training→Productivity curve changes over Training levels;</li>
+<li>moderation: that curve/slope changes across Motivation levels.</li>
+</ul>
+<p>Adding a moderator does not require switching to a linear model. Multiple productivity indicators also do not, by themselves, prove the structural relationship is nonlinear.</p>
+<h3 id="4-option-decision">4. Option decision</h3>
+<p><strong>Option A:</strong> retain Work Experience control, PLS Regression outer model, Warp2 Basic inner model and Stable1 resampling.</p>
+<p><strong>Option B:</strong> add Motivation moderation, switch to linear inner model and bootstrap.</p>
+<p>For a small resource-constrained pilot, Option A is preferred because it:</p>
+<ul>
+<li>answers the primary training question;</li>
+<li>controls an important confounder;</li>
+<li>preserves theoretically plausible nonlinearity;</li>
+<li>limits interaction/measurement complexity;</li>
+<li>supports clearer interpretation and stability.</li>
+</ul>
+<p>Option B bundles three separate choices without necessity. Bootstrapping does not make an overcomplex small-sample model reliable, and adding moderation does not justify deleting nonlinearity. Motivation should be postponed, not rejected: validate its scale, establish the baseline model, obtain a larger sample, then test the interaction and replicate.</p>
+<p>Recommended progression:</p>
+<ol>
+<li>validate Training/Productivity measurements;</li>
+<li>estimate baseline Training→Productivity controlling Experience;</li>
+<li>assess nonlinearity;</li>
+<li>in an expanded study validate Motivation and test moderation;</li>
+<li>replicate and examine out-of-sample prediction.</li>
+</ol>
+<h2 id="g-time-series-analysis-and-forecasting">G. Time-series analysis and forecasting</h2>
+<h3 id="1-data-structures">1. Data structures</h3>
+<ul>
+<li><strong>Cross-sectional:</strong> many entities at one period.</li>
+<li><strong>Time series:</strong> one entity/phenomenon over ordered time, e.g., daily sales.</li>
+<li><strong>Longitudinal:</strong> repeated observations on the same people/entities over time.</li>
+<li><strong>Panel:</strong> multiple entities over multiple times.</li>
+</ul>
+<p>The live transcript reverses cross-sectional/longitudinal wording at one point; the definitions above are the correct exam distinctions.</p>
+<h3 id="2-components-and-models">2. Components and models</h3>
+<p>A time series may decompose into:</p>
+<p><code>Yt = Trendt + Seasonalityt + Cyclet + Irregular/Noiset</code> (additive)</p>
+<p>or multiplicatively when seasonal variation scales with the level. Additive/multiplicative selection should follow pattern/theory and diagnostics, not a casual claim that components are “correlated.”</p>
+<ul>
+<li><strong>Trend:</strong> long-term direction.</li>
+<li><strong>Seasonality:</strong> repeated fixed-frequency pattern, e.g., weekends/festivals.</li>
+<li><strong>Cycle:</strong> longer, less regular economic/business movement.</li>
+<li><strong>Irregular/noise:</strong> unpredictable remainder.</li>
+<li><strong>Stationarity:</strong> statistical properties such as mean/variance and dependence structure remain stable over time, not simply “all values are equal.”</li>
+</ul>
+<p>Methods mentioned:</p>
+<ul>
+<li>moving average—smooths short-term noise;</li>
+<li>exponential smoothing—weights recent values more heavily;</li>
+<li>ARIMA—autoregressive, differenced/integrated and moving-average components;</li>
+<li>SARIMA—ARIMA plus seasonal terms;</li>
+<li>autocorrelation/partial autocorrelation—lag relationships and model identification;</li>
+<li>Prophet (the transcript says “profit”)—Meta/Facebook open-source business forecasting with trend, seasonality, holidays and error.</li>
+</ul>
+<h3 id="3-prophet-demonstration">3. Prophet demonstration</h3>
+<p>Inputs:</p>
+<ul>
+<li>sales CSV with date column <code>ds</code> and outcome <code>y</code>;</li>
+<li>holiday table for New Year, Women’s Day, Independence Day, Diwali, Christmas, etc.</li>
+</ul>
+<p>Outputs/use cases:</p>
+<ul>
+<li>forecast table with <code>yhat</code>, lower and upper uncertainty bounds;</li>
+<li>future sales plot;</li>
+<li>trend, seasonal and holiday component plots;</li>
+<li>detected changepoints;</li>
+<li>error/cross-validation metrics;</li>
+<li>scenario forecasts for GST or optimistic/base/pessimistic conditions.</li>
+</ul>
+<p>Changepoints identify structural shifts requiring parallel business investigation: competitor launch, promotion, stock-out, policy change or event. They do not automatically reveal the cause.</p>
+<p>Prophet can tolerate some missingness/outliers and strong seasonal/holiday effects, but is not automatically superior to ARIMA/SARIMA for every series. Compare alternatives through rolling/holdout time-series validation—not random train/test splits.</p>
+<h3 id="4-forecast-accuracy">4. Forecast accuracy</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAE</td>
+<td>average absolute error in outcome units</td>
+</tr>
+<tr>
+<td>MSE</td>
+<td>average squared error; strongly penalizes large misses and is scale-squared</td>
+</tr>
+<tr>
+<td>RMSE</td>
+<td>square root of MSE; typical error in outcome units</td>
+</tr>
+<tr>
+<td>MAPE/APE</td>
+<td>percentage error; problematic near zero actual values</td>
+</tr>
+</tbody>
+</table></div>
+<p>Lower is better <strong>relative to the same outcome, period and validation design</strong>. MSE <code>59.2</code> cannot be labeled good/bad without scale/baseline; RMSE ≈<code>√59.2 ≈ 7.7</code> is interpretable in sales units. Compare with naïve/seasonal-naïve forecasts and business tolerance.</p>
+<h2 id="h-high-yield-distinctions">H. High-yield distinctions</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pair</th>
+<th>Exam-ready distinction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sentiment class vs polarity</td>
+<td>Categorical label versus continuous direction/strength score.</td>
+</tr>
+<tr>
+<td>Word frequency vs aspect sentiment</td>
+<td>Mention prominence versus feeling attached to the aspect.</td>
+</tr>
+<tr>
+<td>Outer vs inner model</td>
+<td>Construct–indicator measurement versus construct–construct structure.</td>
+</tr>
+<tr>
+<td>Loading vs weight</td>
+<td>Reflective indicator association versus formative contribution.</td>
+</tr>
+<tr>
+<td>Reliability vs convergent validity</td>
+<td>Consistency versus indicators sharing enough construct variance.</td>
+</tr>
+<tr>
+<td>AVE vs AVIF</td>
+<td>Convergent validity versus block collinearity.</td>
+</tr>
+<tr>
+<td>Cross-loading vs VIF</td>
+<td>Indicator overlap across constructs versus predictor redundancy.</td>
+</tr>
+<tr>
+<td>Fornell–Larcker vs SPR</td>
+<td>Construct discriminant validity versus pooled sign-reversal risk.</td>
+</tr>
+<tr>
+<td>GoF vs SPR</td>
+<td>Broad traditional fit index versus Simpson’s paradox diagnostic.</td>
+</tr>
+<tr>
+<td>Control vs moderator</td>
+<td>Adjusts alternative influence versus changes a focal path.</td>
+</tr>
+<tr>
+<td>Main effect vs interaction</td>
+<td>Average predictor effect versus conditional slope change.</td>
+</tr>
+<tr>
+<td>Outer algorithm vs inner algorithm</td>
+<td>Measurement estimation versus structural path form/estimation.</td>
+</tr>
+<tr>
+<td>Inner algorithm vs resampling</td>
+<td>Defines relationship estimation versus estimates sampling stability/uncertainty.</td>
+</tr>
+<tr>
+<td>Nonlinearity vs moderation</td>
+<td>Curvature over X versus relationship changing with W.</td>
+</tr>
+<tr>
+<td>Time series vs panel</td>
+<td>One phenomenon through time versus many entities through time.</td>
+</tr>
+<tr>
+<td>Seasonality vs cycle</td>
+<td>Regular fixed-period recurrence versus longer irregular movement.</td>
+</tr>
+<tr>
+<td>Additive vs multiplicative</td>
+<td>Constant-scale component effects versus effects proportional to series level.</td>
+</tr>
+<tr>
+<td>MAE vs MSE/RMSE</td>
+<td>Absolute-error units versus squared-error penalty and its unit-restored root.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="i-likely-exam-questions-with-answer-points">I. Likely exam questions with answer points</h2>
+<h3 id="1-explain-sentiment-analysis-and-design-an-end-to-end-review-study">1. Explain sentiment analysis and design an end-to-end review study.</h3>
+<p>Define sentiment/aspects/emotions; data ethics and preprocessing; polarity/classes; validation; aspect/time/competitor comparisons; negative drill-down; action; limitations.</p>
+<h3 id="2-critique-a-word-cloud-based-conclusion">2. Critique a word cloud-based conclusion.</h3>
+<p>Frequency is not sentiment, importance or causality; stopwords/context matter; pair with aspect polarity, representative text, segment/time analysis and manual validation.</p>
+<h3 id="3-distinguish-measurement-and-structural-models-in-pls-sem">3. Distinguish measurement and structural models in PLS-SEM.</h3>
+<p>List metrics and required evaluation order; explain why bad measurement makes paths uninterpretable.</p>
+<h3 id="4-evaluate-a-pls-sem-measurement-model">4. Evaluate a PLS-SEM measurement model.</h3>
+<p>Loadings and significance, cross-loadings, alpha/CR, AVE, Fornell–Larcker/HTMT; distinguish significant from good; handle weak/cross-loading items using theory and effect on CR/AVE/domain.</p>
+<h3 id="5-interpret-warppls-model-quality-indices">5. Interpret WarpPLS model-quality indices.</h3>
+<p>APC/ARS/AARS significance, VIF/AVIF/AFVIF, R²/Q², GoF and SPR; state that no single cutoff validates the whole model.</p>
+<h3 id="6-explain-simpson-s-paradox-in-managerial-research">6. Explain Simpson’s paradox in managerial research.</h3>
+<p>Give pooled/subgroup reversal, distinguish SPR from VIF/GoF, recommend group analysis and theoretically justified controls.</p>
+<h3 id="7-evaluate-greentech-options-a-and-b">7. Evaluate GreenTech Options A and B.</h3>
+<p>Clarify outer/inner/resampling, control/moderator and nonlinearity/moderation; recommend parsimonious Option A for pilot; stage Motivation later.</p>
+<h3 id="8-explain-moderation-in-pls-sem">8. Explain moderation in PLS-SEM.</h3>
+<p>Attach W to focal path, interaction term, sign/magnitude/p/CI, simple slopes/plot, distinguish motivation main effect from Training×Motivation.</p>
+<h3 id="9-explain-the-main-components-and-models-of-time-series-analysis">9. Explain the main components and models of time-series analysis.</h3>
+<p>Trend/seasonality/cycle/noise, stationarity, additive/multiplicative; moving average, exponential smoothing, ARIMA/SARIMA and Prophet; validation.</p>
+<h3 id="10-interpret-prophet-output-for-a-retailer">10. Interpret Prophet output for a retailer.</h3>
+<p>Forecast/interval, component and holiday effects, changepoints, MAE/RMSE/MAPE, comparison with naïve baseline, scenario action and causal caveat.</p>
+<h2 id="j-source-coverage-checklist">J. Source-coverage checklist</h2>
+<ul>
+<li>[x] <strong>Video 1 — Text mining/sentiment concepts:</strong> positive/neutral/negative and emotions; preprocessing, POS, entities, keywords, aspects and emotion analysis.</li>
+<li>[x] <strong>Video 1 — Sentiment metrics:</strong> polarity, class, intensity, aspect frequency/polarity/weight/share, trend/burst, salience, sarcasm/spam, critical incidents/reputation and competitive gap/parity.</li>
+<li>[x] <strong>Video 1 — Colab/Gemini demonstration:</strong> Uber upload, scoring, aspect extraction, word cloud/distribution, reported 10,792/1,180/1,029 classes, prominent terms and negative-review drill-down/action areas.</li>
+<li>[x] <strong>Video 1 — Lecturer emphasis:</strong> theory and analysis possibilities guide useful prompting; unstructured text becomes actionable intelligence; automation limitations addressed in appendix.</li>
+<li>[x] <strong>Video 2 — WarpPLS setup:</strong> data/model loading, latent constructs/indicators, direct paths, mediation and path-specific moderation links, model drawing/editing.</li>
+<li>[x] <strong>Video 2 — Settings:</strong> outer PLS Regression, inner Warp2 Basic, Stable1 versus bootstrap/resampling selection and analysis execution.</li>
+<li>[x] <strong>Video 3 — Output/model quality:</strong> algorithm/resample report, APC/ARS/AARS, AVIF/AFVIF, GoF and SPR-related fit/quality discussion.</li>
+<li>[x] <strong>Video 3 — Measurement quality:</strong> reflective loadings/weights, cross-loadings, significance, reliability, AVE/convergent and discriminant validity.</li>
+<li>[x] <strong>Video 3 — Structural quality:</strong> PV/SAT R² around .28/.34, Q² predictive relevance, direct/indirect/moderated estimates, path <code>.25</code> and interaction <code>−.13</code> examples, plots and sensitivity to algorithms.</li>
+<li>[x] <strong>Video 3 — Additional capabilities:</strong> direct mediation/moderation reports and multi-group comparisons; warning against arbitrary algorithm choice/specification searching.</li>
+<li>[x] <strong>Live — Course/research recap:</strong> theory, perceptions/historic data, description/forecast/prescription and tool formatting/AI interpretation emphasis.</li>
+<li>[x] <strong>Live — Time-series foundations:</strong> data type, components, stationarity, additive/multiplicative forms, moving average, exponential smoothing, ARIMA/SARIMA and autocorrelation.</li>
+<li>[x] <strong>Live — Prophet:</strong> <code>ds</code>/<code>y</code>, holiday data, trend/seasonality/holiday/error, forecast and intervals, changepoints, scenario analysis, MAE/MSE/RMSE/MAPE and Google Colab demonstration.</li>
+<li>[x] <strong>Live — Text mining/panel preview:</strong> textual sources/themes/actionable insight and panel as entities plus time; administrative similarity Q&amp;A recognized as session-specific.</li>
+<li>[x] <strong>PLS-SEM comprehensive notes:</strong> correct evaluation sequence, loadings/cross-loadings, CR/AVE/Fornell–Larcker, interaction artifacts, VIF/AVIF, GoF caveat, Simpson’s paradox/SPR, controls/MGA and algorithm distinctions.</li>
+<li>[x] <strong>GreenTech case blocks:</strong> Training/Productivity constructs, PLS outer and Warp2 inner algorithms, Experience control, Motivation moderation, Stable1/bootstrap, small-sample complexity and Option A recommendation.</li>
+<li>[x] <strong>GreenTech measurement/structure:</strong> multidimensional Productivity, control not indicator, main versus interaction, nonlinearity versus moderation, parsimony, staged validation/baseline/nonlinear/moderation/replication workflow.</li>
+</ul>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<p>Combine structured TechNova scales with sentiment from exit interviews or employee reviews, then test the latent predictor → turnover-intention model in PLS-SEM. Evaluate the measurement model before structural paths and distinguish measurement validity from multicollinearity.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-13.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 13: Time Series, Forecasting, and Panel Data</span>
+      </a>
+      <a href="week-15.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 15: Logistic Regression — Model Fit,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

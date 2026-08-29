@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Visualization · Week 14 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Visualization</span>
+      <span class="brand-title">Week 14</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html" selected>Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Data Visualization, Visual Perception, and Preattentive Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Visual Perception, Better Visualization, Form–Function, Tables and…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Visualizing and Comparing Categories
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Charts That Show Change Over Time
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Distribution and Relationship Visualizations
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Data Visualization: Exhaustive Exam Notes
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Data Visualization with Python, Jupyter, Python Basics, and Chart…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Python Data Visualization, Matplotlib Plotting, Interpretation, and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Data Visualization with Matplotlib, Seaborn, and Jupyter Notebook
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Exam-Focused Study Notes
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Seaborn, Matplotlib, Heatmaps, Styling, and Dashboard Design
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Dashboards, Dashboard Design, Grammar of Graphics, and Matplotlib
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Dashboard Design, Visual Encoding, Matplotlib, and Dashboard Analytics
+      </a>
+      <a class="is-active" href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Storytelling with Data
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Storytelling with Data: Exam-Focused Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Visualization · Week 14</p>
+        <h1 class="page-title">Storytelling with Data</h1>
+        <p class="page-meta">Week 14 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#exam-focused-comprehensive-notes">Exam-focused comprehensive notes</a></li>
+      <li><a href="#1-central-purpose-of-data-visualization">1. Central purpose of data visualization</a></li>
+      <li><a href="#2-lesson-1-understand-the-context">2. Lesson 1 — Understand the context</a></li>
+      <li><a href="#2-1-exploratory-versus-explanatory-analysis">2.1 Exploratory versus explanatory analysis</a></li>
+      <li><a href="#2-2-the-who-define-the-audience-precisely">2.2 The “Who”: define the audience precisely</a></li>
+      <li><a href="#2-3-the-what-define-knowledge-and-action">2.3 The “What”: define knowledge and action</a></li>
+      <li><a href="#2-4-the-big-idea">2.4 The Big Idea</a></li>
+      <li><a href="#2-5-communication-mechanism-live-presentation-versus-document-email">2.5 Communication mechanism: live presentation versus document/email</a></li>
+      <li><a href="#2-6-tone">2.6 Tone</a></li>
+      <li><a href="#2-7-select-data-only-after-context-is-clear">2.7 Select data only after context is clear</a></li>
+      <li><a href="#3-storyboarding-structuring-communication-before-slides">3. Storyboarding: structuring communication before slides</a></li>
+      <li><a href="#4-lesson-2-choose-an-effective-visual-display">4. Lesson 2 — Choose an effective visual display</a></li>
+      <li><a href="#4-1-charts-to-avoid-or-use-only-with-strong-justification">4.1 Charts to avoid or use only with strong justification</a></li>
+      <li><a href="#5-lesson-3-identify-and-eliminate-clutter">5. Lesson 3 — Identify and eliminate clutter</a></li>
+      <li><a href="#5-1-cognitive-load">5.1 Cognitive load</a></li>
+      <li><a href="#5-2-clutter">5.2 Clutter</a></li>
+      <li><a href="#5-3-gestalt-principles-as-decluttering-tools">5.3 Gestalt principles as decluttering tools</a></li>
+      <li><a href="#5-4-lack-of-visual-order-is-a-form-of-clutter">5.4 Lack of visual order is a form of clutter</a></li>
+      <li><a href="#6-focus-attention-and-audience-perception">6. Focus attention and audience perception</a></li>
+      <li><a href="#7-telling-a-story">7. Telling a story</a></li>
+      <li><a href="#7-1-instructor-s-suspense-story-and-its-lesson">7.1 Instructor’s suspense story and its lesson</a></li>
+      <li><a href="#7-2-narrative-arc-freytag-s-pyramid">7.2 Narrative arc / Freytag’s pyramid</a></li>
+      <li><a href="#8-audience-as-hero-segmentation-and-common-ground">8. Audience as hero, segmentation, and common ground</a></li>
+      <li><a href="#9-innovatepay-case-study">9. InnovatePay case study</a></li>
+      <li><a href="#9-1-recommended-approach">9.1 Recommended approach</a></li>
+      <li><a href="#9-2-evaluation-of-presentation-options">9.2 Evaluation of presentation options</a></li>
+      <li><a href="#9-3-trust-and-relationship-management">9.3 Trust and relationship management</a></li>
+      <li><a href="#10-common-mistakes-and-corrections">10. Common mistakes and corrections</a></li>
+      <li><a href="#11-end-to-end-exam-framework">11. End-to-end exam framework</a></li>
+      <li><a href="#12-likely-exam-questions-and-answer-cues">12. Likely exam questions and answer cues</a></li>
+      <li><a href="#13-rapid-revision-and-final-checklist">13. Rapid revision and final checklist</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="exam-focused-comprehensive-notes">Exam-focused comprehensive notes</h2>
+<h2 id="1-central-purpose-of-data-visualization">1. Central purpose of data visualization</h2>
+<p>The purpose of data visualization is <strong>not to create attractive charts</strong>. It is to communicate a message or story that the audience needs to hear and can act upon.</p>
+<ul>
+<li>Data contains possible stories, but visualization software cannot identify the relevant story by itself.</li>
+<li>Modern tools make chart production easy; they do not make explanation or persuasion easy.</li>
+<li>The analyst/communicator must bring the story to life both <strong>visually</strong> and <strong>contextually</strong>.</li>
+<li>A successful visual is judged by what the audience perceives and understands, not by what the creator intended or how sophisticated the chart looks.</li>
+</ul>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> It is never about “my chart” or “my presentation.” The decisive question is: <em>What does the audience see, understand, feel, and do?</em> A presenter may intend a bubble, while the audience perceives a balloon.</p>
+</blockquote>
+<h3 id="six-lessons-in-storytelling-with-data">Six lessons in storytelling with data</h3>
+<ol>
+<li>Understand the context.</li>
+<li>Choose an appropriate/effective visual display.</li>
+<li>Identify and eliminate clutter.</li>
+<li>Focus attention where it is needed.</li>
+<li>Think like a designer.</li>
+<li>Tell a story.</li>
+</ol>
+<p>The Week 14 material develops the first three directly and reinforces the remaining lessons through examples, discussion, and a case study.</p>
+<h3 id="opening-complaint-handling-example-before-and-after-storytelling">Opening complaint-handling example: before and after storytelling</h3>
+<p>A department head wants top management to approve recruitment of an additional employee for complaint handling.</p>
+<p><strong>Weak version:</strong> A month-wise chart shows complaints received (blue bars) and complaints handled (red bars), January–December. Although the data is present, the audience must discover the problem unaided. The need for an employee is not immediately evident.</p>
+<p><strong>Story-driven version:</strong> The processed-complaints series is given strong visual emphasis. It visibly drops after May, while the gap between complaints received and processed grows. An annotation explains that an employee resigned in May. Figures are displayed for the deterioration period. This establishes a clear causal narrative:</p>
+<p><strong>Employee resigns in May → processing capacity falls → backlog/gap grows → performance does not recover → replacement employee is required.</strong></p>
+<p>The second visual works because it highlights the relevant change, gives context, quantifies deterioration, and supports a decision.</p>
+<hr>
+<h2 id="2-lesson-1-understand-the-context">2. Lesson 1 — Understand the context</h2>
+<p>Before creating content or selecting a chart, answer three questions in order:</p>
+<ol>
+<li><strong>Who?</strong> To whom are you communicating?</li>
+<li><strong>What?</strong> What should the audience know or do?</li>
+<li><strong>How?</strong> How can data and the communication method help make the point?</li>
+</ol>
+<p>The “how” should be considered only after the “who” and “what” are clear.</p>
+<h2 id="2-1-exploratory-versus-explanatory-analysis">2.1 Exploratory versus explanatory analysis</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Exploratory analysis</th>
+<th>Explanatory analysis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Purpose</td>
+<td>Understand data and discover what is noteworthy</td>
+<td>Communicate a selected insight to an audience</td>
+</tr>
+<tr>
+<td>Analogy</td>
+<td>Searching for a needle in a haystack</td>
+<td>Showing the audience the needle</td>
+</tr>
+<tr>
+<td>Typical activity</td>
+<td>Test many hypotheses; inspect data in many ways</td>
+<td>Select evidence supporting the key message</td>
+</tr>
+<tr>
+<td>Visual treatment</td>
+<td>Often neutral and comprehensive</td>
+<td>Deliberately guides attention</td>
+</tr>
+<tr>
+<td>Audience burden</td>
+<td>High if shown directly</td>
+<td>Reduced by the communicator</td>
+</tr>
+</tbody>
+</table></div>
+<p>Exploration may involve examining hundreds or thousands of hypotheses or views. That work is necessary for the analyst, but it is generally inappropriate as the final communication.</p>
+<p>After finding the significant insight, shift into the <strong>explanatory space</strong>. Do not make the audience repeat the entire search. Analysts are often tempted to show everything as evidence of effort or robustness. Resist that urge: showing all the “hay” makes the audience search again for the “needle.”</p>
+<h3 id="exam-point">Exam point</h3>
+<p>Exploration and explanation are not competing methods. They are sequential stages:</p>
+<p><strong>Explore broadly → identify the important finding → explain selectively.</strong></p>
+<h2 id="2-2-the-who-define-the-audience-precisely">2.2 The “Who”: define the audience precisely</h2>
+<p>The more specific the audience definition, the more effective the communication can be.</p>
+<p>Avoid vague audiences such as:</p>
+<ul>
+<li>“internal and external stakeholders”;</li>
+<li>“anyone interested”;</li>
+<li>“all management.”</li>
+</ul>
+<p>Different groups have different knowledge, motivations, questions, and decision criteria. Trying to address everyone at once often means addressing no one effectively. It may be necessary to create different communications for different audiences.</p>
+<h3 id="how-to-narrow-the-audience">How to narrow the audience</h3>
+<ul>
+<li>Identify the <strong>decision-maker</strong>.</li>
+<li>Identify influencers and implementers.</li>
+<li>Determine what each person already knows.</li>
+<li>Understand what they value and what evidence they trust.</li>
+<li>Anticipate objections, risks, and questions.</li>
+</ul>
+<h3 id="relationship-and-perceived-credibility">Relationship and perceived credibility</h3>
+<p>Consider whether this is the audience’s first encounter with you or whether an established relationship exists.</p>
+<ul>
+<li>Do they already trust you as an expert?</li>
+<li>Must credibility be built through the communication?</li>
+<li>What common ground exists?</li>
+<li>How will they perceive your role, competence, and motives?</li>
+</ul>
+<p>These factors affect the order, flow, amount of background, use of evidence, and tone. With a familiar audience, shared terminology and prior context may be assumed. With a new audience, competence and reliability must be demonstrated through relevant evidence and clear reasoning.</p>
+<blockquote>
+<p><strong>Caveat:</strong> Credentials can establish baseline authority, but a long credentials-first opening makes the presenter the focus. Credibility is more persuasively demonstrated through accurate analysis, relevance, transparency, and an understanding of audience priorities.</p>
+</blockquote>
+<h2 id="2-3-the-what-define-knowledge-and-action">2.3 The “What”: define knowledge and action</h2>
+<p>Every communication should aim for the audience to <strong>know something or do something</strong>. If that cannot be stated concisely, reconsider whether the communication is necessary or whether its purpose has been properly defined.</p>
+<p>Ask:</p>
+<ul>
+<li>What is the single most important takeaway?</li>
+<li>Why should this audience care?</li>
+<li>What decision or action is required?</li>
+<li>What should happen next?</li>
+</ul>
+<p>Analysts sometimes avoid recommendations because they assume senior audiences know better and should independently choose an action. The lecture rejects this assumption. The analyst normally knows the data best and is therefore in a unique position to interpret it and guide understanding and action.</p>
+<p>Take a confident stance when evidence supports a specific observation or recommendation. If a firm action cannot appropriately be recommended, suggest possible next steps or deliberately invite discussion toward a decision.</p>
+<p>Merely presenting data lets the audience say, “Interesting,” and move on. Asking for action forces a productive response: accept, reject, modify, or discuss the recommendation.</p>
+<h2 id="2-4-the-big-idea">2.4 The Big Idea</h2>
+<p>The <strong>Big Idea</strong> is the central, memorable, audience-relevant message the communication must convey. It should be:</p>
+<ul>
+<li>concise;</li>
+<li>specific;</li>
+<li>supported by evidence;</li>
+<li>relevant to the chosen audience;</li>
+<li>linked to an implication or action.</li>
+</ul>
+<p>Introduce the Big Idea early. Do not bury it at the end after making the audience process details without knowing why they matter.</p>
+<p><strong>Useful formulation:</strong></p>
+<blockquote>
+<p>Because <strong>[important evidence/change]</strong>, the audience should <strong>[understand/decide/do]</strong>, leading to <strong>[desired outcome]</strong>.</p>
+</blockquote>
+<p><strong>Practical example:</strong> “Because complaint-processing performance has declined continuously since the May resignation and the backlog is widening, approve one replacement employee now to restore service levels.”</p>
+<h2 id="2-5-communication-mechanism-live-presentation-versus-document-email">2.5 Communication mechanism: live presentation versus document/email</h2>
+<p>Communication lies on a continuum:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Live presentation</th>
+<th>Written document/email</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Control over sequence and pace</td>
+<td>Presenter has high control</td>
+<td>Reader has high control</td>
+</tr>
+<tr>
+<td>Ability to respond to cues</td>
+<td>Immediate</td>
+<td>Usually absent/delayed</td>
+</tr>
+<tr>
+<td>Detail required in artifact</td>
+<td>Lower; presenter can explain</td>
+<td>Higher; document must stand alone</td>
+</tr>
+<tr>
+<td>Typical format</td>
+<td>Sparse slides</td>
+<td>Denser, self-contained material</td>
+</tr>
+</tbody>
+</table></div>
+<p>In a live presentation, the presenter determines what the audience sees and when. The presenter can speed up, slow down, answer questions, and vary detail based on visual cues. Not every supporting detail needs to appear on the slide, though the presenter must know it.</p>
+<p>In a written document/email, the audience decides the order and pace of consumption. Because the author is not present to observe confusion or answer immediately, the document must anticipate and directly address more questions.</p>
+<p>In an ideal world, the live deck and written leave-behind would be different products. In practice, time constraints often cause one artifact to serve both purposes. The communicator must then balance presentational clarity with sufficient standalone context.</p>
+<h2 id="2-6-tone">2.6 Tone</h2>
+<p>Choose tone consciously. Depending on audience, relationship, and objective, communication may need to be authoritative, collaborative, urgent, cautious, instructional, or exploratory. Tone affects word choice, sequencing, visual emphasis, and how directly the recommendation is stated.</p>
+<h2 id="2-7-select-data-only-after-context-is-clear">2.7 Select data only after context is clear</h2>
+<p>Only after defining audience and required knowledge/action should the communicator ask:</p>
+<blockquote>
+<p>What data is available that will help make this point?</p>
+</blockquote>
+<p>Do not begin with the available chart or dataset and then invent a purpose. Context determines relevant evidence; evidence determines the visual.</p>
+<hr>
+<h2 id="3-storyboarding-structuring-communication-before-slides">3. Storyboarding: structuring communication before slides</h2>
+<p>Storyboarding is one of the most important early actions for keeping a communication on point.</p>
+<h3 id="definition-and-purpose">Definition and purpose</h3>
+<p>A <strong>storyboard</strong> is a visual outline of the planned content. It:</p>
+<ul>
+<li>establishes structure and logical flow;</li>
+<li>exposes missing or unnecessary steps;</li>
+<li>organizes thinking before polishing visuals;</li>
+<li>can be changed cheaply as details develop;</li>
+<li>allows early stakeholder/client approval and checks alignment with need.</li>
+</ul>
+<h3 id="do-not-start-in-presentation-software">Do not start in presentation software</h3>
+<p>Starting directly in PowerPoint or similar software encourages “slide-generating mode”: individual pages are built before the relationship among ideas is clear, producing large decks that may say little.</p>
+<p>Computer-created content also creates psychological attachment because time and effort have been invested. Even when a slide misses the mark, creators resist modifying or deleting it. Start <strong>low-tech</strong>—whiteboard, sticky notes, or plain paper—where crossing out, reordering, and discarding ideas feels inexpensive.</p>
+<h3 id="storyboard-procedure">Storyboard procedure</h3>
+<ol>
+<li>State the issue.</li>
+<li>Demonstrate with evidence that the issue exists.</li>
+<li>Present alternatives/ideas for overcoming it.</li>
+<li>Identify the chosen alternative and describe the pilot/program and goals.</li>
+<li>Demonstrate success, for example with survey or performance results.</li>
+<li>Recommend continuation or expansion and request the required resources/funds.</li>
+</ol>
+<p>This sequence takes the audience logically from problem recognition to justified action.</p>
+<h3 id="practical-use-case">Practical use case</h3>
+<p>A company pilots a customer-retention program and seeks expansion funding:</p>
+<p><strong>Rising churn → evidence by customer segment → possible remedies → chosen pilot and targets → pilot results → scale-up recommendation and budget request.</strong></p>
+<hr>
+<h2 id="4-lesson-2-choose-an-effective-visual-display">4. Lesson 2 — Choose an effective visual display</h2>
+<p>Chart choice must follow the communication objective and data relationship. Consider:</p>
+<ul>
+<li>audience and Big Idea;</li>
+<li>comparison, trend, distribution, relationship, or composition required;</li>
+<li>whether precise values or broad patterns matter;</li>
+<li>cognitive effort imposed;</li>
+<li>possible perceptual distortion.</li>
+</ul>
+<h3 id="common-appropriate-choices">Common appropriate choices</h3>
+<ul>
+<li><strong>Line chart:</strong> trends over ordered time.</li>
+<li><strong>Bar chart:</strong> category comparisons; length on a common baseline is easy to compare.</li>
+<li><strong>Table:</strong> precise lookup of values, especially when multiple exact figures matter.</li>
+<li><strong>Directly labeled simple chart:</strong> when the audience needs a clear comparison without decoding a legend.</li>
+</ul>
+<h2 id="4-1-charts-to-avoid-or-use-only-with-strong-justification">4.1 Charts to avoid or use only with strong justification</h2>
+<h3 id="pie-charts">Pie charts</h3>
+<p>Human vision is poor at assigning precise quantitative values to two-dimensional areas and angles.</p>
+<ul>
+<li>Similar slices are difficult or impossible to rank accurately.</li>
+<li>Even dissimilar slices usually reveal only that one is larger, not accurately by how much.</li>
+<li>Data labels supply the missing precision, but then the chart may not justify the space it occupies.</li>
+<li>Its unique benefit is the part-to-whole metaphor.</li>
+</ul>
+<p>If using a pie chart, pause and answer: <strong>Why is a pie chart necessary here?</strong> It should not be the default.</p>
+<h3 id="donut-charts">Donut charts</h3>
+<p>Pie charts require angle/area comparisons; donut charts require comparison of arc lengths. Human eyes are not reliable at translating arc length into quantitative value. Therefore donut charts are usually even harder to interpret precisely.</p>
+<h3 id="3d-charts">3D charts</h3>
+<blockquote>
+<p><strong>Golden rule: Never use 3D unless actually plotting a meaningful third dimension—and even then, take great care.</strong></p>
+</blockquote>
+<p>Decorative 3D:</p>
+<ul>
+<li>introduces side, floor, and perspective panels that add clutter;</li>
+<li>distorts heights, lengths, areas, and positions;</li>
+<li>makes values difficult or impossible to compare;</li>
+<li>can cause erroneous interpretation.</li>
+</ul>
+<p>In the Excel example, source values were January–February = 1, March–April = 2, May = 3, June = 4. Perspective made January and February appear nearer 0.8 rather than 1. Excel’s bar height corresponded to an invisible tangent plane rather than the visually obvious gridline intersection. The application therefore created ambiguity even though the data was simple.</p>
+<p>Never plot one-dimensional data with cosmetic 3D.</p>
+<h3 id="combo-charts-dual-or-secondary-y-axes">Combo charts / dual or secondary y-axes</h3>
+<p>Dual-axis charts may place variables with different units against a common x-axis, but they require the audience to determine which series maps to which scale. The chosen axis ranges can also create misleading apparent correlations.</p>
+<p>Better alternatives:</p>
+<ol>
+<li>Remove the second y-axis and directly label the secondary series/data points.</li>
+<li>Separate the charts vertically, each with its own clearly labeled y-axis, while retaining the shared x-axis/alignment.</li>
+</ol>
+<h3 id="quantitative-comparison-principle">Quantitative-comparison principle</h3>
+<p>When quantitative comparison matters, encode values with a perceptually reliable attribute such as <strong>position or length on a common baseline</strong>. Do not use area/angle merely for decoration. Explicit labels and annotations remove ambiguity when exact comparisons or a critical point matter.</p>
+<hr>
+<h2 id="5-lesson-3-identify-and-eliminate-clutter">5. Lesson 3 — Identify and eliminate clutter</h2>
+<h2 id="5-1-cognitive-load">5.1 Cognitive load</h2>
+<p><strong>Cognitive load</strong> is the mental effort needed to absorb or learn information. Asking an audience to decode a visual consumes its limited processing resources.</p>
+<p>The transcript says “infinite,” but the surrounding teaching point is that mental processing must be used carefully: unnecessary work can prevent the message from being understood. For exam purposes, emphasize the stated design implication—<strong>do not waste audience brainpower on irrelevant decoding</strong>.</p>
+<p><strong>Extraneous cognitive load</strong> consumes mental resources without increasing understanding. Perceived load is crucial: audiences rapidly judge how hard a visual will be to process, often without conscious deliberation. If it looks too difficult, they may disengage before trying.</p>
+<p>Goal: minimize perceived cognitive load as far as reasonable while preserving all information needed for the message.</p>
+<h2 id="5-2-clutter">5.2 Clutter</h2>
+<p><strong>Clutter</strong> consists of visual elements that take up space but do not increase understanding.</p>
+<p>Why it is harmful:</p>
+<ul>
+<li>makes the visual appear more complicated than necessary;</li>
+<li>creates an uncomfortable user experience;</li>
+<li>increases extraneous cognitive load;</li>
+<li>competes with the signal;</li>
+<li>may cause the audience to abandon interpretation, ending communication.</li>
+</ul>
+<p>Decluttering does <strong>not</strong> mean removing necessary context, evidence, labels, uncertainty, or qualifications. It means removing or muting elements that do not serve a specific communication purpose.</p>
+<h2 id="5-3-gestalt-principles-as-decluttering-tools">5.3 Gestalt principles as decluttering tools</h2>
+<p>Use principles of visual perception to achieve organization without extra marks:</p>
+<ul>
+<li><strong>Proximity:</strong> nearby items are perceived as a group.</li>
+<li><strong>Similarity:</strong> items sharing visual properties are perceived as related.</li>
+<li><strong>Enclosure:</strong> a boundary groups enclosed elements.</li>
+<li><strong>Closure:</strong> the mind completes incomplete forms.</li>
+<li><strong>Continuity:</strong> aligned elements are perceived as part of a continuous structure.</li>
+<li><strong>Connection:</strong> physically connected items are strongly perceived as related.</li>
+</ul>
+<h3 id="examples">Examples</h3>
+<ul>
+<li>If related items are already close together, a surrounding border may be redundant; proximity already signals the group.</li>
+<li>If bars begin at a common aligned position, an additional vertical line may be unnecessary; continuity creates an implied baseline.</li>
+</ul>
+<p>Anything unnecessary should not occupy the visual. Gestalt principles help separate signal from noise.</p>
+<h2 id="5-4-lack-of-visual-order-is-a-form-of-clutter">5.4 Lack of visual order is a form of clutter</h2>
+<p>Thoughtful design “fades into the background”; the audience notices the message rather than the mechanics. Poorly ordered layouts make the audience feel the burden of interpretation.</p>
+<p>Major sources of disorder:</p>
+<ul>
+<li>poor alignment;</li>
+<li>inadequate or misused white space;</li>
+<li>inconsistent placement;</li>
+<li>diagonal text and connector lines;</li>
+<li>weak hierarchy.</li>
+</ul>
+<h3 id="alignment">Alignment</h3>
+<p>Clean horizontal and vertical lines make layouts feel deliberate.</p>
+<ul>
+<li>Center-aligned text creates irregular left and right edges and can make a thoughtful layout appear sloppy.</li>
+<li>Prefer <strong>left alignment for prose/text</strong>.</li>
+<li>In tables, left-align text and text headers.</li>
+<li><strong>Right-align numeric columns and their headers</strong> to support digit/value comparison.</li>
+<li>Make alignment choices in relation to surrounding elements, not in isolation.</li>
+</ul>
+<h3 id="reading-path-and-placement">Reading path and placement</h3>
+<p>Without a strong cue, audiences typically begin at the top-left and scan left-to-right, then move down and repeat—described in the lecture as an E/Z-like pattern.</p>
+<p>Place orientation information—title, relevant legend, labels, and reading guidance—where it is encountered before the data, generally toward the upper-left. The audience should learn how to read the table/graph before interpreting its values.</p>
+<h3 id="avoid-diagonal-elements">Avoid diagonal elements</h3>
+<p>Diagonal connector lines look messy, and angled text is harder to read than horizontal text. The cited findings were:</p>
+<ul>
+<li>text rotated <strong>45°</strong> in either direction: on average <strong>52% slower</strong> to read;</li>
+<li>text rotated <strong>90°</strong> in either direction: on average <strong>205% slower</strong>.</li>
+</ul>
+<p>Avoid diagonal axis labels where possible. Alternatives include shortening labels, using a horizontal bar chart, wrapping text, or redesigning the layout.</p>
+<h3 id="white-space">White space</h3>
+<p><strong>White space</strong> is intentional blank space. It is not wasted space.</p>
+<ul>
+<li>Do not add decoration or more data simply because blank space remains.</li>
+<li>Add data only for a thoughtful, specific purpose.</li>
+<li>White space separates groups, creates hierarchy, gives the eye rest, and improves legibility.</li>
+<li>It functions like pauses in public speaking: without pauses, speech feels exhausting and difficult to follow.</li>
+</ul>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> Become comfortable with white space. Empty space can actively improve communication.</p>
+</blockquote>
+<hr>
+<h2 id="6-focus-attention-and-audience-perception">6. Focus attention and audience perception</h2>
+<p>The display itself is not the full visualization; the audience’s perception of it is what matters.</p>
+<h3 id="information-hierarchy">Information hierarchy</h3>
+<p>Information hierarchy determines what is noticed first, second, and later. Establish hierarchy through:</p>
+<ul>
+<li>position;</li>
+<li>size;</li>
+<li>contrast;</li>
+<li>color;</li>
+<li>line weight;</li>
+<li>labels and annotations;</li>
+<li>white space and grouping.</li>
+</ul>
+<h3 id="preattentive-attributes">Preattentive attributes</h3>
+<p>Preattentive attributes such as strong color contrast, size, orientation, enclosure, or bold line weight are processed rapidly and can direct attention before conscious analysis.</p>
+<p>Use them selectively:</p>
+<ul>
+<li>keep most elements neutral;</li>
+<li>emphasize the one or few elements carrying the Big Idea;</li>
+<li>mute context rather than deleting it when it remains necessary;</li>
+<li>do not highlight everything, because if everything is emphasized, nothing is emphasized.</li>
+</ul>
+<p>During exploration, neutrality helps avoid premature bias. During explanation, selective emphasis deliberately guides the audience to the evidence-backed takeaway.</p>
+<h3 id="annotation">Annotation</h3>
+<p>If a critical point may be missed in a dense graph, explicitly identify it with a concise annotation or arrow. Do this even if the presenter plans to discuss it verbally; the visual should make the intended point visible and unambiguous.</p>
+<h3 id="think-like-a-designer">Think like a designer</h3>
+<p>A designer asks:</p>
+<ul>
+<li>What does the audience need?</li>
+<li>What will they notice first?</li>
+<li>What work am I forcing them to do?</li>
+<li>Can grouping, alignment, hierarchy, or direct labeling remove that work?</li>
+<li>Does every element serve the Big Idea?</li>
+</ul>
+<p>Design is functional, not decorative. The desired experience is that the message feels obvious while the design itself recedes.</p>
+<hr>
+<h2 id="7-telling-a-story">7. Telling a story</h2>
+<p>Stories organize facts into a meaningful and memorable sequence. They can connect cognitive understanding with emotion, increasing receptivity and long-term recall. The instructor stressed that familiar stories remain in memory even when the associated formal laws or facts fade.</p>
+<p>Examples mentioned:</p>
+<ul>
+<li>Archimedes, the overflowing bath, “Eureka,” and the crown problem;</li>
+<li>Newton and the falling apple;</li>
+<li>the thirsty crow;</li>
+<li>the hare and tortoise;</li>
+<li>Arabian Nights, James Bond, and Harry Potter;</li>
+<li>brand/business origin stories such as Nirma, Haldiram, and Pashmina shawls.</li>
+</ul>
+<h3 id="why-stories-work">Why stories work</h3>
+<ul>
+<li>They create context and meaning.</li>
+<li>They create curiosity and emotional connection.</li>
+<li>They organize events causally.</li>
+<li>They activate more than purely analytical processing.</li>
+<li>They make associated information easier to retrieve later.</li>
+</ul>
+<p>The instructor’s stated neuroscience explanation was that a story activates cognitive and emotional areas, making the listener receptive and helping information enter long-term memory. Treat this as the lecture’s conceptual explanation rather than a detailed neuroscientific model.</p>
+<h3 id="story-plus-data">Story plus data</h3>
+<p>Story and data perform complementary functions:</p>
+<ul>
+<li><strong>Story:</strong> context, meaning, shared purpose, emotional relevance.</li>
+<li><strong>Data:</strong> proof, quantification, validation, credibility.</li>
+</ul>
+<p>A useful flow is:</p>
+<p><strong>Story/context → why it matters → evidence → implication → recommendation/decision.</strong></p>
+<p>Stories must support evidence, not replace it. Too many stories can interrupt analytical flow, become repetitive, or make the work seem less rigorous.</p>
+<h2 id="7-1-instructor-s-suspense-story-and-its-lesson">7.1 Instructor’s suspense story and its lesson</h2>
+<p>The live class used an extended story to demonstrate attention and retention:</p>
+<ol>
+<li>From an upstairs window, the narrator sees a one-legged beggar at neighbour Mr. Anthony’s gate.</li>
+<li>Anthony angrily swings a hose; the frightened man jumps away.</li>
+<li>Later, the man is found dead after apparently striking his head on a post.</li>
+<li>The narrator believes Anthony’s action contributed but did not directly witness the head impact, creating an ethical/evidentiary dilemma about telling police.</li>
+<li>The narrator is haunted in dreams for many nights by the dead man demanding the truth.</li>
+<li>At a later birthday gathering, the narrator thinks he sees the same beggar enter Anthony’s compound.</li>
+<li>A cry follows; Anthony suffers a fatal heart attack.</li>
+</ol>
+<p>The operational point is not the factual truth of the anecdote. Its suspense, vivid setting, moral dilemma, repetition, and escalation held attention far longer than an abstract lecture could. It demonstrates how narrative makes an audience anticipate the next event and remember details.</p>
+<h2 id="7-2-narrative-arc-freytag-s-pyramid">7.2 Narrative arc / Freytag’s pyramid</h2>
+<p>The instructor referred to “Freytag’s curve/pyramid”: compelling stories generally move through recognizable stages. A standard exam-ready structure is:</p>
+<ol>
+<li><strong>Exposition:</strong> establish setting, characters, and normal conditions.</li>
+<li><strong>Inciting incident/conflict:</strong> introduce the problem or change.</li>
+<li><strong>Rising action:</strong> build evidence, stakes, tension, or attempts to respond.</li>
+<li><strong>Climax:</strong> reach the decisive insight, turning point, or choice.</li>
+<li><strong>Falling action/resolution:</strong> show consequences and conclude with action.</li>
+</ol>
+<p>In business storytelling, translate this into:</p>
+<p><strong>Current state → problem/change → evidence and stakes → insight/solution → recommendation and expected outcome.</strong></p>
+<hr>
+<h2 id="8-audience-as-hero-segmentation-and-common-ground">8. Audience as hero, segmentation, and common ground</h2>
+<blockquote>
+<p><strong>Key principle:</strong> Position the audience—not the presenter—as the hero.</p>
+</blockquote>
+<p>A presenter-centered story highlights what the analyst did and how clever the analysis was. An audience-centered story highlights what the stakeholders need to achieve, the choices available to them, and how their decisions create customer/business outcomes. The analyst acts as guide and evidence provider.</p>
+<p>This is especially useful when credibility with a new stakeholder has not yet been established: relevance and useful evidence build trust more effectively than self-promotion.</p>
+<h3 id="audience-segmentation-versus-common-ground">Audience segmentation versus common ground</h3>
+<ul>
+<li><strong>Segmentation:</strong> recognize that stakeholder groups have different priorities and evidence needs.</li>
+<li><strong>Common ground:</strong> identify a goal, outcome, or experience they share.</li>
+</ul>
+<p>The ideal is a <strong>shared narrative with stakeholder-specific evidence</strong>, not separate disconnected stories.</p>
+<hr>
+<h2 id="9-innovatepay-case-study">9. InnovatePay case study</h2>
+<p>Emma, a consultant, must present a quarterly performance report to a leadership group containing:</p>
+<ul>
+<li>a <strong>new CFO</strong>, interested in ROI, revenue, cost, financial impact, growth, and risk;</li>
+<li>a <strong>long-time Engineering Lead</strong>, interested in system performance, reliability, scalability, technical feasibility, implementation constraints, and engineering outcomes.</li>
+</ul>
+<p>Her challenges are to build trust with a new stakeholder, preserve an established relationship, address different evidence needs, and maintain one coherent strategic story.</p>
+<h2 id="9-1-recommended-approach">9.1 Recommended approach</h2>
+<ol>
+<li>Open with a concise customer success story as a qualitative anchor and shared purpose.</li>
+<li>State the Big Idea and the leadership decision required.</li>
+<li>Present business evidence: revenue, ROI, market impact, risk.</li>
+<li>Present technical evidence: performance, scalability, reliability, feasibility.</li>
+<li>Explicitly connect technical capability to business outcome.</li>
+<li>Recommend action and state the expected customer/business result.</li>
+</ol>
+<p>Example causal chain:</p>
+<p><strong>System upgrade → faster transaction processing → better customer experience → lower abandonment/churn → higher transaction volume → increased revenue.</strong></p>
+<p>Do not merely report “latency decreased by 30%.” Translate it: “The 30% reduction improved checkout responsiveness, reduced abandonment, and contributed to more completed transactions.” The Engineering Lead sees performance; the CFO sees financial consequence.</p>
+<h2 id="9-2-evaluation-of-presentation-options">9.2 Evaluation of presentation options</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Strength</th>
+<th>Risk</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. Credentials first, then data</td>
+<td>Establishes authority quickly</td>
+<td>Presenter-centered; asks audience to trust identity rather than relevant evidence</td>
+<td>Weakest fit</td>
+</tr>
+<tr>
+<td>B. Market narrative, then technical details</td>
+<td>Strong context and audience-centered opening</td>
+<td>Can split the presentation into “CFO section” and “engineering section”</td>
+<td>Strong if evidence is integrated</td>
+</tr>
+<tr>
+<td>C. Customer stories throughout</td>
+<td>Maintains engagement and links metrics to outcomes</td>
+<td>Overuse can fragment analysis or reduce rigor</td>
+<td>Use selectively</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="bifurcated-narrative-caveat">Bifurcated narrative caveat</h3>
+<p>A sequence such as “market → finance/CFO → technical/engineering” may make concerns seem ranked or disconnected. Avoid two parallel presentations. Integrate them causally:</p>
+<p><strong>Customer need → technical capability → customer outcome → business value → leadership decision.</strong></p>
+<h3 id="appropriate-detail">Appropriate detail</h3>
+<ul>
+<li>CFO: high-level summaries, revenue trends, ROI, forecasts, business risk.</li>
+<li>Engineering Lead: system metrics, capacity, performance trends, reliability, constraints.</li>
+</ul>
+<p>Use multiple layers of the same evidence where needed, but keep both audiences within the same narrative.</p>
+<h2 id="9-3-trust-and-relationship-management">9.3 Trust and relationship management</h2>
+<p>Trust grows through relevance, transparency, accuracy, logical structure, and understanding of stakeholder concerns. Do not over-prioritize the new CFO because of seniority, and do not use the established Engineering relationship as unquestioned authority. Both are participants in the same decision.</p>
+<hr>
+<h2 id="10-common-mistakes-and-corrections">10. Common mistakes and corrections</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Mistake</th>
+<th>Correction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Start with software or a favorite chart</td>
+<td>Define audience, objective, Big Idea, and storyboard first</td>
+</tr>
+<tr>
+<td>Show all exploratory work</td>
+<td>Show the selected insight and evidence</td>
+</tr>
+<tr>
+<td>Use a generic audience</td>
+<td>Identify decision-makers and segment needs</td>
+</tr>
+<tr>
+<td>Present data without asking for action</td>
+<td>Make a recommendation or propose next steps</td>
+</tr>
+<tr>
+<td>Bury the Big Idea</td>
+<td>State it early and reinforce it</td>
+</tr>
+<tr>
+<td>Use credentials as the main source of trust</td>
+<td>Demonstrate credibility through relevant evidence and reasoning</td>
+</tr>
+<tr>
+<td>Use pie/donut/3D/dual-axis charts by default</td>
+<td>Use position/length, direct labels, or separate charts</td>
+</tr>
+<tr>
+<td>Fill all blank space</td>
+<td>Preserve white space unless added content has a specific purpose</td>
+</tr>
+<tr>
+<td>Center-align blocks or rotate labels</td>
+<td>Create clean lines; use left/right alignment and horizontal text</td>
+</tr>
+<tr>
+<td>Highlight everything</td>
+<td>Use selective emphasis around the key takeaway</td>
+</tr>
+<tr>
+<td>Tell separate stories to mixed stakeholders</td>
+<td>Build one shared causal narrative with tailored evidence</td>
+</tr>
+<tr>
+<td>Use emotion instead of proof</td>
+<td>Let story establish meaning and data establish proof</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="11-end-to-end-exam-framework">11. End-to-end exam framework</h2>
+<p><strong>Audience → relationship/credibility → required knowledge/action → Big Idea → communication medium and tone → storyboard → supporting evidence → visual choice → declutter/order → focus attention → narrative → recommendation → expected outcome.</strong></p>
+<h3 id="expanded-procedure">Expanded procedure</h3>
+<ol>
+<li>Identify the specific audience and decision-maker.</li>
+<li>Assess prior knowledge, relationship, trust, and priorities.</li>
+<li>Define exactly what they should know or do.</li>
+<li>Formulate the Big Idea.</li>
+<li>Choose live/document format, tone, and necessary detail.</li>
+<li>Build a low-tech storyboard.</li>
+<li>Select only evidence relevant to the Big Idea.</li>
+<li>Choose a perceptually appropriate chart/table.</li>
+<li>Remove clutter and impose alignment, hierarchy, and white space.</li>
+<li>Direct attention with selective preattentive cues and annotations.</li>
+<li>Organize evidence into a causal narrative.</li>
+<li>Conclude with a clear recommendation and outcome.</li>
+</ol>
+<hr>
+<h2 id="12-likely-exam-questions-and-answer-cues">12. Likely exam questions and answer cues</h2>
+<h3 id="1-differentiate-exploratory-and-explanatory-analysis">1. Differentiate exploratory and explanatory analysis.</h3>
+<p>Define both; use the needle/haystack analogy; explain why showing all exploration burdens the audience; state the sequence from broad discovery to selective communication.</p>
+<h3 id="2-explain-who-what-and-how">2. Explain “Who, What, and How.”</h3>
+<p>Who = specific audience, relationship, perception; What = intended knowledge/action and relevance; How = data, visual, medium, detail, and tone. Stress that how comes after who and what.</p>
+<h3 id="3-why-is-storyboarding-important">3. Why is storyboarding important?</h3>
+<p>It creates structure, exposes gaps, supports early alignment, prevents premature slide production, and reduces attachment. Mention low-tech tools and the issue→evidence→alternatives→pilot→success→recommendation sequence.</p>
+<h3 id="4-why-avoid-pie-donut-3d-and-dual-axis-charts">4. Why avoid pie, donut, 3D, and dual-axis charts?</h3>
+<p>Pie: angle/area comparison; donut: arc length; 3D: perspective distortion and clutter; dual axis: decoding burden and misleading scale relationships. Give alternatives.</p>
+<h3 id="5-define-cognitive-load-and-clutter">5. Define cognitive load and clutter.</h3>
+<p>Cognitive load is mental effort; extraneous load does not aid understanding; clutter occupies space without increasing understanding. Explain disengagement risk and Gestalt-based removal.</p>
+<h3 id="6-discuss-alignment-and-white-space">6. Discuss alignment and white space.</h3>
+<p>Alignment produces clean lines and order; left-align text/right-align numbers; avoid diagonal text; white space groups, rests the eye, and functions like pauses in speech.</p>
+<h3 id="7-how-should-attention-be-focused">7. How should attention be focused?</h3>
+<p>Use hierarchy, position, contrast, selective color/weight, direct labels, and annotations. Neutralize context and emphasize only the key evidence.</p>
+<h3 id="8-explain-audience-as-hero">8. Explain audience-as-hero.</h3>
+<p>Center the narrative on audience goals and decisions, with presenter as guide. It improves relevance, ownership, and trust and avoids self-centered credentials-first communication.</p>
+<h3 id="9-recommend-a-structure-for-innovatepay">9. Recommend a structure for InnovatePay.</h3>
+<p>Customer story/shared goal → Big Idea → business evidence → technical evidence → explicit causal integration → recommendation → outcome. Address the bifurcated-narrative risk.</p>
+<h3 id="10-explain-why-storytelling-improves-data-communication">10. Explain why storytelling improves data communication.</h3>
+<p>Stories provide context, causality, emotion, curiosity, and memory; data supplies proof. Use the instructor’s suspense story or Archimedes/Newton/Nirma examples, while stressing that story must not replace evidence.</p>
+<hr>
+<h2 id="13-rapid-revision-and-final-checklist">13. Rapid revision and final checklist</h2>
+<h3 id="must-remember-statements">Must-remember statements</h3>
+<ul>
+<li>Visualization exists to communicate, not decorate.</li>
+<li>Tools create charts; analysts identify and communicate stories.</li>
+<li>Do not show the audience the haystack after finding the needle.</li>
+<li>Define <strong>Who</strong> and <strong>What</strong> before <strong>How</strong>.</li>
+<li>A communication should ask the audience to know or do something.</li>
+<li>The analyst should interpret evidence and confidently guide action.</li>
+<li>Live slides may be sparse; standalone documents require more explicit detail.</li>
+<li>Storyboard before opening presentation software.</li>
+<li>Start low-tech to make deletion and rearrangement easy.</li>
+<li>Avoid pie, donut, decorative 3D, and secondary-axis charts unless strongly justified.</li>
+<li>Clutter takes space without increasing understanding.</li>
+<li>Use Gestalt principles instead of redundant borders/lines.</li>
+<li>Left-align text; right-align numbers; avoid diagonal labels.</li>
+<li>White space is functional and resembles a pause in speaking.</li>
+<li>Audience perception—not creator intent—is the final test.</li>
+<li>Use preattentive attributes selectively.</li>
+<li>Audience is the hero; communicator is the guide.</li>
+<li>Segment evidence, not the overall story.</li>
+<li>Story provides meaning; data provides proof.</li>
+<li>End with a recommendation and expected outcome.</li>
+</ul>
+<h3 id="pre-submission-presentation-checklist">Pre-submission/presentation checklist</h3>
+<ul>
+<li>[ ] Have I named a specific audience and decision-maker?</li>
+<li>[ ] Do I understand their relationship with and perception of me?</li>
+<li>[ ] Can I state what they should know or do in one sentence?</li>
+<li>[ ] Is the Big Idea early, clear, relevant, and evidence-backed?</li>
+<li>[ ] Is the medium suited to the level of control and detail?</li>
+<li>[ ] Did I storyboard the causal/logical flow before designing slides?</li>
+<li>[ ] Is every included data point relevant to the decision?</li>
+<li>[ ] Does the chart encode comparison accurately?</li>
+<li>[ ] Have I avoided unjustified pie, donut, 3D, and dual axes?</li>
+<li>[ ] Can any border, gridline, legend, label, or decoration be removed?</li>
+<li>[ ] Are alignment and white space creating clear visual order?</li>
+<li>[ ] Is horizontal text used wherever possible?</li>
+<li>[ ] Is the key evidence immediately noticeable?</li>
+<li>[ ] Are annotations used where a crucial point might be missed?</li>
+<li>[ ] Does the narrative integrate different stakeholder priorities?</li>
+<li>[ ] Does the story support rather than replace data?</li>
+<li>[ ] Is the audience positioned as capable of achieving the outcome?</li>
+<li>[ ] Is the requested decision/action explicit?</li>
+</ul>
+<h3 id="one-line-synthesis">One-line synthesis</h3>
+<blockquote>
+<p><strong>Effective data storytelling begins with a precise audience and decision, converts exploration into a focused Big Idea, supports it with well-chosen and decluttered evidence, guides attention through deliberate design, and leads the audience through a memorable causal story toward action.</strong></p>
+</blockquote>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<h3 id="review-derived-explanatory-sequence">Review-derived explanatory sequence</h3>
+<p>A strong dashboard or presentation should answer:</p>
+<ol>
+<li><strong>What happened?</strong> State the observable pattern.</li>
+<li><strong>Why did it happen?</strong> Supply relevant analysis and context.</li>
+<li><strong>What are the implications?</strong> Translate evidence into audience-specific consequence.</li>
+<li><strong>What action is recommended?</strong> End with a clear decision or next step.</li>
+</ol>
+<p>This sequence connects Week 12&rsquo;s rapid dashboard scan with Week 14&rsquo;s Big Idea and narrative. Executives need the summary and decision quickly; technical audiences may need supporting detail after the main claim.</p>
+<h3 id="chart-and-emphasis-reminders">Chart and emphasis reminders</h3>
+<ul>
+<li>Trend over time → line; category comparison → bar; one small whole → pie; precise lookup → table.</li>
+<li>Colour saturation, position, size, and contrast may direct attention preattentively, but selective emphasis is essential.</li>
+<li>Decluttering does not mean removing necessary scales, labels, context, uncertainty, or accessibility cues.</li>
+<li>Do not make the audience decode a complex chart to discover the headline; state the conclusion and use the visual as evidence.</li>
+</ul>
+<h3 id="domain-and-audience-cross-link">Domain and audience cross-link</h3>
+<p>The perceptual rules are stable, but the story follows the audience&rsquo;s workflow. Financial storytelling foregrounds performance, forecast, and risk; clinical communication foregrounds patient safety and critical alerts. Audience relevance determines sequence, language, evidence, and action.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-13.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 13: Dashboard Design, Visual Encoding,…</span>
+      </a>
+      <a href="week-15.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 15: Storytelling with Data: Exam-Focused Study Notes</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

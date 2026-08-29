@@ -1,0 +1,3922 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Project · Week 15 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Project</span>
+      <span class="brand-title">Week 15</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html" selected>Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Business Research Process, Research Problems, and Research Approaches
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Research Planning, Theoretical Frameworks, Measurement, and Data…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Systematic Literature Review (SLR), Literature Review Methods,…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Theoretical Frameworks, Variables, Moderators, Mediators, and…
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Measurement Models, Scale Development, Reflective vs Formative…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Questionnaire Design, Data Collection Methods, Measurement Scales,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Research Inference, Sampling, Regression, Correlation, Mediation,…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Business Research Process — Management Problems, Research Problems,…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Jamovi Data Management, Measurement Levels, Scale Construction,…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Jamovi Factor Analysis, EFA, CFA, SEM, Validity Assessment, and…
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Regression, Mediation, Moderation, t-tests, ANOVA, and Descriptive…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Regression Modelling, Controls, Composite Indices, Moderation, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Time Series, Forecasting, and Panel Data
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        PLS-SEM — Measurement Quality, Structural Models, Controls,…
+      </a>
+      <a class="is-active" href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Logistic Regression — Model Fit, Interpretation, Prediction, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Project · Week 15</p>
+        <h1 class="page-title">Logistic Regression — Model Fit, Interpretation, Prediction, and Diagnostics</h1>
+        <p class="page-meta">Week 15 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-overview">1. Overview</a></li>
+      <li><a href="#misconception-1">Misconception 1</a></li>
+      <li><a href="#misconception-2">Misconception 2</a></li>
+      <li><a href="#misconception-3">Misconception 3</a></li>
+      <li><a href="#misconception-4">Misconception 4</a></li>
+      <li><a href="#misconception-5">Misconception 5</a></li>
+      <li><a href="#misconception-6">Misconception 6</a></li>
+      <li><a href="#misconception-7">Misconception 7</a></li>
+      <li><a href="#misconception-8">Misconception 8</a></li>
+      <li><a href="#misconception-9">Misconception 9</a></li>
+      <li><a href="#misconception-10">Misconception 10</a></li>
+      <li><a href="#misconception-11">Misconception 11</a></li>
+      <li><a href="#central-takeaway">Central takeaway</a></li>
+      <li><a href="#case-study">Case Study</a></li>
+      <li><a href="#1-case-study-overview">1. Case Study Overview</a></li>
+      <li><a href="#layer-1-model-quality">Layer 1 — Model quality</a></li>
+      <li><a href="#layer-2-decision-quality">Layer 2 — Decision quality</a></li>
+      <li><a href="#misconception-1-2">Misconception 1</a></li>
+      <li><a href="#misconception-2-2">Misconception 2</a></li>
+      <li><a href="#misconception-3-2">Misconception 3</a></li>
+      <li><a href="#misconception-4-2">Misconception 4</a></li>
+      <li><a href="#misconception-5-2">Misconception 5</a></li>
+      <li><a href="#misconception-6-2">Misconception 6</a></li>
+      <li><a href="#misconception-7-2">Misconception 7</a></li>
+      <li><a href="#misconception-8-2">Misconception 8</a></li>
+      <li><a href="#misconception-9-2">Misconception 9</a></li>
+      <li><a href="#misconception-10-2">Misconception 10</a></li>
+      <li><a href="#core-takeaway">Core takeaway</a></li>
+      <li><a href="#1-case-overview">1. Case Overview</a></li>
+      <li><a href="#rapid-recall-chain">Rapid-recall chain</a></li>
+      <li><a href="#core-equations-and-interpretation">Core equations and interpretation</a></li>
+      <li><a href="#high-value-distinctions">High-value distinctions</a></li>
+      <li><a href="#classification-and-the-confusion-matrix">Classification and the confusion matrix</a></li>
+      <li><a href="#model-evaluation-toolkit">Model evaluation toolkit</a></li>
+      <li><a href="#event-reference-coding">Event/reference coding</a></li>
+      <li><a href="#northfield-retail-attrition-case">Northfield Retail attrition case</a></li>
+      <li><a href="#larger-jamovi-hr-demonstration">Larger Jamovi HR demonstration</a></li>
+      <li><a href="#frequent-mistakes-to-avoid">Frequent mistakes to avoid</a></li>
+      <li><a href="#likely-exam-questions">Likely exam questions</a></li>
+      <li><a href="#source-coverage-checklist">Source-coverage checklist</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-overview"><strong>1. Overview</strong></h2>
+<p>This quiz focused on <strong>binary logistic regression</strong>, particularly its application to employee turnover/attrition.</p>
+<p>The central example was:</p>
+<blockquote>
+<p><strong>Employee leaves vs employee stays</strong></p>
+</blockquote>
+<p>Because the outcome has only two categories, ordinary linear regression is generally inappropriate for directly modeling the probability of the event. Logistic regression is designed to estimate probabilities constrained to the interval:</p>
+<blockquote>
+<p><strong>0 to 1</strong></p>
+</blockquote>
+<p>The major concepts covered were:</p>
+<ul>
+<li>Binary logistic regression  </li>
+<li>Outcome/event coding  </li>
+<li>Probability interpretation  </li>
+<li>Log-odds/logit  </li>
+<li>AUC and ROC  </li>
+<li>Deviance  </li>
+<li>Log-likelihood  </li>
+<li>AIC and BIC  </li>
+<li>Model comparison  </li>
+<li>Pseudo-R²  </li>
+<li>Predictor coding in jamovi  </li>
+<li>Continuous covariates  </li>
+<li>Multicollinearity  </li>
+<li>VIF and tolerance  </li>
+<li>Cutoffs and classification  </li>
+<li>Reference-category changes  </li>
+<li>Model interpretation  </li>
+<li>Accuracy vs likelihood-based fit  </li>
+<li>Appropriate workflow for HR prediction</li>
+</ul>
+<hr>
+<h1 id="2-why-logistic-regression"><strong>2. Why Logistic Regression?</strong></h1>
+<p>Suppose HR wants to predict:</p>
+<blockquote>
+<p><strong>Attrition \= Yes or No</strong></p>
+</blockquote>
+<p>The outcome is binary:</p>
+<ul>
+<li>0 \= No / stayed  </li>
+<li>1 \= Yes / left</li>
+</ul>
+<p>A linear regression model could theoretically produce predictions such as:</p>
+<blockquote>
+<p>-0.20</p>
+</blockquote>
+<p>or:</p>
+<blockquote>
+<p>1.17</p>
+</blockquote>
+<p>Those cannot be interpreted as probabilities.</p>
+<p>A probability must satisfy:</p>
+<blockquote>
+<p><strong>0 ≤ P ≤ 1</strong></p>
+</blockquote>
+<p>Logistic regression solves this by modeling the probability through the logistic function.</p>
+<hr>
+<h1 id="3-logistic-regression-output"><strong>3. Logistic Regression Output</strong></h1>
+<p>Suppose the model produces:</p>
+<blockquote>
+<p><strong>0.72</strong></p>
+</blockquote>
+<p>for an employee.</p>
+<p>This is interpreted as:</p>
+<blockquote>
+<p><strong>Estimated probability that the employee will leave \= 72%</strong></p>
+</blockquote>
+<p>It is not:</p>
+<ul>
+<li>A coefficient  </li>
+<li>A raw continuous prediction  </li>
+<li>A log-odds value, if the software is reporting predicted probability  </li>
+<li>An automatic leave/stay classification</li>
+</ul>
+<hr>
+<h1 id="4-probability-to-classification"><strong>4. Probability to Classification</strong></h1>
+<p>Once a probability has been estimated, HR can apply a classification threshold.</p>
+<p>A common threshold is:</p>
+<blockquote>
+<p><strong>0.50</strong></p>
+</blockquote>
+<p>For example:</p>
+<h3 id="predicted-probability-0-72"><strong>Predicted probability \= 0.72</strong></h3>
+<p>Since:</p>
+<blockquote>
+<p>0.72 ≥ 0.50</p>
+</blockquote>
+<p>classify as:</p>
+<blockquote>
+<p><strong>Leave</strong></p>
+</blockquote>
+<h3 id="predicted-probability-0-32"><strong>Predicted probability \= 0.32</strong></h3>
+<p>Since:</p>
+<blockquote>
+<p>0.32 \&lt; 0.50</p>
+</blockquote>
+<p>classify as:</p>
+<blockquote>
+<p><strong>Stay</strong></p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Logistic regression → probability → threshold → classification</strong></p>
+</blockquote>
+<hr>
+<h1 id="5-the-threshold-is-a-decision-rule"><strong>5. The Threshold Is a Decision Rule</strong></h1>
+<p>The 0.5 cutoff is common, but it is not a universal law.</p>
+<p>The appropriate threshold depends on the business problem.</p>
+<p>For HR:</p>
+<h3 id="false-negative"><strong>False negative</strong></h3>
+<p>An employee is predicted to stay but actually leaves.</p>
+<p>This could be costly if the organization loses a critical employee.</p>
+<h3 id="false-positive"><strong>False positive</strong></h3>
+<p>An employee is predicted to leave but actually stays.</p>
+<p>This could lead HR to waste retention resources.</p>
+<p>Therefore, the optimal cutoff may differ from 0.5 depending on:</p>
+<ul>
+<li>Cost of false positives  </li>
+<li>Cost of false negatives  </li>
+<li>Class balance  </li>
+<li>Business objectives</li>
+</ul>
+<hr>
+<h1 id="6-logistic-regression-and-the-logit"><strong>6. Logistic Regression and the Logit</strong></h1>
+<p>Logistic regression models the <strong>log-odds</strong> of the event.</p>
+<p>The basic form is:</p>
+<blockquote>
+<p><strong>log(p / (1 − p)) \= β₀ + β₁X₁ + β₂X₂ + &hellip;</strong></p>
+</blockquote>
+<p>where:</p>
+<ul>
+<li><strong>p</strong> \= probability of the event  </li>
+<li><strong>p/(1−p)</strong> \= odds  </li>
+<li><strong>log(p/(1−p))</strong> \= log-odds or logit</li>
+</ul>
+<p>The logistic transformation then converts the model&rsquo;s linear predictor into a probability between 0 and 1.</p>
+<hr>
+<h1 id="7-probability-odds-and-log-odds"><strong>7. Probability, Odds, and Log-Odds</strong></h1>
+<p>These three quantities should not be confused.</p>
+<p>Suppose:</p>
+<blockquote>
+<p>p \= 0.75</p>
+</blockquote>
+<h3 id="probability"><strong>Probability</strong></h3>
+<blockquote>
+<p>0.75</p>
+</blockquote>
+<h3 id="odds"><strong>Odds</strong></h3>
+<blockquote>
+<p>0.75 / 0.25 \= 3</p>
+</blockquote>
+<p>So the odds are:</p>
+<blockquote>
+<p><strong>3:1</strong></p>
+</blockquote>
+<h3 id="log-odds"><strong>Log-odds</strong></h3>
+<blockquote>
+<p>ln(3)</p>
+</blockquote>
+<p>These are mathematically related but have different interpretations.</p>
+<hr>
+<h1 id="8-changing-the-event-category"><strong>8. Changing the Event Category</strong></h1>
+<p>Suppose the original model predicts:</p>
+<blockquote>
+<p><strong>Leave \= Yes</strong></p>
+</blockquote>
+<p>and the researcher changes the event to:</p>
+<blockquote>
+<p><strong>Stay \= No</strong></p>
+</blockquote>
+<p>The model is now expressed in terms of the opposite outcome.</p>
+<p>The underlying information in the dataset has not changed.</p>
+<p>However:</p>
+<blockquote>
+<p><strong>The interpretation of the coefficients changes.</strong></p>
+</blockquote>
+<p>For a binary outcome, switching the event to its complement reverses the direction of the log-odds relationship.</p>
+<p>Thus, coefficients typically change sign.</p>
+<hr>
+<h1 id="9-example-of-outcome-recoding"><strong>9. Example of Outcome Recoding</strong></h1>
+<p>Suppose:</p>
+<blockquote>
+<p>β \= +0.80</p>
+</blockquote>
+<p>when modeling:</p>
+<blockquote>
+<p>Probability of leaving.</p>
+</blockquote>
+<p>A positive coefficient means higher X is associated with higher log-odds of leaving.</p>
+<p>If the model instead predicts:</p>
+<blockquote>
+<p>Probability of staying,</p>
+</blockquote>
+<p>the corresponding relationship reverses.</p>
+<p>The same underlying relationship is being represented from the opposite perspective.</p>
+<hr>
+<h1 id="10-what-does-not-necessarily-change-when-the-event-is-recoded"><strong>10. What Does Not Necessarily Change When the Event Is Recoded?</strong></h1>
+<p>Changing which binary category is treated as the event does <strong>not fundamentally change the underlying data relationship</strong>.</p>
+<p>It changes:</p>
+<ul>
+<li>Event interpretation  </li>
+<li>Coefficient direction  </li>
+<li>Intercept/coefficients representation</li>
+</ul>
+<p>It does not mean:</p>
+<blockquote>
+<p>The data suddenly have a different causal structure.</p>
+</blockquote>
+<hr>
+<h1 id="11-model-fit-deviance"><strong>11. Model Fit: Deviance</strong></h1>
+<p>One of the major fit measures discussed was:</p>
+<blockquote>
+<p><strong>Deviance</strong></p>
+</blockquote>
+<p>For logistic regression, deviance is based on the log-likelihood.</p>
+<p>Conceptually:</p>
+<blockquote>
+<p><strong>Deviance \= −2 × log-likelihood</strong></p>
+</blockquote>
+<p>For models fitted to the same outcome data:</p>
+<blockquote>
+<p><strong>Lower deviance generally indicates better likelihood-based fit.</strong></p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote>
+<p>Smaller deviance → better fit</p>
+</blockquote>
+<p>provided the models are being compared appropriately.</p>
+<hr>
+<h1 id="12-why-lower-deviance-is-better"><strong>12. Why Lower Deviance Is Better</strong></h1>
+<p>Higher log-likelihood means the model assigns greater likelihood to the observed data.</p>
+<p>Because:</p>
+<blockquote>
+<p>Deviance \= −2 × log-likelihood</p>
+</blockquote>
+<p>a larger log-likelihood corresponds to a smaller deviance.</p>
+<p>Thus:</p>
+<blockquote>
+<p><strong>Higher likelihood → lower deviance → better fit</strong></p>
+</blockquote>
+<hr>
+<h1 id="13-comparing-two-models"><strong>13. Comparing Two Models</strong></h1>
+<p>Suppose:</p>
+<h3 id="model-1"><strong>Model 1</strong></h3>
+<p>Residual deviance:</p>
+<blockquote>
+<p>420</p>
+</blockquote>
+<h3 id="model-2"><strong>Model 2</strong></h3>
+<p>Residual deviance:</p>
+<blockquote>
+<p>435</p>
+</blockquote>
+<p>If both models are fit to the same data and have the same complexity:</p>
+<blockquote>
+<p><strong>Model 1 is preferred on likelihood-based fit.</strong></p>
+</blockquote>
+<p>The fact that Model 2 might have slightly higher classification accuracy at a 0.5 cutoff does not override this conclusion.</p>
+<hr>
+<h1 id="14-accuracy-vs-deviance"><strong>14. Accuracy vs Deviance</strong></h1>
+<p>This distinction is important.</p>
+<h3 id="accuracy"><strong>Accuracy</strong></h3>
+<p>Measures:</p>
+<blockquote>
+<p>Percentage of observations classified correctly at a particular cutoff.</p>
+</blockquote>
+<p>Example:</p>
+<blockquote>
+<p>0.5 threshold.</p>
+</blockquote>
+<h3 id="deviance"><strong>Deviance</strong></h3>
+<p>Measures:</p>
+<blockquote>
+<p>Likelihood-based model fit.</p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote>
+<p>A model can have higher classification accuracy but worse likelihood-based fit.</p>
+</blockquote>
+<p>Accuracy and deviance answer different questions.</p>
+<hr>
+<h1 id="15-aic"><strong>15. AIC</strong></h1>
+<p>AIC stands for:</p>
+<blockquote>
+<p><strong>Akaike Information Criterion</strong></p>
+</blockquote>
+<p>AIC compares model fit while penalizing model complexity.</p>
+<p>Conceptually:</p>
+<blockquote>
+<p><strong>AIC \= fit measure + complexity penalty</strong></p>
+</blockquote>
+<p>The preferred model generally has:</p>
+<blockquote>
+<p><strong>Lower AIC</strong></p>
+</blockquote>
+<p>when comparing appropriate candidate models fitted to the same data.</p>
+<hr>
+<h1 id="16-bic"><strong>16. BIC</strong></h1>
+<p>BIC stands for:</p>
+<blockquote>
+<p><strong>Bayesian Information Criterion</strong></p>
+</blockquote>
+<p>Like AIC, it balances:</p>
+<ul>
+<li>Model fit  </li>
+<li>Model complexity</li>
+</ul>
+<p>The preferred model generally has:</p>
+<blockquote>
+<p><strong>Lower BIC</strong></p>
+</blockquote>
+<p>when comparing suitable models on the same data.</p>
+<p>BIC typically imposes a stronger complexity penalty than AIC, especially as sample size grows.</p>
+<hr>
+<h1 id="17-aic-and-bic-are-not-significance-tests-for-individual-predictors"><strong>17. AIC and BIC Are Not Significance Tests for Individual Predictors</strong></h1>
+<p>This was explicitly tested.</p>
+<p>AIC and BIC are primarily:</p>
+<blockquote>
+<p><strong>Model-comparison criteria</strong></p>
+</blockquote>
+<p>They do not answer:</p>
+<blockquote>
+<p>“Is β₁ statistically different from zero?”</p>
+</blockquote>
+<p>For an individual coefficient, researchers typically consider:</p>
+<ul>
+<li>Standard error  </li>
+<li>Wald statistic  </li>
+<li>p-value  </li>
+<li>Confidence interval</li>
+</ul>
+<p>depending on the analysis framework.</p>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>AIC/BIC ≠ individual coefficient significance test</strong></p>
+</blockquote>
+<hr>
+<h1 id="18-deviance-aic-and-bic-do-not-require-a-0-5-cutoff"><strong>18. Deviance, AIC, and BIC Do Not Require a 0.5 Cutoff</strong></h1>
+<p>Another important misconception addressed in the quiz:</p>
+<blockquote>
+<p>Deviance, AIC, and BIC are not dependent on choosing a classification cutoff.</p>
+</blockquote>
+<p>They operate on the model&rsquo;s likelihood/probability structure.</p>
+<p>A threshold such as 0.5 becomes relevant when converting predicted probabilities into:</p>
+<blockquote>
+<p><strong>Predicted classes</strong></p>
+</blockquote>
+<p>It is not required to calculate:</p>
+<ul>
+<li>Deviance  </li>
+<li>AIC  </li>
+<li>BIC</li>
+</ul>
+<hr>
+<h1 id="19-aic-bic-vs-accuracy"><strong>19. AIC/BIC vs Accuracy</strong></h1>
+<h3 id="aic-bic"><strong>AIC/BIC</strong></h3>
+<p>Used for:</p>
+<blockquote>
+<p>Comparing statistical models based on fit and complexity.</p>
+</blockquote>
+<h3 id="accuracy-2"><strong>Accuracy</strong></h3>
+<p>Used for:</p>
+<blockquote>
+<p>Evaluating classification decisions at a selected cutoff.</p>
+</blockquote>
+<p>Therefore, one should not automatically say:</p>
+<blockquote>
+<p>“The model with higher accuracy is the better model.”</p>
+</blockquote>
+<p>The correct choice depends on the analytical objective.</p>
+<hr>
+<h1 id="20-pseudo-r"><strong>20. Pseudo-R²</strong></h1>
+<p>Logistic regression does not have the exact same R² interpretation as ordinary linear regression.</p>
+<p>Therefore, logistic models often use:</p>
+<blockquote>
+<p><strong>Pseudo-R² measures</strong></p>
+</blockquote>
+<p>Examples include:</p>
+<ul>
+<li>McFadden&rsquo;s R²  </li>
+<li>Cox &amp; Snell R²  </li>
+<li>Nagelkerke R²</li>
+</ul>
+<p>These provide useful measures of model performance, but they should not simply be interpreted as:</p>
+<blockquote>
+<p>“The percentage of variance explained”</p>
+</blockquote>
+<p>in exactly the same way as ordinary least squares R².</p>
+<hr>
+<h1 id="21-why-pseudo-r-should-not-automatically-determine-model-choice"><strong>21. Why Pseudo-R² Should Not Automatically Determine Model Choice</strong></h1>
+<p>A higher pseudo-R² may be useful evidence, but it does not mean:</p>
+<blockquote>
+<p>The model is automatically superior in every respect.</p>
+</blockquote>
+<p>Researchers should consider:</p>
+<ul>
+<li>Likelihood  </li>
+<li>AIC  </li>
+<li>BIC  </li>
+<li>Predictive performance  </li>
+<li>Classification performance  </li>
+<li>Theoretical justification  </li>
+<li>Model complexity</li>
+</ul>
+<hr>
+<h1 id="22-auc"><strong>22. AUC</strong></h1>
+<p>AUC stands for:</p>
+<blockquote>
+<p><strong>Area Under the ROC Curve</strong></p>
+</blockquote>
+<p>The quiz&rsquo;s key interpretation is:</p>
+<blockquote>
+<p><strong>Overall class separation across cutoffs.</strong></p>
+</blockquote>
+<p>AUC summarizes the model&rsquo;s ability to discriminate between the two classes across a range of thresholds.</p>
+<hr>
+<h1 id="23-roc-curve"><strong>23. ROC Curve</strong></h1>
+<p>ROC stands for:</p>
+<blockquote>
+<p><strong>Receiver Operating Characteristic</strong></p>
+</blockquote>
+<p>It examines the trade-off between:</p>
+<ul>
+<li>True positive rate / sensitivity  </li>
+<li>False positive rate</li>
+</ul>
+<p>across different classification thresholds.</p>
+<p>Therefore, unlike accuracy at 0.5:</p>
+<blockquote>
+<p>ROC/AUC considers performance across many possible cutoffs.</p>
+</blockquote>
+<hr>
+<h1 id="24-interpretation-of-auc"><strong>24. Interpretation of AUC</strong></h1>
+<p>AUC can be understood as a measure of how well the model ranks positive cases above negative cases.</p>
+<p>Broadly:</p>
+<blockquote>
+<p>AUC near 0.5 → little discrimination</p>
+<p>Higher AUC → better discrimination</p>
+<p>AUC near 1.0 → excellent discrimination</p>
+</blockquote>
+<p>Exact interpretation should consider context and sample uncertainty.</p>
+<hr>
+<h1 id="25-auc-vs-accuracy"><strong>25. AUC vs Accuracy</strong></h1>
+<h3 id="accuracy-3"><strong>Accuracy</strong></h3>
+<p>Depends on:</p>
+<blockquote>
+<p><strong>One chosen threshold</strong></p>
+</blockquote>
+<h3 id="auc"><strong>AUC</strong></h3>
+<p>Summarizes:</p>
+<blockquote>
+<p><strong>Discrimination across thresholds</strong></p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote>
+<p>AUC is not simply “percentage correct.”</p>
+</blockquote>
+<hr>
+<h1 id="26-auc-vs-sensitivity"><strong>26. AUC vs Sensitivity</strong></h1>
+<p>Sensitivity at a particular threshold answers:</p>
+<blockquote>
+<p>Of the employees who actually leave, what proportion did the model correctly identify?</p>
+</blockquote>
+<p>AUC is broader.</p>
+<p>It evaluates discrimination across the range of thresholds.</p>
+<p>Thus:</p>
+<blockquote>
+<p><strong>AUC ≠ sensitivity at 0.5</strong></p>
+</blockquote>
+<hr>
+<h1 id="27-jamovi-variable-setup"><strong>27. jamovi Variable Setup</strong></h1>
+<p>The quiz included a practical jamovi question.</p>
+<p>Suppose:</p>
+<blockquote>
+<p>Attrition \= 0/1</p>
+</blockquote>
+<p>is the binary outcome.</p>
+<p>And:</p>
+<blockquote>
+<p>Job Satisfaction \= 1–4</p>
+</blockquote>
+<p>is a predictor.</p>
+<p>Job Satisfaction should be treated as a:</p>
+<blockquote>
+<p><strong>Continuous variable</strong></p>
+</blockquote>
+<p>when the research design treats the 1–4 score as a quantitative covariate.</p>
+<p>It should then be placed in:</p>
+<blockquote>
+<p><strong>Covariates</strong></p>
+</blockquote>
+<hr>
+<h1 id="28-dependent-variable-vs-covariate"><strong>28. Dependent Variable vs Covariate</strong></h1>
+<p>In the logistic regression setup:</p>
+<h3 id="dependent-variable"><strong>Dependent variable</strong></h3>
+<p>The binary outcome:</p>
+<blockquote>
+<p>Attrition</p>
+</blockquote>
+<h3 id="covariate"><strong>Covariate</strong></h3>
+<p>The predictor:</p>
+<blockquote>
+<p>Job Satisfaction</p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote>
+<p>Job Satisfaction → Covariates</p>
+</blockquote>
+<p>not:</p>
+<blockquote>
+<p>Dependent Variable.</p>
+</blockquote>
+<hr>
+<h1 id="29-why-coding-alone-does-not-determine-measurement-level"><strong>29. Why Coding Alone Does Not Determine Measurement Level</strong></h1>
+<p>A variable being represented by numbers does not automatically make it continuous.</p>
+<p>For example:</p>
+<blockquote>
+<p>Gender \= 1, 2</p>
+</blockquote>
+<p>is usually categorical.</p>
+<p>But:</p>
+<blockquote>
+<p>Job Satisfaction \= 1–4</p>
+</blockquote>
+<p>may be treated as a quantitative predictor if the analytical design justifies that treatment.</p>
+<p>The measurement level should reflect:</p>
+<blockquote>
+<p><strong>What the variable means and how it is being analyzed</strong>, not merely the fact that it contains numbers.</p>
+</blockquote>
+<hr>
+<h1 id="30-multicollinearity"><strong>30. Multicollinearity</strong></h1>
+<p>The quiz included:</p>
+<blockquote>
+<p>VIF \= 6</p>
+</blockquote>
+<p>and:</p>
+<blockquote>
+<p>Tolerance \= 0.15</p>
+</blockquote>
+<p>This indicates:</p>
+<blockquote>
+<p><strong>Multicollinearity among predictors.</strong></p>
+</blockquote>
+<p>The predictors contain substantial overlapping information.</p>
+<hr>
+<h1 id="31-vif"><strong>31. VIF</strong></h1>
+<p>VIF stands for:</p>
+<blockquote>
+<p><strong>Variance Inflation Factor</strong></p>
+</blockquote>
+<p>It measures how much the variance of an estimated coefficient is inflated because of relationships among predictors.</p>
+<p>Higher VIF indicates greater multicollinearity.</p>
+<p>A VIF of:</p>
+<blockquote>
+<p>6</p>
+</blockquote>
+<p>would generally warrant investigation.</p>
+<hr>
+<h1 id="32-tolerance"><strong>32. Tolerance</strong></h1>
+<p>Tolerance is related to VIF:</p>
+<blockquote>
+<p><strong>Tolerance \= 1 / VIF</strong></p>
+</blockquote>
+<p>Therefore, if:</p>
+<blockquote>
+<p>VIF \= 6</p>
+</blockquote>
+<p>then:</p>
+<blockquote>
+<p>Tolerance ≈ 0.167</p>
+</blockquote>
+<p>The example&rsquo;s:</p>
+<blockquote>
+<p>Tolerance \= 0.15</p>
+</blockquote>
+<p>is consistent with substantial multicollinearity.</p>
+<p>Lower tolerance indicates greater multicollinearity.</p>
+<hr>
+<h1 id="33-what-multicollinearity-does"><strong>33. What Multicollinearity Does</strong></h1>
+<p>Multicollinearity can lead to:</p>
+<ul>
+<li>Inflated standard errors  </li>
+<li>Less precise coefficient estimates  </li>
+<li>Unstable coefficient estimates  </li>
+<li>Difficulty separating individual predictor effects</li>
+</ul>
+<p>It is not primarily:</p>
+<ul>
+<li>Class imbalance  </li>
+<li>Nonlinearity  </li>
+<li>Overfitting</li>
+</ul>
+<p>although severe multicollinearity can contribute to broader modeling difficulties.</p>
+<hr>
+<h1 id="34-multicollinearity-vs-nonlinearity"><strong>34. Multicollinearity vs Nonlinearity</strong></h1>
+<p>These are different problems.</p>
+<h3 id="multicollinearity"><strong>Multicollinearity</strong></h3>
+<blockquote>
+<p>Predictors are strongly related to each other.</p>
+</blockquote>
+<h3 id="nonlinearity"><strong>Nonlinearity</strong></h3>
+<blockquote>
+<p>The relationship between a predictor and the outcome is not adequately represented by the assumed functional form.</p>
+</blockquote>
+<p>A high VIF indicates:</p>
+<blockquote>
+<p><strong>Multicollinearity</strong></p>
+</blockquote>
+<p>not automatically:</p>
+<blockquote>
+<p>Nonlinearity.</p>
+</blockquote>
+<hr>
+<h1 id="35-multicollinearity-vs-class-imbalance"><strong>35. Multicollinearity vs Class Imbalance</strong></h1>
+<p>Class imbalance concerns the distribution of the outcome classes.</p>
+<p>Example:</p>
+<blockquote>
+<p>95% stay</p>
+<p>5% leave</p>
+</blockquote>
+<p>This is a class imbalance problem.</p>
+<p>It is unrelated to a VIF of 6.</p>
+<hr>
+<h1 id="36-multicollinearity-vs-overfitting"><strong>36. Multicollinearity vs Overfitting</strong></h1>
+<p>Overfitting occurs when a model captures noise or idiosyncrasies of the training data and performs poorly on new data.</p>
+<p>Multicollinearity concerns relationships among predictors.</p>
+<p>The two can coexist but are not synonymous.</p>
+<hr>
+<h1 id="37-outcome-reference-level"><strong>37. Outcome Reference Level</strong></h1>
+<p>Changing the reference/event category in binary logistic regression changes the way the model is expressed.</p>
+<p>For example:</p>
+<h3 id="original"><strong>Original</strong></h3>
+<blockquote>
+<p>Yes \= event</p>
+</blockquote>
+<h3 id="new"><strong>New</strong></h3>
+<blockquote>
+<p>No \= event</p>
+</blockquote>
+<p>The model is now predicting the opposite outcome.</p>
+<p>Consequently:</p>
+<blockquote>
+<p><strong>Coefficient signs switch.</strong></p>
+</blockquote>
+<p>The underlying data relationship has not changed.</p>
+<hr>
+<h1 id="38-what-does-not-change-fundamentally"><strong>38. What Does Not Change Fundamentally?</strong></h1>
+<p>Changing the event category does not mean:</p>
+<ul>
+<li>The dataset has changed  </li>
+<li>Predictors have changed  </li>
+<li>The underlying observations have changed  </li>
+<li>A different regression type is required</li>
+</ul>
+<p>It is a change in:</p>
+<blockquote>
+<p><strong>Outcome interpretation/coding</strong></p>
+</blockquote>
+<hr>
+<h1 id="39-changing-reference-category-does-not-create-ordinal-regression"><strong>39. Changing Reference Category Does Not Create Ordinal Regression</strong></h1>
+<p>A binary outcome remains binary even if categories are coded:</p>
+<blockquote>
+<p>0 and 1</p>
+</blockquote>
+<p>or:</p>
+<blockquote>
+<p>1 and 2</p>
+</blockquote>
+<p>or:</p>
+<blockquote>
+<p>Yes and No</p>
+</blockquote>
+<p>Changing the event category does not create an order.</p>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Binary logistic regression remains binary logistic regression.</strong></p>
+</blockquote>
+<hr>
+<h1 id="40-model-fit-and-reference-coding"><strong>40. Model Fit and Reference Coding</strong></h1>
+<p>For the same binary data and predictor set, changing which category is treated as the event generally changes the representation of the coefficients, but it does not fundamentally make the model a different underlying fit to the data.</p>
+<p>Thus, the key effect is:</p>
+<blockquote>
+<p><strong>Interpretation and coefficient direction change.</strong></p>
+</blockquote>
+<hr>
+<h1 id="41-logistic-regression-vs-linear-regression"><strong>41. Logistic Regression vs Linear Regression</strong></h1>
+<p>This was particularly important in the final question.</p>
+<p>Suppose a straight-line model predicts:</p>
+<blockquote>
+<p>-0.15</p>
+</blockquote>
+<p>or:</p>
+<blockquote>
+<p>1.20</p>
+</blockquote>
+<p>If interpreted as a probability, these are invalid.</p>
+<p>A proper probability must be:</p>
+<blockquote>
+<p><strong>0 to 1</strong></p>
+</blockquote>
+<hr>
+<h1 id="42-why-logistic-regression-solves-the-problem"><strong>42. Why Logistic Regression Solves the Problem</strong></h1>
+<p>Logistic regression uses the logistic function:</p>
+<blockquote>
+<p><strong>p \= 1 / (1 + e⁻ᶻ)</strong></p>
+</blockquote>
+<p>where:</p>
+<blockquote>
+<p>z \= β₀ + β₁X₁ + β₂X₂ + &hellip;</p>
+</blockquote>
+<p>Regardless of the value of z:</p>
+<blockquote>
+<p>p always lies between 0 and 1.</p>
+</blockquote>
+<p>This makes logistic regression appropriate for binary-event probabilities.</p>
+<hr>
+<h1 id="43-the-correct-hr-prediction-workflow"><strong>43. The Correct HR Prediction Workflow</strong></h1>
+<p>HR requires:</p>
+<ol>
+<li>An interpretable probability of resignation.  </li>
+<li>An automatic leave/stay classification rule.</li>
+</ol>
+<p>The appropriate workflow is:</p>
+<blockquote>
+<p><strong>Logistic regression → estimated probability → threshold → classification</strong></p>
+</blockquote>
+<p>For example:</p>
+<blockquote>
+<p>Probability \= 0.72</p>
+</blockquote>
+<p>↓</p>
+<blockquote>
+<p>Compare with 0.50</p>
+</blockquote>
+<p>↓</p>
+<blockquote>
+<p><strong>Leave</strong></p>
+</blockquote>
+<hr>
+<h1 id="44-why-clamping-linear-predictions-is-not-appropriate"><strong>44. Why Clamping Linear Predictions Is Not Appropriate</strong></h1>
+<p>One tempting workaround is:</p>
+<blockquote>
+<p>Linear regression → predictions → clamp values below 0 to 0 and above 1 to 1.</p>
+</blockquote>
+<p>This is an ad hoc fix.</p>
+<p>It does not turn linear regression into a proper probability model.</p>
+<p>The fundamental issue remains:</p>
+<blockquote>
+<p>Linear regression does not naturally model binary-event probabilities.</p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote>
+<p>Use logistic regression instead.</p>
+</blockquote>
+<hr>
+<h1 id="45-why-thresholding-linear-regression-is-also-inadequate"><strong>45. Why Thresholding Linear Regression Is Also Inadequate</strong></h1>
+<p>Another workaround is:</p>
+<blockquote>
+<p>Linear regression → fitted value → threshold → classification</p>
+</blockquote>
+<p>Although this may produce a classification rule, the fitted values are not properly modeled probabilities.</p>
+<p>Therefore, if HR specifically requires:</p>
+<blockquote>
+<p><strong>An interpretable chance of resignation</strong></p>
+</blockquote>
+<p>logistic regression is the appropriate approach.</p>
+<hr>
+<h1 id="46-likelihood-based-model-comparison"><strong>46. Likelihood-Based Model Comparison</strong></h1>
+<p>When comparing logistic models fit to the same outcome data:</p>
+<h3 id="deviance-2"><strong>Deviance</strong></h3>
+<blockquote>
+<p>Lower is better.</p>
+</blockquote>
+<h3 id="aic"><strong>AIC</strong></h3>
+<blockquote>
+<p>Lower is generally preferred.</p>
+</blockquote>
+<h3 id="bic"><strong>BIC</strong></h3>
+<blockquote>
+<p>Lower is generally preferred.</p>
+</blockquote>
+<p>These metrics incorporate likelihood-based fit, with AIC/BIC also accounting for model complexity.</p>
+<hr>
+<h1 id="47-equal-model-complexity"><strong>47. Equal Model Complexity</strong></h1>
+<p>If two models have:</p>
+<blockquote>
+<p>Same data</p>
+</blockquote>
+<p>and:</p>
+<blockquote>
+<p>Same residual degrees of freedom / same effective complexity</p>
+</blockquote>
+<p>then comparing deviance becomes particularly straightforward.</p>
+<p>The model with lower deviance has:</p>
+<blockquote>
+<p>Higher likelihood</p>
+</blockquote>
+<p>and therefore:</p>
+<blockquote>
+<p>Better likelihood-based fit.</p>
+</blockquote>
+<hr>
+<h1 id="48-why-accuracy-does-not-always-win"><strong>48. Why Accuracy Does Not Always Win</strong></h1>
+<p>Suppose:</p>
+<h3 id="model-1-2"><strong>Model 1</strong></h3>
+<p>Accuracy \= 80%</p>
+<p>Deviance \= 400</p>
+<h3 id="model-2-2"><strong>Model 2</strong></h3>
+<p>Accuracy \= 82%</p>
+<p>Deviance \= 415</p>
+<p>Model 2 has better 0.5-cutoff accuracy.</p>
+<p>But Model 1 has better likelihood-based fit.</p>
+<p>Therefore, if the question specifically asks for:</p>
+<blockquote>
+<p><strong>Likelihood-based model comparison</strong></p>
+</blockquote>
+<p>Model 1 should be preferred.</p>
+<hr>
+<h1 id="49-model-selection-should-match-the-objective"><strong>49. Model Selection Should Match the Objective</strong></h1>
+<p>Different metrics answer different questions.</p>
+<h3 id="if-the-goal-is-likelihood-based-fit"><strong>If the goal is likelihood-based fit:</strong></h3>
+<p>Use:</p>
+<blockquote>
+<p>Deviance / AIC / BIC</p>
+</blockquote>
+<h3 id="if-the-goal-is-discrimination"><strong>If the goal is discrimination:</strong></h3>
+<p>Use:</p>
+<blockquote>
+<p>AUC</p>
+</blockquote>
+<h3 id="if-the-goal-is-classification-at-a-chosen-threshold"><strong>If the goal is classification at a chosen threshold:</strong></h3>
+<p>Use:</p>
+<blockquote>
+<p>Accuracy / sensitivity / specificity / confusion matrix</p>
+</blockquote>
+<h3 id="if-the-goal-is-individual-predictor-inference"><strong>If the goal is individual predictor inference:</strong></h3>
+<p>Use:</p>
+<blockquote>
+<p>Coefficient, standard error, p-value, confidence interval, odds ratio</p>
+</blockquote>
+<hr>
+<h1 id="50-odds-ratios"><strong>50. Odds Ratios</strong></h1>
+<p>Although not directly tested in the quiz, odds ratios are important for interpreting logistic regression.</p>
+<p>For coefficient β:</p>
+<blockquote>
+<p><strong>Odds Ratio \= eᵝ</strong></p>
+</blockquote>
+<p>If:</p>
+<blockquote>
+<p>OR &gt; 1</p>
+</blockquote>
+<p>then higher X is associated with higher odds of the event.</p>
+<p>If:</p>
+<blockquote>
+<p>OR \&lt; 1</p>
+</blockquote>
+<p>then higher X is associated with lower odds of the event.</p>
+<p>If:</p>
+<blockquote>
+<p>OR \= 1</p>
+</blockquote>
+<p>then there is no multiplicative change in odds associated with a one-unit increase in X.</p>
+<hr>
+<h1 id="51-odds-ratio-is-not-probability-ratio"><strong>51. Odds Ratio Is Not Probability Ratio</strong></h1>
+<p>An odds ratio of:</p>
+<blockquote>
+<p>2</p>
+</blockquote>
+<p>does not mean:</p>
+<blockquote>
+<p>Probability doubles.</p>
+</blockquote>
+<p>Odds and probabilities are different quantities.</p>
+<p>This is a common interpretation error.</p>
+<hr>
+<h1 id="52-predictor-sign-interpretation"><strong>52. Predictor Sign Interpretation</strong></h1>
+<p>Suppose the event is:</p>
+<blockquote>
+<p>Employee leaves</p>
+</blockquote>
+<p>and:</p>
+<blockquote>
+<p>β &gt; 0</p>
+</blockquote>
+<p>Then higher predictor values are associated with:</p>
+<blockquote>
+<p>Higher log-odds of leaving.</p>
+</blockquote>
+<p>If:</p>
+<blockquote>
+<p>β \&lt; 0</p>
+</blockquote>
+<p>then higher predictor values are associated with:</p>
+<blockquote>
+<p>Lower log-odds of leaving.</p>
+</blockquote>
+<p>But if the event category is switched to:</p>
+<blockquote>
+<p>Employee stays</p>
+</blockquote>
+<p>the coefficient direction reverses.</p>
+<p>Therefore:</p>
+<blockquote>
+<p>Always identify the event category before interpreting coefficient signs.</p>
+</blockquote>
+<hr>
+<h1 id="53-important-integrated-workflow-for-logistic-regression"><strong>53. Important Integrated Workflow for Logistic Regression</strong></h1>
+<p>A useful analytical sequence is:</p>
+<h3 id="step-1-define-the-binary-outcome"><strong>Step 1 — Define the binary outcome</strong></h3>
+<p>Example:</p>
+<blockquote>
+<p>Attrition \= Leave/Stay</p>
+</blockquote>
+<h3 id="step-2-define-the-event-category"><strong>Step 2 — Define the event category</strong></h3>
+<p>Example:</p>
+<blockquote>
+<p>Leave \= event</p>
+</blockquote>
+<h3 id="step-3-set-predictor-measurement-levels"><strong>Step 3 — Set predictor measurement levels</strong></h3>
+<p>Example:</p>
+<blockquote>
+<p>Job Satisfaction \= continuous covariate</p>
+</blockquote>
+<h3 id="step-4-check-data-quality"><strong>Step 4 — Check data quality</strong></h3>
+<p>Check:</p>
+<ul>
+<li>Missing values  </li>
+<li>Coding  </li>
+<li>Outliers  </li>
+<li>Sample size  </li>
+<li>Class distribution</li>
+</ul>
+<h3 id="step-5-check-multicollinearity"><strong>Step 5 — Check multicollinearity</strong></h3>
+<p>Use:</p>
+<blockquote>
+<p>VIF / tolerance</p>
+</blockquote>
+<h3 id="step-6-fit-logistic-regression"><strong>Step 6 — Fit logistic regression</strong></h3>
+<p>Estimate:</p>
+<blockquote>
+<p>Probability of event</p>
+</blockquote>
+<h3 id="step-7-assess-individual-predictors"><strong>Step 7 — Assess individual predictors</strong></h3>
+<p>Examine:</p>
+<ul>
+<li>Coefficients  </li>
+<li>Odds ratios  </li>
+<li>p-values  </li>
+<li>Confidence intervals</li>
+</ul>
+<h3 id="step-8-assess-overall-model-fit"><strong>Step 8 — Assess overall/model fit</strong></h3>
+<p>Examine:</p>
+<ul>
+<li>Deviance  </li>
+<li>Likelihood-ratio tests  </li>
+<li>AIC  </li>
+<li>BIC  </li>
+<li>Pseudo-R²</li>
+</ul>
+<h3 id="step-9-assess-discrimination"><strong>Step 9 — Assess discrimination</strong></h3>
+<p>Use:</p>
+<blockquote>
+<p>ROC/AUC</p>
+</blockquote>
+<h3 id="step-10-evaluate-classification"><strong>Step 10 — Evaluate classification</strong></h3>
+<p>At a chosen threshold, assess:</p>
+<ul>
+<li>Accuracy  </li>
+<li>Sensitivity  </li>
+<li>Specificity  </li>
+<li>Confusion matrix</li>
+</ul>
+<h3 id="step-11-choose-the-appropriate-threshold"><strong>Step 11 — Choose the appropriate threshold</strong></h3>
+<p>Based on:</p>
+<blockquote>
+<p>Business costs and objectives.</p>
+</blockquote>
+<hr>
+<h1 id="54-common-misconceptions-to-remember"><strong>54. Common Misconceptions to Remember</strong></h1>
+<h2 id="misconception-1"><strong>Misconception 1</strong></h2>
+<p><strong>“Higher deviance means better fit.”</strong></p>
+<p>False.</p>
+<blockquote>
+<p><strong>Lower deviance is better.</strong></p>
+</blockquote>
+<hr>
+<h2 id="misconception-2"><strong>Misconception 2</strong></h2>
+<p><strong>“Higher AIC/BIC means better model.”</strong></p>
+<p>False.</p>
+<blockquote>
+<p><strong>Lower AIC/BIC is generally preferred.</strong></p>
+</blockquote>
+<hr>
+<h2 id="misconception-3"><strong>Misconception 3</strong></h2>
+<p><strong>“AIC tells whether an individual coefficient is significant.”</strong></p>
+<p>False.</p>
+<p>AIC compares models.</p>
+<hr>
+<h2 id="misconception-4"><strong>Misconception 4</strong></h2>
+<p><strong>“Deviance requires a 0.5 cutoff.”</strong></p>
+<p>False.</p>
+<p>Deviance is likelihood-based and does not require classification.</p>
+<hr>
+<h2 id="misconception-5"><strong>Misconception 5</strong></h2>
+<p><strong>“AUC is accuracy.”</strong></p>
+<p>False.</p>
+<p>AUC measures discrimination across thresholds.</p>
+<hr>
+<h2 id="misconception-6"><strong>Misconception 6</strong></h2>
+<p><strong>“AUC is sensitivity at 0.5.”</strong></p>
+<p>False.</p>
+<p>Sensitivity is threshold-specific.</p>
+<p>AUC considers discrimination across thresholds.</p>
+<hr>
+<h2 id="misconception-7"><strong>Misconception 7</strong></h2>
+<p><strong>“A prediction of 0.72 means the model is 72% accurate.”</strong></p>
+<p>False.</p>
+<p>It means:</p>
+<blockquote>
+<p><strong>Estimated event probability \= 72%.</strong></p>
+</blockquote>
+<hr>
+<h2 id="misconception-8"><strong>Misconception 8</strong></h2>
+<p><strong>“A linear regression prediction can simply be clamped to 0–1.”</strong></p>
+<p>Not as a principled replacement for logistic regression.</p>
+<p>Use a probability model designed for binary outcomes.</p>
+<hr>
+<h2 id="misconception-9"><strong>Misconception 9</strong></h2>
+<p><strong>“Changing the event category changes the underlying relationship.”</strong></p>
+<p>False.</p>
+<p>It changes the model&rsquo;s perspective and typically reverses coefficient signs.</p>
+<hr>
+<h2 id="misconception-10"><strong>Misconception 10</strong></h2>
+<p><strong>“VIF \= 6 means the model is nonlinear.”</strong></p>
+<p>False.</p>
+<p>It indicates:</p>
+<blockquote>
+<p><strong>Multicollinearity.</strong></p>
+</blockquote>
+<hr>
+<h2 id="misconception-11"><strong>Misconception 11</strong></h2>
+<p><strong>“Pseudo-R² is exactly the same as ordinary R².”</strong></p>
+<p>False.</p>
+<p>Pseudo-R² measures should be interpreted within their logistic-regression framework.</p>
+<hr>
+<h1 id="55-quick-reference-table"><strong>55. Quick Reference Table</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Logistic regression</td>
+<td>Models binary-event probability</td>
+</tr>
+<tr>
+<td>Probability</td>
+<td>Between 0 and 1</td>
+</tr>
+<tr>
+<td>Logit</td>
+<td>Log-odds of the event</td>
+</tr>
+<tr>
+<td>Odds</td>
+<td>p/(1−p)</td>
+</tr>
+<tr>
+<td>AUC</td>
+<td>Overall discrimination across thresholds</td>
+</tr>
+<tr>
+<td>Accuracy</td>
+<td>Correct classifications at a chosen threshold</td>
+</tr>
+<tr>
+<td>Sensitivity</td>
+<td>True-positive rate</td>
+</tr>
+<tr>
+<td>Specificity</td>
+<td>True-negative rate</td>
+</tr>
+<tr>
+<td>Deviance</td>
+<td>−2 × log-likelihood</td>
+</tr>
+<tr>
+<td>Lower deviance</td>
+<td>Better likelihood-based fit</td>
+</tr>
+<tr>
+<td>AIC</td>
+<td>Fit + complexity penalty</td>
+</tr>
+<tr>
+<td>Lower AIC</td>
+<td>Generally preferred</td>
+</tr>
+<tr>
+<td>BIC</td>
+<td>Fit + stronger complexity penalty</td>
+</tr>
+<tr>
+<td>Lower BIC</td>
+<td>Generally preferred</td>
+</tr>
+<tr>
+<td>Pseudo-R²</td>
+<td>Logistic-model explanatory-fit measure</td>
+</tr>
+<tr>
+<td>VIF</td>
+<td>Multicollinearity diagnostic</td>
+</tr>
+<tr>
+<td>High VIF</td>
+<td>Potential multicollinearity</td>
+</tr>
+<tr>
+<td>Low tolerance</td>
+<td>Potential multicollinearity</td>
+</tr>
+<tr>
+<td>Event/reference category</td>
+<td>Determines interpretation of coefficient direction</td>
+</tr>
+<tr>
+<td>Cutoff</td>
+<td>Converts probability into class</td>
+</tr>
+<tr>
+<td>0.5 cutoff</td>
+<td>Common, but not mandatory</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="56-final-exam-memory-framework"><strong>56. Final Exam Memory Framework</strong></h1>
+<p>When you see:</p>
+<h3 id="binary-outcome"><strong>“Binary outcome”</strong></h3>
+<p>→ <strong>Logistic regression</strong></p>
+<h3 id="prediction-0-72"><strong>“Prediction \= 0.72”</strong></h3>
+<p>→ <strong>72% estimated probability of the event</strong></p>
+<h3 id="convert-probability-to-leave-stay"><strong>“Convert probability to leave/stay”</strong></h3>
+<p>→ <strong>Choose a threshold</strong></p>
+<h3 id="overall-discrimination"><strong>“Overall discrimination”</strong></h3>
+<p>→ <strong>AUC</strong></p>
+<h3 id="same-data-compare-likelihood-based-fit"><strong>“Same data, compare likelihood-based fit”</strong></h3>
+<p>→ <strong>Lower deviance</strong></p>
+<h3 id="compare-fit-and-complexity"><strong>“Compare fit and complexity”</strong></h3>
+<p>→ <strong>AIC/BIC; lower is generally preferred</strong></p>
+<h3 id="individual-predictor-significance"><strong>“Individual predictor significance”</strong></h3>
+<p>→ <strong>Coefficient/p-value/confidence interval</strong>, not AIC/BIC</p>
+<h3 id="vif-6"><strong>“VIF \= 6”</strong></h3>
+<p>→ <strong>Multicollinearity</strong></p>
+<h3 id="tolerance-0-15"><strong>“Tolerance \= 0.15”</strong></h3>
+<p>→ <strong>Multicollinearity concern</strong></p>
+<h3 id="change-yes-event-to-no-event"><strong>“Change Yes event to No event”</strong></h3>
+<p>→ <strong>Coefficient interpretation/signs change</strong></p>
+<h3 id="predict-values-below-0-or-above-1"><strong>“Predict values below 0 or above 1”</strong></h3>
+<p>→ <strong>Use logistic regression rather than clamping linear predictions</strong></p>
+<h3 id="job-satisfaction-1-4-as-predictor"><strong>“Job Satisfaction 1–4 as predictor”</strong></h3>
+<p>→ <strong>Treat as Continuous if the analytical design treats it as a quantitative covariate</strong></p>
+<hr>
+<h1 id="57-core-mental-model"><strong>57. Core Mental Model</strong></h1>
+<p>The entire quiz can be condensed into:</p>
+<blockquote>
+<p><strong>Binary outcome</strong></p>
+<p>↓</p>
+<p><strong>Logistic regression</strong></p>
+<p>↓</p>
+<p><strong>Estimate probability 0–1</strong></p>
+<p>↓</p>
+<p><strong>Choose event/reference category carefully</strong></p>
+<p>↓</p>
+<p><strong>Check predictor multicollinearity</strong></p>
+<p>↓</p>
+<p><strong>Evaluate individual predictors</strong></p>
+<p>↓</p>
+<p><strong>Evaluate likelihood-based fit</strong></p>
+<p>→ Deviance<br>
+→ AIC<br>
+→ BIC</p>
+<p>↓</p>
+<p><strong>Evaluate discrimination</strong></p>
+<p>→ ROC/AUC</p>
+<p>↓</p>
+<p><strong>Choose classification threshold</strong></p>
+<p>↓</p>
+<p><strong>Evaluate classification performance</strong></p>
+<p>→ Accuracy<br>
+→ Sensitivity<br>
+→ Specificity</p>
+<p>↓</p>
+<p><strong>Translate probabilities into HR decisions</strong></p>
+</blockquote>
+<h2 id="central-takeaway"><strong>Central takeaway</strong></h2>
+<p><strong>Logistic regression should be understood as a probability model first and a classification model second.</strong></p>
+<p>The model estimates an event probability in the valid <strong>0–1 range</strong>. A threshold such as 0.5 can then convert that probability into a leave/stay decision. Model fit should be evaluated with likelihood-based measures such as <strong>deviance, AIC, and BIC</strong>, while <strong>AUC</strong> evaluates discrimination across thresholds and <strong>VIF/tolerance</strong> diagnose multicollinearity. Changing the event category changes the interpretation and signs of coefficients but does not change the underlying data relationship.</p>
+<h2 id="case-study"><strong>Case Study</strong></h2>
+<p>Northfield Retail opened a new analytics group in its HR department to predict which store employees might leave within six months. They built a logistic regression model: Probability \= 1/(1+e^(−Z)), where Z \= b₀ + b₁X₁ + b₂X₂ + … using tenure (months), performance ratings and training hours as predictors. By plugging a new hire&rsquo;s values into the equation, they score attrition risk and compare it to a cut-off of 0.5: above it means likely attrition, below it means likely retention. This first pass achieves only 50% sensitivity on the attrition class, signaling a need for refinement.The analytics team considers two improvement paths. First, they could add variables believed to relate to intent, such as manager relationship quality and career-growth signals. Second, they could remove variables with weak contribution—income, salary hike, working hours, and training—if a leaner model performs comparably. They plan to build a second model and compare deviance, AIC and BIC: lower values indicate a better fit. After each version they will re-check sensitivity and specificity, aiming to raise correct prediction on the minority (attrition) class toward at least 70%.At a decision meeting, the HR director wants a more accurate attrition signal to target retention programs quickly. The store manager prefers a simpler model that highlights actionable factors on the floor. The CFO worries that adding too many survey-based inputs raises costs. Should the team prioritize expanding the variable set, pruning weak predictors, or adjusting the classification cut-off? Analyze the trade-offs, suggest a path forward, and justify your recommendation based on the logistic regression framework.</p>
+<h1 id="comprehensive-notes-northfield-retail-logistic-regression-for-employee-attrition-prediction"><strong>Comprehensive Notes: Northfield Retail — Logistic Regression for Employee Attrition Prediction</strong></h1>
+<h2 id="1-case-study-overview"><strong>1. Case Study Overview</strong></h2>
+<p>Northfield Retail has created an HR analytics group to predict which employees are likely to leave within the next six months.</p>
+<p>The team uses <strong>binary logistic regression</strong>, with employee attrition as the binary outcome.</p>
+<p>The initial predictors are:</p>
+<ul>
+<li><strong>Tenure</strong> in months  </li>
+<li><strong>Performance rating</strong>  </li>
+<li><strong>Training hours</strong></li>
+</ul>
+<p>The model produces an estimated probability of attrition, which is then converted into a leave/retain classification using a <strong>0.5 cutoff</strong>.</p>
+<p>The first model has:</p>
+<blockquote>
+<p><strong>50% sensitivity for the attrition class</strong></p>
+</blockquote>
+<p>This means the model is missing a substantial proportion of employees who actually leave.</p>
+<p>The team therefore considers three broad strategies:</p>
+<ol>
+<li><strong>Expand the predictor set</strong>  </li>
+<li><strong>Prune weak predictors</strong>  </li>
+<li><strong>Change the classification cutoff</strong></li>
+</ol>
+<p>The key methodological lesson is:</p>
+<blockquote>
+<p><strong>Model improvement and classification-threshold adjustment solve different problems. The team should diagnose whether the weakness is in the model&rsquo;s explanatory/predictive structure or in the decision threshold before choosing an intervention.</strong></p>
+</blockquote>
+<hr>
+<h1 id="2-the-business-problem"><strong>2. The Business Problem</strong></h1>
+<p>The practical objective is:</p>
+<blockquote>
+<p><strong>Identify employees who are likely to leave within six months so HR can target retention interventions.</strong></p>
+</blockquote>
+<p>This is fundamentally a <strong>binary classification and probability-estimation problem</strong>.</p>
+<p>The outcome can be represented as:</p>
+<ul>
+<li>1 \= employee leaves  </li>
+<li>0 \= employee stays</li>
+</ul>
+<p>The model therefore estimates:</p>
+<blockquote>
+<p><strong>P(Attrition \= 1 | employee characteristics)</strong></p>
+</blockquote>
+<hr>
+<h1 id="3-why-logistic-regression-is-appropriate"><strong>3. Why Logistic Regression Is Appropriate</strong></h1>
+<p>Attrition is a binary outcome.</p>
+<p>Ordinary linear regression is not ideal because a linear model can produce predictions below 0 or above 1.</p>
+<p>Logistic regression solves this by transforming a linear predictor into a probability.</p>
+<p>The model is:</p>
+<p>\[  
+P(Y=1)=\\frac{1}{1+e^{-Z}}  
+\]</p>
+<p>where:</p>
+<p>\[  
+Z=b\_0+b\_1X\_1+b\_2X\_2+\\cdots+b\_kX\_k  
+\]</p>
+<p>The logistic transformation guarantees:</p>
+<p>\[  
+0\<P\<1  
+\]</p>
+<hr>
+<h1 id="4-the-meaning-of-z"><strong>4. The Meaning of Z</strong></h1>
+<p>The quantity:</p>
+<p>\[  
+Z=b\_0+b\_1X\_1+b\_2X\_2+\\cdots  
+\]</p>
+<p>is the <strong>linear predictor</strong>.</p>
+<p>It is not itself the probability.</p>
+<p>The logistic function transforms Z into the probability of attrition.</p>
+<p>For example:</p>
+<blockquote>
+<p>Z \= 0</p>
+</blockquote>
+<p>produces:</p>
+<blockquote>
+<p>P \= 0.50</p>
+</blockquote>
+<p>If:</p>
+<blockquote>
+<p>Z &gt; 0</p>
+</blockquote>
+<p>then:</p>
+<blockquote>
+<p>P &gt; 0.50</p>
+</blockquote>
+<p>If:</p>
+<blockquote>
+<p>Z \&lt; 0</p>
+</blockquote>
+<p>then:</p>
+<blockquote>
+<p>P \&lt; 0.50</p>
+</blockquote>
+<p>This relationship explains why the 0.5 probability cutoff corresponds to:</p>
+<blockquote>
+<p><strong>Z \= 0</strong></p>
+</blockquote>
+<hr>
+<h1 id="5-initial-predictors"><strong>5. Initial Predictors</strong></h1>
+<p>The first model contains:</p>
+<h3 id="tenure"><strong>Tenure</strong></h3>
+<p>Measures how long the employee has been with the organization.</p>
+<p>It could capture relationships between organizational attachment, career stage, or early-stage turnover.</p>
+<h3 id="performance-rating"><strong>Performance rating</strong></h3>
+<p>Represents observed employee performance.</p>
+<p>It may be associated with:</p>
+<ul>
+<li>Engagement  </li>
+<li>Career prospects  </li>
+<li>Managerial relationships  </li>
+<li>Retention</li>
+</ul>
+<h3 id="training-hours"><strong>Training hours</strong></h3>
+<p>Represents exposure to training.</p>
+<p>Training could potentially influence:</p>
+<ul>
+<li>Skill development  </li>
+<li>Engagement  </li>
+<li>Career prospects  </li>
+<li>Organizational commitment</li>
+</ul>
+<p>Importantly, a predictor&rsquo;s inclusion should be based on:</p>
+<blockquote>
+<p><strong>Theory, evidence, and predictive contribution</strong></p>
+</blockquote>
+<p>rather than simply whether it is available.</p>
+<hr>
+<h1 id="6-predicted-probability"><strong>6. Predicted Probability</strong></h1>
+<p>Suppose an employee&rsquo;s characteristics are inserted into the logistic equation and the result is:</p>
+<blockquote>
+<p><strong>P \= 0.72</strong></p>
+</blockquote>
+<p>The interpretation is:</p>
+<blockquote>
+<p>The model estimates a 72% probability of attrition.</p>
+</blockquote>
+<p>This is a probability estimate, not a guarantee that the employee will leave.</p>
+<hr>
+<h1 id="7-from-probability-to-classification"><strong>7. From Probability to Classification</strong></h1>
+<p>The team currently uses:</p>
+<blockquote>
+<p><strong>0.5 cutoff</strong></p>
+</blockquote>
+<p>The rule is:</p>
+<h3 id="if-p-0-5"><strong>If P ≥ 0.5</strong></h3>
+<p>→ classify as:</p>
+<blockquote>
+<p><strong>Likely attrition</strong></p>
+</blockquote>
+<h3 id="if-p-0-5-2"><strong>If P \&lt; 0.5</strong></h3>
+<p>→ classify as:</p>
+<blockquote>
+<p><strong>Likely retention</strong></p>
+</blockquote>
+<p>This creates the automatic leave/stay flag needed by HR.</p>
+<hr>
+<h1 id="8-probability-vs-classification"><strong>8. Probability vs Classification</strong></h1>
+<p>These should not be confused.</p>
+<h3 id="probability-2"><strong>Probability</strong></h3>
+<p>Answers:</p>
+<blockquote>
+<p><strong>How risky does this employee appear to be?</strong></p>
+</blockquote>
+<p>Example:</p>
+<blockquote>
+<p>0.78</p>
+</blockquote>
+<h3 id="classification"><strong>Classification</strong></h3>
+<p>Answers:</p>
+<blockquote>
+<p><strong>Which category should the employee be assigned to under the chosen rule?</strong></p>
+</blockquote>
+<p>Example:</p>
+<blockquote>
+<p>Attrition</p>
+</blockquote>
+<p>The cutoff converts the continuous probability estimate into a categorical decision.</p>
+<hr>
+<h1 id="9-sensitivity"><strong>9. Sensitivity</strong></h1>
+<p>The case reports:</p>
+<blockquote>
+<p><strong>50% sensitivity for the attrition class</strong></p>
+</blockquote>
+<p>Sensitivity measures:</p>
+<blockquote>
+<p><strong>The proportion of actual attrition cases that the model correctly identifies.</strong></p>
+</blockquote>
+<p>In simplified form:</p>
+<p>\[  
+Sensitivity=\\frac{TP}{TP+FN}  
+\]</p>
+<p>where:</p>
+<ul>
+<li>TP \= true positives  </li>
+<li>FN \= false negatives</li>
+</ul>
+<hr>
+<h1 id="10-meaning-of-50-sensitivity"><strong>10. Meaning of 50% Sensitivity</strong></h1>
+<p>A sensitivity of 50% means:</p>
+<blockquote>
+<p>The model correctly identifies approximately half of the employees who actually leave.</p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote>
+<p>Approximately half of actual leavers are being missed.</p>
+</blockquote>
+<p>This is particularly important because HR&rsquo;s stated goal is to identify employees at risk early enough to intervene.</p>
+<hr>
+<h1 id="11-false-negatives"><strong>11. False Negatives</strong></h1>
+<p>A false negative occurs when:</p>
+<blockquote>
+<p>The model predicts retention, but the employee actually leaves.</p>
+</blockquote>
+<p>For this business problem, false negatives can be costly.</p>
+<p>The organization might:</p>
+<ul>
+<li>Fail to intervene  </li>
+<li>Lose skilled employees  </li>
+<li>Experience project disruption  </li>
+<li>Face replacement costs  </li>
+<li>Lose institutional knowledge</li>
+</ul>
+<p>Therefore, improving attrition sensitivity is strategically important.</p>
+<hr>
+<h1 id="12-specificity"><strong>12. Specificity</strong></h1>
+<p>Specificity measures:</p>
+<blockquote>
+<p><strong>The proportion of employees who actually stay that the model correctly identifies as staying.</strong></p>
+</blockquote>
+<p>Formula:</p>
+<p>\[  
+Specificity=\\frac{TN}{TN+FP}  
+\]</p>
+<p>where:</p>
+<ul>
+<li>TN \= true negatives  </li>
+<li>FP \= false positives</li>
+</ul>
+<hr>
+<h1 id="13-false-positives"><strong>13. False Positives</strong></h1>
+<p>A false positive occurs when:</p>
+<blockquote>
+<p>The model predicts attrition, but the employee actually stays.</p>
+</blockquote>
+<p>This can also have business consequences.</p>
+<p>HR may:</p>
+<ul>
+<li>Spend retention resources unnecessarily  </li>
+<li>Conduct unnecessary interventions  </li>
+<li>Cause employee concern  </li>
+<li>Misallocate management attention</li>
+</ul>
+<p>Thus, maximizing sensitivity without considering specificity can also be problematic.</p>
+<hr>
+<h1 id="14-sensitivity-vs-specificity"><strong>14. Sensitivity vs Specificity</strong></h1>
+<p>The two measures represent different objectives.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Main question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sensitivity</td>
+<td>How many actual leavers did we catch?</td>
+</tr>
+<tr>
+<td>Specificity</td>
+<td>How many actual stayers did we correctly leave alone?</td>
+</tr>
+</tbody>
+</table></div>
+<p>Improving one can sometimes reduce the other, depending on the classification threshold.</p>
+<hr>
+<h1 id="15-why-the-minority-class-matters"><strong>15. Why the Minority Class Matters</strong></h1>
+<p>The case explicitly says the team wants to improve correct prediction of:</p>
+<blockquote>
+<p><strong>The minority attrition class</strong></p>
+</blockquote>
+<p>This is important because accuracy can be misleading when attrition is relatively uncommon.</p>
+<p>For example, suppose:</p>
+<blockquote>
+<p>90% stay<br>
+10% leave</p>
+</blockquote>
+<p>A model that predicts:</p>
+<blockquote>
+<p>Everyone stays</p>
+</blockquote>
+<p>would achieve:</p>
+<blockquote>
+<p>90% accuracy</p>
+</blockquote>
+<p>but:</p>
+<blockquote>
+<p>0% attrition sensitivity.</p>
+</blockquote>
+<p>For HR&rsquo;s purpose, that model would be nearly useless.</p>
+<hr>
+<h1 id="16-why-accuracy-alone-is-not-enough"><strong>16. Why Accuracy Alone Is Not Enough</strong></h1>
+<p>The team should therefore avoid relying solely on:</p>
+<blockquote>
+<p>Overall accuracy</p>
+</blockquote>
+<p>Instead, it should monitor:</p>
+<ul>
+<li>Sensitivity  </li>
+<li>Specificity  </li>
+<li>Precision  </li>
+<li>Recall  </li>
+<li>Confusion matrix  </li>
+<li>AUC  </li>
+<li>Possibly F1 score  </li>
+<li>Business costs of errors</li>
+</ul>
+<p>The case specifically emphasizes sensitivity and specificity.</p>
+<hr>
+<h1 id="17-the-three-improvement-strategies"><strong>17. The Three Improvement Strategies</strong></h1>
+<p>The case proposes three fundamentally different approaches:</p>
+<h3 id="strategy-a"><strong>Strategy A</strong></h3>
+<blockquote>
+<p><strong>Expand the predictor set</strong></p>
+</blockquote>
+<h3 id="strategy-b"><strong>Strategy B</strong></h3>
+<blockquote>
+<p><strong>Prune weak predictors</strong></p>
+</blockquote>
+<h3 id="strategy-c"><strong>Strategy C</strong></h3>
+<blockquote>
+<p><strong>Adjust the classification cutoff</strong></p>
+</blockquote>
+<p>These should not be treated as interchangeable.</p>
+<hr>
+<h1 id="18-strategy-a-expand-the-predictor-set"><strong>18. Strategy A — Expand the Predictor Set</strong></h1>
+<p>The team could add variables such as:</p>
+<ul>
+<li>Manager relationship quality  </li>
+<li>Career-growth signals</li>
+</ul>
+<p>These may be closer to the employee&rsquo;s actual:</p>
+<blockquote>
+<p><strong>Intent to leave</strong></p>
+</blockquote>
+<p>than variables such as training hours or salary changes.</p>
+<hr>
+<h1 id="19-why-expansion-could-help"><strong>19. Why Expansion Could Help</strong></h1>
+<p>The initial model may be missing important information.</p>
+<p>Suppose actual attrition depends heavily on:</p>
+<blockquote>
+<p>Poor manager relationship</p>
+</blockquote>
+<p>but the model does not measure it.</p>
+<p>Then the model lacks a potentially important predictor.</p>
+<p>Similarly:</p>
+<blockquote>
+<p>Lack of career-growth opportunity</p>
+</blockquote>
+<p>may be a direct indicator of turnover intention.</p>
+<p>Adding theoretically relevant predictors can therefore improve:</p>
+<ul>
+<li>Predictive discrimination  </li>
+<li>Sensitivity  </li>
+<li>Overall model fit  </li>
+<li>Explanatory usefulness</li>
+</ul>
+<hr>
+<h1 id="20-risks-of-expanding-the-model"><strong>20. Risks of Expanding the Model</strong></h1>
+<p>Adding variables is not automatically beneficial.</p>
+<p>More predictors can create:</p>
+<ul>
+<li>More data requirements  </li>
+<li>Higher survey costs  </li>
+<li>Greater respondent burden  </li>
+<li>Multicollinearity  </li>
+<li>Greater model complexity  </li>
+<li>Potential overfitting  </li>
+<li>More difficult interpretation</li>
+</ul>
+<p>This directly addresses the CFO&rsquo;s concern.</p>
+<hr>
+<h1 id="21-survey-based-variables"><strong>21. Survey-Based Variables</strong></h1>
+<p>Manager relationship quality and career-growth signals may require:</p>
+<ul>
+<li>Employee surveys  </li>
+<li>Manager assessments  </li>
+<li>Structured questionnaires</li>
+</ul>
+<p>This creates additional costs.</p>
+<p>The organization must ask:</p>
+<blockquote>
+<p><strong>Does the predictive improvement justify the cost of collecting the information?</strong></p>
+</blockquote>
+<p>This is a key business analytics principle.</p>
+<hr>
+<h1 id="22-strategy-b-prune-weak-predictors"><strong>22. Strategy B — Prune Weak Predictors</strong></h1>
+<p>The team could remove variables with weak contribution:</p>
+<ul>
+<li>Income  </li>
+<li>Salary hike  </li>
+<li>Working hours  </li>
+<li>Training</li>
+</ul>
+<p>The idea is to create a:</p>
+<blockquote>
+<p><strong>Lean model</strong></p>
+</blockquote>
+<p>that performs comparably to a larger model.</p>
+<hr>
+<h1 id="23-why-pruning-can-be-beneficial"><strong>23. Why Pruning Can Be Beneficial</strong></h1>
+<p>A simpler model can offer:</p>
+<h3 id="interpretability"><strong>Interpretability</strong></h3>
+<p>Managers can understand the main drivers.</p>
+<h3 id="operational-usefulness"><strong>Operational usefulness</strong></h3>
+<p>The organization can focus on actionable variables.</p>
+<h3 id="lower-data-collection-burden"><strong>Lower data collection burden</strong></h3>
+<p>Fewer inputs may be required.</p>
+<h3 id="reduced-complexity"><strong>Reduced complexity</strong></h3>
+<p>The model becomes easier to maintain.</p>
+<h3 id="potentially-greater-stability"><strong>Potentially greater stability</strong></h3>
+<p>Removing unnecessary predictors can reduce noise and multicollinearity.</p>
+<hr>
+<h1 id="24-important-caveat-about-removing-variables"><strong>24. Important Caveat About Removing Variables</strong></h1>
+<p>A variable should not be removed merely because:</p>
+<blockquote>
+<p>Its individual p-value is not significant.</p>
+</blockquote>
+<p>Predictive models and explanatory models have different goals.</p>
+<p>A variable may contribute to:</p>
+<ul>
+<li>Prediction  </li>
+<li>Adjustment for confounding  </li>
+<li>Interactions  </li>
+<li>Overall model performance</li>
+</ul>
+<p>Therefore, variable removal should consider:</p>
+<ul>
+<li>Theory  </li>
+<li>Predictive contribution  </li>
+<li>Model comparison  </li>
+<li>Multicollinearity  </li>
+<li>Stability  </li>
+<li>Business relevance</li>
+</ul>
+<hr>
+<h1 id="25-strategy-c-adjust-the-classification-cutoff"><strong>25. Strategy C — Adjust the Classification Cutoff</strong></h1>
+<p>The third option is to change:</p>
+<blockquote>
+<p><strong>0.5</strong></p>
+</blockquote>
+<p>to another threshold.</p>
+<p>For example:</p>
+<blockquote>
+<p>0.4</p>
+</blockquote>
+<p>or:</p>
+<blockquote>
+<p>0.3</p>
+</blockquote>
+<p>A lower threshold means more employees are classified as:</p>
+<blockquote>
+<p><strong>Likely to leave</strong></p>
+</blockquote>
+<hr>
+<h1 id="26-why-lowering-the-cutoff-can-increase-sensitivity"><strong>26. Why Lowering the Cutoff Can Increase Sensitivity</strong></h1>
+<p>Suppose:</p>
+<blockquote>
+<p>Employee A \= 0.45 probability</p>
+</blockquote>
+<p>Under a 0.5 cutoff:</p>
+<blockquote>
+<p>Predicted stay</p>
+</blockquote>
+<p>Under a 0.4 cutoff:</p>
+<blockquote>
+<p>Predicted leave</p>
+</blockquote>
+<p>Lowering the threshold therefore captures more employees as potential leavers.</p>
+<p>This can increase:</p>
+<blockquote>
+<p><strong>Sensitivity</strong></p>
+</blockquote>
+<hr>
+<h1 id="27-the-cost-of-lowering-the-cutoff"><strong>27. The Cost of Lowering the Cutoff</strong></h1>
+<p>The trade-off is that more employees who would actually stay may be classified as at risk.</p>
+<p>This increases:</p>
+<blockquote>
+<p><strong>False positives</strong></p>
+</blockquote>
+<p>and can reduce:</p>
+<blockquote>
+<p><strong>Specificity</strong></p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote>
+<p>Lower cutoff → typically higher sensitivity, lower specificity.</p>
+</blockquote>
+<p>The exact change depends on the distribution of predicted probabilities.</p>
+<hr>
+<h1 id="28-why-threshold-adjustment-is-different-from-model-improvement"><strong>28. Why Threshold Adjustment Is Different from Model Improvement</strong></h1>
+<p>This distinction is essential.</p>
+<h3 id="adding-removing-predictors"><strong>Adding/removing predictors</strong></h3>
+<p>Changes:</p>
+<blockquote>
+<p><strong>The model itself</strong></p>
+</blockquote>
+<h3 id="changing-the-cutoff"><strong>Changing the cutoff</strong></h3>
+<p>Changes:</p>
+<blockquote>
+<p><strong>The decision rule applied to the model&rsquo;s probabilities</strong></p>
+</blockquote>
+<p>A threshold change does not create new information.</p>
+<p>It simply changes how existing probability estimates are converted into classifications.</p>
+<hr>
+<h1 id="29-threshold-adjustment-does-not-fix-a-weak-model"><strong>29. Threshold Adjustment Does Not Fix a Weak Model</strong></h1>
+<p>Suppose the model does not distinguish leavers from stayers well.</p>
+<p>Changing:</p>
+<blockquote>
+<p>0.5 → 0.3</p>
+</blockquote>
+<p>may change sensitivity and specificity.</p>
+<p>But it does not necessarily improve:</p>
+<blockquote>
+<p><strong>Underlying discrimination.</strong></p>
+</blockquote>
+<p>That is why the team should also evaluate:</p>
+<blockquote>
+<p><strong>ROC/AUC</strong></p>
+</blockquote>
+<hr>
+<h1 id="30-auc-as-a-diagnostic"><strong>30. AUC as a Diagnostic</strong></h1>
+<p>AUC measures:</p>
+<blockquote>
+<p><strong>How well the model separates leavers from stayers across thresholds.</strong></p>
+</blockquote>
+<p>If AUC is poor, simply changing the cutoff is unlikely to solve the underlying problem.</p>
+<p>If AUC is strong but sensitivity at 0.5 is only 50%, then:</p>
+<blockquote>
+<p><strong>Threshold adjustment may be particularly useful.</strong></p>
+</blockquote>
+<p>This is one of the most important diagnostic distinctions in the case.</p>
+<hr>
+<h1 id="31-a-useful-decision-logic"><strong>31. A Useful Decision Logic</strong></h1>
+<p>The team should first ask:</p>
+<h3 id="is-the-model-capable-of-distinguishing-leavers-from-stayers"><strong>Is the model capable of distinguishing leavers from stayers?</strong></h3>
+<p>Use:</p>
+<blockquote>
+<p>ROC/AUC</p>
+</blockquote>
+<p>If discrimination is poor:</p>
+<blockquote>
+<p>Improve the model.</p>
+</blockquote>
+<p>If discrimination is good but sensitivity at 0.5 is inadequate:</p>
+<blockquote>
+<p>Consider changing the cutoff.</p>
+</blockquote>
+<p>This prevents the team from using threshold changes as a substitute for model development.</p>
+<hr>
+<h1 id="32-deviance"><strong>32. Deviance</strong></h1>
+<p>The team plans to compare:</p>
+<blockquote>
+<p><strong>Deviance</strong></p>
+</blockquote>
+<p>For logistic regression:</p>
+<p>\[  
+Deviance=-2\\log(L)  
+\]</p>
+<p>where L is the model likelihood.</p>
+<p>For appropriate comparisons using the same outcome data:</p>
+<blockquote>
+<p><strong>Lower deviance indicates better likelihood-based fit.</strong></p>
+</blockquote>
+<hr>
+<h1 id="33-aic"><strong>33. AIC</strong></h1>
+<p>AIC stands for:</p>
+<blockquote>
+<p><strong>Akaike Information Criterion</strong></p>
+</blockquote>
+<p>It balances:</p>
+<ul>
+<li>Model fit  </li>
+<li>Number of parameters</li>
+</ul>
+<p>The preferred model generally has:</p>
+<blockquote>
+<p><strong>Lower AIC</strong></p>
+</blockquote>
+<hr>
+<h1 id="34-bic"><strong>34. BIC</strong></h1>
+<p>BIC stands for:</p>
+<blockquote>
+<p><strong>Bayesian Information Criterion</strong></p>
+</blockquote>
+<p>It also balances:</p>
+<ul>
+<li>Fit  </li>
+<li>Complexity</li>
+</ul>
+<p>but generally imposes a stronger complexity penalty than AIC.</p>
+<p>The preferred model generally has:</p>
+<blockquote>
+<p><strong>Lower BIC</strong></p>
+</blockquote>
+<hr>
+<h1 id="35-why-aic-and-bic-matter-for-northfield"><strong>35. Why AIC and BIC Matter for Northfield</strong></h1>
+<p>Suppose:</p>
+<h3 id="model-1-3"><strong>Model 1</strong></h3>
+<p>Contains:</p>
+<blockquote>
+<p>8 predictors</p>
+</blockquote>
+<h3 id="model-2-3"><strong>Model 2</strong></h3>
+<p>Contains:</p>
+<blockquote>
+<p>4 predictors</p>
+</blockquote>
+<p>If Model 2 has similar predictive performance but substantially lower:</p>
+<blockquote>
+<p>AIC and BIC</p>
+</blockquote>
+<p>then the leaner model may be preferable.</p>
+<p>This supports the store manager&rsquo;s preference for simplicity.</p>
+<hr>
+<h1 id="36-deviance-aic-and-bic-are-not-cutoff-metrics"><strong>36. Deviance, AIC, and BIC Are Not Cutoff Metrics</strong></h1>
+<p>These metrics assess:</p>
+<blockquote>
+<p><strong>Model fit and complexity</strong></p>
+</blockquote>
+<p>They do not depend on selecting:</p>
+<blockquote>
+<p>0.5</p>
+</blockquote>
+<p>or:</p>
+<blockquote>
+<p>0.4</p>
+</blockquote>
+<p>The cutoff is relevant to classification metrics such as:</p>
+<ul>
+<li>Sensitivity  </li>
+<li>Specificity  </li>
+<li>Accuracy  </li>
+<li>Confusion matrix</li>
+</ul>
+<hr>
+<h1 id="37-two-different-layers-of-evaluation"><strong>37. Two Different Layers of Evaluation</strong></h1>
+<p>The Northfield team should think in two layers.</p>
+<h2 id="layer-1-model-quality"><strong>Layer 1 — Model quality</strong></h2>
+<p>Ask:</p>
+<blockquote>
+<p>Does the model represent and discriminate the data well?</p>
+</blockquote>
+<p>Use:</p>
+<ul>
+<li>Deviance  </li>
+<li>AIC  </li>
+<li>BIC  </li>
+<li>AUC  </li>
+<li>Coefficients  </li>
+<li>Confidence intervals  </li>
+<li>Multicollinearity diagnostics</li>
+</ul>
+<h2 id="layer-2-decision-quality"><strong>Layer 2 — Decision quality</strong></h2>
+<p>Ask:</p>
+<blockquote>
+<p>Given the model, where should we place the classification threshold?</p>
+</blockquote>
+<p>Use:</p>
+<ul>
+<li>Sensitivity  </li>
+<li>Specificity  </li>
+<li>Precision  </li>
+<li>Recall  </li>
+<li>Business costs</li>
+</ul>
+<hr>
+<h1 id="38-the-most-important-diagnostic-combination"><strong>38. The Most Important Diagnostic Combination</strong></h1>
+<p>A particularly useful combination is:</p>
+<blockquote>
+<p><strong>AUC + sensitivity/specificity at candidate thresholds</strong></p>
+</blockquote>
+<p>For example:</p>
+<h3 id="model-a"><strong>Model A</strong></h3>
+<p>AUC \= 0.85</p>
+<p>Sensitivity at 0.5 \= 50%</p>
+<p>This suggests:</p>
+<blockquote>
+<p>Good discrimination may exist, but the threshold is too conservative for the HR objective.</p>
+</blockquote>
+<p>A lower cutoff could potentially improve sensitivity.</p>
+<hr>
+<h3 id="model-b"><strong>Model B</strong></h3>
+<p>AUC \= 0.58</p>
+<p>Sensitivity at 0.5 \= 50%</p>
+<p>This suggests:</p>
+<blockquote>
+<p>The underlying model has weak discrimination.</p>
+</blockquote>
+<p>Changing the cutoff is unlikely to fundamentally solve the problem.</p>
+<p>The team should improve the predictor/model specification.</p>
+<hr>
+<h1 id="39-variable-expansion-vs-pruning"><strong>39. Variable Expansion vs Pruning</strong></h1>
+<p>These are also different responses to a weak model.</p>
+<h3 id="expansion"><strong>Expansion</strong></h3>
+<p>Assumes:</p>
+<blockquote>
+<p>Important information is missing.</p>
+</blockquote>
+<h3 id="pruning"><strong>Pruning</strong></h3>
+<p>Assumes:</p>
+<blockquote>
+<p>The existing model contains unnecessary/noisy variables.</p>
+</blockquote>
+<p>The team needs evidence before deciding which interpretation is correct.</p>
+<hr>
+<h1 id="40-how-to-test-expansion"><strong>40. How to Test Expansion</strong></h1>
+<p>Create:</p>
+<blockquote>
+<p><strong>Model 2 — Expanded</strong></p>
+</blockquote>
+<p>Add:</p>
+<ul>
+<li>Manager relationship quality  </li>
+<li>Career-growth signals</li>
+</ul>
+<p>Then compare Model 2 with Model 1 using:</p>
+<ul>
+<li>Deviance  </li>
+<li>AIC  </li>
+<li>BIC  </li>
+<li>AUC  </li>
+<li>Sensitivity  </li>
+<li>Specificity</li>
+</ul>
+<p>Also assess:</p>
+<ul>
+<li>Cost of collecting the variables  </li>
+<li>Interpretability  </li>
+<li>Stability  </li>
+<li>Multicollinearity</li>
+</ul>
+<hr>
+<h1 id="41-how-to-test-pruning"><strong>41. How to Test Pruning</strong></h1>
+<p>Create:</p>
+<blockquote>
+<p><strong>Model 3 — Lean</strong></p>
+</blockquote>
+<p>Remove weakly contributing variables such as:</p>
+<ul>
+<li>Income  </li>
+<li>Salary hike  </li>
+<li>Working hours  </li>
+<li>Training</li>
+</ul>
+<p>Then compare Model 3 with Model 1.</p>
+<p>If Model 3 has:</p>
+<ul>
+<li>Similar AUC  </li>
+<li>Similar sensitivity  </li>
+<li>Similar specificity  </li>
+<li>Better or comparable AIC/BIC  </li>
+<li>Better interpretability  </li>
+<li>Lower data requirements</li>
+</ul>
+<p>then the lean model may be preferable.</p>
+<hr>
+<h1 id="42-nested-vs-non-nested-model-considerations"><strong>42. Nested vs Non-Nested Model Considerations</strong></h1>
+<p>If one model is a strict extension of another, likelihood-ratio testing may sometimes be appropriate.</p>
+<p>For example:</p>
+<blockquote>
+<p>Model 1: tenure + performance + training</p>
+<p>Model 2: Model 1 + manager relationship + career growth</p>
+</blockquote>
+<p>Model 2 is nested within the expanded model structure.</p>
+<p>However, AIC/BIC can provide broader model-comparison information, especially when comparing models with different complexity.</p>
+<hr>
+<h1 id="43-model-stability"><strong>43. Model Stability</strong></h1>
+<p>A model should not be judged solely by fit to the current dataset.</p>
+<p>The team should consider:</p>
+<blockquote>
+<p><strong>Will the model perform reliably on new employees?</strong></p>
+</blockquote>
+<p>This is particularly important when:</p>
+<ul>
+<li>Sample size is limited  </li>
+<li>Many predictors are included  </li>
+<li>Survey variables are noisy  </li>
+<li>The attrition class is relatively small</li>
+</ul>
+<hr>
+<h1 id="44-overfitting-risk"><strong>44. Overfitting Risk</strong></h1>
+<p>Adding many predictors can cause:</p>
+<blockquote>
+<p><strong>Overfitting</strong></p>
+</blockquote>
+<p>The model may learn patterns specific to the current employee sample rather than generalizable relationships.</p>
+<p>Symptoms may include:</p>
+<ul>
+<li>Excellent training performance  </li>
+<li>Poor validation performance  </li>
+<li>Unstable coefficients  </li>
+<li>Large differences across samples</li>
+</ul>
+<p>Therefore, model expansion should ideally be evaluated using:</p>
+<ul>
+<li>Holdout data  </li>
+<li>Cross-validation  </li>
+<li>Out-of-sample performance</li>
+</ul>
+<hr>
+<h1 id="45-the-cfo-s-cost-concern"><strong>45. The CFO&rsquo;s Cost Concern</strong></h1>
+<p>The CFO is worried about:</p>
+<blockquote>
+<p><strong>Survey/input collection costs</strong></p>
+</blockquote>
+<p>This is a legitimate model-selection consideration.</p>
+<p>Analytics should not ask only:</p>
+<blockquote>
+<p>“Does the variable improve statistical fit?”</p>
+</blockquote>
+<p>It should also ask:</p>
+<blockquote>
+<p>“Is the improvement worth the operational cost?”</p>
+</blockquote>
+<p>For example:</p>
+<p>If collecting Manager Relationship Quality costs ₹X per employee and only marginally improves AUC from:</p>
+<blockquote>
+<p>0.76 → 0.77</p>
+</blockquote>
+<p>the organization may reasonably decide the benefit is too small.</p>
+<hr>
+<h1 id="46-the-store-manager-s-concern"><strong>46. The Store Manager&rsquo;s Concern</strong></h1>
+<p>The store manager wants:</p>
+<blockquote>
+<p><strong>A simpler model with actionable factors.</strong></p>
+</blockquote>
+<p>This favors:</p>
+<ul>
+<li>Parsimony  </li>
+<li>Interpretability  </li>
+<li>Operational relevance</li>
+</ul>
+<p>A model with fewer variables may be easier to translate into actions.</p>
+<p>For example:</p>
+<blockquote>
+<p>“Low career-growth signal + poor manager relationship \= high retention priority”</p>
+</blockquote>
+<p>is more actionable than a model containing dozens of weak predictors.</p>
+<hr>
+<h1 id="47-hr-director-s-concern"><strong>47. HR Director&rsquo;s Concern</strong></h1>
+<p>The HR director wants:</p>
+<blockquote>
+<p><strong>A more accurate attrition signal quickly.</strong></p>
+</blockquote>
+<p>This favors:</p>
+<ul>
+<li>High sensitivity  </li>
+<li>Good discrimination  </li>
+<li>Rapid deployment  </li>
+<li>Effective prioritization</li>
+</ul>
+<p>The HR director&rsquo;s goal may therefore justify a lower cutoff if the model already has good discrimination.</p>
+<hr>
+<h1 id="48-balancing-the-three-stakeholders"><strong>48. Balancing the Three Stakeholders</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Stakeholder</th>
+<th>Primary concern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HR Director</td>
+<td>Catch more likely leavers</td>
+</tr>
+<tr>
+<td>Store Manager</td>
+<td>Simple, actionable model</td>
+</tr>
+<tr>
+<td>CFO</td>
+<td>Control data collection/model costs</td>
+</tr>
+</tbody>
+</table></div>
+<p>A strong analytical solution should satisfy all three as far as possible.</p>
+<hr>
+<h1 id="49-recommended-path-forward"><strong>49. Recommended Path Forward</strong></h1>
+<p>A sensible approach is <strong>not to immediately choose only one of the three options</strong>.</p>
+<p>Instead:</p>
+<blockquote>
+<p><strong>Use a staged evaluation.</strong></p>
+</blockquote>
+<h3 id="step-1"><strong>Step 1</strong></h3>
+<p>Keep the current model as the baseline.</p>
+<h3 id="step-2"><strong>Step 2</strong></h3>
+<p>Evaluate its:</p>
+<ul>
+<li>AUC  </li>
+<li>Sensitivity  </li>
+<li>Specificity  </li>
+<li>Deviance  </li>
+<li>AIC  </li>
+<li>BIC</li>
+</ul>
+<h3 id="step-3"><strong>Step 3</strong></h3>
+<p>Build an expanded model with theoretically relevant variables.</p>
+<h3 id="step-4"><strong>Step 4</strong></h3>
+<p>Build a lean model by pruning weak predictors.</p>
+<h3 id="step-5"><strong>Step 5</strong></h3>
+<p>Compare all candidate models.</p>
+<h3 id="step-6"><strong>Step 6</strong></h3>
+<p>For the strongest model, evaluate multiple classification thresholds.</p>
+<h3 id="step-7"><strong>Step 7</strong></h3>
+<p>Select the threshold based on HR&rsquo;s cost of false negatives vs false positives.</p>
+<hr>
+<h1 id="50-why-threshold-adjustment-should-come-after-model-evaluation"><strong>50. Why Threshold Adjustment Should Come After Model Evaluation</strong></h1>
+<p>Suppose the current model has:</p>
+<blockquote>
+<p>AUC \= strong</p>
+</blockquote>
+<p>but:</p>
+<blockquote>
+<p>Sensitivity at 0.5 \= 50%</p>
+</blockquote>
+<p>Then changing the threshold may be the quickest improvement.</p>
+<p>But suppose:</p>
+<blockquote>
+<p>AUC \= poor.</p>
+</blockquote>
+<p>Then the model itself needs improvement.</p>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Do not use the cutoff to compensate for fundamentally weak discrimination.</strong></p>
+</blockquote>
+<hr>
+<h1 id="51-a-practical-threshold-analysis"><strong>51. A Practical Threshold Analysis</strong></h1>
+<p>Instead of assuming:</p>
+<blockquote>
+<p>0.5</p>
+</blockquote>
+<p>is optimal, evaluate thresholds such as:</p>
+<blockquote>
+<p>0.20<br>
+0.30<br>
+0.40<br>
+0.50<br>
+0.60</p>
+</blockquote>
+<p>and calculate:</p>
+<ul>
+<li>Sensitivity  </li>
+<li>Specificity  </li>
+<li>Precision  </li>
+<li>False-positive rate  </li>
+<li>False-negative rate</li>
+</ul>
+<p>Then choose the threshold that best matches HR&rsquo;s business objective.</p>
+<hr>
+<h1 id="52-business-cost-matrix"><strong>52. Business Cost Matrix</strong></h1>
+<p>A particularly useful framework is to assign costs.</p>
+<p>For example:</p>
+<h3 id="false-negative-2"><strong>False negative</strong></h3>
+<p>Employee leaves and HR fails to intervene.</p>
+<p>Cost could include:</p>
+<ul>
+<li>Replacement cost  </li>
+<li>Recruitment  </li>
+<li>Training  </li>
+<li>Project disruption  </li>
+<li>Knowledge loss</li>
+</ul>
+<h3 id="false-positive-2"><strong>False positive</strong></h3>
+<p>HR intervenes unnecessarily.</p>
+<p>Cost could include:</p>
+<ul>
+<li>Manager time  </li>
+<li>Incentives  </li>
+<li>Survey/retention costs  </li>
+<li>Employee discomfort</li>
+</ul>
+<p>If:</p>
+<blockquote>
+<p>False negatives are much more expensive than false positives,</p>
+</blockquote>
+<p>then a lower classification threshold may be justified.</p>
+<hr>
+<h1 id="53-the-70-sensitivity-target"><strong>53. The 70% Sensitivity Target</strong></h1>
+<p>The team wants:</p>
+<blockquote>
+<p><strong>At least 70% sensitivity</strong></p>
+</blockquote>
+<p>This is a useful operational target, but it should not be pursued in isolation.</p>
+<p>A model could achieve:</p>
+<blockquote>
+<p>90% sensitivity</p>
+</blockquote>
+<p>by labeling nearly everyone as:</p>
+<blockquote>
+<p>“Likely to leave.”</p>
+</blockquote>
+<p>That would be operationally useless if specificity became extremely low.</p>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Sensitivity must be evaluated together with specificity and other performance measures.</strong></p>
+</blockquote>
+<hr>
+<h1 id="54-confusion-matrix"><strong>54. Confusion Matrix</strong></h1>
+<p>A confusion matrix provides:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th>Actual Leave</th>
+<th>Actual Stay</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Predicted Leave</td>
+<td>True Positive</td>
+<td>False Positive</td>
+</tr>
+<tr>
+<td>Predicted Stay</td>
+<td>False Negative</td>
+<td>True Negative</td>
+</tr>
+</tbody>
+</table></div>
+<p>From this table, HR can calculate:</p>
+<ul>
+<li>Sensitivity  </li>
+<li>Specificity  </li>
+<li>Precision  </li>
+<li>Accuracy</li>
+</ul>
+<p>This is the clearest way to understand the consequences of a selected threshold.</p>
+<hr>
+<h1 id="55-precision"><strong>55. Precision</strong></h1>
+<p>Precision answers:</p>
+<blockquote>
+<p>Of the employees predicted to leave, how many actually leave?</p>
+</blockquote>
+<p>\[  
+Precision=\\frac{TP}{TP+FP}  
+\]</p>
+<p>This matters because HR resources may be limited.</p>
+<p>If precision is very low:</p>
+<blockquote>
+<p>Most employees targeted for intervention may not actually leave.</p>
+</blockquote>
+<hr>
+<h1 id="56-recall"><strong>56. Recall</strong></h1>
+<p>In binary classification:</p>
+<blockquote>
+<p><strong>Recall \= Sensitivity</strong></p>
+</blockquote>
+<p>For attrition:</p>
+<blockquote>
+<p>Recall measures how many actual leavers were successfully identified.</p>
+</blockquote>
+<hr>
+<h1 id="57-why-auc-and-sensitivity-should-be-used-together"><strong>57. Why AUC and Sensitivity Should Be Used Together</strong></h1>
+<p>AUC answers:</p>
+<blockquote>
+<p>How well does the model rank/separate leavers and stayers overall?</p>
+</blockquote>
+<p>Sensitivity answers:</p>
+<blockquote>
+<p>How many leavers are captured at the selected cutoff?</p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>AUC assesses model discrimination; sensitivity assesses the chosen operating point.</strong></p>
+</blockquote>
+<hr>
+<h1 id="58-recommended-model-selection-framework"><strong>58. Recommended Model-Selection Framework</strong></h1>
+<p>The team should use a scorecard such as:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Model 1</th>
+<th>Expanded Model</th>
+<th>Lean Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deviance</td>
+<td>Compare</td>
+<td>Compare</td>
+<td>Compare</td>
+</tr>
+<tr>
+<td>AIC</td>
+<td>Compare</td>
+<td>Compare</td>
+<td>Compare</td>
+</tr>
+<tr>
+<td>BIC</td>
+<td>Compare</td>
+<td>Compare</td>
+<td>Compare</td>
+</tr>
+<tr>
+<td>AUC</td>
+<td>Compare</td>
+<td>Compare</td>
+<td>Compare</td>
+</tr>
+<tr>
+<td>Sensitivity</td>
+<td>Compare</td>
+<td>Compare</td>
+<td>Compare</td>
+</tr>
+<tr>
+<td>Specificity</td>
+<td>Compare</td>
+<td>Compare</td>
+<td>Compare</td>
+</tr>
+<tr>
+<td>Complexity</td>
+<td>Low</td>
+<td>High</td>
+<td>Lowest</td>
+</tr>
+<tr>
+<td>Data cost</td>
+<td>Low</td>
+<td>High</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Interpretability</td>
+<td>High</td>
+<td>Lower</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Actionability</td>
+<td>Moderate</td>
+<td>Potentially high</td>
+<td>High</td>
+</tr>
+</tbody>
+</table></div>
+<p>The best model is not necessarily the model with the lowest value on one statistical metric.</p>
+<hr>
+<h1 id="59-what-should-be-prioritized"><strong>59. What Should Be Prioritized?</strong></h1>
+<p>For Northfield&rsquo;s specific situation, the strongest path is:</p>
+<blockquote>
+<p><strong>First evaluate whether the current model has adequate discrimination. Then compare an expanded model with a lean model. Finally optimize the classification threshold for the chosen model.</strong></p>
+</blockquote>
+<p>This is preferable to immediately:</p>
+<blockquote>
+<p>Lowering the cutoff.</p>
+</blockquote>
+<p>because the team first needs to determine whether the problem lies in:</p>
+<ol>
+<li>The <strong>model&rsquo;s information content</strong>, or  </li>
+<li>The <strong>classification decision rule</strong>.</li>
+</ol>
+<hr>
+<h1 id="60-recommended-strategic-outcome"><strong>60. Recommended Strategic Outcome</strong></h1>
+<p>A reasonable recommendation would be:</p>
+<h3 id="first-priority"><strong>First priority</strong></h3>
+<blockquote>
+<p><strong>Build and compare candidate models.</strong></p>
+</blockquote>
+<p>Use theoretically justified additions such as:</p>
+<ul>
+<li>Manager relationship quality  </li>
+<li>Career-growth signals</li>
+</ul>
+<p>while also testing a lean version.</p>
+<h3 id="second-priority"><strong>Second priority</strong></h3>
+<blockquote>
+<p><strong>Evaluate AUC and model fit.</strong></p>
+</blockquote>
+<h3 id="third-priority"><strong>Third priority</strong></h3>
+<blockquote>
+<p><strong>Tune the classification threshold.</strong></p>
+</blockquote>
+<p>If the chosen model has good AUC but only 50% sensitivity at 0.5, reduce the threshold enough to achieve the desired sensitivity while monitoring specificity and precision.</p>
+<hr>
+<h1 id="61-why-not-simply-add-everything"><strong>61. Why Not Simply Add Everything?</strong></h1>
+<p>Because:</p>
+<blockquote>
+<p>More predictors ≠ automatically better prediction.</p>
+</blockquote>
+<p>Potential consequences:</p>
+<ul>
+<li>Overfitting  </li>
+<li>Higher data costs  </li>
+<li>More complex interpretation  </li>
+<li>Multicollinearity  </li>
+<li>Greater maintenance burden</li>
+</ul>
+<p>The CFO&rsquo;s concern is therefore methodologically valid.</p>
+<hr>
+<h1 id="62-why-not-simply-remove-everything-weak"><strong>62. Why Not Simply Remove Everything Weak?</strong></h1>
+<p>Because:</p>
+<blockquote>
+<p>“Weak individual contribution” does not automatically mean “useless predictor.”</p>
+</blockquote>
+<p>A predictor may:</p>
+<ul>
+<li>Improve prediction collectively  </li>
+<li>Control confounding  </li>
+<li>Become useful in interaction  </li>
+<li>Improve out-of-sample performance</li>
+</ul>
+<p>Pruning should therefore be evidence-based.</p>
+<hr>
+<h1 id="63-why-not-simply-lower-the-cutoff"><strong>63. Why Not Simply Lower the Cutoff?</strong></h1>
+<p>Because:</p>
+<blockquote>
+<p>A cutoff only changes classification.</p>
+</blockquote>
+<p>It does not improve the model&rsquo;s underlying ability to distinguish leavers from stayers.</p>
+<p>If AUC is poor, threshold adjustment is not a sufficient solution.</p>
+<hr>
+<h1 id="64-three-questions-the-team-should-ask"><strong>64. Three Questions the Team Should Ask</strong></h1>
+<h3 id="question-1"><strong>Question 1</strong></h3>
+<blockquote>
+<p><strong>Does the model discriminate well?</strong></p>
+</blockquote>
+<p>Use:</p>
+<blockquote>
+<p>AUC</p>
+</blockquote>
+<h3 id="question-2"><strong>Question 2</strong></h3>
+<blockquote>
+<p><strong>Does the candidate model improve likelihood-based fit enough to justify its complexity?</strong></p>
+</blockquote>
+<p>Use:</p>
+<blockquote>
+<p>Deviance, AIC, BIC</p>
+</blockquote>
+<h3 id="question-3"><strong>Question 3</strong></h3>
+<blockquote>
+<p><strong>Does the selected operating threshold meet HR&rsquo;s business objective?</strong></p>
+</blockquote>
+<p>Use:</p>
+<blockquote>
+<p>Sensitivity, specificity, precision, and business costs</p>
+</blockquote>
+<p>This three-question framework captures the core of the case.</p>
+<hr>
+<h1 id="65-common-misconceptions"><strong>65. Common Misconceptions</strong></h1>
+<h2 id="misconception-1-2"><strong>Misconception 1</strong></h2>
+<p><strong>“Lowering the threshold improves the model.”</strong></p>
+<p>Not necessarily.</p>
+<p>It changes the classification rule.</p>
+<hr>
+<h2 id="misconception-2-2"><strong>Misconception 2</strong></h2>
+<p><strong>“A 70% sensitivity target means the model should simply classify more people as leavers.”</strong></p>
+<p>Not necessarily.</p>
+<p>Sensitivity must be balanced against specificity and precision.</p>
+<hr>
+<h2 id="misconception-3-2"><strong>Misconception 3</strong></h2>
+<p><strong>“More variables always improve logistic regression.”</strong></p>
+<p>False.</p>
+<p>They may introduce:</p>
+<ul>
+<li>Noise  </li>
+<li>Overfitting  </li>
+<li>Multicollinearity  </li>
+<li>Cost</li>
+</ul>
+<hr>
+<h2 id="misconception-4-2"><strong>Misconception 4</strong></h2>
+<p><strong>“Remove every variable with a high p-value.”</strong></p>
+<p>Not automatically.</p>
+<p>Variable selection should consider theory and predictive performance.</p>
+<hr>
+<h2 id="misconception-5-2"><strong>Misconception 5</strong></h2>
+<p><strong>“AIC/BIC tell us which variables are individually significant.”</strong></p>
+<p>False.</p>
+<p>They compare models.</p>
+<hr>
+<h2 id="misconception-6-2"><strong>Misconception 6</strong></h2>
+<p><strong>“Lower AIC means higher predictive accuracy.”</strong></p>
+<p>Not necessarily.</p>
+<p>AIC measures a likelihood-based fit/complexity trade-off, not classification accuracy directly.</p>
+<hr>
+<h2 id="misconception-7-2"><strong>Misconception 7</strong></h2>
+<p><strong>“Accuracy is the most important metric because it is easy to understand.”</strong></p>
+<p>Not for imbalanced attrition prediction.</p>
+<p>A model can have high accuracy while missing most leavers.</p>
+<hr>
+<h2 id="misconception-8-2"><strong>Misconception 8</strong></h2>
+<p><strong>“AUC of 0.8 means the model is 80% accurate.”</strong></p>
+<p>False.</p>
+<p>AUC measures discrimination, not accuracy at a particular threshold.</p>
+<hr>
+<h2 id="misconception-9-2"><strong>Misconception 9</strong></h2>
+<p><strong>“A 0.5 cutoff is mandatory.”</strong></p>
+<p>False.</p>
+<p>It is simply a common starting point.</p>
+<hr>
+<h2 id="misconception-10-2"><strong>Misconception 10</strong></h2>
+<p><strong>“Changing the cutoff changes the logistic regression coefficients.”</strong></p>
+<p>No.</p>
+<p>The fitted model stays the same; the classification rule changes.</p>
+<hr>
+<h1 id="66-integrated-analytical-workflow"><strong>66. Integrated Analytical Workflow</strong></h1>
+<p>The recommended workflow is:</p>
+<blockquote>
+<p><strong>Define attrition outcome</strong></p>
+<p>↓</p>
+<p><strong>Fit baseline logistic regression</strong></p>
+<p>↓</p>
+<p><strong>Check coefficients and odds ratios</strong></p>
+<p>↓</p>
+<p><strong>Check multicollinearity</strong></p>
+<p>↓</p>
+<p><strong>Evaluate deviance/AIC/BIC</strong></p>
+<p>↓</p>
+<p><strong>Evaluate AUC</strong></p>
+<p>↓</p>
+<p><strong>Build expanded model</strong></p>
+<p>↓</p>
+<p><strong>Build lean/pruned model</strong></p>
+<p>↓</p>
+<p><strong>Compare fit + discrimination + complexity</strong></p>
+<p>↓</p>
+<p><strong>Select the most useful model</strong></p>
+<p>↓</p>
+<p><strong>Test multiple probability thresholds</strong></p>
+<p>↓</p>
+<p><strong>Compare sensitivity + specificity + precision</strong></p>
+<p>↓</p>
+<p><strong>Choose threshold using business costs</strong></p>
+<p>↓</p>
+<p><strong>Deploy and monitor out-of-sample performance</strong></p>
+</blockquote>
+<hr>
+<h1 id="67-final-recommendation"><strong>67. Final Recommendation</strong></h1>
+<p>For Northfield Retail, the best approach is <strong>not to commit prematurely to expansion, pruning, or cutoff adjustment in isolation</strong>.</p>
+<p>A disciplined approach is:</p>
+<blockquote>
+<p><strong>Compare a theoretically expanded model with a leaner model, using deviance, AIC, BIC, AUC, sensitivity, and specificity. Then optimize the classification cutoff for the selected model.</strong></p>
+</blockquote>
+<p>Given the HR director&rsquo;s emphasis on catching leavers, the final threshold should likely be chosen to achieve approximately the desired <strong>70%+ sensitivity</strong>, <strong>provided that the corresponding false-positive rate and operational cost remain acceptable</strong>.</p>
+<p>If the existing model already has good AUC but poor sensitivity at 0.5, <strong>threshold adjustment may be the quickest intervention</strong>.</p>
+<p>If AUC is weak, the priority should instead be <strong>improving the predictor set or model specification</strong>.</p>
+<p>If the expanded model gives only marginal improvement while significantly increasing cost and complexity, the <strong>leaner model</strong> is preferable.</p>
+<p>Thus the most defensible strategy is:</p>
+<blockquote>
+<p><strong>Diagnose → compare models → select a parsimonious but sufficiently predictive model → optimize the cutoff → validate on new data.</strong></p>
+</blockquote>
+<h2 id="core-takeaway"><strong>Core takeaway</strong></h2>
+<p>The central distinction is:</p>
+<blockquote>
+<p><strong>Predictor selection changes the model; cutoff selection changes the decision rule.</strong></p>
+</blockquote>
+<p>A strong logistic-regression workflow should first make sure the model contains useful information and discriminates between leavers and stayers. Only then should HR decide how aggressively to classify employees as high-risk.</p>
+<p>For Northfield, the goal is not simply to maximize a statistical metric. The goal is to create a <strong>reliable, interpretable, cost-effective attrition signal that catches enough genuine leavers to make retention intervention worthwhile.</strong></p>
+<h1 id="comprehensive-notes-northfield-retail-employee-attrition-logistic-regression-case"><strong>Comprehensive Notes: Northfield Retail Employee Attrition Logistic Regression Case</strong></h1>
+<h2 id="1-case-overview"><strong>1. Case Overview</strong></h2>
+<p>Northfield Retail&rsquo;s HR analytics team developed a <strong>binary logistic regression model</strong> to predict whether store employees would leave within six months.</p>
+<p>The initial model uses:</p>
+<ul>
+<li><strong>Tenure</strong>  </li>
+<li><strong>Performance rating</strong>  </li>
+<li><strong>Training hours</strong></li>
+</ul>
+<p>The model estimates each employee&rsquo;s probability of attrition and converts that probability into a leave/stay classification using a <strong>0.5 cutoff</strong>.</p>
+<p>The initial model achieved only:</p>
+<blockquote>
+<p><strong>50% sensitivity for the attrition class</strong></p>
+</blockquote>
+<p>This means the model identified only about half of the employees who actually left.</p>
+<p>The team therefore considered:</p>
+<ol>
+<li>Adding potentially informative predictors.  </li>
+<li>Removing weak predictors.  </li>
+<li>Adjusting the classification cutoff.</li>
+</ol>
+<p>The case ultimately emphasizes an important distinction:</p>
+<blockquote>
+<p><strong>Statistical model fit, predictive discrimination, classification performance, and business usefulness are related but different concepts.</strong></p>
+</blockquote>
+<hr>
+<h1 id="2-logistic-regression-framework"><strong>2. Logistic Regression Framework</strong></h1>
+<p>Because attrition has two possible outcomes, logistic regression is appropriate.</p>
+<p>The model is:</p>
+<p>\[  
+P(Y=1)=\\frac{1}{1+e^{-Z}}  
+\]</p>
+<p>where:</p>
+<p>\[  
+Z=b\_0+b\_1X\_1+b\_2X\_2+\\cdots+b\_kX\_k  
+\]</p>
+<p>Here:</p>
+<ul>
+<li>(Y=1) represents the event, such as <strong>employee leaves</strong>.  </li>
+<li>(X_1, X_2,\ldots) are predictors.  </li>
+<li>(b_0) is the intercept.  </li>
+<li>(b_i) are regression coefficients.  </li>
+<li>(Z) is the linear predictor.  </li>
+<li>The logistic transformation converts (Z) into a probability between 0 and 1.</li>
+</ul>
+<h3 id="key-distinction"><strong>Key distinction</strong></h3>
+<p>The predictors first produce:</p>
+<blockquote>
+<p><strong>Z / linear predictor</strong></p>
+</blockquote>
+<p>which is then transformed into:</p>
+<blockquote>
+<p><strong>Probability of attrition</strong></p>
+</blockquote>
+<p>The probability is the employee&rsquo;s risk score.</p>
+<hr>
+<h1 id="3-employee-level-risk-prediction"><strong>3. Employee-Level Risk Prediction</strong></h1>
+<p>For a new employee, Northfield inserts the employee&rsquo;s:</p>
+<ul>
+<li>Tenure  </li>
+<li>Performance rating  </li>
+<li>Training hours</li>
+</ul>
+<p>into the equation.</p>
+<p>The result is a probability such as:</p>
+<blockquote>
+<p><strong>0.72</strong></p>
+</blockquote>
+<p>This means:</p>
+<blockquote>
+<p>The model estimates a <strong>72% probability of attrition</strong>.</p>
+</blockquote>
+<p>It does <strong>not</strong> mean:</p>
+<ul>
+<li>72% model accuracy  </li>
+<li>A coefficient of 0.72  </li>
+<li>A guaranteed 72% chance that the employee will leave</li>
+</ul>
+<p>It is a model-generated probability estimate.</p>
+<hr>
+<h1 id="4-the-0-5-classification-cutoff"><strong>4. The 0.5 Classification Cutoff</strong></h1>
+<p>The model uses:</p>
+<blockquote>
+<p><strong>0.5</strong></p>
+</blockquote>
+<p>as the initial classification threshold.</p>
+<p>The rule is:</p>
+<p>\[  
+P(\\text{attrition})\\geq0.5  
+\]</p>
+<p>→ classify as <strong>likely attrition</strong></p>
+<p>and:</p>
+<p>\[  
+P(\\text{attrition})\<0.5  
+\]</p>
+<p>→ classify as <strong>likely retention</strong>.</p>
+<p>The cutoff therefore converts a continuous probability into a binary decision.</p>
+<hr>
+<h1 id="5-what-happened-with-the-initial-0-5-cutoff"><strong>5. What Happened With the Initial 0.5 Cutoff?</strong></h1>
+<p>The initial model had:</p>
+<blockquote>
+<p><strong>50% sensitivity for attrition</strong></p>
+</blockquote>
+<p>Therefore, it failed to identify approximately half of the employees who actually left.</p>
+<p>This was the direct problem that triggered model refinement.</p>
+<p>The important point is:</p>
+<blockquote>
+<p>The problem was not that logistic regression could not generate probabilities. The issue was that the chosen model/cutoff combination was insufficiently effective at identifying actual leavers.</p>
+</blockquote>
+<hr>
+<h1 id="6-sensitivity"><strong>6. Sensitivity</strong></h1>
+<p>Sensitivity is:</p>
+<p>\[  
+Sensitivity=\\frac{TP}{TP+FN}  
+\]</p>
+<p>It measures:</p>
+<blockquote>
+<p><strong>Among employees who actually leave, how many does the model correctly identify?</strong></p>
+</blockquote>
+<p>For Northfield:</p>
+<blockquote>
+<p>50% sensitivity</p>
+</blockquote>
+<p>means approximately:</p>
+<blockquote>
+<p>Half of actual leavers were correctly identified.</p>
+</blockquote>
+<p>The HR director wants this substantially improved, with a target around:</p>
+<blockquote>
+<p><strong>70% sensitivity</strong></p>
+</blockquote>
+<hr>
+<h1 id="7-why-sensitivity-matters-in-this-case"><strong>7. Why Sensitivity Matters in This Case</strong></h1>
+<p>The purpose of the model is to help HR target retention interventions.</p>
+<p>A missed leaver is a:</p>
+<blockquote>
+<p><strong>False negative</strong></p>
+</blockquote>
+<p>The model predicts:</p>
+<blockquote>
+<p>Stay</p>
+</blockquote>
+<p>but the employee actually:</p>
+<blockquote>
+<p>Leaves.</p>
+</blockquote>
+<p>False negatives can be costly because HR loses the opportunity to intervene.</p>
+<p>Potential consequences include:</p>
+<ul>
+<li>Replacement costs  </li>
+<li>Recruitment costs  </li>
+<li>Training costs  </li>
+<li>Loss of institutional knowledge  </li>
+<li>Operational disruption  </li>
+<li>Reduced team continuity</li>
+</ul>
+<p>Therefore, sensitivity is particularly important for this business problem.</p>
+<hr>
+<h1 id="8-specificity"><strong>8. Specificity</strong></h1>
+<p>Specificity measures:</p>
+<blockquote>
+<p>Among employees who actually stay, how many does the model correctly classify as staying?</p>
+</blockquote>
+<p>\[  
+Specificity=\\frac{TN}{TN+FP}  
+\]</p>
+<p>A false positive occurs when:</p>
+<blockquote>
+<p>Model predicts attrition, but employee stays.</p>
+</blockquote>
+<p>This matters because HR may waste retention resources on employees who were not actually at risk.</p>
+<hr>
+<h1 id="9-sensitivity-specificity-trade-off"><strong>9. Sensitivity-Specificity Trade-off</strong></h1>
+<p>The classification threshold creates a fundamental trade-off.</p>
+<h3 id="lower-cutoff"><strong>Lower cutoff</strong></h3>
+<p>More employees are classified as:</p>
+<blockquote>
+<p>At risk of leaving</p>
+</blockquote>
+<p>This generally:</p>
+<blockquote>
+<p><strong>Increases sensitivity</strong></p>
+</blockquote>
+<p>but:</p>
+<blockquote>
+<p><strong>Decreases specificity</strong></p>
+</blockquote>
+<p>because more genuine stayers may be incorrectly flagged.</p>
+<h3 id="higher-cutoff"><strong>Higher cutoff</strong></h3>
+<p>Fewer employees are classified as at risk.</p>
+<p>This generally:</p>
+<blockquote>
+<p><strong>Increases specificity</strong></p>
+</blockquote>
+<p>but:</p>
+<blockquote>
+<p><strong>Decreases sensitivity</strong></p>
+</blockquote>
+<p>because more actual leavers may be missed.</p>
+<hr>
+<h1 id="10-why-lowering-the-cutoff-is-potentially-useful"><strong>10. Why Lowering the Cutoff Is Potentially Useful</strong></h1>
+<p>Suppose an employee has:</p>
+<blockquote>
+<p>Attrition probability \= 0.42</p>
+</blockquote>
+<p>At a 0.50 cutoff:</p>
+<blockquote>
+<p>Stay</p>
+</blockquote>
+<p>At a 0.40 cutoff:</p>
+<blockquote>
+<p>Attrition</p>
+</blockquote>
+<p>Thus, lowering the cutoff can capture additional potential leavers.</p>
+<p>This is especially relevant because Northfield&rsquo;s immediate problem is:</p>
+<blockquote>
+<p><strong>Only 50% sensitivity.</strong></p>
+</blockquote>
+<hr>
+<h1 id="11-but-threshold-adjustment-does-not-improve-the-underlying-model"><strong>11. But Threshold Adjustment Does Not Improve the Underlying Model</strong></h1>
+<p>This is a critical distinction.</p>
+<p>Changing:</p>
+<blockquote>
+<p>0.50 → 0.40</p>
+</blockquote>
+<p>does not change:</p>
+<ul>
+<li>Regression coefficients  </li>
+<li>Predictor set  </li>
+<li>Underlying fitted model  </li>
+<li>AUC  </li>
+<li>Likelihood-based fit</li>
+</ul>
+<p>It changes only:</p>
+<blockquote>
+<p><strong>How probabilities are converted into classifications.</strong></p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Model improvement ≠ threshold adjustment.</strong></p>
+</blockquote>
+<hr>
+<h1 id="12-auc-and-model-discrimination"><strong>12. AUC and Model Discrimination</strong></h1>
+<p>AUC measures:</p>
+<blockquote>
+<p><strong>How effectively the model separates leavers from stayers across classification thresholds.</strong></p>
+</blockquote>
+<p>It is therefore useful before deciding whether threshold adjustment is enough.</p>
+<h3 id="good-auc-poor-sensitivity-at-0-5"><strong>Good AUC + poor sensitivity at 0.5</strong></h3>
+<p>Could indicate:</p>
+<blockquote>
+<p>The model discriminates reasonably well, but the operating threshold is poorly chosen.</p>
+</blockquote>
+<p>In this situation:</p>
+<blockquote>
+<p>Threshold adjustment may be sufficient.</p>
+</blockquote>
+<h3 id="poor-auc"><strong>Poor AUC</strong></h3>
+<p>Suggests:</p>
+<blockquote>
+<p>The model itself has weak discrimination.</p>
+</blockquote>
+<p>In this situation:</p>
+<blockquote>
+<p>Changing the cutoff alone is unlikely to solve the problem.</p>
+</blockquote>
+<p>The team should improve the predictor/model specification.</p>
+<hr>
+<h1 id="13-model-fit-measures"><strong>13. Model Fit Measures</strong></h1>
+<p>Northfield plans to compare:</p>
+<ul>
+<li><strong>Deviance</strong>  </li>
+<li><strong>AIC</strong>  </li>
+<li><strong>BIC</strong></li>
+</ul>
+<p>These are likelihood-based model-comparison measures.</p>
+<hr>
+<h1 id="14-deviance"><strong>14. Deviance</strong></h1>
+<p>Deviance is based on log-likelihood:</p>
+<p>\[  
+Deviance=-2\\log(L)  
+\]</p>
+<p>For comparable models fitted to the same outcome data:</p>
+<blockquote>
+<p><strong>Lower deviance generally indicates better likelihood-based fit.</strong></p>
+</blockquote>
+<hr>
+<h1 id="15-aic-2"><strong>15. AIC</strong></h1>
+<p>AIC stands for:</p>
+<blockquote>
+<p><strong>Akaike Information Criterion</strong></p>
+</blockquote>
+<p>It balances:</p>
+<ul>
+<li>Model fit  </li>
+<li>Model complexity</li>
+</ul>
+<p>Generally:</p>
+<blockquote>
+<p><strong>Lower AIC is preferred</strong></p>
+</blockquote>
+<p>when comparing suitable models.</p>
+<hr>
+<h1 id="16-bic-2"><strong>16. BIC</strong></h1>
+<p>BIC stands for:</p>
+<blockquote>
+<p><strong>Bayesian Information Criterion</strong></p>
+</blockquote>
+<p>It also balances:</p>
+<ul>
+<li>Fit  </li>
+<li>Complexity</li>
+</ul>
+<p>but applies a stronger complexity penalty than AIC in many settings.</p>
+<p>Generally:</p>
+<blockquote>
+<p><strong>Lower BIC is preferred.</strong></p>
+</blockquote>
+<hr>
+<h1 id="17-what-aic-bic-do-not-tell-you"><strong>17. What AIC/BIC Do Not Tell You</strong></h1>
+<p>AIC and BIC do <strong>not</strong> directly answer:</p>
+<blockquote>
+<p>“Which model has the highest attrition sensitivity?”</p>
+</blockquote>
+<p>They also do not directly tell you:</p>
+<blockquote>
+<p>“Which model should HR deploy?”</p>
+</blockquote>
+<p>They provide evidence about:</p>
+<blockquote>
+<p><strong>Likelihood-based model fit while accounting for complexity.</strong></p>
+</blockquote>
+<p>Business performance must still be considered.</p>
+<hr>
+<h1 id="18-accuracy-is-not-enough"><strong>18. Accuracy Is Not Enough</strong></h1>
+<p>Attrition may be a minority class.</p>
+<p>For example, if:</p>
+<ul>
+<li>90% stay  </li>
+<li>10% leave</li>
+</ul>
+<p>a model predicting everyone as staying would achieve:</p>
+<blockquote>
+<p>90% accuracy</p>
+</blockquote>
+<p>but:</p>
+<blockquote>
+<p>0% sensitivity.</p>
+</blockquote>
+<p>That model would be useless for identifying leavers.</p>
+<p>Therefore, Northfield should not optimize only:</p>
+<blockquote>
+<p>Overall accuracy.</p>
+</blockquote>
+<p>It should examine:</p>
+<ul>
+<li>Sensitivity  </li>
+<li>Specificity  </li>
+<li>AUC  </li>
+<li>Precision  </li>
+<li>Confusion matrix  </li>
+<li>Business costs</li>
+</ul>
+<hr>
+<h1 id="19-expanding-the-predictor-set"><strong>19. Expanding the Predictor Set</strong></h1>
+<p>One improvement strategy is to add variables such as:</p>
+<ul>
+<li>Manager relationship quality  </li>
+<li>Career-growth signals</li>
+</ul>
+<p>These variables may capture aspects of employee turnover intention that the original model misses.</p>
+<p>The logic is:</p>
+<blockquote>
+<p>Important information may be absent from the baseline model.</p>
+</blockquote>
+<p>If these predictors genuinely contain useful information, they may improve:</p>
+<ul>
+<li>AUC  </li>
+<li>Sensitivity  </li>
+<li>Model fit  </li>
+<li>Risk discrimination</li>
+</ul>
+<hr>
+<h1 id="20-risks-of-adding-predictors"><strong>20. Risks of Adding Predictors</strong></h1>
+<p>More variables are not automatically better.</p>
+<p>Potential problems include:</p>
+<ul>
+<li>Overfitting  </li>
+<li>Multicollinearity  </li>
+<li>Greater model complexity  </li>
+<li>Higher data collection cost  </li>
+<li>Survey fatigue  </li>
+<li>More difficult interpretation  </li>
+<li>Greater maintenance requirements</li>
+</ul>
+<p>This is particularly relevant because the CFO is concerned about:</p>
+<blockquote>
+<p><strong>The cost of survey-based data collection.</strong></p>
+</blockquote>
+<hr>
+<h1 id="21-why-the-cfo-is-concerned"><strong>21. Why the CFO Is Concerned</strong></h1>
+<p>Adding variables such as manager relationship quality may require:</p>
+<ul>
+<li>Survey design  </li>
+<li>Survey administration  </li>
+<li>Data processing  </li>
+<li>Ongoing data collection  </li>
+<li>Employee participation  </li>
+<li>Maintenance</li>
+</ul>
+<p>Therefore, the question is not simply:</p>
+<blockquote>
+<p>“Does this variable improve the model?”</p>
+</blockquote>
+<p>It is:</p>
+<blockquote>
+<p><strong>Does the improvement justify the cost of obtaining and maintaining the variable?</strong></p>
+</blockquote>
+<hr>
+<h1 id="22-pruning-weak-predictors"><strong>22. Pruning Weak Predictors</strong></h1>
+<p>The second model-development strategy is to remove weak predictors.</p>
+<p>Potential candidates in the case include:</p>
+<ul>
+<li>Income  </li>
+<li>Salary hike  </li>
+<li>Working hours  </li>
+<li>Training</li>
+</ul>
+<p>The statistical rationale given in the case is:</p>
+<blockquote>
+<p>These variables have weak contributions and may not materially improve the model&rsquo;s ability to distinguish leavers from stayers.</p>
+</blockquote>
+<p>A leaner model may perform comparably while being:</p>
+<ul>
+<li>Simpler  </li>
+<li>Easier to interpret  </li>
+<li>Cheaper to maintain  </li>
+<li>More operationally actionable</li>
+</ul>
+<hr>
+<h1 id="23-important-qualification-about-variable-removal"><strong>23. Important Qualification About Variable Removal</strong></h1>
+<p>A weak individual contribution does not automatically mean:</p>
+<blockquote>
+<p>“Delete the variable.”</p>
+</blockquote>
+<p>Variable selection should consider:</p>
+<ul>
+<li>Theory  </li>
+<li>Predictive contribution  </li>
+<li>Multicollinearity  </li>
+<li>Model fit  </li>
+<li>Out-of-sample performance  </li>
+<li>Business usefulness</li>
+</ul>
+<p>A variable might still be important as a control or interaction variable.</p>
+<hr>
+<h1 id="24-store-manager-s-perspective"><strong>24. Store Manager&rsquo;s Perspective</strong></h1>
+<p>The Store Manager prefers:</p>
+<blockquote>
+<p><strong>A simpler, interpretable model</strong></p>
+</blockquote>
+<p>with factors that can be acted upon at store level.</p>
+<p>This reflects a practical analytics philosophy:</p>
+<blockquote>
+<p>A slightly less statistically sophisticated model may be more valuable if managers can understand and act on it.</p>
+</blockquote>
+<p>For example, identifying:</p>
+<blockquote>
+<p>Poor manager relationship</p>
+</blockquote>
+<p>or:</p>
+<blockquote>
+<p>Weak career-growth signals</p>
+</blockquote>
+<p>may directly suggest interventions.</p>
+<hr>
+<h1 id="25-hr-director-s-perspective"><strong>25. HR Director&rsquo;s Perspective</strong></h1>
+<p>The HR Director wants:</p>
+<blockquote>
+<p><strong>A more accurate attrition signal</strong></p>
+</blockquote>
+<p>so retention interventions can be targeted quickly.</p>
+<p>The emphasis is therefore on:</p>
+<ul>
+<li>Detecting actual leavers  </li>
+<li>Increasing sensitivity  </li>
+<li>Improving targeting  </li>
+<li>Reducing missed intervention opportunities</li>
+</ul>
+<hr>
+<h1 id="26-cfo-s-perspective"><strong>26. CFO&rsquo;s Perspective</strong></h1>
+<p>The CFO is primarily concerned with:</p>
+<blockquote>
+<p><strong>The cost of collecting additional survey-based inputs.</strong></p>
+</blockquote>
+<p>This creates a classic:</p>
+<blockquote>
+<p><strong>Value vs cost trade-off</strong></p>
+</blockquote>
+<p>A statistically better model is not automatically the best business decision if obtaining the necessary data is disproportionately expensive.</p>
+<hr>
+<h1 id="27-the-three-stakeholder-priorities"><strong>27. The Three Stakeholder Priorities</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Stakeholder</th>
+<th>Main priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HR Director</td>
+<td>Higher attrition detection / sensitivity</td>
+</tr>
+<tr>
+<td>Store Manager</td>
+<td>Simplicity and actionability</td>
+</tr>
+<tr>
+<td>CFO</td>
+<td>Cost control</td>
+</tr>
+<tr>
+<td>Analytics Team</td>
+<td>Statistical validity and predictive performance</td>
+</tr>
+</tbody>
+</table></div>
+<p>A good solution needs to balance all four.</p>
+<hr>
+<h1 id="28-immediate-next-step"><strong>28. Immediate Next Step</strong></h1>
+<p>The quiz emphasized that the strategically sound <strong>immediate</strong> next step is:</p>
+<blockquote>
+<p><strong>Systematically evaluate lower classification cutoffs.</strong></p>
+</blockquote>
+<p>Why?</p>
+<p>Because:</p>
+<ul>
+<li>It costs essentially nothing to test.  </li>
+<li>It directly addresses the 50% sensitivity problem.  </li>
+<li>It reveals the sensitivity-specificity trade-off.  </li>
+<li>It does not require new data.  </li>
+<li>It does not require rebuilding the model.</li>
+</ul>
+<p>This allows HR to quickly determine whether the existing model can meet its objective through threshold optimization.</p>
+<hr>
+<h1 id="29-but-threshold-testing-should-not-end-the-analysis"><strong>29. But Threshold Testing Should Not End the Analysis</strong></h1>
+<p>The immediate threshold analysis should be followed by:</p>
+<blockquote>
+<p><strong>Model comparison.</strong></p>
+</blockquote>
+<p>The team should test:</p>
+<ol>
+<li>Baseline model  </li>
+<li>Expanded model  </li>
+<li>Pruned model</li>
+</ol>
+<p>and compare their:</p>
+<ul>
+<li>Deviance  </li>
+<li>AIC  </li>
+<li>BIC  </li>
+<li>AUC  </li>
+<li>Sensitivity  </li>
+<li>Specificity  </li>
+<li>Precision  </li>
+<li>Complexity  </li>
+<li>Cost</li>
+</ul>
+<hr>
+<h1 id="30-expanded-vs-pruned-model"><strong>30. Expanded vs Pruned Model</strong></h1>
+<p>The expanded model asks:</p>
+<blockquote>
+<p><strong>Does additional information improve prediction enough to justify its cost and complexity?</strong></p>
+</blockquote>
+<p>The pruned model asks:</p>
+<blockquote>
+<p><strong>Can we retain useful predictive performance while simplifying the model?</strong></p>
+</blockquote>
+<p>These are complementary experiments rather than mutually exclusive philosophical positions.</p>
+<hr>
+<h1 id="31-why-comparing-both-models-is-valuable"><strong>31. Why Comparing Both Models Is Valuable</strong></h1>
+<p>Suppose:</p>
+<h3 id="expanded-model"><strong>Expanded model</strong></h3>
+<ul>
+<li>Better AIC  </li>
+<li>Better BIC  </li>
+<li>Better AUC  </li>
+<li>High data cost  </li>
+<li>More difficult interpretation</li>
+</ul>
+<h3 id="pruned-model"><strong>Pruned model</strong></h3>
+<ul>
+<li>Slightly worse AIC/BIC  </li>
+<li>Similar AUC  </li>
+<li>Better sensitivity at a practical threshold  </li>
+<li>Much simpler  </li>
+<li>Lower cost</li>
+</ul>
+<p>The pruned model could be more useful operationally.</p>
+<hr>
+<h1 id="32-the-final-quiz-scenario"><strong>32. The Final Quiz Scenario</strong></h1>
+<p>The final question presented an important situation:</p>
+<blockquote>
+<p>The expanded model has significantly lower AIC and BIC.</p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote>
+<p>It has superior likelihood-based statistical fit.</p>
+</blockquote>
+<p>However:</p>
+<blockquote>
+<p>The pruned model is the only model able to reach the 70% sensitivity target without specificity becoming unacceptably low.</p>
+</blockquote>
+<p>The recommended choice was:</p>
+<blockquote>
+<p><strong>Pruned model</strong></p>
+</blockquote>
+<p>because the business objective is effective identification of potential leavers.</p>
+<hr>
+<h1 id="33-why-the-pruned-model-can-be-preferred-despite-higher-aic-bic"><strong>33. Why the Pruned Model Can Be Preferred Despite Higher AIC/BIC</strong></h1>
+<p>AIC/BIC are important, but they are not the sole decision criterion.</p>
+<p>The business objective is:</p>
+<blockquote>
+<p><strong>Target retention interventions effectively.</strong></p>
+</blockquote>
+<p>If the expanded model:</p>
+<ul>
+<li>Fits the data better statistically  </li>
+<li>But cannot produce an acceptable classification trade-off</li>
+</ul>
+<p>while the pruned model:</p>
+<ul>
+<li>Meets the critical sensitivity target  </li>
+<li>Maintains acceptable specificity  </li>
+<li>Is simpler and cheaper</li>
+</ul>
+<p>then the pruned model can provide greater practical value.</p>
+<hr>
+<h1 id="34-statistical-fit-vs-business-utility"><strong>34. Statistical Fit vs Business Utility</strong></h1>
+<p>This is perhaps the central conceptual lesson.</p>
+<h3 id="statistical-fit"><strong>Statistical fit</strong></h3>
+<p>Asks:</p>
+<blockquote>
+<p>How well does the model fit the observed data, accounting for complexity?</p>
+</blockquote>
+<p>Measures include:</p>
+<ul>
+<li>Deviance  </li>
+<li>AIC  </li>
+<li>BIC</li>
+</ul>
+<h3 id="predictive-discrimination"><strong>Predictive discrimination</strong></h3>
+<p>Asks:</p>
+<blockquote>
+<p>How well does the model distinguish leavers from stayers?</p>
+</blockquote>
+<p>Measure:</p>
+<ul>
+<li>AUC</li>
+</ul>
+<h3 id="classification-performance"><strong>Classification performance</strong></h3>
+<p>Asks:</p>
+<blockquote>
+<p>At a particular threshold, how well does the model classify cases?</p>
+</blockquote>
+<p>Measures:</p>
+<ul>
+<li>Sensitivity  </li>
+<li>Specificity  </li>
+<li>Precision  </li>
+<li>Accuracy</li>
+</ul>
+<h3 id="business-utility"><strong>Business utility</strong></h3>
+<p>Asks:</p>
+<blockquote>
+<p>Is this model useful and affordable for the organization?</p>
+</blockquote>
+<p>Considers:</p>
+<ul>
+<li>Intervention costs  </li>
+<li>Data collection costs  </li>
+<li>Manager usability  </li>
+<li>Actionability  </li>
+<li>Cost of false positives  </li>
+<li>Cost of false negatives</li>
+</ul>
+<hr>
+<h1 id="35-why-aic-bic-cannot-automatically-override-business-requirements"><strong>35. Why AIC/BIC Cannot Automatically Override Business Requirements</strong></h1>
+<p>A lower AIC or BIC means:</p>
+<blockquote>
+<p>Better likelihood-based fit relative to complexity.</p>
+</blockquote>
+<p>It does <strong>not</strong> mean:</p>
+<blockquote>
+<p>Automatically better operational decisions.</p>
+</blockquote>
+<p>Model selection must reflect the actual objective.</p>
+<p>If HR needs to catch at least 70% of leavers while retaining acceptable specificity, then those requirements matter directly.</p>
+<hr>
+<h1 id="36-why-the-pruned-model-was-not-chosen-merely-because-it-was-simpler"><strong>36. Why the Pruned Model Was Not Chosen Merely Because It Was Simpler</strong></h1>
+<p>This distinction matters.</p>
+<p>The strongest justification was <strong>not</strong>:</p>
+<blockquote>
+<p>“The store manager likes simple models.”</p>
+</blockquote>
+<p>Nor was it:</p>
+<blockquote>
+<p>“The CFO wants to save money.”</p>
+</blockquote>
+<p>The strongest justification was:</p>
+<blockquote>
+<p><strong>The pruned model meets the critical classification-performance requirement.</strong></p>
+</blockquote>
+<p>Simplicity and cost-effectiveness are additional benefits.</p>
+<hr>
+<h1 id="37-threshold-selection-as-a-business-decision"><strong>37. Threshold Selection as a Business Decision</strong></h1>
+<p>A threshold should ultimately reflect:</p>
+<blockquote>
+<p><strong>Relative costs of false negatives and false positives.</strong></p>
+</blockquote>
+<p>If missing a potential leaver is extremely costly:</p>
+<blockquote>
+<p>Lower threshold may be appropriate.</p>
+</blockquote>
+<p>If unnecessary interventions are very expensive:</p>
+<blockquote>
+<p>Higher threshold may be appropriate.</p>
+</blockquote>
+<p>Thus, the optimal cutoff is a:</p>
+<blockquote>
+<p><strong>Decision-theoretic choice</strong>, not simply a statistical default.</p>
+</blockquote>
+<hr>
+<h1 id="38-common-misconceptions"><strong>38. Common Misconceptions</strong></h1>
+<h3 id="1-0-5-is-the-correct-cutoff"><strong>1. “0.5 is the correct cutoff.”</strong></h3>
+<p>Not necessarily.</p>
+<p>It is merely a common starting point.</p>
+<hr>
+<h3 id="2-lowering-the-cutoff-improves-the-model"><strong>2. “Lowering the cutoff improves the model.”</strong></h3>
+<p>Not exactly.</p>
+<p>It changes classification performance, not the underlying fitted model.</p>
+<hr>
+<h3 id="3-aic-bic-tell-us-which-model-predicts-attrition-best"><strong>3. “AIC/BIC tell us which model predicts attrition best.”</strong></h3>
+<p>Not directly.</p>
+<p>They measure likelihood-based fit with complexity considerations.</p>
+<hr>
+<h3 id="4-the-model-with-the-lowest-aic-bic-must-be-deployed"><strong>4. “The model with the lowest AIC/BIC must be deployed.”</strong></h3>
+<p>Not necessarily.</p>
+<p>Business objectives and out-of-sample performance also matter.</p>
+<hr>
+<h3 id="5-more-predictors-always-make-the-model-better"><strong>5. “More predictors always make the model better.”</strong></h3>
+<p>False.</p>
+<p>More predictors can increase:</p>
+<ul>
+<li>Complexity  </li>
+<li>Cost  </li>
+<li>Overfitting  </li>
+<li>Multicollinearity</li>
+</ul>
+<hr>
+<h3 id="6-a-simpler-model-is-always-better"><strong>6. “A simpler model is always better.”</strong></h3>
+<p>Also false.</p>
+<p>A model that is too simple may omit important information.</p>
+<p>The correct principle is:</p>
+<blockquote>
+<p><strong>Choose the simplest model that provides adequate predictive and business performance.</strong></p>
+</blockquote>
+<hr>
+<h3 id="7-70-sensitivity-means-70-accuracy"><strong>7. “70% sensitivity means 70% accuracy.”</strong></h3>
+<p>False.</p>
+<p>Sensitivity specifically concerns:</p>
+<blockquote>
+<p>Actual members of the attrition class.</p>
+</blockquote>
+<hr>
+<h3 id="8-high-sensitivity-alone-means-the-model-is-good"><strong>8. “High sensitivity alone means the model is good.”</strong></h3>
+<p>False.</p>
+<p>Sensitivity must be considered alongside:</p>
+<ul>
+<li>Specificity  </li>
+<li>Precision  </li>
+<li>AUC  </li>
+<li>Business costs</li>
+</ul>
+<hr>
+<h3 id="9-auc-and-sensitivity-measure-the-same-thing"><strong>9. “AUC and sensitivity measure the same thing.”</strong></h3>
+<p>They do not.</p>
+<blockquote>
+<p><strong>AUC \= discrimination across thresholds</strong></p>
+<p><strong>Sensitivity \= performance at a particular threshold</strong></p>
+</blockquote>
+<hr>
+<h3 id="10-changing-the-cutoff-changes-aic-and-bic"><strong>10. “Changing the cutoff changes AIC and BIC.”</strong></h3>
+<p>No.</p>
+<p>AIC/BIC are properties of the fitted model and likelihood.</p>
+<p>The classification cutoff is applied afterward.</p>
+<hr>
+<h1 id="39-recommended-northfield-workflow"><strong>39. Recommended Northfield Workflow</strong></h1>
+<p>A robust workflow is:</p>
+<h3 id="phase-1-baseline"><strong>Phase 1 — Baseline</strong></h3>
+<p>Fit the original logistic model using:</p>
+<ul>
+<li>Tenure  </li>
+<li>Performance  </li>
+<li>Training</li>
+</ul>
+<h3 id="phase-2-diagnose"><strong>Phase 2 — Diagnose</strong></h3>
+<p>Evaluate:</p>
+<ul>
+<li>Deviance  </li>
+<li>AIC  </li>
+<li>BIC  </li>
+<li>AUC  </li>
+<li>Sensitivity  </li>
+<li>Specificity  </li>
+<li>Confusion matrix</li>
+</ul>
+<h3 id="phase-3-threshold-analysis"><strong>Phase 3 — Threshold analysis</strong></h3>
+<p>Test several cutoffs.</p>
+<p>Identify whether the baseline model can reach:</p>
+<blockquote>
+<p><strong>≥70% sensitivity</strong></p>
+</blockquote>
+<p>without unacceptable specificity.</p>
+<h3 id="phase-4-model-development"><strong>Phase 4 — Model development</strong></h3>
+<p>Build:</p>
+<blockquote>
+<p><strong>Expanded model</strong></p>
+</blockquote>
+<p>and:</p>
+<blockquote>
+<p><strong>Pruned model</strong></p>
+</blockquote>
+<h3 id="phase-5-model-comparison"><strong>Phase 5 — Model comparison</strong></h3>
+<p>Compare:</p>
+<ul>
+<li>Fit  </li>
+<li>Discrimination  </li>
+<li>Sensitivity  </li>
+<li>Specificity  </li>
+<li>Complexity  </li>
+<li>Cost</li>
+</ul>
+<h3 id="phase-6-validation"><strong>Phase 6 — Validation</strong></h3>
+<p>Preferably evaluate performance on:</p>
+<blockquote>
+<p><strong>Out-of-sample / validation data</strong></p>
+</blockquote>
+<p>rather than relying solely on the training dataset.</p>
+<h3 id="phase-7-deployment"><strong>Phase 7 — Deployment</strong></h3>
+<p>Choose:</p>
+<ul>
+<li>Model  </li>
+<li>Threshold  </li>
+<li>Intervention strategy</li>
+</ul>
+<p>based on both statistical evidence and business costs.</p>
+<hr>
+<h1 id="40-compact-revision-framework"><strong>40. Compact Revision Framework</strong></h1>
+<p>Remember the following sequence:</p>
+<blockquote>
+<p><strong>Logistic regression</strong></p>
+<p>→ predicts probability</p>
+<p><strong>Probability</strong></p>
+<p>→ converted into classification using a cutoff</p>
+<p><strong>Cutoff</strong></p>
+<p>→ controls sensitivity/specificity trade-off</p>
+<p><strong>AUC</strong></p>
+<p>→ evaluates discrimination across cutoffs</p>
+<p><strong>Deviance</strong></p>
+<p>→ likelihood-based fit; lower is better</p>
+<p><strong>AIC/BIC</strong></p>
+<p>→ fit + complexity; lower is generally preferred</p>
+<p><strong>Predictor expansion</strong></p>
+<p>→ adds potentially useful information</p>
+<p><strong>Predictor pruning</strong></p>
+<p>→ improves parsimony if weak variables add little</p>
+<p><strong>Business objective</strong></p>
+<p>→ determines which trade-offs matter</p>
+<p><strong>Validation</strong></p>
+<p>→ determines whether the chosen model generalizes.</p>
+</blockquote>
+<hr>
+<h1 id="41-final-takeaway"><strong>41. Final Takeaway</strong></h1>
+<p>The Northfield case demonstrates that <strong>there is no single universal definition of the “best” logistic regression model</strong>.</p>
+<p>The best model is the one that appropriately balances:</p>
+<ul>
+<li>Statistical fit  </li>
+<li>Predictive discrimination  </li>
+<li>Sensitivity  </li>
+<li>Specificity  </li>
+<li>Model complexity  </li>
+<li>Data collection cost  </li>
+<li>Interpretability  </li>
+<li>Operational actionability  </li>
+<li>Business consequences of errors</li>
+</ul>
+<p>The most important conceptual distinction is:</p>
+<blockquote>
+<p><strong>A model estimates risk; the cutoff determines how that risk becomes a decision.</strong></p>
+</blockquote>
+<p>For Northfield, the immediate low-cost response to the 50% sensitivity is to <strong>test alternative cutoffs</strong>. But the longer-term solution should compare <strong>expanded and pruned models</strong> using both statistical and business criteria. In the final scenario, the <strong>pruned model</strong> is preferable because it is the only model that meets the critical 70% sensitivity requirement without unacceptable loss of specificity, despite the expanded model having better AIC/BIC.</p>
+<hr>
+<h1 id="exam-study-guide-appendix">Exam Study Guide Appendix</h1>
+<hr>
+<h1 id="week-15-exam-appendix">Week 15 Exam Appendix</h1>
+<h2 id="rapid-recall-chain">Rapid-recall chain</h2>
+<blockquote>
+<p><strong>Define binary event → choose theoretically relevant predictors → code measurement levels/reference categories → fit logistic model → interpret coefficients/odds ratios → assess likelihood fit and calibration → assess discrimination → inspect confusion matrix at candidate thresholds → validate out of sample → choose a threshold from business error costs → monitor deployment</strong></p>
+</blockquote>
+<p>Logistic regression estimates the probability of a binary outcome such as leave/stay, buy/not buy, default/no default, pass/fail, or treatment success/failure. It does not merely force linear-regression predictions into 0–1.</p>
+<h2 id="core-equations-and-interpretation">Core equations and interpretation</h2>
+<p>Linear predictor:</p>
+<p><code>Z = β₀ + β₁X₁ + … + βkXk</code></p>
+<p>Probability:</p>
+<p><code>P(Y=1|X) = 1 / (1 + e^(−Z))</code></p>
+<p>Logit:</p>
+<p><code>log[p/(1−p)] = Z</code></p>
+<ul>
+<li><strong>Probability</strong> <code>p</code>: chance of the event.</li>
+<li><strong>Odds</strong> <code>p/(1−p)</code>: event chance relative to non-event chance.</li>
+<li><strong>Coefficient β:</strong> change in log-odds for a one-unit increase in X, holding other predictors constant.</li>
+<li><strong>Odds ratio <code>exp(β)</code>:</strong> multiplicative change in odds. OR=1.30 means 30% higher odds, not 30 percentage points more probability. OR=.70 means 30% lower odds.</li>
+</ul>
+<h2 id="high-value-distinctions">High-value distinctions</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Distinction</th>
+<th>Exam-ready answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probability vs. classification</td>
+<td>Probability is continuous risk (e.g., .42); classification applies a chosen cutoff to turn risk into an action label.</td>
+</tr>
+<tr>
+<td>Model vs. threshold</td>
+<td>Predictor/model changes alter estimated probabilities and discrimination; threshold changes only the decision rule applied to existing scores.</td>
+</tr>
+<tr>
+<td>Sensitivity vs. specificity</td>
+<td>Sensitivity=<code>TP/(TP+FN)</code>, fraction of actual events detected; specificity=<code>TN/(TN+FP)</code>, fraction of non-events correctly rejected.</td>
+</tr>
+<tr>
+<td>Precision vs. recall</td>
+<td>Precision=<code>TP/(TP+FP)</code>, fraction of flagged cases truly positive; recall is sensitivity.</td>
+</tr>
+<tr>
+<td>False negative vs. false positive</td>
+<td>FN: actual leaver predicted stay; FP: actual stayer predicted leave. Their business costs determine the cutoff.</td>
+</tr>
+<tr>
+<td>Accuracy vs. AUC</td>
+<td>Accuracy is threshold- and prevalence-dependent; AUC measures ranking/discrimination across all thresholds.</td>
+</tr>
+<tr>
+<td>AUC vs. sensitivity</td>
+<td>AUC is global discrimination; sensitivity is performance for positives at one chosen cutoff.</td>
+</tr>
+<tr>
+<td>Deviance vs. AIC/BIC</td>
+<td>Deviance reflects likelihood lack-of-fit (lower better); AIC/BIC add complexity penalties for model comparison on the same outcome/data. BIC penalizes complexity more strongly.</td>
+</tr>
+<tr>
+<td>AIC/BIC vs. p-value</td>
+<td>AIC/BIC compare whole models; predictor p-values assess individual coefficient evidence.</td>
+</tr>
+<tr>
+<td>Pseudo-R² vs. OLS R²</td>
+<td>Pseudo-R² summarizes relative likelihood improvement; it is not literally the percentage of outcome variance explained and versions (McFadden, Cox–Snell, Nagelkerke) differ.</td>
+</tr>
+<tr>
+<td>Multicollinearity vs. nonlinearity</td>
+<td>Multicollinearity is predictor overlap; nonlinearity in logistic regression concerns whether continuous predictors relate linearly to the <strong>logit</strong>.</td>
+</tr>
+<tr>
+<td>Multicollinearity vs. class imbalance</td>
+<td>VIF/tolerance concern predictors; imbalance concerns rare outcome classes. They require different remedies.</td>
+</tr>
+<tr>
+<td>Binary vs. ordinal/multinomial logistic</td>
+<td>Binary has two outcome levels; ordinal has ordered 3+ levels; multinomial has unordered 3+ levels. Reversing a binary event does not create ordinal regression.</td>
+</tr>
+<tr>
+<td>Logistic vs. linear regression</td>
+<td>Linear regression assumes a continuous outcome and may predict outside 0–1; logistic uses a likelihood-based logit/S-curve appropriate for binary outcomes. Clamping or thresholding OLS does not fix its error/distribution assumptions.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="classification-and-the-confusion-matrix">Classification and the confusion matrix</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: right;">Actual event</th>
+<th style="text-align: right;">Actual non-event</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Predicted event</td>
+<td style="text-align: right;">True positive (TP)</td>
+<td style="text-align: right;">False positive (FP)</td>
+</tr>
+<tr>
+<td>Predicted non-event</td>
+<td style="text-align: right;">False negative (FN)</td>
+<td style="text-align: right;">True negative (TN)</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>Accuracy=<code>(TP+TN)/N</code>.</li>
+<li>Sensitivity/Recall=<code>TP/(TP+FN)</code>.</li>
+<li>Specificity=<code>TN/(TN+FP)</code>.</li>
+<li>Precision=<code>TP/(TP+FP)</code>.</li>
+<li>False-positive rate=<code>FP/(FP+TN)=1−specificity</code>.</li>
+</ul>
+<p>A .50 cutoff is conventional, not universally optimal. Lowering it usually increases sensitivity and false positives while reducing specificity; raising it usually does the reverse. Threshold choice should reflect prevalence, intervention capacity, and the relative cost of FN versus FP.</p>
+<p><strong>Practical use case:</strong> If missing a likely leaver costs ₹3 lakh in replacement and knowledge loss but an unnecessary retention meeting costs ₹5,000, HR may rationally choose a lower threshold. It should still check that the queue of flagged employees is operationally manageable and fair.</p>
+<h2 id="model-evaluation-toolkit">Model evaluation toolkit</h2>
+<h3 id="overall-fit-and-comparison">Overall fit and comparison</h3>
+<ul>
+<li>Compare null/intercept-only and fitted model using likelihood-ratio chi-square/deviance; a small p-value indicates the predictor set improves likelihood over the null.</li>
+<li>Lower deviance is better for comparable/nested models.</li>
+<li>Lower AIC/BIC is preferred among models fit to the same cases and outcome, but these are relative scores, not absolute deployment rules.</li>
+<li>Likelihood-ratio tests are appropriate for nested models; AIC/BIC can compare non-nested candidates under comparable data/likelihood.</li>
+<li>If models have equal complexity, lower deviance corresponds to better likelihood fit; with unequal complexity, AIC/BIC incorporate parsimony.</li>
+</ul>
+<h3 id="discrimination">Discrimination</h3>
+<p>The ROC curve plots sensitivity against false-positive rate across thresholds. AUC is the probability-like ability to rank a randomly chosen event above a randomly chosen non-event.</p>
+<ul>
+<li>.50: no better than chance ranking.</li>
+<li>.60–.70: weak.</li>
+<li>.70–.80: acceptable.</li>
+<li>.80–.90: good.</li>
+<li>
+<blockquote>
+<p>.90: excellent (also check leakage/overfitting).</p>
+</blockquote>
+</li>
+</ul>
+<p>These are heuristics, not universal business standards.</p>
+<h3 id="predictor-inference-and-diagnostics">Predictor inference and diagnostics</h3>
+<p>Report β, SE, Wald/likelihood evidence, p-value, CI, and OR. If an OR confidence interval includes 1, evidence for a nonzero odds effect is weak at that confidence level.</p>
+<p>Check:</p>
+<ul>
+<li>missingness/outliers and coding;</li>
+<li>adequate event count/sample size;</li>
+<li>VIF/tolerance (the lecture prefers VIF &lt;3.3, with looser rules sometimes 5 or 10; tolerance below .20/.10 is concerning);</li>
+<li>linearity of continuous predictors with the logit;</li>
+<li>influential observations;</li>
+<li>calibration/predicted-vs-observed risk;</li>
+<li>class imbalance;</li>
+<li>overfitting via holdout/cross-validation.</li>
+</ul>
+<p>Multicollinearity inflates SEs and destabilizes coefficients; it does not mean predictions must fail or that logistic regression becomes nonlinear.</p>
+<h2 id="event-reference-coding">Event/reference coding</h2>
+<p>The outcome event must be stated explicitly. If “leave” is changed from event to reference/non-event, coefficients generally reverse signs and ORs become reciprocals because the model now predicts the complementary probability. Fitted probabilities correspondingly become <code>1−p</code>; ranking information, likelihood fit, deviance, AIC/BIC, and underlying discrimination are fundamentally unchanged when recoding is done consistently.</p>
+<p>For categorical predictors, changing the reference group changes the interpretation of group coefficients, not the raw data or overall model substance.</p>
+<p>Coding values as 1, 2, 3, 4 does not itself make a variable continuous. Department and gender remain categorical; age/income are continuous; ordered satisfaction ratings require an explicit modeling judgment. In Jamovi, continuous predictors go to <strong>Covariates</strong>, categorical predictors to <strong>Factors</strong>, and the binary outcome to <strong>Dependent Variable</strong>.</p>
+<h2 id="northfield-retail-attrition-case">Northfield Retail attrition case</h2>
+<h3 id="baseline">Baseline</h3>
+<p>Northfield predicts whether an employee will leave within six months. Initial predictors are tenure, performance rating, and training hours; the .50 threshold produces only <strong>50% sensitivity</strong>, missing half the actual leavers. The operational target is at least <strong>70% sensitivity</strong>, but not at the cost of unusably low specificity.</p>
+<h3 id="three-strategies">Three strategies</h3>
+<ol>
+<li><strong>Expand predictors:</strong> add theory-relevant manager-relationship quality and career-growth signals. Potentially improves discrimination, explanation, and sensitivity, but adds survey cost, respondent burden, multicollinearity, complexity, and overfitting risk.</li>
+<li><strong>Prune weak predictors:</strong> consider removing weak variables such as income, salary hike, working hours, or training only after theory, coefficient stability, incremental performance, and validation. Benefits include interpretability, lower collection burden, and parsimony; a variable should not be removed solely because one sample gives <code>p&gt;.05</code>.</li>
+<li><strong>Adjust threshold:</strong> test .20, .30, .40, .50, .60 and compare sensitivity, specificity, precision, FN/FP, and capacity/cost. This can improve the operational trade-off immediately but cannot repair weak AUC/discrimination.</li>
+</ol>
+<h3 id="stakeholder-trade-off">Stakeholder trade-off</h3>
+<ul>
+<li>HR Director: catch more leavers quickly → sensitivity/recall.</li>
+<li>Store Manager: simple actionable factors → interpretability/parsimony.</li>
+<li>CFO: control survey and intervention cost → value of information and false-positive cost.</li>
+</ul>
+<p>Recommended approach:</p>
+<ol>
+<li>Preserve the baseline.</li>
+<li>Diagnose AUC, calibration, sensitivity/specificity, confusion matrix, deviance/AIC/BIC, coefficients, and VIF.</li>
+<li>Build an expanded theory-based model and a defensible lean model.</li>
+<li>Validate each out of sample/cross-validation; avoid selecting on training performance.</li>
+<li>Compare likelihood fit, discrimination, calibration, stability, data cost, and actionability.</li>
+<li>On the best candidate, tune threshold using the cost matrix and ≥70% sensitivity target.</li>
+<li>Pilot deployment, monitor drift/fairness and realized retention benefit, and recalibrate.</li>
+</ol>
+<p>A pruned model can reasonably be deployed despite slightly higher AIC/BIC if it validates well, reaches the sensitivity target with acceptable specificity, is stable/actionable, and produces enough cost savings to outweigh a small likelihood-fit loss. This is business utility, not a claim that higher AIC is statistically better.</p>
+<h2 id="larger-jamovi-hr-demonstration">Larger Jamovi HR demonstration</h2>
+<p>The lecture also uses historic data for 500 employees with age, department, distance from home, education, environment satisfaction, gender, job involvement/level/satisfaction, income, prior companies, overtime, salary hike, performance, relationship satisfaction, stock options, working years, training, work–life balance, tenure/current role/promotion/current manager, and attrition.</p>
+<p>Workflow: import the file; label categories and measurement types; set binary attrition and its event/reference; place continuous predictors in Covariates and categorical predictors in Factors; request collinearity, model fit/pseudo-R², coefficient/OR, classification/confusion, ROC/AUC, sensitivity/specificity, and diagnostics; then interpret with theory and validation.</p>
+<h2 id="frequent-mistakes-to-avoid">Frequent mistakes to avoid</h2>
+<ul>
+<li>Saying a .72 probability is “72% certainty”; it is estimated risk conditional on model/data.</li>
+<li>Assuming .50 is the correct cutoff for every decision.</li>
+<li>Treating 70% sensitivity as 70% accuracy.</li>
+<li>Judging an imbalanced attrition model only by accuracy.</li>
+<li>Saying lower cutoff improves AUC, deviance, AIC, or BIC; it changes classifications, not fitted probabilities/model likelihood.</li>
+<li>Treating AIC/BIC as predictor-significance tests or mandatory deployment rankings.</li>
+<li>Interpreting pseudo-R² exactly like OLS R².</li>
+<li>Equating odds ratio with risk/probability ratio.</li>
+<li>Forgetting the event/reference category when interpreting coefficient signs.</li>
+<li>Concluding a reversed binary event requires ordinal regression.</li>
+<li>Clamping OLS predictions to [0,1] or thresholding them as a substitute for logistic regression.</li>
+<li>Adding every available variable, causing leakage, cost, collinearity, and overfitting.</li>
+<li>Removing every nonsignificant variable without theoretical or validation review.</li>
+<li>Choosing threshold on training data without validation.</li>
+<li>Maximizing sensitivity by flagging almost everyone while ignoring specificity/precision/capacity.</li>
+</ul>
+<h2 id="likely-exam-questions">Likely exam questions</h2>
+<ol>
+<li>Define binary logistic regression and derive the links among probability, odds, log-odds, β, and OR.</li>
+<li>Explain why logistic regression is preferred to linear regression for binary outcomes.</li>
+<li>Construct and interpret a confusion matrix; distinguish sensitivity, specificity, precision, recall, and accuracy.</li>
+<li>Explain ROC/AUC and distinguish AUC from accuracy and sensitivity.</li>
+<li>Discuss deviance, AIC, BIC, pseudo-R², and individual predictor significance.</li>
+<li>Explain threshold choice using false-negative/false-positive costs.</li>
+<li>Explain what changes when outcome/predictor reference categories are reversed.</li>
+<li>Discuss multicollinearity diagnostics and distinguish it from nonlinearity, imbalance, and overfitting.</li>
+<li>Diagnose Northfield&rsquo;s 50% sensitivity and evaluate expansion, pruning, and cutoff adjustment.</li>
+<li>Recommend a model-selection/deployment framework balancing HR, manager, and CFO priorities.</li>
+<li>Explain Jamovi variable setup and the end-to-end logistic-regression workflow.</li>
+<li>Why can a simpler model be chosen despite slightly worse AIC/BIC?</li>
+</ol>
+<h2 id="source-coverage-checklist">Source-coverage checklist</h2>
+<ul>
+<li>[x] Video 1: binary outcomes and applications; logistic/logit/probability; Jamovi import, labeling, outcome, covariates/factors, and event/reference setup.</li>
+<li>[x] Video 1: 500-employee variables, attrition model, coefficient significance, pseudo-R², overall fit, VIF/tolerance, confusion matrix, accuracy, sensitivity, specificity, precision, ROC/AUC.</li>
+<li>[x] Video 1: model fit/predictive validity metrics, classification logic, event recoding and interpretation.</li>
+<li>[x] Consolidated notes: probability→classification, threshold trade-offs, odds/log-odds/OR, deviance/AIC/BIC, pseudo-R², AUC, predictor/reference coding, multicollinearity, logistic versus linear regression, integrated workflow and misconceptions.</li>
+<li>[x] Northfield case: six-month attrition, tenure/performance/training baseline, .50 cutoff, 50% sensitivity, 70% target, minority-class issue, false-negative/false-positive costs.</li>
+<li>[x] Northfield strategies: manager relationship/career-growth expansion, lean-model pruning, threshold analysis, AUC diagnostic, validation/overfitting and model stability.</li>
+<li>[x] Northfield stakeholders: HR sensitivity, manager actionability, CFO collection/intervention cost; confusion matrix, precision/recall, business cost matrix and deployment recommendation.</li>
+<li>[x] Quiz/final scenario: statistical fit versus business utility; pruned model potentially selected despite higher AIC/BIC; why threshold tuning follows model evaluation and does not alter AIC/BIC.</li>
+</ul>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<p>Replace the intention score with actual binary behaviour (<code>Left = 1</code>, <code>Stayed = 0</code>) and model it from earlier employee perceptions plus justified controls. Interpret odds separately from probability, choose thresholds using error costs, and validate classification out of sample.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-14.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 14: PLS-SEM — Measurement Quality, Structural…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

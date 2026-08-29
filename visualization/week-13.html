@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Visualization · Week 13 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Visualization</span>
+      <span class="brand-title">Week 13</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html" selected>Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Data Visualization, Visual Perception, and Preattentive Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Visual Perception, Better Visualization, Form–Function, Tables and…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Visualizing and Comparing Categories
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Charts That Show Change Over Time
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Distribution and Relationship Visualizations
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Data Visualization: Exhaustive Exam Notes
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Data Visualization with Python, Jupyter, Python Basics, and Chart…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Python Data Visualization, Matplotlib Plotting, Interpretation, and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Data Visualization with Matplotlib, Seaborn, and Jupyter Notebook
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Exam-Focused Study Notes
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Seaborn, Matplotlib, Heatmaps, Styling, and Dashboard Design
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Dashboards, Dashboard Design, Grammar of Graphics, and Matplotlib
+      </a>
+      <a class="is-active" href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Dashboard Design, Visual Encoding, Matplotlib, and Dashboard Analytics
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Storytelling with Data
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Storytelling with Data: Exam-Focused Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Visualization · Week 13</p>
+        <h1 class="page-title">Dashboard Design, Visual Encoding, Matplotlib, and Dashboard Analytics</h1>
+        <p class="page-meta">Week 13 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#exam-orientation">Exam orientation</a></li>
+      <li><a href="#1-definition-of-a-dashboard">1. Definition of a dashboard</a></li>
+      <li><a href="#2-why-a-dashboard-must-fit-on-one-screen">2. Why a dashboard must fit on one screen</a></li>
+      <li><a href="#3-dashboard-versus-detailed-analysis">3. Dashboard versus detailed analysis</a></li>
+      <li><a href="#4-contextual-enrichment">4. Contextual enrichment</a></li>
+      <li><a href="#5-complete-list-at-a-glance">5. Complete list at a glance</a></li>
+      <li><a href="#6-mistakes-1-5-foundation-and-live-session-examples">6. Mistakes 1–5: foundation and live-session examples</a></li>
+      <li><a href="#7-mistake-6-introducing-meaningless-variety">7. Mistake 6 — Introducing meaningless variety</a></li>
+      <li><a href="#8-mistake-7-using-poorly-designed-display-media">8. Mistake 7 — Using poorly designed display media</a></li>
+      <li><a href="#9-mistake-8-encoding-quantitative-data-inaccurately">9. Mistake 8 — Encoding quantitative data inaccurately</a></li>
+      <li><a href="#10-mistake-9-arranging-data-poorly">10. Mistake 9 — Arranging data poorly</a></li>
+      <li><a href="#11-mistake-10-highlighting-important-data-ineffectively-or-not-at-all">11. Mistake 10 — Highlighting important data ineffectively or not at all</a></li>
+      <li><a href="#12-mistake-11-cluttering-the-display-with-useless-decorations">12. Mistake 11 — Cluttering the display with useless decorations</a></li>
+      <li><a href="#13-mistake-12-misusing-or-overusing-color">13. Mistake 12 — Misusing or overusing color</a></li>
+      <li><a href="#14-mistake-13-designing-an-unattractive-visual-display">14. Mistake 13 — Designing an unattractive visual display</a></li>
+      <li><a href="#15-four-broad-characteristics">15. Four broad characteristics</a></li>
+      <li><a href="#16-summaries-and-exceptions">16. Summaries and exceptions</a></li>
+      <li><a href="#17-customization-to-audience-and-objective">17. Customization to audience and objective</a></li>
+      <li><a href="#18-selecting-dashboard-display-media">18. Selecting dashboard display media</a></li>
+      <li><a href="#19-strengths-and-limitations">19. Strengths and limitations</a></li>
+      <li><a href="#20-text-based-dashboard-example-and-redesign">20. Text-based dashboard example and redesign</a></li>
+      <li><a href="#21-the-correct-answer-combine-text-and-graphics">21. The correct answer: combine text and graphics</a></li>
+      <li><a href="#22-data-ink-ratio">22. Data-ink ratio</a></li>
+      <li><a href="#23-goal-1-reduce-unnecessary-non-data-pixels">23. Goal 1 — Reduce unnecessary non-data pixels</a></li>
+      <li><a href="#24-goal-2-de-emphasize-and-regularize-necessary-non-data-pixels">24. Goal 2 — De-emphasize and regularize necessary non-data pixels</a></li>
+      <li><a href="#25-goal-3-enhance-data-pixels">25. Goal 3 — Enhance data pixels</a></li>
+      <li><a href="#26-static-and-dynamic-emphasis">26. Static and dynamic emphasis</a></li>
+      <li><a href="#27-libraries-modules-and-components">27. Libraries, modules, and components</a></li>
+      <li><a href="#28-jupyter-notebook-execution">28. Jupyter Notebook execution</a></li>
+      <li><a href="#29-importing-pyplot-and-making-a-basic-plot">29. Importing Pyplot and making a basic plot</a></li>
+      <li><a href="#30-direct-and-object-oriented-approaches">30. Direct and object-oriented approaches</a></li>
+      <li><a href="#31-aesthetic-manipulation-as-a-visualization-skill">31. Aesthetic manipulation as a visualization skill</a></li>
+      <li><a href="#32-chartjunk">32. Chartjunk</a></li>
+      <li><a href="#33-visual-hierarchy">33. Visual hierarchy</a></li>
+      <li><a href="#34-consistency-and-cognitive-load">34. Consistency and cognitive load</a></li>
+      <li><a href="#35-information-density">35. Information density</a></li>
+      <li><a href="#36-sketchy-versus-precise-visual-styles">36. Sketchy versus precise visual styles</a></li>
+      <li><a href="#37-business-setting">37. Business setting</a></li>
+      <li><a href="#38-core-kpis">38. Core KPIs</a></li>
+      <li><a href="#39-metric-relationships">39. Metric relationships</a></li>
+      <li><a href="#40-time-granularity">40. Time granularity</a></li>
+      <li><a href="#41-missing-diagnostic-metrics">41. Missing diagnostic metrics</a></li>
+      <li><a href="#42-dashboard-versus-external-analytics-and-drill-down">42. Dashboard versus external analytics and drill-down</a></li>
+      <li><a href="#43-funnel-analysis">43. Funnel analysis</a></li>
+      <li><a href="#44-conversion-analysis">44. Conversion analysis</a></li>
+      <li><a href="#45-decision-alternatives-and-sequence">45. Decision alternatives and sequence</a></li>
+      <li><a href="#46-a-b-testing">46. A/B testing</a></li>
+      <li><a href="#47-dashboard-as-a-decision-support-system">47. Dashboard as a decision-support system</a></li>
+      <li><a href="#48-end-to-end-procedure">48. End-to-end procedure</a></li>
+      <li><a href="#49-define-a-dashboard-and-explain-the-importance-of-a-single-screen">49. “Define a dashboard and explain the importance of a single screen.”</a></li>
+      <li><a href="#50-explain-meaningless-variety">50. “Explain meaningless variety.”</a></li>
+      <li><a href="#51-discuss-poorly-designed-display-media-with-examples">51. “Discuss poorly designed display media with examples.”</a></li>
+      <li><a href="#52-what-is-data-ink-ratio-how-is-it-applied-to-dashboards">52. “What is data-ink ratio? How is it applied to dashboards?”</a></li>
+      <li><a href="#53-compare-text-tables-and-graphs">53. “Compare text, tables, and graphs.”</a></li>
+      <li><a href="#54-how-should-important-information-be-highlighted">54. “How should important information be highlighted?”</a></li>
+      <li><a href="#55-explain-dashboard-monitoring-versus-diagnosis-using-brightmart">55. “Explain dashboard monitoring versus diagnosis using BrightMart.”</a></li>
+      <li><a href="#must-memorize-definitions">Must-memorize definitions</a></li>
+      <li><a href="#thirteen-mistakes-checklist">Thirteen mistakes checklist</a></li>
+      <li><a href="#fast-design-rules">Fast design rules</a></li>
+      <li><a href="#brightmart-investigation-checklist">BrightMart investigation checklist</a></li>
+      <li><a href="#matplotlib-recall">Matplotlib recall</a></li>
+      <li><a href="#one-sentence-master-answer">One-sentence master answer</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="exam-orientation">Exam orientation</h2>
+<p>Week 13 brings together four closely related areas:</p>
+<ol>
+<li>the remaining common mistakes in dashboard design;</li>
+<li>the characteristics of a well-designed dashboard;</li>
+<li>practical implementation and refinement of charts in Matplotlib; and</li>
+<li>interpretation of dashboards as monitoring and decision-support systems, illustrated through the BrightMart case.</li>
+</ol>
+<p>The central principle running through the week is:</p>
+<blockquote>
+<p>A dashboard is not a place to display everything available. It is a carefully designed visual display of the most important information needed to achieve one or more objectives, consolidated on a single screen so that it can be monitored at a glance.</p>
+</blockquote>
+<p>The instructor repeatedly emphasized the words <strong>objective</strong>, <strong>most important</strong>, <strong>single screen</strong>, and <strong>at a glance</strong>. These are likely examination anchors.</p>
+<hr>
+<h1 id="part-i-dashboard-fundamentals">Part I — Dashboard fundamentals</h1>
+<h2 id="1-definition-of-a-dashboard">1. Definition of a dashboard</h2>
+<p>A dashboard is a <strong>visual display</strong> of the <strong>most important information</strong> required to achieve one or more objectives, <strong>consolidated and arranged on a single screen</strong> so that it can be <strong>monitored at a glance</strong>.</p>
+<p>This definition implies five requirements:</p>
+<ul>
+<li><strong>Visual:</strong> the main communication is graphical. One or two important numbers may appear, but a full-fledged data table by itself is not a dashboard.</li>
+<li><strong>Selective:</strong> only information critical to the objective should be included.</li>
+<li><strong>Objective-driven:</strong> every item must answer why the dashboard exists, who will use it, and what decision or monitoring task it supports.</li>
+<li><strong>Single-screen:</strong> the critical picture should not require scrolling or movement to another page.</li>
+<li><strong>Rapidly assimilated:</strong> users should understand the state of affairs quickly and recognize what requires attention.</li>
+</ul>
+<h3 id="automobile-dashboard-analogy">Automobile-dashboard analogy</h3>
+<p>A car dashboard shows a small set of critical measures—speed, remaining fuel, oil level, battery condition, engine temperature, and warnings. It does not show every measurable parameter in the vehicle. Its objective is to support safety, timely travel, and immediate operational decisions.</p>
+<p>For example, if the destination is 20 km away and the car is moving at 40 km/h, the driver can estimate a travel time of about 30 minutes. The information is useful because it is critical, contextual, and visible in one glance. The same logic applies to sales, finance, recruitment, and operating-performance dashboards.</p>
+<h2 id="2-why-a-dashboard-must-fit-on-one-screen">2. Why a dashboard must fit on one screen</h2>
+<p>Scrolling is not merely inconvenient. It creates <strong>cognitive load</strong>:</p>
+<ul>
+<li>the user sees one set of related information;</li>
+<li>after scrolling, the first set disappears;</li>
+<li>the earlier information must be retained in working memory;</li>
+<li>the new information must then be interpreted against that memory.</li>
+</ul>
+<p>When all critical information is visible together, users can compare it directly, revisit any element instantly, detect relationships, and reach better decisions.</p>
+<p><strong>Instructor emphasis:</strong> If ten charts do not fit, do not automatically create two or three pages. Reconsider the priorities, rank the charts, and keep perhaps the five most important. An inability to reduce the set may mean the designer has not identified what is truly important.</p>
+<p>Vendor dashboards often provide many tabs and buttons because vendors do not know every customer&rsquo;s exact need and want to demonstrate that every requested measure exists. A purpose-built dashboard should do the opposite: decide what is critical for its specific audience and objective.</p>
+<h2 id="3-dashboard-versus-detailed-analysis">3. Dashboard versus detailed analysis</h2>
+<p>A dashboard tells users <strong>what is happening</strong> and helps them recognize <strong>what needs attention</strong>. It normally does not contain everything needed to diagnose a problem or select a final response.</p>
+<ul>
+<li><strong>Dashboard/monitoring:</strong> broad, high-level, rapid overview.</li>
+<li><strong>Diagnosis/investigation:</strong> additional detail, drill-down, segmentation, external analytics, and causal testing.</li>
+</ul>
+<p>Trying to place all diagnostic details on the dashboard makes it unreadable. Quick access to further information is useful, but the moment the user drills down or moves to a detailed analytical view, the user has moved beyond the dashboard itself.</p>
+<h2 id="4-contextual-enrichment">4. Contextual enrichment</h2>
+<p>A value without context is difficult to evaluate. A value of 40, 50, or 60 does not by itself reveal whether performance is good or bad.</p>
+<p>Useful enrichment includes:</p>
+<ul>
+<li>target versus actual;</li>
+<li>current period versus previous period;</li>
+<li>year-on-year comparison;</li>
+<li>benchmark, acceptable range, or threshold;</li>
+<li>variance in absolute or percentage terms;</li>
+<li>time-based context.</li>
+</ul>
+<p><strong>Example:</strong> A profit gauge showing 40 becomes meaningful if the display also indicates that 40 is below target, 50 meets target, and 60 exceeds target. Similarly, showing this year&rsquo;s profit beside last year&rsquo;s value enables immediate comparison.</p>
+<hr>
+<h1 id="part-ii-the-13-common-dashboard-design-mistakes">Part II — The 13 common dashboard-design mistakes</h1>
+<p>The live session advised students to memorize the common mistakes. Week 13&rsquo;s recorded videos concentrate on mistakes 6–13, while the live review reconnects them to mistakes 1–5.</p>
+<h2 id="5-complete-list-at-a-glance">5. Complete list at a glance</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: right;">No.</th>
+<th>Mistake</th>
+<th>Core correction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>Exceeding a single screen</td>
+<td>Prioritize and keep the critical view visible at once</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Supplying inadequate context</td>
+<td>Add targets, history, benchmarks, and comparisons</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>Displaying excessive detail or precision</td>
+<td>Match aggregation and numeric precision to the task</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>Choosing an insufficient/deficient measure</td>
+<td>Display the measure that directly answers the question</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>Choosing inappropriate display media</td>
+<td>Match chart type to analytical purpose</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>Introducing meaningless variety</td>
+<td>Prefer consistency over variety for its own sake</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td>Using poorly designed display media</td>
+<td>Remove distraction and design the chosen medium correctly</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td>Encoding quantitative data inaccurately</td>
+<td>Use truthful scales, units, proportions, and symbols</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td>Arranging data poorly</td>
+<td>Use importance, sequence, grouping, and comparison to guide layout</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td>Highlighting important data ineffectively or not at all</td>
+<td>Establish a clear visual hierarchy</td>
+</tr>
+<tr>
+<td style="text-align: right;">11</td>
+<td>Cluttering with useless decoration</td>
+<td>Remove chartjunk and ornamental pixels</td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td>Misusing or overusing color</td>
+<td>Use restrained color with explicit meaning</td>
+</tr>
+<tr>
+<td style="text-align: right;">13</td>
+<td>Designing an unattractive display</td>
+<td>Make the data presentation aesthetically clear and simple</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="6-mistakes-1-5-foundation-and-live-session-examples">6. Mistakes 1–5: foundation and live-session examples</h2>
+<h3 id="6-1-exceeding-the-boundaries-of-a-single-screen">6.1 Exceeding the boundaries of a single screen</h3>
+<p>All critical information should be visible without scrolling. Multiple pages fragment the picture and force memory-based comparison. Reduce the number of charts through objective-based prioritization.</p>
+<h3 id="6-2-supplying-inadequate-context">6.2 Supplying inadequate context</h3>
+<p>Context tells the user whether a number is good, bad, unusual, improving, or deteriorating. Add previous-period performance, targets, benchmarks, or relevant thresholds directly to the display.</p>
+<h3 id="6-3-displaying-excessive-detail-or-precision">6.3 Displaying excessive detail or precision</h3>
+<p>Precision must suit the audience and task. Greater numeric precision increases reading time.</p>
+<ul>
+<li>An executive may need financial figures rounded to the nearest ten thousand, hundred thousand, or million.</li>
+<li>An accounting manager may need every rupee and paisa.</li>
+</ul>
+<p>Aggregation also needs care: summaries reduce cognitive burden, but excessive aggregation can hide local patterns, anomalies, segments, or short-term changes.</p>
+<h3 id="6-4-choosing-an-insufficient-or-deficient-measure">6.4 Choosing an insufficient or deficient measure</h3>
+<p>The displayed measure must directly represent the business question.</p>
+<p><strong>Example—trade gap:</strong> If the question concerns the gap between imports and exports, two separate import/export lines make the viewer estimate vertical distance. Calculate the difference and plot the gap or deficiency itself.</p>
+<p><strong>Example—sales meeting:</strong> If managers discuss weekly or zone-wise sales differences, monthly or yearly totals are at the wrong level of granularity.</p>
+<h3 id="6-5-choosing-inappropriate-display-media">6.5 Choosing inappropriate display media</h3>
+<p>Chart type follows purpose:</p>
+<ul>
+<li>compare categories → bar, clustered bar, or stacked bar as appropriate;</li>
+<li>study change or trend over time → line chart;</li>
+<li>study distribution → histogram;</li>
+<li>show exact lookup values → text/table;</li>
+<li>show overall patterns and relationships → graph.</li>
+</ul>
+<p>Do not select a pie, donut, line, or 3D chart merely because recent displays used bars.</p>
+<h2 id="7-mistake-6-introducing-meaningless-variety">7. Mistake 6 — Introducing meaningless variety</h2>
+<p>Designers sometimes avoid repeating the same chart because they fear sameness will bore viewers. Variety may enrich life, but arbitrary variety weakens a dashboard.</p>
+<p>Always choose the medium that works best, even if the dashboard contains several instances of the same graph. Users who urgently need the information will not be bored by consistent displays. They will, however, be aggravated if arbitrary variety makes them work harder.</p>
+<p>Consistency lets users reuse the same <strong>perceptual strategy</strong>, saving time and mental energy.</p>
+<p><strong>Bad example:</strong> A dashboard combines a bubble chart, donut chart, bar-line combination chart, bar chart, and colorful table. Each object demands a new interpretive strategy, creating a visual jumble.</p>
+<p><strong>Exam point:</strong> Variety is justified only when differences in the data or message require different media—not for entertainment, cuteness, or novelty.</p>
+<h2 id="8-mistake-7-using-poorly-designed-display-media">8. Mistake 7 — Using poorly designed display media</h2>
+<p>Choosing the correct chart category is not sufficient. Its components must also communicate clearly, efficiently, and without distraction.</p>
+<h3 id="8-1-poor-pie-chart-design">8.1 Poor pie-chart design</h3>
+<p>In the example showing revenue divided among six states:</p>
+<ul>
+<li>a bar chart would have supported comparison better;</li>
+<li>a separate legend forced the eyes to move repeatedly between legend and slices;</li>
+<li>direct labels would reduce effort;</li>
+<li>random slice/legend order hid ranking information;</li>
+<li>ordering values by size would allow ranking to be assimilated instantly;</li>
+<li>bright slice colors produced sensory overkill;</li>
+<li>strong color should be reserved for data requiring emphasis.</li>
+</ul>
+<h3 id="8-2-gridlines-patterns-3d-and-meaningless-color">8.2 Gridlines, patterns, 3D, and meaningless color</h3>
+<p>Prominent gridlines and a patterned background of colored rectangles distract from the data and make its shape harder to see. A 3D effect adds no value and makes bar values harder to interpret.</p>
+<p>Different bar colors must encode a real distinction. If every bar is already directly labeled and color does not identify a category or condition, the differences attract attention and make the viewer search for meaning that does not exist.</p>
+<p>If values are printed on bars, heavy gridlines, axis values, and sometimes even the axis itself may be redundant. A good title, direct labels, and targeted annotations can make a legend unnecessary.</p>
+<h3 id="8-3-arrange-paired-values-for-comparison">8.3 Arrange paired values for comparison</h3>
+<p>In an actual-versus-budget chart for four regions, all actual bars were placed on one side and all budget bars on the other. Although the colors had meaning, the layout defeated the main task. Actual and budget for each region should be adjacent.</p>
+<h3 id="8-4-problems-with-gauges-and-physical-metaphors">8.4 Problems with gauges and physical metaphors</h3>
+<p>Three meter-like displays imitated an automobile dashboard:</p>
+<ul>
+<li>odometer-style numbers omitted commas separating groups of three digits, making thousands and millions harder to distinguish;</li>
+<li>numeric scales were inside the dial;</li>
+<li>the needle could cover a scale number;</li>
+<li>the displayed amount could obscure the needle near the top or bottom of the scale;</li>
+<li>much space was used to imitate a physical object rather than communicate efficiently.</li>
+</ul>
+<p>A display can look realistic and attractive yet fail its information objective. Even if a third dimension is intended to encode another variable, 3D views commonly introduce occlusion and difficult judgments.</p>
+<h2 id="9-mistake-8-encoding-quantitative-data-inaccurately">9. Mistake 8 — Encoding quantitative data inaccurately</h2>
+<p>Graphical encoding must preserve truthful magnitude.</p>
+<h3 id="truncated-bar-axis-example">Truncated bar-axis example</h3>
+<p>Revenue and cost bars for January visually suggested that revenue was more than four times cost. The true values showed revenue was less than twice cost. The vertical axis began at 500,000 instead of zero.</p>
+<p>Because bar length encodes quantity, bar charts should start at zero. Changing the baseline changes visible length and creates a false ratio.</p>
+<p>Other accuracy requirements:</p>
+<ul>
+<li>identify percentages and proportional values correctly;</li>
+<li>state whether the unit is rupees, dollars, thousands, lakhs, or millions;</li>
+<li>avoid an ambiguous number such as <code>6.5</code> without units or scale;</li>
+<li>use correct symbols and consistent quantitative scales;</li>
+<li>do not let perspective, area, or volume exaggerate differences.</li>
+</ul>
+<h2 id="10-mistake-9-arranging-data-poorly">10. Mistake 9 — Arranging data poorly</h2>
+<p>Dashboard layout must fit how the information is used. Good arrangement includes:</p>
+<ul>
+<li>placement according to importance;</li>
+<li>a deliberate viewing sequence;</li>
+<li>meaningful grouping without fragmentation;</li>
+<li>proximity for items that must be compared;</li>
+<li>ordering, such as ascending or descending values, when users need highest/lowest comparisons;</li>
+<li>prominent treatment for urgent exceptions.</li>
+</ul>
+<p>The goal is not simply to make the dashboard look good. The most important data should be prominent, immediate-attention data should stand out, and comparable data should be placed and designed to encourage comparison.</p>
+<h3 id="screen-real-estate-and-visual-sequence">Screen real estate and visual sequence</h3>
+<ul>
+<li>The <strong>upper-left</strong> is highly prominent under left-to-right, top-to-bottom reading conventions.</li>
+<li>The <strong>center</strong> is also strongly prominent because of basic visual perception.</li>
+<li>The <strong>lower-right</strong> is generally least prominent.</li>
+</ul>
+<p>In the poor example, a vendor name and logo occupied the upper-left, wasting prime space. An average-order-size gauge then received early attention even though it was unlikely to be the primary concern. At the bottom, large explanatory text drew attention to tangential content. The design lacked balance and an appropriate visual sequence.</p>
+<h2 id="11-mistake-10-highlighting-important-data-ineffectively-or-not-at-all">11. Mistake 10 — Highlighting important data ineffectively or not at all</h2>
+<p>A viewer&rsquo;s eyes should immediately move to the most important information, even if that information is not naturally located in the most prominent region.</p>
+<p>If everything is bold, colorful, bordered, and visually prominent, nothing stands out. In the example:</p>
+<ul>
+<li>many buttons/tabs on the left were emphasized even though they were controls, not data;</li>
+<li>hardware, software, peripheral, image, and photo items all received emphasis;</li>
+<li>all graphs were equally bold and colorful;</li>
+<li>strong borders surrounded everything.</li>
+</ul>
+<p>The result was a “wash of sameness” with no clear focus. Everything on a dashboard should be important enough to deserve space, but not everything is equally important.</p>
+<p><strong>Practical use case:</strong> For a sudden COVID-related event in a time series, use a concise annotation and arrow to ensure the audience does not miss the change.</p>
+<h2 id="12-mistake-11-cluttering-the-display-with-useless-decorations">12. Mistake 11 — Cluttering the display with useless decorations</h2>
+<p>Decorations are sometimes added to entertain viewers or make a dashboard seem artistic. Even if initially appealing, they quickly become tiring and continue to consume attention and space.</p>
+<p>Examples of useless decoration:</p>
+<ul>
+<li>thick borders;</li>
+<li>shadows;</li>
+<li>reflections;</li>
+<li>gradients;</li>
+<li>decorative spirals designed to resemble a spiral-bound notebook;</li>
+<li>ornamental images or shapes;</li>
+<li>3D effects with no data meaning.</li>
+</ul>
+<p>Such elements are visual content the viewer must process before reaching the data. This is commonly called <strong>chartjunk</strong>.</p>
+<h2 id="13-mistake-12-misusing-or-overusing-color">13. Mistake 12 — Misusing or overusing color</h2>
+<p>Color must be chosen with knowledge of perception and with meaningful differences.</p>
+<p>Key rules:</p>
+<ul>
+<li>reserve bold, bright, fully saturated colors for exceptional or specially important cases;</li>
+<li>if everything is brightly colored, color loses its highlighting function;</li>
+<li>use calm, natural palettes—soft grays, browns, greens, and blues—as standard colors;</li>
+<li>muted palettes allow relaxed, open scanning rather than stressful pinpoint focus;</li>
+<li>ensure the design remains understandable to color-blind users;</li>
+<li>do not rely on hue alone for critical meaning—also use labels, position, weight, or another accessible cue;</li>
+<li>keep the meaning of each color consistent across the dashboard.</li>
+</ul>
+<h2 id="14-mistake-13-designing-an-unattractive-visual-display">14. Mistake 13 — Designing an unattractive visual display</h2>
+<p>Removing decoration does <strong>not</strong> mean aesthetics are irrelevant. An ugly or unpleasant dashboard makes viewers want to look away and places them in a mental state that is unfavorable to use.</p>
+<p>The solution is not to add prettiness. It is to present the <strong>data itself attractively</strong> through appropriate media, typography, spacing, alignment, restrained color, and clarity—without anything that distracts from or obscures it.</p>
+<p>Donald Norman&rsquo;s view, as applied in the lecture:</p>
+<ul>
+<li>effectiveness should be judged by how well a design works and how easy it is to use;</li>
+<li>aesthetically pleasing designs can be more enjoyable and relaxing;</li>
+<li>this can prepare users for greater insight and creative response;</li>
+<li>aesthetics can contribute to usability when not in conflict with it.</li>
+</ul>
+<p>Therefore, the choice is not <strong>aesthetics versus usability</strong> but <strong>aesthetics and usability</strong>. Information design exists to communicate an intended message so that useful understanding results. Apply aesthetic skill to the data display itself, not to distracting ornamentation.</p>
+<blockquote>
+<p>The desired aesthetic is the eloquence that emerges from simplicity.</p>
+</blockquote>
+<hr>
+<h1 id="part-iii-characteristics-of-a-well-designed-dashboard">Part III — Characteristics of a well-designed dashboard</h1>
+<h2 id="15-four-broad-characteristics">15. Four broad characteristics</h2>
+<p>A well-designed dashboard presents information that is:</p>
+<ol>
+<li><strong>exceptionally well organized</strong>;</li>
+<li><strong>condensed</strong>, mainly through summaries and exceptions;</li>
+<li><strong>specific and customized</strong> to the audience and objectives; and</li>
+<li>displayed through <strong>concise, often small media</strong> that communicate the message clearly and directly.</li>
+</ol>
+<p>Only absolutely necessary information should be included. It must be condensed without losing meaning and remain readable even in the small spaces typical of dashboards.</p>
+<h2 id="16-summaries-and-exceptions">16. Summaries and exceptions</h2>
+<h3 id="16-1-summarization">16.1 Summarization</h3>
+<p>Summarization is a process of reduction: a large, sometimes very large, set of numbers is represented by a smaller set or even a single number.</p>
+<p>Common dashboard summaries:</p>
+<ul>
+<li>sums;</li>
+<li>averages;</li>
+<li>occasionally measures of distribution;</li>
+<li>occasionally correlations.</li>
+</ul>
+<p>Sums and averages are most common; distribution and correlation measures are comparatively rare.</p>
+<h3 id="16-2-exceptions">16.2 Exceptions</h3>
+<p>Monitoring often requires attention only when something unusual occurs—a problem, opportunity, or operational condition outside normality. Rather than forcing the user to inspect hundreds of ordinary values, highlight the one or two <strong>critical-value exceptions</strong>.</p>
+<p>Summaries answer “What is the overall state?” Exceptions answer “What needs attention now?”</p>
+<h3 id="caveat-aggregation-can-hide-meaning">Caveat: aggregation can hide meaning</h3>
+<p>Aggregation reduces cognitive burden and improves overview, but excessive aggregation can conceal:</p>
+<ul>
+<li>regional or customer-segment differences;</li>
+<li>short-lived spikes or declines;</li>
+<li>outliers;</li>
+<li>distribution shape;</li>
+<li>opposing trends that cancel in the total.</li>
+</ul>
+<p>Use the highest level of detail necessary for the decision—not the highest detail available and not a summary so broad that it hides the issue.</p>
+<h2 id="17-customization-to-audience-and-objective">17. Customization to audience and objective</h2>
+<p>The best dashboard targets information needs related to a specific objective or set of objectives.</p>
+<p>Customization includes:</p>
+<ul>
+<li><strong>vocabulary:</strong> use terms the audience understands;</li>
+<li><strong>representation:</strong> do not show a linear correlation coefficient to users who cannot interpret it when a familiar graph would work better;</li>
+<li><strong>time granularity:</strong> sales managers who think in weeks should not receive only monthly breakdowns;</li>
+<li><strong>precision:</strong> executives and accountants require different numeric detail;</li>
+<li><strong>preferences and tasks:</strong> choose the display users can interpret efficiently.</li>
+</ul>
+<h2 id="18-selecting-dashboard-display-media">18. Selecting dashboard display media</h2>
+<p>The medium should say exactly what the dashboard needs to say:</p>
+<ul>
+<li>directly;</li>
+<li>clearly;</li>
+<li>without distraction;</li>
+<li>with maximum meaning in minimum space.</li>
+</ul>
+<p>A gauge, thermometer, traffic signal, or automobile metaphor is acceptable only if it passes those tests. “Cute” displays are counterproductive when another method communicates better; novelty fades, while efficiency and effectiveness remain.</p>
+<p>Two fundamental selection principles:</p>
+<ol>
+<li>The medium must be the best way to display that particular type of information.</li>
+<li>It must continue to work when reduced to the small size characteristic of dashboards.</li>
+</ol>
+<p>The final choice depends on:</p>
+<ul>
+<li>nature of the information;</li>
+<li>nature of the intended message;</li>
+<li>needs and preferences of the audience.</li>
+</ul>
+<p>A dashboard may legitimately use several media because it contains different kinds of information, but each must be matched to its data—not introduced for arbitrary variety.</p>
+<hr>
+<h1 id="part-iv-text-tables-and-graphs">Part IV — Text, tables, and graphs</h1>
+<h2 id="19-strengths-and-limitations">19. Strengths and limitations</h2>
+<h3 id="text-and-numbers">Text and numbers</h3>
+<p>Verbal language is processed <strong>serially</strong>, one word at a time. People read at different speeds, but language remains serial, especially for quantitative information.</p>
+<p>Its key advantage is <strong>precision</strong>. If the sole goal is to communicate year-to-date expenses of ₹4,87,321 exactly, a number with a label may be ideal.</p>
+<p>Text can be enriched with:</p>
+<ul>
+<li>an evaluative statement such as “higher than target”;</li>
+<li>target value;</li>
+<li>absolute variance;</li>
+<li>percentage variance;</li>
+<li>good/bad or attention-needed indication.</li>
+</ul>
+<p>If only exceptional measures receive the emphasis, users—including color-blind users, when non-color cues are used—can identify what needs attention.</p>
+<h3 id="tables">Tables</h3>
+<p>Tables are excellent for <strong>lookup</strong> and exact values. Examples include bus schedules, tax-rate tables, and a book index. In the lecture example, the September 2019 value of 164.1 could be found precisely.</p>
+<p>Tables are poor at revealing the overall shape of a sequence or trend. Determining how values move from January to December requires slow, item-by-item comparison.</p>
+<h3 id="graphs">Graphs</h3>
+<p>Graphs are superior for patterns, trends, relationships, comparisons, and the “big picture.” They are generally less precise than tables for exact lookup.</p>
+<p>William Playfair, a British social scientist in the late eighteenth century, invented several graph forms still used today. By giving numbers shape through grid coordinates on two axes, graphs dramatically expanded quantitative thinking. Their strength is that they bring patterns to light that might otherwise remain undetected.</p>
+<h2 id="20-text-based-dashboard-example-and-redesign">20. Text-based dashboard example and redesign</h2>
+<p>In a predominantly text-based dashboard:</p>
+<ul>
+<li>each measure was isolated;</li>
+<li>comparisons were difficult;</li>
+<li>the only broad impression came from red and yellow boxes;</li>
+<li>a non-color-blind viewer could infer that much was wrong, but little beyond that;</li>
+<li>color-blind users could miss the signal.</li>
+</ul>
+<p>A redesign placed measures in a table and replaced red/yellow/green coding with bold black and gray text. This improved scanning and accessibility for lookup, but did not create new pattern-level meaning.</p>
+<h2 id="21-the-correct-answer-combine-text-and-graphics">21. The correct answer: combine text and graphics</h2>
+<p>An effective dashboard normally blends text and graphics to obtain both:</p>
+<ul>
+<li>rich, meaningful pattern recognition; and</li>
+<li>the required level of quantitative precision.</li>
+</ul>
+<p>For every measure or related set of measures, ask:</p>
+<ol>
+<li>What does the viewer need?</li>
+<li>How will the data be used?</li>
+<li>What message must the data convey?</li>
+<li>Does the task require exact lookup, pattern recognition, or both?</li>
+</ol>
+<p>Then select text, graph, or a combination accordingly.</p>
+<hr>
+<h1 id="part-v-data-ink-ratio-and-visual-design-process">Part V — Data-ink ratio and visual-design process</h1>
+<h2 id="22-data-ink-ratio">22. Data-ink ratio</h2>
+<p>Edward R. Tufte introduced the concept in <em>The Visual Display of Quantitative Information</em> (1983).</p>
+<h3 id="definitions">Definitions</h3>
+<ul>
+<li><strong>Data ink:</strong> the non-erasable core of a graphic—the marks that represent its data or information.</li>
+<li><strong>Non-data ink:</strong> visual content that does not itself represent data.</li>
+<li><strong>Data-ink ratio:</strong></li>
+</ul>
+<p>\[
+\text{Data-ink ratio} = \frac{\text{data ink}}{\text{total ink used in the graphic}}
+\]</p>
+<p>It is the proportion devoted to the non-redundant display of data. Equivalently, it relates to one minus the proportion that could be erased without losing data information.</p>
+<p>Tufte&rsquo;s design principle is to <strong>maximize the data-ink ratio within reason</strong>. Every mark should have a reason, and that reason should usually be to communicate new information.</p>
+<p>For screen dashboards, replace <strong>ink</strong> with <strong>pixel</strong>. Non-data pixels, excluding the blank background, should be reduced to a reasonable minimum.</p>
+<h2 id="23-goal-1-reduce-unnecessary-non-data-pixels">23. Goal 1 — Reduce unnecessary non-data pixels</h2>
+<p>Dashboard development is iterative:</p>
+<ol>
+<li>create a mock-up;</li>
+<li>evaluate it;</li>
+<li>redesign;</li>
+<li>evaluate again;</li>
+<li>repeat until the dashboard works.</li>
+</ol>
+<p>Experience reduces the number of iterations, but the search for unnecessary non-data pixels remains useful at every skill level.</p>
+<p>Common removable elements:</p>
+<ul>
+<li>color variations that encode nothing;</li>
+<li>borders around sections where whitespace would separate them;</li>
+<li>title, data-region, or legend fills where a neutral background works;</li>
+<li>gradients where solid color works;</li>
+<li>unnecessary gridlines in graphs and tables;</li>
+<li>alternating row bands when whitespace is sufficient;</li>
+<li>complete borders around graphs when one horizontal and one vertical axis line are enough;</li>
+<li>3D effects whose third dimension represents no variable;</li>
+<li>features that merely imitate a physical object or make the display ornate.</li>
+</ul>
+<h2 id="24-goal-2-de-emphasize-and-regularize-necessary-non-data-pixels">24. Goal 2 — De-emphasize and regularize necessary non-data pixels</h2>
+<p>Not every non-data pixel can be removed. Some support structure, organization, legibility, navigation, and selection.</p>
+<p>Potentially useful non-data elements:</p>
+<ul>
+<li>axis lines defining a data region;</li>
+<li>lines, borders, or fills separating tightly packed sections;</li>
+<li>gridlines needed for effective reading;</li>
+<li>alternating row fills when whitespace cannot adequately separate rows;</li>
+<li>navigation and data-selection controls.</li>
+</ul>
+<p>Make these elements <strong>just visible enough</strong> to do their job:</p>
+<ul>
+<li>use light, low-saturation colors such as light gray;</li>
+<li>use thin strokes;</li>
+<li>keep similar structural elements consistent;</li>
+<li>do not vary color, weight, or shape when elements serve the same purpose.</li>
+</ul>
+<p>Differences attract notice even when muted. Regularity makes structural elements recede, allowing attention to remain on data. The best dashboard design is almost invisible.</p>
+<h3 id="controls-and-instructions">Controls and instructions</h3>
+<p>Buttons, sliders, and selection boxes can serve important functions but are not data. They should not compete with data for attention. Place necessary controls in an out-of-the-way area, such as the lower-right corner, and mute them visually.</p>
+<p>Long instructions and descriptions also take space and attract attention. Put most explanatory material on a separate, easily accessible screen unless it is essential to interpreting the current display.</p>
+<h2 id="25-goal-3-enhance-data-pixels">25. Goal 3 — Enhance data pixels</h2>
+<p>The lecture describes enhancement through two sequential actions:</p>
+<ol>
+<li>eliminate unnecessary data pixels/information; and</li>
+<li>highlight the most important data that remains.</li>
+</ol>
+<p>Use “What does the user really need for the task?” as the strict selection criterion. Removing irrelevant information automatically increases the focus on what remains. Reduction can occur through outright removal or through summaries and exceptions.</p>
+<h2 id="26-static-and-dynamic-emphasis">26. Static and dynamic emphasis</h2>
+<p>Important information falls into two categories:</p>
+<ol>
+<li><strong>Always important:</strong> key measures the audience usually cares about most.</li>
+<li><strong>Important only now:</strong> an unusual shortfall, emerging opportunity, or operational condition requiring immediate attention.</li>
+</ol>
+<p>They need different treatment:</p>
+<ul>
+<li>always-important information → <strong>static emphasis</strong>, especially stable screen position;</li>
+<li>momentarily important information → <strong>dynamic emphasis</strong>, such as conditional color, alert markers, or annotations.</li>
+</ul>
+<p>Layout should not jump dynamically because users learn where to find measures. Stable location improves scanning.</p>
+<p>Place always-important information in the upper-left or center. Never waste these areas on logos, navigation controls, or selection widgets.</p>
+<hr>
+<h1 id="part-vi-matplotlib-and-jupyter-notebook-practice">Part VI — Matplotlib and Jupyter Notebook practice</h1>
+<h2 id="27-libraries-modules-and-components">27. Libraries, modules, and components</h2>
+<p>The live class reviewed the Python structure:</p>
+<ul>
+<li>Python provides the environment;</li>
+<li>libraries contain modules;</li>
+<li>modules contain components such as functions, classes, variables, and constants;</li>
+<li>these are prewritten, tested code that can be reused.</li>
+</ul>
+<p>You may import a complete library or only the required module. A square-root function illustrates reuse: pass an argument, let the tested function perform its job, and receive the result.</p>
+<p>The instructor planned to share a PDF of the notebook rather than the <code>.ipynb</code> file so students would type the code themselves. The emphasis was that skill comes from reproducing and experimenting, not merely reading.</p>
+<h2 id="28-jupyter-notebook-execution">28. Jupyter Notebook execution</h2>
+<ul>
+<li>Run a cell with <strong>Ctrl+Enter</strong> or <strong>Shift+Enter</strong>.</li>
+<li>The number in square brackets records the order in which a cell was executed.</li>
+<li>An asterisk <code>[*]</code> means the cell is still executing.</li>
+<li>After execution completes, an execution number appears.</li>
+</ul>
+<p>The simple starting example was <code>print("Hello World")</code>.</p>
+<h2 id="29-importing-pyplot-and-making-a-basic-plot">29. Importing Pyplot and making a basic plot</h2>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+
+plt.plot(x, y)
+plt.show()
+</code></pre>
+<p>Pyplot&rsquo;s basic line color is blue by default and there may be no markers unless specified.</p>
+<pre><code class="language-python">plt.plot(x, y, color=&quot;r&quot;, marker=&quot;o&quot;)
+</code></pre>
+<p>This changes the line to red and uses circular markers. A square marker can be requested with <code>marker="s"</code>. Students were encouraged to try different markers and colors, including magenta and cyan, observe valid options, and learn from error messages when an option is invalid.</p>
+<h2 id="30-direct-and-object-oriented-approaches">30. Direct and object-oriented approaches</h2>
+<p>Matplotlib offers:</p>
+<ul>
+<li>a direct/Pyplot approach; and</li>
+<li>an object-oriented approach.</li>
+</ul>
+<p>The object-oriented approach creates figure and axes objects and assigns properties through those objects.</p>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 2, 100)
+fig, ax = plt.subplots()
+
+ax.plot(x, x, label=&quot;linear&quot;)
+ax.plot(x, x**2, label=&quot;quadratic&quot;)
+ax.plot(x, x**3, label=&quot;cubic&quot;)
+
+ax.set_title(&quot;Linear, Quadratic, and Cubic Functions&quot;)
+ax.set_xlabel(&quot;x&quot;)
+ax.set_ylabel(&quot;y&quot;)
+ax.legend()
+plt.show()
+</code></pre>
+<p><code>np.linspace(0, 2, 100)</code> creates 100 evenly spaced values from 0 to 2. The three lines share the same axes. Default colors appeared as blue, orange, and green; colors can be set explicitly, for example red for linear, magenta for quadratic, and green for cubic.</p>
+<h2 id="31-aesthetic-manipulation-as-a-visualization-skill">31. Aesthetic manipulation as a visualization skill</h2>
+<p>Students should learn how to:</p>
+<ul>
+<li>change colors and markers;</li>
+<li>add title, x-label, y-label, and legend;</li>
+<li>remove unnecessary enclosing box/spines;</li>
+<li>remove unneeded axis numbers or axes;</li>
+<li>reduce redundant pixels;</li>
+<li>add targeted annotations.</li>
+</ul>
+<p>Knowing visualization theory is not enough if the implementation tool cannot be controlled accordingly. If a surrounding box is unnecessary, the practitioner must know how to remove it.</p>
+<h3 id="annotation">Annotation</h3>
+<p>An annotation directs the audience to a point that must not be missed. It commonly combines an arrow and short explanatory text. Use it for a significant event, turning point, anomaly, or contextual cause—not as general decoration.</p>
+<p><strong>Practical example:</strong> Label the point where a policy change, campaign launch, or COVID disruption caused a sharp movement in the series.</p>
+<hr>
+<h1 id="part-vii-related-perceptual-and-information-design-concepts">Part VII — Related perceptual and information-design concepts</h1>
+<h2 id="32-chartjunk">32. Chartjunk</h2>
+<p><strong>Chartjunk</strong> means visual elements that do not improve understanding of the data. Examples include unnecessary 3D effects, ornamental icons, decorative borders, shadows, gradients, textures, and background art.</p>
+<p>Chartjunk:</p>
+<ul>
+<li>consumes attention;</li>
+<li>lowers the effective data-ink ratio;</li>
+<li>increases cognitive load;</li>
+<li>may distort perception;</li>
+<li>competes with the message.</li>
+</ul>
+<p>The test is not “Does it look attractive?” but “Does it improve comprehension, structure, or usability enough to justify its presence?”</p>
+<h2 id="33-visual-hierarchy">33. Visual hierarchy</h2>
+<p>Visual hierarchy guides the viewer through information in the intended order. It is created through:</p>
+<ul>
+<li>location;</li>
+<li>size;</li>
+<li>contrast;</li>
+<li>color saturation;</li>
+<li>typography;</li>
+<li>whitespace;</li>
+<li>grouping;</li>
+<li>annotation.</li>
+</ul>
+<p>A hierarchy should reflect business importance, not the designer&rsquo;s desire to fill space. Strong emphasis should be scarce; otherwise it ceases to function.</p>
+<h2 id="34-consistency-and-cognitive-load">34. Consistency and cognitive load</h2>
+<p>Consistency in chart forms, axis treatment, colors, labels, and layout allows learned perceptual strategies to be reused. Inconsistency makes the viewer repeatedly decode the display.</p>
+<p>Cognitive load rises when users must:</p>
+<ul>
+<li>remember information hidden by scrolling;</li>
+<li>translate between unrelated chart types;</li>
+<li>match legends to distant marks;</li>
+<li>perform avoidable calculations;</li>
+<li>search for the meaning of arbitrary colors;</li>
+<li>distinguish decoration from data;</li>
+<li>infer missing context.</li>
+</ul>
+<p>Good design externalizes these tasks so the user can focus on interpretation and decision-making.</p>
+<h2 id="35-information-density">35. Information density</h2>
+<p>High information density is not automatically bad. A dashboard can contain substantial information if it is well organized, relevant, visually quiet, and readable. The problem is clutter: poorly structured or unnecessary content.</p>
+<p>The aim is <strong>maximum useful meaning per unit of space</strong>, not simply maximum data or minimum content.</p>
+<h2 id="36-sketchy-versus-precise-visual-styles">36. Sketchy versus precise visual styles</h2>
+<p>A crisp digital rendering can imply accuracy, finality, and authority. A sketch-like style can signal that a design or idea is provisional and invite discussion or revision.</p>
+<p>Possible uses of sketchy presentation include early prototypes, brainstorming, participatory design, and eliciting feedback. A polished style is more appropriate when measures are final, operational, and must be read precisely.</p>
+<p>The style changes how viewers perceive the status of the information; it should therefore match the communication objective.</p>
+<hr>
+<h1 id="part-viii-brightmart-analytical-dashboard-case-study">Part VIII — BrightMart analytical-dashboard case study</h1>
+<h2 id="37-business-setting">37. Business setting</h2>
+<p>BrightMart is an e-commerce business using a dashboard to understand site traffic, engagement, and purchase behavior. Stakeholders include:</p>
+<ul>
+<li><strong>Alex:</strong> concerned with overall business performance and the decision process;</li>
+<li><strong>Priya (Marketing):</strong> concerned with acquisition, traffic quality, campaign performance, and whether visitors are the right audience;</li>
+<li><strong>Jamal (Product):</strong> concerned with product discovery, the customer journey, and friction within the purchase process.</li>
+</ul>
+<p>Their perspectives are complementary. A strong decision requires shared interpretation rather than assuming one metric or one stakeholder already has the answer.</p>
+<h2 id="38-core-kpis">38. Core KPIs</h2>
+<h3 id="number-of-visitors">Number of visitors</h3>
+<p>Measures traffic volume or reach. Growth can mean successful acquisition, but it does not prove commercial success. Traffic may be irrelevant or low quality.</p>
+<h3 id="number-of-orders">Number of orders</h3>
+<p>A direct outcome measure, but it needs context: traffic, conversion rate, product mix, period, and customer segment.</p>
+<h3 id="registered-visitors">Registered visitors</h3>
+<p>Indicates users who have created accounts. Registration may signal stronger intent or relationship potential, but does not guarantee purchase.</p>
+<h3 id="product-views">Product views</h3>
+<p>Shows interest and discovery activity. High product views with weak orders suggests a gap between interest and purchase behavior.</p>
+<h2 id="39-metric-relationships">39. Metric relationships</h2>
+<p>Metrics should be interpreted as a system:</p>
+<p>\[
+\text{Visitors} \rightarrow \text{Product views} \rightarrow \text{Cart/checkout actions} \rightarrow \text{Orders}
+\]</p>
+<p>Supporting behaviors such as registration, session duration, and bounce rate help explain movement between stages.</p>
+<p>Possible interpretations:</p>
+<ul>
+<li>visitors up, orders up proportionally → acquisition and conversion may both be healthy;</li>
+<li>visitors up, orders flat → traffic quality or conversion problem;</li>
+<li>product views up, orders flat/down → interest exists, but product, price, trust, stock, usability, cart, checkout, or delivery friction may block purchase;</li>
+<li>registered visitors up, orders flat → registration succeeds but later stages need investigation;</li>
+<li>orders down while traffic is stable → investigate the funnel and operational/product factors before simply acquiring more traffic.</li>
+</ul>
+<p>Correlation between metrics does not by itself establish causation.</p>
+<h2 id="40-time-granularity">40. Time granularity</h2>
+<h3 id="daily-metrics">Daily metrics</h3>
+<p>Useful for operational monitoring, sudden spikes, outages, campaign effects, day-of-week patterns, and immediate anomalies. Daily values can be noisy.</p>
+<h3 id="monthly-metrics">Monthly metrics</h3>
+<p>Useful for strategic direction, seasonality, sustained change, and management reporting. Monthly aggregation can hide short-duration problems.</p>
+<p>Contradictory daily and monthly patterns are not necessarily errors. A few recent bad days may coexist with a healthy month, or a monthly average may hide a serious short-lived incident. Align granularity with the question and investigate both when they disagree.</p>
+<h2 id="41-missing-diagnostic-metrics">41. Missing diagnostic metrics</h2>
+<h3 id="bounce-rate">Bounce rate</h3>
+<p>The proportion of visits that end without meaningful further interaction, subject to the analytics system&rsquo;s exact definition.</p>
+<p>It can indicate:</p>
+<ul>
+<li>mismatch between campaign promise and landing page;</li>
+<li>irrelevant or low-quality traffic;</li>
+<li>slow loading;</li>
+<li>confusing design;</li>
+<li>weak content or product relevance;</li>
+<li>technical problems.</li>
+</ul>
+<p>Bounce rate alone is not a full diagnosis. Interpret by source, landing page, device, campaign, new/returning user, and intent.</p>
+<h3 id="session-duration">Session duration</h3>
+<p>Measures time spent in a session. Longer is not automatically better: it may mean engagement or difficulty. Shorter is not automatically worse: users may complete a task efficiently.</p>
+<p>Interpret duration with page flow, outcomes, conversion, and task type.</p>
+<h2 id="42-dashboard-versus-external-analytics-and-drill-down">42. Dashboard versus external analytics and drill-down</h2>
+<p>The dashboard signals where attention is required. Detailed analytics can then segment by:</p>
+<ul>
+<li>channel or campaign;</li>
+<li>landing page;</li>
+<li>device/browser;</li>
+<li>geography;</li>
+<li>product/category;</li>
+<li>new versus returning users;</li>
+<li>registered versus unregistered users;</li>
+<li>checkout step;</li>
+<li>time period.</li>
+</ul>
+<p>This drill-down converts a broad symptom into a more precise hypothesis. The dashboard is therefore a <strong>launch pad</strong>, not the entire investigation.</p>
+<h2 id="43-funnel-analysis">43. Funnel analysis</h2>
+<p>A purchase funnel examines stage-by-stage movement, for example:</p>
+<ol>
+<li>visit;</li>
+<li>product view;</li>
+<li>add to cart;</li>
+<li>begin checkout;</li>
+<li>payment step;</li>
+<li>completed order.</li>
+</ol>
+<p>For each transition, calculate continuation and drop-off rates. The stage with the largest meaningful loss is a priority for investigation, but consider traffic volume and business impact—not percentage alone.</p>
+<h3 id="bounce-rate-versus-funnel-analysis">Bounce rate versus funnel analysis</h3>
+<ul>
+<li><strong>Bounce rate</strong> focuses primarily on early exit or lack of engagement.</li>
+<li><strong>Funnel analysis</strong> locates loss across the multi-step journey.</li>
+</ul>
+<p>They answer different questions and should be used together. Start with the stage most likely implicated by the observed pattern.</p>
+<h2 id="44-conversion-analysis">44. Conversion analysis</h2>
+<p>Basic conversion rate:</p>
+<p>\[
+\text{Conversion rate} = \frac{\text{Orders}}{\text{Visitors}} \times 100
+\]</p>
+<p>Useful variants include product-view-to-cart, cart-to-checkout, checkout-to-order, and registered-user conversion.</p>
+<p>Do not rely only on totals. Segment conversion rates to avoid hiding different behaviors. A rising total may result from more visitors even while conversion efficiency falls.</p>
+<h2 id="45-decision-alternatives-and-sequence">45. Decision alternatives and sequence</h2>
+<p>Possible responses include:</p>
+<ul>
+<li>increase marketing to acquire more visitors;</li>
+<li>improve targeting or landing-page alignment;</li>
+<li>improve product pages and product discovery;</li>
+<li>fix cart, checkout, payment, or delivery friction;</li>
+<li>adjust product assortment, pricing, promotions, or stock;</li>
+<li>investigate technical performance by device/browser.</li>
+</ul>
+<p>Do not jump immediately to a favored action. A disciplined sequence is:</p>
+<ol>
+<li>confirm the metric definitions and data quality;</li>
+<li>identify the abnormal relationship or funnel stage;</li>
+<li>segment the data;</li>
+<li>form competing hypotheses;</li>
+<li>collect supporting qualitative/quantitative evidence;</li>
+<li>prioritize by expected impact, confidence, and effort;</li>
+<li>test the intervention;</li>
+<li>monitor downstream and guardrail metrics.</li>
+</ol>
+<h2 id="46-a-b-testing">46. A/B testing</h2>
+<p>An A/B test compares a control with a variant while changing a defined element, such as a product-page call to action, registration flow, checkout step, or landing-page message.</p>
+<p>Good practice:</p>
+<ul>
+<li>state a clear hypothesis before the test;</li>
+<li>randomly assign comparable users;</li>
+<li>define the primary metric and guardrails;</li>
+<li>run for an adequate period/sample;</li>
+<li>account for business cycles and novelty effects;</li>
+<li>avoid changing multiple uncontrolled factors;</li>
+<li>evaluate practical as well as statistical significance;</li>
+<li>inspect whether effects differ by important segment.</li>
+</ul>
+<p>A/B testing follows diagnosis. Testing random changes without identifying the likely source of friction wastes effort.</p>
+<h2 id="47-dashboard-as-a-decision-support-system">47. Dashboard as a decision-support system</h2>
+<p>A dashboard supports decisions by:</p>
+<ul>
+<li>making the current state visible;</li>
+<li>showing performance relative to context;</li>
+<li>exposing exceptions and contradictions;</li>
+<li>focusing stakeholder discussion;</li>
+<li>identifying where investigation should begin;</li>
+<li>allowing the effect of action to be monitored.</li>
+</ul>
+<p>It should not create false certainty. Strategic ambiguity is normal when several explanations fit the same metric pattern. The correct response is structured investigation, not premature conclusion.</p>
+<hr>
+<h1 id="part-ix-integrated-dashboard-design-workflow">Part IX — Integrated dashboard-design workflow</h1>
+<h2 id="48-end-to-end-procedure">48. End-to-end procedure</h2>
+<h3 id="step-1-define-objective-and-audience">Step 1: Define objective and audience</h3>
+<p>Ask: Why is the dashboard being created? For whom? What must they monitor or decide? What information is most critical?</p>
+<h3 id="step-2-select-necessary-measures">Step 2: Select necessary measures</h3>
+<p>Choose only measures that directly support the objective. Verify definitions, units, granularity, and data quality.</p>
+<h3 id="step-3-add-context">Step 3: Add context</h3>
+<p>Include targets, benchmarks, prior periods, expected ranges, and useful comparisons.</p>
+<h3 id="step-4-set-appropriate-detail">Step 4: Set appropriate detail</h3>
+<p>Choose summaries, exceptions, time grain, segmentation, and precision suited to the task and audience.</p>
+<h3 id="step-5-match-medium-to-message">Step 5: Match medium to message</h3>
+<p>Use exact text/table values for lookup, graphs for shape and comparison, and a blend when both are needed.</p>
+<h3 id="step-6-arrange-for-use">Step 6: Arrange for use</h3>
+<p>Group related items, place comparisons close together, order values when useful, and reserve upper-left/center for always-important measures.</p>
+<h3 id="step-7-establish-emphasis">Step 7: Establish emphasis</h3>
+<p>Use static location for consistently important information and dynamic visual cues for current exceptions.</p>
+<h3 id="step-8-remove-and-mute">Step 8: Remove and mute</h3>
+<p>Remove redundant data, chartjunk, arbitrary color, 3D effects, unnecessary lines, borders, legends, and instructions. Mute structural elements that must remain.</p>
+<h3 id="step-9-check-truthful-encoding">Step 9: Check truthful encoding</h3>
+<p>Verify zero baselines for bars, accurate units, consistent scales, readable labels, and the absence of misleading perspective or visual area.</p>
+<h3 id="step-10-test-and-iterate">Step 10: Test and iterate</h3>
+<p>Observe whether users can identify state, exceptions, comparisons, and next actions quickly. Redesign and retest.</p>
+<hr>
+<h1 id="part-x-likely-exam-questions-and-answer-frameworks">Part X — Likely exam questions and answer frameworks</h1>
+<h2 id="49-define-a-dashboard-and-explain-the-importance-of-a-single-screen">49. “Define a dashboard and explain the importance of a single screen.”</h2>
+<p>Start with the full definition. Explain selection, objective, consolidation, monitoring at a glance, and cognitive load caused by scrolling. Use the automobile analogy and prioritization example.</p>
+<h2 id="50-explain-meaningless-variety">50. “Explain meaningless variety.”</h2>
+<p>Define it as changing display media without a data/message reason. Explain perceptual strategy switching, extra time/effort, and consistency. Use the bubble–donut–combo–bar–table example.</p>
+<h2 id="51-discuss-poorly-designed-display-media-with-examples">51. “Discuss poorly designed display media with examples.”</h2>
+<p>Cover legend bouncing, random ordering, excessive color, strong gridlines, patterned backgrounds, 3D distortion, non-adjacent actual/budget bars, and gauge/odometer readability problems.</p>
+<h2 id="52-what-is-data-ink-ratio-how-is-it-applied-to-dashboards">52. “What is data-ink ratio? How is it applied to dashboards?”</h2>
+<p>Give Tufte attribution, definitions, formula, “maximize within reason,” pixel adaptation, removable non-data pixels, and the need to mute/regularize useful structural pixels.</p>
+<h2 id="53-compare-text-tables-and-graphs">53. “Compare text, tables, and graphs.”</h2>
+<p>Text/numbers provide precision and serial reading; tables support exact lookup; graphs reveal shape, patterns, trends, relationships, and comparisons. Effective dashboards blend them based on viewer need and message.</p>
+<h2 id="54-how-should-important-information-be-highlighted">54. “How should important information be highlighted?”</h2>
+<p>Distinguish always-important from important-now. Use stable location for the first and dynamic cues for the second. Mention upper-left/center prominence, scarcity of strong emphasis, and avoiding logos/controls in prime space.</p>
+<h2 id="55-explain-dashboard-monitoring-versus-diagnosis-using-brightmart">55. “Explain dashboard monitoring versus diagnosis using BrightMart.”</h2>
+<p>State that dashboard metrics signal symptoms. Use visitors, product views, registration, and orders to find contradictions; then drill into bounce rate, duration, funnel stages, segments, and external analytics. Form hypotheses and test them, potentially through A/B experiments.</p>
+<hr>
+<h1 id="rapid-revision-sheet">Rapid revision sheet</h1>
+<h2 id="must-memorize-definitions">Must-memorize definitions</h2>
+<ul>
+<li><strong>Dashboard:</strong> visual display of the most important information needed to achieve one or more objectives, consolidated on one screen and monitored at a glance.</li>
+<li><strong>Critical-value exception:</strong> an unusual value representing a problem or opportunity that deserves attention.</li>
+<li><strong>Data ink:</strong> non-erasable part of a graphic representing data.</li>
+<li><strong>Data-ink ratio:</strong> data ink divided by total ink; for dashboards, think data pixels divided by total meaningful pixels.</li>
+<li><strong>Chartjunk:</strong> visual content that does not improve understanding and competes with the data.</li>
+<li><strong>Conversion rate:</strong> orders divided by visitors, multiplied by 100.</li>
+</ul>
+<h2 id="thirteen-mistakes-checklist">Thirteen mistakes checklist</h2>
+<ul>
+<li>[ ] Single-screen boundary exceeded</li>
+<li>[ ] Context inadequate</li>
+<li>[ ] Detail/precision excessive</li>
+<li>[ ] Measure does not directly answer the question</li>
+<li>[ ] Display medium mismatched to purpose</li>
+<li>[ ] Variety introduced without meaning</li>
+<li>[ ] Chosen medium designed poorly</li>
+<li>[ ] Quantities encoded inaccurately</li>
+<li>[ ] Data arranged poorly</li>
+<li>[ ] Important data not highlighted effectively</li>
+<li>[ ] Useless decoration present</li>
+<li>[ ] Color misused or overused</li>
+<li>[ ] Display unattractive or unpleasant</li>
+</ul>
+<h2 id="fast-design-rules">Fast design rules</h2>
+<ul>
+<li>[ ] Begin with objective, audience, and decision.</li>
+<li>[ ] Keep only critical information.</li>
+<li>[ ] Fit the critical view on one screen.</li>
+<li>[ ] Add target, history, benchmark, and variance where needed.</li>
+<li>[ ] Use the audience&rsquo;s vocabulary, time grain, and precision.</li>
+<li>[ ] Use tables for precise lookup and graphs for patterns.</li>
+<li>[ ] Start bar-chart axes at zero.</li>
+<li>[ ] State units and scale explicitly.</li>
+<li>[ ] Put comparable items together.</li>
+<li>[ ] Sort when ranking matters.</li>
+<li>[ ] Reserve upper-left/center for always-important data.</li>
+<li>[ ] Use dynamic emphasis for exceptions.</li>
+<li>[ ] Reserve saturated color for special cases.</li>
+<li>[ ] Do not rely on color alone.</li>
+<li>[ ] Remove chartjunk and redundant components.</li>
+<li>[ ] Mute and standardize necessary non-data pixels.</li>
+<li>[ ] Keep controls low-prominence and away from prime space.</li>
+<li>[ ] Iterate: mock up, evaluate, redesign, repeat.</li>
+</ul>
+<h2 id="brightmart-investigation-checklist">BrightMart investigation checklist</h2>
+<ul>
+<li>[ ] Confirm definitions and data quality.</li>
+<li>[ ] Compare visitors, views, registrations, and orders.</li>
+<li>[ ] Examine daily and monthly granularity.</li>
+<li>[ ] Calculate conversion at each funnel transition.</li>
+<li>[ ] Check bounce rate and session duration in context.</li>
+<li>[ ] Segment by source, campaign, page, device, product, and user type.</li>
+<li>[ ] Form competing hypotheses.</li>
+<li>[ ] Prioritize by impact, confidence, and effort.</li>
+<li>[ ] A/B test a defined intervention.</li>
+<li>[ ] Monitor primary and guardrail metrics.</li>
+</ul>
+<h2 id="matplotlib-recall">Matplotlib recall</h2>
+<ul>
+<li>[ ] <code>import matplotlib.pyplot as plt</code></li>
+<li>[ ] <code>fig, ax = plt.subplots()</code> for object-oriented plotting</li>
+<li>[ ] <code>ax.plot(...)</code> for one or more series</li>
+<li>[ ] <code>ax.set_title</code>, <code>ax.set_xlabel</code>, <code>ax.set_ylabel</code>, <code>ax.legend</code></li>
+<li>[ ] use <code>color</code> and <code>marker</code> deliberately</li>
+<li>[ ] learn to remove unnecessary spines, ticks, axes, and boxes</li>
+<li>[ ] use annotations to direct attention to meaningful events</li>
+<li>[ ] run Jupyter cells with Ctrl+Enter or Shift+Enter; <code>[*]</code> means executing</li>
+</ul>
+<h2 id="one-sentence-master-answer">One-sentence master answer</h2>
+<blockquote>
+<p>A successful dashboard selects objective-critical information, condenses it into summaries and exceptions, adds enough context for evaluation, encodes it truthfully in audience-appropriate text and graphics, arranges it on one screen according to importance and comparison needs, and uses restrained, consistent aesthetics so the data—not the decoration—commands attention.</p>
+</blockquote>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<h3 id="finsight-synthesis-consistency-hierarchy-and-business-value">FinSight synthesis: consistency, hierarchy, and business value</h3>
+<p>A dashboard is a decision-support communication system, not a contest to display the most data. FinSight&rsquo;s redesign replaced random colour, unrelated charts, crowded labels, and equal prominence with stable semantic encoding, grouped KPIs, aligned reading flow, whitespace, and selective emphasis. A beautiful dashboard is not necessarily effective: <strong>function and truthful communication take precedence over decoration</strong>.</p>
+<p>The redesign creates business value through faster decisions, fewer misreadings, higher client satisfaction, greater trust, and reduced training. Numerical accuracy alone cannot rescue unreadable design, while perceptual clarity cannot legitimize misleading data or scales.</p>
+<h3 id="beyond-gestalt-as-an-industry-baseline">Beyond Gestalt as an industry baseline</h3>
+<p>Once perceptual good practice becomes standard, differentiation must come from additional value:</p>
+<ul>
+<li><strong>AI assistance:</strong> natural-language summaries, anomaly detection, automatic insights, recommendations;</li>
+<li><strong>predictive analytics:</strong> forecasting, risk prediction, scenario and trend analysis;</li>
+<li><strong>personalization:</strong> role-based executive, analyst, or client views;</li>
+<li><strong>interactivity:</strong> filters, drill-down, and what-if analysis;</li>
+<li><strong>domain expertise:</strong> industry KPIs, regulation, and actionable business interpretation; and</li>
+<li><strong>storytelling:</strong> what happened, why it happened, implications, and recommended action.</li>
+</ul>
+<p>Interactivity should use progressive disclosure: show the decision-critical overview, then permit diagnosis without overloading the initial screen.</p>
+<h3 id="review-answer-frame">Review answer frame</h3>
+<p>Define the objective and audience → choose relevant metrics and context → match chart to question → arrange through proximity/continuity → establish hierarchy/figure-ground → remove chartjunk → verify truthful encoding/accessibility → test and iterate → add analytical or interactive value only when it improves the decision.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-12.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 12: Dashboards, Dashboard Design, Grammar of…</span>
+      </a>
+      <a href="week-14.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 14: Storytelling with Data</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,2787 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Project · Week 3 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Project</span>
+      <span class="brand-title">Week 3</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html" selected>Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Business Research Process, Research Problems, and Research Approaches
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Research Planning, Theoretical Frameworks, Measurement, and Data…
+      </a>
+      <a class="is-active" href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Systematic Literature Review (SLR), Literature Review Methods,…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Theoretical Frameworks, Variables, Moderators, Mediators, and…
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Measurement Models, Scale Development, Reflective vs Formative…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Questionnaire Design, Data Collection Methods, Measurement Scales,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Research Inference, Sampling, Regression, Correlation, Mediation,…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Business Research Process — Management Problems, Research Problems,…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Jamovi Data Management, Measurement Levels, Scale Construction,…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Jamovi Factor Analysis, EFA, CFA, SEM, Validity Assessment, and…
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Regression, Mediation, Moderation, t-tests, ANOVA, and Descriptive…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Regression Modelling, Controls, Composite Indices, Moderation, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Time Series, Forecasting, and Panel Data
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        PLS-SEM — Measurement Quality, Structural Models, Controls,…
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Logistic Regression — Model Fit, Interpretation, Prediction, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Project · Week 3</p>
+        <h1 class="page-title">Systematic Literature Review (SLR), Literature Review Methods, Search Strategy, and Research Gap Identification</h1>
+        <p class="page-meta">Week 3 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-understand-existing-knowledge">1. Understand Existing Knowledge</a></li>
+      <li><a href="#2-build-a-theoretical-foundation">2. Build a Theoretical Foundation</a></li>
+      <li><a href="#3-identify-research-variables">3. Identify Research Variables</a></li>
+      <li><a href="#4-identify-research-gaps">4. Identify Research Gaps</a></li>
+      <li><a href="#definition">Definition</a></li>
+      <li><a href="#key-characteristics">Key Characteristics</a></li>
+      <li><a href="#definition-2">Definition</a></li>
+      <li><a href="#characteristics">Characteristics</a></li>
+      <li><a href="#comparison-with-slr">Comparison with SLR</a></li>
+      <li><a href="#definition-3">Definition</a></li>
+      <li><a href="#characteristics-2">Characteristics</a></li>
+      <li><a href="#identifying-main-concepts">Identifying Main Concepts</a></li>
+      <li><a href="#finding-synonyms-and-related-terms">Finding Synonyms and Related Terms</a></li>
+      <li><a href="#combining-terms-using-boolean-operators">Combining Terms Using Boolean Operators</a></li>
+      <li><a href="#correct-search-planning-sequence">Correct Search Planning Sequence</a></li>
+      <li><a href="#purpose">Purpose</a></li>
+      <li><a href="#purpose-2">Purpose</a></li>
+      <li><a href="#purpose-3">Purpose</a></li>
+      <li><a href="#purpose-4">Purpose</a></li>
+      <li><a href="#database-comparison">Database Comparison</a></li>
+      <li><a href="#1-remove-duplicates">1. Remove Duplicates</a></li>
+      <li><a href="#2-apply-inclusion-and-exclusion-criteria">2. Apply Inclusion and Exclusion Criteria</a></li>
+      <li><a href="#3-evaluate-eligible-studies">3. Evaluate Eligible Studies</a></li>
+      <li><a href="#4-extract-data">4. Extract Data</a></li>
+      <li><a href="#identifying-candidate-studies">Identifying Candidate Studies</a></li>
+      <li><a href="#evaluating-eligible-studies">Evaluating Eligible Studies</a></li>
+      <li><a href="#collecting-and-combining-evidence">Collecting and Combining Evidence</a></li>
+      <li><a href="#summarising-review-outcomes">Summarising Review Outcomes</a></li>
+      <li><a href="#why-structured-extraction-matters">Why Structured Extraction Matters</a></li>
+      <li><a href="#definition-4">Definition</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#strong-approach">Strong Approach</a></li>
+      <li><a href="#example">Example</a></li>
+      <li><a href="#1-ideal-situation">1. Ideal Situation</a></li>
+      <li><a href="#2-current-situation">2. Current Situation</a></li>
+      <li><a href="#3-consequences">3. Consequences</a></li>
+      <li><a href="#4-research-direction">4. Research Direction</a></li>
+      <li><a href="#misconception-1">Misconception 1:</a></li>
+      <li><a href="#misconception-2">Misconception 2:</a></li>
+      <li><a href="#misconception-3">Misconception 3:</a></li>
+      <li><a href="#misconception-4">Misconception 4:</a></li>
+      <li><a href="#misconception-5">Misconception 5:</a></li>
+      <li><a href="#systematic-literature-review-process">Systematic Literature Review Process</a></li>
+      <li><a href="#literature-review-helps-determine">Literature Review Helps Determine</a></li>
+      <li><a href="#search-strategy">Search Strategy</a></li>
+      <li><a href="#research-gap-identification">Research Gap Identification</a></li>
+      <li><a href="#analysis-methods">Analysis Methods</a></li>
+      <li><a href="#case-study">Case Study</a></li>
+      <li><a href="#definition-5">Definition</a></li>
+      <li><a href="#4-1-scope-limitations">4.1 Scope Limitations</a></li>
+      <li><a href="#4-2-sample-limitations">4.2 Sample Limitations</a></li>
+      <li><a href="#4-3-methodological-limitations">4.3 Methodological Limitations</a></li>
+      <li><a href="#4-4-context-limitations">4.4 Context Limitations</a></li>
+      <li><a href="#example-2">Example</a></li>
+      <li><a href="#why-sample-boundaries-matter">Why Sample Boundaries Matter</a></li>
+      <li><a href="#strategic-value-of-mentioning-this-limitation">Strategic Value of Mentioning This Limitation</a></li>
+      <li><a href="#definition-6">Definition</a></li>
+      <li><a href="#example-3">Example</a></li>
+      <li><a href="#9-1-team-diversity">9.1 Team Diversity</a></li>
+      <li><a href="#9-2-digital-collaboration-tools">9.2 Digital Collaboration Tools</a></li>
+      <li><a href="#9-3-methodological-improvements">9.3 Methodological Improvements</a></li>
+      <li><a href="#definition-7">Definition</a></li>
+      <li><a href="#purpose-5">Purpose</a></li>
+      <li><a href="#requirements">Requirements</a></li>
+      <li><a href="#definition-8">Definition</a></li>
+      <li><a href="#purpose-6">Purpose</a></li>
+      <li><a href="#1-questionnaire-instruments">1. Questionnaire Instruments</a></li>
+      <li><a href="#2-raw-data-samples">2. Raw Data Samples</a></li>
+      <li><a href="#3-supplementary-tables">3. Supplementary Tables</a></li>
+      <li><a href="#4-interview-protocols">4. Interview Protocols</a></li>
+      <li><a href="#main-report">Main Report</a></li>
+      <li><a href="#appendix">Appendix</a></li>
+      <li><a href="#why-not-include-everything-in-the-main-report">Why Not Include Everything in the Main Report?</a></li>
+      <li><a href="#focus">Focus</a></li>
+      <li><a href="#advantages">Advantages</a></li>
+      <li><a href="#limitation">Limitation</a></li>
+      <li><a href="#focus-2">Focus</a></li>
+      <li><a href="#advantages-2">Advantages</a></li>
+      <li><a href="#limitation-2">Limitation</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#advantages-3">Advantages</a></li>
+      <li><a href="#most-comprehensive-approach">Most Comprehensive Approach</a></li>
+      <li><a href="#example-4">Example</a></li>
+      <li><a href="#example-5">Example</a></li>
+      <li><a href="#definition-9">Definition</a></li>
+      <li><a href="#example-6">Example</a></li>
+      <li><a href="#benefits">Benefits</a></li>
+      <li><a href="#generalisability">Generalisability</a></li>
+      <li><a href="#internal-validity">Internal Validity</a></li>
+      <li><a href="#construct-validity">Construct Validity</a></li>
+      <li><a href="#misconception-1-2">Misconception 1:</a></li>
+      <li><a href="#misconception-2-2">Misconception 2:</a></li>
+      <li><a href="#misconception-3-2">Misconception 3:</a></li>
+      <li><a href="#misconception-4-2">Misconception 4:</a></li>
+      <li><a href="#misconception-5-2">Misconception 5:</a></li>
+      <li><a href="#1-introduction">1. Introduction</a></li>
+      <li><a href="#2-literature-review">2. Literature Review</a></li>
+      <li><a href="#3-methodology">3. Methodology</a></li>
+      <li><a href="#4-findings">4. Findings</a></li>
+      <li><a href="#5-discussion">5. Discussion</a></li>
+      <li><a href="#6-limitations">6. Limitations</a></li>
+      <li><a href="#7-future-research-agenda-2">7. Future Research Agenda</a></li>
+      <li><a href="#8-references">8. References</a></li>
+      <li><a href="#9-appendices">9. Appendices</a></li>
+      <li><a href="#limitations">Limitations</a></li>
+      <li><a href="#future-research-agenda">Future Research Agenda</a></li>
+      <li><a href="#references">References</a></li>
+      <li><a href="#appendices">Appendices</a></li>
+      <li><a href="#definition-10">Definition</a></li>
+      <li><a href="#purpose-of-literature-review">Purpose of Literature Review</a></li>
+      <li><a href="#literature-review-vs-other-report-sections">Literature Review vs Other Report Sections</a></li>
+      <li><a href="#definition-11">Definition</a></li>
+      <li><a href="#why-report-limitations">Why Report Limitations?</a></li>
+      <li><a href="#5-1-scope-limitations">5.1 Scope Limitations</a></li>
+      <li><a href="#5-2-sample-limitations">5.2 Sample Limitations</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#example-7">Example</a></li>
+      <li><a href="#5-3-methodological-limitations">5.3 Methodological Limitations</a></li>
+      <li><a href="#5-4-context-limitations">5.4 Context Limitations</a></li>
+      <li><a href="#definition-12">Definition</a></li>
+      <li><a href="#example-8">Example</a></li>
+      <li><a href="#importance">Importance</a></li>
+      <li><a href="#definition-13">Definition</a></li>
+      <li><a href="#example-9">Example</a></li>
+      <li><a href="#9-1-team-diversity-2">9.1 Team Diversity</a></li>
+      <li><a href="#9-2-digital-collaboration-tools-2">9.2 Digital Collaboration Tools</a></li>
+      <li><a href="#9-3-methodological-improvements-2">9.3 Methodological Improvements</a></li>
+      <li><a href="#definition-14">Definition</a></li>
+      <li><a href="#purpose-7">Purpose</a></li>
+      <li><a href="#requirements-2">Requirements</a></li>
+      <li><a href="#definition-15">Definition</a></li>
+      <li><a href="#purpose-8">Purpose</a></li>
+      <li><a href="#questionnaire-instruments">Questionnaire Instruments</a></li>
+      <li><a href="#raw-data-samples">Raw Data Samples</a></li>
+      <li><a href="#supplementary-tables">Supplementary Tables</a></li>
+      <li><a href="#interview-protocols">Interview Protocols</a></li>
+      <li><a href="#main-report-should-include">Main Report Should Include:</a></li>
+      <li><a href="#appendices-should-include">Appendices Should Include:</a></li>
+      <li><a href="#principle">Principle</a></li>
+      <li><a href="#advantages-4">Advantages</a></li>
+      <li><a href="#strength">Strength</a></li>
+      <li><a href="#weakness">Weakness</a></li>
+      <li><a href="#risk">Risk</a></li>
+      <li><a href="#strength-2">Strength</a></li>
+      <li><a href="#weakness-2">Weakness</a></li>
+      <li><a href="#step-1-present-limitations">Step 1: Present Limitations</a></li>
+      <li><a href="#step-2-connect-limitations-to-future-research">Step 2: Connect Limitations to Future Research</a></li>
+      <li><a href="#step-3-present-future-research-agenda">Step 3: Present Future Research Agenda</a></li>
+      <li><a href="#step-4-place-detailed-materials-in-appendices">Step 4: Place Detailed Materials in Appendices</a></li>
+      <li><a href="#definition-16">Definition</a></li>
+      <li><a href="#example-10">Example</a></li>
+      <li><a href="#benefits-2">Benefits</a></li>
+      <li><a href="#why-useful-for-remote-work-research">Why Useful for Remote Work Research</a></li>
+      <li><a href="#balanced-reporting-principle">Balanced Reporting Principle</a></li>
+      <li><a href="#misconception-1-3">Misconception 1:</a></li>
+      <li><a href="#misconception-2-3">Misconception 2:</a></li>
+      <li><a href="#misconception-3-3">Misconception 3:</a></li>
+      <li><a href="#misconception-4-3">Misconception 4:</a></li>
+      <li><a href="#misconception-5-3">Misconception 5:</a></li>
+      <li><a href="#limitations-2">Limitations</a></li>
+      <li><a href="#future-research-agenda-2">Future Research Agenda</a></li>
+      <li><a href="#references-2">References</a></li>
+      <li><a href="#appendices-2">Appendices</a></li>
+      <li><a href="#how-to-use-these-notes">How to use these notes</a></li>
+      <li><a href="#1-position-of-the-execution-stage-in-research">1. Position of the execution stage in research</a></li>
+      <li><a href="#2-primary-and-secondary-data">2. Primary and secondary data</a></li>
+      <li><a href="#3-data-storage-coding-cleaning-and-preparation">3. Data storage, coding, cleaning, and preparation</a></li>
+      <li><a href="#4-bias-in-data-collection-and-research">4. Bias in data collection and research</a></li>
+      <li><a href="#5-quantitative-and-qualitative-analysis">5. Quantitative and qualitative analysis</a></li>
+      <li><a href="#6-structure-of-a-research-report">6. Structure of a research report</a></li>
+      <li><a href="#7-literature-review-definition-purposes-and-types">7. Literature review: definition, purposes, and types</a></li>
+      <li><a href="#8-conducting-a-systematic-literature-review">8. Conducting a systematic literature review</a></li>
+      <li><a href="#9-finding-and-articulating-a-research-gap">9. Finding and articulating a research gap</a></li>
+      <li><a href="#10-theory-theoretical-frameworks-and-variables">10. Theory, theoretical frameworks, and variables</a></li>
+      <li><a href="#11-hypotheses-significance-estimation-and-generalisation">11. Hypotheses, significance, estimation, and generalisation</a></li>
+      <li><a href="#12-questionnaires-and-measurement">12. Questionnaires and measurement</a></li>
+      <li><a href="#13-project-and-live-session-applications">13. Project and live-session applications</a></li>
+      <li><a href="#14-review-case-augmentation-limitations-future-research-references-and-appendices">14. Review/case augmentation: limitations, future research, references, and appendices</a></li>
+      <li><a href="#15-high-yield-exam-comparisons">15. High-yield exam comparisons</a></li>
+      <li><a href="#16-exam-ready-integrative-example">16. Exam-ready integrative example</a></li>
+      <li><a href="#source-coverage-checklist">Source-coverage checklist</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h1 id="1-overview-of-literature-review-in-research"><strong>1. Overview of Literature Review in Research</strong></h1>
+<p>A literature review is a structured process of examining existing research to understand:</p>
+<ul>
+<li>What is already known about a topic.  </li>
+<li>Which theories and variables have been studied.  </li>
+<li>What methods previous researchers used.  </li>
+<li>Where gaps or unanswered questions remain.</li>
+</ul>
+<p>A strong literature review does not simply summarize previous studies. It builds an argument for why a new study is needed.</p>
+<p>The overall purpose is:</p>
+<p><strong>Existing knowledge → Identify limitations → Develop research direction</strong></p>
+<hr>
+<h1 id="2-purpose-of-a-literature-review"><strong>2. Purpose of a Literature Review</strong></h1>
+<p>A literature review helps researchers:</p>
+<h2 id="1-understand-existing-knowledge"><strong>1. Understand Existing Knowledge</strong></h2>
+<p>Researchers examine:</p>
+<ul>
+<li>Previous findings.  </li>
+<li>Established theories.  </li>
+<li>Common research methods.  </li>
+<li>Important concepts.</li>
+</ul>
+<p>Example:</p>
+<p>A researcher studying hybrid work and team performance reviews previous studies to understand:</p>
+<ul>
+<li>How remote work affects collaboration.  </li>
+<li>Which performance measures are commonly used.  </li>
+<li>Where findings disagree.</li>
+</ul>
+<hr>
+<h2 id="2-build-a-theoretical-foundation"><strong>2. Build a Theoretical Foundation</strong></h2>
+<p>Literature reviews help identify:</p>
+<ul>
+<li>Relevant theories.  </li>
+<li>Important concepts.  </li>
+<li>Relationships between variables.</li>
+</ul>
+<p>Example:</p>
+<p>A digital adoption study may use:</p>
+<ul>
+<li>Technology Acceptance Model.  </li>
+<li>Diffusion of Innovation Theory.</li>
+</ul>
+<p>The literature review helps determine:</p>
+<p><strong>Which theory explains the research problem?</strong></p>
+<hr>
+<h2 id="3-identify-research-variables"><strong>3. Identify Research Variables</strong></h2>
+<p>Previous studies help researchers identify:</p>
+<p>Independent variables:</p>
+<ul>
+<li>Possible causes.  </li>
+<li>Influencing factors.</li>
+</ul>
+<p>Dependent variables:</p>
+<ul>
+<li>Outcomes being explained.</li>
+</ul>
+<p>Example:</p>
+<p>Research topic:</p>
+<blockquote>
+<p>Employee engagement and retention.</p>
+</blockquote>
+<p>Possible variables:</p>
+<ul>
+<li>Leadership support.  </li>
+<li>Workplace culture.  </li>
+<li>Employee satisfaction.  </li>
+<li>Intention to stay.</li>
+</ul>
+<hr>
+<h2 id="4-identify-research-gaps"><strong>4. Identify Research Gaps</strong></h2>
+<p>A research gap is something that previous studies have not adequately explained.</p>
+<p>Examples:</p>
+<ul>
+<li>Missing populations.  </li>
+<li>Missing geographical contexts.  </li>
+<li>Outdated data.  </li>
+<li>Conflicting findings.  </li>
+<li>Limited theoretical understanding.</li>
+</ul>
+<hr>
+<h1 id="3-types-of-literature-reviews"><strong>3. Types of Literature Reviews</strong></h1>
+<p>Different review methods serve different purposes.</p>
+<hr>
+<h1 id="3-1-systematic-literature-review-slr"><strong>3.1 Systematic Literature Review (SLR)</strong></h1>
+<h2 id="definition"><strong>Definition</strong></h2>
+<p>A systematic literature review is a structured and reproducible review method that uses predefined procedures to identify, select, evaluate, and synthesize existing studies.</p>
+<p>It aims to reduce:</p>
+<ul>
+<li>Selection bias.  </li>
+<li>Researcher subjectivity.  </li>
+<li>Inconsistent source selection.</li>
+</ul>
+<hr>
+<h2 id="key-characteristics"><strong>Key Characteristics</strong></h2>
+<p>A systematic review includes:</p>
+<h3 id="1-defined-research-question"><strong>1. Defined Research Question</strong></h3>
+<p>The review begins with a focused question.</p>
+<p>Example:</p>
+<blockquote>
+<p>What factors influence digital technology adoption among small businesses?</p>
+</blockquote>
+<hr>
+<h3 id="2-search-strategy"><strong>2. Search Strategy</strong></h3>
+<p>Researchers define:</p>
+<ul>
+<li>Databases used.  </li>
+<li>Keywords.  </li>
+<li>Search combinations.  </li>
+<li>Date ranges.</li>
+</ul>
+<hr>
+<h3 id="3-inclusion-and-exclusion-criteria"><strong>3. Inclusion and Exclusion Criteria</strong></h3>
+<p>Rules determine:</p>
+<p>Which studies are included?</p>
+<p>Example inclusion criteria:</p>
+<ul>
+<li>Peer-reviewed articles.  </li>
+<li>Published after 2015.  </li>
+<li>Studies involving organizational adoption.</li>
+</ul>
+<p>Example exclusion criteria:</p>
+<ul>
+<li>Non-English articles.  </li>
+<li>Studies unrelated to the research question.</li>
+</ul>
+<hr>
+<h3 id="4-quality-assessment"><strong>4. Quality Assessment</strong></h3>
+<p>Included studies are evaluated for:</p>
+<ul>
+<li>Research quality.  </li>
+<li>Methodological strength.  </li>
+<li>Risk of bias.</li>
+</ul>
+<hr>
+<h3 id="5-evidence-synthesis"><strong>5. Evidence Synthesis</strong></h3>
+<p>Researchers combine findings to identify:</p>
+<ul>
+<li>Common themes.  </li>
+<li>Relationships.  </li>
+<li>Research gaps.</li>
+</ul>
+<hr>
+<h1 id="3-2-narrative-traditional-review"><strong>3.2 Narrative (Traditional) Review</strong></h1>
+<h2 id="definition-2"><strong>Definition</strong></h2>
+<p>A narrative review summarizes and discusses literature based on the author&rsquo;s interpretation.</p>
+<hr>
+<h2 id="characteristics"><strong>Characteristics</strong></h2>
+<p>Advantages:</p>
+<ul>
+<li>Flexible.  </li>
+<li>Useful for understanding broad topics.  </li>
+<li>Allows conceptual discussion.</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li>Less reproducible.  </li>
+<li>Higher risk of selection bias.</li>
+</ul>
+<hr>
+<h2 id="comparison-with-slr"><strong>Comparison with SLR</strong></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Systematic Review</th>
+<th>Narrative Review</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Search process</td>
+<td>Planned and documented</td>
+<td>Flexible</td>
+</tr>
+<tr>
+<td>Selection criteria</td>
+<td>Explicit</td>
+<td>Often subjective</td>
+</tr>
+<tr>
+<td>Reproducibility</td>
+<td>High</td>
+<td>Lower</td>
+</tr>
+<tr>
+<td>Bias control</td>
+<td>Stronger</td>
+<td>Weaker</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="3-3-scoping-review"><strong>3.3 Scoping Review</strong></h1>
+<h2 id="definition-3"><strong>Definition</strong></h2>
+<p>A scoping review maps the breadth of research on a topic.</p>
+<p>It answers:</p>
+<blockquote>
+<p>What research exists in this area?</p>
+</blockquote>
+<p>rather than:</p>
+<blockquote>
+<p>What is the effect of a specific intervention?</p>
+</blockquote>
+<hr>
+<h2 id="characteristics-2"><strong>Characteristics</strong></h2>
+<p>Useful for:</p>
+<ul>
+<li>Emerging topics.  </li>
+<li>Broad research areas.  </li>
+<li>Identifying available evidence.</li>
+</ul>
+<p>Example:</p>
+<p>Mapping all studies related to artificial intelligence in healthcare.</p>
+<hr>
+<h1 id="3-4-rapid-review"><strong>3.4 Rapid Review</strong></h1>
+<p>A rapid review is an accelerated form of evidence review.</p>
+<p>It may simplify:</p>
+<ul>
+<li>Search process.  </li>
+<li>Screening.  </li>
+<li>Quality assessment.</li>
+</ul>
+<p>Used when:</p>
+<ul>
+<li>Decisions are needed quickly.  </li>
+<li>Time is limited.</li>
+</ul>
+<hr>
+<h1 id="4-systematic-literature-review-process"><strong>4. Systematic Literature Review Process</strong></h1>
+<p>A typical SLR follows a structured sequence.</p>
+<hr>
+<h1 id="step-1-define-research-question"><strong>Step 1: Define Research Question</strong></h1>
+<p>A clear research question guides:</p>
+<ul>
+<li>Search strategy.  </li>
+<li>Study selection.  </li>
+<li>Analysis.</li>
+</ul>
+<p>A vague question creates irrelevant results.</p>
+<hr>
+<h1 id="step-2-identify-search-terms"><strong>Step 2: Identify Search Terms</strong></h1>
+<p>The search strategy should be planned before searching.</p>
+<hr>
+<h2 id="identifying-main-concepts"><strong>Identifying Main Concepts</strong></h2>
+<p>First identify major concepts.</p>
+<p>Example:</p>
+<p>Research question:</p>
+<blockquote>
+<p>How does remote work affect employee productivity?</p>
+</blockquote>
+<p>Main concepts:</p>
+<ol>
+<li>Remote work  </li>
+<li>Employee productivity</li>
+</ol>
+<hr>
+<h2 id="finding-synonyms-and-related-terms"><strong>Finding Synonyms and Related Terms</strong></h2>
+<p>Each concept may have multiple terms.</p>
+<p>Example:</p>
+<p>Remote work:</p>
+<ul>
+<li>Remote work  </li>
+<li>Telework  </li>
+<li>Work from home  </li>
+<li>Hybrid work</li>
+</ul>
+<p>Productivity:</p>
+<ul>
+<li>Performance  </li>
+<li>Efficiency  </li>
+<li>Work output</li>
+</ul>
+<hr>
+<h2 id="combining-terms-using-boolean-operators"><strong>Combining Terms Using Boolean Operators</strong></h2>
+<p>Common operators:</p>
+<h3 id="and"><strong>AND</strong></h3>
+<p>Narrows results.</p>
+<p>Example:</p>
+<p>remote work AND productivity</p>
+<p>Returns studies containing both concepts.</p>
+<hr>
+<h3 id="or"><strong>OR</strong></h3>
+<p>Expands results.</p>
+<p>Example:</p>
+<p>remote work OR telework OR hybrid work</p>
+<p>Finds studies using different terms.</p>
+<hr>
+<h2 id="correct-search-planning-sequence"><strong>Correct Search Planning Sequence</strong></h2>
+<ol>
+<li>Identify main concepts.  </li>
+<li>List synonyms and related terms.  </li>
+<li>Combine using AND/OR.  </li>
+<li>Document the final search strategy.</li>
+</ol>
+<hr>
+<h1 id="5-search-tools-and-databases"><strong>5. Search Tools and Databases</strong></h1>
+<p>Different search tools serve different purposes.</p>
+<hr>
+<h1 id="google-scholar"><strong>Google Scholar</strong></h1>
+<h2 id="purpose"><strong>Purpose</strong></h2>
+<p>Broad academic search.</p>
+<p>Includes:</p>
+<ul>
+<li>Journal articles.  </li>
+<li>Conference papers.  </li>
+<li>Reports.  </li>
+<li>Theses.  </li>
+<li>Other scholarly documents.</li>
+</ul>
+<p>Useful for:</p>
+<ul>
+<li>Initial broad searches.  </li>
+<li>Finding grey literature.</li>
+</ul>
+<hr>
+<h1 id="jstor"><strong>JSTOR</strong></h1>
+<h2 id="purpose-2"><strong>Purpose</strong></h2>
+<p>Academic archive.</p>
+<p>Strong in:</p>
+<ul>
+<li>Humanities.  </li>
+<li>Social sciences.  </li>
+<li>Historical research.</li>
+</ul>
+<p>Focus:</p>
+<p>Mostly journal collections and books.</p>
+<hr>
+<h1 id="pubmed"><strong>PubMed</strong></h1>
+<h2 id="purpose-3"><strong>Purpose</strong></h2>
+<p>Biomedical and health sciences database.</p>
+<p>Useful for:</p>
+<ul>
+<li>Medicine.  </li>
+<li>Healthcare.  </li>
+<li>Clinical studies.</li>
+</ul>
+<hr>
+<h1 id="web-of-science"><strong>Web of Science</strong></h1>
+<h2 id="purpose-4"><strong>Purpose</strong></h2>
+<p>Curated scholarly database.</p>
+<p>Strengths:</p>
+<ul>
+<li>Citation tracking.  </li>
+<li>High-quality indexing.  </li>
+<li>Research impact analysis.</li>
+</ul>
+<hr>
+<h2 id="database-comparison"><strong>Database Comparison</strong></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Main Strength</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Google Scholar</td>
+<td>Broad academic coverage</td>
+</tr>
+<tr>
+<td>JSTOR</td>
+<td>Archived academic collections</td>
+</tr>
+<tr>
+<td>PubMed</td>
+<td>Medical and health research</td>
+</tr>
+<tr>
+<td>Web of Science</td>
+<td>Citation analysis and indexed journals</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="6-screening-and-study-selection-in-slr"><strong>6. Screening and Study Selection in SLR</strong></h1>
+<p>After searching databases:</p>
+<p>Researchers usually obtain many records.</p>
+<p>The process involves:</p>
+<hr>
+<h2 id="1-remove-duplicates"><strong>1. Remove Duplicates</strong></h2>
+<p>The same paper may appear in multiple databases.</p>
+<p>Duplicate removal prevents:</p>
+<ul>
+<li>Double counting.  </li>
+<li>Incorrect evidence estimates.</li>
+</ul>
+<hr>
+<h2 id="2-apply-inclusion-and-exclusion-criteria"><strong>2. Apply Inclusion and Exclusion Criteria</strong></h2>
+<p>Studies are screened based on predefined rules.</p>
+<p>Example:</p>
+<p>Include:</p>
+<ul>
+<li>Studies on employee engagement.  </li>
+<li>Quantitative and qualitative research.</li>
+</ul>
+<p>Exclude:</p>
+<ul>
+<li>Opinion articles.  </li>
+<li>Studies unrelated to workplace settings.</li>
+</ul>
+<hr>
+<h2 id="3-evaluate-eligible-studies"><strong>3. Evaluate Eligible Studies</strong></h2>
+<p>Remaining studies are assessed for:</p>
+<ul>
+<li>Quality.  </li>
+<li>Reliability.  </li>
+<li>Bias risk.</li>
+</ul>
+<hr>
+<h2 id="4-extract-data"><strong>4. Extract Data</strong></h2>
+<p>Researchers collect information such as:</p>
+<ul>
+<li>Author.  </li>
+<li>Year.  </li>
+<li>Methodology.  </li>
+<li>Sample.  </li>
+<li>Key findings.</li>
+</ul>
+<hr>
+<h1 id="7-pieces-framework-in-literature-review"><strong>7. PIECES Framework in Literature Review</strong></h1>
+<p>PIECES represents stages in systematic review workflow.</p>
+<p>The relevant stages include:</p>
+<hr>
+<h2 id="identifying-candidate-studies"><strong>Identifying Candidate Studies</strong></h2>
+<p>Purpose:</p>
+<p>Find potential research papers through searching.</p>
+<p>Activities:</p>
+<ul>
+<li>Database searching.  </li>
+<li>Keyword application.  </li>
+<li>Initial collection.</li>
+</ul>
+<hr>
+<h2 id="evaluating-eligible-studies"><strong>Evaluating Eligible Studies</strong></h2>
+<p>Purpose:</p>
+<p>Determine whether selected studies are suitable.</p>
+<p>Includes:</p>
+<ul>
+<li>Applying inclusion/exclusion criteria.  </li>
+<li>Quality assessment.  </li>
+<li>Risk-of-bias evaluation.</li>
+</ul>
+<hr>
+<h2 id="collecting-and-combining-evidence"><strong>Collecting and Combining Evidence</strong></h2>
+<p>Purpose:</p>
+<p>Extract and synthesize findings.</p>
+<p>Activities:</p>
+<ul>
+<li>Data extraction.  </li>
+<li>Comparison.  </li>
+<li>Evidence integration.</li>
+</ul>
+<hr>
+<h2 id="summarising-review-outcomes"><strong>Summarising Review Outcomes</strong></h2>
+<p>Purpose:</p>
+<p>Present final findings.</p>
+<p>Includes:</p>
+<ul>
+<li>Themes.  </li>
+<li>Patterns.  </li>
+<li>Research gaps.  </li>
+<li>Conclusions.</li>
+</ul>
+<hr>
+<h1 id="8-data-extraction-and-evidence-synthesis"><strong>8. Data Extraction and Evidence Synthesis</strong></h1>
+<p>After selecting studies, researchers extract relevant information.</p>
+<p>A structured extraction table may include:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Author</td>
+<td>Smith et al.</td>
+</tr>
+<tr>
+<td>Year</td>
+<td>2024</td>
+</tr>
+<tr>
+<td>Research topic</td>
+<td>Hybrid work</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>Survey</td>
+</tr>
+<tr>
+<td>Sample</td>
+<td>500 employees</td>
+</tr>
+<tr>
+<td>Findings</td>
+<td>Remote flexibility improved satisfaction</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="why-structured-extraction-matters"><strong>Why Structured Extraction Matters</strong></h2>
+<p>It allows researchers to:</p>
+<ul>
+<li>Compare studies.  </li>
+<li>Identify patterns.  </li>
+<li>Avoid selective interpretation.</li>
+</ul>
+<hr>
+<h1 id="9-thematic-analysis"><strong>9. Thematic Analysis</strong></h1>
+<h2 id="definition-4"><strong>Definition</strong></h2>
+<p>Thematic analysis identifies common patterns or themes in qualitative data.</p>
+<p>Used with:</p>
+<ul>
+<li>Interview transcripts.  </li>
+<li>Focus group discussions.  </li>
+<li>Open-ended responses.</li>
+</ul>
+<hr>
+<h2 id="process"><strong>Process</strong></h2>
+<h3 id="step-1-familiarization"><strong>Step 1: Familiarization</strong></h3>
+<p>Read transcripts repeatedly.</p>
+<hr>
+<h3 id="step-2-coding"><strong>Step 2: Coding</strong></h3>
+<p>Assign labels to meaningful sections.</p>
+<p>Example:</p>
+<p>Interview statement:</p>
+<blockquote>
+<p>&ldquo;My manager rarely communicates changes.&rdquo;</p>
+</blockquote>
+<p>Code:</p>
+<ul>
+<li>Poor communication.</li>
+</ul>
+<hr>
+<h3 id="step-3-theme-development"><strong>Step 3: Theme Development</strong></h3>
+<p>Combine related codes.</p>
+<p>Example:</p>
+<p>Codes:</p>
+<ul>
+<li>Poor communication.  </li>
+<li>Lack of updates.  </li>
+<li>Unclear expectations.</li>
+</ul>
+<p>Theme:</p>
+<blockquote>
+<p>Leadership communication problems.</p>
+</blockquote>
+<hr>
+<h3 id="step-4-interpretation"><strong>Step 4: Interpretation</strong></h3>
+<p>Explain how themes relate to the research question.</p>
+<hr>
+<h1 id="10-literature-review-and-research-gap"><strong>10. Literature Review and Research Gap</strong></h1>
+<p>A good literature review should not be a list of summaries.</p>
+<p>Weak approach:</p>
+<p>Study 1 found X.</p>
+<p>Study 2 found Y.</p>
+<p>Study 3 found Z.</p>
+<hr>
+<h2 id="strong-approach"><strong>Strong Approach</strong></h2>
+<p>Organize literature by themes.</p>
+<p>Example:</p>
+<p>Theme 1:</p>
+<blockquote>
+<p>Benefits of hybrid work.</p>
+</blockquote>
+<p>Theme 2:</p>
+<blockquote>
+<p>Challenges of hybrid collaboration.</p>
+</blockquote>
+<p>Theme 3:</p>
+<blockquote>
+<p>Industry differences.</p>
+</blockquote>
+<p>Then identify:</p>
+<p>What remains unresolved?</p>
+<hr>
+<h1 id="11-moving-from-literature-review-to-research-problem"><strong>11. Moving From Literature Review to Research Problem</strong></h1>
+<p>A literature review should justify the new study.</p>
+<p>A strong ending explains:</p>
+<ol>
+<li>What is known.  </li>
+<li>What is uncertain.  </li>
+<li>Why the uncertainty matters.  </li>
+<li>How the proposed study addresses it.</li>
+</ol>
+<hr>
+<h2 id="example"><strong>Example</strong></h2>
+<p>Existing research:</p>
+<ul>
+<li>Hybrid work improves flexibility.  </li>
+<li>Results differ by industry.</li>
+</ul>
+<p>Gap:</p>
+<ul>
+<li>Limited evidence after organizational policy changes.</li>
+</ul>
+<p>Research need:</p>
+<ul>
+<li>Study hybrid work effects in post-policy-change environments.</li>
+</ul>
+<hr>
+<h1 id="12-research-problem-description-structure"><strong>12. Research Problem Description Structure</strong></h1>
+<p>A research problem description usually contains:</p>
+<hr>
+<h2 id="1-ideal-situation"><strong>1. Ideal Situation</strong></h2>
+<p>What should happen?</p>
+<p>Example:</p>
+<blockquote>
+<p>Everyone should have easy access to healthcare services.</p>
+</blockquote>
+<hr>
+<h2 id="2-current-situation"><strong>2. Current Situation</strong></h2>
+<p>What is happening now?</p>
+<p>Example:</p>
+<blockquote>
+<p>Many people report difficulty accessing services.</p>
+</blockquote>
+<hr>
+<h2 id="3-consequences"><strong>3. Consequences</strong></h2>
+<p>Why does the problem matter?</p>
+<p>Examples:</p>
+<ul>
+<li>Poor health outcomes.  </li>
+<li>Increased healthcare burden.  </li>
+<li>Reduced service effectiveness.</li>
+</ul>
+<hr>
+<h2 id="4-research-direction"><strong>4. Research Direction</strong></h2>
+<p>What needs to be investigated?</p>
+<p>Example:</p>
+<blockquote>
+<p>Identify factors limiting healthcare access.</p>
+</blockquote>
+<hr>
+<h1 id="13-common-misconceptions"><strong>13. Common Misconceptions</strong></h1>
+<h2 id="misconception-1"><strong>Misconception 1:</strong></h2>
+<p>&ldquo;A literature review is just summarizing papers.&rdquo;</p>
+<p>Reality:</p>
+<p>A good review synthesizes evidence and builds an argument.</p>
+<hr>
+<h2 id="misconception-2"><strong>Misconception 2:</strong></h2>
+<p>&ldquo;More citations automatically mean a better review.&rdquo;</p>
+<p>Reality:</p>
+<p>Quality, relevance, and synthesis matter more than citation count.</p>
+<hr>
+<h2 id="misconception-3"><strong>Misconception 3:</strong></h2>
+<p>&ldquo;Systematic reviews only collect journal articles.&rdquo;</p>
+<p>Reality:</p>
+<p>Depending on the strategy, they may include:</p>
+<ul>
+<li>Conference papers.  </li>
+<li>Reports.  </li>
+<li>Grey literature.</li>
+</ul>
+<hr>
+<h2 id="misconception-4"><strong>Misconception 4:</strong></h2>
+<p>&ldquo;Search terms can be created after searching.&rdquo;</p>
+<p>Reality:</p>
+<p>A systematic review requires a documented and repeatable search strategy.</p>
+<hr>
+<h2 id="misconception-5"><strong>Misconception 5:</strong></h2>
+<p>&ldquo;The research gap appears automatically.&rdquo;</p>
+<p>Reality:</p>
+<p>Researchers must analyze patterns, contradictions, and limitations to identify gaps.</p>
+<hr>
+<h1 id="14-key-revision-summary"><strong>14. Key Revision Summary</strong></h1>
+<h2 id="systematic-literature-review-process"><strong>Systematic Literature Review Process</strong></h2>
+<p><strong>Define question → Plan search → Identify studies → Remove duplicates → Apply criteria → Evaluate quality → Extract data → Synthesize evidence → Identify gaps</strong></p>
+<hr>
+<h2 id="literature-review-helps-determine"><strong>Literature Review Helps Determine</strong></h2>
+<ul>
+<li>Theory.  </li>
+<li>Variables.  </li>
+<li>Research direction.</li>
+</ul>
+<hr>
+<h2 id="search-strategy"><strong>Search Strategy</strong></h2>
+<p>Correct order:</p>
+<p><strong>Concepts → Synonyms → Boolean operators → Database search</strong></p>
+<hr>
+<h2 id="research-gap-identification"><strong>Research Gap Identification</strong></h2>
+<p>Look for:</p>
+<ul>
+<li>Missing contexts.  </li>
+<li>Conflicting findings.  </li>
+<li>Method limitations.  </li>
+<li>Outdated evidence.</li>
+</ul>
+<hr>
+<h2 id="analysis-methods"><strong>Analysis Methods</strong></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interview text</td>
+<td>Thematic analysis</td>
+</tr>
+<tr>
+<td>Numerical data</td>
+<td>Statistical analysis</td>
+</tr>
+<tr>
+<td>Multiple studies</td>
+<td>Literature synthesis</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="final-principle"><strong>Final Principle</strong></h1>
+<p>A rigorous literature review is not a collection of summaries. It is a structured process that transforms existing knowledge into a foundation for new research.</p>
+<p>A strong researcher moves from:</p>
+<p><strong>Existing evidence → Critical evaluation → Research gap → Theory and variables → New investigation</strong>.</p>
+<h2 id="case-study"><strong>Case Study</strong></h2>
+<p>At BrightStar Ltd., a research team led by Priya is finalizing their report on remote work productivity. The guidelines require documenting the limitations of the current study – constraints in scope, sample, methodology, or context that may reduce the generalisability or applicability of the findings; outlining a Future Research Agenda – unresolved questions, unexplored variables, or methodological improvements suggested by the current study; compiling References: a complete, consistently formatted list of all sources cited in the report, organised alphabetically; and assembling Appendices: supporting materials not included in the main body – questionnaire instruments, raw data samples, supplementary tables, interview protocols, etc..Having completed the literature review as the process of systematically searching, critically evaluating, and synthesising existing published research on a specific topic, concept, or problem, the team now addresses feedback from stakeholders. Priya wants to highlight the single-department sample limitation to clarify boundary conditions. Marco, the operations manager, believes methodology constraints are secondary to actionable insights. Dr. Liu, the research methods professor, stresses a detailed Future Research Agenda that investigates team diversity and digital collaboration tools.The team faces a decision point. Option A: Emphasize scope and sample limitations to guide generalisability. Option B: Focus on methodological improvements, such as adopting a mixed methods design, to strengthen validity. Option C: Include both in the main report and reserve detailed survey instruments and interview protocols in Appendices. Students should analyze how each choice shapes reader interpretation, balances depth and scope, and supports BrightStar Ltd.&rsquo;s strategic planning.</p>
+<h1 id="comprehensive-notes-brightstar-ltd-research-report-limitations-future-research-agenda-references-appendices-and-research-communication"><strong>Comprehensive Notes: BrightStar Ltd. Research Report Limitations, Future Research Agenda, References, Appendices, and Research Communication</strong></h1>
+<h1 id="1-case-overview"><strong>1. Case Overview</strong></h1>
+<p>BrightStar Ltd. has completed a research study on <strong>remote work productivity</strong>. The research team, led by Priya, is preparing the final report and must ensure that the report communicates not only findings but also the boundaries, limitations, and future directions of the study.</p>
+<p>The case focuses on four essential components of a strong research report:</p>
+<ol>
+<li><strong>Limitations of the Current Study</strong>  </li>
+<li><strong>Future Research Agenda</strong>  </li>
+<li><strong>References</strong>  </li>
+<li><strong>Appendices</strong></li>
+</ol>
+<p>The team must decide how to present these elements so that readers can correctly interpret the findings and use them for strategic planning.</p>
+<hr>
+<h1 id="2-role-of-the-final-research-report"><strong>2. Role of the Final Research Report</strong></h1>
+<p>A research report is not only a presentation of results. It must communicate:</p>
+<ul>
+<li>What was studied.  </li>
+<li>How it was studied.  </li>
+<li>What conclusions can reasonably be drawn.  </li>
+<li>Where conclusions should be applied carefully.  </li>
+<li>What future research is needed.</li>
+</ul>
+<p>A strong report balances:</p>
+<p><strong>Evidence → Interpretation → Boundaries → Future improvement</strong></p>
+<hr>
+<h1 id="3-limitations-of-the-current-study"><strong>3. Limitations of the Current Study</strong></h1>
+<h2 id="definition-5"><strong>Definition</strong></h2>
+<p>Research limitations are constraints or weaknesses that may affect:</p>
+<ul>
+<li>Generalisability.  </li>
+<li>Applicability.  </li>
+<li>Interpretation of findings.  </li>
+<li>Strength of conclusions.</li>
+</ul>
+<p>Limitations do not mean the research is invalid. They define the conditions under which the findings should be interpreted.</p>
+<hr>
+<h1 id="4-types-of-research-limitations"><strong>4. Types of Research Limitations</strong></h1>
+<h2 id="4-1-scope-limitations"><strong>4.1 Scope Limitations</strong></h2>
+<p>Scope limitations define what the study covers and what it does not cover.</p>
+<p>Example:</p>
+<p>BrightStar studies remote work productivity but only examines:</p>
+<ul>
+<li>One department.  </li>
+<li>One business unit.  </li>
+<li>One type of work.</li>
+</ul>
+<p>The findings may not apply to:</p>
+<ul>
+<li>Other departments.  </li>
+<li>Different job roles.  </li>
+<li>Other organizations.</li>
+</ul>
+<hr>
+<h2 id="4-2-sample-limitations"><strong>4.2 Sample Limitations</strong></h2>
+<p>Sample limitations relate to who participated in the study.</p>
+<p>Example:</p>
+<p>BrightStar used employees from only one department.</p>
+<p>Impact:</p>
+<p>The sample may not represent:</p>
+<ul>
+<li>The entire company.  </li>
+<li>Different organizational roles.  </li>
+<li>Other industries.</li>
+</ul>
+<hr>
+<h2 id="4-3-methodological-limitations"><strong>4.3 Methodological Limitations</strong></h2>
+<p>Methodological limitations relate to the research design and data collection methods.</p>
+<p>Examples:</p>
+<ul>
+<li>Survey-only approach.  </li>
+<li>Self-reported responses.  </li>
+<li>Lack of qualitative interviews.  </li>
+<li>Limited measurement tools.</li>
+</ul>
+<hr>
+<h2 id="4-4-context-limitations"><strong>4.4 Context Limitations</strong></h2>
+<p>Context limitations relate to the environment in which the study was conducted.</p>
+<p>Examples:</p>
+<ul>
+<li>One company.  </li>
+<li>One geographic region.  </li>
+<li>Specific remote-work policies.  </li>
+<li>Particular organizational culture.</li>
+</ul>
+<hr>
+<h1 id="5-importance-of-reporting-limitations"><strong>5. Importance of Reporting Limitations</strong></h1>
+<p>A limitation section improves research credibility.</p>
+<p>It shows that researchers:</p>
+<ul>
+<li>Understand boundaries.  </li>
+<li>Avoid overclaiming.  </li>
+<li>Recognize uncertainty.</li>
+</ul>
+<hr>
+<h2 id="example-2"><strong>Example</strong></h2>
+<p>Incorrect conclusion:</p>
+<blockquote>
+<p>Remote work improves productivity for all companies.</p>
+</blockquote>
+<p>Better conclusion:</p>
+<blockquote>
+<p>Within BrightStar&rsquo;s studied department, remote work was associated with improved productivity. Further research is required to determine whether this applies across other departments and organizations.</p>
+</blockquote>
+<hr>
+<h1 id="6-priya-s-focus-single-department-sample-limitation"><strong>6. Priya’s Focus: Single-Department Sample Limitation</strong></h1>
+<p>Priya wants to highlight:</p>
+<blockquote>
+<p>The study used a single-department sample.</p>
+</blockquote>
+<p>This is an important limitation because it affects generalisability.</p>
+<hr>
+<h2 id="why-sample-boundaries-matter"><strong>Why Sample Boundaries Matter</strong></h2>
+<p>Employees in different departments may differ in:</p>
+<ul>
+<li>Work type.  </li>
+<li>Collaboration needs.  </li>
+<li>Technology usage.  </li>
+<li>Management style.</li>
+</ul>
+<p>Example:</p>
+<p>A software development team may adapt well to remote work.</p>
+<p>A customer-support team may face different challenges.</p>
+<hr>
+<h2 id="strategic-value-of-mentioning-this-limitation"><strong>Strategic Value of Mentioning This Limitation</strong></h2>
+<p>It helps decision-makers understand:</p>
+<ul>
+<li>Where findings can be applied.  </li>
+<li>Where caution is required.  </li>
+<li>What additional evidence is needed.</li>
+</ul>
+<hr>
+<h1 id="7-future-research-agenda"><strong>7. Future Research Agenda</strong></h1>
+<h2 id="definition-6"><strong>Definition</strong></h2>
+<p>A Future Research Agenda identifies unresolved questions and suggests directions for future studies.</p>
+<p>It answers:</p>
+<blockquote>
+<p>What should researchers investigate next?</p>
+</blockquote>
+<hr>
+<h1 id="8-purpose-of-a-future-research-agenda"><strong>8. Purpose of a Future Research Agenda</strong></h1>
+<p>A good future research section:</p>
+<ul>
+<li>Builds on current findings.  </li>
+<li>Identifies unanswered questions.  </li>
+<li>Suggests improvements.  </li>
+<li>Extends knowledge.</li>
+</ul>
+<p>It converts limitations into opportunities.</p>
+<hr>
+<h2 id="example-3"><strong>Example</strong></h2>
+<p>Current limitation:</p>
+<blockquote>
+<p>Only one department was studied.</p>
+</blockquote>
+<p>Future research:</p>
+<blockquote>
+<p>Study multiple departments to compare how remote work affects different job roles.</p>
+</blockquote>
+<hr>
+<h1 id="9-dr-liu-s-recommendation-future-research-directions"><strong>9. Dr. Liu’s Recommendation: Future Research Directions</strong></h1>
+<p>Dr. Liu emphasizes investigating:</p>
+<h2 id="9-1-team-diversity"><strong>9.1 Team Diversity</strong></h2>
+<p>Future research could examine:</p>
+<ul>
+<li>Does remote work affect diverse teams differently?  </li>
+<li>How do cultural differences influence collaboration?  </li>
+<li>Does team composition influence productivity outcomes?</li>
+</ul>
+<hr>
+<h2 id="9-2-digital-collaboration-tools"><strong>9.2 Digital Collaboration Tools</strong></h2>
+<p>Future research could explore:</p>
+<ul>
+<li>Which tools improve productivity?  </li>
+<li>How does tool adoption affect teamwork?  </li>
+<li>Do communication platforms reduce remote-work challenges?</li>
+</ul>
+<hr>
+<h2 id="9-3-methodological-improvements"><strong>9.3 Methodological Improvements</strong></h2>
+<p>Future studies could improve research design through:</p>
+<ul>
+<li>Larger samples.  </li>
+<li>Multiple organizations.  </li>
+<li>Longitudinal studies.  </li>
+<li>Mixed methods.</li>
+</ul>
+<hr>
+<h1 id="10-references-section"><strong>10. References Section</strong></h1>
+<h2 id="definition-7"><strong>Definition</strong></h2>
+<p>References provide a complete list of all sources cited in the report.</p>
+<hr>
+<h2 id="purpose-5"><strong>Purpose</strong></h2>
+<p>References allow readers to:</p>
+<ul>
+<li>Verify evidence.  </li>
+<li>Locate original sources.  </li>
+<li>Evaluate research foundations.</li>
+</ul>
+<hr>
+<h2 id="requirements"><strong>Requirements</strong></h2>
+<p>A good reference section should be:</p>
+<h3 id="complete"><strong>Complete</strong></h3>
+<p>Every cited source must appear.</p>
+<hr>
+<h3 id="consistent"><strong>Consistent</strong></h3>
+<p>All sources should follow the same formatting style.</p>
+<p>Examples:</p>
+<ul>
+<li>APA style.  </li>
+<li>Harvard style.  </li>
+<li>IEEE style.</li>
+</ul>
+<hr>
+<h3 id="alphabetical"><strong>Alphabetical</strong></h3>
+<p>References are usually organized by:</p>
+<ul>
+<li>Author surname.</li>
+</ul>
+<p>Example:</p>
+<p>Anderson, J.</p>
+<p>Brown, M.</p>
+<p>Smith, R.</p>
+<hr>
+<h1 id="11-appendices"><strong>11. Appendices</strong></h1>
+<h2 id="definition-8"><strong>Definition</strong></h2>
+<p>Appendices contain supporting materials that are useful but too detailed for the main report.</p>
+<hr>
+<h2 id="purpose-6"><strong>Purpose</strong></h2>
+<p>Appendices:</p>
+<ul>
+<li>Maintain report readability.  </li>
+<li>Provide transparency.  </li>
+<li>Allow deeper examination.</li>
+</ul>
+<hr>
+<h1 id="examples-of-appendix-materials"><strong>Examples of Appendix Materials</strong></h1>
+<h2 id="1-questionnaire-instruments"><strong>1. Questionnaire Instruments</strong></h2>
+<p>Example:</p>
+<p>Survey questions used to measure remote work productivity.</p>
+<hr>
+<h2 id="2-raw-data-samples"><strong>2. Raw Data Samples</strong></h2>
+<p>Example:</p>
+<p>Sample responses or datasets.</p>
+<hr>
+<h2 id="3-supplementary-tables"><strong>3. Supplementary Tables</strong></h2>
+<p>Example:</p>
+<p>Detailed statistical outputs.</p>
+<hr>
+<h2 id="4-interview-protocols"><strong>4. Interview Protocols</strong></h2>
+<p>Example:</p>
+<p>Questions used during qualitative interviews.</p>
+<hr>
+<h1 id="12-main-report-vs-appendix"><strong>12. Main Report vs Appendix</strong></h1>
+<p>A key reporting principle:</p>
+<h2 id="main-report"><strong>Main Report</strong></h2>
+<p>Contains:</p>
+<ul>
+<li>Important findings.  </li>
+<li>Major explanations.  </li>
+<li>Key limitations.  </li>
+<li>Strategic implications.</li>
+</ul>
+<hr>
+<h2 id="appendix"><strong>Appendix</strong></h2>
+<p>Contains:</p>
+<ul>
+<li>Detailed evidence.  </li>
+<li>Supporting documents.  </li>
+<li>Technical materials.</li>
+</ul>
+<hr>
+<h2 id="why-not-include-everything-in-the-main-report"><strong>Why Not Include Everything in the Main Report?</strong></h2>
+<p>Including all materials can:</p>
+<ul>
+<li>Overload readers.  </li>
+<li>Hide key findings.  </li>
+<li>Reduce readability.</li>
+</ul>
+<hr>
+<h1 id="13-decision-point-evaluating-report-options"><strong>13. Decision Point: Evaluating Report Options</strong></h1>
+<p>The team considers three approaches.</p>
+<hr>
+<h1 id="option-a-emphasize-scope-and-sample-limitations"><strong>Option A: Emphasize Scope and Sample Limitations</strong></h1>
+<h2 id="focus"><strong>Focus</strong></h2>
+<p>Highlight:</p>
+<ul>
+<li>Single-department sample.  </li>
+<li>Limits of generalisation.</li>
+</ul>
+<hr>
+<h2 id="advantages"><strong>Advantages</strong></h2>
+<h3 id="improves-interpretation"><strong>Improves Interpretation</strong></h3>
+<p>Readers understand:</p>
+<ul>
+<li>Where findings apply.  </li>
+<li>Where caution is needed.</li>
+</ul>
+<hr>
+<h3 id="supports-responsible-decision-making"><strong>Supports Responsible Decision-Making</strong></h3>
+<p>Managers avoid applying findings incorrectly.</p>
+<hr>
+<h2 id="limitation"><strong>Limitation</strong></h2>
+<p>May underemphasize:</p>
+<ul>
+<li>Research improvement opportunities.  </li>
+<li>Methodological development.</li>
+</ul>
+<hr>
+<h1 id="option-b-focus-on-methodological-improvements"><strong>Option B: Focus on Methodological Improvements</strong></h1>
+<h2 id="focus-2"><strong>Focus</strong></h2>
+<p>Recommend:</p>
+<ul>
+<li>Mixed methods.  </li>
+<li>Better research designs.  </li>
+<li>Stronger validity.</li>
+</ul>
+<hr>
+<h2 id="advantages-2"><strong>Advantages</strong></h2>
+<p>Improves future research quality.</p>
+<p>Examples:</p>
+<p>Current study:</p>
+<p>Survey only.</p>
+<p>Future study:</p>
+<p>Survey + interviews.</p>
+<hr>
+<h2 id="limitation-2"><strong>Limitation</strong></h2>
+<p>May shift attention away from current study boundaries.</p>
+<p>Readers may not clearly understand:</p>
+<ul>
+<li>Who was studied.  </li>
+<li>Where findings apply.</li>
+</ul>
+<hr>
+<h1 id="option-c-include-both-limitations-and-future-improvements-use-appendices"><strong>Option C: Include Both Limitations and Future Improvements, Use Appendices</strong></h1>
+<h2 id="approach"><strong>Approach</strong></h2>
+<p>Main report includes:</p>
+<ul>
+<li>Study limitations.  </li>
+<li>Future research agenda.</li>
+</ul>
+<p>Appendices contain:</p>
+<ul>
+<li>Surveys.  </li>
+<li>Interview guides.  </li>
+<li>Supporting data.</li>
+</ul>
+<hr>
+<h2 id="advantages-3"><strong>Advantages</strong></h2>
+<h3 id="balanced-communication"><strong>Balanced Communication</strong></h3>
+<p>Readers receive:</p>
+<ul>
+<li>Appropriate interpretation.  </li>
+<li>Future direction.  </li>
+<li>Technical transparency.</li>
+</ul>
+<hr>
+<h3 id="better-strategic-planning"><strong>Better Strategic Planning</strong></h3>
+<p>Managers understand:</p>
+<ul>
+<li>Current evidence.  </li>
+<li>Research boundaries.  </li>
+<li>Next steps.</li>
+</ul>
+<hr>
+<h2 id="most-comprehensive-approach"><strong>Most Comprehensive Approach</strong></h2>
+<p>Option C provides the strongest reporting structure.</p>
+<p>It balances:</p>
+<ul>
+<li>Scope clarity.  </li>
+<li>Methodological improvement.  </li>
+<li>Reader usability.</li>
+</ul>
+<hr>
+<h1 id="14-relationship-between-limitations-and-future-research"><strong>14. Relationship Between Limitations and Future Research</strong></h1>
+<p>Limitations and future research are connected.</p>
+<p>A limitation identifies:</p>
+<blockquote>
+<p>What the current study cannot answer.</p>
+</blockquote>
+<p>Future research identifies:</p>
+<blockquote>
+<p>How future studies can address it.</p>
+</blockquote>
+<hr>
+<h2 id="example-4"><strong>Example</strong></h2>
+<p>Limitation:</p>
+<p>Single department sample.</p>
+<p>↓</p>
+<p>Future research:</p>
+<p>Study multiple departments.</p>
+<hr>
+<h2 id="example-5"><strong>Example</strong></h2>
+<p>Limitation:</p>
+<p>Survey-only methodology.</p>
+<p>↓</p>
+<p>Future research:</p>
+<p>Use mixed methods.</p>
+<hr>
+<h1 id="15-mixed-methods-as-a-future-improvement"><strong>15. Mixed Methods as a Future Improvement</strong></h1>
+<h2 id="definition-9"><strong>Definition</strong></h2>
+<p>Mixed methods combines:</p>
+<ul>
+<li>Quantitative research.  </li>
+<li>Qualitative research.</li>
+</ul>
+<hr>
+<h2 id="example-6"><strong>Example</strong></h2>
+<p>Current study:</p>
+<p>Employee survey measuring productivity.</p>
+<p>Future study:</p>
+<p>Survey + interviews.</p>
+<hr>
+<h2 id="benefits"><strong>Benefits</strong></h2>
+<p>Provides:</p>
+<h3 id="quantitative-evidence"><strong>Quantitative Evidence</strong></h3>
+<p>Answers:</p>
+<ul>
+<li>How much?  </li>
+<li>How often?  </li>
+<li>What relationships exist?</li>
+</ul>
+<hr>
+<h3 id="qualitative-understanding"><strong>Qualitative Understanding</strong></h3>
+<p>Answers:</p>
+<ul>
+<li>Why?  </li>
+<li>How?  </li>
+<li>What experiences explain the findings?</li>
+</ul>
+<hr>
+<h1 id="16-research-quality-and-validity"><strong>16. Research Quality and Validity</strong></h1>
+<h2 id="generalisability"><strong>Generalisability</strong></h2>
+<p>Question:</p>
+<blockquote>
+<p>Can findings apply to other groups or settings?</p>
+</blockquote>
+<p>Affected by:</p>
+<ul>
+<li>Sample size.  </li>
+<li>Sample diversity.  </li>
+<li>Study context.</li>
+</ul>
+<hr>
+<h2 id="internal-validity"><strong>Internal Validity</strong></h2>
+<p>Question:</p>
+<blockquote>
+<p>Are conclusions supported by the research design?</p>
+</blockquote>
+<p>Affected by:</p>
+<ul>
+<li>Method quality.  </li>
+<li>Control of alternative explanations.</li>
+</ul>
+<hr>
+<h2 id="construct-validity"><strong>Construct Validity</strong></h2>
+<p>Question:</p>
+<blockquote>
+<p>Are concepts measured correctly?</p>
+</blockquote>
+<p>Affected by:</p>
+<ul>
+<li>Measurement design.  </li>
+<li>Research instruments.</li>
+</ul>
+<hr>
+<h1 id="17-common-misconceptions"><strong>17. Common Misconceptions</strong></h1>
+<h2 id="misconception-1-2"><strong>Misconception 1:</strong></h2>
+<p>&ldquo;Limitations weaken the research report.&rdquo;</p>
+<p>Reality:</p>
+<p>Acknowledging limitations increases credibility.</p>
+<hr>
+<h2 id="misconception-2-2"><strong>Misconception 2:</strong></h2>
+<p>&ldquo;Only methodology limitations matter.&rdquo;</p>
+<p>Reality:</p>
+<p>Limitations may involve:</p>
+<ul>
+<li>Scope.  </li>
+<li>Sample.  </li>
+<li>Context.  </li>
+<li>Measurement.  </li>
+<li>Methodology.</li>
+</ul>
+<hr>
+<h2 id="misconception-3-2"><strong>Misconception 3:</strong></h2>
+<p>&ldquo;Future research means repeating the same study.&rdquo;</p>
+<p>Reality:</p>
+<p>Future research should address unresolved questions and improve understanding.</p>
+<hr>
+<h2 id="misconception-4-2"><strong>Misconception 4:</strong></h2>
+<p>&ldquo;Appendices are optional extra information.&rdquo;</p>
+<p>Reality:</p>
+<p>Appendices improve transparency by providing supporting evidence.</p>
+<hr>
+<h2 id="misconception-5-2"><strong>Misconception 5:</strong></h2>
+<p>&ldquo;A research report should only highlight positive findings.&rdquo;</p>
+<p>Reality:</p>
+<p>A strong report communicates:</p>
+<ul>
+<li>Findings.  </li>
+<li>Limitations.  </li>
+<li>Uncertainty.  </li>
+<li>Future opportunities.</li>
+</ul>
+<hr>
+<h1 id="18-recommended-reporting-structure-for-brightstar"><strong>18. Recommended Reporting Structure for BrightStar</strong></h1>
+<p>A strong final report structure:</p>
+<h2 id="1-introduction"><strong>1. Introduction</strong></h2>
+<ul>
+<li>Research problem.  </li>
+<li>Objectives.  </li>
+<li>Context.</li>
+</ul>
+<hr>
+<h2 id="2-literature-review"><strong>2. Literature Review</strong></h2>
+<ul>
+<li>Existing knowledge.  </li>
+<li>Theoretical foundation.  </li>
+<li>Research gap.</li>
+</ul>
+<hr>
+<h2 id="3-methodology"><strong>3. Methodology</strong></h2>
+<ul>
+<li>Research design.  </li>
+<li>Sample.  </li>
+<li>Data collection.</li>
+</ul>
+<hr>
+<h2 id="4-findings"><strong>4. Findings</strong></h2>
+<ul>
+<li>Results.  </li>
+<li>Analysis.</li>
+</ul>
+<hr>
+<h2 id="5-discussion"><strong>5. Discussion</strong></h2>
+<ul>
+<li>Interpretation.  </li>
+<li>Strategic implications.</li>
+</ul>
+<hr>
+<h2 id="6-limitations"><strong>6. Limitations</strong></h2>
+<ul>
+<li>Scope.  </li>
+<li>Sample.  </li>
+<li>Method.  </li>
+<li>Context.</li>
+</ul>
+<hr>
+<h2 id="7-future-research-agenda-2"><strong>7. Future Research Agenda</strong></h2>
+<ul>
+<li>Unresolved questions.  </li>
+<li>Improvements.</li>
+</ul>
+<hr>
+<h2 id="8-references"><strong>8. References</strong></h2>
+<ul>
+<li>Complete cited sources.</li>
+</ul>
+<hr>
+<h2 id="9-appendices"><strong>9. Appendices</strong></h2>
+<ul>
+<li>Instruments.  </li>
+<li>Data.  </li>
+<li>Supporting materials.</li>
+</ul>
+<hr>
+<h1 id="19-final-revision-summary"><strong>19. Final Revision Summary</strong></h1>
+<h2 id="limitations"><strong>Limitations</strong></h2>
+<p>Explain:</p>
+<ul>
+<li>What restricts interpretation.  </li>
+<li>Where findings may not generalize.</li>
+</ul>
+<hr>
+<h2 id="future-research-agenda"><strong>Future Research Agenda</strong></h2>
+<p>Explain:</p>
+<ul>
+<li>What remains unanswered.  </li>
+<li>How future studies can improve.</li>
+</ul>
+<hr>
+<h2 id="references"><strong>References</strong></h2>
+<p>Provide:</p>
+<ul>
+<li>Complete and consistent source documentation.</li>
+</ul>
+<hr>
+<h2 id="appendices"><strong>Appendices</strong></h2>
+<p>Provide:</p>
+<ul>
+<li>Supporting technical materials.</li>
+</ul>
+<hr>
+<h1 id="final-principle-2"><strong>Final Principle</strong></h1>
+<p>A high-quality research report does not simply present results. It creates a transparent chain:</p>
+<p><strong>Research question → Method → Evidence → Findings → Limitations → Future improvements → Strategic decisions</strong></p>
+<p>For BrightStar Ltd., the strongest approach is to acknowledge the single-department sample limitation, recommend future methodological improvements such as mixed methods and broader samples, and place detailed supporting materials in appendices. This allows decision-makers to use current findings responsibly while creating a roadmap for stronger future research.</p>
+<h1 id="comprehensive-notes-brightstar-ltd-research-report-finalization-limitations-future-research-agenda-references-and-appendices"><strong>Comprehensive Notes: BrightStar Ltd. Research Report Finalization — Limitations, Future Research Agenda, References, and Appendices</strong></h1>
+<h1 id="1-case-overview-2"><strong>1. Case Overview</strong></h1>
+<p>BrightStar Ltd. has completed a research study on <strong>remote work productivity</strong>. The research team, led by Priya, is preparing the final report and must ensure that the findings are communicated responsibly and effectively.</p>
+<p>The final reporting stage requires the team to include:</p>
+<ol>
+<li><strong>Limitations of the Current Study</strong>  </li>
+<li><strong>Future Research Agenda</strong>  </li>
+<li><strong>References</strong>  </li>
+<li><strong>Appendices</strong></li>
+</ol>
+<p>The main challenge is balancing different stakeholder priorities:</p>
+<ul>
+<li><strong>Priya</strong> wants clear acknowledgement of study limitations, especially the single-department sample.  </li>
+<li><strong>Marco (Operations Manager)</strong> prioritizes actionable insights and practical usefulness.  </li>
+<li><strong>Dr. Liu (Research Methods Professor)</strong> emphasizes methodological improvement and future research opportunities.</li>
+</ul>
+<p>The case demonstrates that a strong research report is not just about presenting findings. It must explain:</p>
+<ul>
+<li>How reliable the findings are.  </li>
+<li>Where they apply.  </li>
+<li>What remains unknown.  </li>
+<li>How future studies can improve understanding.</li>
+</ul>
+<hr>
+<h1 id="2-structure-of-a-strong-research-report"><strong>2. Structure of a Strong Research Report</strong></h1>
+<p>A comprehensive research report usually follows this logic:</p>
+<p><strong>Research problem → Literature review → Methodology → Findings → Discussion → Limitations → Future research → References → Appendices</strong></p>
+<p>Each section serves a different purpose.</p>
+<hr>
+<h1 id="3-literature-review"><strong>3. Literature Review</strong></h1>
+<h2 id="definition-10"><strong>Definition</strong></h2>
+<p>A literature review is:</p>
+<blockquote>
+<p>The systematic process of searching, critically evaluating, and synthesizing existing published research on a specific topic, concept, or problem.</p>
+</blockquote>
+<p>It establishes the foundation for the current study.</p>
+<hr>
+<h2 id="purpose-of-literature-review"><strong>Purpose of Literature Review</strong></h2>
+<p>A literature review helps researchers:</p>
+<h3 id="1-understand-existing-knowledge-2"><strong>1. Understand Existing Knowledge</strong></h3>
+<p>It identifies:</p>
+<ul>
+<li>What is already known.  </li>
+<li>Important theories.  </li>
+<li>Existing findings.  </li>
+<li>Common research approaches.</li>
+</ul>
+<hr>
+<h3 id="2-identify-research-gaps"><strong>2. Identify Research Gaps</strong></h3>
+<p>A literature review helps determine:</p>
+<ul>
+<li>What previous studies have not answered.  </li>
+<li>Which areas need further investigation.  </li>
+<li>Where current evidence is incomplete.</li>
+</ul>
+<hr>
+<h3 id="3-build-research-direction"><strong>3. Build Research Direction</strong></h3>
+<p>It helps determine:</p>
+<ul>
+<li>Relevant variables.  </li>
+<li>Theoretical frameworks.  </li>
+<li>Research questions.  </li>
+<li>Appropriate methods.</li>
+</ul>
+<hr>
+<h2 id="literature-review-vs-other-report-sections"><strong>Literature Review vs Other Report Sections</strong></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Literature Review</td>
+<td>Understand existing knowledge</td>
+</tr>
+<tr>
+<td>Limitations</td>
+<td>Explain weaknesses of current study</td>
+</tr>
+<tr>
+<td>Future Research</td>
+<td>Suggest next investigations</td>
+</tr>
+<tr>
+<td>References</td>
+<td>Document sources</td>
+</tr>
+<tr>
+<td>Appendices</td>
+<td>Provide supporting materials</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="4-limitations-of-a-research-study"><strong>4. Limitations of a Research Study</strong></h1>
+<h2 id="definition-11"><strong>Definition</strong></h2>
+<p>Research limitations are constraints that may reduce:</p>
+<ul>
+<li>Generalisability.  </li>
+<li>Applicability.  </li>
+<li>Accuracy of interpretation.</li>
+</ul>
+<p>They define the boundaries within which findings should be understood.</p>
+<hr>
+<h2 id="why-report-limitations"><strong>Why Report Limitations?</strong></h2>
+<p>Limitations improve credibility because they show that researchers:</p>
+<ul>
+<li>Understand the weaknesses of their work.  </li>
+<li>Avoid exaggerating conclusions.  </li>
+<li>Provide realistic interpretations.</li>
+</ul>
+<p>A limitation does not mean the study failed.</p>
+<p>It means:</p>
+<blockquote>
+<p>The findings should be applied within specific conditions.</p>
+</blockquote>
+<hr>
+<h1 id="5-types-of-research-limitations"><strong>5. Types of Research Limitations</strong></h1>
+<h2 id="5-1-scope-limitations"><strong>5.1 Scope Limitations</strong></h2>
+<p>Scope defines the range of the study.</p>
+<p>Example:</p>
+<p>BrightStar studied:</p>
+<ul>
+<li>Remote work productivity.</li>
+</ul>
+<p>But did not study:</p>
+<ul>
+<li>Employee well-being.  </li>
+<li>Long-term career effects.  </li>
+<li>Organizational culture changes.</li>
+</ul>
+<hr>
+<h2 id="5-2-sample-limitations"><strong>5.2 Sample Limitations</strong></h2>
+<p>Sample limitations occur when participants do not fully represent the broader population.</p>
+<p>BrightStar limitation:</p>
+<blockquote>
+<p>The study used a single-department sample.</p>
+</blockquote>
+<hr>
+<h2 id="impact"><strong>Impact</strong></h2>
+<p>Findings may not apply to:</p>
+<ul>
+<li>Other departments.  </li>
+<li>Different job roles.  </li>
+<li>Other organizations.</li>
+</ul>
+<hr>
+<h2 id="example-7"><strong>Example</strong></h2>
+<p>A software development team may experience remote work differently from:</p>
+<ul>
+<li>Sales teams.  </li>
+<li>Customer support teams.  </li>
+<li>Operations teams.</li>
+</ul>
+<hr>
+<h2 id="5-3-methodological-limitations"><strong>5.3 Methodological Limitations</strong></h2>
+<p>These relate to the research approach.</p>
+<p>Examples:</p>
+<ul>
+<li>Survey-only research.  </li>
+<li>Self-reported responses.  </li>
+<li>Small sample size.  </li>
+<li>Lack of qualitative insights.</li>
+</ul>
+<hr>
+<h2 id="5-4-context-limitations"><strong>5.4 Context Limitations</strong></h2>
+<p>These relate to the environment of the study.</p>
+<p>Examples:</p>
+<ul>
+<li>One organization.  </li>
+<li>One industry.  </li>
+<li>One geographic location.</li>
+</ul>
+<hr>
+<h1 id="6-priya-s-focus-single-department-sample-limitation-2"><strong>6. Priya’s Focus: Single-Department Sample Limitation</strong></h1>
+<p>Priya wants to highlight that the study used participants from only one department.</p>
+<p>This addresses the principle of:</p>
+<h1 id="generalisability-2"><strong>Generalisability</strong></h1>
+<h2 id="definition-12"><strong>Definition</strong></h2>
+<p>Generalisability refers to the extent to which research findings can be applied to:</p>
+<ul>
+<li>Other groups.  </li>
+<li>Other settings.  </li>
+<li>Other situations.</li>
+</ul>
+<hr>
+<h2 id="example-8"><strong>Example</strong></h2>
+<p>Finding:</p>
+<blockquote>
+<p>Remote work improved productivity in BrightStar&rsquo;s engineering department.</p>
+</blockquote>
+<p>Cannot automatically become:</p>
+<blockquote>
+<p>Remote work improves productivity across all departments.</p>
+</blockquote>
+<hr>
+<h2 id="importance"><strong>Importance</strong></h2>
+<p>Acknowledging this limitation helps stakeholders understand:</p>
+<ul>
+<li>Where findings are reliable.  </li>
+<li>Where additional evidence is needed.</li>
+</ul>
+<hr>
+<h1 id="7-future-research-agenda-3"><strong>7. Future Research Agenda</strong></h1>
+<h2 id="definition-13"><strong>Definition</strong></h2>
+<p>A Future Research Agenda identifies:</p>
+<ul>
+<li>Unanswered questions.  </li>
+<li>New variables to explore.  </li>
+<li>Methodological improvements.  </li>
+<li>Directions for future studies.</li>
+</ul>
+<p>It transforms limitations into opportunities.</p>
+<hr>
+<h1 id="8-purpose-of-future-research"><strong>8. Purpose of Future Research</strong></h1>
+<p>A Future Research Agenda answers:</p>
+<blockquote>
+<p>What should researchers study next?</p>
+</blockquote>
+<p>It should not simply repeat the current study.</p>
+<p>It should extend knowledge.</p>
+<hr>
+<h2 id="example-9"><strong>Example</strong></h2>
+<p>Current limitation:</p>
+<p>Single-department sample.</p>
+<p>Future research:</p>
+<p>Study multiple departments to compare remote work outcomes.</p>
+<hr>
+<h1 id="9-dr-liu-s-recommended-future-research-areas"><strong>9. Dr. Liu’s Recommended Future Research Areas</strong></h1>
+<p>Dr. Liu suggests investigating:</p>
+<h2 id="9-1-team-diversity-2"><strong>9.1 Team Diversity</strong></h2>
+<p>Future studies could examine:</p>
+<ul>
+<li>Whether diverse teams experience remote work differently.  </li>
+<li>How cultural differences influence collaboration.  </li>
+<li>Whether diversity affects productivity outcomes.</li>
+</ul>
+<hr>
+<h2 id="9-2-digital-collaboration-tools-2"><strong>9.2 Digital Collaboration Tools</strong></h2>
+<p>Future research could explore:</p>
+<ul>
+<li>Which tools improve productivity.  </li>
+<li>How communication platforms affect teamwork.  </li>
+<li>Whether technology adoption influences remote performance.</li>
+</ul>
+<hr>
+<h2 id="9-3-methodological-improvements-2"><strong>9.3 Methodological Improvements</strong></h2>
+<p>Possible improvements:</p>
+<ul>
+<li>Larger samples.  </li>
+<li>Multiple departments.  </li>
+<li>Multiple organizations.  </li>
+<li>Mixed-method approaches.  </li>
+<li>Longitudinal studies.</li>
+</ul>
+<hr>
+<h1 id="10-references-section-2"><strong>10. References Section</strong></h1>
+<h2 id="definition-14"><strong>Definition</strong></h2>
+<p>The References section is a complete list of all sources cited in the report.</p>
+<hr>
+<h2 id="purpose-7"><strong>Purpose</strong></h2>
+<p>References provide:</p>
+<h3 id="1-academic-credit"><strong>1. Academic Credit</strong></h3>
+<p>They acknowledge original researchers.</p>
+<hr>
+<h3 id="2-transparency"><strong>2. Transparency</strong></h3>
+<p>Readers can verify:</p>
+<ul>
+<li>Evidence sources.  </li>
+<li>Theoretical foundations.  </li>
+<li>Previous research.</li>
+</ul>
+<hr>
+<h3 id="3-traceability"><strong>3. Traceability</strong></h3>
+<p>Readers can locate the original material.</p>
+<hr>
+<h2 id="requirements-2"><strong>Requirements</strong></h2>
+<p>A good References section should be:</p>
+<h3 id="complete-2"><strong>Complete</strong></h3>
+<p>Every cited source appears.</p>
+<hr>
+<h3 id="consistent-2"><strong>Consistent</strong></h3>
+<p>Uses one citation style.</p>
+<p>Examples:</p>
+<ul>
+<li>APA.  </li>
+<li>Harvard.  </li>
+<li>IEEE.</li>
+</ul>
+<hr>
+<h3 id="alphabetically-organized"><strong>Alphabetically Organized</strong></h3>
+<p>Usually arranged by:</p>
+<ul>
+<li>Author surname.</li>
+</ul>
+<p>Example:</p>
+<p>Anderson</p>
+<p>Brown</p>
+<p>Smith</p>
+<hr>
+<h1 id="11-appendices-2"><strong>11. Appendices</strong></h1>
+<h2 id="definition-15"><strong>Definition</strong></h2>
+<p>Appendices contain supporting materials that are useful but too detailed for the main report.</p>
+<hr>
+<h2 id="purpose-8"><strong>Purpose</strong></h2>
+<p>Appendices improve:</p>
+<ul>
+<li>Transparency.  </li>
+<li>Reproducibility.  </li>
+<li>Methodological verification.</li>
+</ul>
+<p>They allow readers to inspect details without interrupting the main report flow.</p>
+<hr>
+<h1 id="12-examples-of-appendix-materials"><strong>12. Examples of Appendix Materials</strong></h1>
+<h2 id="questionnaire-instruments"><strong>Questionnaire Instruments</strong></h2>
+<p>Example:</p>
+<p>Full employee survey questions.</p>
+<hr>
+<h2 id="raw-data-samples"><strong>Raw Data Samples</strong></h2>
+<p>Example:</p>
+<p>Sample responses or datasets.</p>
+<hr>
+<h2 id="supplementary-tables"><strong>Supplementary Tables</strong></h2>
+<p>Example:</p>
+<p>Detailed statistical outputs.</p>
+<hr>
+<h2 id="interview-protocols"><strong>Interview Protocols</strong></h2>
+<p>Example:</p>
+<p>Questions used during interviews.</p>
+<hr>
+<h1 id="13-main-report-vs-appendices"><strong>13. Main Report vs Appendices</strong></h1>
+<h2 id="main-report-should-include"><strong>Main Report Should Include:</strong></h2>
+<ul>
+<li>Key findings.  </li>
+<li>Major interpretations.  </li>
+<li>Limitations.  </li>
+<li>Strategic implications.  </li>
+<li>Future research directions.</li>
+</ul>
+<hr>
+<h2 id="appendices-should-include"><strong>Appendices Should Include:</strong></h2>
+<ul>
+<li>Technical details.  </li>
+<li>Supporting evidence.  </li>
+<li>Research instruments.  </li>
+<li>Additional tables.</li>
+</ul>
+<hr>
+<h2 id="principle"><strong>Principle</strong></h2>
+<p>Important interpretation belongs in the main report.</p>
+<p>Detailed supporting evidence belongs in appendices.</p>
+<hr>
+<h1 id="14-evaluating-reporting-options"><strong>14. Evaluating Reporting Options</strong></h1>
+<p>BrightStar considers different ways to structure the final report.</p>
+<hr>
+<h1 id="option-a-include-limitations-and-future-research-in-main-report-appendices-hold-details"><strong>Option A: Include Limitations and Future Research in Main Report; Appendices Hold Details</strong></h1>
+<p>This is the strongest approach.</p>
+<h2 id="advantages-4"><strong>Advantages</strong></h2>
+<h3 id="transparency"><strong>Transparency</strong></h3>
+<p>Limitations are visible.</p>
+<p>Readers understand:</p>
+<ul>
+<li>Boundaries.  </li>
+<li>Applicability.</li>
+</ul>
+<hr>
+<h3 id="strategic-planning"><strong>Strategic Planning</strong></h3>
+<p>Future research provides:</p>
+<ul>
+<li>Improvement path.  </li>
+<li>Long-term direction.</li>
+</ul>
+<hr>
+<h3 id="readability"><strong>Readability</strong></h3>
+<p>Technical details do not overwhelm managers.</p>
+<hr>
+<h1 id="option-b-focus-mainly-on-actionable-insights"><strong>Option B: Focus Mainly on Actionable Insights</strong></h1>
+<h2 id="strength"><strong>Strength</strong></h2>
+<p>Supports operational decision-making.</p>
+<p>Useful for managers who want immediate action.</p>
+<hr>
+<h2 id="weakness"><strong>Weakness</strong></h2>
+<p>May hide important information:</p>
+<ul>
+<li>Research limitations.  </li>
+<li>Uncertainty.  </li>
+<li>Future needs.</li>
+</ul>
+<hr>
+<h2 id="risk"><strong>Risk</strong></h2>
+<p>Managers may overapply findings.</p>
+<hr>
+<h1 id="option-c-focus-mainly-on-methodological-improvements"><strong>Option C: Focus Mainly on Methodological Improvements</strong></h1>
+<h2 id="strength-2"><strong>Strength</strong></h2>
+<p>Improves future research quality.</p>
+<p>Example:</p>
+<p>Moving from survey-only research to mixed methods.</p>
+<hr>
+<h2 id="weakness-2"><strong>Weakness</strong></h2>
+<p>May make current findings appear less useful.</p>
+<p>The current study still provides value and should not be treated only as a preliminary exercise.</p>
+<hr>
+<h1 id="15-recommended-reporting-strategy"><strong>15. Recommended Reporting Strategy</strong></h1>
+<p>The strongest integrated approach:</p>
+<h2 id="step-1-present-limitations"><strong>Step 1: Present Limitations</strong></h2>
+<p>Clearly explain:</p>
+<ul>
+<li>Single-department sample.  </li>
+<li>Scope restrictions.  </li>
+<li>Methodological constraints.</li>
+</ul>
+<p>Purpose:</p>
+<p>Define boundaries.</p>
+<hr>
+<h2 id="step-2-connect-limitations-to-future-research"><strong>Step 2: Connect Limitations to Future Research</strong></h2>
+<p>Example:</p>
+<p>Limitation:</p>
+<p>Single department.</p>
+<p>↓</p>
+<p>Future research:</p>
+<p>Multi-department study.</p>
+<hr>
+<h2 id="step-3-present-future-research-agenda"><strong>Step 3: Present Future Research Agenda</strong></h2>
+<p>Include:</p>
+<ul>
+<li>Team diversity.  </li>
+<li>Digital collaboration tools.  </li>
+<li>Improved methodologies.</li>
+</ul>
+<hr>
+<h2 id="step-4-place-detailed-materials-in-appendices"><strong>Step 4: Place Detailed Materials in Appendices</strong></h2>
+<p>Include:</p>
+<ul>
+<li>Survey instruments.  </li>
+<li>Interview protocols.  </li>
+<li>Raw data samples.</li>
+</ul>
+<hr>
+<h1 id="16-mixed-methods-as-future-improvement"><strong>16. Mixed Methods as Future Improvement</strong></h1>
+<h2 id="definition-16"><strong>Definition</strong></h2>
+<p>Mixed methods combines:</p>
+<ul>
+<li>Quantitative research.  </li>
+<li>Qualitative research.</li>
+</ul>
+<hr>
+<h2 id="example-10"><strong>Example</strong></h2>
+<p>Current study:</p>
+<p>Employee productivity survey.</p>
+<p>Future study:</p>
+<p>Survey + interviews.</p>
+<hr>
+<h2 id="benefits-2"><strong>Benefits</strong></h2>
+<h3 id="quantitative-data-provides"><strong>Quantitative Data Provides:</strong></h3>
+<ul>
+<li>Measurement.  </li>
+<li>Statistical patterns.  </li>
+<li>General trends.</li>
+</ul>
+<hr>
+<h3 id="qualitative-data-provides"><strong>Qualitative Data Provides:</strong></h3>
+<ul>
+<li>Experiences.  </li>
+<li>Explanations.  </li>
+<li>Context.</li>
+</ul>
+<hr>
+<h2 id="why-useful-for-remote-work-research"><strong>Why Useful for Remote Work Research</strong></h2>
+<p>Remote work involves:</p>
+<ul>
+<li>Technology.  </li>
+<li>Communication.  </li>
+<li>Culture.  </li>
+<li>Collaboration.  </li>
+<li>Employee experience.</li>
+</ul>
+<p>Numbers alone may not explain all factors.</p>
+<hr>
+<h1 id="17-stakeholder-perspective-comparison"><strong>17. Stakeholder Perspective Comparison</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Stakeholder</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Priya</td>
+<td>Transparency and research boundaries</td>
+</tr>
+<tr>
+<td>Marco</td>
+<td>Practical actionable insights</td>
+</tr>
+<tr>
+<td>Dr. Liu</td>
+<td>Methodological rigor and future inquiry</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="balanced-reporting-principle"><strong>Balanced Reporting Principle</strong></h2>
+<p>A good research report must satisfy all three:</p>
+<p><strong>Scientific credibility + Practical usefulness + Future improvement</strong></p>
+<hr>
+<h1 id="18-common-misconceptions"><strong>18. Common Misconceptions</strong></h1>
+<h2 id="misconception-1-3"><strong>Misconception 1:</strong></h2>
+<p>&ldquo;Limitations weaken the report.&rdquo;</p>
+<p>Reality:</p>
+<p>Limitations increase trust by showing responsible interpretation.</p>
+<hr>
+<h2 id="misconception-2-3"><strong>Misconception 2:</strong></h2>
+<p>&ldquo;Only methodology problems are limitations.&rdquo;</p>
+<p>Reality:</p>
+<p>Limitations can involve:</p>
+<ul>
+<li>Scope.  </li>
+<li>Sample.  </li>
+<li>Context.  </li>
+<li>Measurement.  </li>
+<li>Method.</li>
+</ul>
+<hr>
+<h2 id="misconception-3-3"><strong>Misconception 3:</strong></h2>
+<p>&ldquo;Future research is only for academic purposes.&rdquo;</p>
+<p>Reality:</p>
+<p>Future research helps organizations make better strategic decisions.</p>
+<hr>
+<h2 id="misconception-4-3"><strong>Misconception 4:</strong></h2>
+<p>&ldquo;Appendices contain unimportant information.&rdquo;</p>
+<p>Reality:</p>
+<p>Appendices contain important supporting evidence that improves transparency.</p>
+<hr>
+<h2 id="misconception-5-3"><strong>Misconception 5:</strong></h2>
+<p>&ldquo;The main report should contain all technical details.&rdquo;</p>
+<p>Reality:</p>
+<p>Too much technical detail can reduce readability.</p>
+<hr>
+<h1 id="19-final-revision-summary-2"><strong>19. Final Revision Summary</strong></h1>
+<h2 id="limitations-2"><strong>Limitations</strong></h2>
+<p>Explain:</p>
+<ul>
+<li>What restricts interpretation.  </li>
+<li>Where findings apply.  </li>
+<li>Where caution is required.</li>
+</ul>
+<hr>
+<h2 id="future-research-agenda-2"><strong>Future Research Agenda</strong></h2>
+<p>Explains:</p>
+<ul>
+<li>What remains unanswered.  </li>
+<li>How future studies can improve understanding.</li>
+</ul>
+<hr>
+<h2 id="references-2"><strong>References</strong></h2>
+<p>Provide:</p>
+<ul>
+<li>Complete source documentation.  </li>
+<li>Citation transparency.</li>
+</ul>
+<hr>
+<h2 id="appendices-2"><strong>Appendices</strong></h2>
+<p>Provide:</p>
+<ul>
+<li>Supporting materials.  </li>
+<li>Research instruments.  </li>
+<li>Detailed evidence.</li>
+</ul>
+<hr>
+<h1 id="final-principle-3"><strong>Final Principle</strong></h1>
+<p>A high-quality research report does not only communicate conclusions. It communicates the strength, boundaries, and future potential of those conclusions.</p>
+<p>The ideal reporting structure is:</p>
+<p><strong>Findings → Limitations → Future Research → References → Appendices</strong></p>
+<p>For BrightStar Ltd., the best strategy is to clearly present limitations and future research directions in the main report while moving detailed supporting materials into appendices. This balances scientific rigor, stakeholder understanding, and practical organizational decision-making.</p>
+<hr>
+<h1 id="exam-study-guide-appendix">Exam Study Guide Appendix</h1>
+<h1 id="week-3-research-execution-analysis-reporting-literature-review-and-theory">Week 3 — Research Execution, Analysis, Reporting, Literature Review and Theory</h1>
+<h2 id="how-to-use-these-notes">How to use these notes</h2>
+<p>This week moves through the research process from execution to analysis and reporting, then explains literature review, theoretical frameworks, variables, hypotheses, and related project decisions. For exam answers, do three things: define the concept, explain its purpose/process, and add a business example.</p>
+<hr>
+<h2 id="1-position-of-the-execution-stage-in-research">1. Position of the execution stage in research</h2>
+<p>A typical research endeavour has five broad stages:</p>
+<ol>
+<li><strong>Planning</strong> — define the business problem, translate it into a research problem, identify concepts/variables, propose relationships and hypotheses, identify stakeholders, decide whose views matter, and determine whom and how many to study.</li>
+<li><strong>Execution</strong> — carry out the plan: meet participants, collect the required data, verify its quality, store it, clean it, and arrange it for analysis.</li>
+<li><strong>Analysis</strong> — apply methods capable of answering the research questions and establishing the authenticity of findings.</li>
+<li><strong>Reporting</strong> — communicate methods, evidence, findings, contributions, limitations, and recommendations in a structured form.</li>
+<li><strong>Decision-making</strong> — use the findings to address the original business problem.</li>
+</ol>
+<p>The execution stage is primarily about <strong>data collection and data management</strong>. Its key elements are:</p>
+<ul>
+<li>choosing and applying a data-collection method;</li>
+<li>preventing or minimising bias, prejudice, and error;</li>
+<li>storing data in a usable format;</li>
+<li>cleaning and preparing data by resolving errors, inconsistencies, and missing values;</li>
+<li>documenting precautions so decision-makers can judge the credibility of the results.</li>
+</ul>
+<hr>
+<h2 id="2-primary-and-secondary-data">2. Primary and secondary data</h2>
+<h3 id="2-1-definitions">2.1 Definitions</h3>
+<ul>
+<li><strong>Primary data</strong> is collected directly by the researcher from the field or participants, for the first time and for the specific study.</li>
+<li><strong>Secondary data</strong> was collected previously by another researcher, agency, or source—usually for another purpose—and is reused in the current study.</li>
+</ul>
+<p>The classification is <strong>relative to the study</strong>, not inherent in the data. Customer responses collected by Researcher A are primary for A; the same responses are secondary when reused by Researcher B.</p>
+<h3 id="2-2-examples-and-sources">2.2 Examples and sources</h3>
+<ul>
+<li>Surveying customers directly about their feelings toward a product produces primary data.</li>
+<li>Census data on customer age/income, a telephone directory or contact list, economic data, market reports, and third-party consumer-behaviour studies are secondary sources.</li>
+<li>Businesses also possess extensive internal data: sales reports, customer types, demand fluctuations, service studies, economic information, and market changes.</li>
+</ul>
+<p>Internal data may itself have different origins:</p>
+<ul>
+<li>Data generated through routine organisational operations—such as store-wise sales, visitor types, or seasonal demand—is internally held and originally collected by the organisation. The lecturer described this as internal data of a primary nature.</li>
+<li>Reports prepared by KPMG, EY, Deloitte, or another consulting agency are stored internally but were not collected by the business; they remain secondary in origin.</li>
+</ul>
+<p>Before collecting new data, determine whether adequate secondary data can answer the research question. Primary data is necessary when secondary evidence is absent, insufficient, outdated, contextually unsuitable, or unable to measure the required attitudes, perceptions, feelings, or opinions.</p>
+<h3 id="2-3-three-primary-data-methods">2.3 Three primary-data methods</h3>
+<ol>
+<li><strong>Observation</strong> — observe a phenomenon such as how a customer moves through a store or makes a purchase; record the observations as text and analyse them for behavioural patterns. This corresponds to the “exposure” source of research understanding mentioned by the lecturer.</li>
+<li><strong>Interview</strong> — use an interview schedule to collect information from experts or other relevant people. Interview extracts are primary, usually textual, data.</li>
+<li><strong>Survey</strong> — approach a comparatively large number of critical participants with a questionnaire. A questionnaire can collect perceptions and convert them into structured responses.</li>
+</ol>
+<p><strong>Practical use case:</strong> A retailer investigating falling repeat purchases could combine transaction history (secondary/internal operational data), in-store observation (primary), interviews with store managers (primary qualitative), and a customer satisfaction questionnaire (primary quantitative).</p>
+<hr>
+<h2 id="3-data-storage-coding-cleaning-and-preparation">3. Data storage, coding, cleaning, and preparation</h2>
+<h3 id="3-1-converting-responses-into-analysable-form">3.1 Converting responses into analysable form</h3>
+<p>Collected data may remain textual or may be transformed into numbers. A statement such as “I like this product” can use a five-point scale from strongly disagree to strongly agree; categories can be assigned numeric codes. Numeric conversion makes storage, comparison, mathematical analysis, and transfer into statistical tools easier and is essential for quantitative analysis.</p>
+<p>For spreadsheet storage, think of an <strong>m × n matrix</strong>:</p>
+<ul>
+<li>rows represent the <em>m</em> respondents or observations;</li>
+<li>columns represent the <em>n</em> questions/variables;</li>
+<li>each cell stores a respondent’s answer to a question.</li>
+</ul>
+<p>Long variable names should receive concise, consistent codes. If five statements measure satisfaction, they might be <code>SAT1</code>, <code>SAT2</code>, … <code>SAT5</code>. Qualitative material may instead be retained as transcripts, field notes, images, audio, or video.</p>
+<h3 id="3-2-data-quality-problems">3.2 Data-quality problems</h3>
+<ul>
+<li><strong>Pattern/straight-line responses:</strong> the respondent gives the same answer, such as “neutral” or “strongly agree,” to all 20 items. This raises doubt about whether the respondent applied their mind.</li>
+<li><strong>Non-response/missing value:</strong> an item is omitted.</li>
+<li><strong>Invalid response:</strong> the permitted scale is 1–5 but another value or text is entered.</li>
+<li><strong>Inconsistency/error:</strong> answers conflict or are entered incorrectly.</li>
+</ul>
+<p>Cleaning means identifying these problems, correcting them when a defensible correction is possible, coding consistently, and excluding unusable responses where necessary. Data must finally be stored in a form accepted by the selected analysis tool.</p>
+<p><strong>Exam caution:</strong> Do not say cleaning merely “deletes bad data.” It includes validation, correction, coding, treatment of missingness, and reasoned exclusion.</p>
+<hr>
+<h2 id="4-bias-in-data-collection-and-research">4. Bias in data collection and research</h2>
+<p>Bias can arise from sample selection, measurement, the researcher, participants, or interpretation. Researchers must anticipate it before data collection, minimise it during collection, and explain the precautions in the report.</p>
+<h3 id="4-1-selection-and-sampling-biases">4.1 Selection and sampling biases</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Bias</th>
+<th>Meaning</th>
+<th>Transcript example / implication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sampling bias</strong></td>
+<td>Sample selection is not sufficiently random or representative of the target population.</td>
+<td>A landline telephone survey excludes many younger mobile-phone users; sample findings may not represent the customer population.</td>
+</tr>
+<tr>
+<td><strong>Non-response bias</strong></td>
+<td>People who refuse/avoid participation differ systematically, in a research-relevant way, from participants.</td>
+<td>Unhealthy people may avoid a health-practices survey, leaving an overly healthy respondent group.</td>
+</tr>
+<tr>
+<td><strong>Volunteer/self-selection bias</strong></td>
+<td>People with particular characteristics choose to participate, skewing the respondent pool and crowding out other perspectives.</td>
+<td>Highly enthusiastic customers may dominate an optional product-feedback survey.</td>
+</tr>
+<tr>
+<td><strong>Attrition bias</strong></td>
+<td>Participants drop out after a longitudinal study or experiment starts, and leavers differ significantly from those who remain.</td>
+<td>Participants experiencing adverse effects leave a drug-effectiveness study before completion.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="4-2-information-and-measurement-biases">4.2 Information and measurement biases</h3>
+<p>Management research often studies <strong>latent variables</strong>—intrinsic constructs such as perceptions, feelings, happiness, pleasure, attitudes, and beliefs that cannot be measured directly like height or weight. They require indicators and instruments, so measurement error is especially important.</p>
+<ul>
+<li><strong>Measurement bias:</strong> flaws, ambiguity, inconsistency, or inaccuracy in the tool or collection method prevent the intended phenomenon from being measured correctly. An ambiguous questionnaire confuses respondents and produces erroneous answers.</li>
+<li><strong>Recall bias:</strong> participants cannot accurately or completely remember past events. Asking for details from five years ago invites guessing or reconstructed memories; use appropriate recall periods and avoid unnecessarily remote questions.</li>
+<li><strong>Observer/researcher bias:</strong> a researcher’s expectations or beliefs unconsciously influence collection or later interpretation—for example, by giving clues about a preferred answer.</li>
+<li><strong>Interviewer bias:</strong> the interviewer’s tone, body language, phrasing, recording, or interpretation systematically influences responses. It overlaps with observer bias but is specific to the interview interaction.</li>
+</ul>
+<h3 id="4-3-response-biases">4.3 Response biases</h3>
+<ul>
+<li><strong>Social desirability bias:</strong> participants report what society approves rather than their true behaviour or belief—for example, expressing strong support for charity regardless of actual conduct.</li>
+<li><strong>Acquiescence bias:</strong> a tendency to agree or answer “yes” regardless of the item’s content.</li>
+<li><strong>Demand-characteristics bias:</strong> once participants infer the purpose or expected result of the study, they alter answers to fit that expectation.</li>
+</ul>
+<h3 id="4-4-analysis-and-cognitive-biases">4.4 Analysis and cognitive biases</h3>
+<ul>
+<li><strong>Confirmation bias:</strong> the researcher seeks, interprets, or favours evidence that confirms a pre-existing belief or expected hypothesis outcome.</li>
+<li><strong>Survivorship bias:</strong> analysis focuses only on cases that succeeded or survived and ignores failures. Studying only successful firms cannot reveal the complete causes of success and failure.</li>
+</ul>
+<p><strong>Practical controls:</strong> representative/random sampling where feasible, multiple contact attempts, dropout analysis, validated and pilot-tested instruments, neutral wording, standard interviewer scripts/training, blinding where feasible, triangulation, explicit inclusion/exclusion rules, audit trails, and reporting both supportive and contradictory evidence.</p>
+<hr>
+<h2 id="5-quantitative-and-qualitative-analysis">5. Quantitative and qualitative analysis</h2>
+<p>The analysis choice should be anticipated at planning stage because it depends on the research purpose and the form of data to be collected.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Quantitative analysis</th>
+<th>Qualitative analysis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data</td>
+<td>Numbers: counts, scores, percentages</td>
+<td>Non-numeric material: transcripts, open-ended responses, field notes, images, video/audio</td>
+</tr>
+<tr>
+<td>Purpose</td>
+<td>Measure magnitude, test hypotheses, establish associations, compare groups, forecast</td>
+<td>Explore meanings, experiences, reasons, language, and context</td>
+</tr>
+<tr>
+<td>Typical questions</td>
+<td>What? How much? How many? To what extent does X affect Y?</td>
+<td>Why? How does an experience or meaning emerge?</td>
+</tr>
+<tr>
+<td>Typical outputs</td>
+<td>Tables, charts, graphs, p-values, correlations, estimates, forecasts</td>
+<td>Codes, categories, themes, networks, rich description, narratives</td>
+</tr>
+<tr>
+<td>Tool style</td>
+<td>Excel/SPSS/jamovi/Minitab and graphical interfaces; R/RStudio and code-based tools</td>
+<td>NVivo and other qualitative-data-analysis/text-mining tools</td>
+</tr>
+</tbody>
+</table></div>
+<p>“How” appears in both: quantitative analysis expresses how much one unit of X changes Y, while qualitative analysis narrates the mechanism, meaning, or experience.</p>
+<p>The methods below are illustrative, not exhaustive.</p>
+<h3 id="5-1-descriptive-statistics">5.1 Descriptive statistics</h3>
+<p>Descriptive statistics summarise and describe a dataset:</p>
+<ul>
+<li><strong>central tendency:</strong> mean, median, mode;</li>
+<li><strong>dispersion:</strong> range, variance, standard deviation;</li>
+<li><strong>position:</strong> percentiles and quartiles; the median is the 50th percentile, dividing ordered data into two halves;</li>
+<li><strong>shape/symmetry:</strong> skewness and kurtosis.</li>
+</ul>
+<p>A distribution describes how data points are scattered around a central value. Data may be symmetrical or non-symmetrical.</p>
+<h3 id="5-2-inferential-and-comparative-methods">5.2 Inferential and comparative methods</h3>
+<ul>
+<li><strong>Independent-samples t-test:</strong> tests whether the means of two independent groups differ statistically—for example, satisfaction among male versus female customers, two store regions, or average sales under website layout A versus B (A/B testing).</li>
+<li><strong>ANOVA (analysis of variance):</strong> compares means across three or more groups.</li>
+<li><strong>Chi-square test:</strong> tests association between categorical variables—for example, region (South/East/West) and preferred product (A/B/C). Do not define chi-square simply as a comparison of two numerical means.</li>
+<li><strong>Correlation:</strong> assesses whether variables move together and the strength/direction of association; it does not by itself establish a directional causal model.</li>
+<li><strong>Regression:</strong> estimates the relationship of a dependent variable with one or more independent variables, supports forecasting, supplies direction, and helps identify the strongest predictor. Example: forecast sales using advertising spend, price, and competitor activity.</li>
+</ul>
+<h3 id="5-3-time-series-analysis">5.3 Time-series analysis</h3>
+<p>Analyses observations collected over time to identify trend, cycles, and seasonality and forecast future values from history. Uses include future sales, stock values, monthly electricity consumption, and demand planning.</p>
+<h3 id="5-4-data-mining-methods">5.4 Data mining methods</h3>
+<ul>
+<li><strong>Market-basket/association analysis:</strong> finds items or sequences frequently purchased together, potentially using the Apriori algorithm. If milk and bread co-occur, a retailer can design bundles, shelf placement, and recommendations.</li>
+<li><strong>Cluster analysis:</strong> an unsupervised method that groups similar customers, products, transactions, or geographic areas based on characteristics. Uses include target-market segmentation and pattern discovery.</li>
+</ul>
+<h3 id="5-5-qualitative-methods">5.5 Qualitative methods</h3>
+<ul>
+<li><strong>Content analysis:</strong> systematically codes and categorises communication in text, audio, or video to discover patterns and draw inferences. Uses include customer feedback, social-media posts, and competitor advertisements to understand brand perception or sentiment.</li>
+<li><strong>Thematic analysis:</strong> identifies, analyses, and reports recurring themes in interview transcripts and open-ended responses—for example, themes explaining employee reactions to a new policy.</li>
+<li><strong>Narrative/discourse analysis:</strong> studies language, stories, and context.</li>
+<li><strong>Sentiment analysis, text mining, and topic modelling:</strong> useful for voluntarily produced reviews such as Glassdoor data; reviews can also be clustered to classify employee/customer groups.</li>
+</ul>
+<p>The lecturer emphasised that unsolicited reviews can be valuable because customers or employees provide them voluntarily, without the direct compulsion of a research interview, though their representativeness must still be assessed.</p>
+<hr>
+<h2 id="6-structure-of-a-research-report">6. Structure of a research report</h2>
+<p>A strong report is structured so a decision-maker can understand and trust the work.</p>
+<h3 id="6-1-title">6.1 Title</h3>
+<p>Be precise and clear. Indicate, where useful, the central concepts, context, and stakeholder perspective.</p>
+<h3 id="6-2-abstract">6.2 Abstract</h3>
+<p>A concise summary of the entire research activity. It should cover:</p>
+<ul>
+<li><strong>what</strong> was studied;</li>
+<li><strong>why</strong> it was needed and justified;</li>
+<li><strong>how</strong> it was conducted;</li>
+<li><strong>who</strong> participated and/or who benefits;</li>
+<li>one or two overarching key findings;</li>
+<li>how the findings benefit the business or relevant stakeholders.</li>
+</ul>
+<h3 id="6-3-introduction">6.3 Introduction</h3>
+<p>Include:</p>
+<ul>
+<li>central concepts;</li>
+<li>background/context and why the study is necessary;</li>
+<li>relevant stakeholder entities and those affected;</li>
+<li>origin of the research problem in a business or social problem;</li>
+<li>problem statement: ideal situation, actual situation, the gap, and consequences;</li>
+<li>research questions;</li>
+<li>research gap and why previous solutions cannot simply be applied;</li>
+<li>objectives;</li>
+<li>anticipated/potential contribution.</li>
+</ul>
+<p>Context should clarify <strong>geography, time, variables, and stakeholder/entity boundaries</strong>. A poor introduction makes later methodological choices difficult to understand.</p>
+<p>A gap may be:</p>
+<ul>
+<li><strong>theoretical:</strong> existing explanations omit newly important causal variables or no longer explain the phenomenon adequately;</li>
+<li><strong>contextual:</strong> knowledge is missing for a geography, stakeholder, sector, or period.</li>
+</ul>
+<h3 id="6-4-literature-review">6.4 Literature review</h3>
+<p>Explain the evolution of concepts, relevant theories, constructs/variables, major prior findings, limitations, contradictions, and new phenomena that challenge earlier knowledge. It justifies the new study by showing why existing findings are not wholly transferable to the current context.</p>
+<p>The lecturer treated a <strong>construct</strong> as approximately a variable for introductory understanding, while noting that a methodological distinction exists.</p>
+<h3 id="6-5-theoretical-framework">6.5 Theoretical framework</h3>
+<p>State the adopted theory/model, important variables or constructs, theoretical and operational definitions, proposed relationships, assumptions, the phenomenon explained, and background/control variables needed for generalisation.</p>
+<h3 id="6-6-methodology-research-design">6.6 Methodology/research design</h3>
+<p>Explain:</p>
+<ul>
+<li>research type: exploratory, descriptive, or causal;</li>
+<li>whether the design is quantitative, qualitative, mixed, experimental, etc.;</li>
+<li>population, sampling unit, sampling method, sample size, and scientific basis for that size;</li>
+<li>data type/source and collection process;</li>
+<li>collection instrument (e.g., questionnaire);</li>
+<li>bias/error controls and data-quality standards;</li>
+<li>selected analytical methods.</li>
+</ul>
+<h3 id="6-7-findings-and-discussion">6.7 Findings and discussion</h3>
+<p>Present findings logically, then interpret them. Discussion is essential to credibility, particularly when a finding is new or contradicts prior research. Explain it in light of contextual realities so decision-makers can act with confidence.</p>
+<h3 id="6-8-contributions">6.8 Contributions</h3>
+<ul>
+<li><strong>Theoretical:</strong> validates, challenges, augments, or extends an existing theory.</li>
+<li><strong>Practical/business/social:</strong> helps solve the investigated problem or improves stakeholder outcomes.</li>
+<li><strong>Policy:</strong> informs organisational or public policy.</li>
+<li><strong>Academic/methodological:</strong> advances research practice or knowledge.</li>
+</ul>
+<p>Separating contribution types makes their value explicit.</p>
+<h3 id="6-9-limitations-and-future-research">6.9 Limitations and future research</h3>
+<p>Disclose remaining limitations even after bias controls. This defines where findings may not apply, protects responsible decision-making, and helps future researchers replicate the study while correcting weaknesses. Then present unanswered issues and extensions as a future research agenda.</p>
+<p>Typical limitations:</p>
+<ul>
+<li><strong>scope:</strong> a narrow phenomenon, function, period, or set of variables;</li>
+<li><strong>sample:</strong> small, non-representative, or drawn from one department/group;</li>
+<li><strong>method:</strong> reliance on self-report, cross-sectional design, one method, or weak instrument;</li>
+<li><strong>context:</strong> one firm, industry, country, or unusual event.</li>
+</ul>
+<h3 id="6-10-references-and-appendices">6.10 References and appendices</h3>
+<ul>
+<li><strong>References:</strong> complete, consistently formatted, alphabetically organised acknowledgement of every cited source; they provide academic credit, transparency, and traceability.</li>
+<li><strong>Appendices:</strong> detailed supporting material that is important for verification but would interrupt the main narrative—questionnaires, interview protocols, raw-data samples, supplementary tables, coding guides, and other instruments.</li>
+</ul>
+<p>The main report should contain evidence needed to understand and decide; appendices hold audit detail. Do not hide a crucial finding in an appendix.</p>
+<hr>
+<h2 id="7-literature-review-definition-purposes-and-types">7. Literature review: definition, purposes, and types</h2>
+<h3 id="7-1-definition">7.1 Definition</h3>
+<p>A literature review systematically or critically <strong>searches, evaluates, and combines existing research</strong> on a topic, concept, or problem to understand current knowledge and guide the solution to the problem under investigation. It reveals the direction, scope, limitations, and methods of extant research.</p>
+<p>It can support every element of the “5W1H” of research:</p>
+<ul>
+<li><strong>Why:</strong> problem, question, and gap;</li>
+<li><strong>Where/when:</strong> context and time;</li>
+<li><strong>What:</strong> concepts/variables;</li>
+<li><strong>Who:</strong> participants and beneficiaries;</li>
+<li><strong>How:</strong> methods.</li>
+</ul>
+<p>When clarity is lacking, the researcher can learn through three broad sources stressed in the lectures: <strong>experts, exposure/observation, and existing research reports</strong>.</p>
+<p>Purposes include understanding the current state of research; defining the research problem; identifying gaps; identifying variables and prior relationships; narrating context convincingly; selecting methodology; and building a theoretical foundation.</p>
+<h3 id="7-2-review-types">7.2 Review types</h3>
+<ul>
+<li><strong>Narrative/traditional review:</strong> broad overview of knowledge, theories, and common viewpoints; selection and synthesis may be flexible and narrative.</li>
+<li><strong>Rapid review:</strong> abbreviated process used where time/resources are limited; useful for quick decisions but sacrifices comprehensiveness.</li>
+<li><strong>Scoping review:</strong> maps the breadth, concepts, evidence types, and gaps in a wide or emerging field rather than narrowly estimating an effect.</li>
+<li><strong>Systematic literature review (SLR):</strong> answers a specific, well-defined research question through transparent, reproducible identification, quality evaluation, and synthesis of all relevant evidence.</li>
+<li><strong>Structured literature review:</strong> applies an explicit structure to selection and extraction, often recording research question, location, participants, method, and findings.</li>
+<li><strong>Research synthesis:</strong> integrates an existing evidence base.</li>
+<li><strong>Meta-analysis:</strong> statistically combines quantitative results from independent studies to estimate a more precise overall effect—for example, combining treatment-effect estimates across studies. It is not simply a narrative summary.</li>
+</ul>
+<p>The continuum runs from few formal rules (traditional/rapid/narrative) to strict, transparent rules (SLR/structured review/meta-analysis). The lecturer placed greatest academic emphasis on SLR.</p>
+<hr>
+<h2 id="8-conducting-a-systematic-literature-review">8. Conducting a systematic literature review</h2>
+<h3 id="8-1-start-with-a-review-question-and-protocol">8.1 Start with a review question and protocol</h3>
+<p>An SLR begins with a clear research question, the need/background for answering it, scope, intended approach, search terms, databases, inclusion/exclusion criteria, quality assessment, and planned synthesis.</p>
+<p>Identify the main concepts in the question, then create synonyms and related terms. Combine them with Boolean logic:</p>
+<ul>
+<li><code>AND</code> narrows by requiring both concepts: <code>customer satisfaction AND packaged food</code>.</li>
+<li><code>OR</code> broadens by accepting alternatives: <code>(Gen Z OR young consumer)</code>.</li>
+</ul>
+<p>A planned string might be: <code>(customer satisfaction OR consumer satisfaction) AND (packaged food OR FMCG) AND (India OR emerging economy)</code>.</p>
+<h3 id="8-2-inclusion-and-exclusion-criteria">8.2 Inclusion and exclusion criteria</h3>
+<p>Predefine what will count. Criteria may concern date, geography, population/generation, language, publication type, industry, method, or relevance.</p>
+<p>Transcript example: for post-COVID satisfaction with packaged foods among Gen Z in India/developing economies, exclude pre-2019 studies and irrelevant developed-country contexts; include studies focused on India, developing economies, and Gen Z. Criteria must follow the question rather than being adjusted merely to produce a preferred result.</p>
+<h3 id="8-3-databases">8.3 Databases</h3>
+<p>Possible sources include Google Scholar, Scopus, Web of Science, JSTOR, and PubMed. Select based on disciplinary coverage and review scope. Searches across multiple databases create duplicates, which must be removed.</p>
+<h3 id="8-4-pieces-framework">8.4 PIECES framework</h3>
+<p>PIECES provides a staged view of SLR:</p>
+<ol>
+<li><strong>Planning:</strong> define question, rationale, approach, scope, keywords, databases, and eligibility criteria.</li>
+<li><strong>Identifying:</strong> search and identify studies meeting preliminary criteria.</li>
+<li><strong>Evaluating:</strong> assess relevance, quality, and risk of bias; eliminate evidence that is not trustworthy under the protocol.</li>
+<li><strong>Collecting and combining:</strong> extract relevant fields/themes and integrate the shortlisted evidence.</li>
+<li><strong>Explaining:</strong> interpret results in context and discuss strengths, weaknesses, and important observations.</li>
+<li><strong>Summarising:</strong> transparently report methods and findings.</li>
+</ol>
+<h3 id="8-5-screening-and-prisma">8.5 Screening and PRISMA</h3>
+<p>PRISMA means <strong>Preferred Reporting Items for Systematic Reviews and Meta-Analyses</strong>. Its flow documents:</p>
+<ol>
+<li><strong>Identification:</strong> records found through databases/registers and other sources; duplicates and clearly unsuitable records are removed.</li>
+<li><strong>Screening:</strong> titles and abstracts are screened; potentially eligible full texts are sought and assessed.</li>
+<li><strong>Included:</strong> the final set enters qualitative synthesis and, where appropriate, quantitative meta-analysis.</li>
+</ol>
+<p>At each stage, report the number retained/excluded and reasons for full-text exclusion. This makes selection transparent and reproducible.</p>
+<h3 id="8-6-structured-extraction-and-synthesis">8.6 Structured extraction and synthesis</h3>
+<p>For each eligible study, extract comparable fields: citation, question/objective, theory, variables, context, participants/sample, design, data, measures, analysis, results, limitations, and quality/risk-of-bias judgement. A structured table prevents selective memory and supports defensible comparison.</p>
+<p><strong>Thematic synthesis process:</strong></p>
+<ol>
+<li>familiarise yourself with the evidence;</li>
+<li>code relevant passages/findings;</li>
+<li>group codes into themes;</li>
+<li>interpret patterns, contrasts, and their implications.</li>
+</ol>
+<h3 id="8-7-tccm-reporting-framework">8.7 TCCM reporting framework</h3>
+<p>The transcript sometimes renders the acronym imperfectly; the components described are <strong>Theory, Context, Characteristics, and Methodology (TCCM)</strong>:</p>
+<ul>
+<li><strong>Theory:</strong> dominant models/concepts/frameworks and unexplored theoretical perspectives.</li>
+<li><strong>Context:</strong> country, sector/industry, period, and setting; reveals transferability and contextual gaps.</li>
+<li><strong>Characteristics:</strong> focal constructs, variables, themes/domains, and their mapped relationships.</li>
+<li><strong>Methodology:</strong> design, quantitative/qualitative approach, data collection, sample, and analytical methods; reveals dominant methods and the need for methodological diversity.</li>
+</ul>
+<p>PIECES organises the review process; TCCM organises how the body of research is analysed/reported.</p>
+<hr>
+<h2 id="9-finding-and-articulating-a-research-gap">9. Finding and articulating a research gap</h2>
+<p>A literature review should not end as a list of summaries. Compare the literature to identify what remains unknown, under-tested, contradictory, context-bound, or methodologically weak.</p>
+<p>A strong problem/gap narrative follows:</p>
+<ol>
+<li><strong>Ideal situation:</strong> what should happen according to theory, organisational goals, or accepted practice.</li>
+<li><strong>Current situation:</strong> what actually occurs.</li>
+<li><strong>Consequences:</strong> why the discrepancy matters.</li>
+<li><strong>Research direction:</strong> what question/relationship/context must now be investigated.</li>
+</ol>
+<p>Possible gaps include missing variables/relationships, an under-studied population or geography, outdated evidence after environmental change, inconsistent findings, dependence on one method, weak samples, or theory not tested in a new context.</p>
+<p><strong>Practical example:</strong> Technology-acceptance studies may establish perceived usefulness and ease of use in conventional systems, but agentic AI adoption by an agency workforce may be untested. Applying and validating UTAUT/TAM in that new context is a contextual confirmation or extension—not proof that no earlier technology research exists.</p>
+<hr>
+<h2 id="10-theory-theoretical-frameworks-and-variables">10. Theory, theoretical frameworks, and variables</h2>
+<h3 id="10-1-theory">10.1 Theory</h3>
+<p>A <strong>theory</strong> is a systematic explanation of a phenomenon through relationships among factors/variables contributing to its occurrence or development. A phenomenon such as buying can be explained as a sequence involving need recognition, information search, evaluation of alternatives/value, selection, and purchase.</p>
+<p>Existing examples mentioned:</p>
+<ul>
+<li><strong>Technology Acceptance Model (TAM):</strong> Davis (1989); technology adoption is driven particularly by perceived usefulness and perceived ease of use. Later technology-acceptance work includes Venkatesh and UTAUT.</li>
+<li><strong>Diffusion of Innovation</strong> for adoption/spread.</li>
+<li><strong>Value-Belief-Norm theory</strong> and <strong>Stages of Change</strong> in environmental/behavioural contexts.</li>
+<li><strong>AIDA:</strong> Attention → Interest → Desire → Action. If an expensive advertisement gains exposure but does not generate interest, desire, or purchase, the expected theory/process breaks at an identifiable point.</li>
+</ul>
+<p>A researcher may adopt an existing theory, validate it in a new context, extend/challenge it, or develop a new explanation. A model gives direction by identifying what should cause the desired outcome and what must be measured.</p>
+<h3 id="10-2-five-variable-roles">10.2 Five variable roles</h3>
+<ol>
+<li><strong>Dependent variable (DV):</strong> the effect/outcome to be explained. Example: sales or satisfaction.</li>
+<li><strong>Independent variable (IV):</strong> the presumed cause/predictor. Example: advertisement effectiveness or product quality.</li>
+<li><strong>Mediator:</strong> explains <em>how/why</em> an IV produces a DV. Advertisement → perceived value → purchase/sales; perceived value carries the effect.</li>
+<li><strong>Moderator:</strong> changes the strength or direction of the IV–DV relationship. Trust in advertising strengthens the effect of ad effectiveness on purchase; distrust weakens it.</li>
+<li><strong>Control variable:</strong> a third factor whose influence is held constant so the focal relationship can be estimated/generalised. Gender, age, income, or education may affect ad response and therefore be controlled when justified.</li>
+</ol>
+<p>Do not confuse mediation and moderation: a mediator is the mechanism; a moderator specifies when/for whom/how strongly the relation occurs.</p>
+<h3 id="10-3-building-a-model-from-a-business-problem">10.3 Building a model from a business problem</h3>
+<p>The live-session retail example follows this chain:</p>
+<ol>
+<li><strong>Business problem:</strong> store footfall is declining.</li>
+<li><strong>Desired effect:</strong> repeat visits/footfall must increase.</li>
+<li><strong>Candidate DV:</strong> customer satisfaction and/or loyalty, because satisfied/loyal customers are more likely to return.</li>
+<li><strong>Inventory possible causes:</strong> established theory, prior studies, experts, and business experience suggest product quality, price, variety, service, store ambience/location, offers, display, payment options, etc.</li>
+<li><strong>Classify variables:</strong> determine IVs, mediators, moderators, and justified controls such as age.</li>
+<li><strong>Propose hypotheses:</strong> e.g., perceived product quality positively affects satisfaction.</li>
+<li><strong>Collect measurements:</strong> assess each construct using suitable questionnaire items or operational data.</li>
+<li><strong>Analyse relationships:</strong> identify strong and weak predictors; a weak/non-supported link suggests where corrective action is needed.</li>
+</ol>
+<p>An illustrated model was: product attributes and store attributes → perceived value → satisfaction; variety-seeking and price sensitivity may moderate relevant paths. Data must measure every construct before estimating the hypothesised relationships.</p>
+<hr>
+<h2 id="11-hypotheses-significance-estimation-and-generalisation">11. Hypotheses, significance, estimation, and generalisation</h2>
+<p>A <strong>hypothesis</strong> is a logical, testable assumption made at the beginning about an expected outcome. Theories comprise multiple hypothesised relationships.</p>
+<p>Two broad hypothesis uses were emphasised:</p>
+<ul>
+<li><strong>Relational hypotheses:</strong> whether variables are related—for example, product quality affects satisfaction.</li>
+<li><strong>Group-difference hypotheses:</strong> whether a variable differs across demographic groups such as gender, age, or income.</li>
+</ul>
+<p>Classical statistical form:</p>
+<ul>
+<li><strong>Null hypothesis (H₀):</strong> no significant relationship/difference.</li>
+<li><strong>Alternative hypothesis (H₁):</strong> a significant relationship/difference exists.</li>
+</ul>
+<p>In business research, the desired practical result is often support for the alternative because the business expects an action such as a better advertisement to raise purchase intention. Contemporary articles may state only the directional/alternative research hypothesis, but students should know how to write both forms.</p>
+<p>A sample result must be used to infer a population. A path coefficient/beta expresses estimated relationship strength; the live session used <strong>p &lt; .05</strong> as the conventional benchmark for statistical significance/generalisation. Do not equate statistical significance with practical importance, causality, or proof; also inspect effect magnitude, design, assumptions, and context.</p>
+<p><strong>Estimation</strong> is using sample statistics to infer population parameters, accompanied by concepts such as confidence level and confidence interval. If a true census measures every member, sample-to-population inference is unnecessary.</p>
+<hr>
+<h2 id="12-questionnaires-and-measurement">12. Questionnaires and measurement</h2>
+<p>Many marketing and HR constructs are latent; directly observable metrics (purchase count, revenue, frequency) can be counted, while beliefs, attitudes, perceived quality, and satisfaction require carefully designed measures.</p>
+<p>A typical questionnaire may contain:</p>
+<ol>
+<li><strong>Respondent profile:</strong> age, gender, income, education, social background, etc.</li>
+<li><strong>Exploratory/behaviour section:</strong> visit frequency, online/offline preference, decision style, preferred format, and reasons.</li>
+<li><strong>Construct measures:</strong> multiple statements measuring each model variable.</li>
+<li><strong>Optional open-ended questions:</strong> recommendations or service expectations.</li>
+</ol>
+<p>The number of questions is determined by objectives, constructs, required depth, respondent burden, and validated scale requirements—not a universal fixed number. Reuse/adapt standard questionnaires from literature where appropriate and document the source and adaptation.</p>
+<hr>
+<h2 id="13-project-and-live-session-applications">13. Project and live-session applications</h2>
+<ul>
+<li>A project proposal is a plan and was described as not itself graded; the final report is evaluated. Absence of a non-acceptance message was treated in the session as acceptance, while revisions can be made as concepts become clearer.</li>
+<li><strong>Design of Experiments (DOE), including Taguchi designs</strong>, is acceptable where suited to the problem. The report must still explain why an experiment is required and connect it to the business problem.</li>
+<li><strong>Glassdoor/review data</strong> can be valid textual secondary data for sentiment analysis, text mining, topic modelling, and clustering, subject to source-quality and sampling limitations.</li>
+<li><strong>UTAUT for agentic-AI workforce acceptance</strong> is a legitimate use of an existing theory in a new context; perceptual data would ordinarily be collected to test it.</li>
+<li>A topic such as “digital marketing strategies” is too broad unless narrowed to a specific outcome/question—for example, emerging strategies for customer engagement or testing drivers of engagement.</li>
+<li>For a <strong>virtual project</strong>, begin with objectives and determine data requirements; then check whether appropriate secondary data exists and whether it is free or paid.</li>
+<li><strong>FMCG input-cost inflation:</strong> possible secondary sources include CPI and government/RBI data; CMIE was mentioned as another potential source, possibly paid.</li>
+<li><strong>Mutual-fund investment among salaried employees:</strong> perception can be studied by surveying salaried employees; precise investment-volume data may require access to fund providers.</li>
+<li><strong>Institutional funding in PE/VC and firm effects:</strong> viable in principle but likely dependent on suitable secondary-data access and a clear analytical design.</li>
+<li>Multiple controls can be included simultaneously as covariates in SPSS/jamovi or other modelling tools. First justify/test whether a candidate factor materially changes the focal effect; t-tests/ANOVA can inspect group differences, while the final model can control multiple covariates together.</li>
+</ul>
+<hr>
+<h2 id="14-review-case-augmentation-limitations-future-research-references-and-appendices">14. Review/case augmentation: limitations, future research, references, and appendices</h2>
+<p>The source’s BrightStar Ltd. review/case reinforces final-report judgement. A good report should not choose between honesty about limitations and useful future action; it should combine both while preserving readability.</p>
+<h3 id="14-1-brightstar-reporting-logic">14.1 BrightStar reporting logic</h3>
+<p>If a study of collaboration/remote work used only one department, disclose the <strong>sample and scope limitation</strong>. Findings may have internal value but limited <strong>generalisability</strong> across departments, functions, organisations, or cultures. The limitation does not automatically invalidate the study; it defines the boundary of inference.</p>
+<p>Then convert boundaries into a future research agenda:</p>
+<ul>
+<li>replicate across departments and organisations;</li>
+<li>include more diverse teams and demographic/professional backgrounds;</li>
+<li>test digital collaboration tools and remote/hybrid conditions;</li>
+<li>use longitudinal designs to examine change over time;</li>
+<li>add qualitative interviews/focus groups to explain quantitative patterns;</li>
+<li>improve measures and sampling.</li>
+</ul>
+<p>The strongest reporting option is therefore:</p>
+<ol>
+<li>disclose material limitations in the main report;</li>
+<li>explain their likely impact on interpretation;</li>
+<li>connect each limitation to a feasible future study;</li>
+<li>keep actionable insights visible;</li>
+<li>place bulky instruments, raw-data samples, and supplementary tables in appendices.</li>
+</ol>
+<h3 id="14-2-mixed-methods">14.2 Mixed methods</h3>
+<p>Mixed methods combine:</p>
+<ul>
+<li><strong>quantitative breadth:</strong> magnitude, frequency, group comparison, relationship testing, and potential generalisation;</li>
+<li><strong>qualitative depth:</strong> meaning, mechanism, context, and participant experience.</li>
+</ul>
+<p>For remote-work research, a survey might quantify collaboration, engagement, or productivity while interviews explain isolation, communication barriers, tool fatigue, trust, or managerial support. Combining them gives a fuller basis for decisions, provided the integration strategy is explicit.</p>
+<h3 id="14-3-validity-concepts">14.3 Validity concepts</h3>
+<ul>
+<li><strong>Generalisability/external validity:</strong> whether findings extend beyond the studied sample/context.</li>
+<li><strong>Internal validity:</strong> whether the observed effect is credibly attributable to the proposed cause rather than confounding factors.</li>
+<li><strong>Construct validity:</strong> whether the instrument truly measures the intended construct.</li>
+</ul>
+<p>A single-department sample principally threatens generalisability; ambiguous satisfaction items threaten construct validity; an uncontrolled third variable threatens internal validity.</p>
+<h3 id="14-4-common-misconceptions-corrected">14.4 Common misconceptions corrected</h3>
+<ul>
+<li>Reporting limitations does <strong>not</strong> necessarily weaken a report; transparent boundaries strengthen credibility.</li>
+<li>A future research agenda is <strong>not</strong> a vague wish list; it should follow directly from gaps and limitations.</li>
+<li>References are <strong>not</strong> optional background reading; every cited work must be traceable and consistently listed.</li>
+<li>Appendices are <strong>not</strong> a dumping ground; include only relevant verification/support material.</li>
+<li>Quantitative methods are <strong>not inherently superior</strong> to qualitative methods; fit depends on question and data.</li>
+<li>Mixed methods is <strong>not merely collecting two kinds of data</strong>; findings must be purposefully integrated.</li>
+<li>A literature review is <strong>not an article-by-article summary</strong>; it requires evaluation and synthesis.</li>
+<li>Meta-analysis is <strong>not synonymous with SLR</strong>; it is a statistical synthesis that may form part of a systematic review when compatible quantitative studies exist.</li>
+</ul>
+<hr>
+<h2 id="15-high-yield-exam-comparisons">15. High-yield exam comparisons</h2>
+<h3 id="primary-vs-secondary-data">Primary vs secondary data</h3>
+<p>Primary is collected specifically and directly for the present inquiry; secondary pre-exists and is reused. Primary offers fit and control but costs time/resources; secondary is fast and economical but may be outdated, differently defined, or contextually mismatched.</p>
+<h3 id="quantitative-vs-qualitative-analysis">Quantitative vs qualitative analysis</h3>
+<p>Quantitative measures magnitude and tests numerical relationships; qualitative explains meaning, experience, and mechanism. The research question and data—not researcher preference—determine the choice.</p>
+<h3 id="correlation-vs-regression">Correlation vs regression</h3>
+<p>Correlation describes association; regression specifies an outcome and one or more predictors, estimates direction/magnitude, and supports prediction. Neither alone proves causation without an appropriate design.</p>
+<h3 id="t-test-vs-anova-vs-chi-square">t-test vs ANOVA vs chi-square</h3>
+<ul>
+<li>t-test: numerical mean across two independent groups;</li>
+<li>ANOVA: numerical mean across three or more groups;</li>
+<li>chi-square: association between categorical variables.</li>
+</ul>
+<h3 id="mediator-vs-moderator-vs-control">Mediator vs moderator vs control</h3>
+<ul>
+<li>mediator = mechanism (“how/why”);</li>
+<li>moderator = boundary condition (“when/for whom/how strongly”);</li>
+<li>control = competing influence held constant.</li>
+</ul>
+<h3 id="narrative-review-vs-slr-vs-meta-analysis">Narrative review vs SLR vs meta-analysis</h3>
+<ul>
+<li>narrative = broad, flexible synthesis;</li>
+<li>SLR = question-driven, transparent, reproducible evidence selection and synthesis;</li>
+<li>meta-analysis = statistical pooling of compatible quantitative estimates.</li>
+</ul>
+<hr>
+<h2 id="16-exam-ready-integrative-example">16. Exam-ready integrative example</h2>
+<p><strong>Problem:</strong> A retailer’s footfall is declining.</p>
+<p><strong>Planning and literature:</strong> Define the ideal and current footfall, consequences, stakeholders, and question. Review retail-satisfaction and loyalty literature using databases, explicit keywords, criteria, PRISMA screening, and TCCM extraction. Identify whether product/store attributes, value, satisfaction, loyalty, variety-seeking, and price sensitivity are supported and whether the local context is under-studied.</p>
+<p><strong>Framework:</strong> Product attributes and store attributes (IVs) → perceived value (mediator) → satisfaction/loyalty (DVs); price sensitivity or variety-seeking may moderate paths; age/income may be controls.</p>
+<p><strong>Execution:</strong> Use transaction data plus a representative customer survey, observation, and possibly interviews. Pilot neutral questionnaire items, standardise administration, code Likert items, monitor missing and straight-line responses, and document bias controls.</p>
+<p><strong>Analysis:</strong> Describe distributions; use t-test/ANOVA for group differences, regression for predictors, time series for footfall trends, basket analysis for co-purchases, and thematic analysis for interview/open-response explanations.</p>
+<p><strong>Report/decision:</strong> Present findings and contextual discussion, contributions, limitations, actions (assortment, ambience, pricing, offers, payment options), and a future agenda. Put instruments and supplemental detail in appendices and cite all sources consistently.</p>
+<hr>
+<h2 id="source-coverage-checklist">Source-coverage checklist</h2>
+<ul>
+<li>[x] <strong>Video 01 — Execution Stage:</strong> research-stage sequence; execution objectives; primary/secondary and internal data; observation/interview/survey; numeric/text storage; m × n spreadsheet; coding; pattern responses, missing/invalid values; all four bias families and examples; bias documentation.</li>
+<li>[x] <strong>Video 02 — Quantitative &amp; Qualitative Analysis Methods &amp; Tools:</strong> data/purpose/output/tool distinctions; descriptive statistics; t-test, ANOVA, chi-square; correlation/regression; time series; market basket/Apriori; clusters; content, thematic, narrative/discourse and sentiment-oriented analysis; business examples; method-selection principle.</li>
+<li>[x] <strong>Video 03 — Key Elements of Research Report:</strong> title, abstract, introduction, context, problem narration, research gap, literature review, theory, design/methodology, findings/discussion, contribution types, limitations, future agenda, references, appendices, and decision-maker trust.</li>
+<li>[x] <strong>Video 04 — Literature Review:</strong> definition/purposes; 5W1H support; expert/exposure/literature sources; review types; SLR and meta-analysis; question/keywords/Boolean logic; databases; inclusion/exclusion; duplicates; PIECES; evaluation/risk of bias; extraction/synthesis; PRISMA; TCCM; gap formulation.</li>
+<li>[x] <strong>Embedded interaction/Q&amp;A:</strong> theory and phenomena; buying process; TAM/UTAUT, Diffusion of Innovation, VBN, Stages of Change, AIDA; IV/DV/mediator/moderator/control; retail footfall model; hypothesis types; null/alternative; p-value and population inference; latent variables; questionnaire structure; DOE/Taguchi; Glassdoor; virtual/secondary-data and finance/project examples; multiple controls; proposal guidance.</li>
+<li>[x] <strong>Quiz/review and BrightStar case material:</strong> report limitations, one-department boundary, generalisability/internal/construct validity, future research, team diversity and collaboration tools, mixed methods, references, appendices, main-report vs appendix decisions, misconceptions, and recommended balanced reporting strategy.</li>
+</ul>
+<h3 id="transcript-ambiguities-normalised">Transcript ambiguities normalised</h3>
+<ul>
+<li>Tool names were phonetically transcribed; notes use the most likely forms: <strong>SPSS, jamovi, Minitab, R/RStudio, NVivo</strong>.</li>
+<li>“PIECES,” “TCCM,” “PRISMA,” “kurtosis,” “quartiles,” “acquiescence bias,” “survivorship bias,” “latent variable,” and “questionnaire” were normalised from speech-to-text variants.</li>
+<li>The lecture’s phrase about “primary internal data” is retained with the important clarification that primary/secondary status depends on who collected it and for what current research purpose.</li>
+</ul>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<p>The review clarifies that a literature review uses secondary evidence rather than collecting primary data. TechNova is an end-to-end reporting example: report findings, implications, limitations, cautious association language, and a future follow-up using actual turnover.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-2.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 2: Research Planning, Theoretical Frameworks,…</span>
+      </a>
+      <a href="week-4.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 4: Theoretical Frameworks, Variables,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

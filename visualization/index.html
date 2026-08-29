@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Visualization · Week 1 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Visualization</span>
+      <span class="brand-title">Week 1</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html" selected>Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a class="is-active" href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Data Visualization, Visual Perception, and Preattentive Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Visual Perception, Better Visualization, Form–Function, Tables and…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Visualizing and Comparing Categories
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Charts That Show Change Over Time
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Distribution and Relationship Visualizations
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Data Visualization: Exhaustive Exam Notes
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Data Visualization with Python, Jupyter, Python Basics, and Chart…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Python Data Visualization, Matplotlib Plotting, Interpretation, and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Data Visualization with Matplotlib, Seaborn, and Jupyter Notebook
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Exam-Focused Study Notes
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Seaborn, Matplotlib, Heatmaps, Styling, and Dashboard Design
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Dashboards, Dashboard Design, Grammar of Graphics, and Matplotlib
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Dashboard Design, Visual Encoding, Matplotlib, and Dashboard Analytics
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Storytelling with Data
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Storytelling with Data: Exam-Focused Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Visualization · Week 1</p>
+        <h1 class="page-title">Data Visualization, Visual Perception, and Preattentive Processing</h1>
+        <p class="page-meta">Week 1 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#how-to-use-these-notes">How to use these notes</a></li>
+      <li><a href="#1-foundations-of-data-visualization">1. Foundations of Data Visualization</a></li>
+      <li><a href="#2-benefits-goals-limitations-and-governance">2. Benefits, Goals, Limitations, and Governance</a></li>
+      <li><a href="#3-why-tables-alone-often-fail-core-live-class-examples">3. Why Tables Alone Often Fail: Core Live-Class Examples</a></li>
+      <li><a href="#4-visual-perception-why-designers-must-understand-it">4. Visual Perception: Why Designers Must Understand It</a></li>
+      <li><a href="#5-mechanics-of-sight">5. Mechanics of Sight</a></li>
+      <li><a href="#6-human-memory-and-visual-processing">6. Human Memory and Visual Processing</a></li>
+      <li><a href="#7-preattentive-attributes">7. Preattentive Attributes</a></li>
+      <li><a href="#8-encoding-quantitative-and-categorical-values">8. Encoding Quantitative and Categorical Values</a></li>
+      <li><a href="#9-context-contrast-and-perceptual-illusions">9. Context, Contrast, and Perceptual Illusions</a></li>
+      <li><a href="#10-limits-of-preattentive-and-distinct-perception">10. Limits of Preattentive and Distinct Perception</a></li>
+      <li><a href="#11-colour-meaning-psychology-and-accessibility">11. Colour: Meaning, Psychology, and Accessibility</a></li>
+      <li><a href="#12-presentation-and-dashboard-design-principles-from-the-quiz">12. Presentation and Dashboard Design Principles from the Quiz</a></li>
+      <li><a href="#13-storytelling-with-data">13. Storytelling with Data</a></li>
+      <li><a href="#14-ai-in-data-visualization">14. AI in Data Visualization</a></li>
+      <li><a href="#15-greenwave-energy-dashboard-case-study">15. GreenWave Energy Dashboard Case Study</a></li>
+      <li><a href="#16-likely-exam-questions-and-answer-frameworks">16. Likely Exam Questions and Answer Frameworks</a></li>
+      <li><a href="#17-practical-design-checklist">17. Practical Design Checklist</a></li>
+      <li><a href="#18-rapid-revision-sheet">18. Rapid Revision Sheet</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="how-to-use-these-notes">How to use these notes</h2>
+<p>These notes consolidate the four Week 1 recorded lectures, the live class, the quiz material, and the GreenWave Energy case study. They retain the definitions, explanations, examples, caveats, design limits, and instructor emphasis while removing timestamps, platform messages, greetings, and repeated classroom prompts.</p>
+<hr>
+<h2 id="1-foundations-of-data-visualization">1. Foundations of Data Visualization</h2>
+<h3 id="1-1-why-visual-representation-matters">1.1 Why visual representation matters</h3>
+<p>Visual representation is a fundamental part of human learning and understanding. Humans have used visuals to instruct, convey meaning, and tell stories since ancient times. Vision is especially powerful because seeing, thinking, and understanding are closely connected: common words for understanding—<em>insight, illumination,</em> and <em>enlightenment</em>—are themselves visual metaphors.</p>
+<h3 id="1-2-two-types-of-visual-representation-of-data">1.2 Two types of visual representation of data</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Primary purpose</th>
+<th>Roles and experience</th>
+<th>Typical question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Presentation</strong></td>
+<td>Communicate and persuade</td>
+<td>A presenter communicates to an audience; the experience is mainly directed by the presenter</td>
+<td>“How can I communicate this conclusion convincingly?”</td>
+</tr>
+<tr>
+<td><strong>Visualization</strong></td>
+<td>Use visuals to think, explore, and answer questions</td>
+<td>The experience is active; users interact with or inspect the data to discover answers</td>
+<td>“What patterns or answers are hidden in these data?”</td>
+</tr>
+</tbody>
+</table></div>
+<p>Both are important, but they impose different design requirements. A presentation must make the intended message unmistakable; an exploratory visualization must help users investigate and discover.</p>
+<h3 id="1-3-definition-of-data-visualization">1.3 Definition of data visualization</h3>
+<p><strong>Data visualization is the graphical representation of information and data using visual elements such as charts, graphs, and maps.</strong></p>
+<p>It converts abstract numbers into meaningful visual structures so that users can see and understand trends, outliers, relationships, and patterns hidden in data. It also provides a dynamic and intuitive way to explore information and allows technical findings to be communicated to non-technical audiences without confusion.</p>
+<h3 id="1-4-data-to-wisdom-chain">1.4 Data-to-wisdom chain</h3>
+<p>The live session repeatedly emphasized the progression:</p>
+<blockquote>
+<p><strong>Data → Information → Knowledge → Wisdom → Problem solving and decision-making</strong></p>
+</blockquote>
+<ul>
+<li><strong>Data</strong> are raw observations or values.</li>
+<li><strong>Information</strong> is data organized so that it conveys meaning.</li>
+<li><strong>Knowledge</strong> is understanding the patterns, relationships, and implications in that information.</li>
+<li><strong>Wisdom</strong> is applying knowledge appropriately to make sound decisions and solve problems.</li>
+</ul>
+<p>Data visualization is a major tool for moving raw data along this chain. The instructor described this transformation as the essence of the course and as a skill required by <strong>all managers</strong>, not merely analytics or AI specialists.</p>
+<h3 id="1-5-data-visualization-as-art-and-science">1.5 Data visualization as art and science</h3>
+<p>The instructor characterized data visualization as <strong>more of an art than a science</strong> in the sense that correct data alone do not guarantee impact. Designers must make judgments about audience, context, chart choice, emphasis, annotation, sequence, and storytelling. Scientific accuracy remains essential, but communication quality depends on informed design choices.</p>
+<hr>
+<h2 id="2-benefits-goals-limitations-and-governance">2. Benefits, Goals, Limitations, and Governance</h2>
+<h3 id="2-1-instructor-emphasis">2.1 Instructor emphasis</h3>
+<p>The benefits of data visualization automatically become its <strong>design goals</strong>. Students need not mechanically memorize a list, but should keep the benefits in mind because this awareness makes designs more complete and effective and provides motivation for learning the subject.</p>
+<h3 id="2-2-major-benefits">2.2 Major benefits</h3>
+<h4 id="a-enhances-communication">A. Enhances communication</h4>
+<ul>
+<li>Visuals function as a near-universal language that can cross barriers of language and technical expertise.</li>
+<li>They clarify complex ideas when presenting findings to stakeholders, collaborating with teams, or educating the public.</li>
+<li>A visually engaging representation promotes shared understanding across levels of an organization.</li>
+</ul>
+<h4 id="b-improves-analysis">B. Improves analysis</h4>
+<ul>
+<li>Raw rows and columns force users to search manually.</li>
+<li>Visual representations reveal structure that is difficult to detect in a table.</li>
+<li>Graphs allow many values to be perceived as one coherent pattern, supporting comparison and interpretation.</li>
+</ul>
+<h4 id="c-drives-informed-decision-making">C. Drives informed decision-making</h4>
+<ul>
+<li>The ultimate goal is to provide timely, relevant insights so stakeholders can act confidently.</li>
+<li>Applications include optimizing marketing campaigns, allocating resources, identifying growth opportunities, and responding to risks.</li>
+<li>Visual storytelling converts information into action and can drive positive business outcomes.</li>
+</ul>
+<h4 id="d-increases-efficiency">D. Increases efficiency</h4>
+<ul>
+<li>Traditional analysis often requires sifting through spreadsheets and databases, which is time-consuming and prone to human error.</li>
+<li>Visualization tools automate portions of analysis and make trends and outliers easier to identify.</li>
+<li>Reducing the effort needed to extract insight frees resources for more strategic work.</li>
+</ul>
+<h4 id="e-reveals-trends-patterns-and-anomalies">E. Reveals trends, patterns, and anomalies</h4>
+<ul>
+<li>Plotting data across time or variables can expose patterns invisible in raw data.</li>
+<li>These patterns support forecasting, opportunity detection, and risk mitigation.</li>
+<li>Examples: anomalies in financial transactions, customer-behaviour changes, and social-media trends.</li>
+</ul>
+<h4 id="f-democratizes-data-driven-decisions">F. Democratizes data-driven decisions</h4>
+<ul>
+<li>Visualization puts analytical power into the hands of those who need it—from frontline employees to C-suite executives.</li>
+<li>Broader access promotes a culture of analytics and enables users at all organizational levels to decide with confidence.</li>
+</ul>
+<h4 id="g-leverages-advanced-analytics">G. Leverages advanced analytics</h4>
+<ul>
+<li>Modern tools increasingly incorporate machine learning and artificial intelligence.</li>
+<li>They can reveal deeper insights and predictive trends and offer prescriptive recommendations.</li>
+<li>Combining visualization with advanced analytics can uncover opportunities, optimize processes, and support innovation.</li>
+</ul>
+<h4 id="h-enables-interactive-dashboards">H. Enables interactive dashboards</h4>
+<ul>
+<li>Interactive dashboards combine multiple visualizations in one interface to present key metrics and KPIs, often in real time.</li>
+<li>Users can drill down, filter by criteria, inspect specific data points, and create ad hoc views.</li>
+<li>Uses include monitoring business performance, tracking project milestones, and conducting what-if analysis.</li>
+</ul>
+<h3 id="2-3-data-quality-the-non-negotiable-foundation">2.3 Data quality: the non-negotiable foundation</h3>
+<blockquote>
+<p><strong>Garbage in, garbage out.</strong> No visualization can compensate for poor-quality data.</p>
+</blockquote>
+<p>Organizations must ensure:</p>
+<ul>
+<li><strong>Accuracy</strong> — values correctly represent reality.</li>
+<li><strong>Completeness</strong> — necessary data are not missing.</li>
+<li><strong>Consistency</strong> — definitions and values agree across sources and time.</li>
+<li><strong>Integrity</strong> — data remain reliable throughout collection, processing, and use.</li>
+</ul>
+<p>Recommended controls include:</p>
+<ol>
+<li>Establish data-quality standards.</li>
+<li>Implement validation checks.</li>
+<li>Create robust data-governance processes/frameworks.</li>
+<li>Enforce data-stewardship policies.</li>
+<li>Resolve data-integration problems.</li>
+<li>Train users.</li>
+<li>Use appropriate technical and analytical capabilities.</li>
+</ol>
+<p>These controls create the foundation required to trust visualized insights and make decisions confidently.</p>
+<h3 id="2-4-challenges-and-ways-to-overcome-them">2.4 Challenges and ways to overcome them</h3>
+<p>Potential obstacles include data-integration issues, poor data quality, technical limitations, limited user skill, misleading visual encoding, and inappropriate reliance on automated tools. Organizations can respond through user training, governance, stewardship, validation, appropriate analytical methods, and perceptually informed design.</p>
+<hr>
+<h2 id="3-why-tables-alone-often-fail-core-live-class-examples">3. Why Tables Alone Often Fail: Core Live-Class Examples</h2>
+<h3 id="3-1-global-warming-table-versus-visualization">3.1 Global warming: table versus visualization</h3>
+<p>The instructor first displayed a table of global temperature values from 1850 to 2026 and asked whether it communicated the seriousness of global warming. A viewer could read the numbers and observe some increase, but the impact was weak—especially for a large audience, viewers seated far away, or people facing distractions.</p>
+<p>The same data were then shown visually under the message <strong>“Global temperature rise since 1850: rapid warming in recent decades.”</strong> The visualization made the key comparison explicit:</p>
+<ul>
+<li>From about 1850 to 1970, temperature rose approximately <strong>0.6°C</strong>.</li>
+<li>From then to the present, it rose approximately another <strong>1.2°C</strong>.</li>
+<li>What took more than a century to increase was more than doubled in roughly the last 50 years.</li>
+</ul>
+<p>The visualization, annotation, and contrasting colour made the focal message available on the screen even if a viewer briefly stopped listening. A raw table could make the audience miss individual values or the key “doubling” statement.</p>
+<p><strong>Exam lesson:</strong> A visualization should not merely display numbers. It should reveal and emphasize the message that matters.</p>
+<h3 id="3-2-data-is-the-new-oil-and-free-digital-products">3.2 “Data is the new oil” and free digital products</h3>
+<p>The live session used the phrase <strong>“data is the new oil.”</strong> In earlier decades oil was viewed as a supreme asset; today organizations compete intensely for data. The instructor connected this to the saying:</p>
+<blockquote>
+<p><strong>If a product is free, you are the product.</strong></p>
+</blockquote>
+<p>Free apps and services may collect users’ preferences, questions, needs, and behaviour. Organizations can profile and cluster users, then use or sell this data to support customized advertising and targeting. The relevance to visualization is that possessing data is not enough: it becomes impactful only when transformed into a form an audience can understand.</p>
+<h3 id="3-3-anscombe-s-quartet">3.3 Anscombe’s quartet</h3>
+<p>Four datasets contain paired values \(X_1,Y_1\), \(X_2,Y_2\), \(X_3,Y_3\), and \(X_4,Y_4\). Their means and standard deviations are the same or very similar, so a table and summary statistics do not reveal how differently the variables behave. When graphed, the differences become obvious:</p>
+<ol>
+<li>Dataset 1 shows an approximately <strong>linear relationship</strong>.</li>
+<li>Dataset 2 shows a <strong>curved/parabolic relationship</strong> that rises and then falls.</li>
+<li>Dataset 3 is roughly linear but contains <strong>one major outlier</strong>.</li>
+<li>Dataset 4 is largely a vertical cluster with <strong>one influential outlier</strong>.</li>
+</ol>
+<p><strong>Exam lesson:</strong> Equal or similar summary statistics can hide radically different distributions and relationships. Always visualize the data; a graph can reveal form, curvature, clustering, and outliers that tables or aggregates conceal.</p>
+<h3 id="3-4-cognitive-effort-and-audience-disengagement">3.4 Cognitive effort and audience disengagement</h3>
+<p>The brain conserves cognitive resources. If viewers examine a complicated table for a short time and cannot make sense of it, they may stop processing it. They can continue staring at the screen without truly seeing or understanding. The instructor advised assuming that an audience is initially uninterested: the presenter must create interest and minimize unnecessary cognitive effort.</p>
+<p>Good visualization reduces the effort required to identify structure, enabling the audience to understand quickly and remain engaged.</p>
+<hr>
+<h2 id="4-visual-perception-why-designers-must-understand-it">4. Visual Perception: Why Designers Must Understand It</h2>
+<h3 id="4-1-vision-s-dominance">4.1 Vision’s dominance</h3>
+<ul>
+<li>Humans have five senses (<em>Panchendriyas</em>), but vision is the most powerful and efficient channel for receiving information.</li>
+<li>Approximately <strong>70% of the body’s sensory receptors</strong> are dedicated to vision.</li>
+<li>Because visualization communicates through this dominant channel, understanding visual perception is necessary for designing effective quantitative displays.</li>
+</ul>
+<h3 id="4-2-colin-ware-s-perception-based-argument">4.2 Colin Ware’s perception-based argument</h3>
+<p>The visual system follows its own rules. Patterns shown one way may be instantly visible, while the same patterns shown differently may become effectively invisible. If designers understand perception, they can translate that knowledge into display rules so important patterns stand out. Disobeying those rules can make data incomprehensible or misleading.</p>
+<p>This is the foundation of <strong>perception-based design</strong>: designing charts according to the strengths and limits of human vision, rather than merely making them attractive.</p>
+<h3 id="4-3-light-comes-from-above-illusion">4.3 “Light comes from above” illusion</h3>
+<p>The lecture showed two sets of shaded circles. One set appeared to bulge outward and the other to be dented inward. Rotating the circles upside down reversed the perception even though the sets had not changed position.</p>
+<p>Reason: the visual system contains an assumption that illumination comes from above. Historically, the sun was the dominant source of light, so a shape with a bright upper half and shadowed lower half is naturally interpreted as convex or bulging outward. Modern light sources may come from anywhere, but this built-in rule still guides perception.</p>
+<p><strong>Lesson:</strong> Visual-system rules are powerful but not always obvious. Designers must understand them because context and shading can change what viewers believe they see.</p>
+<hr>
+<h2 id="5-mechanics-of-sight">5. Mechanics of Sight</h2>
+<h3 id="5-1-sensation-versus-perception">5.1 Sensation versus perception</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Definition</th>
+<th>Where it occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sensation</strong></td>
+<td>The physical process in which a stimulus is detected</td>
+<td>Sensory organs, especially the eyes</td>
+</tr>
+<tr>
+<td><strong>Perception</strong></td>
+<td>The cognitive interpretation of that physical stimulus so it becomes meaningful</td>
+<td>The brain</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>The eye sees/detects light; the brain perceives and interprets the image.</strong></p>
+</blockquote>
+<h3 id="5-2-visual-pathway">5.2 Visual pathway</h3>
+<p>For visual sensation to occur, light must come either from:</p>
+<ul>
+<li>A <strong>light-emitting object</strong>, such as the sun, a light bulb, computer screen, or firefly; or</li>
+<li>A <strong>reflecting object/surface</strong>, such as an apple or paper containing a printed table or graph.</li>
+</ul>
+<p>The process is:</p>
+<ol>
+<li>Light comes from a source or is reflected by an object.</li>
+<li>Light enters the eye.</li>
+<li>Specialized nerve cells absorb the light and convert it into neural/electrochemical signals—the language of the nervous system.</li>
+<li>Signals travel through the optic nerve.</li>
+<li>The brain processes the signals in stages and constructs the perceived image.</li>
+</ol>
+<p>The relevant components are therefore the light source, the object if it is not itself luminous, the eye, and the brain.</p>
+<h3 id="5-3-eye-as-a-camera-major-components">5.3 Eye as a camera: major components</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cornea</strong></td>
+<td>Protective transparent covering at the front of the eye; light first enters through it</td>
+</tr>
+<tr>
+<td><strong>Iris</strong></td>
+<td>Muscle that controls pupil size, like a camera aperture</td>
+</tr>
+<tr>
+<td><strong>Pupil</strong></td>
+<td>Opening through which light enters; becomes smaller in bright light and larger in dim light</td>
+</tr>
+<tr>
+<td><strong>Lens</strong></td>
+<td>Focuses light; thickens for near objects and becomes thinner/elongated for distant objects</td>
+</tr>
+<tr>
+<td><strong>Retina</strong></td>
+<td>Thin light-sensitive inner surface at the rear of the eye; receives the focused image</td>
+</tr>
+<tr>
+<td><strong>Rods</strong></td>
+<td>Photoreceptors specialized for dim light; primarily black-and-white information</td>
+</tr>
+<tr>
+<td><strong>Cones</strong></td>
+<td>Photoreceptors specialized for brighter light and colour</td>
+</tr>
+<tr>
+<td><strong>Fovea</strong></td>
+<td>Small central retinal region densely packed with cones; gives extremely clear, detailed vision</td>
+</tr>
+<tr>
+<td><strong>Optic nerve</strong></td>
+<td>Carries neural signals from the retina to the brain</td>
+</tr>
+</tbody>
+</table></div>
+<p>Cones are commonly grouped into three types responsive to ranges associated with <strong>red, green, and blue</strong>. When we inspect something closely, we direct its image toward the fovea to exploit its dense concentration of cones.</p>
+<p>The live session additionally described the retinal image as inverted and the brain as interpreting it into the upright scene we experience. The larger principle is that the brain—not the eye alone—constructs visual experience.</p>
+<h3 id="5-4-fixations-and-saccadic-eye-movement">5.4 Fixations and saccadic eye movement</h3>
+<p>Seeing is not a perfectly smooth recording of the entire visual field. Because the fovea covers only a limited area at one time, vision occurs in spurts:</p>
+<ol>
+<li>The eyes <strong>fixate</strong> on one location for about half a second and collect detail.</li>
+<li>Non-foveal/peripheral vision surveys the larger field and selects a next point of interest.</li>
+<li>The eyes jump to the next fixation in about a quarter of a second.</li>
+<li>These rapid jumps are called <strong>saccades</strong>, and the pattern is <strong>saccadic eye movement</strong>.</li>
+</ol>
+<p>Despite processing millions of bits of visual input, humans consciously see only a small fraction and only part of that in detail. Some stimuli attract attention much more strongly than others. A very brief object that appears and disappears during a saccade may never be noticed.</p>
+<p><strong>Design implication:</strong> The display must ensure that critical information attracts a fixation and is not lost among competing stimuli.</p>
+<hr>
+<h2 id="6-human-memory-and-visual-processing">6. Human Memory and Visual Processing</h2>
+<p>The lecture compared the brain loosely with a computer: it has a very short sensory register, temporary high-speed working storage, and more permanent long-term storage.</p>
+<h3 id="6-1-iconic-memory">6.1 Iconic memory</h3>
+<ul>
+<li>A visual sensory register that initially receives signals from the eyes through the optic nerve.</li>
+<li>Holds input for <strong>less than one second</strong>.</li>
+<li>Processing is extremely fast, automatic, and unconscious.</li>
+<li>Most unimportant information is quickly discarded.</li>
+<li>This stage supports <strong>preattentive processing</strong>.</li>
+</ul>
+<p>Iconic memory can detect that a feature is present without retaining a detailed, reportable memory of its precise position. For example, a viewer may briefly detect one differently oriented element but later be unable to state exactly where it was.</p>
+<h3 id="6-2-working-memory">6.2 Working memory</h3>
+<ul>
+<li>Receives useful information from iconic memory in the form of <strong>visual chunks</strong>.</li>
+<li>Supports conscious, attentive interpretation.</li>
+<li>Is temporary: information lasts from a few seconds to longer periods only if rehearsed.</li>
+<li>Has severely limited capacity: approximately <strong>three or four chunks at one time</strong>.</li>
+<li>New information requires existing contents to move to long-term memory or be forgotten.</li>
+<li>With appropriate rehearsal, selected information moves to long-term memory; without rehearsal it disappears.</li>
+</ul>
+<h4 id="design-consequences-of-limited-working-memory">Design consequences of limited working memory</h4>
+<ul>
+<li>A chart with a legend containing ten colours or symbols forces constant back-and-forth reference because viewers cannot hold all ten mappings in working memory.</li>
+<li>Direct labelling or fewer categories can reduce this burden.</li>
+<li>Designers can combine many individual values into a larger coherent visual pattern—a single meaningful <strong>chunk</strong>.</li>
+<li>This explains why graphs can communicate large datasets “all at once,” while tables are more useful for looking up individual exact values.</li>
+</ul>
+<h3 id="6-3-long-term-memory">6.3 Long-term memory</h3>
+<ul>
+<li>Stores information selected for later use, consciously or unconsciously, through rehearsal.</li>
+<li>Information is organized through associations, links, and cross-references, similar to indexes that help retrieve stored material.</li>
+<li>One item may have many associations.</li>
+<li>Long-term memory is crucial for recognizing images and detecting meaningful patterns based on previous experience.</li>
+</ul>
+<p>For practical table and graph design, the course stresses two needs more than the detailed biology of long-term memory:</p>
+<ol>
+<li>Use preattentive attributes to capture and direct attention.</li>
+<li>Respect the capacity limits of working memory.</li>
+</ol>
+<h3 id="6-4-preattentive-versus-attentive-processing">6.4 Preattentive versus attentive processing</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Preattentive processing</th>
+<th>Attentive processing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Automatic and unconscious</td>
+<td>Conscious and deliberate</td>
+</tr>
+<tr>
+<td>Extremely fast; below awareness</td>
+<td>Slower</td>
+</tr>
+<tr>
+<td>Parallel detection of simple features</td>
+<td>Sequential examination</td>
+</tr>
+<tr>
+<td>Occurs in/through iconic sensory processing</td>
+<td>Uses working memory</td>
+</tr>
+<tr>
+<td>Produces rapid recognition or “pop-out”</td>
+<td>Can produce learning, understanding, and remembering</td>
+</tr>
+<tr>
+<td>Minimal cognitive effort</td>
+<td>Requires attention and cognitive resources</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="7-preattentive-attributes">7. Preattentive Attributes</h2>
+<h3 id="7-1-definition">7.1 Definition</h3>
+<p><strong>Preattentive processing</strong> occurs below consciousness at extremely high speed and is tuned to a specific set of visual attributes.</p>
+<p>A <strong>preattentive attribute</strong> is a visual feature that lets an item stand out immediately without requiring the viewer to inspect every object sequentially. Proper use can highlight important objects or group related objects; improper or excessive use creates competition and clutter.</p>
+<h3 id="7-2-number-5-example">7.2 Number-5 example</h3>
+<p>Viewers were asked to count the digit 5 in a dense list of similarly formatted numbers. This required slow sequential search. In a second version, all 5s were black while other digits were light grey. The task became easy because <strong>colour intensity</strong> created contrast and made the targets pop out.</p>
+<p><strong>Practical use case:</strong> In an exception report, show overdue cases in one strong accent colour and de-emphasize normal cases in grey.</p>
+<h3 id="7-3-colin-ware-s-four-categories">7.3 Colin Ware’s four categories</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Attributes mentioned in the source</th>
+<th>Principal use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Form</strong></td>
+<td>Length, width, orientation, shape, size, enclosure, curvature, collinearity</td>
+<td>Encode quantity in selected cases; distinguish, group, or emphasize objects</td>
+</tr>
+<tr>
+<td><strong>Colour</strong></td>
+<td>Hue; intensity (saturation/lightness/brightness)</td>
+<td>Separate categories or highlight; intensity can also imply low-to-high order</td>
+</tr>
+<tr>
+<td><strong>Spatial position</strong></td>
+<td>2-D position (horizontal and vertical); depth is weaker</td>
+<td>Highly accurate quantitative and categorical encoding</td>
+</tr>
+<tr>
+<td><strong>Movement</strong></td>
+<td>Flicker and motion</td>
+<td>Very strong attention capture in dynamic displays</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="7-4-form-attributes">7.4 Form attributes</h3>
+<p>Form can increase or reduce salience. Making an object larger can imply importance; making it smaller can de-emphasize it.</p>
+<h4 id="length">Length</h4>
+<ul>
+<li>Distance along an object’s dominant dimension.</li>
+<li>In a bar chart, values are represented by vertical or horizontal length—but not both simultaneously for the same measure.</li>
+<li>Bars share a common baseline, making comparison highly accurate.</li>
+<li>Length varies continuously, so it can encode more than merely “short” and “long.”</li>
+</ul>
+<h4 id="width">Width</h4>
+<ul>
+<li>Variation along the secondary or less dominant dimension.</li>
+<li>It can encode a second value, but it relies more on area judgment and is less precise than length.</li>
+</ul>
+<h4 id="shape-size-orientation-enclosure-curvature-and-collinearity">Shape, size, orientation, enclosure, curvature, and collinearity</h4>
+<ul>
+<li>Can distinguish or draw attention to part of a visualization automatically.</li>
+<li>Shape and enclosure are categorical rather than inherently ordered.</li>
+<li>Size can imply quantity, but precise magnitude judgments are limited.</li>
+<li>Orientation differences can pop out, but only a small number are clearly distinguishable.</li>
+</ul>
+<h3 id="7-5-colour-systems-and-hsl">7.5 Colour systems and HSL</h3>
+<p>Colour may be represented using RGB (red, green, blue), CMYK (cyan, magenta, yellow, key/black), or HSL (hue, saturation, lightness). <strong>HSL is particularly useful for discussing preattentive perception.</strong></p>
+<h4 id="hue">Hue</h4>
+<ul>
+<li>The named colour, such as red, green, blue, or violet.</li>
+<li>Represented around a colour wheel from <strong>0° to 360°</strong>.</li>
+<li>Key positions in 60° steps: red 0°/360°, yellow 60°, green 120°, cyan 180°, blue 240°, and magenta 300°.</li>
+<li>Hue is primarily <strong>categorical</strong>: red is not inherently “more” than green.</li>
+</ul>
+<h4 id="saturation">Saturation</h4>
+<ul>
+<li>The degree to which a hue displays its full essence or purity.</li>
+<li>Expressed from <strong>0%</strong> (no saturation/pale or grey) to <strong>100%</strong> (fully saturated hue).</li>
+</ul>
+<h4 id="lightness-brightness">Lightness/brightness</h4>
+<ul>
+<li>The degree to which a colour appears dark or bright.</li>
+<li>Expressed from <strong>0%</strong> (fully dark/black) to <strong>100%</strong> (fully light in the lecture’s scale description).</li>
+</ul>
+<p>Hue and intensity are processed preattentively. A red ball among neutral balls or a dark ball among pale balls is detected with little effort.</p>
+<h3 id="7-6-spatial-position">7.6 Spatial position</h3>
+<p>Human perception of horizontal and vertical position is clear and accurate. Depth is perceived, but not nearly as accurately. Therefore, <strong>2-D position is among the strongest visual encodings</strong>.</p>
+<p>A plotted point can simultaneously encode:</p>
+<ul>
+<li>A quantitative value by its position relative to an axis; and</li>
+<li>A categorical distinction by placement along another axis.</li>
+</ul>
+<h3 id="7-7-movement-and-flicker">7.7 Movement and flicker</h3>
+<ul>
+<li>Motion and flicker are extremely effective at capturing attention.</li>
+<li>In the live class, movement was described as dominating even strong colour differences.</li>
+<li>Evolutionary explanation: a small movement in an otherwise static environment could signal a predator or snake; the brain treats movement as potentially important or threatening.</li>
+<li>An unexpected sound similarly overrides a pleasant background sound because it may signal danger.</li>
+</ul>
+<p><strong>Critical caveat:</strong> Movement quickly becomes annoying or distracting when overused. Animated web advertisements are an example, and irritation from them helped motivate ad-blocking. Use motion only when it carries important meaning and do not sustain it unnecessarily. Static visualization therefore concentrates mainly on form, colour, and spatial position.</p>
+<hr>
+<h2 id="8-encoding-quantitative-and-categorical-values">8. Encoding Quantitative and Categorical Values</h2>
+<h3 id="8-1-the-key-distinction">8.1 The key distinction</h3>
+<p>Some attributes are naturally perceived along a quantitative continuum; others are only perceived as different categories.</p>
+<ul>
+<li><strong>Length:</strong> a longer line naturally means “more” than a shorter line.</li>
+<li><strong>Hue:</strong> blue, green, red, and yellow are different, but one is not naturally greater than another.</li>
+<li><strong>Colour intensity:</strong> can indicate low-to-high order, though exact differences are difficult to estimate.</li>
+</ul>
+<p>Choosing an attribute whose perceptual meaning matches the data type is a central design decision.</p>
+<h3 id="8-2-attribute-comparison">8.2 Attribute comparison</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Quantitatively perceived?</th>
+<th>Design guidance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Length</td>
+<td>Yes; comparatively strong, though not unlimited</td>
+<td>Preferred for numeric comparison, especially with a common baseline</td>
+</tr>
+<tr>
+<td>Width</td>
+<td>Limited</td>
+<td>Shows rough magnitude; inferior to length/position</td>
+</tr>
+<tr>
+<td>Orientation</td>
+<td>No natural quantitative order</td>
+<td>Use for categories, sparingly</td>
+</tr>
+<tr>
+<td>Size/area</td>
+<td>Yes, but limited</td>
+<td>Viewers judge “larger,” but not accurately “how much larger”</td>
+</tr>
+<tr>
+<td>Shape</td>
+<td>No</td>
+<td>Categorical differentiation only</td>
+</tr>
+<tr>
+<td>Enclosure</td>
+<td>No</td>
+<td>Grouping or emphasis, not quantity</td>
+</tr>
+<tr>
+<td>Hue</td>
+<td>No</td>
+<td>Categories, not ordered quantity</td>
+</tr>
+<tr>
+<td>Colour intensity</td>
+<td>Ordered, but limited</td>
+<td>Can show low-to-high; avoid for precise magnitude when position or length is available</td>
+</tr>
+<tr>
+<td>2-D position</td>
+<td>Yes; strongest/effective</td>
+<td>Prefer for accurate quantitative encoding</td>
+</tr>
+</tbody>
+</table></div>
+<p>All these attributes can represent categorical differences, including attributes that can also represent quantity.</p>
+<h3 id="8-3-priority-rule-for-quantitative-encoding">8.3 Priority rule for quantitative encoding</h3>
+<blockquote>
+<p>Whenever possible, use <strong>2-D position or length</strong> for quantitative values rather than width, area, size, or colour intensity.</p>
+</blockquote>
+<p>Viewers can often tell that one circle is larger than another but struggle to determine whether its value is 4, 5, 10, 15, or 20 times as large. In the lecture example, a large circle represented 10 when the small circle represented 1, but the value was difficult to estimate. Pie slices and line widths create the same area-judgment problem.</p>
+<p>Likewise, viewers can identify that one grey is darker than another but cannot reliably say how much darker.</p>
+<h3 id="8-4-continuous-encoding">8.4 Continuous encoding</h3>
+<p>Using only “short” and “long” line categories discards nuance. Mapping values to continuously varying lengths allows immediate comparison across many magnitudes. Visual comparison can be faster than reading labels sequentially, provided the encoding is honest and axes/baselines are appropriate.</p>
+<hr>
+<h2 id="9-context-contrast-and-perceptual-illusions">9. Context, Contrast, and Perceptual Illusions</h2>
+<h3 id="9-1-perception-is-relative-not-absolute">9.1 Perception is relative, not absolute</h3>
+<p>Visual perception measures differences in context rather than absolute values. Therefore, identical values can appear different, and different-looking objects may actually be equal.</p>
+<h4 id="simultaneous-contrast-example">Simultaneous contrast example</h4>
+<p>Several squares had identical RGB/intensity values but appeared lighter or darker because their surrounding backgrounds had different intensities.</p>
+<h4 id="line-length-illusion">Line-length illusion</h4>
+<p>Two horizontal lines were exactly equal in length but appeared different because of different shapes attached to their ends (the classic Müller-Lyer-type illusion). Even knowing it is an illusion does not remove the misperception.</p>
+<p><strong>Design obligation:</strong> Construct tables and graphs so surrounding context does not create a false message.</p>
+<h3 id="9-2-meaningful-contrast-only">9.2 Meaningful contrast only</h3>
+<p>The brain assumes visual differences have meaning. If one table column is red while all other text is black, readers infer that the red column is special or important. Therefore:</p>
+<ul>
+<li>Include only differences that communicate a real distinction.</li>
+<li>Use one strong contrast to focus attention.</li>
+<li>Do not decorate randomly with colour, size, or shape.</li>
+</ul>
+<h3 id="9-3-contrast-is-strongest-when-rare">9.3 Contrast is strongest when rare</h3>
+<p>Contrast works best when one or a very small number of elements differ from otherwise similar surroundings. In the rainfall example, the maximum rainfall in March and minimum in July stood out because their colour differed from all other months.</p>
+<p>As the number of differences increases, each difference becomes less salient.</p>
+<blockquote>
+<p><strong>When everyone in the room shouts, no one will be heard.</strong></p>
+</blockquote>
+<p>If too many items are emphasized, emphasis becomes the rule rather than the exception, and the intended message is buried in visual clutter.</p>
+<hr>
+<h2 id="10-limits-of-preattentive-and-distinct-perception">10. Limits of Preattentive and Distinct Perception</h2>
+<h3 id="10-1-limited-number-of-distinct-values">10.1 Limited number of distinct values</h3>
+<p>There is a limit to how many variations of a single attribute viewers can distinguish quickly. A departmental-expense line chart with a different hue for every department becomes difficult when too many departments are included.</p>
+<p>Colin Ware’s principle: a preattentive symbol becomes less distinctive as the variety of distractors increases. A hawk is easy to spot in a sky full of pigeons but harder in a sky containing many different kinds of birds.</p>
+<p>Approximate research limits given in the lecture:</p>
+<ul>
+<li>No more than about <strong>8 hues</strong></li>
+<li>About <strong>4 orientations</strong></li>
+<li>About <strong>4 sizes</strong></li>
+<li>Other attributes should also be limited to a few clearly separable values</li>
+</ul>
+<p>Beyond these limits, viewers shift from rapid preattentive processing to slower attentive search. This then collides with working memory’s capacity of only about three or four chunks.</p>
+<h3 id="10-2-combining-attributes-usually-requires-attention">10.2 Combining attributes usually requires attention</h3>
+<p>Preattentive processing usually cannot handle more than one attribute of an object at the same time.</p>
+<ul>
+<li>With circles in black, dark grey, and light grey, any one intensity is easy to find.</li>
+<li>Adding both circles and squares still allows viewers to locate all squares, all circles, or all black items.</li>
+<li>But locating the <strong>dark-grey squares</strong> or <strong>light-grey circles</strong> requires attention to both shape and intensity simultaneously, so the task becomes slower and attentive.</li>
+</ul>
+<p>Adding more shapes or a third attribute such as size increases complexity further.</p>
+<p>When using several expressions of one attribute, ensure they are far enough apart perceptually to appear truly distinct.</p>
+<h3 id="10-3-dense-grid-search-chunking-and-legends">10.3 Dense-grid search, chunking, and legends</h3>
+<p>For a dense grid in which users must locate all 5s:</p>
+<ol>
+<li><strong>Best improvement:</strong> give the 5s a distinct colour/intensity.</li>
+<li>A secondary cue such as modest size difference may reinforce detection, but multiple cues should not create clutter.</li>
+<li>Gridlines or spacing can create chunks and reduce navigation effort, but they do not identify the target.</li>
+<li>A written instruction (“Find the 5s”) explains the task but does not eliminate sequential search.</li>
+<li>Showing rows one at a time slows total search.</li>
+</ol>
+<p><strong>Chunking</strong> groups information into manageable units and lowers working-memory demand. Legends explain mappings of colours, shapes, or symbols, but do not directly make targets easier to see. Long legends can themselves impose a working-memory burden; good encoding and direct labelling should support or replace unnecessary legend lookup.</p>
+<hr>
+<h2 id="11-colour-meaning-psychology-and-accessibility">11. Colour: Meaning, Psychology, and Accessibility</h2>
+<h3 id="11-1-cultural-context">11.1 Cultural context</h3>
+<p>Colour associations differ across cultures:</p>
+<ul>
+<li>In many Western contexts, <strong>red</strong> may signal danger, warning, or heat.</li>
+<li>In China, red can signify good fortune.</li>
+</ul>
+<p>Designers must know the audience and consider whether cultural associations will influence interpretation. Colour is not semantically universal.</p>
+<h3 id="11-2-salient-versus-subdued-colours">11.2 Salient versus subdued colours</h3>
+<p>Edward Tufte is cited as favouring colours found in nature—medium greys, greens, blues, and browns—because they are generally soothing and easy on the eye. They are useful for elements that should remain in the background.</p>
+<p>Fully saturated, bright colours demand attention and should be reserved for genuinely important information. If all elements use vivid colours, none retains priority.</p>
+<h3 id="11-3-colour-blindness">11.3 Colour blindness</h3>
+<p>Many colour-blind viewers have difficulty distinguishing red and green; both may appear brownish or similar. Guidance from the lecture:</p>
+<ul>
+<li>Prefer using either red or green, not both, when the audience may include colour-blind users.</li>
+<li>If both are necessary, vary their intensity sufficiently and ideally add another cue such as label, shape, or pattern.</li>
+</ul>
+<h3 id="11-4-consistency-and-perceptual-uniformity">11.4 Consistency and perceptual uniformity</h3>
+<p>Maintain stable colour meanings across charts—for example, USA always blue, Europe green, and Asia orange. Consistency reduces the need to relearn mappings.</p>
+<p>For ordered numeric data, use a perceptually uniform palette so equal numeric steps appear approximately equal visually. Avoid arbitrary rainbow schemes or misleading intensity changes.</p>
+<hr>
+<h2 id="12-presentation-and-dashboard-design-principles-from-the-quiz">12. Presentation and Dashboard Design Principles from the Quiz</h2>
+<h3 id="12-1-visual-hierarchy">12.1 Visual hierarchy</h3>
+<p>Visual hierarchy answers: <strong>What should the viewer notice first?</strong> It is created using position, contrast, colour, size, spacing, and typography. Important information should have the strongest meaningful emphasis; supporting material should recede.</p>
+<p>For left-to-right readers, the upper-left is a natural starting region, making it useful for headlines, alerts, and primary KPIs. The GreenWave case also treats the upper central area as prominent for the revenue graph. The broader rule is to place the most important element where the audience will encounter it early and unmistakably.</p>
+<h3 id="12-2-data-ink-and-non-data-ink">12.2 Data ink and non-data ink</h3>
+<ul>
+<li><strong>Data ink:</strong> graphical marks that directly communicate data—bars, lines, points, symbols, trend lines, and necessary data labels.</li>
+<li><strong>Non-data ink:</strong> marks that do not directly represent data—heavy gridlines, decorative borders, background patterns, excessive shading, and unnecessary embellishment.</li>
+<li><strong>Data-ink ratio:</strong> the proportion of total visible ink devoted to the data. Effective design generally maximizes meaningful data ink and minimizes distracting non-data ink.</li>
+</ul>
+<p>Lightening gridlines retains reference support while keeping them from competing with the data. “Maximize data ink” does not mean indiscriminately thicken or enlarge everything; doing so can create overload.</p>
+<h3 id="12-3-grouping-and-sequencing">12.3 Grouping and sequencing</h3>
+<ul>
+<li><strong>Grouping:</strong> place related visuals together so proximity implies relationship and reduces search effort.</li>
+<li><strong>Sequencing:</strong> arrange information in the order users naturally consume or reason about it.</li>
+<li>A logical dashboard sequence might move from revenue to cost savings to customer acquisition.</li>
+<li>Grouping should not accidentally make an important metric seem secondary; retain the grouping and use another selective cue if more emphasis is needed.</li>
+</ul>
+<h3 id="12-4-readability-and-large-screens">12.4 Readability and large screens</h3>
+<p>Dashboards used on projectors, conference-room displays, and large screens require adequate font size, line thickness, spacing, and contrast. Very thin lines and tiny labels disappear at a distance; excessively large marks create clutter. Legibility is a practical design constraint, not a cosmetic afterthought.</p>
+<h3 id="12-5-avoid-misleading-and-cluttered-charts">12.5 Avoid misleading and cluttered charts</h3>
+<ul>
+<li>Avoid unnecessary <strong>3-D charts</strong> because perspective distorts size, hides bars, exaggerates differences, and impairs comparison.</li>
+<li>Do not exaggerate small numeric differences with disproportionately large symbols or circles.</li>
+<li>Avoid too many colours, symbols, shapes, icons, labels, or oversized elements.</li>
+<li>Use a small number of consistent encodings and one accent colour when possible.</li>
+</ul>
+<hr>
+<h2 id="13-storytelling-with-data">13. Storytelling with Data</h2>
+<h3 id="13-1-why-story-matters">13.1 Why story matters</h3>
+<p>Pure data may activate analytical processing but still fail to engage. The instructor argued that adding context, emotion, empathy, and narrative makes a presentation memorable and action-oriented. People are naturally interested in stories. Data storytelling should not distort evidence; it organizes truthful evidence around a meaningful situation, conflict, consequence, and required action.</p>
+<h3 id="13-2-complaints-department-case">13.2 Complaints department case</h3>
+<p>A department head receives and processes customer complaints. Early in the year, complaints received and processed are approximately matched. A staff member resigns in <strong>April</strong>. Thereafter, processed complaints increasingly fall below received complaints and the backlog grows. The department head wants management to approve an immediate replacement.</p>
+<h4 id="weak-presentation">Weak presentation</h4>
+<p>A monthly table listing complaints received and processed makes management calculate the gap and infer the change themselves.</p>
+<h4 id="stronger-presentation">Stronger presentation</h4>
+<ol>
+<li>Use a <strong>line chart</strong> comparing complaints received with complaints processed over time.</li>
+<li>Annotate April as the staff-resignation event.</li>
+<li>Show that the lines matched before the event and diverged afterward.</li>
+<li>Add a <strong>bar chart of backlog</strong>, where backlog is the difference between complaints received and processed.</li>
+<li>Explain the team’s attempts to compensate and connect the growing service gap to the staffing shortage.</li>
+<li>End with the requested action: approve the replacement urgently.</li>
+</ol>
+<p>This forms a simple story:</p>
+<ul>
+<li><strong>Opening:</strong> consistent complaint-handling performance.</li>
+<li><strong>Conflict/event:</strong> employee resigns in April.</li>
+<li><strong>Consequence:</strong> backlog begins and grows.</li>
+<li><strong>Resolution/action:</strong> appoint a replacement.</li>
+</ul>
+<h3 id="13-3-practical-business-use-case">13.3 Practical business use case</h3>
+<p>The same structure can be used for inventory shortages, delayed projects, lost sales capacity, rising support tickets, or declining service levels:</p>
+<blockquote>
+<p>Baseline performance → disruptive event → measurable divergence → operational/business consequence → requested decision.</p>
+</blockquote>
+<hr>
+<h2 id="14-ai-in-data-visualization">14. AI in Data Visualization</h2>
+<h3 id="14-1-use-ai-but-do-not-surrender-judgment">14.1 Use AI—but do not surrender judgment</h3>
+<p>The instructor’s answer was explicit: managers <strong>should use AI</strong> for visualization and <strong>should still learn data visualization</strong>.</p>
+<p>AI can:</p>
+<ul>
+<li>Process large numbers of data rows quickly.</li>
+<li>Suggest chart types and narrative structures.</li>
+<li>Detect patterns such as a growing backlog.</li>
+<li>Produce draft visuals and annotations rapidly.</li>
+<li>Accelerate analysis and design iteration.</li>
+</ul>
+<h3 id="14-2-ai-case-strengths-and-errors">14.2 AI case: strengths and errors</h3>
+<p>For the complaints case, AI correctly suggested:</p>
+<ul>
+<li>Begin with consistent departmental performance.</li>
+<li>Treat the April resignation as the narrative conflict.</li>
+<li>Show the growing backlog after April.</li>
+<li>Compare received and processed complaints using a line chart.</li>
+<li>Show unprocessed complaints/backlog using bars.</li>
+</ul>
+<p>But its generated output contained errors:</p>
+<ul>
+<li>It recommended a line chart but generated an incorrect bar chart.</li>
+<li>January received and processed complaints were both 160, yet the bars had unequal heights.</li>
+<li>It attributed the visual error to scaling and recommended starting the y-axis at zero, consistent bar widths/spacing, and checking labels.</li>
+<li>After further prompting, it produced an improved slide but marked the resignation in <strong>May</strong>, even though the input clearly said <strong>April</strong>.</li>
+</ul>
+<h3 id="14-3-why-human-visualization-knowledge-remains-essential">14.3 Why human visualization knowledge remains essential</h3>
+<ol>
+<li><strong>Verification:</strong> AI can create data, scaling, annotation, and factual errors.</li>
+<li><strong>Business context:</strong> Humans understand the operational reality and causal relevance better.</li>
+<li><strong>Audience knowledge:</strong> Cultural meaning and audience expectations may not be captured correctly.</li>
+<li><strong>Chart selection:</strong> Users must know available charts and when a line, bar, pie, waterfall, or another chart is appropriate.</li>
+<li><strong>Technical dialogue:</strong> Knowledge enables users to challenge AI—e.g., “Why did you choose this chart?” or “Would a waterfall chart communicate the change better?”</li>
+<li><strong>Interpretation:</strong> Automation can propose a story, but human judgment connects it responsibly to real decisions.</li>
+<li><strong>Bias and limitations:</strong> AI may reproduce bias or give confident but false explanations.</li>
+<li><strong>Tool availability:</strong> Analytical skill remains useful when AI tools are unavailable or inconvenient.</li>
+</ol>
+<p><strong>Recommended workflow:</strong> Use AI for speed and ideation; verify every value, scale, label, event, chart choice, colour meaning, and conclusion using human domain and visualization expertise.</p>
+<hr>
+<h2 id="15-greenwave-energy-dashboard-case-study">15. GreenWave Energy Dashboard Case Study</h2>
+<h3 id="15-1-case-situation">15.1 Case situation</h3>
+<p>GreenWave Energy is designing a quarterly dashboard for:</p>
+<ul>
+<li>Revenue growth</li>
+<li>Cost savings</li>
+<li>Customer acquisition</li>
+</ul>
+<p>The dashboard must reduce non-data ink, strengthen meaningful data ink, create hierarchy, group and sequence information logically, and remain legible on large screens.</p>
+<h3 id="15-2-stakeholder-proposals">15.2 Stakeholder proposals</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Person</th>
+<th>Proposal</th>
+<th>Principle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Alice, visual designer</strong></td>
+<td>Thicker lines, wider bars, larger fonts/symbols; lighter gridlines</td>
+<td>Increase visible data marks, create size hierarchy, reduce non-data ink</td>
+</tr>
+<tr>
+<td><strong>Ben, data analyst</strong></td>
+<td>Brighter/more vivid colours for primary figures</td>
+<td>Use colour intensity for preattentive emphasis</td>
+</tr>
+<tr>
+<td><strong>Carla, product manager</strong></td>
+<td>Ensure legibility on large screens</td>
+<td>Usability through adequate scale, spacing, thickness, and contrast</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="15-3-version-a">15.3 Version A</h3>
+<ul>
+<li>Bigger fonts and larger headline symbols.</li>
+<li>Wider bars and thicker lines.</li>
+<li>Revenue graph at the center-top to reflect positional priority.</li>
+<li>Light background gridlines.</li>
+</ul>
+<p><strong>Strengths:</strong> strong hierarchy, visibility, and immediate emphasis.<br>
+<strong>Risk:</strong> if too many elements are enlarged, the dashboard becomes visually heavy and overwhelming.</p>
+<h3 id="15-4-version-b">15.4 Version B</h3>
+<ul>
+<li>Italics for forecast values, creating an orientation cue.</li>
+<li>Medium-thickness bars.</li>
+<li>Bright orange emphasis on cost savings.</li>
+<li>Customer-acquisition chart placed on the left to group related visuals.</li>
+</ul>
+<p><strong>Strengths:</strong> cleaner, more moderate emphasis and useful categorical differentiation.<br>
+<strong>Risks:</strong> italics/orientation is weaker than position, size, or colour; left-side grouping may unintentionally downplay customer acquisition.</p>
+<h3 id="15-5-option-comparison-and-decision">15.5 Option comparison and decision</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Approach</th>
+<th>Evaluation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Version A’s size and position emphasis</td>
+<td>Clear but can overwhelm if applied broadly</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Version B’s orientation and vivid colour</td>
+<td>Cleaner but may create insufficient hierarchy</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Combine selected size/position treatments with colour/orientation and reduced gridlines</td>
+<td>Best overall balance when cues are selective rather than excessive</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Recommended answer: Option 3.</strong> It integrates complementary channels—position for priority, size for headline emphasis, colour for selective salience, orientation for forecasts, proximity for grouping, sequencing for reading order, and lighter gridlines to reduce clutter.</p>
+<p>Important qualification: combining cues is beneficial only when each has a clear semantic job. The course also warns that simultaneously searching for conjunctions of attributes is slower and that excessive emphasis destroys hierarchy. Therefore, do not make every element large, bright, differently shaped, and italic. Apply each cue sparingly and consistently.</p>
+<h3 id="15-6-suggested-design-procedure">15.6 Suggested design procedure</h3>
+<ol>
+<li>Remove or lighten non-data ink, especially heavy gridlines and borders.</li>
+<li>Decide the dashboard’s decision purpose and primary KPI.</li>
+<li>Place the primary KPI in a prominent 2-D location.</li>
+<li>Use sufficient font, symbol, line, and bar size for large-screen legibility.</li>
+<li>Reserve one vivid accent colour for the metric/event needing attention.</li>
+<li>Use typography/orientation consistently to distinguish forecasts from actuals.</li>
+<li>Keep related charts together.</li>
+<li>Sequence the views in the order the business story should be read.</li>
+<li>Verify that visual magnitude matches numerical magnitude.</li>
+<li>Test from the audience’s viewing distance and, where possible, with colour-vision-deficiency checks.</li>
+</ol>
+<hr>
+<h2 id="16-likely-exam-questions-and-answer-frameworks">16. Likely Exam Questions and Answer Frameworks</h2>
+<h3 id="q1-define-data-visualization-and-distinguish-presentation-from-visualization">Q1. Define data visualization and distinguish presentation from visualization.</h3>
+<p>Start with the formal definition. Then contrast purpose (communicate/persuade versus think/explore), roles (presenter/audience versus active user), and design requirement. Add one example of each.</p>
+<h3 id="q2-explain-the-benefits-and-limitations-of-data-visualization">Q2. Explain the benefits and limitations of data visualization.</h3>
+<p>Cover communication, analysis, decisions, efficiency, patterns, democratization, advanced analytics, and dashboards. Then state “garbage in, garbage out,” data quality dimensions, integration/technical issues, and remedies such as governance, validation, stewardship, training, and human review.</p>
+<h3 id="q3-explain-sensation-perception-and-the-mechanics-of-sight">Q3. Explain sensation, perception, and the mechanics of sight.</h3>
+<p>Define sensation and perception; trace light source/object → cornea/pupil/lens → retina/rods/cones/fovea → optic nerve → brain. State “the eye detects; the brain perceives.” Include fixations and saccades.</p>
+<h3 id="q4-compare-iconic-working-and-long-term-memory">Q4. Compare iconic, working, and long-term memory.</h3>
+<p>Discuss duration, function, conscious status, and capacity. Emphasize iconic memory’s sub-second preattentive processing, working memory’s 3–4 chunks, rehearsal, chunking, and long-term memory’s associations/pattern recognition.</p>
+<h3 id="q5-define-preattentive-processing-and-classify-its-attributes">Q5. Define preattentive processing and classify its attributes.</h3>
+<p>Define it as unconscious and extremely fast. List form, colour, spatial position, and movement with subattributes. Use the black-5-among-grey-digits example and explain highlighting/grouping.</p>
+<h3 id="q6-which-visual-attributes-are-suitable-for-quantitative-versus-categorical-data">Q6. Which visual attributes are suitable for quantitative versus categorical data?</h3>
+<p>State that 2-D position and length are preferred for quantitative values; area/size, width, and intensity are limited; hue, shape, orientation, and enclosure are categorical. Explain why hue has no natural greater/less order.</p>
+<h3 id="q7-explain-the-perceptual-effects-of-context-and-contrast">Q7. Explain the perceptual effects of context and contrast.</h3>
+<p>Use identical-intensity squares and equal-length lines with different endpoints. State that perception is relative. Explain that contrast implies meaning, is strongest when rare, and loses power when many differences compete.</p>
+<h3 id="q8-discuss-limits-of-preattentive-perception">Q8. Discuss limits of preattentive perception.</h3>
+<p>Give approximate limits (8 hues, 4 orientations, 4 sizes), the hawk-versus-pigeons analogy, decline with varied distractors, working-memory capacity, and the need for attentive processing when searching for combinations such as dark-grey squares.</p>
+<h3 id="q9-discuss-responsible-use-of-colour">Q9. Discuss responsible use of colour.</h3>
+<p>Cover categorical hue versus ordered intensity, cultural meanings, subdued versus saturated colour, red–green colour blindness, consistency, perceptual uniformity, and sparse highlighting.</p>
+<h3 id="q10-why-must-managers-learn-visualization-when-ai-can-generate-charts">Q10. Why must managers learn visualization when AI can generate charts?</h3>
+<p>Say “use AI and learn visualization.” Explain AI’s speed and pattern-finding, then cover errors, hallucinated annotations, scaling mistakes, business context, audience/culture, bias, chart selection, technical prompting, and human verification. Cite the complaints/resignation case.</p>
+<h3 id="q11-explain-storytelling-with-data-using-the-complaints-case">Q11. Explain storytelling with data using the complaints case.</h3>
+<p>Describe baseline, April resignation, widening received-versus-processed gap, growing backlog, line chart plus backlog bars, annotation, emotion/context, and requested action.</p>
+<h3 id="q12-explain-anscombe-s-quartet-and-its-importance">Q12. Explain Anscombe’s quartet and its importance.</h3>
+<p>State that similar summary statistics can coexist with four very different visual patterns. Describe the linear, curved, outlier-linear, and clustered/outlier plots. Conclude that analysts should visualize rather than rely only on summary measures.</p>
+<hr>
+<h2 id="17-practical-design-checklist">17. Practical Design Checklist</h2>
+<p>Before presenting a chart or dashboard, ask:</p>
+<ul>
+<li>What decision or question should the visual support?</li>
+<li>Is this a presentation meant to persuade, or a visualization meant to explore?</li>
+<li>Are the underlying data accurate, complete, consistent, and validated?</li>
+<li>Is the chosen chart appropriate for the relationship—time, comparison, distribution, composition, or correlation?</li>
+<li>Are quantitative values encoded primarily by 2-D position or length?</li>
+<li>Are categorical values separated using a small number of distinct hues/shapes?</li>
+<li>Does every colour, size, shape, orientation, and movement difference carry meaning?</li>
+<li>Is the most important point detectable preattentively?</li>
+<li>Have I limited hues, sizes, orientations, and legend mappings?</li>
+<li>Am I asking viewers to combine multiple attributes or repeatedly consult a legend?</li>
+<li>Could background, endpoint shape, perspective, or scaling create an illusion?</li>
+<li>Is contrast sparse enough to remain powerful?</li>
+<li>Are cultural colour meanings and colour blindness considered?</li>
+<li>Are gridlines, borders, and decorations quieter than the data?</li>
+<li>Is the display readable at the actual viewing distance?</li>
+<li>Does the annotation state the key insight rather than merely label the topic?</li>
+<li>Does the narrative move from evidence to insight to action?</li>
+<li>If AI helped, have all values, scales, labels, dates, event positions, and conclusions been independently verified?</li>
+</ul>
+<hr>
+<h2 id="18-rapid-revision-sheet">18. Rapid Revision Sheet</h2>
+<h3 id="definitions-to-memorize">Definitions to memorize</h3>
+<ul>
+<li><strong>Data visualization:</strong> graphical representation of information and data using charts, graphs, maps, and related visual elements.</li>
+<li><strong>Sensation:</strong> physical detection of a stimulus.</li>
+<li><strong>Perception:</strong> cognitive interpretation that makes the stimulus meaningful.</li>
+<li><strong>Preattentive processing:</strong> extremely fast, automatic, unconscious detection of selected visual attributes.</li>
+<li><strong>Attentive processing:</strong> conscious, sequential, slower processing that enables understanding and memory.</li>
+<li><strong>Preattentive attribute:</strong> visual property that makes an item pop out without sequential search.</li>
+<li><strong>Data ink:</strong> marks that directly represent data.</li>
+<li><strong>Non-data ink:</strong> graphical marks that do not directly represent data.</li>
+<li><strong>Chunking:</strong> combining items into larger meaningful units to reduce working-memory load.</li>
+</ul>
+<h3 id="numbers-and-lists-to-remember">Numbers and lists to remember</h3>
+<ul>
+<li>About <strong>70%</strong> of sensory receptors are dedicated to vision.</li>
+<li>Iconic memory: <strong>less than one second</strong>.</li>
+<li>Working-memory capacity: about <strong>3–4 chunks</strong>.</li>
+<li>Approximate preattentive distinction limits: <strong>8 hues, 4 orientations, 4 sizes</strong>.</li>
+<li>HSL hue wheel: red <strong>0°/360°</strong>, yellow <strong>60°</strong>, green <strong>120°</strong>, cyan <strong>180°</strong>, blue <strong>240°</strong>, magenta <strong>300°</strong>.</li>
+<li>Four preattentive categories: <strong>form, colour, spatial position, movement</strong>.</li>
+<li>Memory stages: <strong>iconic, working, long-term</strong>.</li>
+<li>Data chain: <strong>data → information → knowledge → wisdom → decisions/actions</strong>.</li>
+</ul>
+<h3 id="one-line-principles">One-line principles</h3>
+<ul>
+<li>The eye detects light; <strong>the brain perceives</strong>.</li>
+<li>Use <strong>position and length</strong> for precise quantity.</li>
+<li>Use <strong>hue for categories</strong>, not magnitude.</li>
+<li>Intensity can show order, but not precise differences.</li>
+<li>Perception is <strong>context-dependent and relative</strong>.</li>
+<li>Contrast must be <strong>meaningful and rare</strong>.</li>
+<li>If everything is emphasized, nothing is emphasized.</li>
+<li>A graph can chunk thousands of values into one pattern; a table is better for exact lookup.</li>
+<li>Movement captures attention strongly but becomes distracting when overused.</li>
+<li><strong>Garbage in, garbage out.</strong></li>
+<li>Visualize data even when summary statistics appear sufficient.</li>
+<li>Use AI for speed; use human expertise for context, validation, and judgment.</li>
+</ul>
+<h3 id="final-exam-ready-checklist">Final exam-ready checklist</h3>
+<ul>
+<li>[ ] I can define data visualization and its two forms.</li>
+<li>[ ] I can explain all major benefits and data-quality caveats.</li>
+<li>[ ] I can trace the mechanics of sight and name the eye components.</li>
+<li>[ ] I can explain fixations and saccadic movement.</li>
+<li>[ ] I can compare iconic, working, and long-term memory.</li>
+<li>[ ] I can distinguish preattentive from attentive processing.</li>
+<li>[ ] I can list all four preattentive categories and their attributes.</li>
+<li>[ ] I can classify attributes as quantitative, categorical, or quantitatively limited.</li>
+<li>[ ] I can explain context illusions and the limits of contrast.</li>
+<li>[ ] I remember 8 hues, 4 orientations, 4 sizes, and 3–4 working-memory chunks.</li>
+<li>[ ] I can discuss cultural colour meaning and red–green colour blindness.</li>
+<li>[ ] I can explain global warming, Anscombe’s quartet, the number-5 task, rainfall contrast, and the complaints-backlog case.</li>
+<li>[ ] I can justify learning visualization in the AI age.</li>
+<li>[ ] I can solve the GreenWave case and justify Option 3 with appropriate qualifications.</li>
+</ul>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<h3 id="preattentive-timing-saturation-and-exam-traps">Preattentive timing, saturation, and exam traps</h3>
+<p>Preattentive processing occurs before deliberate attention, typically in about <strong>200–250 milliseconds</strong>. The complete review list is colour/hue, <strong>colour saturation</strong>, brightness/luminance, size, shape, orientation, position, length, and motion. A highly saturated bright-red point among pale-red points is a standard pop-out example: the target is detected without reading every point.</p>
+<p>Font style, paragraph length, and the data source are <strong>not</strong> preattentive attributes in the relevant sense; they require conscious reading or semantic interpretation. Use preattentive cues selectively: when every item is bright, large, bold, or differently coloured, no clear figure emerges.</p>
+<h3 id="review-derived-dashboard-principles">Review-derived dashboard principles</h3>
+<ul>
+<li>Accurate data can still fail to communicate when layout, labelling, hierarchy, or encoding is poor.</li>
+<li>Stable semantic colour reduces relearning. If Revenue is blue in one view, green in another, and orange in a third, the viewer must repeatedly decode the dashboard.</li>
+<li>Highlight only the evidence that supports the central message; mute gridlines, decorative marks, and secondary notes.</li>
+<li>Cross-week chain: <strong>detection (Week 1) → Gestalt organization (Week 2) → correct chart selection (Week 8) → usable dashboard hierarchy (Week 12)</strong>.</li>
+</ul>
+<h3 id="exam-answer-frame">Exam answer frame</h3>
+<p>If asked why human knowledge remains essential even when AI generates charts: define the analytical question, verify the data and scale, check whether the encoding matches the variable type, direct attention without overload, test accessibility and audience interpretation, and reject decorative or misleading output.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-2.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 2: Visual Perception, Better Visualization,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

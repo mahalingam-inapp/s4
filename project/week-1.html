@@ -1,0 +1,2723 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Project · Week 1 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Project</span>
+      <span class="brand-title">Week 1</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html" selected>Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a class="is-active" href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Business Research Process, Research Problems, and Research Approaches
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Research Planning, Theoretical Frameworks, Measurement, and Data…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Systematic Literature Review (SLR), Literature Review Methods,…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Theoretical Frameworks, Variables, Moderators, Mediators, and…
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Measurement Models, Scale Development, Reflective vs Formative…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Questionnaire Design, Data Collection Methods, Measurement Scales,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Research Inference, Sampling, Regression, Correlation, Mediation,…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Business Research Process — Management Problems, Research Problems,…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Jamovi Data Management, Measurement Levels, Scale Construction,…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Jamovi Factor Analysis, EFA, CFA, SEM, Validity Assessment, and…
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Regression, Mediation, Moderation, t-tests, ANOVA, and Descriptive…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Regression Modelling, Controls, Composite Indices, Moderation, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Time Series, Forecasting, and Panel Data
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        PLS-SEM — Measurement Quality, Structural Models, Controls,…
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Logistic Regression — Model Fit, Interpretation, Prediction, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Project · Week 1</p>
+        <h1 class="page-title">Business Research Process, Research Problems, and Research Approaches</h1>
+        <p class="page-meta">Week 1 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-role-of-business-research-in-decision-making">1. Role of Business Research in Decision-Making</a></li>
+      <li><a href="#what-is-a-research-problem">What is a Research Problem?</a></li>
+      <li><a href="#research-problem-vs-business-decision">Research Problem vs Business Decision</a></li>
+      <li><a href="#stage-1-define-the-problem-and-research-objectives">Stage 1: Define the Problem and Research Objectives</a></li>
+      <li><a href="#stage-2-develop-research-questions-and-hypotheses">Stage 2: Develop Research Questions and Hypotheses</a></li>
+      <li><a href="#stage-3-plan-and-collect-data">Stage 3: Plan and Collect Data</a></li>
+      <li><a href="#stage-4-analyze-and-interpret-results">Stage 4: Analyze and Interpret Results</a></li>
+      <li><a href="#purpose">Purpose</a></li>
+      <li><a href="#purpose-2">Purpose</a></li>
+      <li><a href="#purpose-3">Purpose</a></li>
+      <li><a href="#correct-research-sequence">Correct Research Sequence</a></li>
+      <li><a href="#common-misconception-2">Common Misconception</a></li>
+      <li><a href="#1-business-context">1. Business Context</a></li>
+      <li><a href="#2-relevant-conditions">2. Relevant Conditions</a></li>
+      <li><a href="#3-time-period">3. Time Period</a></li>
+      <li><a href="#4-link-to-research-design">4. Link to Research Design</a></li>
+      <li><a href="#problem-with-post-hoc-research-design">Problem with Post-Hoc Research Design</a></li>
+      <li><a href="#basic-research">Basic Research</a></li>
+      <li><a href="#applied-research">Applied Research</a></li>
+      <li><a href="#comparison">Comparison</a></li>
+      <li><a href="#quantitative-research">Quantitative Research</a></li>
+      <li><a href="#qualitative-research">Qualitative Research</a></li>
+      <li><a href="#mixed-methods-research">Mixed Methods Research</a></li>
+      <li><a href="#systematic">Systematic</a></li>
+      <li><a href="#empirical">Empirical</a></li>
+      <li><a href="#objective">Objective</a></li>
+      <li><a href="#ethical">Ethical</a></li>
+      <li><a href="#1-using-manager-opinions-instead-of-evidence">1. Using Manager Opinions Instead of Evidence</a></li>
+      <li><a href="#2-supporting-a-preferred-plan">2. Supporting a Preferred Plan</a></li>
+      <li><a href="#3-collecting-data-without-a-clear-purpose">3. Collecting Data Without a Clear Purpose</a></li>
+      <li><a href="#research-process">Research Process</a></li>
+      <li><a href="#research-types">Research Types</a></li>
+      <li><a href="#data-approaches">Data Approaches</a></li>
+      <li><a href="#good-research-requires">Good Research Requires</a></li>
+      <li><a href="#final-principle">Final Principle</a></li>
+      <li><a href="#case-study">Case Study</a></li>
+      <li><a href="#1-case-overview">1. Case Overview</a></li>
+      <li><a href="#difference-between-a-business-issue-and-a-research-problem">Difference Between a Business Issue and a Research Problem</a></li>
+      <li><a href="#characteristics-of-a-good-research-problem">Characteristics of a Good Research Problem</a></li>
+      <li><a href="#what-is-context-narration">What is Context Narration?</a></li>
+      <li><a href="#greenthread-s-context-narrative">GreenThread&amp;rsquo;s Context Narrative</a></li>
+      <li><a href="#importance-of-context-narration">Importance of Context Narration</a></li>
+      <li><a href="#importance-of-the-planning-phase">Importance of the Planning Phase</a></li>
+      <li><a href="#components-of-research-planning">Components of Research Planning</a></li>
+      <li><a href="#1-define-objectives">1. Define Objectives</a></li>
+      <li><a href="#2-select-research-methods">2. Select Research Methods</a></li>
+      <li><a href="#3-identify-data-sources">3. Identify Data Sources</a></li>
+      <li><a href="#secondary-research">Secondary Research</a></li>
+      <li><a href="#primary-research">Primary Research</a></li>
+      <li><a href="#greenthread-s-combined-approach">GreenThread&amp;rsquo;s Combined Approach</a></li>
+      <li><a href="#definition">Definition</a></li>
+      <li><a href="#advantages-3">Advantages</a></li>
+      <li><a href="#limitations-3">Limitations</a></li>
+      <li><a href="#definition-2">Definition</a></li>
+      <li><a href="#advantages-4">Advantages</a></li>
+      <li><a href="#limitations-4">Limitations</a></li>
+      <li><a href="#phase-1-exploratory-qualitative-research">Phase 1: Exploratory Qualitative Research</a></li>
+      <li><a href="#phase-2-quantitative-survey">Phase 2: Quantitative Survey</a></li>
+      <li><a href="#why-mixed-methods-fits-the-case">Why Mixed Methods Fits the Case</a></li>
+      <li><a href="#internal-validity">Internal Validity</a></li>
+      <li><a href="#external-validity">External Validity</a></li>
+      <li><a href="#improving-validity">Improving Validity</a></li>
+      <li><a href="#misconception-1">Misconception 1:</a></li>
+      <li><a href="#misconception-2">Misconception 2:</a></li>
+      <li><a href="#misconception-3">Misconception 3:</a></li>
+      <li><a href="#misconception-4">Misconception 4:</a></li>
+      <li><a href="#research-problem">Research Problem</a></li>
+      <li><a href="#context-narration">Context Narration</a></li>
+      <li><a href="#planning">Planning</a></li>
+      <li><a href="#research-design">Research Design</a></li>
+      <li><a href="#strategic-decision-principle">Strategic Decision Principle</a></li>
+      <li><a href="#1-overview-of-the-case">1. Overview of the Case</a></li>
+      <li><a href="#business-concern">Business Concern</a></li>
+      <li><a href="#research-problem-2">Research Problem</a></li>
+      <li><a href="#importance-of-a-clearly-defined-research-problem">Importance of a Clearly Defined Research Problem</a></li>
+      <li><a href="#meaning-of-context-narration">Meaning of Context Narration</a></li>
+      <li><a href="#greenthread-s-context-narration-flow">GreenThread’s Context Narration Flow</a></li>
+      <li><a href="#strategic-purpose-of-context-narration">Strategic Purpose of Context Narration</a></li>
+      <li><a href="#why-planning-is-the-most-important-stage">Why Planning Is the Most Important Stage</a></li>
+      <li><a href="#1-define-research-objectives">1. Define Research Objectives</a></li>
+      <li><a href="#2-select-research-methods-2">2. Select Research Methods</a></li>
+      <li><a href="#3-identify-data-sources-2">3. Identify Data Sources</a></li>
+      <li><a href="#secondary-research-2">Secondary Research</a></li>
+      <li><a href="#advantages-of-secondary-research">Advantages of Secondary Research</a></li>
+      <li><a href="#limitations-5">Limitations</a></li>
+      <li><a href="#primary-research-2">Primary Research</a></li>
+      <li><a href="#advantages-5">Advantages</a></li>
+      <li><a href="#limitations-6">Limitations</a></li>
+      <li><a href="#definition-3">Definition</a></li>
+      <li><a href="#strengths">Strengths</a></li>
+      <li><a href="#limitations-7">Limitations</a></li>
+      <li><a href="#definition-4">Definition</a></li>
+      <li><a href="#strengths-2">Strengths</a></li>
+      <li><a href="#limitations-8">Limitations</a></li>
+      <li><a href="#breadth-vs-depth">Breadth vs Depth</a></li>
+      <li><a href="#arjun-s-perspective-breadth">Arjun’s Perspective: Breadth</a></li>
+      <li><a href="#lina-s-perspective-depth">Lina’s Perspective: Depth</a></li>
+      <li><a href="#survey-answers">Survey Answers:</a></li>
+      <li><a href="#focus-groups-answer">Focus Groups Answer:</a></li>
+      <li><a href="#meaning">Meaning</a></li>
+      <li><a href="#recommended-greenthread-approach">Recommended GreenThread Approach</a></li>
+      <li><a href="#benefits">Benefits</a></li>
+      <li><a href="#construct-validity">Construct Validity</a></li>
+      <li><a href="#external-validity-2">External Validity</a></li>
+      <li><a href="#combining-both">Combining Both</a></li>
+      <li><a href="#correct-approach">Correct Approach</a></li>
+      <li><a href="#brand-positioning">Brand Positioning</a></li>
+      <li><a href="#product-adaptation">Product Adaptation</a></li>
+      <li><a href="#market-acceptance">Market Acceptance</a></li>
+      <li><a href="#misconception-1-2">Misconception 1:</a></li>
+      <li><a href="#misconception-2-2">Misconception 2:</a></li>
+      <li><a href="#misconception-3-2">Misconception 3:</a></li>
+      <li><a href="#misconception-4-2">Misconception 4:</a></li>
+      <li><a href="#research-flow">Research Flow</a></li>
+      <li><a href="#key-concepts">Key Concepts</a></li>
+      <li><a href="#how-to-use-these-notes-for-the-exam">How to use these notes for the exam</a></li>
+      <li><a href="#1-1-meaning-and-importance">1.1 Meaning and importance</a></li>
+      <li><a href="#1-2-the-research-cycle">1.2 The research cycle</a></li>
+      <li><a href="#1-3-business-environment-and-the-scope-of-research">1.3 Business environment and the scope of research</a></li>
+      <li><a href="#1-4-business-problem-definition-magnitude-and-consequences">1.4 Business problem: definition, magnitude, and consequences</a></li>
+      <li><a href="#1-5-business-problem-research-problem-and-research-questions">1.5 Business problem, research problem, and research questions</a></li>
+      <li><a href="#2-1-why-classification-matters">2.1 Why classification matters</a></li>
+      <li><a href="#2-2-classification-by-general-purpose">2.2 Classification by general purpose</a></li>
+      <li><a href="#2-3-classification-by-methodology-approach-or-type-of-data">2.3 Classification by methodology, approach, or type of data</a></li>
+      <li><a href="#2-4-classification-by-scope-or-objective">2.4 Classification by scope or objective</a></li>
+      <li><a href="#2-5-classification-by-time">2.5 Classification by time</a></li>
+      <li><a href="#2-6-classification-by-manipulation-control">2.6 Classification by manipulation/control</a></li>
+      <li><a href="#2-7-classification-by-inference-or-reasoning">2.7 Classification by inference or reasoning</a></li>
+      <li><a href="#2-8-specialized-research-types">2.8 Specialized research types</a></li>
+      <li><a href="#2-9-characteristics-of-good-research">2.9 Characteristics of good research</a></li>
+      <li><a href="#3-1-four-major-stages">3.1 Four major stages</a></li>
+      <li><a href="#3-2-planning-through-five-key-questions">3.2 Planning through five key questions</a></li>
+      <li><a href="#3-3-symptoms-versus-underlying-problems">3.3 Symptoms versus underlying problems</a></li>
+      <li><a href="#3-4-business-problem-versus-research-problem">3.4 Business problem versus research problem</a></li>
+      <li><a href="#3-5-research-gap">3.5 Research gap</a></li>
+      <li><a href="#3-6-why-good-planning-matters">3.6 Why good planning matters</a></li>
+      <li><a href="#4-1-the-two-cs-context-and-concepts">4.1 The “two Cs”: context and concepts</a></li>
+      <li><a href="#4-2-elements-of-context">4.2 Elements of context</a></li>
+      <li><a href="#4-3-detailed-application-remote-work-and-employee-well-being">4.3 Detailed application: remote work and employee well-being</a></li>
+      <li><a href="#4-4-how-to-narrate-research-context">4.4 How to narrate research context</a></li>
+      <li><a href="#4-5-why-context-narration-is-valuable">4.5 Why context narration is valuable</a></li>
+      <li><a href="#5-1-high-value-distinctions">5.1 High-value distinctions</a></li>
+      <li><a href="#5-2-reusable-answer-framework-for-a-case-question">5.2 Reusable answer framework for a case question</a></li>
+      <li><a href="#5-3-likely-long-answer-prompts">5.3 Likely long-answer prompts</a></li>
+      <li><a href="#video-01-business-research">Video 01 — Business Research</a></li>
+      <li><a href="#video-02-types-of-research">Video 02 — Types of Research</a></li>
+      <li><a href="#video-03-stages-in-the-research-process">Video 03 — Stages in the Research Process</a></li>
+      <li><a href="#video-04-context-of-a-research">Video 04 — Context of a Research</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-role-of-business-research-in-decision-making"><strong>1. Role of Business Research in Decision-Making</strong></h2>
+<p>Business research is a structured process used by organizations to collect, analyze, and interpret information to support better decisions. It helps managers move beyond assumptions, opinions, and intuition by providing evidence-based insights.</p>
+<p>A business problem often begins as an unclear situation:</p>
+<ul>
+<li>Sales are declining.  </li>
+<li>Customer retention is falling.  </li>
+<li>Employee turnover is increasing.  </li>
+<li>A product is not performing as expected.</li>
+</ul>
+<p>The purpose of research is not immediately to choose an action but first to understand the underlying issue, identify causes, and provide reliable information for decision-making.</p>
+<p>A good research process transforms:</p>
+<p><strong>Unclear business issue → Research problem → Research questions → Data collection → Analysis → Findings → Decision/action</strong></p>
+<hr>
+<h1 id="2-identifying-a-research-problem"><strong>2. Identifying a Research Problem</strong></h1>
+<h2 id="what-is-a-research-problem"><strong>What is a Research Problem?</strong></h2>
+<p>A research problem defines the information gap that needs to be investigated before making a decision.</p>
+<p>It focuses on:</p>
+<ul>
+<li>What is happening?  </li>
+<li>Why is it happening?  </li>
+<li>What factors influence the situation?  </li>
+<li>What information is required to make a decision?</li>
+</ul>
+<h3 id="example"><strong>Example</strong></h3>
+<p>Business issue:</p>
+<blockquote>
+<p>Store sales have declined for two months.</p>
+</blockquote>
+<p>A weak approach:</p>
+<blockquote>
+<p>Immediately reduce prices.</p>
+</blockquote>
+<p>A research problem:</p>
+<blockquote>
+<p>Determine whether declining sales are caused by product dissatisfaction or ineffective advertising by analyzing customer feedback and sales data.</p>
+</blockquote>
+<p>The research problem does not prescribe the solution. It identifies the information needed to choose the correct solution.</p>
+<hr>
+<h2 id="research-problem-vs-business-decision"><strong>Research Problem vs Business Decision</strong></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Research Problem</th>
+<th>Business Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Finds information and explanations</td>
+<td>Chooses an action</td>
+</tr>
+<tr>
+<td>Investigates causes</td>
+<td>Implements solutions</td>
+</tr>
+<tr>
+<td>Uses data collection and analysis</td>
+<td>Uses research findings</td>
+</tr>
+<tr>
+<td>Example: Why are customers leaving?</td>
+<td>Example: Improve product features</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="common-misconception"><strong>Common Misconception</strong></h3>
+<p>A manager may confuse:</p>
+<blockquote>
+<p>&ldquo;How can we increase sales?&rdquo;</p>
+</blockquote>
+<p>with:</p>
+<blockquote>
+<p>&ldquo;Why are sales declining?&rdquo;</p>
+</blockquote>
+<p>The first is an action question. The second is a research question.</p>
+<hr>
+<h1 id="3-the-business-research-process"><strong>3. The Business Research Process</strong></h1>
+<p>A systematic research process generally follows these stages:</p>
+<h2 id="stage-1-define-the-problem-and-research-objectives"><strong>Stage 1: Define the Problem and Research Objectives</strong></h2>
+<p>The first step is understanding:</p>
+<ul>
+<li>The business situation  </li>
+<li>The decision that must be supported  </li>
+<li>The information needed</li>
+</ul>
+<p>A poorly defined problem leads to irrelevant data collection.</p>
+<p>Example:</p>
+<p>Poor definition:</p>
+<blockquote>
+<p>Customers are not buying enough.</p>
+</blockquote>
+<p>Better definition:</p>
+<blockquote>
+<p>Identify whether repeat purchases are declining due to product quality, pricing, customer experience, or competitor offerings.</p>
+</blockquote>
+<hr>
+<h2 id="stage-2-develop-research-questions-and-hypotheses"><strong>Stage 2: Develop Research Questions and Hypotheses</strong></h2>
+<p>Once the problem is defined, researchers identify what they need to investigate.</p>
+<h3 id="research-questions"><strong>Research Questions</strong></h3>
+<p>Research questions guide the investigation.</p>
+<p>Examples:</p>
+<ul>
+<li>Why are customers cancelling subscriptions?  </li>
+<li>Which customer groups have lower repeat purchases?  </li>
+<li>Does advertising awareness affect sales?</li>
+</ul>
+<h3 id="hypotheses"><strong>Hypotheses</strong></h3>
+<p>A hypothesis is a testable prediction about relationships between variables.</p>
+<p>Example:</p>
+<blockquote>
+<p>Customers with lower satisfaction scores are more likely to stop purchasing.</p>
+</blockquote>
+<p>Hypotheses allow researchers to test possible explanations using data.</p>
+<hr>
+<h2 id="stage-3-plan-and-collect-data"><strong>Stage 3: Plan and Collect Data</strong></h2>
+<p>After defining questions and hypotheses, researchers decide:</p>
+<ul>
+<li>What data is required?  </li>
+<li>Who should provide the data?  </li>
+<li>What methods should be used?  </li>
+<li>How should the information be collected?</li>
+</ul>
+<p>Methods may include:</p>
+<ul>
+<li>Surveys  </li>
+<li>Interviews  </li>
+<li>Observation  </li>
+<li>Existing company records  </li>
+<li>Experiments</li>
+</ul>
+<hr>
+<h2 id="stage-4-analyze-and-interpret-results"><strong>Stage 4: Analyze and Interpret Results</strong></h2>
+<p>The final stage involves:</p>
+<ul>
+<li>Examining patterns  </li>
+<li>Testing relationships  </li>
+<li>Drawing conclusions  </li>
+<li>Translating findings into business recommendations</li>
+</ul>
+<p>The research process is iterative.</p>
+<p>If the solution does not work:</p>
+<p><strong>Review findings → redefine problem → update research questions → conduct further research</strong></p>
+<p>Research is not a one-time activity.</p>
+<hr>
+<h1 id="4-exploratory-descriptive-and-explanatory-research"><strong>4. Exploratory, Descriptive, and Explanatory Research</strong></h1>
+<p>Research designs differ based on how much is known about the problem.</p>
+<hr>
+<h1 id="exploratory-research"><strong>Exploratory Research</strong></h1>
+<h2 id="purpose"><strong>Purpose</strong></h2>
+<p>Used when the problem is unclear or poorly understood.</p>
+<p>It helps discover:</p>
+<ul>
+<li>Possible causes  </li>
+<li>New ideas  </li>
+<li>Important variables  </li>
+<li>Research directions</li>
+</ul>
+<p>Common methods:</p>
+<ul>
+<li>Interviews  </li>
+<li>Focus groups  </li>
+<li>Expert discussions  </li>
+<li>Literature review</li>
+</ul>
+<p>Example:</p>
+<p>A company notices falling repeat purchases but does not know why.</p>
+<p>Exploratory research may reveal:</p>
+<ul>
+<li>Poor customer service  </li>
+<li>Product quality concerns  </li>
+<li>Pricing issues  </li>
+<li>Better competitor offers</li>
+</ul>
+<hr>
+<h1 id="descriptive-research"><strong>Descriptive Research</strong></h1>
+<h2 id="purpose-2"><strong>Purpose</strong></h2>
+<p>Explains what is happening.</p>
+<p>It answers:</p>
+<ul>
+<li>Who?  </li>
+<li>What?  </li>
+<li>When?  </li>
+<li>Where?  </li>
+<li>How much?</li>
+</ul>
+<p>It identifies patterns and characteristics.</p>
+<p>Example:</p>
+<p>A retailer discovers:</p>
+<ul>
+<li>Younger customers purchase less frequently.  </li>
+<li>Certain regions have higher churn.  </li>
+<li>Repeat purchases dropped after a specific month.</li>
+</ul>
+<p>Descriptive research does not prove causes. It describes the situation.</p>
+<hr>
+<h1 id="explanatory-research"><strong>Explanatory Research</strong></h1>
+<h2 id="purpose-3"><strong>Purpose</strong></h2>
+<p>Determines why something happens.</p>
+<p>It tests cause-and-effect relationships.</p>
+<p>Example:</p>
+<p>Research question:</p>
+<blockquote>
+<p>Does poor customer satisfaction cause customers to stop purchasing?</p>
+</blockquote>
+<p>The study tests whether satisfaction levels influence retention.</p>
+<hr>
+<h2 id="correct-research-sequence"><strong>Correct Research Sequence</strong></h2>
+<p>The typical progression is:</p>
+<p><strong>Exploratory → Descriptive → Explanatory</strong></p>
+<p>Meaning:</p>
+<ol>
+<li>Discover possible causes.  </li>
+<li>Describe patterns.  </li>
+<li>Test relationships and causes.</li>
+</ol>
+<hr>
+<h2 id="common-misconception-2"><strong>Common Misconception</strong></h2>
+<p>Incorrect idea:</p>
+<blockquote>
+<p>If causal research is performed, descriptive research is unnecessary.</p>
+</blockquote>
+<p>Why this is wrong:</p>
+<p>Before testing causes, researchers usually need to understand the pattern of the problem.</p>
+<hr>
+<h1 id="5-research-context-and-introduction-writing"><strong>5. Research Context and Introduction Writing</strong></h1>
+<p>A strong research report introduction should explain:</p>
+<h2 id="1-business-context"><strong>1. Business Context</strong></h2>
+<p>What situation exists?</p>
+<p>Example:</p>
+<blockquote>
+<p>Customer retention has declined over the last six months.</p>
+</blockquote>
+<h2 id="2-relevant-conditions"><strong>2. Relevant Conditions</strong></h2>
+<p>Internal and external factors:</p>
+<p>Internal:</p>
+<ul>
+<li>Product quality  </li>
+<li>Employee performance  </li>
+<li>Processes</li>
+</ul>
+<p>External:</p>
+<ul>
+<li>Competition  </li>
+<li>Market changes  </li>
+<li>Customer preferences</li>
+</ul>
+<h2 id="3-time-period"><strong>3. Time Period</strong></h2>
+<p>Research should explain when the issue occurred.</p>
+<p>Example:</p>
+<blockquote>
+<p>The decline began after the introduction of a new pricing model.</p>
+</blockquote>
+<h2 id="4-link-to-research-design"><strong>4. Link to Research Design</strong></h2>
+<p>The introduction should justify why the selected methods are appropriate.</p>
+<p>Example:</p>
+<blockquote>
+<p>Because customer dissatisfaction was suspected, surveys and interviews were selected to understand customer perceptions.</p>
+</blockquote>
+<hr>
+<h1 id="6-importance-of-planning-before-data-collection"><strong>6. Importance of Planning Before Data Collection</strong></h1>
+<p>Research quality depends heavily on early planning.</p>
+<p>Before collecting data, researchers must know:</p>
+<ul>
+<li>What problem they are solving  </li>
+<li>What information is required  </li>
+<li>What variables should be measured  </li>
+<li>How results will support decisions</li>
+</ul>
+<hr>
+<h2 id="problem-with-post-hoc-research-design"><strong>Problem with Post-Hoc Research Design</strong></h2>
+<p>A weak approach:</p>
+<ol>
+<li>Collect random survey data.  </li>
+<li>Look for patterns.  </li>
+<li>Create research questions afterward.  </li>
+<li>Justify findings.</li>
+</ol>
+<p>This creates risks:</p>
+<ul>
+<li>Researchers may find only convenient patterns.  </li>
+<li>Questions may not match collected data.  </li>
+<li>Results may not support actual decisions.</li>
+</ul>
+<p>Good research requires alignment:</p>
+<p><strong>Research problem → Questions → Measures → Data → Analysis → Decision</strong></p>
+<hr>
+<h1 id="7-basic-pure-research-vs-applied-research"><strong>7. Basic (Pure) Research vs Applied Research</strong></h1>
+<h2 id="basic-research"><strong>Basic Research</strong></h2>
+<p>Purpose:</p>
+<p>To expand knowledge and develop theories.</p>
+<p>Characteristics:</p>
+<ul>
+<li>Focuses on understanding fundamental mechanisms.  </li>
+<li>May not have immediate business application.</li>
+</ul>
+<p>Example:</p>
+<p>Studying how trust develops between buyers and sellers across industries to create a general theory.</p>
+<hr>
+<h2 id="applied-research"><strong>Applied Research</strong></h2>
+<p>Purpose:</p>
+<p>To solve a specific organizational problem.</p>
+<p>Characteristics:</p>
+<ul>
+<li>Focuses on practical recommendations.  </li>
+<li>Supports immediate decisions.</li>
+</ul>
+<p>Example:</p>
+<p>Determining why a company&rsquo;s customers are leaving and recommending retention strategies.</p>
+<hr>
+<h2 id="comparison"><strong>Comparison</strong></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Basic Research</th>
+<th>Applied Research</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Builds theory</td>
+<td>Solves practical problems</td>
+</tr>
+<tr>
+<td>General knowledge</td>
+<td>Specific decisions</td>
+</tr>
+<tr>
+<td>Long-term understanding</td>
+<td>Immediate action</td>
+</tr>
+<tr>
+<td>Example: How trust forms</td>
+<td>Example: How to reduce churn</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="8-qualitative-quantitative-and-mixed-methods-research"><strong>8. Qualitative, Quantitative, and Mixed Methods Research</strong></h1>
+<h2 id="quantitative-research"><strong>Quantitative Research</strong></h2>
+<p>Uses numerical data.</p>
+<p>Examples:</p>
+<ul>
+<li>Sales figures  </li>
+<li>Survey ratings  </li>
+<li>Employee turnover percentages  </li>
+<li>Customer counts</li>
+</ul>
+<p>Used for:</p>
+<ul>
+<li>Measuring patterns  </li>
+<li>Statistical analysis  </li>
+<li>Testing relationships</li>
+</ul>
+<p>Example:</p>
+<blockquote>
+<p>Analyze monthly resignation rates across departments.</p>
+</blockquote>
+<hr>
+<h2 id="qualitative-research"><strong>Qualitative Research</strong></h2>
+<p>Uses non-numerical information.</p>
+<p>Examples:</p>
+<ul>
+<li>Interviews  </li>
+<li>Customer comments  </li>
+<li>Employee experiences</li>
+</ul>
+<p>Used for:</p>
+<ul>
+<li>Understanding opinions  </li>
+<li>Discovering motivations  </li>
+<li>Exploring experiences</li>
+</ul>
+<p>Example:</p>
+<blockquote>
+<p>Conduct exit interviews to understand why employees leave.</p>
+</blockquote>
+<hr>
+<h2 id="mixed-methods-research"><strong>Mixed Methods Research</strong></h2>
+<p>Combines quantitative and qualitative approaches.</p>
+<p>Example:</p>
+<p>Employee turnover study:</p>
+<p>Quantitative:</p>
+<ul>
+<li>HR records showing resignation rates</li>
+</ul>
+<p>Qualitative:</p>
+<ul>
+<li>Exit interviews explaining reasons</li>
+</ul>
+<p>Together:</p>
+<p>Numbers show the size of the problem.</p>
+<p>Interviews explain the reasons behind it.</p>
+<hr>
+<h1 id="9-characteristics-of-good-research"><strong>9. Characteristics of Good Research</strong></h1>
+<p>Good research should be:</p>
+<h2 id="systematic"><strong>Systematic</strong></h2>
+<p>Research follows a planned process.</p>
+<p>It involves:</p>
+<ul>
+<li>Clear objectives  </li>
+<li>Appropriate methods  </li>
+<li>Structured analysis</li>
+</ul>
+<hr>
+<h2 id="empirical"><strong>Empirical</strong></h2>
+<p>Research is based on observable evidence.</p>
+<p>Examples:</p>
+<ul>
+<li>Sales records  </li>
+<li>Survey responses  </li>
+<li>Measured observations</li>
+</ul>
+<p>It avoids relying only on opinions.</p>
+<hr>
+<h2 id="objective"><strong>Objective</strong></h2>
+<p>Research should minimize personal bias.</p>
+<p>Researchers should not:</p>
+<ul>
+<li>Select only favorable evidence.  </li>
+<li>Adjust conclusions to support preferred decisions.  </li>
+<li>Ignore contradictory findings.</li>
+</ul>
+<hr>
+<h2 id="ethical"><strong>Ethical</strong></h2>
+<p>Research should maintain:</p>
+<ul>
+<li>Honesty  </li>
+<li>Transparency  </li>
+<li>Responsible data handling  </li>
+<li>Accurate reporting</li>
+</ul>
+<hr>
+<h1 id="10-common-research-quality-problems"><strong>10. Common Research Quality Problems</strong></h1>
+<h2 id="1-using-manager-opinions-instead-of-evidence"><strong>1. Using Manager Opinions Instead of Evidence</strong></h2>
+<p>Problem:</p>
+<p>Managers may have useful experience, but opinions alone are not research evidence.</p>
+<p>Better approach:</p>
+<p>Combine experience with:</p>
+<ul>
+<li>Data analysis  </li>
+<li>Customer feedback  </li>
+<li>Market information</li>
+</ul>
+<hr>
+<h2 id="2-supporting-a-preferred-plan"><strong>2. Supporting a Preferred Plan</strong></h2>
+<p>Problem:</p>
+<p>Researchers should not manipulate findings to justify an existing decision.</p>
+<p>Good research:</p>
+<ul>
+<li>Tests alternatives.  </li>
+<li>Accepts unexpected results.  </li>
+<li>Reports evidence objectively.</li>
+</ul>
+<hr>
+<h2 id="3-collecting-data-without-a-clear-purpose"><strong>3. Collecting Data Without a Clear Purpose</strong></h2>
+<p>Problem:</p>
+<p>Large amounts of data do not guarantee useful research.</p>
+<p>The key question:</p>
+<blockquote>
+<p>Does the data answer the decision problem?</p>
+</blockquote>
+<hr>
+<h1 id="11-research-cycle-continuous-improvement"><strong>11. Research Cycle: Continuous Improvement</strong></h1>
+<p>Business research is not always linear.</p>
+<p>A completed study may lead to new questions.</p>
+<p>Example:</p>
+<p>Initial problem:</p>
+<blockquote>
+<p>Why are sales declining?</p>
+</blockquote>
+<p>Research finding:</p>
+<blockquote>
+<p>Advertising awareness is low.</p>
+</blockquote>
+<p>Action:</p>
+<blockquote>
+<p>Improve advertising.</p>
+</blockquote>
+<p>Result:</p>
+<blockquote>
+<p>Sales remain below target.</p>
+</blockquote>
+<p>Next step:</p>
+<p>Restart research:</p>
+<ul>
+<li>Review assumptions.  </li>
+<li>Update questions.  </li>
+<li>Collect additional evidence.</li>
+</ul>
+<p>This creates a continuous improvement cycle.</p>
+<hr>
+<h1 id="key-revision-summary"><strong>Key Revision Summary</strong></h1>
+<h2 id="research-process"><strong>Research Process</strong></h2>
+<p><strong>Define problem → Develop questions/hypotheses → Plan and collect data → Analyze and interpret results</strong></p>
+<hr>
+<h2 id="research-types"><strong>Research Types</strong></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Main Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exploratory</td>
+<td>Discover possible causes</td>
+</tr>
+<tr>
+<td>Descriptive</td>
+<td>Describe patterns</td>
+</tr>
+<tr>
+<td>Explanatory</td>
+<td>Test causes</td>
+</tr>
+<tr>
+<td>Basic</td>
+<td>Build theory</td>
+</tr>
+<tr>
+<td>Applied</td>
+<td>Solve practical problems</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="data-approaches"><strong>Data Approaches</strong></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Data Type</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quantitative</td>
+<td>Numbers</td>
+<td>Measure patterns</td>
+</tr>
+<tr>
+<td>Qualitative</td>
+<td>Words/experiences</td>
+<td>Understand reasons</td>
+</tr>
+<tr>
+<td>Mixed Methods</td>
+<td>Both</td>
+<td>Combine measurement and explanation</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="good-research-requires"><strong>Good Research Requires</strong></h2>
+<ul>
+<li>Clear problem definition  </li>
+<li>Proper planning before data collection  </li>
+<li>Evidence-based conclusions  </li>
+<li>Objective interpretation  </li>
+<li>Ethical practices  </li>
+<li>Alignment between research questions and decisions</li>
+</ul>
+<hr>
+<h2 id="final-principle"><strong>Final Principle</strong></h2>
+<p>Effective business research does not begin with a solution. It begins by understanding the problem, gathering appropriate evidence, testing explanations, and using findings to support better decisions.</p>
+<h2 id="case-study"><strong>Case Study</strong></h2>
+<p>Maya Singh, Market Research Manager at GreenThread, a sustainable fashion startup, leads a project to evaluate expansion into Southeast Asian markets. The team&rsquo;s research problem emerges from broad concerns about consumer demand for eco-friendly apparel and the specific variations in purchasing behavior across countries. They use context narration to tell a structured story that moves from a broad understanding of the global sustainable fashion trend to this specific research problem: understanding urban female shoppers in Malaysia within regulatory and cultural settings.In the planning phase, identified as the most crucial stage, the team outlines objectives, methods, and data sources, ensuring the research process follows a structured roadmap that begins with careful planning and progresses through execution and analysis to decision-making. They list contextual factors—geographical diversity, social and cultural norms around modest dress, political and economic stability, and seasonal time-related influences—to ground their inquiry in real-world conditions. Combining secondary industry reports with primary surveys and interviews, they aim for valid insights that address both internal goals and external market forces.At the decision point, Maya must choose between a cross-sectional online survey for broad quantitative data or a series of focus group interviews for deeper qualitative insights. Arjun Patel, the Operations Lead, favors the faster, cost-efficient survey, while Lina Morales, Financial Analyst, argues that focus groups offer richer validity despite higher resource needs. Students must apply business research concepts—types of research designs, the importance of systematic planning, and context analysis—to recommend a design balancing methodological soundness, context relevance, and resource constraints.</p>
+<h1 id="comprehensive-notes-greenthread-sustainable-fashion-market-expansion-research-case-study"><strong>Comprehensive Notes: GreenThread Sustainable Fashion Market Expansion Research Case Study</strong></h1>
+<h2 id="1-case-overview"><strong>1. Case Overview</strong></h2>
+<p>GreenThread is a sustainable fashion startup exploring expansion into Southeast Asian markets. Maya Singh, the Market Research Manager, leads a research project to understand whether the company should enter new markets and how it should position its eco-friendly apparel offerings.</p>
+<p>The central challenge is not simply determining whether sustainable fashion is popular. The team must understand:</p>
+<ul>
+<li>Whether consumers are willing to purchase eco-friendly apparel.  </li>
+<li>How purchasing behavior differs across countries.  </li>
+<li>What cultural, regulatory, economic, and social factors influence demand.  </li>
+<li>Which customer segments offer the strongest opportunity.</li>
+</ul>
+<p>The case demonstrates important business research concepts:</p>
+<ul>
+<li>Defining a research problem.  </li>
+<li>Using context narration.  </li>
+<li>Systematic research planning.  </li>
+<li>Context analysis.  </li>
+<li>Selecting appropriate research designs.  </li>
+<li>Balancing methodological quality with practical constraints.</li>
+</ul>
+<hr>
+<h1 id="2-identifying-the-research-problem"><strong>2. Identifying the Research Problem</strong></h1>
+<h2 id="difference-between-a-business-issue-and-a-research-problem"><strong>Difference Between a Business Issue and a Research Problem</strong></h2>
+<p>A business issue is a broad concern that requires investigation.</p>
+<p>Example:</p>
+<blockquote>
+<p>GreenThread wants to expand into Southeast Asia.</p>
+</blockquote>
+<p>This does not yet define what information is needed.</p>
+<p>A research problem converts the business issue into a specific information need.</p>
+<p>GreenThread&rsquo;s research problem:</p>
+<blockquote>
+<p>Understand the demand for sustainable apparel among urban female shoppers in Malaysia while considering cultural, regulatory, and market conditions.</p>
+</blockquote>
+<p>This research problem focuses on:</p>
+<ul>
+<li>Target customers.  </li>
+<li>Market conditions.  </li>
+<li>Purchase behavior.  </li>
+<li>Factors influencing buying decisions.</li>
+</ul>
+<hr>
+<h2 id="characteristics-of-a-good-research-problem"><strong>Characteristics of a Good Research Problem</strong></h2>
+<p>A strong research problem should be:</p>
+<h3 id="1-specific"><strong>1. Specific</strong></h3>
+<p>It should identify:</p>
+<ul>
+<li>The target population.  </li>
+<li>The market.  </li>
+<li>The decision context.</li>
+</ul>
+<p>Weak:</p>
+<blockquote>
+<p>Study sustainable fashion.</p>
+</blockquote>
+<p>Strong:</p>
+<blockquote>
+<p>Understand purchasing behavior of urban female consumers in Malaysia toward eco-friendly apparel.</p>
+</blockquote>
+<hr>
+<h3 id="2-decision-oriented"><strong>2. Decision-Oriented</strong></h3>
+<p>Research should support a business decision.</p>
+<p>GreenThread needs answers to questions such as:</p>
+<ul>
+<li>Should the company enter Malaysia?  </li>
+<li>Which consumer segments should be targeted?  </li>
+<li>What product positioning should be used?</li>
+</ul>
+<hr>
+<h3 id="3-researchable"><strong>3. Researchable</strong></h3>
+<p>The problem should be answerable through data collection.</p>
+<p>Possible sources:</p>
+<ul>
+<li>Customer surveys.  </li>
+<li>Interviews.  </li>
+<li>Industry reports.  </li>
+<li>Market statistics.</li>
+</ul>
+<hr>
+<h1 id="3-role-of-context-narration-in-research"><strong>3. Role of Context Narration in Research</strong></h1>
+<h2 id="what-is-context-narration"><strong>What is Context Narration?</strong></h2>
+<p>Context narration is a structured explanation that connects the broader business environment to the specific research problem.</p>
+<p>It creates a logical story:</p>
+<p><strong>Global trend → Industry situation → Market opportunity → Specific research question</strong></p>
+<hr>
+<h2 id="greenthread-s-context-narrative"><strong>GreenThread&rsquo;s Context Narrative</strong></h2>
+<p>The team moves through the following progression:</p>
+<h3 id="step-1-global-sustainable-fashion-trend"><strong>Step 1: Global Sustainable Fashion Trend</strong></h3>
+<p>The starting point:</p>
+<ul>
+<li>Growing awareness of environmental issues.  </li>
+<li>Increasing interest in ethical consumption.  </li>
+<li>Expansion of sustainable brands.</li>
+</ul>
+<p>This establishes why the topic matters.</p>
+<hr>
+<h3 id="step-2-regional-opportunity"><strong>Step 2: Regional Opportunity</strong></h3>
+<p>The focus shifts to Southeast Asia.</p>
+<p>The team considers:</p>
+<ul>
+<li>Growing consumer markets.  </li>
+<li>Increasing awareness of sustainability.  </li>
+<li>Differences between countries.</li>
+</ul>
+<hr>
+<h3 id="step-3-specific-market-focus"><strong>Step 3: Specific Market Focus</strong></h3>
+<p>The research narrows to:</p>
+<ul>
+<li>Malaysia.  </li>
+<li>Urban female shoppers.  </li>
+<li>Eco-friendly apparel purchasing behavior.</li>
+</ul>
+<p>This narrowing process prevents overly broad research.</p>
+<hr>
+<h2 id="importance-of-context-narration"><strong>Importance of Context Narration</strong></h2>
+<p>A strong context section helps readers understand:</p>
+<ul>
+<li>Why the research is needed.  </li>
+<li>Why the selected market matters.  </li>
+<li>Why specific methods are appropriate.</li>
+</ul>
+<p>It also helps justify the research design.</p>
+<hr>
+<h1 id="4-systematic-research-planning"><strong>4. Systematic Research Planning</strong></h1>
+<h2 id="importance-of-the-planning-phase"><strong>Importance of the Planning Phase</strong></h2>
+<p>The planning phase is considered the most crucial stage because it determines the foundation of the entire study.</p>
+<p>Poor planning can lead to:</p>
+<ul>
+<li>Irrelevant data.  </li>
+<li>Wrong conclusions.  </li>
+<li>Wasted resources.  </li>
+<li>Decisions based on incomplete information.</li>
+</ul>
+<hr>
+<h2 id="components-of-research-planning"><strong>Components of Research Planning</strong></h2>
+<h2 id="1-define-objectives"><strong>1. Define Objectives</strong></h2>
+<p>Objectives clarify what the research should achieve.</p>
+<p>Examples:</p>
+<ul>
+<li>Measure consumer interest in sustainable apparel.  </li>
+<li>Identify purchasing motivations.  </li>
+<li>Understand barriers to adoption.  </li>
+<li>Compare market conditions.</li>
+</ul>
+<hr>
+<h2 id="2-select-research-methods"><strong>2. Select Research Methods</strong></h2>
+<p>The team must decide:</p>
+<ul>
+<li>How data will be collected.  </li>
+<li>Which research design is appropriate.  </li>
+<li>How results will support decisions.</li>
+</ul>
+<hr>
+<h2 id="3-identify-data-sources"><strong>3. Identify Data Sources</strong></h2>
+<p>GreenThread uses two major categories.</p>
+<hr>
+<h1 id="5-secondary-and-primary-research"><strong>5. Secondary and Primary Research</strong></h1>
+<h2 id="secondary-research"><strong>Secondary Research</strong></h2>
+<p>Secondary research uses existing information.</p>
+<p>Examples:</p>
+<ul>
+<li>Industry reports.  </li>
+<li>Government publications.  </li>
+<li>Market studies.  </li>
+<li>Academic research.</li>
+</ul>
+<h3 id="advantages"><strong>Advantages</strong></h3>
+<ul>
+<li>Faster.  </li>
+<li>Less expensive.  </li>
+<li>Provides market background.</li>
+</ul>
+<h3 id="limitations"><strong>Limitations</strong></h3>
+<ul>
+<li>May not perfectly match GreenThread&rsquo;s specific question.  </li>
+<li>Data may be outdated.</li>
+</ul>
+<hr>
+<h2 id="primary-research"><strong>Primary Research</strong></h2>
+<p>Primary research collects new information specifically for the research problem.</p>
+<p>Examples:</p>
+<ul>
+<li>Surveys.  </li>
+<li>Interviews.  </li>
+<li>Focus groups.</li>
+</ul>
+<h3 id="advantages-2"><strong>Advantages</strong></h3>
+<ul>
+<li>Directly addresses the research objective.  </li>
+<li>Provides specific customer insights.</li>
+</ul>
+<h3 id="limitations-2"><strong>Limitations</strong></h3>
+<ul>
+<li>More expensive.  </li>
+<li>Requires careful design.</li>
+</ul>
+<hr>
+<h2 id="greenthread-s-combined-approach"><strong>GreenThread&rsquo;s Combined Approach</strong></h2>
+<p>The team combines:</p>
+<p><strong>Secondary research + Primary research</strong></p>
+<p>This provides:</p>
+<ul>
+<li>Market-level understanding.  </li>
+<li>Customer-level insights.</li>
+</ul>
+<p>This approach improves research validity.</p>
+<hr>
+<h1 id="6-context-analysis-in-business-research"><strong>6. Context Analysis in Business Research</strong></h1>
+<p>A market cannot be studied in isolation.</p>
+<p>GreenThread considers multiple contextual factors.</p>
+<hr>
+<h1 id="6-1-geographical-diversity"><strong>6.1 Geographical Diversity</strong></h1>
+<p>Different countries and regions may have:</p>
+<ul>
+<li>Different income levels.  </li>
+<li>Different shopping habits.  </li>
+<li>Different environmental awareness.</li>
+</ul>
+<p>A strategy successful in one country may fail in another.</p>
+<hr>
+<h1 id="6-2-social-and-cultural-norms"><strong>6.2 Social and Cultural Norms</strong></h1>
+<p>Fashion is strongly influenced by culture.</p>
+<p>For Malaysia, researchers must consider:</p>
+<ul>
+<li>Modesty expectations.  </li>
+<li>Clothing preferences.  </li>
+<li>Religious and cultural influences.  </li>
+<li>Acceptable fashion styles.</li>
+</ul>
+<p>Sustainable products must fit local preferences.</p>
+<hr>
+<h1 id="6-3-political-and-economic-stability"><strong>6.3 Political and Economic Stability</strong></h1>
+<p>Market expansion depends on:</p>
+<ul>
+<li>Government policies.  </li>
+<li>Import regulations.  </li>
+<li>Economic conditions.  </li>
+<li>Consumer purchasing power.</li>
+</ul>
+<p>A sustainable fashion opportunity may change depending on economic conditions.</p>
+<hr>
+<h1 id="6-4-seasonal-and-time-factors"><strong>6.4 Seasonal and Time Factors</strong></h1>
+<p>Purchasing behavior may vary due to:</p>
+<ul>
+<li>Climate.  </li>
+<li>Festivals.  </li>
+<li>Fashion seasons.  </li>
+<li>Economic cycles.</li>
+</ul>
+<p>Research should consider when data is collected.</p>
+<hr>
+<h1 id="7-research-design-decision"><strong>7. Research Design Decision</strong></h1>
+<p>Maya must choose between two approaches:</p>
+<ol>
+<li>Cross-sectional online survey.  </li>
+<li>Focus group interviews.</li>
+</ol>
+<p>Each has advantages and limitations.</p>
+<hr>
+<h1 id="8-cross-sectional-online-survey"><strong>8. Cross-Sectional Online Survey</strong></h1>
+<h2 id="definition"><strong>Definition</strong></h2>
+<p>A cross-sectional survey collects data from a population at one point in time.</p>
+<p>Example:</p>
+<p>Surveying Malaysian urban female shoppers about:</p>
+<ul>
+<li>Sustainability awareness.  </li>
+<li>Purchase intention.  </li>
+<li>Price sensitivity.</li>
+</ul>
+<hr>
+<h2 id="advantages-3"><strong>Advantages</strong></h2>
+<h3 id="1-quantitative-measurement"><strong>1. Quantitative Measurement</strong></h3>
+<p>Provides numerical data.</p>
+<p>Examples:</p>
+<ul>
+<li>Percentage willing to buy sustainable clothing.  </li>
+<li>Average willingness to pay.  </li>
+<li>Awareness levels.</li>
+</ul>
+<hr>
+<h3 id="2-large-sample-size"><strong>2. Large Sample Size</strong></h3>
+<p>Can reach many respondents.</p>
+<p>This improves:</p>
+<ul>
+<li>Generalizability.  </li>
+<li>Statistical confidence.</li>
+</ul>
+<hr>
+<h3 id="3-cost-and-time-efficiency"><strong>3. Cost and Time Efficiency</strong></h3>
+<p>Compared with interviews:</p>
+<ul>
+<li>Faster.  </li>
+<li>Lower cost.  </li>
+<li>Easier to analyze.</li>
+</ul>
+<p>This supports Arjun&rsquo;s argument.</p>
+<hr>
+<h2 id="limitations-3"><strong>Limitations</strong></h2>
+<h3 id="1-limited-depth"><strong>1. Limited Depth</strong></h3>
+<p>Surveys may not reveal:</p>
+<ul>
+<li>Why consumers think differently.  </li>
+<li>Cultural motivations.  </li>
+<li>Emotional factors.</li>
+</ul>
+<hr>
+<h3 id="2-risk-of-poor-question-design"><strong>2. Risk of Poor Question Design</strong></h3>
+<p>Results depend heavily on:</p>
+<ul>
+<li>Question wording.  </li>
+<li>Sampling quality.  </li>
+<li>Response accuracy.</li>
+</ul>
+<hr>
+<h1 id="9-focus-group-interviews"><strong>9. Focus Group Interviews</strong></h1>
+<h2 id="definition-2"><strong>Definition</strong></h2>
+<p>A focus group is a qualitative research method where a small group discusses opinions, perceptions, and experiences.</p>
+<p>Example:</p>
+<p>Discussing:</p>
+<ul>
+<li>What sustainable fashion means to Malaysian consumers.  </li>
+<li>Why they choose or avoid eco-friendly clothing.</li>
+</ul>
+<hr>
+<h2 id="advantages-4"><strong>Advantages</strong></h2>
+<h3 id="1-rich-insights"><strong>1. Rich Insights</strong></h3>
+<p>Provides deeper understanding of:</p>
+<ul>
+<li>Motivations.  </li>
+<li>Concerns.  </li>
+<li>Cultural influences.</li>
+</ul>
+<hr>
+<h3 id="2-discovery-of-unexpected-factors"><strong>2. Discovery of Unexpected Factors</strong></h3>
+<p>Participants may reveal issues researchers did not anticipate.</p>
+<p>Example:</p>
+<p>Consumers may like sustainability but dislike:</p>
+<ul>
+<li>Design limitations.  </li>
+<li>Pricing.  </li>
+<li>Availability.</li>
+</ul>
+<hr>
+<h2 id="limitations-4"><strong>Limitations</strong></h2>
+<h3 id="1-small-sample-size"><strong>1. Small Sample Size</strong></h3>
+<p>Results may not represent the whole market.</p>
+<hr>
+<h3 id="2-higher-cost-and-time"><strong>2. Higher Cost and Time</strong></h3>
+<p>Requires:</p>
+<ul>
+<li>Recruitment.  </li>
+<li>Moderation.  </li>
+<li>Analysis.</li>
+</ul>
+<p>This supports Lina&rsquo;s argument.</p>
+<hr>
+<h1 id="10-comparing-survey-and-focus-groups"><strong>10. Comparing Survey and Focus Groups</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Online Survey</th>
+<th>Focus Groups</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Research type</td>
+<td>Quantitative</td>
+<td>Qualitative</td>
+</tr>
+<tr>
+<td>Main purpose</td>
+<td>Measure patterns</td>
+<td>Explore reasons</td>
+</tr>
+<tr>
+<td>Sample size</td>
+<td>Large</td>
+<td>Small</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>Lower</td>
+<td>Higher</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>Faster</td>
+<td>Slower</td>
+</tr>
+<tr>
+<td>Data depth</td>
+<td>Lower</td>
+<td>Higher</td>
+</tr>
+<tr>
+<td>Statistical analysis</td>
+<td>Strong</td>
+<td>Limited</td>
+</tr>
+<tr>
+<td>Cultural insights</td>
+<td>Limited</td>
+<td>Strong</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="11-choosing-the-best-research-design"><strong>11. Choosing the Best Research Design</strong></h1>
+<p>The correct choice depends on the research objective.</p>
+<p>The team is investigating:</p>
+<ul>
+<li>Market demand.  </li>
+<li>Consumer behavior differences.  </li>
+<li>Cultural influences.</li>
+</ul>
+<p>A purely quantitative approach may miss important cultural factors.</p>
+<p>A purely qualitative approach may not provide enough market measurement.</p>
+<hr>
+<h1 id="recommended-approach-mixed-methods-research"><strong>Recommended Approach: Mixed Methods Research</strong></h1>
+<p>The strongest design is a combination:</p>
+<h2 id="phase-1-exploratory-qualitative-research"><strong>Phase 1: Exploratory Qualitative Research</strong></h2>
+<p>Use focus groups to understand:</p>
+<ul>
+<li>Consumer attitudes.  </li>
+<li>Cultural expectations.  </li>
+<li>Sustainability perceptions.</li>
+</ul>
+<p>Purpose:</p>
+<p>Discover important variables.</p>
+<hr>
+<h2 id="phase-2-quantitative-survey"><strong>Phase 2: Quantitative Survey</strong></h2>
+<p>Use a cross-sectional survey to measure:</p>
+<ul>
+<li>Market size.  </li>
+<li>Consumer interest.  </li>
+<li>Purchase intention.</li>
+</ul>
+<p>Purpose:</p>
+<p>Validate patterns across a larger population.</p>
+<hr>
+<h2 id="why-mixed-methods-fits-the-case"><strong>Why Mixed Methods Fits the Case</strong></h2>
+<p>It balances:</p>
+<h3 id="methodological-soundness"><strong>Methodological Soundness</strong></h3>
+<p>Combines:</p>
+<ul>
+<li>Depth from qualitative research.  </li>
+<li>Measurement from quantitative research.</li>
+</ul>
+<hr>
+<h3 id="context-relevance"><strong>Context Relevance</strong></h3>
+<p>Focus groups reveal:</p>
+<ul>
+<li>Cultural expectations.  </li>
+<li>Local preferences.</li>
+</ul>
+<p>Surveys measure:</p>
+<ul>
+<li>How widespread those views are.</li>
+</ul>
+<hr>
+<h3 id="resource-constraints"><strong>Resource Constraints</strong></h3>
+<p>The team can prioritize resources:</p>
+<ul>
+<li>Initial focus groups with targeted participants.  </li>
+<li>Larger survey after refining questions.</li>
+</ul>
+<hr>
+<h1 id="12-validity-in-business-research"><strong>12. Validity in Business Research</strong></h1>
+<p>Validity means whether the research accurately measures what it intends to measure.</p>
+<hr>
+<h2 id="internal-validity"><strong>Internal Validity</strong></h2>
+<p>Concern:</p>
+<p>Are conclusions supported by the research design?</p>
+<p>Example:</p>
+<p>Does sustainability interest actually influence buying intention?</p>
+<hr>
+<h2 id="external-validity"><strong>External Validity</strong></h2>
+<p>Concern:</p>
+<p>Can findings be applied to a larger population?</p>
+<p>Example:</p>
+<p>Do findings from a small group represent Malaysian urban consumers?</p>
+<hr>
+<h2 id="improving-validity"><strong>Improving Validity</strong></h2>
+<p>GreenThread improves validity by:</p>
+<ul>
+<li>Combining multiple data sources.  </li>
+<li>Considering local context.  </li>
+<li>Using appropriate research methods.  </li>
+<li>Aligning methods with objectives.</li>
+</ul>
+<hr>
+<h1 id="13-common-misconceptions"><strong>13. Common Misconceptions</strong></h1>
+<h2 id="misconception-1"><strong>Misconception 1:</strong></h2>
+<p>&ldquo;The cheapest and fastest research method is always best.&rdquo;</p>
+<p>Reality:</p>
+<p>Efficiency matters, but research quality and decision usefulness are more important.</p>
+<hr>
+<h2 id="misconception-2"><strong>Misconception 2:</strong></h2>
+<p>&ldquo;More survey responses automatically mean better research.&rdquo;</p>
+<p>Reality:</p>
+<p>Large samples cannot fix:</p>
+<ul>
+<li>Poor questions.  </li>
+<li>Wrong target audience.  </li>
+<li>Incorrect research objectives.</li>
+</ul>
+<hr>
+<h2 id="misconception-3"><strong>Misconception 3:</strong></h2>
+<p>&ldquo;Qualitative research is less valuable because it has fewer participants.&rdquo;</p>
+<p>Reality:</p>
+<p>Qualitative research provides depth and helps discover motivations.</p>
+<hr>
+<h2 id="misconception-4"><strong>Misconception 4:</strong></h2>
+<p>&ldquo;Quantitative research provides all necessary answers.&rdquo;</p>
+<p>Reality:</p>
+<p>Numbers show patterns but may not explain reasons.</p>
+<hr>
+<h1 id="14-key-learning-points-from-the-case-study"><strong>14. Key Learning Points from the Case Study</strong></h1>
+<h2 id="research-problem"><strong>Research Problem</strong></h2>
+<p>A good research problem converts a broad business concern into a specific information need.</p>
+<hr>
+<h2 id="context-narration"><strong>Context Narration</strong></h2>
+<p>A strong introduction moves logically:</p>
+<p><strong>Broad environment → Specific opportunity → Research problem</strong></p>
+<hr>
+<h2 id="planning"><strong>Planning</strong></h2>
+<p>Planning ensures:</p>
+<ul>
+<li>Clear objectives.  </li>
+<li>Appropriate methods.  </li>
+<li>Relevant data.  </li>
+<li>Reliable decisions.</li>
+</ul>
+<hr>
+<h2 id="research-design"><strong>Research Design</strong></h2>
+<p>The method should match the research objective.</p>
+<ul>
+<li>Need measurement → Quantitative.  </li>
+<li>Need understanding → Qualitative.  </li>
+<li>Need both → Mixed methods.</li>
+</ul>
+<hr>
+<h2 id="strategic-decision-principle"><strong>Strategic Decision Principle</strong></h2>
+<p>For market expansion decisions, organizations often need both:</p>
+<p><strong>Understanding consumers deeply + measuring market potential accurately</strong></p>
+<p>Therefore, mixed methods often provide the strongest foundation.</p>
+<hr>
+<h1 id="final-summary"><strong>Final Summary</strong></h1>
+<p>The GreenThread case demonstrates that successful business research is not simply about collecting data. It requires:</p>
+<ol>
+<li>Clearly defining the research problem.  </li>
+<li>Building context around the decision.  </li>
+<li>Planning the research systematically.  </li>
+<li>Considering cultural, economic, and environmental factors.  </li>
+<li>Selecting methods that match the research objective.  </li>
+<li>Combining qualitative and quantitative insights when necessary.  </li>
+<li>Using valid evidence to support strategic decisions.</li>
+</ol>
+<p>For a sustainable fashion expansion decision, the most robust approach is a carefully planned mixed-methods design that begins with exploratory customer understanding and progresses toward measurable market validation.</p>
+<h1 id="comprehensive-notes-greenthread-sustainable-fashion-market-research-case-study"><strong>Comprehensive Notes: GreenThread Sustainable Fashion Market Research Case Study</strong></h1>
+<h2 id="1-overview-of-the-case"><strong>1. Overview of the Case</strong></h2>
+<p>GreenThread is a sustainable fashion startup exploring expansion into Southeast Asian markets. Maya Singh, the Market Research Manager, must design a research approach that helps the company understand whether and how it should enter these markets.</p>
+<p>The central research challenge is:</p>
+<blockquote>
+<p>Understanding the demand, preferences, and purchasing behavior of urban female shoppers in Malaysia while considering cultural, regulatory, economic, and social conditions.</p>
+</blockquote>
+<p>The case highlights important business research concepts:</p>
+<ul>
+<li>Research problem formulation  </li>
+<li>Context narration  </li>
+<li>Systematic research planning  </li>
+<li>Secondary and primary research  </li>
+<li>Research design selection  </li>
+<li>Quantitative vs qualitative methods  </li>
+<li>Mixed-methods research  </li>
+<li>Validity and strategic decision-making</li>
+</ul>
+<hr>
+<h1 id="2-from-business-concern-to-research-problem"><strong>2. From Business Concern to Research Problem</strong></h1>
+<h2 id="business-concern"><strong>Business Concern</strong></h2>
+<p>A business concern is a broad issue that requires investigation.</p>
+<p>Example:</p>
+<blockquote>
+<p>GreenThread wants to expand into Southeast Asia.</p>
+</blockquote>
+<p>This statement alone does not tell researchers what information is needed.</p>
+<hr>
+<h2 id="research-problem-2"><strong>Research Problem</strong></h2>
+<p>A research problem identifies the specific knowledge gap that must be addressed before making a decision.</p>
+<p>GreenThread’s research problem:</p>
+<blockquote>
+<p>Understand how urban female shoppers in Malaysia perceive, evaluate, and purchase sustainable apparel within local cultural and regulatory conditions.</p>
+</blockquote>
+<p>A good research problem should answer:</p>
+<ul>
+<li>What information is missing?  </li>
+<li>Why is that information important?  </li>
+<li>How will the findings support decisions?</li>
+</ul>
+<hr>
+<h2 id="importance-of-a-clearly-defined-research-problem"><strong>Importance of a Clearly Defined Research Problem</strong></h2>
+<p>A weak research problem creates:</p>
+<ul>
+<li>Unfocused data collection.  </li>
+<li>Irrelevant findings.  </li>
+<li>Poor strategic decisions.</li>
+</ul>
+<p>A strong research problem creates alignment between:</p>
+<p><strong>Business objective → Research questions → Data collection → Analysis → Decision</strong></p>
+<hr>
+<h1 id="3-context-narration-in-business-research"><strong>3. Context Narration in Business Research</strong></h1>
+<h2 id="meaning-of-context-narration"><strong>Meaning of Context Narration</strong></h2>
+<p>Context narration is a structured explanation that connects the broad environment to the specific research problem.</p>
+<p>It is not simply background information. It creates the logic behind why the research is needed.</p>
+<hr>
+<h2 id="greenthread-s-context-narration-flow"><strong>GreenThread’s Context Narration Flow</strong></h2>
+<p>The team moves through a logical sequence:</p>
+<h3 id="1-global-trend"><strong>1. Global Trend</strong></h3>
+<p>Broad observation:</p>
+<ul>
+<li>Growing awareness of sustainability.  </li>
+<li>Increased interest in ethical fashion.  </li>
+<li>Environmental concerns influencing consumer choices.</li>
+</ul>
+<p>↓</p>
+<h3 id="2-regional-opportunity"><strong>2. Regional Opportunity</strong></h3>
+<p>Focus shifts to Southeast Asia:</p>
+<ul>
+<li>Emerging consumer markets.  </li>
+<li>Different levels of sustainability awareness.  </li>
+<li>Diverse cultural expectations.</li>
+</ul>
+<p>↓</p>
+<h3 id="3-specific-research-problem"><strong>3. Specific Research Problem</strong></h3>
+<p>The study focuses on:</p>
+<ul>
+<li>Malaysia.  </li>
+<li>Urban female shoppers.  </li>
+<li>Sustainable apparel purchasing behavior.</li>
+</ul>
+<hr>
+<h2 id="strategic-purpose-of-context-narration"><strong>Strategic Purpose of Context Narration</strong></h2>
+<p>Context narration helps:</p>
+<ul>
+<li>Explain why the research matters.  </li>
+<li>Justify the chosen research approach.  </li>
+<li>Connect external market realities with internal business goals.</li>
+</ul>
+<p>It ensures the study is relevant rather than generic.</p>
+<hr>
+<h1 id="4-research-planning-phase"><strong>4. Research Planning Phase</strong></h1>
+<h2 id="why-planning-is-the-most-important-stage"><strong>Why Planning Is the Most Important Stage</strong></h2>
+<p>The planning phase establishes the foundation of the entire research project.</p>
+<p>It determines:</p>
+<ul>
+<li>What will be studied.  </li>
+<li>Why it will be studied.  </li>
+<li>How information will be collected.  </li>
+<li>How results will support decisions.</li>
+</ul>
+<p>Poor planning creates problems later even if data collection is excellent.</p>
+<hr>
+<h1 id="components-of-research-planning-2"><strong>Components of Research Planning</strong></h1>
+<h2 id="1-define-research-objectives"><strong>1. Define Research Objectives</strong></h2>
+<p>Objectives specify what the research should achieve.</p>
+<p>Examples:</p>
+<ul>
+<li>Measure consumer interest in sustainable clothing.  </li>
+<li>Understand purchase motivations.  </li>
+<li>Identify barriers to adoption.  </li>
+<li>Determine market potential.</li>
+</ul>
+<hr>
+<h2 id="2-select-research-methods-2"><strong>2. Select Research Methods</strong></h2>
+<p>Researchers decide:</p>
+<ul>
+<li>Survey?  </li>
+<li>Interviews?  </li>
+<li>Focus groups?  </li>
+<li>Observation?  </li>
+<li>Existing data analysis?</li>
+</ul>
+<p>The method should match the research objective.</p>
+<hr>
+<h2 id="3-identify-data-sources-2"><strong>3. Identify Data Sources</strong></h2>
+<p>GreenThread uses:</p>
+<ul>
+<li>Secondary data.  </li>
+<li>Primary data.</li>
+</ul>
+<hr>
+<h1 id="5-secondary-research-and-primary-research"><strong>5. Secondary Research and Primary Research</strong></h1>
+<h2 id="secondary-research-2"><strong>Secondary Research</strong></h2>
+<p>Secondary research uses existing information collected by others.</p>
+<p>Examples:</p>
+<ul>
+<li>Industry reports.  </li>
+<li>Government statistics.  </li>
+<li>Market analyses.  </li>
+<li>Academic studies.</li>
+</ul>
+<hr>
+<h2 id="advantages-of-secondary-research"><strong>Advantages of Secondary Research</strong></h2>
+<ul>
+<li>Faster.  </li>
+<li>Less expensive.  </li>
+<li>Provides market background.  </li>
+<li>Helps identify trends.</li>
+</ul>
+<hr>
+<h2 id="limitations-5"><strong>Limitations</strong></h2>
+<p>Secondary data may:</p>
+<ul>
+<li>Not answer the exact research question.  </li>
+<li>Lack customer-level detail.  </li>
+<li>Miss cultural nuances.</li>
+</ul>
+<hr>
+<h2 id="primary-research-2"><strong>Primary Research</strong></h2>
+<p>Primary research collects new data specifically for the current research problem.</p>
+<p>Examples:</p>
+<ul>
+<li>Surveys.  </li>
+<li>Interviews.  </li>
+<li>Focus groups.</li>
+</ul>
+<hr>
+<h2 id="advantages-5"><strong>Advantages</strong></h2>
+<ul>
+<li>Directly addresses the research problem.  </li>
+<li>Provides current customer insights.  </li>
+<li>Can explore specific issues.</li>
+</ul>
+<hr>
+<h2 id="limitations-6"><strong>Limitations</strong></h2>
+<ul>
+<li>More expensive.  </li>
+<li>Requires careful planning.  </li>
+<li>Takes more time.</li>
+</ul>
+<hr>
+<h1 id="6-context-analysis-in-international-market-research"><strong>6. Context Analysis in International Market Research</strong></h1>
+<p>When entering a foreign market, companies must consider environmental factors.</p>
+<p>GreenThread considers:</p>
+<hr>
+<h1 id="6-1-geographical-diversity-2"><strong>6.1 Geographical Diversity</strong></h1>
+<p>Different regions may differ in:</p>
+<ul>
+<li>Income levels.  </li>
+<li>Shopping patterns.  </li>
+<li>Climate.  </li>
+<li>Fashion preferences.</li>
+</ul>
+<p>A strategy successful in one country may not work elsewhere.</p>
+<hr>
+<h1 id="6-2-social-and-cultural-norms-2"><strong>6.2 Social and Cultural Norms</strong></h1>
+<p>Fashion is strongly influenced by culture.</p>
+<p>Important considerations:</p>
+<ul>
+<li>Clothing expectations.  </li>
+<li>Modesty preferences.  </li>
+<li>Religious influences.  </li>
+<li>Social acceptance.</li>
+</ul>
+<p>Example:</p>
+<p>Understanding how modest dress expectations influence sustainable clothing choices.</p>
+<hr>
+<h1 id="6-3-political-and-economic-stability-2"><strong>6.3 Political and Economic Stability</strong></h1>
+<p>Market decisions depend on:</p>
+<ul>
+<li>Regulations.  </li>
+<li>Trade policies.  </li>
+<li>Economic conditions.  </li>
+<li>Consumer purchasing power.</li>
+</ul>
+<hr>
+<h1 id="6-4-seasonal-and-time-factors-2"><strong>6.4 Seasonal and Time Factors</strong></h1>
+<p>Consumer behavior may change due to:</p>
+<ul>
+<li>Climate.  </li>
+<li>Festivals.  </li>
+<li>Fashion cycles.  </li>
+<li>Economic changes.</li>
+</ul>
+<hr>
+<h1 id="7-research-design-options-in-greenthread-s-decision"><strong>7. Research Design Options in GreenThread’s Decision</strong></h1>
+<p>Maya faces a choice:</p>
+<ol>
+<li>Cross-sectional online survey.  </li>
+<li>Focus group interviews.</li>
+</ol>
+<p>These methods answer different research needs.</p>
+<hr>
+<h1 id="8-cross-sectional-online-survey-2"><strong>8. Cross-Sectional Online Survey</strong></h1>
+<h2 id="definition-3"><strong>Definition</strong></h2>
+<p>A cross-sectional survey collects information from respondents at a specific point in time.</p>
+<p>Example:</p>
+<p>Surveying Malaysian shoppers about:</p>
+<ul>
+<li>Sustainability awareness.  </li>
+<li>Purchase intention.  </li>
+<li>Price sensitivity.</li>
+</ul>
+<hr>
+<h2 id="strengths"><strong>Strengths</strong></h2>
+<h3 id="1-broad-quantitative-data"><strong>1. Broad Quantitative Data</strong></h3>
+<p>Provides measurable information:</p>
+<ul>
+<li>Percentage of interested consumers.  </li>
+<li>Average purchase intention.  </li>
+<li>Market size estimates.</li>
+</ul>
+<hr>
+<h3 id="2-larger-sample-size"><strong>2. Larger Sample Size</strong></h3>
+<p>Can include many respondents.</p>
+<p>Benefits:</p>
+<ul>
+<li>Better generalization.  </li>
+<li>Stronger market estimation.</li>
+</ul>
+<hr>
+<h3 id="3-efficiency"><strong>3. Efficiency</strong></h3>
+<p>Advantages:</p>
+<ul>
+<li>Faster.  </li>
+<li>Lower cost.  </li>
+<li>Easier analysis.</li>
+</ul>
+<p>This explains Arjun Patel’s preference.</p>
+<hr>
+<h2 id="limitations-7"><strong>Limitations</strong></h2>
+<h3 id="limited-depth"><strong>Limited Depth</strong></h3>
+<p>A survey may show:</p>
+<blockquote>
+<p>Consumers are not buying sustainable clothing.</p>
+</blockquote>
+<p>But may not explain:</p>
+<blockquote>
+<p>Why they are not buying.</p>
+</blockquote>
+<p>Possible missing factors:</p>
+<ul>
+<li>Cultural expectations.  </li>
+<li>Emotional attitudes.  </li>
+<li>Social perceptions.</li>
+</ul>
+<hr>
+<h1 id="9-focus-group-interviews-2"><strong>9. Focus Group Interviews</strong></h1>
+<h2 id="definition-4"><strong>Definition</strong></h2>
+<p>Focus groups involve guided discussions with selected participants to explore opinions and experiences.</p>
+<p>Example:</p>
+<p>Discussing:</p>
+<ul>
+<li>Meaning of sustainable fashion.  </li>
+<li>Cultural concerns.  </li>
+<li>Clothing preferences.</li>
+</ul>
+<hr>
+<h2 id="strengths-2"><strong>Strengths</strong></h2>
+<h3 id="1-deep-understanding"><strong>1. Deep Understanding</strong></h3>
+<p>Provides insights into:</p>
+<ul>
+<li>Motivations.  </li>
+<li>Beliefs.  </li>
+<li>Barriers.  </li>
+<li>Cultural influences.</li>
+</ul>
+<hr>
+<h3 id="2-exploratory-value"><strong>2. Exploratory Value</strong></h3>
+<p>Can reveal unexpected issues.</p>
+<p>Example:</p>
+<p>Consumers may support sustainability but reject products because:</p>
+<ul>
+<li>Designs do not match local preferences.  </li>
+<li>Prices seem too high.  </li>
+<li>Clothing styles are inappropriate.</li>
+</ul>
+<hr>
+<h2 id="limitations-8"><strong>Limitations</strong></h2>
+<h3 id="smaller-sample"><strong>Smaller Sample</strong></h3>
+<p>Results may not represent the whole market.</p>
+<hr>
+<h3 id="more-resource-intensive"><strong>More Resource Intensive</strong></h3>
+<p>Requires:</p>
+<ul>
+<li>Recruitment.  </li>
+<li>Moderation.  </li>
+<li>Analysis.</li>
+</ul>
+<p>This explains Lina Morales’ argument.</p>
+<hr>
+<h1 id="10-survey-vs-focus-groups-comparison"><strong>10. Survey vs Focus Groups Comparison</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Survey</th>
+<th>Focus Groups</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Research type</td>
+<td>Quantitative</td>
+<td>Qualitative</td>
+</tr>
+<tr>
+<td>Main purpose</td>
+<td>Measure</td>
+<td>Explore</td>
+</tr>
+<tr>
+<td>Sample size</td>
+<td>Large</td>
+<td>Small</td>
+</tr>
+<tr>
+<td>Data type</td>
+<td>Numbers</td>
+<td>Opinions and experiences</td>
+</tr>
+<tr>
+<td>Strength</td>
+<td>Generalization</td>
+<td>Depth</td>
+</tr>
+<tr>
+<td>Weakness</td>
+<td>Limited explanation</td>
+<td>Limited scalability</td>
+</tr>
+<tr>
+<td>Best for</td>
+<td>Market sizing</td>
+<td>Understanding motivations</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="11-the-methodological-trade-off"><strong>11. The Methodological Trade-Off</strong></h1>
+<p>The disagreement between Arjun and Lina represents a common research challenge:</p>
+<h2 id="breadth-vs-depth"><strong>Breadth vs Depth</strong></h2>
+<hr>
+<h2 id="arjun-s-perspective-breadth"><strong>Arjun’s Perspective: Breadth</strong></h2>
+<p>Focus:</p>
+<ul>
+<li>Large sample.  </li>
+<li>Numerical measurement.  </li>
+<li>Market estimation.  </li>
+<li>Cost efficiency.</li>
+</ul>
+<p>Primary goal:</p>
+<blockquote>
+<p>How many consumers are interested?</p>
+</blockquote>
+<hr>
+<h2 id="lina-s-perspective-depth"><strong>Lina’s Perspective: Depth</strong></h2>
+<p>Focus:</p>
+<ul>
+<li>Consumer motivations.  </li>
+<li>Cultural understanding.  </li>
+<li>Product adaptation.  </li>
+<li>Brand relevance.</li>
+</ul>
+<p>Primary goal:</p>
+<blockquote>
+<p>Why do consumers behave this way?</p>
+</blockquote>
+<hr>
+<p>Neither method is universally superior.</p>
+<p>The correct choice depends on the research objective.</p>
+<hr>
+<h1 id="12-why-the-survey-vs-focus-group-choice-is-too-simplistic"><strong>12. Why the Survey vs Focus Group Choice Is Too Simplistic</strong></h1>
+<p>The case presents a false binary.</p>
+<p>Survey and focus groups are not direct competitors.</p>
+<p>They serve different purposes.</p>
+<hr>
+<h2 id="survey-answers"><strong>Survey Answers:</strong></h2>
+<ul>
+<li>How many?  </li>
+<li>How often?  </li>
+<li>Which groups?  </li>
+<li>What percentage?</li>
+</ul>
+<hr>
+<h2 id="focus-groups-answer"><strong>Focus Groups Answer:</strong></h2>
+<ul>
+<li>Why?  </li>
+<li>How do consumers think?  </li>
+<li>What cultural factors influence decisions?</li>
+</ul>
+<hr>
+<p>A complex international expansion decision often requires both.</p>
+<hr>
+<h1 id="13-mixed-methods-research-approach"><strong>13. Mixed Methods Research Approach</strong></h1>
+<h2 id="meaning"><strong>Meaning</strong></h2>
+<p>Mixed methods research combines:</p>
+<ul>
+<li>Quantitative methods.  </li>
+<li>Qualitative methods.</li>
+</ul>
+<hr>
+<h2 id="recommended-greenthread-approach"><strong>Recommended GreenThread Approach</strong></h2>
+<h3 id="phase-1-exploratory-focus-groups"><strong>Phase 1: Exploratory Focus Groups</strong></h3>
+<p>Purpose:</p>
+<p>Understand:</p>
+<ul>
+<li>Cultural preferences.  </li>
+<li>Consumer motivations.  </li>
+<li>Barriers.  </li>
+<li>Local expectations.</li>
+</ul>
+<hr>
+<h3 id="phase-2-quantitative-survey-2"><strong>Phase 2: Quantitative Survey</strong></h3>
+<p>Purpose:</p>
+<p>Measure:</p>
+<ul>
+<li>Size of demand.  </li>
+<li>Market segments.  </li>
+<li>Purchase likelihood.</li>
+</ul>
+<hr>
+<h2 id="benefits"><strong>Benefits</strong></h2>
+<h3 id="better-validity"><strong>Better Validity</strong></h3>
+<p>Combines:</p>
+<ul>
+<li>Depth of understanding.  </li>
+<li>Statistical measurement.</li>
+</ul>
+<hr>
+<h3 id="better-product-adaptation"><strong>Better Product Adaptation</strong></h3>
+<p>Focus groups reveal:</p>
+<ul>
+<li>What customers want.  </li>
+<li>What may create rejection.</li>
+</ul>
+<hr>
+<h3 id="better-market-prediction"><strong>Better Market Prediction</strong></h3>
+<p>Surveys estimate:</p>
+<ul>
+<li>Market opportunity.  </li>
+<li>Consumer adoption levels.</li>
+</ul>
+<hr>
+<h1 id="14-validity-in-research"><strong>14. Validity in Research</strong></h1>
+<h2 id="construct-validity"><strong>Construct Validity</strong></h2>
+<p>Does the research measure the concept it intends to measure?</p>
+<p>Example:</p>
+<p>Does a survey truly capture consumer commitment to sustainable fashion?</p>
+<p>Focus groups help improve construct validity by exploring meanings.</p>
+<hr>
+<h2 id="external-validity-2"><strong>External Validity</strong></h2>
+<p>Can findings apply to a wider population?</p>
+<p>Surveys help improve external validity because they involve larger samples.</p>
+<hr>
+<h2 id="combining-both"><strong>Combining Both</strong></h2>
+<p>Mixed methods improves both:</p>
+<ul>
+<li>Focus groups → deeper understanding.  </li>
+<li>Surveys → broader applicability.</li>
+</ul>
+<hr>
+<h1 id="15-using-secondary-data-strategically"><strong>15. Using Secondary Data Strategically</strong></h1>
+<p>Secondary research should not replace primary research.</p>
+<p>Instead, it should guide it.</p>
+<hr>
+<h2 id="correct-approach"><strong>Correct Approach</strong></h2>
+<p>Secondary data:</p>
+<ol>
+<li>Establishes market background.  </li>
+<li>Identifies trends.  </li>
+<li>Reveals information gaps.</li>
+</ol>
+<p>Then:</p>
+<p>Primary research explores those gaps.</p>
+<hr>
+<p>Example:</p>
+<p>Industry reports show:</p>
+<blockquote>
+<p>Sustainable fashion interest is growing.</p>
+</blockquote>
+<p>Remaining question:</p>
+<blockquote>
+<p>Why are Malaysian consumers still hesitant?</p>
+</blockquote>
+<p>Focus groups investigate:</p>
+<ul>
+<li>Cultural concerns.  </li>
+<li>Product expectations.</li>
+</ul>
+<p>Surveys measure:</p>
+<ul>
+<li>How widespread those concerns are.</li>
+</ul>
+<hr>
+<h1 id="16-long-term-strategic-implications"><strong>16. Long-Term Strategic Implications</strong></h1>
+<p>For a sustainable fashion startup, research affects:</p>
+<h2 id="brand-positioning"><strong>Brand Positioning</strong></h2>
+<p>Understanding cultural values helps create authentic messaging.</p>
+<p>Example:</p>
+<p>A sustainability message must fit local consumer beliefs.</p>
+<hr>
+<h2 id="product-adaptation"><strong>Product Adaptation</strong></h2>
+<p>Research helps determine:</p>
+<ul>
+<li>Designs.  </li>
+<li>Materials.  </li>
+<li>Styles.  </li>
+<li>Pricing expectations.</li>
+</ul>
+<hr>
+<h2 id="market-acceptance"><strong>Market Acceptance</strong></h2>
+<p>Poor cultural understanding can lead to:</p>
+<ul>
+<li>Product rejection.  </li>
+<li>Weak brand connection.  </li>
+<li>Failed market entry.</li>
+</ul>
+<hr>
+<h1 id="17-common-misconceptions"><strong>17. Common Misconceptions</strong></h1>
+<h2 id="misconception-1-2"><strong>Misconception 1:</strong></h2>
+<p>&ldquo;Quantitative research is always more objective.&rdquo;</p>
+<p>Reality:</p>
+<p>Numbers are valuable but depend on:</p>
+<ul>
+<li>Question design.  </li>
+<li>Sampling.  </li>
+<li>Measurement quality.</li>
+</ul>
+<hr>
+<h2 id="misconception-2-2"><strong>Misconception 2:</strong></h2>
+<p>&ldquo;Qualitative research is unreliable because it uses fewer people.&rdquo;</p>
+<p>Reality:</p>
+<p>Qualitative research provides depth and helps discover important factors.</p>
+<hr>
+<h2 id="misconception-3-2"><strong>Misconception 3:</strong></h2>
+<p>&ldquo;The cheapest method should always be selected.&rdquo;</p>
+<p>Reality:</p>
+<p>Research cost must be balanced against decision risk.</p>
+<p>A wrong market entry decision may cost much more than better research.</p>
+<hr>
+<h2 id="misconception-4-2"><strong>Misconception 4:</strong></h2>
+<p>&ldquo;Secondary research eliminates the need for primary research.&rdquo;</p>
+<p>Reality:</p>
+<p>Secondary data provides context but may not capture specific customer behavior.</p>
+<hr>
+<h1 id="18-final-revision-summary"><strong>18. Final Revision Summary</strong></h1>
+<h2 id="research-flow"><strong>Research Flow</strong></h2>
+<p><strong>Broad market trend → Context analysis → Research problem → Planning → Data collection → Analysis → Strategic decision</strong></p>
+<hr>
+<h2 id="key-concepts"><strong>Key Concepts</strong></h2>
+<h3 id="context-narration-2"><strong>Context Narration</strong></h3>
+<p>Connects broad trends to specific research problems.</p>
+<h3 id="planning-phase"><strong>Planning Phase</strong></h3>
+<p>Creates the roadmap for effective research.</p>
+<h3 id="survey"><strong>Survey</strong></h3>
+<p>Best for measuring market size and patterns.</p>
+<h3 id="focus-groups"><strong>Focus Groups</strong></h3>
+<p>Best for understanding motivations and cultural factors.</p>
+<h3 id="mixed-methods"><strong>Mixed Methods</strong></h3>
+<p>Combines measurement with understanding.</p>
+<h3 id="secondary-research-3"><strong>Secondary Research</strong></h3>
+<p>Provides background and identifies gaps.</p>
+<h3 id="primary-research-3"><strong>Primary Research</strong></h3>
+<p>Provides specific customer insights.</p>
+<hr>
+<h1 id="core-learning-principle"><strong>Core Learning Principle</strong></h1>
+<p>For complex international market expansion decisions, the strongest research approach is not choosing between numbers and stories. Effective research combines:</p>
+<p><strong>Quantitative evidence to understand market potential + qualitative insight to understand human behavior.</strong></p>
+<p>GreenThread’s success depends on transforming research findings into culturally relevant brand positioning, product adaptation, and sustainable long-term growth.</p>
+<hr>
+<h1 id="exam-study-guide-appendix">Exam Study Guide Appendix</h1>
+<h1 id="week-1-study-notes-foundations-of-business-research">Week 1 Study Notes — Foundations of Business Research</h1>
+<h2 id="how-to-use-these-notes-for-the-exam">How to use these notes for the exam</h2>
+<p>Week 1 builds a single chain of reasoning:</p>
+<blockquote>
+<p><strong>Business symptom → underlying business problem → research problem → research questions → research design and data → analysis and insight → managerial decision/action → iteration if necessary</strong></p>
+</blockquote>
+<p>For exam answers, define the relevant term first, distinguish it from related terms, reproduce the process or classification, and then apply it to a practical example.</p>
+<hr>
+<h1 id="1-business-research">1. Business Research</h1>
+<h2 id="1-1-meaning-and-importance">1.1 Meaning and importance</h2>
+<p>Business research is a <strong>problem-solving methodology adopted by an organization to solve business problems</strong>. Organizations operate in turbulent environments and encounter many kinds of problems. Quality managerial decisions require information; data are analyzed and interpreted to produce that information and, ultimately, actionable insights. Business research serves this need and reduces the risk involved in managerial decision-making.</p>
+<p>The lecture adopts Leedy&rsquo;s (1997) idea of research: it is a process through which an organization attempts, <strong>systematically and with the support of data</strong>, to obtain:</p>
+<ul>
+<li>an answer to a question;</li>
+<li>a resolution to a problem; or</li>
+<li>a greater understanding of a phenomenon useful for decision-making.</li>
+</ul>
+<p>The lecturer particularly emphasizes <strong>“with the support of data.”</strong> Business research is not intuition or unsupported opinion. It is systematic: it follows logically ordered steps involving data collection, analysis, and interpretation to address a specific business challenge.</p>
+<h2 id="1-2-the-research-cycle">1.2 The research cycle</h2>
+<p>A typical business-research process is cyclical and often iterative:</p>
+<ol>
+<li>Identify and clearly define the problem.</li>
+<li>Define the goal of the research.</li>
+<li>Break the problem into research questions.</li>
+<li>Formulate hypotheses or theoretical propositions about relationships among factors instrumental to the problem.</li>
+<li>Plan the research: decide whom to approach, what data are required, where the data can be obtained, and which methods will be used.</li>
+<li>Collect the data.</li>
+<li>Analyze the data to uncover hidden information.</li>
+<li>Interpret the information as insights relevant to the solution.</li>
+<li>Act on the insights.</li>
+<li>Repeat or refine parts of the process until a stable solution is obtained.</li>
+</ol>
+<p>Research does not always yield a complete solution in one pass. New findings may require the problem, questions, hypotheses, or data plan to be revised. This is why it is described as a <strong>research cycle</strong>.</p>
+<h2 id="1-3-business-environment-and-the-scope-of-research">1.3 Business environment and the scope of research</h2>
+<p>The business environment is <strong>VUCA</strong>: volatile, uncertain, complex, and ambiguous. It is also dynamic. Changes in any part of the environment can create organizational challenges.</p>
+<h3 id="three-layers-of-the-environment">Three layers of the environment</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Meaning</th>
+<th>Illustrative factors/problems</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Internal environment</strong></td>
+<td>Factors substantially within organizational control</td>
+<td>Operational inefficiency, employee turnover, financial underperformance, internal conflict; these may require changes to internal policy or practice</td>
+</tr>
+<tr>
+<td><strong>Micro environment</strong></td>
+<td>External parties/factors managed in routine business relationships</td>
+<td>Customers, competitors, B2B partners, suppliers, logistics partners; competition, supply disruption, and changing consumer behavior</td>
+</tr>
+<tr>
+<td><strong>Macro environment</strong></td>
+<td>Broad forces outside organizational control</td>
+<td>Economic instability; sociocultural and demographic shifts; regulatory/legal change; technological disruption; geopolitical shifts; environmental concerns</td>
+</tr>
+</tbody>
+</table></div>
+<p>The <strong>micro and macro environments together form the external environment</strong>. Business research helps organizations understand changes across all three layers and develop strategies that maintain competitiveness.</p>
+<h2 id="1-4-business-problem-definition-magnitude-and-consequences">1.4 Business problem: definition, magnitude, and consequences</h2>
+<p>A business problem is a <strong>discrepancy, deviation, or performance gap between what an organization ideally expects and what it actually achieves</strong>, measured against a performance criterion or metric.</p>
+<p>Performance criteria differ across functions:</p>
+<ul>
+<li>Marketing: unit sales, sales revenue, campaign reach, market share.</li>
+<li>Human resources: employee turnover.</li>
+<li>Operations: quality loss, delivery performance, inventory performance.</li>
+<li>Finance: profitability, costs, or financial performance.</li>
+</ul>
+<h3 id="core-example-sales-shortfall">Core example: sales shortfall</h3>
+<p>If a firm expects sales of 100 units per month but sells only 70, the gap—and hence the simple magnitude of the problem—is 30 units. The observed gap alone does not reveal its cause; possible causes include changed consumer behavior, product quality, pricing, weak promotion, sales-force demotivation, or logistics failures.</p>
+<h3 id="advertisement-example">Advertisement example</h3>
+<p>If a firm expects an advertisement to reach 70% of its target audience but it reaches only 30%, there is a 40-percentage-point performance gap. Research must investigate why targeting, channel selection, message, or delivery failed.</p>
+<h3 id="why-the-problem-must-be-solved">Why the problem must be solved</h3>
+<p>The seriousness and urgency of a problem depend on its consequences. A sales shortfall may reduce market share, cause customer defection, and lower profitability. Unresolved problems weaken competitiveness and may eventually cause business failure.</p>
+<h2 id="1-5-business-problem-research-problem-and-research-questions">1.5 Business problem, research problem, and research questions</h2>
+<p>These terms form a progression but are not interchangeable.</p>
+<ul>
+<li><strong>Business problem:</strong> the practical performance gap faced by management.</li>
+<li><strong>Research problem:</strong> a clearer, narrower, information-oriented and directional formulation of what must be investigated to help address that gap.</li>
+<li><strong>Research questions:</strong> specific questions whose answers collectively provide the evidence needed to understand the research problem and support action.</li>
+</ul>
+<h3 id="declining-sales-illustration">Declining-sales illustration</h3>
+<p><strong>Observed business problem:</strong> Sales of a product declined by 15% over the last two quarters, as shown in sales reports.</p>
+<p>The report identifies the fact of decline but not its reasons. Possible directions include consumer behavior, product quality, pricing, advertising effectiveness, sales-force motivation, and logistics.</p>
+<p><strong>Possible research problem:</strong></p>
+<blockquote>
+<p>To identify and examine the various factors contributing to the 15% decline in sales and propose strategies to reverse the trend.</p>
+</blockquote>
+<p>This is more target-oriented and directional than the raw business problem. It seeks the relative importance of contributing factors so that management can act intelligently.</p>
+<h3 id="sources-used-to-generate-possible-causes-questions">Sources used to generate possible causes/questions</h3>
+<p>When initially framing the problem and questions, a researcher can use:</p>
+<ol>
+<li><strong>Existing literature and empirical findings</strong> about sales, sales promotion, or sales decline.</li>
+<li><strong>Experts and informed stakeholders</strong>, such as senior marketing managers and customers.</li>
+<li><strong>Direct observation</strong>, such as observing shoppers in a supermarket and noting what they request or why they reject the product.</li>
+</ol>
+<h3 id="research-questions-by-cause-or-business-function">Research questions by cause or business function</h3>
+<p><strong>Consumer behavior/customer experience</strong></p>
+<ul>
+<li>What are customers&rsquo; priorities and preferences concerning product X?</li>
+<li>What is the level of customer satisfaction?</li>
+<li>Which aspects of interaction with the product are customer pain points?</li>
+<li>How do customers evaluate the usefulness of different product features?</li>
+</ul>
+<p><strong>Product quality and operations</strong></p>
+<ul>
+<li>What quality do customers expect?</li>
+<li>Which issues affect the product&rsquo;s quality management?</li>
+<li>What product-quality concerns do customers have?</li>
+<li>Which factors affect reliability and post-sale support?</li>
+<li>What operational inefficiencies prevent adequate service or timely supply to retail shops?</li>
+<li>What delivery or inventory problems contribute to lost sales?</li>
+</ul>
+<p><strong>Pricing and finance</strong></p>
+<ul>
+<li>What price do customers regard as ideal?</li>
+<li>How price-sensitive are customers?</li>
+<li>What is the product&rsquo;s price elasticity?</li>
+<li>Do profitability, pricing, cost structure, or improper utilization of advertising funds contribute to the decline?</li>
+</ul>
+<p><strong>Sales team and HR</strong></p>
+<ul>
+<li>What is the relationship between salesperson compensation and sales achieved?</li>
+<li>How motivated is the sales team?</li>
+<li>Which policies motivate salespeople?</li>
+<li>What perceived knowledge or skill gaps in the sales team hinder performance?</li>
+<li>Do training gaps or employee turnover affect sales?</li>
+</ul>
+<p><strong>Promotion and competition</strong></p>
+<ul>
+<li>How effective are current digital and traditional promotional campaigns?</li>
+<li>Is the firm targeting the correct audience?</li>
+<li>Does the advertisement reach the target market effectively?</li>
+<li>Which promotional strategies would be more effective for this type of product?</li>
+<li>Which new products or substitutes have gained customer attention?</li>
+</ul>
+<p><strong>Artificial intelligence</strong></p>
+<ul>
+<li>Can an AI-driven causal-inference model identify the dominant variables causing the sales decline?</li>
+<li>Can an AI algorithm quantify each variable&rsquo;s impact?</li>
+<li>Can prediction, optimization, or customization improve the response strategy?</li>
+</ul>
+<h3 id="cross-functional-lesson">Cross-functional lesson</h3>
+<p>A sales decline may initially appear to be purely a marketing problem, yet its causes can lie in finance, HR, operations, logistics, or technology. A complete solution may therefore require research questions across multiple functional domains. Answers considered together are more useful than an isolated functional diagnosis.</p>
+<p><strong>Practical use case:</strong> An e-commerce company&rsquo;s conversion rate falls. Marketing data might reveal weak ad targeting, operations data might reveal frequent stock-outs, UX data might reveal checkout friction, and customer interviews might reveal distrust of delivery promises. Treating only the advertising symptom could leave the actual causes untouched.</p>
+<hr>
+<h1 id="2-types-of-research">2. Types of Research</h1>
+<h2 id="2-1-why-classification-matters">2.1 Why classification matters</h2>
+<p>After defining the research problem and questions, the researcher selects a methodology. That selection depends on the type or types of research required. A business project may legitimately combine several types.</p>
+<h2 id="2-2-classification-by-general-purpose">2.2 Classification by general purpose</h2>
+<h3 id="pure-or-basic-research">Pure or basic research</h3>
+<p>Research conducted solely to advance fundamental knowledge or theory, without requiring an immediate practical application. Application may emerge later.</p>
+<ul>
+<li>Newton&rsquo;s discovery of gravity was not initially directed toward designing aircraft or missiles.</li>
+<li>Other examples: investigating DNA structure or the origins of the universe.</li>
+</ul>
+<h3 id="applied-research-2">Applied research</h3>
+<p>Research designed to solve a specific practical problem or create a practical intervention/solution. Business research is predominantly applied research.</p>
+<ul>
+<li>Example: estimating market demand for a new product before launch.</li>
+</ul>
+<h2 id="2-3-classification-by-methodology-approach-or-type-of-data">2.3 Classification by methodology, approach, or type of data</h2>
+<h3 id="qualitative-research-2">Qualitative research</h3>
+<p>Uses non-numerical material—text, images, interviews, and observations—to gain an in-depth understanding of a problem.</p>
+<ul>
+<li>Example: interviewing five teachers about perceptions of a new curriculum and analyzing interview themes.</li>
+<li>Useful when meanings, motives, experiences, or an insufficiently understood problem must be explored.</li>
+</ul>
+<h3 id="quantitative-research-2">Quantitative research</h3>
+<p>Uses numerical data that can be measured, counted, and statistically analyzed.</p>
+<ul>
+<li>Example: surveying 500 students to measure learning styles.</li>
+<li>Useful for estimating prevalence, comparing groups, testing relationships, or quantifying effects.</li>
+</ul>
+<h3 id="mixed-method-research">Mixed-method research</h3>
+<p>Combines qualitative and quantitative methods within one study, sometimes at different stages.</p>
+<ul>
+<li>Example 1: conduct a large-scale survey, then in-depth interviews with a smaller group to explain or validate the survey findings.</li>
+<li>Example 2: begin qualitatively to define the business problem/factors, then quantify the importance of those factors.</li>
+</ul>
+<h2 id="2-4-classification-by-scope-or-objective">2.4 Classification by scope or objective</h2>
+<h3 id="exploratory-research-2">Exploratory research</h3>
+<p>Used when little is known. It explores the state of affairs, clarifies the nature of the problem, and generates preliminary knowledge. Most research has an exploratory phase at the beginning.</p>
+<ul>
+<li>Example: investigate possible reasons for student absenteeism before designing a formal survey.</li>
+</ul>
+<h3 id="descriptive-research-2">Descriptive research</h3>
+<p>Accurately and systematically describes a population, situation, or phenomenon. It addresses <strong>what, where, when, and how</strong>.</p>
+<ul>
+<li>Example: calculate the percentage of online shoppers in a geographic area and their average monthly spending.</li>
+</ul>
+<h3 id="explanatory-or-causal-research">Explanatory or causal research</h3>
+<p>Examines cause–effect relationships and the factors that produce an outcome—the <strong>why</strong>.</p>
+<ul>
+<li>Smoking intensity → probability of cancer.</li>
+<li>Motivation → student performance.</li>
+<li>Advertising → product awareness, purchase intention, demand, or popularity.</li>
+<li>Example research question: How does advertising relate to purchase intention?</li>
+</ul>
+<p>The lecturer&rsquo;s closing sequence is conceptually: <strong>exploratory research uncovers/clarifies the problem; descriptive research maps what and how; explanatory/causal research identifies why and which factors cause it.</strong> The transcript says “explanatory” at the first step, but this conflicts with the lecture&rsquo;s earlier definitions and is best understood as a transcription slip for “exploratory.”</p>
+<h2 id="2-5-classification-by-time">2.5 Classification by time</h2>
+<h3 id="cross-sectional-research">Cross-sectional research</h3>
+<p>Collects data from multiple units or a population at one point in time: a one-shot picture.</p>
+<ul>
+<li>Example: one survey of city residents&rsquo; opinions about a new policy.</li>
+<li>Typical use: a one-time customer-opinion survey.</li>
+</ul>
+<h3 id="longitudinal-research">Longitudinal research</h3>
+<p>Collects data from the same sample or observational units at multiple points over an extended period to track change.</p>
+<ul>
+<li>Example: track the same children&rsquo;s academic performance after Classes 1, 2, and 3.</li>
+<li>Other examples: time-series analysis of stock-market fluctuations or sales reports.</li>
+</ul>
+<h2 id="2-6-classification-by-manipulation-control">2.6 Classification by manipulation/control</h2>
+<h3 id="experimental-research">Experimental research</h3>
+<p>The researcher manipulates one or more independent/causal variables and generally assigns participants randomly to treatment/control groups to test causal effects.</p>
+<ul>
+<li>Example: administer a new drug to a randomly selected treatment group and compare it with a control group.</li>
+</ul>
+<h3 id="non-experimental-research">Non-experimental research</h3>
+<p>The researcher observes variables without manipulating them. It includes descriptive and correlational work and generally cannot establish direct causality merely from association.</p>
+<ul>
+<li>Example: study the relationship between hours of sleep and test scores without changing anyone&rsquo;s sleep habits.</li>
+</ul>
+<h3 id="quasi-experimental-research">Quasi-experimental research</h3>
+<p>Tests a potential causal relationship but lacks random assignment, often for ethical or practical reasons. The intervention/exposure already differs through some real-world mechanism.</p>
+<ul>
+<li>Example: compare test scores in two existing schools when one has already implemented a new teaching program and the other has not.</li>
+</ul>
+<h2 id="2-7-classification-by-inference-or-reasoning">2.7 Classification by inference or reasoning</h2>
+<h3 id="inductive-reasoning">Inductive reasoning</h3>
+<p>Moves from specific observations/data to broader patterns, generalizations, or theories.</p>
+<ul>
+<li>Example: review many successful entrepreneurs, identify common traits, and develop a general leadership theory.</li>
+</ul>
+<h3 id="deductive-reasoning">Deductive reasoning</h3>
+<p>Moves from a general theory or hypothesis to a specific test using collected data. It asks whether the generalized proposition holds for a particular group, context, or time.</p>
+<ul>
+<li>Example: use the theory of gravity to predict a dropped object&rsquo;s path and conduct an experiment to test the prediction.</li>
+</ul>
+<h2 id="2-8-specialized-research-types">2.8 Specialized research types</h2>
+<h3 id="ethnographic-research">Ethnographic research</h3>
+<p>A qualitative method involving deep immersion in a cultural group or setting to understand behavior, interactions, and perspectives from an insider viewpoint.</p>
+<ul>
+<li>Example: live in a remote village for six months to understand an ethnic group&rsquo;s social structure and rituals.</li>
+</ul>
+<h3 id="historical-research">Historical research</h3>
+<p>Systematically collects, evaluates, and interprets past data to understand past events and connect them with the present. It is not restricted to countries or religion; it can trace the history of any outcome or performance.</p>
+<ul>
+<li>Example: analyze company reports and newspaper articles to trace the development of labor unions in an industry.</li>
+</ul>
+<h3 id="phenomenological-research">Phenomenological research</h3>
+<p>A qualitative method focused on describing and understanding the shared lived experience of individuals concerning a particular phenomenon.</p>
+<ul>
+<li>Example: interview people with a chronic illness to understand their everyday experience of living with the disease.</li>
+</ul>
+<h2 id="2-9-characteristics-of-good-research">2.9 Characteristics of good research</h2>
+<p>For decision-makers to trust and use a study, it should be systematic, logical, empirical, objective, and ethically sound.</p>
+<h3 id="1-systematic">1. Systematic</h3>
+<p>The study follows an ordered, logically dependent sequence. A methodology cannot sensibly be selected before the problem is defined, and useful data cannot be identified without knowing the problem and questions.</p>
+<p>Typical sequence: frame the problem → design the method → collect data → analyze with appropriate methods → report findings clearly and structurally so a decision-maker can understand and act.</p>
+<ul>
+<li>Example: a study of stress should begin with a clearly stated problem and relevant theoretical framework and end with conclusions that directly answer its questions.</li>
+</ul>
+<h3 id="2-logical">2. Logical</h3>
+<p>Reasoning from the problem statement to the conclusion must be rational, internally consistent, and free from contradiction or false/unrelated claims.</p>
+<ul>
+<li>Example: a study of coffee consumption and concentration should structure evidence around the relevant hypothesis and should not draw conclusions unrelated to the analyzed relationship.</li>
+</ul>
+<h3 id="3-empirical">3. Empirical</h3>
+<p>Findings rest on observable, verifiable real-world evidence gathered through the senses or reliable instruments—not personal feeling, prejudice, or opinion.</p>
+<ul>
+<li>Example: assess a hypertension drug through measured blood-pressure changes rather than the researcher&rsquo;s belief that it works.</li>
+</ul>
+<h3 id="4-objective">4. Objective</h3>
+<p>Data should be represented as collected and conclusions should follow from evidence, with the researcher&rsquo;s personal expectations minimized.</p>
+<ul>
+<li>Example: use an independent coder for interview data so that identified themes are less influenced by the primary researcher&rsquo;s expectations.</li>
+</ul>
+<h3 id="5-ethically-sound">5. Ethically sound</h3>
+<p>Research design and execution must respect participants&rsquo; and society&rsquo;s rights and well-being. It must obtain informed consent, ensure privacy/confidentiality, explain risk, and avoid harm to people or other beings.</p>
+<ul>
+<li>Example: before a sensitive survey, provide a detailed consent form explaining risk and guaranteeing response privacy.</li>
+</ul>
+<hr>
+<h1 id="3-stages-in-the-business-research-process">3. Stages in the Business Research Process</h1>
+<h2 id="3-1-four-major-stages">3.1 Four major stages</h2>
+<h3 id="stage-1-planning">Stage 1 — Planning</h3>
+<ul>
+<li>Define the research problem.</li>
+<li>Formulate clear research questions.</li>
+<li>State hypotheses/assumptions about relationships among study variables.</li>
+<li>Conduct an adequate literature review/background investigation: distinguish what is already known from what remains unknown.</li>
+<li>Create a clear research design.</li>
+<li>Finalize the components of the methodology.</li>
+</ul>
+<h3 id="stage-2-execution">Stage 2 — Execution</h3>
+<ul>
+<li>Collect the required data.</li>
+<li>Conduct experiments where appropriate.</li>
+<li>Gather all information needed to analyze the problem and reach a solution.</li>
+</ul>
+<h3 id="stage-3-analysis">Stage 3 — Analysis</h3>
+<ul>
+<li>Organize raw data.</li>
+<li>Clean the data.</li>
+<li>Select and apply appropriate statistical or analytical techniques.</li>
+<li>Identify patterns, trends, or significant relationships.</li>
+<li>Convert results into insights relevant to the business problem.</li>
+</ul>
+<h3 id="stage-4-decision-making">Stage 4 — Decision-making</h3>
+<ul>
+<li>Decision-makers or implementers use the research findings.</li>
+<li>Develop recommendations and make quality decisions based on evidence.</li>
+</ul>
+<h2 id="3-2-planning-through-five-key-questions">3.2 Planning through five key questions</h2>
+<p>Planning asks <strong>why, where, what, who, and how</strong>.</p>
+<h3 id="why">Why?</h3>
+<p>Clarifies the purpose or motivation for the research:</p>
+<ul>
+<li>What is the business problem?</li>
+<li>What is the research problem?</li>
+<li>What questions must be answered?</li>
+<li>What research gap—additional knowledge absent from existing literature—must be filled?</li>
+</ul>
+<h3 id="where">Where?</h3>
+<p>Clarifies context, background, environment, and place:</p>
+<ul>
+<li>Which contextual forces make the problem important?</li>
+<li>Is a sales decline connected to a new competitor/product or a tax-policy change?</li>
+<li>What have previous scholars attempted, and do their findings/methods remain relevant?</li>
+<li>Is a new approach required?</li>
+<li>What geographic area, organization, industry, or population setting defines the research boundary?</li>
+</ul>
+<h3 id="what">What?</h3>
+<p>Clarifies the important concepts, theories, variables, and proposed connections among variables.</p>
+<p>A <strong>concept</strong> is any phenomenon of interest to the researcher. If declining sales may be connected to post-purchase behavior, concepts might include customer satisfaction and customer loyalty. The researcher must identify theories explaining each concept and factors proposed as its determinants.</p>
+<p>For customer satisfaction, potential variables in existing theory may include:</p>
+<ul>
+<li>product quality;</li>
+<li>salesperson/service quality;</li>
+<li>advertising effectiveness; and</li>
+<li>value generated by product consumption.</li>
+</ul>
+<p>The researcher selects as <strong>variables of interest</strong> those factors that are relevant and insufficiently understood in the current case, then studies how they relate.</p>
+<h3 id="who">Who?</h3>
+<p>Clarifies stakeholders, beneficiaries, and participants.</p>
+<p>A problem can affect marketers, customers, employees, investors, suppliers, or government bodies that collect tax. The study must identify:</p>
+<ul>
+<li>who benefits from the research; and</li>
+<li>whose participation or data are essential.</li>
+</ul>
+<p>Example: If a firm is developing an advertising strategy for teenagers, teenagers are both an important group whose views must be studied and potential beneficiaries of a better-targeted offering.</p>
+<h3 id="how">How?</h3>
+<p>Clarifies methods and tools across the process:</p>
+<ul>
+<li>methods for identifying and framing the problem;</li>
+<li>methods for selecting concepts and stakeholders;</li>
+<li>data-collection methods and instruments, such as a questionnaire developed for customers/participants;</li>
+<li>data organization and cleaning;</li>
+<li>software/tools such as Excel or SPSS;</li>
+<li>analytical methods, ranging from descriptive statistics to correlation or regression.</li>
+</ul>
+<p>At the end of planning, the researcher should be able to state clear objectives and scope. <strong>Scope</strong> defines what the study covers and what it does not cover, and therefore how far the study can address the business problem.</p>
+<h2 id="3-3-symptoms-versus-underlying-problems">3.3 Symptoms versus underlying problems</h2>
+<p>An observed performance gap is often initially treated as the problem but may actually be a <strong>symptom</strong>.</p>
+<ul>
+<li><strong>Symptom:</strong> a visible sign, outcome, or indicator that something is wrong; it does not explain why.</li>
+<li><strong>Underlying business problem:</strong> the root issue that creates the symptom and must be corrected to eliminate it.</li>
+</ul>
+<p>Examples of symptoms include declining sales, high employee turnover, and increased customer complaints. Declining sales might arise from a product that fails to meet customer needs, poor quality, ineffective marketing leadership, or a flawed promotional/business strategy.</p>
+<p>The researcher must go beneath the symptom. Treating only the symptom leaves the root cause intact, allowing it to reappear in the same or another form.</p>
+<h2 id="3-4-business-problem-versus-research-problem">3.4 Business problem versus research problem</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Business problem</th>
+<th>Research problem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Focus</strong></td>
+<td>Action-oriented, current, measurable managerial challenge</td>
+<td>Information-oriented; seeks evidence to fill a knowledge gap</td>
+</tr>
+<tr>
+<td><strong>Scope</strong></td>
+<td>Broad, often initially symptomatic; linked to operational, financial, or strategic performance</td>
+<td>Narrower, specific, diagnostic; seeks underlying causes</td>
+</tr>
+<tr>
+<td><strong>Objective</strong></td>
+<td>Select action to correct/improve a situation, e.g., increase sales or reduce costs</td>
+<td>Generate actionable insight from data to inform that decision</td>
+</tr>
+<tr>
+<td><strong>Formulation</strong></td>
+<td>Stated as a challenge or issue</td>
+<td>Stated as a specific researchable question or goal</td>
+</tr>
+<tr>
+<td><strong>Outcome</strong></td>
+<td>A decision about what to do</td>
+<td>Findings and recommendations concerning causal/contributing factors</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="streaming-service-example">Streaming-service example</h3>
+<p><strong>Context/business symptom:</strong> A subscription streaming service&rsquo;s customer churn rate increased by 5% in the last quarter, causing financial loss.</p>
+<p><strong>Management objective:</strong> Implement a strategy that reduces churn by a specified target percentage.</p>
+<p><strong>Research problem/question:</strong> Which factors—content quality, price, user interface, or competitors&rsquo; offerings—are the primary drivers of churn among subscribers who cancel within the specified period?</p>
+<p><strong>Research objective:</strong> Identify and quantify variables that predict churn so management can decide what factor to target.</p>
+<p><strong>Research outcome:</strong> A ranked list of churn drivers that supports strategic interventions.</p>
+<p><strong>Business outcome/action:</strong> Invest in user-interface development, improve content, alter pricing, or launch targeted promotions, depending on the evidence.</p>
+<p>This example shows why a business target and a research objective differ: management wants a performance change; the researcher produces knowledge that helps management choose the intervention.</p>
+<h2 id="3-5-research-gap">3.5 Research gap</h2>
+<p>A research gap is:</p>
+<ul>
+<li>an unanswered question;</li>
+<li>an unexplored topic; or</li>
+<li>an area in which existing knowledge is insufficient, inconsistent, or outdated.</li>
+</ul>
+<p>Research can already exist and a gap can still remain. Earlier assumptions or evidence may no longer be trustworthy after changes in technology, society, place, or time, making revalidation necessary.</p>
+<h3 id="customer-satisfaction-example">Customer-satisfaction example</h3>
+<p>Many theories and variables may explain customer satisfaction generally, but if no study addresses the beliefs of Gen Z customers in the relevant context, that segment represents an unanswered contextual question. If studies exist but rest on obsolete assumptions, the changed environment creates a need for fresh evidence.</p>
+<h3 id="types-of-research-gap">Types of research gap</h3>
+<ul>
+<li><strong>Theoretical gap:</strong> existing theory does not adequately identify or explain the factors producing an outcome.</li>
+<li><strong>Methodological gap:</strong> prior work used one method (for example, qualitative research), while the proposition now requires a different or complementary method (for example, quantitative testing).</li>
+<li><strong>Contextual gap:</strong> findings from one location, economy, industry, population, or period have not been examined in another—for example, evidence from emerging economies but not underdeveloped economies.</li>
+<li><strong>Empirical gap:</strong> earlier findings require replication/retesting because newer evidence or environmental changes challenge them.</li>
+<li><strong>Temporal illustration:</strong> pre-COVID customer-satisfaction findings may not fully apply after COVID or after technological disruption.</li>
+</ul>
+<h2 id="3-6-why-good-planning-matters">3.6 Why good planning matters</h2>
+<p>Planning is the essential road map of research. It makes a study systematic, efficient, and methodologically sound and supports valid, reliable, meaningful conclusions for decision-making.</p>
+<hr>
+<h1 id="4-context-of-research">4. Context of Research</h1>
+<h2 id="4-1-the-two-cs-context-and-concepts">4.1 The “two Cs”: context and concepts</h2>
+<p>Every research study has two important Cs:</p>
+<ul>
+<li><strong>Context</strong> answers <strong>where</strong> the research occurs and describes the setting and relevant environmental realities.</li>
+<li><strong>Concepts</strong> answer <strong>what</strong> key phenomena/themes the research investigates.</li>
+</ul>
+<p>Context is normally narrated in the introduction. It tells the story behind the study, establishes importance and rationale, and explains why particular procedures, steps, or methods are appropriate. It narrows a broad topic into a specific research problem.</p>
+<p>The researcher must ask: <strong>Which aspects of context may influence the research process or results?</strong> Contextual forces can affect both the formation of the problem and the suitability of solutions, so they matter throughout the research activity.</p>
+<h2 id="4-2-elements-of-context">4.2 Elements of context</h2>
+<h3 id="geographic-context">Geographic context</h3>
+<p>Location attributes influence the relevance and magnitude of a problem. A problem in one region may not exist in another; findings from a developing economy may not apply unchanged to a developed economy.</p>
+<h3 id="physical-institutional-organizational-or-industry-context">Physical, institutional, organizational, or industry context</h3>
+<p>The type of institution/industry shapes problems and solutions. An employment problem in banking may not operate in the same way in an IT-enabled industry. Relevant details include organization size, industry, working arrangements, structures, and policies.</p>
+<h3 id="social-and-cultural-context">Social and cultural context</h3>
+<p>Cultural values and relationships among people and institutions can alter both the investigated problem and a viable solution. These should be analyzed at the start rather than treated as irrelevant background.</p>
+<h3 id="political-and-economic-context">Political and economic context</h3>
+<p>Sanctions, political events, economic conditions, and global financial crises may affect the problem directly or indirectly. Understanding them improves the study&rsquo;s robustness.</p>
+<h3 id="temporal-context">Temporal context</h3>
+<p>The relevant period matters. Problems may emerge after COVID, a budget announcement, policy reform, or technological disruption. For such problems, data from before the triggering event may be inappropriate; the researcher must define a suitable post-event period.</p>
+<h2 id="4-3-detailed-application-remote-work-and-employee-well-being">4.3 Detailed application: remote work and employee well-being</h2>
+<h3 id="broad-issue">Broad issue</h3>
+<p>After COVID, remote work/work from home became a new normal. It offers autonomy and flexibility, but employees may struggle to synchronize home and work, work longer hours, fail to “switch off,” and experience emotional exhaustion. Research is needed to understand the effect on well-being.</p>
+<h3 id="geographic-boundary">Geographic boundary</h3>
+<p>The problem could be global wherever remote work is practiced. Alternatively, it may warrant a national context—such as India—if strong cultural/family ties change work–home interaction. Moving from a global to a national canvas changes the factors, population, and interpretation. Clear boundaries define the scope.</p>
+<h3 id="organizational-setting">Organizational setting</h3>
+<p>The result may differ according to:</p>
+<ul>
+<li>fully remote versus hybrid arrangements (for example, two office days per week);</li>
+<li>organization size;</li>
+<li>industry; and</li>
+<li>the exact remote-working model.</li>
+</ul>
+<p>The context narration should state which industries/models are included and which aspects are within the investigation.</p>
+<h3 id="social-cultural-and-communication-setting">Social/cultural and communication setting</h3>
+<p>Relevant details include the organizational culture around remote work and the communication channels/practices available to remote employees.</p>
+<h3 id="external-and-time-related-setting">External and time-related setting</h3>
+<p>Government regulations and economic conditions may permit, restrict, or influence remote work. “During COVID,” “immediately after COVID,” and “two years later when policy is more structured” are materially different periods.</p>
+<h2 id="4-4-how-to-narrate-research-context">4.4 How to narrate research context</h2>
+<p>The recommended logic is <strong>broad to specific</strong>.</p>
+<h3 id="step-1-present-the-larger-picture">Step 1 — Present the larger picture</h3>
+<p>Explain the global/macro setting: COVID-related turbulence, why remote work was introduced, how it became normal, its advantages and disadvantages, and how established employee variables such as satisfaction and motivation have been considered under remote work.</p>
+<h3 id="step-2-state-the-specific-business-problem">Step 2 — State the specific business problem</h3>
+<p>Explain the expected condition, actual condition, and consequences.</p>
+<p>For example, organizations expected remote work to increase autonomy, flexibility, satisfaction, and productivity. In practice, some employees work longer, cannot psychologically disconnect, and experience emotional exhaustion, damaging well-being. Organizations intending to retain hybrid/remote models must manage well-being not only as an ethical imperative but as a determinant of long-term productivity, satisfaction, and retention.</p>
+<h3 id="step-3-summarize-existing-research-and-expose-its-gap">Step 3 — Summarize existing research and expose its gap</h3>
+<p>Briefly state the directions, contributions, and limitations of earlier work: What is already known? What is still missing? What extra knowledge is necessary for a strong solution?</p>
+<p>Illustrative gap: many post-pandemic studies connect remote work with increased work–life conflict. However, the mechanism through which daily organizational communication—such as synchronous versus asynchronous communication—affects specific dimensions of well-being, such as emotional and physical well-being, remains partly theoretical or underexplored in persistent remote-work settings.</p>
+<p>This progresses from a broad problem (remote work may harm well-being), through prior knowledge, to a specific missing link (routine communication practices and dimensions of well-being).</p>
+<h3 id="step-4-state-purpose-and-objectives">Step 4 — State purpose and objectives</h3>
+<p><strong>Purpose:</strong> investigate effective organizational communication practices that positively affect employee well-being in remote-working models.</p>
+<p><strong>Possible objective:</strong> identify effective organizational communication practices that positively influence employee well-being.</p>
+<p>Objectives are clear statements covering the research purpose.</p>
+<h3 id="step-5-define-scope-and-likely-contribution">Step 5 — Define scope and likely contribution</h3>
+<p>State what the study covers and excludes and how it may contribute to theory and practice. If the study is conducted in banking, its findings are directly relevant to banking; they may not automatically be valid in construction. Scope prevents overgeneralization and states where application is defensible.</p>
+<h2 id="4-5-why-context-narration-is-valuable">4.5 Why context narration is valuable</h2>
+<p>A well-written context helps decision-makers:</p>
+<ol>
+<li>understand why the study matters;</li>
+<li>understand why the selected procedures and methods are appropriate; and</li>
+<li>judge how useful and applicable the findings/recommendations are for solving the investigated problem.</li>
+</ol>
+<p><strong>Practical use case:</strong> A remote-work survey conducted only among large Indian banks in 2026 should not be described as evidence about “all employees everywhere.” Its context tells readers which population, industry, work model, regulation, and period produced the result and therefore limits responsible use.</p>
+<hr>
+<h1 id="5-integrated-exam-revision">5. Integrated Exam Revision</h1>
+<h2 id="5-1-high-value-distinctions">5.1 High-value distinctions</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pair</th>
+<th>Essential distinction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data vs. insight</td>
+<td>Data are raw evidence; analysis and interpretation reveal information/insight useful for action</td>
+</tr>
+<tr>
+<td>Symptom vs. problem</td>
+<td>Symptom is the visible outcome; problem is the underlying cause</td>
+</tr>
+<tr>
+<td>Business problem vs. research problem</td>
+<td>Managerial performance challenge vs. specific information/knowledge investigation</td>
+</tr>
+<tr>
+<td>Research problem vs. research question</td>
+<td>Overall investigation direction vs. individual answerable components</td>
+</tr>
+<tr>
+<td>Basic vs. applied</td>
+<td>Knowledge for its own advancement vs. knowledge directed at a practical solution</td>
+</tr>
+<tr>
+<td>Qualitative vs. quantitative</td>
+<td>Non-numerical meanings/experiences vs. measurable numerical patterns/effects</td>
+</tr>
+<tr>
+<td>Cross-sectional vs. longitudinal</td>
+<td>One point in time vs. repeated observation over time</td>
+</tr>
+<tr>
+<td>Experimental vs. quasi-experimental</td>
+<td>Manipulation with random assignment vs. causal comparison without random assignment</td>
+</tr>
+<tr>
+<td>Inductive vs. deductive</td>
+<td>Specific observations → general theory vs. general theory → specific empirical test</td>
+</tr>
+<tr>
+<td>Context vs. concept</td>
+<td>Where/setting/boundaries vs. what phenomenon/theme</td>
+</tr>
+<tr>
+<td>Scope vs. objective</td>
+<td>What is included/excluded vs. what the study intends to accomplish</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="5-2-reusable-answer-framework-for-a-case-question">5.2 Reusable answer framework for a case question</h2>
+<p>Given a case such as “customer churn rose,” answer in this order:</p>
+<ol>
+<li>State the observed symptom and metric (e.g., churn increased five percentage points).</li>
+<li>Explain why it may be only a symptom.</li>
+<li>List plausible root causes across functions.</li>
+<li>Frame the business problem as an expected-versus-actual gap and note consequences.</li>
+<li>Convert it into a narrow research problem.</li>
+<li>Write research questions for the suspected factors.</li>
+<li>Identify the research type(s): often exploratory → descriptive → explanatory, using mixed methods where appropriate.</li>
+<li>Specify context and scope: place, industry, population, period, and institutional setting.</li>
+<li>Identify participants/beneficiaries.</li>
+<li>Outline method, data, analysis, and decision outcome.</li>
+<li>Check systematic, logical, empirical, objective, and ethical quality.</li>
+</ol>
+<h2 id="5-3-likely-long-answer-prompts">5.3 Likely long-answer prompts</h2>
+<ul>
+<li>Define business research and explain its importance in a VUCA environment.</li>
+<li>Explain the business-research cycle and why it is iterative.</li>
+<li>Distinguish business problem, symptom, research problem, and research question with an example.</li>
+<li>Classify research by purpose, data/method, objective, time, manipulation, and reasoning.</li>
+<li>Compare experimental, non-experimental, and quasi-experimental designs.</li>
+<li>Explain the characteristics of good research with examples.</li>
+<li>Explain the four stages of business research and the five planning questions.</li>
+<li>Define research gap and discuss theoretical, methodological, contextual, and empirical gaps.</li>
+<li>Explain the meaning, elements, structure, and importance of research context.</li>
+<li>Apply context narration to remote work and employee well-being.</li>
+</ul>
+<hr>
+<h1 id="6-source-coverage-checklist">6. Source-Coverage Checklist</h1>
+<p>This checklist maps every major transcript segment to the corresponding note heading.</p>
+<h2 id="video-01-business-research">Video 01 — Business Research</h2>
+<ul>
+<li>[x] Lecture purpose; definition and importance of business research — §1.1</li>
+<li>[x] Leedy (1997), systematic process, and emphasis on data — §1.1</li>
+<li>[x] Sequential/iterative research cycle, hypotheses, planning, data, analysis, insight, action — §1.2</li>
+<li>[x] VUCA/dynamic business environment — §1.3</li>
+<li>[x] Internal, micro, and macro layers; external environment — §1.3</li>
+<li>[x] Problems/examples in all three environmental layers — §1.3</li>
+<li>[x] Business problem as performance discrepancy — §1.4</li>
+<li>[x] Functional performance metrics — §1.4</li>
+<li>[x] 100-unit target/70-unit actual sales example and consequences — §1.4</li>
+<li>[x] Advertisement reach example — §1.4</li>
+<li>[x] 15% two-quarter sales decline example — §1.5</li>
+<li>[x] Conversion from business problem to research problem — §1.5</li>
+<li>[x] Literature, experts, and observation as sources of preliminary causes — §1.5</li>
+<li>[x] Questions on behavior, quality, pricing, sales team, logistics — §1.5</li>
+<li>[x] Questions across marketing, HR, operations, AI, and finance — §1.5</li>
+<li>[x] Cross-functional nature and final lecture summary — §1.5</li>
+</ul>
+<h2 id="video-02-types-of-research">Video 02 — Types of Research</h2>
+<ul>
+<li>[x] Why research classification affects methodology — §2.1</li>
+<li>[x] Pure/basic and applied research, definitions and examples — §2.2</li>
+<li>[x] Qualitative, quantitative, and mixed methods, definitions and examples — §2.3</li>
+<li>[x] Exploratory, descriptive, and explanatory/causal research — §2.4</li>
+<li>[x] Cross-sectional and longitudinal research — §2.5</li>
+<li>[x] Experimental, non-experimental, and quasi-experimental research — §2.6</li>
+<li>[x] Inductive and deductive reasoning — §2.7</li>
+<li>[x] Ethnographic, historical, and phenomenological research — §2.8</li>
+<li>[x] Systematic, logical, empirical, objective, and ethical characteristics — §2.9</li>
+<li>[x] Examples for each quality characteristic — §2.9</li>
+<li>[x] Multiple research types and exploratory→descriptive→causal sequence — §2.4</li>
+<li>[x] Apparent transcript terminology slip explicitly flagged — §2.4</li>
+</ul>
+<h2 id="video-03-stages-in-the-research-process">Video 03 — Stages in the Research Process</h2>
+<ul>
+<li>[x] Planning, execution, analysis, and decision-making — §3.1</li>
+<li>[x] Planning activities and literature review/design/methodology — §3.1</li>
+<li>[x] Execution data collection/experiments — §3.1</li>
+<li>[x] Data organization, cleaning, analysis, patterns/trends/relationships — §3.1</li>
+<li>[x] Why, where, what, who, and how — §3.2</li>
+<li>[x] Concepts, theories, variables, and customer-satisfaction example — §3.2</li>
+<li>[x] Stakeholders, beneficiaries, and teenage customer example — §3.2</li>
+<li>[x] Tools/questionnaires, Excel/SPSS, descriptive statistics/correlation/regression — §3.2</li>
+<li>[x] Objectives and scope — §3.2</li>
+<li>[x] Symptom versus root business problem and examples — §3.3</li>
+<li>[x] Five-way comparison of business and research problems — §3.4</li>
+<li>[x] Streaming-service churn example — §3.4</li>
+<li>[x] Research-gap definition and Gen Z satisfaction example — §3.5</li>
+<li>[x] Theoretical, methodological, contextual, empirical/temporal gaps — §3.5</li>
+<li>[x] Importance of planning — §3.6</li>
+</ul>
+<h2 id="video-04-context-of-a-research">Video 04 — Context of a Research</h2>
+<ul>
+<li>[x] Two Cs: context and concepts — §4.1</li>
+<li>[x] Purpose of context narration — §4.1</li>
+<li>[x] Geographic, institutional, social/cultural, political/economic, and temporal factors — §4.2</li>
+<li>[x] Remote work and employee well-being example — §4.3</li>
+<li>[x] Global/national, organizational, cultural, regulatory, and time boundaries — §4.3</li>
+<li>[x] Broad-to-specific context-writing process — §4.4</li>
+<li>[x] Expected autonomy/flexibility versus inability to switch off and emotional exhaustion — §4.4</li>
+<li>[x] Existing research and synchronous/asynchronous communication gap — §4.4</li>
+<li>[x] Purpose, objective, scope, and theoretical/practical contribution — §4.4</li>
+<li>[x] Banking-versus-construction generalizability example — §4.4</li>
+<li>[x] Decision-maker value of context narration — §4.5</li>
+</ul>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<p>TechNova demonstrates how an operational turnover symptom becomes a systematic empirical question and then a managerial decision process. Use it to distinguish a business problem from a research problem and to remember the complete process chain and the need to specify organisational/population context.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-2.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 2: Research Planning, Theoretical Frameworks,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

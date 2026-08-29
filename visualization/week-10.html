@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Visualization · Week 10 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Visualization</span>
+      <span class="brand-title">Week 10</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html" selected>Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Data Visualization, Visual Perception, and Preattentive Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Visual Perception, Better Visualization, Form–Function, Tables and…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Visualizing and Comparing Categories
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Charts That Show Change Over Time
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Distribution and Relationship Visualizations
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Data Visualization: Exhaustive Exam Notes
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Data Visualization with Python, Jupyter, Python Basics, and Chart…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Python Data Visualization, Matplotlib Plotting, Interpretation, and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Data Visualization with Matplotlib, Seaborn, and Jupyter Notebook
+      </a>
+      <a class="is-active" href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Exam-Focused Study Notes
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Seaborn, Matplotlib, Heatmaps, Styling, and Dashboard Design
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Dashboards, Dashboard Design, Grammar of Graphics, and Matplotlib
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Dashboard Design, Visual Encoding, Matplotlib, and Dashboard Analytics
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Storytelling with Data
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Storytelling with Data: Exam-Focused Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Visualization · Week 10</p>
+        <h1 class="page-title">Exam-Focused Study Notes</h1>
+        <p class="page-meta">Week 10 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#scope-of-the-week">Scope of the Week</a></li>
+      <li><a href="#1-why-study-a-variable-s-distribution">1. Why Study a Variable&amp;rsquo;s Distribution?</a></li>
+      <li><a href="#2-histogram">2. Histogram</a></li>
+      <li><a href="#3-kernel-density-estimation-kde">3. Kernel Density Estimation (KDE)</a></li>
+      <li><a href="#4-box-plot-box-and-whisker-plot">4. Box Plot / Box-and-Whisker Plot</a></li>
+      <li><a href="#5-violin-plot">5. Violin Plot</a></li>
+      <li><a href="#6-distribution-plot-comparison">6. Distribution-Plot Comparison</a></li>
+      <li><a href="#7-scatter-plots-and-marker-customization">7. Scatter Plots and Marker Customization</a></li>
+      <li><a href="#8-pair-plot-and-pairgrid">8. Pair Plot and PairGrid</a></li>
+      <li><a href="#9-related-plot-choices">9. Related Plot Choices</a></li>
+      <li><a href="#10-3d-visualization">10. 3D Visualization</a></li>
+      <li><a href="#11-visualization-selection-framework">11. Visualization Selection Framework</a></li>
+      <li><a href="#12-environment-setup">12. Environment Setup</a></li>
+      <li><a href="#13-rug-plot">13. Rug Plot</a></li>
+      <li><a href="#14-seaborn-bar-plot-and-default-aggregation">14. Seaborn Bar Plot and Default Aggregation</a></li>
+      <li><a href="#15-choosing-between-bar-rug-and-combined-views">15. Choosing Between Bar, Rug, and Combined Views</a></li>
+      <li><a href="#16-instructor-announcements-and-emphasis">16. Instructor Announcements and Emphasis</a></li>
+      <li><a href="#17-python-and-jupyter-architecture">17. Python and Jupyter Architecture</a></li>
+      <li><a href="#18-creating-and-navigating-a-notebook">18. Creating and Navigating a Notebook</a></li>
+      <li><a href="#19-cell-types">19. Cell Types</a></li>
+      <li><a href="#20-comments-modes-and-execution-state">20. Comments, Modes, and Execution State</a></li>
+      <li><a href="#21-python-data-types">21. Python Data Types</a></li>
+      <li><a href="#22-python-operators">22. Python Operators</a></li>
+      <li><a href="#use-case-1-apparent-bimodality-in-pooled-data">Use Case 1: Apparent bimodality in pooled data</a></li>
+      <li><a href="#use-case-2-comparing-passenger-age-distributions-by-class-and-survival">Use Case 2: Comparing passenger-age distributions by class and survival</a></li>
+      <li><a href="#use-case-3-selecting-a-chart-for-an-analytical-question">Use Case 3: Selecting a chart for an analytical question</a></li>
+      <li><a href="#definitions-to-be-able-to-write">Definitions to be able to write</a></li>
+      <li><a href="#parameter-facts">Parameter facts</a></li>
+      <li><a href="#interpretation-and-caveats">Interpretation and caveats</a></li>
+      <li><a href="#jupyter-python-checks">Jupyter/Python checks</a></li>
+      <li><a href="#high-probability-exam-questions">High-probability exam questions</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="scope-of-the-week">Scope of the Week</h2>
+<p>Week 10 combines practical Seaborn distribution plots, visualization-selection questions, a Titanic workshop case study, and a live introduction to Jupyter Notebook and Python basics.</p>
+<p>The central analytical principle is:</p>
+<blockquote>
+<p>Choose a visualization that preserves the structure needed to answer the question, while keeping the result readable and no more complex than necessary.</p>
+</blockquote>
+<hr>
+<h1 id="part-i-visualizing-distributions-with-seaborn">Part I — Visualizing Distributions with Seaborn</h1>
+<h2 id="1-why-study-a-variable-s-distribution">1. Why Study a Variable&rsquo;s Distribution?</h2>
+<p>Understanding distribution is an early step in data analysis or modelling. Distribution plots quickly help answer:</p>
+<ul>
+<li>What range do the observations cover?</li>
+<li>What are the central tendencies?</li>
+<li>Is the distribution heavily skewed?</li>
+<li>Is there evidence of bimodality or multiple modes?</li>
+<li>Are there significant outliers?</li>
+<li>Do these features change across subsets defined by other variables?</li>
+</ul>
+<p>Seaborn&rsquo;s distribution module includes axes-level functions such as <code>histplot()</code>, <code>kdeplot()</code>, and <code>rugplot()</code>. Figure-level functions such as <code>displot()</code>, <code>jointplot()</code>, and <code>pairplot()</code> organize one or more axes-level plots. A figure-level function can create a grid of subplots; this is why <code>displot()</code> supports <code>row</code> and <code>col</code> faceting.</p>
+<h2 id="2-histogram">2. Histogram</h2>
+<h3 id="definition-and-purpose">Definition and purpose</h3>
+<p>A histogram divides the axis of a numerical variable into discrete <strong>bins</strong>. The height of each bar shows the number of observations falling in that bin. It is one of the most common ways to visualize a distribution and can be univariate or bivariate/conditioned through Seaborn semantics.</p>
+<h3 id="core-displot-parameters">Core <code>displot()</code> parameters</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Meaning / exam point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td>Input structure: Pandas DataFrame, NumPy array, mapping, or sequence.</td>
+</tr>
+<tr>
+<td><code>x</code>, <code>y</code></td>
+<td>Variables/vectors assigned to plot axes.</td>
+</tr>
+<tr>
+<td><code>hue</code></td>
+<td>Semantic variable mapped to colour; draws a distribution for each unique category.</td>
+</tr>
+<tr>
+<td><code>row</code>, <code>col</code></td>
+<td>Variables defining subsets displayed in different rows or columns of a facet grid.</td>
+</tr>
+<tr>
+<td><code>kind</code></td>
+<td>Chooses the underlying distribution approach. For a histogram, use <code>kind="hist"</code> or rely on the histogram default in the demonstrated context.</td>
+</tr>
+<tr>
+<td><code>legend</code></td>
+<td>Boolean controlling whether the legend is displayed.</td>
+</tr>
+<tr>
+<td><code>palette</code></td>
+<td>Colour method for hue levels; may be a string, list, dictionary, or supported Matplotlib colour map/palette.</td>
+</tr>
+<tr>
+<td><code>binwidth</code></td>
+<td>Directly sets bin width.</td>
+</tr>
+<tr>
+<td><code>element</code></td>
+<td>Changes bar representation, e.g. <code>"bars"</code> versus <code>"step"</code>.</td>
+</tr>
+<tr>
+<td><code>multiple</code></td>
+<td>Controls how multiple hue distributions relate: layered, stacked, or dodged.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="demonstrated-workflow-penguins-dataset">Demonstrated workflow: Penguins dataset</h3>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import seaborn as sns
+
+penguins = sns.load_dataset(&quot;penguins&quot;)
+penguins.head()
+</code></pre>
+<p>Columns inspected in the lesson included <code>species</code>, <code>island</code>, <code>bill_length_mm</code>, <code>bill_depth_mm</code>, <code>flipper_length_mm</code>, <code>body_mass_g</code>, and <code>sex</code>. Always inspect the dataset and copy column names accurately.</p>
+<p>Basic histogram:</p>
+<pre><code class="language-python">sns.displot(data=penguins, x=&quot;flipper_length_mm&quot;)
+</code></pre>
+<p>The demonstrated combined distribution suggested that a common flipper length was around 195 mm, but more importantly it appeared <strong>bimodal</strong>. Therefore, one central value did not describe the entire distribution well.</p>
+<h3 id="bin-width-a-major-interpretive-caution">Bin width: a major interpretive caution</h3>
+<pre><code class="language-python">sns.displot(data=penguins, x=&quot;flipper_length_mm&quot;, binwidth=3)
+</code></pre>
+<ul>
+<li>Bin size can materially change the apparent pattern.</li>
+<li>Bins that are too wide may hide genuine structure.</li>
+<li>Bins that are too narrow may create apparent features from random variability.</li>
+<li>Seaborn selects defaults using information such as variance and sample size, but automatic rules make assumptions about the data.</li>
+<li><strong>Instructor emphasis:</strong> do not rely blindly on the default. Check whether the interpretation remains consistent across several reasonable bin widths.</li>
+<li>With <code>binwidth=3</code>, bin edges progress in intervals of three units.</li>
+</ul>
+<h3 id="explaining-bimodality-with-conditional-subsets">Explaining bimodality with conditional subsets</h3>
+<pre><code class="language-python">sns.displot(
+    data=penguins,
+    x=&quot;flipper_length_mm&quot;,
+    hue=&quot;species&quot;
+)
+</code></pre>
+<p>Assigning <code>species</code> to <code>hue</code> produces a separately coloured histogram for each species. The species-level distributions explain much of the apparent bimodality in the pooled histogram. This illustrates a general lesson: a combined distribution can conceal different subgroup distributions.</p>
+<h3 id="ways-to-display-multiple-histograms">Ways to display multiple histograms</h3>
+<h4 id="layered-default">Layered/default</h4>
+<p>Separate hue distributions are drawn on the same axes. This supports direct comparison but overlapping bars may be difficult to distinguish.</p>
+<h4 id="step-element">Step element</h4>
+<pre><code class="language-python">sns.displot(
+    data=penguins,
+    x=&quot;flipper_length_mm&quot;,
+    hue=&quot;species&quot;,
+    element=&quot;step&quot;
+)
+</code></pre>
+<p>The step outline can reduce visual obstruction compared with filled overlapping bars.</p>
+<h4 id="stack">Stack</h4>
+<pre><code class="language-python">sns.displot(
+    data=penguins,
+    x=&quot;flipper_length_mm&quot;,
+    hue=&quot;species&quot;,
+    multiple=&quot;stack&quot;
+)
+</code></pre>
+<ul>
+<li>Components are placed vertically on one another.</li>
+<li>The total outline corresponds to the full histogram.</li>
+<li>It emphasizes the <strong>part-to-whole</strong> relationship.</li>
+<li>Caveat: it may obscure each subgroup&rsquo;s shape or mode because only the baseline group has a common zero baseline.</li>
+</ul>
+<h4 id="dodge">Dodge</h4>
+<pre><code class="language-python">sns.displot(
+    data=penguins,
+    x=&quot;flipper_length_mm&quot;,
+    hue=&quot;species&quot;,
+    multiple=&quot;dodge&quot;
+)
+</code></pre>
+<ul>
+<li>Bars move horizontally and become narrower.</li>
+<li>Overlap is removed and bar heights remain directly comparable.</li>
+<li>Best when the categorical variable has only a small number of levels; many categories make the display crowded.</li>
+</ul>
+<h3 id="faceting-separate-subplots">Faceting: separate subplots</h3>
+<pre><code class="language-python">sns.displot(
+    data=penguins,
+    x=&quot;flipper_length_mm&quot;,
+    col=&quot;sex&quot;
+)
+</code></pre>
+<p>Because <code>displot()</code> is figure-level, <code>col="sex"</code> creates one row with separate columns for male and female distributions. Using <code>row</code> would arrange them vertically. Separate subplots represent each subset clearly, but make direct point-by-point comparison somewhat harder than a shared plot.</p>
+<p>Colouring faceted plots:</p>
+<pre><code class="language-python">sns.displot(
+    data=penguins,
+    x=&quot;flipper_length_mm&quot;,
+    col=&quot;sex&quot;,
+    hue=&quot;sex&quot;,
+    palette=&quot;pastel&quot;
+)
+</code></pre>
+<p>The lesson explicitly noted that <code>hue</code> must be set when a palette is intended to map distinct colours to categories.</p>
+<h3 id="exam-ready-comparison-of-multiple-histogram-strategies">Exam-ready comparison of multiple-histogram strategies</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Main strength</th>
+<th>Main limitation</th>
+<th>Best use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Layer</td>
+<td>Direct comparison on one axes</td>
+<td>Overlap</td>
+<td>Few transparent or outline distributions</td>
+</tr>
+<tr>
+<td>Step</td>
+<td>Less obstruction</td>
+<td>Exact areas may be less visually forceful</td>
+<td>Comparing shapes</td>
+</tr>
+<tr>
+<td>Stack</td>
+<td>Part-to-whole emphasis</td>
+<td>Individual modes/shapes obscured</td>
+<td>Composition by bin</td>
+</tr>
+<tr>
+<td>Dodge</td>
+<td>Heights remain comparable</td>
+<td>Crowded with many levels</td>
+<td>Small number of categories</td>
+</tr>
+<tr>
+<td>Facet (<code>row</code>/<code>col</code>)</td>
+<td>Each subset is clear</td>
+<td>Harder direct comparison; more space</td>
+<td>Detailed subgroup inspection</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="3-kernel-density-estimation-kde">3. Kernel Density Estimation (KDE)</h2>
+<h3 id="definition">Definition</h3>
+<p>A histogram approximates an underlying probability density by binning and counting observations. <strong>Kernel density estimation</strong> solves the same broad problem differently: it smooths observations, commonly using a Gaussian/normal kernel, to produce a continuous density estimate.</p>
+<p>KDE resembles a smoothed histogram, but it is an estimate rather than a display of literal bin counts. It can introduce distortions, especially near bounded data or when smoothing is poorly chosen.</p>
+<h3 id="bandwidth-the-central-kde-concept">Bandwidth: the central KDE concept</h3>
+<p>Bandwidth controls the width/standard deviation of the smoothing kernel and therefore the smoothness of the KDE curve.</p>
+<ul>
+<li><strong>Over-smoothed KDE:</strong> may erase meaningful peaks, skewness, or other real features.</li>
+<li><strong>Under-smoothed KDE:</strong> may turn random noise into false bumps or apparent structure.</li>
+<li>Default bandwidth rules tend to work best when the true distribution is smooth, unimodal, and roughly bell-shaped.</li>
+<li>Robust practice is to increase and decrease bandwidth and check whether substantive conclusions persist.</li>
+</ul>
+<p>Bandwidth in KDE is analogous to bin width in a histogram.</p>
+<h3 id="major-kdeplot-parameters">Major <code>kdeplot()</code> parameters</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td>DataFrame, NumPy array, mapping, or sequence.</td>
+</tr>
+<tr>
+<td><code>x</code>, <code>y</code></td>
+<td>Variables/vectors positioned on the axes.</td>
+</tr>
+<tr>
+<td><code>hue</code></td>
+<td>Maps categories to different colours/density curves.</td>
+</tr>
+<tr>
+<td><code>palette</code></td>
+<td>Sets category colours.</td>
+</tr>
+<tr>
+<td><code>bw_method</code></td>
+<td>String or scalar specifying how the base smoothing bandwidth is determined.</td>
+</tr>
+<tr>
+<td><code>bw_adjust</code></td>
+<td>Numeric multiplier applied to the bandwidth selected by <code>bw_method</code>; larger values produce smoother curves.</td>
+</tr>
+<tr>
+<td><code>multiple</code></td>
+<td>Controls arrangement of multiple densities, including stacking.</td>
+</tr>
+<tr>
+<td><code>alpha</code></td>
+<td>Controls transparency.</td>
+</tr>
+<tr>
+<td><code>linewidth</code></td>
+<td>Controls outline width; <code>0</code> removes the visible outline in a filled display.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="demonstrated-code-and-interpretation">Demonstrated code and interpretation</h3>
+<pre><code class="language-python">penguins = sns.load_dataset(&quot;penguins&quot;)
+
+sns.kdeplot(
+    data=penguins,
+    x=&quot;flipper_length_mm&quot;
+)
+</code></pre>
+<p>Bandwidth experiments:</p>
+<pre><code class="language-python">sns.kdeplot(
+    data=penguins,
+    x=&quot;flipper_length_mm&quot;,
+    bw_adjust=0.2
+)
+</code></pre>
+<p>The lesson compared values such as <code>0.2</code>, <code>0.3</code>, and <code>0.6</code>: increasing <code>bw_adjust</code> made the curve smoother; reducing it made the curve more jagged.</p>
+<p>Species-specific KDEs:</p>
+<pre><code class="language-python">sns.kdeplot(
+    data=penguins,
+    x=&quot;flipper_length_mm&quot;,
+    hue=&quot;species&quot;
+)
+</code></pre>
+<p>Filled/stacked aesthetic variation:</p>
+<pre><code class="language-python">sns.kdeplot(
+    data=penguins,
+    x=&quot;flipper_length_mm&quot;,
+    hue=&quot;species&quot;,
+    multiple=&quot;stack&quot;,
+    palette=&quot;crest&quot;,
+    fill=True,
+    alpha=0.5,
+    linewidth=0
+)
+</code></pre>
+<p>This shows how category, colour, stacking, transparency, and line width can jointly improve readability. Aesthetics must not substitute for checking bandwidth validity.</p>
+<hr>
+<h2 id="4-box-plot-box-and-whisker-plot">4. Box Plot / Box-and-Whisker Plot</h2>
+<h3 id="definition-and-components">Definition and components</h3>
+<p>A box plot displays the three quartile values—lower quartile (Q1), median (Q2), and upper quartile (Q3)—together with extreme values.</p>
+<p>The interquartile range is:</p>
+<p>\[
+IQR = Q3 - Q1
+\]</p>
+<p>Whiskers extend to observations within 1.5 IQR of the lower and upper quartiles. Observations outside that range are shown individually. Hence, displayed outlier points correspond to actual observations.</p>
+<h3 id="two-seaborn-methods">Two Seaborn methods</h3>
+<ol>
+<li>Axes-level <code>sns.boxplot()</code>.</li>
+<li>Figure-level <code>sns.catplot(kind="box")</code>.</li>
+</ol>
+<h3 id="important-boxplot-parameters">Important <code>boxplot()</code> parameters</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td>Input DataFrame, array, mapping, or sequence.</td>
+</tr>
+<tr>
+<td><code>x</code>, <code>y</code>, <code>hue</code></td>
+<td>Long-form plotting variables and nested category semantics.</td>
+</tr>
+<tr>
+<td><code>order</code>, <code>hue_order</code></td>
+<td>Lists specifying the plotted order of categorical levels.</td>
+</tr>
+<tr>
+<td><code>orient</code></td>
+<td>Explicitly overrides inferred vertical/horizontal orientation.</td>
+</tr>
+<tr>
+<td><code>palette</code></td>
+<td>Category colour mapping.</td>
+</tr>
+<tr>
+<td><code>fill</code></td>
+<td><code>False</code> produces an outline/line-art style.</td>
+</tr>
+<tr>
+<td><code>gap</code></td>
+<td>Adds space between clustered elements, e.g. <code>gap=0.1</code>.</td>
+</tr>
+<tr>
+<td><code>color</code>, <code>linecolor</code>, <code>linewidth</code></td>
+<td>Modify fill, outline colour, and outline thickness.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="demonstrated-titanic-workflow">Demonstrated Titanic workflow</h3>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import seaborn as sns
+
+titanic = sns.load_dataset(&quot;titanic&quot;)
+titanic.head()
+</code></pre>
+<p>Variables emphasized included <code>age</code>, <code>alive</code>, and <code>class</code>.</p>
+<p>One-variable plot:</p>
+<pre><code class="language-python">sns.boxplot(data=titanic, x=&quot;age&quot;)
+</code></pre>
+<p>Grouped horizontal plot:</p>
+<pre><code class="language-python">sns.boxplot(data=titanic, x=&quot;age&quot;, y=&quot;class&quot;)
+</code></pre>
+<p>Nested vertical grouping:</p>
+<pre><code class="language-python">sns.boxplot(
+    data=titanic,
+    x=&quot;class&quot;,
+    y=&quot;age&quot;,
+    hue=&quot;alive&quot;
+)
+</code></pre>
+<p>The categorical <code>class</code> on x and numeric <code>age</code> on y produces vertical boxes; <code>hue="alive"</code> nests survival groups within each class.</p>
+<p>Custom categorical colours:</p>
+<pre><code class="language-python">sns.boxplot(
+    data=titanic,
+    x=&quot;class&quot;,
+    y=&quot;age&quot;,
+    hue=&quot;alive&quot;,
+    palette=[&quot;red&quot;, &quot;green&quot;]
+)
+</code></pre>
+<p>In the instructor&rsquo;s intended semantic scheme, red represented not alive and green represented alive. Always verify hue-order before assuming which colour maps to which level.</p>
+<p>Outline and spacing:</p>
+<pre><code class="language-python">sns.boxplot(
+    data=titanic,
+    x=&quot;age&quot;,
+    y=&quot;class&quot;,
+    hue=&quot;alive&quot;,
+    fill=False,
+    gap=0.1
+)
+</code></pre>
+<p>Other aesthetic controls demonstrated included <code>color</code>, <code>linecolor</code>, and <code>linewidth</code> (e.g. <code>linewidth=0.75</code>).</p>
+<h3 id="orientation-inference">Orientation inference</h3>
+<p>Seaborn normally infers orientation from variable types:</p>
+<ul>
+<li>categorical x + numerical y → vertical boxes;</li>
+<li>numerical x + categorical y → horizontal boxes.</li>
+</ul>
+<p><code>orient</code> can override the default, which is especially useful when inference is ambiguous.</p>
+<h3 id="catplot-kind-box"><code>catplot(kind="box")</code></h3>
+<pre><code class="language-python">sns.catplot(
+    data=titanic,
+    x=&quot;class&quot;,
+    y=&quot;age&quot;,
+    kind=&quot;box&quot;
+)
+</code></pre>
+<p>Swapping the assignments changes the orientation:</p>
+<pre><code class="language-python">sns.catplot(
+    data=titanic,
+    x=&quot;age&quot;,
+    y=&quot;class&quot;,
+    kind=&quot;box&quot;
+)
+</code></pre>
+<h3 id="when-to-use-boxplot-versus-catplot">When to use <code>boxplot()</code> versus <code>catplot()</code></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Use <code>boxplot()</code> when…</th>
+<th>Use <code>catplot(kind="box")</code> when…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A direct, straightforward axes-level box plot is sufficient.</td>
+<td>Multiple/faceted box plots are needed by categorical variables.</td>
+</tr>
+<tr>
+<td>Fine Matplotlib axes control is wanted.</td>
+<td>Consistency with other Seaborn categorical plots is valuable.</td>
+</tr>
+<tr>
+<td>Performance matters on large data; it is lighter.</td>
+<td>You may switch among box, strip, violin, and other categorical kinds.</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="5-violin-plot">5. Violin Plot</h2>
+<h3 id="definition-2">Definition</h3>
+<p>A violin plot combines features of a box plot and a density plot:</p>
+<ul>
+<li>vertical/horizontal spread shows the data range;</li>
+<li>width shows estimated density at each value;</li>
+<li>median and quartiles may be displayed inside;</li>
+<li>the smooth density shape makes skewness, bimodality, and density variation easier to see than in a simple box plot.</li>
+</ul>
+<p>Like a box plot, it compares distributions across categories; unlike a box plot, its outer shape is based on a KDE of the underlying distribution.</p>
+<h3 id="when-to-use-it">When to use it</h3>
+<ul>
+<li>Comparing the distributions of multiple groups, e.g. age across passenger classes.</li>
+<li>Revealing shape, skewness, bimodal tendencies, or local density differences.</li>
+<li>Showing both summary statistics and fuller distributional shape in one view.</li>
+</ul>
+<h3 id="major-parameters">Major parameters</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td>Dataset. With no x/y it may be interpreted as wide form; with x/y, long form is expected.</td>
+</tr>
+<tr>
+<td><code>x</code>, <code>y</code>, <code>hue</code></td>
+<td>Plotting and grouping variables.</td>
+</tr>
+<tr>
+<td><code>orient</code></td>
+<td>Fixes vertical/horizontal orientation and overrides inference; useful when both variables are numeric.</td>
+</tr>
+<tr>
+<td><code>bw_method</code></td>
+<td>Method for calculating kernel bandwidth.</td>
+</tr>
+<tr>
+<td><code>bw_adjust</code></td>
+<td>Numeric multiplier for bandwidth; larger means smoother density.</td>
+</tr>
+<tr>
+<td><code>fill</code></td>
+<td><code>False</code> produces outline style.</td>
+</tr>
+<tr>
+<td><code>palette</code></td>
+<td>Sets hue colours.</td>
+</tr>
+</tbody>
+</table></div>
+<p>All KDE bandwidth cautions also apply to violin plots.</p>
+<h3 id="positional-vector-versus-keyword-data-frame-argument-style">Positional/vector versus keyword/data-frame argument style</h3>
+<p>Vector style shown in the lesson:</p>
+<pre><code class="language-python">df = sns.load_dataset(&quot;titanic&quot;)
+sns.violinplot(x=df.age)
+</code></pre>
+<p>Keyword/data-frame style:</p>
+<pre><code class="language-python">sns.violinplot(data=df, x=&quot;age&quot;)
+</code></pre>
+<p>Difference:</p>
+<ul>
+<li>Vector style extracts the Series first and passes it directly.</li>
+<li>Keyword style passes the entire DataFrame, then names the column inside the function.</li>
+<li>Both can generate the same visual result; the demonstration introduced both calling styles.</li>
+</ul>
+<h3 id="bivariate-grouping-and-orientation">Bivariate grouping and orientation</h3>
+<pre><code class="language-python">sns.violinplot(data=df, x=&quot;age&quot;, y=&quot;class&quot;)  # horizontal
+sns.violinplot(data=df, x=&quot;class&quot;, y=&quot;age&quot;)  # vertical
+</code></pre>
+<p>Seaborn prefers to group by the categorical variable. Swapping categorical/numeric x and y assignments changes orientation.</p>
+<p>Nested grouping, line-art, and palette:</p>
+<pre><code class="language-python">sns.violinplot(
+    data=df,
+    x=&quot;class&quot;,
+    y=&quot;age&quot;,
+    hue=&quot;alive&quot;,
+    fill=False
+)
+
+sns.violinplot(
+    data=df,
+    x=&quot;class&quot;,
+    y=&quot;age&quot;,
+    hue=&quot;alive&quot;,
+    palette=[&quot;red&quot;, &quot;green&quot;]
+)
+</code></pre>
+<h3 id="catplot-kind-violin-and-faceting"><code>catplot(kind="violin")</code> and faceting</h3>
+<pre><code class="language-python">sns.catplot(
+    data=df,
+    x=&quot;class&quot;,
+    y=&quot;age&quot;,
+    hue=&quot;alive&quot;,
+    kind=&quot;violin&quot;
+)
+</code></pre>
+<p>Side-by-side facet columns:</p>
+<pre><code class="language-python">sns.catplot(
+    data=df,
+    x=&quot;class&quot;,
+    y=&quot;age&quot;,
+    hue=&quot;alive&quot;,
+    col=&quot;alive&quot;,
+    kind=&quot;violin&quot;,
+    palette=[&quot;red&quot;, &quot;green&quot;]
+)
+</code></pre>
+<p>Using <code>row="alive"</code> instead places the not-alive and alive facets one above the other. The same selection logic used for box plots applies: use <code>violinplot()</code> for a straightforward axes-level plot and <code>catplot()</code> for figure-level faceting and consistency across categorical plot types.</p>
+<hr>
+<h2 id="6-distribution-plot-comparison">6. Distribution-Plot Comparison</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Plot</th>
+<th>Encodes</th>
+<th>Main strength</th>
+<th>Main risk/limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Histogram</td>
+<td>Counts in bins</td>
+<td>Concrete frequency structure</td>
+<td>Sensitive to bin width</td>
+</tr>
+<tr>
+<td>KDE</td>
+<td>Continuous estimated density</td>
+<td>Smooth shape comparison</td>
+<td>Sensitive to bandwidth; may imply density outside valid bounds</td>
+</tr>
+<tr>
+<td>Box plot</td>
+<td>Quartiles, median, whiskers, outliers</td>
+<td>Compact robust summary across groups</td>
+<td>Hides detailed/multimodal shape</td>
+</tr>
+<tr>
+<td>Violin plot</td>
+<td>KDE shape plus internal summary</td>
+<td>Shows summary and full shape</td>
+<td>Bandwidth-dependent; width may be unfamiliar</td>
+</tr>
+<tr>
+<td>Rug plot</td>
+<td>One tick per observation</td>
+<td>Preserves individual positions</td>
+<td>Overplotting with large samples; weak summary</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Likely exam comparison:</strong> histogram bin width and KDE/violin bandwidth play analogous roles. Both must be varied to check robustness.</p>
+<hr>
+<h1 id="part-ii-quiz-concepts-choosing-and-customizing-visualizations">Part II — Quiz Concepts: Choosing and Customizing Visualizations</h1>
+<h2 id="7-scatter-plots-and-marker-customization">7. Scatter Plots and Marker Customization</h2>
+<p>A scatter plot displays the relationship between two numeric variables; each point is one observation. For the Tips dataset, plotting <code>total_bill</code> against <code>tip</code> preserves each meal&rsquo;s paired values and can reveal trend/correlation, clusters, and outliers such as a high bill with an unusually low tip.</p>
+<pre><code class="language-python">sns.scatterplot(data=df, x=&quot;total_bill&quot;, y=&quot;tip&quot;)
+</code></pre>
+<h3 id="preserve-hue-colours-while-changing-every-marker">Preserve hue colours while changing every marker</h3>
+<pre><code class="language-python">sns.scatterplot(
+    data=df,
+    x=&quot;x&quot;,
+    y=&quot;y&quot;,
+    hue=&quot;category&quot;,
+    marker=&quot;D&quot;
+)
+</code></pre>
+<p><code>marker="D"</code> makes all observations diamonds while leaving hue-based category colours and the corresponding legend mapping intact.</p>
+<p>Do not use <code>style="category"</code> if the goal is one common marker: <code>style</code> deliberately maps categories to different marker shapes. Use it only when both colour and shape distinction are desired.</p>
+<p>Changing the palette when only shape needs changing is also incorrect because it changes the established colour encoding.</p>
+<h3 id="why-not-aggregate-for-relationship-analysis">Why not aggregate for relationship analysis?</h3>
+<p>A bar chart of average or total tips destroys the individual <code>(total_bill, tip)</code> pairings. Bar charts summarize; scatter plots preserve observation-level relationships.</p>
+<h2 id="8-pair-plot-and-pairgrid">8. Pair Plot and PairGrid</h2>
+<h3 id="pair-plot">Pair plot</h3>
+<p>A pair plot displays every pairwise relationship among selected numerical variables in a matrix:</p>
+<ul>
+<li>off-diagonal cells show bivariate relationships, commonly scatter plots;</li>
+<li>diagonal cells show each variable&rsquo;s univariate distribution, commonly histogram or KDE.</li>
+</ul>
+<p>For <code>total_bill</code>, <code>tip</code>, and <code>size</code>, it shows every two-variable combination plus three diagonal distributions. It is preferred for broad multivariate exploration and discovering correlations/patterns.</p>
+<h3 id="pairgrid">PairGrid</h3>
+<p><code>PairGrid</code> provides more control over what is mapped into the grid:</p>
+<pre><code class="language-python">g = sns.PairGrid(df)
+g.map_offdiag(sns.scatterplot)
+g.map_diag(sns.histplot)
+</code></pre>
+<p>Use it when different functions or settings are needed on diagonal and off-diagonal panels.</p>
+<h3 id="pairgrid-versus-facetgrid">PairGrid versus FacetGrid</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>PairGrid</th>
+<th>FacetGrid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Purpose</td>
+<td>Compare variables with other variables</td>
+<td>Compare subsets/groups</td>
+</tr>
+<tr>
+<td>Rows/columns represent</td>
+<td>Variables</td>
+<td>Categorical levels</td>
+</tr>
+<tr>
+<td>Typical use</td>
+<td>Correlation and multivariate exploration</td>
+<td>Conditioned plots, e.g. male vs female</td>
+</tr>
+</tbody>
+</table></div>
+<p>Memory cue: <strong>PairGrid = variable × variable; FacetGrid = group-conditioned panels.</strong></p>
+<h2 id="9-related-plot-choices">9. Related Plot Choices</h2>
+<ul>
+<li><strong>Scatter plot:</strong> one pair of numerical variables.</li>
+<li><strong>Pair plot / PairGrid:</strong> many numerical-variable relationships.</li>
+<li><strong>Distribution plot:</strong> one variable&rsquo;s distribution.</li>
+<li><strong>Joint plot:</strong> one numerical pair plus marginal distributions.</li>
+<li><strong>Correlation heatmap:</strong> compact numerical summary of correlations.</li>
+</ul>
+<p>A correlation heatmap is compact and quickly communicates strength/direction of linear association, but it does not show individual observations, clusters, nonlinear shape, or unusual points.</p>
+<h2 id="10-3d-visualization">10. 3D Visualization</h2>
+<p>A 2D plot represents <code>(x, y)</code>; a 3D plot represents <code>(x, y, z)</code>. A third variable can reveal separation or clustering hidden in a 2D projection—for example, age, income, and spending considered simultaneously.</p>
+<p>Limitations:</p>
+<ul>
+<li><strong>Occlusion:</strong> points hide behind one another.</li>
+<li><strong>Perspective distortion:</strong> the viewing angle affects apparent distances and patterns.</li>
+<li><strong>Interaction requirement:</strong> rotation may be required for understanding.</li>
+<li>It does not change the data or create a new relationship; it only changes representation.</li>
+<li>It can show association or clustering, but does not prove causation or explain why groups exist.</li>
+</ul>
+<p>Use 3D only when the third variable materially answers the analytical question. Prefer 2D when it communicates the result more clearly; never use 3D merely for decoration.</p>
+<h2 id="11-visualization-selection-framework">11. Visualization Selection Framework</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Suitable visualization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Relationship between two numeric variables</td>
+<td>Scatter plot</td>
+</tr>
+<tr>
+<td>All pairwise relationships among many numeric variables</td>
+<td>Pair plot / PairGrid</td>
+</tr>
+<tr>
+<td>One-variable distribution</td>
+<td>Histogram, KDE, rug plot</td>
+</tr>
+<tr>
+<td>Distribution plus categorical comparison</td>
+<td>Box or violin plot</td>
+</tr>
+<tr>
+<td>One numeric pair plus marginal distributions</td>
+<td>Joint plot</td>
+</tr>
+<tr>
+<td>Three-variable structure hidden in 2D</td>
+<td>Consider 3D scatter</td>
+</tr>
+<tr>
+<td>Compact numerical correlation overview</td>
+<td>Correlation heatmap</td>
+</tr>
+<tr>
+<td>Separate category-conditioned views</td>
+<td>FacetGrid / figure-level <code>row</code> or <code>col</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Common exam traps:</p>
+<ol>
+<li>Changing hue/palette when only the marker should change.</li>
+<li>Using a bar chart where observation-level relationships must be preserved.</li>
+<li>Choosing 3D because it looks impressive rather than because z adds insight.</li>
+<li>Confusing PairGrid with FacetGrid.</li>
+</ol>
+<hr>
+<h1 id="part-iii-titanic-workshop-case-study">Part III — Titanic Workshop Case Study</h1>
+<h2 id="12-environment-setup">12. Environment Setup</h2>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import seaborn as sns
+
+plt.rcParams[&quot;figure.figsize&quot;] = [8, 6]
+sns.set_style(&quot;darkgrid&quot;)
+
+titanic = sns.load_dataset(&quot;titanic&quot;)
+</code></pre>
+<h3 id="what-each-statement-does">What each statement does</h3>
+<ul>
+<li><code>matplotlib.pyplot</code> provides foundational plotting and low-level figure/axes control.</li>
+<li>Seaborn provides a high-level statistical visualization interface built on Matplotlib.</li>
+<li><code>plt.rcParams["figure.figsize"] = [8, 6]</code> sets the default figure width and height in inches; it affects appearance/readability, not the data, aggregation, or statistical result.</li>
+<li><code>sns.set_style("darkgrid")</code> changes the visual theme/background and grid. Other common styles include <code>white</code> and <code>whitegrid</code>.</li>
+<li><code>sns.load_dataset("titanic")</code> loads Seaborn&rsquo;s example Titanic data.</li>
+</ul>
+<h2 id="13-rug-plot">13. Rug Plot</h2>
+<p>A rug plot places a small tick along an axis for each observation.</p>
+<pre><code class="language-python">sns.rugplot(data=titanic, x=&quot;age&quot;)
+</code></pre>
+<p>It preserves raw observation positions and helps identify concentration, gaps, clusters, and overall distribution. Because every observation is shown, it provides detail that aggregate plots omit.</p>
+<p>Limitations:</p>
+<ul>
+<li>ticks overlap heavily in large/dense datasets;</li>
+<li>it does not directly provide a strong category summary or central tendency;</li>
+<li>unfamiliar audiences may find it harder to interpret;</li>
+<li>it is often most effective as a supporting layer or separate exploratory panel.</li>
+</ul>
+<h2 id="14-seaborn-bar-plot-and-default-aggregation">14. Seaborn Bar Plot and Default Aggregation</h2>
+<pre><code class="language-python">sns.barplot(x=&quot;pclass&quot;, y=&quot;fare&quot;, data=titanic)
+</code></pre>
+<p>For each passenger-class category, Seaborn&rsquo;s bar plot displays the <strong>mean fare by default</strong> (with uncertainty/error information depending on version/settings). The case-study interpretation was that first-class passengers had a substantially higher average fare than second- and third-class passengers.</p>
+<p>A bar plot is useful for:</p>
+<ul>
+<li>clear category comparison;</li>
+<li>concise summary communication;</li>
+<li>presentations and executive audiences.</li>
+</ul>
+<p>It does not show every passenger&rsquo;s fare, within-class spread, clusters, skewness, or individual outliers. A crucial exam point is to know the estimator/default aggregation rather than incorrectly describing each bar as a total or raw value.</p>
+<h2 id="15-choosing-between-bar-rug-and-combined-views">15. Choosing Between Bar, Rug, and Combined Views</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Advantage</th>
+<th>Limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bar plot only</td>
+<td>Simple comparison of mean fare by class</td>
+<td>Hides raw distributions and variation</td>
+</tr>
+<tr>
+<td>Rug plot only</td>
+<td>Preserves all age observations and clusters</td>
+<td>Weak category summary; can become cluttered</td>
+</tr>
+<tr>
+<td>Combined/multi-panel</td>
+<td>Provides summary plus detail</td>
+<td>More complex and takes more space</td>
+</tr>
+</tbody>
+</table></div>
+<p>The suggested teaching sequence is a <strong>multi-panel or staged approach</strong>:</p>
+<ol>
+<li>Begin with mean fare by passenger class to establish the main summary.</li>
+<li>Show the age rug plot to teach raw distribution and clustering.</li>
+<li>Explain how summary and detailed views complement each other and may motivate deeper conditioned analysis.</li>
+</ol>
+<p>Do not literally overlay unrelated variables or incompatible scales merely because both plots are available. Separate panels are normally clearer for mean fare by class and age distribution. If investigating whether older passengers cluster in higher-fare classes, use an appropriate relationship/conditioned plot rather than inferring that relationship from two unrelated marginals.</p>
+<p>Audience matters:</p>
+<ul>
+<li>Beginners: introduce the familiar summary first, then explain rug marks.</li>
+<li>Analysts: show raw detail and complementary panels.</li>
+<li>Decision-makers: emphasize the principal comparison and avoid unnecessary complexity.</li>
+</ul>
+<p>The general principle is: a summary view states <strong>what</strong> is happening; a detailed exploratory view helps investigate <strong>why</strong> and reveals what aggregation hides.</p>
+<hr>
+<h1 id="part-iv-week-10-live-session-jupyter-notebook-and-python-basics">Part IV — Week 10 Live Session: Jupyter Notebook and Python Basics</h1>
+<h2 id="16-instructor-announcements-and-emphasis">16. Instructor Announcements and Emphasis</h2>
+<ul>
+<li>Secure course eligibility early; only eligible students receive the interim-examination link. Do not postpone watching/completing the required content.</li>
+<li>The mini/experiential project was described as not mandatory but professionally valuable: collect real-world data, do meaningful work, and learn to showcase it in interviews.</li>
+<li>The transcript referred to a report submitted as PDF and a short 3–4 slide presentation through the Review Week 3 page, with the best three invited to present. The spoken date was tentative (“29 July or month-end”), so current LMS instructions should govern deadlines.</li>
+</ul>
+<h2 id="17-python-and-jupyter-architecture">17. Python and Jupyter Architecture</h2>
+<ul>
+<li><strong>Python</strong> is the language/engine used to write and run code.</li>
+<li><strong>Jupyter Notebook</strong> is the browser-based front end where code, text, and results are entered/displayed.</li>
+<li>The <strong>kernel</strong> is the background engine: it executes code, calculates results, and sends output back to the browser.</li>
+<li>In a local installation, the browser is served from the same computer (<code>localhost</code>, commonly on a port such as 8888).</li>
+<li>Do not close the background server/kernel window while using the notebook; the browser front end will lose its execution backend and stop working.</li>
+</ul>
+<p>Installation routes mentioned:</p>
+<ol>
+<li>Install Anaconda, which bundles Python/Jupyter and supporting packages.</li>
+<li>Install Python from <code>python.org</code>, then install Jupyter separately.</li>
+</ol>
+<p>Other environments such as VS Code or PyCharm are acceptable for experienced users, but the instructor demonstrates in Jupyter. Verify installation/version from the command line (the lecture mentioned version checks such as <code>pip --version</code>). A desktop/taskbar shortcut may simplify starting Jupyter.</p>
+<h2 id="18-creating-and-navigating-a-notebook">18. Creating and Navigating a Notebook</h2>
+<ul>
+<li>The Jupyter home page behaves like a file explorer, showing files and folders.</li>
+<li>Use <strong>New → Python 3 / Notebook</strong> to create a notebook.</li>
+<li>Notebook files use the <code>.ipynb</code> extension, analogous to <code>.docx</code>, <code>.xlsx</code>, and <code>.pptx</code> for other applications.</li>
+<li>Rename an “Untitled” notebook by clicking its title.</li>
+<li>Explore File, Edit, View, Run, Kernel, and Help menus.</li>
+<li>The instructor stressed active practice and trial-and-error rather than only listening.</li>
+</ul>
+<h2 id="19-cell-types">19. Cell Types</h2>
+<h3 id="code-cell">Code cell</h3>
+<ul>
+<li>Default cell type.</li>
+<li>Accepts executable Python.</li>
+<li>Recognizable by <code>In [ ]</code> / square brackets.</li>
+<li>Output appears below the cell.</li>
+<li>The execution number records <strong>execution order</strong>, not physical top-to-bottom position.</li>
+</ul>
+<pre><code class="language-python">print(&quot;Hello world&quot;)
+</code></pre>
+<p>Python is case-sensitive: the lesson&rsquo;s capitalized <code>Print</code> produced an error; <code>print</code> must be lowercase. Strings must be quoted.</p>
+<p>Execution:</p>
+<ul>
+<li><code>Shift+Enter</code>: execute and move to/select the next cell.</li>
+<li><code>Ctrl+Enter</code>: execute while remaining on the current cell.</li>
+<li>Plain Enter inserts a new line while editing.</li>
+</ul>
+<p>Errors appear visibly (commonly red); read them to diagnose syntax or name problems.</p>
+<h3 id="markdown-cell">Markdown cell</h3>
+<p>A Markdown cell formats explanatory text rather than running it as Python. It lacks code-cell execution brackets. It enables notebooks to combine narrative, headings, instructions, expected results, and code.</p>
+<p>Examples:</p>
+<pre><code class="language-markdown"># Main heading
+## Second-level heading
+*italic text*
+**bold text**
+</code></pre>
+<p>The instructor noted that heading levels can extend through six levels. Execute/render the Markdown cell to see formatting.</p>
+<h3 id="raw-cell">Raw cell</h3>
+<p>A raw cell preserves content without executing it or rendering it as Markdown. It is less commonly used and may carry material for another conversion/application, such as notebook conversion or LaTeX-related workflows.</p>
+<h2 id="20-comments-modes-and-execution-state">20. Comments, Modes, and Execution State</h2>
+<h3 id="python-comments">Python comments</h3>
+<pre><code class="language-python"># Demo of basic Python addition
+x = 20
+y = 30
+print(x + y)
+</code></pre>
+<p>Text placed directly in a code cell is treated as Python and may cause a syntax error. Prefix non-executable explanatory text with <code>#</code>. Comments document code blocks, aid debugging, and help future readers locate assignments, input logic, calculations, and other sections in long programs.</p>
+<h3 id="edit-and-command-view-behaviour">Edit and command/view behaviour</h3>
+<p>Clicking/double-clicking inside a cell places it in edit mode. After execution, rendered Markdown or output is shown; select/edit the cell again to change its source.</p>
+<h3 id="execution-order-and-dependencies">Execution order and dependencies</h3>
+<p>If a calculation cell is run before the cells that define its variables, Python reports that the variables are not defined.</p>
+<pre><code class="language-python">x = 10
+y = 20
+r = x + y
+</code></pre>
+<p>The assignments must execute before <code>r = x + y</code>. Restarting the kernel clears in-memory state; cells then need to be rerun in the correct order. Clearing output changes what is displayed, while restarting affects live state.</p>
+<h3 id="indicator"><code>[*]</code> indicator</h3>
+<ul>
+<li><code>In [*]</code> means the kernel is busy executing that cell.</li>
+<li>A number appears when execution finishes.</li>
+<li>Long calculations or loops may show the star for some time.</li>
+<li>A persistent star may indicate a very long operation or an infinite loop; interrupt or restart the kernel when necessary.</li>
+</ul>
+<h2 id="21-python-data-types">21. Python Data Types</h2>
+<p>The lecture focused on seven major types:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Meaning</th>
+<th>Example / syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>String (<code>str</code>)</td>
+<td>Text</td>
+<td><code>x = "Hello world"</code></td>
+</tr>
+<tr>
+<td>Integer (<code>int</code>)</td>
+<td>Whole number, positive/negative/zero</td>
+<td><code>age = 25</code></td>
+</tr>
+<tr>
+<td>Float (<code>float</code>)</td>
+<td>Decimal/floating-point number</td>
+<td><code>height = 5.9</code></td>
+</tr>
+<tr>
+<td>Boolean (<code>bool</code>)</td>
+<td><code>True</code> or <code>False</code></td>
+<td><code>is_student = True</code></td>
+</tr>
+<tr>
+<td>List (<code>list</code>)</td>
+<td>Ordered collection, written with square brackets</td>
+<td><code>colors = ["red", "green", "blue"]</code></td>
+</tr>
+<tr>
+<td>Tuple (<code>tuple</code>)</td>
+<td>Ordered collection commonly used for fixed groups/coordinates, written with parentheses</td>
+<td><code>dimensions = (1920, 1080)</code></td>
+</tr>
+<tr>
+<td>Dictionary (<code>dict</code>)</td>
+<td>Key–value pairs, written with curly braces and colons</td>
+<td><code>student = {"name": "Senthil", "age": 25}</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Use <code>type()</code> to inspect a value:</p>
+<pre><code class="language-python">print(&quot;x is&quot;, type(x))
+print(&quot;age is&quot;, type(age))
+</code></pre>
+<p>Python uses dynamic type inference: unlike languages requiring a prior declaration, it infers a variable&rsquo;s type from the assigned value. <code>height = 5.9</code> is a float, whereas <code>height = 5</code> is an integer.</p>
+<h2 id="22-python-operators">22. Python Operators</h2>
+<h3 id="arithmetic-operators">Arithmetic operators</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Operator</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Addition</td>
+<td><code>+</code></td>
+<td><code>x + y</code></td>
+</tr>
+<tr>
+<td>Subtraction</td>
+<td><code>-</code></td>
+<td><code>x - y</code></td>
+</tr>
+<tr>
+<td>Multiplication</td>
+<td><code>*</code></td>
+<td><code>x * y</code></td>
+</tr>
+<tr>
+<td>Division</td>
+<td><code>/</code></td>
+<td><code>x / y</code></td>
+</tr>
+<tr>
+<td>Exponentiation</td>
+<td><code>**</code></td>
+<td><code>x ** y</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>With <code>x=10</code>, <code>y=20</code>: addition is 30, subtraction is −10, and multiplication is 200.</p>
+<h3 id="logical-operators">Logical operators</h3>
+<ul>
+<li><code>and</code>: true only if both operands/conditions are true.</li>
+<li><code>or</code>: true if at least one is true.</li>
+<li><code>not</code>: reverses a Boolean condition.</li>
+</ul>
+<p>Example with <code>x=True</code>, <code>y=False</code>: <code>x and y</code> is <code>False</code>; <code>x or y</code> is <code>True</code>; <code>not (x and y)</code> is <code>True</code>.</p>
+<h3 id="comparison-operators">Comparison operators</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Meaning</th>
+<th>Operator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equal to</td>
+<td><code>==</code></td>
+</tr>
+<tr>
+<td>Not equal to</td>
+<td><code>!=</code></td>
+</tr>
+<tr>
+<td>Greater than</td>
+<td><code>&gt;</code></td>
+</tr>
+<tr>
+<td>Less than</td>
+<td><code>&lt;</code></td>
+</tr>
+<tr>
+<td>Greater than or equal to</td>
+<td><code>&gt;=</code></td>
+</tr>
+<tr>
+<td>Less than or equal to</td>
+<td><code>&lt;=</code></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Major exam/syntax warning:</strong> <code>=</code> assigns a value; <code>==</code> tests equality.</p>
+<h3 id="assignment-operators">Assignment operators</h3>
+<pre><code class="language-python">r = x + y   # assign result
+x += y      # equivalent to x = x + y
+x -= y      # x = x - y
+x *= y      # x = x * y
+x /= y      # x = x / y
+x **= y     # x = x ** y
+</code></pre>
+<p>Augmented assignment performs the operation and stores the new result back in the left-hand variable.</p>
+<h3 id="membership-operators">Membership operators</h3>
+<ul>
+<li><code>in</code>: tests whether an item belongs to a collection.</li>
+<li><code>not in</code>: tests whether it does not belong.</li>
+</ul>
+<pre><code class="language-python">days = [&quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;,
+        &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;]
+
+print(&quot;Sunday&quot; in days)       # True
+print(&quot;Xunday&quot; not in days)  # True
+</code></pre>
+<p>This is useful for quickly checking membership even in large collections.</p>
+<h3 id="course-boundary-emphasized-by-instructor">Course boundary emphasized by instructor</h3>
+<p>The session was only a starting review. Students are expected to independently possess/refresh working Python knowledge. The data-visualization course uses libraries such as Matplotlib, Seaborn, and Plotly; it is not intended to teach all Python, Pandas, NumPy, data import, and manipulation from first principles.</p>
+<hr>
+<h1 id="part-v-practical-use-cases">Part V — Practical Use Cases</h1>
+<h2 id="use-case-1-apparent-bimodality-in-pooled-data">Use Case 1: Apparent bimodality in pooled data</h2>
+<ol>
+<li>Plot a histogram of <code>flipper_length_mm</code>.</li>
+<li>Vary <code>binwidth</code> to verify that the two-peak impression is stable.</li>
+<li>Add <code>hue="species"</code> to determine whether subgroup mixing explains the pattern.</li>
+<li>Compare layer, step, dodge, and facet layouts depending on whether shape comparison, height comparison, or subset clarity matters most.</li>
+</ol>
+<h2 id="use-case-2-comparing-passenger-age-distributions-by-class-and-survival">Use Case 2: Comparing passenger-age distributions by class and survival</h2>
+<ul>
+<li>Use <code>boxplot()</code> for a compact comparison of medians, IQRs, whiskers, and outliers.</li>
+<li>Use <code>violinplot()</code> when skewness, modes, and density shape matter.</li>
+<li>Add <code>hue="alive"</code> for nested survival comparison.</li>
+<li>Use <code>catplot(..., col="alive")</code> when separate panels are easier to interpret.</li>
+</ul>
+<h2 id="use-case-3-selecting-a-chart-for-an-analytical-question">Use Case 3: Selecting a chart for an analytical question</h2>
+<ul>
+<li>“Do bills and tips move together?” → scatter plot.</li>
+<li>“How do all numerical variables relate?” → pair plot / PairGrid.</li>
+<li>“What is the average fare by class?” → bar plot, noting its estimator.</li>
+<li>“Where are individual ages concentrated?” → rug plot, often with a histogram/KDE or separate panel.</li>
+<li>“Does a third variable reveal group separation?” → consider 3D, then test whether a clearer 2D encoding/facet could communicate it better.</li>
+</ul>
+<hr>
+<h1 id="rapid-revision-and-exam-checklist">Rapid Revision and Exam Checklist</h1>
+<h2 id="definitions-to-be-able-to-write">Definitions to be able to write</h2>
+<ul>
+<li>[ ] Histogram: counts observations inside numerical bins.</li>
+<li>[ ] KDE: continuous density estimate created by smoothing observations with kernels.</li>
+<li>[ ] Box plot: Q1, median, Q3, whiskers within 1.5 IQR, and separately displayed outside observations.</li>
+<li>[ ] Violin plot: KDE-based distribution shape combined with summary information.</li>
+<li>[ ] Rug plot: one tick per observation along an axis.</li>
+<li>[ ] Scatter plot: one point per paired numerical observation.</li>
+<li>[ ] PairGrid: variable-by-variable grid; FacetGrid: category-conditioned grid.</li>
+<li>[ ] Kernel: background engine that executes Jupyter code.</li>
+</ul>
+<h2 id="parameter-facts">Parameter facts</h2>
+<ul>
+<li>[ ] <code>hue</code> maps a semantic category to colour.</li>
+<li>[ ] <code>row</code>/<code>col</code> create facet grids in figure-level functions.</li>
+<li>[ ] <code>element="step"</code> reduces filled-bar overlap.</li>
+<li>[ ] <code>multiple="stack"</code> stresses part-to-whole but can hide subgroup modes.</li>
+<li>[ ] <code>multiple="dodge"</code> preserves bar-height comparison; best with few categories.</li>
+<li>[ ] <code>binwidth</code> changes histogram detail.</li>
+<li>[ ] <code>bw_adjust</code> multiplies KDE bandwidth; higher value → smoother curve.</li>
+<li>[ ] <code>orient</code> overrides inferred orientation.</li>
+<li>[ ] <code>fill=False</code> gives outline box/violin styling.</li>
+<li>[ ] <code>marker="D"</code> changes all scatter markers to diamonds without changing hue colours.</li>
+<li>[ ] <code>style=category</code> intentionally gives categories different marker styles.</li>
+<li>[ ] <code>catplot(kind="box")</code> and <code>catplot(kind="violin")</code> enable figure-level categorical faceting.</li>
+</ul>
+<h2 id="interpretation-and-caveats">Interpretation and caveats</h2>
+<ul>
+<li>[ ] Test several bin widths; a default histogram can hide or invent apparent features.</li>
+<li>[ ] Test several bandwidths; over-smoothing erases features and under-smoothing promotes noise.</li>
+<li>[ ] A pooled distribution may be multimodal because distinct subgroups are mixed.</li>
+<li>[ ] Box plots are compact but can conceal multimodality; violin plots reveal shape but depend on KDE bandwidth.</li>
+<li>[ ] Correlation heatmaps hide raw observations, clusters, and nonlinear patterns.</li>
+<li>[ ] 3D adds occlusion/perspective problems and never proves causality.</li>
+<li>[ ] Seaborn bar plots aggregate (mean by default in the case study); they do not display every observation.</li>
+<li>[ ] Choose the plot based on the analytical question and audience, not visual novelty.</li>
+</ul>
+<h2 id="jupyter-python-checks">Jupyter/Python checks</h2>
+<ul>
+<li>[ ] <code>.ipynb</code> is the notebook extension.</li>
+<li>[ ] Code, Markdown, and raw are the three cell types discussed.</li>
+<li>[ ] Code-cell numbers show execution order, not document order.</li>
+<li>[ ] <code>In [*]</code> means the kernel is busy.</li>
+<li>[ ] Run prerequisite assignment cells before dependent calculations.</li>
+<li>[ ] <code>#</code> comments out explanatory text in code.</li>
+<li>[ ] Strings require quotes; Python is case-sensitive.</li>
+<li>[ ] Know <code>str</code>, <code>int</code>, <code>float</code>, <code>bool</code>, <code>list</code>, <code>tuple</code>, and <code>dict</code> syntax.</li>
+<li>[ ] <code>type(value)</code> identifies a data type.</li>
+<li>[ ] <code>=</code> assigns; <code>==</code> compares.</li>
+<li>[ ] Know arithmetic, logical, comparison, augmented-assignment, and membership operators.</li>
+</ul>
+<h2 id="high-probability-exam-questions">High-probability exam questions</h2>
+<ol>
+<li>Explain how bin width affects a histogram and why multiple values should be tested.</li>
+<li>Define KDE and compare bandwidth with histogram bin width.</li>
+<li>Distinguish over-smoothing from under-smoothing.</li>
+<li>Explain the components of a box plot, including the 1.5-IQR rule.</li>
+<li>Compare box plots and violin plots.</li>
+<li>Compare axes-level <code>boxplot()</code>/<code>violinplot()</code> with figure-level <code>catplot()</code>.</li>
+<li>Explain <code>hue</code>, <code>row</code>, <code>col</code>, <code>palette</code>, <code>multiple</code>, and <code>orient</code>.</li>
+<li>Compare stack, dodge, layer/step, and faceting.</li>
+<li>Distinguish PairGrid from FacetGrid.</li>
+<li>Explain why scatter plots preserve relationships while bar charts aggregate them.</li>
+<li>State advantages and limitations of 3D plots.</li>
+<li>Explain Jupyter&rsquo;s browser–kernel architecture and cell execution order.</li>
+<li>Differentiate code, Markdown, and raw cells.</li>
+<li>Identify Python data types and operators, especially <code>=</code> versus <code>==</code>, and <code>in</code> versus <code>not in</code>.</li>
+</ol>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<h3 id="scatter-line-and-bubble-distinctions">Scatter, line, and bubble distinctions</h3>
+<p>A scatter plot shows the relationship between two quantitative variables—for example Advertising vs Sales, Height vs Weight, or Experience vs Salary. It reveals correlation/association, clusters, outliers, and nonlinear structure without requiring an inherent order.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Chart</th>
+<th>Encodes</th>
+<th>Implied structure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scatter</td>
+<td>x-position + y-position</td>
+<td>Association; no required order</td>
+</tr>
+<tr>
+<td>Line</td>
+<td>ordered x + connected y</td>
+<td>Progression, usually time</td>
+</tr>
+<tr>
+<td>Bubble</td>
+<td>x + y + bubble area; optional colour</td>
+<td>Association with a third/fourth variable</td>
+</tr>
+</tbody>
+</table></div>
+<p>Do not connect scatter points unless the order or path is analytically meaningful. Do not infer causation from correlation.</p>
+<h3 id="perceptual-precision-and-dimensionality">Perceptual precision and dimensionality</h3>
+<p>Aligned 2-D position is easier to compare than bubble area or perspective-distorted depth. A 3-D plot may reveal hidden structure interactively, but occlusion, perspective, and dependence on rotation can make it worse than 2-D alternatives. Prefer pair plots, faceting, colour/shape, or small multiples when they answer the question more clearly and accessibly.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-9.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 9: Data Visualization with Matplotlib, Seaborn,…</span>
+      </a>
+      <a href="week-11.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 11: Seaborn, Matplotlib, Heatmaps, Styling, and…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

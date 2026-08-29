@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Visualization · Week 8 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Visualization</span>
+      <span class="brand-title">Week 8</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html" selected>Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Data Visualization, Visual Perception, and Preattentive Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Visual Perception, Better Visualization, Form–Function, Tables and…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Visualizing and Comparing Categories
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Charts That Show Change Over Time
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Distribution and Relationship Visualizations
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Data Visualization: Exhaustive Exam Notes
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Data Visualization with Python, Jupyter, Python Basics, and Chart…
+      </a>
+      <a class="is-active" href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Python Data Visualization, Matplotlib Plotting, Interpretation, and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Data Visualization with Matplotlib, Seaborn, and Jupyter Notebook
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Exam-Focused Study Notes
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Seaborn, Matplotlib, Heatmaps, Styling, and Dashboard Design
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Dashboards, Dashboard Design, Grammar of Graphics, and Matplotlib
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Dashboard Design, Visual Encoding, Matplotlib, and Dashboard Analytics
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Storytelling with Data
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Storytelling with Data: Exam-Focused Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Visualization · Week 8</p>
+        <h1 class="page-title">Python Data Visualization, Matplotlib Plotting, Interpretation, and Table Design</h1>
+        <p class="page-meta">Week 8 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#how-to-use-these-notes">How to Use These Notes</a></li>
+      <li><a href="#1-major-python-data-visualization-libraries">1. Major Python Data-Visualization Libraries</a></li>
+      <li><a href="#2-matplotlib-and-jupyter-notebook-setup">2. Matplotlib and Jupyter Notebook Setup</a></li>
+      <li><a href="#3-line-charts-with-matplotlib">3. Line Charts with Matplotlib</a></li>
+      <li><a href="#4-bar-charts">4. Bar Charts</a></li>
+      <li><a href="#5-histograms">5. Histograms</a></li>
+      <li><a href="#6-wellfit-university-histogram-case-study">6. WellFit University Histogram Case Study</a></li>
+      <li><a href="#7-scatter-plots">7. Scatter Plots</a></li>
+      <li><a href="#8-pie-charts">8. Pie Charts</a></li>
+      <li><a href="#9-visualization-selection-and-general-design-principles">9. Visualization Selection and General Design Principles</a></li>
+      <li><a href="#10-legends-in-matplotlib">10. Legends in Matplotlib</a></li>
+      <li><a href="#11-tables-as-data-visualization">11. Tables as Data Visualization</a></li>
+      <li><a href="#12-python-and-jupyter-notebook-installation">12. Python and Jupyter Notebook Installation</a></li>
+      <li><a href="#13-high-probability-exam-questions-and-model-points">13. High-Probability Exam Questions and Model Points</a></li>
+      <li><a href="#14-rapid-revision-and-final-checklist">14. Rapid Revision and Final Checklist</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="how-to-use-these-notes">How to Use These Notes</h2>
+<p>These notes consolidate all substantive material in the Week 8 transcript: the four recorded lessons, quiz concepts, the WellFit University histogram case study, and the live session. Commands and parameter names have been normalized to their correct Python/Matplotlib spellings where the transcript&rsquo;s speech-to-text was inaccurate.</p>
+<blockquote>
+<p><strong>Instructor emphasis:</strong> Data-visualization skill comes through practice. Reproduce the demonstrated code in Jupyter Notebook, compare your output with the expected chart, and treat syntax errors as part of learning. Small mistakes—mismatched quotation marks, missing commas/brackets, or an incorrect argument—can stop a plot from rendering.</p>
+</blockquote>
+<hr>
+<h2 id="1-major-python-data-visualization-libraries">1. Major Python Data-Visualization Libraries</h2>
+<p>Week 8 introduces five major libraries: <strong>Matplotlib, Seaborn, Cartopy, Pandas, and Plotly</strong>.</p>
+<h3 id="1-1-matplotlib">1.1 Matplotlib</h3>
+<p>Matplotlib is the <strong>de facto standard for static visualization in Python</strong>. It is one of Python&rsquo;s oldest, most widely used, and most popular visualization libraries. It was developed to resemble MATLAB, a language widely used in academia.</p>
+<p>Key capabilities:</p>
+<ul>
+<li>Creates static, interactive, and animated visualizations.</li>
+<li>Supports line graphs, scatter plots, histograms, bar charts, pie charts, and many other plots.</li>
+<li>Is highly customizable: color, fonts, axes, labels, titles, markers, line styles, legends, and other elements can be adjusted.</li>
+<li>Can produce publication-quality figures.</li>
+<li>Is simple and versatile.</li>
+<li>Integrates well with NumPy and Pandas, making data from different sources easy to visualize.</li>
+<li>Supports multiple backends, so figures can be displayed on different platforms and saved in different formats.</li>
+</ul>
+<h3 id="1-2-seaborn">1.2 Seaborn</h3>
+<p>Seaborn is a powerful visualization library <strong>built on top of Matplotlib</strong>. It specializes in attractive, informative <strong>statistical graphics</strong> with relatively little code.</p>
+<p>Key capabilities:</p>
+<ul>
+<li>Provides high-level abstractions for complex plots.</li>
+<li>Supports heat maps, violin plots, and clustered pair plots/pair plots.</li>
+<li>Handles Pandas DataFrames seamlessly.</li>
+<li>Makes relationships among variables straightforward to plot.</li>
+<li>Offers themes, color palettes, and easy customization of chart elements.</li>
+<li>Is especially useful in <strong>exploratory data analysis (EDA)</strong> for finding patterns, trends, and correlations.</li>
+</ul>
+<h3 id="1-3-cartopy">1.3 Cartopy</h3>
+<p>Cartopy is designed for <strong>geospatial visualization and map-based plotting</strong>. It is widely used in scientific and academic work.</p>
+<p>Key capabilities:</p>
+<ul>
+<li>Builds on Matplotlib and extends it for geospatial data.</li>
+<li>Supports map projections such as Mercator, Robinson, and Albers Equal Area.</li>
+<li>Draws geographic boundaries, coastlines, borders, and gridlines.</li>
+<li>Supports customizable overlays, including data points, heat maps, and vector data on base maps.</li>
+<li>Works with libraries such as Shapely and Fiona for efficient geospatial-data manipulation.</li>
+<li>Is regarded as a more modern and versatile alternative to the older Basemap package, which has been deprecated.</li>
+<li>Produces professional-quality geographic visualizations.</li>
+</ul>
+<h3 id="1-4-pandas">1.4 Pandas</h3>
+<p>Pandas is primarily a library for data manipulation and analysis, but it is also a powerful visualization tool, especially when paired with Matplotlib or Seaborn.</p>
+<p>Key capabilities:</p>
+<ul>
+<li>Plots directly from a DataFrame or Series using the <code>.plot()</code> method.</li>
+<li>Supports line plots, bar plots, histograms, scatter plots, and pie charts.</li>
+<li>Removes much of the manual preparation normally needed to configure data for a chart.</li>
+<li>Automatically uses a DataFrame&rsquo;s index on the x-axis, simplifying axis handling.</li>
+<li>Combines strong grouping and aggregation operations with immediate plotting of summaries.</li>
+<li>Supports customization of colors, styles, titles, axis labels, and other elements through <code>.plot()</code> arguments.</li>
+<li>Works with Matplotlib for more complex visualization and with Seaborn for enhanced statistical graphics.</li>
+</ul>
+<h3 id="1-5-plotly">1.5 Plotly</h3>
+<p>Plotly is a robust library for <strong>interactive, web-based visualization</strong>. Its charts are dynamic, visually polished, shareable online, and embeddable in applications.</p>
+<p>Key capabilities:</p>
+<ul>
+<li>Supports line, scatter, bar, box, heat-map, and 3D plots.</li>
+<li>Allows users to hover, zoom, pan, and export from the chart interface.</li>
+<li>Supports advanced charts such as geographic maps, choropleth maps, and financial charts.</li>
+<li>Works with Python, Pandas, and Jupyter Notebook.</li>
+<li>Allows extensive customization of colors, themes, styles, titles, and labels.</li>
+<li>Exports plots as static images or HTML files for web presentations and platforms.</li>
+<li>Is popular among analysts, data scientists, and developers when polished interactivity is required.</li>
+</ul>
+<h3 id="1-6-library-comparison">1.6 Library Comparison</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Primary strength</th>
+<th>Best suited to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Matplotlib</td>
+<td>Foundational, highly customizable plotting</td>
+<td>General-purpose/static and publication-quality figures</td>
+</tr>
+<tr>
+<td>Seaborn</td>
+<td>High-level statistical graphics</td>
+<td>EDA, correlations, distributions, attractive defaults</td>
+</tr>
+<tr>
+<td>Cartopy</td>
+<td>Geospatial plotting and projections</td>
+<td>Maps, geographic boundaries, overlays</td>
+</tr>
+<tr>
+<td>Pandas</td>
+<td>Direct plotting from tabular data</td>
+<td>Quick plots during manipulation, grouping, and aggregation</td>
+</tr>
+<tr>
+<td>Plotly</td>
+<td>Interactive web graphics</td>
+<td>Dashboards, online sharing, hover/zoom/pan, advanced interactive charts</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Likely exam comparison:</strong> Seaborn and Cartopy both extend Matplotlib, but Seaborn focuses on statistical graphics while Cartopy focuses on geospatial graphics. Pandas prioritizes convenient DataFrame/Series plotting; Plotly prioritizes interactivity.</p>
+<hr>
+<h2 id="2-matplotlib-and-jupyter-notebook-setup">2. Matplotlib and Jupyter Notebook Setup</h2>
+<p>Matplotlib is <strong>not part of the core Python library</strong> and must be installed separately.</p>
+<h3 id="2-1-install-matplotlib-in-jupyter">2.1 Install Matplotlib in Jupyter</h3>
+<pre><code class="language-python">!pip install matplotlib
+</code></pre>
+<p>The leading <code>!</code> tells Jupyter to run the line as a terminal/shell command. Installation may take time and print many messages; successful completion is indicated by an installation-success message.</p>
+<h3 id="2-2-import-pyplot">2.2 Import Pyplot</h3>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+</code></pre>
+<p><code>pyplot</code> is conventionally given the shorter alias <code>plt</code>.</p>
+<p>For the notebook-oriented workflow shown in the lecture:</p>
+<pre><code class="language-python">%matplotlib inline
+</code></pre>
+<p>This IPython magic directs plots to appear inside the Jupyter Notebook. Modern notebook environments often display plots inline automatically, but this was an explicit lecture step.</p>
+<h3 id="2-3-notebook-execution-caveat">2.3 Notebook Execution Caveat</h3>
+<p>If a cell depends on imports or variables defined in earlier cells, those earlier cells must have been executed. Otherwise, repeat the import in the current cell or run the notebook from the start. <code>plt.show()</code> explicitly renders the prepared chart.</p>
+<hr>
+<h2 id="3-line-charts-with-matplotlib">3. Line Charts with Matplotlib</h2>
+<h3 id="3-1-purpose-and-basic-procedure">3.1 Purpose and Basic Procedure</h3>
+<p>A line chart is useful for showing ordered change, especially change over time.</p>
+<p>The lecture example plots years on the x-axis and nominal GDP on the y-axis:</p>
+<pre><code class="language-python">years = [1950, 1960, 1970, 1980, 1990, 2000, 2010, 2020]
+gdp = [300.2, 543.5, 1035.5, 2890.3, 5240.9, 10700.3, 14560.1, 20670.3]
+
+plt.plot(years, gdp)
+plt.show()
+</code></pre>
+<p>The essential call is <code>plt.plot(x_values, y_values)</code>. The x- and y-lists must contain matching numbers of observations.</p>
+<h3 id="3-2-improving-aesthetics-and-readability">3.2 Improving Aesthetics and Readability</h3>
+<pre><code class="language-python">plt.plot(
+    years,
+    gdp,
+    color=&quot;green&quot;,
+    marker=&quot;o&quot;,
+    linestyle=&quot;solid&quot;
+)
+plt.title(&quot;Nominal GDP from 1950 to 2020&quot;)
+plt.xlabel(&quot;Years&quot;)
+plt.ylabel(&quot;GDP&quot;)
+plt.show()
+</code></pre>
+<p>Important components:</p>
+<ul>
+<li><code>color</code> changes the line color.</li>
+<li><code>marker="o"</code> marks observations with circles.</li>
+<li><code>linestyle="solid"</code> controls the line pattern.</li>
+<li><code>title</code>, <code>xlabel</code>, and <code>ylabel</code> provide context and improve readability.</li>
+</ul>
+<blockquote>
+<p><strong>Syntax warning:</strong> Python&rsquo;s keyword is <code>color</code>, not British <code>colour</code>. Opening and closing quotes must match, values must be valid Python values, and brackets must be closed.</p>
+</blockquote>
+<h3 id="3-3-multiple-lines-on-one-plot">3.3 Multiple Lines on One Plot</h3>
+<p>To compare two countries, call <code>plt.plot()</code> once for each series:</p>
+<pre><code class="language-python">gdp_b = [310, 354, 510, 1030, 2000, 4150, 7500, 10350, 14340]
+
+plt.title(&quot;GDP Comparison&quot;)
+plt.ylabel(&quot;GDP&quot;)
+
+plt.plot(years, gdp, color=&quot;blue&quot;, marker=&quot;o&quot;,
+         linestyle=&quot;solid&quot;, label=&quot;A&quot;)
+plt.plot(years, gdp_b, color=&quot;red&quot;, marker=&quot;s&quot;,
+         linestyle=&quot;solid&quot;, label=&quot;B&quot;)
+
+plt.legend(loc=&quot;upper left&quot;)
+plt.show()
+</code></pre>
+<p>The transcript&rsquo;s second list appears to contain a data-count inconsistency; in actual code, both y-series must match the length of <code>years</code>.</p>
+<p>Marker examples:</p>
+<ul>
+<li><code>"o"</code>: circle</li>
+<li><code>"s"</code>: square</li>
+<li><code>"+"</code>: plus</li>
+<li><code>"x"</code>: cross</li>
+</ul>
+<p><code>label</code> names the plotted series; <code>plt.legend()</code> displays those names. Place a legend where it does not cover important data, such as <code>loc="upper left"</code> when that area is open.</p>
+<h3 id="3-4-annotation">3.4 Annotation</h3>
+<p>Annotations direct attention and strengthen the intended message. Conceptually, an annotation needs:</p>
+<ol>
+<li>The annotation text.</li>
+<li><code>xy</code>: the coordinate of the data point being referenced.</li>
+<li><code>xytext</code>: the coordinate where the text should appear.</li>
+</ol>
+<pre><code class="language-python">plt.annotate(
+    &quot;Country B in 2020&quot;,
+    xy=(2020, 14340),
+    xytext=(1970, 17500)
+)
+</code></pre>
+<p>Positioning often requires trial and error. Lowering the y-value in <code>xytext</code> moves the annotation text downward.</p>
+<p>To add an arrow:</p>
+<pre><code class="language-python">plt.annotate(
+    &quot;Country B in 2020&quot;,
+    xy=(2020, 14340),
+    xytext=(1970, 17500),
+    arrowprops={&quot;color&quot;: &quot;black&quot;, &quot;width&quot;: 0.5, &quot;headwidth&quot;: 5}
+)
+</code></pre>
+<p><code>arrowprops</code> receives a dictionary and can control arrow color, line width, and head width. The arrow points to <code>xy</code>, not to <code>xytext</code>.</p>
+<hr>
+<h2 id="4-bar-charts">4. Bar Charts</h2>
+<h3 id="4-1-definition-and-data-mapping">4.1 Definition and Data Mapping</h3>
+<p>A bar chart compares <strong>magnitudes across categories</strong>. For a vertical bar chart:</p>
+<ul>
+<li>x-axis: categorical values/bar positions</li>
+<li>y-axis: corresponding aggregated numerical values/bar heights</li>
+</ul>
+<p>Use <code>plt.bar()</code> for vertical bars and <code>plt.barh()</code> for horizontal bars.</p>
+<h3 id="4-2-important-plt-bar-arguments">4.2 Important <code>plt.bar()</code> Arguments</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x</code></td>
+<td>x-coordinates/categories of bars</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td>heights of vertical bars</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td>width of bars; lecture gives default as <code>0.8</code></td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>fill color</td>
+</tr>
+<tr>
+<td><code>edgecolor</code></td>
+<td>outline color</td>
+</tr>
+<tr>
+<td><code>linewidth</code></td>
+<td>thickness of bar outlines</td>
+</tr>
+<tr>
+<td><code>align</code></td>
+<td>alignment to x position: <code>"center"</code> (default) or <code>"edge"</code></td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td>series name used by the legend</td>
+</tr>
+<tr>
+<td><code>alpha</code></td>
+<td>transparency: <code>0</code> fully transparent, <code>1</code> fully opaque</td>
+</tr>
+<tr>
+<td><code>hatch</code></td>
+<td>interior pattern, such as <code>/</code>, <code>\\</code>, <code>o</code>, or <code>x</code></td>
+</tr>
+<tr>
+<td><code>bottom</code></td>
+<td>starting position of bars on the y-axis</td>
+</tr>
+<tr>
+<td><code>log</code></td>
+<td>when <code>True</code>, uses a logarithmic scale</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="4-3-simple-vertical-bar-chart">4.3 Simple Vertical Bar Chart</h3>
+<p>Lecture data:</p>
+<ul>
+<li>Annie Hall: 5 Oscars</li>
+<li>Ben-Hur: 11</li>
+<li>Casablanca: 3</li>
+<li>Gandhi: 8</li>
+<li>West Side Story: 10</li>
+</ul>
+<pre><code class="language-python">movies = [&quot;Annie Hall&quot;, &quot;Ben-Hur&quot;, &quot;Casablanca&quot;, &quot;Gandhi&quot;, &quot;West Side Story&quot;]
+num_oscars = [5, 11, 3, 8, 10]
+
+plt.bar(movies, num_oscars, color=&quot;blue&quot;, edgecolor=&quot;black&quot;, width=0.5)
+plt.title(&quot;My Favorite Movies&quot;)
+plt.ylabel(&quot;Number of Academy Awards&quot;)
+plt.show()
+</code></pre>
+<p>The height of each bar encodes the number of awards.</p>
+<h3 id="4-4-grouped-clustered-bar-chart">4.4 Grouped/Clustered Bar Chart</h3>
+<p>A clustered bar chart compares <strong>two or more series within each category</strong>. Bars need numeric offsets so that they appear side by side rather than overlap.</p>
+<p>Procedure:</p>
+<ol>
+<li>Import NumPy.</li>
+<li>Use <code>np.arange(len(categories))</code> to create numeric base positions.</li>
+<li>Choose a common bar width.</li>
+<li>Offset each series around each category&rsquo;s base position.</li>
+<li>Reset x-ticks to the category labels.</li>
+</ol>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+years = [2023, 2024, 2025]
+sales_a = [5, 6, 8]
+sales_b = [7, 9, 10]
+sales_c = [8, 7, 6]
+
+x = np.arange(len(years))
+width = 0.3
+
+plt.bar(x - width, sales_a, width=width, color=&quot;green&quot;,
+        edgecolor=&quot;black&quot;, alpha=0.8, label=&quot;Product A&quot;)
+plt.bar(x, sales_b, width=width, color=&quot;blue&quot;,
+        edgecolor=&quot;black&quot;, alpha=0.8, label=&quot;Product B&quot;)
+plt.bar(x + width, sales_c, width=width, color=&quot;red&quot;,
+        edgecolor=&quot;black&quot;, alpha=0.8, label=&quot;Product C&quot;)
+
+plt.xticks(x, years)
+plt.title(&quot;Sales Performance&quot;)
+plt.xlabel(&quot;Years&quot;)
+plt.ylabel(&quot;Sales&quot;)
+plt.legend()
+plt.show()
+</code></pre>
+<p>The exact offsets can vary; the core rule is that each series receives a consistent adjacent position and bars must not overlap. The instructor stressed practicing the positioning logic.</p>
+<h3 id="4-5-horizontal-bar-chart">4.5 Horizontal Bar Chart</h3>
+<p>Use <code>plt.barh()</code>. Categories move to the y-axis and values to the x-axis.</p>
+<pre><code class="language-python">plt.barh(movies, num_oscars, color=&quot;green&quot;, edgecolor=&quot;red&quot;)
+plt.title(&quot;My Favorite Movies&quot;)
+plt.show()
+</code></pre>
+<h3 id="4-6-avoiding-misleading-bar-charts">4.6 Avoiding Misleading Bar Charts</h3>
+<p>Because bar length represents magnitude, a bar-chart value axis should normally start at zero.</p>
+<p>Example: Store A sales = 100; Store B sales = 105. The true difference is only 5. If the y-axis begins at 95, the visible lengths exaggerate that small difference and can falsely imply that B greatly outperforms A.</p>
+<p><strong>Best practice:</strong> begin the quantitative axis at zero, preserve proportional length, and avoid visual exaggeration.</p>
+<h3 id="4-7-what-a-bar-chart-does-and-does-not-show">4.7 What a Bar Chart Does—and Does Not—Show</h3>
+<p>If a horizontal bar for females is longer than the bar for males in a chart of average age difference, the valid conclusion is only that the <strong>female average age difference is larger</strong>. Bar length does not by itself reveal sample size, variability, or consistency.</p>
+<hr>
+<h2 id="5-histograms">5. Histograms</h2>
+<h3 id="5-1-definition-and-purpose">5.1 Definition and Purpose</h3>
+<p>A histogram shows the <strong>distribution of numerical data</strong> by grouping continuous values into contiguous intervals called <strong>bins</strong>. Each bar&rsquo;s height represents frequency (or another specified statistic) in that interval.</p>
+<p>Histograms reveal:</p>
+<ul>
+<li>frequency and concentration</li>
+<li>center or typical region</li>
+<li>spread/range</li>
+<li>shape</li>
+<li>dense and empty regions</li>
+<li>possible outliers or subgroups</li>
+</ul>
+<p>Unlike a categorical bar chart, histogram bars normally touch because bins represent adjacent numerical ranges.</p>
+<h3 id="5-2-important-plt-hist-arguments">5.2 Important <code>plt.hist()</code> Arguments</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x</code></td>
+<td>input dataset, such as an array or list</td>
+</tr>
+<tr>
+<td><code>bins</code></td>
+<td>number of bins or explicit bin edges; default is 10</td>
+</tr>
+<tr>
+<td><code>range</code></td>
+<td>lower and upper limits included in the histogram</td>
+</tr>
+<tr>
+<td><code>density</code></td>
+<td>if <code>True</code>, normalizes the histogram rather than showing raw counts</td>
+</tr>
+<tr>
+<td><code>cumulative</code></td>
+<td>if <code>True</code>, creates a cumulative histogram</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>bar fill color</td>
+</tr>
+<tr>
+<td><code>edgecolor</code></td>
+<td>bar-outline color</td>
+</tr>
+<tr>
+<td><code>linewidth</code></td>
+<td>width of bin edges</td>
+</tr>
+<tr>
+<td><code>alpha</code></td>
+<td>transparency from 0 to 1</td>
+</tr>
+<tr>
+<td><code>histtype</code></td>
+<td>style such as <code>bar</code>, <code>barstacked</code>, <code>step</code>, or <code>stepfilled</code></td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td>dataset label for a legend</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="5-3-lecture-example-normally-distributed-random-data">5.3 Lecture Example: Normally Distributed Random Data</h3>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+data = np.random.randn(1000)  # 1,000 random values from a normal distribution
+
+plt.hist(
+    data,
+    bins=20,
+    range=(-3, 3),
+    density=True,
+    cumulative=False,
+    color=&quot;skyblue&quot;,
+    edgecolor=&quot;black&quot;,
+    linewidth=1.2,
+    alpha=0.7,
+    histtype=&quot;bar&quot;,
+    label=&quot;Data Distribution&quot;
+)
+plt.xlabel(&quot;Value&quot;)
+plt.ylabel(&quot;Density&quot;)
+plt.title(&quot;Histogram Example&quot;)
+plt.legend()
+plt.show()
+</code></pre>
+<p>The transcript called the y-axis “frequency,” but because <code>density=True</code>, <strong>density</strong> is the technically precise label. Set <code>density=False</code> or omit it when raw frequency/count is intended.</p>
+<h3 id="5-4-common-distribution-shapes">5.4 Common Distribution Shapes</h3>
+<ul>
+<li><strong>Approximately uniform:</strong> bars are roughly equal in height; values occur at similar frequencies and there is no strong peak.</li>
+<li><strong>Normal/bell-shaped:</strong> one central peak, approximate symmetry, and fewer values at both extremes.</li>
+<li><strong>Bimodal:</strong> two peaks, suggesting two common groups or processes.</li>
+<li><strong>Right-skewed:</strong> many smaller values and a long tail toward larger values.</li>
+</ul>
+<h3 id="5-5-histogram-vs-dot-plot">5.5 Histogram vs Dot Plot</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dot plot</th>
+<th>Histogram</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shows each observation/exact value</td>
+<td>Groups observations into bins</td>
+</tr>
+<tr>
+<td>Best for smaller datasets</td>
+<td>Scales better to larger datasets</td>
+</tr>
+<tr>
+<td>Individual values remain identifiable</td>
+<td>Individual observations are concealed</td>
+</tr>
+<tr>
+<td>Good when exact observations matter</td>
+<td>Good for overall distribution shape</td>
+</tr>
+</tbody>
+</table></div>
+<p>If the requirement is to show distribution while hiding individual observations, choose a <strong>histogram</strong>.</p>
+<h3 id="5-6-transforming-index-based-data-for-distribution-analysis">5.6 Transforming Index-Based Data for Distribution Analysis</h3>
+<p>A plot with dataset row index on x and flight duration on y answers “How does duration vary by row?” It does not directly answer questions about typical duration, spread, or extremes.</p>
+<p>To study the distribution:</p>
+<ol>
+<li>Divide durations into bins.</li>
+<li>Count flights in each bin.</li>
+<li>display those counts as a histogram.</li>
+</ol>
+<p>This exposes the center, spread, and unusually short or long flights.</p>
+<hr>
+<h2 id="6-wellfit-university-histogram-case-study">6. WellFit University Histogram Case Study</h2>
+<h3 id="6-1-scenario-and-objective">6.1 Scenario and Objective</h3>
+<p>WellFit University&rsquo;s Health and Wellness team studies weekly step totals from <strong>120 staff members</strong>, collected during March.</p>
+<ul>
+<li><strong>Maria, data analyst:</strong> focuses on statistical exploration and visualization.</li>
+<li><strong>Jamal, fitness coach:</strong> focuses on interpretable results for wellness programs.</li>
+<li><strong>Elena, program manager:</strong> focuses on decision usefulness.</li>
+</ul>
+<p>Their objective is to understand walking patterns and design targeted wellness interventions.</p>
+<h3 id="6-2-initial-histogram">6.2 Initial Histogram</h3>
+<p>Maria begins with <strong>1,000-step bins</strong>:</p>
+<ul>
+<li>2,000–2,999</li>
+<li>3,000–3,999</li>
+<li>4,000–4,999</li>
+<li>5,000–5,999</li>
+<li>6,000–6,999</li>
+<li>7,000–7,999</li>
+<li>8,000–8,999</li>
+</ul>
+<p>The highest frequency occurs in <strong>6,000–6,999</strong>, and frequencies decline toward both ends. This resembles a bell-shaped/normal distribution with roughly symmetric tails: most staff cluster around the center and relatively few occupy the extremes.</p>
+<h3 id="6-3-what-the-histogram-answers">6.3 What the Histogram Answers</h3>
+<ul>
+<li><strong>Where do most staff fall?</strong> The modal bin/peak, here 6,000–6,999.</li>
+<li><strong>How varied are walking habits?</strong> A wider distribution indicates more variation; a narrow one indicates more consistency.</li>
+<li><strong>Are there unusual groups?</strong> A secondary peak may suggest a subgroup, but it must be validated.</li>
+<li><strong>How many observations exist?</strong> Add the heights/frequencies of all bins; the total should be 120.</li>
+</ul>
+<h3 id="6-4-bin-width-controls-interpretation">6.4 Bin Width Controls Interpretation</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Bin width</th>
+<th>Benefit</th>
+<th>Cost/risk</th>
+<th>Best use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>500 steps</td>
+<td>Fine detail; may expose a secondary peak near 7,500</td>
+<td>More noise, irregular fluctuations, cognitive load, false subgroups</td>
+<td>Exploration</td>
+</tr>
+<tr>
+<td>1,000 steps</td>
+<td>Balance of detail and smoothness</td>
+<td>May still simplify subtle structure</td>
+<td>Primary communication and decisions</td>
+</tr>
+<tr>
+<td>2,000 steps</td>
+<td>Smooth, simple overview</td>
+<td>Can merge meaningful groups and conceal structure</td>
+<td>Broad overview only</td>
+</tr>
+</tbody>
+</table></div>
+<p>Smaller bins provide more detail but increase noise. Larger bins reduce noise but lose detail. The best histogram is not the most detailed; it is the one that best supports the analytical question and audience.</p>
+<h3 id="6-5-stakeholder-positions">6.5 Stakeholder Positions</h3>
+<ul>
+<li>Maria favors examining 500-step bins because a secondary peak around 7,500 might reveal highly active staff or different behavioral patterns.</li>
+<li>Jamal worries that too many bins will make interpretation difficult and encourage over-reading random variation.</li>
+<li>Elena favors 1,000-step bins as a practical balance for intervention planning.</li>
+</ul>
+<h3 id="6-6-recommended-analytical-strategy">6.6 Recommended Analytical Strategy</h3>
+<ol>
+<li><strong>Establish the baseline:</strong> use the 1,000-step histogram for the main report.</li>
+<li><strong>Explore:</strong> use a 500-step histogram to investigate the possible 7,500-step subgroup.</li>
+<li><strong>Validate:</strong> check whether the secondary peak is stable, statistically meaningful, and connected to a genuine subgroup or program participation.</li>
+<li><strong>Design interventions:</strong> use the validated pattern, not the visual peak alone.</li>
+</ol>
+<p>Do not use 2,000-step bins as the only analysis because they may hide important wellness segments.</p>
+<h3 id="6-7-caution-about-normal-distribution">6.7 Caution About “Normal Distribution”</h3>
+<p>A bell-shaped histogram <strong>resembles</strong> a normal distribution, but appearance alone does not prove normality. Histogram shape changes with bin width, sample size, random variation, and outliers. Confirm normality with summary statistics, alternative bin widths, Q–Q plots, or formal statistical tests when the conclusion matters.</p>
+<p>Likewise, a small secondary peak may be a real subgroup or random fluctuation. Do not make causal or segment claims without additional evidence.</p>
+<h3 id="6-8-practical-wellness-uses">6.8 Practical Wellness Uses</h3>
+<ul>
+<li>Staff in the central 6,000–6,999 range: maintain programs and encourage incremental improvement.</li>
+<li>Low-step tail, such as 2,000–2,999: offer targeted support, reminders, or walking challenges.</li>
+<li>High-step group, such as 8,000–8,999: study successful behaviors and potentially use them as examples.</li>
+</ul>
+<h3 id="6-9-common-histogram-mistakes">6.9 Common Histogram Mistakes</h3>
+<ol>
+<li>Too many bins: noisy, unstable, hard to interpret.</li>
+<li>Too few bins: oversimplifies and hides subgroups.</li>
+<li>Treating every peak as meaningful: visual fluctuations require validation.</li>
+<li>Ignoring the audience: analysts may need detail; decision-makers often need clarity.</li>
+<li>Declaring a distribution normal solely from its visual appearance.</li>
+</ol>
+<hr>
+<h2 id="7-scatter-plots">7. Scatter Plots</h2>
+<h3 id="7-1-definition-and-use">7.1 Definition and Use</h3>
+<p>A scatter plot displays the relationship between <strong>two numerical variables</strong> as points. The lecture describes it as especially appropriate when a given x-value may have multiple y-values.</p>
+<p>Scatter plots help reveal:</p>
+<ul>
+<li>relationships and trends</li>
+<li>correlations</li>
+<li>clusters</li>
+<li>outliers</li>
+</ul>
+<p>They do not by themselves prove causation.</p>
+<h3 id="7-2-basic-scatter-plot">7.2 Basic Scatter Plot</h3>
+<p>Lecture scenario: number of friends versus minutes spent on a website.</p>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+
+plt.scatter(friends, minutes)
+plt.title(&quot;Minutes vs Number of Friends&quot;)
+plt.xlabel(&quot;Number of Friends&quot;)
+plt.ylabel(&quot;Minutes Spent on the Site&quot;)
+plt.show()
+</code></pre>
+<p>The first two arguments provide x and y. Color and marker shape can distinguish observations or series.</p>
+<h3 id="7-3-labeling-every-point">7.3 Labeling Every Point</h3>
+<p>The lecture assigns labels A–I to nine points and uses <code>zip()</code> plus a <code>for</code> loop:</p>
+<pre><code class="language-python">labels = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;F&quot;, &quot;G&quot;, &quot;H&quot;, &quot;I&quot;]
+
+plt.scatter(friends, minutes)
+
+for label, friend_count, minute_count in zip(labels, friends, minutes):
+    plt.annotate(
+        label,
+        xy=(friend_count, minute_count),
+        xytext=(-15, -3),
+        textcoords=&quot;offset points&quot;
+    )
+
+plt.show()
+</code></pre>
+<p><code>xytext=(-15, -3)</code> offsets each label slightly from its point; different offsets can be tried until labels remain readable and do not obscure the marks.</p>
+<h3 id="7-4-multi-series-scatter-plots">7.4 Multi-Series Scatter Plots</h3>
+<p>When several measurements—such as sepal width, petal length, and petal width—must each be compared with sepal length, use separate scatter series on the same axes. Distinguish them with color and marker shape, and include a legend that does not cover data.</p>
+<p>Do not rely on color alone. A robust design could use blue circles, red squares, and green triangles. This remains interpretable in grayscale and helps people with color-vision deficiencies.</p>
+<h3 id="7-5-scatter-plots-for-location-decisions">7.5 Scatter Plots for Location Decisions</h3>
+<p>If home locations form one large cluster, two smaller clusters, and a few isolated points, a single meetup location should generally be near the <strong>center of the densest/largest cluster</strong>, because that region represents the greatest concentration of users.</p>
+<p>Caveats:</p>
+<ul>
+<li>Isolated outliers should not dominate the decision.</li>
+<li>A simple arithmetic mean can lie in an empty region between clusters and may not represent most users.</li>
+<li>A spatial pattern does not explain its cause; the plot cannot prove that housing cost or another factor caused the clustering.</li>
+</ul>
+<h3 id="7-6-curse-of-dimensionality">7.6 Curse of Dimensionality</h3>
+<p>Nearest-neighbor methods predict or classify on the assumption that nearby observations behave similarly. In low-dimensional space, distance differences can be meaningful. As features/dimensions increase:</p>
+<ul>
+<li>distances tend to become more similar;</li>
+<li>nearest and farthest points become harder to distinguish;</li>
+<li>neighborhoods become unstable;</li>
+<li>the identity of the “nearest” point may increasingly depend on chance.</li>
+</ul>
+<p>This is the <strong>curse of dimensionality</strong>. A clear or random-looking two-dimensional scatter plot cannot prove that nearest-neighbor behavior will remain reliable in a higher-dimensional feature space.</p>
+<hr>
+<h2 id="8-pie-charts">8. Pie Charts</h2>
+<h3 id="8-1-construction-with-matplotlib">8.1 Construction with Matplotlib</h3>
+<p>Use <code>plt.pie()</code> to show parts of a whole.</p>
+<pre><code class="language-python">sizes = [30, 20, 50]
+labels = [&quot;Category A&quot;, &quot;Category B&quot;, &quot;Category C&quot;]
+
+plt.pie(sizes, labels=labels)
+plt.show()
+</code></pre>
+<h3 id="8-2-important-plt-pie-arguments">8.2 Important <code>plt.pie()</code> Arguments</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x</code></td>
+<td>values determining wedge sizes</td>
+</tr>
+<tr>
+<td><code>labels</code></td>
+<td>text labels for wedges</td>
+</tr>
+<tr>
+<td><code>autopct</code></td>
+<td>formatting for values/percentages inside wedges</td>
+</tr>
+<tr>
+<td><code>colors</code></td>
+<td>custom wedge colors</td>
+</tr>
+<tr>
+<td><code>explode</code></td>
+<td>offsets selected wedges to emphasize them</td>
+</tr>
+<tr>
+<td><code>shadow</code></td>
+<td>adds a shadow when <code>True</code></td>
+</tr>
+<tr>
+<td><code>startangle</code></td>
+<td>angle at which the first wedge begins</td>
+</tr>
+<tr>
+<td><code>wedgeprops</code></td>
+<td>dictionary of wedge properties</td>
+</tr>
+<tr>
+<td><code>textprops</code></td>
+<td>dictionary of text-appearance properties</td>
+</tr>
+<tr>
+<td><code>radius</code></td>
+<td>overall pie radius/size</td>
+</tr>
+<tr>
+<td><code>counterclock</code></td>
+<td>direction; default is counterclockwise, <code>False</code> makes it clockwise</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="8-3-enhanced-pie-chart">8.3 Enhanced Pie Chart</h3>
+<pre><code class="language-python">colors = [&quot;lightblue&quot;, &quot;lightgreen&quot;, &quot;lightcoral&quot;]
+explode = [0, 0.1, 0]  # emphasize Category B
+
+plt.pie(
+    sizes,
+    labels=labels,
+    colors=colors,
+    explode=explode,
+    autopct=&quot;%1.1f%%&quot;,
+    shadow=True,
+    startangle=180
+)
+plt.show()
+</code></pre>
+<p><code>%1.1f%%</code> displays one digit after the decimal and a literal percent sign. Thus 33.33 becomes 33.3%. <code>explode</code> must contain one offset per wedge; zero means no displacement. Without <code>counterclock=False</code>, wedges are drawn counterclockwise.</p>
+<h3 id="8-4-instructor-s-critical-evaluation-of-pie-and-donut-charts">8.4 Instructor&rsquo;s Critical Evaluation of Pie and Donut Charts</h3>
+<p>Although pie charts are popular and instantly familiar, the live-session instructor advised avoiding them <strong>as far as possible</strong> in analytical visualization:</p>
+<ul>
+<li>Humans are poor at accurately comparing slice sizes.</li>
+<li>It is unclear whether people judge central angle, arc length, or area.</li>
+<li>Similar slices make the smallest, second largest, and fine differences difficult to identify.</li>
+<li>They provide a general picture but lose nuance and precision.</li>
+<li>A bar/column chart makes rankings and small differences easier to see through aligned lengths.</li>
+</ul>
+<p>A pie chart can still be suitable for a broad, nontechnical audience—such as a shareholders&rsquo; AGM—when the aim is merely to show an obvious largest or smallest component and more complex charts would confuse the audience. The trade-off is loss of detail.</p>
+<p><strong>Exam nuance:</strong> Know both positions. Matplotlib supports pie charts and the lecture teaches their arguments, but visualization best practice often favors bar charts for accurate comparison.</p>
+<hr>
+<h2 id="9-visualization-selection-and-general-design-principles">9. Visualization Selection and General Design Principles</h2>
+<h3 id="9-1-match-the-chart-to-the-question">9.1 Match the Chart to the Question</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Analytical question</th>
+<th>Suitable visual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compare categories/magnitudes</td>
+<td>Bar chart</td>
+</tr>
+<tr>
+<td>Show change over ordered time</td>
+<td>Line chart</td>
+</tr>
+<tr>
+<td>Show relationship between numerical variables</td>
+<td>Scatter plot</td>
+</tr>
+<tr>
+<td>Show distribution shape</td>
+<td>Histogram</td>
+</tr>
+<tr>
+<td>Show every observation in a small dataset</td>
+<td>Dot plot</td>
+</tr>
+<tr>
+<td>Compare multiple numerical series</td>
+<td>Multi-series line/scatter chart</td>
+</tr>
+<tr>
+<td>Show geographic clusters</td>
+<td>Map or spatial scatter plot</td>
+</tr>
+<tr>
+<td>Show exact value of every item</td>
+<td>Table</td>
+</tr>
+<tr>
+<td>Show an overview/general magnitude</td>
+<td>Graph/chart</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="9-2-do-not-distort-magnitude">9.2 Do Not Distort Magnitude</h3>
+<p>Avoid truncated quantitative axes on bar charts and any scale manipulation that makes a small difference appear strategically large.</p>
+<h3 id="9-3-use-appropriate-visual-encoding">9.3 Use Appropriate Visual Encoding</h3>
+<p>Visualization encodes information through position, length, color, shape, line style, and markers. Position and aligned length are generally easier to compare accurately than angles or areas.</p>
+<h3 id="9-4-design-for-accessibility">9.4 Design for Accessibility</h3>
+<p>Do not depend on a single visual channel. Multiple overlapping lines should combine color, marker, and line style—for example, solid-circle, dashed-square, and dotted-triangle. This helps when colors look similar, for color-vision deficiencies, and in grayscale printing.</p>
+<h3 id="9-5-understand-the-limits-of-a-chart">9.5 Understand the Limits of a Chart</h3>
+<p>A chart may show patterns, relationships, clusters, or distributions. It cannot automatically establish causes or explain why the pattern occurred. It also cannot show measures that were not encoded: a mean bar does not reveal sample size or variability.</p>
+<h3 id="9-6-reduce-cognitive-load">9.6 Reduce Cognitive Load</h3>
+<p>Effective charts make comparison immediate. Avoid designs that force the viewer to search, mentally calculate, repeatedly consult a distant legend, or decode unnecessary decoration.</p>
+<hr>
+<h2 id="10-legends-in-matplotlib">10. Legends in Matplotlib</h2>
+<p>A legend maps visual elements to datasets.</p>
+<pre><code class="language-python">plt.plot(months, revenue, label=&quot;Revenue&quot;)
+plt.legend()
+</code></pre>
+<ul>
+<li><code>label</code> names an individual plotted series.</li>
+<li><code>plt.legend()</code> displays the legend.</li>
+<li><code>title</code> sets the chart title, not the series name.</li>
+<li><code>name</code> is not the standard Matplotlib plot argument for legend entries.</li>
+</ul>
+<p>Place the legend where it does not obstruct data.</p>
+<hr>
+<h2 id="11-tables-as-data-visualization">11. Tables as Data Visualization</h2>
+<h3 id="11-1-when-to-use-a-table">11.1 When to Use a Table</h3>
+<p>Tables are not an inferior substitute for graphs. Use a <strong>table when every individual value matters</strong> and must be available for exact lookup. Use a graph when the audience needs the overall picture, magnitude, pattern, or “feel” of the data.</p>
+<p>The instructor stressed that tables are often neglected: people beautify graphs but assume a table is merely rows and columns. Table design deserves equal attention.</p>
+<h3 id="11-2-ten-guidelines-for-better-tables">11.2 Ten Guidelines for Better Tables</h3>
+<h4 id="1-offset-the-header-from-the-body">1. Offset the header from the body</h4>
+<p>Make headers visibly distinct, for example through restrained shading or bold treatment. This establishes hierarchy and separates labels from data. Avoid harsh styling that overwhelms the values.</p>
+<h4 id="2-use-gridlines-judiciously">2. Use gridlines judiciously</h4>
+<p>Remove gridlines where spacing and alignment already provide structure. If lines are needed, make them subtle. Heavy internal borders draw attention away from the figures; data should remain dominant.</p>
+<h4 id="3-left-align-text">3. Left-align text</h4>
+<p>In left-to-right reading systems, readers naturally begin text at the left margin. Consistent left alignment gives every text item the same starting point. (The instructor noted that right-to-left languages may follow the opposite reading convention.)</p>
+<h4 id="4-right-align-numbers">4. Right-align numbers</h4>
+<p>Never center numerical columns. Right alignment aligns units, tens, hundreds, and higher place values, making numbers such as 10 and 10,000 easy to compare. The natural comparison of numerical place value proceeds from the right.</p>
+<h4 id="5-align-headers-with-their-data">5. Align headers with their data</h4>
+<ul>
+<li>A header over a text column should be left-aligned.</li>
+<li>A header over a numeric column should be right-aligned.</li>
+</ul>
+<p>Centering all headers breaks the visual alignment that helps readers scan columns.</p>
+<h4 id="6-use-an-appropriate-level-of-precision">6. Use an appropriate level of precision</h4>
+<p>Do not reproduce every decimal merely because a calculator provides it. Precision must fit the purpose and measurement context.</p>
+<ul>
+<li>A heat-exchanger area stated as approximately 10,323.2435 m² implies meaningless precision at that magnitude.</li>
+<li>A book price stated as 350.235 has an irrelevant fractional part in the practical pricing context.</li>
+<li>Very small quantities such as 0.025 may require several decimals because those digits carry meaning.</li>
+<li>Spacecraft orientation may demand fine precision because tiny differences matter.</li>
+<li>When the integer part is very large, use no decimals or at most one or two unless the context genuinely requires more.</li>
+</ul>
+<p><strong>Core principle:</strong> distinguish calculator precision from meaningful decision precision.</p>
+<h4 id="7-guide-reading-with-spacing">7. Guide reading with spacing</h4>
+<p>Whitespace implicitly directs the eye:</p>
+<ul>
+<li>More space <strong>between columns</strong> groups entries vertically and encourages column-wise reading.</li>
+<li>Less space between columns plus more space <strong>between rows</strong> groups entries horizontally and encourages row-wise reading.</li>
+</ul>
+<p>Use spacing deliberately rather than explaining the reading path in words.</p>
+<h4 id="8-avoid-repeated-units">8. Avoid repeated units</h4>
+<p>Do not repeat <code>%</code>, <code>₹</code>, “rupees,” or another unit in every cell. Put the unit in the column header when it applies to the entire column. This reduces clutter without removing meaning.</p>
+<h4 id="9-highlight-outliers-and-missing-data">9. Highlight outliers and missing data</h4>
+<p>If most values lie between 1 and 10 but one value is 100, visually flag it so the reader does not miss it. Missing values should also be visibly identified.</p>
+<p>Use preattentive attributes such as a restrained font-color change. Heavy background blocks can be too harsh and may make readers see only the outlier while ignoring the rest of the table.</p>
+<h4 id="10-group-similar-items-and-add-small-visuals-where-appropriate">10. Group similar items and add small visuals where appropriate</h4>
+<p>Place related items together—for example, countries grouped by continent—and use whitespace between groups. Avoid unnecessarily repeating group labels in every row when clear grouping conveys membership.</p>
+<p>Small visuals such as <strong>sparklines</strong> can be placed inside cells. A sparkline is a compact line graphic that fits within a cell and summarizes the pattern or trend without requiring a full-size chart.</p>
+<h3 id="11-3-table-checklist-from-the-instructor">11.3 Table Checklist from the Instructor</h3>
+<ul>
+<li>Header clearly offset from body</li>
+<li>Gridlines removed or subtle</li>
+<li>Text left-aligned</li>
+<li>Numbers right-aligned</li>
+<li>Headers aligned with the type of data below</li>
+<li>Precision appropriate to purpose</li>
+<li>Spacing guides the intended reading direction</li>
+<li>Units stated once in headers</li>
+<li>Outliers/missing values highlighted without overpowering the table</li>
+<li>Similar items grouped with whitespace</li>
+<li>Small visuals added only when useful</li>
+</ul>
+<blockquote>
+<p><strong>Instructor caveat:</strong> The live instructor described these as practical best practices rather than material intended specifically for an examination, but they remain core course knowledge and are plausible application questions.</p>
+</blockquote>
+<hr>
+<h2 id="12-python-and-jupyter-notebook-installation">12. Python and Jupyter Notebook Installation</h2>
+<p>The course&rsquo;s practical portion uses Python through Jupyter Notebook because a notebook can combine explanatory text, notes, code, and output in one place. Students were asked to install both and replicate class exercises.</p>
+<h3 id="12-1-installation-procedure">12.1 Installation Procedure</h3>
+<ol>
+<li>Download a <strong>stable</strong> version of Python from the official Python site; avoid an unstable prerelease.</li>
+<li>During installation, select <strong>Add Python to PATH</strong> so the operating system can locate the Python executable.</li>
+<li>Open a command prompt/terminal and verify Python:</li>
+</ol>
+<p><code>bash
+   python --version</code></p>
+<ol start="4">
+<li><code>pip</code> normally installs with Python. Verify it:</li>
+</ol>
+<p><code>bash
+   pip --version</code></p>
+<ol start="5">
+<li>Install Jupyter Notebook:</li>
+</ol>
+<p><code>bash
+   pip install notebook</code></p>
+<ol start="6">
+<li>Launch it from the command prompt:</li>
+</ol>
+<p><code>bash
+   jupyter notebook</code></p>
+<ol start="7">
+<li>Jupyter opens its front end in the default browser. A terminal/server process continues running in the background and supplies the notebook interface.</li>
+</ol>
+<p>The instructor stated that this is a data-visualization course, not a complete Python course. Students without Python knowledge should independently learn basics; class support would cover limited foundations such as variable types, operators, and executing commands.</p>
+<hr>
+<h2 id="13-high-probability-exam-questions-and-model-points">13. High-Probability Exam Questions and Model Points</h2>
+<h3 id="q1-compare-matplotlib-seaborn-cartopy-pandas-and-plotly">Q1. Compare Matplotlib, Seaborn, Cartopy, Pandas, and Plotly.</h3>
+<p>State each library&rsquo;s focus, relationship to other libraries, plot strengths, and whether it emphasizes statistical, geospatial, DataFrame-based, foundational, or interactive visualization.</p>
+<h3 id="q2-explain-how-to-create-and-customize-a-line-plot-in-matplotlib">Q2. Explain how to create and customize a line plot in Matplotlib.</h3>
+<p>Mention installation/import, <code>plt.plot(x, y)</code>, matching data lengths, <code>color</code>, <code>marker</code>, <code>linestyle</code>, title, axis labels, legend labels, <code>plt.legend()</code>, annotation, and <code>plt.show()</code>.</p>
+<h3 id="q3-explain-annotation-parameters">Q3. Explain annotation parameters.</h3>
+<p><code>text</code> is the message; <code>xy</code> is the referenced data point; <code>xytext</code> is the text position; <code>arrowprops</code> optionally formats an arrow. Placement may require iteration.</p>
+<h3 id="q4-distinguish-bar-charts-and-histograms">Q4. Distinguish bar charts and histograms.</h3>
+<p>Bar charts compare discrete categories with separated bars; histograms group continuous numerical values into contiguous bins to show a distribution. Bar height represents category magnitude; histogram height represents bin frequency/density.</p>
+<h3 id="q5-explain-grouped-bar-chart-positioning">Q5. Explain grouped bar-chart positioning.</h3>
+<p>Create base locations with <code>np.arange</code>, choose a common width, add/subtract width-based offsets for each series, and set tick labels back to the original categories. Correct positioning prevents overlap.</p>
+<h3 id="q6-discuss-histogram-bin-width-selection-using-wellfit">Q6. Discuss histogram bin-width selection using WellFit.</h3>
+<p>500-step bins provide detail but noise; 2,000-step bins provide smoothness but hide subgroups; 1,000-step bins balance clarity and detail. Use 1,000 for primary communication, 500 for exploration, and validate any apparent secondary peak.</p>
+<h3 id="q7-why-should-a-bar-chart-normally-start-at-zero">Q7. Why should a bar chart normally start at zero?</h3>
+<p>Bar length is the magnitude encoding. A truncated axis changes the apparent ratio of lengths and exaggerates differences.</p>
+<h3 id="q8-why-are-pie-charts-often-discouraged">Q8. Why are pie charts often discouraged?</h3>
+<p>People compare aligned lengths better than slice angles/areas; similar slices are hard to rank precisely, nuance is lost, and a bar chart usually supports more accurate comparisons. Pie charts remain usable for a very broad audience and an obvious part-to-whole message.</p>
+<h3 id="q9-explain-the-curse-of-dimensionality">Q9. Explain the curse of dimensionality.</h3>
+<p>As dimensions grow, pairwise distances become less distinguishable and nearest-neighbor neighborhoods become unstable. A 2D plot does not guarantee high-dimensional nearest-neighbor reliability.</p>
+<h3 id="q10-state-and-explain-the-table-design-guidelines">Q10. State and explain the table-design guidelines.</h3>
+<p>Cover header/body separation, subtle gridlines, left-aligned text, right-aligned numbers, matched header alignment, meaningful precision, spacing-directed reading, units in headers, restrained outlier/missing-data highlighting, grouping/whitespace, and sparklines.</p>
+<hr>
+<h2 id="14-rapid-revision-and-final-checklist">14. Rapid Revision and Final Checklist</h2>
+<h3 id="libraries">Libraries</h3>
+<ul>
+<li>[ ] Matplotlib = foundational/de facto standard; extensive customization.</li>
+<li>[ ] Seaborn = statistical graphics on top of Matplotlib; excellent for EDA.</li>
+<li>[ ] Cartopy = geospatial maps, projections, overlays; modern alternative to Basemap.</li>
+<li>[ ] Pandas = direct DataFrame/Series <code>.plot()</code>, automatic index handling, aggregation-to-plot workflow.</li>
+<li>[ ] Plotly = polished interactive/web charts with hover, zoom, pan, export.</li>
+</ul>
+<h3 id="core-matplotlib-commands">Core Matplotlib Commands</h3>
+<ul>
+<li>[ ] Install: <code>!pip install matplotlib</code></li>
+<li>[ ] Import: <code>import matplotlib.pyplot as plt</code></li>
+<li>[ ] Notebook display: <code>%matplotlib inline</code></li>
+<li>[ ] Line: <code>plt.plot()</code></li>
+<li>[ ] Vertical bar: <code>plt.bar()</code></li>
+<li>[ ] Horizontal bar: <code>plt.barh()</code></li>
+<li>[ ] Histogram: <code>plt.hist()</code></li>
+<li>[ ] Scatter: <code>plt.scatter()</code></li>
+<li>[ ] Pie: <code>plt.pie()</code></li>
+<li>[ ] Annotation: <code>plt.annotate()</code></li>
+<li>[ ] Legend: series <code>label=...</code>, followed by <code>plt.legend()</code></li>
+<li>[ ] Render: <code>plt.show()</code></li>
+</ul>
+<h3 id="chart-logic">Chart Logic</h3>
+<ul>
+<li>[ ] Line = ordered/time change.</li>
+<li>[ ] Bar = compare categorical magnitude; quantitative axis usually begins at zero.</li>
+<li>[ ] Grouped bar = multiple series, offset positions, no overlap.</li>
+<li>[ ] Histogram = binned numerical distribution; default <code>bins=10</code>.</li>
+<li>[ ] Scatter = relation between two numeric variables; patterns do not prove causes.</li>
+<li>[ ] Pie = part-to-whole, but weak for precise slice comparison.</li>
+<li>[ ] Dot plot reveals observations; histogram conceals individuals and reveals shape.</li>
+</ul>
+<h3 id="parameters-to-remember">Parameters to Remember</h3>
+<ul>
+<li>[ ] <code>alpha</code>: 0 transparent, 1 opaque.</li>
+<li>[ ] Bar <code>hatch</code>: pattern inside bars.</li>
+<li>[ ] Histogram <code>density=True</code>: normalized density, not raw frequency.</li>
+<li>[ ] Pie <code>autopct="%1.1f%%"</code>: one decimal plus percent sign.</li>
+<li>[ ] Pie <code>explode</code>: offset/highlight wedges.</li>
+<li>[ ] Pie default direction: counterclockwise; <code>counterclock=False</code> reverses it.</li>
+<li>[ ] Annotation <code>xy</code>: target; <code>xytext</code>: label location; <code>arrowprops</code>: arrow formatting.</li>
+</ul>
+<h3 id="interpretation">Interpretation</h3>
+<ul>
+<li>[ ] Uniform = similar frequencies across bins.</li>
+<li>[ ] Normal-like = central peak, approximate symmetry, fewer extremes.</li>
+<li>[ ] Bimodal = two peaks; investigate before declaring subgroups.</li>
+<li>[ ] Right-skewed = many low values, long upper tail.</li>
+<li>[ ] Histogram appearance depends strongly on bin width.</li>
+<li>[ ] WellFit recommendation: 1,000-step primary bins; 500-step exploratory bins.</li>
+<li>[ ] Do not infer sample size, variability, or causation unless encoded/evidenced.</li>
+<li>[ ] Use multiple encodings—color + marker + line style—for accessibility.</li>
+</ul>
+<h3 id="tables">Tables</h3>
+<ul>
+<li>[ ] Use tables for exact values; graphs for overview/pattern.</li>
+<li>[ ] Offset headers and minimize heavy gridlines.</li>
+<li>[ ] Left-align text and text headers.</li>
+<li>[ ] Right-align numbers and numeric headers.</li>
+<li>[ ] Use only meaningful precision.</li>
+<li>[ ] Use spacing to guide row-wise or column-wise reading.</li>
+<li>[ ] Put repeated units in headers.</li>
+<li>[ ] Highlight outliers/missing data subtly.</li>
+<li>[ ] Group similar items and use whitespace.</li>
+<li>[ ] Add sparklines only when they improve understanding.</li>
+</ul>
+<h3 id="practical-readiness">Practical Readiness</h3>
+<ul>
+<li>[ ] Install stable Python and select <strong>Add Python to PATH</strong>.</li>
+<li>[ ] Verify with <code>python --version</code> and <code>pip --version</code>.</li>
+<li>[ ] Install with <code>pip install notebook</code>.</li>
+<li>[ ] Launch with <code>jupyter notebook</code>.</li>
+<li>[ ] Run prerequisite cells/imports before dependent cells.</li>
+<li>[ ] Practice every demonstrated chart and debug syntax carefully.</li>
+</ul>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<h3 id="question-first-chart-selection-table">Question-first chart-selection table</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Analytical question</th>
+<th>Preferred chart</th>
+<th>Core caveat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>How is one quantitative variable distributed?</td>
+<td>Histogram</td>
+<td>Bins, not categories</td>
+</tr>
+<tr>
+<td>How do categories compare?</td>
+<td>Bar chart</td>
+<td>Preserve truthful baseline</td>
+</tr>
+<tr>
+<td>How do totals and composition vary?</td>
+<td>Stacked bar</td>
+<td>Floating segments are hard to compare</td>
+</tr>
+<tr>
+<td>How does a value change over time?</td>
+<td>Line chart</td>
+<td>Requires meaningful order</td>
+</tr>
+<tr>
+<td>How do a few parts make one whole?</td>
+<td>Pie chart</td>
+<td>Single snapshot, few categories</td>
+</tr>
+<tr>
+<td>Are two quantitative variables related?</td>
+<td>Scatter plot</td>
+<td>Association is not causation</td>
+</tr>
+<tr>
+<td>Is cumulative magnitude important?</td>
+<td>Area chart</td>
+<td>Less precise than line</td>
+</tr>
+<tr>
+<td>Is there a hierarchy of parts?</td>
+<td>Treemap</td>
+<td>Not a time-series display</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="bar-versus-histogram-exam-distinction">Bar versus histogram — exam distinction</h3>
+<p>A bar chart uses separated marks to compare categories and may be sorted by the reader&rsquo;s task. A histogram uses touching, ordered numeric bins to reveal distribution shape. Numeric-looking data are not automatically continuous: a year often behaves as ordered time.</p>
+<h3 id="answer-framework">Answer framework</h3>
+<ol>
+<li>State the question and audience.</li>
+<li>Identify variable types and order.</li>
+<li>Select the most perceptually accurate suitable encoding.</li>
+<li>Verify baseline, limits, labels, units, and completeness.</li>
+<li>Check accessibility; never rely only on colour.</li>
+<li>Remove clutter and state the remaining limitation.</li>
+</ol>
+<p>Correct chart choice itself reduces cognitive load because users do not have to mentally reconstruct the intended comparison.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-7.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 7: Data Visualization with Python, Jupyter,…</span>
+      </a>
+      <a href="week-9.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 9: Data Visualization with Matplotlib, Seaborn,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

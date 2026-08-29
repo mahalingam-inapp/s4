@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Visualization · Week 3 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Visualization</span>
+      <span class="brand-title">Week 3</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html" selected>Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Data Visualization, Visual Perception, and Preattentive Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Visual Perception, Better Visualization, Form–Function, Tables and…
+      </a>
+      <a class="is-active" href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Visualizing and Comparing Categories
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Charts That Show Change Over Time
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Distribution and Relationship Visualizations
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Data Visualization: Exhaustive Exam Notes
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Data Visualization with Python, Jupyter, Python Basics, and Chart…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Python Data Visualization, Matplotlib Plotting, Interpretation, and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Data Visualization with Matplotlib, Seaborn, and Jupyter Notebook
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Exam-Focused Study Notes
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Seaborn, Matplotlib, Heatmaps, Styling, and Dashboard Design
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Dashboards, Dashboard Design, Grammar of Graphics, and Matplotlib
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Dashboard Design, Visual Encoding, Matplotlib, and Dashboard Analytics
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Storytelling with Data
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Storytelling with Data: Exam-Focused Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Visualization · Week 3</p>
+        <h1 class="page-title">Visualizing and Comparing Categories</h1>
+        <p class="page-meta">Week 3 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-core-idea-choose-the-chart-for-the-communication-task">1. Core idea: choose the chart for the communication task</a></li>
+      <li><a href="#2-1-definition-and-orientation">2.1 Definition and orientation</a></li>
+      <li><a href="#2-2-why-bar-charts-are-perceptually-effective">2.2 Why bar charts are perceptually effective</a></li>
+      <li><a href="#2-3-ordering-and-sorting-bars">2.3 Ordering and sorting bars</a></li>
+      <li><a href="#2-4-strategy-1-start-the-value-axis-at-zero">2.4 Strategy 1 — Start the value axis at zero</a></li>
+      <li><a href="#2-5-strategy-2-do-not-break-bars">2.5 Strategy 2 — Do not break bars</a></li>
+      <li><a href="#2-6-strategy-3-use-tick-marks-and-gridlines-judiciously">2.6 Strategy 3 — Use tick marks and gridlines judiciously</a></li>
+      <li><a href="#2-7-strategy-4-handle-long-axis-labels-by-rotating-the-chart">2.7 Strategy 4 — Handle long axis labels by rotating the chart</a></li>
+      <li><a href="#3-1-single-series-versus-multi-series-charts">3.1 Single-series versus multi-series charts</a></li>
+      <li><a href="#3-2-definition-of-a-clustered-bar-chart">3.2 Definition of a clustered bar chart</a></li>
+      <li><a href="#3-3-when-clustered-bars-are-and-are-not-direct">3.3 When clustered bars are and are not direct</a></li>
+      <li><a href="#3-4-clustered-bars-for-change-over-time">3.4 Clustered bars for change over time</a></li>
+      <li><a href="#3-5-clutter-limitation">3.5 Clutter limitation</a></li>
+      <li><a href="#4-1-definition">4.1 Definition</a></li>
+      <li><a href="#4-2-transcript-illustration-social-program-spending">4.2 Transcript illustration: social-program spending</a></li>
+      <li><a href="#4-3-advantages">4.3 Advantages</a></li>
+      <li><a href="#4-4-main-challenge-changing-baselines">4.4 Main challenge: changing baselines</a></li>
+      <li><a href="#4-5-alternative-break-the-stack-into-small-multiples">4.5 Alternative: break the stack into small multiples</a></li>
+      <li><a href="#4-6-when-the-stack-is-preferable">4.6 When the stack is preferable</a></li>
+      <li><a href="#5-1-definition">5.1 Definition</a></li>
+      <li><a href="#5-2-why-it-works">5.2 Why it works</a></li>
+      <li><a href="#5-3-cultural-linguistic-explanation-of-left-and-right">5.3 Cultural/linguistic explanation of left and right</a></li>
+      <li><a href="#5-4-challenges">5.4 Challenges</a></li>
+      <li><a href="#5-5-the-neutral-category-problem">5.5 The neutral-category problem</a></li>
+      <li><a href="#5-6-reference-markers">5.6 Reference markers</a></li>
+      <li><a href="#6-1-unit-chart-definition">6.1 Unit-chart definition</a></li>
+      <li><a href="#6-2-human-connection">6.2 Human connection</a></li>
+      <li><a href="#6-3-big-numbers-bans">6.3 Big numbers/BANs</a></li>
+      <li><a href="#7-1-definition-and-history">7.1 Definition and history</a></li>
+      <li><a href="#7-2-repeated-icons-versus-scaled-icons">7.2 Repeated icons versus scaled icons</a></li>
+      <li><a href="#7-3-criticisms-and-perceptual-limits">7.3 Criticisms and perceptual limits</a></li>
+      <li><a href="#7-4-engagement-versus-precision">7.4 Engagement versus precision</a></li>
+      <li><a href="#7-5-appropriate-scope">7.5 Appropriate scope</a></li>
+      <li><a href="#8-1-definition">8.1 Definition</a></li>
+      <li><a href="#8-2-ethical-and-inclusive-icon-choice">8.2 Ethical and inclusive icon choice</a></li>
+      <li><a href="#9-1-definition">9.1 Definition</a></li>
+      <li><a href="#9-2-transcript-illustration-income-components">9.2 Transcript illustration: income components</a></li>
+      <li><a href="#9-3-beauty-and-function">9.3 Beauty and function</a></li>
+      <li><a href="#10-1-definition-and-components">10.1 Definition and components</a></li>
+      <li><a href="#10-2-uses">10.2 Uses</a></li>
+      <li><a href="#10-3-perceptual-limitation">10.3 Perceptual limitation</a></li>
+      <li><a href="#11-1-purpose-and-origin">11.1 Purpose and origin</a></li>
+      <li><a href="#11-2-three-basic-elements">11.2 Three basic elements</a></li>
+      <li><a href="#11-3-variations">11.3 Variations</a></li>
+      <li><a href="#11-4-advantages-over-gauges">11.4 Advantages over gauges</a></li>
+      <li><a href="#12-1-definition-and-purpose">12.1 Definition and purpose</a></li>
+      <li><a href="#12-2-advantages">12.2 Advantages</a></li>
+      <li><a href="#12-3-limitations">12.3 Limitations</a></li>
+      <li><a href="#12-4-encode-value-by-area-not-radius-or-diameter">12.4 Encode value by area, not radius or diameter</a></li>
+      <li><a href="#12-5-nested-bubble-charts">12.5 Nested bubble charts</a></li>
+      <li><a href="#13-1-definition">13.1 Definition</a></li>
+      <li><a href="#13-2-visual-conventions">13.2 Visual conventions</a></li>
+      <li><a href="#13-3-transcript-illustration-national-income-composition">13.3 Transcript illustration: national income composition</a></li>
+      <li><a href="#13-4-uses">13.4 Uses</a></li>
+      <li><a href="#13-5-limitation">13.5 Limitation</a></li>
+      <li><a href="#15-1-perceptual-accuracy">15.1 Perceptual accuracy</a></li>
+      <li><a href="#15-2-focus-and-hierarchy">15.2 Focus and hierarchy</a></li>
+      <li><a href="#15-3-accuracy-versus-engagement">15.3 Accuracy versus engagement</a></li>
+      <li><a href="#15-4-reduce-non-data-clutter">15.4 Reduce non-data clutter</a></li>
+      <li><a href="#15-5-ethical-representation">15.5 Ethical representation</a></li>
+      <li><a href="#15-6-manage-complexity">15.6 Manage complexity</a></li>
+      <li><a href="#example-1-product-sales-ranking">Example 1 — Product sales ranking</a></li>
+      <li><a href="#example-2-gender-counts-across-campuses">Example 2 — Gender counts across campuses</a></li>
+      <li><a href="#example-3-department-budget-composition">Example 3 — Department budget composition</a></li>
+      <li><a href="#example-4-employee-satisfaction-survey">Example 4 — Employee satisfaction survey</a></li>
+      <li><a href="#example-5-vaccination-coverage">Example 5 — Vaccination coverage</a></li>
+      <li><a href="#example-6-key-performance-dashboard">Example 6 — Key performance dashboard</a></li>
+      <li><a href="#example-7-expense-reconciliation">Example 7 — Expense reconciliation</a></li>
+      <li><a href="#example-8-outlier-and-detail">Example 8 — Outlier and detail</a></li>
+      <li><a href="#q1-why-should-a-bar-chart-axis-usually-begin-at-zero">Q1. Why should a bar-chart axis usually begin at zero?</a></li>
+      <li><a href="#q2-differentiate-simple-clustered-and-stacked-bar-charts">Q2. Differentiate simple, clustered, and stacked bar charts.</a></li>
+      <li><a href="#q3-what-is-the-changing-baseline-problem">Q3. What is the changing-baseline problem?</a></li>
+      <li><a href="#q4-how-should-neutral-likert-responses-be-handled">Q4. How should neutral Likert responses be handled?</a></li>
+      <li><a href="#q5-compare-gauge-and-bullet-charts">Q5. Compare gauge and bullet charts.</a></li>
+      <li><a href="#q6-why-must-bubble-sizes-be-based-on-area">Q6. Why must bubble sizes be based on area?</a></li>
+      <li><a href="#q7-when-is-a-waterfall-chart-suitable">Q7. When is a waterfall chart suitable?</a></li>
+      <li><a href="#q8-what-are-the-strengths-and-weaknesses-of-unit-isotype-charts">Q8. What are the strengths and weaknesses of unit/isotype charts?</a></li>
+      <li><a href="#q9-how-can-a-designer-handle-outliers-in-a-bar-chart">Q9. How can a designer handle outliers in a bar chart?</a></li>
+      <li><a href="#q10-what-factors-determine-the-choice-among-comparison-charts">Q10. What factors determine the choice among comparison charts?</a></li>
+      <li><a href="#definitions-to-know">Definitions to know</a></li>
+      <li><a href="#rules-and-cautions">Rules and cautions</a></li>
+      <li><a href="#final-decision-test">Final decision test</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-core-idea-choose-the-chart-for-the-communication-task">1. Core idea: choose the chart for the communication task</h2>
+<p>Graphs are powerful communication instruments. The correct graph type depends primarily on <strong>what the creator wants the audience to understand or compare</strong>.</p>
+<p>Charts commonly used to compare categories include:</p>
+<ul>
+<li>Bar/column charts</li>
+<li>Clustered (paired) bar charts</li>
+<li>Stacked bar charts</li>
+<li>Diverging bar charts</li>
+<li>Unit charts</li>
+<li>Isotype charts</li>
+<li>Waffle charts</li>
+<li>Heat maps</li>
+<li>Gauge charts</li>
+<li>Bullet charts</li>
+<li>Bubble charts</li>
+<li>Waterfall charts</li>
+</ul>
+<p>These charts can support comparisons <strong>within groups</strong>, <strong>between groups</strong>, or both. They may communicate levels, change, composition, differences, progress toward a target, or combinations of variables.</p>
+<h3 id="the-central-design-decision">The central design decision</h3>
+<p>Before choosing or constructing a chart, ask:</p>
+<ol>
+<li>What is the primary argument or story?</li>
+<li>What is the most important comparison the reader should make?</li>
+<li>Should attention go to absolute levels, differences, composition, change, or a particular category?</li>
+<li>Is the intended comparison within categories, across categories, or both?</li>
+<li>Are exact values important, or is a broad pattern sufficient?</li>
+</ol>
+<p>The chart creator must prioritize. Including every possible bar, series, or graphical element can obscure the intended point.</p>
+<blockquote>
+<p><strong>Likely exam principle:</strong> Chart selection is not driven merely by which charts are available. It is driven by the communication objective and the comparison the audience must perform.</p>
+</blockquote>
+<hr>
+<h1 id="2-bar-charts">2. Bar Charts</h1>
+<h2 id="2-1-definition-and-orientation">2.1 Definition and orientation</h2>
+<p>A bar chart represents data values through the <strong>length or height of rectangular bars</strong>.</p>
+<ul>
+<li>When bars extend horizontally and are arranged along a vertical categorical axis, the display is commonly called a <strong>bar chart</strong>.</li>
+<li>When bars extend vertically from a horizontal categorical axis, it is commonly called a <strong>column chart</strong>.</li>
+<li>In this course, <strong>bar chart</strong> is used as the umbrella term for both orientations because both encode values with rectangular bars.</li>
+</ul>
+<h2 id="2-2-why-bar-charts-are-perceptually-effective">2.2 Why bar charts are perceptually effective</h2>
+<p>Bar charts rank near the top of the perceptual hierarchy because their rectangles usually share a straight, common baseline. Human viewers can compare aligned lengths quickly and accurately. They are also familiar and easy to construct—even using pen and paper.</p>
+<h3 id="transcript-illustration-population-of-eight-countries">Transcript illustration: population of eight countries</h3>
+<p>A column chart showed the total populations of eight countries. Even without exact value labels, the audience could identify:</p>
+<ul>
+<li>Country A as the most populous.</li>
+<li>Country E as the least populous.</li>
+</ul>
+<p>The shared baseline and comparable lengths make these extremes easy to perceive.</p>
+<h2 id="2-3-ordering-and-sorting-bars">2.3 Ordering and sorting bars</h2>
+<p>Sorting bars by value—ascending or descending—usually helps readers find the highest and lowest values quickly. However, sorting by magnitude is not universally best.</p>
+<p>Choose the order based on the task:</p>
+<ul>
+<li><strong>Ascending/descending order:</strong> Best when rank, extremes, or magnitude comparisons matter.</li>
+<li><strong>Alphabetical order:</strong> Helpful when there are many categories, such as 60 countries, and readers need to locate a named category quickly.</li>
+<li><strong>Purposeful placement:</strong> Put a country or set of countries of interest at one end when the argument centers on them.</li>
+<li><strong>Highlighting:</strong> Use a different color to distinguish one or more focal bars from the rest.</li>
+</ul>
+<blockquote>
+<p><strong>Exam caveat:</strong> “Always sort bars by value” is incorrect. Sorting must support the reader’s lookup or comparison task.</p>
+</blockquote>
+<h2 id="2-4-strategy-1-start-the-value-axis-at-zero">2.4 Strategy 1 — Start the value axis at zero</h2>
+<p>Starting a bar chart’s value axis at zero is the conventional rule of thumb supported by many visualization authors and experts.</p>
+<h3 id="why-zero-matters">Why zero matters</h3>
+<p>Readers interpret a bar chart through bar length. If the axis begins above zero, the displayed lengths no longer represent the full magnitudes. A truncated axis can overemphasize differences and distort perception.</p>
+<h3 id="transcript-illustration-country-populations">Transcript illustration: country populations</h3>
+<p>Because none of the countries in an example had populations below 50 million, a designer might be tempted to begin the axis at 50 million. This makes differences look much larger than they truly are. A country only about three to three-and-a-half times as populous as another may appear orders of magnitude larger.</p>
+<p>Beginning at an even more arbitrary value—such as 100 million—could visually erase or nearly erase the bars of smaller countries, creating the false impression that almost nobody lives there. Once a nonzero baseline is accepted without strong justification, any arbitrary starting point becomes possible.</p>
+<h3 id="research-caveat">Research caveat</h3>
+<p>The lecture notes emerging research suggesting that nonzero baselines might sometimes help viewers assess differences when the displayed range matches the actual variation in the data. However, until evidence is more settled, the recommended practice is to start bar-chart axes at zero to avoid confusion and visual bias.</p>
+<blockquote>
+<p><strong>Likely exam point:</strong> A zero baseline is particularly important for bars because their encoding depends on length. This rule is not merely decorative; it protects the integrity of magnitude comparisons.</p>
+</blockquote>
+<h2 id="2-5-strategy-2-do-not-break-bars">2.5 Strategy 2 — Do not break bars</h2>
+<p>“Breaking the bar” means using squiggly marks, arrows, shading, or similar devices to indicate that part of one or more bars has been cropped. The lecture calls this a <strong>cardinal sin of data visualization</strong>.</p>
+<h3 id="why-broken-bars-are-misleading">Why broken bars are misleading</h3>
+<ul>
+<li>They distort relative lengths.</li>
+<li>The location and size of the break are arbitrary.</li>
+<li>They make extreme values look smaller than they truly are.</li>
+<li>They may exaggerate differences among smaller values while hiding the real dominance of outliers.</li>
+</ul>
+<h3 id="transcript-illustration-populations-of-ten-countries-in-2018">Transcript illustration: populations of ten countries in 2018</h3>
+<p>The example used older, illustrative population data:</p>
+<ul>
+<li>China: approximately 1.39 billion.</li>
+<li>India: approximately 1.34 billion.</li>
+<li>United States: approximately 327 million.</li>
+<li>Other countries followed at lower values.</li>
+</ul>
+<p>China and India were dramatically larger than the remaining countries. Breaking their bars would make them appear much less populous than they actually were.</p>
+<h3 id="better-alternative-zoom-out-and-zoom-in">Better alternative: zoom out and zoom in</h3>
+<p>When outliers dominate but smaller values must also be compared:</p>
+<ol>
+<li>Show <strong>all observations in one chart</strong> so the audience sees the true magnitude of the outliers.</li>
+<li>Add a <strong>second detailed chart</strong> that omits the outliers and zooms in on smaller values.</li>
+<li>Use labels and an active, explanatory title to clarify the smaller differences.</li>
+</ol>
+<p>This preserves honesty while enabling detailed comparison.</p>
+<h2 id="2-6-strategy-3-use-tick-marks-and-gridlines-judiciously">2.6 Strategy 3 — Use tick marks and gridlines judiciously</h2>
+<h3 id="tick-marks">Tick marks</h3>
+<p>Bar charts ordinarily do not need tick marks between categorical bars because whitespace already separates them. Removing unnecessary tick marks reduces clutter.</p>
+<p><strong>Exception:</strong> A larger tick mark may help when a higher-level category label spans several bars, because it visually groups the subordinate labels.</p>
+<h3 id="gridlines">Gridlines</h3>
+<p>Gridlines help readers estimate a bar’s value, particularly for bars far from the labeled axis. They should be light enough to remain background guides rather than compete with the data.</p>
+<h3 id="data-labels">Data labels</h3>
+<p>When exact values matter, add value labels directly to bars. If labels are present, gridlines and sometimes axis lines may be unnecessary. Removing them can create a cleaner display.</p>
+<h3 id="transcript-illustration">Transcript illustration</h3>
+<p>For a highlighted Country E:</p>
+<ul>
+<li>Without a data label, gridlines reveal that its population exceeds 50 million.</li>
+<li>With a label, the precise value of 60 million is clear, so gridlines may add little.</li>
+</ul>
+<p>If a graph has 20 or 50 countries, labeling every bar may create clutter. A separate table or appendix can supply exact values.</p>
+<blockquote>
+<p>Deleting gridlines when labels are present is partly an aesthetic choice. Designers develop a consistent style, but the functional test remains whether an element helps the reader.</p>
+</blockquote>
+<h2 id="2-7-strategy-4-handle-long-axis-labels-by-rotating-the-chart">2.7 Strategy 4 — Handle long axis labels by rotating the chart</h2>
+<p>Common but imperfect responses to long labels include:</p>
+<ul>
+<li>Running text vertically, like lettering on a book spine—forces readers to turn their heads.</li>
+<li>Rotating labels 45 degrees—still makes reading awkward.</li>
+<li>Shrinking the font—may make the labels too small.</li>
+</ul>
+<p>The most elegant solution is often to rotate the <strong>entire chart</strong>, converting vertical columns into horizontal bars. The value is still encoded by bar length, so comprehension is preserved, while category labels become horizontally aligned and easier to read.</p>
+<hr>
+<h1 id="3-single-series-multi-series-and-clustered-bar-charts">3. Single-Series, Multi-Series, and Clustered Bar Charts</h1>
+<h2 id="3-1-single-series-versus-multi-series-charts">3.1 Single-series versus multi-series charts</h2>
+<h3 id="single-series-chart">Single-series chart</h3>
+<p>A single-series chart displays one dataset or category and is best for highlighting one variable.</p>
+<p>Examples:</p>
+<ul>
+<li>A pie chart showing percentage distribution of sales in one region.</li>
+<li>A bar chart showing monthly sales for a single product.</li>
+</ul>
+<h3 id="multi-series-chart">Multi-series chart</h3>
+<p>A multi-series chart displays multiple datasets or categories, enabling comparison between them.</p>
+<p>Examples:</p>
+<ul>
+<li>A clustered bar chart comparing monthly sales of several products.</li>
+<li>A line chart comparing temperature trends across countries over the same period.</li>
+</ul>
+<h2 id="3-2-definition-of-a-clustered-bar-chart">3.2 Definition of a clustered bar chart</h2>
+<p>A <strong>clustered bar chart</strong>, also called a <strong>paired bar chart</strong> when it has two series, places two or more bars side by side for every category. It is a multi-series chart.</p>
+<p>A simple bar chart compares <strong>across categories</strong>. A clustered chart supports comparison:</p>
+<ul>
+<li>Across categories.</li>
+<li>Within each category.</li>
+<li>Of absolute levels.</li>
+<li>Of differences between series.</li>
+</ul>
+<p>Because the bars share a common baseline, the chart is familiar and generally easy to read.</p>
+<h3 id="transcript-illustration-men-and-women-by-country">Transcript illustration: men and women by country</h3>
+<p>A clustered bar chart can show the number of men and women in each country. Readers can inspect both population levels and gender differences within countries.</p>
+<h2 id="3-3-when-clustered-bars-are-and-are-not-direct">3.3 When clustered bars are and are not direct</h2>
+<p>Use clustered bars when both <strong>levels and differences</strong> matter. If the only objective is to show the difference between two values within each category, the format is less direct because readers must mentally subtract two bar lengths. A single bar that encodes the computed difference can communicate that question more directly.</p>
+<h2 id="3-4-clustered-bars-for-change-over-time">3.4 Clustered bars for change over time</h2>
+<p>The lecture illustrates populations of five countries from 2014 to 2018. Clustered bars allow readers to inspect:</p>
+<ul>
+<li>Change within each country.</li>
+<li>Differences across countries.</li>
+</ul>
+<p>The data pattern should guide the choice between bars and lines:</p>
+<ul>
+<li>If values decline or move in a relatively orderly way across a small set of periods, clustered bars may work.</li>
+<li>If values fluctuate over many periods, a line chart usually supports time comparison better.</li>
+</ul>
+<h3 id="two-situations-favoring-bars-over-lines-for-time-data">Two situations favoring bars over lines for time data</h3>
+<ol>
+<li><strong>Few time points</strong>, such as five years. Bars use more ink and therefore give a small dataset more visual weight.</li>
+<li><strong>Discrete intervals with few observations</strong>, such as the quarters of one year.</li>
+</ol>
+<h2 id="3-5-clutter-limitation">3.5 Clutter limitation</h2>
+<p>Too many bars—especially more than two bars per category—can make patterns difficult to see. Readers may not know whether they should compare within clusters or between categories.</p>
+<p>Diagnostic questions:</p>
+<ul>
+<li>Where will the reader’s eye go first?</li>
+<li>Is the intended comparison immediately clear?</li>
+<li>Does the display feel too busy?</li>
+</ul>
+<p>If it does, break the data into separate charts, choose another chart type, or use <strong>small multiples</strong>.</p>
+<hr>
+<h1 id="4-stacked-bar-charts">4. Stacked Bar Charts</h1>
+<h2 id="4-1-definition">4.1 Definition</h2>
+<p>A stacked bar chart is a variation of the bar chart that <strong>subdivides the total for each category into component segments</strong>.</p>
+<ul>
+<li>In a clustered chart, multiple values sit side by side.</li>
+<li>In a stacked chart, multiple values occupy segments of one bar.</li>
+</ul>
+<p>The components may:</p>
+<ul>
+<li>Sum to the same total, commonly 100%, producing equal-length bars; or</li>
+<li>Sum to different totals, producing bars of different overall lengths.</li>
+</ul>
+<h2 id="4-2-transcript-illustration-social-program-spending">4.2 Transcript illustration: social-program spending</h2>
+<p>A chart displayed the share of GDP spent on social programs in eight countries. Each bar was divided into:</p>
+<ul>
+<li>Blue: healthcare spending.</li>
+<li>Orange: old-age programs.</li>
+<li>Green: other programs.</li>
+</ul>
+<p>The full length of each bar represented a country’s total share of GDP devoted to social programs. The values were fictitious and used only for illustration.</p>
+<h2 id="4-3-advantages">4.3 Advantages</h2>
+<ul>
+<li>Familiar, easy to create, and generally easy to read.</li>
+<li>Shows overall totals and component composition in one view.</li>
+<li>Particularly useful for part-to-whole distribution.</li>
+<li>A 100% stacked chart makes relative composition across groups visible.</li>
+</ul>
+<h2 id="4-4-main-challenge-changing-baselines">4.4 Main challenge: changing baselines</h2>
+<p>Only the segment attached to the common baseline is easy to compare accurately across categories. Other segments begin at changing positions, making their lengths harder to compare.</p>
+<h3 id="transcript-comparison-italy-versus-france">Transcript comparison: Italy versus France</h3>
+<p>Healthcare was easy to compare because those segments shared the vertical baseline; Italy’s healthcare spending was visibly higher than France’s. Determining which country spent more on old-age programs was much harder because the orange segments did not share a baseline.</p>
+<h2 id="4-5-alternative-break-the-stack-into-small-multiples">4.5 Alternative: break the stack into small multiples</h2>
+<p>Place every series in its own adjacent chart with a common baseline. This makes component-level comparisons easier—for example, it becomes clear that Italy spends slightly more than France on old-age programs.</p>
+<p><strong>Trade-off:</strong> Separate panels make the total across all components difficult or impossible to see.</p>
+<p><strong>Remedy:</strong> Add a final panel showing total values.</p>
+<p>This extra total panel is unnecessary when all bars already sum to 100%, because every total is identical.</p>
+<h3 id="scale-and-width-consistency">Scale and width consistency</h3>
+<ul>
+<li>Component panels should have equal widths/spacing so one does not appear more important or larger merely because it occupies more space.</li>
+<li>A separate total panel need not have the same width, but its axis increments must be consistent and interpretable.</li>
+</ul>
+<h2 id="4-6-when-the-stack-is-preferable">4.6 When the stack is preferable</h2>
+<p>A stacked chart can be better when the primary message is the <strong>distribution or combined share</strong> rather than precise component comparisons.</p>
+<p>In a spending example with more categories converted into shares of totals, the stacked version clearly showed that roughly three-quarters of government social spending went to healthcare and old-age programs. That aggregate pattern was harder to see after separating every component into its own baseline.</p>
+<p>The segment against the baseline receives perceptual emphasis. In the example, the data were sorted by healthcare and healthcare occupied the baseline position, making it the primary series; the other segments became secondary.</p>
+<blockquote>
+<p><strong>Likely exam principle:</strong> Stacking improves part-to-whole and total perception but weakens comparisons for segments that lack a common baseline.</p>
+</blockquote>
+<hr>
+<h1 id="5-diverging-bar-charts">5. Diverging Bar Charts</h1>
+<h2 id="5-1-definition">5.1 Definition</h2>
+<p>A diverging bar chart is a variation of a stacked bar chart in which stacks extend in opposite directions from a central baseline.</p>
+<p>It is frequently used for survey responses arranged from <strong>strongly disagree</strong> to <strong>strongly agree</strong>, commonly called a <strong>Likert scale</strong>. The scale is named after psychologist Rensis Likert, who developed it in the early 1930s.</p>
+<h2 id="5-2-why-it-works">5.2 Why it works</h2>
+<p>Diverging bars clearly separate opposing sentiments:</p>
+<ul>
+<li>Disagreement extends left, conventionally interpreted as negative.</li>
+<li>Agreement extends right, conventionally interpreted as positive.</li>
+</ul>
+<p>This is effective when the audience mainly needs the total sentiment on each side rather than a precise comparison of every response component.</p>
+<p>If the individual response components are the focal point, paired or clustered bars may be more suitable.</p>
+<h2 id="5-3-cultural-linguistic-explanation-of-left-and-right">5.3 Cultural/linguistic explanation of left and right</h2>
+<p>The lecture explains the negative-left/positive-right convention through Western language history:</p>
+<ul>
+<li>“Left” is linked to the Old English <em>lyft</em>, meaning weak.</li>
+<li>Latin <em>sinister</em> refers to the left side and acquired negative connotations.</li>
+<li>“Right” comes from Old English <em>riht</em>, originally meaning straight rather than bent or crooked.</li>
+<li>Expressions such as “stand upright,” “do the right thing,” and “the right answer” associate the right with goodness and correctness.</li>
+</ul>
+<p>This history helps explain, but does not make universal, the convention of negative values on the left and positive values on the right.</p>
+<h2 id="5-4-challenges">5.4 Challenges</h2>
+<ul>
+<li>Readers must compare both within and across categories.</li>
+<li>Opposite directions make total agreement versus total disagreement harder to compare.</li>
+<li>A clustered bar chart makes the two totals somewhat easier to compare but loses the intuitive positive/negative spatial metaphor.</li>
+<li>Many categories or response groups can make the chart busy and cluttered.</li>
+</ul>
+<h2 id="5-5-the-neutral-category-problem">5.5 The neutral-category problem</h2>
+<p>A neutral response is neither agreement nor disagreement and should not be implicitly assigned to either side.</p>
+<p>Placing the neutral segment across the central baseline is problematic because:</p>
+<ul>
+<li>It visually splits neutral responses between negative and positive sentiment.</li>
+<li>It creates misalignment between the opposing groups.</li>
+<li>It prevents the agree/disagree segments from sitting directly on the central baseline.</li>
+</ul>
+<h3 id="better-approaches">Better approaches</h3>
+<ol>
+<li>Show neutral responses as a separate bar or aligned series beside the diverging chart, giving neutral, disagreement, and agreement their own baselines.</li>
+<li>Use a 100% stacked bar chart in which neutral is integrated as its own category. This makes the total composition and comparisons across countries easier to see.</li>
+</ol>
+<h2 id="5-6-reference-markers">5.6 Reference markers</h2>
+<p>Add meaningful aggregate reference points. The lecture’s example marked 0%, 50%, and 100%, with particular emphasis on 50%, so readers could identify countries where total agreement or disagreement reached at least half of all responses.</p>
+<hr>
+<h1 id="6-unit-charts-and-big-numbers">6. Unit Charts and Big Numbers</h1>
+<h2 id="6-1-unit-chart-definition">6.1 Unit-chart definition</h2>
+<p>A unit chart displays counts using repeated symbols. Each symbol can represent:</p>
+<ul>
+<li>One observation, or</li>
+<li>A fixed number of units.</li>
+</ul>
+<p>Example: If one car icon represents 10 cars and the chart contains 10 icons, the total is 100 cars.</p>
+<p>Unit charts may encode percentages, currency, or any other discrete amount. Units can be arranged in different directions and divided into subcategories using colors or outlines.</p>
+<h2 id="6-2-human-connection">6.2 Human connection</h2>
+<p>Conventional bar charts are abstract and impersonal: they collapse all people behind a value into one shape. A unit chart can remind the audience that a value represents individual people—especially when one dot equals one person—and thereby create a stronger human connection.</p>
+<h2 id="6-3-big-numbers-bans">6.3 Big numbers/BANs</h2>
+<p>Sometimes the simplest way to show a discrete count is to display the number prominently. <em>The Big Book of Dashboards</em> by Steve Wexler, Andy Cotgreave, and Jeff Shaffer calls this the <strong>BAN</strong> or <strong>Big [prominent] Number</strong> approach.</p>
+<p>BANs can work well in:</p>
+<ul>
+<li>Dashboards</li>
+<li>Infographics</li>
+<li>Social-media posts</li>
+<li>Slide decks</li>
+</ul>
+<p>The instructor personally recommends using them sparingly.</p>
+<hr>
+<h1 id="7-isotype-charts">7. Isotype Charts</h1>
+<h2 id="7-1-definition-and-history">7.1 Definition and history</h2>
+<p>An isotype chart is a subclass of unit chart that uses meaningful images or icons instead of plain geometric marks.</p>
+<p><strong>ISOTYPE</strong> stands for <strong>International System of Typographic Picture Education</strong>. The system was developed in the 1920s by Otto Neurath, Mary Neurath, and their collaborator Gerd Arntz.</p>
+<p>They used it to communicate data about:</p>
+<ul>
+<li>Workers in industries.</li>
+<li>Population density and distribution.</li>
+<li>Numbers of machines in factories.</li>
+<li>Broader demographic, economic, and environmental issues.</li>
+</ul>
+<p>Their aim was to make information accessible to a broad public regardless of educational attainment.</p>
+<h3 id="transcript-illustration-2">Transcript illustration</h3>
+<p>An isotype display showed changes in the gender profile—men and women—from 2000 to 2020. The icon system made the trend intuitive and broadly accessible.</p>
+<h2 id="7-2-repeated-icons-versus-scaled-icons">7.2 Repeated icons versus scaled icons</h2>
+<p>Icons can be repeated as units or scaled to match values. Scaling requires great caution because viewers may not know whether the value is encoded by height, width, or area.</p>
+<p>In an example comparing 47% and 14%, the larger icon clearly communicated “more,” but not necessarily the accurate magnitude. If vertical height encodes the value, the icon’s total area may grow far more rapidly—potentially making one icon about ten times the area of another and exaggerating the comparison.</p>
+<p>Therefore, scaled icons are inadvisable when accuracy is paramount.</p>
+<h2 id="7-3-criticisms-and-perceptual-limits">7.3 Criticisms and perceptual limits</h2>
+<p>Icon-driven charts may be attractive and engaging for a few values, but readers may have to:</p>
+<ul>
+<li>Count individual icons.</li>
+<li>Read printed numbers.</li>
+<li>Compare the areas made by icons, which people do poorly.</li>
+</ul>
+<p>The lecture cites an early criticism from Willard Cope Brinton’s 1914 <em>Graphic Methods for Presenting Facts</em>: human figures drawn at different heights mislead because their area grows faster than their height. It also cites visualization author/instructor Stephen Few’s criticism that unit charts force counting, label reading, or poor area judgment.</p>
+<h2 id="7-4-engagement-versus-precision">7.4 Engagement versus precision</h2>
+<p>The loss of precision and slower comprehension can sometimes be offset by memorability and reader engagement. Research mentioned in the lecture found a preference for graphs with stacked icons over simple bars.</p>
+<p>However, background images or images added merely as decoration distracted readers. Therefore, icons should <strong>encode the data</strong>, not serve as gratuitous decoration.</p>
+<h2 id="7-5-appropriate-scope">7.5 Appropriate scope</h2>
+<p>Unit visualizations are intuitive and flexible and can ease readers into a visualization. They are most useful when the audience should understand a specific data item and its encoded value—for example, one person, currency unit, or region.</p>
+<p>Too many observations or units create clutter, hide individual marks, and impair overall judgment.</p>
+<hr>
+<h1 id="8-waffle-charts">8. Waffle Charts</h1>
+<h2 id="8-1-definition">8.1 Definition</h2>
+<p>A waffle chart is a subclass of unit chart designed especially for <strong>part-to-whole relationships</strong>. The standard form is a <strong>10 × 10 grid</strong> of 100 cells, with each colored cell representing one percentage point.</p>
+<p>Multiple waffle charts can show separate percentages, simultaneously enabling:</p>
+<ul>
+<li>Part-to-whole understanding within each category.</li>
+<li>Comparison across categories.</li>
+</ul>
+<h3 id="transcript-illustration-poverty-rates">Transcript illustration: poverty rates</h3>
+<p>Four waffle charts displayed overall poverty rates in four countries. Red squares represented the percentage of people below the poverty line. Because one cell represented one percentage point, the display was easy to read and comprehend.</p>
+<h2 id="8-2-ethical-and-inclusive-icon-choice">8.2 Ethical and inclusive icon choice</h2>
+<p>When unit or waffle charts use icons, the symbol must appropriately represent the content and audience.</p>
+<ul>
+<li>A baby icon is inappropriate for child-mortality statistics because it may be emotionally insensitive.</li>
+<li>Male icons used for all people may erase women represented in the dataset.</li>
+</ul>
+<blockquote>
+<p><strong>Exam point:</strong> Icon choice is not merely aesthetic; it can create ethical, emotional, and representational problems.</p>
+</blockquote>
+<hr>
+<h1 id="9-heat-maps">9. Heat Maps</h1>
+<h2 id="9-1-definition">9.1 Definition</h2>
+<p>A heat map uses color or color saturation to encode data values. In simple terms, it is a <strong>table with color-coded cells</strong>.</p>
+<p>Heat maps are useful for:</p>
+<ul>
+<li>High-frequency or dense data.</li>
+<li>Revealing overall patterns.</li>
+<li>Situations where the broad pattern matters more than exact numbers.</li>
+</ul>
+<h2 id="9-2-transcript-illustration-income-components">9.2 Transcript illustration: income components</h2>
+<p>Two heat maps showed components of total income for six countries using fictitious data.</p>
+<ul>
+<li>One version applied a single shared color scale to all four income categories: lighter shades represented smaller values and darker shades represented larger values.</li>
+<li>The other version assigned a separate color scale to each category.</li>
+</ul>
+<h3 id="interpretation-difference">Interpretation difference</h3>
+<ul>
+<li>A <strong>common scale</strong> permits direct magnitude comparisons across all cells and categories.</li>
+<li>A <strong>separate scale per category</strong> highlights within-category patterns but can make colors across categories non-comparable.</li>
+</ul>
+<h2 id="9-3-beauty-and-function">9.3 Beauty and function</h2>
+<p>Heat maps can draw readers into a visualization through color and appearance. The lecture cites Giorgia Lupi’s principle that beauty is an important entry point that can motivate exploration. Beauty cannot replace functionality, but beauty and functionality together can accomplish more.</p>
+<hr>
+<h1 id="10-gauge-charts">10. Gauge Charts</h1>
+<h2 id="10-1-definition-and-components">10.1 Definition and components</h2>
+<p>A gauge chart resembles a car speedometer. It is normally drawn as part of a circle or a full circle and contains:</p>
+<ul>
+<li>A pointer or needle showing where the observed value falls.</li>
+<li>A quantitative range.</li>
+<li>Shaded subranges, such as poor, good, and excellent.</li>
+</ul>
+<h2 id="10-2-uses">10.2 Uses</h2>
+<p>Gauge charts appear in:</p>
+<ul>
+<li>Financial-planning tools.</li>
+<li>Monitoring dashboards.</li>
+<li>Progress-to-target displays.</li>
+<li>Fundraising campaigns.</li>
+</ul>
+<p>In fundraising, the full semicircle can represent the goal, while the needle or filled/shaded portion represents money raised so far. This succeeds as a familiar visual metaphor: “filling the gauge” means approaching the goal.</p>
+<h2 id="10-3-perceptual-limitation">10.3 Perceptual limitation</h2>
+<p>People are not good at accurately measuring or comparing angles. Therefore:</p>
+<ul>
+<li>Gauge charts are acceptable for a general sense of status or progress.</li>
+<li>They are poor when exact values or precise comparisons with ranges are essential.</li>
+</ul>
+<p>Familiarity and metaphorical clarity explain their continued popularity despite this weakness.</p>
+<hr>
+<h1 id="11-bullet-charts">11. Bullet Charts</h1>
+<h2 id="11-1-purpose-and-origin">11.1 Purpose and origin</h2>
+<p>Stephen Few invented the bullet chart to address the perceptual problems of gauges. It presents similar information in a <strong>linear and compact</strong> format.</p>
+<h2 id="11-2-three-basic-elements">11.2 Three basic elements</h2>
+<ol>
+<li><strong>Actual/observed value</strong> — commonly a horizontal bar.</li>
+<li><strong>Target value</strong> — commonly a short perpendicular marker.</li>
+<li><strong>Background qualitative ranges</strong> — bands such as poor, good, and excellent behind the actual and target marks.</li>
+</ol>
+<p>These layers let readers compare actual performance, target performance, and qualitative status in one compact view.</p>
+<h3 id="transcript-illustration-customer-satisfaction">Transcript illustration: customer satisfaction</h3>
+<ul>
+<li>Actual average satisfaction: <strong>4</strong>, represented by a black horizontal bar.</li>
+<li>Target: <strong>3.5</strong>, represented by a vertical marker.</li>
+<li>Background bands:</li>
+<li>Poor: 1.5 and below.</li>
+<li>Good: 1.5 to 3.</li>
+<li>Excellent: above 3.</li>
+</ul>
+<h2 id="11-3-variations">11.3 Variations</h2>
+<ul>
+<li>The scale may have five or seven performance bands rather than three.</li>
+<li>A target marker may be included or omitted.</li>
+<li>Background ranges can represent the underlying distribution, such as quartiles or percentiles.</li>
+</ul>
+<h2 id="11-4-advantages-over-gauges">11.4 Advantages over gauges</h2>
+<ul>
+<li>More compact.</li>
+<li>Uses aligned rectangular lengths, which are easier to compare than angles.</li>
+<li>Multiple bullet charts can be stacked vertically to compare several metrics, as in financial reports.</li>
+</ul>
+<blockquote>
+<p><strong>Likely exam comparison:</strong> Gauge charts provide a familiar metaphor and quick general status; bullet charts provide denser, more accurate comparison of actual, target, and performance bands.</p>
+</blockquote>
+<hr>
+<h1 id="12-bubble-charts">12. Bubble Charts</h1>
+<h2 id="12-1-definition-and-purpose">12.1 Definition and purpose</h2>
+<p>In a basic bubble chart, circles encode categorical values, much as bars do in a bar chart. Bubble charts compare magnitudes across categories but are usually less precise because people do not judge circle sizes accurately.</p>
+<h2 id="12-2-advantages">12.2 Advantages</h2>
+<ul>
+<li>Visually interesting and potentially more engaging than bars.</li>
+<li>Can reinforce a suitable visual metaphor.</li>
+<li>Appropriate when exact quantitative discrimination is not paramount.</li>
+<li>Can be extended to correlation displays or placed on maps to encode an additional variable.</li>
+</ul>
+<h2 id="12-3-limitations">12.3 Limitations</h2>
+<ul>
+<li>Circle size is difficult to compare accurately.</li>
+<li>Negative values cannot be represented naturally through size. Bars can extend right/up for positive and left/down for negative values, while a circle has no equivalent negative size.</li>
+<li>Viewers often compare diameters even when the data are encoded by area, producing incorrect conclusions.</li>
+</ul>
+<h3 id="transcript-illustration-extreme-poverty">Transcript illustration: extreme poverty</h3>
+<p>Readers were asked to estimate the percentage of people living on less than $1.90 per day in Country C. The value was much easier to estimate in a bar chart than in a bubble chart.</p>
+<p>The lesson is not “never use circles”; it is to match precision and engagement to the audience’s needs.</p>
+<h2 id="12-4-encode-value-by-area-not-radius-or-diameter">12.4 Encode value by area, not radius or diameter</h2>
+<p>If a bubble represents twice a value, its <strong>area</strong> should double—not its radius or diameter.</p>
+<p>For a circle:</p>
+<p>\[
+A = \pi r^2
+\]</p>
+<p>Therefore, to encode value \(v\) proportionally:</p>
+<p>\[
+r \propto \sqrt{v}
+\]</p>
+<p>Doubling radius multiplies area by four, exaggerating a twofold value difference. In the lecture’s A–B–C example:</p>
+<ul>
+<li>B had twice A’s radius and therefore overemphasized the intended doubling.</li>
+<li>C had twice A’s area and correctly represented a value twice as large.</li>
+</ul>
+<h2 id="12-5-nested-bubble-charts">12.5 Nested bubble charts</h2>
+<p>Layered circles are often called <strong>nested bubble charts</strong>. Nesting can make some comparisons easier, but front circles may mask circles behind them.</p>
+<hr>
+<h1 id="13-waterfall-charts">13. Waterfall Charts</h1>
+<h2 id="13-1-definition">13.1 Definition</h2>
+<p>A waterfall chart visualizes a mathematical sequence in which values are added to or subtracted from an initial amount to arrive at a final amount.</p>
+<p>It is essentially a bar chart in which each subsequent bar begins where the previous bar ended, revealing accumulation across the graph.</p>
+<h2 id="13-2-visual-conventions">13.2 Visual conventions</h2>
+<ul>
+<li>Positive and negative contributions usually use different colors.</li>
+<li>Starting and ending totals may use a third distinct color.</li>
+<li>Connector lines often guide the eye from one bar to the next.</li>
+<li>Because connectors are guides rather than data, they should be lighter and thinner than the data marks.</li>
+</ul>
+<h2 id="13-3-transcript-illustration-national-income-composition">13.3 Transcript illustration: national income composition</h2>
+<p>A waterfall chart represented the income composition of a fictitious country:</p>
+<ul>
+<li>Gross income and net income—the initial and final totals—were shaded yellow.</li>
+<li>Negative contributions were red.</li>
+<li>Positive contributions were blue.</li>
+<li>Connecting lines showed how one step led to the next. They were made thicker in the teaching slide only to highlight them for discussion; ordinarily they should be subtle.</li>
+</ul>
+<h2 id="13-4-uses">13.4 Uses</h2>
+<ul>
+<li>Explaining how components reconcile a starting total to an ending total.</li>
+<li>Showing additions and deductions in financial statements.</li>
+<li>Showing change over time—for example, how different contributions move GDP from one year’s level to the next.</li>
+<li>Any series whose terms are sequentially added or subtracted.</li>
+</ul>
+<h2 id="13-5-limitation">13.5 Limitation</h2>
+<p>The waterfall chart is nonstandard for many audiences. Readers may need extra time to learn how to navigate it, so explanatory labels, titles, colors, and restrained connectors are valuable.</p>
+<hr>
+<h1 id="14-comparative-selection-guide">14. Comparative Selection Guide</h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Communication need</th>
+<th>Strong candidate</th>
+<th>Why</th>
+<th>Main caution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compare one value across categories</td>
+<td>Bar chart</td>
+<td>Shared baseline and accurate length judgment</td>
+<td>Start at zero; avoid broken bars</td>
+</tr>
+<tr>
+<td>Compare multiple series within and across categories</td>
+<td>Clustered bar chart</td>
+<td>Side-by-side bars retain a common baseline</td>
+<td>Too many series create clutter</td>
+</tr>
+<tr>
+<td>Show totals plus composition</td>
+<td>Stacked bar chart</td>
+<td>Total length and parts appear together</td>
+<td>Interior segments lack common baselines</td>
+</tr>
+<tr>
+<td>Compare percentage composition</td>
+<td>100% stacked bar</td>
+<td>Equal totals emphasize proportional distribution</td>
+<td>Absolute totals disappear</td>
+</tr>
+<tr>
+<td>Show positive versus negative survey sentiment</td>
+<td>Diverging bar</td>
+<td>Central baseline reinforces opposition</td>
+<td>Neutral category needs special treatment</td>
+</tr>
+<tr>
+<td>Humanize a discrete count</td>
+<td>Unit/isotype chart</td>
+<td>Repeated units can represent individuals</td>
+<td>Counting and area comparison are slow</td>
+</tr>
+<tr>
+<td>Show a simple percentage as part of 100</td>
+<td>Waffle chart</td>
+<td>One cell per percentage point</td>
+<td>Multiple/icon-heavy grids can clutter</td>
+</tr>
+<tr>
+<td>Reveal patterns in dense tabular data</td>
+<td>Heat map</td>
+<td>Color makes clusters and extremes visible</td>
+<td>Exact values and separate color scales need care</td>
+</tr>
+<tr>
+<td>Give a broad status toward a goal</td>
+<td>Gauge chart</td>
+<td>Familiar speedometer metaphor</td>
+<td>Angle judgments are imprecise and space-inefficient</td>
+</tr>
+<tr>
+<td>Compare actual, target, and ranges compactly</td>
+<td>Bullet chart</td>
+<td>Linear aligned lengths and compact stacking</td>
+<td>Range meanings must be clear</td>
+</tr>
+<tr>
+<td>Create an engaging approximate magnitude comparison</td>
+<td>Bubble chart</td>
+<td>Visually engaging; supports maps/correlation</td>
+<td>Encode by area; weak precision; no natural negatives</td>
+</tr>
+<tr>
+<td>Explain cumulative additions/subtractions</td>
+<td>Waterfall chart</td>
+<td>Reconciles start, contributions, and finish</td>
+<td>Nonstandard and may require explanation</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="15-cross-cutting-design-principles">15. Cross-Cutting Design Principles</h1>
+<h2 id="15-1-perceptual-accuracy">15.1 Perceptual accuracy</h2>
+<ul>
+<li>Aligned lengths are easier to compare than unaligned segments, areas, or angles.</li>
+<li>Bar and bullet charts benefit from common baselines.</li>
+<li>Stacked charts weaken comparison for all but the baseline segment.</li>
+<li>Bubbles and scaled icons introduce area-perception errors.</li>
+<li>Gauges depend on weak angle judgments.</li>
+</ul>
+<h2 id="15-2-focus-and-hierarchy">15.2 Focus and hierarchy</h2>
+<ul>
+<li>Decide the primary comparison first.</li>
+<li>Sort or highlight to guide attention.</li>
+<li>In a stacked chart, position the most important series against the baseline.</li>
+<li>Use active titles and labels to state or support the intended message.</li>
+<li>Do not show every possible element merely because it is available.</li>
+</ul>
+<h2 id="15-3-accuracy-versus-engagement">15.3 Accuracy versus engagement</h2>
+<p>Bar charts are highly accurate but can feel familiar or boring. Less common charts—icons, bubbles, heat maps, gauges, and waterfalls—can engage readers, but novelty must not override clarity.</p>
+<p>The instructor’s broader position is not that unusual charts should be avoided. Rather, designers should deploy them when their benefits fit the audience and communication objective.</p>
+<h2 id="15-4-reduce-non-data-clutter">15.4 Reduce non-data clutter</h2>
+<ul>
+<li>Remove categorical tick marks when whitespace already separates bars.</li>
+<li>Render necessary gridlines lightly.</li>
+<li>Consider omitting gridlines and axis lines when direct labels provide exact values.</li>
+<li>Keep waterfall connector lines thin and pale.</li>
+<li>Avoid decorative images that do not encode data.</li>
+</ul>
+<h2 id="15-5-ethical-representation">15.5 Ethical representation</h2>
+<ul>
+<li>Preserve true magnitudes; do not truncate or arbitrarily break bars.</li>
+<li>Use icons that include and respect the population represented.</li>
+<li>Avoid emotionally inappropriate symbols.</li>
+<li>Clearly indicate when data are fictitious, illustrative, or old.</li>
+</ul>
+<h2 id="15-6-manage-complexity">15.6 Manage complexity</h2>
+<p>When a display becomes busy:</p>
+<ul>
+<li>Split it into multiple charts.</li>
+<li>Use a zoom-out/zoom-in pair.</li>
+<li>Use small multiples with shared scales.</li>
+<li>Add a separate total panel when disaggregation hides totals.</li>
+<li>Move exact values to a table or appendix when labels would overwhelm the chart.</li>
+</ul>
+<hr>
+<h1 id="16-practical-examples-and-use-cases">16. Practical Examples and Use Cases</h1>
+<h2 id="example-1-product-sales-ranking">Example 1 — Product sales ranking</h2>
+<p><strong>Question:</strong> Which of 20 products sold most and least this month?</p>
+<p>Use a value-sorted bar chart starting at zero. If managers must locate products by name rather than compare ranks, alphabetical ordering may be more useful.</p>
+<h2 id="example-2-gender-counts-across-campuses">Example 2 — Gender counts across campuses</h2>
+<p><strong>Question:</strong> How do male and female enrollment levels compare within and across campuses?</p>
+<p>Use a paired/clustered bar chart. If only the gender gap matters, compute and chart the gap directly.</p>
+<h2 id="example-3-department-budget-composition">Example 3 — Department budget composition</h2>
+<p><strong>Question:</strong> How much does each department spend in total, and what is the mix of salaries, equipment, and travel?</p>
+<p>Use a stacked bar chart. Put the most important component at the common baseline. If exact travel comparisons are important, use separate small-multiple bars and optionally add a total panel.</p>
+<h2 id="example-4-employee-satisfaction-survey">Example 4 — Employee satisfaction survey</h2>
+<p><strong>Question:</strong> Which teams lean toward agreement or disagreement?</p>
+<p>Use a diverging Likert chart. Keep neutral responses in a separate aligned series or use a 100% stack. Mark 50% if majority sentiment is a decision threshold.</p>
+<h2 id="example-5-vaccination-coverage">Example 5 — Vaccination coverage</h2>
+<p><strong>Question:</strong> What proportion of each district is vaccinated?</p>
+<p>A waffle chart can make each percentage intuitive. A heat map is more scalable if there are many districts and the goal is to see geographic or tabular patterns.</p>
+<h2 id="example-6-key-performance-dashboard">Example 6 — Key performance dashboard</h2>
+<p><strong>Question:</strong> Is actual revenue above its target and within the “good” range?</p>
+<p>Use a bullet chart rather than a gauge when several metrics must fit together and be accurately compared.</p>
+<h2 id="example-7-expense-reconciliation">Example 7 — Expense reconciliation</h2>
+<p><strong>Question:</strong> How did gross revenue become net profit?</p>
+<p>Use a waterfall chart: begin with gross revenue, show each positive and negative adjustment, and end with net profit.</p>
+<h2 id="example-8-outlier-and-detail">Example 8 — Outlier and detail</h2>
+<p><strong>Question:</strong> How can one show two extremely large countries without hiding differences among smaller countries?</p>
+<p>Do not break the large bars. Show one complete chart containing all countries, followed by a zoomed chart of the smaller countries.</p>
+<hr>
+<h1 id="17-likely-exam-questions-and-model-answer-points">17. Likely Exam Questions and Model Answer Points</h1>
+<h2 id="q1-why-should-a-bar-chart-axis-usually-begin-at-zero">Q1. Why should a bar-chart axis usually begin at zero?</h2>
+<p>Because bar values are perceived through length. A nonzero baseline truncates the encoded length, exaggerates differences, and can shift the display from accurate to misleading perception. Emerging research offers limited nuance, but zero remains the safe recommended convention.</p>
+<h2 id="q2-differentiate-simple-clustered-and-stacked-bar-charts">Q2. Differentiate simple, clustered, and stacked bar charts.</h2>
+<ul>
+<li><strong>Simple bar:</strong> One value per category; primarily compares across categories.</li>
+<li><strong>Clustered bar:</strong> Multiple side-by-side series per category; compares within and across categories using a shared baseline.</li>
+<li><strong>Stacked bar:</strong> Components combined in one bar; emphasizes total and composition but makes non-baseline segments difficult to compare.</li>
+</ul>
+<h2 id="q3-what-is-the-changing-baseline-problem">Q3. What is the changing-baseline problem?</h2>
+<p>In a stacked chart, only the first segment shares a baseline across categories. Later segments begin after different cumulative values, weakening precise length comparison. Separate small multiples restore common baselines but sacrifice easy total perception.</p>
+<h2 id="q4-how-should-neutral-likert-responses-be-handled">Q4. How should neutral Likert responses be handled?</h2>
+<p>Do not split neutral across the diverging center because it falsely associates portions with positive and negative sentiment. Show neutral separately or use a 100% stacked chart with neutral as its own component.</p>
+<h2 id="q5-compare-gauge-and-bullet-charts">Q5. Compare gauge and bullet charts.</h2>
+<p>Gauge charts use needles, arcs, and shaded ranges; they provide a familiar general-status metaphor but rely on imprecise angle judgment and consume space. Bullet charts encode actual value, target, and qualitative ranges linearly, are more compact, and support accurate comparison across multiple metrics.</p>
+<h2 id="q6-why-must-bubble-sizes-be-based-on-area">Q6. Why must bubble sizes be based on area?</h2>
+<p>The visible two-dimensional mark is the circle’s area. If radius or diameter is proportional to value, area grows quadratically and exaggerates differences. Radius should be proportional to the square root of value.</p>
+<h2 id="q7-when-is-a-waterfall-chart-suitable">Q7. When is a waterfall chart suitable?</h2>
+<p>When sequential positive and negative contributions reconcile an initial value to a final value, such as gross-to-net income or year-to-year GDP change.</p>
+<h2 id="q8-what-are-the-strengths-and-weaknesses-of-unit-isotype-charts">Q8. What are the strengths and weaknesses of unit/isotype charts?</h2>
+<p>They are intuitive, engaging, memorable, and can humanize data. However, they can force counting, make accurate area comparison difficult, become cluttered, and introduce inappropriate or exclusionary symbolism.</p>
+<h2 id="q9-how-can-a-designer-handle-outliers-in-a-bar-chart">Q9. How can a designer handle outliers in a bar chart?</h2>
+<p>Keep a complete zero-based view to show true magnitude, then provide a separate zoomed-in chart for smaller observations. Do not break or crop bars.</p>
+<h2 id="q10-what-factors-determine-the-choice-among-comparison-charts">Q10. What factors determine the choice among comparison charts?</h2>
+<p>The required comparison—within or across groups, level or difference, absolute or relative, single or multiple series, exact value or overall pattern—plus audience familiarity, perceptual accuracy, clutter, and desired engagement.</p>
+<hr>
+<h1 id="18-rapid-revision-checklist">18. Rapid Revision Checklist</h1>
+<h2 id="definitions-to-know">Definitions to know</h2>
+<ul>
+<li>[ ] Bar chart: rectangular length/height encodes value.</li>
+<li>[ ] Clustered bar: multiple side-by-side bars per category.</li>
+<li>[ ] Stacked bar: component segments combine within each category’s bar.</li>
+<li>[ ] Diverging bar: stacks extend in opposing directions from a central baseline.</li>
+<li>[ ] Unit chart: repeated symbols encode observations or fixed quantities.</li>
+<li>[ ] Isotype: unit chart using pictorial icons; International System of Typographic Picture Education.</li>
+<li>[ ] Waffle chart: normally a 10 × 10 grid, one cell per percentage point.</li>
+<li>[ ] Heat map: table-like display whose cell colors encode values.</li>
+<li>[ ] Gauge chart: speedometer-like range with a pointer and qualitative bands.</li>
+<li>[ ] Bullet chart: compact linear display of actual, target, and background ranges.</li>
+<li>[ ] Bubble chart: circles encode quantitative values, correctly through area.</li>
+<li>[ ] Waterfall chart: sequential additions/subtractions connect an initial to a final total.</li>
+</ul>
+<h2 id="rules-and-cautions">Rules and cautions</h2>
+<ul>
+<li>[ ] Begin bar charts at zero unless an exceptionally well-justified context demands otherwise.</li>
+<li>[ ] Never use arbitrary broken bars to hide outlier magnitude.</li>
+<li>[ ] Use complete plus zoomed-in views for outliers.</li>
+<li>[ ] Sort by value for rank; use alphabetical or purposeful ordering for lookup/story needs.</li>
+<li>[ ] Use color sparingly to highlight focal bars.</li>
+<li>[ ] Remove tick marks when whitespace already separates categories.</li>
+<li>[ ] Keep gridlines and guide lines light; remove them when direct labels make them redundant.</li>
+<li>[ ] Rotate the entire bar chart when category labels are long.</li>
+<li>[ ] Avoid too many bars per cluster; use small multiples when crowded.</li>
+<li>[ ] Remember that stacking helps composition but hurts comparison of interior segments.</li>
+<li>[ ] Treat neutral Likert responses as a distinct category.</li>
+<li>[ ] Use icons to encode data, not as decoration.</li>
+<li>[ ] Choose inclusive and emotionally appropriate icons.</li>
+<li>[ ] Use heat maps for patterns, not primarily for exact-value reading.</li>
+<li>[ ] Prefer bullets to gauges when accuracy, compactness, and multiple comparisons matter.</li>
+<li>[ ] Scale bubble area—not radius or diameter—to value.</li>
+<li>[ ] Use distinct colors for positive, negative, and total bars in waterfalls.</li>
+<li>[ ] Expect nonstandard charts to need more explanation.</li>
+</ul>
+<h2 id="final-decision-test">Final decision test</h2>
+<p>Before publishing any categorical comparison chart, be able to answer:</p>
+<ul>
+<li>[ ] What exact comparison should the reader make first?</li>
+<li>[ ] Is the chart asking for a perceptually easy judgment?</li>
+<li>[ ] Are totals, components, or differences the main message?</li>
+<li>[ ] Does the ordering support the reader’s task?</li>
+<li>[ ] Does every visual element aid interpretation?</li>
+<li>[ ] Could any axis, break, scale, icon, color, or area encoding mislead?</li>
+<li>[ ] Is the chart clear for the intended audience?</li>
+<li>[ ] Would a simpler chart communicate the point more accurately?</li>
+</ul>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<h3 id="stacked-bars-total-plus-composition">Stacked bars: total plus composition</h3>
+<p>A stacked bar is useful when the question requires both category totals and internal composition. Example: one bar per Product, divided into North, South, East, and West sales. Total length and the first segment sharing the baseline are relatively easy to compare. Middle and upper segments float on changing baselines, so exact cross-bar comparison is difficult.</p>
+<p><strong>Exam trade-off:</strong> use a stacked bar when composition justifies lower segment precision. Use grouped bars or small multiples when component-by-component comparison is primary.</p>
+<h3 id="perceptual-and-ethical-cross-links">Perceptual and ethical cross-links</h3>
+<ul>
+<li>Shared-baseline length/position is judged more accurately than angle or area; bars usually outperform pie slices and bubbles for precision.</li>
+<li>Bubble <strong>area</strong>, not diameter, must represent magnitude, yet aligned position remains easier to compare.</li>
+<li>Gestalt organization cannot rescue a misleading axis or inaccurate data. Trust requires both numerical integrity and perceptual clarity.</li>
+</ul>
+<p><strong>Answer frame:</strong> identify whether the audience must compare totals, components, or exact differences; defend baseline, order, scale, and encoding; disclose the precision compromise.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-2.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 2: Visual Perception, Better Visualization,…</span>
+      </a>
+      <a href="week-4.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 4: Charts That Show Change Over Time</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

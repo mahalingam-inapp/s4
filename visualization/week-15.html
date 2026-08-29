@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Visualization · Week 15 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Visualization</span>
+      <span class="brand-title">Week 15</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html" selected>Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Data Visualization, Visual Perception, and Preattentive Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Visual Perception, Better Visualization, Form–Function, Tables and…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Visualizing and Comparing Categories
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Charts That Show Change Over Time
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Distribution and Relationship Visualizations
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Data Visualization: Exhaustive Exam Notes
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Data Visualization with Python, Jupyter, Python Basics, and Chart…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Python Data Visualization, Matplotlib Plotting, Interpretation, and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Data Visualization with Matplotlib, Seaborn, and Jupyter Notebook
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Exam-Focused Study Notes
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Seaborn, Matplotlib, Heatmaps, Styling, and Dashboard Design
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Dashboards, Dashboard Design, Grammar of Graphics, and Matplotlib
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Dashboard Design, Visual Encoding, Matplotlib, and Dashboard Analytics
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Storytelling with Data
+      </a>
+      <a class="is-active" href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Storytelling with Data: Exam-Focused Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Visualization · Week 15</p>
+        <h1 class="page-title">Storytelling with Data: Exam-Focused Study Notes</h1>
+        <p class="page-meta">Week 15 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#scope-of-the-week">Scope of the Week</a></li>
+      <li><a href="#1-preattentive-attributes">1. Preattentive Attributes</a></li>
+      <li><a href="#2-natural-reading-pattern-and-spatial-position">2. Natural Reading Pattern and Spatial Position</a></li>
+      <li><a href="#3-visual-hierarchy">3. Visual Hierarchy</a></li>
+      <li><a href="#4-step-by-step-example-complaints-received-versus-processed">4. Step-by-Step Example: Complaints Received versus Processed</a></li>
+      <li><a href="#5-size">5. Size</a></li>
+      <li><a href="#6-colour">6. Colour</a></li>
+      <li><a href="#7-form-follows-function">7. Form Follows Function</a></li>
+      <li><a href="#8-affordance">8. Affordance</a></li>
+      <li><a href="#9-eliminate-distraction">9. Eliminate Distraction</a></li>
+      <li><a href="#10-accessibility">10. Accessibility</a></li>
+      <li><a href="#11-affordance-versus-signifier">11. Affordance versus Signifier</a></li>
+      <li><a href="#12-aesthetics">12. Aesthetics</a></li>
+      <li><a href="#13-acceptance">13. Acceptance</a></li>
+      <li><a href="#14-why-story-matters">14. Why Story Matters</a></li>
+      <li><a href="#15-what-is-a-story">15. What Is a Story?</a></li>
+      <li><a href="#16-the-audience-is-the-protagonist-hero">16. The Audience Is the Protagonist/Hero</a></li>
+      <li><a href="#17-setting-up-the-story-five-questions">17. Setting Up the Story: Five Questions</a></li>
+      <li><a href="#18-conflict-and-tension">18. Conflict and Tension</a></li>
+      <li><a href="#19-the-narrative-arc">19. The Narrative Arc</a></li>
+      <li><a href="#20-narrative-structure-and-flow">20. Narrative Structure and Flow</a></li>
+      <li><a href="#21-exploratory-versus-explanatory-context">21. Exploratory versus Explanatory Context</a></li>
+      <li><a href="#22-power-of-repetition">22. Power of Repetition</a></li>
+      <li><a href="#23-four-tactics-for-story-clarity">23. Four Tactics for Story Clarity</a></li>
+      <li><a href="#24-storytelling-the-complaints-case">24. Storytelling the Complaints Case</a></li>
+      <li><a href="#25-cognitive-load">25. Cognitive Load</a></li>
+      <li><a href="#26-case-overview">26. Case Overview</a></li>
+      <li><a href="#27-make-quickmart-the-hero">27. Make QuickMart the Hero</a></li>
+      <li><a href="#28-partner-motivations">28. Partner Motivations</a></li>
+      <li><a href="#29-headline-first-communication">29. Headline-First Communication</a></li>
+      <li><a href="#30-storyboarding-with-post-it-notes">30. Storyboarding with Post-it Notes</a></li>
+      <li><a href="#31-narrative-scaffolding">31. Narrative Scaffolding</a></li>
+      <li><a href="#32-three-storyboard-options">32. Three Storyboard Options</a></li>
+      <li><a href="#33-parallel-versus-integrated-narrative">33. Parallel versus Integrated Narrative</a></li>
+      <li><a href="#34-recommended-strategic-hybrid">34. Recommended Strategic Hybrid</a></li>
+      <li><a href="#35-evidence-placement">35. Evidence Placement</a></li>
+      <li><a href="#36-internal-estimates-and-customer-surveys">36. Internal Estimates and Customer Surveys</a></li>
+      <li><a href="#37-handling-inconsistent-evidence">37. Handling Inconsistent Evidence</a></li>
+      <li><a href="#38-strong-story-and-strong-evidence">38. Strong Story and Strong Evidence</a></li>
+      <li><a href="#39-complete-greenleaf-workflow">39. Complete GreenLeaf Workflow</a></li>
+      <li><a href="#before-creating-the-visual">Before creating the visual</a></li>
+      <li><a href="#while-structuring-the-story">While structuring the story</a></li>
+      <li><a href="#while-designing">While designing</a></li>
+      <li><a href="#before-presenting">Before presenting</a></li>
+      <li><a href="#definitions-to-memorize">Definitions to memorize</a></li>
+      <li><a href="#numbers-and-compact-facts">Numbers and compact facts</a></li>
+      <li><a href="#one-line-answers-to-likely-exam-prompts">One-line answers to likely exam prompts</a></li>
+      <li><a href="#final-master-principle">Final master principle</a></li>
+      <li><a href="#administrative-reminder-from-the-live-session">Administrative reminder from the live session</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="scope-of-the-week">Scope of the Week</h2>
+<p>Week 15 completes the <strong>Storytelling with Data</strong> unit through four closely connected themes:</p>
+<ol>
+<li><strong>Focus attention</strong> — use preattentive attributes, size, colour, and spatial position to direct the audience.</li>
+<li><strong>Think like a designer</strong> — apply affordance, accessibility, aesthetics, and acceptance to data communication.</li>
+<li><strong>Tell a story</strong> — organize evidence through conflict, tension, narrative arc, narrative flow, and a call to action.</li>
+<li><strong>Apply the ideas in practice</strong> — especially through the complaints-processing example and the GreenLeaf–QuickMart B2B case.</li>
+</ol>
+<p>The central principle joining the week is:</p>
+<blockquote>
+<p>A data presentation is not an information dump. It is an audience-centred, deliberately designed argument that guides attention, gives evidence meaning, and makes the required action clear.</p>
+</blockquote>
+<hr>
+<h1 id="part-i-focus-attention">Part I — Focus Attention</h1>
+<h2 id="1-preattentive-attributes">1. Preattentive Attributes</h2>
+<h3 id="definition">Definition</h3>
+<p><strong>Preattentive attributes</strong> are visual properties processed by the brain <strong>automatically and unconsciously</strong>, typically in <strong>under about 200 milliseconds</strong>. They allow a viewer to notice a pattern, difference, trend, or outlier before consciously examining the display.</p>
+<p>They are powerful because the brain is naturally hardwired to detect differences in the environment. A designer can use that behaviour to make the audience see what matters first.</p>
+<h3 id="main-functions">Main functions</h3>
+<p>Preattentive attributes are used to:</p>
+<ul>
+<li>direct attention quickly to a chosen point;</li>
+<li>identify patterns, trends, or outliers without focused search;</li>
+<li>establish a visual hierarchy;</li>
+<li>tell the audience implicitly where to look first, second, and later;</li>
+<li>make information faster and easier to scan;</li>
+<li>push necessary but non-message-impacting material into the background.</li>
+</ul>
+<p>The instructor emphasized <strong>size, hue/colour, and spatial position</strong> as especially important attributes for a visual designer.</p>
+<h3 id="different-attributes-have-different-strengths">Different attributes have different strengths</h3>
+<p>Not every preattentive treatment attracts attention equally:</p>
+<ul>
+<li><strong>Colour and size</strong> usually create strong emphasis.</li>
+<li><strong>Italics</strong> generally create milder emphasis.</li>
+<li>Within colour, a <strong>bright blue</strong> normally attracts more attention than a muted blue, and both attract more attention than light grey.</li>
+<li>Multiple attributes can be combined, but they must be used deliberately and sparingly.</li>
+</ul>
+<h3 id="quantitative-versus-categorical-encoding">Quantitative versus categorical encoding</h3>
+<p>People naturally associate quantity with some attributes but not all:</p>
+<ul>
+<li>A <strong>longer line</strong> is interpreted as representing more than a shorter line. This helps explain why bar charts are easy to read.</li>
+<li><strong>Spatial position</strong> and <strong>line length</strong> are strong quantitative encodings.</li>
+<li>To a more limited degree, <strong>size</strong> and <strong>intensity</strong> can represent relative magnitude.</li>
+<li>Hue is normally categorical: asking whether “red or blue is greater” has no inherent meaning.</li>
+</ul>
+<p><strong>Exam distinction:</strong> Use attributes with a meaningful ordered scale for quantitative values; use hue mainly to distinguish categories or to highlight a selected item.</p>
+<h2 id="2-natural-reading-pattern-and-spatial-position">2. Natural Reading Pattern and Spatial Position</h2>
+<p>In the absence of another visual cue, viewers generally begin at the <strong>top-left</strong>, move to the right, and then down to the next row—an approximate zig-zag or “Z” pattern.</p>
+<p>Design implications:</p>
+<ul>
+<li>Treat the <strong>top-left as the most valuable real estate</strong> on the page or screen.</li>
+<li>Place the most important message, takeaway, or call to action there when appropriate.</li>
+<li>Do not make the audience wade through secondary material to find the main point.</li>
+<li>If the desired reading sequence differs from the natural sequence, provide strong visual cues.</li>
+<li>Work with the way people naturally take in information, not against it.</li>
+</ul>
+<h2 id="3-visual-hierarchy">3. Visual Hierarchy</h2>
+<p>A <strong>visual hierarchy</strong> is the deliberate ordering of information by perceptual prominence. It acts as a set of implicit instructions:</p>
+<ol>
+<li>Look here first.</li>
+<li>Then process this supporting point.</li>
+<li>Treat these other elements as background or context.</li>
+</ol>
+<p>It makes communication scannable and reduces the effort required to interpret it. The transcript notes that an audience may initially give a visual only <strong>3–8 seconds</strong> before deciding whether to continue. A strong hierarchy should communicate at least the gist within that window.</p>
+<h3 id="how-to-construct-hierarchy">How to construct hierarchy</h3>
+<ul>
+<li>Use stronger contrast for the most important item.</li>
+<li>Use weaker contrast or grey for background/context.</li>
+<li>Vary size according to importance.</li>
+<li>Use bold or a saturated accent for a key phrase.</li>
+<li>Use positioning to place the key message where attention begins.</li>
+<li>Keep hierarchy consistent across a deck so the audience learns how to read it.</li>
+</ul>
+<h2 id="4-step-by-step-example-complaints-received-versus-processed">4. Step-by-Step Example: Complaints Received versus Processed</h2>
+<h3 id="situation">Situation</h3>
+<p>A monthly line graph compares:</p>
+<ul>
+<li>complaints/calls <strong>received</strong>; and</li>
+<li>complaints/calls <strong>processed</strong> by a department.</li>
+</ul>
+<p>After May, processed complaints fall below received complaints, and the gap widens. The right-hand side of the graph is therefore the intended focus.</p>
+<h3 id="design-process">Design process</h3>
+<h4 id="step-1-push-everything-into-the-background">Step 1 — Push everything into the background</h4>
+<p>Make the complete graph grey. This forces the designer to decide explicitly what deserves to be brought forward.</p>
+<h4 id="step-2-make-the-data-stand-out">Step 2 — Make the data stand out</h4>
+<p>Make the two data series larger/bolder than axes and labels. The data—not the chart framework—should dominate.</p>
+<h4 id="step-3-prioritize-the-important-series">Step 3 — Prioritize the important series</h4>
+<p>Make the processed-response line darker than the received-complaints line. This stresses that processing has fallen behind incoming complaints.</p>
+<h4 id="step-4-direct-attention-to-the-gap">Step 4 — Direct attention to the gap</h4>
+<p>The relevant change occurs on the right, but a viewer will otherwise start at the top-left and eventually reach it. Use selective cues to shorten that search.</p>
+<h4 id="step-5-avoid-labeling-everything">Step 5 — Avoid labeling everything</h4>
+<p>Putting a marker and number on every observation produces a cluttered mess. Instead of emphasizing the gap, it creates competing signals.</p>
+<h4 id="step-6-label-only-the-focal-points">Step 6 — Label only the focal points</h4>
+<p>Retain markers and numerical labels only where the widening gap matters. These values act as cues saying, <strong>“Look here.”</strong> The visual becomes both cleaner and more direct.</p>
+<h3 id="practical-use-case">Practical use case</h3>
+<p>Suppose complaints received and resolved were nearly equal from January to May. An employee resigns in May. The team works overtime and initially contains the problem, but unresolved work begins carrying into later months and the backlog grows. A good visual-story sequence is:</p>
+<ol>
+<li>show the earlier balance;</li>
+<li>mark the resignation as the disrupting event;</li>
+<li>show the initially small then widening gap;</li>
+<li>explain the team&rsquo;s temporary coping effort;</li>
+<li>connect backlog to customer service and organizational reputation;</li>
+<li>request immediate approval for a replacement employee.</li>
+</ol>
+<p>This is stronger than reading a table of monthly values because it combines visual attention, causal context, tension, organizational consequences, and an explicit action.</p>
+<h2 id="5-size">5. Size</h2>
+<p><strong>Relative size suggests relative importance.</strong></p>
+<ul>
+<li>Items of roughly equal importance should have similar size.</li>
+<li>A uniquely important point may be made larger.</li>
+<li>Size should not be varied decoratively; doing so creates a false hierarchy.</li>
+</ul>
+<h2 id="6-colour">6. Colour</h2>
+<p>Colour is one of the strongest attention-directing tools, but only when used with restraint.</p>
+<h3 id="core-rules">Core rules</h3>
+<ul>
+<li>Use colour <strong>sparingly, strategically, consistently, and intentionally</strong>.</li>
+<li>Do not use colour merely to make a graph colourful or prevent boredom. The story should hold attention.</li>
+<li>Do not let software defaults make the colour decision.</li>
+<li>Begin with shades of grey and add one bold accent colour to direct attention.</li>
+<li>Prefer grey rather than black as the neutral base because colour generally contrasts more strongly against grey.</li>
+<li>Blue is often useful: it is familiar, generally avoids the common red–green colour-vision problem, and reproduces reasonably in grayscale. It is not the only valid choice.</li>
+</ul>
+<h3 id="why-too-many-colours-fail">Why too many colours fail</h3>
+<p>When many colours compete:</p>
+<ul>
+<li>nothing stands out;</li>
+<li>contrast loses meaning;</li>
+<li>colours lose their preattentive value;</li>
+<li>the result enters “rainbow land” and becomes harder to process.</li>
+</ul>
+<h3 id="colour-consistency">Colour consistency</h3>
+<p>The audience spends effort learning a colour code once and then assumes it continues. If four regions are assigned four colours, preserve those mappings throughout the report or deck.</p>
+<p>A change in colour signals a change in meaning, topic, or tone. Use a shift only when a real change should be communicated—not for novelty.</p>
+<p>Consistent use also trains the audience: if blue always indicates the focal message, viewers learn where to look first on later slides, reducing mental fatigue.</p>
+<h3 id="colour-blindness-and-redundancy">Colour blindness and redundancy</h3>
+<p>The most common issue discussed is difficulty distinguishing red and green. Therefore:</p>
+<ul>
+<li>avoid relying solely on red versus green;</li>
+<li>if those colours must indicate negative and positive values, add redundant cues;</li>
+<li>possible cues include bold, different saturation/brightness, plus/minus signs, labels, line styles, or symbols.</li>
+</ul>
+<p>The objective is not to disenfranchise a portion of the audience.</p>
+<h3 id="emotional-and-cultural-meaning">Emotional and cultural meaning</h3>
+<p>Colour evokes emotion. Select a palette that reinforces the intended tone. For an international audience, consider cultural connotations; the meaning of red in China, for example, can differ sharply from its associations elsewhere.</p>
+<h3 id="exam-trap">Exam trap</h3>
+<p>Colour is not automatically good. Its value comes from <strong>contrast plus intentional meaning</strong>. Repeated or excessive accents cancel the very emphasis they were intended to create.</p>
+<hr>
+<h1 id="part-ii-think-like-a-designer">Part II — Think Like a Designer</h1>
+<h2 id="7-form-follows-function">7. Form Follows Function</h2>
+<p>In data communication:</p>
+<ul>
+<li><strong>Function</strong> = what the audience should know or do.</li>
+<li><strong>Form</strong> = the visualization or communication design used to achieve it.</li>
+</ul>
+<p>Therefore, chart type, layout, colour, wording, and interaction must follow the communication purpose. The traditional product-design ideas applied to visualization are <strong>affordance, accessibility, aesthetics, and acceptance</strong>.</p>
+<h2 id="8-affordance">8. Affordance</h2>
+<h3 id="definition-2">Definition</h3>
+<p>An <strong>affordance</strong> is an aspect inherent in a design that makes its use apparent. A knob affords turning, a button affords pushing, and a cord affords pulling.</p>
+<p>When sufficient affordance is present, good design “fades into the background”: the user knows what to do without consciously decoding the design.</p>
+<p>In visualization, affordance guides the viewer on how to read or interact with the information.</p>
+<h3 id="three-ways-to-create-visual-affordance">Three ways to create visual affordance</h3>
+<ol>
+<li><strong>Highlight the important material.</strong></li>
+<li><strong>Eliminate distractions.</strong></li>
+<li><strong>Create a clear hierarchy of information.</strong></li>
+</ol>
+<p>Together, these make a complex visual afford understanding without feeling complicated.</p>
+<h3 id="highlight-only-a-small-fraction">Highlight only a small fraction</h3>
+<p>Highlighting becomes weaker as the proportion highlighted rises. The cited universal-design guideline recommends highlighting at most about <strong>10%</strong> of a design.</p>
+<h4 id="emphasis-techniques">Emphasis techniques</h4>
+<ul>
+<li><strong>Bold</strong> is generally preferred because it creates clear emphasis with limited noise.</li>
+<li><strong>Italics</strong> provide weaker emphasis.</li>
+<li><strong>Underlining</strong> adds noise and can reduce legibility; use it very sparingly, if at all.</li>
+<li><strong>Uppercase</strong> can work for short titles, labels, and keywords that must be scanned quickly, but not for long passages.</li>
+<li>Avoid switching among multiple typefaces merely to highlight; sufficient difference is hard to create without damaging aesthetics.</li>
+<li>Colour works well when sparse and can be paired with bold.</li>
+<li>Inverting elements attracts attention but can add substantial visual noise.</li>
+<li>Size attracts attention and signals importance.</li>
+</ul>
+<h2 id="9-eliminate-distraction">9. Eliminate Distraction</h2>
+<p>The instructor invokes the design idea often attributed to Antoine de Saint-Exupéry: perfection is reached not when there is nothing more to add, but when there is nothing left to take away.</p>
+<h3 id="clutter-versus-context">Clutter versus context</h3>
+<ul>
+<li><strong>Clutter</strong>: elements occupying space without adding useful information.</li>
+<li><strong>Context</strong>: information the audience needs for the message to make sense.</li>
+</ul>
+<p>Use the <strong>right amount of context</strong>—neither too much nor too little.</p>
+<h3 id="elimination-questions">Elimination questions</h3>
+<ul>
+<li>Is every data item equally important? Usually not.</li>
+<li>Can noncritical details be removed?</li>
+<li>Can detail be summarized? The presenter must know the detail, but the audience may not need it.</li>
+<li>Would removing an item change the meaning? If not, remove it.</li>
+<li>Is the item being retained only because it is attractive or took effort to create? Effort does not justify inclusion.</li>
+<li>Does it support the message? If not, it does not serve the communication.</li>
+</ul>
+<h2 id="10-accessibility">10. Accessibility</h2>
+<h3 id="definition-3">Definition</h3>
+<p><strong>Accessibility</strong> means that a design can be used by people with diverse abilities. In this course it is broadened to include widely varying technical and analytical skills.</p>
+<p>An engineer may create a chart, but an engineering degree should not be required to understand it. The responsibility for accessibility lies with the designer.</p>
+<h3 id="strategy-1-do-not-overcomplicate">Strategy 1 — Do not overcomplicate</h3>
+<p>If a visual looks difficult, the audience predicts that it will require significant time and is less likely to engage.</p>
+<p>Practical rules:</p>
+<ul>
+<li>Make it legible with a consistent, readable font and suitable size.</li>
+<li>Keep it clean and approachable.</li>
+<li>Use straightforward language.</li>
+<li>Prefer fewer, simpler words.</li>
+<li>Define specialized terminology.</li>
+<li>Spell out acronyms.</li>
+<li>Remove unnecessary complexity.</li>
+<li>When simple and complicated alternatives work equally well, choose the simple one.</li>
+</ul>
+<h3 id="strategy-2-text-is-your-friend">Strategy 2 — Text is your friend</h3>
+<p>Text can:</p>
+<ul>
+<li>label;</li>
+<li>introduce;</li>
+<li>explain;</li>
+<li>reinforce;</li>
+<li>highlight;</li>
+<li>recommend;</li>
+<li>narrate a story.</li>
+</ul>
+<p>Assume every chart needs a meaningful title and every axis needs an explicit label, even if the meaning seems obvious from context. The audience should use cognitive effort to understand the data, not to work out how to read the graph.</p>
+<p>Two viewers can inspect the same chart and reach different conclusions. If a specific conclusion is required, <strong>state it in words</strong> and use preattentive emphasis on those words.</p>
+<p>Annotations may explain:</p>
+<ul>
+<li>a data nuance;</li>
+<li>an important point;</li>
+<li>a relevant external event;</li>
+<li>why a change occurred.</li>
+</ul>
+<p><strong>Exam principle:</strong> Text and visuals are partners. Minimalism does not mean stripping away the words necessary to guide accurate interpretation.</p>
+<h2 id="11-affordance-versus-signifier">11. Affordance versus Signifier</h2>
+<p>The live session extends the idea to interaction:</p>
+<ul>
+<li><strong>Affordance</strong> is what an object/design allows the user to do.</li>
+<li>A <strong>signifier</strong> is the visible cue telling the user where or how the action can be performed.</li>
+</ul>
+<p>For example, an interactive chart may support filtering (affordance), but an icon, button, instruction, cursor change, or label may be required to reveal it (signifier).</p>
+<p>Without a signifier, a technically available feature can remain practically invisible. Good interactive visualization therefore must not assume that users will discover hidden interactions by accident.</p>
+<h3 id="practical-example">Practical example</h3>
+<p>If clicking a region on a map filters all other charts, include a visible instruction such as “Select a region to filter,” use a recognizable hover state, and provide a clear reset control. The interface should communicate its behaviour without a spoken explanation.</p>
+<h2 id="12-aesthetics">12. Aesthetics</h2>
+<h3 id="why-aesthetics-matter">Why aesthetics matter</h3>
+<p>The answer to “Must a data visualization be attractive?” is <strong>yes</strong>, but aesthetics must support function.</p>
+<p>More aesthetic designs are often:</p>
+<ul>
+<li>perceived as easier to use, whether or not they objectively are;</li>
+<li>more readily accepted and used over time;</li>
+<li>more supportive of creative thinking and problem solving;</li>
+<li>associated with more positive relationships;</li>
+<li>given more patience when minor problems occur.</li>
+</ul>
+<p>Thus, attractive design can increase the opportunity for the message to be understood.</p>
+<h3 id="aesthetic-design-rules">Aesthetic design rules</h3>
+<ol>
+<li><strong>Be smart with colour</strong> — intentional, sparse, and strategic.</li>
+<li><strong>Align elements</strong> — create clean horizontal and vertical lines, unity, and cohesion.</li>
+<li><strong>Use whitespace</strong> — preserve margins; do not stretch graphics or fill space simply because it exists.</li>
+</ol>
+<p>Rainbow colour, poor alignment, and misuse or absence of whitespace make a visual feel disorganized and show insufficient respect for both the data and the audience.</p>
+<h2 id="13-acceptance">13. Acceptance</h2>
+<h3 id="definition-4">Definition</h3>
+<p>A design is effective only if its intended audience accepts it. People commonly resist a new design because of their familiarity with the old.</p>
+<p>Acceptance may depend on:</p>
+<ul>
+<li>confidence in the designer or organization;</li>
+<li>perceived credibility and expertise;</li>
+<li>demonstrated superiority over the existing approach;</li>
+<li>how much change the audience is being asked to tolerate.</li>
+</ul>
+<p>The live-session examples contrasted the built-in acceptance available to a well-known company such as Apple with the extra credibility work required of an unfamiliar designer.</p>
+<h3 id="strategies-for-gaining-acceptance-of-a-new-design">Strategies for gaining acceptance of a new design</h3>
+<ol>
+<li><strong>Articulate the benefits.</strong> Explain why the new approach looks different and what new or improved insights it enables.</li>
+<li><strong>Show old and new side by side.</strong> A before/after comparison can make superiority visible.</li>
+<li><strong>Offer multiple options and seek input.</strong> Feedback increases fit and ownership.</li>
+<li><strong>Win over influential audience members.</strong> Consult vocal stakeholders one-to-one, incorporate useful feedback, and let their acceptance influence others.</li>
+</ol>
+<h3 id="presenter-acceptance-and-credentials">Presenter acceptance and credentials</h3>
+<p>Before unfamiliar senior stakeholders accept a message, they may silently ask:</p>
+<ul>
+<li>Who are you?</li>
+<li>Why should I listen to you?</li>
+<li>What do you know that I do not?</li>
+</ul>
+<p>An unfamiliar presenter should establish relevant credibility <strong>briefly and humbly</strong>, not boastfully. Useful tactics include:</p>
+<ul>
+<li>acknowledge the audience&rsquo;s experience and time;</li>
+<li>explain the relevant research, evidence, or months of work completed;</li>
+<li>state why the perspective is useful for this specific issue;</li>
+<li>show that the presenter has information uniquely relevant to the decision.</li>
+</ul>
+<p>The live-session answer stressed that a presenter invited to discuss a topic usually knows something the audience does not; this should be communicated respectfully before diving into the subject.</p>
+<hr>
+<h1 id="part-iii-tell-a-story">Part III — Tell a Story</h1>
+<h2 id="14-why-story-matters">14. Why Story Matters</h2>
+<p>Raw spreadsheet data and isolated facts on slides are easily forgotten. Stories are memorable. Pairing story with effective visuals lets the audience retain what they heard/read along with what they saw.</p>
+<p>The live session began with participants recalling vivid personal incidents, including a vehicle rollover and childhood events, to illustrate that emotionally charged events with disruption, tension, and consequences remain in long-term memory.</p>
+<h2 id="15-what-is-a-story">15. What Is a Story?</h2>
+<p>At a fundamental level, a story explains <strong>how and why life changes</strong>:</p>
+<ol>
+<li>There is an initial balance.</li>
+<li>An event throws it out of balance.</li>
+<li>The protagonist struggles against opposing forces.</li>
+<li>Conflict and suspense develop.</li>
+<li>Choices and action lead toward a new balance or resolution.</li>
+</ol>
+<p>Robert McKee&rsquo;s formulation in the lesson describes the disruption as <strong>subjective expectation meeting cruel reality</strong>.</p>
+<h3 id="questions-for-discovering-a-story">Questions for discovering a story</h3>
+<ul>
+<li>What does the protagonist want or need in order to restore balance?</li>
+<li>What is the protagonist&rsquo;s core need?</li>
+<li>What prevents that desire from being achieved?</li>
+<li>How will the protagonist act in the face of those opposing forces?</li>
+<li>After constructing the story, is it believable?</li>
+</ul>
+<p>If the story is not believable or coherent, add, remove, or rearrange components.</p>
+<h2 id="16-the-audience-is-the-protagonist-hero">16. The Audience Is the Protagonist/Hero</h2>
+<p>In business data storytelling, frame the story around the audience, not around the presenter or supplier.</p>
+<p>The audience should recognize:</p>
+<ul>
+<li>its own situation;</li>
+<li>its own problem or opportunity;</li>
+<li>its own stake in the outcome;</li>
+<li>its ability to make the decision or take the action.</li>
+</ul>
+<p>The presenter, analyst, consultant, or vendor is the guide/enabler—not the hero.</p>
+<p>The audience&rsquo;s implicit questions are:</p>
+<ul>
+<li>Why should I pay attention?</li>
+<li>What is in it for me?</li>
+</ul>
+<h2 id="17-setting-up-the-story-five-questions">17. Setting Up the Story: Five Questions</h2>
+<p>The lesson attributes the following setup questions to Cliff Atkinson:</p>
+<ol>
+<li><strong>Setting</strong> — When and where does the story take place?</li>
+<li><strong>Main character</strong> — Who drives the action? Frame this in terms of the audience.</li>
+<li><strong>Imbalance</strong> — Why is action necessary? What changed?</li>
+<li><strong>Balance</strong> — What desired state should occur?</li>
+<li><strong>Solution</strong> — How will change occur and balance be restored?</li>
+</ol>
+<p>Imbalance–balance–solution may also be framed as <strong>problem–recommended solution</strong>.</p>
+<h2 id="18-conflict-and-tension">18. Conflict and Tension</h2>
+<p>Conflict, struggle, suspense, and dramatic tension are critical because a story in which everything is fine and expected to remain fine is neither attention-grabbing nor action-inspiring.</p>
+<p>The tension lies between:</p>
+<ul>
+<li>present imbalance and desired balance;</li>
+<li>the current problem and its solution;</li>
+<li>the consequences of inaction and the benefits of acting.</li>
+</ul>
+<p>Frame the conflict as the audience&rsquo;s problem so that the audience immediately owns a stake in the solution.</p>
+<h2 id="19-the-narrative-arc">19. The Narrative Arc</h2>
+<p>The narrative arc is the backbone of storytelling:</p>
+<ol>
+<li><strong>Plot/exposition</strong> — establish the setting, characters, and initial state.</li>
+<li><strong>Rising action</strong> — develop the problem, evidence, consequences, and obstacles.</li>
+<li><strong>Climax</strong> — the decision or highest point of tension.</li>
+<li><strong>Falling action</strong> — show how the chosen response addresses the problem.</li>
+<li><strong>Resolution</strong> — restore balance and make the next step clear.</li>
+</ol>
+<p>At its core, the arc represents <strong>transformation</strong>: the protagonist faces conflict, makes choices, and emerges changed.</p>
+<h3 id="beginning">Beginning</h3>
+<ul>
+<li>Establish the plot and audience relevance.</li>
+<li>Show what changed.</li>
+<li>Introduce the imbalance and tension.</li>
+<li>Answer “Why should I care?”</li>
+</ul>
+<h3 id="middle-what-could-be">Middle: what could be</h3>
+<p>The bulk of the communication develops the proposed future and convinces the audience that action is required. Possible content includes:</p>
+<ul>
+<li>relevant background;</li>
+<li>external context or benchmarks;</li>
+<li>comparisons;</li>
+<li>examples illustrating the issue;</li>
+<li>data proving that a problem exists;</li>
+<li>consequences of taking no action;</li>
+<li>options or alternatives;</li>
+<li>why the audience is uniquely positioned to decide or act.</li>
+</ul>
+<p>Select content according to what will resonate with and motivate the particular audience.</p>
+<h3 id="end-call-to-action">End: call to action</h3>
+<p>End by making completely clear what the audience should do with its new understanding.</p>
+<p>A strong ending may:</p>
+<ul>
+<li>return to the opening problem;</li>
+<li>recap the imbalance;</li>
+<li>connect the solution to restored balance;</li>
+<li>reinforce urgency;</li>
+<li>specify the decision or behaviour required.</li>
+</ul>
+<h2 id="20-narrative-structure-and-flow">20. Narrative Structure and Flow</h2>
+<p><strong>Narrative flow</strong> is the order in which the audience experiences the story. Numbers and words on a common topic are useless if they lack a structure that organizes them and gives them meaning.</p>
+<p>Choose the flow by asking:</p>
+<ul>
+<li>Is the audience busy and expecting the answer quickly?</li>
+<li>Is the audience new, requiring credibility to be established?</li>
+<li>Does it care about process, or only the conclusion?</li>
+<li>Is the task collaborative and input-seeking?</li>
+<li>Is the audience deciding or acting?</li>
+<li>What order will most effectively persuade it?</li>
+</ul>
+<h3 id="two-common-orders">Two common orders</h3>
+<h4 id="conventional-order">Conventional order</h4>
+<p>Move from beginning through evidence and tension to the conclusion and action.</p>
+<h4 id="lead-with-the-ending">Lead with the ending</h4>
+<p>Start with the call to action or “so what,” then provide the critical evidence supporting it. This works especially well when:</p>
+<ul>
+<li>trust already exists;</li>
+<li>the audience is busy;</li>
+<li>the audience cares more about the answer than the derivation.</li>
+</ul>
+<p>Leading with the action immediately tells viewers what role or lens to adopt while processing the remainder and can motivate continued attention.</p>
+<h2 id="21-exploratory-versus-explanatory-context">21. Exploratory versus Explanatory Context</h2>
+<p>The live session emphasized deciding what kind of communication is being delivered.</p>
+<h3 id="exploratory">Exploratory</h3>
+<ul>
+<li>Purpose: investigate possibilities or support discussion.</li>
+<li>Present several alternatives (the instructor suggested roughly five or six where appropriate).</li>
+<li>Do not merely open the topic and transfer all thinking to the audience.</li>
+<li>Analyze the alternatives, recommend the best one, and explain why; the audience may agree or disagree.</li>
+</ul>
+<h3 id="explanatory">Explanatory</h3>
+<ul>
+<li>Purpose: communicate a finding, solution, or method already selected.</li>
+<li>Explain the relevant solution directly.</li>
+<li>Do not burden the audience with every discarded path or every step of how the team arrived there unless it is necessary.</li>
+<li>Avoid presenting unnecessary options when the task is to explain what should be known or done.</li>
+</ul>
+<p><strong>Exam distinction:</strong> Exploratory communication considers alternatives; explanatory communication delivers a clear conclusion and supporting evidence.</p>
+<h2 id="22-power-of-repetition">22. Power of Repetition</h2>
+<p>Repeated information is more likely to enter long-term memory. Apply the classic structure:</p>
+<ol>
+<li>Tell the audience what you are going to tell them.</li>
+<li>Tell them.</li>
+<li>Tell them what you told them.</li>
+</ol>
+<p>In a report or deck:</p>
+<ul>
+<li>begin with an executive summary;</li>
+<li>provide the detailed body;</li>
+<li>conclude with a summary of the main points and action.</li>
+</ul>
+<p>The three exposures set expectations, supply evidence, and reinforce retention.</p>
+<h2 id="23-four-tactics-for-story-clarity">23. Four Tactics for Story Clarity</h2>
+<h3 id="23-1-horizontal-logic">23.1 Horizontal logic</h3>
+<p>Read only the slide titles from beginning to end. Together, they should tell the overarching story.</p>
+<p>This requires <strong>action titles/headlines</strong>, not merely descriptive labels.</p>
+<ul>
+<li>Weak: “Customer Survey Results.”</li>
+<li>Strong: “Eco-conscious customers prefer sustainable packaging.”</li>
+</ul>
+<h3 id="23-2-vertical-logic">23.2 Vertical logic</h3>
+<p>Everything on a slide should be mutually reinforcing:</p>
+<ul>
+<li>content supports the title and the title summarizes the content;</li>
+<li>words support visuals and visuals support words;</li>
+<li>no unrelated or extraneous material remains.</li>
+</ul>
+<p>Deciding what to remove or move to an appendix can be as important as deciding what to retain.</p>
+<h3 id="23-3-reverse-storyboarding">23.3 Reverse storyboarding</h3>
+<p>After the deck is complete:</p>
+<ol>
+<li>review every slide;</li>
+<li>write down its main point;</li>
+<li>inspect the resulting list;</li>
+<li>compare it with the intended storyboard.</li>
+</ol>
+<p>If the list does not reproduce the intended story, add, remove, or reorder slides/content.</p>
+<h3 id="23-4-fresh-perspective">23.4 Fresh perspective</h3>
+<p>Give the presentation to a friend or colleague who lacks context. Do not pre-explain it. Ask:</p>
+<ul>
+<li>What do you think the presentation says?</li>
+<li>Where does your attention go?</li>
+<li>What appears most important?</li>
+<li>Where do questions arise?</li>
+<li>Is the objective clear without the presenter speaking?</li>
+</ul>
+<p>Subject-matter experts lose the ability to see their work through a novice audience&rsquo;s eyes. An external reader reveals ambiguity and directs iteration.</p>
+<hr>
+<h1 id="part-iv-integrated-live-session-lessons">Part IV — Integrated Live-Session Lessons</h1>
+<h2 id="24-storytelling-the-complaints-case">24. Storytelling the Complaints Case</h2>
+<p>The same complaints data can be presented either as a confusing series of values or as a persuasive story.</p>
+<h3 id="story-structure">Story structure</h3>
+<ul>
+<li><strong>Balance:</strong> At the beginning of the year, complaints received were effectively matched by complaints processed.</li>
+<li><strong>Disrupting event:</strong> An employee resigned in May.</li>
+<li><strong>Rising action:</strong> The remaining team worked overtime and initially limited the shortfall; a few cases nevertheless carried over.</li>
+<li><strong>Escalation:</strong> The gap grew and the backlog became increasingly unmanageable.</li>
+<li><strong>Organizational stakes:</strong> Failure at the customer-facing end harms not only the department&rsquo;s performance but the reputation of the whole organization.</li>
+<li><strong>Climax:</strong> If no action is taken, performance will continue to decline.</li>
+<li><strong>Call to action:</strong> Approve a replacement employee immediately.</li>
+</ul>
+<h3 id="visual-mechanics">Visual mechanics</h3>
+<ul>
+<li>Use a line chart to make trajectories and the widening gap visible.</li>
+<li>Avoid emphasizing irrelevant earlier numbers.</li>
+<li>Label only points tied to the issue.</li>
+<li>Render the response/processed line dark and complaints received in grey so the shortfall is immediately visible.</li>
+<li>Mark the employee resignation as causal context.</li>
+</ul>
+<p>The instructor did not claim this was the only or perfect design; it demonstrates how selected detail, emphasis, context, and narrative can focus attention and appeal to management.</p>
+<h2 id="25-cognitive-load">25. Cognitive Load</h2>
+<p><strong>Cognitive load</strong> is the mental effort required to understand communication.</p>
+<p>Reduce it by:</p>
+<ul>
+<li>using a familiar, consistent graph form for comparable information;</li>
+<li>maintaining stable colour meanings;</li>
+<li>giving each slide one clear takeaway;</li>
+<li>using headlines that state conclusions;</li>
+<li>removing clutter;</li>
+<li>labeling directly;</li>
+<li>using straightforward language;</li>
+<li>keeping narrative transitions logical;</li>
+<li>avoiding unnecessary switching between unrelated themes.</li>
+</ul>
+<p>Consistency effectively trains the audience to read later visuals. Novelty for its own sake increases mental fatigue.</p>
+<hr>
+<h1 id="part-v-greenleaf-quickmart-case-study">Part V — GreenLeaf–QuickMart Case Study</h1>
+<h2 id="26-case-overview">26. Case Overview</h2>
+<p>Alex/GreenLeaf must persuade QuickMart to adopt a sustainable-packaging partnership. The available arguments include:</p>
+<ul>
+<li>approximately <strong>15% packaging-cost reduction</strong>;</li>
+<li>stronger appeal to eco-conscious customers;</li>
+<li>improved customer preference/loyalty;</li>
+<li>lower material or resource use;</li>
+<li>less waste and a smaller environmental footprint;</li>
+<li>competitive differentiation.</li>
+</ul>
+<p>Internal estimates and external customer/market survey evidence show minor differences. The challenge is not merely to put these facts on slides; it is to arrange them into a coherent, credible, QuickMart-centred argument.</p>
+<h2 id="27-make-quickmart-the-hero">27. Make QuickMart the Hero</h2>
+<h3 id="supplier-centred-framing">Supplier-centred framing</h3>
+<p>“GreenLeaf offers an innovative sustainable-packaging solution.”</p>
+<p>This focuses on the seller and forces the client to translate product features into personal value.</p>
+<h3 id="audience-centred-framing">Audience-centred framing</h3>
+<p>“QuickMart can reduce packaging cost, attract eco-conscious shoppers, and lower waste through a GreenLeaf partnership.”</p>
+<p>This immediately answers why QuickMart should care.</p>
+<p>The client is the protagonist; GreenLeaf is the enabler.</p>
+<h2 id="28-partner-motivations">28. Partner Motivations</h2>
+<p>QuickMart&rsquo;s possible motivations fall into three groups:</p>
+<h3 id="financial">Financial</h3>
+<ul>
+<li>reduce packaging cost;</li>
+<li>improve profitability or margins;</li>
+<li>create operational efficiencies;</li>
+<li>limit long-term cost exposure.</li>
+</ul>
+<h3 id="customer-market">Customer/market</h3>
+<ul>
+<li>attract eco-conscious shoppers;</li>
+<li>improve preference and loyalty;</li>
+<li>strengthen brand positioning;</li>
+<li>respond to market expectations.</li>
+</ul>
+<h3 id="environmental-operational">Environmental/operational</h3>
+<ul>
+<li>reduce material consumption;</li>
+<li>reduce packaging waste;</li>
+<li>decrease environmental footprint;</li>
+<li>support sustainability goals and possible compliance expectations.</li>
+</ul>
+<p>The best opening depends on the audience&rsquo;s decision criteria. Cost is not universally the best lead, though it may be the most robust anchor when financial evidence is strongest.</p>
+<h2 id="29-headline-first-communication">29. Headline-First Communication</h2>
+<p>A <strong>headline-first</strong> structure states the intended conclusion before presenting detail.</p>
+<p>Examples:</p>
+<ul>
+<li>“Cut packaging costs by 15%.”</li>
+<li>“Win eco-conscious shoppers.”</li>
+<li>“Reduce waste footprint by 40%.”</li>
+</ul>
+<p>The headline tells the audience what the evidence means. The chart/table then proves or qualifies it.</p>
+<h3 id="why-headline-first-works">Why headline-first works</h3>
+<ul>
+<li>It provides the answer before detail.</li>
+<li>It reduces decoding effort.</li>
+<li>It makes the client&rsquo;s benefit explicit.</li>
+<li>It creates horizontal logic when headlines are read in sequence.</li>
+<li>It supports rapid executive scanning.</li>
+<li>It prevents a graph from becoming a puzzle.</li>
+</ul>
+<p>Headlines must be meaningful claims, not topic labels such as “Cost,” “Customer Survey,” or “Waste Data.”</p>
+<h2 id="30-storyboarding-with-post-it-notes">30. Storyboarding with Post-it Notes</h2>
+<p>Storyboarding means writing major benefit-oriented headlines on movable notes and testing their sequence before designing final slides.</p>
+<h3 id="benefits">Benefits</h3>
+<ul>
+<li>separates story structure from visual formatting;</li>
+<li>makes reordering inexpensive;</li>
+<li>allows multiple narrative alternatives to be compared;</li>
+<li>reveals gaps, weak transitions, repetition, and unsupported claims;</li>
+<li>encourages collaboration;</li>
+<li>keeps teams from prematurely polishing charts or layouts;</li>
+<li>simulates how the audience will experience the argument.</li>
+</ul>
+<p>It is primarily a tool for <strong>narrative sequencing and testing</strong>, not a data-storage method, checklist, or slide-decoration technique.</p>
+<h2 id="31-narrative-scaffolding">31. Narrative Scaffolding</h2>
+<p><strong>Narrative scaffolding</strong> means arranging claims so that each supports the next and the final conclusion feels earned.</p>
+<p>A strong scaffold:</p>
+<ol>
+<li>begins with a relevant, credible anchor;</li>
+<li>adds complementary business value;</li>
+<li>connects financial, customer, operational, and environmental benefits;</li>
+<li>rises toward a strategic implication;</li>
+<li>ends with a specific decision/action.</li>
+</ol>
+<p>The sequence should feel cumulative, not like a random list.</p>
+<h2 id="32-three-storyboard-options">32. Three Storyboard Options</h2>
+<h3 id="option-a-cost-savings-first">Option A — Cost savings first</h3>
+<p>Possible sequence:</p>
+<ol>
+<li>Reduce packaging cost by about 15%.</li>
+<li>Reduce materials and waste.</li>
+<li>Strengthen customer appeal.</li>
+<li>Build competitive differentiation.</li>
+<li>Partner with GreenLeaf.</li>
+</ol>
+<p><strong>Strengths:</strong> Direct, measurable, executive-friendly, and anchored in a concrete business outcome.</p>
+<p><strong>Weakness:</strong> It may underplay brand/customer value if QuickMart is primarily sustainability- or market-positioning-driven.</p>
+<h3 id="option-b-customer-loyalty-first">Option B — Customer loyalty first</h3>
+<p>Possible sequence:</p>
+<ol>
+<li>Eco-conscious shoppers prefer sustainable packaging.</li>
+<li>QuickMart can strengthen loyalty and market appeal.</li>
+<li>The change also saves resources.</li>
+<li>It lowers cost.</li>
+<li>GreenLeaf enables the combined value.</li>
+</ol>
+<p><strong>Strengths:</strong> Customer-centred and useful when growth, loyalty, and brand differentiation dominate the decision.</p>
+<p><strong>Weakness:</strong> It may appear less concrete if survey evidence is weaker than operational cost evidence.</p>
+<h3 id="option-c-financial-and-environmental-themes-in-parallel-alternation">Option C — Financial and environmental themes in parallel/alternation</h3>
+<p>Possible structure alternates cost, environment, market, waste, and finance.</p>
+<p><strong>Potential benefit:</strong> Shows breadth and prevents the story from appearing one-dimensional.</p>
+<p><strong>Major risk:</strong> Frequent theme switching raises cognitive load and produces fragmentation. The audience must repeatedly change its mental frame, and the conclusion may feel like several independent benefits rather than one integrated strategic case.</p>
+<h2 id="33-parallel-versus-integrated-narrative">33. Parallel versus Integrated Narrative</h2>
+<h3 id="parallel-narrative">Parallel narrative</h3>
+<p>Financial, environmental, and customer claims are presented alongside one another without explicit links. It offers coverage but can feel like a list.</p>
+<h3 id="integrated-narrative">Integrated narrative</h3>
+<p>The relationships are made causal or mutually reinforcing:</p>
+<ul>
+<li>less material use reduces waste;</li>
+<li>lower material use can reduce cost;</li>
+<li>visible sustainability improves customer appeal;</li>
+<li>cost, customer, and waste benefits jointly create competitive advantage.</li>
+</ul>
+<p>The integrated approach is normally more coherent and persuasive.</p>
+<h2 id="34-recommended-strategic-hybrid">34. Recommended Strategic Hybrid</h2>
+<p>A strong sequence, subject to QuickMart&rsquo;s priorities, is:</p>
+<ol>
+<li><strong>QuickMart can improve profitability.</strong></li>
+<li><strong>Packaging costs can fall by approximately 15%.</strong></li>
+<li><strong>Sustainable packaging can strengthen customer appeal.</strong></li>
+<li><strong>Resource and waste consumption can decline.</strong></li>
+<li><strong>These gains reinforce competitive differentiation.</strong></li>
+<li><strong>GreenLeaf can help QuickMart capture the combined opportunity.</strong></li>
+</ol>
+<p>This converts separate evidence into one cumulative argument.</p>
+<h2 id="35-evidence-placement">35. Evidence Placement</h2>
+<p>Each piece of evidence should sit under the claim it supports:</p>
+<ul>
+<li><strong>Cost headline</strong> → internal estimate, current-versus-proposed cost calculation, assumptions, range/sensitivity.</li>
+<li><strong>Customer headline</strong> → survey findings, preference data, segmentation, market evidence.</li>
+<li><strong>Waste/resource headline</strong> → material-use calculations, lifecycle/resource estimates, operational evidence.</li>
+</ul>
+<p>Do not force the audience to decode a chart and guess its intended conclusion. The headline states the meaning; the evidence provides credibility.</p>
+<h2 id="36-internal-estimates-and-customer-surveys">36. Internal Estimates and Customer Surveys</h2>
+<h3 id="internal-estimates">Internal estimates</h3>
+<p>Internal estimates can be strong when they are close to operations and based on actual cost/resource knowledge. However, they may contain assumptions or organizational optimism and should be explained.</p>
+<h3 id="customer-surveys">Customer surveys</h3>
+<p>Surveys reveal attitudes, preferences, or stated intentions but do not automatically prove behaviour. Evaluate:</p>
+<ul>
+<li>sample and respondent relevance;</li>
+<li>wording and methodology;</li>
+<li>timing;</li>
+<li>whether the survey measures preference, intention, or actual purchase behaviour;</li>
+<li>consistency with other market evidence.</li>
+</ul>
+<p><strong>Exam trap:</strong> Survey results are useful evidence, but “customers say they prefer X” does not guarantee they will buy X.</p>
+<h2 id="37-handling-inconsistent-evidence">37. Handling Inconsistent Evidence</h2>
+<p>Minor discrepancies between internal estimates and external surveys do not automatically invalidate either source. Differences may arise from:</p>
+<ul>
+<li>definitions;</li>
+<li>assumptions;</li>
+<li>sample populations;</li>
+<li>time periods;</li>
+<li>methodology;</li>
+<li>rounding;</li>
+<li>uncertainty.</li>
+</ul>
+<h3 id="correct-procedure">Correct procedure</h3>
+<ol>
+<li>Identify the inconsistency.</li>
+<li>Investigate why it exists.</li>
+<li>Assess whether it is minor or materially changes the decision.</li>
+<li>Use a range or qualified claim where appropriate.</li>
+<li>Explain material assumptions transparently.</li>
+<li>Keep the evidence tied to the claim it legitimately supports.</li>
+</ol>
+<h3 id="what-not-to-do">What not to do</h3>
+<ul>
+<li>Do not hide the discrepancy.</li>
+<li>Do not manipulate values until they fit a preferred story.</li>
+<li>Do not overstate precision.</li>
+<li>Do not allow an immaterial difference to become the entire story.</li>
+<li>Do not treat all conflicting values as equally reliable without evaluating source quality.</li>
+</ul>
+<p>Transparency increases credibility. Good storytelling organizes credible evidence; it does not sacrifice analytical rigor.</p>
+<h2 id="38-strong-story-and-strong-evidence">38. Strong Story and Strong Evidence</h2>
+<ul>
+<li><strong>Story without evidence</strong> is assertion or persuasion without credibility.</li>
+<li><strong>Evidence without story</strong> is an information dump without meaning or direction.</li>
+<li>Effective business communication needs both.</li>
+</ul>
+<p>Where several claims are available, the <strong>most robust evidence first</strong> principle can provide a stable anchor. This is a useful default, not an absolute rule: audience relevance remains decisive.</p>
+<h2 id="39-complete-greenleaf-workflow">39. Complete GreenLeaf Workflow</h2>
+<ol>
+<li><strong>Understand QuickMart</strong> — decision-makers, priorities, constraints, and likely objections.</li>
+<li><strong>Identify motivations</strong> — financial, customer, environmental, competitive, and operational.</li>
+<li><strong>Gather evidence</strong> — internal estimates, survey results, resource calculations, and market information.</li>
+<li><strong>Assess evidence quality</strong> — separate strong evidence, weak evidence, assumptions, and inconsistencies.</li>
+<li><strong>Write benefit-oriented headlines</strong> — conclusions, not topic labels.</li>
+<li><strong>Storyboard</strong> — rearrange headlines and compare sequences.</li>
+<li><strong>Evaluate narrative flow</strong> — verify beginning, progression, relevance, and earned conclusion.</li>
+<li><strong>Integrate evidence</strong> — place each chart or fact under the headline it supports.</li>
+<li><strong>Address uncertainty</strong> — disclose material caveats without letting minor discrepancies dominate.</li>
+<li><strong>Design slides last</strong> — only then select chart types, colours, layout, and detailed visuals.</li>
+</ol>
+<hr>
+<h1 id="part-vi-major-comparisons">Part VI — Major Comparisons</h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Meaning</th>
+<th>Primary purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Preattentive attribute</td>
+<td>Automatically processed visual property</td>
+<td>Direct attention rapidly</td>
+</tr>
+<tr>
+<td>Visual hierarchy</td>
+<td>Order created by relative prominence</td>
+<td>Tell the audience what to process first</td>
+</tr>
+<tr>
+<td>Affordance</td>
+<td>What a design enables/suggests the user can do</td>
+<td>Make use intuitive</td>
+</tr>
+<tr>
+<td>Signifier</td>
+<td>Visible cue indicating how/where to act</td>
+<td>Reveal an affordance</td>
+</tr>
+<tr>
+<td>Accessibility</td>
+<td>Usability across varied abilities and skill levels</td>
+<td>Broaden comprehension</td>
+</tr>
+<tr>
+<td>Aesthetics</td>
+<td>Attractive, cohesive presentation</td>
+<td>Improve perceived ease and acceptance</td>
+</tr>
+<tr>
+<td>Acceptance</td>
+<td>Audience willingness to trust/use the design or presenter</td>
+<td>Enable adoption</td>
+</tr>
+<tr>
+<td>Clutter</td>
+<td>Space-consuming material without useful information</td>
+<td>Candidate for removal</td>
+</tr>
+<tr>
+<td>Context</td>
+<td>Information required to understand the message</td>
+<td>Support correct interpretation</td>
+</tr>
+<tr>
+<td>Exploratory communication</td>
+<td>Considers possibilities and alternatives</td>
+<td>Investigate and recommend</td>
+</tr>
+<tr>
+<td>Explanatory communication</td>
+<td>Communicates a selected finding or solution</td>
+<td>Inform or drive action</td>
+</tr>
+<tr>
+<td>Horizontal logic</td>
+<td>Slide headlines together tell the full story</td>
+<td>Ensure deck-level coherence</td>
+</tr>
+<tr>
+<td>Vertical logic</td>
+<td>All content on a slide supports one message</td>
+<td>Ensure slide-level coherence</td>
+</tr>
+<tr>
+<td>Storyboarding</td>
+<td>Movable outline of major claims</td>
+<td>Test sequence before design</td>
+</tr>
+<tr>
+<td>Reverse storyboarding</td>
+<td>Recover the outline from a finished deck</td>
+<td>Audit actual versus intended flow</td>
+</tr>
+<tr>
+<td>Parallel narrative</td>
+<td>Themes placed side by side</td>
+<td>Provide breadth, with fragmentation risk</td>
+</tr>
+<tr>
+<td>Integrated narrative</td>
+<td>Themes linked causally/cumulatively</td>
+<td>Build a coherent argument</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="part-vii-common-misconceptions-and-exam-traps">Part VII — Common Misconceptions and Exam Traps</h1>
+<ol>
+<li><strong>“More colour means more engaging.”</strong> False. Excess colour destroys contrast and preattentive value.</li>
+<li><strong>“Every data point should be labeled.”</strong> False. Label selectively where the audience should focus.</li>
+<li><strong>“A beautiful chart is automatically effective.”</strong> False. Aesthetics must serve function, accuracy, and audience understanding.</li>
+<li><strong>“Minimalism means removing all text.”</strong> False. Titles, labels, conclusions, annotations, and instructions may be essential.</li>
+<li><strong>“The audience will reach the intended conclusion unaided.”</strong> Unsafe. State the conclusion in words.</li>
+<li><strong>“Accessibility refers only to disability.”</strong> Too narrow in this lesson; it also includes varying technical skill.</li>
+<li><strong>“An available interaction will be discovered.”</strong> False. A signifier may be required.</li>
+<li><strong>“Storytelling means dramatizing or manipulating data.”</strong> False. It means structuring credible evidence around audience relevance and action.</li>
+<li><strong>“The company presenting should be the hero.”</strong> False. The audience/client is the hero; the presenter is the guide.</li>
+<li><strong>“The first headline must always be cost.”</strong> False. Lead with the audience&rsquo;s highest-priority decision criterion, though robust financial evidence can be a strong default anchor.</li>
+<li><strong>“Storyboarding is mainly slide design.”</strong> False. It tests narrative order before detailed design.</li>
+<li><strong>“Option C is automatically best because it is balanced.”</strong> False. Alternation can fragment the argument and increase cognitive load.</li>
+<li><strong>“Any inconsistency invalidates all evidence.”</strong> False. Determine whether it is minor or fundamental and explain it transparently.</li>
+<li><strong>“Survey preference proves purchase behaviour.”</strong> False. Stated attitude and actual behaviour differ.</li>
+<li><strong>“Exploratory means giving options with no recommendation.”</strong> False. The presenter should still analyze and recommend.</li>
+<li><strong>“Explanatory presentations should show every route taken.”</strong> False. Focus on the relevant solution and evidence.</li>
+<li><strong>“A presenter can begin immediately without establishing credibility.”</strong> Risky with an unfamiliar audience; briefly answer why they should listen.</li>
+</ol>
+<hr>
+<h1 id="part-viii-practical-design-and-storytelling-checklist">Part VIII — Practical Design and Storytelling Checklist</h1>
+<h2 id="before-creating-the-visual">Before creating the visual</h2>
+<ul>
+<li>Who is the audience?</li>
+<li>What should it know?</li>
+<li>What should it do?</li>
+<li>What is in it for the audience?</li>
+<li>Is the communication exploratory or explanatory?</li>
+<li>What evidence is strongest, weakest, or uncertain?</li>
+<li>What is the single big idea?</li>
+</ul>
+<h2 id="while-structuring-the-story">While structuring the story</h2>
+<ul>
+<li>Establish setting, protagonist, imbalance, desired balance, and solution.</li>
+<li>Make the audience the protagonist.</li>
+<li>Introduce tension and consequences of inaction.</li>
+<li>Choose conventional flow or lead with the ending based on audience needs.</li>
+<li>Write action-oriented headlines.</li>
+<li>Storyboard and test alternative sequences.</li>
+<li>Make each claim support the next.</li>
+<li>End with an explicit call to action.</li>
+</ul>
+<h2 id="while-designing">While designing</h2>
+<ul>
+<li>Push the base into grey.</li>
+<li>Highlight no more than a small fraction (about 10% guideline).</li>
+<li>Use size according to importance.</li>
+<li>Use one accent colour sparingly and consistently.</li>
+<li>Avoid red/green-only distinctions.</li>
+<li>Provide redundant cues for accessibility.</li>
+<li>Use top-left placement deliberately.</li>
+<li>Label titles, axes, and crucial points explicitly.</li>
+<li>Add only necessary context.</li>
+<li>Remove clutter.</li>
+<li>Maintain alignment, margins, and whitespace.</li>
+<li>Add signifiers for interactions.</li>
+</ul>
+<h2 id="before-presenting">Before presenting</h2>
+<ul>
+<li>Read only the slide headlines: do they tell the story? (<strong>horizontal logic</strong>)</li>
+<li>Does every element on each slide support its headline? (<strong>vertical logic</strong>)</li>
+<li>Reverse-storyboard the finished deck.</li>
+<li>Test it with someone who has no context.</li>
+<li>Confirm that the purpose and message are understandable without narration.</li>
+<li>Briefly establish credibility if the audience does not know the presenter.</li>
+<li>Verify that evidence and wording do not overstate certainty.</li>
+</ul>
+<hr>
+<h1 id="rapid-revision-last-minute-exam-sheet">Rapid Revision — Last-Minute Exam Sheet</h1>
+<h2 id="definitions-to-memorize">Definitions to memorize</h2>
+<ul>
+<li><strong>Preattentive attributes:</strong> Visual properties processed automatically, usually in under ~200 ms, enabling immediate detection of difference, pattern, trend, or outlier.</li>
+<li><strong>Visual hierarchy:</strong> Perceptual ordering that tells the audience what to process first, second, and later.</li>
+<li><strong>Affordance:</strong> A design property that suggests/enables how something can be used.</li>
+<li><strong>Signifier:</strong> A visible cue that communicates an affordance.</li>
+<li><strong>Accessibility:</strong> Usability for people with diverse abilities and technical skills.</li>
+<li><strong>Aesthetics:</strong> Attractive and cohesive design that improves perceived usability and acceptance.</li>
+<li><strong>Acceptance:</strong> Audience willingness to trust, adopt, or use a design/message.</li>
+<li><strong>Narrative flow:</strong> The order in which the audience experiences the story.</li>
+<li><strong>Horizontal logic:</strong> Slide titles alone tell the overarching story.</li>
+<li><strong>Vertical logic:</strong> All content on a slide reinforces its main message.</li>
+<li><strong>Reverse storyboarding:</strong> Extracting main points from a finished deck to test whether its actual flow matches the intended story.</li>
+<li><strong>Narrative scaffolding:</strong> Sequencing claims so each supports the next and the conclusion feels earned.</li>
+</ul>
+<h2 id="numbers-and-compact-facts">Numbers and compact facts</h2>
+<ul>
+<li>Preattentive processing: typically <strong>under about 200 milliseconds</strong>.</li>
+<li>Initial audience attention window discussed: roughly <strong>3–8 seconds</strong>.</li>
+<li>Suggested maximum highlighted proportion: about <strong>10%</strong>.</li>
+<li>GreenLeaf estimated packaging-cost reduction: approximately <strong>15%</strong>.</li>
+</ul>
+<h2 id="one-line-answers-to-likely-exam-prompts">One-line answers to likely exam prompts</h2>
+<ul>
+<li><strong>Why use preattentive attributes?</strong> To direct attention immediately and establish visual hierarchy.</li>
+<li><strong>Why begin with grey?</strong> It pushes context back and makes a selective colour accent more visible.</li>
+<li><strong>Why not label every point?</strong> Excess labels create clutter and competing signals.</li>
+<li><strong>Why keep colours consistent?</strong> The audience learns the code once, reducing cognitive load.</li>
+<li><strong>Why avoid red–green dependence?</strong> Many colour-blind viewers cannot reliably distinguish it; add redundant cues.</li>
+<li><strong>Why is top-left important?</strong> It is generally the first place viewers look without other cues.</li>
+<li><strong>What does form follows function mean?</strong> The design must be chosen according to what the audience must know or do.</li>
+<li><strong>How does visualization afford understanding?</strong> Highlight what matters, remove distractions, and establish hierarchy.</li>
+<li><strong>Why use text?</strong> To label, explain, annotate, state the conclusion, and prevent misinterpretation.</li>
+<li><strong>Why do aesthetics matter?</strong> Attractive designs are perceived as easier and receive more acceptance and patience.</li>
+<li><strong>How can acceptance be gained?</strong> Explain benefits, compare before/after, seek input, and win influential supporters.</li>
+<li><strong>What makes a story?</strong> Balance is disrupted, conflict develops, action occurs, and balance is restored.</li>
+<li><strong>Who is the hero in business storytelling?</strong> The audience/client.</li>
+<li><strong>What is the story ending?</strong> A clear call to action tied back to the original imbalance.</li>
+<li><strong>When lead with the ending?</strong> When trust exists or a busy audience wants the “so what” first.</li>
+<li><strong>What is the repetition pattern?</strong> Tell them what you will tell them; tell them; summarize what you told them.</li>
+<li><strong>What is horizontal logic?</strong> Action titles read in sequence tell the deck&rsquo;s story.</li>
+<li><strong>What is vertical logic?</strong> Every word and visual on a slide supports its title.</li>
+<li><strong>Why use Post-it storyboarding?</strong> To test and rearrange narrative sequence cheaply before visual design.</li>
+<li><strong>What is Option C&rsquo;s main risk?</strong> Fragmentation and high cognitive load from alternating themes.</li>
+<li><strong>How should inconsistent evidence be handled?</strong> Investigate, assess materiality, qualify where necessary, and disclose transparently.</li>
+<li><strong>What is the deepest GreenLeaf lesson?</strong> Organize credible evidence around QuickMart&rsquo;s goals so the relevance, connections, and reason to act are unmistakable.</li>
+</ul>
+<h2 id="final-master-principle">Final master principle</h2>
+<blockquote>
+<p>Effective data storytelling combines analytical rigor with audience-centred narrative and intentional visual design: focus attention, remove distraction, establish meaning, build credibility, and end with a clear action.</p>
+</blockquote>
+<h2 id="administrative-reminder-from-the-live-session">Administrative reminder from the live session</h2>
+<p>The instructor/teaching assistant reminded students to watch the required course videos and live sessions and attempt all quizzes to maintain examination eligibility and maximize marks. The stated eligibility reminder was to complete at least <strong>12 weeks of videos and 12 weeks of live sessions</strong> before the end-term examination.</p>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<h3 id="semantic-colour-branding-and-accessibility">Semantic colour, branding, and accessibility</h3>
+<p>Keep a metric&rsquo;s colour stable: Revenue shown as blue, green, and orange in different views forces relearning. Too many colours weaken Gestalt similarity and make all elements compete. Use a neutral base plus a small accent palette; reserve brand colours mainly for headers, navigation, and structural accents when necessary.</p>
+<p>Brand identity must never weaken figure-ground separation or data legibility. KPIs and critical alerts require sufficient contrast. Preserve readable typography and colour-blind accessibility, and encode meaning redundantly through labels, shape, line style, icons, or position rather than colour alone. Familiar conventions can help, but context and accessibility matter more than mechanically applying red/green.</p>
+<h3 id="selective-emphasis-and-interaction">Selective emphasis and interaction</h3>
+<p>If everything is treated as the figure, nothing stands out. Emphasize only decision-critical values, alerts, or evidence; mute background, gridlines, and supporting notes.</p>
+<p>FinSight can differentiate through drill-down, dynamic filters, what-if analysis, AI summaries, and personalized views, but interactive controls need visible <strong>signifiers</strong>. Minimalism does not justify hiding how the dashboard works.</p>
+<h3 id="user-test-checklist">User-test checklist</h3>
+<p>Ask real users:</p>
+<ul>
+<li>Can you find the key metric immediately?</li>
+<li>Do you perceive the intended groupings and relationships?</li>
+<li>Do you notice the critical alert?</li>
+<li>Can you interpret the view without training?</li>
+<li>Can you identify the appropriate action?</li>
+</ul>
+<p>Design intent is not proof of success; user perception and action validate the visual system.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-14.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 14: Storytelling with Data</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,2606 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Project · Week 12 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Project</span>
+      <span class="brand-title">Week 12</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html" selected>Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Business Research Process, Research Problems, and Research Approaches
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Research Planning, Theoretical Frameworks, Measurement, and Data…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Systematic Literature Review (SLR), Literature Review Methods,…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Theoretical Frameworks, Variables, Moderators, Mediators, and…
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Measurement Models, Scale Development, Reflective vs Formative…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Questionnaire Design, Data Collection Methods, Measurement Scales,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Research Inference, Sampling, Regression, Correlation, Mediation,…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Business Research Process — Management Problems, Research Problems,…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Jamovi Data Management, Measurement Levels, Scale Construction,…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Jamovi Factor Analysis, EFA, CFA, SEM, Validity Assessment, and…
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Regression, Mediation, Moderation, t-tests, ANOVA, and Descriptive…
+      </a>
+      <a class="is-active" href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Regression Modelling, Controls, Composite Indices, Moderation, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Time Series, Forecasting, and Panel Data
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        PLS-SEM — Measurement Quality, Structural Models, Controls,…
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Logistic Regression — Model Fit, Interpretation, Prediction, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Project · Week 12</p>
+        <h1 class="page-title">Regression Modelling, Controls, Composite Indices, Moderation, and Standardized Effects</h1>
+        <p class="page-meta">Week 12 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#purpose-of-regression">Purpose of Regression</a></li>
+      <li><a href="#when-to-use">When to use</a></li>
+      <li><a href="#purpose-of-controls">Purpose of Controls</a></li>
+      <li><a href="#continuous-variables">Continuous variables</a></li>
+      <li><a href="#categorical-variables">Categorical variables</a></li>
+      <li><a href="#step-1">Step 1</a></li>
+      <li><a href="#step-2">Step 2</a></li>
+      <li><a href="#step-3">Step 3</a></li>
+      <li><a href="#step-4">Step 4</a></li>
+      <li><a href="#purpose">Purpose</a></li>
+      <li><a href="#model-1">Model 1</a></li>
+      <li><a href="#model-2">Model 2</a></li>
+      <li><a href="#unstandardized-coefficients-b">Unstandardized coefficients (B)</a></li>
+      <li><a href="#standardized-coefficients-beta">Standardized coefficients (Beta)</a></li>
+      <li><a href="#misconception-1">Misconception 1:</a></li>
+      <li><a href="#misconception-2">Misconception 2:</a></li>
+      <li><a href="#misconception-3">Misconception 3:</a></li>
+      <li><a href="#misconception-4">Misconception 4:</a></li>
+      <li><a href="#misconception-5">Misconception 5:</a></li>
+      <li><a href="#question">Question:</a></li>
+      <li><a href="#question-2">Question:</a></li>
+      <li><a href="#question-3">Question:</a></li>
+      <li><a href="#question-4">Question:</a></li>
+      <li><a href="#question-5">Question:</a></li>
+      <li><a href="#step-1-2">Step 1:</a></li>
+      <li><a href="#step-2-2">Step 2:</a></li>
+      <li><a href="#step-3-2">Step 3:</a></li>
+      <li><a href="#step-4-2">Step 4:</a></li>
+      <li><a href="#step-5">Step 5:</a></li>
+      <li><a href="#case-study">Case Study</a></li>
+      <li><a href="#purpose-of-controls-2">Purpose of Controls</a></li>
+      <li><a href="#likert-scale-measures">Likert scale measures</a></li>
+      <li><a href="#objective-usage-metrics">Objective usage metrics</a></li>
+      <li><a href="#purpose-2">Purpose</a></li>
+      <li><a href="#dependent-variable">Dependent variable</a></li>
+      <li><a href="#predictors">Predictors</a></li>
+      <li><a href="#controls">Controls</a></li>
+      <li><a href="#purpose-3">Purpose</a></li>
+      <li><a href="#model-1-controls-only">Model 1: Controls only</a></li>
+      <li><a href="#model-2-add-interface-usage">Model 2: Add interface usage</a></li>
+      <li><a href="#block-1">Block 1:</a></li>
+      <li><a href="#block-2">Block 2:</a></li>
+      <li><a href="#block-3">Block 3:</a></li>
+      <li><a href="#r">R²</a></li>
+      <li><a href="#adjusted-r">Adjusted R²</a></li>
+      <li><a href="#complex-model">Complex model</a></li>
+      <li><a href="#simple-model">Simple model</a></li>
+      <li><a href="#purpose-4">Purpose</a></li>
+      <li><a href="#misconception-1-2">Misconception 1:</a></li>
+      <li><a href="#misconception-2-2">Misconception 2:</a></li>
+      <li><a href="#misconception-3-2">Misconception 3:</a></li>
+      <li><a href="#misconception-4-2">Misconception 4:</a></li>
+      <li><a href="#misconception-5-2">Misconception 5:</a></li>
+      <li><a href="#step-1-3">Step 1:</a></li>
+      <li><a href="#step-2-3">Step 2:</a></li>
+      <li><a href="#step-3-3">Step 3:</a></li>
+      <li><a href="#step-4-3">Step 4:</a></li>
+      <li><a href="#step-5-2">Step 5:</a></li>
+      <li><a href="#step-6">Step 6:</a></li>
+      <li><a href="#dependent-variable-outcome">Dependent Variable (Outcome)</a></li>
+      <li><a href="#predictors-2">Predictors</a></li>
+      <li><a href="#control-variables">Control Variables</a></li>
+      <li><a href="#age">Age</a></li>
+      <li><a href="#region">Region</a></li>
+      <li><a href="#prior-sessions">Prior sessions</a></li>
+      <li><a href="#customer-tenure">Customer tenure</a></li>
+      <li><a href="#dummy-coding">Dummy coding</a></li>
+      <li><a href="#reference-category">Reference category.</a></li>
+      <li><a href="#factors">Factors</a></li>
+      <li><a href="#covariates">Covariates</a></li>
+      <li><a href="#purpose-5">Purpose</a></li>
+      <li><a href="#block-1-controls-only">Block 1: Controls only</a></li>
+      <li><a href="#block-2-add-feature-usage">Block 2: Add feature usage</a></li>
+      <li><a href="#block-1-2">Block 1:</a></li>
+      <li><a href="#block-2-2">Block 2:</a></li>
+      <li><a href="#block-3-2">Block 3:</a></li>
+      <li><a href="#r-2">R²</a></li>
+      <li><a href="#adjusted-r-2">Adjusted R²</a></li>
+      <li><a href="#explanatory-power">Explanatory power</a></li>
+      <li><a href="#simplicity">Simplicity</a></li>
+      <li><a href="#misconception-1-3">Misconception 1:</a></li>
+      <li><a href="#misconception-2-3">Misconception 2:</a></li>
+      <li><a href="#misconception-3-3">Misconception 3:</a></li>
+      <li><a href="#misconception-4-3">Misconception 4:</a></li>
+      <li><a href="#misconception-5-3">Misconception 5:</a></li>
+      <li><a href="#step-1-define-the-research-question">Step 1: Define the research question</a></li>
+      <li><a href="#step-2-identify-variables">Step 2: Identify variables</a></li>
+      <li><a href="#step-3-prepare-data">Step 3: Prepare data</a></li>
+      <li><a href="#step-4-build-hierarchical-models">Step 4: Build hierarchical models</a></li>
+      <li><a href="#step-5-evaluate-improvement">Step 5: Evaluate improvement</a></li>
+      <li><a href="#step-6-compare-effects">Step 6: Compare effects</a></li>
+      <li><a href="#a-practical-examples-and-use-cases">A. Practical examples and use cases</a></li>
+      <li><a href="#b-high-yield-distinctions">B. High-yield distinctions</a></li>
+      <li><a href="#c-likely-exam-questions-and-answer-cues">C. Likely exam questions and answer cues</a></li>
+      <li><a href="#d-rapid-revision-traps">D. Rapid revision traps</a></li>
+      <li><a href="#e-source-coverage-checklist">E. Source-coverage checklist</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h1 id="1-overview"><strong>1. Overview</strong></h1>
+<p>This quiz focuses on building and interpreting regression models for business research.</p>
+<p>The major concepts covered are:</p>
+<ul>
+<li>Regression with predictors and controls.  </li>
+<li>Theory-based control variables.  </li>
+<li>Moderation analysis using interaction terms.  </li>
+<li>Composite index construction.  </li>
+<li>Standardization and z-scores.  </li>
+<li>Interpreting standardized coefficients.  </li>
+<li>Evaluating robustness of regression effects.</li>
+</ul>
+<p>The central principle:</p>
+<blockquote>
+<p>A statistical model should be driven by theory and research objectives, not simply by the availability of variables.</p>
+</blockquote>
+<hr>
+<h1 id="2-regression-as-a-predictive-model"><strong>2. Regression as a Predictive Model</strong></h1>
+<h2 id="purpose-of-regression"><strong>Purpose of Regression</strong></h2>
+<p>Regression estimates how one or more predictors relate to an outcome variable.</p>
+<p>General form:</p>
+<p>Outcome \= Intercept + Predictor effects + Error</p>
+<hr>
+<p>Example:</p>
+<p>Predict:</p>
+<p>Customer Satisfaction</p>
+<p>from:</p>
+<ul>
+<li>Store Attributes.  </li>
+<li>Product Attributes.</li>
+</ul>
+<hr>
+<p>Regression helps answer:</p>
+<ul>
+<li>Which predictors influence the outcome?  </li>
+<li>How strong are those relationships?  </li>
+<li>Does each predictor contribute after controlling for others?</li>
+</ul>
+<hr>
+<h1 id="3-multiple-linear-regression"><strong>3. Multiple Linear Regression</strong></h1>
+<h2 id="when-to-use"><strong>When to use</strong></h2>
+<p>Multiple regression is appropriate when:</p>
+<ul>
+<li>There is one continuous dependent variable.  </li>
+<li>There are multiple predictors.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Customer Satisfaction predicted by:</p>
+<ul>
+<li>Store Attributes.  </li>
+<li>Product Attributes.  </li>
+<li>Age.  </li>
+<li>Gender.  </li>
+<li>Income.</li>
+</ul>
+<hr>
+<p>Benefits:</p>
+<ul>
+<li>Estimates unique contribution of each predictor.  </li>
+<li>Controls for overlap among predictors.  </li>
+<li>Provides a comprehensive explanatory model.</li>
+</ul>
+<hr>
+<h1 id="4-control-variables-in-regression"><strong>4. Control Variables in Regression</strong></h1>
+<h2 id="purpose-of-controls"><strong>Purpose of Controls</strong></h2>
+<p>Control variables are included to account for alternative explanations.</p>
+<p>They help answer:</p>
+<blockquote>
+<p>&ldquo;Does the main predictor still matter after accounting for other relevant factors?&rdquo;</p>
+</blockquote>
+<hr>
+<p>Example:</p>
+<p>Research question:</p>
+<p>Do Store Attributes affect Satisfaction?</p>
+<p>Potential control:</p>
+<p>Age.</p>
+<p>Reason:</p>
+<p>Age may influence satisfaction independently.</p>
+<hr>
+<p>Regression model:</p>
+<p>Satisfaction \=<br>
+Store Attributes +<br>
+Age</p>
+<hr>
+<p>Interpretation:</p>
+<p>The Store Attributes coefficient represents the effect after accounting for age.</p>
+<hr>
+<h1 id="5-theory-based-controls"><strong>5. Theory-Based Controls</strong></h1>
+<p>A major principle:</p>
+<blockquote>
+<p>Include controls because theory suggests they matter, not simply because data is available.</p>
+</blockquote>
+<hr>
+<p>Example:</p>
+<p>Appropriate control:</p>
+<p>Age, if previous research suggests age affects satisfaction.</p>
+<hr>
+<p>Inappropriate control:</p>
+<p>Shop preference, if:</p>
+<ul>
+<li>It is not a cause of satisfaction.  </li>
+<li>It does not confound the attribute measures.</li>
+</ul>
+<hr>
+<h1 id="6-why-not-add-every-available-variable"><strong>6. Why Not Add Every Available Variable?</strong></h1>
+<p>Including unnecessary controls can:</p>
+<ul>
+<li>Reduce model clarity.  </li>
+<li>Increase complexity.  </li>
+<li>Reduce statistical power.  </li>
+<li>Introduce noise.</li>
+</ul>
+<hr>
+<p>A good regression model is:</p>
+<p>Not the model with the most variables.</p>
+<p>It is the model with the most theoretically justified variables.</p>
+<hr>
+<h1 id="7-handling-categorical-controls-in-jamovi"><strong>7. Handling Categorical Controls in Jamovi</strong></h1>
+<p>Regression requires different treatment depending on variable type.</p>
+<hr>
+<h2 id="continuous-variables"><strong>Continuous variables</strong></h2>
+<p>Example:</p>
+<ul>
+<li>Age.  </li>
+<li>Income.</li>
+</ul>
+<p>Entered as:</p>
+<p>Covariates.</p>
+<hr>
+<h2 id="categorical-variables"><strong>Categorical variables</strong></h2>
+<p>Example:</p>
+<ul>
+<li>Gender.  </li>
+<li>Education level.</li>
+</ul>
+<p>Entered as:</p>
+<p>Factors.</p>
+<hr>
+<p>Why?</p>
+<p>Jamovi creates dummy variables internally to represent categories.</p>
+<hr>
+<h1 id="8-composite-scores-and-index-construction"><strong>8. Composite Scores and Index Construction</strong></h1>
+<p>Researchers often combine multiple measures into one overall score.</p>
+<p>Example:</p>
+<p>Creating a:</p>
+<p>&ldquo;Store Quality Index&rdquo;</p>
+<p>from:</p>
+<ul>
+<li>Waiting time.  </li>
+<li>Product availability.  </li>
+<li>Number of items.  </li>
+<li>Complaints.</li>
+</ul>
+<hr>
+<p>Purpose:</p>
+<p>Create a single meaningful construct.</p>
+<hr>
+<h1 id="9-problem-of-different-measurement-units"><strong>9. Problem of Different Measurement Units</strong></h1>
+<p>Different variables may use different scales.</p>
+<p>Example:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Waiting time</td>
+<td>Minutes</td>
+</tr>
+<tr>
+<td>Distance</td>
+<td>km</td>
+</tr>
+<tr>
+<td>Sales</td>
+<td>Rupees</td>
+</tr>
+<tr>
+<td>Inventory</td>
+<td>Count</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<p>If summed directly:</p>
+<p>Variables with larger numerical values dominate.</p>
+<p>Example:</p>
+<p>₹10,000 sales overwhelms a 5-minute waiting time.</p>
+<hr>
+<p>Solution:</p>
+<p>Standardization.</p>
+<hr>
+<h1 id="10-standardization-using-z-scores"><strong>10. Standardization Using z-scores</strong></h1>
+<p>A z-score transforms variables into a common scale.</p>
+<p>Formula:</p>
+<p>z \= (value - mean) / standard deviation</p>
+<hr>
+<p>After standardization:</p>
+<ul>
+<li>Mean \= 0.  </li>
+<li>Standard deviation \= 1.</li>
+</ul>
+<hr>
+<p>Benefits:</p>
+<ul>
+<li>Removes unit differences.  </li>
+<li>Makes variables comparable.  </li>
+<li>Prevents large-unit variables dominating.</li>
+</ul>
+<hr>
+<h1 id="11-direction-alignment-before-combining-measures"><strong>11. Direction Alignment Before Combining Measures</strong></h1>
+<p>A composite score must have consistent interpretation.</p>
+<p>Desired:</p>
+<p>Higher score \= Better performance.</p>
+<hr>
+<p>Problem:</p>
+<p>Some measures may have opposite meanings.</p>
+<p>Example:</p>
+<p>Higher is better:</p>
+<ul>
+<li>Products available.  </li>
+<li>Sales.</li>
+</ul>
+<p>Higher is worse:</p>
+<ul>
+<li>Waiting time.  </li>
+<li>Complaints.</li>
+</ul>
+<hr>
+<p>Before combining:</p>
+<p>Reverse-code negative indicators.</p>
+<hr>
+<p>Example:</p>
+<p>Waiting time:</p>
+<p>Low waiting time \= good.</p>
+<p>After reverse coding:</p>
+<p>Higher score \= better.</p>
+<hr>
+<h1 id="12-correct-composite-index-process"><strong>12. Correct Composite Index Process</strong></h1>
+<p>Steps:</p>
+<h2 id="step-1"><strong>Step 1</strong></h2>
+<p>Identify indicators.</p>
+<p>Example:</p>
+<p>Store metrics.</p>
+<hr>
+<h2 id="step-2"><strong>Step 2</strong></h2>
+<p>Align direction.</p>
+<p>Reverse-code lower-is-better measures.</p>
+<hr>
+<h2 id="step-3"><strong>Step 3</strong></h2>
+<p>Standardize variables.</p>
+<p>Convert to z-scores.</p>
+<hr>
+<h2 id="step-4"><strong>Step 4</strong></h2>
+<p>Combine.</p>
+<p>Average or sum standardized values.</p>
+<hr>
+<h1 id="13-moderation-analysis"><strong>13. Moderation Analysis</strong></h1>
+<h2 id="purpose"><strong>Purpose</strong></h2>
+<p>Moderation tests whether the relationship between two variables changes depending on another variable.</p>
+<hr>
+<p>Question:</p>
+<p>&ldquo;Does the effect of X on Y depend on Z?&rdquo;</p>
+<hr>
+<p>Example:</p>
+<p>Store Attributes → Satisfaction</p>
+<p>Moderated by:</p>
+<p>Variety Seeking.</p>
+<hr>
+<h1 id="14-testing-moderation"><strong>14. Testing Moderation</strong></h1>
+<p>Moderation is tested using an interaction term.</p>
+<p>Regression model:</p>
+<p>Satisfaction \=<br>
+Store Attributes +<br>
+Variety Seeking +<br>
+(Store Attributes × Variety Seeking)</p>
+<hr>
+<p>The key term:</p>
+<p>Interaction effect.</p>
+<hr>
+<p>If interaction is significant:</p>
+<p>The effect of Store Attributes differs depending on Variety Seeking.</p>
+<hr>
+<h1 id="15-interpreting-stable-moderation"><strong>15. Interpreting Stable Moderation</strong></h1>
+<p>Suppose:</p>
+<p>Before controls:</p>
+<p>Interaction p \&lt; 0.05</p>
+<p>After demographic controls:</p>
+<p>Interaction p \&lt; 0.05</p>
+<hr>
+<p>Conclusion:</p>
+<p>The moderation effect is robust.</p>
+<hr>
+<p>Meaning:</p>
+<p>The effect remains after accounting for:</p>
+<ul>
+<li>Age.  </li>
+<li>Gender.  </li>
+<li>Education.  </li>
+<li>Income.</li>
+</ul>
+<hr>
+<h1 id="16-adding-demographic-controls-to-models"><strong>16. Adding Demographic Controls to Models</strong></h1>
+<p>Researchers often compare:</p>
+<h2 id="model-1"><strong>Model 1</strong></h2>
+<p>Main predictors only.</p>
+<p>Example:</p>
+<p>Satisfaction \=<br>
+Store Attributes</p>
+<hr>
+<h2 id="model-2"><strong>Model 2</strong></h2>
+<p>Predictors + controls.</p>
+<p>Example:</p>
+<p>Satisfaction \=<br>
+Store Attributes +<br>
+Age +<br>
+Gender +<br>
+Income</p>
+<hr>
+<p>Researchers examine:</p>
+<ol>
+<li>Change in coefficients.  </li>
+<li>Change in explained variance.</li>
+</ol>
+<hr>
+<h1 id="17-evaluating-regression-robustness"><strong>17. Evaluating Regression Robustness</strong></h1>
+<p>If a coefficient changes very little after controls:</p>
+<p>Example:</p>
+<p>Before:</p>
+<p>β \= 0.35</p>
+<p>After:</p>
+<p>β \= 0.345</p>
+<hr>
+<p>Interpretation:</p>
+<p>The relationship is stable.</p>
+<p>Term:</p>
+<p>Robust estimate.</p>
+<hr>
+<p>Meaning:</p>
+<p>The predictor effect is not explained by demographic differences.</p>
+<hr>
+<h1 id="18-understanding-r"><strong>18. Understanding ΔR²</strong></h1>
+<p>Adding controls may increase explained variance.</p>
+<p>Example:</p>
+<p>Model 1:</p>
+<p>R² \= 0.40</p>
+<p>Model 2:</p>
+<p>R² \= 0.45</p>
+<hr>
+<p>ΔR²:</p>
+<p>0.05</p>
+<hr>
+<p>Meaning:</p>
+<p>Controls explain additional variation.</p>
+<hr>
+<p>Important:</p>
+<p>Controls do not need to be significant individually to improve understanding.</p>
+<hr>
+<h1 id="19-standardized-vs-unstandardized-coefficients"><strong>19. Standardized vs Unstandardized Coefficients</strong></h1>
+<h2 id="unstandardized-coefficients-b"><strong>Unstandardized coefficients (B)</strong></h2>
+<p>Represent effects in original units.</p>
+<p>Example:</p>
+<p>A one-point increase in Store Attributes increases Satisfaction by 0.4 points.</p>
+<hr>
+<p>Useful for:</p>
+<p>Practical interpretation.</p>
+<hr>
+<h2 id="standardized-coefficients-beta"><strong>Standardized coefficients (Beta)</strong></h2>
+<p>Convert variables to standard deviation units.</p>
+<hr>
+<p>Useful for:</p>
+<p>Comparing relative strength of predictors.</p>
+<hr>
+<h1 id="20-why-use-standardized-beta-coefficients"><strong>20. Why Use Standardized Beta Coefficients?</strong></h1>
+<p>Predictors may have different units.</p>
+<p>Example:</p>
+<p>Predictor 1:</p>
+<p>1–5 attitude score.</p>
+<p>Predictor 2:</p>
+<p>Seconds.</p>
+<hr>
+<p>Comparing raw coefficients is misleading.</p>
+<hr>
+<p>Standardized coefficients allow comparison because all predictors are placed on the same scale.</p>
+<hr>
+<h1 id="21-common-misconceptions"><strong>21. Common Misconceptions</strong></h1>
+<h2 id="misconception-1"><strong>Misconception 1:</strong></h2>
+<p>Add every available variable as a control.</p>
+<p>Reality:</p>
+<p>Controls should be theory-driven.</p>
+<hr>
+<h2 id="misconception-2"><strong>Misconception 2:</strong></h2>
+<p>Statistical significance alone decides whether to include controls.</p>
+<p>Reality:</p>
+<p>Theoretical relevance is more important.</p>
+<hr>
+<h2 id="misconception-3"><strong>Misconception 3:</strong></h2>
+<p>Standardization fixes direction problems.</p>
+<p>Reality:</p>
+<p>Standardization changes scale, not meaning.</p>
+<p>Lower-is-better variables still need reverse coding.</p>
+<hr>
+<h2 id="misconception-4"><strong>Misconception 4:</strong></h2>
+<p>Interaction significance disappears when controls are added.</p>
+<p>Reality:</p>
+<p>If it remains significant, the moderation is more credible.</p>
+<hr>
+<h2 id="misconception-5"><strong>Misconception 5:</strong></h2>
+<p>Unstandardized coefficients can always compare predictor importance.</p>
+<p>Reality:</p>
+<p>Different units make direct comparison inappropriate.</p>
+<hr>
+<h1 id="22-regression-analysis-decision-framework"><strong>22. Regression Analysis Decision Framework</strong></h1>
+<h2 id="question"><strong>Question:</strong></h2>
+<p>&ldquo;Which variables predict satisfaction?&rdquo;</p>
+<p>Use:</p>
+<p>Multiple regression.</p>
+<hr>
+<h2 id="question-2"><strong>Question:</strong></h2>
+<p>&ldquo;Does one variable explain an outcome?&rdquo;</p>
+<p>Use:</p>
+<p>Simple regression.</p>
+<hr>
+<h2 id="question-3"><strong>Question:</strong></h2>
+<p>&ldquo;Does the relationship depend on another variable?&rdquo;</p>
+<p>Use:</p>
+<p>Moderation with interaction.</p>
+<hr>
+<h2 id="question-4"><strong>Question:</strong></h2>
+<p>&ldquo;Can several indicators be combined?&rdquo;</p>
+<p>Use:</p>
+<p>Composite index construction.</p>
+<hr>
+<h2 id="question-5"><strong>Question:</strong></h2>
+<p>&ldquo;Which predictor is strongest?&rdquo;</p>
+<p>Use:</p>
+<p>Standardized beta coefficients.</p>
+<hr>
+<h1 id="23-complete-workflow-for-building-a-strong-regression-model"><strong>23. Complete Workflow for Building a Strong Regression Model</strong></h1>
+<h2 id="step-1-2"><strong>Step 1:</strong></h2>
+<p>Define theoretical model.</p>
+<p>Identify:</p>
+<ul>
+<li>Outcome.  </li>
+<li>Predictors.  </li>
+<li>Controls.  </li>
+<li>Moderators.</li>
+</ul>
+<hr>
+<h2 id="step-2-2"><strong>Step 2:</strong></h2>
+<p>Prepare variables.</p>
+<ul>
+<li>Reverse-code where needed.  </li>
+<li>Standardize indicators.  </li>
+<li>Create composite scores.</li>
+</ul>
+<hr>
+<h2 id="step-3-2"><strong>Step 3:</strong></h2>
+<p>Run regression.</p>
+<p>Interpret:</p>
+<ul>
+<li>Coefficients.  </li>
+<li>Significance.  </li>
+<li>R².</li>
+</ul>
+<hr>
+<h2 id="step-4-2"><strong>Step 4:</strong></h2>
+<p>Add justified controls.</p>
+<p>Check:</p>
+<ul>
+<li>Coefficient changes.  </li>
+<li>ΔR².</li>
+</ul>
+<hr>
+<h2 id="step-5"><strong>Step 5:</strong></h2>
+<p>Test interactions if theory suggests moderation.</p>
+<hr>
+<h1 id="final-key-takeaways"><strong>Final Key Takeaways</strong></h1>
+<ol>
+<li>Regression should answer a clear theoretical question.  </li>
+<li>Controls improve interpretation only when they are justified.  </li>
+<li>Categorical controls belong as factors in Jamovi.  </li>
+<li>Composite indices require:<br>
+   * Same direction.<br>
+   * Same scale.  </li>
+<li>Standardization removes unit effects but does not fix direction.  </li>
+<li>Moderation is tested through interaction terms.  </li>
+<li>Stable coefficients after controls indicate robustness.  </li>
+<li>Standardized beta coefficients allow comparison of predictor strength.  </li>
+<li>The strongest models combine:<br>
+   * Theory.<br>
+   * Appropriate statistics.<br>
+   * Clear interpretation.</li>
+</ol>
+<p><strong>Good statistical modelling is not about adding more variables; it is about building the simplest model that accurately answers the research question.</strong></p>
+<h2 id="case-study"><strong>Case Study</strong></h2>
+<p>Emma, the marketing manager at IntellaTech, partners with Raj, a data analyst, to evaluate whether a recent interface update boosts user satisfaction and engagement. Their dataset includes user satisfaction scores on a Likert scale and objective usage metrics in mixed units. To isolate the update&rsquo;s effect, they plan to hold demographic factors constant. They recall that statistical methods for Likert scale data and mixed-unit operational metrics are identical, differing only through preparatory steps like standardization and reverse-coding.In Jamovi, Raj enters gender and region as categorical controls in the factors box, which automatically dummy-codes each level and sets the first-coded category as the reference level. Continuous controls, such as age and number of prior sessions, go into the covariates box. They build a hierarchical regression using the model builder, first estimating a control-only model and then adding a feature usage metric to compute ΔR², the change in explained variance. They compare standardized estimates across predictors to fairly assess effect sizes on the same scale.At the decision point, Emma suggests adding customer tenure as a third block to further reduce confounds, while Raj worries this may inflate the number of predictors and affect adjusted R². Students must consider if adding tenure as another covariate balances rigor with parsimony. Should the reference level for dummy coding shift to a different category? How will an additional block alter ΔR², and what trade-offs arise between model complexity and explanatory power?</p>
+<h1 id="comprehensive-notes-intellatech-case-study-hierarchical-regression-control-variables-dummy-coding-standardization-r-and-model-complexity"><strong>Comprehensive Notes: IntellaTech Case Study — Hierarchical Regression, Control Variables, Dummy Coding, Standardization, ΔR², and Model Complexity</strong></h1>
+<h1 id="1-case-overview"><strong>1. Case Overview</strong></h1>
+<p>IntellaTech wants to evaluate whether a recent interface update improves:</p>
+<ul>
+<li>User satisfaction.  </li>
+<li>User engagement.</li>
+</ul>
+<p>Emma (marketing manager) and Raj (data analyst) use regression analysis to separate the effect of the interface update from other factors that may influence user behaviour.</p>
+<p>The main analytical challenge:</p>
+<blockquote>
+<p>Determine whether the interface update contributes additional explanatory power after accounting for demographic and user-related factors.</p>
+</blockquote>
+<p>The case covers:</p>
+<ul>
+<li>Regression modelling.  </li>
+<li>Control variables.  </li>
+<li>Dummy coding.  </li>
+<li>Hierarchical regression.  </li>
+<li>ΔR².  </li>
+<li>Standardized coefficients.  </li>
+<li>Model complexity.  </li>
+<li>Parsimony.</li>
+</ul>
+<hr>
+<h1 id="2-research-question-and-analytical-goal"><strong>2. Research Question and Analytical Goal</strong></h1>
+<p>The primary question:</p>
+<blockquote>
+<p>Does the interface update improve satisfaction and engagement after controlling for other user characteristics?</p>
+</blockquote>
+<hr>
+<p>A simple comparison might show:</p>
+<p>Users after update are more satisfied.</p>
+<p>However, this does not prove the update caused improvement.</p>
+<p>Other factors may influence satisfaction:</p>
+<ul>
+<li>Age.  </li>
+<li>Gender.  </li>
+<li>Region.  </li>
+<li>Prior experience.  </li>
+<li>Customer tenure.</li>
+</ul>
+<hr>
+<p>Regression allows the researcher to isolate the contribution of the update-related variables.</p>
+<hr>
+<h1 id="3-why-control-variables-are-used"><strong>3. Why Control Variables Are Used</strong></h1>
+<h2 id="purpose-of-controls-2"><strong>Purpose of Controls</strong></h2>
+<p>Control variables reduce alternative explanations.</p>
+<p>They answer:</p>
+<blockquote>
+<p>&ldquo;Does the main predictor still matter when other relevant factors are held constant?&rdquo;</p>
+</blockquote>
+<hr>
+<p>Example:</p>
+<p>Without controls:</p>
+<p>Satisfaction \= Interface Update</p>
+<hr>
+<p>Possible issue:</p>
+<p>Maybe younger users both:</p>
+<ul>
+<li>Like new interfaces more.  </li>
+<li>Report higher satisfaction.</li>
+</ul>
+<hr>
+<p>Adding age as a control:</p>
+<p>Satisfaction \=<br>
+Interface Update + Age</p>
+<hr>
+<p>Now the interface effect is estimated after accounting for age differences.</p>
+<hr>
+<h1 id="4-choosing-control-variables"><strong>4. Choosing Control Variables</strong></h1>
+<p>Controls should be based on theory, not simply availability.</p>
+<hr>
+<p>Good control:</p>
+<p>Age.</p>
+<p>Reason:</p>
+<p>Age may influence technology adoption and satisfaction.</p>
+<hr>
+<p>Good control:</p>
+<p>Region.</p>
+<p>Reason:</p>
+<p>Different markets may have different user expectations.</p>
+<hr>
+<p>Potential control:</p>
+<p>Customer tenure.</p>
+<p>Reason:</p>
+<p>Long-term users may evaluate changes differently from new users.</p>
+<hr>
+<h1 id="5-the-problem-of-too-many-controls"><strong>5. The Problem of Too Many Controls</strong></h1>
+<p>Adding controls has benefits:</p>
+<ul>
+<li>Reduces confounding.  </li>
+<li>Improves accuracy.</li>
+</ul>
+<p>But excessive controls can create problems:</p>
+<ul>
+<li>More complex models.  </li>
+<li>Reduced interpretability.  </li>
+<li>Lower statistical power.  </li>
+<li>Possible overfitting.</li>
+</ul>
+<hr>
+<p>The goal:</p>
+<p>Not the largest model.</p>
+<p>The goal:</p>
+<p>The most theoretically justified model.</p>
+<hr>
+<h1 id="6-likert-scale-data-and-operational-metrics"><strong>6. Likert Scale Data and Operational Metrics</strong></h1>
+<p>The case mentions two types of measures:</p>
+<h2 id="likert-scale-measures"><strong>Likert scale measures</strong></h2>
+<p>Example:</p>
+<p>User satisfaction rating:</p>
+<p>1–5.</p>
+<hr>
+<h2 id="objective-usage-metrics"><strong>Objective usage metrics</strong></h2>
+<p>Example:</p>
+<ul>
+<li>Number of sessions.  </li>
+<li>Time spent.  </li>
+<li>Feature usage.</li>
+</ul>
+<hr>
+<p>These variables may differ in scale and measurement.</p>
+<hr>
+<h1 id="7-preparing-mixed-unit-metrics"><strong>7. Preparing Mixed-Unit Metrics</strong></h1>
+<p>Suppose engagement is measured using:</p>
+<ul>
+<li>Sessions.  </li>
+<li>Minutes.  </li>
+<li>Click counts.</li>
+</ul>
+<p>These variables have different units.</p>
+<p>Example:</p>
+<p>Sessions:</p>
+<p>0–100.</p>
+<p>Time:</p>
+<p>0–5000 minutes.</p>
+<hr>
+<p>If combined directly:</p>
+<p>Large-number variables dominate.</p>
+<hr>
+<p>Solution:</p>
+<p>Standardization.</p>
+<hr>
+<h1 id="8-standardization"><strong>8. Standardization</strong></h1>
+<h2 id="purpose-2"><strong>Purpose</strong></h2>
+<p>Convert variables to a common scale.</p>
+<p>Usually:</p>
+<p>z-scores.</p>
+<p>Formula:</p>
+<p>z \= (value - mean) / standard deviation</p>
+<hr>
+<p>After standardization:</p>
+<ul>
+<li>Mean \= 0.  </li>
+<li>Standard deviation \= 1.</li>
+</ul>
+<hr>
+<p>Benefits:</p>
+<ul>
+<li>Removes unit differences.  </li>
+<li>Makes variables comparable.  </li>
+<li>Allows fair aggregation.</li>
+</ul>
+<hr>
+<h1 id="9-reverse-coding"><strong>9. Reverse Coding</strong></h1>
+<p>Some measures may have opposite meanings.</p>
+<p>Example:</p>
+<p>Higher value is worse:</p>
+<ul>
+<li>Number of complaints.  </li>
+<li>Waiting time.</li>
+</ul>
+<hr>
+<p>Before combining:</p>
+<p>Reverse-code these variables.</p>
+<p>Goal:</p>
+<p>All indicators should have the same interpretation.</p>
+<p>Example:</p>
+<p>Higher score \= better performance.</p>
+<hr>
+<p>Important:</p>
+<p>Standardization does not fix direction.</p>
+<p>A badly oriented variable remains badly oriented after z-scoring.</p>
+<hr>
+<h1 id="10-regression-in-jamovi"><strong>10. Regression in Jamovi</strong></h1>
+<p>Regression models contain:</p>
+<h2 id="dependent-variable"><strong>Dependent variable</strong></h2>
+<p>The outcome being predicted.</p>
+<p>Example:</p>
+<p>User satisfaction.</p>
+<hr>
+<h2 id="predictors"><strong>Predictors</strong></h2>
+<p>Variables expected to influence the outcome.</p>
+<p>Example:</p>
+<p>Feature usage.</p>
+<hr>
+<h2 id="controls"><strong>Controls</strong></h2>
+<p>Variables included to remove alternative explanations.</p>
+<p>Example:</p>
+<p>Age.</p>
+<hr>
+<h1 id="11-categorical-variables-in-regression"><strong>11. Categorical Variables in Regression</strong></h1>
+<p>Examples:</p>
+<ul>
+<li>Gender.  </li>
+<li>Region.</li>
+</ul>
+<p>These are categorical variables.</p>
+<p>Regression requires numerical representation.</p>
+<hr>
+<p>Solution:</p>
+<p>Dummy coding.</p>
+<hr>
+<h1 id="12-dummy-coding"><strong>12. Dummy Coding</strong></h1>
+<p>Dummy coding converts categories into binary variables.</p>
+<p>Example:</p>
+<p>Gender:</p>
+<p>Categories:</p>
+<ul>
+<li>Male.  </li>
+<li>Female.</li>
+</ul>
+<hr>
+<p>Jamovi creates:</p>
+<p>Gender_Male:</p>
+<p>0 \= Female</p>
+<p>1 \= Male</p>
+<hr>
+<p>The omitted category becomes the reference category.</p>
+<hr>
+<h1 id="13-reference-category"><strong>13. Reference Category</strong></h1>
+<p>The reference category is the baseline group.</p>
+<p>Regression coefficients are interpreted relative to it.</p>
+<hr>
+<p>Example:</p>
+<p>Reference:</p>
+<p>Female.</p>
+<p>Coefficient:</p>
+<p>Gender_Male \= 0.3</p>
+<p>Interpretation:</p>
+<p>Male users have 0.3 higher predicted satisfaction than female users, holding other variables constant.</p>
+<hr>
+<h1 id="14-does-the-reference-level-need-to-change"><strong>14. Does the Reference Level Need to Change?</strong></h1>
+<p>The case asks whether the reference category should shift.</p>
+<p>Answer:</p>
+<p>Only if there is a theoretical reason.</p>
+<hr>
+<p>Changing reference level does NOT change:</p>
+<ul>
+<li>Model fit.  </li>
+<li>Overall significance.  </li>
+<li>Predictions.</li>
+</ul>
+<p>It only changes interpretation of coefficients.</p>
+<hr>
+<p>Example:</p>
+<p>Comparing:</p>
+<p>Male vs Female</p>
+<p>is mathematically equivalent to:</p>
+<p>Female vs Male</p>
+<p>if coding is adjusted correctly.</p>
+<hr>
+<h1 id="15-continuous-controls-in-regression"><strong>15. Continuous Controls in Regression</strong></h1>
+<p>Examples:</p>
+<ul>
+<li>Age.  </li>
+<li>Number of previous sessions.</li>
+</ul>
+<p>These are continuous variables.</p>
+<hr>
+<p>In Jamovi:</p>
+<p>They go into:</p>
+<p>Covariates box.</p>
+<hr>
+<p>Categorical variables:</p>
+<p>Factors box.</p>
+<hr>
+<p>Continuous variables:</p>
+<p>Covariates box.</p>
+<hr>
+<h1 id="16-hierarchical-regression"><strong>16. Hierarchical Regression</strong></h1>
+<h2 id="purpose-3"><strong>Purpose</strong></h2>
+<p>Hierarchical regression evaluates whether new predictors add explanatory value beyond existing variables.</p>
+<hr>
+<p>It answers:</p>
+<blockquote>
+<p>&ldquo;Does this new variable explain additional variance after accounting for existing predictors?&rdquo;</p>
+</blockquote>
+<hr>
+<h1 id="17-building-blocks-in-hierarchical-regression"><strong>17. Building Blocks in Hierarchical Regression</strong></h1>
+<p>Example:</p>
+<h2 id="model-1-controls-only"><strong>Model 1: Controls only</strong></h2>
+<p>Predictors:</p>
+<ul>
+<li>Age.  </li>
+<li>Gender.  </li>
+<li>Region.</li>
+</ul>
+<hr>
+<p>Measure:</p>
+<p>R²</p>
+<hr>
+<p>Meaning:</p>
+<p>How much variance in satisfaction is explained by controls.</p>
+<hr>
+<h2 id="model-2-add-interface-usage"><strong>Model 2: Add interface usage</strong></h2>
+<p>Predictors:</p>
+<ul>
+<li>Age.  </li>
+<li>Gender.  </li>
+<li>Region.  </li>
+<li>Feature usage.</li>
+</ul>
+<hr>
+<p>Measure:</p>
+<p>New R².</p>
+<hr>
+<h1 id="18-r-change-in-explained-variance"><strong>18. ΔR² (Change in Explained Variance)</strong></h1>
+<p>Formula:</p>
+<p>ΔR² \= R²(Model 2) − R²(Model 1)</p>
+<hr>
+<p>Meaning:</p>
+<p>How much additional variance is explained by the new predictor block.</p>
+<hr>
+<p>Example:</p>
+<p>Model 1:</p>
+<p>R² \= 0.30</p>
+<p>Model 2:</p>
+<p>R² \= 0.42</p>
+<hr>
+<p>ΔR²:</p>
+<p>0.12</p>
+<hr>
+<p>Interpretation:</p>
+<p>Feature usage explains an additional 12% of satisfaction variance beyond controls.</p>
+<hr>
+<h1 id="19-adding-customer-tenure-as-another-block"><strong>19. Adding Customer Tenure as Another Block</strong></h1>
+<p>Emma suggests adding tenure.</p>
+<p>Possible model:</p>
+<h2 id="block-1"><strong>Block 1:</strong></h2>
+<p>Demographics:</p>
+<ul>
+<li>Age.  </li>
+<li>Gender.  </li>
+<li>Region.</li>
+</ul>
+<hr>
+<h2 id="block-2"><strong>Block 2:</strong></h2>
+<p>Feature usage.</p>
+<hr>
+<h2 id="block-3"><strong>Block 3:</strong></h2>
+<p>Customer tenure.</p>
+<hr>
+<p>Question:</p>
+<p>Does tenure add meaningful explanatory power?</p>
+<hr>
+<h1 id="20-impact-of-adding-another-block"><strong>20. Impact of Adding Another Block</strong></h1>
+<p>Adding predictors can:</p>
+<p>Increase:</p>
+<ul>
+<li>R².</li>
+</ul>
+<p>Because more variables are included.</p>
+<hr>
+<p>However:</p>
+<p>The increase may be small.</p>
+<hr>
+<p>If tenure produces meaningful ΔR²:</p>
+<p>It improves explanation.</p>
+<hr>
+<p>If tenure adds little:</p>
+<p>It may not justify additional complexity.</p>
+<hr>
+<h1 id="21-r-vs-adjusted-r"><strong>21. R² vs Adjusted R²</strong></h1>
+<h2 id="r"><strong>R²</strong></h2>
+<p>Measures explained variance.</p>
+<p>Problem:</p>
+<p>It always increases when predictors are added.</p>
+<hr>
+<p>Even useless predictors can increase R².</p>
+<hr>
+<h2 id="adjusted-r"><strong>Adjusted R²</strong></h2>
+<p>Penalizes unnecessary predictors.</p>
+<hr>
+<p>It considers:</p>
+<ul>
+<li>Number of predictors.  </li>
+<li>Sample size.</li>
+</ul>
+<hr>
+<p>If adjusted R² decreases:</p>
+<p>The added variable may not improve the model enough.</p>
+<hr>
+<h1 id="22-model-complexity-vs-parsimony"><strong>22. Model Complexity vs Parsimony</strong></h1>
+<h2 id="complex-model"><strong>Complex model</strong></h2>
+<p>Advantages:</p>
+<ul>
+<li>More variables.  </li>
+<li>More complete explanation.</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>Harder interpretation.  </li>
+<li>Higher overfitting risk.</li>
+</ul>
+<hr>
+<h2 id="simple-model"><strong>Simple model</strong></h2>
+<p>Advantages:</p>
+<ul>
+<li>Easier interpretation.  </li>
+<li>More stable.  </li>
+<li>Better generalization.</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>May miss important factors.</li>
+</ul>
+<hr>
+<p>Best principle:</p>
+<blockquote>
+<p>Add complexity only when it provides meaningful explanatory improvement.</p>
+</blockquote>
+<hr>
+<h1 id="23-standardized-coefficients"><strong>23. Standardized Coefficients</strong></h1>
+<h2 id="purpose-4"><strong>Purpose</strong></h2>
+<p>Compare predictor strengths.</p>
+<hr>
+<p>Problem:</p>
+<p>Predictors have different units.</p>
+<p>Example:</p>
+<p>Age:</p>
+<p>Years.</p>
+<p>Feature usage:</p>
+<p>Number of sessions.</p>
+<hr>
+<p>Unstandardized coefficients cannot be directly compared.</p>
+<hr>
+<p>Solution:</p>
+<p>Standardized beta coefficients.</p>
+<hr>
+<h1 id="24-interpreting-standardized-beta"><strong>24. Interpreting Standardized Beta</strong></h1>
+<p>Example:</p>
+<p>Feature usage:</p>
+<p>β \= 0.45</p>
+<p>Age:</p>
+<p>β \= 0.10</p>
+<hr>
+<p>Interpretation:</p>
+<p>Feature usage has a stronger association with satisfaction than age, holding other variables constant.</p>
+<hr>
+<h1 id="25-common-misconceptions"><strong>25. Common Misconceptions</strong></h1>
+<h2 id="misconception-1-2"><strong>Misconception 1:</strong></h2>
+<p>Controls prove causality.</p>
+<p>Reality:</p>
+<p>Controls reduce alternative explanations but do not create experimental proof.</p>
+<hr>
+<h2 id="misconception-2-2"><strong>Misconception 2:</strong></h2>
+<p>Add every available variable as a control.</p>
+<p>Reality:</p>
+<p>Controls should be theoretically justified.</p>
+<hr>
+<h2 id="misconception-3-2"><strong>Misconception 3:</strong></h2>
+<p>Changing reference category changes results.</p>
+<p>Reality:</p>
+<p>It only changes coefficient interpretation.</p>
+<hr>
+<h2 id="misconception-4-2"><strong>Misconception 4:</strong></h2>
+<p>R² always determines the best model.</p>
+<p>Reality:</p>
+<p>Adjusted R² and theoretical relevance matter.</p>
+<hr>
+<h2 id="misconception-5-2"><strong>Misconception 5:</strong></h2>
+<p>Standardization fixes all measurement problems.</p>
+<p>Reality:</p>
+<p>Standardization fixes scale differences only.</p>
+<p>Direction problems require reverse coding.</p>
+<hr>
+<h1 id="26-regression-model-selection-framework"><strong>26. Regression Model Selection Framework</strong></h1>
+<h2 id="step-1-3"><strong>Step 1:</strong></h2>
+<p>Define research question.</p>
+<p>Example:</p>
+<p>Does interface usage improve satisfaction?</p>
+<hr>
+<h2 id="step-2-3"><strong>Step 2:</strong></h2>
+<p>Identify predictors.</p>
+<p>Example:</p>
+<p>Feature usage.</p>
+<hr>
+<h2 id="step-3-3"><strong>Step 3:</strong></h2>
+<p>Identify justified controls.</p>
+<p>Example:</p>
+<p>Age, region.</p>
+<hr>
+<h2 id="step-4-3"><strong>Step 4:</strong></h2>
+<p>Prepare variables.</p>
+<ul>
+<li>Dummy-code categorical variables.  </li>
+<li>Standardize mixed-unit metrics.  </li>
+<li>Reverse-code negative indicators.</li>
+</ul>
+<hr>
+<h2 id="step-5-2"><strong>Step 5:</strong></h2>
+<p>Build hierarchical models.</p>
+<p>Compare:</p>
+<ul>
+<li>R².  </li>
+<li>ΔR².  </li>
+<li>Adjusted R².</li>
+</ul>
+<hr>
+<h2 id="step-6"><strong>Step 6:</strong></h2>
+<p>Interpret effect sizes.</p>
+<p>Use:</p>
+<ul>
+<li>Standardized beta coefficients.</li>
+</ul>
+<hr>
+<h1 id="27-final-key-takeaways"><strong>27. Final Key Takeaways</strong></h1>
+<ol>
+<li>Regression estimates predictor effects while controlling for other variables.  </li>
+<li>Controls should be theory-driven, not automatically included.  </li>
+<li>Categorical variables enter regression as factors and are dummy-coded.  </li>
+<li>Reference categories affect interpretation, not model performance.  </li>
+<li>Continuous variables enter as covariates.  </li>
+<li>Standardization makes mixed-unit measures comparable.  </li>
+<li>Reverse coding aligns indicator direction before combining scores.  </li>
+<li>Hierarchical regression tests whether new predictors add explanatory value.  </li>
+<li>ΔR² measures additional variance explained by a new block.  </li>
+<li>Adjusted R² helps balance explanatory power and model complexity.  </li>
+<li>Standardized beta coefficients allow fair comparison of predictor importance.</li>
+</ol>
+<p><strong>The best regression model is not the one with the most predictors; it is the one that provides the clearest, most theoretically meaningful explanation with appropriate complexity.</strong></p>
+<h1 id="comprehensive-notes-intellatech-case-study-hierarchical-regression-control-variables-data-preparation-dummy-coding-standardization-and-effect-interpretation"><strong>Comprehensive Notes: IntellaTech Case Study — Hierarchical Regression, Control Variables, Data Preparation, Dummy Coding, Standardization, and Effect Interpretation</strong></h1>
+<h1 id="1-case-study-overview"><strong>1. Case Study Overview</strong></h1>
+<p>IntellaTech wants to evaluate whether a recent interface update improves:</p>
+<ul>
+<li>User satisfaction.  </li>
+<li>User engagement.</li>
+</ul>
+<p>Emma (marketing manager) and Raj (data analyst) use regression analysis to determine whether the interface update has an effect after accounting for other user characteristics.</p>
+<p>The key analytical challenge:</p>
+<blockquote>
+<p>Separate the true contribution of the interface update from other factors that may influence satisfaction.</p>
+</blockquote>
+<p>The case covers:</p>
+<ul>
+<li>Linear regression.  </li>
+<li>Control variables.  </li>
+<li>Hierarchical regression.  </li>
+<li>Dummy coding.  </li>
+<li>Covariates vs factors in Jamovi.  </li>
+<li>ΔR².  </li>
+<li>Standardized coefficients.  </li>
+<li>Data preparation for mixed measurement types.  </li>
+<li>Model complexity and parsimony.</li>
+</ul>
+<hr>
+<h1 id="2-research-objective"><strong>2. Research Objective</strong></h1>
+<p>The basic question:</p>
+<blockquote>
+<p>Does the interface update improve user satisfaction after controlling for demographic and historical user differences?</p>
+</blockquote>
+<p>A simple comparison before and after the update may be misleading because user groups may differ naturally.</p>
+<p>For example:</p>
+<ul>
+<li>Younger users may adopt new features more easily.  </li>
+<li>Long-term users may react differently to changes.  </li>
+<li>Different regions may have different expectations.</li>
+</ul>
+<p>Regression allows these influences to be controlled.</p>
+<hr>
+<h1 id="3-regression-model-structure"><strong>3. Regression Model Structure</strong></h1>
+<p>A regression model contains:</p>
+<h2 id="dependent-variable-outcome"><strong>Dependent Variable (Outcome)</strong></h2>
+<p>The variable being predicted.</p>
+<p>Example:</p>
+<p>User satisfaction.</p>
+<hr>
+<h2 id="predictors-2"><strong>Predictors</strong></h2>
+<p>Variables expected to influence the outcome.</p>
+<p>Example:</p>
+<p>Feature usage after interface update.</p>
+<hr>
+<h2 id="control-variables"><strong>Control Variables</strong></h2>
+<p>Variables included to account for alternative explanations.</p>
+<p>Examples:</p>
+<ul>
+<li>Age.  </li>
+<li>Gender.  </li>
+<li>Region.  </li>
+<li>Prior sessions.  </li>
+<li>Customer tenure.</li>
+</ul>
+<hr>
+<p>General model:</p>
+<p><strong>Satisfaction \= Interface effect + Controls + Error</strong></p>
+<hr>
+<h1 id="4-why-control-variables-are-important"><strong>4. Why Control Variables Are Important</strong></h1>
+<p>A control variable helps answer:</p>
+<blockquote>
+<p>Does the main predictor still matter after accounting for other relevant factors?</p>
+</blockquote>
+<hr>
+<p>Example:</p>
+<p>Without controls:</p>
+<p>Feature usage → Satisfaction</p>
+<p>Possible problem:</p>
+<p>Maybe highly active users naturally have higher satisfaction.</p>
+<hr>
+<p>With controls:</p>
+<p>Feature usage → Satisfaction<br>
+while controlling for:</p>
+<ul>
+<li>Age.  </li>
+<li>Prior sessions.  </li>
+<li>Region.</li>
+</ul>
+<hr>
+<p>Now the feature effect is estimated more accurately.</p>
+<hr>
+<h1 id="5-choosing-control-variables"><strong>5. Choosing Control Variables</strong></h1>
+<p>A major principle:</p>
+<blockquote>
+<p>Include variables because theory suggests they matter, not simply because they exist in the dataset.</p>
+</blockquote>
+<hr>
+<p>Good controls:</p>
+<h2 id="age"><strong>Age</strong></h2>
+<p>Reason:</p>
+<p>Age may influence technology adoption.</p>
+<hr>
+<h2 id="region"><strong>Region</strong></h2>
+<p>Reason:</p>
+<p>Different regions may have different expectations or usage patterns.</p>
+<hr>
+<h2 id="prior-sessions"><strong>Prior sessions</strong></h2>
+<p>Reason:</p>
+<p>Previous engagement may influence satisfaction.</p>
+<hr>
+<h2 id="customer-tenure"><strong>Customer tenure</strong></h2>
+<p>Potentially useful because:</p>
+<p>Long-term customers may evaluate interface changes differently.</p>
+<hr>
+<h1 id="6-avoiding-unnecessary-controls"><strong>6. Avoiding Unnecessary Controls</strong></h1>
+<p>Adding every available variable is not always better.</p>
+<p>Problems caused by unnecessary predictors:</p>
+<ul>
+<li>Increased model complexity.  </li>
+<li>Reduced interpretability.  </li>
+<li>Possible multicollinearity.  </li>
+<li>Lower adjusted R².  </li>
+<li>Reduced statistical power.</li>
+</ul>
+<hr>
+<p>The objective:</p>
+<p>A theoretically justified model, not the largest model.</p>
+<hr>
+<h1 id="7-categorical-variables-in-jamovi"><strong>7. Categorical Variables in Jamovi</strong></h1>
+<p>Examples:</p>
+<ul>
+<li>Gender.  </li>
+<li>Region.</li>
+</ul>
+<p>These are categorical variables.</p>
+<p>Regression cannot directly use categories like:</p>
+<p>Male/Female.</p>
+<p>Therefore they require:</p>
+<h2 id="dummy-coding"><strong>Dummy coding</strong></h2>
+<hr>
+<h1 id="8-dummy-coding"><strong>8. Dummy Coding</strong></h1>
+<p>Dummy coding converts categories into numerical indicators.</p>
+<p>Example:</p>
+<p>Gender:</p>
+<ul>
+<li>Male.  </li>
+<li>Female.</li>
+</ul>
+<p>Jamovi creates a binary variable.</p>
+<p>Example:</p>
+<p>Gender_Male:</p>
+<ul>
+<li>0 \= Female.  </li>
+<li>1 \= Male.</li>
+</ul>
+<hr>
+<p>The omitted category becomes the:</p>
+<h2 id="reference-category"><strong>Reference category.</strong></h2>
+<hr>
+<h1 id="9-reference-category"><strong>9. Reference Category</strong></h1>
+<p>The reference category is the baseline for comparison.</p>
+<p>Example:</p>
+<p>Reference:</p>
+<p>Female.</p>
+<p>Regression coefficient:</p>
+<p>Gender_Male \= 0.20.</p>
+<p>Interpretation:</p>
+<p>Male users have 0.20 higher predicted satisfaction compared with female users, holding other variables constant.</p>
+<hr>
+<h1 id="10-changing-reference-levels"><strong>10. Changing Reference Levels</strong></h1>
+<p>Changing the reference category does not change:</p>
+<ul>
+<li>Model fit.  </li>
+<li>R².  </li>
+<li>Predictions.  </li>
+<li>Statistical significance of the overall model.</li>
+</ul>
+<hr>
+<p>It only changes:</p>
+<p>How coefficients are interpreted.</p>
+<hr>
+<p>A researcher may change the reference level when:</p>
+<ul>
+<li>One group is strategically important.  </li>
+<li>One market is a benchmark.  </li>
+<li>A pilot region is the comparison standard.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Instead of comparing every region against Region A:</p>
+<p>Choose the largest market as the reference.</p>
+<hr>
+<h1 id="11-covariates-vs-factors-in-jamovi"><strong>11. Covariates vs Factors in Jamovi</strong></h1>
+<p>Jamovi separates variables by type.</p>
+<hr>
+<h2 id="factors"><strong>Factors</strong></h2>
+<p>Categorical variables.</p>
+<p>Examples:</p>
+<ul>
+<li>Gender.  </li>
+<li>Region.</li>
+</ul>
+<p>Used for:</p>
+<ul>
+<li>Nominal categories.  </li>
+<li>Dummy coding.</li>
+</ul>
+<hr>
+<h2 id="covariates"><strong>Covariates</strong></h2>
+<p>Continuous variables.</p>
+<p>Examples:</p>
+<ul>
+<li>Age.  </li>
+<li>Number of prior sessions.  </li>
+<li>Income.</li>
+</ul>
+<p>Used as numerical predictors.</p>
+<hr>
+<p>Summary:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Variable type</th>
+<th>Jamovi location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gender</td>
+<td>Factors</td>
+</tr>
+<tr>
+<td>Region</td>
+<td>Factors</td>
+</tr>
+<tr>
+<td>Age</td>
+<td>Covariates</td>
+</tr>
+<tr>
+<td>Prior sessions</td>
+<td>Covariates</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="12-hierarchical-regression"><strong>12. Hierarchical Regression</strong></h1>
+<h2 id="purpose-5"><strong>Purpose</strong></h2>
+<p>Hierarchical regression evaluates whether new predictors add explanatory value beyond existing predictors.</p>
+<p>It answers:</p>
+<blockquote>
+<p>Does this new variable explain additional variance after accounting for controls?</p>
+</blockquote>
+<hr>
+<h1 id="13-hierarchical-regression-process"><strong>13. Hierarchical Regression Process</strong></h1>
+<p>Example:</p>
+<h2 id="block-1-controls-only"><strong>Block 1: Controls only</strong></h2>
+<p>Variables:</p>
+<ul>
+<li>Age.  </li>
+<li>Gender.  </li>
+<li>Region.  </li>
+<li>Prior sessions.</li>
+</ul>
+<hr>
+<p>Output:</p>
+<p>R²₁</p>
+<p>Meaning:</p>
+<p>Variance explained by controls.</p>
+<hr>
+<h2 id="block-2-add-feature-usage"><strong>Block 2: Add feature usage</strong></h2>
+<p>Variables:</p>
+<ul>
+<li>Controls.  </li>
+<li>Feature usage.</li>
+</ul>
+<hr>
+<p>Output:</p>
+<p>R²₂</p>
+<hr>
+<p>Compare:</p>
+<p>ΔR² \= R²₂ − R²₁</p>
+<hr>
+<h1 id="14-understanding-r"><strong>14. Understanding ΔR²</strong></h1>
+<p>ΔR² represents:</p>
+<blockquote>
+<p>Additional variance explained by the newly added predictor block.</p>
+</blockquote>
+<hr>
+<p>Example:</p>
+<p>Model 1:</p>
+<p>R² \= 0.30</p>
+<p>Model 2:</p>
+<p>R² \= 0.45</p>
+<hr>
+<p>ΔR²:</p>
+<p>0.15</p>
+<hr>
+<p>Interpretation:</p>
+<p>Feature usage explains an additional 15% of satisfaction variance beyond demographic and historical controls.</p>
+<hr>
+<h1 id="15-adding-customer-tenure-as-another-block"><strong>15. Adding Customer Tenure as Another Block</strong></h1>
+<p>Emma suggests adding tenure.</p>
+<p>Possible structure:</p>
+<h2 id="block-1-2"><strong>Block 1:</strong></h2>
+<p>Demographics:</p>
+<ul>
+<li>Age.  </li>
+<li>Gender.  </li>
+<li>Region.</li>
+</ul>
+<hr>
+<h2 id="block-2-2"><strong>Block 2:</strong></h2>
+<p>Feature usage.</p>
+<hr>
+<h2 id="block-3-2"><strong>Block 3:</strong></h2>
+<p>Customer tenure.</p>
+<hr>
+<p>Question:</p>
+<p>Does tenure meaningfully improve the model?</p>
+<hr>
+<h1 id="16-trade-off-of-adding-more-predictors"><strong>16. Trade-off of Adding More Predictors</strong></h1>
+<p>Benefits:</p>
+<ul>
+<li>More complete explanation.  </li>
+<li>Better control of confounding.</li>
+</ul>
+<hr>
+<p>Costs:</p>
+<ul>
+<li>More complexity.  </li>
+<li>More predictors.  </li>
+<li>Possible reduction in adjusted R².</li>
+</ul>
+<hr>
+<h1 id="17-r-vs-adjusted-r"><strong>17. R² vs Adjusted R²</strong></h1>
+<h2 id="r-2"><strong>R²</strong></h2>
+<p>Measures explained variance.</p>
+<p>Problem:</p>
+<p>It always increases when variables are added.</p>
+<hr>
+<h2 id="adjusted-r-2"><strong>Adjusted R²</strong></h2>
+<p>Accounts for:</p>
+<ul>
+<li>Number of predictors.  </li>
+<li>Sample size.</li>
+</ul>
+<hr>
+<p>If a new variable increases R² but decreases adjusted R²:</p>
+<p>The variable may not provide enough value.</p>
+<hr>
+<h1 id="18-model-parsimony"><strong>18. Model Parsimony</strong></h1>
+<p>Parsimony means:</p>
+<blockquote>
+<p>Prefer the simplest model that adequately explains the data.</p>
+</blockquote>
+<hr>
+<p>A good model balances:</p>
+<h2 id="explanatory-power"><strong>Explanatory power</strong></h2>
+<p>How much variation is explained.</p>
+<p>AND</p>
+<h2 id="simplicity"><strong>Simplicity</strong></h2>
+<p>How easy the model is to interpret and generalize.</p>
+<hr>
+<h1 id="19-mixed-measurement-units"><strong>19. Mixed Measurement Units</strong></h1>
+<p>The dataset includes:</p>
+<ul>
+<li>Likert satisfaction scores.  </li>
+<li>Objective usage metrics.</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>Sessions.  </li>
+<li>Time.  </li>
+<li>Clicks.</li>
+</ul>
+<hr>
+<p>Different units create comparison problems.</p>
+<p>Example:</p>
+<p>Sessions:</p>
+<p>0–100.</p>
+<p>Time:</p>
+<p>0–10,000 minutes.</p>
+<hr>
+<p>If combined directly:</p>
+<p>Large-scale variables dominate.</p>
+<hr>
+<h1 id="20-standardization"><strong>20. Standardization</strong></h1>
+<p>Standardization converts variables into a common scale.</p>
+<p>Usually:</p>
+<p>z-scores.</p>
+<p>Formula:</p>
+<p>z \= (value − mean) / standard deviation</p>
+<hr>
+<p>After standardization:</p>
+<ul>
+<li>Mean \= 0.  </li>
+<li>Standard deviation \= 1.</li>
+</ul>
+<hr>
+<p>Benefits:</p>
+<ul>
+<li>Removes unit differences.  </li>
+<li>Allows fair comparison.  </li>
+<li>Prevents large numerical values dominating.</li>
+</ul>
+<hr>
+<h1 id="21-what-standardization-does-not-do"><strong>21. What Standardization Does NOT Do</strong></h1>
+<p>Standardization:</p>
+<p>✓ Fixes scale differences.</p>
+<p>Does NOT:</p>
+<p>✗ Fix incorrect direction.</p>
+<p>Example:</p>
+<p>Complaints:</p>
+<p>Higher value \= worse.</p>
+<p>After z-scoring:</p>
+<p>Higher still means more complaints.</p>
+<hr>
+<p>Need:</p>
+<p>Reverse coding.</p>
+<hr>
+<h1 id="22-reverse-coding"><strong>22. Reverse Coding</strong></h1>
+<p>Used when indicators have opposite meanings.</p>
+<p>Example:</p>
+<p>Positive indicators:</p>
+<ul>
+<li>More features used.  </li>
+<li>More sessions.</li>
+</ul>
+<p>Negative indicators:</p>
+<ul>
+<li>More complaints.  </li>
+<li>Longer waiting time.</li>
+</ul>
+<hr>
+<p>Before combining:</p>
+<p>Reverse-code negative indicators.</p>
+<p>Goal:</p>
+<p>Higher score always means better performance.</p>
+<hr>
+<h1 id="23-likert-scale-data-preparation"><strong>23. Likert Scale Data Preparation</strong></h1>
+<p>Likert items often measure attitudes.</p>
+<p>Example:</p>
+<p>1 \= strongly disagree</p>
+<p>5 \= strongly agree</p>
+<hr>
+<p>Preparation:</p>
+<p>Check:</p>
+<ul>
+<li>Reverse-worded questions.  </li>
+<li>Direction consistency.  </li>
+<li>Missing values.</li>
+</ul>
+<hr>
+<p>Important:</p>
+<p>Not every Likert variable must automatically become a z-score.</p>
+<p>Standardization is mainly required when:</p>
+<ul>
+<li>Combining variables.  </li>
+<li>Comparing effect sizes.</li>
+</ul>
+<hr>
+<h1 id="24-comparing-predictor-effects"><strong>24. Comparing Predictor Effects</strong></h1>
+<p>Regression coefficients may have different units.</p>
+<p>Example:</p>
+<p>Age:</p>
+<p>Years.</p>
+<p>Feature usage:</p>
+<p>Number of sessions.</p>
+<hr>
+<p>Raw coefficients cannot be directly compared.</p>
+<hr>
+<p>Solution:</p>
+<p>Standardized beta coefficients.</p>
+<hr>
+<h1 id="25-standardized-beta-coefficients"><strong>25. Standardized Beta Coefficients</strong></h1>
+<p>Standardized coefficients represent:</p>
+<p>Effect in standard deviation units.</p>
+<hr>
+<p>Example:</p>
+<p>Feature usage:</p>
+<p>β \= 0.40</p>
+<p>Age:</p>
+<p>β \= 0.10</p>
+<hr>
+<p>Interpretation:</p>
+<p>Feature usage has a stronger association with satisfaction.</p>
+<hr>
+<h1 id="26-common-misconceptions"><strong>26. Common Misconceptions</strong></h1>
+<h2 id="misconception-1-3"><strong>Misconception 1:</strong></h2>
+<p>Adding all variables improves the model.</p>
+<p>Reality:</p>
+<p>Only theoretically justified variables should be added.</p>
+<hr>
+<h2 id="misconception-2-3"><strong>Misconception 2:</strong></h2>
+<p>Changing reference categories changes the model.</p>
+<p>Reality:</p>
+<p>It only changes interpretation.</p>
+<hr>
+<h2 id="misconception-3-3"><strong>Misconception 3:</strong></h2>
+<p>Standardization is required for every regression variable.</p>
+<p>Reality:</p>
+<p>Regression can handle different units.</p>
+<p>Standardization is mainly useful for:</p>
+<ul>
+<li>Comparing effects.  </li>
+<li>Creating composite scores.</li>
+</ul>
+<hr>
+<h2 id="misconception-4-3"><strong>Misconception 4:</strong></h2>
+<p>R² alone identifies the best model.</p>
+<p>Reality:</p>
+<p>Adjusted R² and theory must also be considered.</p>
+<hr>
+<h2 id="misconception-5-3"><strong>Misconception 5:</strong></h2>
+<p>Dummy coding makes categories continuous.</p>
+<p>Reality:</p>
+<p>Dummy variables represent category comparisons.</p>
+<hr>
+<h1 id="27-complete-analytical-workflow"><strong>27. Complete Analytical Workflow</strong></h1>
+<h2 id="step-1-define-the-research-question"><strong>Step 1: Define the research question</strong></h2>
+<p>Example:</p>
+<p>Does interface usage improve satisfaction?</p>
+<hr>
+<h2 id="step-2-identify-variables"><strong>Step 2: Identify variables</strong></h2>
+<p>Outcome:</p>
+<p>Satisfaction.</p>
+<p>Predictor:</p>
+<p>Feature usage.</p>
+<p>Controls:</p>
+<p>Age, gender, region, prior sessions.</p>
+<hr>
+<h2 id="step-3-prepare-data"><strong>Step 3: Prepare data</strong></h2>
+<p>For categorical variables:</p>
+<ul>
+<li>Define factors.  </li>
+<li>Check reference categories.</li>
+</ul>
+<p>For continuous variables:</p>
+<ul>
+<li>Check measurement quality.</li>
+</ul>
+<p>For combined metrics:</p>
+<ul>
+<li>Reverse-code.  </li>
+<li>Standardize.</li>
+</ul>
+<hr>
+<h2 id="step-4-build-hierarchical-models"><strong>Step 4: Build hierarchical models</strong></h2>
+<p>Model 1:</p>
+<p>Controls.</p>
+<p>Model 2:</p>
+<p>Controls + feature usage.</p>
+<hr>
+<h2 id="step-5-evaluate-improvement"><strong>Step 5: Evaluate improvement</strong></h2>
+<p>Check:</p>
+<ul>
+<li>ΔR².  </li>
+<li>Statistical significance.  </li>
+<li>Adjusted R².</li>
+</ul>
+<hr>
+<h2 id="step-6-compare-effects"><strong>Step 6: Compare effects</strong></h2>
+<p>Use:</p>
+<p>Standardized beta coefficients.</p>
+<hr>
+<h1 id="final-key-takeaways-2"><strong>Final Key Takeaways</strong></h1>
+<ol>
+<li>Regression isolates predictor effects while controlling for other influences.  </li>
+<li>Control variables should be theory-driven.  </li>
+<li>Categorical variables enter Jamovi regression as factors.  </li>
+<li>Continuous variables enter as covariates.  </li>
+<li>Dummy coding allows categorical variables to be included in regression.  </li>
+<li>Reference categories affect interpretation, not model quality.  </li>
+<li>Hierarchical regression tests whether new predictors add explanatory power.  </li>
+<li>ΔR² measures additional variance explained by newly added predictors.  </li>
+<li>Adjusted R² helps balance model improvement and complexity.  </li>
+<li>Standardization allows fair comparison of predictors with different units.  </li>
+<li>Reverse coding ensures all measures point in the same direction.  </li>
+<li>The best regression model balances:<br>
+<em> Statistical rigor.<br>
+</em> Theoretical justification.<br>
+<em> Interpretability.<br>
+</em> Practical usefulness.</li>
+</ol>
+<p><strong>A strong analytical model is not the most complicated model; it is the simplest model that provides a reliable and meaningful explanation of the research question.</strong></p>
+<p><strong>Live</strong></p>
+<p>Stream<br>
+Amrita Online MBA  Semester 4 Batch OCT 2024  Live Session  Project-20260727_190031-Meeting Recording - View-only</p>
+<p>This document is shared with others</p>
+<p>Mahalingam P R - \[AA.BU.P2MBA24075126\]<br>
+M<br>
+Sign in</p>
+<p>Record</p>
+<p>Upload</p>
+<p>Favorite</p>
+<p>Playlist</p>
+<p>Teams</p>
+<p>Share</p>
+<p>Volume slider is at 100%<br>
+0 minutes of 1 hour 1 minute 11 seconds<br>
+0:00 / 1:01:11<br>
+1<br>
+x<br>
+Read transcript<br>
+Transcript</p>
+<p>Close</p>
+<p>Download<br>
+You don&rsquo;t have permission to download the transcript. Contact Amrita Online - LMS File Server to request access.</p>
+<p>You don&rsquo;t have permission to download the transcript. Contact<br>
+Amrita Online - LMS File Server<br>
+to request access.<br>
+Transcript. Use arrow keys to navigate between transcript entries. Select an entry to navigate the media to the time of the entry.</p>
+<p>AI-generated content may be incorrect</p>
+<p>Ms Shinta Idicula - MBA - Amrita Online<br>
+started transcription<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+0 minutes 3 seconds<br>
+0:03<br>
+Ms Shinta Idicula - MBA - Amrita Online 0 minutes 3 seconds<br>
+Pleasure to welcome you all to today&rsquo;s session. Please note that this session has been recorded for academic purposes. I kindly request all participants to turn on your cameras if possible. Your microphones will remain muted throughout the session to avoid background disturbances. If you have any questions.<br>
+Ms Shinta Idicula - MBA - Amrita Online 0 minutes 22 seconds<br>
+Or wish to share your thoughts, please use the raise hand option and I will unmute you at appropriate time. You may also use the chat box to share your comments or queries during the session. Now, without further delay, I would like to hand over the session to Doctor Riju Kumar Ji, who will be leading today&rsquo;s discussion. Over to you, Sir.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+0 minutes 42 seconds<br>
+0:42<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 0 minutes 42 seconds<br>
+Yeah, thank you. Good evening, everyone.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 0 minutes 45 seconds<br>
+So, when the story is like we have created a, we have a problem, we created a model, we collected data, and now we are going through the analysis phase. I&rsquo;m giving demonstration about how different analysis are carried out to answer certain important questions we have framed as part of the research.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 7 seconds<br>
+So I have explained, whenever after collecting your data immediately, you need to check the general quality of the data. There are certain things to be verified for that, the normality of the data, missing values, data independence, all such things have to be verified first to make sure that your data is good for.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 26 seconds<br>
+Proper analysis. Then second important thing is in always in I mean research you will be handling variables which are not directly measurable. These variables we call latin variables and for measuring latin variables we have an approach. I have explained all the all those things, but there will be a lot of assumptions related to measurement also. So we&rsquo;ll be checking.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 48 seconds<br>
+In the second stage, whether the measurement has caught has come properly good enough to consider that variables are measured and we can understand their associations, etcetera, etcetera. So for verifying measurement quality, we look into reliability and validity. I said reliability is consistency for that we can look into compact alpha measure as well as.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 2 minutes 12 seconds<br>
+Composite reliability measure. These 2 measures I have shown you how we are from where we can locate. It&rsquo;s available when you conduct the structural equation modelling kind of an analysis or when you do EFA. Also, you will get a general review about the item loadings etcetera, which speaks about validity. validity. One is item loading, as I said, it is available in the EFA stage and all.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 2 minutes 34 seconds<br>
+Then we&rsquo;ll be going with the average variance extracted. Then there is HTMT criteria to look into whether discrimination is also adequate, discrimination is also existing, that is called discriminant validity. So These are the things I have explained till date. Now, once we found that all the indicators used for measuring a.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 2 minutes 55 seconds<br>
+Variable are adequately capturing the theme behind the definition of the variable and are loading in a proper quantity. We use every such items for further analysis. If any item is underperforming, that means if not nodding properly or not showing a significance.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 3 minutes 16 seconds<br>
+Then all such way items will be removed and the remaining items only are used for I mean further analysis. There&rsquo;s a question to Missus Shinda. Yeah, Shinda, there&rsquo;s a question to you only while uploading the file. Yeah, this is you can discuss it later. I will finish it and maybe towards the end we will.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 3 minutes 36 seconds<br>
+Is it okay to mention the file name? Yes, it is absolutely okay. Nothing wrong in it. Don&rsquo;t worry. Okay, so this is what I have said. Now we need to know one thing. Now see we have in our data. I am going to share my screen and I am going to take the data once again.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 4 minutes 2 seconds<br>
+Can you be in a position to see my screen?<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+4 minutes 7 seconds<br>
+4:07<br>
+Ms Shinta Idicula - MBA - Amrita Online 4 minutes 7 seconds<br>
+Prisible, sir.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+4 minutes 8 seconds<br>
+4:08<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 4 minutes 8 seconds<br>
+Visible. So what we&rsquo;ll do now see we have initially used the see one to 5 items to measure store attributes. In really all variables are measured using certain items. Now when you check the validity and reliability, we find that all whether all these items are contributing towards measurement in a.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 4 minutes 28 seconds<br>
+Acceptable manner or some of them are underperforming. If we get the results that all the items are contributing adequately good in measurement, we will use every item. Say for example, store attribute 5 items other if one item loads less than 0.5 or if one item is not becoming significant.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 4 minutes 49 seconds<br>
+Or if one item shows significant amount of cross loading with the many other items so that the discriminative fee or discriminative quality is disturbed, in such cases only we will be removing an item. Otherwise, we will be using all items and all items together should capture at least 50% of the variance too. That is what we call the AVE average variance extracted.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 5 minutes 14 seconds<br>
+I&rsquo;ve given a general view of all these things. Please listen to my video also now once all the items assume that all the items were found good in measurement they are adequately loading. Also, after our initial investigation, now we can compute scores for each of the variables. Now variable store attribute will be average of.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 5 minutes 37 seconds<br>
+We I mean the scores or the values for store attribute one, store attribute 2, store attribute 34, and 5. So the responses to these 5 questions, the average of that can be considered as a score which capture the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 5 minutes 57 seconds<br>
+So for calculating that, I will show you how I have calculated and kept it. But one for one item, I can give you a demo. So you go to a new column, just click there or you can use the compute button. Now after getting the compute button, just click on here so it will come. A fresh window will be open at the top of the data.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 6 minutes 18 seconds<br>
+So here the means the column name is a J, but you can rename it like any say. For example, I&rsquo;m calculating SA score. You can write SA score.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 6 minutes 30 seconds<br>
+Or yes, I mean whatever name you want to give. So this is the cumulative values of the individuals or the customers perception towards all the store related attributes available in this retail format. So this can be additive or average. Both are okay. Averaging will be easy for you to.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 6 minutes 51 seconds<br>
+Consider whether it is good or bad, but why? Because we know that all are measured on a 5 point scale. So where on the 5 point scale the average score lies will show the general feeling of customers towards the quality of store attributes maintained in the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 7 minutes 10 seconds<br>
+Sure. So here there are lot of this is like a calculator. There are a lot of functions are there. Now we want we are going to go use the me. So equal sign will be there. You select me, double click it. So there&rsquo;s a bracket comes and in the bracket you just add item by item, say essay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 7 minutes 30 seconds<br>
+SA one is there, double click it, then SA 2 sorry not SA we have this is satisfaction right? We want for store attribute we are creating so take items for store attributes. Okay, store attribute one will come, comma, 2 will come, comma.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 7 minutes 50 seconds<br>
+3 will come, comma, 4 will come, comma, 5 will come. Now if you put an enter, see here in SA score, SA underscore score values will come. I just you just put an enter, see the score value has already come. Similarly, you can create score for all other.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 8 minutes 11 seconds<br>
+Very good. Also, I have I mean collected I mean I have computed it already and it is kept I have given the different name to avoid the conflict. So it says score has already been calculated by me. Then this is the way how you are calculating the scope and this score gives the score of store attribute.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 8 minutes 31 seconds<br>
+As calculated from 45 indicators used to evaluate store attribute I mean as in and the first row value will be about the first respondent and it will be going to I mean the under respondents list. Now if you want to.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 8 minutes 50 seconds<br>
+Do any calculation now I&rsquo;m deleting this because it&rsquo;s already been computed. My purpose was to show you only so I it&rsquo;s already been computed now once all this is there now again you can pick a descriptive of these score values and find where the I mean say for example I&rsquo;m just moving I&rsquo;ll just show you SS score value.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 9 minutes 12 seconds<br>
+Digest want to know the mean mean is 3.5 because we are collected from our own I mean our sample size I mean so many people the responses so average would be 3.52 out of 5. So this is generally we can say whether it is high or low and this mean value you will be comparing across men across woman.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 9 minutes 31 seconds<br>
+And see whether there&rsquo;s a significant difference in existing or not. So this is zoom. Now this is the measurement related aspect. Now next is we have lot of hypothesis related to our relationship between the variables and all. Now we can test all those hypothesis. I hope you remember the hypothesis, I will show you.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 9 minutes 53 seconds<br>
+That I mean the notes in the notes how many hypothesis we have created. So we have created see I said first family, second family. Now about the relationship among the variables or construct which are used. So that means.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 10 minutes 13 seconds<br>
+In the model, see product attribute is predicting value product attribute. We also believe that it will predict, predict customer satisfaction. Store attribute will pre will. We are expecting that store attributes will predict perceived value value field. Similarly, store attribute will parallely produce customer satisfaction. Also, value will produce satisfaction.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 10 minutes 35 seconds<br>
+So these are all direct hypothesis, direct relation between the variables. Then we have a moderating hypothesis and a mediating hypothesis. To verify moderating hypothesis and mediating hypothesis in jmov, we need to use MIT mode menu for all other things we can get from.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 10 minutes 54 seconds<br>
+Regression variables. OK, now I&rsquo;ll just give a demo how to do this.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 11 minutes 2 seconds<br>
+One minute, let me make the video little quick. See for example, one of our hypothesis is that product attributes and store attributes together or are both of them are good in predicting value. See hypothesis H1 and H2 since 2 variables are there, it&rsquo;s multiple one to one.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 11 minutes 22 seconds<br>
+Simple linear regression, 2 variables predicting one outcome, multiple linear regression and we will be doing this analysis. So here what is the dependent variable? Dependent variable in this stretch is perceived value and independent variable in this stretch is product attributes and store attribute.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 11 minutes 41 seconds<br>
+So what we will do, we will move the scores we computed, see perceived value is one score that we will move as dependent variable. Now independent variables in Jemovi are represented like covariates, something which vary, which acts as reason for variation in dependent variables. So we will move that.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 12 minutes 3 seconds<br>
+SA score was one. PV have not written score, but it means PV score. Now if we want to split this across gender or any categories, any groups we can do. Now I am taking the enter things together. Okay, so together I am creating the model.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 12 minutes 22 seconds<br>
+I don&rsquo;t want to split the data into data related to male customers or female customers or aged customers. or If you want to have such investigation, you can add that factor age or whatever be to the categorical curve. Now, as I said, regression has got certain assumptions. One assumption is about auto.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 12 minutes 44 seconds<br>
+Correlation, I said we can check that using the Win Watson statistics normality we already collinearity also we need not be expecting a high level of collinearity. So PR value should be less than I mean 3.3 and then of course QQQ plot or residual plot, these 2 things also we will check.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 13 minutes 5 seconds<br>
+Why? Because this speaks that if your data data, we found that it&rsquo;s not perfectly normal. So in regression, one condition is that if data is not perfectly normal, means the residual should follow a normal distribution. See for that we can look at the residual truth and all such things we will be getting and yeah, now this much if you want estimate.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 13 minutes 27 seconds<br>
+So in the estimate if you want standardised estimate also you can click standardised estimate also whether you are independent or not. I mean variables and dependent variables are adequately fitting to check that you can have the ANOVA test also. I mean margins are the result of now when you give all this.</p>
+<p>Sync to video<br>
+Transcript</p>
+<p>\[3:41:20 PM\] Transcript watcher started. Scroll the content manually.<br>
+\[3:41:25 PM\] Timestamp: 0:03<br>
+\[3:41:25 PM\] Timestamp: 0:42<br>
+\[3:41:25 PM\] Timestamp: 4:07<br>
+\[3:41:25 PM\] Timestamp: 4:08<br>
+🟥 Stop &amp; Extract Transcript<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 13 minutes 48 seconds<br>
+Sorry, it has gone off. So when you give all this details, the results will come. So what are the results and how will you? The result is that these 2 things together explain 22.8% of the reasons for formation of value. That is the first input or hypothesis.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 14 minutes 7 seconds<br>
+The interpretational hypothesis also falls as one of the outcomes of the result. First outcome is R square. R square speaks about it is in statistics, we call it like coefficient or determination. It speaks about to what extent are there variance or variation in the outcome variable, that is the dependent variable, are.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 14 minutes 28 seconds<br>
+Captured by the independent variable in practical way, we will give a different kind of interpretation. Also, to what extent does independent variables explain the portion of or the reasons for value developed? Now we can see 28.8% of the reasons for.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 14 minutes 48 seconds<br>
+Value developed in the mind of customers are due to the quality of the products as well as quality of the store aspects. So you can be happy about it or not happy about it. 22.8% means it is not a very great number, but of course a significant share of value is developed from these 2 things. So the remaining things are developed from many other things which I have not considered.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 15 minutes 13 seconds<br>
+In our case, so we have to feel that the items which are in control are producing or are developing value, but if they have little more predictive power, it should have been good. What way we can do to increase the predictive power of I mean quality of products or quality of store?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 15 minutes 32 seconds<br>
+That&rsquo;s where we I have to think now we found that they are producing to the level of 28.8% percentage only. So remaining around 77% are from some reasons which we have not included in the model. So they occupy. So any important variable which we have not considered is a.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 15 minutes 51 seconds<br>
+The reason for the value of field that all that we can capture only through another research only. This is it now there we get if you get in the NOVA table if you get P value as significant, we have to conclude that both independent variables have a an important role in or are.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 16 minutes 12 seconds<br>
+Significantly mean fitting in a model about proceed value. Just look whether this P values are less than 0.05. Now when it comes to so sorry it jumps. Okay now next important thing is this is related to our hypothesis testing. See.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 16 minutes 31 seconds<br>
+The model coefficient, the model coefficient speaks about whether the which of the independent variable among these 2 are more contributing are or are contributing or contributing in a higher level. Now you see the estimate standardised is shown otherwise standardised are mostly used to compare which which one is having a stronger predictive power or.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 16 minutes 55 seconds<br>
+Weaker predicting part. If you want to write a regression equation, you will be using estimate. So if I write equation perceived value that is the outcome perceived value is equal to 0.259 into store attribute score plus 0.929 to.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 15 seconds<br>
+Into product attribute score plus the constant 1.512. So this is the regression equation which explains how perceived value is direct is developed. Now when you look at the P values, so P values of the what is what do you mean by P this P value? Now we observe this relationship.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 38 seconds<br>
+Between store attribute and product perceived value in a sample. So what is our guarantee that if you predict of you or if you project this findings to the population, there is a chance of error coming? By this P value, it means that you cannot reject the null, that there is no relation.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 57 seconds<br>
+To exists generally between SA and PV, we are rejecting it because we that null is rejected because we get a P value more than so. That means there is a significant relation which can be generalizable exists between PV and SA. So we are looking at P.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 18 minutes 17 seconds<br>
+If it is point less than 0.05, we are happy. That is the limit we keep. Similarly in the other aspect also. Now when you compare among SA and PA, which one is the highest predictor of PV? We look at the standard estimate, which value which which of this estimate value is higher. So here we.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 18 minutes 36 seconds<br>
+Find that product attributes is having a higher value of 0.322 whereas SA is having a value 0.269. So that means product attribute as is currently giving having higher I mean power or ability in predicting value.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 18 minutes 57 seconds<br>
+So these are the conclusions. So we find that both the hypothesis are supported because we got some estimate which are significant, that means less than 0.05. And when we compare by use using standardised estimate, we found that product attributes are currently having a higher predictive power.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 19 minutes 18 seconds<br>
+Nowhere we got a Dubbin Watson statistics 2.08 we I found earlier said that should be between 1.5 and 2.5. This is absolutely within the accepted limit. So we are happy now the others are certain hypothesis testing you can look at the standardised risk really these points are.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 19 minutes 36 seconds<br>
+Very little bit closer to the diagonal, so we assume that the deviations are not very much troublesome or it is okay or manageable only then. Similarly, in the residual float, we could not see a funnel shaped or I mean a natural this appears.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 19 minutes 56 seconds<br>
+Totally like a scattered one. If it appears like a scattered one, that means that the data independence as well as I mean the normality variation to cause a issue in estimation. These are not I mean available so similar. Yeah, these are the diagram. So earlier I did an analysis of that diagram scale. So these are the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 19 seconds<br>
+diagrams. Now again, when you look at the collinearity analysis, we found that the VA values of the independent variables are much less than 3.3, so we don&rsquo;t have to worry about it. So we I mean consider that as acceptable and no multicollinearity challenges notice. So these are the interpretation.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 38 seconds<br>
+I have given how to interpret it. I mean that this discussion related to interpretation I have given clearly see here, see, just go through it, do the analysis like what I have said, just go through it, see every I mean, I mean.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 58 seconds<br>
+Assumption and the final results, everything is explained here. See, conducting, sorry, conducting the regression, then analysing the output, then verifying whether the hypothesis are supported or not. So these are.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 17 seconds<br>
+I am just giving a demo about one only. All other direct hypothesis where X predicts Y can be verified in this manner. Now, if you want to check the mediation moderation related hypothesis here in jemovi, we need to use the I mean module medmode. Medmode stands for mediation moderation.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 38 seconds<br>
+You click you take it, say mediation is the general mediation model. Mediation is the moderation you if you in our case it&rsquo;s a simple mediation case. So you click on mediation. So again another window will come. Nowhere also you know the model. So here final outcome is satisfaction that is given as the dependent variable.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 22 minutes 1 second<br>
+And we want to check whether store attribute or product attribute develops dependent variable satisfaction through mediator. So, mediator is perceived value that you will be, I mean moving to the mediator box. The dependent variable will be final, that is store attribute.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 22 minutes 22 seconds<br>
+Sorry, satisfaction and the predictor restore attribute. So you move I mean correspondingly nowhere. You don&rsquo;t have to, you can check the path estimates too. So you will get the results. See I have told what is direct effect, what is indirect effect, and how to check the significance and all. So here SZ to PV.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 22 minutes 42 seconds<br>
+Of course is now estimate is 0.351. It is significant PV 2 SAT that is the second that is also significant. SA 2 SAT is also significant nowhere direct effect is from SA 2 SAT indirect effect is SA 2 PV 2 SAT indirect effect we got a value of 0.0681 and it is.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 23 minutes 6 seconds<br>
+Been given a P value less than 0.05. If the P value is less than 0.05, you cannot reject. You are forced to reject the truth that there is no indirect effect, generalizable indirect effect. That means so when you are rejecting it, we are going by the alternate. That means there is a generalizable indirect effect between exists between.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 23 minutes 26 seconds<br>
+Store attribute on satisfaction mediated through PV. So we are supporting the mediated hypothesis. Also, this is how mediated hypothesis in the next case you need to move SA and put pH. So here also we get a indirect effect which is significant and you can compare and say which effect is higher and all.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 23 minutes 48 seconds<br>
+OK, this is how you check mediate. Now to check moderation, you move here. So here also the I mean the logic is saying in our model. Let me take the model one second, one minute.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 24 minutes 6 seconds<br>
+In our model, see variety seeking is moderating the effect of PA on customer satisfaction or satisfaction, so that we will check first. Multiple moderation hypothesis are here. One is that variety seeking moderates the effect of PA on satisfaction.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 24 minutes 25 seconds<br>
+So I have to check that I will move again, the scores are used, I will move satisfaction to dependent variable, predictor is perceived in product attribute and moderated here is VS, we move VS here. So we get yes this.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 24 minutes 44 seconds<br>
+Moderation is normally denoted as a in the output as an interaction. I said it is an interaction term. So this PA into VS in the output results window and the magnitude and significance of that. This 2 tells whether there is a significant moderation effect. Here the magnitude is 0.11 and P value.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 25 minutes 7 seconds<br>
+Is 0.013 less than 0.05 so we need to conclude that variety seeking is significantly moderating the product attribute quality ability of product attribute quality to predict satisfaction. So this is something you need to be seriously worried about people are variety seekers.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 25 minutes 26 seconds<br>
+And variety seeking has the ability to moderate, pull down the satisfaction development occurring in the mind of the customers from positive perception towards product that use. This is how we check moderation and mediation. Now to check there are.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 25 minutes 45 seconds<br>
+Some comparisons are there that I&rsquo;ll show you that is easy to understand. You can look into our YouTube video and understand and learn also. But my another task which I want to explain today is to introduce a another tool which can be used little more user friendly, but only problem is it can be downloaded for 3 months time.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 7 seconds<br>
+So I will tell you one minute, sorry.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 13 seconds<br>
+So this is a tool can you see this page scriptwarp.com Warp PLS. This is a software which is useful to perform structural equation modelling in an easily interpret or easy manner and you can use the I mean results.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 32 seconds<br>
+They have a wonderful manual. Look at the user manual is also there. So if you refer the user manual, your interpretation can also be done wonderfully easy. And one more simple way to interpret this, just take the result, go to ChatGPT or Gemini, just to feed it and ask what the results indicate that what are the practical suggestion as a researcher.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 52 seconds<br>
+You should I mean try to develop by seeing the results that all such things are possible now to download this what PLS means its doing regression regression with factor analysis together in a common way we will say that is the structural equation modelling. I said factor analysis is required to know whether the items we have used to measure are correspondingly loading loading to the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes 17 seconds<br>
+Factor you are measuring then the groupings are as planned or not. For that, we need to perform factor analysis then to understand the I mean loadings and relationship we need to do regression. These 2 things can be simultaneously done in warp PLS and that&rsquo;s structural equation modelling approach also.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes 37 seconds<br>
+And Structural equation modeling can be done using 2 approaches. One is called a covariance based approach and another is a variance based approach. Variance based approach, the most popular tool or one of the most popular tool is WARP PLS and PLS is in fact it speaks about variance based approach. WARP stands for non linear.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes 57 seconds<br>
+So most of the regression models and tools are working on the assumptions that between the, I mean X variables or Y variables, a linear association can be established. But in certain cases, especially in social science, many relations are not perfectly linear. So there should be some algorithm which has the capability to handle.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 28 minutes 19 seconds<br>
+Nonlinear relationship also and what feel less has got the capabilities to handle nonlinear relationship also like S curve per mean U curve inverted U curve etcetera etcetera. So that&rsquo;s why this is popular so today and you can download this from the website script.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 28 minutes 39 seconds<br>
+What.com Now once you downloaded, there will be a I&rsquo;ll show you one minute.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 28 minutes 48 seconds<br>
+Once you download it will appear like a see this what PLS 8.0 that blue and black square. This will be the icon which will be coming in the desktop once you download it and once you open this the front page will be like this highly useful.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 29 minutes 8 seconds<br>
+I mean user interface easy to follow. So now the one good point with this tool is it has been arranged in such a manner that you can move like step one, step 2, step 3 and you will get the results. Also, I will give a small demo about how to use this tool.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 29 minutes 29 seconds<br>
+Of course, there is a video in my video lectures also and I will give an idea how so what all things we have found out. We can again check whether it is easily available here or not. Nowhere in this tool there&rsquo;s a right up in the left side and there is an action box towards the right, action boxes towards the right now.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 29 minutes 49 seconds<br>
+Once you open the tool, the first step is going to proceed to step number one. So if you click on step number one, so since I have opened it earlier, it is asking whether you want OK, I will go yes. So this 3 things will come either if you have created a project file here the extension of the file will be dot PRJPRJ stands for project each analysis activity.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 30 minutes 13 seconds<br>
+Is a project so if you have an existing project saved in your desktop you can take from here and if you&rsquo;re creating a new project you have to click the second button. So when I click it will ask the place where I need to create the I mean a new project file and all I&rsquo;m going to the notes and data file.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 30 minutes 33 seconds<br>
+I am giving the name demo so it will come with an extension dot prji will save it. OK so it is saying that project file created successfully. This is the file and it is available in such and such location so I can click OK so the step number one is over now step number 2 is capt.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 30 minutes 52 seconds<br>
+Capturing data to the tool. I said how we Jyamobi is capturing every data. Every tool has got some mechanism to capture. Some will use clipboard, some will use I mean say I mean like open using the command. So here also there is a specific procedure so you can take the data from a file.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 31 minutes 13 seconds<br>
+From a clipboard, if I have an Excel file already saved with my data, so I am going to read from file. So I need to search it is in my desktop and I know that it is in my notes and data file. I take notes and data file I know I am.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 31 minutes 33 seconds<br>
+I have no clear which file type it is, whether it is CSV, Excel, or somethings or text file. So I give all the files so I am going by and I know this is 3 tl satisfaction demo data. This is my data file so I open it now I mean.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 31 minutes 52 seconds<br>
+It is saying that a file import wizard will come, so I agree. So it has come. You can see it, right? Shinder, you can see it, right?<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+32 minutes 3 seconds<br>
+32:03<br>
+Ms Shinta Idicula - MBA - Amrita Online 32 minutes 3 seconds<br>
+Yes, sir, it&rsquo;s visible.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+32 minutes 4 seconds<br>
+32:04<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 32 minutes 4 seconds<br>
+Okay, so the enter data you can just browse down, you can make it big, all such things you can do. I mean you can just check whether you just click next, just see whether column heads, data and text data if at all it is came or not. If everything has come, you can just simply click.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 32 minutes 23 seconds<br>
+Finish. So once you finish the table is, if there is a missing value they will report as NaN and enter data is captured. See the data which we were analysing or captured here. So here I don&rsquo;t have to capture score and all. I&rsquo;m not done so far. If you can do I wanted to, I can do learn also later also or if you here we don&rsquo;t have to calculate.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 32 minutes 48 seconds<br>
+Score, we can take the all items together and calculate the relationship also. That is the plus point of that. Now it is asking does the data look correct? I am saying yes, so data is successfully loaded. That&rsquo;s the message came. I click OK, so step 2 is over. Now once the step is over, there is a blue.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 33 minutes 7 seconds<br>
+Colour will come, sky blue colour will come. Now we are going to next step, step number 3 in step number 3 here, see in others tool we were analysing all quality aspects, etcetera, etcetera. But here some of the pre processing required on the data like removing the missing value, identifying the row conflict columns.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 33 minutes 29 seconds<br>
+Various challenges, certain statistical as well as non statistical quality check is automatically done by the tool. So that makes your I mean your decisions about data quality little easier. So I and it again one more thing this tool will do it will standardise. So even if some normality deviations are there, we&rsquo;ll be using standardised scores.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 33 minutes 51 seconds<br>
+Which are little robust to proceed with parametric analysis in case of data, I mean normality deviation. So all these steps are automatically done by the tool in one button or one button click itself. You can read and understand what all the tasks completed at this stage, so pre processed data. So it&rsquo;s doing what all.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 34 minutes 13 seconds<br>
+Checking see missing value no missing value found no column with zero within no identical column checking the rank problems and at the end it will standardise also all column or indicators standardised standardised scores why we use because they are little robust in robust to handle.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 34 minutes 32 seconds<br>
+Non Normality Devi issues. OK, now I click OK, wait for a moment. Now it is now the table is with the standardised scores. Standardised scores are typically between minus. What is standardised X minus X bar divided by Sigma. So once you standardise it, naturally everything will come within.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 34 minutes 52 seconds<br>
+A particular range. So here the range so the properties of a normal distribution curve, right? So -4 to plus more means 99.9% of the observation will fall within that interval. Just let us think about some fundamental statistics also. Now one good point with this is see in the item you can see if there are some values.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 13 seconds<br>
+Very close to 4 or very close to 2.58 or 1.96 to be precise 1.96 is for 95% significance level. Then you can identify which are the values by browsing through. If you want you can download this data in an Excel and you can see which are the people having I see here 13.09 is shown with respect to air.<br>
+\[3:41:35 PM\] Timestamp: 32:03<br>
+\[3:41:35 PM\] Timestamp: 32:04<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 37 minutes 40 seconds<br>
+Second, I will try try whether if it is since it is open, it should work. That&rsquo;s my feeling.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 37 minutes 48 seconds<br>
+That&rsquo;s why the project is not getting saved also.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 24 seconds<br>
+Please.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 26 seconds<br>
+The data. Yeah, this the data.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 31 seconds<br>
+Welcome.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 33 seconds<br>
+Okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 40 seconds<br>
+To Step 3, I think after Step 3, it&rsquo;s not processing. Let me see, it&rsquo;s not proceeding because the tool has expert.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 58 seconds<br>
+Yeah, after this stage, it is not proceeding. I am sorry, can you please? This is an user friendly, easy tool to perform structural equation modeling. It will produce results little more directly. So my suggestion is just visit my video, let me see whether in next class I can download the tool once again.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 39 minutes 17 seconds<br>
+And give a full demo of this so far, I think is OK for you, but the remaining things as the tool, the license has got expert. I am not in a position to proceed as expert. OK, no problem. Now I mean, anyway, now I mean the same results only that tool is an additional tool.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 39 minutes 39 seconds<br>
+A little more user friendly tool you can use to conduct a structural equation modelling analysis. So anyway, I have said about I mean regression and all now in and mediation moderation. Also, I have shown you this is the portion I was trying to explain to perform the analysis with all variables together as a model with item both formative and reflected to type whatever be.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 40 minutes 3 seconds<br>
+Mediators and moderators in single instances use same approach with the tool like warp PLS. That was what I was trying to show you. 50% I have shown the remaining 50% I will show you in the next interaction session another 10 minutes if I can download it again. The problem is that or not the license contact expert.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 40 minutes 23 seconds<br>
+So now the next steps in our analysis, only 2 more steps are involved. to There are certain hypothesis which speak which are about the where I mean categorical variable in the group like there are male customers and female customers. So you&rsquo;re not sure whether male customers and female customers have got any.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 40 minutes 44 seconds<br>
+Significant difference with respect to satisfaction or with respect to any variable of interest. Similarly, there are certain group of customers who are I mean classified based on the age or income group, so you&rsquo;re not sure whether they are having different feelings towards satisfaction or any variable of importance. So all such hypothesis can be.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 6 seconds<br>
+Verified using 2 type 2 test. Precisely one is independent sample T test and another is one way ANOVA. So if there are only 2 categories to be converted, we will be using independent sample T test and if there are more than 2 categories like age or income or education in this particular case.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 24 seconds<br>
+are classified. In such cases, the customers are classified into more than 2 groups. If we want to compare those groups and identify some group of people who are separate or different from the other group, we need to use the analysis called one way ANOVA. ANOVAS means analysis of variance. So these 2 things I&rsquo;ll showcase you.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 47 seconds<br>
+And for all these 2 analysis group comparison analysis, one major assumption with respect to data is homogeneity of variance. That means the homogeneity within the group should be equal. Equivalence, equality, equal or variance within the group should be equal. One group having.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 42 minutes 9 seconds<br>
+Very minor variation and another group having large variance means the opinions differ significantly away from one person to another person. So this is one test homogeneity of variance. So here there are 2 assumptions coming. One whether homogeneity exists or not.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 42 minutes 28 seconds<br>
+Number 2, whether there is a group difference exists on. So with respect to these 2, we create an assumption, say for example. Okay, now first we will check independent sample T test. That means we will be checking whether satisfaction or any variable of interest significantly differs across.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 42 minutes 51 seconds<br>
+Male or female customers 2 groups or where customers are divided into 2 groups. So now how will you do how will you be doing it again? In Jammu V, there is a menu called T test. So in T test menu, there are 3 type of.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 43 minutes 12 seconds<br>
+Test one is independent sample t test where this is the particular case we are doing right now, male and female, 2 different groups, and they are mutually exclusive. No member in the male group can be a member of female group. Also, paired t test are conducted when there is a before and after the same group.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 43 minutes 32 seconds<br>
+Before, say for example, you give a medicine before the medicine, what is the body temperature? After the medicine, what is the body temperature? Is there a temperature reduction significant reduction of temperature occur after consuming the medicine so to verify whether medicine is effective? In such cases, priority test is good. One sample is you take a sample from the population, calculate the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 43 minutes 54 seconds<br>
+Say for example, height of some 1000 students in the age group of 15 to 18 are calculated and you get that the height is 175, but you want a population mean or you believe that in developed economies the average height of students in the age group 18 to or 15 to 18 is 180.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 44 minutes 17 seconds<br>
+You got in a sample 175. What is the guarantee that this 175 can be considered equally equivalent to 180 in the population? To verify that you do one sample T test. Nowhere we want to do is independent sample test clicking here. Now I&rsquo;m comparing anything. You can compare any indicator or any score. Now I&rsquo;m checking whether satisfaction.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 44 minutes 41 seconds<br>
+Is significantly different across gender. I move gender or sex is the grouping variable and the absurd or the measured variable I am comparing is I mean satisfaction. So here non parametric well generalist non parametric student T test is something.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 45 minutes 2 seconds<br>
+You can check for parametric things. You need mean difference also. How much mean of these 2 groups are different? That is what we mean by mean group. Then coming you need to descriptive also effective size is not required to be precise, but we want.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 45 minutes 21 seconds<br>
+Homogeneity test, that is what I said. This is the only assumption with respect to independent samples t test. So student ti base factor, even if not there, no problem. Student T itself is sufficiently good enough to understand whether there is a group difference or not. Mean difference, if mean difference is not fixed also, no problem, but you need descriptives then only you will understand.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 45 minutes 43 seconds<br>
+Which group is having high satisfaction, which group is not having high satisfaction? Then homogeneity is an assumption for independent sample treaters. So come down to the analysis. So this is the analysis. So you see like here there are 2 components for the analysis.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 46 minutes 3 seconds<br>
+Number one is homogeneity of variance related assumption. So here we got homogeneity of variance as 0.212 that the null hypothesis there is there is no difference in the variance of.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 46 minutes 22 seconds<br>
+2 groups and we fail to reject that. There is no difference because we got a P value more than 0.05. So we fail to reject the. So here the interpretation is all low P value suggests violation of them. We got a low in the sense less than 0.05 here we got a value more than 0.054.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 46 minutes 41 seconds<br>
+So homogeneity of variance except that means this student T students I mean T is good enough. Otherwise we should go for Welch or Mann Whitney. These are non parametric because if assumption is violated, you can&rsquo;t go with the parametric.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 46 minutes 59 seconds<br>
+I mean t test then you go for well general. Here we have sufficiently met the homogeneity of various assumption. So we are going to our assumption to use student is OK and with respect to that we got a VP value. So here this is the second hypothesis. There is no difference in the satisfaction score or satisfaction levels of men and women.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 47 minutes 24 seconds<br>
+That is the null, there is no negation is null and that also we fail to reject. Why? Because we got a P value more than 0.05. So we need to conclude that men customers as well as female customers are equally satisfied even though there is a small difference in the satisfaction that is -0.0.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 47 minutes 43 seconds<br>
+26 This difference is not good enough to conclude that one group is more satisfied than the second group. I will just go and see we have clicked the descriptives. So in the descriptive column C male 290 male where the their mean was 3.63 with respect to satisfaction female were 95.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 45 seconds<br>
+First.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 47 seconds<br>
+Once he finds a year looking at 1:00 minute, I&rsquo;ll show the results once again.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 54 seconds<br>
+See assumption check verified then after that we have the test results of ANOVA ANOVA also interpretation is like saying like our independent sample T test only if you get a P value less than 0.05 we need to reject the null.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 13 seconds<br>
+And conclude that there is a difference if P values are more than 0.05, that means that there is no difference between the group means. So here in the case of PV and the satisfaction, there is a difference and these 2 cases of the assumption when you look at the assumptions.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 33 seconds<br>
+PV it&rsquo;s okay, we can go with I mean equal variance, but with respect to SA, there is no issue. I think SA there is no issue satisfaction there is an issue, but in satisfaction also we are getting assumptions correct. That means assume equal variance so.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 53 seconds<br>
+So we are, I mean, we have to go with Fishers value. Both values are reported here, wealth and Fishers. Accordingly, you check and we found that with respect to satisfaction and with respect to PV, one group is different from other group. There are 4 groups, see less than 2525 to 4040 to 60 and above. Now which group is?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 16 seconds<br>
+Amount. So for that, you click it positive test positive test. Also, there are 2 type of test. If there is no variance equal variant, then go with the game server. Now we got equal variance. Now the 2 things we are worried are being equal variance. So we go with the tracking procedure. tracking.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 36 seconds<br>
+And that results will tell you which.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 42 seconds<br>
+so they are with respect to PV, they have made a comparison. So here, which all cases the P value falls less than yeah, see here the P value is less than 0.05. So 8 above 60 is significantly their thoughts about perceived value is different from other groups. Similarly in.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 2 seconds<br>
+Variety seeking also we can see that.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 8 seconds<br>
+Variety seeking yeah, main difference 25 to 40, sorry, that is 0.98, 0.10 point. I think variety seeking no difference everywhere. It is more than I think you might have wrongly. Anyway, look at the P value in across the group and which in which P value you like here.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 27 seconds<br>
+See above 60 P value is less than 0.05. That means that group is significantly different from other groups. That&rsquo;s all. This is how we check ANOVA. Also now the last analysis here is with respect to our inter analysis.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 46 seconds<br>
+Story is to verify whether there is a categorical difference, I mean some association access between categorical variables. In our case, there are multiple categorical variables like preference towards shopping format across gender, whether age and similarly whether age has got significant.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 7 seconds<br>
+Association with the shopping preference or similarly age and income, but don&rsquo;t make a comparison which are not sensible, for example, across age and gender. No, that means that as age changes you are expecting change in gender, that&rsquo;s not likely to occur. So apply your comments, so whatever categorical group you are considering.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 28 seconds<br>
+There should be a logical association likely to exist between. Then if you have a doubt whether this a logical I mean relationship exist or not, use a chi square test and how to conduct chi square test. I will show you this is the last analysis. this.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 44 seconds<br>
+Me.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 47 seconds<br>
+In this family, a ki score will come in one minute, but I have got it.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes<br>
+On the frequency tab, it will come with the frequency tab it&rsquo;s script to you or to you.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 15 seconds<br>
+Yeah, here the frequency tab it will be coming in frequency tab. Click for independent samples chi square. This X square is short way of short mean manner to right chi square. So click on here. Now what all categories you want to compare? I want to check whether.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 35 seconds<br>
+If gender has got any preference towards the shop preference, gender and shop preference and the statistics column, I am clicking chi square. Now if there is no association between these categories, that is the null null. Say that there is no association between.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 53 seconds<br>
+Gender or sex and short preference. If we get a P value less than 0.05, that means that the range and association and looking at the trend, we can say whether men are more preferred or women are more preferred. So this contingency table speaks here that male 241 among the male 241 proposed.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 57 minutes 13 seconds<br>
+Offline and only 49 prefers online. As a percentage, you can see almost I mean 60 to 70% are preferring here 73 female prefer offline and 22 female prefer online. Now we can&rsquo;t see a see the P value. P value speaks.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 57 minutes 31 seconds<br>
+Verify the null hypothesis or the hypothesis that gender and shopping preference are associate. There&rsquo;s no association with the null hypothesis that we are failing to reject because we got a P value more than 0.05.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 57 minutes 50 seconds<br>
+If we get a P value more less than 0.75, we have to reject the null that there is no association between it and we need to conclude that there is an association and looking at the share of both, we will be concluding which group is more affinity towards a particular mode or otherwise.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 58 minutes 9 seconds<br>
+So, this is how we test chi square analysis. So With this, I finish almost all the analysis required to drop to verify the assumptions with respect to the case we are discussing. All the results we got are listed now for you should also do the any statistical analysis you do.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 58 minutes 31 seconds<br>
+Whatever major observations you get after the analysis, you should serially I mean note it down for I mean every result one by one you should serially list and the based on these results you have to draw conclusions which will be useful for solving the business problem under investigation.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 58 minutes 53 seconds<br>
+I will explain about that in the next class because now it is 759 So what all we did in a second I can summarise. After collecting the data, you arrange the data in a spreadsheet. Data can be arranged in Excel, CSV, whatever format you like. Then you check the general quality of data by verifying the missing values, outliers, etcetera. Then statistical quality.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 59 minutes 17 seconds<br>
+Of the data, you check the normality, data independence, randomness, etcetera. Then you verify the measurement measurement qualities by looking into reliability and validity matrices. Then you proceed with the what is the we call like association hypothesis testing by conducting.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 59 minutes 38 seconds<br>
+Regressions, mediation analysis, moderation analysis, etcetera. Then you convert the group using independent ambulatory test and ANOVA&rsquo;s as well as chi square and after all this analysis, you will get lot of insights about consumer behaviour. Now have listed down what we have, I mean what are the important things we observed after our analysis and by.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 hour<br>
+Discussing all these findings, we will be in a position to come about with some suggestions which are useful to solve the business problem under investigation. Those things I can finish in the next class. I think now it is time. So can we conclude? Aishinda, anything more?<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+1 hour 19 seconds<br>
+1:00:19<br>
+Ms Shinta Idicula - MBA - Amrita Online 1 hour 19 seconds<br>
+No, sir, we can conclude.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+1 hour 22 seconds<br>
+1:00:22<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 hour 22 seconds<br>
+Okay, so please reserve your doubt. Next is an interaction session. I will be happy if all of you who at least finish your data collection. Those who are doing the survey data kind of thing and all at least finish the data collection and proceed with a little bit of analysis. So if you feel any doubt, we can some little bit of interaction.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 hour 43 seconds<br>
+During next session. Okay, thank you.<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+1 hour 49 seconds<br>
+1:00:49<br>
+Ms Shinta Idicula - MBA - Amrita Online 1 hour 49 seconds<br>
+Thank you all for joining, and a heartful thanks to Raji Sir for the session. Thank you.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+1 hour 54 seconds<br>
+1:00:54<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 hour 54 seconds<br>
+Thank you.</p>
+<p>Ms Shinta Idicula - MBA - Amrita Online<br>
+stopped transcription<br>
+\[3:41:45 PM\] Timestamp: 1:00:19<br>
+\[3:41:45 PM\] Timestamp: 1:00:22<br>
+\[3:41:45 PM\] Timestamp: 1:00:49<br>
+\[3:41:45 PM\] Timestamp: 1:00:54</p>
+<hr>
+<h1 id="exam-study-guide-appendix">Exam Study Guide Appendix</h1>
+<hr>
+<h1 id="exam-oriented-appendix">Exam-Oriented Appendix</h1>
+<h2 id="a-practical-examples-and-use-cases">A. Practical examples and use cases</h2>
+<h3 id="1-regression-with-control-variables-retail-satisfaction">1. Regression with control variables: retail satisfaction</h3>
+<p><strong>Question:</strong> How strongly do store attributes (SA) and product attributes (PA) predict customer satisfaction after accounting for demographic factors?</p>
+<p><strong>Base model:</strong></p>
+<p><code>Satisfaction = b₀ + b₁(SA) + b₂(PA) + error</code></p>
+<p>The lecture example reports approximately <code>R² = .299</code>. Standardised effects were about <code>βSA = .350</code> and <code>βPA = .329</code>, so SA was slightly stronger before demographic controls.</p>
+<p><strong>Controlled model:</strong> Add theoretically relevant age, gender, education, and income variables. In Jamovi:</p>
+<ul>
+<li>continuous controls go under <strong>Covariates</strong>;</li>
+<li>categorical controls go under <strong>Factors</strong> and are dummy-coded automatically.</li>
+</ul>
+<p>After controls, the SA and PA standardised effects were roughly <code>.34</code> and <code>.33</code>, indicating that their predictive relationships were stable. Most demographic terms were nonsignificant, though the above-55 versus under-25 age contrast was significant and positive in the transcript example.</p>
+<p><strong>Interpretation:</strong> “Holding the included demographics constant, higher store and product attribute scores are associated with higher satisfaction.” Do not say controls remove all confounding or prove causality.</p>
+<h3 id="2-dummy-coding-and-reference-categories">2. Dummy coding and reference categories</h3>
+<p>For a three-category Region variable (North, South, West), regression uses <code>k − 1 = 2</code> indicators. If North is the reference:</p>
+<ul>
+<li>South coefficient = expected outcome difference between South and North, holding other predictors fixed;</li>
+<li>West coefficient = West–North difference.</li>
+</ul>
+<p>Changing the reference category changes coefficient comparisons/intercept, not fitted values, R², or the underlying model. Choose a reference that is substantively meaningful or aids interpretation. The lecture’s Jamovi examples used first categories such as Male, age under 25, matric-level education, and income below ₹25,000 as references.</p>
+<h3 id="3-hierarchical-regression-use-case-intellatech">3. Hierarchical regression use case: IntellaTech</h3>
+<p><strong>Goal:</strong> Test whether interface/feature usage explains customer satisfaction beyond background factors.</p>
+<ul>
+<li><strong>Block/Model 1:</strong> theory-based controls—age, region, prior sessions, perhaps tenure.</li>
+<li><strong>Block/Model 2:</strong> add interface/feature usage predictors.</li>
+<li><strong>Optional Model 3:</strong> add customer tenure only if theory requires a separate incremental test.</li>
+</ul>
+<p>Compare <code>R²</code>, adjusted <code>R²</code>, <code>ΔR²</code>, the F-change/significance of the added block, coefficient stability, diagnostics, and interpretability.</p>
+<p>The retail demonstration’s control-only adjusted R² was approximately <code>.00748</code>, increasing to about <code>.31</code> after the focal attributes were added. The important conclusion is that the focal predictors contributed substantial incremental explanatory power beyond weak demographic controls—not that high R² proves causal truth.</p>
+<h3 id="4-choosing-control-variables-2">4. Choosing control variables</h3>
+<p>Include a control when theory or prior evidence indicates that it affects the outcome and could distort the focal predictor–outcome relationship. For IntellaTech:</p>
+<ul>
+<li>age may relate to technology familiarity;</li>
+<li>region may capture service/infrastructure variation;</li>
+<li>prior sessions represent existing engagement;</li>
+<li>customer tenure may reflect accumulated experience.</li>
+</ul>
+<p>Do not include every available variable. Unnecessary controls reduce parsimony/power, increase collinearity, complicate interpretation, and can introduce overcontrol bias, especially if the variable is a mediator or consequence of exposure.</p>
+<h3 id="5-r-and-adjusted-r-use-case">5. R² and adjusted R² use case</h3>
+<ul>
+<li><strong>R²</strong> is the sample proportion of outcome variance explained and never falls when predictors are added.</li>
+<li><strong>Adjusted R²</strong> penalises predictors that do not improve the model enough; it can fall after adding noise variables.</li>
+<li><strong>ΔR²</strong> is the incremental explained variance between nested blocks: <code>R²new − R²previous</code>.</li>
+</ul>
+<p>Example: <code>R²control = .08</code>, <code>R²usage = .32</code>; <code>ΔR² = .24</code>. Interface usage adds 24 percentage points of explained sample variance beyond controls. Report whether the change is statistically supported and whether it is practically meaningful.</p>
+<h3 id="6-standardised-versus-unstandardised-effects">6. Standardised versus unstandardised effects</h3>
+<ul>
+<li><strong>B (unstandardised):</strong> expected change in Y’s original units for a one-unit increase in X, holding others constant. Best for practical prediction: “One additional prior session predicts 0.12 satisfaction points.”</li>
+<li><strong>β (standardised):</strong> expected SD change in Y for a one-SD increase in X. Useful for comparing predictor strength within a model when units differ.</li>
+</ul>
+<p>Large β does not automatically mean causal or strategically easiest to change. Compare β only after checking model assumptions, uncertainty, construct quality, and predictor ranges.</p>
+<h3 id="7-mediation-with-regression-paths">7. Mediation with regression paths</h3>
+<p><strong>Question:</strong> Does perceived value (PV) mediate the effect of product attributes (PA) on satisfaction (SAT)?</p>
+<p>Estimate:</p>
+<ol>
+<li><code>a</code>: PA → PV;</li>
+<li><code>b</code>: PV → SAT while accounting for PA;</li>
+<li><code>c′</code>: direct PA → SAT while accounting for PV.</li>
+</ol>
+<p>Indirect effect = <code>a × b</code>; total effect = <code>c′ + ab</code>. The lecture demonstrates this through multiple regressions and multiplication of coefficients. For formal inference, use a dedicated mediation procedure with bootstrapped confidence intervals; significance of separate paths alone is not a sufficient indirect-effect test.</p>
+<h3 id="8-moderation-with-an-interaction">8. Moderation with an interaction</h3>
+<p><strong>Question:</strong> Does variety-seeking (VS) change the PA → satisfaction relationship?</p>
+<p><code>SAT = b₀ + b₁PA + b₂VS + b₃(PA×VS) + controls + error</code></p>
+<p>The interaction coefficient <code>b₃</code> tests moderation. The lecture example reports a positive, significant interaction (unstandardised estimate around <code>.0551</code>; standardised value around <code>.3427</code> after controls), interpreted as product attributes generating greater satisfaction among stronger variety seekers.</p>
+<p>Keep both lower-order terms (<code>PA</code>, <code>VS</code>) in a model containing <code>PA×VS</code>. Mean-centering can improve interpretation and reduce nonessential collinearity with the product term, but does not change substantive model fit or cure true predictor collinearity. Probe a significant interaction using simple slopes or predicted-value plots rather than interpreting only its sign.</p>
+<h3 id="9-practical-business-conclusions-from-the-retail-case">9. Practical business conclusions from the retail case</h3>
+<p>Descriptive means in the lecture were approximately PA <code>4.10/5</code>, satisfaction <code>3.64/5</code>, and perceived value <code>3.62/5</code>. Store attributes were a stronger direct satisfaction predictor, while product attributes created value and had stronger effects for variety seekers.</p>
+<p>Possible decisions drawn from the combined evidence:</p>
+<ul>
+<li>expand assortment breadth/depth and product quality screening;</li>
+<li>create “What’s New” displays/demos for variety seekers;</li>
+<li>improve store ambience, signage, movement, queues, service encounters, employee training/motivation;</li>
+<li>maintain courteous/helpful staff as a current strength;</li>
+<li>display savings and price comparisons to strengthen cognitive value;</li>
+<li>launch loyalty mechanisms where repeat/loyalty intent is weak;</li>
+<li>periodically monitor online-shopping preference rather than assuming it is static.</li>
+</ul>
+<p>Low item means/loading patterns can suggest improvement opportunities but should be interpreted against item wording, construct validity, importance, and feasibility—not treated mechanically as strategy.</p>
+<h3 id="10-metric-based-measurement-model">10. Metric-based measurement model</h3>
+<p>The same conceptual variables can be measured using operational metrics rather than perceptions:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Construct</th>
+<th>Example objective metrics</th>
+<th>Desired direction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Store attributes</td>
+<td>distance to store, checkout wait, available SKUs</td>
+<td>distance/wait lower is better; availability higher is better</td>
+</tr>
+<tr>
+<td>Product attributes</td>
+<td>price deviation from market, defects per 1,000, stock-out frequency, product life/warranty</td>
+<td>price/defects/stock-outs lower; life higher</td>
+</tr>
+<tr>
+<td>Perceived/realised value proxy</td>
+<td>usage duration ÷ price paid, savings, benefit per cost</td>
+<td>higher is better</td>
+</tr>
+<tr>
+<td>Variety-seeking</td>
+<td>brands switched, unique SKUs bought, first-time product trials, categories explored</td>
+<td>higher indicates more variety-seeking</td>
+</tr>
+<tr>
+<td>Satisfaction outcomes</td>
+<td>complaints, repeat visits, retention/loyalty, recommendation</td>
+<td>complaints lower; repeat/retention higher</td>
+</tr>
+</tbody>
+</table></div>
+<p>Metrics may be more objective than self-reports but are still operational proxies; validity and data quality remain necessary.</p>
+<h3 id="11-building-a-composite-index-from-mixed-unit-metrics">11. Building a composite index from mixed-unit metrics</h3>
+<p>Never directly average kilometres, minutes, rupees, counts, and percentages. Use:</p>
+<ol>
+<li><strong>Validate and clean</strong> every indicator.</li>
+<li><strong>Standardise</strong> each: <code>z = (x − mean)/SD</code>.</li>
+<li><strong>Align direction:</strong> if high values mean worse performance (distance, wait, defects, complaints), reverse the standardised score using <code>−z</code>.</li>
+<li><strong>Aggregate</strong> aligned z-scores by justified mean/sum (or theoretically supported weights).</li>
+<li><strong>Document and validate</strong> the resulting index before regression.</li>
+</ol>
+<p>Example: Store Index = mean(<code>−zDistance</code>, <code>−zWait</code>, <code>+zAvailability</code>). A high index consistently represents better store attributes.</p>
+<p>Standardisation removes unit/scale differences; it does not correct invalid data, make a nonnormal variable normal, establish equal importance, or prove the indicators belong in one construct.</p>
+<h3 id="12-selecting-methods-for-metric-business-data">12. Selecting methods for metric business data</h3>
+<ul>
+<li>Descriptive: mean, median, SD, distribution, trends, frequency.</li>
+<li>Two independent groups: t-test; nonparametric analogue often Mann–Whitney U.</li>
+<li>3+ groups: ANOVA; appropriate rank-based alternative when assumptions/design require.</li>
+<li>Categorical association: chi-square.</li>
+<li>Multiple outcomes: MANOVA where justified.</li>
+<li>Association/prediction: correlation and regression.</li>
+<li>Binary outcome: logistic regression.</li>
+<li>Time-ordered outcomes: moving averages, exponential smoothing/Holt-type methods, ARIMA/SARIMA as appropriate.</li>
+<li>Advanced prediction: trees/random forests, Bayesian models, neural networks—chosen for the problem and validation needs, not sophistication alone.</li>
+</ul>
+<hr>
+<h2 id="b-high-yield-distinctions">B. High-yield distinctions</h2>
+<h3 id="predictor-vs-control-vs-mediator-vs-moderator">Predictor vs control vs mediator vs moderator</h3>
+<ul>
+<li>Focal predictor: variable whose direct contribution is a research interest.</li>
+<li>Control: competing/background variable held statistically constant.</li>
+<li>Mediator: mechanism carrying an effect (<code>X → M → Y</code>).</li>
+<li>Moderator: boundary condition changing effect strength/direction (<code>X×W → Y</code>).</li>
+</ul>
+<p>Placing a mediator in the control block can remove part of the very effect being studied.</p>
+<h3 id="covariate-vs-factor-in-jamovi">Covariate vs factor in Jamovi</h3>
+<ul>
+<li>Covariate: numeric/continuous predictor entered directly.</li>
+<li>Factor: categorical predictor represented through contrasts/dummy variables.</li>
+<li>“Control” describes analytical purpose, not a distinct software data type.</li>
+</ul>
+<h3 id="dummy-coding-vs-reverse-coding">Dummy coding vs reverse coding</h3>
+<ul>
+<li>Dummy coding turns a categorical variable into <code>k−1</code> indicators relative to a reference.</li>
+<li>Reverse coding changes direction so high values have consistent meaning; for a 1–5 item, common reversal is <code>6 − x</code>; for a z-score, multiply by <code>−1</code>.</li>
+</ul>
+<h3 id="standardisation-vs-mean-centering">Standardisation vs mean-centering</h3>
+<ul>
+<li>Standardising subtracts the mean and divides by SD; mean 0, SD 1.</li>
+<li>Centering subtracts the mean only; units/SD remain unchanged.</li>
+<li>Standardisation supports mixed-unit comparison/indexing; centering supports interpretation of interaction main effects.</li>
+</ul>
+<h3 id="composite-scale-vs-composite-index">Composite scale vs composite index</h3>
+<ul>
+<li>Scale items commonly reflect one latent construct and should covary.</li>
+<li>Index indicators may form an overall condition and need not be interchangeable; weighting/direction requires theory.</li>
+</ul>
+<h3 id="simultaneous-vs-hierarchical-regression">Simultaneous vs hierarchical regression</h3>
+<ul>
+<li>Simultaneous: all predictors enter in one block; estimates their joint/unique effects.</li>
+<li>Hierarchical: researcher specifies theoretically ordered blocks and tests incremental contribution (<code>ΔR²</code>).</li>
+<li>Hierarchical regression is not stepwise selection; order comes from theory, not an automated algorithm.</li>
+</ul>
+<h3 id="r-vs-adjusted-r-vs-r">R² vs adjusted R² vs ΔR²</h3>
+<ul>
+<li>R²: total sample variance explained.</li>
+<li>Adjusted R²: complexity-penalised estimate for comparing models with different predictor counts.</li>
+<li>ΔR²: incremental variance explained by a new block.</li>
+</ul>
+<h3 id="b-vs">B vs β</h3>
+<ul>
+<li>B retains original units and is used in prediction/economic interpretation.</li>
+<li>β uses SD units and helps compare relative association strength.</li>
+</ul>
+<h3 id="mediation-vs-moderation">Mediation vs moderation</h3>
+<ul>
+<li>Mediation asks <strong>how/why</strong> X affects Y.</li>
+<li>Moderation asks <strong>when/for whom/how strongly</strong> X affects Y.</li>
+<li>Indirect effect is a product of paths; moderation is tested by an interaction.</li>
+</ul>
+<h3 id="perceptual-vs-metric-data">Perceptual vs metric data</h3>
+<ul>
+<li>Perceptual: respondents’ beliefs/attitudes on scales; necessary for internal experiences such as felt value.</li>
+<li>Metric: observed operational quantities; less dependent on self-report but may be incomplete proxies and measured in mixed units.</li>
+<li>They can be combined/triangulated rather than treated as mutually exclusive.</li>
+</ul>
+<h3 id="parametric-vs-nonparametric-methods">Parametric vs nonparametric methods</h3>
+<p>Parametric methods estimate parameters under distributional/model assumptions and often use means; nonparametric/rank methods make different/weaker assumptions and can suit ordinal or strongly nonnormal data. Nonparametric does not mean “assumption free.”</p>
+<hr>
+<h2 id="c-likely-exam-questions-and-answer-cues">C. Likely exam questions and answer cues</h2>
+<ol>
+<li><strong>Why and how are controls included in regression?</strong> Confounding/background rationale, theory-based choice, covariate/factor placement, dummy coding, adjusted coefficients, assumptions, cautious causal language.</li>
+<li><strong>Interpret a categorical control coefficient.</strong> Identify reference group; sign/magnitude is category–reference difference holding other variables fixed; p-value/CI; change reference only for useful comparisons.</li>
+<li><strong>Explain hierarchical regression.</strong> Theory-ordered blocks, controls first, focal predictors next, compare R²/adjusted R²/ΔR²/F-change and coefficient stability.</li>
+<li><strong>Distinguish R², adjusted R², and ΔR².</strong> Definition, behaviour after new predictors, model-comparison use, practical caveats.</li>
+<li><strong>Should every available demographic variable be controlled?</strong> No; discuss theory, confounding, overcontrol, multicollinearity, power, parsimony, transparency.</li>
+<li><strong>B versus β.</strong> Original-unit prediction versus standardised comparison; provide a numerical interpretation and caution against causal ranking.</li>
+<li><strong>How is moderation tested?</strong> Lower-order effects + product term + controls; significance/CI; centering; simple slopes/plot.</li>
+<li><strong>How is mediation tested?</strong> a, b, c′, indirect <code>ab</code>, total; bootstrapped indirect-effect CI; distinguish from moderation.</li>
+<li><strong>Build a mixed-unit performance index.</strong> Clean, standardise, direction-align/reverse, aggregate/weight, validate, document.</li>
+<li><strong>What does standardisation do and not do?</strong> Unit-free z-score/comparability; no automatic normality, validity, equal importance, or bias removal.</li>
+<li><strong>Compare perceptual and metric measurement.</strong> Examples, strengths, weaknesses, proxy validity, triangulation.</li>
+<li><strong>Convert retail results to strategy.</strong> Describe means, structural paths, moderation, item performance, demographics; recommend store, product, staff, loyalty, and monitoring actions.</li>
+<li><strong>How does Jamovi handle categorical controls?</strong> Factors, automatic dummy coding, first/reference level, <code>k−1</code> comparisons; interpretation.</li>
+<li><strong>Explain model parsimony.</strong> Balance explanatory/predictive value, theory, diagnostics, sample size, and interpretability; use adjusted R²/validation, not R² alone.</li>
+<li><strong>Choose an analysis for business metric data.</strong> Link outcome type, groups/time/dependence, goal and assumptions to t-test/ANOVA/chi-square/regression/logistic/time-series/nonparametric choice.</li>
+</ol>
+<h3 id="10-mark-answer-pattern">10-mark answer pattern</h3>
+<ol>
+<li>Define the technique/concept.</li>
+<li>Specify business question and variables.</li>
+<li>Present equation or ordered process.</li>
+<li>Explain software/data preparation.</li>
+<li>Interpret coefficients/model fit and uncertainty.</li>
+<li>State assumptions, limitation, and practical action.</li>
+</ol>
+<hr>
+<h2 id="d-rapid-revision-traps">D. Rapid revision traps</h2>
+<ul>
+<li>A control variable is justified by theory/design, not simply because it is available.</li>
+<li>Nonsignificant controls do not automatically make the study unbiased.</li>
+<li>Statistical control cannot fix omitted/unmeasured confounding or establish randomisation.</li>
+<li>Categorical variables belong as factors/dummies, not as one continuous numeric code.</li>
+<li>Changing the dummy reference does not change model fit.</li>
+<li>More predictors always maintain/increase raw R², so raw R² alone rewards complexity.</li>
+<li>Adjusted R² can fall when a weak predictor is added.</li>
+<li>ΔR² is incremental explained variance, not automatically a causal contribution.</li>
+<li>Hierarchical regression is theory-ordered, not the same as automated stepwise regression.</li>
+<li>A significant interaction must be probed; main effects become conditional in its presence.</li>
+<li>Centering does not remove genuine multicollinearity or change the interaction’s fit.</li>
+<li>Mediation is not shown merely because X, M, and Y are pairwise significant.</li>
+<li>Multiplying path estimates gives an indirect estimate, but infer it with an appropriate CI/bootstrap.</li>
+<li>Standardised β is unitless but depends on sample variability; it is not an immutable importance score.</li>
+<li>Directly averaging kilometres, minutes, defects, and rupees is meaningless.</li>
+<li>Reverse before aggregating so every high score represents the same direction.</li>
+<li>A high metric index is useful only if its indicators and weights are defensible.</li>
+<li>Objective metrics are not automatically valid measures of subjective value/satisfaction.</li>
+<li>Item loading and item mean answer different questions: measurement contribution versus performance level.</li>
+<li>Low loading does not by itself prove an operational weakness in the business; it may indicate a poor item.</li>
+<li>p-values, R², and β must be translated into contextual/practical significance.</li>
+</ul>
+<hr>
+<h2 id="e-source-coverage-checklist">E. Source-coverage checklist</h2>
+<ul>
+<li>[x] <strong>Video 01 — Case Part 14:</strong> Jamovi multiple regression; SA/PA prediction of satisfaction; R² and standardised/unstandardised estimates; categorical versus continuous controls; factor/covariate placement; automatic dummy coding and reference groups; demographic contrast interpretation; control-only and focal-predictor models; adjusted/ΔR²; mediation path calculations; moderation interaction with VS; controls in interaction model; generalisation rationale.</li>
+<li>[x] <strong>Video 02 — Case Part 15:</strong> integrated reporting of retail findings; PA/PV/satisfaction descriptive means; store-versus-product predictor interpretation; demographic differences; mediation/moderation conclusions; item loadings/weak opportunities and strong staff item; product assortment/new-product displays; ambience/service/queues/training; loyalty and cognitive-value strategies; online-preference monitoring; customer profile; descriptive, inferential, parametric/nonparametric, time-series and advanced-method overview.</li>
+<li>[x] <strong>Video 03 — Using Metric Data:</strong> operational indicators for store/product/value/variety/satisfaction; mixed measurement units; z-score standardisation; negatively oriented metric reversal; optional centering; sum/average composite formation; Jamovi regression with metric scores; metric-data workflow and limitations.</li>
+<li>[x] <strong>Regression comprehensive review:</strong> regression purpose; multiple predictors; theory-based controls; danger of indiscriminate controls; categorical controls; composite indices; unit mismatch; standardisation/direction alignment; moderation; demographic blocks; robustness; ΔR²; B versus β; decision framework and full workflow.</li>
+<li>[x] <strong>IntellaTech case and duplicate review:</strong> outcomes/predictors/controls; age/region/prior sessions/tenure; factors versus covariates; dummy/reference coding; hierarchical blocks; adding tenure; R² versus adjusted R²; complexity/parsimony; mixed units; reverse coding; Likert preparation; standardised effects; misconceptions and complete analytical workflow.</li>
+</ul>
+<h3 id="transcript-terminology-and-methodological-cautions">Transcript terminology and methodological cautions</h3>
+<ul>
+<li>Speech-to-text variants were normalised to <strong>Jamovi, regression, covariates, dummy coding, standardised beta, R²/adjusted R²/ΔR², mediation, moderation, interaction term, z-score, reverse coding, Mann–Whitney U, ARIMA/SARIMA, and logistic regression</strong>.</li>
+<li>The transcript demonstrates indirect effects via separate regressions and coefficient multiplication; formal mediation inference should use the indirect effect’s bootstrapped/appropriate confidence interval.</li>
+<li>The source sometimes frames controls as producing a relationship “in the absence” of demographics. More precisely, regression estimates the focal relationship <strong>conditional on/holding constant</strong> the included variables; it does not remove those people or all confounding.</li>
+<li>The source suggests examining significance before deciding whether to control. Best exam practice is to retain controls based primarily on causal/theoretical justification, not data-driven significance alone.</li>
+</ul>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<p>Extend TechNova with hierarchical regression: enter theory-based controls such as tenure, department, role, and labour-market conditions, then focal predictors. Supervisor support can be tested as an interaction moderator; job satisfaction as a mediator. Variable roles must be theory-defined, not assigned merely by software placement.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-11.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 11: Regression, Mediation, Moderation, t-tests,…</span>
+      </a>
+      <a href="week-13.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 13: Time Series, Forecasting, and Panel Data</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

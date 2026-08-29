@@ -1,0 +1,3671 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Project · Week 13 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Project</span>
+      <span class="brand-title">Week 13</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html" selected>Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Business Research Process, Research Problems, and Research Approaches
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Research Planning, Theoretical Frameworks, Measurement, and Data…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Systematic Literature Review (SLR), Literature Review Methods,…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Theoretical Frameworks, Variables, Moderators, Mediators, and…
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Measurement Models, Scale Development, Reflective vs Formative…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Questionnaire Design, Data Collection Methods, Measurement Scales,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Research Inference, Sampling, Regression, Correlation, Mediation,…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Business Research Process — Management Problems, Research Problems,…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Jamovi Data Management, Measurement Levels, Scale Construction,…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Jamovi Factor Analysis, EFA, CFA, SEM, Validity Assessment, and…
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Regression, Mediation, Moderation, t-tests, ANOVA, and Descriptive…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Regression Modelling, Controls, Composite Indices, Moderation, and…
+      </a>
+      <a class="is-active" href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Time Series, Forecasting, and Panel Data
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        PLS-SEM — Measurement Quality, Structural Models, Controls,…
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Logistic Regression — Model Fit, Interpretation, Prediction, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Project · Week 13</p>
+        <h1 class="page-title">Time Series, Forecasting, and Panel Data</h1>
+        <p class="page-meta">Week 13 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#1-overview">1. Overview</a></li>
+      <li><a href="#mean-absolute-error-mae">Mean Absolute Error — MAE</a></li>
+      <li><a href="#root-mean-squared-error-rmse">Root Mean Squared Error — RMSE</a></li>
+      <li><a href="#mean-absolute-percentage-error-mape">Mean Absolute Percentage Error — MAPE</a></li>
+      <li><a href="#misconception-1-any-data-with-dates-are-time-series-data">Misconception 1: Any data with dates are time-series data</a></li>
+      <li><a href="#misconception-2-missing-years-mean-the-data-cannot-be-panel-data">Misconception 2: Missing years mean the data cannot be panel data</a></li>
+      <li><a href="#misconception-3-fixed-effects-assumes-entity-characteristics-are-unrelated-to-regressors">Misconception 3: Fixed effects assumes entity characteristics are unrelated to regressors</a></li>
+      <li><a href="#misconception-4-random-effects-is-always-better-because-it-is-more-efficient">Misconception 4: Random effects is always better because it is more efficient</a></li>
+      <li><a href="#misconception-5-hausman-p-0-05-means-fe-is-proven-wrong">Misconception 5: Hausman p &amp;gt; 0.05 means FE is proven wrong</a></li>
+      <li><a href="#misconception-6-correlation-and-regression-are-forecast-accuracy-metrics">Misconception 6: Correlation and regression are forecast accuracy metrics</a></li>
+      <li><a href="#misconception-7-seasonality-and-cyclicity-are-the-same">Misconception 7: Seasonality and cyclicity are the same</a></li>
+      <li><a href="#misconception-8-a-recession-related-rise-and-fall-is-necessarily-seasonal">Misconception 8: A recession-related rise and fall is necessarily seasonal</a></li>
+      <li><a href="#misconception-9-forecast-uncertainty-stays-constant-over-the-horizon">Misconception 9: Forecast uncertainty stays constant over the horizon</a></li>
+      <li><a href="#misconception-10-regression-automatically-establishes-causation">Misconception 10: Regression automatically establishes causation</a></li>
+      <li><a href="#time-series-path">Time-series path</a></li>
+      <li><a href="#panel-data-path">Panel-data path</a></li>
+      <li><a href="#the-three-most-important-distinctions">The three most important distinctions</a></li>
+      <li><a href="#case-study">Case Study</a></li>
+      <li><a href="#1-case-overview">1. Case Overview</a></li>
+      <li><a href="#option-a-fixed-effects">Option A — Fixed Effects</a></li>
+      <li><a href="#option-b-random-effects">Option B — Random Effects</a></li>
+      <li><a href="#option-c-dynamic-panel">Option C — Dynamic Panel</a></li>
+      <li><a href="#misconception-1-five-stores-over-20-weeks-is-a-time-series">Misconception 1: Five stores over 20 weeks is a time series</a></li>
+      <li><a href="#misconception-2-100-observations-means-100-independent-observations">Misconception 2: 100 observations means 100 independent observations</a></li>
+      <li><a href="#misconception-3-fixed-effects-and-random-effects-are-just-different-regression-algorithms">Misconception 3: Fixed Effects and Random Effects are just different regression algorithms</a></li>
+      <li><a href="#misconception-4-hausman-p-0-03-means-the-model-is-statistically-significant">Misconception 4: Hausman p \= 0.03 means the model is statistically significant</a></li>
+      <li><a href="#misconception-5-a-significant-hausman-test-proves-fixed-effects-is-perfect">Misconception 5: A significant Hausman test proves Fixed Effects is perfect</a></li>
+      <li><a href="#misconception-6-dynamic-panel-is-simply-another-name-for-fixed-effects">Misconception 6: Dynamic panel is simply another name for Fixed Effects</a></li>
+      <li><a href="#misconception-7-adding-lagged-sales-automatically-solves-autocorrelation">Misconception 7: Adding lagged sales automatically solves autocorrelation</a></li>
+      <li><a href="#misconception-8-any-multicollinearity-requires-deleting-a-variable">Misconception 8: Any multicollinearity requires deleting a variable</a></li>
+      <li><a href="#misconception-9-ai-generated-code-is-automatically-correct">Misconception 9: AI-generated code is automatically correct</a></li>
+      <li><a href="#1-case-study-in-context">1. Case Study in Context</a></li>
+      <li><a href="#1-multicollinearity-caused-the-dynamic-model">1. Multicollinearity caused the dynamic model</a></li>
+      <li><a href="#2-the-missing-promotion-value-motivated-the-dynamic-model">2. The missing promotion value motivated the dynamic model</a></li>
+      <li><a href="#3-lagged-sales-can-be-used-to-impute-missing-promotion">3. Lagged sales can be used to impute missing promotion</a></li>
+      <li><a href="#4-hausman-led-david-to-add-lagged-sales">4. Hausman led David to add lagged sales</a></li>
+      <li><a href="#5-fixed-effects-directly-estimates-store-layout">5. Fixed Effects directly estimates store layout</a></li>
+      <li><a href="#6-multicollinearity-biases-coefficients">6. Multicollinearity biases coefficients</a></li>
+      <li><a href="#7-minor-multicollinearity-means-one-variable-must-be-deleted">7. Minor multicollinearity means one variable must be deleted</a></li>
+      <li><a href="#8-dynamic-panel-and-fe-are-mutually-exclusive">8. Dynamic panel and FE are mutually exclusive</a></li>
+      <li><a href="#9-adding-lagged-sales-automatically-solves-serial-correlation">9. Adding lagged sales automatically solves serial correlation</a></li>
+      <li><a href="#10-pooled-ols-is-a-good-substitute-for-dynamic-panel-because-it-is-easier">10. Pooled OLS is a good substitute for dynamic panel because it is easier</a></li>
+      <li><a href="#11-ai-generated-code-should-be-trusted-without-verification">11. AI-generated code should be trusted without verification</a></li>
+      <li><a href="#most-important-takeaway">Most important takeaway</a></li>
+      <li><a href="#rapid-recall-decision-tree">Rapid-recall decision tree</a></li>
+      <li><a href="#high-value-distinctions">High-value distinctions</a></li>
+      <li><a href="#time-series-essentials">Time-series essentials</a></li>
+      <li><a href="#panel-data-essentials">Panel-data essentials</a></li>
+      <li><a href="#greenleaf-retail-applied-case">GreenLeaf Retail applied case</a></li>
+      <li><a href="#frequent-mistakes-to-avoid">Frequent mistakes to avoid</a></li>
+      <li><a href="#likely-exam-questions">Likely exam questions</a></li>
+      <li><a href="#source-coverage-checklist">Source-coverage checklist</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="1-overview"><strong>1. Overview</strong></h2>
+<p>This quiz covered several important concepts in <strong>time-series analysis, forecasting, and panel-data analysis</strong>.</p>
+<p>The major themes were:</p>
+<ol>
+<li>Lagged effects  </li>
+<li>Forecast uncertainty and prediction intervals  </li>
+<li>Time-series decomposition  </li>
+<li>Panel-data models  </li>
+<li>Fixed effects vs. random effects  </li>
+<li>Dynamic panel models  </li>
+<li>Hausman testing  </li>
+<li>Forecasting workflow  </li>
+<li>Forecast accuracy metrics  </li>
+<li>Distinguishing time-series, cross-sectional, and panel data</li>
+</ol>
+<p>A useful way to organize the entire topic is:</p>
+<blockquote>
+<p><strong>Understand the structure of the data → identify time-series patterns → select an appropriate model → validate forecasts → measure accuracy</strong></p>
+</blockquote>
+<p>For panel data, the corresponding logic is:</p>
+<blockquote>
+<p><strong>Identify entity and time dimensions → determine whether entity effects correlate with regressors → choose pooled, FE, RE, or dynamic panel methods</strong></p>
+</blockquote>
+<hr>
+<h1 id="2-time-series-data"><strong>2. Time-Series Data</strong></h1>
+<p>A <strong>time series</strong> consists of observations recorded sequentially over time for a particular entity or process.</p>
+<p>Examples:</p>
+<ul>
+<li>Monthly sales for one store  </li>
+<li>Daily stock prices  </li>
+<li>Annual GDP  </li>
+<li>Weekly website traffic  </li>
+<li>Hourly electricity demand</li>
+</ul>
+<p>The ordering of observations matters because earlier observations may influence later observations.</p>
+<h3 id="key-characteristics"><strong>Key characteristics</strong></h3>
+<p>Time-series data often contain:</p>
+<ul>
+<li>Trend  </li>
+<li>Seasonality  </li>
+<li>Cyclicity  </li>
+<li>Irregular/random variation  </li>
+<li>Autocorrelation  </li>
+<li>Lagged relationships</li>
+</ul>
+<hr>
+<h1 id="3-lagged-effects"><strong>3. Lagged Effects</strong></h1>
+<p>A <strong>lagged effect</strong> occurs when an event or variable affects an outcome <strong>after a delay</strong>.</p>
+<p>For example:</p>
+<blockquote>
+<p>A holiday occurs today, but sales increase several days later.</p>
+</blockquote>
+<p>The holiday&rsquo;s effect is therefore <strong>lagged</strong>.</p>
+<h3 id="example"><strong>Example</strong></h3>
+<p>Suppose:</p>
+<ul>
+<li>Holiday occurs on December 10  </li>
+<li>Sales response occurs on December 13</li>
+</ul>
+<p>The effect has a time delay.</p>
+<p>Conceptually:</p>
+<blockquote>
+<p>Event at time <strong>t</strong> → Effect at time <strong>t + k</strong></p>
+</blockquote>
+<p>where <strong>k</strong> represents the lag.</p>
+<h3 id="lead-vs-lag"><strong>Lead vs lag</strong></h3>
+<p>A useful distinction:</p>
+<p><strong>Lag effect:</strong><br>
+The cause/event occurs first, and its effect occurs later.</p>
+<p><strong>Lead effect:</strong><br>
+A variable or event provides information about something that occurs later; in time-series terminology, the predictor is effectively ahead of the outcome.</p>
+<p>For the quiz example, because the holiday affects sales <strong>a few days later</strong>, the appropriate concept is:</p>
+<blockquote>
+<p><strong>Lagged effect</strong></p>
+</blockquote>
+<hr>
+<h1 id="4-time-series-components"><strong>4. Time-Series Components</strong></h1>
+<p>A time series can be viewed as containing several underlying components.</p>
+<p>The major components are:</p>
+<ol>
+<li><strong>Trend</strong>  </li>
+<li><strong>Seasonality</strong>  </li>
+<li><strong>Cyclicity</strong>  </li>
+<li><strong>Irregularity/noise</strong></li>
+</ol>
+<p>Understanding the distinction among these is essential.</p>
+<hr>
+<h1 id="5-trend"><strong>5. Trend</strong></h1>
+<p>A <strong>trend</strong> represents the general long-term direction of a series.</p>
+<p>It can be:</p>
+<ul>
+<li>Increasing  </li>
+<li>Decreasing  </li>
+<li>Relatively stable</li>
+</ul>
+<p>Example:</p>
+<blockquote>
+<p>A company&rsquo;s sales increase steadily over ten years.</p>
+</blockquote>
+<p>That long-term movement represents a <strong>trend</strong>.</p>
+<p>Trend does not require the pattern to repeat at regular intervals.</p>
+<hr>
+<h1 id="6-seasonality"><strong>6. Seasonality</strong></h1>
+<p><strong>Seasonality</strong> refers to a pattern that repeats at a <strong>regular and predictable frequency</strong>.</p>
+<p>Examples:</p>
+<ul>
+<li>Retail sales increasing every December  </li>
+<li>Ice-cream sales increasing every summer  </li>
+<li>Electricity demand following a daily pattern  </li>
+<li>Hotel bookings increasing every holiday season</li>
+</ul>
+<p>The defining characteristic is <strong>regular repetition</strong>.</p>
+<h3 id="important-distinction"><strong>Important distinction</strong></h3>
+<p>A pattern occurring every year in the same months is seasonal.</p>
+<p>A movement caused by a recession that does not repeat at the same time each year is <strong>not seasonality</strong>.</p>
+<hr>
+<h1 id="7-cyclicity"><strong>7. Cyclicity</strong></h1>
+<p><strong>Cyclicity</strong> refers to longer-term fluctuations associated with broader economic or business conditions.</p>
+<p>Examples:</p>
+<ul>
+<li>Economic expansion  </li>
+<li>Recession  </li>
+<li>Recovery  </li>
+<li>Business-cycle fluctuations</li>
+</ul>
+<p>A cycle does <strong>not necessarily repeat at a fixed calendar interval</strong>.</p>
+<h3 id="quiz-example"><strong>Quiz example</strong></h3>
+<p>A company&rsquo;s monthly sales:</p>
+<blockquote>
+<p>Rise for approximately 18 months → fall during a recession</p>
+</blockquote>
+<p>Because the movement:</p>
+<ul>
+<li>Is related to economic conditions  </li>
+<li>Does not repeat in the same months every year</li>
+</ul>
+<p>it represents <strong>cyclicity</strong>.</p>
+<hr>
+<h1 id="8-cyclicity-vs-seasonality"><strong>8. Cyclicity vs Seasonality</strong></h1>
+<p>This is one of the most important distinctions.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Seasonality</th>
+<th>Cyclicity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Repetition</td>
+<td>Regular</td>
+<td>Not necessarily regular</td>
+</tr>
+<tr>
+<td>Timing</td>
+<td>Predictable</td>
+<td>Variable</td>
+</tr>
+<tr>
+<td>Typical duration</td>
+<td>Often fixed</td>
+<td>Often longer and variable</td>
+</tr>
+<tr>
+<td>Example</td>
+<td>December sales spike</td>
+<td>Recession-related sales decline</td>
+</tr>
+<tr>
+<td>Calendar relationship</td>
+<td>Strong</td>
+<td>Usually weak</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="memory-aid"><strong>Memory aid</strong></h3>
+<blockquote>
+<p><strong>Seasonality \= regular repetition</strong></p>
+<p><strong>Cyclicity \= economic/business cycles</strong></p>
+</blockquote>
+<hr>
+<h1 id="9-irregularity-or-noise"><strong>9. Irregularity or Noise</strong></h1>
+<p><strong>Irregularity</strong>, also called random or residual variation, represents unpredictable movements that are not explained by the systematic components.</p>
+<p>Examples may include:</p>
+<ul>
+<li>Unexpected disruptions  </li>
+<li>Sudden shocks  </li>
+<li>Random fluctuations  </li>
+<li>Measurement noise  </li>
+<li>Unusual one-off events</li>
+</ul>
+<p>Noise is generally difficult to predict systematically.</p>
+<hr>
+<h1 id="10-time-series-decomposition"><strong>10. Time-Series Decomposition</strong></h1>
+<p>A time series can conceptually be decomposed into:</p>
+<blockquote>
+<p><strong>Observed Series \= Trend + Seasonality + Cyclicity + Irregularity</strong></p>
+</blockquote>
+<p>Depending on the model, decomposition may be additive or multiplicative.</p>
+<h3 id="additive-decomposition"><strong>Additive decomposition</strong></h3>
+<p>Conceptually:</p>
+<blockquote>
+<p>Y \= T + S + C + I</p>
+</blockquote>
+<p>where:</p>
+<ul>
+<li>Y \= observed series  </li>
+<li>T \= trend  </li>
+<li>S \= seasonal component  </li>
+<li>C \= cyclical component  </li>
+<li>I \= irregular component</li>
+</ul>
+<p>The purpose of decomposition is to understand <strong>what is driving movements in the series</strong>.</p>
+<hr>
+<h1 id="11-forecast-uncertainty"><strong>11. Forecast Uncertainty</strong></h1>
+<p>Forecasts become increasingly uncertain as we look farther into the future.</p>
+<p>A point forecast gives one expected value:</p>
+<blockquote>
+<p>Forecast sales \= ₹10 million</p>
+</blockquote>
+<p>But the actual future value may differ.</p>
+<p>A <strong>prediction interval</strong> expresses uncertainty around the forecast.</p>
+<p>For example:</p>
+<ul>
+<li>50% prediction interval  </li>
+<li>80% prediction interval  </li>
+<li>95% prediction interval</li>
+</ul>
+<p>The wider the desired coverage, the wider the interval generally becomes.</p>
+<hr>
+<h1 id="12-fan-charts"><strong>12. Fan Charts</strong></h1>
+<p>A <strong>fan chart</strong> is a visualization designed to show how forecast uncertainty changes over the forecast horizon.</p>
+<p>It typically contains:</p>
+<ul>
+<li>A central forecast path  </li>
+<li>Nested shaded prediction intervals  </li>
+<li>Increasing width as the forecast horizon extends</li>
+</ul>
+<p>For example:</p>
+<blockquote>
+<p>Central forecast<br>
+± 50% interval<br>
+± 80% interval<br>
+± 95% interval</p>
+</blockquote>
+<p>The visual appearance resembles a fan because uncertainty spreads outward into the future.</p>
+<h3 id="why-it-is-appropriate"><strong>Why it is appropriate</strong></h3>
+<p>If the objective is:</p>
+<blockquote>
+<p>“Show one graphic where uncertainty visibly widens as the horizon extends,”</p>
+</blockquote>
+<p>a <strong>fan chart</strong> is particularly appropriate.</p>
+<hr>
+<h1 id="13-forecasting-workflow"><strong>13. Forecasting Workflow</strong></h1>
+<p>Suppose a manager has:</p>
+<blockquote>
+<p>36 monthly sales observations from one store</p>
+</blockquote>
+<p>and wants forecasts for future months.</p>
+<p>A sensible workflow is:</p>
+<h3 id="step-1-verify-the-time-index"><strong>Step 1: Verify the time index</strong></h3>
+<p>Ensure that:</p>
+<ul>
+<li>Dates are correctly formatted  </li>
+<li>Observations are in chronological order  </li>
+<li>There are no unexpected duplicate periods  </li>
+<li>Missing observations are understood</li>
+</ul>
+<h3 id="step-2-inspect-the-series"><strong>Step 2: Inspect the series</strong></h3>
+<p>Look for:</p>
+<ul>
+<li>Trend  </li>
+<li>Seasonality  </li>
+<li>Outliers  </li>
+<li>Structural changes  </li>
+<li>Variability  </li>
+<li>Autocorrelation</li>
+</ul>
+<h3 id="step-3-select-an-appropriate-forecasting-model"><strong>Step 3: Select an appropriate forecasting model</strong></h3>
+<p>Depending on the characteristics of the series, possible models include:</p>
+<ul>
+<li>ARIMA  </li>
+<li>Exponential smoothing  </li>
+<li>Seasonal models  </li>
+<li>Other time-series forecasting methods</li>
+</ul>
+<h3 id="step-4-validate-the-model"><strong>Step 4: Validate the model</strong></h3>
+<p>Use appropriate validation or out-of-sample testing.</p>
+<h3 id="step-5-produce-forecasts"><strong>Step 5: Produce forecasts</strong></h3>
+<p>Generate future predictions and, where appropriate, prediction intervals.</p>
+<hr>
+<h1 id="14-why-model-first-inspect-later-is-poor-practice"><strong>14. Why “Model First, Inspect Later” Is Poor Practice</strong></h1>
+<p>One option in the quiz suggested:</p>
+<blockquote>
+<p>Fit an ARIMA-style model immediately and only afterward inspect trend and seasonality.</p>
+</blockquote>
+<p>This reverses an important part of the workflow.</p>
+<p>The researcher should first understand the data before selecting a model.</p>
+<p>Model selection should be informed by characteristics such as:</p>
+<ul>
+<li>Trend  </li>
+<li>Seasonality  </li>
+<li>Autocorrelation  </li>
+<li>Stationarity  </li>
+<li>Forecast horizon</li>
+</ul>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Inspect → model → validate → forecast</strong></p>
+</blockquote>
+<p>is preferable to:</p>
+<blockquote>
+<p><strong>Model blindly → inspect afterward</strong></p>
+</blockquote>
+<hr>
+<h1 id="15-why-pooling-36-monthly-observations-as-independent-data-is-problematic"><strong>15. Why Pooling 36 Monthly Observations as Independent Data Is Problematic</strong></h1>
+<p>Time-series observations are generally <strong>not independent</strong>.</p>
+<p>For example:</p>
+<blockquote>
+<p>January sales may be related to February sales.</p>
+</blockquote>
+<p>Treating the 36 observations simply as independent observations and using their overall mean ignores:</p>
+<ul>
+<li>Trend  </li>
+<li>Seasonality  </li>
+<li>Autocorrelation  </li>
+<li>Time dependence  </li>
+<li>Recent changes</li>
+</ul>
+<p>A time-series forecasting model is therefore more appropriate when the goal is to forecast future monthly sales.</p>
+<hr>
+<h1 id="16-panel-data"><strong>16. Panel Data</strong></h1>
+<p><strong>Panel data</strong> combines two dimensions:</p>
+<ol>
+<li><strong>Entity dimension</strong>  </li>
+<li><strong>Time dimension</strong></li>
+</ol>
+<p>Examples:</p>
+<ul>
+<li>Companies observed over several years  </li>
+<li>Countries observed annually  </li>
+<li>Individuals observed monthly  </li>
+<li>Stores observed over multiple periods</li>
+</ul>
+<p>A typical panel dataset might look like:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Company</th>
+<th>Year</th>
+<th>Sales</th>
+<th>Advertising</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>2022</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td>A</td>
+<td>2023</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td>A</td>
+<td>2024</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td>B</td>
+<td>2022</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td>B</td>
+<td>2024</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+</tr>
+</tbody>
+</table></div>
+<p>The company identifier tells us that multiple observations belong to the <strong>same entity</strong>.</p>
+<hr>
+<h1 id="17-missing-years-do-not-automatically-destroy-panel-structure"><strong>17. Missing Years Do Not Automatically Destroy Panel Structure</strong></h1>
+<p>An important point from the final quiz question:</p>
+<p>A dataset can still be panel data even if some entity-year combinations are missing.</p>
+<p>For example:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Company</th>
+<th>Year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>2021</td>
+</tr>
+<tr>
+<td>A</td>
+<td>2022</td>
+</tr>
+<tr>
+<td>A</td>
+<td>2024</td>
+</tr>
+<tr>
+<td>B</td>
+<td>2021</td>
+</tr>
+<tr>
+<td>B</td>
+<td>2022</td>
+</tr>
+<tr>
+<td>B</td>
+<td>2023</td>
+</tr>
+</tbody>
+</table></div>
+<p>Company A has no observation for 2023, but the data remain panel data because:</p>
+<ul>
+<li>There is a company dimension.  </li>
+<li>There is a time dimension.  </li>
+<li>The company identifier allows repeated observations to be tracked.</li>
+</ul>
+<p>This is called an <strong>unbalanced panel</strong>.</p>
+<h3 id="balanced-vs-unbalanced-panel"><strong>Balanced vs unbalanced panel</strong></h3>
+<p><strong>Balanced panel:</strong><br>
+Every entity has observations for every relevant time period.</p>
+<p><strong>Unbalanced panel:</strong><br>
+Some entity-time combinations are missing.</p>
+<p>Both are panel data.</p>
+<hr>
+<h1 id="18-time-series-vs-cross-sectional-vs-panel-data"><strong>18. Time Series vs Cross-Sectional vs Panel Data</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Data type</th>
+<th>Entity dimension</th>
+<th>Time dimension</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Time series</strong></td>
+<td>Usually one entity/process</td>
+<td>Yes</td>
+<td>Monthly sales of one store</td>
+</tr>
+<tr>
+<td><strong>Cross-sectional</strong></td>
+<td>Many entities</td>
+<td>One point/period</td>
+<td>Sales of 500 firms in 2025</td>
+</tr>
+<tr>
+<td><strong>Panel</strong></td>
+<td>Many entities</td>
+<td>Multiple periods</td>
+<td>Sales of 500 firms from 2020–2025</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="key-diagnostic-question"><strong>Key diagnostic question</strong></h3>
+<p>Ask:</p>
+<blockquote>
+<p><strong>Do I have repeated observations of multiple entities over time?</strong></p>
+</blockquote>
+<p>If yes, the data are generally <strong>panel data</strong>.</p>
+<hr>
+<h1 id="19-pooled-ols"><strong>19. Pooled OLS</strong></h1>
+<p><strong>Pooled OLS</strong> combines all entity-time observations and estimates one common regression while ignoring entity-specific effects.</p>
+<p>For example:</p>
+<blockquote>
+<p>Sales \= β₀ + β₁ Advertising + error</p>
+</blockquote>
+<p>The model does not explicitly control for permanent differences between firms.</p>
+<p>This can be problematic when firms differ systematically in characteristics such as:</p>
+<ul>
+<li>Brand strength  </li>
+<li>Management quality  </li>
+<li>Corporate culture  </li>
+<li>Long-standing reputation</li>
+</ul>
+<hr>
+<h1 id="20-fixed-effects-model"><strong>20. Fixed Effects Model</strong></h1>
+<p>The <strong>Fixed Effects (FE)</strong> model controls for <strong>time-invariant entity-specific characteristics</strong>.</p>
+<p>Examples:</p>
+<ul>
+<li>Brand strength  </li>
+<li>Historical reputation  </li>
+<li>Permanent organizational culture  </li>
+<li>Stable geographic characteristics</li>
+</ul>
+<p>The critical feature is:</p>
+<blockquote>
+<p>Fixed effects allow these entity-specific characteristics to be <strong>correlated with the explanatory variables</strong>.</p>
+</blockquote>
+<p>For example:</p>
+<blockquote>
+<p>Brand strength may be correlated with advertising expenditure.</p>
+</blockquote>
+<p>A company with a stronger brand may systematically spend differently on advertising.</p>
+<p>Fixed effects are designed for precisely this situation.</p>
+<h3 id="core-principle"><strong>Core principle</strong></h3>
+<blockquote>
+<p><strong>FE controls for unchanging entity characteristics even when those characteristics correlate with regressors.</strong></p>
+</blockquote>
+<hr>
+<h1 id="21-random-effects-model"><strong>21. Random Effects Model</strong></h1>
+<p>The <strong>Random Effects (RE)</strong> model treats entity-specific effects differently.</p>
+<p>The standard RE assumption is that the entity-specific effects are <strong>uncorrelated with the explanatory variables</strong>.</p>
+<p>This assumption is crucial.</p>
+<p>If that assumption is violated, RE estimates can be inappropriate.</p>
+<h3 id="simplified-distinction"><strong>Simplified distinction</strong></h3>
+<p><strong>Fixed Effects:</strong></p>
+<blockquote>
+<p>Entity-specific effect may be correlated with regressors.</p>
+</blockquote>
+<p><strong>Random Effects:</strong></p>
+<blockquote>
+<p>Entity-specific effect is assumed to be uncorrelated with regressors.</p>
+</blockquote>
+<hr>
+<h1 id="22-fixed-effects-vs-random-effects"><strong>22. Fixed Effects vs Random Effects</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Fixed Effects</th>
+<th>Random Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Controls for entity-specific effects</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Allows correlation with regressors</td>
+<td><strong>Yes</strong></td>
+<td><strong>No, under standard assumption</strong></td>
+</tr>
+<tr>
+<td>Uses within-entity variation</td>
+<td>Strongly emphasizes it</td>
+<td>Uses within and between variation</td>
+</tr>
+<tr>
+<td>Suitable when unobserved entity traits correlate with regressors</td>
+<td><strong>Yes</strong></td>
+<td>Generally no</td>
+</tr>
+<tr>
+<td>Example</td>
+<td>Brand strength correlated with advertising</td>
+<td>Entity effects assumed independent of advertising</td>
+</tr>
+</tbody>
+</table></div>
+<p>The most important conceptual distinction is the <strong>correlation assumption</strong>.</p>
+<hr>
+<h1 id="23-hausman-test"><strong>23. Hausman Test</strong></h1>
+<p>The <strong>Hausman test</strong> is commonly used to help choose between Fixed Effects and Random Effects.</p>
+<p>The conceptual null hypothesis is associated with the validity of the RE assumption.</p>
+<p>Simplified interpretation:</p>
+<h3 id="if-p-value-0-05"><strong>If p-value &gt; 0.05</strong></h3>
+<p>At the 5% significance level:</p>
+<blockquote>
+<p>Do not reject the null hypothesis.</p>
+</blockquote>
+<p>This supports the use of <strong>Random Effects</strong>, assuming the rest of the model is appropriate.</p>
+<h3 id="if-p-value-0-05-2"><strong>If p-value \&lt; 0.05</strong></h3>
+<blockquote>
+<p>Reject the null hypothesis.</p>
+</blockquote>
+<p>This provides evidence against the RE assumptions and generally favors <strong>Fixed Effects</strong>.</p>
+<h3 id="quiz-example-2"><strong>Quiz example</strong></h3>
+<p>Given:</p>
+<blockquote>
+<p>Hausman p-value \= 0.08<br>
+Significance level \= 0.05</p>
+</blockquote>
+<p>Since:</p>
+<blockquote>
+<p><strong>0.08 &gt; 0.05</strong></p>
+</blockquote>
+<p>the correct decision is:</p>
+<blockquote>
+<p><strong>Do not reject the null → choose Random Effects</strong></p>
+</blockquote>
+<hr>
+<h1 id="24-hausman-test-decision-rule"><strong>24. Hausman Test Decision Rule</strong></h1>
+<p>A useful revision table:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Hausman p-value</th>
+<th>Decision</th>
+<th>Typical model choice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p \&lt; 0.05</td>
+<td>Reject null</td>
+<td>Fixed Effects</td>
+</tr>
+<tr>
+<td>p &gt; 0.05</td>
+<td>Do not reject null</td>
+<td>Random Effects</td>
+</tr>
+</tbody>
+</table></div>
+<p>This is a simplified exam-oriented rule; actual model selection should also consider the research design, assumptions, specification, and diagnostics.</p>
+<hr>
+<h1 id="25-dynamic-panel-models"><strong>25. Dynamic Panel Models</strong></h1>
+<p>A <strong>dynamic panel model</strong> includes lagged dependent variables.</p>
+<p>For example:</p>
+<blockquote>
+<p>Current sales depend partly on last year&rsquo;s sales.</p>
+</blockquote>
+<p>Conceptually:</p>
+<blockquote>
+<p>Salesᵢ,ₜ \= β₀ + β₁ Advertisingᵢ,ₜ + β₂ Salesᵢ,ₜ₋₁ + entity effect + error</p>
+</blockquote>
+<p>The inclusion of:</p>
+<blockquote>
+<p><strong>Salesᵢ,ₜ₋₁</strong></p>
+</blockquote>
+<p>makes the model dynamic.</p>
+<hr>
+<h1 id="26-why-dynamic-panel-models-are-different"><strong>26. Why Dynamic Panel Models Are Different</strong></h1>
+<p>Suppose a researcher studies:</p>
+<blockquote>
+<p>Advertising → Sales</p>
+</blockquote>
+<p>but sales are persistent:</p>
+<blockquote>
+<p>Last year&rsquo;s sales → This year&rsquo;s sales</p>
+</blockquote>
+<p>Then ignoring lagged sales may omit an important source of persistence.</p>
+<p>A dynamic panel model accounts for this temporal dependence.</p>
+<p>The quiz specifically referenced:</p>
+<blockquote>
+<p><strong>Arellano–Bond type models</strong></p>
+</blockquote>
+<p>These are designed for dynamic panel settings and use instrumental-variable/GMM-style approaches to address endogeneity issues associated with lagged dependent variables and other regressors under appropriate assumptions.</p>
+<hr>
+<h1 id="27-fixed-effects-vs-dynamic-panel"><strong>27. Fixed Effects vs Dynamic Panel</strong></h1>
+<p>These should not be treated as mutually exclusive concepts in every situation.</p>
+<h3 id="fixed-effects"><strong>Fixed effects</strong></h3>
+<p>Main concern:</p>
+<blockquote>
+<p>Controlling for unobserved, time-invariant entity characteristics.</p>
+</blockquote>
+<h3 id="dynamic-panel"><strong>Dynamic panel</strong></h3>
+<p>Main concern:</p>
+<blockquote>
+<p>Modeling dependence on past values of the dependent variable.</p>
+</blockquote>
+<p>A dataset can require both considerations.</p>
+<p>For example:</p>
+<blockquote>
+<p>Firms have persistent sales + firms have permanent characteristics correlated with advertising.</p>
+</blockquote>
+<p>A dynamic panel framework may therefore be more appropriate than a simple static FE model.</p>
+<hr>
+<h1 id="28-forecast-accuracy-metrics"><strong>28. Forecast Accuracy Metrics</strong></h1>
+<p>The quiz identified the common forecast accuracy measures:</p>
+<blockquote>
+<p><strong>MAE, RMSE, MAPE</strong></p>
+</blockquote>
+<p>These compare forecasts with actual observations.</p>
+<hr>
+<h2 id="mean-absolute-error-mae"><strong>Mean Absolute Error — MAE</strong></h2>
+<p>MAE measures the average absolute forecast error.</p>
+<p>Conceptually:</p>
+<blockquote>
+<p><strong>MAE \= average |Actual − Forecast|</strong></p>
+</blockquote>
+<p>It is easy to interpret because it expresses error in the same units as the target variable.</p>
+<p>For example, if sales are measured in ₹ millions, MAE is also expressed in ₹ millions.</p>
+<hr>
+<h2 id="root-mean-squared-error-rmse"><strong>Root Mean Squared Error — RMSE</strong></h2>
+<p>RMSE is based on squared errors and then takes the square root.</p>
+<p>Conceptually:</p>
+<blockquote>
+<p><strong>RMSE \= √(average error²)</strong></p>
+</blockquote>
+<p>Because errors are squared, RMSE gives relatively greater influence to large errors.</p>
+<p>Thus, RMSE is useful when large forecast errors are particularly undesirable.</p>
+<hr>
+<h2 id="mean-absolute-percentage-error-mape"><strong>Mean Absolute Percentage Error — MAPE</strong></h2>
+<p>MAPE expresses forecast error in percentage terms.</p>
+<p>Conceptually:</p>
+<blockquote>
+<p><strong>MAPE \= average absolute percentage error</strong></p>
+</blockquote>
+<p>It can be intuitive because it expresses the typical error as a percentage.</p>
+<p>However, MAPE has limitations, especially when actual values are <strong>zero or very close to zero</strong>.</p>
+<hr>
+<h1 id="29-forecast-accuracy-vs-model-selection-metrics"><strong>29. Forecast Accuracy vs Model Selection Metrics</strong></h1>
+<p>The quiz included several groups of statistical terms that should not be confused.</p>
+<h3 id="forecast-accuracy"><strong>Forecast accuracy</strong></h3>
+<blockquote>
+<p><strong>MAE, RMSE, MAPE</strong></p>
+</blockquote>
+<p>Used to evaluate how close forecasts are to actual observations.</p>
+<h3 id="information-criteria"><strong>Information criteria</strong></h3>
+<blockquote>
+<p><strong>AIC, BIC, HQIC</strong></p>
+</blockquote>
+<p>Often used for model comparison and model selection, balancing model fit and complexity.</p>
+<h3 id="ar-ma-arma"><strong>AR/MA/ARMA</strong></h3>
+<p>These refer to <strong>time-series model structures</strong>, not forecast accuracy metrics.</p>
+<ul>
+<li>AR \= Autoregressive  </li>
+<li>MA \= Moving Average  </li>
+<li>ARMA \= Autoregressive Moving Average</li>
+</ul>
+<h3 id="acf-pacf-q-statistic"><strong>ACF/PACF/Q-statistic</strong></h3>
+<p>These are primarily tools for understanding time-series dependence and model diagnostics.</p>
+<ul>
+<li>ACF \= Autocorrelation Function  </li>
+<li>PACF \= Partial Autocorrelation Function  </li>
+<li>Q-statistics can be used for testing serial correlation.</li>
+</ul>
+<hr>
+<h1 id="30-forecasting-vs-panel-regression"><strong>30. Forecasting vs Panel Regression</strong></h1>
+<p>Another important distinction from the quiz is that not every dataset involving time should be analyzed as a time-series forecasting problem.</p>
+<h3 id="single-store-over-time"><strong>Single store over time</strong></h3>
+<p>Example:</p>
+<blockquote>
+<p>36 months of sales from one store</p>
+</blockquote>
+<p>This is primarily a <strong>time-series forecasting problem</strong>.</p>
+<h3 id="many-firms-over-multiple-years"><strong>Many firms over multiple years</strong></h3>
+<p>Example:</p>
+<blockquote>
+<p>100 firms observed from 2015–2025</p>
+</blockquote>
+<p>This is <strong>panel data</strong>.</p>
+<p>The appropriate methodology depends on the research objective.</p>
+<p>If the objective is:</p>
+<blockquote>
+<p>Predict next month&rsquo;s sales for one store</p>
+</blockquote>
+<p>a time-series forecasting model may be appropriate.</p>
+<p>If the objective is:</p>
+<blockquote>
+<p>Estimate the effect of advertising on firm sales across firms and years</p>
+</blockquote>
+<p>a panel regression model may be appropriate.</p>
+<hr>
+<h1 id="31-data-structure-determines-the-method"><strong>31. Data Structure Determines the Method</strong></h1>
+<p>A central lesson from this quiz is:</p>
+<blockquote>
+<p><strong>Do not select a statistical method before understanding the structure and purpose of the data.</strong></p>
+</blockquote>
+<p>Ask:</p>
+<h3 id="question-1-is-there-a-time-dimension"><strong>Question 1: Is there a time dimension?</strong></h3>
+<p>If no → likely cross-sectional data.</p>
+<p>If yes → continue.</p>
+<h3 id="question-2-is-there-only-one-entity"><strong>Question 2: Is there only one entity?</strong></h3>
+<p>If yes → likely time-series data.</p>
+<h3 id="question-3-are-there-multiple-entities-observed-repeatedly-over-time"><strong>Question 3: Are there multiple entities observed repeatedly over time?</strong></h3>
+<p>If yes → panel data.</p>
+<h3 id="question-4-what-is-the-research-objective"><strong>Question 4: What is the research objective?</strong></h3>
+<ul>
+<li>Forecasting → time-series forecasting methods  </li>
+<li>Estimating causal/associational effects across entities → panel regression  </li>
+<li>Understanding dynamic persistence → dynamic models may be required</li>
+</ul>
+<hr>
+<h1 id="32-common-misconceptions"><strong>32. Common Misconceptions</strong></h1>
+<h2 id="misconception-1-any-data-with-dates-are-time-series-data"><strong>Misconception 1: Any data with dates are time-series data</strong></h2>
+<p>Not necessarily.</p>
+<p>Multiple entities observed over multiple dates constitute <strong>panel data</strong>.</p>
+<hr>
+<h2 id="misconception-2-missing-years-mean-the-data-cannot-be-panel-data"><strong>Misconception 2: Missing years mean the data cannot be panel data</strong></h2>
+<p>False.</p>
+<p>Panel data can be <strong>unbalanced</strong>.</p>
+<p>The key is whether entities can be tracked across time.</p>
+<hr>
+<h2 id="misconception-3-fixed-effects-assumes-entity-characteristics-are-unrelated-to-regressors"><strong>Misconception 3: Fixed effects assumes entity characteristics are unrelated to regressors</strong></h2>
+<p>False.</p>
+<p>That is closer to the standard Random Effects assumption.</p>
+<p>Fixed effects allows correlation between time-invariant entity characteristics and regressors.</p>
+<hr>
+<h2 id="misconception-4-random-effects-is-always-better-because-it-is-more-efficient"><strong>Misconception 4: Random effects is always better because it is more efficient</strong></h2>
+<p>False.</p>
+<p>RE depends on the assumption that entity-specific effects are uncorrelated with the regressors.</p>
+<p>If that assumption is inappropriate, FE may be preferable.</p>
+<hr>
+<h2 id="misconception-5-hausman-p-0-05-means-fe-is-proven-wrong"><strong>Misconception 5: Hausman p &gt; 0.05 means FE is proven wrong</strong></h2>
+<p>Not exactly.</p>
+<p>A p-value above 0.05 means the test does not provide sufficient evidence to reject the null under the chosen significance level.</p>
+<p>In the simplified FE/RE decision framework, this supports RE.</p>
+<hr>
+<h2 id="misconception-6-correlation-and-regression-are-forecast-accuracy-metrics"><strong>Misconception 6: Correlation and regression are forecast accuracy metrics</strong></h2>
+<p>False.</p>
+<p>They are analytical methods for studying relationships.</p>
+<p>Forecast accuracy is commonly evaluated using measures such as:</p>
+<blockquote>
+<p>MAE, RMSE, MAPE</p>
+</blockquote>
+<hr>
+<h2 id="misconception-7-seasonality-and-cyclicity-are-the-same"><strong>Misconception 7: Seasonality and cyclicity are the same</strong></h2>
+<p>False.</p>
+<p><strong>Seasonality</strong> is regularly recurring.</p>
+<p><strong>Cyclicity</strong> is associated with longer-term fluctuations that do not necessarily repeat at fixed intervals.</p>
+<hr>
+<h2 id="misconception-8-a-recession-related-rise-and-fall-is-necessarily-seasonal"><strong>Misconception 8: A recession-related rise and fall is necessarily seasonal</strong></h2>
+<p>False.</p>
+<p>Economic cycles are typically classified as <strong>cyclical</strong> rather than seasonal.</p>
+<hr>
+<h2 id="misconception-9-forecast-uncertainty-stays-constant-over-the-horizon"><strong>Misconception 9: Forecast uncertainty stays constant over the horizon</strong></h2>
+<p>Generally false.</p>
+<p>As the forecast horizon increases, uncertainty often increases, which can be visualized using a <strong>fan chart</strong>.</p>
+<hr>
+<h2 id="misconception-10-regression-automatically-establishes-causation"><strong>Misconception 10: Regression automatically establishes causation</strong></h2>
+<p>False.</p>
+<p>Regression identifies statistical relationships under a model. Causal inference requires appropriate assumptions and research design.</p>
+<hr>
+<h1 id="33-high-value-comparison-table"><strong>33. High-Value Comparison Table</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lagged effect</td>
+<td>Effect occurs after the influencing event</td>
+</tr>
+<tr>
+<td>Trend</td>
+<td>Long-term direction</td>
+</tr>
+<tr>
+<td>Seasonality</td>
+<td>Regular recurring pattern</td>
+</tr>
+<tr>
+<td>Cyclicity</td>
+<td>Longer-term business/economic fluctuations</td>
+</tr>
+<tr>
+<td>Irregularity</td>
+<td>Unpredictable/random variation</td>
+</tr>
+<tr>
+<td>Fan chart</td>
+<td>Shows forecast path with widening uncertainty bands</td>
+</tr>
+<tr>
+<td>Time series</td>
+<td>One entity/process tracked over time</td>
+</tr>
+<tr>
+<td>Panel</td>
+<td>Multiple entities tracked over time</td>
+</tr>
+<tr>
+<td>Pooled OLS</td>
+<td>Ignores entity-specific effects</td>
+</tr>
+<tr>
+<td>Fixed Effects</td>
+<td>Controls for entity effects that may correlate with regressors</td>
+</tr>
+<tr>
+<td>Random Effects</td>
+<td>Assumes entity effects are uncorrelated with regressors</td>
+</tr>
+<tr>
+<td>Dynamic panel</td>
+<td>Includes lagged dependent variable</td>
+</tr>
+<tr>
+<td>Hausman test</td>
+<td>Helps assess FE vs RE choice</td>
+</tr>
+<tr>
+<td>MAE</td>
+<td>Average absolute forecast error</td>
+</tr>
+<tr>
+<td>RMSE</td>
+<td>Square-root average squared error</td>
+</tr>
+<tr>
+<td>MAPE</td>
+<td>Average percentage-based error</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="34-integrated-mental-model"><strong>34. Integrated Mental Model</strong></h1>
+<p>The concepts can be connected into a single framework.</p>
+<h2 id="time-series-path"><strong>Time-series path</strong></h2>
+<p><strong>Historical observations</strong></p>
+<p>↓</p>
+<p><strong>Check time ordering</strong></p>
+<p>↓</p>
+<p><strong>Inspect trend / seasonality / cyclicity / noise</strong></p>
+<p>↓</p>
+<p><strong>Consider lagged relationships</strong></p>
+<p>↓</p>
+<p><strong>Select forecasting model</strong></p>
+<p>↓</p>
+<p><strong>Generate point forecasts + prediction intervals</strong></p>
+<p>↓</p>
+<p><strong>Evaluate with MAE / RMSE / MAPE</strong></p>
+<p>↓</p>
+<p><strong>Visualize uncertainty with fan charts when useful</strong></p>
+<hr>
+<h2 id="panel-data-path"><strong>Panel-data path</strong></h2>
+<p><strong>Multiple entities × multiple time periods</strong></p>
+<p>↓</p>
+<p><strong>Identify entity-specific effects</strong></p>
+<p>↓</p>
+<p><strong>Ask whether entity effects correlate with regressors</strong></p>
+<p>↓</p>
+<p><strong>FE vs RE consideration</strong></p>
+<p>↓</p>
+<p><strong>Use Hausman test where appropriate</strong></p>
+<p>↓</p>
+<p><strong>If past outcomes influence current outcomes, consider dynamic panel modeling</strong></p>
+<hr>
+<h1 id="35-final-revision-checklist"><strong>35. Final Revision Checklist</strong></h1>
+<p>Before an exam, make sure you can answer these immediately:</p>
+<ul>
+<li><strong>Holiday effect occurring several days later?</strong> → Lagged effect.  </li>
+<li><strong>Regular repeating annual pattern?</strong> → Seasonality.  </li>
+<li><strong>Recession-related irregular economic cycle?</strong> → Cyclicity.  </li>
+<li><strong>Long-term upward/downward direction?</strong> → Trend.  </li>
+<li><strong>Unpredictable residual variation?</strong> → Irregularity/noise.  </li>
+<li><strong>Forecast uncertainty widening into the future?</strong> → Fan chart.  </li>
+<li><strong>One store over 36 months?</strong> → Time-series data.  </li>
+<li><strong>Many firms over many years?</strong> → Panel data.  </li>
+<li><strong>Missing firm-years?</strong> → Can still be an unbalanced panel.  </li>
+<li><strong>Entity effects correlated with regressors?</strong> → Fixed Effects.  </li>
+<li><strong>Entity effects assumed uncorrelated with regressors?</strong> → Random Effects.  </li>
+<li><strong>Past sales included as a predictor?</strong> → Dynamic panel.  </li>
+<li><strong>Hausman p \= 0.08 at 5%?</strong> → Do not reject null; typically choose RE.  </li>
+<li><strong>Forecast accuracy metrics?</strong> → MAE, RMSE, MAPE.  </li>
+<li><strong>ACF/PACF?</strong> → Time-series dependence/model identification or diagnostics, not forecast accuracy metrics.  </li>
+<li><strong>AIC/BIC/HQIC?</strong> → Information criteria for model comparison, not direct forecast accuracy measures.</li>
+</ul>
+<h2 id="the-three-most-important-distinctions"><strong>The three most important distinctions</strong></h2>
+<blockquote>
+<p><strong>Seasonality \= repeats regularly</strong></p>
+<p><strong>Cyclicity \= business/economic fluctuations without fixed repetition</strong></p>
+<p><strong>Panel data \= entities + time</strong></p>
+</blockquote>
+<p>And for panel models:</p>
+<blockquote>
+<p><strong>FE \= entity effects may correlate with regressors</strong></p>
+<p><strong>RE \= entity effects assumed uncorrelated with regressors</strong></p>
+</blockquote>
+<h2 id="case-study"><strong>Case Study</strong></h2>
+<p>GreenLeaf Retail is a regional chain of five outlets tracking weekly sales over 20 weeks. Each week, store teams record sales volume and promotional spending, while sensors log foot traffic and a third-party service provides local weather data. This creates a panel dataset of 100 observations with metrics: Sales_it, Promo_it, Traffic_it, and Rain_i,t. One week&rsquo;s promotion data at the downtown store is missing, requiring a decision on handling the gap. Managers suspect unobserved store-specific traits, like store layout, may influence sales. David, the data analyst, evaluates three model options: Pooled OLS, Random Effects, and Fixed Effects, following the progression Pooled OLS → Random Effects → Fixed Effects based on trait correlations. He applies a Hausman test; a p-value of 0.03 suggests correlated traits, favoring Fixed Effects. He also notes that foot traffic and weather rainfall show minor multicollinearity, prompting a decision on covariate inclusion. Because past sales often drive current outcomes, David incorporates a one-period lagged Sales_it in a dynamic panel model to capture persistence effects, then checks for autocorrelation. An AI-assisted coding tool (Gemini in Colab) helps generate syntax but hits a package conflict, so David adapts the code manually, relying on theoretical reasoning. Maria, the operations manager, the CFO, and the marketing lead must choose among: (A) Fixed Effects for robust control of unobserved traits, (B) Random Effects if the panel proves uncorrelated and more efficient, or (C) a dynamic panel specification to model sales persistence explicitly. They consider interpretability, computation time, and strategic insight into promotional timing. The decision will guide resource allocation and the next quarterly plan.</p>
+<h1 id="comprehensive-notes-greenleaf-retail-panel-data-fixed-effects-dynamic-panels-and-model-selection"><strong>Comprehensive Notes: GreenLeaf Retail — Panel Data, Fixed Effects, Dynamic Panels, and Model Selection</strong></h1>
+<h2 id="1-case-overview"><strong>1. Case Overview</strong></h2>
+<p>GreenLeaf Retail is a regional retail chain with:</p>
+<ul>
+<li><strong>5 stores</strong>  </li>
+<li><strong>20 weeks</strong> of observations  </li>
+<li><strong>Weekly data</strong>  </li>
+<li><strong>100 total store-week observations</strong></li>
+</ul>
+<p>Each store is observed repeatedly over time, making this a <strong>panel dataset</strong>.</p>
+<p>The core variables are:</p>
+<ul>
+<li><strong>Salesᵢₜ</strong> — sales for store <em>i</em> at time <em>t</em>  </li>
+<li><strong>Promoᵢₜ</strong> — promotional spending  </li>
+<li><strong>Trafficᵢₜ</strong> — foot traffic  </li>
+<li><strong>Rainᵢₜ</strong> — rainfall/weather conditions</li>
+</ul>
+<p>The business objective is to understand sales drivers and support decisions about:</p>
+<ul>
+<li>Promotional spending  </li>
+<li>Promotional timing  </li>
+<li>Store-level resource allocation  </li>
+<li>Quarterly planning</li>
+</ul>
+<p>The case introduces several important methodological issues:</p>
+<ol>
+<li>Panel-data structure  </li>
+<li>Missing data  </li>
+<li>Unobserved store-specific characteristics  </li>
+<li>Pooled OLS  </li>
+<li>Random Effects  </li>
+<li>Fixed Effects  </li>
+<li>Hausman testing  </li>
+<li>Multicollinearity  </li>
+<li>Dynamic panel modeling  </li>
+<li>Autocorrelation  </li>
+<li>AI-assisted coding  </li>
+<li>Statistical reasoning and managerial interpretation</li>
+</ol>
+<hr>
+<h1 id="2-identifying-the-data-structure"><strong>2. Identifying the Data Structure</strong></h1>
+<p>The dataset contains:</p>
+<blockquote>
+<p><strong>5 stores × 20 weeks \= 100 store-week observations</strong></p>
+</blockquote>
+<p>Each observation is associated with both:</p>
+<ul>
+<li>A <strong>store</strong>  </li>
+<li>A <strong>week</strong></li>
+</ul>
+<p>Therefore, the data are <strong>panel data</strong>.</p>
+<p>Conceptually:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Store</th>
+<th>Week</th>
+<th>Sales</th>
+<th>Promo</th>
+<th>Traffic</th>
+<th>Rain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Downtown</td>
+<td>1</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td>Downtown</td>
+<td>2</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td>Downtown</td>
+<td>3</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td>&hellip;</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td>Store 5</td>
+<td>20</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+</tr>
+</tbody>
+</table></div>
+<p>The same store appears repeatedly across different weeks.</p>
+<h3 id="key-rule"><strong>Key rule</strong></h3>
+<blockquote>
+<p><strong>Multiple entities + repeated observations over time \= panel data.</strong></p>
+</blockquote>
+<p>This distinguishes the case from a simple time series.</p>
+<h3 id="time-series"><strong>Time series</strong></h3>
+<p>One store tracked over 20 weeks:</p>
+<blockquote>
+<p>Store A → Week 1, Week 2, &hellip;, Week 20</p>
+</blockquote>
+<h3 id="panel"><strong>Panel</strong></h3>
+<p>Five stores tracked over 20 weeks:</p>
+<blockquote>
+<p>Store A, B, C, D, E → each observed across multiple weeks</p>
+</blockquote>
+<hr>
+<h1 id="3-the-panel-dimensions"><strong>3. The Panel Dimensions</strong></h1>
+<p>The dataset has two fundamental dimensions.</p>
+<h3 id="cross-sectional-dimension"><strong>Cross-sectional dimension</strong></h3>
+<p>The <strong>five stores</strong>.</p>
+<h3 id="time-dimension"><strong>Time dimension</strong></h3>
+<p>The <strong>20 weeks</strong>.</p>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Entity dimension \= 5 stores</strong></p>
+<p><strong>Time dimension \= 20 weeks</strong></p>
+<p><strong>Total observations \= 5 × 20 \= 100</strong></p>
+</blockquote>
+<p>This is sometimes described as an <strong>N × T panel</strong>, where:</p>
+<ul>
+<li>N \= number of entities  </li>
+<li>T \= number of time periods</li>
+</ul>
+<p>Here:</p>
+<blockquote>
+<p><strong>N \= 5, T \= 20</strong></p>
+</blockquote>
+<hr>
+<h1 id="4-the-core-research-question"><strong>4. The Core Research Question</strong></h1>
+<p>The underlying analytical question can be expressed as:</p>
+<blockquote>
+<p>How do promotional spending, foot traffic, weather, and previous sales relate to current sales while accounting for differences between stores?</p>
+</blockquote>
+<p>A basic model could be written conceptually as:</p>
+<blockquote>
+<p><strong>Salesᵢₜ \= β₀ + β₁Promoᵢₜ + β₂Trafficᵢₜ + β₃Rainᵢₜ + errorᵢₜ</strong></p>
+</blockquote>
+<p>However, managers suspect that stores have permanent characteristics that are not explicitly measured.</p>
+<p>For example:</p>
+<ul>
+<li>Store layout  </li>
+<li>Location characteristics  </li>
+<li>Permanent customer demographics  </li>
+<li>Store size  </li>
+<li>Long-standing local reputation  </li>
+<li>Other stable characteristics</li>
+</ul>
+<p>This leads directly to the fixed-effects/random-effects question.</p>
+<hr>
+<h1 id="5-unobserved-store-specific-traits"><strong>5. Unobserved Store-Specific Traits</strong></h1>
+<p>The case says managers suspect that <strong>unobserved store-specific traits</strong>, such as store layout, influence sales.</p>
+<p>This is important because not every factor affecting sales is necessarily included in the dataset.</p>
+<p>For example:</p>
+<blockquote>
+<p>Store layout → Sales</p>
+</blockquote>
+<p>But store layout might not have a numerical variable in the dataset.</p>
+<p>If store layout differs between stores and remains relatively stable over the 20-week period, it is a:</p>
+<blockquote>
+<p><strong>Time-invariant store-specific characteristic</strong></p>
+</blockquote>
+<p>This is precisely the type of effect that panel-data models can help address.</p>
+<hr>
+<h1 id="6-why-ignoring-store-differences-can-be-problematic"><strong>6. Why Ignoring Store Differences Can Be Problematic</strong></h1>
+<p>Suppose Downtown has:</p>
+<ul>
+<li>Better layout  </li>
+<li>Better visibility  </li>
+<li>More attractive product placement</li>
+</ul>
+<p>while another store has a less favorable layout.</p>
+<p>If these differences are ignored, a regression might incorrectly attribute some of the sales difference to:</p>
+<blockquote>
+<p>Promotion spending</p>
+</blockquote>
+<p>when some of the difference actually comes from:</p>
+<blockquote>
+<p>Store layout</p>
+</blockquote>
+<p>This creates a potential <strong>omitted-variable problem</strong>.</p>
+<p>Panel-data methods provide ways to account for such unobserved heterogeneity.</p>
+<hr>
+<h1 id="7-pooled-ols"><strong>7. Pooled OLS</strong></h1>
+<p>The simplest model considered is:</p>
+<blockquote>
+<p><strong>Pooled OLS</strong></p>
+</blockquote>
+<p>Pooled OLS treats the panel observations as one combined dataset.</p>
+<p>A simplified model is:</p>
+<blockquote>
+<p>Salesᵢₜ \= β₀ + β₁Promoᵢₜ + β₂Trafficᵢₜ + β₃Rainᵢₜ + εᵢₜ</p>
+</blockquote>
+<p>The model does not explicitly account for permanent store-specific effects.</p>
+<h3 id="advantages"><strong>Advantages</strong></h3>
+<ul>
+<li>Simple  </li>
+<li>Easy to interpret  </li>
+<li>Fast to estimate  </li>
+<li>Computationally inexpensive</li>
+</ul>
+<h3 id="limitation"><strong>Limitation</strong></h3>
+<p>If stores differ systematically in unobserved ways, pooled OLS can produce biased or misleading estimates when those omitted characteristics are related to the explanatory variables.</p>
+<hr>
+<h1 id="8-random-effects"><strong>8. Random Effects</strong></h1>
+<p>The next model considered is:</p>
+<blockquote>
+<p><strong>Random Effects (RE)</strong></p>
+</blockquote>
+<p>Random Effects recognizes that entities may have their own unobserved characteristics.</p>
+<p>However, the standard RE framework assumes that these entity-specific effects are <strong>uncorrelated with the explanatory variables</strong>.</p>
+<p>For example, RE would require an assumption along the lines of:</p>
+<blockquote>
+<p>Store layout is uncorrelated with promotional spending, traffic, rainfall, etc., in the relevant model structure.</p>
+</blockquote>
+<p>If that assumption is reasonable, Random Effects can be attractive because it can use both:</p>
+<ul>
+<li>Within-store variation  </li>
+<li>Between-store variation</li>
+</ul>
+<p>and can be more efficient than Fixed Effects under its assumptions.</p>
+<hr>
+<h1 id="9-fixed-effects"><strong>9. Fixed Effects</strong></h1>
+<p>The third model is:</p>
+<blockquote>
+<p><strong>Fixed Effects (FE)</strong></p>
+</blockquote>
+<p>Fixed Effects controls for <strong>time-invariant store-specific characteristics</strong>.</p>
+<p>For example:</p>
+<blockquote>
+<p>Store layout<br>
+Store&rsquo;s permanent location characteristics<br>
+Stable customer base characteristics<br>
+Long-term store-specific culture</p>
+</blockquote>
+<p>The major advantage is that these characteristics <strong>can be correlated with the regressors</strong>.</p>
+<p>For example:</p>
+<blockquote>
+<p>Store layout ↔ Promotional spending</p>
+</blockquote>
+<p>A store with a better layout may systematically receive different promotional investment.</p>
+<p>Fixed Effects can control for such time-invariant differences.</p>
+<hr>
+<h1 id="10-the-fundamental-fe-vs-re-distinction"><strong>10. The Fundamental FE vs RE Distinction</strong></h1>
+<p>This is one of the most important concepts in the case.</p>
+<h3 id="fixed-effects-2"><strong>Fixed Effects</strong></h3>
+<p>Allows:</p>
+<blockquote>
+<p><strong>Unobserved store-specific effects correlated with explanatory variables</strong></p>
+</blockquote>
+<h3 id="random-effects"><strong>Random Effects</strong></h3>
+<p>Assumes:</p>
+<blockquote>
+<p><strong>Unobserved store-specific effects are uncorrelated with explanatory variables</strong></p>
+</blockquote>
+<h3 id="memory-aid-2"><strong>Memory aid</strong></h3>
+<blockquote>
+<p><strong>FE \= correlation is allowed</strong></p>
+<p><strong>RE \= correlation is assumed away</strong></p>
+</blockquote>
+<hr>
+<h1 id="11-comparing-the-three-models"><strong>11. Comparing the Three Models</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Controls for store-specific effects?</th>
+<th>Allows correlation with regressors?</th>
+<th>Main characteristic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pooled OLS</strong></td>
+<td>No explicit control</td>
+<td>Not addressed</td>
+<td>Simplest</td>
+</tr>
+<tr>
+<td><strong>Random Effects</strong></td>
+<td>Yes</td>
+<td>No, under standard assumption</td>
+<td>More efficient if assumptions hold</td>
+</tr>
+<tr>
+<td><strong>Fixed Effects</strong></td>
+<td>Yes</td>
+<td><strong>Yes</strong></td>
+<td>Robust to time-invariant correlated heterogeneity</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="12-the-model-progression-in-the-case"><strong>12. The Model Progression in the Case</strong></h1>
+<p>David evaluates:</p>
+<blockquote>
+<p><strong>Pooled OLS → Random Effects → Fixed Effects</strong></p>
+</blockquote>
+<p>based on the relationship between store-specific traits and explanatory variables.</p>
+<p>This is useful as a <strong>conceptual progression</strong>:</p>
+<h3 id="stage-1-pooled-ols"><strong>Stage 1: Pooled OLS</strong></h3>
+<p>Start with the simplest specification.</p>
+<h3 id="stage-2-random-effects"><strong>Stage 2: Random Effects</strong></h3>
+<p>Recognize that stores have entity-specific characteristics and model them as random effects under the RE assumptions.</p>
+<h3 id="stage-3-fixed-effects"><strong>Stage 3: Fixed Effects</strong></h3>
+<p>If evidence indicates that store-specific effects are correlated with regressors, FE becomes more appropriate.</p>
+<h3 id="important-methodological-clarification"><strong>Important methodological clarification</strong></h3>
+<p>The sequence:</p>
+<blockquote>
+<p>Pooled OLS → RE → FE</p>
+</blockquote>
+<p>should <strong>not be interpreted as a mandatory universal testing sequence</strong>.</p>
+<p>Actual panel-model selection depends on:</p>
+<ul>
+<li>Research design  </li>
+<li>Data-generating process  </li>
+<li>Theoretical assumptions  </li>
+<li>Relevant specification tests  </li>
+<li>Model diagnostics</li>
+</ul>
+<p>The case uses the progression pedagogically to illustrate increasing control for unobserved heterogeneity.</p>
+<hr>
+<h1 id="13-hausman-test"><strong>13. Hausman Test</strong></h1>
+<p>David applies a <strong>Hausman test</strong> to help decide between FE and RE.</p>
+<p>The case reports:</p>
+<blockquote>
+<p><strong>p-value \= 0.03</strong></p>
+</blockquote>
+<p>The significance level is conventionally taken as:</p>
+<blockquote>
+<p><strong>α \= 0.05</strong></p>
+</blockquote>
+<p>Since:</p>
+<blockquote>
+<p><strong>0.03 \&lt; 0.05</strong></p>
+</blockquote>
+<p>the null hypothesis is rejected.</p>
+<p>In the standard FE-vs-RE interpretation, this provides evidence that the RE assumption is not appropriate because entity-specific effects are correlated with the regressors.</p>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Fixed Effects is favored.</strong></p>
+</blockquote>
+<hr>
+<h1 id="14-hausman-decision-rule"><strong>14. Hausman Decision Rule</strong></h1>
+<p>For exam purposes:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Hausman p-value</th>
+<th>Decision</th>
+<th>Typical conclusion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p \&lt; 0.05</td>
+<td>Reject H₀</td>
+<td>Favor FE</td>
+</tr>
+<tr>
+<td>p &gt; 0.05</td>
+<td>Do not reject H₀</td>
+<td>Favor RE</td>
+</tr>
+</tbody>
+</table></div>
+<p>For GreenLeaf:</p>
+<blockquote>
+<p>p \= 0.03</p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Reject H₀ → favor Fixed Effects</strong></p>
+</blockquote>
+<hr>
+<h1 id="15-what-does-the-hausman-result-mean-here"><strong>15. What Does the Hausman Result Mean Here?</strong></h1>
+<p>The result suggests that store-specific characteristics are related to the explanatory variables.</p>
+<p>For example, imagine:</p>
+<blockquote>
+<p>Store layout influences sales and is also related to how promotions are allocated.</p>
+</blockquote>
+<p>Then the assumption that store-specific effects are independent of regressors becomes questionable.</p>
+<p>Fixed Effects is better suited to control for these permanent store-level differences.</p>
+<hr>
+<h1 id="16-what-fixed-effects-actually-does"><strong>16. What Fixed Effects Actually Does</strong></h1>
+<p>Fixed Effects effectively focuses on variation <strong>within each store over time</strong>.</p>
+<p>Instead of asking simply:</p>
+<blockquote>
+<p>Why does Store A sell more than Store B?</p>
+</blockquote>
+<p>FE emphasizes:</p>
+<blockquote>
+<p>When Store A&rsquo;s promotional spending changes, how does its sales outcome change relative to its own store-specific baseline?</p>
+</blockquote>
+<p>This helps remove the influence of characteristics that:</p>
+<ul>
+<li>Differ across stores  </li>
+<li>Remain constant over time</li>
+</ul>
+<hr>
+<h1 id="17-what-fixed-effects-cannot-automatically-control"><strong>17. What Fixed Effects Cannot Automatically Control</strong></h1>
+<p>Fixed Effects controls for <strong>time-invariant</strong> characteristics.</p>
+<p>It does not automatically eliminate factors that:</p>
+<ul>
+<li>Change over time  </li>
+<li>Affect sales  </li>
+<li>Are omitted from the model</li>
+</ul>
+<p>For example:</p>
+<blockquote>
+<p>A store&rsquo;s manager changes halfway through the study.</p>
+</blockquote>
+<p>That is not time-invariant.</p>
+<p>Similarly:</p>
+<blockquote>
+<p>A competitor opens nearby in Week 15.</p>
+</blockquote>
+<p>That changes over time.</p>
+<p>Such factors may require explicit variables, time effects, or other modeling strategies.</p>
+<hr>
+<h1 id="18-time-fixed-effects"><strong>18. Time Fixed Effects</strong></h1>
+<p>Although not explicitly required in the case, time effects are an important extension to understand.</p>
+<p>All stores may experience common weekly shocks, such as:</p>
+<ul>
+<li>Major festivals  </li>
+<li>Regional events  </li>
+<li>Economy-wide changes  </li>
+<li>Holidays  </li>
+<li>System-wide campaigns</li>
+</ul>
+<p>A model can potentially include:</p>
+<blockquote>
+<p><strong>Store fixed effects + time fixed effects</strong></p>
+</blockquote>
+<p>This controls for:</p>
+<ul>
+<li>Permanent store-specific differences  </li>
+<li>Common shocks affecting all stores in a particular period</li>
+</ul>
+<p>This is often called a <strong>two-way fixed-effects framework</strong>.</p>
+<hr>
+<h1 id="19-missing-promotion-data"><strong>19. Missing Promotion Data</strong></h1>
+<p>One week&rsquo;s promotion data for the Downtown store is missing.</p>
+<p>This creates a <strong>missing-data problem</strong>.</p>
+<p>There is no single automatic solution. The correct treatment depends on:</p>
+<ul>
+<li>Why the value is missing  </li>
+<li>Whether the missingness is accidental  </li>
+<li>Whether the value can be reliably reconstructed  </li>
+<li>Whether other related records exist  </li>
+<li>How much the missing value affects the analysis</li>
+</ul>
+<hr>
+<h1 id="20-possible-ways-to-handle-the-missing-value"><strong>20. Possible Ways to Handle the Missing Value</strong></h1>
+<p>Potential approaches include:</p>
+<h3 id="1-investigate-the-source-first"><strong>1. Investigate the source first</strong></h3>
+<p>Before imputing anything, determine why the promotion value is missing.</p>
+<p>For example:</p>
+<ul>
+<li>Data-entry error  </li>
+<li>File transfer problem  </li>
+<li>Promotion genuinely not recorded  </li>
+<li>Promotion did not occur  </li>
+<li>Sensor/system failure</li>
+</ul>
+<p>These situations imply different treatments.</p>
+<hr>
+<h3 id="2-recover-the-actual-value"><strong>2. Recover the actual value</strong></h3>
+<p>If another reliable source records the promotion amount, recovering the actual value is generally preferable to guessing.</p>
+<hr>
+<h3 id="3-imputation"><strong>3. Imputation</strong></h3>
+<p>If the value cannot be recovered, an appropriate imputation method may sometimes be considered.</p>
+<p>The method should reflect:</p>
+<ul>
+<li>The data structure  </li>
+<li>Promotion patterns  </li>
+<li>Other variables  </li>
+<li>Statistical assumptions</li>
+</ul>
+<p>Blindly replacing the value with the mean is often inappropriate for time-dependent panel data.</p>
+<hr>
+<h3 id="4-omit-the-observation-from-a-specific-analysis"><strong>4. Omit the observation from a specific analysis</strong></h3>
+<p>If justified, the affected observation may be excluded from a model requiring that variable.</p>
+<p>However, dropping data can reduce information and may introduce bias depending on the missingness mechanism.</p>
+<hr>
+<h1 id="21-what-should-not-be-done-automatically"><strong>21. What Should Not Be Done Automatically</strong></h1>
+<p>It is poor practice to:</p>
+<blockquote>
+<p>Simply fill the missing promotion value with an arbitrary number.</p>
+</blockquote>
+<p>Likewise, one should not automatically:</p>
+<blockquote>
+<p>Delete the entire store&rsquo;s data.</p>
+</blockquote>
+<p>A missing value should first be <strong>investigated and characterized</strong>.</p>
+<hr>
+<h1 id="22-multicollinearity"><strong>22. Multicollinearity</strong></h1>
+<p>David notices minor multicollinearity between:</p>
+<ul>
+<li>Foot traffic  </li>
+<li>Rainfall</li>
+</ul>
+<h3 id="multicollinearity"><strong>Multicollinearity</strong></h3>
+<p>Multicollinearity occurs when explanatory variables are correlated with one another.</p>
+<p>For example:</p>
+<blockquote>
+<p>Rainfall ↔ Foot traffic</p>
+</blockquote>
+<p>Rain may reduce the number of people visiting stores.</p>
+<p>Therefore, Traffic and Rain can contain overlapping information.</p>
+<hr>
+<h1 id="23-why-multicollinearity-matters"><strong>23. Why Multicollinearity Matters</strong></h1>
+<p>Multicollinearity can cause:</p>
+<ul>
+<li>Larger standard errors  </li>
+<li>Less precise coefficient estimates  </li>
+<li>Difficulty separating the individual effect of correlated predictors  </li>
+<li>Unstable coefficient estimates in some situations</li>
+</ul>
+<p>It does <strong>not necessarily make the model unusable</strong>.</p>
+<p>The severity matters.</p>
+<p>The case says the multicollinearity is <strong>minor</strong>, so it should be assessed rather than automatically removing one of the variables.</p>
+<hr>
+<h1 id="24-should-traffic-or-rain-be-removed"><strong>24. Should Traffic or Rain Be Removed?</strong></h1>
+<p>There is no universal rule that says:</p>
+<blockquote>
+<p>“If two predictors are correlated, delete one.”</p>
+</blockquote>
+<p>Instead, David should consider:</p>
+<ul>
+<li>Strength of correlation  </li>
+<li>VIF or related diagnostics  </li>
+<li>Theoretical relevance  </li>
+<li>Statistical significance  </li>
+<li>Business importance  </li>
+<li>Model stability  </li>
+<li>Whether each variable provides unique information</li>
+</ul>
+<h3 id="strategic-consideration"><strong>Strategic consideration</strong></h3>
+<p>Rainfall may influence sales directly.</p>
+<p>It may also influence sales indirectly through:</p>
+<blockquote>
+<p>Rain → Foot Traffic → Sales</p>
+</blockquote>
+<p>Therefore, removing rainfall simply because it correlates with traffic could eliminate useful information.</p>
+<hr>
+<h1 id="25-multicollinearity-vs-causality"><strong>25. Multicollinearity vs Causality</strong></h1>
+<p>A correlation between Traffic and Rain does not automatically tell us the complete causal structure.</p>
+<p>Possible relationships include:</p>
+<blockquote>
+<p>Rain → Traffic → Sales</p>
+</blockquote>
+<p>or:</p>
+<blockquote>
+<p>Rain → Sales</p>
+</blockquote>
+<p>or both.</p>
+<p>The analytical goal and theoretical framework should guide the specification.</p>
+<hr>
+<h1 id="26-dynamic-panel-model"><strong>26. Dynamic Panel Model</strong></h1>
+<p>The case states:</p>
+<blockquote>
+<p>Past sales often drive current outcomes.</p>
+</blockquote>
+<p>This means sales exhibit <strong>persistence</strong>.</p>
+<p>For example:</p>
+<blockquote>
+<p>High sales this week → potentially high sales next week.</p>
+</blockquote>
+<p>Therefore, David incorporates:</p>
+<blockquote>
+<p><strong>One-period lagged Sales</strong></p>
+</blockquote>
+<p>into the model.</p>
+<p>Conceptually:</p>
+<blockquote>
+<p><strong>Salesᵢₜ₋₁ → Salesᵢₜ</strong></p>
+</blockquote>
+<p>The model becomes something like:</p>
+<blockquote>
+<p>Salesᵢₜ \= β₀ + β₁Promoᵢₜ + β₂Trafficᵢₜ + β₃Rainᵢₜ + ρSalesᵢₜ₋₁ + store effect + errorᵢₜ</p>
+</blockquote>
+<hr>
+<h1 id="27-why-include-lagged-sales"><strong>27. Why Include Lagged Sales?</strong></h1>
+<p>A lagged dependent variable captures <strong>persistence</strong>.</p>
+<p>Current sales may depend on previous sales because of:</p>
+<ul>
+<li>Customer loyalty  </li>
+<li>Continuing promotions  </li>
+<li>Inventory conditions  </li>
+<li>Word-of-mouth  </li>
+<li>Store momentum  </li>
+<li>Persistent demand patterns  </li>
+<li>Customer purchasing cycles</li>
+</ul>
+<p>Ignoring this persistence could lead to an incomplete model.</p>
+<hr>
+<h1 id="28-static-vs-dynamic-panel"><strong>28. Static vs Dynamic Panel</strong></h1>
+<h3 id="static-panel-model"><strong>Static panel model</strong></h3>
+<p>Does not include lagged dependent variables.</p>
+<p>Example:</p>
+<blockquote>
+<p>Salesᵢₜ \= β₀ + β₁Promoᵢₜ + β₂Trafficᵢₜ + β₃Rainᵢₜ + store effect + error</p>
+</blockquote>
+<h3 id="dynamic-panel-model"><strong>Dynamic panel model</strong></h3>
+<p>Includes past values of the dependent variable.</p>
+<p>Example:</p>
+<blockquote>
+<p>Salesᵢₜ \= β₀ + β₁Promoᵢₜ + β₂Trafficᵢₜ + β₃Rainᵢₜ + ρSalesᵢₜ₋₁ + store effect + error</p>
+</blockquote>
+<h3 id="core-distinction"><strong>Core distinction</strong></h3>
+<blockquote>
+<p><strong>Dynamic panel \= panel data + temporal dependence through lagged outcome(s)</strong></p>
+</blockquote>
+<hr>
+<h1 id="29-important-dynamic-panel-issue-endogeneity"><strong>29. Important Dynamic Panel Issue: Endogeneity</strong></h1>
+<p>Including a lagged dependent variable in a panel model creates additional econometric complications.</p>
+<p>In a Fixed Effects model with a lagged dependent variable:</p>
+<blockquote>
+<p>Salesᵢₜ₋₁</p>
+</blockquote>
+<p>can become correlated with the transformed error term.</p>
+<p>This can create bias, particularly when the time dimension is relatively short.</p>
+<p>The GreenLeaf panel has:</p>
+<blockquote>
+<p><strong>N \= 5, T \= 20</strong></p>
+</blockquote>
+<p>So the time dimension is not extremely large.</p>
+<p>This makes dynamic-panel methodology an important consideration.</p>
+<hr>
+<h1 id="30-arellano-bond-and-dynamic-panels"><strong>30. Arellano–Bond and Dynamic Panels</strong></h1>
+<p>For dynamic panel settings, methods such as <strong>Arellano–Bond</strong> can be used under appropriate assumptions.</p>
+<p>They are designed to address problems involving:</p>
+<ul>
+<li>Lagged dependent variables  </li>
+<li>Endogeneity  </li>
+<li>Unobserved individual effects</li>
+</ul>
+<p>They typically use instrumental variables/GMM-type estimation based on suitable lagged variables.</p>
+<p>The important conceptual point is:</p>
+<blockquote>
+<p>Adding a lagged dependent variable to a panel regression is not always as simple as adding another ordinary predictor.</p>
+</blockquote>
+<hr>
+<h1 id="31-autocorrelation"><strong>31. Autocorrelation</strong></h1>
+<p>David checks for <strong>autocorrelation</strong> after incorporating the lagged sales variable.</p>
+<p>Autocorrelation occurs when errors or observations are systematically related across time.</p>
+<p>For example:</p>
+<blockquote>
+<p>This week&rsquo;s unexplained sales shock may be related to next week&rsquo;s unexplained sales shock.</p>
+</blockquote>
+<p>This violates some standard regression assumptions and can affect inference.</p>
+<h3 id="why-it-matters"><strong>Why it matters</strong></h3>
+<p>Autocorrelation can lead to:</p>
+<ul>
+<li>Incorrect standard errors  </li>
+<li>Misleading significance tests  </li>
+<li>Inefficient estimation under some conditions  </li>
+<li>Poorly specified dynamic models</li>
+</ul>
+<p>Therefore, time dependence needs to be diagnosed rather than ignored.</p>
+<hr>
+<h1 id="32-lagged-sales-and-autocorrelation-are-different"><strong>32. Lagged Sales and Autocorrelation Are Different</strong></h1>
+<p>These concepts are related but not identical.</p>
+<h3 id="lagged-dependent-variable"><strong>Lagged dependent variable</strong></h3>
+<p>A deliberate model term:</p>
+<blockquote>
+<p>Salesᵢₜ₋₁</p>
+</blockquote>
+<p>used to capture persistence.</p>
+<h3 id="autocorrelation"><strong>Autocorrelation</strong></h3>
+<p>A statistical property of the errors or series where observations/residuals are correlated over time.</p>
+<p>A dynamic model can reduce some unexplained temporal dependence, but researchers still need to check residual behavior.</p>
+<hr>
+<h1 id="33-ai-assisted-coding"><strong>33. AI-Assisted Coding</strong></h1>
+<p>The case introduces:</p>
+<blockquote>
+<p><strong>Gemini in Colab</strong></p>
+</blockquote>
+<p>as an AI-assisted coding tool.</p>
+<p>The tool helps generate statistical programming syntax but encounters a package conflict.</p>
+<p>David therefore adapts the code manually.</p>
+<p>This highlights an important principle:</p>
+<blockquote>
+<p><strong>AI can assist with implementation, but statistical reasoning remains the researcher&rsquo;s responsibility.</strong></p>
+</blockquote>
+<hr>
+<h1 id="34-ai-coding-vs-statistical-reasoning"><strong>34. AI Coding vs Statistical Reasoning</strong></h1>
+<p>AI can help with:</p>
+<ul>
+<li>Syntax generation  </li>
+<li>Boilerplate code  </li>
+<li>Data transformation  </li>
+<li>Model specification templates  </li>
+<li>Debugging suggestions  </li>
+<li>Documentation lookup  </li>
+<li>Visualization code</li>
+</ul>
+<p>But the analyst must still understand:</p>
+<ul>
+<li>Why the model is appropriate  </li>
+<li>What assumptions it makes  </li>
+<li>What the coefficients mean  </li>
+<li>Whether the data are structured correctly  </li>
+<li>Whether diagnostics are adequate  </li>
+<li>Whether the generated code actually implements the intended model</li>
+</ul>
+<hr>
+<h1 id="35-package-conflicts"><strong>35. Package Conflicts</strong></h1>
+<p>A package conflict is a <strong>technical implementation problem</strong>, not necessarily a statistical problem.</p>
+<p>The correct response is not to abandon the research methodology.</p>
+<p>Instead:</p>
+<ol>
+<li>Understand the intended analysis.  </li>
+<li>Identify what the code is supposed to do.  </li>
+<li>Investigate the package conflict.  </li>
+<li>Adapt the implementation.  </li>
+<li>Validate the resulting code.  </li>
+<li>Verify that the statistical model is still correctly specified.</li>
+</ol>
+<p>This is an important lesson for AI-assisted analytical workflows.</p>
+<hr>
+<h1 id="36-interpretability-vs-computation-vs-strategic-insight"><strong>36. Interpretability vs Computation vs Strategic Insight</strong></h1>
+<p>The management team must balance three considerations:</p>
+<h3 id="interpretability"><strong>Interpretability</strong></h3>
+<p>Can managers understand what the model says?</p>
+<h3 id="computation"><strong>Computation</strong></h3>
+<p>How difficult and time-consuming is the model to estimate and maintain?</p>
+<h3 id="strategic-insight"><strong>Strategic insight</strong></h3>
+<p>Does the model answer the business question effectively?</p>
+<p>A statistically sophisticated model is not automatically the best business model if its complexity does not produce useful additional insight.</p>
+<hr>
+<h1 id="37-comparing-the-three-decision-options"><strong>37. Comparing the Three Decision Options</strong></h1>
+<p>The case presents three broad choices.</p>
+<h2 id="option-a-fixed-effects"><strong>Option A — Fixed Effects</strong></h2>
+<blockquote>
+<p><strong>Fixed Effects for robust control of unobserved traits</strong></p>
+</blockquote>
+<p>This is strongly supported by the Hausman result.</p>
+<p>Why?</p>
+<blockquote>
+<p>p \= 0.03 \&lt; 0.05</p>
+</blockquote>
+<p>which indicates evidence against the standard RE assumption.</p>
+<p>FE is particularly appropriate when:</p>
+<ul>
+<li>Store-specific effects matter  </li>
+<li>Those effects may correlate with regressors  </li>
+<li>The research focuses on within-store relationships</li>
+</ul>
+<hr>
+<h2 id="option-b-random-effects"><strong>Option B — Random Effects</strong></h2>
+<blockquote>
+<p><strong>Random Effects if the panel proves uncorrelated and more efficient</strong></p>
+</blockquote>
+<p>RE can be attractive when the assumption of no correlation between entity effects and regressors is credible.</p>
+<p>It may provide greater efficiency and allows use of both within- and between-entity variation.</p>
+<p>However, the case&rsquo;s Hausman result:</p>
+<blockquote>
+<p>p \= 0.03</p>
+</blockquote>
+<p>provides evidence against the standard RE assumption.</p>
+<p>Therefore, RE is less favored in this specific case.</p>
+<hr>
+<h2 id="option-c-dynamic-panel"><strong>Option C — Dynamic Panel</strong></h2>
+<blockquote>
+<p><strong>Dynamic panel specification to model sales persistence explicitly</strong></p>
+</blockquote>
+<p>This addresses a different issue.</p>
+<p>The dynamic model is motivated by:</p>
+<blockquote>
+<p>Current sales depend on previous sales.</p>
+</blockquote>
+<p>Therefore, Dynamic Panel is not simply an alternative to FE or RE in the same conceptual dimension.</p>
+<p>A dynamic model can incorporate appropriate treatment of entity effects while also modeling lagged outcomes.</p>
+<hr>
+<h1 id="38-critical-distinction-fe-re-vs-dynamic-modeling"><strong>38. Critical Distinction: FE/RE vs Dynamic Modeling</strong></h1>
+<p>This is an especially important concept.</p>
+<h3 id="fe-vs-re-asks"><strong>FE vs RE asks:</strong></h3>
+<blockquote>
+<p><strong>How should we handle unobserved entity-specific effects?</strong></p>
+</blockquote>
+<h3 id="dynamic-panel-asks"><strong>Dynamic panel asks:</strong></h3>
+<blockquote>
+<p><strong>Does the current outcome depend on its own past values, and how should that persistence be modeled?</strong></p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote>
+<p>FE/RE and dynamic modeling address <strong>different methodological dimensions</strong>.</p>
+</blockquote>
+<p>A model can be:</p>
+<blockquote>
+<p>Dynamic + Fixed Effects</p>
+</blockquote>
+<p>rather than treating “Fixed Effects” and “Dynamic Panel” as mutually exclusive categories.</p>
+<hr>
+<h1 id="39-why-the-case-favors-fixed-effects"><strong>39. Why the Case Favors Fixed Effects</strong></h1>
+<p>The strongest direct evidence concerning FE vs RE is:</p>
+<blockquote>
+<p><strong>Hausman p-value \= 0.03</strong></p>
+</blockquote>
+<p>Since:</p>
+<blockquote>
+<p>0.03 \&lt; 0.05</p>
+</blockquote>
+<p>the null is rejected.</p>
+<p>This indicates that the RE assumption of uncorrelated entity-specific effects is questionable.</p>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Fixed Effects is favored over Random Effects.</strong></p>
+</blockquote>
+<p>However, the presence of sales persistence means that a more complete specification may need to consider a <strong>dynamic FE/panel approach</strong>, with appropriate treatment of dynamic-panel bias and serial dependence.</p>
+<hr>
+<h1 id="40-a-more-complete-analytical-strategy"><strong>40. A More Complete Analytical Strategy</strong></h1>
+<p>A strong analytical workflow for GreenLeaf would be:</p>
+<h3 id="step-1-validate-the-data"><strong>Step 1 — Validate the data</strong></h3>
+<p>Check:</p>
+<ul>
+<li>Store IDs  </li>
+<li>Week IDs  </li>
+<li>Duplicate records  </li>
+<li>Missing values  </li>
+<li>Date ordering  </li>
+<li>Units  </li>
+<li>Outliers</li>
+</ul>
+<h3 id="step-2-investigate-the-missing-promotion-value"><strong>Step 2 — Investigate the missing promotion value</strong></h3>
+<p>Determine why the Downtown observation is missing.</p>
+<h3 id="step-3-explore-the-variables"><strong>Step 3 — Explore the variables</strong></h3>
+<p>Examine:</p>
+<ul>
+<li>Sales trends  </li>
+<li>Promotions  </li>
+<li>Traffic  </li>
+<li>Rainfall  </li>
+<li>Store-level differences  </li>
+<li>Week-level patterns</li>
+</ul>
+<h3 id="step-4-assess-multicollinearity"><strong>Step 4 — Assess multicollinearity</strong></h3>
+<p>Check:</p>
+<ul>
+<li>Correlations  </li>
+<li>VIF  </li>
+<li>Model stability</li>
+</ul>
+<h3 id="step-5-establish-a-baseline"><strong>Step 5 — Establish a baseline</strong></h3>
+<p>Estimate a simple pooled model if useful as a baseline.</p>
+<h3 id="step-6-consider-panel-effects"><strong>Step 6 — Consider panel effects</strong></h3>
+<p>Compare appropriate FE and RE specifications.</p>
+<h3 id="step-7-apply-hausman-testing-where-appropriate"><strong>Step 7 — Apply Hausman testing where appropriate</strong></h3>
+<p>Here:</p>
+<blockquote>
+<p>p \= 0.03 → FE favored over RE.</p>
+</blockquote>
+<h3 id="step-8-assess-dynamics"><strong>Step 8 — Assess dynamics</strong></h3>
+<p>Investigate whether:</p>
+<blockquote>
+<p>Salesᵢₜ₋₁</p>
+</blockquote>
+<p>should be included.</p>
+<h3 id="step-9-use-an-appropriate-dynamic-panel-estimator"><strong>Step 9 — Use an appropriate dynamic-panel estimator</strong></h3>
+<p>If the dynamic specification creates endogeneity concerns, consider methods designed for dynamic panels, such as appropriate GMM approaches, rather than simply running naïve FE.</p>
+<h3 id="step-10-check-serial-correlation-and-other-diagnostics"><strong>Step 10 — Check serial correlation and other diagnostics</strong></h3>
+<p>Evaluate whether residual dependence remains.</p>
+<h3 id="step-11-compare-interpretability-and-predictive-usefulness"><strong>Step 11 — Compare interpretability and predictive usefulness</strong></h3>
+<p>The statistically preferred model should also be useful for management.</p>
+<h3 id="step-12-translate-results-into-decisions"><strong>Step 12 — Translate results into decisions</strong></h3>
+<p>Use findings to guide:</p>
+<ul>
+<li>Promotional timing  </li>
+<li>Promotional budgets  </li>
+<li>Store resource allocation  </li>
+<li>Quarterly planning</li>
+</ul>
+<hr>
+<h1 id="41-promotional-timing"><strong>41. Promotional Timing</strong></h1>
+<p>The case specifically mentions <strong>strategic insight into promotional timing</strong>.</p>
+<p>This is important because the business may not simply want to know:</p>
+<blockquote>
+<p>“Does promotion increase sales?”</p>
+</blockquote>
+<p>It may want to know:</p>
+<blockquote>
+<p>“When should we promote?”</p>
+</blockquote>
+<p>The dynamic model can provide additional insight because sales may persist from one week to the next.</p>
+<p>For example:</p>
+<blockquote>
+<p>Promotion → sales response this week → continued sales momentum next week</p>
+</blockquote>
+<p>However, establishing the causal timing of promotional effects requires careful model specification.</p>
+<hr>
+<h1 id="42-possible-temporal-relationships"><strong>42. Possible Temporal Relationships</strong></h1>
+<p>The model could potentially consider:</p>
+<blockquote>
+<p>Promotionₜ → Salesₜ</p>
+</blockquote>
+<p>and, depending on the research question:</p>
+<blockquote>
+<p>Promotionₜ₋₁ → Salesₜ</p>
+</blockquote>
+<p>The latter is a <strong>lagged promotional effect</strong>.</p>
+<p>This can be particularly important if promotions do not immediately affect purchasing behavior.</p>
+<p>The case does not explicitly state that promotional spending has a lagged effect, so this would require additional investigation rather than automatic inclusion.</p>
+<hr>
+<h1 id="43-strategic-interpretation-of-coefficients"><strong>43. Strategic Interpretation of Coefficients</strong></h1>
+<p>Suppose the model estimates a positive coefficient for promotional spending.</p>
+<p>A basic interpretation might be:</p>
+<blockquote>
+<p>Holding other included factors constant, higher promotional spending is associated with higher sales.</p>
+</blockquote>
+<p>But the exact interpretation depends on:</p>
+<ul>
+<li>Model specification  </li>
+<li>Transformation of variables  </li>
+<li>Fixed effects  </li>
+<li>Lag structure  </li>
+<li>Statistical significance  </li>
+<li>Endogeneity  </li>
+<li>Measurement quality</li>
+</ul>
+<p>Researchers should avoid turning a statistical coefficient into an automatic causal claim.</p>
+<hr>
+<h1 id="44-importance-of-within-store-analysis"><strong>44. Importance of Within-Store Analysis</strong></h1>
+<p>Because FE controls for permanent store characteristics, the analysis focuses heavily on changes <strong>within the same store over time</strong>.</p>
+<p>For example:</p>
+<blockquote>
+<p>When Downtown increases its promotional spending relative to its usual level, how does its sales outcome change?</p>
+</blockquote>
+<p>This is different from simply comparing:</p>
+<blockquote>
+<p>Downtown vs Suburban Store</p>
+</blockquote>
+<p>because permanent differences between stores can confound the comparison.</p>
+<hr>
+<h1 id="45-what-fe-means-for-strategic-interpretation"><strong>45. What FE Means for Strategic Interpretation</strong></h1>
+<p>A Fixed Effects result is especially useful for questions like:</p>
+<blockquote>
+<p>“When this store changes its promotional activity, what happens relative to its own baseline?”</p>
+</blockquote>
+<p>It is less directly suited to explaining why one store&rsquo;s permanent level of sales differs from another&rsquo;s based on characteristics that do not vary over time.</p>
+<p>This distinction is important when communicating results to management.</p>
+<hr>
+<h1 id="46-potential-role-of-time-effects"><strong>46. Potential Role of Time Effects</strong></h1>
+<p>Suppose all five stores experience unusually high sales in Week 12 because of a regional festival.</p>
+<p>Without time effects, some of that common movement might be attributed incorrectly to other variables.</p>
+<p>A richer specification might therefore include:</p>
+<blockquote>
+<p><strong>Store FE + Week FE</strong></p>
+</blockquote>
+<p>This can control for:</p>
+<ul>
+<li>Store-specific permanent characteristics  </li>
+<li>Common weekly shocks</li>
+</ul>
+<p>For a 20-week study, this can be particularly relevant if there are major calendar events or regional changes.</p>
+<hr>
+<h1 id="47-missing-data-and-model-interpretation"><strong>47. Missing Data and Model Interpretation</strong></h1>
+<p>The missing promotion observation is particularly important because Promotion is one of the key explanatory variables.</p>
+<p>If it is simply dropped:</p>
+<ul>
+<li>One store-week observation is lost for models requiring Promotion.  </li>
+<li>The sample becomes incomplete for that row.  </li>
+<li>The effect is probably small in raw count terms, but the missingness mechanism still matters.</li>
+</ul>
+<p>If it is imputed:</p>
+<ul>
+<li>The imputation introduces assumptions.  </li>
+<li>The uncertainty associated with the imputation should be considered.</li>
+</ul>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Data-quality investigation should come before model fitting.</strong></p>
+</blockquote>
+<hr>
+<h1 id="48-common-misconceptions"><strong>48. Common Misconceptions</strong></h1>
+<h2 id="misconception-1-five-stores-over-20-weeks-is-a-time-series"><strong>Misconception 1: Five stores over 20 weeks is a time series</strong></h2>
+<p>Not in the usual panel-data classification.</p>
+<p>Because multiple stores are repeatedly observed over time, the dataset is <strong>panel data</strong>.</p>
+<hr>
+<h2 id="misconception-2-100-observations-means-100-independent-observations"><strong>Misconception 2: 100 observations means 100 independent observations</strong></h2>
+<p>Not necessarily.</p>
+<p>Panel observations can be correlated within stores over time.</p>
+<p>That dependence is one reason specialized panel methods are useful.</p>
+<hr>
+<h2 id="misconception-3-fixed-effects-and-random-effects-are-just-different-regression-algorithms"><strong>Misconception 3: Fixed Effects and Random Effects are just different regression algorithms</strong></h2>
+<p>The deeper distinction is their assumptions about <strong>unobserved entity-specific effects</strong>.</p>
+<p>FE allows correlation with regressors.</p>
+<p>RE assumes no correlation.</p>
+<hr>
+<h2 id="misconception-4-hausman-p-0-03-means-the-model-is-statistically-significant"><strong>Misconception 4: Hausman p \= 0.03 means the model is statistically significant</strong></h2>
+<p>The Hausman test is specifically informing the <strong>FE vs RE specification choice</strong>.</p>
+<p>It does not mean that every predictor in the model is statistically significant.</p>
+<hr>
+<h2 id="misconception-5-a-significant-hausman-test-proves-fixed-effects-is-perfect"><strong>Misconception 5: A significant Hausman test proves Fixed Effects is perfect</strong></h2>
+<p>No.</p>
+<p>It provides evidence against the standard RE assumption.</p>
+<p>The final model still needs:</p>
+<ul>
+<li>Specification checks  </li>
+<li>Error diagnostics  </li>
+<li>Appropriate treatment of dynamics  </li>
+<li>Consideration of time effects  </li>
+<li>Robust inference</li>
+</ul>
+<hr>
+<h2 id="misconception-6-dynamic-panel-is-simply-another-name-for-fixed-effects"><strong>Misconception 6: Dynamic panel is simply another name for Fixed Effects</strong></h2>
+<p>No.</p>
+<p>Dynamic panel modeling addresses <strong>lagged dependent variables and persistence</strong>.</p>
+<p>Fixed Effects addresses <strong>time-invariant entity heterogeneity</strong>.</p>
+<p>They can be combined.</p>
+<hr>
+<h2 id="misconception-7-adding-lagged-sales-automatically-solves-autocorrelation"><strong>Misconception 7: Adding lagged sales automatically solves autocorrelation</strong></h2>
+<p>Not necessarily.</p>
+<p>Lagged sales can capture persistence, but residual autocorrelation must still be checked.</p>
+<hr>
+<h2 id="misconception-8-any-multicollinearity-requires-deleting-a-variable"><strong>Misconception 8: Any multicollinearity requires deleting a variable</strong></h2>
+<p>No.</p>
+<p>Minor multicollinearity should be diagnosed and assessed.</p>
+<p>Theoretical relevance and statistical consequences matter.</p>
+<hr>
+<h2 id="misconception-9-ai-generated-code-is-automatically-correct"><strong>Misconception 9: AI-generated code is automatically correct</strong></h2>
+<p>No.</p>
+<p>AI-generated syntax can contain:</p>
+<ul>
+<li>Package incompatibilities  </li>
+<li>Incorrect assumptions  </li>
+<li>Wrong function usage  </li>
+<li>Incorrect model specification  </li>
+<li>Deprecated syntax</li>
+</ul>
+<p>The analyst must validate the implementation.</p>
+<hr>
+<h1 id="49-key-comparison-table"><strong>49. Key Comparison Table</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>GreenLeaf application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Panel data</td>
+<td>5 stores observed over 20 weeks</td>
+</tr>
+<tr>
+<td>Pooled OLS</td>
+<td>Baseline model ignoring store-specific effects</td>
+</tr>
+<tr>
+<td>Random Effects</td>
+<td>Models store effects assuming no correlation with regressors</td>
+</tr>
+<tr>
+<td>Fixed Effects</td>
+<td>Controls for store-specific time-invariant effects that may correlate with regressors</td>
+</tr>
+<tr>
+<td>Hausman test</td>
+<td>Helps assess FE vs RE</td>
+</tr>
+<tr>
+<td>Hausman p \= 0.03</td>
+<td>Favors FE at 5% level</td>
+</tr>
+<tr>
+<td>Multicollinearity</td>
+<td>Traffic and rainfall contain overlapping information</td>
+</tr>
+<tr>
+<td>Dynamic panel</td>
+<td>Includes lagged sales</td>
+</tr>
+<tr>
+<td>Lagged sales</td>
+<td>Captures persistence in sales</td>
+</tr>
+<tr>
+<td>Autocorrelation</td>
+<td>Checks temporal dependence in errors/residuals</td>
+</tr>
+<tr>
+<td>Missing data</td>
+<td>Requires investigation and appropriate treatment</td>
+</tr>
+<tr>
+<td>AI coding</td>
+<td>Helps implementation but does not replace statistical reasoning</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="50-one-page-revision-sheet"><strong>50. One-Page Revision Sheet</strong></h1>
+<h3 id="dataset"><strong>Dataset</strong></h3>
+<blockquote>
+<p><strong>5 stores × 20 weeks \= 100 panel observations</strong></p>
+</blockquote>
+<h3 id="variables"><strong>Variables</strong></h3>
+<ul>
+<li><strong>Dependent:</strong> Sales  </li>
+<li><strong>Independent candidates:</strong> Promotion, Traffic, Rainfall  </li>
+<li><strong>Potential lagged dependent variable:</strong> Previous week&rsquo;s Sales  </li>
+<li><strong>Unobserved store characteristics:</strong> Layout, permanent location characteristics, etc.</li>
+</ul>
+<h3 id="main-issue"><strong>Main issue</strong></h3>
+<blockquote>
+<p>Store-specific traits may influence sales and may correlate with explanatory variables.</p>
+</blockquote>
+<h3 id="model-progression"><strong>Model progression</strong></h3>
+<blockquote>
+<p><strong>Pooled OLS → RE → FE</strong></p>
+</blockquote>
+<p>Conceptual progression from simpler to more controlled panel specifications.</p>
+<h3 id="hausman-test"><strong>Hausman test</strong></h3>
+<blockquote>
+<p><strong>p \= 0.03</strong></p>
+</blockquote>
+<p>At α \= 0.05:</p>
+<blockquote>
+<p>0.03 \&lt; 0.05 → reject null → <strong>favor FE</strong></p>
+</blockquote>
+<h3 id="multicollinearity-2"><strong>Multicollinearity</strong></h3>
+<blockquote>
+<p>Traffic ↔ Rainfall</p>
+</blockquote>
+<p>Minor multicollinearity should be <strong>diagnosed and assessed</strong>, not automatically eliminated.</p>
+<h3 id="dynamics"><strong>Dynamics</strong></h3>
+<blockquote>
+<p>Current Sales depends on previous Sales.</p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote>
+<p>Include <strong>lagged Sales</strong> → dynamic panel framework.</p>
+</blockquote>
+<h3 id="diagnostics"><strong>Diagnostics</strong></h3>
+<blockquote>
+<p>Check <strong>autocorrelation</strong> after modeling temporal dependence.</p>
+</blockquote>
+<h3 id="ai"><strong>AI</strong></h3>
+<blockquote>
+<p>Gemini can help generate code, but the analyst must validate and adapt it.</p>
+</blockquote>
+<h3 id="strategic-objective"><strong>Strategic objective</strong></h3>
+<blockquote>
+<p>Use the model to improve promotional timing, resource allocation, and quarterly planning.</p>
+</blockquote>
+<hr>
+<h1 id="51-final-conceptual-framework"><strong>51. Final Conceptual Framework</strong></h1>
+<p>The entire case can be understood through four layers.</p>
+<h3 id="layer-1-data-structure"><strong>Layer 1 — Data structure</strong></h3>
+<blockquote>
+<p><strong>Stores + Weeks → Panel Data</strong></p>
+</blockquote>
+<h3 id="layer-2-unobserved-heterogeneity"><strong>Layer 2 — Unobserved heterogeneity</strong></h3>
+<blockquote>
+<p><strong>Store-specific traits → FE vs RE decision</strong></p>
+</blockquote>
+<p>Hausman:</p>
+<blockquote>
+<p><strong>p \= 0.03 → FE favored</strong></p>
+</blockquote>
+<h3 id="layer-3-temporal-dependence"><strong>Layer 3 — Temporal dependence</strong></h3>
+<blockquote>
+<p><strong>Past Sales → Current Sales</strong></p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Dynamic panel consideration</strong></p>
+</blockquote>
+<h3 id="layer-4-model-quality"><strong>Layer 4 — Model quality</strong></h3>
+<p>Check:</p>
+<ul>
+<li>Missing data  </li>
+<li>Multicollinearity  </li>
+<li>Autocorrelation  </li>
+<li>Specification  </li>
+<li>Interpretability  </li>
+<li>Strategic usefulness</li>
+</ul>
+<p>The ultimate goal is not simply to find the most complicated statistical model. It is to develop a model that <strong>appropriately reflects the data-generating process, survives diagnostic scrutiny, and provides actionable insight for GreenLeaf&rsquo;s decisions</strong>.</p>
+<h1 id="comprehensive-notes-greenleaf-retail-panel-models-dynamic-panels-diagnostics-and-analytical-decision-making"><strong>Comprehensive Notes: GreenLeaf Retail — Panel Models, Dynamic Panels, Diagnostics, and Analytical Decision-Making</strong></h1>
+<h2 id="1-case-study-in-context"><strong>1. Case Study in Context</strong></h2>
+<p>GreenLeaf Retail operates <strong>five retail outlets</strong> and records weekly information over <strong>20 weeks</strong>.</p>
+<p>The dataset contains:</p>
+<ul>
+<li><strong>Sales</strong>  </li>
+<li><strong>Promotional spending</strong>  </li>
+<li><strong>Foot traffic</strong>  </li>
+<li><strong>Rainfall</strong></li>
+</ul>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>5 stores × 20 weeks \= 100 store-week observations</strong></p>
+</blockquote>
+<p>Because the same stores are repeatedly observed over time, this is <strong>panel data</strong>.</p>
+<p>The analytical objective is to understand sales drivers and provide management with useful insights for:</p>
+<ul>
+<li>Promotional planning  </li>
+<li>Promotional timing  </li>
+<li>Resource allocation  </li>
+<li>Quarterly planning</li>
+</ul>
+<p>The case combines several important econometric concepts:</p>
+<blockquote>
+<p><strong>Panel structure → unobserved heterogeneity → FE/RE → Hausman test → multicollinearity → missing data → dynamic panel → lagged sales → Nickell bias → GMM → autocorrelation → AI-assisted implementation</strong></p>
+</blockquote>
+<hr>
+<h1 id="2-structure-of-the-greenleaf-dataset"><strong>2. Structure of the GreenLeaf Dataset</strong></h1>
+<p>The two dimensions of the panel are:</p>
+<h3 id="cross-sectional-dimension-2"><strong>Cross-sectional dimension</strong></h3>
+<p><strong>5 retail stores</strong></p>
+<h3 id="time-dimension-2"><strong>Time dimension</strong></h3>
+<p><strong>20 weeks</strong></p>
+<p>Thus:</p>
+<blockquote>
+<p><strong>N \= 5 stores</strong></p>
+<p><strong>T \= 20 weeks</strong></p>
+<p><strong>N × T \= 100 observations</strong></p>
+</blockquote>
+<p>The basic notation is:</p>
+<blockquote>
+<p><strong>i \= store</strong></p>
+<p><strong>t \= week</strong></p>
+</blockquote>
+<p>For example:</p>
+<blockquote>
+<p>Salesᵢₜ \= sales of store <em>i</em> during week <em>t</em>.</p>
+</blockquote>
+<hr>
+<h1 id="3-why-this-is-panel-data"><strong>3. Why This Is Panel Data</strong></h1>
+<p>Panel data combine:</p>
+<ul>
+<li>Multiple entities  </li>
+<li>Multiple time periods</li>
+</ul>
+<p>A simple time series would be:</p>
+<blockquote>
+<p>One store → 20 weekly observations</p>
+</blockquote>
+<p>GreenLeaf has:</p>
+<blockquote>
+<p>Five stores → each observed over 20 weeks</p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Panel data</strong></p>
+</blockquote>
+<p>This structure is important because observations belonging to the same store may be related over time.</p>
+<hr>
+<h1 id="4-basic-sales-model"><strong>4. Basic Sales Model</strong></h1>
+<p>A simple starting model could be represented as:</p>
+<blockquote>
+<p><strong>Salesᵢₜ \= β₀ + β₁Promoᵢₜ + β₂Trafficᵢₜ + β₃Rainᵢₜ + εᵢₜ</strong></p>
+</blockquote>
+<p>Here:</p>
+<ul>
+<li><strong>Sales</strong> \= dependent variable  </li>
+<li><strong>Promo</strong> \= promotional spending  </li>
+<li><strong>Traffic</strong> \= foot traffic  </li>
+<li><strong>Rain</strong> \= rainfall  </li>
+<li><strong>ε</strong> \= error term</li>
+</ul>
+<p>But this simple model may be inadequate because stores differ in ways that are not explicitly measured.</p>
+<hr>
+<h1 id="5-unobserved-store-specific-heterogeneity"><strong>5. Unobserved Store-Specific Heterogeneity</strong></h1>
+<p>Managers suspect that factors such as <strong>store layout</strong> affect sales.</p>
+<p>Other possible permanent characteristics include:</p>
+<ul>
+<li>Store location  </li>
+<li>Store size  </li>
+<li>Permanent customer base  </li>
+<li>Long-term reputation  </li>
+<li>Physical layout  </li>
+<li>Stable demographic characteristics</li>
+</ul>
+<p>These are examples of:</p>
+<blockquote>
+<p><strong>Unobserved, time-invariant entity-specific characteristics</strong></p>
+</blockquote>
+<p>They matter because they may influence both:</p>
+<blockquote>
+<p>Sales</p>
+</blockquote>
+<p>and potentially:</p>
+<blockquote>
+<p>Promotional spending, traffic, or other regressors.</p>
+</blockquote>
+<hr>
+<h1 id="6-why-pooled-ols-may-be-problematic"><strong>6. Why Pooled OLS May Be Problematic</strong></h1>
+<p>Pooled OLS effectively treats all observations as belonging to one combined regression without explicitly accounting for permanent store-specific effects.</p>
+<p>Conceptually:</p>
+<blockquote>
+<p><strong>Salesᵢₜ \= β₀ + β₁Promoᵢₜ + β₂Trafficᵢₜ + β₃Rainᵢₜ + εᵢₜ</strong></p>
+</blockquote>
+<p>Suppose Downtown has a superior store layout.</p>
+<p>If layout is omitted and also related to promotional spending, some of the sales effect associated with layout may incorrectly be attributed to promotion.</p>
+<p>This creates an <strong>omitted-variable/unobserved heterogeneity problem</strong>.</p>
+<p>Therefore, the concern that motivated FE/RE consideration was:</p>
+<blockquote>
+<p><strong>Stable, unobserved store-specific characteristics may systematically influence sales.</strong></p>
+</blockquote>
+<hr>
+<h1 id="7-pooled-ols-2"><strong>7. Pooled OLS</strong></h1>
+<h3 id="definition"><strong>Definition</strong></h3>
+<p>Pooled OLS combines all entity-time observations into a single regression.</p>
+<h3 id="advantages-2"><strong>Advantages</strong></h3>
+<ul>
+<li>Simple  </li>
+<li>Easy to understand  </li>
+<li>Computationally efficient  </li>
+<li>Useful as a baseline</li>
+</ul>
+<h3 id="limitation-2"><strong>Limitation</strong></h3>
+<p>It does not explicitly control for store-specific unobserved heterogeneity.</p>
+<p>If such heterogeneity is correlated with regressors, the resulting estimates can be problematic.</p>
+<h3 id="important-misconception"><strong>Important misconception</strong></h3>
+<p>Multicollinearity is <strong>not</strong> the main reason to abandon Pooled OLS in this case.</p>
+<p>The primary concern is:</p>
+<blockquote>
+<p><strong>Unobserved store-specific heterogeneity.</strong></p>
+</blockquote>
+<hr>
+<h1 id="8-random-effects-model"><strong>8. Random Effects Model</strong></h1>
+<p>Random Effects recognizes that entities may have individual-specific effects.</p>
+<p>The standard RE assumption is:</p>
+<blockquote>
+<p><strong>Entity-specific effects are uncorrelated with the explanatory variables.</strong></p>
+</blockquote>
+<p>If this assumption is valid, RE can be attractive because it can exploit both:</p>
+<ul>
+<li>Within-store variation  </li>
+<li>Between-store variation</li>
+</ul>
+<p>and may be more efficient than FE under the appropriate assumptions.</p>
+<hr>
+<h1 id="9-fixed-effects-model"><strong>9. Fixed Effects Model</strong></h1>
+<p>Fixed Effects controls for <strong>time-invariant store-specific characteristics</strong>.</p>
+<p>Examples:</p>
+<ul>
+<li>Store layout  </li>
+<li>Stable location characteristics  </li>
+<li>Permanent store reputation  </li>
+<li>Other constant store-level attributes</li>
+</ul>
+<p>The crucial feature is:</p>
+<blockquote>
+<p>FE allows these unobserved characteristics to be <strong>correlated with the regressors</strong>.</p>
+</blockquote>
+<p>For GreenLeaf, that is important because store characteristics might influence how promotions are used or how traffic relates to sales.</p>
+<hr>
+<h1 id="10-fe-vs-re-the-core-distinction"><strong>10. FE vs RE — The Core Distinction</strong></h1>
+<p>This is the most important conceptual distinction in the case.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Fixed Effects</th>
+<th>Random Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Controls for entity-specific effects</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Entity effects may correlate with regressors</td>
+<td><strong>Yes</strong></td>
+<td><strong>No under standard assumption</strong></td>
+</tr>
+<tr>
+<td>Focus</td>
+<td>Within-entity variation</td>
+<td>Within + between variation</td>
+</tr>
+<tr>
+<td>Main assumption</td>
+<td>Correlation allowed</td>
+<td>No correlation</td>
+</tr>
+<tr>
+<td>GreenLeaf if store traits correlate with promotion</td>
+<td><strong>Preferred</strong></td>
+<td>Problematic</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="memory-aid-3"><strong>Memory aid</strong></h3>
+<blockquote>
+<p><strong>FE \= correlation permitted</strong></p>
+<p><strong>RE \= correlation assumed absent</strong></p>
+</blockquote>
+<hr>
+<h1 id="11-hausman-test"><strong>11. Hausman Test</strong></h1>
+<p>The Hausman test is used to help distinguish between FE and RE.</p>
+<p>In the standard framework, the null hypothesis corresponds to the RE assumption being appropriate.</p>
+<p>The case gives:</p>
+<blockquote>
+<p><strong>Hausman p-value \= 0.03</strong></p>
+</blockquote>
+<p>At a 5% significance level:</p>
+<blockquote>
+<p><strong>α \= 0.05</strong></p>
+</blockquote>
+<p>Since:</p>
+<blockquote>
+<p><strong>0.03 \&lt; 0.05</strong></p>
+</blockquote>
+<p>the null hypothesis is rejected.</p>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>The evidence favors Fixed Effects over Random Effects.</strong></p>
+</blockquote>
+<hr>
+<h1 id="12-interpretation-of-the-hausman-result"><strong>12. Interpretation of the Hausman Result</strong></h1>
+<p>The result indicates evidence that:</p>
+<blockquote>
+<p><strong>Unobserved store-specific effects are correlated with the explanatory variables.</strong></p>
+</blockquote>
+<p>This violates the core RE assumption.</p>
+<p>Therefore, FE is more appropriate for the initial static panel analysis.</p>
+<h3 id="important-distinction-2"><strong>Important distinction</strong></h3>
+<p>The Hausman test does <strong>not</strong> mean:</p>
+<blockquote>
+<p>“The Fixed Effects model is statistically significant.”</p>
+</blockquote>
+<p>It specifically provides evidence relevant to:</p>
+<blockquote>
+<p><strong>FE vs RE specification choice.</strong></p>
+</blockquote>
+<hr>
+<h1 id="13-what-fixed-effects-does-and-does-not-do"><strong>13. What Fixed Effects Does and Does Not Do</strong></h1>
+<h3 id="fe-controls-for"><strong>FE controls for:</strong></h3>
+<blockquote>
+<p>Time-invariant differences between stores.</p>
+</blockquote>
+<h3 id="fe-does-not-automatically-control-for"><strong>FE does not automatically control for:</strong></h3>
+<blockquote>
+<p>Time-varying omitted factors.</p>
+</blockquote>
+<p>Examples of time-varying factors:</p>
+<ul>
+<li>A new manager  </li>
+<li>A competitor opening nearby  </li>
+<li>A temporary store renovation  </li>
+<li>A special event  </li>
+<li>A store-specific shock</li>
+</ul>
+<p>These may require additional variables or time effects.</p>
+<hr>
+<h1 id="14-time-fixed-effects"><strong>14. Time Fixed Effects</strong></h1>
+<p>A useful extension is to include <strong>time fixed effects</strong>.</p>
+<p>Suppose all five stores experience unusually high sales during Week 12 because of a regional festival.</p>
+<p>A model with only store FE may not fully account for that common weekly shock.</p>
+<p>A richer model could include:</p>
+<blockquote>
+<p><strong>Store Fixed Effects + Week Fixed Effects</strong></p>
+</blockquote>
+<p>This is commonly referred to as:</p>
+<blockquote>
+<p><strong>Two-way fixed effects</strong></p>
+</blockquote>
+<p>It controls for:</p>
+<ul>
+<li>Permanent store-specific differences  </li>
+<li>Common time-specific shocks</li>
+</ul>
+<hr>
+<h1 id="15-missing-promotion-data"><strong>15. Missing Promotion Data</strong></h1>
+<p>One Downtown store-week has missing promotional spending.</p>
+<p>This is a <strong>missing-data problem</strong>, not a model-selection problem.</p>
+<p>The correct approach is to first determine:</p>
+<blockquote>
+<p><strong>Why is the value missing?</strong></p>
+</blockquote>
+<p>Possibilities include:</p>
+<ul>
+<li>Data-entry error  </li>
+<li>System failure  </li>
+<li>Missing file  </li>
+<li>Promotion occurred but was not recorded  </li>
+<li>Promotion genuinely did not occur</li>
+</ul>
+<hr>
+<h1 id="16-appropriate-missing-data-strategy"><strong>16. Appropriate Missing-Data Strategy</strong></h1>
+<p>A sensible sequence is:</p>
+<h3 id="step-1"><strong>Step 1</strong></h3>
+<p>Investigate the source.</p>
+<h3 id="step-2"><strong>Step 2</strong></h3>
+<p>Attempt to recover the actual value from a reliable source.</p>
+<h3 id="step-3"><strong>Step 3</strong></h3>
+<p>If recovery is impossible, evaluate whether imputation is justified.</p>
+<h3 id="step-4"><strong>Step 4</strong></h3>
+<p>Consider the consequences of excluding the affected observation.</p>
+<p>The method should depend on the missingness mechanism and analytical objective.</p>
+<h3 id="important-misconception-2"><strong>Important misconception</strong></h3>
+<p>A dynamic panel model is <strong>not a technique for imputing the missing promotion value</strong>.</p>
+<p>Likewise:</p>
+<blockquote>
+<p>Lagged sales should not be inserted merely because one promotion observation is missing.</p>
+</blockquote>
+<hr>
+<h1 id="17-multicollinearity"><strong>17. Multicollinearity</strong></h1>
+<p>The case identifies minor multicollinearity between:</p>
+<ul>
+<li>Foot traffic  </li>
+<li>Rainfall</li>
+</ul>
+<p>This means these explanatory variables contain overlapping information.</p>
+<p>A plausible relationship is:</p>
+<blockquote>
+<p>Rainfall → Foot Traffic</p>
+</blockquote>
+<p>For example, heavy rainfall might reduce store visits.</p>
+<hr>
+<h1 id="18-what-multicollinearity-does"><strong>18. What Multicollinearity Does</strong></h1>
+<p>Multicollinearity generally affects the <strong>precision</strong> of coefficient estimates.</p>
+<p>Potential consequences include:</p>
+<ul>
+<li>Larger standard errors  </li>
+<li>Less precise estimates  </li>
+<li>Difficulty separating individual predictor effects  </li>
+<li>Greater coefficient instability</li>
+</ul>
+<h3 id="critical-distinction"><strong>Critical distinction</strong></h3>
+<p>Multicollinearity does <strong>not itself create systematic coefficient bias</strong> in the same way that omitted-variable endogeneity can.</p>
+<p>This distinction was central to Question 9.</p>
+<hr>
+<h1 id="19-should-a-correlated-variable-automatically-be-removed"><strong>19. Should a Correlated Variable Automatically Be Removed?</strong></h1>
+<p>No.</p>
+<p>The fact that Traffic and Rain are correlated does not automatically mean one should be deleted.</p>
+<p>The analyst should consider:</p>
+<ul>
+<li>Degree of correlation  </li>
+<li>VIF or other diagnostics  </li>
+<li>Theoretical relevance  </li>
+<li>Statistical significance  </li>
+<li>Coefficient stability  </li>
+<li>Business importance  </li>
+<li>Whether each variable contributes unique information</li>
+</ul>
+<p>The case describes the multicollinearity as <strong>minor</strong>, so it requires a deliberate modeling decision rather than automatic elimination.</p>
+<hr>
+<h1 id="20-multicollinearity-vs-missing-data"><strong>20. Multicollinearity vs Missing Data</strong></h1>
+<p>These are fundamentally different problems.</p>
+<h3 id="missing-data"><strong>Missing data</strong></h3>
+<p>Problem:</p>
+<blockquote>
+<p><strong>Information is absent.</strong></p>
+</blockquote>
+<p>Potential consequence:</p>
+<blockquote>
+<p>Loss of information or bias depending on why the data are missing and how they are handled.</p>
+</blockquote>
+<h3 id="multicollinearity-3"><strong>Multicollinearity</strong></h3>
+<p>Problem:</p>
+<blockquote>
+<p><strong>Information in predictors overlaps.</strong></p>
+</blockquote>
+<p>Potential consequence:</p>
+<blockquote>
+<p>Reduced precision in separating their individual effects.</p>
+</blockquote>
+<h3 id="memory-aid-4"><strong>Memory aid</strong></h3>
+<blockquote>
+<p><strong>Missing data \= information gap</strong></p>
+<p><strong>Multicollinearity \= overlapping information</strong></p>
+</blockquote>
+<hr>
+<h1 id="21-dynamic-sales-behavior"><strong>21. Dynamic Sales Behavior</strong></h1>
+<p>Managers observe that:</p>
+<blockquote>
+<p>Current sales are often influenced by previous sales.</p>
+</blockquote>
+<p>This is called <strong>persistence</strong>.</p>
+<p>For example:</p>
+<blockquote>
+<p>High sales in Week 10 may be associated with high sales in Week 11.</p>
+</blockquote>
+<p>This motivates adding:</p>
+<blockquote>
+<p><strong>Salesᵢ,ₜ₋₁</strong></p>
+</blockquote>
+<p>to the model.</p>
+<hr>
+<h1 id="22-dynamic-panel-model"><strong>22. Dynamic Panel Model</strong></h1>
+<p>A dynamic panel model includes a lagged dependent variable.</p>
+<p>For GreenLeaf:</p>
+<blockquote>
+<p><strong>Salesᵢₜ₋₁</strong></p>
+</blockquote>
+<p>is the one-period lag of current sales.</p>
+<p>A conceptual model is:</p>
+<blockquote>
+<p><strong>Salesᵢₜ \= β₀ + β₁Promoᵢₜ + β₂Trafficᵢₜ + β₃Rainᵢₜ + ρSalesᵢₜ₋₁ + store effect + errorᵢₜ</strong></p>
+</blockquote>
+<p>The defining feature is:</p>
+<blockquote>
+<p><strong>The dependent variable depends partly on its own past value.</strong></p>
+</blockquote>
+<hr>
+<h1 id="23-why-david-added-lagged-sales"><strong>23. Why David Added Lagged Sales</strong></h1>
+<p>The correct analytical reasoning is:</p>
+<blockquote>
+<p><strong>Previous-week sales may influence current-week sales.</strong></p>
+</blockquote>
+<p>Therefore, the lagged dependent variable captures:</p>
+<ul>
+<li>Sales momentum  </li>
+<li>Persistence  </li>
+<li>Customer purchasing patterns  </li>
+<li>Continuing demand  </li>
+<li>Carryover effects</li>
+</ul>
+<p>This is fundamentally different from adding lagged sales to address:</p>
+<ul>
+<li>Missing promotion data  </li>
+<li>Multicollinearity  </li>
+<li>Store-specific fixed effects</li>
+</ul>
+<hr>
+<h1 id="24-dynamic-panel-vs-fixed-effects"><strong>24. Dynamic Panel vs Fixed Effects</strong></h1>
+<p>These address <strong>different analytical questions</strong>.</p>
+<h3 id="fixed-effects-asks"><strong>Fixed Effects asks:</strong></h3>
+<blockquote>
+<p>How can we control for permanent store-specific differences that may be correlated with regressors?</p>
+</blockquote>
+<h3 id="dynamic-panel-asks-2"><strong>Dynamic Panel asks:</strong></h3>
+<blockquote>
+<p>How does previous sales performance influence current sales?</p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>FE addresses unobserved heterogeneity.</strong></p>
+<p><strong>Dynamic modeling addresses temporal persistence.</strong></p>
+</blockquote>
+<p>They are not inherently competing alternatives.</p>
+<p>A model can incorporate both.</p>
+<hr>
+<h1 id="25-the-important-econometric-problem-with-lagged-dependent-variables"><strong>25. The Important Econometric Problem with Lagged Dependent Variables</strong></h1>
+<p>Adding:</p>
+<blockquote>
+<p><strong>Salesᵢ,ₜ₋₁</strong></p>
+</blockquote>
+<p>to a standard Fixed Effects model introduces an important problem.</p>
+<p>In a dynamic panel with fixed effects, the lagged dependent variable can become correlated with the transformed error term.</p>
+<p>This can produce:</p>
+<blockquote>
+<p><strong>Nickell bias</strong></p>
+</blockquote>
+<p>particularly when the time dimension is relatively short.</p>
+<p>GreenLeaf has:</p>
+<blockquote>
+<p><strong>N \= 5</strong></p>
+<p><strong>T \= 20</strong></p>
+</blockquote>
+<p>So this issue deserves consideration.</p>
+<hr>
+<h1 id="26-nickell-bias"><strong>26. Nickell Bias</strong></h1>
+<p>Nickell bias is associated with estimating dynamic panel models using conventional fixed-effects methods when a lagged dependent variable is included.</p>
+<p>The simplified intuition is:</p>
+<blockquote>
+<p><strong>Lagged dependent variable + fixed-effects transformation → correlation with transformed error</strong></p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote>
+<p>Naïvely adding lagged sales to FE is not necessarily enough.</p>
+</blockquote>
+<p>This is why Question 10 favored a <strong>specialized dynamic-panel estimator</strong>.</p>
+<hr>
+<h1 id="27-dynamic-panel-estimators"><strong>27. Dynamic Panel Estimators</strong></h1>
+<p>When dynamic panel problems arise, specialized estimators may be used.</p>
+<p>One important example is:</p>
+<blockquote>
+<p><strong>Arellano–Bond Difference GMM</strong></p>
+</blockquote>
+<p>These approaches use suitable instruments, often based on lagged variables, to address endogeneity under the appropriate assumptions.</p>
+<p>The broad logic is:</p>
+<blockquote>
+<p>Dynamic model → endogeneity concern → instrumental-variable/GMM strategy</p>
+</blockquote>
+<hr>
+<h1 id="28-arellano-bond"><strong>28. Arellano–Bond</strong></h1>
+<p>Arellano–Bond is associated with:</p>
+<blockquote>
+<p><strong>Difference GMM estimation for dynamic panel data.</strong></p>
+</blockquote>
+<p>It is designed for situations involving:</p>
+<ul>
+<li>Lagged dependent variables  </li>
+<li>Individual-specific effects  </li>
+<li>Potential endogeneity  </li>
+<li>Panel structures with relatively many entities and comparatively shorter time dimensions</li>
+</ul>
+<p>The estimator transforms the model and uses suitable internal instruments under specified assumptions.</p>
+<hr>
+<h1 id="29-why-pooled-ols-with-lagged-sales-is-not-an-ideal-solution"><strong>29. Why Pooled OLS with Lagged Sales Is Not an Ideal Solution</strong></h1>
+<p>One quiz option suggested:</p>
+<blockquote>
+<p>Run FE as a baseline, then use Pooled OLS with lagged sales as the dynamic model.</p>
+</blockquote>
+<p>This is not methodologically satisfactory as the primary dynamic specification because Pooled OLS ignores the very store-specific heterogeneity that motivated the FE analysis.</p>
+<p>If store traits are correlated with regressors, simply moving to Pooled OLS does not solve the problem.</p>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Dynamic modeling should retain appropriate treatment of the panel structure.</strong></p>
+</blockquote>
+<hr>
+<h1 id="30-autocorrelation"><strong>30. Autocorrelation</strong></h1>
+<p>David checks for <strong>autocorrelation</strong> after modeling persistence.</p>
+<p>Autocorrelation means that errors or unexplained components are correlated across time.</p>
+<p>For example:</p>
+<blockquote>
+<p>An unexplained positive sales shock this week may be related to an unexplained positive shock next week.</p>
+</blockquote>
+<p>This can affect:</p>
+<ul>
+<li>Standard errors  </li>
+<li>Statistical inference  </li>
+<li>Model validity  </li>
+<li>Efficiency</li>
+</ul>
+<hr>
+<h1 id="31-lagged-sales-vs-autocorrelation"><strong>31. Lagged Sales vs Autocorrelation</strong></h1>
+<p>These are related but not identical.</p>
+<h3 id="lagged-sales"><strong>Lagged sales</strong></h3>
+<p>A variable deliberately included in the model:</p>
+<blockquote>
+<p><strong>Salesᵢ,ₜ₋₁</strong></p>
+</blockquote>
+<p>to model persistence.</p>
+<h3 id="autocorrelation-2"><strong>Autocorrelation</strong></h3>
+<p>A property of the error process or residuals:</p>
+<blockquote>
+<p><strong>εᵢₜ related to εᵢ,ₜ₋₁</strong></p>
+</blockquote>
+<p>A lagged dependent variable can capture some temporal dependence, but it does not guarantee that residual autocorrelation disappears.</p>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Always perform appropriate post-estimation diagnostics.</strong></p>
+</blockquote>
+<hr>
+<h1 id="32-dynamic-panel-diagnostic-serial-correlation"><strong>32. Dynamic Panel Diagnostic: Serial Correlation</strong></h1>
+<p>For Arellano–Bond-type models, serial-correlation diagnostics are especially important.</p>
+<p>A key concern is:</p>
+<blockquote>
+<p><strong>Second-order serial correlation</strong></p>
+</blockquote>
+<p>The standard Arellano–Bond framework expects no problematic second-order serial correlation in the differenced residuals for the usual moment conditions to remain valid.</p>
+<p>Thus, after estimation, David should conduct appropriate post-estimation tests.</p>
+<hr>
+<h1 id="33-why-the-technical-issue-matters"><strong>33. Why the Technical Issue Matters</strong></h1>
+<p>Gemini in Colab helped generate the initial code but encountered:</p>
+<blockquote>
+<p><strong>A package conflict</strong></p>
+</blockquote>
+<p>This prevented direct use of the generated code.</p>
+<p>David therefore had to:</p>
+<ul>
+<li>Understand what the code was intended to do  </li>
+<li>Modify the code manually  </li>
+<li>Resolve the implementation issue  </li>
+<li>Rely on theoretical understanding</li>
+</ul>
+<p>This is not merely a programming detail.</p>
+<p>It highlights a broader principle:</p>
+<blockquote>
+<p><strong>Statistical theory must guide AI-assisted implementation.</strong></p>
+</blockquote>
+<hr>
+<h1 id="34-ai-assisted-coding-proper-role"><strong>34. AI-Assisted Coding: Proper Role</strong></h1>
+<p>AI tools can be valuable for:</p>
+<ul>
+<li>Generating syntax  </li>
+<li>Producing boilerplate  </li>
+<li>Explaining APIs  </li>
+<li>Suggesting debugging approaches  </li>
+<li>Creating data-processing code  </li>
+<li>Generating visualizations  </li>
+<li>Drafting model specifications</li>
+</ul>
+<p>But the analyst remains responsible for:</p>
+<ul>
+<li>Correct model selection  </li>
+<li>Correct assumptions  </li>
+<li>Correct variable definitions  </li>
+<li>Correct estimator  </li>
+<li>Correct diagnostics  </li>
+<li>Interpretation  </li>
+<li>Reproducibility</li>
+</ul>
+<h3 id="key-lesson"><strong>Key lesson</strong></h3>
+<blockquote>
+<p><strong>AI can accelerate implementation; it cannot replace methodological judgment.</strong></p>
+</blockquote>
+<hr>
+<h1 id="35-technical-failure-does-not-justify-statistical-simplification"><strong>35. Technical Failure Does Not Justify Statistical Simplification</strong></h1>
+<p>A package conflict is a <strong>software implementation problem</strong>.</p>
+<p>It should not automatically lead David to:</p>
+<blockquote>
+<p>Drop the dynamic model</p>
+</blockquote>
+<p>or:</p>
+<blockquote>
+<p>Replace it with an inappropriate Pooled OLS model.</p>
+</blockquote>
+<p>Instead:</p>
+<blockquote>
+<p>Adapt the implementation while preserving the theoretically appropriate methodology.</p>
+</blockquote>
+<p>This was a major theme in the final quiz question.</p>
+<hr>
+<h1 id="36-management-s-decision-criteria"><strong>36. Management&rsquo;s Decision Criteria</strong></h1>
+<p>Maria, the CFO, and the marketing lead consider:</p>
+<ol>
+<li><strong>Interpretability</strong>  </li>
+<li><strong>Computation time</strong>  </li>
+<li><strong>Strategic insight</strong></li>
+</ol>
+<p>These are business-oriented considerations.</p>
+<p>The most technically sophisticated model is not automatically the best management solution.</p>
+<p>A model should balance:</p>
+<blockquote>
+<p><strong>Statistical validity + computational feasibility + business usefulness</strong></p>
+</blockquote>
+<hr>
+<h1 id="37-interpretability"><strong>37. Interpretability</strong></h1>
+<p>Management needs to understand what the model means.</p>
+<p>For example:</p>
+<blockquote>
+<p>Does increasing promotion appear associated with higher sales?</p>
+<p>How much persistence exists from one week to the next?</p>
+<p>Which factors matter most?</p>
+</blockquote>
+<p>If the model is technically correct but impossible for decision-makers to interpret, its strategic value may be limited.</p>
+<hr>
+<h1 id="38-computational-efficiency"><strong>38. Computational Efficiency</strong></h1>
+<p>Different models require different levels of computational and coding complexity.</p>
+<p>Pooled OLS:</p>
+<blockquote>
+<p>Simple and fast.</p>
+</blockquote>
+<p>FE:</p>
+<blockquote>
+<p>More complex but still relatively manageable.</p>
+</blockquote>
+<p>Dynamic GMM:</p>
+<blockquote>
+<p>More technically demanding and requires additional diagnostics.</p>
+</blockquote>
+<p>Therefore, management must consider whether the additional complexity is justified by the additional insight.</p>
+<hr>
+<h1 id="39-strategic-insight"><strong>39. Strategic Insight</strong></h1>
+<p>The ultimate purpose is not simply to estimate coefficients.</p>
+<p>The model should help answer questions such as:</p>
+<ul>
+<li>Should promotional spending increase?  </li>
+<li>When should promotions be scheduled?  </li>
+<li>Does promotional activity have persistence?  </li>
+<li>How important is foot traffic?  </li>
+<li>How much does rainfall affect sales?  </li>
+<li>How should resources be allocated across stores?  </li>
+<li>What should be incorporated into the next quarterly plan?</li>
+</ul>
+<hr>
+<h1 id="40-why-fixed-effects-is-strong-for-the-initial-analysis"><strong>40. Why Fixed Effects Is Strong for the Initial Analysis</strong></h1>
+<p>Given:</p>
+<blockquote>
+<p><strong>Hausman p \= 0.03</strong></p>
+</blockquote>
+<p>FE is favored over RE for the static panel specification.</p>
+<p>Its advantage is that it controls for stable store-specific characteristics that may be correlated with explanatory variables.</p>
+<p>Thus, it provides a robust baseline for analyzing relationships involving:</p>
+<ul>
+<li>Promotion  </li>
+<li>Traffic  </li>
+<li>Rain</li>
+</ul>
+<p>while accounting for permanent store differences.</p>
+<hr>
+<h1 id="41-why-dynamic-panel-may-be-needed-beyond-fe"><strong>41. Why Dynamic Panel May Be Needed Beyond FE</strong></h1>
+<p>However, the business process has persistence:</p>
+<blockquote>
+<p>Previous sales → current sales</p>
+</blockquote>
+<p>Therefore, a static FE model may not fully represent the data-generating process.</p>
+<p>Adding lagged sales introduces dynamics.</p>
+<p>But because dynamic FE has the potential for <strong>Nickell bias</strong>, David should not simply add the lagged term and stop.</p>
+<p>Instead:</p>
+<blockquote>
+<p><strong>Use an appropriate dynamic-panel estimator.</strong></p>
+</blockquote>
+<hr>
+<h1 id="42-the-most-methodologically-sound-path"><strong>42. The Most Methodologically Sound Path</strong></h1>
+<p>The comprehensive analytical path is:</p>
+<h3 id="step-1-establish-panel-structure"><strong>Step 1 — Establish panel structure</strong></h3>
+<blockquote>
+<p>5 stores × 20 weeks.</p>
+</blockquote>
+<h3 id="step-2-clean-and-investigate-data"><strong>Step 2 — Clean and investigate data</strong></h3>
+<p>Address:</p>
+<ul>
+<li>Missing promotion value  </li>
+<li>Data quality  </li>
+<li>Outliers  </li>
+<li>Time indexing</li>
+</ul>
+<h3 id="step-3-explore-relationships"><strong>Step 3 — Explore relationships</strong></h3>
+<p>Examine:</p>
+<ul>
+<li>Sales patterns  </li>
+<li>Promotion  </li>
+<li>Traffic  </li>
+<li>Rain  </li>
+<li>Store differences</li>
+</ul>
+<h3 id="step-4-assess-multicollinearity-2"><strong>Step 4 — Assess multicollinearity</strong></h3>
+<p>Evaluate Traffic and Rain using appropriate diagnostics.</p>
+<h3 id="step-5-establish-a-baseline-panel-model"><strong>Step 5 — Establish a baseline panel model</strong></h3>
+<p>Estimate a suitable static specification.</p>
+<h3 id="step-6-compare-fe-and-re"><strong>Step 6 — Compare FE and RE</strong></h3>
+<p>Use theory and appropriate specification tests.</p>
+<h3 id="step-7-interpret-hausman-result"><strong>Step 7 — Interpret Hausman result</strong></h3>
+<blockquote>
+<p>p \= 0.03 → evidence favoring FE.</p>
+</blockquote>
+<h3 id="step-8-investigate-persistence"><strong>Step 8 — Investigate persistence</strong></h3>
+<p>Determine whether:</p>
+<blockquote>
+<p>Salesᵢ,ₜ₋₁</p>
+</blockquote>
+<p>belongs in the model.</p>
+<h3 id="step-9-recognize-dynamic-panel-complications"><strong>Step 9 — Recognize dynamic-panel complications</strong></h3>
+<p>Do not naïvely rely on standard FE if the dynamic specification creates bias.</p>
+<h3 id="step-10-use-specialized-dynamic-panel-estimation"><strong>Step 10 — Use specialized dynamic-panel estimation</strong></h3>
+<p>For example:</p>
+<blockquote>
+<p>Arellano–Bond / Difference GMM</p>
+</blockquote>
+<p>where appropriate.</p>
+<h3 id="step-11-perform-diagnostics"><strong>Step 11 — Perform diagnostics</strong></h3>
+<p>Especially:</p>
+<ul>
+<li>Serial-correlation tests  </li>
+<li>Instrument validity diagnostics  </li>
+<li>Specification checks</li>
+</ul>
+<h3 id="step-12-compare-business-usefulness"><strong>Step 12 — Compare business usefulness</strong></h3>
+<p>Assess:</p>
+<ul>
+<li>Interpretability  </li>
+<li>Computation  </li>
+<li>Strategic value</li>
+</ul>
+<h3 id="step-13-translate-results-into-action"><strong>Step 13 — Translate results into action</strong></h3>
+<p>Use findings to inform:</p>
+<ul>
+<li>Promotional timing  </li>
+<li>Resource allocation  </li>
+<li>Quarterly planning</li>
+</ul>
+<hr>
+<h1 id="43-important-distinction-static-fe-vs-dynamic-fe-gmm"><strong>43. Important Distinction: Static FE vs Dynamic FE/GMM</strong></h1>
+<p>A useful mental model is:</p>
+<h3 id="static-fe"><strong>Static FE</strong></h3>
+<blockquote>
+<p>Controls for permanent store-specific differences.</p>
+</blockquote>
+<h3 id="dynamic-fe"><strong>Dynamic FE</strong></h3>
+<blockquote>
+<p>Controls for permanent differences <strong>and</strong> includes lagged sales.</p>
+</blockquote>
+<h3 id="dynamic-gmm"><strong>Dynamic GMM</strong></h3>
+<blockquote>
+<p>Addresses additional endogeneity concerns created by dynamic panel structure using appropriate instruments/moment conditions.</p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Dynamic GMM is not simply “more FE.”</strong></p>
+</blockquote>
+<p>It is a specialized approach to a more complicated econometric problem.</p>
+<hr>
+<h1 id="44-common-misconceptions-from-the-quiz"><strong>44. Common Misconceptions from the Quiz</strong></h1>
+<h2 id="1-multicollinearity-caused-the-dynamic-model"><strong>1. Multicollinearity caused the dynamic model</strong></h2>
+<p><strong>False.</strong></p>
+<p>Dynamic modeling was motivated by:</p>
+<blockquote>
+<p><strong>Sales persistence</strong></p>
+</blockquote>
+<p>not by the correlation between Traffic and Rain.</p>
+<hr>
+<h2 id="2-the-missing-promotion-value-motivated-the-dynamic-model"><strong>2. The missing promotion value motivated the dynamic model</strong></h2>
+<p><strong>False.</strong></p>
+<p>Missing data and dynamic modeling are separate issues.</p>
+<hr>
+<h2 id="3-lagged-sales-can-be-used-to-impute-missing-promotion"><strong>3. Lagged sales can be used to impute missing promotion</strong></h2>
+<p><strong>False.</strong></p>
+<p>A lagged dependent variable is a modeling variable, not a generic imputation technique.</p>
+<hr>
+<h2 id="4-hausman-led-david-to-add-lagged-sales"><strong>4. Hausman led David to add lagged sales</strong></h2>
+<p><strong>False.</strong></p>
+<p>Hausman informs:</p>
+<blockquote>
+<p><strong>FE vs RE</strong></p>
+</blockquote>
+<p>The lagged-sales decision comes from:</p>
+<blockquote>
+<p><strong>Sales persistence.</strong></p>
+</blockquote>
+<hr>
+<h2 id="5-fixed-effects-directly-estimates-store-layout"><strong>5. Fixed Effects directly estimates store layout</strong></h2>
+<p><strong>False.</strong></p>
+<p>FE controls for the influence of time-invariant characteristics; it does not normally estimate separate coefficients for characteristics that do not vary within the entity.</p>
+<p>This is an important distinction.</p>
+<hr>
+<h2 id="6-multicollinearity-biases-coefficients"><strong>6. Multicollinearity biases coefficients</strong></h2>
+<p>Generally, <strong>not by itself</strong>.</p>
+<p>Its primary effect is reduced precision, such as larger standard errors and difficulty distinguishing individual predictor effects.</p>
+<hr>
+<h2 id="7-minor-multicollinearity-means-one-variable-must-be-deleted"><strong>7. Minor multicollinearity means one variable must be deleted</strong></h2>
+<p><strong>False.</strong></p>
+<p>The analyst should evaluate the severity and theoretical importance before deciding.</p>
+<hr>
+<h2 id="8-dynamic-panel-and-fe-are-mutually-exclusive"><strong>8. Dynamic panel and FE are mutually exclusive</strong></h2>
+<p><strong>False.</strong></p>
+<p>A dynamic panel specification can incorporate treatment of fixed effects.</p>
+<p>The important issue is using an appropriate estimator.</p>
+<hr>
+<h2 id="9-adding-lagged-sales-automatically-solves-serial-correlation"><strong>9. Adding lagged sales automatically solves serial correlation</strong></h2>
+<p><strong>False.</strong></p>
+<p>Residual autocorrelation still requires diagnosis.</p>
+<hr>
+<h2 id="10-pooled-ols-is-a-good-substitute-for-dynamic-panel-because-it-is-easier"><strong>10. Pooled OLS is a good substitute for dynamic panel because it is easier</strong></h2>
+<p><strong>Not necessarily.</strong></p>
+<p>If unobserved store heterogeneity matters, Pooled OLS does not address the underlying issue.</p>
+<hr>
+<h2 id="11-ai-generated-code-should-be-trusted-without-verification"><strong>11. AI-generated code should be trusted without verification</strong></h2>
+<p><strong>False.</strong></p>
+<p>The analyst must validate both:</p>
+<blockquote>
+<p><strong>Code correctness</strong></p>
+</blockquote>
+<p>and:</p>
+<blockquote>
+<p><strong>Statistical correctness</strong></p>
+</blockquote>
+<hr>
+<h1 id="45-key-concept-comparison"><strong>45. Key Concept Comparison</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Main question</th>
+<th>GreenLeaf solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Panel structure</td>
+<td>Are multiple stores tracked over time?</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Unobserved heterogeneity</td>
+<td>Do stores have permanent differences?</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>FE vs RE</td>
+<td>Are those differences correlated with regressors?</td>
+<td>Evidence says yes</td>
+</tr>
+<tr>
+<td>Hausman</td>
+<td>What does the test suggest?</td>
+<td>p=.03 → FE favored</td>
+</tr>
+<tr>
+<td>Missing data</td>
+<td>What if promotion is absent?</td>
+<td>Investigate/recover/impute appropriately</td>
+</tr>
+<tr>
+<td>Multicollinearity</td>
+<td>Do predictors overlap?</td>
+<td>Traffic and Rain show minor overlap</td>
+</tr>
+<tr>
+<td>Dynamics</td>
+<td>Does past sales affect current sales?</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Dynamic-panel bias</td>
+<td>Can naïve FE handle lagged sales?</td>
+<td>Potential Nickell bias</td>
+</tr>
+<tr>
+<td>Dynamic estimator</td>
+<td>How should dynamics be estimated?</td>
+<td>Consider Difference GMM</td>
+</tr>
+<tr>
+<td>Diagnostics</td>
+<td>Are errors appropriately behaved?</td>
+<td>Check autocorrelation</td>
+</tr>
+<tr>
+<td>AI issue</td>
+<td>Can generated code run?</td>
+<td>Package conflict → manual adaptation</td>
+</tr>
+<tr>
+<td>Management</td>
+<td>What makes model useful?</td>
+<td>Interpretability + computation + strategy</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="46-exam-oriented-memory-framework"><strong>46. Exam-Oriented Memory Framework</strong></h1>
+<h3 id="if-the-question-mentions"><strong>If the question mentions:</strong></h3>
+<p><strong>“Unobserved store characteristics correlated with predictors”</strong></p>
+<p>→ <strong>Fixed Effects</strong></p>
+<hr>
+<p><strong>“Entity-specific effects assumed uncorrelated with regressors”</strong></p>
+<p>→ <strong>Random Effects</strong></p>
+<hr>
+<p><strong>“Hausman p \= 0.03 at 5%”</strong></p>
+<p>→ <strong>Reject null → favor Fixed Effects</strong></p>
+<hr>
+<p><strong>“Previous sales influence current sales”</strong></p>
+<p>→ <strong>Dynamic panel</strong></p>
+<hr>
+<p><strong>“Lagged dependent variable in FE creates bias”</strong></p>
+<p>→ <strong>Nickell bias</strong></p>
+<hr>
+<p><strong>“Specialized dynamic estimator”</strong></p>
+<p>→ <strong>Arellano–Bond / Difference GMM</strong></p>
+<hr>
+<p><strong>“Check after dynamic-panel estimation”</strong></p>
+<p>→ <strong>Serial-correlation/autocorrelation diagnostics + instrument/specification diagnostics</strong></p>
+<hr>
+<p><strong>“Traffic and Rain are correlated”</strong></p>
+<p>→ <strong>Multicollinearity</strong></p>
+<hr>
+<p><strong>“Minor multicollinearity”</strong></p>
+<p>→ <strong>Assess whether to retain or remove predictors; don&rsquo;t automatically delete one</strong></p>
+<hr>
+<p><strong>“One promotion value missing”</strong></p>
+<p>→ <strong>Missing-data problem</strong></p>
+<hr>
+<p><strong>“AI code doesn&rsquo;t run because of package conflict”</strong></p>
+<p>→ <strong>Adapt/debug manually; don&rsquo;t abandon the theoretically appropriate model</strong></p>
+<hr>
+<p><strong>“Managers care about interpretability, computation, and strategic insight”</strong></p>
+<p>→ <strong>Business-oriented model selection criteria</strong></p>
+<hr>
+<h1 id="47-final-integrated-understanding"><strong>47. Final Integrated Understanding</strong></h1>
+<p>The GreenLeaf case illustrates that <strong>model selection is not one single decision</strong>.</p>
+<p>There are several separate questions:</p>
+<h3 id="question-1-what-type-of-data-do-we-have"><strong>Question 1 — What type of data do we have?</strong></h3>
+<blockquote>
+<p>Panel data.</p>
+</blockquote>
+<h3 id="question-2-are-stores-fundamentally-different"><strong>Question 2 — Are stores fundamentally different?</strong></h3>
+<blockquote>
+<p>Yes, potentially.</p>
+</blockquote>
+<h3 id="question-3-can-those-differences-correlate-with-regressors"><strong>Question 3 — Can those differences correlate with regressors?</strong></h3>
+<blockquote>
+<p>Hausman test suggests yes.</p>
+</blockquote>
+<h3 id="question-4-which-static-panel-model-is-favored"><strong>Question 4 — Which static panel model is favored?</strong></h3>
+<blockquote>
+<p>Fixed Effects.</p>
+</blockquote>
+<h3 id="question-5-are-predictors-correlated"><strong>Question 5 — Are predictors correlated?</strong></h3>
+<blockquote>
+<p>Traffic and Rain show minor multicollinearity.</p>
+</blockquote>
+<h3 id="question-6-does-sales-depend-on-its-own-history"><strong>Question 6 — Does sales depend on its own history?</strong></h3>
+<blockquote>
+<p>Yes.</p>
+</blockquote>
+<h3 id="question-7-can-we-simply-add-lagged-sales-to-fe"><strong>Question 7 — Can we simply add lagged sales to FE?</strong></h3>
+<blockquote>
+<p>Not without considering dynamic-panel bias.</p>
+</blockquote>
+<h3 id="question-8-what-can-address-the-dynamic-panel-problem"><strong>Question 8 — What can address the dynamic-panel problem?</strong></h3>
+<blockquote>
+<p>Specialized estimators such as Difference GMM / Arellano–Bond, where appropriate.</p>
+</blockquote>
+<h3 id="question-9-is-the-model-technically-valid"><strong>Question 9 — Is the model technically valid?</strong></h3>
+<blockquote>
+<p>Check autocorrelation, instrument validity, and other diagnostics.</p>
+</blockquote>
+<h3 id="question-10-is-it-useful-to-management"><strong>Question 10 — Is it useful to management?</strong></h3>
+<blockquote>
+<p>Evaluate interpretability, computation, and strategic insight.</p>
+</blockquote>
+<hr>
+<h1 id="48-the-core-mental-model"><strong>48. The Core Mental Model</strong></h1>
+<p>The entire case can ultimately be reduced to this sequence:</p>
+<blockquote>
+<p><strong>Panel data</strong></p>
+<p>↓</p>
+<p><strong>Unobserved store differences</strong></p>
+<p>↓</p>
+<p><strong>FE vs RE</strong></p>
+<p>↓</p>
+<p><strong>Hausman p \= 0.03</strong></p>
+<p>↓</p>
+<p><strong>Fixed Effects favored</strong></p>
+<p>↓</p>
+<p><strong>But sales persistence exists</strong></p>
+<p>↓</p>
+<p><strong>Add lagged Sales</strong></p>
+<p>↓</p>
+<p><strong>Dynamic-panel complications / Nickell bias</strong></p>
+<p>↓</p>
+<p><strong>Consider specialized dynamic-panel estimator such as Arellano–Bond</strong></p>
+<p>↓</p>
+<p><strong>Check serial correlation and instrument/specification diagnostics</strong></p>
+<p>↓</p>
+<p><strong>Translate statistically valid results into promotional and resource-allocation decisions</strong></p>
+</blockquote>
+<h2 id="most-important-takeaway"><strong>Most important takeaway</strong></h2>
+<p><strong>Fixed Effects and dynamic modeling solve different problems.</strong></p>
+<blockquote>
+<p><strong>Fixed Effects:</strong> controls for unobserved, time-invariant store characteristics that may correlate with explanatory variables.</p>
+<p><strong>Dynamic panel:</strong> models the persistence of the dependent variable through its past values.</p>
+</blockquote>
+<p>A strong analysis of GreenLeaf therefore does not blindly choose between “FE” and “dynamic panel.” It recognizes that <strong>both issues may need to be addressed simultaneously</strong>, using an estimator appropriate for the resulting dynamic panel structure.</p>
+<hr>
+<h1 id="exam-study-guide-appendix">Exam Study Guide Appendix</h1>
+<hr>
+<h1 id="week-13-exam-appendix">Week 13 Exam Appendix</h1>
+<h2 id="rapid-recall-decision-tree">Rapid-recall decision tree</h2>
+<ol>
+<li><strong>One entity observed repeatedly over ordered time?</strong> → time-series analysis/forecasting.</li>
+<li><strong>Many entities observed once?</strong> → cross-sectional analysis.</li>
+<li><strong>Many entities observed repeatedly over time?</strong> → panel data.</li>
+<li>For panel data: begin with pooled OLS as a baseline; consider entity/time heterogeneity; compare FE and RE; if the outcome depends on its own past, consider a dynamic panel estimator and serial-correlation diagnostics.</li>
+</ol>
+<blockquote>
+<p>The data structure and research objective determine the method—not the number of rows, availability of software, or an AI-generated suggestion.</p>
+</blockquote>
+<h2 id="high-value-distinctions">High-value distinctions</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Distinction</th>
+<th>Exam-ready answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cross-sectional vs. time series vs. panel</td>
+<td>Many units at one time vs. one unit/aggregate over ordered time vs. multiple units repeatedly observed over time.</td>
+</tr>
+<tr>
+<td>Lag vs. lead</td>
+<td>A lag uses a past value to explain/predict the present; a lead refers to a future value.</td>
+</tr>
+<tr>
+<td>Trend vs. seasonality vs. cycle vs. irregularity</td>
+<td>Trend is persistent long-term direction; seasonality is a fixed/calendar-repeating pattern; cycle is a longer, non-fixed business/economic wave; irregularity is unpredictable noise/shock.</td>
+</tr>
+<tr>
+<td>Seasonality vs. cyclicity</td>
+<td>Christmas/weekend repetition is seasonal; recession/expansion without a fixed calendar length is cyclical.</td>
+</tr>
+<tr>
+<td>Additive vs. multiplicative decomposition</td>
+<td>Additive assumes component size is roughly constant (<code>Y=T+S+C+I</code>); multiplicative assumes seasonal/cyclical amplitude scales with level (<code>Y=T×S×C×I</code>).</td>
+</tr>
+<tr>
+<td>Forecast accuracy vs. model identification/selection</td>
+<td>MAE/RMSE/MAPE assess out-of-sample prediction error; ACF/PACF aid dependence/order identification; information criteria compare fit with complexity penalties.</td>
+</tr>
+<tr>
+<td>Pooled OLS vs. FE vs. RE</td>
+<td>Pooled ignores persistent entity differences; FE allows entity-specific intercepts correlated with regressors; RE treats entity effects as random and uncorrelated with regressors.</td>
+</tr>
+<tr>
+<td>FE vs. time FE</td>
+<td>Entity FE absorbs time-invariant differences across units; time FE absorbs common period shocks. Two-way FE uses both.</td>
+</tr>
+<tr>
+<td>Static vs. dynamic panel</td>
+<td>Static model excludes lagged outcome; dynamic model includes past Y to represent persistence/state dependence.</td>
+</tr>
+<tr>
+<td>Lagged outcome vs. autocorrelation</td>
+<td>Lagged Y is an explanatory variable modeling persistence; autocorrelation is correlation among model errors over time. Adding lagged Y does not automatically eliminate serial correlation.</td>
+</tr>
+<tr>
+<td>Multicollinearity vs. bias/causality</td>
+<td>Multicollinearity inflates uncertainty and destabilizes individual coefficients; it does not necessarily bias coefficients or create/end causality.</td>
+</tr>
+<tr>
+<td>AI computation vs. statistical reasoning</td>
+<td>AI may draft code and explain output; the researcher must verify data structure, assumptions, estimator, package behavior, diagnostics, and business interpretation.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="time-series-essentials">Time-series essentials</h2>
+<p>Time-series analysis studies ordered observations collected over time—daily stock prices, daily retail sales, monthly demand, quarterly GDP, annual rainfall—to find temporal structure and forecast future values. Observations are generally dependent, so pooling 36 monthly values as if they were 36 independent cross-sectional cases is inappropriate.</p>
+<h3 id="components-and-stationarity">Components and stationarity</h3>
+<ul>
+<li><strong>Trend:</strong> long-term rise, fall, or stable level.</li>
+<li><strong>Seasonality:</strong> predictable fixed-frequency variation—day of week, month, holiday period.</li>
+<li><strong>Cycle:</strong> longer wave without a fixed duration, such as business-cycle contraction and recovery.</li>
+<li><strong>Irregular/noise:</strong> random disturbances.</li>
+<li><strong>Stationarity:</strong> key statistical properties do not change over time. Many ARIMA-style techniques require stationarity or transformations/differencing that achieve it.</li>
+</ul>
+<p><strong>Practical use case:</strong> Café sales rise each year (trend), peak every December (seasonality), fall during a recession (cycle), and drop unexpectedly during a one-day transport strike (irregular shock).</p>
+<h3 id="common-techniques">Common techniques</h3>
+<ul>
+<li>decomposition into components;</li>
+<li>moving averages/smoothing to reduce noise;</li>
+<li>exponential smoothing (older observations receive declining weights);</li>
+<li>ARIMA and seasonal ARIMA (SARIMA);</li>
+<li>autocorrelation/partial autocorrelation analysis;</li>
+<li>Meta/Facebook <strong>Prophet</strong>, designed for business series with trend changes, multiple seasonalities, holidays, missing values, and outliers.</li>
+</ul>
+<p>Prophet is often represented conceptually as outcome = trend + seasonal terms + holiday/event effects + error. It outputs fitted/forecast values (<code>yhat</code>), uncertainty bounds, trend/weekly/yearly/holiday components, and change points where trend shifts.</p>
+<h3 id="sound-forecasting-workflow">Sound forecasting workflow</h3>
+<ol>
+<li>Verify date parsing, ordering, frequency, duplicates, gaps, and target field.</li>
+<li>Visualize before fitting: trend, seasonal patterns, breaks, anomalies, missingness.</li>
+<li>Partition training/test periods or use rolling-origin/time-series cross-validation; never randomly shuffle temporal observations for ordinary validation.</li>
+<li>Compare plausible models rather than accepting the first recommendation.</li>
+<li>Evaluate residual structure and out-of-sample error.</li>
+<li>Produce point forecasts plus widening uncertainty bands/fan charts.</li>
+<li>Add defensible holidays/events/regressors and scenario assumptions.</li>
+<li>Translate change points and forecasts into operational decisions.</li>
+</ol>
+<h3 id="forecast-accuracy-2">Forecast accuracy</h3>
+<ul>
+<li><code>MAE = mean(|actual−forecast|)</code>: easy to interpret in outcome units.</li>
+<li><code>RMSE = sqrt(mean(error²))</code>: penalizes large errors more strongly.</li>
+<li><code>MAPE = mean(|error/actual|)×100</code>: percentage interpretation, but unstable/undefined near zero.</li>
+</ul>
+<p>Lower values indicate better prediction on comparable data. Accuracy must be assessed on unseen periods. Correlation and regression coefficients are not forecast-error metrics.</p>
+<h3 id="google-colab-gemini-demonstration">Google Colab + Gemini demonstration</h3>
+<p>The case used daily retail sales from 1 January 2023 to 31 December 2024. Prophet expects the date column as <code>ds</code> and outcome as <code>y</code>. The workflow uploaded CSV data, reformatted dates, checked missingness and plots, compared ARIMA/SARIMA, Holt–Winters, and Prophet candidates, fit Prophet, inspected weekly/yearly trends, validated errors, added a holiday file, identified change points, generated optimistic/moderate/pessimistic scenarios, and exported forecast values.</p>
+<p>Use Gemini as assistance, not authority: read its proposed plan, revise prompts, inspect code/results, and verify that holidays, lags, uncertainty, and validation are defined correctly. Scenario forecasts are conditional “what-if” outputs, not guarantees.</p>
+<h2 id="panel-data-essentials">Panel-data essentials</h2>
+<p>Panel data combine cross-sectional and temporal dimensions—for example, sales of 10 stores over 12 months, or 30 firms from 2015–2024. Each row must identify an <strong>entity</strong> and <strong>time period</strong>.</p>
+<ul>
+<li><strong>Balanced panel:</strong> every entity has all periods.</li>
+<li><strong>Unbalanced panel:</strong> some entity–period observations are missing; it can still be valid panel data.</li>
+</ul>
+<h3 id="models">Models</h3>
+<p><strong>Pooled OLS:</strong> assumes no relevant persistent unit-specific heterogeneity (or ignores it). Easy baseline, but repeated rows are not truly independent and omitted store traits can confound coefficients.</p>
+<p><strong>Fixed Effects (FE):</strong> estimates relationships from <strong>within-entity change</strong>, absorbing all time-invariant entity traits, observed or unobserved. It permits those entity effects to correlate with regressors. It cannot estimate the effects of time-invariant entity variables and does not automatically handle time-varying confounders, serial correlation, heteroskedasticity, or endogeneity.</p>
+<p><strong>Random Effects (RE):</strong> models entity differences as random and assumes they are uncorrelated with regressors. It can estimate time-invariant predictors and may be more efficient when the assumption holds.</p>
+<h3 id="hausman-test-2">Hausman test</h3>
+<ul>
+<li>H₀: the RE estimator is consistent; systematic FE–RE coefficient differences are absent.</li>
+<li><code>p &gt; .05</code>: fail to reject H₀; RE may be used if assumptions and substantive design support it.</li>
+<li><code>p &lt; .05</code>: reject H₀; RE&rsquo;s no-correlation assumption is doubtful, so FE is generally favored.</li>
+</ul>
+<p>A Hausman result does not prove FE perfect or test the significance of the substantive sales model. In GreenLeaf, <code>p=.03</code> favors FE over RE under the test.</p>
+<h3 id="dynamic-panels">Dynamic panels</h3>
+<p>If current sales depend on prior sales due to loyalty, habit, momentum, adjustment, or persistence, specify a lagged dependent variable:</p>
+<p><code>Sales_it = ρ Sales_i,t−1 + βX_it + entity/time effects + error_it</code></p>
+<p>Simply adding lagged Y to a short FE panel creates correlation with transformed errors (<strong>Nickell bias/endogeneity</strong>). Arellano–Bond/difference GMM and related dynamic-panel estimators use suitable deeper lags as instruments, but require valid-instrument and serial-correlation checks. Dynamic panel modeling is not a replacement name for FE; it answers a separate temporal-persistence question.</p>
+<h2 id="greenleaf-retail-applied-case">GreenLeaf Retail applied case</h2>
+<h3 id="structure-and-question">Structure and question</h3>
+<p>GreenLeaf has five stores observed across 20 weeks (<code>N×T=100</code> rows), with sales, promotions, traffic, rain, and other conditions. This is panel data, not a single 100-observation time series. The goal is to explain within-store sales changes and turn results into promotional decisions.</p>
+<h3 id="why-heterogeneity-matters">Why heterogeneity matters</h3>
+<p>Stores differ persistently in location, layout, customer base, management, and brand familiarity. If these traits correlate with promotions or traffic, pooled OLS/RE can be misleading. FE compares each store with itself over time, while time FE can absorb common weekly shocks such as festivals, inflation changes, or market-wide weather/event effects.</p>
+<h3 id="missing-promotion-value">Missing promotion value</h3>
+<ol>
+<li>Investigate why it is missing.</li>
+<li>Recover the actual value from operational records if possible.</li>
+<li>If justified, impute using a documented method and perform sensitivity analysis.</li>
+<li>Otherwise omit that entity-period observation for the affected model and disclose the impact.</li>
+</ol>
+<p>Do not replace it automatically with zero, mean, or lagged sales: “missing” does not mean “no promotion,” and the outcome cannot logically supply the missing predictor without a defensible imputation model.</p>
+<h3 id="traffic-rain-and-multicollinearity">Traffic, rain, and multicollinearity</h3>
+<p>Correlated predictors increase standard errors and make individual contributions hard to separate. Diagnose correlation/VIF/condition information, then retain variables if they are theoretically distinct and strategically important; combine, redesign, or remove only with justification. Rain may influence both traffic and sales, suggesting a causal structure that cannot be solved merely by dropping the variable with the weaker p-value.</p>
+<h3 id="recommended-progression">Recommended progression</h3>
+<ol>
+<li>Validate identifiers, time order, missingness, units, duplicates, and coding.</li>
+<li>Explore within- and between-store variation and temporal patterns.</li>
+<li>Diagnose multicollinearity and missing promotion data.</li>
+<li>Fit pooled OLS as a baseline with panel-appropriate uncertainty.</li>
+<li>Estimate FE and RE; use theory plus Hausman to choose.</li>
+<li>Add time FE when common week shocks matter.</li>
+<li>Examine lagged sales/persistence.</li>
+<li>If dynamics matter, use an appropriate dynamic-panel estimator rather than naïve pooled/FE lag regression.</li>
+<li>Test serial correlation, heteroskedasticity, instrument validity, and robustness.</li>
+<li>Compare interpretability, computation, predictive performance, and decision value.</li>
+</ol>
+<p><strong>Strategic use case:</strong> If FE shows promotions increase sales within the same store, allocate promotions by expected within-store return. If lagged sales is strong and validly estimated, plan sustained campaigns rather than isolated one-week actions. Coefficients are evidence, not automatic causal effects, unless identification supports causality.</p>
+<h2 id="frequent-mistakes-to-avoid">Frequent mistakes to avoid</h2>
+<ul>
+<li>Calling any dated table a time series without checking entity structure.</li>
+<li>Confusing a business-cycle effect with seasonality.</li>
+<li>Fitting before plotting/cleaning the series.</li>
+<li>Treating forecast intervals as constant-width certainty; uncertainty normally expands with horizon.</li>
+<li>Selecting a forecasting model only because software recommends it.</li>
+<li>Using in-sample fit as forecast validation.</li>
+<li>Assuming missing years destroy a panel.</li>
+<li>Treating 100 entity-period rows as 100 independent units.</li>
+<li>Saying FE assumes entity effects are uncorrelated with regressors (that is the RE requirement).</li>
+<li>Interpreting Hausman <code>p=.03</code> as the sales model&rsquo;s significance.</li>
+<li>Thinking FE directly estimates time-invariant store layout.</li>
+<li>Assuming any multicollinearity biases coefficients or mandates deletion.</li>
+<li>Adding lagged sales to fix missing data or automatically remove autocorrelation.</li>
+<li>Using ordinary pooled OLS merely because dynamic-panel code fails.</li>
+<li>Trusting AI-written code without checking data index, package conflicts, estimator options, or output.</li>
+<li>Claiming regression automatically establishes causation.</li>
+</ul>
+<h2 id="likely-exam-questions">Likely exam questions</h2>
+<ol>
+<li>Distinguish cross-sectional, time-series, and panel data with examples.</li>
+<li>Explain trend, seasonality, cyclicity, irregularity, lag, and stationarity.</li>
+<li>Outline an end-to-end forecasting workflow using Prophet/Google Colab.</li>
+<li>Compare MAE, RMSE, and MAPE; explain forecast uncertainty/fan charts.</li>
+<li>Explain change points, holiday effects, and scenario forecasting.</li>
+<li>Compare pooled OLS, FE, and RE.</li>
+<li>State and interpret the Hausman test decision rule.</li>
+<li>Explain what FE controls and what it cannot automatically solve.</li>
+<li>Distinguish static and dynamic panels; explain lagged sales, endogeneity, Nickell bias, and Arellano–Bond.</li>
+<li>Diagnose the GreenLeaf dataset and recommend a defensible analytical strategy.</li>
+<li>Discuss missing promotion data and multicollinearity without mechanical deletion/imputation.</li>
+<li>Explain the proper role and limits of AI-assisted statistical coding.</li>
+</ol>
+<h2 id="source-coverage-checklist">Source-coverage checklist</h2>
+<ul>
+<li>[x] Video 1: cross-sectional/longitudinal/time-series distinction; examples; ordered dependence; trend, seasonality, cycle, irregularity, stationarity, lags and decomposition.</li>
+<li>[x] Video 1: moving average, exponential smoothing, ARIMA/SARIMA, ACF/PACF, Prophet; <code>ds/y</code> formatting; holidays, change points, components, forecast intervals, metrics, scenarios, visualizations and export.</li>
+<li>[x] Video 1: Google Colab/Gemini workflow, model suggestions and selection, daily 2023–2024 retail-sales demonstration, validation and AI-verification cautions.</li>
+<li>[x] Video 2: panel definition/dimensions; 10 stores×12 months and 30 firms×10 years examples; advertising→sales application; entity/time effects.</li>
+<li>[x] Video 2: pooled OLS, FE, RE, between/fixed-difference/dynamic ideas; assumptions, Hausman test, within-entity interpretation, past-sales effect, Google Colab support.</li>
+<li>[x] Consolidated notes: balanced/unbalanced panels; additive decomposition; uncertainty/fan charts; forecast/model-selection measures; data-structure decision rules; common misconceptions.</li>
+<li>[x] GreenLeaf case: five stores×20 weeks; persistent store traits; pooled/RE/FE progression; Hausman p=.03; time FE; missing promotion; traffic/rain multicollinearity; coefficients and promotional timing.</li>
+<li>[x] GreenLeaf dynamic extension: lagged sales, persistence, endogeneity/Nickell bias, Arellano–Bond/GMM, serial-correlation diagnostics; static FE versus dynamic modeling.</li>
+<li>[x] GreenLeaf decision layer: interpretability, computation, strategic insight, AI coding/package conflicts, complete analytical progression and managerial translation.</li>
+</ul>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<p>Turnover intention is not actual turnover. Add monthly organisational turnover as a time series or follow employees in panel waves, measuring satisfaction before later exits. Temporal ordering strengthens—but by itself does not prove—causal interpretation.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-12.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 12: Regression Modelling, Controls, Composite…</span>
+      </a>
+      <a href="week-14.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 14: PLS-SEM — Measurement Quality, Structural…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

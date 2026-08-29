@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Visualization · Week 9 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Visualization</span>
+      <span class="brand-title">Week 9</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html" selected>Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Data Visualization, Visual Perception, and Preattentive Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Visual Perception, Better Visualization, Form–Function, Tables and…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Visualizing and Comparing Categories
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Charts That Show Change Over Time
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Distribution and Relationship Visualizations
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Data Visualization: Exhaustive Exam Notes
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Data Visualization with Python, Jupyter, Python Basics, and Chart…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Python Data Visualization, Matplotlib Plotting, Interpretation, and…
+      </a>
+      <a class="is-active" href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Data Visualization with Matplotlib, Seaborn, and Jupyter Notebook
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Exam-Focused Study Notes
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Seaborn, Matplotlib, Heatmaps, Styling, and Dashboard Design
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Dashboards, Dashboard Design, Grammar of Graphics, and Matplotlib
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Dashboard Design, Visual Encoding, Matplotlib, and Dashboard Analytics
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Storytelling with Data
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Storytelling with Data: Exam-Focused Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Visualization · Week 9</p>
+        <h1 class="page-title">Data Visualization with Matplotlib, Seaborn, and Jupyter Notebook</h1>
+        <p class="page-meta">Week 9 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#exam-focused-scope">Exam-focused scope</a></li>
+      <li><a href="#1-meaning-and-purpose">1. Meaning and purpose</a></li>
+      <li><a href="#2-important-stackplot-arguments">2. Important stackplot() arguments</a></li>
+      <li><a href="#3-worked-example-weekly-temperatures-in-three-cities">3. Worked example: weekly temperatures in three cities</a></li>
+      <li><a href="#4-likely-exam-questions">4. Likely exam questions</a></li>
+      <li><a href="#5-why-subplots-are-needed">5. Why subplots are needed</a></li>
+      <li><a href="#6-syntax-and-matrix-logic">6. Syntax and matrix logic</a></li>
+      <li><a href="#7-figure-size-and-rcparams">7. Figure size and rcParams</a></li>
+      <li><a href="#8-data-generation-and-list-comprehension">8. Data generation and list comprehension</a></li>
+      <li><a href="#9-worked-example-2-3-matrix">9. Worked example: 2 × 3 matrix</a></li>
+      <li><a href="#10-worked-example-3-2-matrix">10. Worked example: 3 × 2 matrix</a></li>
+      <li><a href="#11-comparing-square-root-and-cubic-growth">11. Comparing square-root and cubic growth</a></li>
+      <li><a href="#12-likely-exam-questions">12. Likely exam questions</a></li>
+      <li><a href="#13-state-based-versus-object-oriented-plotting">13. State-based versus object-oriented plotting</a></li>
+      <li><a href="#14-advantages-of-the-oo-approach">14. Advantages of the OO approach</a></li>
+      <li><a href="#15-worked-example-sine-wave">15. Worked example: sine wave</a></li>
+      <li><a href="#16-independent-axes-customization">16. Independent axes customization</a></li>
+      <li><a href="#17-saving-a-figure">17. Saving a figure</a></li>
+      <li><a href="#18-definition-and-relationship-to-matplotlib">18. Definition and relationship to Matplotlib</a></li>
+      <li><a href="#19-key-features">19. Key features</a></li>
+      <li><a href="#20-installation-and-imports">20. Installation and imports</a></li>
+      <li><a href="#21-seaborn-barplot">21. Seaborn barplot()</a></li>
+      <li><a href="#22-worked-example-titanic-passenger-class-and-age">22. Worked example: Titanic passenger class and age</a></li>
+      <li><a href="#23-role-of-hue">23. Role of hue</a></li>
+      <li><a href="#24-definition">24. Definition</a></li>
+      <li><a href="#25-figure-level-versus-axes-level-functions">25. Figure-level versus axes-level functions</a></li>
+      <li><a href="#26-key-catplot-capabilities">26. Key catplot() capabilities</a></li>
+      <li><a href="#27-worked-example-tips-dataset">27. Worked example: Tips dataset</a></li>
+      <li><a href="#28-likely-exam-questions">28. Likely exam questions</a></li>
+      <li><a href="#29-box-plots">29. Box plots</a></li>
+      <li><a href="#30-violin-plots">30. Violin plots</a></li>
+      <li><a href="#31-scatter-plot-markers">31. Scatter-plot markers</a></li>
+      <li><a href="#32-chart-choice-by-analytical-goal">32. Chart choice by analytical goal</a></li>
+      <li><a href="#33-scenario">33. Scenario</a></li>
+      <li><a href="#34-why-multiple-visual-encodings-matter">34. Why multiple visual encodings matter</a></li>
+      <li><a href="#35-evaluating-the-options">35. Evaluating the options</a></li>
+      <li><a href="#36-recommended-answer">36. Recommended answer</a></li>
+      <li><a href="#37-tables-as-visualization">37. Tables as visualization</a></li>
+      <li><a href="#38-guiding-reading-direction-with-spacing">38. Guiding reading direction with spacing</a></li>
+      <li><a href="#39-best-practices-for-tables">39. Best practices for tables</a></li>
+      <li><a href="#40-instructor-emphasis-on-visual-economy">40. Instructor emphasis on visual economy</a></li>
+      <li><a href="#41-examination-eligibility-reminder">41. Examination eligibility reminder</a></li>
+      <li><a href="#42-review-week-3-project-options">42. Review Week 3 project options</a></li>
+      <li><a href="#43-transition-from-theory-to-practice">43. Transition from theory to practice</a></li>
+      <li><a href="#44-why-jupyter-notebook-is-used">44. Why Jupyter Notebook is used</a></li>
+      <li><a href="#45-installation-routes">45. Installation routes</a></li>
+      <li><a href="#46-launching-jupyter-notebook">46. Launching Jupyter Notebook</a></li>
+      <li><a href="#47-kernel-server-and-browser-relationship">47. Kernel/server and browser relationship</a></li>
+      <li><a href="#48-notebook-interface">48. Notebook interface</a></li>
+      <li><a href="#49-three-cell-types">49. Three cell types</a></li>
+      <li><a href="#50-running-cells-and-shortcuts">50. Running cells and shortcuts</a></li>
+      <li><a href="#51-python-basics-students-must-review">51. Python basics students must review</a></li>
+      <li><a href="#52-libraries-packages-and-modules">52. Libraries, packages, and modules</a></li>
+      <li><a href="#53-matplotlib-versus-seaborn">53. Matplotlib versus Seaborn</a></li>
+      <li><a href="#54-subplot-versus-subplots">54. subplot() versus subplots()</a></li>
+      <li><a href="#55-appearance-versus-data">55. Appearance versus data</a></li>
+      <li><a href="#56-frequent-mistakes-to-avoid">56. Frequent mistakes to avoid</a></li>
+      <li><a href="#definitions-to-memorize">Definitions to memorize</a></li>
+      <li><a href="#syntax-checklist">Syntax checklist</a></li>
+      <li><a href="#one-minute-self-test">One-minute self-test</a></li>
+      <li><a href="#high-probability-long-answer-structure">High-probability long-answer structure</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="exam-focused-scope">Exam-focused scope</h2>
+<p>Week 9 moves from visualization theory into practical Python visualization. It covers:</p>
+<ol>
+<li>Matplotlib stacked area plots (<code>stackplot</code>).</li>
+<li>Multiple plots using <code>subplot()</code>.</li>
+<li>Matplotlib’s object-oriented (OO) approach and saving figures.</li>
+<li>Introduction to Seaborn and <code>barplot()</code>.</li>
+<li>Categorical visualization using Seaborn <code>catplot()</code>.</li>
+<li>Quiz concepts: subplot placement, figure sizing, chart selection, markers, box/violin plots, and Seaborn–Matplotlib integration.</li>
+<li>Live-session review: effective table design, Python/Jupyter installation, the Jupyter architecture and interface, cell types, keyboard execution behavior, and essential Python prerequisites.</li>
+</ol>
+<blockquote>
+<p><strong>Terminology correction:</strong> The transcript’s speech-to-text often renders <code>pyplot</code> as “pipe plot,” Seaborn as “C Born/C Bond,” <code>catplot</code> as “cap plot,” <code>axes</code> as “accesses,” and <code>linspace</code> as “link space.” The correct technical names are used below.</p>
+</blockquote>
+<hr>
+<h1 id="part-i-matplotlib-stacked-plots-area-charts">Part I — Matplotlib Stacked Plots / Area Charts</h1>
+<h2 id="1-meaning-and-purpose">1. Meaning and purpose</h2>
+<p>A <strong>stacked plot</strong> or <strong>stacked area chart</strong> displays numerical information for multiple collections or categories, with each category stacked on top of the preceding one.</p>
+<p>It is especially useful for:</p>
+<ul>
+<li>showing <strong>cumulative data over time</strong>;</li>
+<li>displaying how several components contribute to a total;</li>
+<li>comparing both the overall total and the changing contribution of categories.</li>
+</ul>
+<p>The Matplotlib function is:</p>
+<pre><code class="language-python">plt.stackplot(x, y1, y2, ..., labels=..., colors=..., alpha=...,
+              edgecolor=..., linewidth=...)
+</code></pre>
+<h2 id="2-important-stackplot-arguments">2. Important <code>stackplot()</code> arguments</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+<th>Exam point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x</code></td>
+<td>X-axis values, such as time points or categories</td>
+<td>All Y-series correspond to these positions.</td>
+</tr>
+<tr>
+<td><code>y1, y2, ...</code></td>
+<td>Numerical datasets for the categories to be stacked</td>
+<td>Their order determines bottom-to-top stacking.</td>
+</tr>
+<tr>
+<td><code>labels</code></td>
+<td>Names for the stacked areas</td>
+<td>Used by the legend.</td>
+</tr>
+<tr>
+<td><code>colors</code></td>
+<td>Custom colors for the stacked areas</td>
+<td>Must remain aligned with the Y-series order.</td>
+</tr>
+<tr>
+<td><code>alpha</code></td>
+<td>Opacity/transparency</td>
+<td><code>0</code> is fully transparent; <code>1</code> is fully opaque.</td>
+</tr>
+<tr>
+<td><code>edgecolor</code></td>
+<td>Color of area boundaries</td>
+<td>Helps visually separate adjacent areas.</td>
+</tr>
+<tr>
+<td><code>linewidth</code></td>
+<td>Width of area boundaries</td>
+<td>Controls boundary prominence.</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Accuracy note:</strong> The instructor correctly interprets <code>alpha=0.7</code> as 70% opaque and 30% transparent, but later says “100” is fully opaque. In Matplotlib the practical range is <strong>0 to 1</strong>, so <strong><code>alpha=1</code></strong>, not <code>100</code>, is fully opaque.</p>
+</blockquote>
+<h2 id="3-worked-example-weekly-temperatures-in-three-cities">3. Worked example: weekly temperatures in three cities</h2>
+<h3 id="task">Task</h3>
+<p>Create a stacked area plot showing average daily temperatures from Monday to Sunday for Chennai, Kochi, and Bengaluru.</p>
+<p>The transcript uses these data:</p>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+
+days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;,
+        &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;]
+
+chennai = [36, 35, 32, 30, 35, 32, 29]
+kochi = [28, 29, 30, 31, 29, 28, 25]
+bengaluru = [25, 23, 26, 27, 27, 28, 26]
+
+plt.stackplot(days, chennai, kochi, bengaluru)
+plt.show()
+</code></pre>
+<h3 id="improved-aesthetics-and-readability">Improved aesthetics and readability</h3>
+<pre><code class="language-python">labels = [&quot;Chennai&quot;, &quot;Kochi&quot;, &quot;Bengaluru&quot;]
+colors = [&quot;lightblue&quot;, &quot;lightgreen&quot;, &quot;lightcoral&quot;]
+
+plt.stackplot(
+    days,
+    chennai,
+    kochi,
+    bengaluru,
+    labels=labels,
+    colors=colors,
+    alpha=0.7
+)
+plt.legend(loc=&quot;upper center&quot;)
+plt.title(&quot;Days of Week versus Temperature&quot;)
+plt.show()
+</code></pre>
+<p>The plotted order is:</p>
+<ul>
+<li>Chennai at the bottom in light blue;</li>
+<li>Kochi in the middle in light green;</li>
+<li>Bengaluru at the top in light coral.</li>
+</ul>
+<h3 id="changing-stack-order">Changing stack order</h3>
+<p>To place Bengaluru at the bottom, Kochi in the middle, and Chennai at the top, change the sequence of Y-series:</p>
+<pre><code class="language-python">plt.stackplot(
+    days,
+    bengaluru,
+    kochi,
+    chennai,
+    labels=[&quot;Bengaluru&quot;, &quot;Kochi&quot;, &quot;Chennai&quot;],
+    colors=[&quot;lightcoral&quot;, &quot;lightgreen&quot;, &quot;lightblue&quot;],
+    alpha=0.7
+)
+</code></pre>
+<p><strong>Core rule:</strong> The first Y-series becomes the bottommost layer; each later series is placed above it.</p>
+<p>When order changes, also reorder:</p>
+<ul>
+<li>labels, so the legend remains correct;</li>
+<li>colors, if each city/category is meant to retain its original color.</li>
+</ul>
+<h3 id="interpretation-caveat">Interpretation caveat</h3>
+<p>A stacked temperature plot demonstrates the function, but summing temperatures across cities is not normally a meaningful “total.” In applied work, stacked areas are strongest when components genuinely form a cumulative whole, such as sales by product over time, expenses by category, or energy supplied by source.</p>
+<h2 id="4-likely-exam-questions">4. Likely exam questions</h2>
+<ul>
+<li>Define a stacked area plot and state its use.</li>
+<li>List and explain the principal arguments of <code>stackplot()</code>.</li>
+<li>Explain how stacking order is determined.</li>
+<li>What does <code>alpha=0.7</code> mean?</li>
+<li>If the Y-series are reordered, what else must be reordered and why?</li>
+</ul>
+<hr>
+<h1 id="part-ii-multiple-plots-with-subplot">Part II — Multiple Plots with <code>subplot()</code></h1>
+<h2 id="5-why-subplots-are-needed">5. Why subplots are needed</h2>
+<p>Earlier work included:</p>
+<ul>
+<li>one plot on one axes;</li>
+<li>multiple data series drawn on the same axes.</li>
+</ul>
+<p><code>subplot()</code> instead creates <strong>multiple standalone plots inside one figure</strong>. This is useful when overlaying all series would hide individual patterns or create clutter.</p>
+<h2 id="6-syntax-and-matrix-logic">6. Syntax and matrix logic</h2>
+<pre><code class="language-python">plt.subplot(rows, columns, index)
+</code></pre>
+<ul>
+<li>First argument: number of rows.</li>
+<li>Second argument: number of columns.</li>
+<li>Third argument: the selected cell/position.</li>
+</ul>
+<p>Compact notation is also valid:</p>
+<pre><code class="language-python">plt.subplot(231)
+</code></pre>
+<p>This means <code>2</code> rows, <code>3</code> columns, position <code>1</code>.</p>
+<h3 id="numbering-rule">Numbering rule</h3>
+<p>Positions are numbered <strong>left to right across the first row, then left to right across each following row</strong>.</p>
+<p>For a 2 × 3 layout:</p>
+<pre><code class="language-text">+-----------+-----------+-----------+
+|     1     |     2     |     3     |
++-----------+-----------+-----------+
+|     4     |     5     |     6     |
++-----------+-----------+-----------+
+</code></pre>
+<p>Examples:</p>
+<ul>
+<li><code>subplot(2, 3, 1)</code> → top-left.</li>
+<li><code>subplot(2, 3, 3)</code> → top-right.</li>
+<li><code>subplot(2, 3, 4)</code> → bottom-left.</li>
+<li><code>subplot(3, 3, 2)</code> → first row, second column.</li>
+<li><code>subplot(3, 3, ...)</code> creates nine total cells.</li>
+</ul>
+<h2 id="7-figure-size-and-rcparams">7. Figure size and <code>rcParams</code></h2>
+<p>Two ideas must be distinguished:</p>
+<h3 id="setting-an-individual-figure-size">Setting an individual figure size</h3>
+<pre><code class="language-python">plt.figure(figsize=(12, 8))
+</code></pre>
+<p>This sizes the figure explicitly.</p>
+<h3 id="setting-the-default-size-for-future-figures">Setting the default size for future figures</h3>
+<pre><code class="language-python">plt.rcParams[&quot;figure.figsize&quot;] = (12, 8)
+</code></pre>
+<p><code>rcParams</code> is Matplotlib’s configuration dictionary. This assignment sets the default size of figures created afterward in the session.</p>
+<p>Important behavior:</p>
+<ul>
+<li>it controls the <strong>overall figure canvas</strong>, not each subplot independently;</li>
+<li>individual subplots scale to fit within that canvas;</li>
+<li>it affects <strong>new figures</strong>, not figures that already exist;</li>
+<li>it changes presentation dimensions, not underlying data or mathematical curve shape.</li>
+</ul>
+<p>With a 12 × 8 figure, a 2 × 3 grid is relatively wide. With an 8 × 12 figure, a 3 × 2 grid is relatively tall.</p>
+<h2 id="8-data-generation-and-list-comprehension">8. Data generation and list comprehension</h2>
+<p>The lesson generates X-values using NumPy and transformations using Python/NumPy:</p>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+import math
+
+plt.rcParams[&quot;figure.figsize&quot;] = (12, 8)
+
+x_values = np.linspace(0, 20, 20)
+y1_values = [math.sqrt(i) for i in x_values]
+y2_values = [i**3 for i in x_values]
+</code></pre>
+<p><code>np.linspace(0, 20, 20)</code> produces <strong>20 evenly spaced values from 0 through 20</strong>. It does not mean a step size of 20; the transcript’s wording on that point is imprecise.</p>
+<pre><code class="language-python">[math.sqrt(i) for i in x_values]
+</code></pre>
+<p>is a <strong>list comprehension</strong>. It applies <code>math.sqrt()</code> to every X-value and creates a new list. The instructor notes that a <code>for</code> loop could do the same work, but list comprehension expresses it efficiently in one line.</p>
+<h2 id="9-worked-example-2-3-matrix">9. Worked example: 2 × 3 matrix</h2>
+<p>The first row contains square-root plots; the second contains cubic plots. Each cell can receive its own data and color.</p>
+<pre><code class="language-python">plt.subplot(2, 3, 1)
+plt.plot(x_values, y1_values, color=&quot;blue&quot;)
+
+plt.subplot(2, 3, 2)
+plt.plot(x_values, y1_values, color=&quot;red&quot;)
+
+plt.subplot(2, 3, 3)
+plt.plot(x_values, y1_values, color=&quot;green&quot;)
+
+plt.subplot(2, 3, 4)
+plt.plot(x_values, y2_values, color=&quot;green&quot;)
+
+plt.subplot(2, 3, 5)
+plt.plot(x_values, y2_values, color=&quot;blue&quot;)
+
+plt.subplot(2, 3, 6)
+plt.plot(x_values, y2_values, color=&quot;red&quot;)
+
+plt.show()
+</code></pre>
+<p>The exact color sequence is less important than the principle: after selecting a cell with <code>subplot()</code>, subsequent plot settings apply to that cell.</p>
+<h2 id="10-worked-example-3-2-matrix">10. Worked example: 3 × 2 matrix</h2>
+<p>The second demonstration uses:</p>
+<ul>
+<li>row 1: square root of X;</li>
+<li>row 2: square of X;</li>
+<li>row 3: cube of X.</li>
+</ul>
+<pre><code class="language-python">plt.rcParams[&quot;figure.figsize&quot;] = (8, 12)
+
+x_values = np.linspace(0, 20, 20)
+y1_values = [math.sqrt(i) for i in x_values]
+y2_values = [i**2 for i in x_values]
+y3_values = [i**3 for i in x_values]
+
+series = [y1_values, y1_values, y2_values,
+          y2_values, y3_values, y3_values]
+colors = [&quot;blue&quot;, &quot;red&quot;, &quot;green&quot;, &quot;green&quot;, &quot;blue&quot;, &quot;red&quot;]
+
+for position, (values, color) in enumerate(zip(series, colors), start=1):
+    plt.subplot(3, 2, position)
+    plt.plot(x_values, values, color=color)
+
+plt.show()
+</code></pre>
+<p>Each cell may also receive its own:</p>
+<ul>
+<li>title;</li>
+<li>X- and Y-values;</li>
+<li>color;</li>
+<li>marker and line style;</li>
+<li>axis labels or limits.</li>
+</ul>
+<h2 id="11-comparing-square-root-and-cubic-growth">11. Comparing square-root and cubic growth</h2>
+<p>For nonnegative X:</p>
+<ul>
+<li><code>sqrt(x)</code> rises relatively quickly near zero and then its growth slows; the curve flattens.</li>
+<li><code>x**3</code> grows increasingly rapidly.</li>
+<li>Therefore, as X increases, the gap between <code>x**3</code> and <code>sqrt(x)</code> increases.</li>
+</ul>
+<p>Examples:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: right;">x</th>
+<th style="text-align: right;">√x</th>
+<th style="text-align: right;">x³</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1.414</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1.732</td>
+<td style="text-align: right;">27</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="12-likely-exam-questions">12. Likely exam questions</h2>
+<ul>
+<li>Explain all three arguments of <code>subplot()</code>.</li>
+<li>Identify the position represented by <code>subplot(234)</code> or <code>subplot(332)</code>.</li>
+<li>Draw and number a 2 × 3 or 2 × 2 subplot grid.</li>
+<li>Distinguish multiple lines on one axes from multiple standalone subplots.</li>
+<li>Explain the effect of <code>plt.rcParams['figure.figsize']</code>.</li>
+<li>Define list comprehension and relate it to the square-root example.</li>
+</ul>
+<hr>
+<h1 id="part-iii-matplotlib-object-oriented-approach">Part III — Matplotlib Object-Oriented Approach</h1>
+<h2 id="13-state-based-versus-object-oriented-plotting">13. State-based versus object-oriented plotting</h2>
+<h3 id="state-based-pyplot-style">State-based <code>pyplot</code> style</h3>
+<pre><code class="language-python">plt.plot(x, y)
+plt.title(&quot;Sine Wave&quot;)
+</code></pre>
+<p>This style operates through Matplotlib’s current/global plotting state.</p>
+<h3 id="object-oriented-style">Object-oriented style</h3>
+<pre><code class="language-python">fig, ax = plt.subplots()
+ax.plot(x, y)
+ax.set_title(&quot;Sine Wave&quot;)
+</code></pre>
+<p>This explicitly creates and manipulates objects:</p>
+<ul>
+<li><code>fig</code>: the whole <strong>Figure</strong> or canvas;</li>
+<li><code>ax</code>: an <strong>Axes</strong> object, the individual plotting area.</li>
+</ul>
+<p>An object encapsulates an entity together with its data and methods. Here, the figure and axes objects expose methods for configuring the plot.</p>
+<h2 id="14-advantages-of-the-oo-approach">14. Advantages of the OO approach</h2>
+<ol>
+<li><strong>Better structure and scalability</strong> — figures and their related axes are separate objects, which makes complex figures and multiple subplots easier to manage.</li>
+<li><strong>Precise control</strong> — ticks, labels, grids, titles, limits, and other properties can be changed for one axes without unintentionally changing the whole figure.</li>
+<li><strong>Avoidance of global-state issues</strong> — <code>pyplot</code> settings may cause unintended changes when several plots exist; explicit objects reduce ambiguity.</li>
+<li><strong>Readability and maintainability</strong> — explicit references make code easier to understand, debug, and maintain.</li>
+</ol>
+<h2 id="15-worked-example-sine-wave">15. Worked example: sine wave</h2>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 10, 1000)
+y = np.sin(x)
+
+fig, ax = plt.subplots()
+
+ax.set_title(&quot;Sine Wave&quot;)
+ax.set_xlabel(&quot;Time&quot;)
+ax.set_ylabel(&quot;Amplitude&quot;)
+ax.grid(True)
+
+ax.plot(x, y, label=&quot;Sine Curve&quot;, color=&quot;green&quot;)
+ax.legend()
+
+plt.show()
+</code></pre>
+<p>Here all axes-specific settings are called through <code>ax</code>:</p>
+<ul>
+<li><code>ax.set_title()</code>;</li>
+<li><code>ax.set_xlabel()</code>;</li>
+<li><code>ax.set_ylabel()</code>;</li>
+<li><code>ax.grid(True)</code>;</li>
+<li><code>ax.plot()</code>;</li>
+<li><code>ax.legend()</code>.</li>
+</ul>
+<h2 id="16-independent-axes-customization">16. Independent axes customization</h2>
+<pre><code class="language-python">fig, axes = plt.subplots(1, 3)
+
+axes[0].plot(x, y, color=&quot;red&quot;, marker=&quot;o&quot;)
+axes[0].set_ylim(0, 5)
+
+axes[1].plot(x, y, color=&quot;blue&quot;, marker=&quot;x&quot;)
+axes[1].set_ylim(0, 10)
+</code></pre>
+<p>Individual axes can have different colors, markers, titles, grid settings, and limits. These changes affect <strong>presentation</strong>, not the X- or Y-data.</p>
+<h2 id="17-saving-a-figure">17. Saving a figure</h2>
+<p>Use the Figure object’s <code>savefig()</code> method:</p>
+<pre><code class="language-python">fig.savefig(&quot;waves.jpg&quot;)
+</code></pre>
+<p>or a full path:</p>
+<pre><code class="language-python">fig.savefig(&quot;D:/Data Visualization/waves.jpg&quot;)
+</code></pre>
+<p>The instructor demonstrates saving the sine-wave plot as <code>waves.jpg</code> in a local folder and then verifies that the file exists and opens correctly. The same method can save PNG and other supported image formats; the extension usually determines the format.</p>
+<p>On Windows, forward slashes are convenient. Alternatives include a raw string such as <code>r"D:\Data Visualization\waves.jpg"</code> or escaped backslashes. The entire path must be quoted because it is a Python string.</p>
+<p>Likely exam distinction:</p>
+<ul>
+<li>axes methods configure an individual plotting area;</li>
+<li><code>fig.savefig()</code> saves the entire figure.</li>
+</ul>
+<hr>
+<h1 id="part-iv-introduction-to-seaborn">Part IV — Introduction to Seaborn</h1>
+<h2 id="18-definition-and-relationship-to-matplotlib">18. Definition and relationship to Matplotlib</h2>
+<p><strong>Seaborn</strong> is a powerful Python visualization library built on top of Matplotlib. It is designed to make statistical graphics informative, attractive, and relatively easy to create.</p>
+<p>It is widely used for:</p>
+<ul>
+<li>data exploration;</li>
+<li>statistical visualization;</li>
+<li>trends, relationships, and distributions;</li>
+<li>concise, high-level plotting with attractive defaults.</li>
+</ul>
+<p>Seaborn does <strong>not</strong> replace Matplotlib. A Seaborn plot still creates Matplotlib Figure/Axes objects, so Matplotlib can be used afterward for detailed titles, annotations, ticks, axis control, and layout adjustments.</p>
+<h2 id="19-key-features">19. Key features</h2>
+<ol>
+<li><strong>Attractive default styles</strong> — aesthetically pleasing output without extensive customization.</li>
+<li><strong>Built-in statistical plots</strong> — distribution, regression, and categorical plot types are readily available.</li>
+<li><strong>Pandas integration</strong> — column names from DataFrames can be mapped directly to plot roles.</li>
+<li><strong>Automatic data mapping</strong> — variables are mapped to visual elements such as X, Y, color/hue, row, and column.</li>
+<li><strong>Themes and palettes</strong> — multiple themes and palettes support different presentation styles.</li>
+<li><strong>High-level interface</strong> — complex statistical graphics can often be produced with short function calls.</li>
+</ol>
+<p>Common functions mentioned:</p>
+<ul>
+<li><code>histplot()</code> — histogram/distribution;</li>
+<li><code>scatterplot()</code> — relationship between two variables;</li>
+<li><code>boxplot()</code> — quartiles, median, spread, and outliers;</li>
+<li><code>heatmap()</code>;</li>
+<li><code>violinplot()</code>;</li>
+<li><code>barplot()</code>;</li>
+<li><code>catplot()</code>.</li>
+</ul>
+<h2 id="20-installation-and-imports">20. Installation and imports</h2>
+<p>In a Jupyter cell:</p>
+<pre><code class="language-python">!pip install seaborn
+</code></pre>
+<p>The exclamation mark sends the command to the system shell from the notebook. If already installed, the output may say “Requirement already satisfied.” Installing Seaborn normally installs or checks required dependencies, including Matplotlib and pandas.</p>
+<p>Standard imports:</p>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import seaborn as sns
+</code></pre>
+<p>Preferred Matplotlib import:</p>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+</code></pre>
+<p>Avoid wildcard imports such as:</p>
+<pre><code class="language-python">from matplotlib.pyplot import *
+</code></pre>
+<p>because they clutter the global namespace, create possible naming conflicts, reduce readability, and complicate debugging.</p>
+<h2 id="21-seaborn-barplot">21. Seaborn <code>barplot()</code></h2>
+<p><code>barplot()</code> is used to plot a categorical variable against a numerical variable. Principal arguments discussed are:</p>
+<ul>
+<li><code>x</code>: categorical variable;</li>
+<li><code>y</code>: numerical variable;</li>
+<li><code>data</code>: DataFrame;</li>
+<li><code>hue</code>: additional category used to split/group each X-category;</li>
+<li><code>palette</code>: color palette;</li>
+<li><code>width</code>: bar width;</li>
+<li>error-bar configuration;</li>
+<li><code>hue_order</code>: explicit order of hue categories.</li>
+</ul>
+<p>By default, a Seaborn bar plot represents an aggregate estimate (commonly the mean) for each category and may show uncertainty/error bars depending on the Seaborn version and settings.</p>
+<h2 id="22-worked-example-titanic-passenger-class-and-age">22. Worked example: Titanic passenger class and age</h2>
+<h3 id="load-and-inspect-the-dataset">Load and inspect the dataset</h3>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import seaborn as sns
+
+titanic_data = sns.load_dataset(&quot;titanic&quot;)
+titanic_data.head()
+</code></pre>
+<p>Inspecting <code>head()</code> reveals the first five rows and column names such as:</p>
+<ul>
+<li><code>survived</code>, <code>pclass</code>, <code>sex</code>, <code>age</code>, <code>sibsp</code>, <code>parch</code>, <code>fare</code>, <code>embarked</code>, <code>who</code>, <code>adult_male</code>, <code>deck</code>, and others.</li>
+</ul>
+<p>The columns of primary interest are:</p>
+<ul>
+<li><code>pclass</code>: passenger class;</li>
+<li><code>age</code>: passenger age;</li>
+<li>later, <code>sex</code>: subgrouping variable.</li>
+</ul>
+<h3 id="basic-plot">Basic plot</h3>
+<pre><code class="language-python">sns.barplot(x=&quot;pclass&quot;, y=&quot;age&quot;, data=titanic_data)
+plt.show()
+</code></pre>
+<p>Interpretation described in the lesson:</p>
+<ul>
+<li>first-class mean age is roughly between 35 and 40;</li>
+<li>second-class mean age is around 30;</li>
+<li>third-class mean age is around 25;</li>
+<li>the average passenger age therefore declines from first to third class.</li>
+</ul>
+<h3 id="different-colors-by-class">Different colors by class</h3>
+<p>To assign separate colors, map <code>pclass</code> to <code>hue</code> and choose a palette:</p>
+<pre><code class="language-python">sns.barplot(
+    x=&quot;pclass&quot;,
+    y=&quot;age&quot;,
+    data=titanic_data,
+    hue=&quot;pclass&quot;,
+    palette=&quot;pastel&quot;
+)
+</code></pre>
+<p>Built-in palette examples mentioned:</p>
+<ul>
+<li><code>pastel</code>;</li>
+<li><code>bright</code>;</li>
+<li><code>muted</code>;</li>
+<li><code>dark</code>.</li>
+</ul>
+<p>Custom colors are also possible. Documentation can be consulted for the available palette choices.</p>
+<h3 id="grouped-clustered-bar-plot-by-sex">Grouped/clustered bar plot by sex</h3>
+<pre><code class="language-python">sns.barplot(
+    x=&quot;pclass&quot;,
+    y=&quot;age&quot;,
+    data=titanic_data,
+    hue=&quot;sex&quot;,
+    palette=&quot;pastel&quot;,
+    hue_order=[&quot;male&quot;, &quot;female&quot;]
+)
+</code></pre>
+<p>This divides each passenger-class category into male and female bars. <code>hue_order</code> forces male to appear first and female second.</p>
+<p>The lesson’s conclusion is that the broad pattern remains similar across sex: first-class passengers are older on average and third-class passengers younger.</p>
+<blockquote>
+<p><strong>Interpretation caution:</strong> Bar height here represents average age, not the number of passengers. The transcript occasionally says “number of males,” but the Y-variable is <code>age</code>; therefore, it is the <strong>mean age for each sex/class group</strong>.</p>
+</blockquote>
+<h2 id="23-role-of-hue">23. Role of <code>hue</code></h2>
+<p><code>hue</code> maps another variable to color and creates subgroups within the main X-category. It is the key argument for grouped or clustered bar plots in this example.</p>
+<p>Uses:</p>
+<ul>
+<li>compare male and female average age within each passenger class;</li>
+<li>compare regions within product categories;</li>
+<li>compare customer segments within months.</li>
+</ul>
+<p>Changing <code>palette</code>, marker, or color changes appearance, not the data.</p>
+<hr>
+<h1 id="part-v-seaborn-catplot-and-categorical-data">Part V — Seaborn <code>catplot()</code> and Categorical Data</h1>
+<h2 id="24-definition">24. Definition</h2>
+<p><code>catplot()</code> is a <strong>figure-level</strong> Seaborn function for visualizing categorical data. It offers a flexible interface for producing different categorical plot types, including:</p>
+<ul>
+<li>bar plots;</li>
+<li>box plots;</li>
+<li>violin plots;</li>
+<li>other categorical plot variants selected through <code>kind</code>.</li>
+</ul>
+<h2 id="25-figure-level-versus-axes-level-functions">25. Figure-level versus axes-level functions</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Figure-level function (<code>catplot</code>)</th>
+<th>Axes-level function (<code>barplot</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scope</td>
+<td>Creates and manages its own complete figure</td>
+<td>Draws directly on a Matplotlib Axes</td>
+</tr>
+<tr>
+<td>Multiple panels</td>
+<td>Supports them automatically through faceting</td>
+<td>Requires axes/subplot management for multiple panels</td>
+</tr>
+<tr>
+<td>Common parameters</td>
+<td><code>row</code>, <code>col</code>, <code>hue</code>, <code>kind</code></td>
+<td><code>x</code>, <code>y</code>, <code>hue</code>, <code>data</code>, etc.</td>
+</tr>
+<tr>
+<td>Typical use</td>
+<td>Multi-panel categorical comparisons</td>
+<td>One categorical plot on a chosen axes</td>
+</tr>
+</tbody>
+</table></div>
+<p>The transcript calls axes-level functions “access-level” due to transcription error.</p>
+<h2 id="26-key-catplot-capabilities">26. Key <code>catplot()</code> capabilities</h2>
+<ol>
+<li>Works directly with categorical variables.</li>
+<li>Supports <strong>faceting</strong>—creating multiple subplots—using <code>row</code> and <code>col</code>.</li>
+<li>Supports grouping through <code>hue</code>.</li>
+<li>Supports multiple plot types through <code>kind</code>.</li>
+<li>Automatically handles the full figure and multiple panels.</li>
+</ol>
+<h2 id="27-worked-example-tips-dataset">27. Worked example: Tips dataset</h2>
+<h3 id="load-and-inspect">Load and inspect</h3>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import seaborn as sns
+
+tips = sns.load_dataset(&quot;tips&quot;)
+tips.head()
+</code></pre>
+<p>Relevant columns include:</p>
+<ul>
+<li><code>total_bill</code> — numerical bill value;</li>
+<li><code>tip</code>;</li>
+<li><code>sex</code> — Male/Female;</li>
+<li><code>day</code> — Thursday, Friday, Saturday, Sunday;</li>
+<li><code>time</code> — Lunch/Dinner.</li>
+</ul>
+<h3 id="faceted-grouped-bar-plot">Faceted grouped bar plot</h3>
+<pre><code class="language-python">sns.catplot(
+    data=tips,
+    x=&quot;day&quot;,
+    y=&quot;total_bill&quot;,
+    hue=&quot;sex&quot;,
+    col=&quot;time&quot;,
+    kind=&quot;bar&quot;
+)
+</code></pre>
+<p>Role of each argument:</p>
+<ul>
+<li><code>x="day"</code>: days on the horizontal axis;</li>
+<li><code>y="total_bill"</code>: numerical response;</li>
+<li><code>data=tips</code>: source DataFrame;</li>
+<li><code>hue="sex"</code>: separate male and female groups by color;</li>
+<li><code>col="time"</code>: create separate panels for Lunch and Dinner;</li>
+<li><code>kind="bar"</code>: use bar plots.</li>
+</ul>
+<p>The result contains two panels automatically:</p>
+<ul>
+<li>left panel: Lunch;</li>
+<li>right panel: Dinner;</li>
+<li>within each day/panel, colors split the values by sex.</li>
+</ul>
+<blockquote>
+<p><strong>Interpretation caution:</strong> As with <code>barplot()</code>, the bars generally display an aggregate estimate such as the mean <code>total_bill</code>, not the literal sum of all bills, unless an explicit estimator or pre-aggregation changes that behavior. “Total bill” is the column name.</p>
+</blockquote>
+<h2 id="28-likely-exam-questions">28. Likely exam questions</h2>
+<ul>
+<li>Define <code>catplot()</code> and state its key features.</li>
+<li>Distinguish figure-level and axes-level Seaborn functions.</li>
+<li>Explain <code>hue</code>, <code>col</code>, and <code>kind</code> in the Tips example.</li>
+<li>How does <code>catplot()</code> create multiple panels without <code>subplot()</code>?</li>
+<li>Write code for a grouped/faceted categorical bar plot.</li>
+</ul>
+<hr>
+<h1 id="part-vi-distribution-charts-and-visualization-choices">Part VI — Distribution Charts and Visualization Choices</h1>
+<h2 id="29-box-plots">29. Box plots</h2>
+<p>A box plot is appropriate when an analyst must compare distributions—such as fares across passenger classes—while avoiding display of every individual observation.</p>
+<p>It summarizes:</p>
+<ul>
+<li><strong>median</strong>: middle value;</li>
+<li><strong>quartiles</strong>: boundaries of the middle portion of the data;</li>
+<li><strong>box / IQR</strong>: middle 50% of values;</li>
+<li><strong>whiskers</strong>: the typical non-outlier range under the plot’s convention;</li>
+<li><strong>outliers</strong>: unusually distant values plotted separately.</li>
+</ul>
+<p>Why side-by-side box plots fit the passenger-fare problem:</p>
+<ul>
+<li>compare several classes;</li>
+<li>show typical value and spread;</li>
+<li>reveal unusual values;</li>
+<li>do not require exposing or labeling each fare.</li>
+</ul>
+<p>A dot plot is less appropriate under those requirements because it shows individual observations and can become cluttered with large datasets.</p>
+<h2 id="30-violin-plots">30. Violin plots</h2>
+<p>A violin plot combines:</p>
+<ul>
+<li>box-plot-like summary information;</li>
+<li>a density estimate showing distribution shape.</li>
+</ul>
+<p>It helps compare:</p>
+<ul>
+<li>spread;</li>
+<li>concentration/density;</li>
+<li>shape and possible multimodality;</li>
+<li>typical/median tendencies;</li>
+<li>subgroups, such as passenger age by class and gender.</li>
+</ul>
+<p>Color can encode gender or another subgroup. A violin plot does not necessarily show the exact value of every observation unless points are added separately.</p>
+<h2 id="31-scatter-plot-markers">31. Scatter-plot markers</h2>
+<pre><code class="language-python">sns.scatterplot(data=df, x=&quot;age&quot;, y=&quot;fare&quot;, marker=&quot;x&quot;)
+</code></pre>
+<p><code>marker</code> changes point shape only. Common examples:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Shape</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>o</code></td>
+<td>circle</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td>cross</td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td>square</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>triangle</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>star</td>
+</tr>
+</tbody>
+</table></div>
+<p>It does not move points, change values, delete observations, or alter the underlying dataset.</p>
+<h2 id="32-chart-choice-by-analytical-goal">32. Chart choice by analytical goal</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Goal</th>
+<th>Suitable chart</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compare distributions</td>
+<td>Box plot or violin plot</td>
+</tr>
+<tr>
+<td>Show relationship between two numerical variables</td>
+<td>Scatter plot</td>
+</tr>
+<tr>
+<td>Compare multiple independent views</td>
+<td>Subplots/facets</td>
+</tr>
+<tr>
+<td>Show individual observations</td>
+<td>Dot/strip/scatter plot</td>
+</tr>
+<tr>
+<td>Show cumulative components over time</td>
+<td>Stacked area plot</td>
+</tr>
+<tr>
+<td>Compare category-level estimates</td>
+<td>Bar plot</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="part-vii-case-study-stellar-analytics">Part VII — Case Study: Stellar Analytics</h1>
+<h2 id="33-scenario">33. Scenario</h2>
+<p>Priya, an analyst at Stellar Analytics, must compare growth curves created by transforming time data. She generates linearly spaced X-values from 0 to 20 and computes square roots. The objective is to understand how growth changes and identify nonlinear trends.</p>
+<p>She chooses a 12 × 8 figure and initially arranges plots in a 2 × 3 grid. The first three cells use indices 1, 2, and 3, leaving cells 4–6 for other transformations.</p>
+<p>Visual styles include:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Style</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bo-</code></td>
+<td>blue, circle markers, solid line</td>
+</tr>
+<tr>
+<td><code>rx-</code></td>
+<td>red, cross markers, solid line</td>
+</tr>
+<tr>
+<td><code>g*-</code></td>
+<td>green, star markers, solid line</td>
+</tr>
+</tbody>
+</table></div>
+<p>The case mentions a red-cross <strong>dashed</strong> line in one sentence, but the literal format string <code>rx-</code> uses a <strong>solid</strong> line. A dashed version would require <code>rx--</code>.</p>
+<p>Stakeholders:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Person</th>
+<th>Role</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Priya</td>
+<td>Analyst</td>
+<td>complete and correct comparison of patterns</td>
+</tr>
+<tr>
+<td>Leo</td>
+<td>UX designer</td>
+<td>consistent labels, spacing, palette, print/screen readability</td>
+</tr>
+<tr>
+<td>Zara</td>
+<td>Product manager</td>
+<td>high-level summary without overwhelming stakeholders</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="34-why-multiple-visual-encodings-matter">34. Why multiple visual encodings matter</h2>
+<p>Do not rely only on color because:</p>
+<ul>
+<li>grayscale printing may remove distinctions;</li>
+<li>screens and projectors differ;</li>
+<li>viewers may have color-vision deficiencies.</li>
+</ul>
+<p>Combine color, marker, and line style. This improves robustness and accessibility without changing the underlying values.</p>
+<h2 id="35-evaluating-the-options">35. Evaluating the options</h2>
+<h3 id="option-a-complete-the-2-3-grid">Option A — Complete the 2 × 3 grid</h3>
+<p>Add three transformations to panels 4–6.</p>
+<p>Advantages:</p>
+<ul>
+<li>maximum completeness;</li>
+<li>every transformation visible;</li>
+<li>valuable for technical exploration.</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>six panels may be dense;</li>
+<li>each panel is smaller;</li>
+<li>executive audiences may be overwhelmed.</li>
+</ul>
+<p>Best use: internal analysis or appendix.</p>
+<h3 id="option-b-switch-to-a-focused-2-2-grid">Option B — Switch to a focused 2 × 2 grid</h3>
+<p>Show only the four most important curves.</p>
+<p>Advantages:</p>
+<ul>
+<li>larger, clearer panels;</li>
+<li>more readable labels;</li>
+<li>easier presentation and storytelling;</li>
+<li>lower cognitive load.</li>
+</ul>
+<p>Disadvantage: some transformations are omitted from the main view.</p>
+<p>Best use: executive presentation.</p>
+<h3 id="option-c-overlay-all-curves-on-one-axes">Option C — Overlay all curves on one axes</h3>
+<p>Advantages:</p>
+<ul>
+<li>compact;</li>
+<li>direct comparison on common axes.</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>overlap can hide individual shapes;</li>
+<li>colors and legends become difficult to track;</li>
+<li>clutter increases with each series.</li>
+</ul>
+<p>Best use: only when there are few clearly distinguishable curves and direct comparison is paramount.</p>
+<h2 id="36-recommended-answer">36. Recommended answer</h2>
+<p>Use a <strong>dual-artifact strategy</strong>:</p>
+<ol>
+<li>During exploration, use the complete 2 × 3 grid to inspect all transformations.</li>
+<li>Select the most decision-relevant curves.</li>
+<li>For Zara’s presentation, use a 2 × 2 grid with consistent labels, spacing, colors, markers, and line styles.</li>
+<li>Retain the full 2 × 3 view in an appendix or supporting analysis.</li>
+</ol>
+<p>This balances analytical depth, UX readability, and executive clarity.</p>
+<p>Core design lesson: the best visualization is not necessarily the one containing the most information; it is the one that communicates the right information effectively to its intended audience.</p>
+<hr>
+<h1 id="part-viii-live-session-table-design-review">Part VIII — Live Session: Table Design Review</h1>
+<h2 id="37-tables-as-visualization">37. Tables as visualization</h2>
+<p>Visualization is not limited to graphs and pictures. Tables are also visual/graphic mechanisms for communicating data.</p>
+<p>Use a table when the audience needs to examine <strong>individual data points</strong>, row by row or column by column. Charts are often better for patterns; tables are especially strong for precise lookup.</p>
+<h2 id="38-guiding-reading-direction-with-spacing">38. Guiding reading direction with spacing</h2>
+<p>The instructor strongly emphasizes that visualization designers must control audience attention: viewers should notice and interpret what the designer intends.</p>
+<p>This applies the Gestalt <strong>principle of proximity</strong>: items placed near one another are perceived as a group.</p>
+<h3 id="to-force-row-wise-reading">To force row-wise reading</h3>
+<ul>
+<li>make horizontal gaps between columns relatively small, so items within a row feel grouped;</li>
+<li>make vertical gaps between rows relatively large, so each row is separated from the next group.</li>
+</ul>
+<h3 id="to-force-column-wise-reading">To force column-wise reading</h3>
+<ul>
+<li>make vertical gaps between rows relatively small, so values down a column feel grouped;</li>
+<li>make horizontal gaps between columns relatively large, so each column appears as a separate group.</li>
+</ul>
+<p>This is not merely decoration: spacing determines grouping, reading direction, attention, and interpretation.</p>
+<h2 id="39-best-practices-for-tables">39. Best practices for tables</h2>
+<h3 id="39-1-offset-the-header-from-the-body">39.1 Offset the header from the body</h3>
+<p>The header explains how to interpret each column and must stand out using suitable pre-attentive attributes. It should be noticed before the body.</p>
+<p>Use informative labels. Prefer “Student Name” over merely “Name” where ambiguity exists; similarly specify student roll number or marks in Mathematics, Physics, Chemistry, and Biology.</p>
+<h3 id="39-2-put-informative-titles-at-the-top">39.2 Put informative titles at the top</h3>
+<p>The eye typically begins near the top-left. Put the most important interpretive information there.</p>
+<p>Titles should say what is shown, not merely name a broad topic. Prefer:</p>
+<ul>
+<li>“Product-wise Profitability” over “Profitability”;</li>
+<li>“Sector-wise GDP” or “Comparative GDP” over “GDP.”</li>
+</ul>
+<p>If explanatory information is placed only below a visual, viewers may become confused or lose interest before finding it.</p>
+<h3 id="39-3-use-gridlines-judiciously">39.3 Use gridlines judiciously</h3>
+<p>Every line, color, and pixel demands some cognitive processing. More visual elements increase cognitive load; excessive load tires the audience, reduces interest, and can cause disengagement.</p>
+<p>Ask whether each gridline is necessary. In a table, full crisscross borders around every cell can be irritating and heavy. White space often separates groups adequately.</p>
+<p>The same logic applies to charts: if values are printed directly above bars, a vertical scale and gridlines may become redundant. Retain only what genuinely helps interpretation.</p>
+<h3 id="39-4-align-numbers-and-text-properly">39.4 Align numbers and text properly</h3>
+<ul>
+<li>right-align numerical values;</li>
+<li>left-align text;</li>
+<li>align headers consistently with the data beneath them.</li>
+</ul>
+<p>Right alignment makes place values and magnitudes easier to compare. The instructor explains that number magnitude is recognized from units, tens, hundreds, thousands, and so on, making a shared right edge useful.</p>
+<h3 id="39-5-highlight-outliers-carefully">39.5 Highlight outliers carefully</h3>
+<p>Use a different color or other restrained emphasis for values that do not follow the general pattern. The goal is to signal “this is unusual; note it,” not to make the outlier overwhelm all other information.</p>
+<h3 id="39-6-avoid-unit-repetition">39.6 Avoid unit repetition</h3>
+<p>If every value in a column is in rupees, put the unit/symbol in the header instead of repeating it in every cell. This reduces clutter.</p>
+<h3 id="39-7-use-meaningful-precision">39.7 Use meaningful precision</h3>
+<p>Do not display unnecessary decimals. Round to the nearest meaningful digit or decimal place. Several decimal places may matter for very small values, but are often meaningless beside a large whole-number magnitude.</p>
+<h3 id="39-8-group-similar-items-and-remove-repetition">39.8 Group similar items and remove repetition</h3>
+<p>Keep related rows together—for example, all Mechanical Department records, then all Operations records—with white space between groups. A merged/group label can prevent writing “Mechanical” or “Operations” repeatedly in every row.</p>
+<h3 id="39-9-add-small-visualizations-when-useful">39.9 Add small visualizations when useful</h3>
+<p>Small in-cell visualizations such as <strong>sparklines</strong> can be added when they genuinely help readers perceive a trend. Their use must still be appropriate and uncluttered.</p>
+<h2 id="40-instructor-emphasis-on-visual-economy">40. Instructor emphasis on visual economy</h2>
+<p>The instructor criticizes overly decorative AI-generated visuals that add lines, colors, pictures, and other noise. The principle is:</p>
+<blockquote>
+<p>Every line and pixel should be justifiable.</p>
+</blockquote>
+<p>Visual attractiveness is not the same as professional clarity. Remove elements that consume attention without adding meaning.</p>
+<hr>
+<h1 id="part-ix-live-session-course-logistics-and-practical-preparation">Part IX — Live Session: Course Logistics and Practical Preparation</h1>
+<h2 id="41-examination-eligibility-reminder">41. Examination eligibility reminder</h2>
+<p>The live session stresses that students should not postpone eligibility requirements until the course end.</p>
+<ul>
+<li>View the uploaded video content for at least 12 weeks.</li>
+<li>View the live-session recordings for at least 12 weeks.</li>
+<li>Eligibility must be established before the list is sent to the examination cell.</li>
+<li>Only eligible students receive the link for the end-term examination.</li>
+<li>Complete viewing formalities early; detailed repeat viewing can follow.</li>
+</ul>
+<h2 id="42-review-week-3-project-options">42. Review Week 3 project options</h2>
+<p>Students may undertake either:</p>
+<ul>
+<li>the usual mini project; or</li>
+<li>an experiential-learning project.</li>
+</ul>
+<p>Experiential learning requires going into a real setting—such as a café, coffee shop, service station, or other workplace—to observe or collect data and produce managerially useful insights.</p>
+<p>Instructor emphasis:</p>
+<ul>
+<li>it is a small project rather than a major project;</li>
+<li>it was described as not graded and not compulsory, but strongly encouraged for real-world learning;</li>
+<li>instructions were expected with Week 10 quizzes/discussion topics;</li>
+<li>three best projects would be selected for presentation in Review Week 3, mentioned as likely 1 August;</li>
+<li>students should begin early rather than waiting until Week 12.</li>
+</ul>
+<h2 id="43-transition-from-theory-to-practice">43. Transition from theory to practice</h2>
+<p>By Week 9, the course had substantially covered theoretical topics such as:</p>
+<ul>
+<li>Gestalt principles;</li>
+<li>attentive/pre-attentive mechanisms and visual perception;</li>
+<li>chart types;</li>
+<li>meanings of charts and selection of an appropriate chart;</li>
+<li>table design.</li>
+</ul>
+<p>The course now moves into creating visualizations with Python. Primary packages are Matplotlib and Seaborn; pandas and NumPy may be used to obtain, organize, or transform data.</p>
+<p>The instructor explicitly notes that this is not a full Python programming course. Students must independently refresh enough Python to import packages, name/use them, understand data types, assign variables, and perform basic operations.</p>
+<hr>
+<h1 id="part-x-python-and-jupyter-notebook-setup">Part X — Python and Jupyter Notebook Setup</h1>
+<h2 id="44-why-jupyter-notebook-is-used">44. Why Jupyter Notebook is used</h2>
+<p>Jupyter Notebook combines in one file:</p>
+<ul>
+<li>explanatory text/notes;</li>
+<li>executable code;</li>
+<li>visible output and charts.</li>
+</ul>
+<p>Therefore, a teacher or analyst need not distribute separate notes and a separate coding platform. Recipients can read the explanation, execute the code, and inspect results in one place.</p>
+<h2 id="45-installation-routes">45. Installation routes</h2>
+<h3 id="route-a-anaconda-distribution">Route A — Anaconda distribution</h3>
+<p>Download Anaconda and follow its installer. It can install Jupyter Notebook and necessary dependencies together. The instructor describes this as the easiest and most straightforward option.</p>
+<h3 id="route-b-python-and-pip">Route B — Python and pip</h3>
+<ol>
+<li>Download a recent stable Python version from <code>python.org</code>.</li>
+<li>During installation, select <strong>Add Python to PATH</strong>.</li>
+<li>Verify installation in Command Prompt:</li>
+</ol>
+<pre><code class="language-text">python --version
+</code></pre>
+<ol start="4">
+<li>Verify pip:</li>
+</ol>
+<pre><code class="language-text">pip --version
+</code></pre>
+<ol start="5">
+<li>Use pip to install Jupyter Notebook if needed.</li>
+</ol>
+<p><code>pip</code> is Python’s package manager and is bundled with modern Python releases. If absent, the transcript mentions obtaining <code>get-pip.py</code> from pip’s official source and running it.</p>
+<h3 id="why-path-matters">Why PATH matters</h3>
+<p>Adding Python to the environment PATH tells the operating system where the Python executable is located. Users can type <code>python</code> without specifying its full installation path.</p>
+<p>The instructor accepts other tools such as VS Code, PyCharm, IPython, or JupyterLab, but recommends having classic Jupyter Notebook because class demonstrations and shared notebooks use it.</p>
+<h2 id="46-launching-jupyter-notebook">46. Launching Jupyter Notebook</h2>
+<p>In Command Prompt:</p>
+<pre><code class="language-text">jupyter notebook
+</code></pre>
+<p>Expected behavior:</p>
+<ol>
+<li>A terminal/command window opens and displays server log messages.</li>
+<li>The default browser opens the Jupyter interface.</li>
+<li>Jupyter looks like a website, but the notebook server is normally running on the user’s own computer rather than on a remote website.</li>
+<li>The log indicates the local directory from which notebooks are served and a local port, commonly <code>8888</code>.</li>
+</ol>
+<h2 id="47-kernel-server-and-browser-relationship">47. Kernel/server and browser relationship</h2>
+<p>The instructor uses “kernel” broadly for the background engine. The key conceptual model is:</p>
+<ul>
+<li>the browser is the visible front end;</li>
+<li>the local notebook server serves the web interface and files;</li>
+<li>the kernel executes code and returns results;</li>
+<li>the browser displays those results.</li>
+</ul>
+<p>Do not close the background terminal/server while using the notebook. It can be minimized, but closing it stops the local service and makes the browser notebook cease functioning.</p>
+<p>Users normally interact with the browser notebook, not by typing code into the server log window.</p>
+<hr>
+<h1 id="part-xi-jupyter-notebook-interface-and-cells">Part XI — Jupyter Notebook Interface and Cells</h1>
+<h2 id="48-notebook-interface">48. Notebook interface</h2>
+<p>Students are encouraged to create/open a notebook and explore menus such as:</p>
+<ul>
+<li>File;</li>
+<li>Edit;</li>
+<li>View;</li>
+<li>Run;</li>
+<li>Kernel;</li>
+<li>Settings;</li>
+<li>Help.</li>
+</ul>
+<p>The central unit of interaction is a <strong>cell</strong>.</p>
+<h2 id="49-three-cell-types">49. Three cell types</h2>
+<h3 id="code-cell">Code cell</h3>
+<ul>
+<li>contains executable Python code;</li>
+<li>sends code to the kernel;</li>
+<li>shows output beneath the cell;</li>
+<li>has an execution indicator such as <code>[1]</code> on the left.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-python">x = &quot;Santhosh&quot;
+y = &quot;Raju&quot;
+print(x, y)
+</code></pre>
+<p>Strings must be placed in quotes. The output is <code>Santhosh Raju</code>.</p>
+<p>Execution counts reveal order. <code>[1]</code> means the cell was the first execution in that kernel session. Running cells out of logical order may create errors—for example, using a variable before the defining cell has run.</p>
+<p>An asterisk <code>[*]</code> means the cell is still executing.</p>
+<h3 id="markdown-cell">Markdown cell</h3>
+<ul>
+<li>contains formatted explanatory text rather than executable Python;</li>
+<li>can create headings and narrative notes;</li>
+<li>does not show the code-cell execution bracket.</li>
+</ul>
+<p>Examples:</p>
+<pre><code class="language-markdown"># Introduction to Jupyter Notebook
+## Basics of the User Interface
+</code></pre>
+<p>One <code>#</code> creates a level-one heading; two create a level-two heading. Executing the Markdown cell renders the formatting.</p>
+<h3 id="raw-cell">Raw cell</h3>
+<ul>
+<li>preserves entered material without Markdown rendering;</li>
+<li>does not execute it through the kernel;</li>
+<li>is useful when content must remain unformatted/unprocessed.</li>
+</ul>
+<h2 id="50-running-cells-and-shortcuts">50. Running cells and shortcuts</h2>
+<p>Key behavior discussed:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Shortcut</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Shift + Enter</code></td>
+<td>Run the cell and move to the next cell (often creating one if needed)</td>
+</tr>
+<tr>
+<td><code>Ctrl + Enter</code></td>
+<td>Run the cell and remain on the same cell</td>
+</tr>
+<tr>
+<td><code>Alt + Enter</code></td>
+<td>Run the cell and insert a new cell below</td>
+</tr>
+<tr>
+<td><code>A</code> in command mode</td>
+<td>Insert a cell above</td>
+</tr>
+<tr>
+<td><code>B</code> in command mode</td>
+<td>Insert a cell below</td>
+</tr>
+<tr>
+<td><code>X</code> in command mode</td>
+<td>Cut selected cell(s)</td>
+</tr>
+<tr>
+<td><code>Shift + V</code> in command mode</td>
+<td>Paste cell(s) above</td>
+</tr>
+</tbody>
+</table></div>
+<p>The transcript’s shortcut sentence is compressed, but the standard Jupyter meanings above capture the intended demonstration.</p>
+<h2 id="51-python-basics-students-must-review">51. Python basics students must review</h2>
+<p>The instructor requires familiarity with:</p>
+<ul>
+<li>numerical types;</li>
+<li>strings;</li>
+<li>Boolean values;</li>
+<li>lists;</li>
+<li>tuples;</li>
+<li>sets;</li>
+<li>dictionaries;</li>
+<li>mutable versus immutable objects;</li>
+<li>variables and assignment;</li>
+<li>basic arithmetic and printing;</li>
+<li>importing and using packages/functions.</li>
+</ul>
+<p>Use <code>type()</code> to inspect the type of a value:</p>
+<pre><code class="language-python">x = &quot;Santhosh&quot;
+type(x)  # str
+</code></pre>
+<h2 id="52-libraries-packages-and-modules">52. Libraries, packages, and modules</h2>
+<p>Libraries/packages provide prewritten reusable code. They are imported when required instead of rewriting established functionality.</p>
+<p>Example:</p>
+<pre><code class="language-python">import math
+math.sqrt(25)
+</code></pre>
+<p>The square-root operation already exists in the <code>math</code> library. Importing required libraries gives access to their modules/functions. The central visualization libraries for the course are Matplotlib and Seaborn, with NumPy and pandas supporting data generation and manipulation.</p>
+<p>Instructor emphasis: programming is learned by doing, like swimming—not merely by watching. Install the software, experiment with simple expressions such as <code>3 + 4</code>, assign values to variables, run cells, and inspect outputs before later sessions begin chart construction.</p>
+<hr>
+<h1 id="part-xii-integrated-comparisons-and-exam-traps">Part XII — Integrated Comparisons and Exam Traps</h1>
+<h2 id="53-matplotlib-versus-seaborn">53. Matplotlib versus Seaborn</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Matplotlib</th>
+<th>Seaborn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Level</td>
+<td>foundational/general plotting library</td>
+<td>high-level statistical visualization library built on Matplotlib</td>
+</tr>
+<tr>
+<td>Strength</td>
+<td>precise control, annotation, axes/layout customization</td>
+<td>attractive defaults, statistical plots, DataFrame mapping</td>
+</tr>
+<tr>
+<td>DataFrame support</td>
+<td>possible but more manual</td>
+<td>direct and convenient</td>
+</tr>
+<tr>
+<td>Best combined use</td>
+<td>customize figures/axes</td>
+<td>create statistical plot quickly</td>
+</tr>
+</tbody>
+</table></div>
+<p>Strong workflow:</p>
+<ol>
+<li>Use Seaborn for efficient statistical visualization and attractive defaults.</li>
+<li>Use Matplotlib for precise refinement, annotations, ticks, titles, and layout.</li>
+</ol>
+<p>It is a mistake to stop using Matplotlib after adopting Seaborn, because doing so gives up fine-grained control that remains fully compatible with Seaborn plots.</p>
+<h2 id="54-subplot-versus-subplots">54. <code>subplot()</code> versus <code>subplots()</code></h2>
+<ul>
+<li><code>plt.subplot(r, c, i)</code> selects one cell in a grid using pyplot’s stateful interface.</li>
+<li><code>plt.subplots(...)</code> creates a Figure and one or more Axes objects and is central to the OO interface.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-python">fig, axes = plt.subplots(2, 3, figsize=(12, 8))
+axes[0, 0].plot(x, y)
+</code></pre>
+<h2 id="55-appearance-versus-data">55. Appearance versus data</h2>
+<p>Changing any of the following changes visual encoding but not observations:</p>
+<ul>
+<li>color;</li>
+<li>marker;</li>
+<li>line style;</li>
+<li>palette;</li>
+<li>axis limits;</li>
+<li>figure size.</li>
+</ul>
+<p>However, axis limits can hide part of the displayed range, so they may alter perception even though the stored data remains unchanged.</p>
+<h2 id="56-frequent-mistakes-to-avoid">56. Frequent mistakes to avoid</h2>
+<ol>
+<li>Treating <code>np.linspace(0, 20, 20)</code> as a step of 20; it means 20 evenly spaced samples.</li>
+<li>Saying <code>alpha=100</code> is the valid opaque setting; use <code>alpha=1</code>.</li>
+<li>Reordering stacked data but not labels/colors.</li>
+<li>Confusing an average-age bar with passenger count.</li>
+<li>Assuming <code>total_bill</code> bars necessarily show the sum; default <code>barplot</code> behavior is an estimate such as the mean.</li>
+<li>Calling <code>barplot()</code> figure-level; it is axes-level.</li>
+<li>Calling <code>catplot()</code> axes-level; it is figure-level.</li>
+<li>Believing Seaborn prevents Matplotlib customization.</li>
+<li>Assuming marker/color changes data.</li>
+<li>Using <code>rx-</code> while describing a dashed line; <code>-</code> is solid and <code>--</code> is dashed.</li>
+<li>Using excessive gridlines, borders, colors, or decoration.</li>
+<li>Showing every plot to an executive audience when a focused selection would communicate better.</li>
+</ol>
+<hr>
+<h1 id="rapid-revision-and-exam-checklist">Rapid Revision and Exam Checklist</h1>
+<h2 id="definitions-to-memorize">Definitions to memorize</h2>
+<ul>
+<li><strong>Stacked area plot:</strong> multiple numerical series filled and stacked to show cumulative composition, often over time.</li>
+<li><strong>Subplot:</strong> an individual plotting area placed within a matrix/grid in one figure.</li>
+<li><strong>Figure:</strong> the complete Matplotlib canvas.</li>
+<li><strong>Axes:</strong> an individual plot area inside a figure.</li>
+<li><strong>Seaborn:</strong> a statistical visualization library built on Matplotlib.</li>
+<li><strong>Axes-level function:</strong> draws on a particular Matplotlib Axes; example: <code>sns.barplot()</code>.</li>
+<li><strong>Figure-level function:</strong> creates/manages its full figure and can facet automatically; example: <code>sns.catplot()</code>.</li>
+<li><strong>Hue:</strong> mapping of an additional grouping variable to color.</li>
+<li><strong>Faceting:</strong> splitting data into multiple panels by row or column categories.</li>
+<li><strong>Box plot:</strong> summary of median, quartiles, spread, whiskers, and outliers.</li>
+<li><strong>Violin plot:</strong> distribution plot combining density shape with box-plot-like summary information.</li>
+<li><strong>Kernel:</strong> computational process that executes notebook code.</li>
+<li><strong>Markdown cell:</strong> rendered text/documentation cell.</li>
+<li><strong>Raw cell:</strong> unexecuted, unrendered content cell.</li>
+<li><strong>Gestalt proximity:</strong> nearby items are perceived as belonging to one group.</li>
+</ul>
+<h2 id="syntax-checklist">Syntax checklist</h2>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+</code></pre>
+<pre><code class="language-python">plt.stackplot(x, y1, y2, labels=labels, colors=colors, alpha=0.7)
+</code></pre>
+<pre><code class="language-python">plt.subplot(rows, columns, position)
+plt.rcParams[&quot;figure.figsize&quot;] = (12, 8)
+</code></pre>
+<pre><code class="language-python">fig, ax = plt.subplots()
+ax.plot(x, y)
+ax.set_title(&quot;Title&quot;)
+ax.set_xlabel(&quot;X&quot;)
+ax.set_ylabel(&quot;Y&quot;)
+ax.grid(True)
+ax.legend()
+fig.savefig(&quot;figure.png&quot;)
+</code></pre>
+<pre><code class="language-python">sns.barplot(data=df, x=&quot;category&quot;, y=&quot;value&quot;, hue=&quot;group&quot;)
+</code></pre>
+<pre><code class="language-python">sns.catplot(
+    data=tips,
+    x=&quot;day&quot;,
+    y=&quot;total_bill&quot;,
+    hue=&quot;sex&quot;,
+    col=&quot;time&quot;,
+    kind=&quot;bar&quot;
+)
+</code></pre>
+<h2 id="one-minute-self-test">One-minute self-test</h2>
+<ul>
+<li>[ ] Can I explain every argument in <code>subplot(2, 3, 4)</code>?</li>
+<li>[ ] Can I number a subplot grid left-to-right, top-to-bottom?</li>
+<li>[ ] Can I explain why the first <code>stackplot</code> Y-series is at the bottom?</li>
+<li>[ ] Can I interpret <code>alpha=0.7</code> correctly?</li>
+<li>[ ] Can I distinguish <code>figure</code>, <code>axes</code>, <code>subplot()</code>, and <code>subplots()</code>?</li>
+<li>[ ] Can I give four advantages of the OO Matplotlib approach?</li>
+<li>[ ] Can I save a Figure object as JPG or PNG?</li>
+<li>[ ] Can I explain why Seaborn and Matplotlib should be used together?</li>
+<li>[ ] Can I distinguish axes-level <code>barplot()</code> from figure-level <code>catplot()</code>?</li>
+<li>[ ] Can I explain <code>hue</code>, <code>hue_order</code>, <code>col</code>, and <code>kind</code>?</li>
+<li>[ ] Can I choose among scatter, box, violin, bar, stacked area, and subplots for a stated problem?</li>
+<li>[ ] Can I explain why style/marker changes do not change data?</li>
+<li>[ ] Can I explain the Stellar Analytics 2 × 3 versus 2 × 2 recommendation?</li>
+<li>[ ] Can I state all major table-design guidelines?</li>
+<li>[ ] Can I use proximity/spacing to force row-wise or column-wise reading?</li>
+<li>[ ] Can I explain the browser–server–kernel relationship in Jupyter?</li>
+<li>[ ] Can I distinguish code, Markdown, and raw cells?</li>
+<li>[ ] Can I state the effects of <code>Shift+Enter</code>, <code>Ctrl+Enter</code>, and <code>Alt+Enter</code>?</li>
+<li>[ ] Have I reviewed Python types, mutability, variables, <code>type()</code>, imports, and package use?</li>
+</ul>
+<h2 id="high-probability-long-answer-structure">High-probability long-answer structure</h2>
+<p>For any “explain with example” question:</p>
+<ol>
+<li>Give the definition/purpose.</li>
+<li>Write the function syntax.</li>
+<li>Explain every relevant argument.</li>
+<li>Provide a short dataset/code example.</li>
+<li>Interpret the expected output.</li>
+<li>State customization options.</li>
+<li>Add a caveat or chart-selection consideration.</li>
+</ol>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<h3 id="implementing-perceptually-consistent-multi-panel-figures">Implementing perceptually consistent multi-panel figures</h3>
+<p>The review adds no new Matplotlib syntax, but it sharpens implementation choices:</p>
+<ul>
+<li>Preserve the same semantic colour, marker meaning, units, and scale logic for a metric across subplots. Independent axes customization must not silently change meaning.</li>
+<li>Use <strong>proximity</strong> to place related panels together, <strong>alignment</strong> to create order, and <strong>continuity</strong> to guide a left-to-right/top-to-bottom analytical sequence.</li>
+<li>Keep typography, spacing, title style, label precision, and legend strategy consistent across panels.</li>
+<li>Split an overloaded overlay into subplots or small multiples when doing so reduces occlusion and cognitive load; do not fragment a coherent comparison unnecessarily.</li>
+<li>Use restrained gridlines/backgrounds so the data form the figure and interface decoration remains ground.</li>
+</ul>
+<h3 id="practical-validation">Practical validation</h3>
+<p>After code runs, inspect the rendered output: Are labels overlapping? Does one panel dominate accidentally? Are comparable axes truly comparable? Is a category&rsquo;s colour stable? Can the intended reading sequence be understood without explanation? Tool correctness is not visualization correctness.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-8.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 8: Python Data Visualization, Matplotlib…</span>
+      </a>
+      <a href="week-10.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 10: Exam-Focused Study Notes</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

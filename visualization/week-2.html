@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Visualization · Week 2 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Visualization</span>
+      <span class="brand-title">Week 2</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html" selected>Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Data Visualization, Visual Perception, and Preattentive Processing
+      </a>
+      <a class="is-active" href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Visual Perception, Better Visualization, Form–Function, Tables and…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Visualizing and Comparing Categories
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Charts That Show Change Over Time
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Distribution and Relationship Visualizations
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Data Visualization: Exhaustive Exam Notes
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Data Visualization with Python, Jupyter, Python Basics, and Chart…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Python Data Visualization, Matplotlib Plotting, Interpretation, and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Data Visualization with Matplotlib, Seaborn, and Jupyter Notebook
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Exam-Focused Study Notes
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Seaborn, Matplotlib, Heatmaps, Styling, and Dashboard Design
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Dashboards, Dashboard Design, Grammar of Graphics, and Matplotlib
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Dashboard Design, Visual Encoding, Matplotlib, and Dashboard Analytics
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Storytelling with Data
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Storytelling with Data: Exam-Focused Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Visualization · Week 2</p>
+        <h1 class="page-title">Visual Perception, Better Visualization, Form–Function, Tables and Graphs</h1>
+        <p class="page-meta">Week 2 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#exam-orientation">Exam orientation</a></li>
+      <li><a href="#1-1-cognitive-processing-implication">1.1 Cognitive processing implication</a></li>
+      <li><a href="#2-1-four-categories">2.1 Four categories</a></li>
+      <li><a href="#2-2-relative-strength-and-interaction">2.2 Relative strength and interaction</a></li>
+      <li><a href="#2-3-limits-of-some-visual-encodings">2.3 Limits of some visual encodings</a></li>
+      <li><a href="#3-1-principle-of-proximity">3.1 Principle of proximity</a></li>
+      <li><a href="#3-2-principle-of-similarity">3.2 Principle of similarity</a></li>
+      <li><a href="#3-3-principle-of-enclosure">3.3 Principle of enclosure</a></li>
+      <li><a href="#3-4-principle-of-closure">3.4 Principle of closure</a></li>
+      <li><a href="#3-5-principle-of-continuity">3.5 Principle of continuity</a></li>
+      <li><a href="#3-6-principle-of-connection">3.6 Principle of connection</a></li>
+      <li><a href="#3-7-gestalt-and-clutter-reduction">3.7 Gestalt and clutter reduction</a></li>
+      <li><a href="#4-1-show-the-data">4.1 Show the data</a></li>
+      <li><a href="#4-2-reduce-clutter">4.2 Reduce clutter</a></li>
+      <li><a href="#4-3-integrate-graphics-and-text">4.3 Integrate graphics and text</a></li>
+      <li><a href="#4-4-avoid-spaghetti-charts">4.4 Avoid spaghetti charts</a></li>
+      <li><a href="#4-5-start-with-grey">4.5 Start with grey</a></li>
+      <li><a href="#5-1-form-spectrum">5.1 Form spectrum</a></li>
+      <li><a href="#5-2-function-spectrum">5.2 Function spectrum</a></li>
+      <li><a href="#5-3-four-quadrants">5.3 Four quadrants</a></li>
+      <li><a href="#5-4-blended-visual-experiences">5.4 Blended visual experiences</a></li>
+      <li><a href="#5-5-animation-and-transitions">5.5 Animation and transitions</a></li>
+      <li><a href="#6-1-when-prose-is-best">6.1 When prose is best</a></li>
+      <li><a href="#6-2-quantitative-and-categorical-information">6.2 Quantitative and categorical information</a></li>
+      <li><a href="#6-3-a-mark-can-encode-both-roles">6.3 A mark can encode both roles</a></li>
+      <li><a href="#6-4-characteristics-of-a-table">6.4 Characteristics of a table</a></li>
+      <li><a href="#6-5-table-versus-graph">6.5 Table versus graph</a></li>
+      <li><a href="#6-6-good-table-design-through-gestalt-principles">6.6 Good table design through Gestalt principles</a></li>
+      <li><a href="#7-1-simultaneous-contrast">7.1 Simultaneous contrast</a></li>
+      <li><a href="#7-2-uniform-two-dimensional-areas">7.2 Uniform two-dimensional areas</a></li>
+      <li><a href="#7-3-dashboard-case-visionary-apps">7.3 Dashboard case: Visionary Apps</a></li>
+      <li><a href="#7-4-gestalt-concepts-in-the-case">7.4 Gestalt concepts in the case</a></li>
+      <li><a href="#7-5-recommended-strategy-in-the-case">7.5 Recommended strategy in the case</a></li>
+      <li><a href="#step-1-define-audience-and-task">Step 1: Define audience and task</a></li>
+      <li><a href="#step-2-choose-prose-table-or-graph">Step 2: Choose prose, table, or graph</a></li>
+      <li><a href="#step-3-choose-function-and-form">Step 3: Choose function and form</a></li>
+      <li><a href="#step-4-establish-perceptual-organization">Step 4: Establish perceptual organization</a></li>
+      <li><a href="#step-5-build-attention-hierarchy">Step 5: Build attention hierarchy</a></li>
+      <li><a href="#step-6-integrate-the-story">Step 6: Integrate the story</a></li>
+      <li><a href="#step-7-remove-clutter-and-validate">Step 7: Remove clutter and validate</a></li>
+      <li><a href="#q1-explain-the-six-gestalt-principles-with-visualization-applications">Q1. Explain the six Gestalt principles with visualization applications.</a></li>
+      <li><a href="#q2-what-are-pre-attentive-attributes-classify-them">Q2. What are pre-attentive attributes? Classify them.</a></li>
+      <li><a href="#q3-state-and-explain-the-five-guidelines-for-better-visualization">Q3. State and explain the five guidelines for better visualization.</a></li>
+      <li><a href="#q4-distinguish-explanatory-and-exploratory-visualization">Q4. Distinguish explanatory and exploratory visualization.</a></li>
+      <li><a href="#q5-explain-the-form-function-matrix">Q5. Explain the form–function matrix.</a></li>
+      <li><a href="#q6-when-should-a-table-be-used-instead-of-a-graph">Q6. When should a table be used instead of a graph?</a></li>
+      <li><a href="#q7-differentiate-quantitative-and-categorical-information">Q7. Differentiate quantitative and categorical information.</a></li>
+      <li><a href="#q8-explain-simultaneous-contrast-using-the-dashboard-case">Q8. Explain simultaneous contrast using the dashboard case.</a></li>
+      <li><a href="#q9-why-are-active-titles-useful-are-they-biased">Q9. Why are active titles useful? Are they biased?</a></li>
+      <li><a href="#q10-what-is-the-role-of-ai-tools-in-visualization">Q10. What is the role of AI/tools in visualization?</a></li>
+      <li><a href="#one-line-definitions">One-line definitions</a></li>
+      <li><a href="#must-memorize-lists">Must-memorize lists</a></li>
+      <li><a href="#final-self-check">Final self-check</a></li>
+      <li><a href="#ultimate-takeaway">Ultimate takeaway</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="exam-orientation">Exam orientation</h2>
+<p>Week 2 explains <strong>how people see and group visual information</strong>, and how that knowledge should guide the design of tables, graphs, dashboards, reports, and presentations. The central idea is that a visualization is not successful merely because it contains correct data. It must direct attention, reduce unnecessary cognitive effort, support the intended task, and communicate a meaningful story.</p>
+<p>The week covers:</p>
+<ol>
+<li>Gestalt principles of visual perception.</li>
+<li>Five guidelines for better data visualization.</li>
+<li>The form–function classification of visualization.</li>
+<li>Quantitative versus categorical information.</li>
+<li>When to use prose, tables, or graphs.</li>
+<li>Pre-attentive processing and cognitive load.</li>
+<li>Contrast, relative perception, and dashboard design.</li>
+<li>The proper role of visualization tools and AI.</li>
+</ol>
+<blockquote>
+<p><strong>Core instructor message:</strong> Tools can draw or generate charts, but people must decide the insight, emphasis, audience path, and story. A technically generated chart is only a starting point.</p>
+</blockquote>
+<hr>
+<h1 id="1-human-visual-perception-and-why-it-matters">1. Human visual perception and why it matters</h1>
+<p>Human vision does not passively record every object with equal importance. The eyes and brain select, group, complete, compare, and interpret what is seen. A designer can therefore either cooperate with perception or unintentionally make the audience work against it.</p>
+<p>The audience is often distracted, unfamiliar with the subject, and unwilling to spend much cognitive effort decoding a confusing display. If the words and the visual contradict one another, or if the intended pattern is buried in clutter, the audience may simply disengage. Visuals, spoken explanation, labels, and gestures must therefore be <strong>congruent</strong>.</p>
+<p>The live-session example showed a field containing mostly circles plus a few other shapes. Without emphasis, viewers struggled to identify the uncommon shapes or establish which non-circle shape was most frequent. Once the distinct shapes were highlighted with a pre-attentive attribute, viewers could immediately see three octagons and one each of the other uncommon shapes. The information did not change; only its perceptual accessibility changed.</p>
+<h2 id="1-1-cognitive-processing-implication">1.1 Cognitive processing implication</h2>
+<p>Attention is limited. Information must first attract attention, pass through brief <strong>iconic memory</strong>, and enter <strong>working memory</strong> before it can be consciously processed. Unnecessary gridlines, borders, decorations, labels, motion, or repeated explanations consume some of that limited cognitive capacity.</p>
+<p>Consequently:</p>
+<ul>
+<li>Use perceptual cues to make important information effortless to locate.</li>
+<li>Do not make the audience read instructions that can be communicated through layout.</li>
+<li>Do not spend visual “pixels” on elements that add no meaning.</li>
+<li>Reserve attention-getting attributes for information that deserves attention.</li>
+<li>Build on perceptual conventions already understood by the audience instead of redundantly explaining them.</li>
+</ul>
+<p>The instructor’s “egg” analogy illustrates scaffolding: once the subject is identified as an egg, the audience already understands many properties of it. Explaining every obvious property wastes time and may cause disengagement. Gestalt conventions similarly allow a designer to communicate structure without explicitly describing every grouping.</p>
+<hr>
+<h1 id="2-pre-attentive-processing">2. Pre-attentive processing</h1>
+<p><strong>Pre-attentive attributes</strong> are visual properties detected rapidly and automatically, before focused conscious attention. They make an item “pop out” from its surroundings and can guide the audience toward the intended information.</p>
+<h2 id="2-1-four-categories">2.1 Four categories</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Attributes/examples</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Form</strong></td>
+<td>Length, width, orientation, shape, size, enclosure</td>
+<td>An item differing in form is noticed immediately.</td>
+</tr>
+<tr>
+<td><strong>Colour</strong></td>
+<td>Hue and intensity/saturation</td>
+<td>A red item among grey ones, or a dark item among pale ones, attracts attention.</td>
+</tr>
+<tr>
+<td><strong>Spatial position</strong></td>
+<td>Different horizontal or vertical position; deviation from an alignment</td>
+<td>A point outside a common line or cluster appears as an outlier.</td>
+</tr>
+<tr>
+<td><strong>Movement</strong></td>
+<td>Motion, animation, flicker</td>
+<td>Usually the strongest cue; it can overpower other attributes.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="form">Form</h3>
+<ul>
+<li>A shorter line among equal-length lines stands out.</li>
+<li>A wider line among narrow lines stands out.</li>
+<li>A slanted line among vertical lines stands out.</li>
+<li>A different shape or size stands out.</li>
+<li>Putting one item inside a box creates especially strong emphasis.</li>
+</ul>
+<h3 id="colour">Colour</h3>
+<ul>
+<li><strong>Hue</strong> identifies the colour family, such as red, yellow, blue, or green.</li>
+<li><strong>Intensity/saturation</strong> concerns how light, dark, strong, or muted the colour appears.</li>
+<li>Colour should be purposeful. If everything is colourful, nothing has a clear priority.</li>
+</ul>
+<h3 id="spatial-position">Spatial position</h3>
+<p>An item displaced from a shared alignment attracts attention. This explains why an outlier may be difficult to detect in a numeric table but immediately visible in a suitable graph.</p>
+<h3 id="movement">Movement</h3>
+<p>Movement and flicker are biologically powerful because humans are conditioned to associate unexpected motion with possible danger. A single patch of moving grass might indicate a snake or predator; survival therefore favoured rapid detection of motion.</p>
+<p><strong>Design caveat:</strong> The power of motion makes it dangerous when used casually. Repeated flicker or decorative animation monopolizes attention, irritates viewers, and distracts from the message. Use motion sparingly, perhaps once to direct attention or to clarify a meaningful transition. Do not make it continuous merely for entertainment.</p>
+<h2 id="2-2-relative-strength-and-interaction">2.2 Relative strength and interaction</h2>
+<p>Pre-attentive cues do not all have equal strength:</p>
+<ul>
+<li>Enclosure is generally stronger than a small difference in length.</li>
+<li>Movement can subordinate length, width, shape, colour, orientation, and enclosure.</li>
+<li>Multiple simultaneous cues may compete rather than reinforce the intended focus.</li>
+</ul>
+<h2 id="2-3-limits-of-some-visual-encodings">2.3 Limits of some visual encodings</h2>
+<p>Although size is noticeable, people find it hard to judge <strong>how many times larger</strong> one circle or area is than another. This is one reason pie charts and area-based comparisons are often discouraged when accurate quantitative comparison matters. Noticing a difference is not the same as estimating its magnitude accurately.</p>
+<h3 id="practical-use-case">Practical use case</h3>
+<p>Suppose a chart shows departmental scores. Keeping all series grey and using one saturated colour for the department needing intervention lets the audience find it immediately. Making every department a different bright colour destroys that hierarchy.</p>
+<hr>
+<h1 id="3-gestalt-principles-of-visual-perception">3. Gestalt principles of visual perception</h1>
+<p>The Gestalt school of psychology began its research in <strong>1912</strong> to understand how people perceive pattern, form, and organization. The German word <em>Gestalt</em> refers to pattern or organized form. Researchers observed that people automatically organize what they see to make sense of it. Their principles remain useful descriptions of visual behaviour, especially in tables, graphs, and reports.</p>
+<p>The six principles emphasized in the course are:</p>
+<ol>
+<li>Proximity</li>
+<li>Similarity</li>
+<li>Enclosure</li>
+<li>Closure</li>
+<li>Continuity</li>
+<li>Connection</li>
+</ol>
+<h2 id="3-1-principle-of-proximity">3.1 Principle of proximity</h2>
+<p><strong>Definition:</strong> Objects close to one another are perceived as belonging to a group.</p>
+<p>Ten identical circles can appear as two groups or three groups solely because of their spacing. No border or label is required.</p>
+<h3 id="application-to-tables-and-layouts">Application to tables and layouts</h3>
+<p>Spacing can direct whether the audience scans:</p>
+<ul>
+<li><strong>Across rows:</strong> make horizontal gaps smaller than vertical gaps.</li>
+<li><strong>Down columns:</strong> make vertical gaps smaller than horizontal gaps.</li>
+</ul>
+<p>The conscious use of space is therefore a powerful means of organizing information and controlling the viewing path. A table need not say “read row-wise” if its spacing already makes row grouping obvious.</p>
+<p><strong>Instructor emphasis:</strong> Written instructions themselves require cognitive effort. Use spacing to make the desired reading path automatic and conserve working memory for the real message.</p>
+<h2 id="3-2-principle-of-similarity">3.2 Principle of similarity</h2>
+<p><strong>Definition:</strong> Objects similar in colour, size, shape, or orientation are perceived as a group.</p>
+<p>Similarity is useful for encoding categories. It works best when:</p>
+<ul>
+<li>The number of distinctions is limited.</li>
+<li>The attributes are different enough to distinguish the groups clearly.</li>
+<li>The same visual meaning is used consistently.</li>
+</ul>
+<p>Similarity can sometimes override proximity. Even if objects are farther apart, shared colour, size, or shape can make them appear related. In tables, similar formatting can direct scanning across rows or down columns.</p>
+<p><strong>Caveat:</strong> Accidental similarity can create a relationship that the data does not support. If panels or series are not related, do not style them as if they are.</p>
+<h2 id="3-3-principle-of-enclosure">3.3 Principle of enclosure</h2>
+<p><strong>Definition:</strong> Objects are perceived as belonging together when a boundary surrounds them, such as a border or a common field of background colour.</p>
+<p>Objects with identical physical arrangement can be grouped differently merely by changing their enclosures. Enclosure is widely used in tables and graphs through borders and background fills.</p>
+<p>Important points:</p>
+<ul>
+<li>A bright, thick border or dominant fill is unnecessary; a subtle boundary can be sufficient.</li>
+<li>White space itself can create an illusory enclosure.</li>
+<li>Enclosure is stronger than connection in the hierarchy illustrated by the course.</li>
+<li>Unnecessary boxes or shaded panels may create unintended groups and clutter.</li>
+</ul>
+<h2 id="3-4-principle-of-closure">3.4 Principle of closure</h2>
+<p><strong>Definition:</strong> People prefer closed, whole, regular forms and mentally complete open or incomplete structures when a reasonable complete interpretation exists.</p>
+<p>People have a perceptual dislike of loose ends and try to resolve ambiguous stimuli. Thus:</p>
+<ul>
+<li>Partial grey shapes may be perceived as rectangles, circles, ovals, or continuous lines hidden behind another object rather than as unrelated irregular fragments.</li>
+<li>Several disconnected perpendicular segments may be seen as a rectangle.</li>
+<li>A curved partial outline may be perceived as a complete oval.</li>
+</ul>
+<h3 id="application-to-graphs">Application to graphs</h3>
+<p>The plotting region need not be enclosed by a heavy rectangular frame or filled background. A subtle pair of x- and y-axes, or even sufficient alignment and whitespace, may allow the viewer to infer the full region. Closure lets designers remove non-data ink without destroying structure.</p>
+<h2 id="3-5-principle-of-continuity">3.5 Principle of continuity</h2>
+<p><strong>Definition:</strong> Objects aligned with one another or appearing to continue one another are perceived as parts of a single whole.</p>
+<p>When a line crosses or disappears behind a shape, people usually perceive it as continuing rather than breaking into unrelated fragments. A dotted curve is also perceived as a continuous pattern when the dots follow a clear path.</p>
+<h3 id="applications">Applications</h3>
+<ul>
+<li>Left-aligned bars clearly share a baseline, sometimes eliminating the need for a visible vertical axis line.</li>
+<li>In a table, distinct alignments can separate division names, department names, and right-aligned headcounts without vertical gridlines.</li>
+<li>Alignment creates column and hierarchy structure while reducing clutter.</li>
+</ul>
+<h2 id="3-6-principle-of-connection">3.6 Principle of connection</h2>
+<p><strong>Definition:</strong> Objects joined by a line are perceived as members of the same group.</p>
+<p>Equally spaced circles can appear as attached pairs when connecting lines are added. Connection can overpower proximity and similarity in colour, size, or shape, although enclosure is stronger still.</p>
+<h3 id="strength-relationship-emphasized-in-the-lesson">Strength relationship emphasized in the lesson</h3>
+<p><strong>Enclosure &gt; connection &gt; proximity/similarity</strong> in the illustrated grouping examples.</p>
+<h3 id="application-to-graphs-2">Application to graphs</h3>
+<p>Connecting points in a line graph:</p>
+<ul>
+<li>Creates a clear sense of relationship.</li>
+<li>Reveals the overall shape or trend of the data.</li>
+<li>Makes a series easier to follow than disconnected points.</li>
+</ul>
+<p>Use connection only when a genuine relationship or sequence exists. Connecting unrelated observations can imply a false relationship.</p>
+<h2 id="3-7-gestalt-and-clutter-reduction">3.7 Gestalt and clutter reduction</h2>
+<p>Gestalt principles are not decoration. They allow structure to be communicated through spacing, alignment, continuity, and restrained connection, reducing the need for boxes, gridlines, background changes, and verbose instructions.</p>
+<blockquote>
+<p><strong>Likely exam comparison:</strong> Pre-attentive attributes are primarily used to <strong>capture/direct attention</strong>; Gestalt principles are primarily used to <strong>organize perception and reduce clutter/cognitive effort</strong>.</p>
+</blockquote>
+<hr>
+<h1 id="4-five-primary-guidelines-for-better-data-visualization">4. Five primary guidelines for better data visualization</h1>
+<p>The course provides five guidelines:</p>
+<ol>
+<li>Show the data.</li>
+<li>Reduce the clutter.</li>
+<li>Integrate graphics and text.</li>
+<li>Avoid spaghetti charts.</li>
+<li>Start with grey.</li>
+</ol>
+<h2 id="4-1-show-the-data">4.1 Show the data</h2>
+<p>The audience can understand the point, argument, or story only if it can see the relevant data. “Show the data” does <strong>not</strong> mean display every available observation equally. It means identify how much data is needed and show the values that matter most to the argument.</p>
+<h3 id="state-gdp-example">State GDP example</h3>
+<p>A chart of Indian States and Union Territories across years assigned a unique colour to every series. That made it difficult to identify the three states whose state domestic product had fallen after 2017. In the improved version, the three relevant states were highlighted and all other series were greyed into the background.</p>
+<p><strong>Lesson:</strong> Good design is not about showing the least data; it is about showing the data that matters most.</p>
+<h2 id="4-2-reduce-clutter">4.2 Reduce clutter</h2>
+<p><strong>Clutter</strong> consists of unnecessary visual elements that distract from the central data and consume cognitive capacity.</p>
+<p>Common sources include:</p>
+<ul>
+<li>Heavy tick marks and gridlines.</li>
+<li>Redundant axes.</li>
+<li>Overlapping squares, circles, or triangle markers.</li>
+<li>Textured/patterned fills and gradients when solid colour would work.</li>
+<li>Unnecessary three-dimensional effects that distort quantities.</li>
+<li>Excessive labels and text.</li>
+<li>Heavy borders and boxes.</li>
+<li>Decorative backgrounds, icons, photographs, balloons, or “dancing” numbers.</li>
+</ul>
+<p>Simplification makes the intended argument clearer and more comprehensible. If values are printed directly above bars, for example, gridlines and perhaps even y-axis numbers may become redundant.</p>
+<p><strong>Instructor phrase:</strong> “Lesser the pixels, the better.” This does not mean remove meaningful data. It means do not make the brain process nonessential marks.</p>
+<p>Design choices still contain judgment. Scientific knowledge explains perception, but decisions about chart type, labels, colour, font, annotations, and layout require a practiced balance of art and science.</p>
+<h2 id="4-3-integrate-graphics-and-text">4.3 Integrate graphics and text</h2>
+<p>Text in and around a graph is as important as bars, points, and lines. It can explain both what the graph means and how to read it.</p>
+<p>Three methods are emphasized:</p>
+<ol>
+<li>Remove legends where possible and directly label series.</li>
+<li>Use active titles.</li>
+<li>Add useful details/annotations.</li>
+</ol>
+<h3 id="a-direct-labels-instead-of-detached-legends">A. Direct labels instead of detached legends</h3>
+<p>Default legends often sit away from the data. The viewer must repeatedly match colour or symbol to legend entry, creating unnecessary eye movement and cognitive effort.</p>
+<p>Better practice:</p>
+<ul>
+<li>Label a line at or near the line.</li>
+<li>Align line labels together on one side when possible so the eye does not jump around.</li>
+<li>In a simple two-bar comparison, place country names inside/near the bars or use title colour to link the title to the data.</li>
+</ul>
+<p><strong>Caveat:</strong> Legends cannot always be removed. A map with many colour categories or a chart with many series may become more cluttered if every mark is directly labelled. If a legend is necessary, make its order correspond to the order of the data.</p>
+<h3 id="b-active-titles">B. Active titles</h3>
+<p>Jonathan Schwabish, in <em>Better Data Visualizations</em>, recommends titles that function like newspaper headlines. An <strong>active title</strong> states the principal takeaway rather than merely naming variables.</p>
+<ul>
+<li>Descriptive but weak: “Percentage of men and women in the workforce, 1980–2020.”</li>
+<li>Active: “Women’s workforce participation rose while men’s fell over the period.”</li>
+</ul>
+<p>Active titles are not inherently biased. They should faithfully state the result and message supported by the data. They must be concise and clear.</p>
+<blockquote>
+<p>If a concise active title is impossible to write, the chart may lack a concise takeaway, or the designer may not yet have decided what it should communicate.</p>
+</blockquote>
+<h3 id="c-add-details-and-annotations">C. Add details and annotations</h3>
+<p>Annotations can explain:</p>
+<ul>
+<li>Peaks and valleys.</li>
+<li>Outliers and unusual variation.</li>
+<li>Events associated with changes.</li>
+<li>Nonstandard encodings or how the graph should be read.</li>
+</ul>
+<p>In the avian-flu example, labels for the first outbreak, its peak, the second outbreak, and its peak helped connect outbreaks with a reduction in migratory-bird visits. Concise annotations transform a shape into a supported argument and particularly help readers with less visualization experience.</p>
+<h2 id="4-4-avoid-spaghetti-charts">4.4 Avoid spaghetti charts</h2>
+<p>A chart becomes a <strong>spaghetti/noodle chart</strong> when many lines, bars, colours, icons, or labels are packed into one display until patterns become difficult to follow. The solution is often not to fit everything into one graph but to split it into <strong>small multiples</strong>, also called grid or panel charts.</p>
+<h3 id="advantages-of-small-multiples">Advantages of small multiples</h3>
+<ol>
+<li>Once readers understand one panel, they understand the others.</li>
+<li>Large amounts of information can be shown without the confusion of one dense chart.</li>
+<li>Readers can compare patterns across variables or categories.</li>
+</ol>
+<h3 id="rules-and-pitfalls">Rules and pitfalls</h3>
+<ul>
+<li>Arrange panels in a logical order, such as geography or alphabetic sequence.</li>
+<li>Do not make readers navigate unpredictably around the page.</li>
+<li>Use the same layout, size, fonts, colours, and encoding meanings.</li>
+<li>Axes may vary only when justified and clearly communicated; comparable panels generally benefit from common scales.</li>
+<li>Never let blue mean “yes” in one panel and “no” in another.</li>
+<li>Small multiples should be easy to read at an overview level.</li>
+<li>Avoid repeating long axis titles, dense labels, annotations, and data markers in every small panel.</li>
+<li>Their purpose is normally to reveal overall patterns, not force close inspection of every tiny value.</li>
+</ul>
+<p>The course’s small-multiple example used random, fictitious data only to demonstrate layout; its numeric content was not a research finding.</p>
+<h2 id="4-5-start-with-grey">4.5 Start with grey</h2>
+<p>Begin a chart with all data elements in grey. Then add colour only where it performs a specific job. This technique forces purposeful decisions about emphasis, labels, and other elements.</p>
+<p>Starting with grey does not prohibit colour; it prevents colour from becoming an arbitrary default. Neutral context plus selective colour creates hierarchy.</p>
+<h3 id="practical-workflow">Practical workflow</h3>
+<ol>
+<li>Render all series in neutral grey.</li>
+<li>Identify the one or few facts central to the message.</li>
+<li>Apply a distinct hue or intensity to those elements.</li>
+<li>Check that no unrelated mark competes for attention.</li>
+<li>Confirm that meaning does not depend on colour alone where accessibility matters.</li>
+</ol>
+<hr>
+<h1 id="5-form-and-function-of-visualization">5. Form and function of visualization</h1>
+<p>Visualization types can be located on two perpendicular spectra:</p>
+<ul>
+<li><strong>Form (vertical):</strong> static ↔ interactive.</li>
+<li><strong>Function (horizontal):</strong> explanatory ↔ exploratory.</li>
+</ul>
+<p>These are spectra, not rigid boxes. A visualization may fall between endpoints or combine several modes.</p>
+<h2 id="5-1-form-spectrum">5.1 Form spectrum</h2>
+<h3 id="static-visualization">Static visualization</h3>
+<ul>
+<li>Presents all information at once.</li>
+<li>Does not move or respond to the user.</li>
+<li>Examples: conventional bar, line, or pie chart in a report or slide.</li>
+</ul>
+<h3 id="interactive-visualization">Interactive visualization</h3>
+<ul>
+<li>Allows information transfer between user and interface.</li>
+<li>The user clicks, swipes, filters, or otherwise acts, and additional or altered information appears.</li>
+</ul>
+<h3 id="animated-visualization">Animated visualization</h3>
+<p>Animation sits between static and interactive forms. It may not allow users to manipulate data to produce alternative results, but may allow control over pace, play, pause, rewind, or transitions.</p>
+<h2 id="5-2-function-spectrum">5.2 Function spectrum</h2>
+<h3 id="explanatory-visualization">Explanatory visualization</h3>
+<p>Explanatory visuals are storytellers. They communicate key results from an analysis, foreground a proven hypothesis or argument, and guide the audience toward a conclusion.</p>
+<p>Typical characteristics:</p>
+<ul>
+<li>Author-driven.</li>
+<li>Linear or predefined ordering.</li>
+<li>Heavy/explicit messaging.</li>
+<li>Curated or limited interactivity.</li>
+<li>Data and conclusion largely determined in advance.</li>
+<li>Context, chart selection, colour, title, axes, legends, and annotations are crucial.</li>
+</ul>
+<p>They work best when the goal is efficient communication or storytelling.</p>
+<h3 id="exploratory-visualization">Exploratory visualization</h3>
+<p>Exploratory visuals function like treasure maps. They let users inspect the data, discover patterns, make connections, form hypotheses, ask questions, and draw their own conclusions.</p>
+<p>Typical characteristics:</p>
+<ul>
+<li>User-driven.</li>
+<li>Nonlinear or no prescribed ordering.</li>
+<li>Limited messaging.</li>
+<li>Open interactivity where available.</li>
+<li>Supports diagnostics and hypothesis formation.</li>
+</ul>
+<blockquote>
+<p><strong>Transcript caveat resolved:</strong> One spoken line labels “nonlinear ordering, limited messaging and open interactivity” as explanatory, but the surrounding explanation makes clear that these are <strong>exploratory</strong> attributes. Explanatory attributes are linear ordering, heavier messaging, and curated interactivity.</p>
+</blockquote>
+<h2 id="5-3-four-quadrants">5.3 Four quadrants</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Quadrant</th>
+<th>Main nature</th>
+<th>Typical use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Static explanatory</strong></td>
+<td>Fixed, author-driven argument</td>
+<td>A report chart illustrating a stated conclusion.</td>
+</tr>
+<tr>
+<td><strong>Interactive explanatory</strong></td>
+<td>Guided story with selective interaction</td>
+<td>A narrative graphic with hover/rollover detail or step-through explanation.</td>
+</tr>
+<tr>
+<td><strong>Static exploratory</strong></td>
+<td>Fixed display from which readers find their own patterns</td>
+<td>A rich chart that does not assert one conclusion.</td>
+</tr>
+<tr>
+<td><strong>Interactive exploratory</strong></td>
+<td>Full or broad dataset users can filter and investigate</td>
+<td>Analytical dashboard or data tool for discovering patterns.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="static-explanatory">Static explanatory</h3>
+<p>Common in text and presentations. A line or bar chart reinforces an argument, follows a predefined path, and uses strong messaging.</p>
+<h3 id="interactive-explanatory">Interactive explanatory</h3>
+<p>The simplest form is a static chart with hover or rollover information layered on it. Interactivity can engage readers in a story or explain a process. Hover-only design has become less suitable as audiences increasingly use smartphones, where hovering is unavailable or awkward.</p>
+<h3 id="static-exploratory">Static exploratory</h3>
+<p>Does not make one specific argument or highlight one prescribed detail. Readers interpret the fixed display and reach conclusions themselves. It suits audiences expected to diagnose data and form hypotheses.</p>
+<h3 id="interactive-exploratory">Interactive exploratory</h3>
+<p>Presents a broad or complete dataset and asks users to find interesting patterns or stories. Users may filter, manipulate, build views, or reuse the data in their own work.</p>
+<h2 id="5-4-blended-visual-experiences">5.4 Blended visual experiences</h2>
+<p>Online newspapers, magazines, and articles often combine static and interactive charts with prose, photographs, and audio interviews. This can provide deeper understanding than text alone. The quadrants bend and blend; no quadrant is universally right or wrong.</p>
+<p>Selection depends on:</p>
+<ul>
+<li>Desired audience reaction.</li>
+<li>Publication medium.</li>
+<li>Audience tools and technology.</li>
+<li>Audience knowledge and behaviour.</li>
+<li>Whether the objective is explanation or discovery.</li>
+<li>Changing device and news-consumption habits.</li>
+</ul>
+<h2 id="5-5-animation-and-transitions">5.5 Animation and transitions</h2>
+<p>Tamara Munzner’s <em>Visualization Analysis and Design</em> is cited in the session in connection with different roles of animation. The lecture particularly emphasizes:</p>
+<ul>
+<li>Narrative storytelling through movies or state-to-state transitions.</li>
+<li>User-controlled video playback such as play, pause, and rewind.</li>
+<li>Transitions between two data configurations, which help preserve context by letting users watch points move from one state to another.</li>
+</ul>
+<p>An animated GIF (<strong>Graphics Interchange Format</strong>) contains multiple image frames in one file. In visualization it can stitch sequential graphs into an animated whole—for example, adding one line at a time until a four-line chart is complete.</p>
+<p>Animation should communicate change, sequence, or continuity; it should not be added merely because it is visually impressive.</p>
+<hr>
+<h1 id="6-tables-graphs-and-prose">6. Tables, graphs, and prose</h1>
+<p>Tables and graphs are the two primary structures for communicating quantitative information, but neither is automatically the best choice.</p>
+<h2 id="6-1-when-prose-is-best">6.1 When prose is best</h2>
+<p>If the message contains only one or two numbers, a sentence or bullet is usually clearer than a table or graph.</p>
+<p>Example:</p>
+<blockquote>
+<p>Q2 sales were ₹1,40,500, exceeding the forecast by 12%.</p>
+</blockquote>
+<p>A colourful table, celebratory balloons, a presenter’s picture, and animated numbers may entertain, but they obscure a message that can be stated in one sentence. The instructor calls attention to the <strong>eloquence of simplicity</strong>.</p>
+<h2 id="6-2-quantitative-and-categorical-information">6.2 Quantitative and categorical information</h2>
+<p>Quantitative messages contain two roles:</p>
+<ul>
+<li><strong>Quantitative values:</strong> measurements such as units produced, orders received, amount payable, sales, or headcount.</li>
+<li><strong>Categorical items:</strong> identify what the values measure, such as department, gender, quarter, or sales channel.</li>
+</ul>
+<p>In a department table, “Sales,” “Operations,” and “Finance” belong to the department category; “Men” and “Women” belong to gender; the measured counts are quantitative.</p>
+<h3 id="numbers-are-not-always-quantitative">Numbers are not always quantitative</h3>
+<p>Order numbers, part numbers, years used as labels, and sequence identifiers can be categorical even though written with digits.</p>
+<p><strong>Diagnostic test:</strong> Ask, “Would it make sense to add these numbers?”</p>
+<ul>
+<li>If yes, they may be quantities.</li>
+<li>If no, they are likely identifiers/categories.</li>
+</ul>
+<p>The test is a practical heuristic, not a replacement for understanding the variable’s meaning.</p>
+<h2 id="6-3-a-mark-can-encode-both-roles">6.3 A mark can encode both roles</h2>
+<p>In a grouped bar chart:</p>
+<ul>
+<li>Quarter labels (Q1–Q4) are categorical.</li>
+<li>Currency values on the vertical scale are quantitative.</li>
+<li>Title and legend text are categorical/contextual.</li>
+<li>Bar <strong>height</strong> encodes quantitative sales.</li>
+<li>Bar <strong>colour</strong> encodes categorical channel, such as direct versus indirect.</li>
+</ul>
+<p>Thus, one graphical mark can simultaneously encode quantitative and categorical information through different attributes.</p>
+<p>The ability to deconstruct a graph into these roles is essential because different design practices apply to each type.</p>
+<h2 id="6-4-characteristics-of-a-table">6.4 Characteristics of a table</h2>
+<p><strong>Definition:</strong> A table is a structure for organizing and displaying information.</p>
+<p>Its defining characteristics are:</p>
+<ol>
+<li>Information is arranged in rows and columns.</li>
+<li>Information is encoded as text—words or numbers.</li>
+</ol>
+<p>Gridlines may visually reinforce the structure but do <strong>not</strong> define a table. Arrangement creates the table. Gridlines must be used carefully because heavy lines can reduce readability and compete with data.</p>
+<h2 id="6-5-table-versus-graph">6.5 Table versus graph</h2>
+<p>The deciding question is: <strong>How will the information be used?</strong></p>
+<ul>
+<li>Use a <strong>table</strong> for lookup, precise reading, or one-to-one comparison.</li>
+<li>Use a <strong>graph</strong> to examine a dataset as a whole and detect patterns, relationships, trends, distributions, or outliers.</li>
+</ul>
+<p>Tables encode values directly as text, so no visual-to-number translation is needed. Graphs encode values visually, which supports pattern recognition but may require estimating the underlying numbers.</p>
+<h3 id="conditions-favouring-a-table">Conditions favouring a table</h3>
+<p>Use a table if one or more of the following applies:</p>
+<ol>
+<li>Users will look up individual values.</li>
+<li>Users will compare particular individual values, not entire series.</li>
+<li>Precise values are required.</li>
+<li>The information uses more than one unit of measure.</li>
+<li>Summary and detailed values must appear together.</li>
+</ol>
+<h3 id="conditions-favouring-a-graph">Conditions favouring a graph</h3>
+<p>Use a graph when readers need to see:</p>
+<ul>
+<li>Overall patterns.</li>
+<li>Change over time.</li>
+<li>Relationships/correlation.</li>
+<li>Distribution.</li>
+<li>Relative magnitude.</li>
+<li>Outliers or clusters.</li>
+</ul>
+<h2 id="6-6-good-table-design-through-gestalt-principles">6.6 Good table design through Gestalt principles</h2>
+<ul>
+<li>Use proximity to establish row or column scanning.</li>
+<li>Use alignment and continuity to define columns.</li>
+<li>Right-align numeric values to assist comparison.</li>
+<li>Use similarity consistently for related fields.</li>
+<li>Avoid unnecessary vertical gridlines; whitespace and alignment may be enough.</li>
+<li>Use light horizontal separation only when it genuinely supports lookup.</li>
+<li>Use enclosure sparingly for totals, summaries, or meaningful groups.</li>
+<li>In grayscale reports, rely on spacing, alignment, weight, and restrained shading rather than many indistinguishable greys.</li>
+</ul>
+<hr>
+<h1 id="7-visual-contrast-context-and-relative-perception">7. Visual contrast, context, and relative perception</h1>
+<p>The course and quiz case emphasize that human perception is <strong>relative rather than absolute</strong>. An object’s appearance depends on its surroundings even when its actual physical value is unchanged.</p>
+<h2 id="7-1-simultaneous-contrast">7.1 Simultaneous contrast</h2>
+<p><strong>Simultaneous contrast</strong> occurs when identical objects appear different because they are placed against different backgrounds. A 50% grey panel can look darker on a light background and lighter on a dark background even though its luminance has not changed.</p>
+<p>The visual system evaluates boundaries and relative differences, not isolated absolute values. Therefore background design is part of the data display, not a neutral afterthought.</p>
+<h3 id="candle-analogy">Candle analogy</h3>
+<p>Raj’s analogy compares a candle in bright sunshine with the same candle in a dark cellar. Its light output may be identical, but it seems weak in sunshine and bright in darkness. Perceived brightness depends on context.</p>
+<h2 id="7-2-uniform-two-dimensional-areas">7.2 Uniform two-dimensional areas</h2>
+<p>Flat dashboard panels and icons are especially susceptible because they often consist of large, uniform areas without texture or depth cues. The surrounding field strongly influences their apparent brightness and salience.</p>
+<h2 id="7-3-dashboard-case-visionary-apps">7.3 Dashboard case: Visionary Apps</h2>
+<p>Users thought identical grey panels were different, creating confusion. The case evaluates three broad responses.</p>
+<h3 id="option-1-uniform-light-theme">Option 1: Uniform light theme</h3>
+<p>Benefits:</p>
+<ul>
+<li>Consistent background contrast reduces the simultaneous-contrast illusion.</li>
+<li>Supports stable comparison between panels.</li>
+<li>Applies Gestalt <strong>Prägnanz/simplicity</strong> by creating a predictable environment.</li>
+<li>Reduces cognitive effort and is relatively simple to implement.</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li>Important icons or controls may have less figure–ground separation.</li>
+<li>A static theme can still introduce a consistent perceptual bias.</li>
+</ul>
+<h3 id="option-2-uniform-dark-theme">Option 2: Uniform dark theme</h3>
+<p>Benefits:</p>
+<ul>
+<li>Strong figure–ground separation.</li>
+<li>Important controls and metrics can become more salient.</li>
+<li>Defensible when rapid identification is the dominant goal.</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li>Icons may appear excessively bright or intense.</li>
+<li>Strong contrast can exaggerate perceived differences.</li>
+<li>Salience does not necessarily produce accurate comparison.</li>
+</ul>
+<h3 id="option-3-adaptive-shading">Option 3: Adaptive shading</h3>
+<p>An adaptive system changes background shading dynamically to optimize local visibility or contrast.</p>
+<p>Benefits:</p>
+<ul>
+<li>Can respond to content and context.</li>
+<li>May improve local perceptual conditions.</li>
+</ul>
+<p>Challenges raised by Lina:</p>
+<ul>
+<li>Performance cost, especially on low-end devices.</li>
+<li>Additional engineering, testing, and maintenance.</li>
+<li>More edge cases and possible inconsistency.</li>
+<li>Changing appearance may reduce perceptual constancy and increase cognitive load.</li>
+</ul>
+<h2 id="7-4-gestalt-concepts-in-the-case">7.4 Gestalt concepts in the case</h2>
+<ul>
+<li><strong>Similarity:</strong> Similar panels should share background and styling so they are understood as equivalent.</li>
+<li><strong>Prägnanz (simplicity):</strong> People prefer simple, stable, predictable visual organization.</li>
+<li><strong>Figure–ground:</strong> Important content must be sufficiently distinct from its background.</li>
+</ul>
+<h2 id="7-5-recommended-strategy-in-the-case">7.5 Recommended strategy in the case</h2>
+<p>The strongest overall answer is a <strong>two-stage roadmap</strong>:</p>
+<ol>
+<li>Deploy a simple, uniform light theme to solve the immediate comparison problem with low engineering risk.</li>
+<li>Later evaluate adaptive shading after performance optimization, broader device testing, and user validation.</li>
+</ol>
+<p>This balances immediate usability with future extensibility. A dark theme remains a defensible alternative when salience and rapid identification are more important than minimizing contextual brightness differences.</p>
+<h3 id="important-trade-off">Important trade-off</h3>
+<ul>
+<li>Static themes improve consistency but may create a fixed contextual bias.</li>
+<li>Adaptive themes improve contextual responsiveness but can reduce perceptual constancy and increase complexity.</li>
+<li>Higher contrast improves salience but can worsen perceived difference.</li>
+</ul>
+<p>The correct design choice must balance perceptual accuracy, visibility, cognitive consistency, engineering effort, maintenance, testing, device capability, and user benefit.</p>
+<hr>
+<h1 id="8-visual-field-real-estate-and-reading-order">8. Visual-field “real estate” and reading order</h1>
+<p>For audiences accustomed to left-to-right reading, the eyes commonly go first to the <strong>top-left</strong>, with the central area also highly valuable. The bottom-right is relatively low-value visual real estate.</p>
+<p>Design implications:</p>
+<ul>
+<li>Do not waste the top-left on a large logo or irrelevant branding.</li>
+<li>Place the subject, active title, or essential reading context in a prime location.</li>
+<li>Tell readers early what the figure is about, its time span, variables, and intended takeaway.</li>
+<li>If attention must jump from the natural starting point to a low-attention area, use a restrained pre-attentive cue.</li>
+</ul>
+<p>This is not an immutable biological law for every culture or interface; it reflects learned reading habits and the audience context emphasized in the lecture.</p>
+<hr>
+<h1 id="9-data-ink-non-data-ink-and-minimal-formatting">9. Data ink, non-data ink, and minimal formatting</h1>
+<p>Although the transcript uses “pixels” informally, the underlying distinction is between marks that represent or explain the data and marks that do not.</p>
+<ul>
+<li><strong>Data ink:</strong> bars, points, lines, and other marks that encode data.</li>
+<li><strong>Supportive ink:</strong> necessary labels, titles, annotations, scales, or reference cues.</li>
+<li><strong>Non-data ink/clutter:</strong> decoration or redundant structure that neither encodes nor meaningfully explains information.</li>
+</ul>
+<p>Minimal formatting does not mean plainness for its own sake. It means every element earns its place. Removing all context can be as harmful as adding too much decoration.</p>
+<h3 id="closure-in-plotting-areas">Closure in plotting areas</h3>
+<p>A plot does not need a four-sided heavy frame. Viewers can complete the implied rectangle through closure. Subtle axes, aligned marks, and whitespace are frequently sufficient.</p>
+<h3 id="redundant-gridlines-example">Redundant gridlines example</h3>
+<p>If each bar already carries an exact value label, dense horizontal gridlines and a fully numbered y-axis may duplicate the same function. Retain them only if they assist a genuine comparison task.</p>
+<hr>
+<h1 id="10-tools-ai-and-human-judgment">10. Tools, AI, and human judgment</h1>
+<p>Tools named in the lecture include Google Charts, RAWGraphs, and Tableau. Such systems can quickly produce line charts, waterfall charts, treemaps, violin charts, alluvial diagrams, and many other forms. Speed does not guarantee meaning.</p>
+<p>In the departmental-performance example, a tool generated a correctly labelled chart in roughly half a second, while a human might take much longer. Yet the default output offered no clear insight. Human editing added statements such as:</p>
+<ul>
+<li>A 10% increase in average score.</li>
+<li>The lowest average score and need for improvement.</li>
+<li>The number of projects.</li>
+<li>The top students or strongest growth.</li>
+</ul>
+<p>The annotations converted a collection of marks into a message.</p>
+<blockquote>
+<p><strong>Memorable distinction:</strong> Tools visualize data; humans visualize meaning.</p>
+</blockquote>
+<p>Use tools rather than drawing everything from scratch, but:</p>
+<ol>
+<li>Inspect defaults critically.</li>
+<li>Remove repetition and mistakes.</li>
+<li>Decide the audience and the intended insight.</li>
+<li>Highlight and annotate what matters.</li>
+<li>Modify axes, legends, labels, colours, and layout.</li>
+<li>Validate that the chart supports the story without distortion.</li>
+</ol>
+<p>Effective interaction with AI also requires visualization vocabulary. A user must know what to request: remove the y-axis labels, directly label a series, change label font, use a specific hue, align panels, or eliminate redundant gridlines. Domain knowledge is what allows precise prompting and evaluation.</p>
+<hr>
+<h1 id="11-integrated-decision-framework">11. Integrated decision framework</h1>
+<p>When designing any visualization, proceed in this order.</p>
+<h2 id="step-1-define-audience-and-task">Step 1: Define audience and task</h2>
+<ul>
+<li>Who will use it?</li>
+<li>Are they expected to receive a conclusion or discover one?</li>
+<li>Do they need lookup, exact values, comparison, pattern detection, or exploration?</li>
+<li>On what medium/device will it be viewed?</li>
+</ul>
+<h2 id="step-2-choose-prose-table-or-graph">Step 2: Choose prose, table, or graph</h2>
+<ul>
+<li>One or two numbers → prose/bullet.</li>
+<li>Lookup and precision → table.</li>
+<li>Pattern, trend, relationship, or outlier → graph.</li>
+</ul>
+<h2 id="step-3-choose-function-and-form">Step 3: Choose function and form</h2>
+<ul>
+<li>Explanation versus exploration.</li>
+<li>Static, animated, or interactive.</li>
+<li>Select the relevant quadrant without treating it as rigid.</li>
+</ul>
+<h2 id="step-4-establish-perceptual-organization">Step 4: Establish perceptual organization</h2>
+<ul>
+<li>Proximity for grouping and scan direction.</li>
+<li>Similarity for consistent categories.</li>
+<li>Enclosure only for meaningful groups.</li>
+<li>Closure and continuity to remove redundant frames/gridlines.</li>
+<li>Connection only for genuine relationships.</li>
+</ul>
+<h2 id="step-5-build-attention-hierarchy">Step 5: Build attention hierarchy</h2>
+<ul>
+<li>Start with grey.</li>
+<li>Add a limited pre-attentive cue to the key evidence.</li>
+<li>Keep titles and context in high-value locations.</li>
+<li>Avoid motion unless it communicates sequence or transition.</li>
+</ul>
+<h2 id="step-6-integrate-the-story">Step 6: Integrate the story</h2>
+<ul>
+<li>Use an active title.</li>
+<li>Directly label when practical.</li>
+<li>Add concise causal/contextual annotations.</li>
+<li>Keep legend order consistent with data when a legend is necessary.</li>
+</ul>
+<h2 id="step-7-remove-clutter-and-validate">Step 7: Remove clutter and validate</h2>
+<ul>
+<li>Delete marks that add no meaning.</li>
+<li>Check that scales and comparisons are fair.</li>
+<li>Confirm backgrounds do not create unintended contrast effects.</li>
+<li>Test on the actual device and with representative users.</li>
+<li>Ask whether the intended insight can be stated quickly and accurately.</li>
+</ul>
+<hr>
+<h1 id="12-likely-exam-questions-and-answer-points">12. Likely exam questions and answer points</h1>
+<h2 id="q1-explain-the-six-gestalt-principles-with-visualization-applications">Q1. Explain the six Gestalt principles with visualization applications.</h2>
+<p>Define proximity, similarity, enclosure, closure, continuity, and connection. For each, give one perceptual example and one table/graph application. Mention the relative grouping strength illustrated in class: enclosure is stronger than connection, while connection can overpower proximity and similarity.</p>
+<h2 id="q2-what-are-pre-attentive-attributes-classify-them">Q2. What are pre-attentive attributes? Classify them.</h2>
+<p>Define automatic rapid detection; list form, colour, spatial position, and movement. Give examples under each. Explain that movement is exceptionally strong due to survival conditioning and must be used sparingly.</p>
+<h2 id="q3-state-and-explain-the-five-guidelines-for-better-visualization">Q3. State and explain the five guidelines for better visualization.</h2>
+<p>Show data; reduce clutter; integrate graphics and text; avoid spaghetti charts; start with grey. Include the GDP highlighting example, direct labels/active titles/annotations, and small-multiple advantages and rules.</p>
+<h2 id="q4-distinguish-explanatory-and-exploratory-visualization">Q4. Distinguish explanatory and exploratory visualization.</h2>
+<p>Explanatory is author-driven, linear, messaging-heavy, curated, and conclusion-oriented. Exploratory is user-driven, nonlinear, lightly messaged, open, and discovery/hypothesis-oriented.</p>
+<h2 id="q5-explain-the-form-function-matrix">Q5. Explain the form–function matrix.</h2>
+<p>Form runs static to interactive; function runs explanatory to exploratory. Explain all four quadrants and note that they are spectra that can blend.</p>
+<h2 id="q6-when-should-a-table-be-used-instead-of-a-graph">Q6. When should a table be used instead of a graph?</h2>
+<p>Use tables for lookup, individual comparisons, precise values, multiple units, and combined summary/detail. Use graphs for patterns and relationships. Use prose for one or two numbers.</p>
+<h2 id="q7-differentiate-quantitative-and-categorical-information">Q7. Differentiate quantitative and categorical information.</h2>
+<p>Quantitative values measure; categorical values identify what is measured. Numbers may be categories if addition has no meaning. Explain how bar height can be quantitative while bar colour is categorical.</p>
+<h2 id="q8-explain-simultaneous-contrast-using-the-dashboard-case">Q8. Explain simultaneous contrast using the dashboard case.</h2>
+<p>Identical grey panels look different on different backgrounds because brightness is judged relatively. Use the candle analogy, compare light/dark/adaptive solutions, mention Gestalt simplicity/similarity/figure–ground, engineering constraints, and the two-stage recommendation.</p>
+<h2 id="q9-why-are-active-titles-useful-are-they-biased">Q9. Why are active titles useful? Are they biased?</h2>
+<p>They state the chart’s supported takeaway and reduce interpretation time. They are not inherently biased if faithful to the evidence. Failure to write one may indicate the chart has no clear takeaway.</p>
+<h2 id="q10-what-is-the-role-of-ai-tools-in-visualization">Q10. What is the role of AI/tools in visualization?</h2>
+<p>Tools generate marks quickly; humans supply purpose, audience knowledge, emphasis, annotation, validation, and story. Technical vocabulary is required to instruct and correct tools effectively.</p>
+<hr>
+<h1 id="13-rapid-revision-sheet">13. Rapid revision sheet</h1>
+<h2 id="one-line-definitions">One-line definitions</h2>
+<ul>
+<li><strong>Pre-attentive processing:</strong> Rapid automatic detection of visual differences before focused attention.</li>
+<li><strong>Proximity:</strong> Near objects are grouped.</li>
+<li><strong>Similarity:</strong> Visually alike objects are grouped.</li>
+<li><strong>Enclosure:</strong> Objects within a common boundary/field are grouped.</li>
+<li><strong>Closure:</strong> Incomplete forms are mentally completed.</li>
+<li><strong>Continuity:</strong> Aligned or smoothly continuing objects are seen as one path/whole.</li>
+<li><strong>Connection:</strong> Linked objects are grouped.</li>
+<li><strong>Active title:</strong> A title that states the chart’s supported takeaway.</li>
+<li><strong>Spaghetti chart:</strong> An overloaded chart whose many series/marks are difficult to follow.</li>
+<li><strong>Small multiples:</strong> Repeated comparable panels showing variations of a common chart.</li>
+<li><strong>Explanatory visual:</strong> Author-guided communication of known results.</li>
+<li><strong>Exploratory visual:</strong> User-guided investigation to discover results.</li>
+<li><strong>Simultaneous contrast:</strong> Identical tones appear different because of surrounding backgrounds.</li>
+<li><strong>Table:</strong> Row-and-column organization in which information is encoded as words/numbers.</li>
+</ul>
+<h2 id="must-memorize-lists">Must-memorize lists</h2>
+<h3 id="pre-attentive-categories">Pre-attentive categories</h3>
+<ul>
+<li>Form</li>
+<li>Colour</li>
+<li>Spatial position</li>
+<li>Movement</li>
+</ul>
+<h3 id="six-gestalt-principles">Six Gestalt principles</h3>
+<ul>
+<li>Proximity</li>
+<li>Similarity</li>
+<li>Enclosure</li>
+<li>Closure</li>
+<li>Continuity</li>
+<li>Connection</li>
+</ul>
+<h3 id="five-visualization-guidelines">Five visualization guidelines</h3>
+<ul>
+<li>Show the data</li>
+<li>Reduce clutter</li>
+<li>Integrate graphics and text</li>
+<li>Avoid spaghetti charts</li>
+<li>Start with grey</li>
+</ul>
+<h3 id="three-ways-to-integrate-graphics-and-text">Three ways to integrate graphics and text</h3>
+<ul>
+<li>Direct labels/remove legends when feasible</li>
+<li>Active titles</li>
+<li>Details/annotations</li>
+</ul>
+<h3 id="three-benefits-of-small-multiples">Three benefits of small multiples</h3>
+<ul>
+<li>Learn one, read all</li>
+<li>Show much information with less confusion</li>
+<li>Enable cross-category comparison</li>
+</ul>
+<h3 id="table-selection-criteria">Table-selection criteria</h3>
+<ul>
+<li>Lookup individual values</li>
+<li>Compare individual values</li>
+<li>Need precise values</li>
+<li>Multiple units of measure</li>
+<li>Summary and detail together</li>
+</ul>
+<h2 id="final-self-check">Final self-check</h2>
+<ul>
+<li>[ ] Can I define and apply all six Gestalt principles?</li>
+<li>[ ] Can I explain why enclosure, connection, and similarity/proximity may compete?</li>
+<li>[ ] Can I list all pre-attentive categories and explain why movement is strongest?</li>
+<li>[ ] Can I give the shapes, predator/movement, and outlier examples?</li>
+<li>[ ] Can I state all five better-visualization guidelines in order?</li>
+<li>[ ] Can I explain direct labels, active titles, and annotations?</li>
+<li>[ ] Can I list both benefits and pitfalls of small multiples?</li>
+<li>[ ] Can I classify a visualization into the four form–function quadrants?</li>
+<li>[ ] Can I distinguish explanatory from exploratory attributes?</li>
+<li>[ ] Can I decide among prose, table, and graph from the user’s task?</li>
+<li>[ ] Can I identify categorical numbers using the “does addition make sense?” test?</li>
+<li>[ ] Can I explain a bar’s dual quantitative/categorical encoding?</li>
+<li>[ ] Can I explain simultaneous contrast and the candle analogy?</li>
+<li>[ ] Can I compare light, dark, and adaptive dashboard themes?</li>
+<li>[ ] Can I defend the two-stage product strategy?</li>
+<li>[ ] Can I explain prime visual real estate and natural reading order?</li>
+<li>[ ] Can I explain why fewer nonessential pixels conserve cognitive effort?</li>
+<li>[ ] Can I explain why AI-generated charts still require human judgment?</li>
+</ul>
+<hr>
+<h2 id="ultimate-takeaway">Ultimate takeaway</h2>
+<p>Effective visualization is purposeful perception design. Use pre-attentive attributes to direct attention, Gestalt principles to organize information, restrained formatting to conserve cognitive capacity, and the correct medium for the audience’s task. Show meaningful data, eliminate nonessential marks, connect text with graphics, split overloaded displays, and use colour strategically. Technology can accelerate chart production, but only informed human judgment can decide what the audience should understand and ensure the visualization tells that story accurately.</p>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<h3 id="gestalt-distinctions-and-finsight-applications">Gestalt distinctions and FinSight applications</h3>
+<ul>
+<li><strong>Proximity</strong> grouped Financial Performance (Revenue, Profit, Margin), Customer Metrics (New Clients, Retention, Satisfaction), and Risk Metrics (Portfolio Risk, Volatility, Exposure). It is distance-based and can create a false relationship when unrelated metrics are placed together.</li>
+<li><strong>Similarity</strong> creates meaning through colour, shape, size, font, and style. The same metric should retain its encoding across charts, while actual and forecast must remain distinguishable.</li>
+<li><strong>Continuity</strong> supports a natural flow such as Executive Summary → Revenue → Profit → Forecast → Recommendations and helps explain why lines suit ordered temporal progression.</li>
+<li><strong>Closure</strong> uses cards, whitespace, light shading, or subtle boundaries. Heavy boxes around everything add clutter; spacing alone may suffice.</li>
+<li><strong>Figure-ground</strong> makes KPIs, alerts, and outliers prominent while gridlines, backgrounds, decorations, and supporting notes recede. If everything is prominent, nothing is prominent.</li>
+</ul>
+<h3 id="proximity-versus-similarity-exam-distinction">Proximity versus similarity — exam distinction</h3>
+<p>Proximity asks <strong>“Are these marks near one another?”</strong> Similarity asks <strong>“Do these marks look alike?”</strong> Either can group independently, and either can imply a false association when misused.</p>
+<h3 id="necessary-but-not-sufficient">Necessary but not sufficient</h3>
+<p>Gestalt improves organization but cannot guarantee an appropriate chart, accurate data/scales, sufficient labels/context, business relevance, or accessibility. Validate intended grouping with users: can they find key information, see relationships, notice alerts, interpret without training, and act?</p>
+<p><strong>Cross-week link:</strong> truthful scales (Week 3) + perceptual organization (Week 2) + dashboard hierarchy (Weeks 12–13) together produce trust.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-1.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 1: Data Visualization, Visual Perception, and…</span>
+      </a>
+      <a href="week-3.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 3: Visualizing and Comparing Categories</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

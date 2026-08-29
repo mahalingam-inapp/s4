@@ -1,0 +1,3227 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Project · Week 11 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Project</span>
+      <span class="brand-title">Week 11</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html" selected>Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Business Research Process, Research Problems, and Research Approaches
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Research Planning, Theoretical Frameworks, Measurement, and Data…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Systematic Literature Review (SLR), Literature Review Methods,…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Theoretical Frameworks, Variables, Moderators, Mediators, and…
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Measurement Models, Scale Development, Reflective vs Formative…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Questionnaire Design, Data Collection Methods, Measurement Scales,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Research Inference, Sampling, Regression, Correlation, Mediation,…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Business Research Process — Management Problems, Research Problems,…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Jamovi Data Management, Measurement Levels, Scale Construction,…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Jamovi Factor Analysis, EFA, CFA, SEM, Validity Assessment, and…
+      </a>
+      <a class="is-active" href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Regression, Mediation, Moderation, t-tests, ANOVA, and Descriptive…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Regression Modelling, Controls, Composite Indices, Moderation, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Time Series, Forecasting, and Panel Data
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        PLS-SEM — Measurement Quality, Structural Models, Controls,…
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Logistic Regression — Model Fit, Interpretation, Prediction, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Project · Week 11</p>
+        <h1 class="page-title">Regression, Mediation, Moderation, t-tests, ANOVA, and Descriptive Analysis in Jamovi</h1>
+        <p class="page-meta">Week 11 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#concept">Concept</a></li>
+      <li><a href="#anova">ANOVA</a></li>
+      <li><a href="#frequencies-contingency-tables">Frequencies/Contingency tables</a></li>
+      <li><a href="#basic-regression-alone">Basic regression alone</a></li>
+      <li><a href="#purpose">Purpose</a></li>
+      <li><a href="#correlation">Correlation</a></li>
+      <li><a href="#regression">Regression</a></li>
+      <li><a href="#concept-2">Concept</a></li>
+      <li><a href="#purpose-2">Purpose</a></li>
+      <li><a href="#purpose-3">Purpose</a></li>
+      <li><a href="#p-0-05">p &amp;gt; 0.05</a></li>
+      <li><a href="#p-0-05-2">p \&amp;lt; 0.05</a></li>
+      <li><a href="#purpose-4">Purpose</a></li>
+      <li><a href="#purpose-5">Purpose</a></li>
+      <li><a href="#meaning">Meaning</a></li>
+      <li><a href="#meaning-2">Meaning</a></li>
+      <li><a href="#purpose-6">Purpose</a></li>
+      <li><a href="#purpose-7">Purpose</a></li>
+      <li><a href="#misconception-1">Misconception 1:</a></li>
+      <li><a href="#misconception-2">Misconception 2:</a></li>
+      <li><a href="#misconception-3">Misconception 3:</a></li>
+      <li><a href="#misconception-4">Misconception 4:</a></li>
+      <li><a href="#misconception-5">Misconception 5:</a></li>
+      <li><a href="#misconception-6">Misconception 6:</a></li>
+      <li><a href="#question">Question:</a></li>
+      <li><a href="#question-2">Question:</a></li>
+      <li><a href="#question-3">Question:</a></li>
+      <li><a href="#question-4">Question:</a></li>
+      <li><a href="#question-5">Question:</a></li>
+      <li><a href="#question-6">Question:</a></li>
+      <li><a href="#case-study">Case Study</a></li>
+      <li><a href="#purpose-8">Purpose</a></li>
+      <li><a href="#grouping-variable">Grouping variable</a></li>
+      <li><a href="#dependent-variable">Dependent variable</a></li>
+      <li><a href="#null-hypothesis-h0">Null hypothesis (H0)</a></li>
+      <li><a href="#alternative-hypothesis-h1">Alternative hypothesis (H1)</a></li>
+      <li><a href="#purpose-9">Purpose</a></li>
+      <li><a href="#p-0-05-3">p &amp;gt; 0.05</a></li>
+      <li><a href="#p-0-05-4">p \&amp;lt; 0.05</a></li>
+      <li><a href="#purpose-10">Purpose</a></li>
+      <li><a href="#purpose-11">Purpose</a></li>
+      <li><a href="#null-hypothesis-h0-2">Null hypothesis (H0)</a></li>
+      <li><a href="#alternative-hypothesis-h1-2">Alternative hypothesis (H1)</a></li>
+      <li><a href="#option-1-continue-gender-neutral-strategy">Option 1: Continue gender-neutral strategy</a></li>
+      <li><a href="#option-2-pilot-age-based-campaign">Option 2: Pilot age-based campaign</a></li>
+      <li><a href="#option-3-chi-square-analysis">Option 3: Chi-square analysis</a></li>
+      <li><a href="#purpose-12">Purpose</a></li>
+      <li><a href="#if-budget-allows">If budget allows:</a></li>
+      <li><a href="#if-budget-is-limited">If budget is limited:</a></li>
+      <li><a href="#misconception-1-2">Misconception 1:</a></li>
+      <li><a href="#misconception-2-2">Misconception 2:</a></li>
+      <li><a href="#misconception-3-2">Misconception 3:</a></li>
+      <li><a href="#misconception-4-2">Misconception 4:</a></li>
+      <li><a href="#misconception-5-2">Misconception 5:</a></li>
+      <li><a href="#question-7">Question:</a></li>
+      <li><a href="#question-8">Question:</a></li>
+      <li><a href="#question-9">Question:</a></li>
+      <li><a href="#question-10">Question:</a></li>
+      <li><a href="#question-11">Question:</a></li>
+      <li><a href="#purpose-13">Purpose</a></li>
+      <li><a href="#grouping-variable-2">Grouping variable</a></li>
+      <li><a href="#dependent-variable-2">Dependent variable</a></li>
+      <li><a href="#null-hypothesis-h0-3">Null Hypothesis (H0)</a></li>
+      <li><a href="#alternative-hypothesis-h1-3">Alternative Hypothesis (H1)</a></li>
+      <li><a href="#purpose-14">Purpose</a></li>
+      <li><a href="#p-0-05-5">p &amp;gt; 0.05</a></li>
+      <li><a href="#p-0-05-6">p \&amp;lt; 0.05</a></li>
+      <li><a href="#purpose-15">Purpose</a></li>
+      <li><a href="#purpose-16">Purpose</a></li>
+      <li><a href="#null-hypothesis-h0-4">Null Hypothesis (H0)</a></li>
+      <li><a href="#alternative-hypothesis-h1-4">Alternative Hypothesis (H1)</a></li>
+      <li><a href="#purpose-17">Purpose</a></li>
+      <li><a href="#elena-s-perspective">Elena’s perspective</a></li>
+      <li><a href="#ravi-s-perspective">Ravi’s perspective</a></li>
+      <li><a href="#statistical-evidence">Statistical evidence</a></li>
+      <li><a href="#business-risk">Business risk</a></li>
+      <li><a href="#learning-opportunity">Learning opportunity</a></li>
+      <li><a href="#if-budget-allows-2">If budget allows:</a></li>
+      <li><a href="#if-budget-is-limited-2">If budget is limited:</a></li>
+      <li><a href="#misconception-1-3">Misconception 1:</a></li>
+      <li><a href="#misconception-2-3">Misconception 2:</a></li>
+      <li><a href="#misconception-3-3">Misconception 3:</a></li>
+      <li><a href="#misconception-4-3">Misconception 4:</a></li>
+      <li><a href="#misconception-5-3">Misconception 5:</a></li>
+      <li><a href="#misconception-6-2">Misconception 6:</a></li>
+      <li><a href="#compare-two-groups">Compare two groups</a></li>
+      <li><a href="#compare-three-or-more-groups">Compare three or more groups</a></li>
+      <li><a href="#identify-which-groups-differ">Identify which groups differ</a></li>
+      <li><a href="#examine-categorical-relationships">Examine categorical relationships</a></li>
+      <li><a href="#evaluate-evidence-supporting-h0">Evaluate evidence supporting H0</a></li>
+      <li><a href="#a-end-to-end-analysis-map">A. End-to-end analysis map</a></li>
+      <li><a href="#b-practical-workflow-for-the-retail-case">B. Practical workflow for the retail case</a></li>
+      <li><a href="#c-choosing-and-interpreting-regression">C. Choosing and interpreting regression</a></li>
+      <li><a href="#d-mediation-analysis">D. Mediation analysis</a></li>
+      <li><a href="#e-moderation-analysis">E. Moderation analysis</a></li>
+      <li><a href="#f-group-comparison-tests">F. Group-comparison tests</a></li>
+      <li><a href="#g-chi-square-test-of-association">G. Chi-square test of association</a></li>
+      <li><a href="#h-datasense-strategic-decision-case">H. DataSense strategic decision case</a></li>
+      <li><a href="#i-measurement-quality-recap-from-the-live-session">I. Measurement quality recap from the live session</a></li>
+      <li><a href="#j-qualitative-project-management-applications-from-the-live-q-a">J. Qualitative/project-management applications from the live Q&amp;amp;A</a></li>
+      <li><a href="#k-high-yield-distinctions">K. High-yield distinctions</a></li>
+      <li><a href="#l-likely-exam-questions-with-answer-points">L. Likely exam questions with answer points</a></li>
+      <li><a href="#m-source-coverage-checklist">M. Source-coverage checklist</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h1 id="1-overview"><strong>1. Overview</strong></h1>
+<p>This quiz focuses on selecting the correct statistical analysis method based on the research objective.</p>
+<p>The main concepts covered are:</p>
+<ul>
+<li>Mediation analysis.  </li>
+<li>Moderation analysis.  </li>
+<li>Regression.  </li>
+<li>Independent samples t-test.  </li>
+<li>One-way ANOVA.  </li>
+<li>Levene’s test.  </li>
+<li>Bayes Factor interpretation.  </li>
+<li>Descriptive statistics.</li>
+</ul>
+<p>The central principle:</p>
+<blockquote>
+<p>The research question determines the statistical method, not the availability of a particular analysis tool.</p>
+</blockquote>
+<hr>
+<h1 id="2-choosing-the-correct-analysis"><strong>2. Choosing the Correct Analysis</strong></h1>
+<p>A researcher must identify:</p>
+<ol>
+<li>The type of variables involved.  </li>
+<li>The relationship being tested.  </li>
+<li>Whether the goal is prediction, comparison, or explanation.</li>
+</ol>
+<hr>
+<p>Main decision framework:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Research Goal</th>
+<th>Appropriate Analysis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compare two group means</td>
+<td>Independent samples t-test</td>
+</tr>
+<tr>
+<td>Compare three or more group means</td>
+<td>One-way ANOVA</td>
+</tr>
+<tr>
+<td>Predict an outcome from predictors</td>
+<td>Regression</td>
+</tr>
+<tr>
+<td>Test indirect effects</td>
+<td>Mediation</td>
+</tr>
+<tr>
+<td>Test conditional effects</td>
+<td>Moderation</td>
+</tr>
+<tr>
+<td>Test whether a variable changes another relationship</td>
+<td>Interaction regression</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="3-mediation-analysis"><strong>3. Mediation Analysis</strong></h1>
+<h2 id="concept"><strong>Concept</strong></h2>
+<p>Mediation explains <strong>how or why</strong> one variable affects another.</p>
+<p>The structure:</p>
+<p><strong>Independent Variable → Mediator → Dependent Variable</strong></p>
+<hr>
+<p>Example:</p>
+<p>Store Attributes → Perceived Value → Customer Satisfaction</p>
+<p>Question:</p>
+<p>&ldquo;Does Store Attributes improve satisfaction because it increases perceived value?&rdquo;</p>
+<hr>
+<p>Variables:</p>
+<ul>
+<li>X \= Predictor.  </li>
+<li>M \= Mediator.  </li>
+<li>Y \= Outcome.</li>
+</ul>
+<hr>
+<p>Mediation tests:</p>
+<ol>
+<li>Direct effect:</li>
+</ol>
+<p>X → Y</p>
+<ol start="2">
+<li>Indirect effect:</li>
+</ol>
+<p>X → M → Y</p>
+<hr>
+<h1 id="4-mediation-in-jamovi"><strong>4. Mediation in Jamovi</strong></h1>
+<p>The appropriate tool:</p>
+<p><strong>MedMod add-on module</strong></p>
+<hr>
+<p>Why?</p>
+<p>Standard regression can test individual paths, but MedMod directly estimates:</p>
+<ul>
+<li>Indirect effects.  </li>
+<li>Bootstrap confidence intervals.  </li>
+<li>Mediation models.</li>
+</ul>
+<hr>
+<p>Incorrect choices:</p>
+<h2 id="anova"><strong>ANOVA</strong></h2>
+<p>Used for group comparisons.</p>
+<p>Not mediation.</p>
+<hr>
+<h2 id="frequencies-contingency-tables"><strong>Frequencies/Contingency tables</strong></h2>
+<p>Used for categorical relationships.</p>
+<p>Not mediation.</p>
+<hr>
+<h2 id="basic-regression-alone"><strong>Basic regression alone</strong></h2>
+<p>Can estimate paths but is not the direct mediation workflow.</p>
+<hr>
+<h1 id="5-regression-analysis"><strong>5. Regression Analysis</strong></h1>
+<h2 id="purpose"><strong>Purpose</strong></h2>
+<p>Regression predicts an outcome using one or more predictors.</p>
+<p>General form:</p>
+<p>Outcome \= Intercept + Predictor effects + Error</p>
+<hr>
+<p>Example:</p>
+<p>Predict:</p>
+<p>Customer Satisfaction</p>
+<p>from:</p>
+<ul>
+<li>Store Attributes.  </li>
+<li>Product Attributes.</li>
+</ul>
+<hr>
+<h1 id="6-simple-linear-regression"><strong>6. Simple Linear Regression</strong></h1>
+<p>Used when:</p>
+<ul>
+<li>One predictor.  </li>
+<li>One continuous outcome.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Perceived Value → Customer Satisfaction</p>
+<p>Question:</p>
+<p>&ldquo;Does perceived value predict satisfaction?&rdquo;</p>
+<hr>
+<p>Correct analysis:</p>
+<p>Simple linear regression.</p>
+<hr>
+<p>Output includes:</p>
+<ul>
+<li>Regression coefficient.  </li>
+<li>Direction of effect.  </li>
+<li>Significance.  </li>
+<li>Prediction equation.</li>
+</ul>
+<hr>
+<h1 id="7-multiple-linear-regression"><strong>7. Multiple Linear Regression</strong></h1>
+<p>Used when:</p>
+<ul>
+<li>Multiple predictors.  </li>
+<li>One continuous outcome.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Predict Perceived Value from:</p>
+<ul>
+<li>Store Attributes.  </li>
+<li>Product Attributes.</li>
+</ul>
+<p>Model:</p>
+<p>PV \= b0 + b1(Store Attributes) + b2(Product Attributes)</p>
+<hr>
+<p>Advantages:</p>
+<ul>
+<li>Estimates unique contribution of each predictor.  </li>
+<li>Controls for other predictors.</li>
+</ul>
+<hr>
+<h1 id="8-regression-vs-correlation"><strong>8. Regression vs Correlation</strong></h1>
+<h2 id="correlation"><strong>Correlation</strong></h2>
+<p>Answers:</p>
+<p>&ldquo;Are two variables related?&rdquo;</p>
+<p>Does not create prediction equations.</p>
+<hr>
+<h2 id="regression"><strong>Regression</strong></h2>
+<p>Answers:</p>
+<p>&ldquo;Can one variable predict another?&rdquo;</p>
+<p>Provides:</p>
+<ul>
+<li>Equation.  </li>
+<li>Direction.  </li>
+<li>Effect size.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Correlation:</p>
+<p>PV and CS are associated.</p>
+<p>Regression:</p>
+<p>PV predicts CS.</p>
+<hr>
+<h1 id="9-moderation-analysis"><strong>9. Moderation Analysis</strong></h1>
+<h2 id="concept-2"><strong>Concept</strong></h2>
+<p>Moderation explains when or for whom an effect occurs.</p>
+<hr>
+<p>Structure:</p>
+<p>Predictor × Moderator → Outcome</p>
+<hr>
+<p>Example:</p>
+<p>Store Attributes → Customer Satisfaction</p>
+<p>Effect depends on:</p>
+<p>Variety Seeking.</p>
+<hr>
+<p>Question:</p>
+<p>&ldquo;Does the impact of Store Attributes change depending on customer variety-seeking behaviour?&rdquo;</p>
+<hr>
+<h1 id="10-testing-moderation"><strong>10. Testing Moderation</strong></h1>
+<p>The correct method:</p>
+<p>Regression with interaction term.</p>
+<p>Model:</p>
+<p>Customer Satisfaction \=<br>
+Store Attributes +<br>
+Variety Seeking +<br>
+(Store Attributes × Variety Seeking)</p>
+<hr>
+<p>The interaction term determines whether:</p>
+<ul>
+<li>The predictor effect changes across moderator levels.</li>
+</ul>
+<hr>
+<h1 id="11-why-not-split-groups"><strong>11. Why Not Split Groups?</strong></h1>
+<p>A common mistake:</p>
+<p>Creating:</p>
+<ul>
+<li>High variety seekers.  </li>
+<li>Low variety seekers.</li>
+</ul>
+<p>Then running separate regressions.</p>
+<hr>
+<p>Problem:</p>
+<ul>
+<li>Reduces statistical power.  </li>
+<li>Loses information.  </li>
+<li>Does not formally test interaction.</li>
+</ul>
+<hr>
+<p>Better:</p>
+<p>Use continuous moderation with interaction regression.</p>
+<hr>
+<h1 id="12-independent-samples-t-test"><strong>12. Independent Samples t-test</strong></h1>
+<h2 id="purpose-2"><strong>Purpose</strong></h2>
+<p>Compares the means of two independent groups.</p>
+<hr>
+<p>Example:</p>
+<p>Compare satisfaction between:</p>
+<ul>
+<li>Men.  </li>
+<li>Women.</li>
+</ul>
+<hr>
+<p>Variables:</p>
+<p>Grouping variable:</p>
+<p>Categorical.</p>
+<p>Example:</p>
+<p>Gender.</p>
+<hr>
+<p>Outcome:</p>
+<p>Continuous.</p>
+<p>Example:</p>
+<p>Satisfaction score.</p>
+<hr>
+<h1 id="13-levene-s-test"><strong>13. Levene’s Test</strong></h1>
+<h2 id="purpose-3"><strong>Purpose</strong></h2>
+<p>Checks equality of variances before interpreting t-test results.</p>
+<hr>
+<p>Null hypothesis:</p>
+<p>The groups have equal variances.</p>
+<hr>
+<p>Interpretation:</p>
+<h2 id="p-0-05"><strong>p &gt; 0.05</strong></h2>
+<p>Fail to reject null.</p>
+<p>Equal variance assumption acceptable.</p>
+<hr>
+<h2 id="p-0-05-2"><strong>p \&lt; 0.05</strong></h2>
+<p>Variance differs.</p>
+<p>Use unequal variance correction.</p>
+<hr>
+<p>Important:</p>
+<p>Levene’s test does NOT test:</p>
+<ul>
+<li>Equal means.  </li>
+<li>Normality.  </li>
+<li>Group differences.</li>
+</ul>
+<hr>
+<h1 id="14-bayes-factor-in-t-tests"><strong>14. Bayes Factor in t-tests</strong></h1>
+<p>Bayes Factor compares evidence between hypotheses.</p>
+<hr>
+<p>Example:</p>
+<p>BF \= 0.14</p>
+<p>Interpretation:</p>
+<p>Evidence favors the null hypothesis.</p>
+<p>Meaning:</p>
+<p>Evidence supports no meaningful group difference.</p>
+<hr>
+<p>Important:</p>
+<p>A non-significant p-value alone does not prove equality.</p>
+<p>Bayes Factor provides additional evidence.</p>
+<hr>
+<h1 id="15-one-sample-t-test"><strong>15. One-Sample t-test</strong></h1>
+<h2 id="purpose-4"><strong>Purpose</strong></h2>
+<p>Tests whether a sample mean differs from a known benchmark.</p>
+<hr>
+<p>Example:</p>
+<p>Customer satisfaction average:</p>
+<p>Observed mean:</p>
+<p>3.52</p>
+<p>Target:</p>
+<p>4.0</p>
+<hr>
+<p>Research question:</p>
+<p>&ldquo;Is the population average different from 4?&rdquo;</p>
+<hr>
+<p>Correct test:</p>
+<p>One-sample t-test.</p>
+<hr>
+<h1 id="16-independent-t-test-vs-one-sample-t-test"><strong>16. Independent t-test vs One-Sample t-test</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One-sample t-test</td>
+<td>Compare sample mean to fixed value</td>
+</tr>
+<tr>
+<td>Independent samples t-test</td>
+<td>Compare two group means</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<p>Examples:</p>
+<p>One sample:</p>
+<p>&ldquo;Is satisfaction different from target 4?&rdquo;</p>
+<p>Independent:</p>
+<p>&ldquo;Do men and women differ in satisfaction?&rdquo;</p>
+<hr>
+<h1 id="17-anova"><strong>17. ANOVA</strong></h1>
+<h2 id="purpose-5"><strong>Purpose</strong></h2>
+<p>Compares means across multiple groups.</p>
+<hr>
+<p>Example:</p>
+<p>Customer Satisfaction across:</p>
+<ul>
+<li>Age Group 1.  </li>
+<li>Age Group 2.  </li>
+<li>Age Group 3.  </li>
+<li>Age Group 4.</li>
+</ul>
+<hr>
+<p>One-way ANOVA:</p>
+<p>One categorical factor.</p>
+<hr>
+<h1 id="18-anova-vs-regression"><strong>18. ANOVA vs Regression</strong></h1>
+<p>They can answer similar questions.</p>
+<hr>
+<p>ANOVA:</p>
+<p>Focus:</p>
+<p>Group differences.</p>
+<p>Example:</p>
+<p>Do age groups differ in satisfaction?</p>
+<hr>
+<p>Regression:</p>
+<p>Focus:</p>
+<p>Prediction.</p>
+<p>Example:</p>
+<p>How do predictors influence satisfaction?</p>
+<hr>
+<h1 id="19-choosing-regression-instead-of-anova"><strong>19. Choosing Regression Instead of ANOVA</strong></h1>
+<p>If predictors are composite continuous scores:</p>
+<p>Example:</p>
+<ul>
+<li>Store Attributes score.  </li>
+<li>Product Attributes score.</li>
+</ul>
+<p>Outcome:</p>
+<p>Customer Satisfaction.</p>
+<hr>
+<p>Use:</p>
+<p>Multiple linear regression.</p>
+<hr>
+<h1 id="20-descriptive-statistics"><strong>20. Descriptive Statistics</strong></h1>
+<p>Before advanced analysis, summarize data.</p>
+<p>Important measures:</p>
+<ul>
+<li>Mean.  </li>
+<li>Standard deviation.  </li>
+<li>Skewness.  </li>
+<li>Kurtosis.</li>
+</ul>
+<hr>
+<h1 id="21-mean"><strong>21. Mean</strong></h1>
+<h2 id="meaning"><strong>Meaning</strong></h2>
+<p>Average score.</p>
+<p>For Likert composites:</p>
+<p>Represents typical agreement level.</p>
+<hr>
+<p>Example:</p>
+<p>Mean \= 3.8</p>
+<p>Interpretation:</p>
+<p>Average customer agreement is around 3.8.</p>
+<hr>
+<h1 id="22-standard-deviation"><strong>22. Standard Deviation</strong></h1>
+<h2 id="meaning-2"><strong>Meaning</strong></h2>
+<p>Response spread.</p>
+<hr>
+<p>Small SD:</p>
+<p>Responses are similar.</p>
+<hr>
+<p>Large SD:</p>
+<p>Responses vary widely.</p>
+<hr>
+<h1 id="23-skewness"><strong>23. Skewness</strong></h1>
+<h2 id="purpose-6"><strong>Purpose</strong></h2>
+<p>Measures distribution asymmetry.</p>
+<hr>
+<p>Positive skew:</p>
+<p>Longer right tail.</p>
+<hr>
+<p>Negative skew:</p>
+<p>Longer left tail.</p>
+<hr>
+<h1 id="24-kurtosis"><strong>24. Kurtosis</strong></h1>
+<h2 id="purpose-7"><strong>Purpose</strong></h2>
+<p>Measures distribution shape and tail heaviness.</p>
+<hr>
+<p>Used for:</p>
+<p>Understanding distribution shape.</p>
+<hr>
+<p>Important:</p>
+<p>Mean and SD summarize the data.</p>
+<p>Skewness and kurtosis describe distribution shape.</p>
+<hr>
+<h1 id="25-common-misconceptions"><strong>25. Common Misconceptions</strong></h1>
+<h2 id="misconception-1"><strong>Misconception 1:</strong></h2>
+<p>Correlation proves causation.</p>
+<p>Reality:</p>
+<p>Correlation only shows association.</p>
+<p>Regression improves prediction but still requires research design for causal claims.</p>
+<hr>
+<h2 id="misconception-2"><strong>Misconception 2:</strong></h2>
+<p>Mediation means simple regression.</p>
+<p>Reality:</p>
+<p>Mediation specifically tests indirect pathways.</p>
+<hr>
+<h2 id="misconception-3"><strong>Misconception 3:</strong></h2>
+<p>Moderation means comparing groups.</p>
+<p>Reality:</p>
+<p>Moderation tests whether an effect changes depending on another variable.</p>
+<hr>
+<h2 id="misconception-4"><strong>Misconception 4:</strong></h2>
+<p>Levene’s test checks mean differences.</p>
+<p>Reality:</p>
+<p>It checks variance equality.</p>
+<hr>
+<h2 id="misconception-5"><strong>Misconception 5:</strong></h2>
+<p>Non-significant t-test proves groups are identical.</p>
+<p>Reality:</p>
+<p>It means insufficient evidence of difference.</p>
+<p>Bayes Factor can provide evidence supporting no difference.</p>
+<hr>
+<h2 id="misconception-6"><strong>Misconception 6:</strong></h2>
+<p>ANOVA is always better than regression.</p>
+<p>Reality:</p>
+<p>Choice depends on research objective.</p>
+<hr>
+<h1 id="26-complete-analysis-selection-guide"><strong>26. Complete Analysis Selection Guide</strong></h1>
+<h2 id="question"><strong>Question:</strong></h2>
+<p>&ldquo;Do two groups differ?&rdquo;</p>
+<p>Use:</p>
+<p>Independent samples t-test.</p>
+<hr>
+<h2 id="question-2"><strong>Question:</strong></h2>
+<p>&ldquo;Does a sample mean differ from a target?&rdquo;</p>
+<p>Use:</p>
+<p>One-sample t-test.</p>
+<hr>
+<h2 id="question-3"><strong>Question:</strong></h2>
+<p>&ldquo;Do multiple groups differ?&rdquo;</p>
+<p>Use:</p>
+<p>ANOVA.</p>
+<hr>
+<h2 id="question-4"><strong>Question:</strong></h2>
+<p>&ldquo;Can predictors explain an outcome?&rdquo;</p>
+<p>Use:</p>
+<p>Regression.</p>
+<hr>
+<h2 id="question-5"><strong>Question:</strong></h2>
+<p>&ldquo;Does X influence Y through another variable?&rdquo;</p>
+<p>Use:</p>
+<p>Mediation.</p>
+<hr>
+<h2 id="question-6"><strong>Question:</strong></h2>
+<p>&ldquo;Does the effect of X depend on another variable?&rdquo;</p>
+<p>Use:</p>
+<p>Moderation.</p>
+<hr>
+<h1 id="final-key-takeaways"><strong>Final Key Takeaways</strong></h1>
+<ol>
+<li>Statistical methods should match research questions.  </li>
+<li>Regression is for prediction and estimating relationships.  </li>
+<li>Mediation explains mechanisms.  </li>
+<li>Moderation explains conditions under which effects occur.  </li>
+<li>t-tests compare means.  </li>
+<li>ANOVA compares multiple groups.  </li>
+<li>Levene’s test checks variance equality.  </li>
+<li>Bayes Factors provide evidence for or against hypotheses.  </li>
+<li>Descriptive statistics provide the foundation before inferential analysis.  </li>
+<li>A strong analysis plan follows:</li>
+</ol>
+<p><strong>Understand the research question → Select the appropriate statistical model → Check assumptions → Interpret results in context.</strong></p>
+<h2 id="case-study"><strong>Case Study</strong></h2>
+<p>DataSense LLC recently analyzed mobile application satisfaction ratings to decide if gender influences user experience. Analyst Priya collected ratings from male and female customers and performed an Independent Samples t-test. She first tested the homogeneity of variances using Levene&rsquo;s test (Null (H0): no difference in variance between the two groups), finding a Levene&rsquo;s test p-value &gt; 0.05, so the assumption was met. The Student&rsquo;s t-test then yielded a p-value &gt; 0.05 (male mean satisfaction 3.63 u2014 female mean satisfaction 3.66), leading to a failure to reject H0. A Bayes Factor of 0.137 (\&lt; 1) provided strong additional evidence favouring the null hypothesis. Marketing lead Jackson argued that if gender does not differentiate satisfaction, resources might be allocated elsewhere, while Priya suggested further subgroup analyses.To probe deeper, the team examined satisfaction across three age bands (18-29, 30-49, 50+). They conducted a One-Way ANOVA (Null (H0): all group means are equal) and obtained p \= 0.04, prompting rejection of H0. A post-hoc test using Tukey identified a significant difference between the 18-29 and 50+ segments. Product manager Elena saw this as a clear signal to tailor features, whereas finance director Ravi cautioned that budget constraints might limit targeted campaigns.At the decision point, DataSense must choose among three options: continue with a gender-neutral strategy since the demonstration of analysis indicates no significant difference; launch a pilot marketing campaign aimed at the 18-29 segment based on ANOVA findings; or perform a Chi-square test of association on categorical variables (for example, payment method vs feature use) to uncover other differentiators. Students should apply if-then reasoning: if budget allows, pilot an age-based campaign; if not, maintain the current approach.</p>
+<h1 id="comprehensive-notes-datasense-llc-case-study-independent-t-test-bayes-factor-one-way-anova-post-hoc-testing-and-decision-making"><strong>Comprehensive Notes: DataSense LLC Case Study — Independent t-test, Bayes Factor, One-Way ANOVA, Post-hoc Testing, and Decision-Making</strong></h1>
+<h1 id="1-case-overview"><strong>1. Case Overview</strong></h1>
+<p>DataSense LLC wants to understand whether customer characteristics influence mobile application satisfaction.</p>
+<p>The analysis follows two stages:</p>
+<ol>
+<li><strong>Gender-based comparison</strong><br>
+   * Question: Does satisfaction differ between male and female users?<br>
+   * Method: Independent Samples t-test.  </li>
+<li><strong>Age-based comparison</strong><br>
+   * Question: Does satisfaction differ across age groups?<br>
+   * Method: One-Way ANOVA.</li>
+</ol>
+<p>The goal is not only statistical testing but also making business decisions about:</p>
+<ul>
+<li>Marketing strategy.  </li>
+<li>Product improvements.  </li>
+<li>Resource allocation.</li>
+</ul>
+<hr>
+<h1 id="2-statistical-analysis-workflow"><strong>2. Statistical Analysis Workflow</strong></h1>
+<p>A proper hypothesis testing workflow:</p>
+<p><strong>Define research question → Select test → Check assumptions → Run analysis → Interpret results → Make business decision</strong></p>
+<hr>
+<h1 id="3-independent-samples-t-test"><strong>3. Independent Samples t-test</strong></h1>
+<h2 id="purpose-8"><strong>Purpose</strong></h2>
+<p>An Independent Samples t-test compares the mean values of two independent groups.</p>
+<p>It answers:</p>
+<blockquote>
+<p>&ldquo;Are the average scores of two groups statistically different?&rdquo;</p>
+</blockquote>
+<hr>
+<p>DataSense example:</p>
+<p>Compare satisfaction between:</p>
+<ul>
+<li>Male users.  </li>
+<li>Female users.</li>
+</ul>
+<hr>
+<p>Variables:</p>
+<h2 id="grouping-variable"><strong>Grouping variable</strong></h2>
+<p>Categorical:</p>
+<p>Gender.</p>
+<p>Example:</p>
+<ul>
+<li>Male.  </li>
+<li>Female.</li>
+</ul>
+<hr>
+<h2 id="dependent-variable"><strong>Dependent variable</strong></h2>
+<p>Continuous:</p>
+<p>Satisfaction rating.</p>
+<p>Example:</p>
+<p>1–5 satisfaction score.</p>
+<hr>
+<h1 id="4-hypotheses-in-independent-t-test"><strong>4. Hypotheses in Independent t-test</strong></h1>
+<h2 id="null-hypothesis-h0"><strong>Null hypothesis (H0)</strong></h2>
+<p>The two group means are equal.</p>
+<p>Example:</p>
+<p>Male satisfaction \= Female satisfaction.</p>
+<hr>
+<h2 id="alternative-hypothesis-h1"><strong>Alternative hypothesis (H1)</strong></h2>
+<p>The two group means are different.</p>
+<p>Example:</p>
+<p>Male satisfaction ≠ Female satisfaction.</p>
+<hr>
+<h1 id="5-checking-homogeneity-of-variance"><strong>5. Checking Homogeneity of Variance</strong></h1>
+<p>Before interpreting the t-test, assumptions must be checked.</p>
+<p>One important assumption:</p>
+<p><strong>Equal variance between groups.</strong></p>
+<hr>
+<h1 id="6-levene-s-test"><strong>6. Levene’s Test</strong></h1>
+<h2 id="purpose-9"><strong>Purpose</strong></h2>
+<p>Tests whether the variance of the two groups is equal.</p>
+<hr>
+<p>Null hypothesis:</p>
+<p>H0:</p>
+<p>The two groups have equal variances.</p>
+<hr>
+<p>Interpretation:</p>
+<h2 id="p-0-05-3"><strong>p &gt; 0.05</strong></h2>
+<p>Fail to reject H0.</p>
+<p>Conclusion:</p>
+<p>Equal variance assumption is acceptable.</p>
+<hr>
+<h2 id="p-0-05-4"><strong>p \&lt; 0.05</strong></h2>
+<p>Reject H0.</p>
+<p>Conclusion:</p>
+<p>Variances differ.</p>
+<p>Use unequal variance correction (Welch&rsquo;s t-test).</p>
+<hr>
+<p>DataSense result:</p>
+<p>Levene p &gt; 0.05.</p>
+<hr>
+<p>Conclusion:</p>
+<p>The assumption of equal variance is satisfied.</p>
+<hr>
+<h1 id="7-interpreting-the-t-test-result"><strong>7. Interpreting the t-test Result</strong></h1>
+<p>DataSense results:</p>
+<p>Male mean:</p>
+<p>3.63</p>
+<p>Female mean:</p>
+<p>3.66</p>
+<hr>
+<p>Difference:</p>
+<p>Very small.</p>
+<hr>
+<p>t-test p-value:</p>
+<p>p &gt; 0.05</p>
+<hr>
+<p>Decision:</p>
+<p>Fail to reject H0.</p>
+<hr>
+<p>Meaning:</p>
+<p>There is insufficient statistical evidence that gender affects satisfaction.</p>
+<hr>
+<p>Important interpretation:</p>
+<p>This does NOT mean:</p>
+<p>&ldquo;Gender has absolutely no effect.&rdquo;</p>
+<p>It means:</p>
+<p>&ldquo;The study did not find enough evidence of a difference.&rdquo;</p>
+<hr>
+<h1 id="8-bayes-factor"><strong>8. Bayes Factor</strong></h1>
+<h2 id="purpose-10"><strong>Purpose</strong></h2>
+<p>Bayesian analysis provides evidence comparing hypotheses.</p>
+<p>It complements traditional p-values.</p>
+<hr>
+<p>Traditional p-value asks:</p>
+<p>&ldquo;Is there enough evidence against H0?&rdquo;</p>
+<hr>
+<p>Bayes Factor asks:</p>
+<p>&ldquo;Which hypothesis is better supported?&rdquo;</p>
+<hr>
+<h1 id="9-bayes-factor-interpretation"><strong>9. Bayes Factor Interpretation</strong></h1>
+<p>DataSense:</p>
+<p>BF \= 0.137</p>
+<hr>
+<p>General interpretation:</p>
+<p>BF \&lt; 1:</p>
+<p>Evidence favors the null hypothesis.</p>
+<hr>
+<p>Meaning:</p>
+<p>The data provides support that gender does not meaningfully differentiate satisfaction.</p>
+<hr>
+<p>Important:</p>
+<p>Bayes Factor strengthens interpretation beyond simply saying:</p>
+<p>&ldquo;Not significant.&rdquo;</p>
+<hr>
+<h1 id="10-business-interpretation-of-gender-analysis"><strong>10. Business Interpretation of Gender Analysis</strong></h1>
+<p>Finding:</p>
+<p>Gender does not significantly influence satisfaction.</p>
+<hr>
+<p>Possible business implication:</p>
+<p>Avoid gender-specific satisfaction strategies.</p>
+<hr>
+<p>Jackson&rsquo;s viewpoint:</p>
+<p>If gender does not matter:</p>
+<p>Resources may be better spent elsewhere.</p>
+<hr>
+<p>Priya&rsquo;s viewpoint:</p>
+<p>Explore other customer characteristics.</p>
+<hr>
+<p>Both perspectives are valid.</p>
+<p>A non-significant result redirects attention rather than ending analysis.</p>
+<hr>
+<h1 id="11-one-way-anova"><strong>11. One-Way ANOVA</strong></h1>
+<h2 id="purpose-11"><strong>Purpose</strong></h2>
+<p>One-Way ANOVA compares means across three or more groups.</p>
+<hr>
+<p>DataSense example:</p>
+<p>Compare satisfaction across:</p>
+<ol>
+<li>18–29 years.  </li>
+<li>30–49 years.  </li>
+<li>50+ years.</li>
+</ol>
+<hr>
+<p>Why not multiple t-tests?</p>
+<p>Because multiple comparisons increase Type I error risk.</p>
+<p>ANOVA provides one overall test.</p>
+<hr>
+<h1 id="12-anova-hypotheses"><strong>12. ANOVA Hypotheses</strong></h1>
+<h2 id="null-hypothesis-h0-2"><strong>Null hypothesis (H0)</strong></h2>
+<p>All group means are equal.</p>
+<p>Example:</p>
+<p>18–29 satisfaction \=<br>
+30–49 satisfaction \=<br>
+50+ satisfaction.</p>
+<hr>
+<h2 id="alternative-hypothesis-h1-2"><strong>Alternative hypothesis (H1)</strong></h2>
+<p>At least one group mean differs.</p>
+<hr>
+<h1 id="13-anova-result-interpretation"><strong>13. ANOVA Result Interpretation</strong></h1>
+<p>DataSense:</p>
+<p>p \= 0.04</p>
+<hr>
+<p>Since:</p>
+<p>p \&lt; 0.05</p>
+<p>Reject H0.</p>
+<hr>
+<p>Conclusion:</p>
+<p>There is a statistically significant difference among age groups.</p>
+<hr>
+<p>Important:</p>
+<p>ANOVA only tells us:</p>
+<p>&ldquo;At least one group differs.&rdquo;</p>
+<p>It does not tell:</p>
+<p>&ldquo;Which groups differ.&rdquo;</p>
+<hr>
+<h1 id="14-post-hoc-tests"><strong>14. Post-hoc Tests</strong></h1>
+<p>After significant ANOVA, researchers need pairwise comparisons.</p>
+<hr>
+<p>Purpose:</p>
+<p>Identify exactly where differences occur.</p>
+<hr>
+<p>Common post-hoc tests:</p>
+<ul>
+<li>Tukey HSD.  </li>
+<li>Bonferroni.</li>
+</ul>
+<hr>
+<p>DataSense:</p>
+<p>Tukey test found:</p>
+<p>18–29 vs 50+</p>
+<p>significant difference.</p>
+<hr>
+<p>Meaning:</p>
+<p>Younger and older users have different satisfaction levels.</p>
+<hr>
+<h1 id="15-comparing-t-test-and-anova"><strong>15. Comparing t-test and ANOVA</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>t-test</th>
+<th>ANOVA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Groups</td>
+<td>Two</td>
+<td>Three or more</td>
+</tr>
+<tr>
+<td>Outcome</td>
+<td>Continuous</td>
+<td>Continuous</td>
+</tr>
+<tr>
+<td>Example</td>
+<td>Male vs Female</td>
+<td>Age groups</td>
+</tr>
+<tr>
+<td>Main statistic</td>
+<td>t</td>
+<td>F</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="16-why-gender-and-age-produced-different-insights"><strong>16. Why Gender and Age Produced Different Insights</strong></h1>
+<p>Gender analysis:</p>
+<p>No significant difference.</p>
+<p>Meaning:</p>
+<p>Satisfaction appears similar across genders.</p>
+<hr>
+<p>Age analysis:</p>
+<p>Significant difference.</p>
+<p>Meaning:</p>
+<p>Age may influence user experience.</p>
+<hr>
+<p>Important lesson:</p>
+<p>A variable that does not explain differences does not mean the product has no differentiation opportunities.</p>
+<hr>
+<h1 id="17-decision-making-using-statistical-evidence"><strong>17. Decision-Making Using Statistical Evidence</strong></h1>
+<p>The team must translate statistical findings into business actions.</p>
+<hr>
+<h2 id="option-1-continue-gender-neutral-strategy"><strong>Option 1: Continue gender-neutral strategy</strong></h2>
+<p>Supported by:</p>
+<ul>
+<li>Non-significant t-test.  </li>
+<li>Low Bayes Factor.</li>
+</ul>
+<p>Reason:</p>
+<p>Gender does not appear to be a meaningful differentiator.</p>
+<hr>
+<h2 id="option-2-pilot-age-based-campaign"><strong>Option 2: Pilot age-based campaign</strong></h2>
+<p>Supported by:</p>
+<ul>
+<li>Significant ANOVA.  </li>
+<li>Tukey showing 18–29 vs 50+ difference.</li>
+</ul>
+<p>Reason:</p>
+<p>Age appears to influence satisfaction.</p>
+<hr>
+<h2 id="option-3-chi-square-analysis"><strong>Option 3: Chi-square analysis</strong></h2>
+<p>Used for:</p>
+<p>Categorical variables.</p>
+<p>Example:</p>
+<p>Payment method × Feature usage.</p>
+<hr>
+<h1 id="18-chi-square-test"><strong>18. Chi-square Test</strong></h1>
+<h2 id="purpose-12"><strong>Purpose</strong></h2>
+<p>Tests association between categorical variables.</p>
+<hr>
+<p>Example:</p>
+<p>Does payment method relate to feature adoption?</p>
+<p>Variables:</p>
+<p>Payment type:</p>
+<ul>
+<li>Credit card.  </li>
+<li>Wallet.  </li>
+<li>UPI.</li>
+</ul>
+<p>Feature use:</p>
+<ul>
+<li>Yes.  </li>
+<li>No.</li>
+</ul>
+<hr>
+<p>Not appropriate for:</p>
+<p>Comparing satisfaction means.</p>
+<hr>
+<h1 id="19-if-then-decision-framework"><strong>19. If-Then Decision Framework</strong></h1>
+<p>The case emphasizes conditional reasoning.</p>
+<hr>
+<h2 id="if-budget-allows"><strong>If budget allows:</strong></h2>
+<p>Launch a targeted pilot campaign for age segments.</p>
+<p>Reason:</p>
+<p>Evidence suggests age differences.</p>
+<hr>
+<h2 id="if-budget-is-limited"><strong>If budget is limited:</strong></h2>
+<p>Maintain current strategy.</p>
+<p>Reason:</p>
+<p>Avoid unnecessary segmentation costs.</p>
+<hr>
+<h1 id="20-statistical-significance-vs-business-significance"><strong>20. Statistical Significance vs Business Significance</strong></h1>
+<p>Important distinction:</p>
+<p>A statistically significant result does not automatically mean a large business impact.</p>
+<hr>
+<p>Example:</p>
+<p>Age groups differ significantly.</p>
+<p>Questions remain:</p>
+<ul>
+<li>How large is the difference?  </li>
+<li>Is it worth marketing investment?  </li>
+<li>Can the company act on it?</li>
+</ul>
+<hr>
+<h1 id="21-common-misconceptions"><strong>21. Common Misconceptions</strong></h1>
+<h2 id="misconception-1-2"><strong>Misconception 1:</strong></h2>
+<p>Non-significant t-test proves groups are identical.</p>
+<p>Reality:</p>
+<p>It means evidence is insufficient to show difference.</p>
+<hr>
+<h2 id="misconception-2-2"><strong>Misconception 2:</strong></h2>
+<p>Levene’s test checks mean equality.</p>
+<p>Reality:</p>
+<p>It checks variance equality.</p>
+<hr>
+<h2 id="misconception-3-2"><strong>Misconception 3:</strong></h2>
+<p>ANOVA identifies which groups differ.</p>
+<p>Reality:</p>
+<p>Post-hoc tests identify specific differences.</p>
+<hr>
+<h2 id="misconception-4-2"><strong>Misconception 4:</strong></h2>
+<p>Significant ANOVA means every group differs.</p>
+<p>Reality:</p>
+<p>Only at least one group differs.</p>
+<hr>
+<h2 id="misconception-5-2"><strong>Misconception 5:</strong></h2>
+<p>Chi-square can replace ANOVA.</p>
+<p>Reality:</p>
+<p>Chi-square compares categorical associations.</p>
+<p>ANOVA compares means.</p>
+<hr>
+<h1 id="22-complete-analysis-decision-guide"><strong>22. Complete Analysis Decision Guide</strong></h1>
+<h2 id="question-7"><strong>Question:</strong></h2>
+<p>&ldquo;Do two groups have different average scores?&rdquo;</p>
+<p>Use:</p>
+<p>Independent Samples t-test.</p>
+<hr>
+<h2 id="question-8"><strong>Question:</strong></h2>
+<p>&ldquo;Do three or more groups have different average scores?&rdquo;</p>
+<p>Use:</p>
+<p>One-Way ANOVA.</p>
+<hr>
+<h2 id="question-9"><strong>Question:</strong></h2>
+<p>&ldquo;Which groups differ after ANOVA?&rdquo;</p>
+<p>Use:</p>
+<p>Post-hoc tests.</p>
+<hr>
+<h2 id="question-10"><strong>Question:</strong></h2>
+<p>&ldquo;Are two categorical variables related?&rdquo;</p>
+<p>Use:</p>
+<p>Chi-square test.</p>
+<hr>
+<h2 id="question-11"><strong>Question:</strong></h2>
+<p>&ldquo;Is there evidence supporting the null hypothesis?&rdquo;</p>
+<p>Use:</p>
+<p>Bayes Factor.</p>
+<hr>
+<h1 id="23-final-revision-summary"><strong>23. Final Revision Summary</strong></h1>
+<h3 id="independent-samples-t-test"><strong>Independent Samples t-test</strong></h3>
+<p>Purpose:</p>
+<p>Compare two group means.</p>
+<p>Example:</p>
+<p>Male vs Female satisfaction.</p>
+<p>Checks:</p>
+<ul>
+<li>Levene’s test.  </li>
+<li>t-test p-value.</li>
+</ul>
+<hr>
+<h3 id="bayes-factor"><strong>Bayes Factor</strong></h3>
+<p>Purpose:</p>
+<p>Measure evidence for H0 vs H1.</p>
+<p>BF \&lt; 1:</p>
+<p>Supports null hypothesis.</p>
+<hr>
+<h3 id="one-way-anova"><strong>One-Way ANOVA</strong></h3>
+<p>Purpose:</p>
+<p>Compare three or more group means.</p>
+<p>Example:</p>
+<p>Age group satisfaction.</p>
+<hr>
+<h3 id="post-hoc-testing"><strong>Post-hoc Testing</strong></h3>
+<p>Purpose:</p>
+<p>Identify specific group differences.</p>
+<p>Example:</p>
+<p>18–29 vs 50+.</p>
+<hr>
+<h3 id="chi-square"><strong>Chi-square</strong></h3>
+<p>Purpose:</p>
+<p>Test association between categorical variables.</p>
+<p>Example:</p>
+<p>Payment method and feature usage.</p>
+<hr>
+<h1 id="core-principle"><strong>Core Principle</strong></h1>
+<p>Statistical analysis should guide decisions, not replace business judgment.</p>
+<p>The strongest approach is:</p>
+<p><strong>Use appropriate tests → interpret evidence carefully → evaluate practical impact → make resource-aware decisions.</strong></p>
+<h1 id="comprehensive-notes-datasense-llc-case-study-hypothesis-testing-independent-samples-t-test-bayes-factor-anova-post-hoc-analysis-and-strategic-interpretation"><strong>Comprehensive Notes: DataSense LLC Case Study — Hypothesis Testing, Independent Samples t-test, Bayes Factor, ANOVA, Post-hoc Analysis, and Strategic Interpretation</strong></h1>
+<h1 id="1-case-overview-2"><strong>1. Case Overview</strong></h1>
+<p>DataSense LLC analyzed mobile application satisfaction ratings to understand whether demographic factors influence user experience.</p>
+<p>The company examined two demographic dimensions:</p>
+<ol>
+<li><strong>Gender</strong><br>
+   * Male vs Female.<br>
+   * Analysis: Independent Samples t-test.  </li>
+<li><strong>Age</strong><br>
+   * Three age groups:  <ul>
+<li>18–29  </li>
+<li>30–49  </li>
+<li>50+  </li>
+<li>Analysis: One-Way ANOVA followed by Tukey post-hoc testing.</li>
+</ul>
+</li>
+</ol>
+<p>The objective was not only statistical testing but also making strategic decisions:</p>
+<ul>
+<li>Should marketing remain broad and gender-neutral?  </li>
+<li>Should product features target specific age segments?  </li>
+<li>Should additional analyses be performed?</li>
+</ul>
+<hr>
+<h1 id="2-statistical-analysis-workflow-2"><strong>2. Statistical Analysis Workflow</strong></h1>
+<p>A proper analysis process:</p>
+<p><strong>Define business question → Select appropriate statistical test → Check assumptions → Perform hypothesis test → Interpret results → Make business decision</strong></p>
+<hr>
+<h1 id="3-independent-samples-t-test-2"><strong>3. Independent Samples t-test</strong></h1>
+<h2 id="purpose-13"><strong>Purpose</strong></h2>
+<p>An independent samples t-test compares the average values of two independent groups.</p>
+<p>It answers:</p>
+<blockquote>
+<p>&ldquo;Do two groups have significantly different means?&rdquo;</p>
+</blockquote>
+<hr>
+<p>DataSense example:</p>
+<p>Does mobile application satisfaction differ between:</p>
+<ul>
+<li>Male users.  </li>
+<li>Female users?</li>
+</ul>
+<hr>
+<p>Variables:</p>
+<h2 id="grouping-variable-2"><strong>Grouping variable</strong></h2>
+<p>Categorical variable:</p>
+<p>Gender.</p>
+<p>Example:</p>
+<ul>
+<li>Male.  </li>
+<li>Female.</li>
+</ul>
+<hr>
+<h2 id="dependent-variable-2"><strong>Dependent variable</strong></h2>
+<p>Continuous variable:</p>
+<p>Satisfaction score.</p>
+<p>Example:</p>
+<p>1–5 rating.</p>
+<hr>
+<h1 id="4-hypotheses-in-t-test"><strong>4. Hypotheses in t-test</strong></h1>
+<h2 id="null-hypothesis-h0-3"><strong>Null Hypothesis (H0)</strong></h2>
+<p>The two group means are equal.</p>
+<p>Example:</p>
+<p>Male satisfaction \= Female satisfaction.</p>
+<hr>
+<h2 id="alternative-hypothesis-h1-3"><strong>Alternative Hypothesis (H1)</strong></h2>
+<p>The two group means are different.</p>
+<p>Example:</p>
+<p>Male satisfaction ≠ Female satisfaction.</p>
+<hr>
+<h1 id="5-levene-s-test-for-equality-of-variance"><strong>5. Levene’s Test for Equality of Variance</strong></h1>
+<p>Before interpreting a t-test, the assumption of equal variance should be checked.</p>
+<h2 id="purpose-14"><strong>Purpose</strong></h2>
+<p>Levene’s test determines whether the spread of scores is similar across groups.</p>
+<hr>
+<p>Null hypothesis:</p>
+<p>The variances are equal.</p>
+<hr>
+<p>Interpretation:</p>
+<h2 id="p-0-05-5"><strong>p &gt; 0.05</strong></h2>
+<p>Fail to reject H0.</p>
+<p>Meaning:</p>
+<p>The equal variance assumption is satisfied.</p>
+<hr>
+<h2 id="p-0-05-6"><strong>p \&lt; 0.05</strong></h2>
+<p>Reject H0.</p>
+<p>Meaning:</p>
+<p>The groups have different variances.</p>
+<p>Use:</p>
+<ul>
+<li>Welch’s t-test.  </li>
+<li>Unequal variance correction.</li>
+</ul>
+<hr>
+<p>DataSense result:</p>
+<p>Levene p &gt; 0.05.</p>
+<hr>
+<p>Conclusion:</p>
+<p>The variance assumption is satisfied, so the standard Student’s t-test can be used.</p>
+<hr>
+<h1 id="6-student-s-t-test-result"><strong>6. Student’s t-test Result</strong></h1>
+<p>DataSense:</p>
+<p>Male mean satisfaction:</p>
+<p>3.63</p>
+<p>Female mean satisfaction:</p>
+<p>3.66</p>
+<hr>
+<p>Difference:</p>
+<p>0.03 points.</p>
+<p>Very small difference.</p>
+<hr>
+<p>t-test result:</p>
+<p>p &gt; 0.05.</p>
+<hr>
+<p>Decision:</p>
+<p>Fail to reject H0.</p>
+<hr>
+<p>Interpretation:</p>
+<p>There is insufficient statistical evidence that satisfaction differs between genders.</p>
+<hr>
+<p>Important:</p>
+<p>A non-significant result does NOT mean:</p>
+<p>&ldquo;Male and female users are exactly identical.&rdquo;</p>
+<p>It means:</p>
+<p>&ldquo;The observed difference could reasonably occur due to sampling variation.&rdquo;</p>
+<hr>
+<h1 id="7-bayes-factor"><strong>7. Bayes Factor</strong></h1>
+<h2 id="purpose-15"><strong>Purpose</strong></h2>
+<p>Bayes Factor provides additional evidence about competing hypotheses.</p>
+<p>Traditional hypothesis testing asks:</p>
+<blockquote>
+<p>Is there enough evidence to reject H0?</p>
+</blockquote>
+<p>Bayesian analysis asks:</p>
+<blockquote>
+<p>Which hypothesis is better supported by the data?</p>
+</blockquote>
+<hr>
+<h1 id="8-interpreting-bayes-factor"><strong>8. Interpreting Bayes Factor</strong></h1>
+<p>DataSense:</p>
+<p>BF \= 0.137</p>
+<hr>
+<p>General interpretation:</p>
+<p>BF \&lt; 1:</p>
+<p>Evidence favors the null hypothesis.</p>
+<hr>
+<p>Meaning:</p>
+<p>The observed data are more likely under:</p>
+<p>&ldquo;No gender difference&rdquo;</p>
+<p>than:</p>
+<p>&ldquo;A gender difference exists.&rdquo;</p>
+<hr>
+<p>Therefore:</p>
+<p>The Bayes Factor strengthens the conclusion that gender is not an important satisfaction differentiator.</p>
+<hr>
+<h1 id="9-business-meaning-of-gender-analysis"><strong>9. Business Meaning of Gender Analysis</strong></h1>
+<p>Statistical conclusion:</p>
+<p>Gender does not significantly influence satisfaction.</p>
+<hr>
+<p>Strategic implication:</p>
+<p>Avoid investing heavily in gender-specific strategies.</p>
+<hr>
+<p>Jackson’s interpretation:</p>
+<p>If gender does not explain satisfaction differences:</p>
+<p>Marketing resources may be better allocated elsewhere.</p>
+<hr>
+<p>Important lesson:</p>
+<p>A null finding can still create business value by eliminating ineffective segmentation strategies.</p>
+<hr>
+<h1 id="10-moving-beyond-gender-why-analyze-age"><strong>10. Moving Beyond Gender: Why Analyze Age?</strong></h1>
+<p>A common mistake:</p>
+<p>Stopping after one demographic variable shows no difference.</p>
+<hr>
+<p>Correct approach:</p>
+<p>A single non-significant result does not mean:</p>
+<p>&ldquo;No customer differences exist.&rdquo;</p>
+<hr>
+<p>Different variables may reveal different patterns.</p>
+<p>Therefore:</p>
+<p>The team examined age groups.</p>
+<hr>
+<h1 id="11-one-way-anova-2"><strong>11. One-Way ANOVA</strong></h1>
+<h2 id="purpose-16"><strong>Purpose</strong></h2>
+<p>One-Way ANOVA compares means across three or more groups.</p>
+<hr>
+<p>DataSense example:</p>
+<p>Compare satisfaction among:</p>
+<ul>
+<li>18–29.  </li>
+<li>30–49.  </li>
+<li>50+.</li>
+</ul>
+<hr>
+<p>Why ANOVA instead of multiple t-tests?</p>
+<p>Multiple t-tests increase the chance of false positives.</p>
+<p>ANOVA tests all groups together.</p>
+<hr>
+<h1 id="12-anova-hypotheses-2"><strong>12. ANOVA Hypotheses</strong></h1>
+<h2 id="null-hypothesis-h0-4"><strong>Null Hypothesis (H0)</strong></h2>
+<p>All group means are equal.</p>
+<p>Example:</p>
+<p>Mean satisfaction:</p>
+<p>18–29 \=<br>
+30–49 \=<br>
+50+</p>
+<hr>
+<h2 id="alternative-hypothesis-h1-4"><strong>Alternative Hypothesis (H1)</strong></h2>
+<p>At least one group mean differs.</p>
+<hr>
+<h1 id="13-anova-result"><strong>13. ANOVA Result</strong></h1>
+<p>DataSense:</p>
+<p>p \= 0.04</p>
+<hr>
+<p>Since:</p>
+<p>p \&lt; 0.05</p>
+<p>Reject H0.</p>
+<hr>
+<p>Conclusion:</p>
+<p>There is evidence that satisfaction differs across age groups.</p>
+<hr>
+<p>Important:</p>
+<p>ANOVA does NOT immediately tell:</p>
+<p>Which groups differ.</p>
+<p>It only tells:</p>
+<p>At least one difference exists.</p>
+<hr>
+<h1 id="14-post-hoc-testing"><strong>14. Post-hoc Testing</strong></h1>
+<p>After significant ANOVA, additional tests identify specific differences.</p>
+<p>Common methods:</p>
+<ul>
+<li>Tukey HSD.  </li>
+<li>Bonferroni.</li>
+</ul>
+<hr>
+<p>DataSense:</p>
+<p>Tukey test found:</p>
+<p>18–29 vs 50+</p>
+<p>significant difference.</p>
+<hr>
+<p>Interpretation:</p>
+<p>The youngest and oldest groups differ significantly in satisfaction.</p>
+<hr>
+<h1 id="15-anova-vs-t-test-comparison"><strong>15. ANOVA vs t-test Comparison</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Independent t-test</th>
+<th>One-way ANOVA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number of groups</td>
+<td>Two</td>
+<td>Three or more</td>
+</tr>
+<tr>
+<td>Outcome</td>
+<td>Continuous</td>
+<td>Continuous</td>
+</tr>
+<tr>
+<td>Example</td>
+<td>Male vs Female</td>
+<td>Age groups</td>
+</tr>
+<tr>
+<td>Statistic</td>
+<td>t-value</td>
+<td>F-value</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="16-chi-square-test-of-association"><strong>16. Chi-square Test of Association</strong></h1>
+<h2 id="purpose-17"><strong>Purpose</strong></h2>
+<p>Tests whether two categorical variables are related.</p>
+<hr>
+<p>Example:</p>
+<p>Payment method × Feature usage</p>
+<p>Variables:</p>
+<p>Payment method:</p>
+<ul>
+<li>Credit card.  </li>
+<li>UPI.  </li>
+<li>Wallet.</li>
+</ul>
+<p>Feature use:</p>
+<ul>
+<li>Yes.  </li>
+<li>No.</li>
+</ul>
+<hr>
+<p>Chi-square does NOT test:</p>
+<ul>
+<li>Mean differences.  </li>
+<li>Satisfaction score differences.</li>
+</ul>
+<hr>
+<h1 id="17-why-chi-square-was-considered"><strong>17. Why Chi-square Was Considered</strong></h1>
+<p>The team considered Chi-square as an alternative exploration strategy.</p>
+<p>Purpose:</p>
+<p>Find other possible customer differentiators.</p>
+<hr>
+<p>Example:</p>
+<p>Maybe satisfaction is not explained by demographics but by:</p>
+<ul>
+<li>Payment behaviour.  </li>
+<li>Feature adoption.  </li>
+<li>Usage patterns.</li>
+</ul>
+<hr>
+<h1 id="18-statistical-evidence-vs-business-decisions"><strong>18. Statistical Evidence vs Business Decisions</strong></h1>
+<p>A statistically significant result does not automatically mean:</p>
+<p>&ldquo;Immediately spend money.&rdquo;</p>
+<p>Business decisions require:</p>
+<ul>
+<li>Effect size.  </li>
+<li>Cost.  </li>
+<li>Feasibility.  </li>
+<li>Expected return.</li>
+</ul>
+<hr>
+<h1 id="19-elena-vs-ravi-balancing-evidence-and-constraints"><strong>19. Elena vs Ravi: Balancing Evidence and Constraints</strong></h1>
+<h2 id="elena-s-perspective"><strong>Elena’s perspective</strong></h2>
+<p>ANOVA shows differences.</p>
+<p>Therefore:</p>
+<p>Create age-specific features or campaigns.</p>
+<hr>
+<h2 id="ravi-s-perspective"><strong>Ravi’s perspective</strong></h2>
+<p>Budget constraints matter.</p>
+<p>A statistically supported action may still be financially unrealistic.</p>
+<hr>
+<p>Correct strategic approach:</p>
+<p>Balance evidence and feasibility.</p>
+<hr>
+<h1 id="20-pilot-campaign-strategy"><strong>20. Pilot Campaign Strategy</strong></h1>
+<p>The strongest recommendation:</p>
+<p>Run a limited pilot campaign for the identified age segment.</p>
+<hr>
+<p>Why?</p>
+<p>It balances:</p>
+<h2 id="statistical-evidence"><strong>Statistical evidence</strong></h2>
+<p>Age differences exist.</p>
+<hr>
+<h2 id="business-risk"><strong>Business risk</strong></h2>
+<p>A pilot limits financial exposure.</p>
+<hr>
+<h2 id="learning-opportunity"><strong>Learning opportunity</strong></h2>
+<p>The company can measure actual impact before scaling.</p>
+<hr>
+<h1 id="21-decision-framework"><strong>21. Decision Framework</strong></h1>
+<h2 id="if-budget-allows-2"><strong>If budget allows:</strong></h2>
+<p>Pilot age-based strategy.</p>
+<p>Reason:</p>
+<p>ANOVA provides evidence of age-related differences.</p>
+<hr>
+<h2 id="if-budget-is-limited-2"><strong>If budget is limited:</strong></h2>
+<p>Maintain broader strategy.</p>
+<p>Reason:</p>
+<p>Avoid costly segmentation without proven business benefit.</p>
+<hr>
+<h1 id="22-common-misconceptions"><strong>22. Common Misconceptions</strong></h1>
+<h2 id="misconception-1-3"><strong>Misconception 1:</strong></h2>
+<p>A non-significant t-test proves there is no difference.</p>
+<p>Reality:</p>
+<p>It means insufficient evidence of difference.</p>
+<hr>
+<h2 id="misconception-2-3"><strong>Misconception 2:</strong></h2>
+<p>Levene’s test checks whether means are equal.</p>
+<p>Reality:</p>
+<p>It checks whether variances are equal.</p>
+<hr>
+<h2 id="misconception-3-3"><strong>Misconception 3:</strong></h2>
+<p>ANOVA identifies the exact groups that differ.</p>
+<p>Reality:</p>
+<p>Post-hoc tests identify specific differences.</p>
+<hr>
+<h2 id="misconception-4-3"><strong>Misconception 4:</strong></h2>
+<p>A significant p-value means immediate action.</p>
+<p>Reality:</p>
+<p>Business impact and feasibility must also be considered.</p>
+<hr>
+<h2 id="misconception-5-3"><strong>Misconception 5:</strong></h2>
+<p>Bayes Factor replaces p-values.</p>
+<p>Reality:</p>
+<p>Bayes Factor complements traditional hypothesis testing.</p>
+<hr>
+<h2 id="misconception-6-2"><strong>Misconception 6:</strong></h2>
+<p>One demographic variable explains all customer behaviour.</p>
+<p>Reality:</p>
+<p>Different variables reveal different patterns.</p>
+<hr>
+<h1 id="23-complete-statistical-decision-guide"><strong>23. Complete Statistical Decision Guide</strong></h1>
+<h2 id="compare-two-groups"><strong>Compare two groups</strong></h2>
+<p>Example:</p>
+<p>Male vs Female satisfaction.</p>
+<p>Use:</p>
+<p>Independent Samples t-test.</p>
+<hr>
+<h2 id="compare-three-or-more-groups"><strong>Compare three or more groups</strong></h2>
+<p>Example:</p>
+<p>Age categories.</p>
+<p>Use:</p>
+<p>One-Way ANOVA.</p>
+<hr>
+<h2 id="identify-which-groups-differ"><strong>Identify which groups differ</strong></h2>
+<p>Use:</p>
+<p>Post-hoc tests.</p>
+<hr>
+<h2 id="examine-categorical-relationships"><strong>Examine categorical relationships</strong></h2>
+<p>Example:</p>
+<p>Payment method and feature use.</p>
+<p>Use:</p>
+<p>Chi-square.</p>
+<hr>
+<h2 id="evaluate-evidence-supporting-h0"><strong>Evaluate evidence supporting H0</strong></h2>
+<p>Use:</p>
+<p>Bayes Factor.</p>
+<hr>
+<h1 id="24-final-key-takeaways"><strong>24. Final Key Takeaways</strong></h1>
+<ol>
+<li>Statistical tests should match the research question.  </li>
+<li>Independent t-tests compare two group means.  </li>
+<li>Levene’s test checks equal variance assumptions.  </li>
+<li>A non-significant t-test does not prove equality.  </li>
+<li>Bayes Factor can provide evidence supporting the null hypothesis.  </li>
+<li>ANOVA detects differences among multiple groups.  </li>
+<li>Post-hoc tests identify where differences occur.  </li>
+<li>Statistical significance must be combined with business judgment.  </li>
+<li>Good decisions balance:<br>
+   * Data evidence.<br>
+   * Financial constraints.<br>
+   * Strategic goals.  </li>
+<li>The best analytical mindset is:</li>
+</ol>
+<p><strong>Use statistics to discover opportunities, then validate those opportunities through practical business experimentation.</strong></p>
+<p><strong>Live</strong></p>
+<p>Stream<br>
+Amrita Online MBA  Semester 4  Batch OCT 2024  Live Session  Project-20260717_190048-Meeting Recording - View-only</p>
+<p>This document is shared with others</p>
+<p>Mahalingam P R - \[AA.BU.P2MBA24075126\]<br>
+M<br>
+Sign in</p>
+<p>Record</p>
+<p>Upload</p>
+<p>Download</p>
+<p>Favorite</p>
+<p>Playlist</p>
+<p>Teams</p>
+<p>Viewing</p>
+<p>Share</p>
+<p>Volume slider is at 100%<br>
+0 minutes of 1 hour 25 seconds<br>
+0:00 / 1:00:25<br>
+1<br>
+x<br>
+Read transcript<br>
+Use left and right arrow keys to navigate reactions and add at the current video time.<br>
+Like<br>
+Laugh<br>
+Heart<br>
+Surprise<br>
+Clap<br>
+Amrita Online MBA | Semester 4  Batch OCT 2024 | Live Session | Project<br>
+July 17, 2026<br>
+Expires in 97 days</p>
+<p>This video will be deleted on November 14, 2026. To change this,<br>
+use Edit mode.<br>
+•<br>
+145 views<br>
+•<br>
+SharePoint App<br>
+•<br>
+HD<br>
+High-resolution (1080p) playback is available for this video.<br>
+•</p>
+<p>General<br>
+General</p>
+<p>Recordings<br>
+Recordings<br>
+Transcript</p>
+<p>Close</p>
+<p>Download<br>
+Use enter/space for more options.</p>
+<p>Transcript. Use arrow keys to navigate between transcript entries. Select an entry to navigate the media to the time of the entry.</p>
+<p>AI-generated content may be incorrect</p>
+<p>Ms Shinta Idicula - MBA - Amrita Online<br>
+started transcription<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+0 minutes 3 seconds<br>
+0:03<br>
+Ms Shinta Idicula - MBA - Amrita Online 0 minutes 3 seconds<br>
+This course and it gives me great pleasure to welcome you all to today&rsquo;s session. Please note that the session has been recorded for academic purposes. I kindly request all participants to turn on your cameras if possible. Your microphones will remain muted throughout the session to avoid background disturbances.<br>
+Ms Shinta Idicula - MBA - Amrita Online 0 minutes 22 seconds<br>
+If you have any questions or wish to share your thoughts, please use the raise hand option and I will unmute you at appropriate time. You may also use the chat box to share your comments or queries during the session. Now, without further delay, I would like to hand over the session to Doctor Riju Kumar Ji, who will be leading today&rsquo;s.<br>
+Ms Shinta Idicula - MBA - Amrita Online 0 minutes 41 seconds<br>
+Discussion or with yourself.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+0 minutes 44 seconds<br>
+0:44<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 0 minutes 44 seconds<br>
+Okay, good evening everyone.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 0 minutes 47 seconds<br>
+I was just telling Shinder that for the last few weeks, I am feeling a kind of doubt whether or whether all of you are in same plane with me, all of you are clearly following what I am trying to explain.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 6 seconds<br>
+And you are also, I mean, parallel listening to my video lectures, but I got little confused because I never because normally in research classes where the statistics and analytic analysis are all involved, I used to get more doubts in physical interactions. But here, unfortunately.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 26 seconds<br>
+Maybe Fortunately for me, I am not getting any important doubts apart from like the today also the queries came about how to manage the.net in or how to what is the template for submission when the date is or what is the date to submit it like that.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 47 seconds<br>
+few so general queries are coming, but apart from that, nothing related to whether my problem statement is okay, whether the data collection I might proceeding in this particular manner, whether it&rsquo;s right or wrong, or my data has got such and such errors, what I can do with analysis, or what is the purpose of these analysis in a particular data. Now I am telling about lot of systematic steps to be followed.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 2 minutes 11 seconds<br>
+In a foolproof analytic interval, to be precise, as I said here, if you collected data while collecting the data, you need to take care of lot of things, especially the primary data, the survey data kind of thing. You need to see that there is no common method bias coming, there is no.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 2 minutes 31 seconds<br>
+I mean, in data dependence coming people feel or people should give their information or opinion without any independence from another person or without being biased with some other external factors. How to make sure that such in a such a way data collection happens?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 2 minutes 50 seconds<br>
+This is an important task for a researcher because we are mostly handling with the feelings, perceptions, attitude and all, and these are not stationary. These things are highly dynamic, so maybe temporal issues can also change your attitudes, feelings and all. So when you are handling data with respect to feelings, attitude, etcetera, etcetera, you need to.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 3 minutes 13 seconds<br>
+Take care of lot of precautions. I might have said all the precautions in my video lecture, so I said about that. Then, of course, we have collected the data. Of course, we are not in a position to see the entire population because, due to time constraints or budgetary constraints in a particular project, we will be limited or we will have limited option to visit few respondents and collect their opinion, and we have to generalise the opinions.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 3 minutes 36 seconds<br>
+Realise from the limited opinions we get. So we need to look for statistical tools also. So in collecting the data, we need to have some precautions. We need to take the sample in a very random, unbiased manner and after collecting the data from the selected sample, also we need to verify whether the data we got is.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 3 minutes 58 seconds<br>
+Purely random in nature, whether it represents the population, whether it can be use, it can be, or it is useful for an estimation purpose. The for estimation means generalising findings about a population from a sample. So whether the data collected is good for those kind of things.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 4 minutes 17 seconds<br>
+To check all these things, statisticians have come about with a lot of assumptions as well as lot of steps, procedures, and I was trying to explain those procedures for the last 2 to 3 week after explaining the problem we are trying to, I mean, solve. We came to the data and we got the data and I said when you get the data.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 4 minutes 41 seconds<br>
+First, we need to verify the about the quality of the data. Quality of the data means general quality, then measurement quality, then quality with respect to certain specific assumptions the data should have followed to perform a specific statistical.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 4 minutes 59 seconds<br>
+Investigation or statistical analysis. So these were something I was trying to explain during the last during last 3 or for the last 3 sessions. So general quality I said this is a very simple concept from the data should not have very much missing values should not have had outliers because an outlier.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 5 minutes 20 seconds<br>
+Observation can significantly distort the mean value, so it is better to avoid the outliers and how to identify outliers. Also, I have shown in a tool the tool I have and I thought I will introduce here is or introduce here is Jamovi because it is an open source tool.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 5 minutes 39 seconds<br>
+Other tools are paid versions, so in a class which we deliver to lot of people on open platforms or in a very open manner, which we are not supposed to use tools which are which need to be paid. So that&rsquo;s why I thought we will introduce some.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 5 minutes 58 seconds<br>
+Open source or open or free tools, that&rsquo;s why JMovi has been introduced. But in JMovi, how to look into missing values, outlets and allies screen. Then second, I said, of course, every data when you collect, you need to look for whether the data independence is there, whether the normality is meant, whether the I mean.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 6 minutes 18 seconds<br>
+Randomness. Randomness is met in the data. All such things we need to check, so certain specific assumptions for general data quality need to be verified. I explained that also that is also covered. Then we said being mostly Latin variables under discussion we have.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 6 minutes 39 seconds<br>
+To verify whether proper measurement has happened or not, because we are might have used an approach, it might have considered certain indicators which will reflect the feeling of the variable under measurement. So whether that feeling is correctly captured or not.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 6 minutes 58 seconds<br>
+Then only we can say that measurement has happened. So I said to verify measurement, 2 concepts need to be verified, one called the reliability, another called validity reliability. There are basically 2 type of reliability, item to item correlation. It&rsquo;s a measure of something we name the compact alpha.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 7 minutes 17 seconds<br>
+A metric we statisticians are named as chron Grad alpha. So this I saw, I think in the last class I show you how we can calculate chron Grad alpha and there is something called composite variability that also I think I am not explained clearly, but I said it is coming in cell menu if you are.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 7 minutes 37 seconds<br>
+Having some time to verify, please try to see from my video lectures how we can verify it. Then in the validity aspect, there are 2 type of validity: external validity and internal validity. External validity is mostly about the content and the phasing of the statement face validity that we normally verify with the help of experts.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 7 minutes 57 seconds<br>
+Then statistical validity or internal validity refers to do 3 things. One item validity item validity we will calculate or we will verify by checking the item loadings and I said how we can check the item loadings, how the combinations can be reconfirmed.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 8 minutes 18 seconds<br>
+Because we have considered certain group of items together measuring a phenomenon, how to verify that out that also I have verified. Then I have shown how to verify it. Then I said about something called the AVE Average Variance Extract score of the loadings of all the items.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 8 minutes 37 seconds<br>
+Together should capture at least 50% of the variance. I said about that also. Then I said there should be some discrimination even when they are together measuring a phenomena, there should be some adequate I mean discrimination. So that also I have explained. This is where we have stopped in the last session.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 8 minutes 56 seconds<br>
+Now I need to explain how we can check the hypothesis hypothesis related to this problem we are trying to address. So this is the stage now before proceeding to further analysis and my point is can we have an interaction, can we have an interaction in the sense I just want to know from your side.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 9 minutes 17 seconds<br>
+At least those who are present here, where you have reached in your project.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 9 minutes 23 seconds<br>
+What is the data you are going to use and whether the data collection is over or is in progress? So such things I just want to hear. Meanwhile, few questions came in between, so I will try to see what are these questions and whether from my side is it possible to.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 9 minutes 43 seconds<br>
+Yeah, first question was one minute, let me go.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 9 minutes 51 seconds<br>
+There are a lot of queries coming parallelly. Okay, no problem. One by 1I will handle. There was a question on Turnitin.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 10 minutes 2 seconds<br>
+So today&rsquo;s my project update. Yeah, Krithika, I will give you an opportunity to tell it because before that, let me come to yeah, enrolled in turn it insight further what to do. Should I do we have an answer to this question now?<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+10 minutes 20 seconds<br>
+10:20<br>
+Ms Shinta Idicula - MBA - Amrita Online 10 minutes 20 seconds<br>
+Yeah, we will give the instructions by next week, like we have to the students have to generate the similarity report, so the instructions will be shared by coming quick.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+10 minutes 30 seconds<br>
+10:30<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 10 minutes 30 seconds<br>
+Yeah, anyway, this first this requirement comes only after preparing the first report was the similarity of the report is verified. So first, you need to have the report. Then, if you have created the turn in ID, turn it in ID, and all, you can upload the report and turn it in ID, it will produce the similarity report, and you need need to submit the similarity report along with the final.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 10 minutes 55 seconds<br>
+Journal project report, that&rsquo;s all. Now second question is Sir, in Exam POV whether we will have questions from JA Jamui. In fact, to be precise, Shinda, my suggestion is we will not have very specific questions about what is the button to be used in the tool or what is the menu to be operated and all.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 11 minutes 18 seconds<br>
+But we can have questions on, say, for example, what is the, what are the metrics to verify the quality of measurement in the case of a survey questionnaire, so we can so the candidate can answer about its reliability and validity. Reliability are 2 types, validity as there are 4 types of validities like that they can explain I mean conceptually.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 11 minutes 38 seconds<br>
+Tool based questions are unlikely to come right, Krishinda.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 11 minutes 45 seconds<br>
+Because this tool use used to give a demonstration of how the analysis happened tool because there are multiple tools. If you are not I mean preferring Jamovi, you can do the same set of analysis using another tool like SPSS, PSPP, JASP. There are multiple tools now and to be frank, I thought I will I also came across these tools very recently only now with the.<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+11 minutes 46 seconds<br>
+11:46<br>
+Ms Shinta Idicula - MBA - Amrita Online 11 minutes 46 seconds<br>
+It&rsquo;s.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+12 minutes 9 seconds<br>
+12:09<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 12 minutes 9 seconds<br>
+Google collab by just uploading the data. You can give the questions and the tool will give answers. I can give a small demo today itself if I if time permits, but systematically you should know the procedures. But whatever way you analyse, when you get the result, you should have the ability to interpret, interpret, interpret the results and con and take the inputs to solve a business problem. That&rsquo;s not.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 12 minutes 31 seconds<br>
+More important, so mostly questions will be on interpreting the output or what kind of an analysis is required here, all such things. Then one project update came, I have not tried Jamo visa. No problem, I am not insisting, but okay, since she is doing a qualitative project report with respect to qualitative project report, we need to do content analysis, we need to do word cloud, we need to do sentiment analysis.</p>
+<p>Sync to video<br>
+Transcript</p>
+<p>Comments</p>
+<p>Analytics</p>
+<p>\[3:40:19 PM\] Transcript watcher started. Scroll the content manually.<br>
+\[3:40:24 PM\] Timestamp: 0:03<br>
+\[3:40:24 PM\] Timestamp: 0:44<br>
+\[3:40:24 PM\] Timestamp: 10:20<br>
+\[3:40:24 PM\] Timestamp: 10:30<br>
+\[3:40:24 PM\] Timestamp: 11:46<br>
+\[3:40:24 PM\] Timestamp: 12:09<br>
+🟥 Stop &amp; Extract Transcript<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 12 minutes 55 seconds<br>
+We need to automatic mapping all such analysis are there. I think in my video I have explained how to do all these analysis using Google Collab that&rsquo;s sufficiently OK for I mean a master level project. OK, I am in analysis stage and I have interviewed analysis stage in the sense how you are doing the analysis, which tool you are using.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 13 minutes 19 seconds<br>
+Krithika.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 13 minutes 22 seconds<br>
+Okay, anyway, she is using some tool and analysing. Now I have written codes. You have created axial codes, principal codes, sub themes and themes, right? Okay, good. I have reduced it to 6 themes which is satisfying my codes and sub themes. Wonderful. Now this week I am planning for doing the next step. Next step in the sense interpreting or coming out with the relationship mapping among these themes.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 13 minutes 42 seconds<br>
+Or creating a theory around the themes you have identified, themes as well as sub themes. Okay, would please tell the week number in record you that I am not in a position to remember, but the headings of video lectures will be there mostly. It will be in the 12th or 13th week I might have.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 14 minutes 3 seconds<br>
+And maybe thematic analysis might be included in the video 13th or because only 15 weeks videos are there. So maybe 12th, 13th, that&rsquo;s it. Okay, good. Very good. Now can I ask Shashrika, Shashrika, please unmute. Shashrika, let me have one. Okay, then again, one more question.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 14 minutes 22 seconds<br>
+I&rsquo;m sorry, one more in the my first Turnitin similarity report shows a high similarity procedure. How many times can we submit the doc? See, when you are seeing a similarity similarity report is about your writing, so you rewrite it. You might have cut a piece from some other material.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 14 minutes 40 seconds<br>
+Or you might have created it using ChatGPT or Gemini. So those will be shown like as some as having some similarity. So try to rewrite it in your own language and then submit it. Then you will get from the report itself you can identify areas which have significantly high level of similarity. So try to rewrite or redraft those areas and create a fresh report and try it out.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 15 minutes 4 seconds<br>
+Like system slowly, slowly through one or 2 attempts, you can bring that similarity level to less than 25, I think 25% is we are allowing, right? Shinda, how much we are allowing 25% or 20%?<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+15 minutes 18 seconds<br>
+15:18<br>
+Ms Shinta Idicula - MBA - Amrita Online 15 minutes 18 seconds<br>
+20%, Sir.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+15 minutes 20 seconds<br>
+15:20<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 15 minutes 20 seconds<br>
+20 Okay, so you need to bring it down to 20%. Multiple attempts may be required, to be frank, but write it in your own language. Everything you grasp it, you try to reproduce in your own language. Naturally, simplicity will come down. One simple thing is.<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+15 minutes 22 seconds<br>
+15:22<br>
+Ms Shinta Idicula - MBA - Amrita Online 15 minutes 22 seconds<br>
+Yeah.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+15 minutes 38 seconds<br>
+15:38<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 15 minutes 38 seconds<br>
+Try to bring citations in between because 4 or 5 words together repeated in the same order like in any other manuscript or any other material will be considered more like causing similarity challenge. So try to bring.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 15 minutes 58 seconds<br>
+The continuous words which are repeated or which are directly copied from another text to minimum 2 or 3 or in among in a in such a long lengthy sentence, try to rephrase or change one or 2 sentences. These are the simple ways to name minimise similarity, that&rsquo;s it.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 16 minutes 19 seconds<br>
+Okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 16 minutes 23 seconds<br>
+How to know what are the tools required for my college? You mean tool for what tool for analysis? Actually, Google Colab is good enough. Otherwise, there are a lot of Livio 8, KH Koder, then maybe content analysis tools, multiple content analysis, QDA minor. There are many tools are there but now.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 16 minutes 43 seconds<br>
+Since this chat, TBT and all are good to do all this kind of qualitative investigation, summarising, paraphrasing, identifying the key themes and all, maybe with the AI support AI you can do this type of qualitative analysis. No big statistics is involved qualitative analysis in any of the AI driven tools.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 2 seconds<br>
+So that&rsquo;s not then for checking similarity and all Turnitin is a wonderful tool. There are many I authenticate there are multiple tools because our university follows Turnitin. So you have to give the report. Turnitin. Okay, Kritika, I think I was looking at Shashirika left. Shashirika was one lady.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 22 seconds<br>
+Who used to come always, I mean early to join the class and also I thought I will get an update from her, but now her name is Sasidega. Are you here?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 36 seconds<br>
+Shashidega.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 39 seconds<br>
+Okay, not here. Poorna Vidya, Poorna Sandhya, are you there? Are you here? Poorna Sandhya.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 49 seconds<br>
+Poorna.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 51 seconds<br>
+Shinta, please unmute Poorna.<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+17 minutes 56 seconds<br>
+17:56<br>
+Ms Shinta Idicula - MBA - Amrita Online 17 minutes 56 seconds<br>
+So the access is provided, so now you can unmute and speak.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+18 minutes 1 second<br>
+18:01<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 18 minutes 1 second<br>
+But Poorna is also not. This is what I was fearing many times. I hear few names, but I am not sure whether they are here or not. Krithika, okay, I could see she occasionally raises questions also. Then Nambudri Aparna Vishnu, are you here? Nambudri Aparna Vishnu.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 18 minutes 26 seconds<br>
+Don&rsquo;t think Jisha.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 18 minutes 31 seconds<br>
+Jisha.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 18 minutes 33 seconds<br>
+Yeah, Namboodiri Avarna, please unmute. We will ask few queries, we will just because at least sometime I will spend it. Please unmute Namboodiri Avarna.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 18 minutes 46 seconds<br>
+Amputri Aparna, please unmute and just speak about your project, the status of your project, what are the data you&rsquo;re going to, I mean, use for your analysis. Should I include interview content in the report? No, interview content and all you can keep as a data annexure. The data can be submitted as an annexure.<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+18 minutes 46 seconds<br>
+18:46<br>
+Ms Shinta Idicula - MBA - Amrita Online 18 minutes 46 seconds<br>
+Yes, sir.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+19 minutes 7 seconds<br>
+19:07<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 19 minutes 7 seconds<br>
+That&rsquo;s all the report. You need to give the summary of analysis, memory of your findings. The problem is that you are trying to address there. Of course, there is a template and a what are the contents to be included in that.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 19 minutes 19 seconds<br>
+Okay, Namudri Aparna.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 19 minutes 23 seconds<br>
+She is not interested to speak actually.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 19 minutes 28 seconds<br>
+George Kutty, so can I chat and reply as I am out for somewhere? Okay, no problem. I just want to hear some people who are, I mean, okay, no problem. Okay, KPKP is&hellip;<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 19 minutes 45 seconds<br>
+KP Sir, can you provide any sample report from the previous batch? Shinta, are we providing a sample report for them to refer and prepare?<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+19 minutes 54 seconds<br>
+19:54<br>
+Ms Shinta Idicula - MBA - Amrita Online 19 minutes 54 seconds<br>
+Sir, actually the template and the detail manual is already upload and published. So as there is a difference in the overall project template from previous batch, I am not sure that we can be provide the previous report.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+20 minutes 7 seconds<br>
+20:07<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 7 seconds<br>
+Yeah, I understand. I under the problem. The problem is that the last time we also in fact learn lot from the mistake committed by the students in the last time and we have made significant changes in the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 26 seconds<br>
+Template be followed and all. So if we are sharing those report, naturally it will guide you in the wrong direction. That is the problem. But the but what the things to be included in the report and all is well I mean explained in the manual. So just follow the manual, that&rsquo;s it.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 46 seconds<br>
+More that sufficient.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 48 seconds<br>
+Okay, George, George Gutti Stanley, are you there?<br>
+Georgekutty Stanly - \[AA.BU.P2MBA24075077\]<br>
+20 minutes 55 seconds<br>
+20:55<br>
+Georgekutty Stanly - \[AA.BU.P2MBA24075077\] 20 minutes 55 seconds<br>
+Yes, sir, I&rsquo;m here.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+20 minutes 57 seconds<br>
+20:57<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 57 seconds<br>
+Okay, very good. I can see a good voice at least. Okay, George Kuti, can you tell what the status of your work, how far you have reached? I will start a data collection process. If so, what is your data? What are the analysis you are planning to do on it?<br>
+Georgekutty Stanly - \[AA.BU.P2MBA24075077\]<br>
+21 minutes 13 seconds<br>
+21:13<br>
+Georgekutty Stanly - \[AA.BU.P2MBA24075077\] 21 minutes 13 seconds<br>
+Actually Sir, I haven&rsquo;t reached that far. I actually decided on the subject and actually starting the data collection. That&rsquo;s only I know I haven&rsquo;t reached that far.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+21 minutes 19 seconds<br>
+21:19<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 19 seconds<br>
+Okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 28 seconds<br>
+So you are yet to decide the right project, that&rsquo;s what.<br>
+Georgekutty Stanly - \[AA.BU.P2MBA24075077\]<br>
+21 minutes 31 seconds<br>
+21:31<br>
+Georgekutty Stanly - \[AA.BU.P2MBA24075077\] 21 minutes 31 seconds<br>
+No, I have decided the project, I have submitted the proposal, everything.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+21 minutes 36 seconds<br>
+21:36<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 36 seconds<br>
+Okay, can you tell what is the work you are planning to do?<br>
+Georgekutty Stanly - \[AA.BU.P2MBA24075077\]<br>
+21 minutes 39 seconds<br>
+21:39<br>
+Georgekutty Stanly - \[AA.BU.P2MBA24075077\] 21 minutes 39 seconds<br>
+Yeah, it is actually on a retail shop, the inventory management in supply chain inefficiencies, how we can, yeah, that&rsquo;s fine.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+21 minutes 40 seconds<br>
+21:40<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 40 seconds<br>
+What is the&hellip;<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 49 seconds<br>
+okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 51 seconds<br>
+Very good, very good.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 55 seconds<br>
+Then, in are you calculating some metrics to verify the efficiency of supply chain? What are the metrics you thought will be ideal to verify the effectiveness or the quality of the supply chain? As we can get from the theoretical or conceptual things.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 22 minutes 14 seconds<br>
+Supply chain efficiency. What are the metrics you are considering?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 22 minutes 20 seconds<br>
+You got my question separate. For example, one simple thing is in transit loss, loss in transit, lesser the loss in transit, the supply chain is more effective. Turn around time, order completion, order replenishment time, all such things are certain metrics useful to evaluate the efficiency of supply chain, right?<br>
+Georgekutty Stanly - \[AA.BU.P2MBA24075077\]<br>
+22 minutes 21 seconds<br>
+22:21<br>
+Georgekutty Stanly - \[AA.BU.P2MBA24075077\] 22 minutes 21 seconds<br>
+Yeah, it&rsquo;s.<br>
+Georgekutty Stanly - \[AA.BU.P2MBA24075077\] 22 minutes 40 seconds<br>
+Yeah, yes, sir, exactly.<br>
+\[3:40:29 PM\] Timestamp: 15:18<br>
+\[3:40:29 PM\] Timestamp: 15:20<br>
+\[3:40:29 PM\] Timestamp: 15:22<br>
+\[3:40:29 PM\] Timestamp: 15:38<br>
+\[3:40:29 PM\] Timestamp: 17:56<br>
+\[3:40:29 PM\] Timestamp: 18:01<br>
+\[3:40:29 PM\] Timestamp: 18:46<br>
+\[3:40:29 PM\] Timestamp: 19:07<br>
+\[3:40:29 PM\] Timestamp: 19:54<br>
+\[3:40:29 PM\] Timestamp: 20:07<br>
+\[3:40:29 PM\] Timestamp: 20:55<br>
+\[3:40:29 PM\] Timestamp: 20:57<br>
+\[3:40:29 PM\] Timestamp: 21:13<br>
+\[3:40:29 PM\] Timestamp: 21:19<br>
+\[3:40:29 PM\] Timestamp: 21:31<br>
+\[3:40:29 PM\] Timestamp: 21:36<br>
+\[3:40:29 PM\] Timestamp: 21:39<br>
+\[3:40:29 PM\] Timestamp: 21:40<br>
+\[3:40:29 PM\] Timestamp: 22:21<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+24 minutes 19 seconds<br>
+24:19<br>
+Ms Shinta Idicula - MBA - Amrita Online 24 minutes 19 seconds<br>
+Yes, sir, I have enabled the permission for all so that they can unmute and speak for now.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+24 minutes 25 seconds<br>
+24:25<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 24 minutes 25 seconds<br>
+but still nobody is you are everyone is granted permission to speak, so please unmute and speak even if some crowd comes in, some noise comes, no problem. Its for next 5 or 10 minutes maximum. VV is telling that data collection done data collection, doing analysis with Excel, no problem.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 24 minutes 45 seconds<br>
+VVVV means Vaishakh Vishwanath. Vaishakh Vishwanath, can you give an idea of what are the different analysis you are planning you are performing?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 24 minutes 57 seconds<br>
+Why shock?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 25 minutes 2 seconds<br>
+BoyShark.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 25 minutes 5 seconds<br>
+OK, and we has already said, Sir, are Google Forms not OK as I had opted for? No, this see there is no condition that you need to have Google Forms. You collect the data, you locate the data, you collect it and first define what are the data you really require for your project. Like in the supply chain case I said clearly, you need to have a clarity on what are the metrics you are considering to verify the efficiency of supply chain.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 25 minutes 28 seconds<br>
+If metrics are finalised, then to calculate these metrics, what are the what are the data required? Some will be in your record, some will be based on perception, some will be collect. Some need to be collected from the channel partners. So locate from where you can collect and what are the tool so if you want to collect from your channel partners like your distributors or logistic partners and all.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 25 minutes 51 seconds<br>
+Then naturally you need to raise the questions and you need to contact them. You can personally contact them or you can contact them over telephone or you can contact our, I mean by sending a Google form whatever where you prefer, no problem because these are all accepted procedures only. So don&rsquo;t worry about such things. Okay, no, VV has not responded back.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 11 seconds<br>
+Now KV data collection is carried out. My project is to understand the effectiveness of digital initiatives to reach out consumers to scale up business volume and retail. This is a wonderful project. KVKV, are you there? So can you elaborate little more on it and you can can you tell what data you have collected? What are the variables you have collected?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 30 seconds<br>
+And what type of an analysis you are planning to complete as part of this project? KV KV the full now what I can see is only. Yeah, please. Yeah.<br>
+KV<br>
+Kevin V - \[AA.BU.P2MBA24070295\]<br>
+26 minutes 38 seconds<br>
+26:38<br>
+Kevin V - \[AA.BU.P2MBA24070295\] 26 minutes 38 seconds<br>
+Yeah, good evening, Sir. Yeah, Sir. In fact, I have taken different kind of reports from see we does a lot of digital initiatives on our day to day. I am actually into retail business. So we do, we do, we do activate multiple digital activities to multiple countries.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+26 minutes 46 seconds<br>
+26:46<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 46 seconds<br>
+Kevin, yeah.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 56 seconds<br>
+OK.<br>
+KV<br>
+Kevin V - \[AA.BU.P2MBA24070295\]<br>
+27 minutes 3 seconds<br>
+27:03<br>
+Kevin V - \[AA.BU.P2MBA24070295\] 27 minutes 3 seconds<br>
+Across Kerala. So I mean this is the new mode wherein we are trying to reach out to the consumers in the most effective manner. So there are different ways in which we get the lead generation, how effectively we can reach out, what will be the conversion factors, those things we can definitely do a detailed analysis. I mean which mode of.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+27 minutes 5 seconds<br>
+27:05<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes 5 seconds<br>
+Okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes 11 seconds<br>
+Agreed.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes 17 seconds<br>
+Yeah.<br>
+KV<br>
+Kevin V - \[AA.BU.P2MBA24070295\]<br>
+27 minutes 25 seconds<br>
+27:25<br>
+Kevin V - \[AA.BU.P2MBA24070295\] 27 minutes 25 seconds<br>
+In digital initiatives also, we are having lot many ways of doing it. So I mean which are giving us different kind of results in different areas of Kerala. So those kind of analysis are also we are getting it done. I mean there.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+27 minutes 37 seconds<br>
+27:37<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes 37 seconds<br>
+Okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes 40 seconds<br>
+Kevin Kevin, my question is very simple, very simple. You said effectiveness. Effectiveness can be measured by certain metrics like how many people it reached, how much conversion occurred, how much volume of business it looked. So these are the final metrics we want for that we need, okay, number of people responded to the initiative.<br>
+KV<br>
+Kevin V - \[AA.BU.P2MBA24070295\]<br>
+27 minutes 43 seconds<br>
+27:43<br>
+Kevin V - \[AA.BU.P2MBA24070295\] 27 minutes 43 seconds<br>
+Haan.<br>
+Kevin V - \[AA.BU.P2MBA24070295\] 27 minutes 45 seconds<br>
+Yeah.<br>
+Kevin V - \[AA.BU.P2MBA24070295\] 27 minutes 49 seconds<br>
+Correct. Correct. Correct.<br>
+Kevin V - \[AA.BU.P2MBA24070295\] 27 minutes 55 seconds<br>
+Correct.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+27 minutes 59 seconds<br>
+27:59<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes 59 seconds<br>
+Number of people so who saw the so these are the data. So my question is very simple, what is the data you said you data collection is carrying out? So data collection with respect to certain head? Now I am not saying variables or any such terms I am using you are collecting certain details. So what are the details you are?<br>
+KV<br>
+Kevin V - \[AA.BU.P2MBA24070295\]<br>
+27 minutes 59 seconds<br>
+27:59<br>
+Kevin V - \[AA.BU.P2MBA24070295\] 27 minutes 59 seconds<br>
+Haan.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+28 minutes 18 seconds<br>
+28:18<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 28 minutes 18 seconds<br>
+Correctly that will become your data, right? Yeah.<br>
+KV<br>
+Kevin V - \[AA.BU.P2MBA24070295\]<br>
+28 minutes 21 seconds<br>
+28:21<br>
+Kevin V - \[AA.BU.P2MBA24070295\] 28 minutes 21 seconds<br>
+So we are getting the details of the customers, the location wise details. What is the nature of that lead, whether it is a hot lead or a cold lead? So.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+28 minutes 26 seconds<br>
+28:26<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 28 minutes 26 seconds<br>
+OK.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 28 minutes 28 seconds<br>
+Okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 28 minutes 32 seconds<br>
+Okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 28 minutes 34 seconds<br>
+But what is yeah, okay, now my question is effectiveness related to effectiveness related data. What is it?<br>
+KV<br>
+Kevin V - \[AA.BU.P2MBA24070295\]<br>
+28 minutes 36 seconds<br>
+28:36<br>
+Kevin V - \[AA.BU.P2MBA24070295\] 28 minutes 36 seconds<br>
+So.<br>
+Kevin V - \[AA.BU.P2MBA24070295\] 28 minutes 41 seconds<br>
+So based on the conversion factor, we can decide, right? I mean, the effectiveness conversion factor.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+28 minutes 45 seconds<br>
+28:45<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 28 minutes 45 seconds<br>
+Conversion, okay, conversion, conversion is a good okay. Then of course, reach, frequency, all such things are reach means how many people responded to it. Maybe like you can always try to use another also like tunnel that what are the sales funnel you have heard, right? How many cold leads, how many got converted to warm leads, warm leads to hot leads, hot leads got converted to customers. So.<br>
+KV<br>
+Kevin V - \[AA.BU.P2MBA24070295\]<br>
+28 minutes 48 seconds<br>
+28:48<br>
+Kevin V - \[AA.BU.P2MBA24070295\] 28 minutes 48 seconds<br>
+Ha.<br>
+Kevin V - \[AA.BU.P2MBA24070295\] 28 minutes 55 seconds<br>
+Correct.<br>
+Kevin V - \[AA.BU.P2MBA24070295\] 29 minutes 3 seconds<br>
+Correct, yeah, absolutely.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+29 minutes 9 seconds<br>
+29:09<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 29 minutes 9 seconds<br>
+Each tracking the I mean the funnel, that itself can be a good mechanism to evaluate the effectiveness of digital initiative, right?<br>
+KV<br>
+Kevin V - \[AA.BU.P2MBA24070295\]<br>
+29 minutes 17 seconds<br>
+29:17<br>
+Kevin V - \[AA.BU.P2MBA24070295\] 29 minutes 17 seconds<br>
+Yeah, absolutely, absolutely. In fact, the separate Excel is also me getting maintained. So just to understand the conversion factors also based on the nature of the activity.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+29 minutes 19 seconds<br>
+29:19<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 29 minutes 19 seconds<br>
+What if?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 29 minutes 26 seconds<br>
+Okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 29 minutes 29 seconds<br>
+Okay, anyway, you are happy with your project in your learning. I just thought I will have interactions with some people like this because I am always getting a fear that whether I am simply talking and nobody is following me, that&rsquo;s why then JT has come about with a response. Sir, my I my study.<br>
+KV<br>
+Kevin V - \[AA.BU.P2MBA24070295\]<br>
+29 minutes 33 seconds<br>
+29:33<br>
+Kevin V - \[AA.BU.P2MBA24070295\] 29 minutes 33 seconds<br>
+Yeah, I&rsquo;m definitely.<br>
+\[3:40:34 PM\] Timestamp: 24:19<br>
+\[3:40:34 PM\] Timestamp: 24:25<br>
+\[3:40:34 PM\] Timestamp: 26:38<br>
+\[3:40:34 PM\] Timestamp: 26:46<br>
+\[3:40:34 PM\] Timestamp: 27:03<br>
+\[3:40:34 PM\] Timestamp: 27:05<br>
+\[3:40:34 PM\] Timestamp: 27:25<br>
+\[3:40:34 PM\] Timestamp: 27:37<br>
+\[3:40:34 PM\] Timestamp: 27:43<br>
+\[3:40:34 PM\] Timestamp: 27:59<br>
+\[3:40:34 PM\] Timestamp: 27:59<br>
+\[3:40:34 PM\] Timestamp: 28:18<br>
+\[3:40:34 PM\] Timestamp: 28:21<br>
+\[3:40:34 PM\] Timestamp: 28:26<br>
+\[3:40:34 PM\] Timestamp: 28:36<br>
+\[3:40:34 PM\] Timestamp: 28:45<br>
+\[3:40:34 PM\] Timestamp: 28:48<br>
+\[3:40:34 PM\] Timestamp: 29:09<br>
+\[3:40:34 PM\] Timestamp: 29:17<br>
+\[3:40:34 PM\] Timestamp: 29:19<br>
+\[3:40:34 PM\] Timestamp: 29:33<br>
+Kevin V - \[AA.BU.P2MBA24070295\] 29 minutes 44 seconds<br>
+Open.<br>
+Kevin V - \[AA.BU.P2MBA24070295\] 29 minutes 48 seconds<br>
+Thank you, sir.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+29 minutes 48 seconds<br>
+29:48<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 29 minutes 48 seconds<br>
+Customer relationship match. Thank you. Thank you, Kevin. Thank you for sharing this much study. Customer relationship management, digital marketing strategies in modern business, a very broad topic. Jaiti, can you tell what is the exact data you are searching in this project and what way you are planning to collect it and what are the analysis you are planning?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 30 minutes 8 seconds<br>
+Now we reached to the current stage in our interactions that JTJT means let me have a JT means Jivish Tiwari Jivish Tiwari. Yeah, one minute Vishal, right?<br>
+JT<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\]<br>
+30 minutes 20 seconds<br>
+30:20<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\] 30 minutes 20 seconds<br>
+Hello. Yeah, Sir. Good evening, Sir. I am ordering to you.<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\] 30 minutes 30 seconds<br>
+Sure, sir.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+30 minutes 31 seconds<br>
+30:31<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 30 minutes 31 seconds<br>
+Right, Vaishak, please tell you have written lot many things like it takes since you have come up online. Can you, in simple words, explain this?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 30 minutes 44 seconds<br>
+Why, sir?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 30 minutes 47 seconds<br>
+Okay, you can speak now. I can&rsquo;t. Okay, no problem, no problem. Okay, you have collected data related to revenue change, footfall change, change all change. Change means it respect to 2 periods. So what are the so there is 2 period, okay, what will be net profit change, customer spend change, all change how much?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 31 minutes 8 seconds<br>
+Maybe like a pre and post analysis, right? Okay. Anyway, you are responded. You are here. Now I come back to Jeevesh. Jeevesh, are you in a in a position to speak?<br>
+JT<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\]<br>
+31 minutes 20 seconds<br>
+31:20<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\] 31 minutes 20 seconds<br>
+Yes, sir.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+31 minutes 22 seconds<br>
+31:22<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 31 minutes 22 seconds<br>
+Yeah, Jeevesh, please tell can you explain? I just want to know what is the data you planned, you wanted to collect, how you are planning to collect, or have you collected it or not? And what are the major analysis you are thinking to proceed in this data?<br>
+JT<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\]<br>
+31 minutes 24 seconds<br>
+31:24<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\] 31 minutes 24 seconds<br>
+Yeah, sir.<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\] 31 minutes 40 seconds<br>
+So Sir, I like I have the purpose of this project basically studying analysis to how to digital marketing strategy may be effective customer creation in leading Indian ad tech companies. So I previously I worked.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+31 minutes 58 seconds<br>
+31:58<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 31 minutes 58 seconds<br>
+Okay.<br>
+JT<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\]<br>
+31 minutes 59 seconds<br>
+31:59<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\] 31 minutes 59 seconds<br>
+As a senior PDA in at Bysus, so I am looking into that related to my previous experience as well. So I focus on effectiveness, various digital marketing channels to provide improvement and suggestion, yeah.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+32 minutes 12 seconds<br>
+32:12<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 32 minutes 12 seconds<br>
+Agreed Agreed, Jivesh, my simple question is what is the data? Okay, you want to see the effectiveness and all like I was explaining to other people also to capture the effectiveness you have to calculate certain metric. Okay, so for that you need to get certain data.<br>
+JT<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\]<br>
+32 minutes 24 seconds<br>
+32:24<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\] 32 minutes 24 seconds<br>
+Yeah.<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\] 32 minutes 29 seconds<br>
+Okay.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+32 minutes 31 seconds<br>
+32:31<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 32 minutes 31 seconds<br>
+It can be feeling like satisfaction of the employees or satisfaction of the customer, or it can be the conversion rate or it can be the revenue generator. What you are planning to get as data for this.<br>
+JT<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\]<br>
+32 minutes 47 seconds<br>
+32:47<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\] 32 minutes 47 seconds<br>
+So sir, basically I go through, I go through the company website, Vizu Academy, Physics like Physics Wala and Vedantu and upgrade similar kind of fact that companies and what was the Google scholar articles. I go through that and business journalist.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+32 minutes 47 seconds<br>
+32:47<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 32 minutes 47 seconds<br>
+You have a data, right?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 33 minutes 1 second<br>
+And.<br>
+JT<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\]<br>
+33 minutes 7 seconds<br>
+33:07<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\] 33 minutes 7 seconds<br>
+And industry reports, I go through that and collect some data and analysis in a descriptive analytical things. And also I have to choose the tool like MS Excels and charts and tables, yeah.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+33 minutes 15 seconds<br>
+33:15<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 33 minutes 15 seconds<br>
+Okay, so the data will be the number.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 33 minutes 22 seconds<br>
+Okay, I understand, but my thing again on data, data will be the number of articles published number of like that. So can you tell clearly the data because I see looking because okay, you said you visit the website from website you capture certain things, right? May be the number of articles published, number of students enrolled, or number of.<br>
+JT<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\]<br>
+33 minutes 40 seconds<br>
+33:40<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\] 33 minutes 40 seconds<br>
+Yeah.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+33 minutes 43 seconds<br>
+33:43<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 33 minutes 43 seconds<br>
+The turnaround time for or the duration of the courses or fees for the courses or the publication time or the number of reviews occurred on the manuscript. So there will be certain data you will be searching for or certain details you will be searching in the website, right?<br>
+JT<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\]<br>
+33 minutes 59 seconds<br>
+33:59<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\] 33 minutes 59 seconds<br>
+Sir, yeah, I search like 5 to 4 companies&rsquo; data like what is a video marketing, mobile app, and promotions, and apart from that, affordable content in available in the social media. So I am looking to that and I work on the numbers.<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\] 34 minutes 19 seconds<br>
+Recently, I posted in June like July month of the reports, so I am work on it.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+34 minutes 24 seconds<br>
+34:24<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 34 minutes 24 seconds<br>
+Okay, very good, very good. Anyway, you are comfortable with the work and you can do it, right?<br>
+JT<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\]<br>
+34 minutes 27 seconds<br>
+34:27<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\] 34 minutes 27 seconds<br>
+Thank you.<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\] 34 minutes 30 seconds<br>
+Yes, sir, yes.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+34 minutes 32 seconds<br>
+34:32<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 34 minutes 32 seconds<br>
+Now I got another query from thank you, thank you Jivish Chandru Chandru is telling that I have doing project on optimization of cutting tool management systems to enhance operational productivity in precision manufacturing. Wonderful thing I am using the data of IDA. I am by using through data of IDA. IDA means it is a conventional marketing IDA what.<br>
+JT<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\]<br>
+34 minutes 33 seconds<br>
+34:33<br>
+Jeevesh Tiwari - \[AA.BU.P2MBA24070310\] 34 minutes 33 seconds<br>
+Thank you, sir.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+34 minutes 56 seconds<br>
+34:56<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 34 minutes 56 seconds<br>
+So it is IDA attention, interest, desire, and action with. What do you mean by IDA?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 3 seconds<br>
+I got another query, but first we will finish Chandru Chandru. Yes, the same. Okay, so I think you are little clear about now what are the I mean metrics or what are the indicators or items you are that will be the clear data for you right for evaluating the operational productivity.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 24 seconds<br>
+What are the I mean metrics or what are the measures you are trying to capture as data to evaluate the operational productivity Chandru?<br>
+Chandru P - \[AA.BU.P2MBA24074102\]<br>
+35 minutes 39 seconds<br>
+35:39<br>
+Chandru P - \[AA.BU.P2MBA24074102\] 35 minutes 39 seconds<br>
+Yes Sir, yes actually however we can change the project for every 6 months once. So is that case we can we have to focus on that cutting tools. Actually I am in that manufacturing field so have that cutting tools management so that is why I just select that project.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+35 minutes 47 seconds<br>
+35:47<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 47 seconds<br>
+Okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 53 seconds<br>
+Okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 55 seconds<br>
+Okay, the pro I understand Chandru, I understand. My only simple doubt is I am now looking at getting a clarity on what is the data you will be trying to collect and what kind of analysis you will do nowhere. The key word I mean have noticed is to evaluate and enhance operational productivity. in.<br>
+Chandru P - \[AA.BU.P2MBA24074102\]<br>
+35 minutes 57 seconds<br>
+35:57<br>
+Chandru P - \[AA.BU.P2MBA24074102\] 35 minutes 57 seconds<br>
+Regarding this is.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+36 minutes 18 seconds<br>
+36:18<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 36 minutes 18 seconds<br>
+Okay, precision manufacturing, right data with respect to ID also, but then can you be in a position to tell, okay, for I mean operational productivity, I have captured data about I mean how many people use it.<br>
+\[3:40:39 PM\] Timestamp: 29:48<br>
+\[3:40:39 PM\] Timestamp: 30:20<br>
+\[3:40:39 PM\] Timestamp: 30:31<br>
+\[3:40:39 PM\] Timestamp: 31:20<br>
+\[3:40:39 PM\] Timestamp: 31:22<br>
+\[3:40:39 PM\] Timestamp: 31:24<br>
+\[3:40:39 PM\] Timestamp: 31:58<br>
+\[3:40:39 PM\] Timestamp: 31:59<br>
+\[3:40:39 PM\] Timestamp: 32:12<br>
+\[3:40:39 PM\] Timestamp: 32:24<br>
+\[3:40:39 PM\] Timestamp: 32:31<br>
+\[3:40:39 PM\] Timestamp: 32:47<br>
+\[3:40:39 PM\] Timestamp: 32:47<br>
+\[3:40:39 PM\] Timestamp: 33:07<br>
+\[3:40:39 PM\] Timestamp: 33:15<br>
+\[3:40:39 PM\] Timestamp: 33:40<br>
+\[3:40:39 PM\] Timestamp: 33:43<br>
+\[3:40:39 PM\] Timestamp: 33:59<br>
+\[3:40:39 PM\] Timestamp: 34:24<br>
+\[3:40:39 PM\] Timestamp: 34:27<br>
+\[3:40:39 PM\] Timestamp: 34:32<br>
+\[3:40:39 PM\] Timestamp: 34:33<br>
+\[3:40:39 PM\] Timestamp: 34:56<br>
+\[3:40:39 PM\] Timestamp: 35:39<br>
+\[3:40:39 PM\] Timestamp: 35:47<br>
+\[3:40:39 PM\] Timestamp: 35:57<br>
+\[3:40:39 PM\] Timestamp: 36:18<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+37 minutes 11 seconds<br>
+37:11<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 37 minutes 11 seconds<br>
+Okay, that means you have interacted with or you have shared some data sheet or I mean data collection form to the owners of the machine you have supplied and their feelings or their feedback about the machines are collected as data, right?<br>
+Chandru P - \[AA.BU.P2MBA24074102\]<br>
+37 minutes 30 seconds<br>
+37:30<br>
+Chandru P - \[AA.BU.P2MBA24074102\] 37 minutes 30 seconds<br>
+This is not just feedback, it is a performance about the tool performance.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+37 minutes 34 seconds<br>
+37:34<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 37 minutes 34 seconds<br>
+Performance related, OK. Performance related metrics collected from users of the machine. OK, I now understand and then you are analysing. OK, that&rsquo;s good. OK, I just want to know because I&rsquo;m more worried because people are still not very clear about what can be the data. If you are clear about data, only you can think about what kind of analysis you can do.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 37 minutes 53 seconds<br>
+That&rsquo;s why did the data collection. This is a question from PPPPP means okay any PPP, one minute Pranav Prabhagar okay, Pranav Prabhagar, are you can you speak did the data collection namely net operating revenue against global geopolitical risk index here?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 15 seconds<br>
+And did analysis using Excel in English, statistical regression and trend charting. Okay, both we can do okay to prove the geopolitical risk act as an external fact market disruptor that breaks standard linear price elasticity since it affect. Okay, this is a good thing only, but I&rsquo;m my question is this operating net operating revenue from where you will get.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 40 seconds<br>
+For different may how we what are the source of the data?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 45 seconds<br>
+Prunal.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 49 seconds<br>
+Pranav.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 53 seconds<br>
+No, it&rsquo;s not there.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 38 minutes 55 seconds<br>
+No, might have lost connection. OK, I just want to know because the yeah, it is from your official young mean companies website. OK, you have access, you have I mean access to that data source, right? OK, then that&rsquo;s good. OK, you can do this analysis in Google Colab in a simple way. You can support the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 39 minutes 14 seconds<br>
+Or you can feed the data and ask the Google app to verify the quality of the data for our trend settings. It will automatically do the analysis and give you the interpretation and you can ask the tool to give an interpretation easily that could be easily understandable for a layman. So it will explain or give practical interpretation of the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 39 minutes 34 seconds<br>
+Results also OK, Google collab. I can show you maybe if I get time today, I will show you analysis of employee attribution, KP analysis of employee attribution and retention strategies. Understand use. I will show you, I will show you. I think I get 10 minutes to show you that today I am not going to go to another topic.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 39 minutes 54 seconds<br>
+Analysis of the employee attribution, development, and retention strategies in the leading private health care. Okay, this is a good topic, and I feel that this will be mostly handling the perception related data, perception based data from the employees, right? KPKP is who is KP?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 40 minutes 15 seconds<br>
+KP, are you there?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 40 minutes 17 seconds<br>
+It is mostly.<br>
+KP<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\]<br>
+40 minutes 17 seconds<br>
+40:17<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\] 40 minutes 17 seconds<br>
+Hello, sir, am I audible? Yeah, Kamakhya here.<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\] 40 minutes 23 seconds<br>
+Yeah, it&rsquo;s.<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\] 40 minutes 36 seconds<br>
+Okay, its Kamakhya Assam.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+40 minutes 38 seconds<br>
+40:38<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 40 minutes 38 seconds<br>
+So this is an employee perception study, right?<br>
+KP<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\]<br>
+40 minutes 41 seconds<br>
+40:41<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\] 40 minutes 41 seconds<br>
+Right Sir, like I have prepared a Google format kind of format where it show where I have mentioned some demographic details regarding the employees and few kinds of Likert scale I have mentioned like few categories of why they are retaining and why they are.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+40 minutes 45 seconds<br>
+40:45<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 40 minutes 45 seconds<br>
+Okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 40 minutes 46 seconds<br>
+Ha.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 40 minutes 51 seconds<br>
+Okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 40 minutes 59 seconds<br>
+Okay, some costly.<br>
+KP<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\]<br>
+41 minutes<br>
+41:00<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\] 41 minutes<br>
+Why they are leaving? Like why they?<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+41 minutes 2 seconds<br>
+41:02<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 2 seconds<br>
+OK, the some questions related to attribution intentions, retention intentions, may be some factors which will develop this kind of things, those things like maybe satisfaction or work or job.<br>
+KP<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\]<br>
+41 minutes 7 seconds<br>
+41:07<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\] 41 minutes 7 seconds<br>
+Can you please check?<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\] 41 minutes 12 seconds<br>
+Yeah, correct, sir. Why whether they have having any workload or the communication between the management and the employees is satisfactory. Like I have not given it as an open ended question because it is an real time case study. I have just given it as a Likert scale and I it is an single specialty hospital actually.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+41 minutes 20 seconds<br>
+41:20<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 20 seconds<br>
+Okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 24 seconds<br>
+No problem, no problem. So.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 29 seconds<br>
+Or.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 31 seconds<br>
+No problem, no problem. So anyway, anyway, now just to connect with the I mean theoretical explanation I am giving like we have developed a retail satisfaction model. You might have developed a model for capturing employee retention.<br>
+KP<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\]<br>
+41 minutes 33 seconds<br>
+41:33<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\] 41 minutes 33 seconds<br>
+So.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+41 minutes 51 seconds<br>
+41:51<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 51 seconds<br>
+And you might have measured these variables in the model by taking some perceptions about certain items that will measure the feeling, and then you&rsquo;ll be doing some kind of relationship mapping and you&rsquo;ll be checking whether your employees based on their gender, or your age, or their education, or their length of association with the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 42 minutes 14 seconds<br>
+Healthcare scope, do they have different feeling towards employee attribution fact I mean aspect or any factor that developed employee attrition or retention? Is it so?<br>
+KP<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\]<br>
+42 minutes 27 seconds<br>
+42:27<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\] 42 minutes 27 seconds<br>
+Yeah, like I will be doing a qualitative analysis, sir. It&rsquo;s not a quantitative, qualitative analysis, sir.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+42 minutes 28 seconds<br>
+42:28<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 42 minutes 28 seconds<br>
+So, okay, so this work.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 42 minutes 34 seconds<br>
+No, qualitative in the sense that means you are just asking certain questions about employee attribution, attrition, and retention, and then you are trying to do a text mining of those responses. But you said you used only Likert scale like yes or no on text.<br>
+KP<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\]<br>
+42 minutes 47 seconds<br>
+42:47<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\] 42 minutes 47 seconds<br>
+No, sir, I am sir. What to say? I have used the Likert scale. Sir, I am using the quantitative analysis. I am just proceeding with the Excel kind of format. Sir, is that correct way to proceed?<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+43 minutes<br>
+43:00<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 43 minutes<br>
+Okay, now Okay, now you said that you are doing quantitative, that&rsquo;s why I asked it. Okay, quantitative. I said this is what similar to the case. Now we are discussing your analysis will be.<br>
+KP<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\]<br>
+43 minutes 4 seconds<br>
+43:04<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\] 43 minutes 4 seconds<br>
+No, sorry, quantitative, quantitative.<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\] 43 minutes 13 seconds<br>
+Okay, sir, that is using T test Anova, those kind of types of Anova.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+43 minutes 16 seconds<br>
+43:16<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 43 minutes 16 seconds<br>
+Okay, T test to understand the group comparison. Okay, very good, very good. That&rsquo;s okay, yeah.<br>
+KP<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\]<br>
+43 minutes 21 seconds<br>
+43:21<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\] 43 minutes 21 seconds<br>
+That will be my project, sir. And one more thing, sir, as it is a real time case study, is it necessary? Should I mention the hospital name while?<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+43 minutes 30 seconds<br>
+43:30<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 43 minutes 30 seconds<br>
+No, you can mask it, you can mask it because I mean of course our purpose is to solve the problems in industry or organizations facing, but to keep the privacy intact and all, you can mask the name of the hospital, you mean hospital, or the entity. You can simply tell that an entity where 1000 people are working or 300 people are working and the history it is.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 43 minutes 54 seconds<br>
+Working from such so many years and all, we give a description of the firm, but don&rsquo;t tell plainly which is the firm. Otherwise, if you are using the name of the firm, you need to take approval from the I mean that institution to use their names in reports and all because it is something sensitive, right? And now after your analysis, you find that there are.<br>
+KP<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\]<br>
+44 minutes<br>
+44:00<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\] 44 minutes<br>
+Oh.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+44 minutes 13 seconds<br>
+44:13<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 44 minutes 13 seconds<br>
+90% or majority of the employees are planning to, I mean, move away from that. It&rsquo;s not going to be a good report for now, right? So they may not be happy also. So you can share the report to the people before submitting to the university and all, and if they feel okay, if some good findings come, they&rsquo;ll be happy to.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 44 minutes 34 seconds<br>
+That means bring their name also in the report. So if that is the case, use the name otherwise, just mask it, say that message X or company XYZ like that. You can give a fictitious name, no problem, okay.<br>
+KP<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\]<br>
+44 minutes 48 seconds<br>
+44:48<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\] 44 minutes 48 seconds<br>
+Okay sir, but they are saying like from the Amrita institution we need to upload the for direct project, we have to get the permission and we have to upload the it in. So that name will be prescribed in that report, right sir? So that&rsquo;s what I am asking.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+45 minutes 3 seconds<br>
+45:03<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 45 minutes 3 seconds<br>
+Yeah, that is that&rsquo;s what I know if. But the only problem if you are actually Amrita might be happy if you give that because if you are getting a real time project, it is always wonderful, right? And it is always good also. But the problem this type of this is a very sensitive issue, they are studying about their own employees.<br>
+KP<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\]<br>
+45 minutes 4 seconds<br>
+45:04<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\] 45 minutes 4 seconds<br>
+Certificate like final.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+45 minutes 22 seconds<br>
+45:22<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 45 minutes 22 seconds<br>
+And their return to intentions and all. After your study, you find that majority of the employees are unhappy and they are planning to move out. Will they be happy? Will the company be happy to publish such a report? So if company, if such a then company will be saying, then don&rsquo;t use our name or I mean they may not be happy to use the name of the company, but you cannot.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 45 minutes 42 seconds<br>
+Manipulate the results also, then you&rsquo;ll be in such a situation you can get the approval from the company that you have conducted yesterday, but in the report there is no need to mention the company, right?<br>
+KP<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\]<br>
+45 minutes 53 seconds<br>
+45:53<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\] 45 minutes 53 seconds<br>
+Okay, sir, okay, alright.<br>
+\[3:40:44 PM\] Timestamp: 37:11<br>
+\[3:40:44 PM\] Timestamp: 37:30<br>
+\[3:40:44 PM\] Timestamp: 37:34<br>
+\[3:40:44 PM\] Timestamp: 40:17<br>
+\[3:40:44 PM\] Timestamp: 40:38<br>
+\[3:40:44 PM\] Timestamp: 40:41<br>
+\[3:40:44 PM\] Timestamp: 40:45<br>
+\[3:40:44 PM\] Timestamp: 41:00<br>
+\[3:40:44 PM\] Timestamp: 41:02<br>
+\[3:40:44 PM\] Timestamp: 41:07<br>
+\[3:40:44 PM\] Timestamp: 41:20<br>
+\[3:40:44 PM\] Timestamp: 41:33<br>
+\[3:40:44 PM\] Timestamp: 41:51<br>
+\[3:40:44 PM\] Timestamp: 42:27<br>
+\[3:40:44 PM\] Timestamp: 42:28<br>
+\[3:40:44 PM\] Timestamp: 42:47<br>
+\[3:40:44 PM\] Timestamp: 43:00<br>
+\[3:40:44 PM\] Timestamp: 43:04<br>
+\[3:40:44 PM\] Timestamp: 43:16<br>
+\[3:40:44 PM\] Timestamp: 43:21<br>
+\[3:40:44 PM\] Timestamp: 43:30<br>
+\[3:40:44 PM\] Timestamp: 44:00<br>
+\[3:40:44 PM\] Timestamp: 44:13<br>
+\[3:40:44 PM\] Timestamp: 44:48<br>
+\[3:40:44 PM\] Timestamp: 45:03<br>
+\[3:40:44 PM\] Timestamp: 45:04<br>
+\[3:40:44 PM\] Timestamp: 45:22<br>
+\[3:40:44 PM\] Timestamp: 45:53<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+45 minutes 55 seconds<br>
+45:55<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 45 minutes 55 seconds<br>
+Sir, because the if the results comes very wonderfully good, naturally company will be happy to use their name, but otherwise this type of issues can come. That&rsquo;s why, Sir, is it fine to it is again company name? OK, now since 15 minutes only left and I thought about spending 30 minutes on.<br>
+KP<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\]<br>
+46 minutes 5 seconds<br>
+46:05<br>
+Kamakhya P - \[AA.BU.P2MBA24073104\] 46 minutes 5 seconds<br>
+Okay, sir.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+46 minutes 15 seconds<br>
+46:15<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 46 minutes 15 seconds<br>
+Interaction. Now I come back to the discussion. I&rsquo;m not going to give little more details. I&rsquo;ll tell and that we can write up. Sorry, is it fine to use? Okay, now sorry, at least I&rsquo;m happy because few responses I could hear from your side. Now the point what I need to explain here again.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 46 minutes 36 seconds<br>
+Is we have reached up to the quality check and I said to verify all I mean the measurement quality related aspect, we need to check the validity and reliability. also. This can be done either in the confirmatory factor analysis.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 46 minutes 55 seconds<br>
+Module or menu in Zamovi or we can do the same in structural equation modelling tab in Zamovi. This is only part 2 of your analysis. OK, so I will demonstrate that today and then if 5 minutes I left with, I will just show you.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 47 minutes 15 seconds<br>
+Google Collab, OK, so here things are very simple. Now you can go to see as I said in Jamovi, every module installed will be appearing on the top ribbon. So there is a ribbon, there is a button which clearly tells SEM. SEM means structural.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 47 minutes 36 seconds<br>
+Equation modeling and this menu provides lot of details, but it provides import. What we want is the metrics which speaks about reliability and validity that is also directly produced by.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 47 minutes 56 seconds<br>
+This module or this menu, so we will take that we can take syntax means we need to write the code, we will go for interactive some interactive. So here one thing you need to know is here. I mean there is endogenous and exogenous. What do you mean by endogenous? It&rsquo;s another word.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 48 minutes 14 seconds<br>
+For endogenous, exogenous means independent and endogenous means dependent. You know in the model what is endogenous and different. So if you&rsquo;re creating a model, naturally we need to clearly tell, okay, here in our case, outcome or dependent variable is satisfaction. So you need to give dependent variable like satisfaction.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 48 minutes 33 seconds<br>
+But here now our purpose is to verify the quality of measurement. So whichever in endogenous column or in exogenous list, wherever you put no problem, you can put everything in one. Also, because my purpose is to just to check whether the measures related to validity and reliability are coming.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 48 minutes 54 seconds<br>
+In the appropriate level or not, whether my measurement have happened rightly or not, I&rsquo;m not going to go for any other analysis related to the linkages relationship. But here you can create that also. But in the one problem with our model is in our model, one mediator is also there.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 49 minutes 13 seconds<br>
+So the sum model will not capture the media. That&rsquo;s why it only captures certain independent variables and certain dependent variables. So that only this menu how take place takes I mean consider I mean includes so how we are moving it you take all the variables as a family see SA 12 SA 5.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 49 minutes 35 seconds<br>
+As a family, you move it to here. You can give the name also SL, no problem. Sorry, screen not shared. I am sorry, really, sorry, really sorry.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 49 minutes 48 seconds<br>
+I&rsquo;m really sorry.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 49 minutes 53 seconds<br>
+Is it okay now? Can you see the screen?<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+49 minutes 58 seconds<br>
+49:58<br>
+Ms Shinta Idicula - MBA - Amrita Online 49 minutes 58 seconds<br>
+Is serviceable.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+50 minutes<br>
+50:00<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 50 minutes<br>
+So in the top button same I am I have taken and in same mean here the independent variables and X and dependent variables are shown like endogenous and exogenous. Endogenous speaks about dependent variable, exogenous speak I mean it&rsquo;s another way to tell about the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 50 minutes 19 seconds<br>
+Independent variable. Now, what I was trying to tell that here we in our bigger model, we have a mediator also. So, in this module or in this menu, we don&rsquo;t have provision to incorporate the mediator also. So, don&rsquo;t have to worry about that and our purpose of this.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 50 minutes 38 seconds<br>
+particular analysis is to understand how good the measurement has happened. So you can use all the construct, either as endogenous or exogenous, or everything is endogenous or exogenous. We just want to feed and see the metrics related to measurement. That&rsquo;s all. So what I&rsquo;m feeding is first we take.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 50 minutes 58 seconds<br>
+One family store attribute 5 questions, that&rsquo;s the first family we conducted EFA and found that after collecting data also the family structure exist as we planned. So that&rsquo;s the first one we add another. So next one is PA 2.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 17 seconds<br>
+So we name it like P.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 23 seconds<br>
+One minute, it will be nice.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 27 seconds<br>
+PA.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 30 seconds<br>
+We&rsquo;ll move the third one.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 34 seconds<br>
+I am not moving anything everyone I mean everything you can move to whichever box you can the top means it will be endogenous. So endogenous I have moved and here it is VS mean which wherever you move also there will not be any problem.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 49 seconds<br>
+Okay, now I am moving few only. So here also I am moved. Okay, so now what I am trying to tell I am just showing only so you can move all the families as family and like one group you can add a new Latin variable. Now once you add these things are coming.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 8 seconds<br>
+Yeah, there are certain details are coming. All this details you don&rsquo;t have to worry because this is about how the relationship happens and all. Now, what we need to seriously worry here is you have to go to PA output option in the output option.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 28 seconds<br>
+There are some reliability indices, there are HTMD. These HTMD is used to verify discriminant validity. Reliability indices will provide some of the reliability questions like chromback alpha, composite reliability, etcetera.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 46 seconds<br>
+And it also gives AV average variance extracted. So these things only we want here, OK, so that&rsquo;s why I have to move all the variables and then I need to check reliability indices and HDMT. So when it comes down.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 12 seconds<br>
+I took one minute to do it.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 19 seconds<br>
+One minute.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 33 seconds<br>
+It&rsquo;s not comp. I don&rsquo;t know it&rsquo;s not comp minute.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 38 seconds<br>
+Within the year also I will tick beta.<br>
+\[3:40:49 PM\] Timestamp: 45:55<br>
+\[3:40:49 PM\] Timestamp: 46:05<br>
+\[3:40:49 PM\] Timestamp: 46:15<br>
+\[3:40:49 PM\] Timestamp: 49:58<br>
+\[3:40:49 PM\] Timestamp: 50:00<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 54 seconds<br>
+One minute, I think some error happened one minute earlier.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 8 seconds<br>
+Hello.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 16 seconds<br>
+Output fabric.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 35 seconds<br>
+Yeah, here it will come. So now I moved only one, so I forgot to give the name. I will give the name. Yes, I am okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 45 seconds<br>
+I have moved only one item, so at the end see it&rsquo;s coming see additional output, it will come like additional outputs. In additional output, it will come reliability indices, say the variable name SI. We have moved only one, that&rsquo;s why only one line is there in the results.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 5 seconds<br>
+So this alpha is outcome back alpha that&rsquo;s 0.825. The condition is that it should be more than 0.7 then ordinal alpha is called a composite reliability that also should be more than 0.7. We got a value more than 0.7 so that reliability is okay. AVE average variance extracted should be. These are other types of reliability we have to take the first 2 only.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 30 seconds<br>
+I mean that&rsquo;s okay or I mean everywhere the condition is that this value should be more than 0.7. Here we got all the liability values more than 0.7 so condition is met then a V is an indicator of construct validity also. So this here the cut off should be more than 0.5, here we got the value 0.568.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 53 seconds<br>
+So that&rsquo;s good. HDMT should be more than 0.85 since there is only one discriminant means with respect to another construct since it is there is only one construct it is shown like one. Now we can add the second add new. So I&rsquo;m adding the second family.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 24 seconds<br>
+Okay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 27 seconds<br>
+No.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 30 seconds<br>
+If we have not moved in the correct place, then if the if there will there will happen, it will be.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 40 seconds<br>
+Okay, now PA is moved. So now the second family have come, let the calculation happen. You&rsquo;ll see at the bottom.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 51 seconds<br>
+Now the second reliability outcome. So for PA it is 0.936 and all values are more than 0.7 and a V is 0.84, it is more than 0.5. So average variance extractor is also above. Now you see discriminant these 2 items have adequate discriminant.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 57 minutes 9 seconds<br>
+Validity or not, the condition is that HTMT should be less than 0.85 that is the condition. Say here we got between only 0.359 it is less than 0.85 so there is no discrimination challenge. So that way with respect to measurement that aspect also is met.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 57 minutes 31 seconds<br>
+Now if you want to add one more, say for example, variety seeking. So now take these items, variety seeking items, move to the next box.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 57 minutes 45 seconds<br>
+Now the reanalysis will happen.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 57 minutes 48 seconds<br>
+And at the end.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 57 minutes 51 seconds<br>
+Now you see in reliability vs have come. So here it is the first 2 these are about various metrics related to reliability. All the metrics are more than 0.7 so reliability is met and AV is more than 0.5 so construct valid the construct as such is valid.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 58 minutes 10 seconds<br>
+Now HTMT values are less than 0.85 diagonal elements is same same to same that&rsquo;s why it&rsquo;s shown like one and the other correlations are represented by HTMT ratios these are less than 0.85 so discriminant validity also exit. So this way you can check the validity reliability.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 58 minutes 31 seconds<br>
+Of all the construction, so that&rsquo;s what explained here this step 2, okay, HTMT less than 0.85 confirms discriminal validity, AV more than 0.5 confirms constructing validity, alpha, then beta and all such things above 0.7 confirms reliability. ICM loadings we checked in EFA exploratory factor analysis and it is more than 0.5 that.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 58 minutes 53 seconds<br>
+Confirms the construct validity. So these are these all investigations confirm that our measurement has happened perfectly welland we have properly measured the construct. Now we need to calculate the scores of each variables and we need to perform with.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 59 minutes 13 seconds<br>
+Statistical analysis to verify our hypothesis that we will explain in the next class. Since I have no time today, I&rsquo;m not showing the Google collab how we can do this analysis in a simple way in Google collab. Next class, I will try to explain that also. Okay, Shinder, shall we wind up?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 59 minutes 44 seconds<br>
+So today, in a conceptual part, I&rsquo;ve just explained how to check the validity and reliability simultaneously using same menu of Jmobi. That&rsquo;s all, that&rsquo;s all I explained.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 59 minutes 59 seconds<br>
+In the conceptual part.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 hour 2 seconds<br>
+Okay.<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+1 hour 5 seconds<br>
+1:00:05<br>
+Ms Shinta Idicula - MBA - Amrita Online 1 hour 5 seconds<br>
+Okay, so thank you all for joining and heartful thanks to Register for the session. Thank you.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+1 hour 11 seconds<br>
+1:00:11<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 hour 11 seconds<br>
+Thank you.</p>
+<p>Ms Shinta Idicula - MBA - Amrita Online<br>
+stopped transcription<br>
+\[3:40:54 PM\] Timestamp: 1:00:05<br>
+\[3:40:54 PM\] Timestamp: 1:00:11<br>
+Play video</p>
+<hr>
+<h1 id="exam-study-guide-appendix">Exam Study Guide Appendix</h1>
+<hr>
+<h1 id="week-11-exam-appendix-regression-mediation-moderation-group-comparisons-and-decision-oriented-interpretation">Week 11 Exam Appendix — Regression, Mediation, Moderation, Group Comparisons, and Decision-Oriented Interpretation</h1>
+<h2 id="a-end-to-end-analysis-map">A. End-to-end analysis map</h2>
+<p>Week 11 moves from validated measures to business conclusions:</p>
+<blockquote>
+<p>Clean and validate data → compute construct scores → inspect descriptives/benchmarks → test direct effects with regression → test mediation/moderation → compare groups with t-tests/ANOVA → test categorical association with chi-square → translate statistical evidence into action.</p>
+</blockquote>
+<p>The software is secondary. The exam emphasis stated in the live session is likely to be <strong>which analysis is appropriate, what output means, and how it helps solve the problem</strong>, not which Jamovi button to click.</p>
+<h2 id="b-practical-workflow-for-the-retail-case">B. Practical workflow for the retail case</h2>
+<h3 id="1-compute-construct-scores">1. Compute construct scores</h3>
+<p>After item reliability and validity are satisfactory, aggregate the retained items for:</p>
+<ul>
+<li>store attributes (SA);</li>
+<li>product attributes (PA);</li>
+<li>perceived value (PV);</li>
+<li>variety seeking (VS);</li>
+<li>customer satisfaction (CS).</li>
+</ul>
+<p>The demonstration uses a <strong>mean score</strong> for each construct. For five SA items, <code>SA = mean(SA1…SA5)</code>. A mean preserves the original Likert range and is easy to compare with a benchmark. Do not aggregate invalid items merely because they share a label.</p>
+<h3 id="2-descriptive-interpretation">2. Descriptive interpretation</h3>
+<ul>
+<li><strong>Mean:</strong> average construct level. In the case, SA was about <code>3.52</code>; VS was about <code>3.93–3.94</code>, suggesting relatively strong variety-seeking tendencies.</li>
+<li><strong>Standard deviation:</strong> dispersion/disagreement. Higher SD means respondents differ more in their perceptions; VS showed relatively greater disagreement than some other constructs.</li>
+</ul>
+<p>Skewness and kurtosis are useful for distribution/assumption checks, but the lecturer emphasized mean and SD for initial managerial description.</p>
+<p><strong>Use case:</strong> A mean of 3.52 does not itself prove that the entire population meets the retailer’s desired benchmark of 4. The retailer should inspect the population-inference test and the item-level weaknesses before declaring store performance “good.”</p>
+<h3 id="3-one-sample-t-test-as-benchmark-test">3. One-sample t-test as benchmark test</h3>
+<p>Use a one-sample t-test when comparing a sample mean with a specified target/population benchmark.</p>
+<ul>
+<li><code>H0: μ = benchmark</code></li>
+<li><code>H1: μ ≠ benchmark</code> (or directional <code>&lt;</code>/<code>&gt;</code> where justified beforehand)</li>
+</ul>
+<p>For SA, compare the sample mean around 3.52 with a desired benchmark such as 4. A significant result indicates the mean differs from the benchmark; it does <strong>not</strong> prove practical inadequacy without interpreting direction and size. The transcript experiments with nearby test values (e.g., 3.5/3.6) to illustrate the plausible population range.</p>
+<p><strong>Statistical caution:</strong> The reported mean difference is <code>sample mean − test value</code>; a confidence interval around the mean/difference is more informative than guessing population limits from one difference value. “Fail to reject H0” does not prove exact equality.</p>
+<h2 id="c-choosing-and-interpreting-regression">C. Choosing and interpreting regression</h2>
+<h3 id="1-correlation-versus-regression">1. Correlation versus regression</h3>
+<ul>
+<li><strong>Correlation:</strong> symmetric strength/direction of association; no predictor/outcome direction is imposed.</li>
+<li><strong>Regression:</strong> estimates the directional predictive contribution of one or more IVs to a DV, holding other included predictors constant.</li>
+</ul>
+<p>Use regression when theory specifies PA/SA as predictors and PV/CS as outcomes. Correlation alone cannot provide the case’s full predictive/managerial interpretation.</p>
+<h3 id="2-simple-versus-multiple-linear-regression">2. Simple versus multiple linear regression</h3>
+<ul>
+<li><strong>Simple regression:</strong> one IV and one DV, e.g., PV→CS.</li>
+<li><strong>Multiple regression:</strong> two or more IVs predict one DV, e.g., PA and SA→PV; PA and SA→CS.</li>
+</ul>
+<p>The case therefore needs at least:</p>
+<ol>
+<li><code>PV = b0 + b1(PA) + b2(SA) + error</code></li>
+<li><code>CS = b0 + b1(PA) + b2(SA) + error</code></li>
+<li><code>CS = b0 + b1(PV) + error</code></li>
+</ol>
+<p>A combined model may include PA, SA and PV predicting CS, but mediation is not established merely because all appear in one regression.</p>
+<h3 id="3-regression-assumptions-and-diagnostics">3. Regression assumptions and diagnostics</h3>
+<p>Check in proportion to the model:</p>
+<ul>
+<li>linearity between predictors and outcome;</li>
+<li>independent observations/errors;</li>
+<li>approximately normal residuals, assessed with residual Q–Q plots rather than requiring every raw variable to be perfectly normal;</li>
+<li>homoscedasticity/constant residual variance;</li>
+<li>absence of severe multicollinearity (VIF; transcript mentions ideal below about 3.3 and often acceptable below 5);</li>
+<li>no highly influential outliers;</li>
+<li>correct model specification.</li>
+</ul>
+<p>The least-squares line minimizes squared residuals. RMSE measures typical prediction error in outcome units; lower is better <strong>only relative to the outcome scale or competing models</strong>, not through a universal “below .3 is good” cutoff. R² is the proportion of outcome variance explained; adjusted R² is preferable when comparing models with different predictor counts.</p>
+<h3 id="4-reading-output">4. Reading output</h3>
+<p>Interpret:</p>
+<ol>
+<li>overall model test (often an F/ANOVA table);</li>
+<li>R²/adjusted R² and RMSE;</li>
+<li>each coefficient’s sign, magnitude, CI and p-value;</li>
+<li>standardized coefficients when comparing predictors measured on different scales;</li>
+<li>assumptions and practical meaning.</li>
+</ol>
+<p>The case reported significant PA and SA prediction of PV, with standardized contributions roughly PA <code>.322</code> and SA <code>.269</code> in one model; in another demonstrated path SA’s standardized effect was about <code>.364</code>. PV significantly predicted CS at roughly <code>.335</code>. Exact coefficients belong to their specific fitted model—do not mix values across different regressions.</p>
+<p><strong>Exam interpretation:</strong> “A standardized beta of .322 means a one-SD increase in PA is associated with a .322-SD increase in PV, holding the other predictor constant.” It does not mean a 32.2% causal increase unless design and units justify that claim.</p>
+<p>Significance plus moderate/weak explanatory power means the relationship likely exists, but substantial variance remains unexplained; managers should improve selected attributes and investigate omitted causes rather than claim a complete solution.</p>
+<h2 id="d-mediation-analysis">D. Mediation analysis</h2>
+<h3 id="1-logic">1. Logic</h3>
+<p>Mediation tests <strong>how/why</strong> X affects Y through M:</p>
+<blockquote>
+<p>X → M (path a); M → Y controlling X (path b); indirect effect = <code>a × b</code>; direct effect = c′; total effect = c′ + ab.</p>
+</blockquote>
+<p>In the retail model, PV mediates:</p>
+<ul>
+<li>SA→PV→CS;</li>
+<li>PA→PV→CS.</li>
+</ul>
+<p>The null says the indirect effect is zero. Prefer a bootstrap confidence interval for <code>ab</code>; mediation is supported when the indirect-effect interval excludes zero. Individual significant paths alone are not the best formal test of the indirect effect.</p>
+<h3 id="2-case-interpretation">2. Case interpretation</h3>
+<p>For one demonstrated route, about <strong>16.51%</strong> of the total effect was transmitted through PV, while the rest was direct. Both PA and SA showed significant indirect paths through PV. This yields an actionable mechanism: product/store improvements should be designed to make customers perceive better benefit relative to sacrifice, not merely improve operational attributes invisibly.</p>
+<h3 id="3-types-of-mediation">3. Types of mediation</h3>
+<ul>
+<li><strong>Full/indirect-only mediation:</strong> indirect effect exists and the direct effect becomes non-significant/near zero after M is included.</li>
+<li><strong>Partial mediation:</strong> both indirect and direct effects remain.</li>
+<li><strong>Complementary:</strong> direct and indirect effects are significant and have the same sign.</li>
+<li><strong>Competitive:</strong> both significant but have opposite signs.</li>
+</ul>
+<p>The retail paths were interpreted as <strong>complementary partial mediation</strong>: attributes influence satisfaction directly and also positively through value.</p>
+<p><strong>Caution:</strong> Modern mediation inference does not require the direct effect to be significant before mediation, and a non-significant direct effect does not by itself prove “complete causation through M.” Temporal ordering and confounding still matter.</p>
+<h2 id="e-moderation-analysis">E. Moderation analysis</h2>
+<h3 id="1-logic-2">1. Logic</h3>
+<p>Moderation tests <strong>when/for whom</strong> X’s effect changes:</p>
+<p><code>Y = b0 + b1X + b2W + b3(X×W) + error</code></p>
+<p>The coefficient <code>b3</code> tests moderation. Here W is variety seeking. Test each theoretically specified path; the tool used in the video analyzed them separately.</p>
+<p>Simple slopes are often examined at low (<code>−1 SD</code>), mean and high (<code>+1 SD</code>) W. A graph helps show conditional slopes, but significance comes from the interaction/simple-slope output and confidence intervals, not visual appearance alone.</p>
+<h3 id="2-case-interpretation-2">2. Case interpretation</h3>
+<p>Several VS interactions were not significant (p &gt; .05; CIs containing zero), including demonstrated store-attribute paths. One product-attribute interaction was interpreted as significant and positive: as VS increased, product attributes became more influential for satisfaction. Managerial implication: variety seekers may respond to stronger assortment, novelty, display, availability or quality—subject to item-level evidence and cost-benefit testing.</p>
+<p>Do not claim a moderator effect when only the direct effect of X is significant. The <code>X×W</code> term is the test.</p>
+<h2 id="f-group-comparison-tests">F. Group-comparison tests</h2>
+<h3 id="1-independent-samples-t-test">1. Independent-samples t-test</h3>
+<p>Use when comparing a continuous outcome across <strong>two independent groups</strong>, e.g., male versus female satisfaction or online- versus offline-preferring customers.</p>
+<ul>
+<li><code>H0: μ1 = μ2</code></li>
+<li><code>H1: μ1 ≠ μ2</code></li>
+</ul>
+<p>In the case, male CS was about <code>3.63</code> and female CS about <code>3.66</code>; the difference was not significant, so the evidence did not justify gender-differentiated satisfaction strategy.</p>
+<h4 id="levene-s-test">Levene’s test</h4>
+<ul>
+<li>p &gt; .05: do not reject equal variance; Student’s pooled t-test is usable.</li>
+<li>p &lt; .05: equal variance is doubtful; use Welch’s t-test/appropriate unequal-variance row.</li>
+</ul>
+<p>Levene’s p-value concerns variance equality, not group-mean equality.</p>
+<p>Report group means/SDs, t, df, p, CI and effect size (e.g., Cohen’s d), not p alone.</p>
+<h3 id="2-bayes-factor">2. Bayes factor</h3>
+<p>A Bayes factor compares relative evidence for models/hypotheses, unlike a frequentist p-value. For example, <code>BF10</code> &gt; 1 favors H1 over H0; <code>BF01</code> &gt; 1 favors H0. The reciprocal convention must be identified before interpreting. Values near 1 are inconclusive; increasing thresholds indicate stronger evidence. It does not directly report “the probability H0 is true” unless combined with explicit prior odds.</p>
+<h3 id="3-paired-samples-t-test">3. Paired-samples t-test</h3>
+<p>Use for linked observations, e.g., the same students’ marks before and after training. It is not interchangeable with the independent t-test.</p>
+<h3 id="4-one-way-anova">4. One-way ANOVA</h3>
+<p>Use for a continuous outcome across <strong>three or more independent levels</strong>, e.g., satisfaction across age groups.</p>
+<ul>
+<li><code>H0: μ1 = μ2 = … = μk</code></li>
+<li><code>H1: at least one mean differs</code></li>
+</ul>
+<p>The omnibus F-test only establishes that some difference exists. Follow a significant result with post-hoc tests:</p>
+<ul>
+<li>Tukey when equal variances are reasonable;</li>
+<li>Games–Howell when unequal variances/sample sizes warrant it.</li>
+</ul>
+<p>The transcript’s omnibus age result was close to but above .05 (around .08), yet it discusses a marked pairwise difference between ages 40–55 (mean about 3.58) and above 55 (about 3.9). Treat this cautiously: unplanned pairwise claims after a non-significant omnibus test increase false-positive risk. A prespecified contrast or multiplicity-adjusted post-hoc result can still be discussed with transparent caveats.</p>
+<p>Report F, dfs, p, effect size (η²/ω²), group descriptives, assumption method and adjusted pairwise comparisons.</p>
+<h3 id="5-one-sample-vs-independent-vs-paired-t-test">5. One-sample vs independent vs paired t-test</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Comparison</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One-sample t</td>
+<td>one sample mean against a benchmark</td>
+</tr>
+<tr>
+<td>Independent t</td>
+<td>means of two unrelated groups</td>
+</tr>
+<tr>
+<td>Paired t</td>
+<td>two linked measurements/conditions</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="g-chi-square-test-of-association">G. Chi-square test of association</h2>
+<p>Use a contingency-table chi-square test for association between two categorical variables, e.g., gender × preferred shopping format.</p>
+<ul>
+<li><code>H0:</code> variables are independent/no association.</li>
+<li><code>H1:</code> variables are associated.</li>
+</ul>
+<p>Requirements include independent observations, mutually exclusive categories and adequate expected counts. If counts are small, combine defensible categories or use Fisher’s exact test.</p>
+<p>The case did not establish a significant gender–shop-preference association, nor a clear age-level preference association. Do not test categorical pairs without conceptual logic (e.g., treating age and gender as if one changes the other). Report χ², df, p, expected-count diagnostics and Cramér’s V for strength.</p>
+<h2 id="h-datasense-strategic-decision-case">H. DataSense strategic decision case</h2>
+<p>DataSense compares campaign response/customer outcomes:</p>
+<ul>
+<li>gender has two groups → independent t-test;</li>
+<li>age has multiple groups → one-way ANOVA plus justified post-hoc comparisons;</li>
+<li>categorical segment × categorical preference → chi-square;</li>
+<li>Bayes factor adds evidence about H0 versus H1.</li>
+</ul>
+<p>If gender differences are negligible, continue a gender-neutral strategy rather than invent segmentation. If an age group appears promising but evidence is borderline, conduct a limited age-targeted pilot, monitor incremental response/profit and avoid a costly full rollout. Statistical significance is not business significance: calculate expected uplift, segment size, campaign cost, operational feasibility and downside risk.</p>
+<p><strong>If–then decision rule:</strong></p>
+<ul>
+<li>If budget permits, pilot the age-based campaign and measure causal uplift.</li>
+<li>If budget is limited, retain the broad strategy while collecting more targeted evidence.</li>
+<li>Use chi-square only for categorical association questions, not as a substitute for comparing means.</li>
+</ul>
+<h2 id="i-measurement-quality-recap-from-the-live-session">I. Measurement quality recap from the live session</h2>
+<p>Before hypothesis testing:</p>
+<ol>
+<li><strong>General quality:</strong> missingness, coding errors, outliers, independence/randomness and sample representativeness.</li>
+<li><strong>Reliability:</strong> inter-item/internal consistency (Cronbach’s alpha) and composite reliability, typically sought above <code>.70</code> as a guideline.</li>
+<li><strong>Item/convergent validity:</strong> adequate standardized loadings (often ≥.50 contextually) and AVE ≥ <code>.50</code>.</li>
+<li><strong>Discriminant validity:</strong> HTMT below <code>.85</code> (sometimes <code>.90</code> depending on field).</li>
+</ol>
+<p>The live SEM demonstration reported example values such as alpha <code>.825</code>, AVE <code>.568</code>, PA reliability about <code>.936</code>, PA AVE about <code>.84</code>, and HTMT about <code>.359</code>, supporting the demonstrated measures. The lecturer momentarily said “HTMT should be more than .85,” then correctly interpreted the requirement as <strong>less than .85</strong>.</p>
+<p><strong>Important distinctions:</strong></p>
+<ul>
+<li>Cronbach’s alpha is not “item-to-item correlation” itself; it is an internal-consistency coefficient influenced by inter-item covariance and item count.</li>
+<li>Composite reliability is not ordinarily called “ordinal alpha”; they are distinct reliability concepts/estimators.</li>
+<li>Face/content validity are expert/qualitative judgments about apparent relevance/domain coverage, not statistical external validity in the generalizability sense.</li>
+</ul>
+<p>Jamovi SEM labels <strong>exogenous</strong> variables as predictors determined outside the modeled system and <strong>endogenous</strong> variables as modeled outcomes. For measurement-only assessment, constructs can be entered to obtain reliability/validity indices, but a correctly specified CFA/SEM remains preferable when interpreting model fit and paths.</p>
+<h2 id="j-qualitative-project-management-applications-from-the-live-q-a">J. Qualitative/project-management applications from the live Q&amp;A</h2>
+<ul>
+<li>Qualitative interviews can be coded into initial/open codes, axial/principal codes, subthemes and themes; then interpret relationships and build an explanatory account. Useful outputs include content analysis, word clouds, sentiment analysis and thematic maps. Raw interview content may be placed in an annexure; the report presents analysis and findings.</li>
+<li>Google Colab and other tools may assist text mining or quantitative analysis, but the researcher must understand procedures and interpret results.</li>
+<li>A Likert-scale employee attrition/retention questionnaire produces <strong>quantitative</strong>, not qualitative, data. t-tests/ANOVA compare groups; regression tests predictors.</li>
+<li>Organizational identities may be masked (Hospital X/Company XYZ), especially for sensitive attrition findings. Obtain permission if naming the organization; do not manipulate unfavorable results.</li>
+<li>Examples discussed include precision-manufacturing cutting-tool productivity (use performance metrics from users/machines), geopolitical-risk effects on net operating revenue (secondary time-series/regression/trend data), and healthcare employee retention (demographics, workload, communication, satisfaction/retention constructs).</li>
+<li>Administrative notes were session-specific: Turnitin similarity report with the then-stated 20% ceiling, instructions to follow the current manual/template rather than outdated previous reports. These are not statistical exam concepts and should be rechecked against current course rules.</li>
+</ul>
+<h2 id="k-high-yield-distinctions">K. High-yield distinctions</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pair</th>
+<th>Exam-ready distinction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descriptive vs inferential</td>
+<td>Summarizes observed sample vs evaluates uncertainty/generalizes/tests hypotheses.</td>
+</tr>
+<tr>
+<td>Mean vs SD</td>
+<td>Central level vs dispersion/disagreement.</td>
+</tr>
+<tr>
+<td>Correlation vs regression</td>
+<td>Symmetric association vs directional conditional prediction.</td>
+</tr>
+<tr>
+<td>Simple vs multiple regression</td>
+<td>One predictor vs multiple predictors of one outcome.</td>
+</tr>
+<tr>
+<td>R² vs RMSE</td>
+<td>Variance proportion explained vs typical prediction error in outcome units.</td>
+</tr>
+<tr>
+<td>Direct vs indirect effect</td>
+<td>X→Y path vs X→M→Y transmission.</td>
+</tr>
+<tr>
+<td>Full vs partial mediation</td>
+<td>Direct effect absent after M vs direct and indirect effects remain.</td>
+</tr>
+<tr>
+<td>Complementary vs competitive mediation</td>
+<td>Direct/indirect signs agree vs oppose.</td>
+</tr>
+<tr>
+<td>Mediator vs moderator</td>
+<td>Mechanism (“how/why”) vs conditional effect (“when/for whom”).</td>
+</tr>
+<tr>
+<td>Main effect vs interaction</td>
+<td>Average predictor effect vs change in slope across moderator levels.</td>
+</tr>
+<tr>
+<td>One-sample vs independent vs paired t</td>
+<td>Benchmark vs two unrelated groups vs linked measures.</td>
+</tr>
+<tr>
+<td>t-test vs ANOVA</td>
+<td>Two-group mean comparison vs three-or-more-group omnibus comparison.</td>
+</tr>
+<tr>
+<td>ANOVA vs post-hoc</td>
+<td>Detects any mean difference vs locates adjusted pair differences.</td>
+</tr>
+<tr>
+<td>Levene’s test vs t/ANOVA</td>
+<td>Tests variance assumption vs tests mean differences.</td>
+</tr>
+<tr>
+<td>p-value vs Bayes factor</td>
+<td>Null-conditional tail evidence vs relative evidence between models given priors.</td>
+</tr>
+<tr>
+<td>ANOVA vs chi-square</td>
+<td>Continuous outcome across categorical groups vs association between categorical variables.</td>
+</tr>
+<tr>
+<td>Statistical vs business significance</td>
+<td>Evidence against null vs decision-relevant magnitude/value.</td>
+</tr>
+<tr>
+<td>Reliability vs validity</td>
+<td>Consistency vs measuring the intended construct.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="l-likely-exam-questions-with-answer-points">L. Likely exam questions with answer points</h2>
+<h3 id="1-select-the-correct-analysis-for-six-scenarios">1. Select the correct analysis for six scenarios.</h3>
+<ul>
+<li>sample mean vs target → one-sample t;</li>
+<li>two independent group means → independent t;</li>
+<li>same subjects before/after → paired t;</li>
+<li>three+ group means → one-way ANOVA;</li>
+<li>continuous predictors of continuous outcome → regression;</li>
+<li>categorical × categorical → chi-square;</li>
+<li>mechanism → mediation; conditional slope → moderation.</li>
+</ul>
+<h3 id="2-interpret-a-multiple-regression-table">2. Interpret a multiple-regression table.</h3>
+<p>Discuss overall F/p, R²/adjusted R², RMSE, each B/SE/standardized beta/CI/p, sign, relative predictor contribution, assumptions, omitted variance and managerial implication. Avoid causal/percentage overclaims.</p>
+<h3 id="3-explain-mediation-with-the-retail-example">3. Explain mediation with the retail example.</h3>
+<p>Draw SA/PA→PV→CS; label a, b, c′; calculate <code>ab</code>; use bootstrap CI; distinguish total/direct/indirect, full/partial and complementary/competitive; give value-creation action.</p>
+<h3 id="4-explain-moderation-and-simple-slopes">4. Explain moderation and simple slopes.</h3>
+<p>Write the interaction equation; identify VS; interpret significant X×VS; examine low/mean/high slopes; state that significant direct X is not proof of moderation.</p>
+<h3 id="5-compare-three-kinds-of-t-test">5. Compare three kinds of t-test.</h3>
+<p>State data structure, hypotheses and business example for one-sample, independent and paired tests.</p>
+<h3 id="6-interpret-t-test-plus-levene-and-bayes-outputs">6. Interpret t-test plus Levene and Bayes outputs.</h3>
+<p>Choose Student/Welch row from Levene; interpret mean difference/CI/p/effect size; identify BF10/BF01 convention and evidence strength; translate to segmentation action.</p>
+<h3 id="7-explain-anova-and-post-hoc-testing">7. Explain ANOVA and post-hoc testing.</h3>
+<p>State H0/H1, F as between/within variance ratio, homogeneity, omnibus limitation, Tukey/Games–Howell, multiplicity, effect size and group descriptives.</p>
+<h3 id="8-when-should-chi-square-be-used">8. When should chi-square be used?</h3>
+<p>Two categorical variables; independence/mutual exclusivity/expected counts; χ²/p/Cramér’s V; use Fisher when sparse; give shop-preference example.</p>
+<h3 id="9-how-do-reliability-validity-checks-precede-structural-analysis">9. How do reliability/validity checks precede structural analysis?</h3>
+<p>Explain data cleaning, alpha/CR, loadings, AVE and HTMT. Poor measurement invalidates construct scores and later regression/mediation.</p>
+<h3 id="10-convert-statistical-results-into-a-decision">10. Convert statistical results into a decision.</h3>
+<p>State effect direction/size/uncertainty, affected segment/mechanism, controllability, cost, risk and pilot/monitoring plan. Separate “significant” from profitable or strategically important.</p>
+<h2 id="m-source-coverage-checklist">M. Source-coverage checklist</h2>
+<ul>
+<li>[x] <strong>Video 1 — Computed variables:</strong> retained item families, Jamovi Compute/MEAN process and creation of SA/PA/PV/VS/CS construct scores.</li>
+<li>[x] <strong>Video 1 — Descriptives:</strong> mean/SD interpretation, SA ≈3.52, VS ≈3.93–3.94, dispersion and business benchmarking.</li>
+<li>[x] <strong>Video 1 — One-sample t-test:</strong> population benchmark logic, null/alternate, directional options, mean difference/CI, test-value experiments and population-inference purpose.</li>
+<li>[x] <strong>Video 2 — Analysis selection:</strong> direct effects by regression; mediation/moderation by dedicated/SEM approaches; correlation versus regression; simple/multiple regression equations.</li>
+<li>[x] <strong>Video 2 — Regression assumptions:</strong> linearity, residual normality, homoscedasticity, independence/autocorrelation, VIF/multicollinearity, residual/Q–Q diagnostics and least squares.</li>
+<li>[x] <strong>Video 2 — Regression output/case:</strong> model fit/ANOVA, R²/RMSE, standardized coefficients, PA/SA→PV/CS and PV→CS, significant but moderate predictive power, managerial interpretation and correlation comparison.</li>
+<li>[x] <strong>Video 3 — Mediation:</strong> Jamovi medmod setup, bootstrapping/CI/path estimates/percent mediation, PV mediation of SA/PA effects, 16.51% illustration, indirect significance and path diagrams.</li>
+<li>[x] <strong>Video 3 — Mediation taxonomy:</strong> full versus partial, complementary versus competitive; retail paths interpreted as complementary partial mediation.</li>
+<li>[x] <strong>Video 3 — Moderation:</strong> VS interaction terms, separate path tests, CI/p-value, low/mean/high simple slopes and plots; significant and non-significant case paths; assortment implications.</li>
+<li>[x] <strong>Video 4 — Group comparisons:</strong> independent/paired/one-sample t distinctions, gender comparison, Levene/Student/Welch logic and Bayes-factor discussion.</li>
+<li>[x] <strong>Video 4 — ANOVA:</strong> age groups, H0/H1, homogeneity, Fisher F, Tukey/post-hoc comparisons, near-threshold omnibus and 40–55 versus 55+ illustration.</li>
+<li>[x] <strong>Video 4 — Chi-square:</strong> contingency tables, mutually exclusive categories, gender/age versus format preference, null/alternate and need for logical association.</li>
+<li>[x] <strong>Quiz general notes:</strong> regression, mediation, moderation, t-tests, Levene, Bayes factor, ANOVA/post-hoc, chi-square-related selection, descriptives, skewness/kurtosis and common misconceptions.</li>
+<li>[x] <strong>DataSense quiz cases:</strong> gender t-test, age ANOVA, Bayes evidence, post-hoc interpretation, chi-square proposal, statistical/business significance, pilot and budget-sensitive decision frameworks.</li>
+<li>[x] <strong>Live — Data/measurement quality recap:</strong> missing values/outliers/randomness/independence; alpha/composite reliability; face/content and internal validity; loadings, AVE and HTMT.</li>
+<li>[x] <strong>Live — SEM demonstration:</strong> exogenous/endogenous labels, reliability &gt;.70, AVE &gt;.50 and HTMT &lt;.85; reported SA/PA/VS example metrics and lecturer’s verbal cutoff inconsistency clarified.</li>
+<li>[x] <strong>Live — Exam emphasis:</strong> conceptual/output interpretation and analysis choice rather than tool menus; Jamovi/SPSS/PSPP/JASP/Colab alternatives.</li>
+<li>[x] <strong>Live — Project Q&amp;A:</strong> qualitative coding/theme analysis and annexure, quantitative Likert clarification, manufacturing/geopolitical/healthcare examples, data-first analysis planning, privacy/masking and session-specific report/similarity guidance.</li>
+</ul>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<p>Use TechNova to practise coefficient signs, magnitudes, uncertainty, relative predictor strength, group-difference tests, and the distinction between statistical and practical importance. Report association/prediction unless the design supports a causal claim.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-10.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 10: Jamovi Factor Analysis, EFA, CFA, SEM,…</span>
+      </a>
+      <a href="week-12.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 12: Regression Modelling, Controls, Composite…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

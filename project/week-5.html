@@ -1,0 +1,2916 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Project · Week 5 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Project</span>
+      <span class="brand-title">Week 5</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html" selected>Project</option>
+        <option value="../visualization/week-1.html">Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Business Research Process, Research Problems, and Research Approaches
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Research Planning, Theoretical Frameworks, Measurement, and Data…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Systematic Literature Review (SLR), Literature Review Methods,…
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Theoretical Frameworks, Variables, Moderators, Mediators, and…
+      </a>
+      <a class="is-active" href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Measurement Models, Scale Development, Reflective vs Formative…
+      </a>
+      <a href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Questionnaire Design, Data Collection Methods, Measurement Scales,…
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Research Inference, Sampling, Regression, Correlation, Mediation,…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Business Research Process — Management Problems, Research Problems,…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Jamovi Data Management, Measurement Levels, Scale Construction,…
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Jamovi Factor Analysis, EFA, CFA, SEM, Validity Assessment, and…
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Regression, Mediation, Moderation, t-tests, ANOVA, and Descriptive…
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Regression Modelling, Controls, Composite Indices, Moderation, and…
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Time Series, Forecasting, and Panel Data
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        PLS-SEM — Measurement Quality, Structural Models, Controls,…
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Logistic Regression — Model Fit, Interpretation, Prediction, and…
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Project · Week 5</p>
+        <h1 class="page-title">Measurement Models, Scale Development, Reflective vs Formative Constructs, and Survey Measurement Design</h1>
+        <p class="page-meta">Week 5 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#definition">Definition</a></li>
+      <li><a href="#why-measurement-is-needed">Why Measurement Is Needed</a></li>
+      <li><a href="#purpose">Purpose</a></li>
+      <li><a href="#purpose-2">Purpose</a></li>
+      <li><a href="#difference">Difference</a></li>
+      <li><a href="#importance">Importance</a></li>
+      <li><a href="#definition-2">Definition</a></li>
+      <li><a href="#example-employee-motivation">Example: Employee Motivation</a></li>
+      <li><a href="#characteristics">Characteristics</a></li>
+      <li><a href="#definition-3">Definition</a></li>
+      <li><a href="#example-meal-quality">Example: Meal Quality</a></li>
+      <li><a href="#characteristics-2">Characteristics</a></li>
+      <li><a href="#trust-after-service-recovery">Trust After Service Recovery</a></li>
+      <li><a href="#restaurant-meal-quality">Restaurant Meal Quality</a></li>
+      <li><a href="#subjective-measures">Subjective Measures</a></li>
+      <li><a href="#objective-measures">Objective Measures</a></li>
+      <li><a href="#subjective-method">Subjective Method</a></li>
+      <li><a href="#objective-method">Objective Method</a></li>
+      <li><a href="#example">Example</a></li>
+      <li><a href="#psychological-engagement">Psychological Engagement</a></li>
+      <li><a href="#behavioural-indicators">Behavioural Indicators</a></li>
+      <li><a href="#reflective-view">Reflective View</a></li>
+      <li><a href="#formative-view">Formative View</a></li>
+      <li><a href="#mistake-1">Mistake 1:</a></li>
+      <li><a href="#mistake-2">Mistake 2:</a></li>
+      <li><a href="#mistake-3">Mistake 3:</a></li>
+      <li><a href="#mistake-4">Mistake 4:</a></li>
+      <li><a href="#mistake-5">Mistake 5:</a></li>
+      <li><a href="#reliability">Reliability</a></li>
+      <li><a href="#validity">Validity</a></li>
+      <li><a href="#purpose-3">Purpose</a></li>
+      <li><a href="#measurement-model">Measurement Model</a></li>
+      <li><a href="#structural-model">Structural Model</a></li>
+      <li><a href="#reflective-model">Reflective Model</a></li>
+      <li><a href="#formative-model">Formative Model</a></li>
+      <li><a href="#scale-development">Scale Development</a></li>
+      <li><a href="#core-principle">Core Principle</a></li>
+      <li><a href="#case-study">Case Study</a></li>
+      <li><a href="#latent-construct">Latent Construct</a></li>
+      <li><a href="#observable-indicators">Observable Indicators</a></li>
+      <li><a href="#definition-4">Definition</a></li>
+      <li><a href="#service-responsiveness">Service Responsiveness</a></li>
+      <li><a href="#importance-2">Importance</a></li>
+      <li><a href="#servqual-scale">SERVQUAL Scale</a></li>
+      <li><a href="#purpose-of-reviewing-existing-scales">Purpose of Reviewing Existing Scales</a></li>
+      <li><a href="#5-point-likert-scale">5-point Likert Scale</a></li>
+      <li><a href="#purpose-4">Purpose</a></li>
+      <li><a href="#advantages">Advantages</a></li>
+      <li><a href="#definition-5">Definition</a></li>
+      <li><a href="#difference-from-likert-scale">Difference from Likert Scale</a></li>
+      <li><a href="#definition-6">Definition</a></li>
+      <li><a href="#why-generate-many-items">Why Generate Many Items?</a></li>
+      <li><a href="#definition-7">Definition</a></li>
+      <li><a href="#michael-s-recommendation">Michael&amp;rsquo;s Recommendation</a></li>
+      <li><a href="#expert-review-purpose">Expert Review Purpose</a></li>
+      <li><a href="#purpose-5">Purpose</a></li>
+      <li><a href="#compared-with-5-point-scale">Compared with 5-point Scale</a></li>
+      <li><a href="#purpose-6">Purpose</a></li>
+      <li><a href="#importance-3">Importance</a></li>
+      <li><a href="#definition-8">Definition</a></li>
+      <li><a href="#low-correlation-indicates">Low Correlation Indicates</a></li>
+      <li><a href="#definition-9">Definition</a></li>
+      <li><a href="#cronbach-s-alpha">Cronbach&amp;rsquo;s Alpha</a></li>
+      <li><a href="#purpose-7">Purpose</a></li>
+      <li><a href="#requirement">Requirement</a></li>
+      <li><a href="#advantages-2">Advantages</a></li>
+      <li><a href="#disadvantages">Disadvantages</a></li>
+      <li><a href="#advantages-3">Advantages</a></li>
+      <li><a href="#disadvantages-2">Disadvantages</a></li>
+      <li><a href="#advantages-4">Advantages</a></li>
+      <li><a href="#risks">Risks</a></li>
+      <li><a href="#research-principle">Research Principle</a></li>
+      <li><a href="#reliable-but-not-valid">Reliable but not Valid</a></li>
+      <li><a href="#valid-and-reliable">Valid and Reliable</a></li>
+      <li><a href="#misconception-1">Misconception 1:</a></li>
+      <li><a href="#misconception-2">Misconception 2:</a></li>
+      <li><a href="#misconception-3">Misconception 3:</a></li>
+      <li><a href="#misconception-4">Misconception 4:</a></li>
+      <li><a href="#misconception-5">Misconception 5:</a></li>
+      <li><a href="#revise-weak-items-based-on-pilot-feedback-and-retest-before-full-administration">Revise weak items based on pilot feedback and retest before full administration.</a></li>
+      <li><a href="#construct-conceptualisation">Construct Conceptualisation</a></li>
+      <li><a href="#item-pool-generation">Item Pool Generation</a></li>
+      <li><a href="#content-validity">Content Validity</a></li>
+      <li><a href="#pilot-testing">Pilot Testing</a></li>
+      <li><a href="#cognitive-interviews">Cognitive Interviews</a></li>
+      <li><a href="#item-analysis">Item Analysis</a></li>
+      <li><a href="#reliability-3">Reliability</a></li>
+      <li><a href="#factor-analysis">Factor Analysis</a></li>
+      <li><a href="#latent-construct-2">Latent Construct</a></li>
+      <li><a href="#definition-10">Definition</a></li>
+      <li><a href="#novabank-example">NovaBank Example</a></li>
+      <li><a href="#importance-4">Importance</a></li>
+      <li><a href="#common-mistake">Common Mistake</a></li>
+      <li><a href="#servqual-scale-2">SERVQUAL Scale</a></li>
+      <li><a href="#purpose-of-reviewing-servqual">Purpose of Reviewing SERVQUAL</a></li>
+      <li><a href="#servqual-influence">SERVQUAL Influence</a></li>
+      <li><a href="#definition-11">Definition</a></li>
+      <li><a href="#purpose-8">Purpose</a></li>
+      <li><a href="#advantages-5">Advantages</a></li>
+      <li><a href="#definition-12">Definition</a></li>
+      <li><a href="#purpose-9">Purpose</a></li>
+      <li><a href="#example-for-responsiveness">Example for Responsiveness</a></li>
+      <li><a href="#stage-2">Stage 2</a></li>
+      <li><a href="#novabank-example-2">NovaBank Example</a></li>
+      <li><a href="#why-generate-many-items-2">Why Generate Many Items?</a></li>
+      <li><a href="#stage-3">Stage 3</a></li>
+      <li><a href="#michael-s-expert-review-recommendation">Michael&amp;rsquo;s Expert Review Recommendation</a></li>
+      <li><a href="#example-2">Example</a></li>
+      <li><a href="#content-validity-2">Content Validity</a></li>
+      <li><a href="#reliability-4">Reliability</a></li>
+      <li><a href="#stage-4">Stage 4</a></li>
+      <li><a href="#purpose-10">Purpose</a></li>
+      <li><a href="#why-important">Why Important?</a></li>
+      <li><a href="#definition-13">Definition</a></li>
+      <li><a href="#low-correlation-means">Low Correlation Means</a></li>
+      <li><a href="#cronbach-s-alpha-2">Cronbach&amp;rsquo;s Alpha</a></li>
+      <li><a href="#purpose-11">Purpose</a></li>
+      <li><a href="#requirement-2">Requirement</a></li>
+      <li><a href="#advantages-of-7-point-scale">Advantages of 7-Point Scale</a></li>
+      <li><a href="#michael-operations-priority">Michael — Operations Priority</a></li>
+      <li><a href="#priya-research-quality-priority">Priya — Research Quality Priority</a></li>
+      <li><a href="#revise-weak-items-and-retest-before-full-administration">Revise weak items and retest before full administration.</a></li>
+      <li><a href="#misconception-1-2">Misconception 1:</a></li>
+      <li><a href="#misconception-2-2">Misconception 2:</a></li>
+      <li><a href="#misconception-3-2">Misconception 3:</a></li>
+      <li><a href="#misconception-4-2">Misconception 4:</a></li>
+      <li><a href="#misconception-5-2">Misconception 5:</a></li>
+      <li><a href="#construct-conceptualisation-2">Construct Conceptualisation</a></li>
+      <li><a href="#item-generation">Item Generation</a></li>
+      <li><a href="#content-validity-3">Content Validity</a></li>
+      <li><a href="#cognitive-interviews-2">Cognitive Interviews</a></li>
+      <li><a href="#item-analysis-2">Item Analysis</a></li>
+      <li><a href="#cronbach-s-alpha-3">Cronbach&amp;rsquo;s Alpha</a></li>
+      <li><a href="#scale-refinement">Scale Refinement</a></li>
+      <li><a href="#likert-scale">Likert Scale</a></li>
+      <li><a href="#semantic-differential-scale">Semantic Differential Scale</a></li>
+      <li><a href="#key-principle">Key Principle</a></li>
+      <li><a href="#a-practical-examples-and-use-cases">A. Practical examples and use cases</a></li>
+      <li><a href="#b-high-yield-distinctions">B. High-yield distinctions</a></li>
+      <li><a href="#c-likely-exam-questions-with-answer-points">C. Likely exam questions with answer points</a></li>
+      <li><a href="#d-rapid-revision-logic">D. Rapid revision logic</a></li>
+      <li><a href="#e-source-coverage-checklist">E. Source-coverage checklist</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h1 id="1-overview"><strong>1. Overview</strong></h1>
+<p>This quiz focuses on the <strong>measurement stage of research design</strong>, where researchers convert abstract concepts into measurable variables.</p>
+<p>Many important research concepts cannot be directly observed:</p>
+<p>Examples:</p>
+<ul>
+<li>Employee engagement.  </li>
+<li>Customer satisfaction.  </li>
+<li>Trust.  </li>
+<li>Service quality.  </li>
+<li>Motivation.  </li>
+<li>Perceived usefulness.</li>
+</ul>
+<p>These are called <strong>latent constructs</strong>.</p>
+<p>The researcher must design measurement scales that accurately capture these hidden concepts.</p>
+<p>The main topics covered:</p>
+<ul>
+<li>Measurement models.  </li>
+<li>Reflective and formative measurement.  </li>
+<li>Scale development.  </li>
+<li>Construct definition.  </li>
+<li>Indicator selection.  </li>
+<li>Reliability and validity.  </li>
+<li>Objective vs subjective measures.</li>
+</ul>
+<hr>
+<h1 id="2-latent-constructs"><strong>2. Latent Constructs</strong></h1>
+<h2 id="definition"><strong>Definition</strong></h2>
+<p>A latent construct is an abstract concept that cannot be directly observed or measured.</p>
+<p>Examples:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Construct</th>
+<th>Possible Indicators</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Employee engagement</td>
+<td>Energy, dedication, enthusiasm</td>
+</tr>
+<tr>
+<td>Trust</td>
+<td>Confidence, reliability, belief</td>
+</tr>
+<tr>
+<td>Service quality</td>
+<td>Reliability, responsiveness, competence</td>
+</tr>
+<tr>
+<td>Job satisfaction</td>
+<td>Satisfaction ratings</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="why-measurement-is-needed"><strong>Why Measurement Is Needed</strong></h2>
+<p>Because researchers cannot directly measure:</p>
+<blockquote>
+<p>&ldquo;How engaged is an employee?&rdquo;</p>
+</blockquote>
+<p>They measure observable indicators:</p>
+<ul>
+<li>Survey responses.  </li>
+<li>Behavioural records.  </li>
+<li>Ratings.</li>
+</ul>
+<p>The goal is to ensure that indicators accurately represent the underlying construct.</p>
+<hr>
+<h1 id="3-measurement-model-vs-structural-model"><strong>3. Measurement Model vs Structural Model</strong></h1>
+<p>A major distinction in research modeling.</p>
+<hr>
+<h1 id="3-1-measurement-model"><strong>3.1 Measurement Model</strong></h1>
+<h2 id="purpose"><strong>Purpose</strong></h2>
+<p>Explains:</p>
+<blockquote>
+<p>How observed indicators represent latent constructs.</p>
+</blockquote>
+<p>It focuses on:</p>
+<ul>
+<li>Survey items.  </li>
+<li>Indicators.  </li>
+<li>Factor loadings.  </li>
+<li>Reliability.  </li>
+<li>Validity.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Latent construct:</p>
+<p>Employee motivation</p>
+<p>↓</p>
+<p>Survey items:</p>
+<ul>
+<li>&ldquo;I feel energetic at work.&rdquo;  </li>
+<li>&ldquo;I am enthusiastic about my job.&rdquo;  </li>
+<li>&ldquo;I am dedicated to my work.&rdquo;</li>
+</ul>
+<hr>
+<p>The measurement model asks:</p>
+<ul>
+<li>Do these items measure motivation?  </li>
+<li>Are they reliable?  </li>
+<li>Do they represent the same concept?</li>
+</ul>
+<hr>
+<h1 id="3-2-structural-model"><strong>3.2 Structural Model</strong></h1>
+<h2 id="purpose-2"><strong>Purpose</strong></h2>
+<p>Explains:</p>
+<blockquote>
+<p>Relationships between constructs.</p>
+</blockquote>
+<p>Example:</p>
+<p>Employee motivation</p>
+<p>↓</p>
+<p>Job attitude</p>
+<hr>
+<p>The structural model tests:</p>
+<ul>
+<li>Direction of effects.  </li>
+<li>Strength of relationships.  </li>
+<li>Hypotheses.</li>
+</ul>
+<hr>
+<h2 id="difference"><strong>Difference</strong></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Measurement Model</th>
+<th>Structural Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Measures constructs</td>
+<td>Tests relationships</td>
+</tr>
+<tr>
+<td>Indicators → Constructs</td>
+<td>Construct → Construct</td>
+</tr>
+<tr>
+<td>Scale quality</td>
+<td>Hypothesis testing</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="4-scale-development-process"><strong>4. Scale Development Process</strong></h1>
+<p>Developing a good measurement scale involves multiple stages.</p>
+<hr>
+<h1 id="stage-1-define-the-construct"><strong>Stage 1: Define the Construct</strong></h1>
+<p>Before writing questions, researchers must clearly define the concept.</p>
+<p>Example:</p>
+<p>Employee engagement:</p>
+<p>Includes:</p>
+<ul>
+<li>Energy.  </li>
+<li>Dedication.  </li>
+<li>Involvement.</li>
+</ul>
+<p>Does not include:</p>
+<ul>
+<li>Salary satisfaction.  </li>
+<li>Office facilities.</li>
+</ul>
+<hr>
+<h2 id="importance"><strong>Importance</strong></h2>
+<p>Poor definition creates a mixed scale.</p>
+<p>Example:</p>
+<p>Employee engagement items:</p>
+<p>✔ &ldquo;I feel enthusiastic about my work.&rdquo;</p>
+<p>✔ &ldquo;I feel committed to my tasks.&rdquo;</p>
+<p>Incorrect additions:</p>
+<p>✘ &ldquo;My salary is satisfactory.&rdquo;</p>
+<p>✘ &ldquo;My office environment is comfortable.&rdquo;</p>
+<p>These measure different concepts.</p>
+<hr>
+<h1 id="stage-2-generate-initial-items"><strong>Stage 2: Generate Initial Items</strong></h1>
+<p>Researchers create a pool of possible questions.</p>
+<p>Purpose:</p>
+<ul>
+<li>Capture all dimensions.  </li>
+<li>Avoid missing important aspects.</li>
+</ul>
+<p>At this stage, having more items is acceptable.</p>
+<hr>
+<h1 id="stage-3-pilot-testing"><strong>Stage 3: Pilot Testing</strong></h1>
+<p>The draft scale is tested with participants.</p>
+<p>Researchers examine:</p>
+<ul>
+<li>Item clarity.  </li>
+<li>Factor loadings.  </li>
+<li>Reliability.</li>
+</ul>
+<hr>
+<h1 id="stage-4-scale-refinement"><strong>Stage 4: Scale Refinement</strong></h1>
+<p>Weak items are:</p>
+<ul>
+<li>Removed.  </li>
+<li>Rewritten.  </li>
+<li>Improved.</li>
+</ul>
+<p>Then researchers retest the scale.</p>
+<p>Example:</p>
+<p>A pilot study shows:</p>
+<p>Item 4 has a weak factor loading.</p>
+<p>Action:</p>
+<p>Remove item 4.</p>
+<p>Run confirmatory factor analysis again.</p>
+<hr>
+<h1 id="stage-5-final-scale-validation"><strong>Stage 5: Final Scale Validation</strong></h1>
+<p>The final scale is used in the main research study.</p>
+<hr>
+<h1 id="5-reflective-measurement-model"><strong>5. Reflective Measurement Model</strong></h1>
+<h2 id="definition-2"><strong>Definition</strong></h2>
+<p>A reflective model assumes:</p>
+<blockquote>
+<p>The latent construct causes the observed indicators.</p>
+</blockquote>
+<p>Direction:</p>
+<p>Latent Construct<br>
+        ↓<br>
+ Indicator 1<br>
+ Indicator 2<br>
+ Indicator 3</p>
+<hr>
+<h2 id="example-employee-motivation"><strong>Example: Employee Motivation</strong></h2>
+<p>Underlying motivation causes:</p>
+<ul>
+<li>Feeling energetic.  </li>
+<li>Feeling committed.  </li>
+<li>Showing enthusiasm.</li>
+</ul>
+<hr>
+<h2 id="characteristics"><strong>Characteristics</strong></h2>
+<p>Reflective indicators:</p>
+<h3 id="1-should-correlate"><strong>1. Should correlate</strong></h3>
+<p>If motivation increases:</p>
+<p>All motivation items should increase.</p>
+<hr>
+<p>Example:</p>
+<p>A highly motivated employee likely agrees with:</p>
+<ul>
+<li>&ldquo;I enjoy my work.&rdquo;  </li>
+<li>&ldquo;I feel energized.&rdquo;  </li>
+<li>&ldquo;I am committed.&rdquo;</li>
+</ul>
+<hr>
+<h3 id="2-are-interchangeable"><strong>2. Are interchangeable</strong></h3>
+<p>Removing one item usually does not change the meaning of the construct.</p>
+<p>Example:</p>
+<p>Removing one trust question does not redefine trust.</p>
+<hr>
+<h3 id="3-measure-effects-of-the-construct"><strong>3. Measure effects of the construct</strong></h3>
+<p>The construct exists first.</p>
+<p>Indicators reflect it.</p>
+<hr>
+<h1 id="6-examples-of-reflective-constructs"><strong>6. Examples of Reflective Constructs</strong></h1>
+<p>Common reflective constructs:</p>
+<ul>
+<li>Satisfaction.  </li>
+<li>Trust.  </li>
+<li>Motivation.  </li>
+<li>Attitude.  </li>
+<li>Perceived usefulness.  </li>
+<li>Employee engagement (when defined as psychological state).</li>
+</ul>
+<hr>
+<h1 id="7-formative-measurement-model"><strong>7. Formative Measurement Model</strong></h1>
+<h2 id="definition-3"><strong>Definition</strong></h2>
+<p>A formative model assumes:</p>
+<blockquote>
+<p>Indicators create or form the construct.</p>
+</blockquote>
+<p>Direction:</p>
+<p>Indicator 1<br>
+Indicator 2  → Construct<br>
+Indicator 3</p>
+<hr>
+<h2 id="example-meal-quality"><strong>Example: Meal Quality</strong></h2>
+<p>Overall meal quality is created by:</p>
+<ul>
+<li>Food taste.  </li>
+<li>Service friendliness.  </li>
+<li>Cleanliness.  </li>
+<li>Price fairness.</li>
+</ul>
+<hr>
+<h2 id="characteristics-2"><strong>Characteristics</strong></h2>
+<h3 id="1-indicators-do-not-need-to-correlate"><strong>1. Indicators do not need to correlate</strong></h3>
+<p>Example:</p>
+<p>A restaurant can have:</p>
+<ul>
+<li>Excellent food.  </li>
+<li>Poor service.</li>
+</ul>
+<p>These dimensions may differ.</p>
+<hr>
+<h3 id="2-each-indicator-contributes-unique-meaning"><strong>2. Each indicator contributes unique meaning</strong></h3>
+<p>Removing an indicator changes the construct.</p>
+<p>Example:</p>
+<p>Remove cleanliness.</p>
+<p>The meaning of &ldquo;meal quality&rdquo; changes.</p>
+<hr>
+<h3 id="3-indicators-are-not-interchangeable"><strong>3. Indicators are not interchangeable</strong></h3>
+<p>Food taste and price fairness represent different aspects.</p>
+<hr>
+<h1 id="8-reflective-vs-formative-comparison"><strong>8. Reflective vs Formative Comparison</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Reflective</th>
+<th>Formative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Direction</td>
+<td>Construct → Indicators</td>
+<td>Indicators → Construct</td>
+</tr>
+<tr>
+<td>Indicators</td>
+<td>Effects</td>
+<td>Causes/components</td>
+</tr>
+<tr>
+<td>Correlation</td>
+<td>Expected</td>
+<td>Not required</td>
+</tr>
+<tr>
+<td>Removing items</td>
+<td>Usually acceptable</td>
+<td>Changes meaning</td>
+</tr>
+<tr>
+<td>Example</td>
+<td>Trust</td>
+<td>Restaurant quality</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="9-examples-from-the-quiz"><strong>9. Examples from the Quiz</strong></h1>
+<h1 id="reflective-example"><strong>Reflective Example</strong></h1>
+<h2 id="trust-after-service-recovery"><strong>Trust After Service Recovery</strong></h2>
+<p>Assumption:</p>
+<p>A service recovery improves trust.</p>
+<p>Expected result:</p>
+<p>All trust items increase together.</p>
+<p>Example:</p>
+<ul>
+<li>&ldquo;I trust this provider.&rdquo;  </li>
+<li>&ldquo;This provider is reliable.&rdquo;  </li>
+<li>&ldquo;This provider keeps promises.&rdquo;</li>
+</ul>
+<hr>
+<p>Why reflective?</p>
+<p>Because trust causes the responses.</p>
+<hr>
+<h1 id="formative-example"><strong>Formative Example</strong></h1>
+<h2 id="restaurant-meal-quality"><strong>Restaurant Meal Quality</strong></h2>
+<p>Components:</p>
+<ul>
+<li>Taste.  </li>
+<li>Service.  </li>
+<li>Cleanliness.  </li>
+<li>Price.</li>
+</ul>
+<p>Together create quality.</p>
+<hr>
+<p>Why formative?</p>
+<p>Because each component contributes separately.</p>
+<hr>
+<h1 id="10-objective-vs-subjective-measurement"><strong>10. Objective vs Subjective Measurement</strong></h1>
+<h2 id="subjective-measures"><strong>Subjective Measures</strong></h2>
+<p>Collected directly from people.</p>
+<p>Examples:</p>
+<ul>
+<li>Surveys.  </li>
+<li>Interviews.  </li>
+<li>Ratings.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>&ldquo;Rate your satisfaction from 1 to 5.&rdquo;</p>
+<hr>
+<h2 id="objective-measures"><strong>Objective Measures</strong></h2>
+<p>Based on existing records.</p>
+<p>Examples:</p>
+<ul>
+<li>Sales data.  </li>
+<li>Repeat purchases.  </li>
+<li>Store visits.  </li>
+<li>Customer retention records.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Customer satisfaction through:</p>
+<ul>
+<li>Number of repeat visits.  </li>
+<li>Purchase frequency.</li>
+</ul>
+<hr>
+<h1 id="11-measuring-customer-satisfaction"><strong>11. Measuring Customer Satisfaction</strong></h1>
+<p>Customer satisfaction can be measured through:</p>
+<h2 id="subjective-method"><strong>Subjective Method</strong></h2>
+<p>Ask customers:</p>
+<blockquote>
+<p>How satisfied are you?</p>
+</blockquote>
+<p>Example:</p>
+<p>1–5 satisfaction scale.</p>
+<hr>
+<h2 id="objective-method"><strong>Objective Method</strong></h2>
+<p>Use company records:</p>
+<ul>
+<li>Repeat purchases.  </li>
+<li>Visit frequency.  </li>
+<li>Complaints.</li>
+</ul>
+<hr>
+<p>Both methods measure different aspects.</p>
+<hr>
+<h1 id="12-avoiding-idealized-responses-in-surveys"><strong>12. Avoiding Idealized Responses in Surveys</strong></h1>
+<p>A common measurement problem is <strong>social desirability bias</strong>.</p>
+<p>People may answer according to:</p>
+<ul>
+<li>What seems acceptable.  </li>
+<li>What they think they should say.  </li>
+<li>Ideal standards.</li>
+</ul>
+<hr>
+<h2 id="example"><strong>Example</strong></h2>
+<p>Poor question:</p>
+<blockquote>
+<p>&ldquo;How important is excellent equipment when choosing a provider?&rdquo;</p>
+</blockquote>
+<p>Problem:</p>
+<p>Measures importance, not actual perception.</p>
+<hr>
+<p>Better:</p>
+<blockquote>
+<p>&ldquo;This provider uses modern equipment.&rdquo;</p>
+</blockquote>
+<p>Measures perceived performance.</p>
+<hr>
+<h1 id="13-importance-of-specific-referents"><strong>13. Importance of Specific Referents</strong></h1>
+<p>When measuring perceptions, questions should focus on the actual object.</p>
+<p>Better:</p>
+<blockquote>
+<p>&ldquo;This bank provides up-to-date technology.&rdquo;</p>
+</blockquote>
+<p>Not:</p>
+<blockquote>
+<p>&ldquo;Banks provide up-to-date technology.&rdquo;</p>
+</blockquote>
+<hr>
+<p>Reason:</p>
+<p>Generic wording measures general beliefs, not evaluation of the specific provider.</p>
+<hr>
+<h1 id="14-normative-wording-problems"><strong>14. Normative Wording Problems</strong></h1>
+<p>Words like:</p>
+<ul>
+<li>Should.  </li>
+<li>Essential.  </li>
+<li>Must.</li>
+</ul>
+<p>can trigger ideal responses.</p>
+<p>Example:</p>
+<blockquote>
+<p>&ldquo;A good bank should have advanced equipment.&rdquo;</p>
+</blockquote>
+<p>This measures standards, not actual perception.</p>
+<hr>
+<p>Better:</p>
+<blockquote>
+<p>&ldquo;My bank has advanced equipment.&rdquo;</p>
+</blockquote>
+<hr>
+<h1 id="15-employee-engagement-measurement"><strong>15. Employee Engagement Measurement</strong></h1>
+<p>Employee engagement is a complex construct.</p>
+<p>Possible dimensions:</p>
+<h2 id="psychological-engagement"><strong>Psychological Engagement</strong></h2>
+<p>Reflective indicators:</p>
+<ul>
+<li>Enthusiasm.  </li>
+<li>Dedication.  </li>
+<li>Energy.</li>
+</ul>
+<hr>
+<h2 id="behavioural-indicators"><strong>Behavioural Indicators</strong></h2>
+<p>Examples:</p>
+<ul>
+<li>Absenteeism.  </li>
+<li>Turnover.  </li>
+<li>Participation.</li>
+</ul>
+<hr>
+<p>Researchers must decide:</p>
+<p>Is engagement:</p>
+<ol>
+<li>A psychological state?  </li>
+<li>A composite index?</li>
+</ol>
+<hr>
+<h1 id="16-reflective-vs-formative-employee-engagement"><strong>16. Reflective vs Formative Employee Engagement</strong></h1>
+<h2 id="reflective-view"><strong>Reflective View</strong></h2>
+<p>Engagement is an underlying state.</p>
+<p>It causes:</p>
+<ul>
+<li>Enthusiasm.  </li>
+<li>Dedication.  </li>
+<li>Energy.</li>
+</ul>
+<p>Indicators should move together.</p>
+<hr>
+<h2 id="formative-view"><strong>Formative View</strong></h2>
+<p>Engagement is an index created from:</p>
+<ul>
+<li>Attendance.  </li>
+<li>Turnover.  </li>
+<li>Participation.</li>
+</ul>
+<p>Indicators may not correlate.</p>
+<p>Each contributes unique information.</p>
+<hr>
+<h1 id="17-common-measurement-mistakes"><strong>17. Common Measurement Mistakes</strong></h1>
+<h2 id="mistake-1"><strong>Mistake 1:</strong></h2>
+<p>Mixing different constructs in one scale.</p>
+<p>Example:</p>
+<p>Employee engagement scale:</p>
+<p>✔ Motivation.</p>
+<p>✘ Salary satisfaction.</p>
+<p>✘ Office facilities.</p>
+<hr>
+<h2 id="mistake-2"><strong>Mistake 2:</strong></h2>
+<p>Choosing items before defining the construct.</p>
+<p>Correct order:</p>
+<ol>
+<li>Define construct.  </li>
+<li>Decide dimensions.  </li>
+<li>Create items.  </li>
+<li>Test scale.</li>
+</ol>
+<hr>
+<h2 id="mistake-3"><strong>Mistake 3:</strong></h2>
+<p>Assuming all indicators should correlate.</p>
+<p>Only reflective models require strong correlation.</p>
+<hr>
+<h2 id="mistake-4"><strong>Mistake 4:</strong></h2>
+<p>Using one question for complex concepts.</p>
+<p>A single item often cannot capture:</p>
+<ul>
+<li>Multiple dimensions.  </li>
+<li>Reliability.  </li>
+<li>Construct validity.</li>
+</ul>
+<hr>
+<h2 id="mistake-5"><strong>Mistake 5:</strong></h2>
+<p>Confusing measurement and structural models.</p>
+<p>Measurement:</p>
+<p>&ldquo;Do these questions measure trust?&rdquo;</p>
+<p>Structural:</p>
+<p>&ldquo;Does trust influence loyalty?&rdquo;</p>
+<hr>
+<h1 id="18-reliability-and-validity"><strong>18. Reliability and Validity</strong></h1>
+<h2 id="reliability"><strong>Reliability</strong></h2>
+<p>Means:</p>
+<p>Consistency of measurement.</p>
+<p>Example:</p>
+<p>A trust scale gives similar results across items.</p>
+<p>Common measure:</p>
+<ul>
+<li>Cronbach&rsquo;s alpha.</li>
+</ul>
+<hr>
+<h2 id="validity"><strong>Validity</strong></h2>
+<p>Means:</p>
+<p>Accuracy of measurement.</p>
+<p>Question:</p>
+<blockquote>
+<p>Are we measuring the intended concept?</p>
+</blockquote>
+<hr>
+<p>Examples:</p>
+<p>A service quality scale should measure service quality, not customer mood.</p>
+<hr>
+<h1 id="19-confirmatory-factor-analysis-cfa"><strong>19. Confirmatory Factor Analysis (CFA)</strong></h1>
+<h2 id="purpose-3"><strong>Purpose</strong></h2>
+<p>Tests whether items represent expected constructs.</p>
+<p>Example:</p>
+<p>Does this group of questions really measure:</p>
+<ul>
+<li>Trust?  </li>
+<li>Satisfaction?  </li>
+<li>Motivation?</li>
+</ul>
+<hr>
+<p>Used during:</p>
+<ul>
+<li>Scale validation.  </li>
+<li>Refinement.</li>
+</ul>
+<hr>
+<h1 id="20-final-revision-summary"><strong>20. Final Revision Summary</strong></h1>
+<h2 id="measurement-model"><strong>Measurement Model</strong></h2>
+<p>Explains:</p>
+<p>How indicators measure constructs.</p>
+<hr>
+<h2 id="structural-model"><strong>Structural Model</strong></h2>
+<p>Explains:</p>
+<p>How constructs influence each other.</p>
+<hr>
+<h2 id="reflective-model"><strong>Reflective Model</strong></h2>
+<p>Construct causes indicators.</p>
+<p>Example:</p>
+<p>Trust → Trust items.</p>
+<p>Characteristics:</p>
+<ul>
+<li>Indicators correlate.  </li>
+<li>Items interchangeable.</li>
+</ul>
+<hr>
+<h2 id="formative-model"><strong>Formative Model</strong></h2>
+<p>Indicators create construct.</p>
+<p>Example:</p>
+<p>Meal quality \= taste + service + cleanliness.</p>
+<p>Characteristics:</p>
+<ul>
+<li>Indicators need not correlate.  </li>
+<li>Each indicator adds unique meaning.</li>
+</ul>
+<hr>
+<h2 id="scale-development"><strong>Scale Development</strong></h2>
+<p>Sequence:</p>
+<ol>
+<li>Define construct.  </li>
+<li>Generate items.  </li>
+<li>Pilot test.  </li>
+<li>Check reliability and validity.  </li>
+<li>Refine items.  </li>
+<li>Finalize scale.</li>
+</ol>
+<hr>
+<h2 id="core-principle"><strong>Core Principle</strong></h2>
+<p>Good measurement begins with a clear understanding of what the construct represents.</p>
+<p>Before collecting data, researchers must decide:</p>
+<ul>
+<li>What is being measured?  </li>
+<li>Are indicators effects or causes?  </li>
+<li>Are items measuring one concept or multiple concepts?</li>
+</ul>
+<p>A strong measurement model ensures that later statistical analysis and hypothesis testing are based on accurate and meaningful data.</p>
+<h2 id="case-study"><strong>Case Study</strong></h2>
+<p>Sarah Li, the marketing manager at NovaBank, is leading a project to measure perceived service quality among retail banking customers. She begins with construct conceptualisation, defining the latent construct &ldquo;service responsiveness.&rdquo; To inform her item pool, she reviews the 22-item SERVQUAL scale for perceived service quality and notes the use of a 5-point Likert scale ranging from &lsquo;Strongly Disagree&rsquo; to &lsquo;Strongly Agree&rsquo;. Alongside, she considers a semantic differential scale for two new items to capture responsiveness nuances.Her team member, research consultant Priya Patel, generates 30 candidate items (Stage 2: Item Pool Generation) covering clarity, speed, and accessibility. Operations Director Michael Chen advocates for an expert review (Stage 3: Content Validity Assessment) before pre-testing. In a pilot (Stage 4), 20 customers use a 7-point scale to respond, and Priya conducts cognitive interviews to ensure comprehension. Early item analysis reveals that three items show low inter-item correlations, suggesting potential overlap or unclear wording.At this decision point, Sarah must choose the next step: conduct further content validity checks, revise the weak items based on feedback and re-test, or proceed to full scale administration (Stage 5) to gather broader data for exploratory factor analysis. Michael emphasizes time constraints, while Priya highlights the importance of reliability assessment using Cronbach&rsquo;s Alpha before moving forward. Students must weigh the trade-offs between additional pre-testing and the risk of delaying the project&rsquo;s timeline.</p>
+<h1 id="comprehensive-notes-novabank-case-study-construct-conceptualisation-scale-development-content-validity-pilot-testing-reliability-and-scale-refinement"><strong>Comprehensive Notes: NovaBank Case Study — Construct Conceptualisation, Scale Development, Content Validity, Pilot Testing, Reliability, and Scale Refinement</strong></h1>
+<h1 id="1-case-overview"><strong>1. Case Overview</strong></h1>
+<p>NovaBank wants to measure <strong>perceived service quality</strong> among retail banking customers.</p>
+<p>The marketing manager, Sarah Li, needs to develop a measurement scale for an abstract concept:</p>
+<blockquote>
+<p><strong>Service responsiveness</strong></p>
+</blockquote>
+<p>Because responsiveness cannot be directly observed, it is treated as a <strong>latent construct</strong>.</p>
+<p>The case demonstrates the process of developing a reliable and valid survey scale.</p>
+<p>The key research challenge:</p>
+<blockquote>
+<p>How can NovaBank accurately measure customers’ perception of how responsive the bank is?</p>
+</blockquote>
+<hr>
+<h1 id="2-measurement-of-latent-constructs"><strong>2. Measurement of Latent Constructs</strong></h1>
+<h2 id="latent-construct"><strong>Latent Construct</strong></h2>
+<p>A latent construct is an abstract concept that cannot be measured directly.</p>
+<p>Examples:</p>
+<ul>
+<li>Service responsiveness.  </li>
+<li>Customer trust.  </li>
+<li>Satisfaction.  </li>
+<li>Motivation.  </li>
+<li>Perceived usefulness.</li>
+</ul>
+<hr>
+<h2 id="observable-indicators"><strong>Observable Indicators</strong></h2>
+<p>Researchers measure latent constructs through indicators.</p>
+<p>For service responsiveness:</p>
+<p>Possible indicators:</p>
+<ul>
+<li>Quick response to customer requests.  </li>
+<li>Easy access to support.  </li>
+<li>Clear communication.  </li>
+<li>Speed of problem resolution.</li>
+</ul>
+<hr>
+<p>The measurement process:</p>
+<p>Latent Construct<br>
+(Service Responsiveness)</p>
+<pre><code>    ↓
+</code></pre>
+<p>Survey Items</p>
+<pre><code>    ↓
+</code></pre>
+<p>Customer Responses</p>
+<hr>
+<h1 id="3-construct-conceptualisation-stage-1"><strong>3. Construct Conceptualisation (Stage 1)</strong></h1>
+<h2 id="definition-4"><strong>Definition</strong></h2>
+<p>Construct conceptualisation means clearly defining what a concept represents before measuring it.</p>
+<hr>
+<p>Sarah defines:</p>
+<h2 id="service-responsiveness"><strong>Service Responsiveness</strong></h2>
+<p>Possible meaning:</p>
+<ul>
+<li>Ability of the bank to respond quickly.  </li>
+<li>Willingness to help customers.  </li>
+<li>Ease of obtaining support.  </li>
+<li>Speed of resolving issues.</li>
+</ul>
+<hr>
+<h2 id="importance-2"><strong>Importance</strong></h2>
+<p>Without clear conceptualisation:</p>
+<ul>
+<li>Items may measure different concepts.  </li>
+<li>The scale may lack validity.  </li>
+<li>Results become difficult to interpret.</li>
+</ul>
+<hr>
+<h1 id="4-learning-from-existing-scales"><strong>4. Learning from Existing Scales</strong></h1>
+<p>Sarah reviews the:</p>
+<h2 id="servqual-scale"><strong>SERVQUAL Scale</strong></h2>
+<p>SERVQUAL is a widely used service quality measurement framework.</p>
+<p>It measures perceived service quality through multiple dimensions.</p>
+<p>Common dimensions include:</p>
+<ul>
+<li>Reliability.  </li>
+<li>Responsiveness.  </li>
+<li>Assurance.  </li>
+<li>Empathy.  </li>
+<li>Tangibles.</li>
+</ul>
+<hr>
+<h2 id="purpose-of-reviewing-existing-scales"><strong>Purpose of Reviewing Existing Scales</strong></h2>
+<p>Existing scales help researchers:</p>
+<ul>
+<li>Understand established constructs.  </li>
+<li>Identify proven measurement items.  </li>
+<li>Adapt validated approaches.  </li>
+<li>Avoid creating weak items from scratch.</li>
+</ul>
+<hr>
+<h1 id="5-likert-scale"><strong>5. Likert Scale</strong></h1>
+<p>Sarah observes SERVQUAL uses a:</p>
+<h2 id="5-point-likert-scale"><strong>5-point Likert Scale</strong></h2>
+<p>Example:</p>
+<ol>
+<li>Strongly Disagree  </li>
+<li>Disagree  </li>
+<li>Neutral  </li>
+<li>Agree  </li>
+<li>Strongly Agree</li>
+</ol>
+<hr>
+<h2 id="purpose-4"><strong>Purpose</strong></h2>
+<p>Measures the degree of agreement with statements.</p>
+<p>Example item:</p>
+<blockquote>
+<p>&ldquo;The bank responds quickly to customer requests.&rdquo;</p>
+</blockquote>
+<p>Customer selects:</p>
+<p>Strongly Disagree → Strongly Agree</p>
+<hr>
+<h2 id="advantages"><strong>Advantages</strong></h2>
+<ul>
+<li>Easy for respondents.  </li>
+<li>Suitable for attitudes and perceptions.  </li>
+<li>Supports statistical analysis.</li>
+</ul>
+<hr>
+<h1 id="6-semantic-differential-scale"><strong>6. Semantic Differential Scale</strong></h1>
+<p>Sarah also considers semantic differential items.</p>
+<hr>
+<h2 id="definition-5"><strong>Definition</strong></h2>
+<p>A semantic differential scale measures perceptions between two opposite adjectives.</p>
+<p>Example:</p>
+<p>Slow Response</p>
+<p>1 2 3 4 5 6 7</p>
+<p>Fast Response</p>
+<hr>
+<p>Other examples:</p>
+<ul>
+<li>Unhelpful ↔ Helpful  </li>
+<li>Difficult ↔ Easy  </li>
+<li>Inaccessible ↔ Accessible</li>
+</ul>
+<hr>
+<h2 id="difference-from-likert-scale"><strong>Difference from Likert Scale</strong></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Likert Scale</th>
+<th>Semantic Differential</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agreement with statement</td>
+<td>Position between opposite meanings</td>
+</tr>
+<tr>
+<td>&ldquo;The bank responds quickly&rdquo;</td>
+<td>Slow ↔ Fast</td>
+</tr>
+<tr>
+<td>Measures agreement</td>
+<td>Measures perception</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="7-item-pool-generation-stage-2"><strong>7. Item Pool Generation (Stage 2)</strong></h1>
+<h2 id="definition-6"><strong>Definition</strong></h2>
+<p>Creating a large initial set of possible survey items.</p>
+<hr>
+<p>Priya generates:</p>
+<p><strong>30 candidate items</strong></p>
+<p>covering:</p>
+<ul>
+<li>Clarity.  </li>
+<li>Speed.  </li>
+<li>Accessibility.</li>
+</ul>
+<hr>
+<h2 id="why-generate-many-items"><strong>Why Generate Many Items?</strong></h2>
+<p>Early stages prioritize coverage.</p>
+<p>A large item pool allows researchers to:</p>
+<ul>
+<li>Remove weak items later.  </li>
+<li>Capture all dimensions.  </li>
+<li>Improve reliability.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Initial pool:</p>
+<p>30 items</p>
+<p>↓</p>
+<p>Testing</p>
+<p>↓</p>
+<p>Final scale:</p>
+<p>5–10 strong items</p>
+<hr>
+<h1 id="8-content-validity-assessment-stage-3"><strong>8. Content Validity Assessment (Stage 3)</strong></h1>
+<h2 id="definition-7"><strong>Definition</strong></h2>
+<p>Content validity checks whether items adequately represent the construct.</p>
+<p>Question:</p>
+<blockquote>
+<p>Do these items cover everything that service responsiveness means?</p>
+</blockquote>
+<hr>
+<h2 id="michael-s-recommendation"><strong>Michael&rsquo;s Recommendation</strong></h2>
+<p>Operations Director Michael suggests expert review.</p>
+<hr>
+<h2 id="expert-review-purpose"><strong>Expert Review Purpose</strong></h2>
+<p>Experts examine:</p>
+<ul>
+<li>Relevance of items.  </li>
+<li>Clarity.  </li>
+<li>Completeness.  </li>
+<li>Alignment with construct definition.</li>
+</ul>
+<hr>
+<p>Example:</p>
+<p>Construct:</p>
+<p>Service responsiveness</p>
+<p>Good item:</p>
+<blockquote>
+<p>&ldquo;The bank provides prompt assistance.&rdquo;</p>
+</blockquote>
+<p>Poor item:</p>
+<blockquote>
+<p>&ldquo;The bank has attractive branches.&rdquo;</p>
+</blockquote>
+<p>The second item measures tangibles, not responsiveness.</p>
+<hr>
+<h1 id="9-pilot-testing-stage-4"><strong>9. Pilot Testing (Stage 4)</strong></h1>
+<h2 id="purpose-5"><strong>Purpose</strong></h2>
+<p>Pilot testing evaluates the draft scale before large-scale administration.</p>
+<p>It identifies:</p>
+<ul>
+<li>Confusing questions.  </li>
+<li>Weak items.  </li>
+<li>Measurement problems.</li>
+</ul>
+<hr>
+<p>NovaBank pilot:</p>
+<ul>
+<li>20 customers.  </li>
+<li>7-point scale.</li>
+</ul>
+<hr>
+<h1 id="10-seven-point-likert-scale"><strong>10. Seven-Point Likert Scale</strong></h1>
+<p>Example:</p>
+<ol>
+<li>Strongly Disagree  </li>
+<li>Disagree  </li>
+<li>Slightly Disagree  </li>
+<li>Neutral  </li>
+<li>Slightly Agree  </li>
+<li>Agree  </li>
+<li>Strongly Agree</li>
+</ol>
+<hr>
+<h2 id="compared-with-5-point-scale"><strong>Compared with 5-point Scale</strong></h2>
+<p>Advantages:</p>
+<ul>
+<li>More sensitivity.  </li>
+<li>Captures finer differences.</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>Slightly more complex.</li>
+</ul>
+<hr>
+<h1 id="11-cognitive-interviews"><strong>11. Cognitive Interviews</strong></h1>
+<p>Priya conducts cognitive interviews.</p>
+<hr>
+<h2 id="purpose-6"><strong>Purpose</strong></h2>
+<p>Understand how respondents interpret survey questions.</p>
+<p>Researchers ask:</p>
+<ul>
+<li>What did you understand from this question?  </li>
+<li>How did you choose your answer?  </li>
+<li>Was any wording confusing?</li>
+</ul>
+<hr>
+<h2 id="importance-3"><strong>Importance</strong></h2>
+<p>A question may appear clear to researchers but be interpreted differently by customers.</p>
+<hr>
+<p>Example:</p>
+<p>Question:</p>
+<blockquote>
+<p>&ldquo;The bank is responsive.&rdquo;</p>
+</blockquote>
+<p>Customer interpretation:</p>
+<p>Could mean:</p>
+<ul>
+<li>Fast replies.  </li>
+<li>Friendly staff.  </li>
+<li>Digital availability.</li>
+</ul>
+<p>Cognitive interviews reveal ambiguity.</p>
+<hr>
+<h1 id="12-item-analysis"><strong>12. Item Analysis</strong></h1>
+<p>After pilot testing, researchers evaluate item performance.</p>
+<hr>
+<p>Sarah finds:</p>
+<p>Three items have low inter-item correlations.</p>
+<hr>
+<h1 id="13-inter-item-correlation"><strong>13. Inter-item Correlation</strong></h1>
+<h2 id="definition-8"><strong>Definition</strong></h2>
+<p>Measures how consistently items relate to each other.</p>
+<hr>
+<p>For reflective constructs:</p>
+<p>Items should generally correlate.</p>
+<p>Example:</p>
+<p>Service responsiveness items:</p>
+<ul>
+<li>Fast response.  </li>
+<li>Quick assistance.  </li>
+<li>Prompt resolution.</li>
+</ul>
+<p>should move together.</p>
+<hr>
+<h2 id="low-correlation-indicates"><strong>Low Correlation Indicates</strong></h2>
+<p>Possible issues:</p>
+<ol>
+<li>Poor wording.  </li>
+<li>Item measures another concept.  </li>
+<li>Respondents interpret differently.  </li>
+<li>Item does not fit the construct.</li>
+</ol>
+<hr>
+<h1 id="14-reliability-assessment"><strong>14. Reliability Assessment</strong></h1>
+<h2 id="definition-9"><strong>Definition</strong></h2>
+<p>Reliability measures consistency of a scale.</p>
+<p>A reliable scale produces consistent results.</p>
+<hr>
+<h2 id="cronbach-s-alpha"><strong>Cronbach&rsquo;s Alpha</strong></h2>
+<p>Common reliability measure.</p>
+<p>It evaluates:</p>
+<blockquote>
+<p>Whether items intended to measure the same construct behave consistently.</p>
+</blockquote>
+<hr>
+<p>Example:</p>
+<p>Service responsiveness scale:</p>
+<p>Item 1:</p>
+<p>&ldquo;The bank responds quickly.&rdquo;</p>
+<p>Item 2:</p>
+<p>&ldquo;The bank resolves issues promptly.&rdquo;</p>
+<p>Item 3:</p>
+<p>&ldquo;The bank provides immediate assistance.&rdquo;</p>
+<p>High alpha:</p>
+<p>Items work together.</p>
+<p>Low alpha:</p>
+<p>Items may need revision.</p>
+<hr>
+<h1 id="15-scale-development-stages"><strong>15. Scale Development Stages</strong></h1>
+<p>The NovaBank case follows a structured process.</p>
+<hr>
+<h1 id="stage-1-construct-conceptualisation"><strong>Stage 1: Construct Conceptualisation</strong></h1>
+<p>Define the concept.</p>
+<p>Example:</p>
+<p>Service responsiveness.</p>
+<hr>
+<h1 id="stage-2-item-pool-generation"><strong>Stage 2: Item Pool Generation</strong></h1>
+<p>Create many candidate items.</p>
+<p>Example:</p>
+<p>30 items.</p>
+<hr>
+<h1 id="stage-3-content-validity-assessment"><strong>Stage 3: Content Validity Assessment</strong></h1>
+<p>Experts review items.</p>
+<p>Purpose:</p>
+<p>Ensure coverage and relevance.</p>
+<hr>
+<h1 id="stage-4-pilot-testing"><strong>Stage 4: Pilot Testing</strong></h1>
+<p>Test with small sample.</p>
+<p>Activities:</p>
+<ul>
+<li>Customer responses.  </li>
+<li>Cognitive interviews.  </li>
+<li>Item analysis.</li>
+</ul>
+<hr>
+<h1 id="stage-5-full-scale-administration"><strong>Stage 5: Full Scale Administration</strong></h1>
+<p>Collect larger sample.</p>
+<p>Purpose:</p>
+<ul>
+<li>Confirm scale structure.  </li>
+<li>Conduct factor analysis.  </li>
+<li>Finalize measurement model.</li>
+</ul>
+<hr>
+<h1 id="16-exploratory-factor-analysis-efa"><strong>16. Exploratory Factor Analysis (EFA)</strong></h1>
+<p>Michael considers moving to full administration for EFA.</p>
+<hr>
+<h2 id="purpose-7"><strong>Purpose</strong></h2>
+<p>Discover underlying dimensions among items.</p>
+<p>Example:</p>
+<p>30 items may group into:</p>
+<p>Factor 1:</p>
+<p>Responsiveness</p>
+<p>Factor 2:</p>
+<p>Accessibility</p>
+<p>Factor 3:</p>
+<p>Communication clarity</p>
+<hr>
+<h2 id="requirement"><strong>Requirement</strong></h2>
+<p>Usually needs larger samples.</p>
+<p>A pilot with 20 customers is generally insufficient.</p>
+<hr>
+<h1 id="17-decision-point-analysis"><strong>17. Decision Point Analysis</strong></h1>
+<p>Sarah must choose among three options:</p>
+<ol>
+<li>More content validity checks.  </li>
+<li>Revise weak items and retest.  </li>
+<li>Move directly to full administration.</li>
+</ol>
+<hr>
+<h1 id="option-1"><strong>Option 1:</strong></h1>
+<p>Additional Content Validity Checks</p>
+<h2 id="advantages-2"><strong>Advantages</strong></h2>
+<ul>
+<li>Improves conceptual accuracy.  </li>
+<li>Ensures items represent responsiveness.</li>
+</ul>
+<hr>
+<h2 id="disadvantages"><strong>Disadvantages</strong></h2>
+<ul>
+<li>Delays project.</li>
+</ul>
+<hr>
+<h1 id="option-2"><strong>Option 2:</strong></h1>
+<p>Revise Weak Items and Retest</p>
+<h2 id="advantages-3"><strong>Advantages</strong></h2>
+<p>Most appropriate after pilot problems.</p>
+<p>Addresses:</p>
+<ul>
+<li>Low correlations.  </li>
+<li>Confusing wording.</li>
+</ul>
+<p>Improves:</p>
+<ul>
+<li>Reliability.  </li>
+<li>Validity.</li>
+</ul>
+<hr>
+<h2 id="disadvantages-2"><strong>Disadvantages</strong></h2>
+<p>Requires additional time.</p>
+<hr>
+<h1 id="option-3"><strong>Option 3:</strong></h1>
+<p>Proceed to Full Scale Administration</p>
+<h2 id="advantages-4"><strong>Advantages</strong></h2>
+<ul>
+<li>Faster.  </li>
+<li>Provides larger dataset.</li>
+</ul>
+<hr>
+<h2 id="risks"><strong>Risks</strong></h2>
+<p>Weak items may contaminate results.</p>
+<p>Problems:</p>
+<ul>
+<li>Poor factor structure.  </li>
+<li>Low reliability.  </li>
+<li>Invalid conclusions.</li>
+</ul>
+<hr>
+<h1 id="18-balancing-time-and-measurement-quality"><strong>18. Balancing Time and Measurement Quality</strong></h1>
+<p>Michael prioritizes:</p>
+<ul>
+<li>Timeline.  </li>
+<li>Faster deployment.</li>
+</ul>
+<p>Priya prioritizes:</p>
+<ul>
+<li>Reliability.  </li>
+<li>Scale quality.</li>
+</ul>
+<hr>
+<h2 id="research-principle"><strong>Research Principle</strong></h2>
+<p>A rushed scale can create incorrect findings.</p>
+<p>A short delay for refinement may produce:</p>
+<ul>
+<li>Better reliability.  </li>
+<li>Stronger validity.  </li>
+<li>More trustworthy decisions.</li>
+</ul>
+<hr>
+<h1 id="19-reliability-vs-validity"><strong>19. Reliability vs Validity</strong></h1>
+<p>Important distinction.</p>
+<hr>
+<h1 id="reliability-2"><strong>Reliability</strong></h1>
+<p>Question:</p>
+<blockquote>
+<p>Are measurements consistent?</p>
+</blockquote>
+<p>Example:</p>
+<p>Do responsiveness items behave similarly?</p>
+<hr>
+<h1 id="validity-2"><strong>Validity</strong></h1>
+<p>Question:</p>
+<blockquote>
+<p>Are we measuring the correct concept?</p>
+</blockquote>
+<p>Example:</p>
+<p>Do items actually measure responsiveness?</p>
+<hr>
+<p>A scale can be:</p>
+<h2 id="reliable-but-not-valid"><strong>Reliable but not Valid</strong></h2>
+<p>Example:</p>
+<p>All questions consistently measure customer friendliness, but the researcher intended responsiveness.</p>
+<hr>
+<h2 id="valid-and-reliable"><strong>Valid and Reliable</strong></h2>
+<p>Ideal situation.</p>
+<hr>
+<h1 id="20-reflective-measurement-perspective"><strong>20. Reflective Measurement Perspective</strong></h1>
+<p>Service responsiveness is likely a reflective construct.</p>
+<p>Meaning:</p>
+<p>The underlying perception causes item responses.</p>
+<p>Example:</p>
+<p>Customer perceives high responsiveness.</p>
+<p>Therefore:</p>
+<ul>
+<li>&ldquo;Fast response.&rdquo;  </li>
+<li>&ldquo;Quick support.&rdquo;  </li>
+<li>&ldquo;Prompt service.&rdquo;</li>
+</ul>
+<p>receive high ratings.</p>
+<hr>
+<p>Characteristics:</p>
+<ul>
+<li>Items should correlate.  </li>
+<li>Removing one item usually does not change construct meaning.</li>
+</ul>
+<hr>
+<h1 id="21-common-misconceptions"><strong>21. Common Misconceptions</strong></h1>
+<h2 id="misconception-1"><strong>Misconception 1:</strong></h2>
+<p>Create items and immediately launch the survey.</p>
+<p>Reality:</p>
+<p>Scale development requires testing.</p>
+<hr>
+<h2 id="misconception-2"><strong>Misconception 2:</strong></h2>
+<p>More items always mean better measurement.</p>
+<p>Reality:</p>
+<p>Weak items reduce quality.</p>
+<hr>
+<h2 id="misconception-3"><strong>Misconception 3:</strong></h2>
+<p>Low item correlation means remove everything.</p>
+<p>Reality:</p>
+<p>First investigate:</p>
+<ul>
+<li>Wording.  </li>
+<li>Concept alignment.  </li>
+<li>Interpretation.</li>
+</ul>
+<hr>
+<h2 id="misconception-4"><strong>Misconception 4:</strong></h2>
+<p>Content validity and reliability are the same.</p>
+<p>Reality:</p>
+<p>Content validity:</p>
+<blockquote>
+<p>Are we measuring the right thing?</p>
+</blockquote>
+<p>Reliability:</p>
+<blockquote>
+<p>Are we measuring consistently?</p>
+</blockquote>
+<hr>
+<h2 id="misconception-5"><strong>Misconception 5:</strong></h2>
+<p>Pilot results are enough for final conclusions.</p>
+<p>Reality:</p>
+<p>Pilot testing identifies problems; larger studies validate the scale.</p>
+<hr>
+<h1 id="22-recommended-decision-for-novabank"><strong>22. Recommended Decision for NovaBank</strong></h1>
+<p>The strongest approach is:</p>
+<h2 id="revise-weak-items-based-on-pilot-feedback-and-retest-before-full-administration"><strong>Revise weak items based on pilot feedback and retest before full administration.</strong></h2>
+<p>Reason:</p>
+<p>The pilot already identified:</p>
+<ul>
+<li>Low inter-item correlations.  </li>
+<li>Potential wording issues.</li>
+</ul>
+<p>The next logical step is refinement.</p>
+<hr>
+<p>Process:</p>
+<p>Pilot Results</p>
+<p>↓</p>
+<p>Identify Weak Items</p>
+<p>↓</p>
+<p>Rewrite / Remove Items</p>
+<p>↓</p>
+<p>Retest Reliability</p>
+<p>↓</p>
+<p>Large Sample Administration</p>
+<p>↓</p>
+<p>Factor Analysis</p>
+<hr>
+<h1 id="23-final-revision-summary"><strong>23. Final Revision Summary</strong></h1>
+<h2 id="construct-conceptualisation"><strong>Construct Conceptualisation</strong></h2>
+<p>Defines what is being measured.</p>
+<hr>
+<h2 id="item-pool-generation"><strong>Item Pool Generation</strong></h2>
+<p>Creates candidate questions.</p>
+<hr>
+<h2 id="content-validity"><strong>Content Validity</strong></h2>
+<p>Ensures items represent the construct.</p>
+<hr>
+<h2 id="pilot-testing"><strong>Pilot Testing</strong></h2>
+<p>Finds problems before full deployment.</p>
+<hr>
+<h2 id="cognitive-interviews"><strong>Cognitive Interviews</strong></h2>
+<p>Check respondent understanding.</p>
+<hr>
+<h2 id="item-analysis"><strong>Item Analysis</strong></h2>
+<p>Evaluates item quality.</p>
+<hr>
+<h2 id="reliability-3"><strong>Reliability</strong></h2>
+<p>Measures consistency.</p>
+<p>Example:</p>
+<p>Cronbach&rsquo;s Alpha.</p>
+<hr>
+<h2 id="factor-analysis"><strong>Factor Analysis</strong></h2>
+<p>Examines underlying dimensions.</p>
+<hr>
+<h1 id="final-principle"><strong>Final Principle</strong></h1>
+<p>A measurement scale should not be rushed from idea to deployment. High-quality research requires a disciplined progression:</p>
+<p><strong>Define the construct → Generate items → Validate content → Pilot test → Refine items → Assess reliability → Conduct full-scale measurement</strong></p>
+<p>For NovaBank, improving service responsiveness measurement requires prioritizing scale refinement before collecting large-scale data. A reliable and valid measurement foundation is essential before drawing conclusions about customer perceptions.</p>
+<h1 id="comprehensive-notes-novabank-case-study-scale-development-measurement-design-pilot-testing-reliability-and-survey-scale-decisions"><strong>Comprehensive Notes: NovaBank Case Study — Scale Development, Measurement Design, Pilot Testing, Reliability, and Survey Scale Decisions</strong></h1>
+<h1 id="1-overview-of-the-case"><strong>1. Overview of the Case</strong></h1>
+<p>NovaBank wants to measure <strong>perceived service quality</strong> among retail banking customers.</p>
+<p>The research focus is a latent construct:</p>
+<blockquote>
+<p><strong>Service Responsiveness</strong></p>
+</blockquote>
+<p>Because responsiveness cannot be directly observed, the research team must develop a measurement scale that converts customer perceptions into measurable survey responses.</p>
+<p>The case demonstrates the complete process of <strong>scale development</strong>, including:</p>
+<ol>
+<li>Construct conceptualisation.  </li>
+<li>Item generation.  </li>
+<li>Content validity assessment.  </li>
+<li>Pilot testing.  </li>
+<li>Item analysis.  </li>
+<li>Reliability assessment.  </li>
+<li>Scale refinement.</li>
+</ol>
+<hr>
+<h1 id="2-latent-constructs-and-measurement"><strong>2. Latent Constructs and Measurement</strong></h1>
+<h2 id="latent-construct-2"><strong>Latent Construct</strong></h2>
+<p>A latent construct is an abstract concept that cannot be measured directly.</p>
+<p>Examples:</p>
+<ul>
+<li>Service responsiveness.  </li>
+<li>Customer satisfaction.  </li>
+<li>Trust.  </li>
+<li>Motivation.  </li>
+<li>Perceived quality.</li>
+</ul>
+<p>Researchers measure these concepts using observable indicators.</p>
+<p>Example:</p>
+<p>Latent construct:</p>
+<p><strong>Service Responsiveness</strong></p>
+<p>↓</p>
+<p>Indicators:</p>
+<ul>
+<li>The bank responds quickly.  </li>
+<li>The bank provides accessible support.  </li>
+<li>The bank communicates clearly.</li>
+</ul>
+<hr>
+<h1 id="3-construct-conceptualisation"><strong>3. Construct Conceptualisation</strong></h1>
+<h2 id="definition-10"><strong>Definition</strong></h2>
+<p>Construct conceptualisation is the first stage of scale development.</p>
+<p>It involves defining:</p>
+<ul>
+<li>What the construct means.  </li>
+<li>What dimensions it includes.  </li>
+<li>What it does not include.</li>
+</ul>
+<hr>
+<h2 id="novabank-example"><strong>NovaBank Example</strong></h2>
+<p>Sarah defines:</p>
+<p><strong>Service Responsiveness</strong></p>
+<p>as involving:</p>
+<ol>
+<li>Clarity.  </li>
+<li>Speed.  </li>
+<li>Accessibility.</li>
+</ol>
+<hr>
+<h2 id="importance-4"><strong>Importance</strong></h2>
+<p>A clear definition ensures that:</p>
+<ul>
+<li>Survey items measure one concept.  </li>
+<li>Different researchers interpret the construct consistently.  </li>
+<li>Later validity tests have a clear foundation.</li>
+</ul>
+<hr>
+<h2 id="common-mistake"><strong>Common Mistake</strong></h2>
+<p>Creating survey items before defining the construct.</p>
+<p>Incorrect approach:</p>
+<p>Create questions first → decide what they measure later.</p>
+<p>Correct approach:</p>
+<p>Define construct → create items.</p>
+<hr>
+<h1 id="4-reviewing-existing-measurement-scales"><strong>4. Reviewing Existing Measurement Scales</strong></h1>
+<p>Sarah reviews the:</p>
+<h2 id="servqual-scale-2"><strong>SERVQUAL Scale</strong></h2>
+<p>SERVQUAL is an established service quality measurement framework.</p>
+<hr>
+<h2 id="purpose-of-reviewing-servqual"><strong>Purpose of Reviewing SERVQUAL</strong></h2>
+<p>The goal is not necessarily to copy the scale.</p>
+<p>Instead, it provides:</p>
+<ul>
+<li>Theoretical foundation.  </li>
+<li>Example items.  </li>
+<li>Established measurement practices.  </li>
+<li>Response format guidance.</li>
+</ul>
+<hr>
+<h2 id="servqual-influence"><strong>SERVQUAL Influence</strong></h2>
+<p>Sarah learns:</p>
+<ul>
+<li>Service quality can be measured through multiple items.  </li>
+<li>Likert scales are commonly used.  </li>
+<li>Customer perceptions can be captured systematically.</li>
+</ul>
+<hr>
+<h1 id="5-likert-scale-2"><strong>5. Likert Scale</strong></h1>
+<h2 id="definition-11"><strong>Definition</strong></h2>
+<p>A Likert scale measures agreement with statements.</p>
+<p>Example:</p>
+<p>&ldquo;The bank responds quickly to customer requests.&rdquo;</p>
+<p>Response:</p>
+<ol>
+<li>Strongly Disagree  </li>
+<li>Disagree  </li>
+<li>Neutral  </li>
+<li>Agree  </li>
+<li>Strongly Agree</li>
+</ol>
+<hr>
+<h2 id="purpose-8"><strong>Purpose</strong></h2>
+<p>It measures:</p>
+<ul>
+<li>Attitudes.  </li>
+<li>Perceptions.  </li>
+<li>Beliefs.</li>
+</ul>
+<hr>
+<h2 id="advantages-5"><strong>Advantages</strong></h2>
+<ul>
+<li>Easy for respondents.  </li>
+<li>Easy statistical analysis.  </li>
+<li>Commonly used for latent constructs.</li>
+</ul>
+<hr>
+<h1 id="6-semantic-differential-scale-2"><strong>6. Semantic Differential Scale</strong></h1>
+<h2 id="definition-12"><strong>Definition</strong></h2>
+<p>A semantic differential scale measures perception between two opposite concepts.</p>
+<p>Example:</p>
+<p>Slow Service</p>
+<p>1 2 3 4 5 6 7</p>
+<p>Fast Service</p>
+<hr>
+<h2 id="purpose-9"><strong>Purpose</strong></h2>
+<p>It captures the meaning or impression associated with a concept.</p>
+<hr>
+<h2 id="example-for-responsiveness"><strong>Example for Responsiveness</strong></h2>
+<p>Instead of:</p>
+<p>&ldquo;The bank provides quick service.&rdquo;</p>
+<p>Semantic differential:</p>
+<p>Slow response ↔ Fast response</p>
+<hr>
+<h1 id="7-likert-vs-semantic-differential"><strong>7. Likert vs Semantic Differential</strong></h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Likert Scale</th>
+<th>Semantic Differential</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Format</td>
+<td>Agreement statements</td>
+<td>Opposite adjective pairs</td>
+</tr>
+<tr>
+<td>Example</td>
+<td>&ldquo;The bank responds quickly&rdquo;</td>
+<td>Slow ↔ Fast</td>
+</tr>
+<tr>
+<td>Measures</td>
+<td>Agreement</td>
+<td>Perceived meaning</td>
+</tr>
+<tr>
+<td>Common use</td>
+<td>Attitudes and beliefs</td>
+<td>Brand/service perceptions</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h1 id="8-item-pool-generation"><strong>8. Item Pool Generation</strong></h1>
+<h2 id="stage-2"><strong>Stage 2</strong></h2>
+<p>After defining the construct, researchers generate possible items.</p>
+<hr>
+<h2 id="novabank-example-2"><strong>NovaBank Example</strong></h2>
+<p>Priya creates:</p>
+<p><strong>30 candidate items</strong></p>
+<p>covering:</p>
+<ul>
+<li>Clarity.  </li>
+<li>Speed.  </li>
+<li>Accessibility.</li>
+</ul>
+<hr>
+<h2 id="why-generate-many-items-2"><strong>Why Generate Many Items?</strong></h2>
+<p>A large initial pool allows later:</p>
+<ul>
+<li>Removal of weak items.  </li>
+<li>Refinement.  </li>
+<li>Improvement of reliability.</li>
+</ul>
+<hr>
+<p>Typical process:</p>
+<p>30 items</p>
+<p>↓</p>
+<p>Testing</p>
+<p>↓</p>
+<p>Final scale:</p>
+<p>5–10 strong items</p>
+<hr>
+<h1 id="9-content-validity-assessment"><strong>9. Content Validity Assessment</strong></h1>
+<h2 id="stage-3"><strong>Stage 3</strong></h2>
+<p>Content validity asks:</p>
+<blockquote>
+<p>Do the items fully represent the construct?</p>
+</blockquote>
+<hr>
+<h2 id="michael-s-expert-review-recommendation"><strong>Michael&rsquo;s Expert Review Recommendation</strong></h2>
+<p>Experts examine:</p>
+<ul>
+<li>Whether items are relevant.  </li>
+<li>Whether important dimensions are missing.  </li>
+<li>Whether irrelevant items are included.</li>
+</ul>
+<hr>
+<h2 id="example-2"><strong>Example</strong></h2>
+<p>Construct:</p>
+<p>Service responsiveness</p>
+<p>Good item:</p>
+<p>&ldquo;The bank resolves customer issues quickly.&rdquo;</p>
+<p>Poor item:</p>
+<p>&ldquo;The bank has attractive branches.&rdquo;</p>
+<p>The second measures tangibles, not responsiveness.</p>
+<hr>
+<h1 id="10-content-validity-vs-reliability"><strong>10. Content Validity vs Reliability</strong></h1>
+<p>These concepts are often confused.</p>
+<hr>
+<h2 id="content-validity-2"><strong>Content Validity</strong></h2>
+<p>Question:</p>
+<blockquote>
+<p>Are we measuring the right things?</p>
+</blockquote>
+<p>Example:</p>
+<p>Do responsiveness items cover:</p>
+<ul>
+<li>Speed?  </li>
+<li>Accessibility?  </li>
+<li>Clarity?</li>
+</ul>
+<hr>
+<h2 id="reliability-4"><strong>Reliability</strong></h2>
+<p>Question:</p>
+<blockquote>
+<p>Are measurements consistent?</p>
+</blockquote>
+<p>Example:</p>
+<p>Do responsiveness items behave similarly?</p>
+<hr>
+<p>A scale can be:</p>
+<ul>
+<li>Reliable but invalid.  </li>
+<li>Valid and reliable.</li>
+</ul>
+<p>The goal is both.</p>
+<hr>
+<h1 id="11-pilot-testing"><strong>11. Pilot Testing</strong></h1>
+<h2 id="stage-4"><strong>Stage 4</strong></h2>
+<p>Purpose:</p>
+<p>Test the scale before full deployment.</p>
+<hr>
+<p>NovaBank pilot:</p>
+<ul>
+<li>20 customers.  </li>
+<li>7-point scale.</li>
+</ul>
+<hr>
+<p>Pilot testing identifies:</p>
+<ul>
+<li>Confusing questions.  </li>
+<li>Weak items.  </li>
+<li>Reliability problems.</li>
+</ul>
+<hr>
+<h1 id="12-cognitive-interviews"><strong>12. Cognitive Interviews</strong></h1>
+<p>Priya conducts cognitive interviews.</p>
+<hr>
+<h2 id="purpose-10"><strong>Purpose</strong></h2>
+<p>To understand how respondents interpret survey items.</p>
+<p>Questions:</p>
+<ul>
+<li>What did you understand from this statement?  </li>
+<li>How did you decide your answer?  </li>
+<li>Was any wording confusing?</li>
+</ul>
+<hr>
+<h2 id="why-important"><strong>Why Important?</strong></h2>
+<p>Researchers may intend one meaning, but respondents may interpret another.</p>
+<hr>
+<p>Example:</p>
+<p>&ldquo;The bank is responsive.&rdquo;</p>
+<p>Possible interpretations:</p>
+<ul>
+<li>Fast replies.  </li>
+<li>Friendly staff.  </li>
+<li>Digital availability.</li>
+</ul>
+<p>Cognitive interviews reveal ambiguity.</p>
+<hr>
+<h1 id="13-item-analysis"><strong>13. Item Analysis</strong></h1>
+<p>After pilot testing, researchers evaluate individual items.</p>
+<hr>
+<p>Finding:</p>
+<p>Three items have low inter-item correlations.</p>
+<hr>
+<h1 id="14-inter-item-correlation"><strong>14. Inter-item Correlation</strong></h1>
+<h2 id="definition-13"><strong>Definition</strong></h2>
+<p>Measures how strongly survey items relate to each other.</p>
+<hr>
+<p>For a reflective scale:</p>
+<p>Items should generally move together.</p>
+<p>Example:</p>
+<p>Responsiveness items:</p>
+<ul>
+<li>Quick response.  </li>
+<li>Prompt assistance.  </li>
+<li>Fast resolution.</li>
+</ul>
+<p>should correlate.</p>
+<hr>
+<h2 id="low-correlation-means"><strong>Low Correlation Means</strong></h2>
+<p>Possible problems:</p>
+<ol>
+<li>Item does not measure the same construct.  </li>
+<li>Wording is unclear.  </li>
+<li>Respondents interpret it differently.  </li>
+<li>Item measures another concept.</li>
+</ol>
+<hr>
+<h1 id="15-reliability-assessment"><strong>15. Reliability Assessment</strong></h1>
+<h2 id="cronbach-s-alpha-2"><strong>Cronbach&rsquo;s Alpha</strong></h2>
+<p>A common measure of internal consistency.</p>
+<p>It asks:</p>
+<blockquote>
+<p>Do these items work together as a scale?</p>
+</blockquote>
+<hr>
+<p>Example:</p>
+<p>Service responsiveness items:</p>
+<p>Item 1:</p>
+<p>&ldquo;The bank responds quickly.&rdquo;</p>
+<p>Item 2:</p>
+<p>&ldquo;The bank provides prompt help.&rdquo;</p>
+<p>Item 3:</p>
+<p>&ldquo;The bank resolves issues efficiently.&rdquo;</p>
+<p>High alpha:</p>
+<p>Items consistently measure responsiveness.</p>
+<hr>
+<h1 id="16-reflective-measurement-perspective"><strong>16. Reflective Measurement Perspective</strong></h1>
+<p>Service responsiveness is usually treated as a reflective construct.</p>
+<p>Meaning:</p>
+<p>The underlying perception causes responses.</p>
+<p>Model:</p>
+<p>Service Responsiveness<br>
+          ↓<br>
+-----------------------<br>
+Fast response<br>
+Quick help<br>
+Easy access</p>
+<hr>
+<p>Characteristics:</p>
+<ul>
+<li>Indicators should correlate.  </li>
+<li>Removing one item usually does not redefine the construct.</li>
+</ul>
+<hr>
+<h1 id="17-revising-weak-items"><strong>17. Revising Weak Items</strong></h1>
+<p>When items perform poorly:</p>
+<p>Correct approach:</p>
+<ol>
+<li>Review item wording.  </li>
+<li>Check cognitive interview feedback.  </li>
+<li>Remove or rewrite weak items.  </li>
+<li>Retest reliability.</li>
+</ol>
+<hr>
+<p>Incorrect approach:</p>
+<p>Immediately proceed with weak items.</p>
+<hr>
+<h1 id="18-moving-to-full-scale-administration"><strong>18. Moving to Full Scale Administration</strong></h1>
+<p>Full-scale administration allows:</p>
+<ul>
+<li>Larger sample collection.  </li>
+<li>Exploratory factor analysis.  </li>
+<li>Stronger validation.</li>
+</ul>
+<p>However:</p>
+<p>Weak items should ideally be fixed before this stage.</p>
+<hr>
+<h1 id="19-exploratory-factor-analysis-efa"><strong>19. Exploratory Factor Analysis (EFA)</strong></h1>
+<h2 id="purpose-11"><strong>Purpose</strong></h2>
+<p>Identifies underlying dimensions.</p>
+<p>Example:</p>
+<p>30 items may reveal:</p>
+<p>Factor 1:</p>
+<p>Responsiveness</p>
+<p>Factor 2:</p>
+<p>Accessibility</p>
+<p>Factor 3:</p>
+<p>Communication clarity</p>
+<hr>
+<h2 id="requirement-2"><strong>Requirement</strong></h2>
+<p>EFA needs a larger sample.</p>
+<p>A 20-person pilot is generally for refinement, not final factor analysis.</p>
+<hr>
+<h1 id="20-choosing-a-7-point-scale-in-the-pilot"><strong>20. Choosing a 7-Point Scale in the Pilot</strong></h1>
+<p>The team used a 7-point scale despite reviewing a 5-point SERVQUAL scale.</p>
+<p>This can be methodologically justified.</p>
+<hr>
+<h2 id="advantages-of-7-point-scale"><strong>Advantages of 7-Point Scale</strong></h2>
+<h3 id="1-greater-variation"><strong>1. Greater Variation</strong></h3>
+<p>More response options create more data variation.</p>
+<p>Example:</p>
+<p>Instead of:</p>
+<p>Agree / Disagree</p>
+<p>respondents can express:</p>
+<ul>
+<li>Slight agreement.  </li>
+<li>Strong agreement.  </li>
+<li>Moderate agreement.</li>
+</ul>
+<hr>
+<h3 id="2-better-diagnostic-ability"><strong>2. Better Diagnostic Ability</strong></h3>
+<p>During pilot testing, researchers need to understand:</p>
+<ul>
+<li>Which items perform well.  </li>
+<li>Which items differentiate respondents.</li>
+</ul>
+<p>More response categories can provide richer information.</p>
+<hr>
+<h3 id="3-flexibility"><strong>3. Flexibility</strong></h3>
+<p>The final scale can later be adjusted.</p>
+<p>Example:</p>
+<p>Pilot with 7 points.</p>
+<p>Final survey with 5 points if needed.</p>
+<hr>
+<h1 id="21-trade-off-michael-vs-priya"><strong>21. Trade-off: Michael vs Priya</strong></h1>
+<h2 id="michael-operations-priority"><strong>Michael — Operations Priority</strong></h2>
+<p>Concern:</p>
+<ul>
+<li>Time.  </li>
+<li>Faster completion.</li>
+</ul>
+<p>Preference:</p>
+<p>Move quickly to large-scale data collection.</p>
+<hr>
+<h2 id="priya-research-quality-priority"><strong>Priya — Research Quality Priority</strong></h2>
+<p>Concern:</p>
+<ul>
+<li>Reliability.  </li>
+<li>Measurement accuracy.</li>
+</ul>
+<p>Preference:</p>
+<p>Fix weak items before proceeding.</p>
+<hr>
+<h1 id="22-recommended-research-decision"><strong>22. Recommended Research Decision</strong></h1>
+<p>The strongest methodological choice:</p>
+<h2 id="revise-weak-items-and-retest-before-full-administration"><strong>Revise weak items and retest before full administration.</strong></h2>
+<p>Reason:</p>
+<p>The pilot already revealed:</p>
+<ul>
+<li>Low inter-item correlations.  </li>
+<li>Possible wording problems.</li>
+</ul>
+<p>Ignoring these problems risks:</p>
+<ul>
+<li>Poor reliability.  </li>
+<li>Invalid conclusions.</li>
+</ul>
+<hr>
+<h1 id="23-complete-scale-development-workflow"><strong>23. Complete Scale Development Workflow</strong></h1>
+<p>1. Construct Conceptualisation</p>
+<p>Define service responsiveness</p>
+<p>↓</p>
+<p>2. Item Pool Generation</p>
+<p>Create candidate questions</p>
+<p>↓</p>
+<p>3. Content Validity Assessment</p>
+<p>Expert review</p>
+<p>↓</p>
+<p>4. Pilot Testing</p>
+<p>Customer responses + cognitive interviews</p>
+<p>↓</p>
+<p>5. Item Analysis</p>
+<p>Check correlations and item performance</p>
+<p>↓</p>
+<p>6. Reliability Assessment</p>
+<p>Cronbach&rsquo;s Alpha</p>
+<p>↓</p>
+<p>7. Scale Refinement</p>
+<p>Remove/rewrite weak items</p>
+<p>↓</p>
+<p>8. Full Scale Administration</p>
+<p>Large sample testing</p>
+<p>↓</p>
+<p>9. Factor Analysis</p>
+<p>Validate structure</p>
+<hr>
+<h1 id="24-common-misconceptions"><strong>24. Common Misconceptions</strong></h1>
+<h2 id="misconception-1-2"><strong>Misconception 1:</strong></h2>
+<p>Existing scales should always be copied exactly.</p>
+<p>Reality:</p>
+<p>Existing scales provide guidance but often require adaptation.</p>
+<hr>
+<h2 id="misconception-2-2"><strong>Misconception 2:</strong></h2>
+<p>More survey items always improve measurement.</p>
+<p>Reality:</p>
+<p>Poor items reduce reliability.</p>
+<hr>
+<h2 id="misconception-3-2"><strong>Misconception 3:</strong></h2>
+<p>Low inter-item correlation always means delete immediately.</p>
+<p>Reality:</p>
+<p>First investigate:</p>
+<ul>
+<li>Wording.  </li>
+<li>Interpretation.  </li>
+<li>Construct alignment.</li>
+</ul>
+<hr>
+<h2 id="misconception-4-2"><strong>Misconception 4:</strong></h2>
+<p>Pilot testing is only about collecting preliminary data.</p>
+<p>Reality:</p>
+<p>Pilot testing identifies problems before expensive full-scale research.</p>
+<hr>
+<h2 id="misconception-5-2"><strong>Misconception 5:</strong></h2>
+<p>Reliability proves validity.</p>
+<p>Reality:</p>
+<p>A scale can be consistent but measure the wrong thing.</p>
+<hr>
+<h1 id="25-final-revision-summary"><strong>25. Final Revision Summary</strong></h1>
+<h2 id="construct-conceptualisation-2"><strong>Construct Conceptualisation</strong></h2>
+<p>Defines the meaning and boundaries of the concept.</p>
+<hr>
+<h2 id="item-generation"><strong>Item Generation</strong></h2>
+<p>Creates possible measurement statements.</p>
+<hr>
+<h2 id="content-validity-3"><strong>Content Validity</strong></h2>
+<p>Ensures items represent the construct.</p>
+<hr>
+<h2 id="cognitive-interviews-2"><strong>Cognitive Interviews</strong></h2>
+<p>Check respondent understanding.</p>
+<hr>
+<h2 id="item-analysis-2"><strong>Item Analysis</strong></h2>
+<p>Identifies weak items.</p>
+<hr>
+<h2 id="cronbach-s-alpha-3"><strong>Cronbach&rsquo;s Alpha</strong></h2>
+<p>Tests internal consistency.</p>
+<hr>
+<h2 id="scale-refinement"><strong>Scale Refinement</strong></h2>
+<p>Improves measurement quality.</p>
+<hr>
+<h2 id="likert-scale"><strong>Likert Scale</strong></h2>
+<p>Measures agreement.</p>
+<hr>
+<h2 id="semantic-differential-scale"><strong>Semantic Differential Scale</strong></h2>
+<p>Measures perception between opposite meanings.</p>
+<hr>
+<h2 id="key-principle"><strong>Key Principle</strong></h2>
+<p>A strong measurement scale is not created by simply writing questions. It requires a systematic process:</p>
+<p><strong>Define the construct → Develop items → Validate content → Pilot test → Analyse items → Assess reliability → Refine → Deploy</strong></p>
+<p>For NovaBank, the best methodological approach is to improve weak items based on pilot evidence before moving to large-scale administration. This balances research rigor with practical project constraints.</p>
+<p><strong>Live</strong></p>
+<p>Stream<br>
+Amrita Online MBA  Semester 4  Batch OCT 2024  Live Session  Project-20260529_200145-Meeting Recording - View-only</p>
+<p>This document is shared with others</p>
+<p>Mahalingam P R - \[AA.BU.P2MBA24075126\]<br>
+M<br>
+Sign in</p>
+<p>Record</p>
+<p>Upload</p>
+<p>Favorite</p>
+<p>Playlist</p>
+<p>Teams</p>
+<p>Share</p>
+<p>Volume slider is at 100%<br>
+0 minutes of 56 minutes 51 seconds<br>
+0:00 / 56:51<br>
+1<br>
+x<br>
+Read transcript<br>
+Transcript</p>
+<p>Close</p>
+<p>Download<br>
+You don&rsquo;t have permission to download the transcript. Contact Amrita Online - LMS File Server to request access.</p>
+<p>You don&rsquo;t have permission to download the transcript. Contact<br>
+Amrita Online - LMS File Server<br>
+to request access.<br>
+Transcript. Use arrow keys to navigate between transcript entries. Select an entry to navigate the media to the time of the entry.</p>
+<p>AI-generated content may be incorrect</p>
+<p>Ms Shinta Idicula - MBA - Amrita Online<br>
+started transcription<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+0 minutes 3 seconds<br>
+0:03<br>
+Ms Shinta Idicula - MBA - Amrita Online 0 minutes 3 seconds<br>
+Microphones will remain muted throughout the session to avoid background disturbances. If you have any questions or wish to share your thoughts, please use the raise hand option, and I will unmute you at the appropriate time. You may also use the chat box to share your comments or queries during the session. Now, without further delay.<br>
+Ms Shinta Idicula - MBA - Amrita Online 0 minutes 23 seconds<br>
+I would like to hand over this session to Doctor Rij Kumar Ji, who will be leading today&rsquo;s discussion. Over to you, sir.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+0 minutes 30 seconds<br>
+0:30<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 0 minutes 30 seconds<br>
+Yeah, good evening, everyone. So before starting today&rsquo;s topic, I will again try to explain different steps because I got a question from Aparna that she is still clueless as how to start the project and all. Now again, I will tell you the first.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 0 minutes 49 seconds<br>
+The starting point of every business research project is identification of a business problem. Now, what idea you are having about the project and why you want to do are all your personal topic and your personal interest. But in general, if someone asks a question.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 10 seconds<br>
+From identification of a business problem, we initiate a project. The project means a research project which we attempt to solve the business problem. Now, what is a problem? A performance deficiency can be a problem. So if you are working in an organization in your area of interest like marketing or HR, you can come across a disturbing.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 31 seconds<br>
+Performance issue may be absentism in HR, decline in sales for the case of marketing students, may be a process failure or quality loss in case of operational people, logistic challenges and logistic related like I mean damages in transit.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 1 minute 51 seconds<br>
+Is increasing. This can be a performance related problem with respect to operations, A I adaptability, I integration challenges faced by the organization to adapt a I. So this can be a system related problem in certain organizations. What would be one way to look at?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 2 minutes 10 seconds<br>
+Is a performance related deficiency or a performance related complexity or excellent that can be a problem. Another way to look at the problem is any information deficit or knowledge deficit that prevents.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 2 minutes 30 seconds<br>
+A decision maker to take a quality decision. This is what I said. Say your company wants to know whether they want to introduce AI in HR, I mean monitoring or HRM. So they want to know certain knowledge to take a decision.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 2 minutes 49 seconds<br>
+Then they need to go for a first one, what are the cost of that? What are facilities a I can bring? What are the major HR challenges the organization is having? What are the HR functions? So this is again this knowledge they need to gather by way of certain research or certain study. So these are the 2 simple way to look at.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 3 minutes 8 seconds<br>
+Now, if you have submitted the proposal, then you can think, OK, am I trying to solve a performance related deficiency as a problem and solve find solution? Or am I looking for some additional knowledge to take certain decision to address some emerging challenges?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 3 minutes 29 seconds<br>
+Or emerging complexities, emerging Wokaners, say for example, climate change, one big challenge tomorrow we are going to face. So what way the organizations need to be ready with the pollution standards or influence management to and to effectively manage the pollution or.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 3 minutes 48 seconds<br>
+The climatic change so that way you can develop topics. So first step is that then second step what will be once you have identified a problem then naturally you need to think about what kind of an effect or what kind of an outcome you need to develop.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 4 minutes 8 seconds<br>
+Which will act as a countervailing force against the problem you are noticed. So, say for example, you noticed the decline in sales. So you can understand, okay, if I want to if I check what is the level of customer satisfaction and if I know the options to increase customer satisfaction, I can solve the problem of decline in sales. I am telling every topic will.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 4 minutes 31 seconds<br>
+Bit different, but I am giving an example of From this kind of an understanding, you develop a theory or a model which speaks about certain factors instrumental in developing an effect that will end of the day solve the problem you&rsquo;re trying to address the other steps which I have explained related to research gap.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 4 minutes 52 seconds<br>
+Or literature, I mean the details of the background work which has already happened in the field and all such thing under the contextual details, the area or the geographical area or the time frame when the problem is noticed and what are the specificities related to that? These are all, these are all homeworks. are.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 5 minutes 13 seconds<br>
+Helping you to identify the most important factors or variables which are going to develop an effect which will in a way try to or will help in minimising or solving the problem you have noticed. So with all with all these inquiries, you identify the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 5 minutes 33 seconds<br>
+Models and identify the variables and develop a model. Then what happened? Then the model there are all different variables. We need to measure these variables, we need to understand the relation between them, then only we can solve. So we will be trying to collect some data which are useful to.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 5 minutes 53 seconds<br>
+Mean measure these variables of interest. We will try to understand the relation between the variables by statistical means. Then looking at the relation, we will solve the business problem. Try to look at the my videos step by step. See now we have reached only up to development of theory. We have explained how we can come about with a problem.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 6 minutes 15 seconds<br>
+We have explained how literature review can be conducted, what are the databases which will provide quality literature for you to I mean refer. Then I said about what is a theoretical framework and how we develop identify different variables useful.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 6 minutes 35 seconds<br>
+In a theoretical framework, then we I also explain what is the hypothesis and what are the possible ways hypothesis can be created. I hope I have discussed hypothesis. Hypothesis nothing but an assumption a researcher takes about any relationship in the beginning of the study. Say, for example, if we believe that&hellip;<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 6 minutes 54 seconds<br>
+Product quality leads to satisfaction this theatre, I mean relationship or this assumption we have.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 7 minutes 4 seconds<br>
+We are taking because there are lot of theories, existing theories clearly telling that if we offer good products at good quality, then naturally customer will be satisfied. Now we are interested to know in our particular case where we have noticed a problem with respect to your retail shop, whether the product quality that I am with the firm is offering is good enough to.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 7 minutes 25 seconds<br>
+Develop satisfaction. So this is the hypothesis. We develop a hypothesis like this. Similarly, in our customers, we are male customers, female customers, aged customers, younger customers, educated customers, uneducated customers. So there are different groups.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 7 minutes 43 seconds<br>
+Groups, subgroups, categories, etcetera in our population of customers. So we want to know whether across age, across gender, across education level, across income level, whether the feeling towards product quality or satisfaction are they saying more different.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 8 minutes 3 seconds<br>
+So we need to again use certain statistical methods. I have not explained about such things. We have reached only this much. We I have explained what&rsquo;s a research problem, what&rsquo;s a business problem. From that, how we can develop a research problem, then what is it? What is?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 8 minutes 21 seconds<br>
+Research objectives and how to conduct a literature review, how to I mean develop a theory. And in theory, we have variables and what are the different type of variables. I said the variables.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 8 minutes 34 seconds<br>
+We call like dependent variable because that&rsquo;s the outcome we want to create and this outcome is a function of many independent variables and we have certain variables which comes in between the relationship between I mean between independent variable and dependent variable.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 8 minutes 53 seconds<br>
+They are called mediators and moderators. Mediators act as reason for the outcome. Moderators can change the ability of the independent variable to pass the dependent variable positively or negatively depending on their level. And sometimes we want to find out certain relationship irrespective of certain variables coming into picture and creating disturbances. So that those variables will be trying to.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 9 minutes 15 seconds<br>
+Control. So this is what I have explained today. The topic I&rsquo;m supposed to explain is about measurement. Measurement. What do you mean by measurement? Measurement is quantifying. Say we have lot of variables of interest in every research.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 9 minutes 35 seconds<br>
+Or every project. So for example, in the simple example, I said customer satisfaction is a matter to be quantified and verified whether it is appropriate level or whether it reaches appropriate level or not. Similarly, product quality is something feeling towards product quality of.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 9 minutes 56 seconds<br>
+put in a shop is something which we need to measure. And when you think many such things, many variables are directly measurable because, say for example, if I want to measure weight of a product, it is easy to weight because there is something called a common balance. You can measure it if I want to measure the duration of.</p>
+<p>Sync to video<br>
+Transcript</p>
+<p>\[3:33:55 PM\] Transcript watcher started. Scroll the content manually.<br>
+\[3:34:00 PM\] Timestamp: 0:03<br>
+\[3:34:00 PM\] Timestamp: 0:30<br>
+🟥 Stop &amp; Extract Transcript<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 13 minutes 36 seconds<br>
+Are you seeing my slide?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 13 minutes 38 seconds<br>
+Is it okay?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 13 minutes 41 seconds<br>
+Is it okay?<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+13 minutes 41 seconds<br>
+13:41<br>
+Ms Shinta Idicula - MBA - Amrita Online 13 minutes 41 seconds<br>
+Yes sir, it&rsquo;s visible.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+13 minutes 44 seconds<br>
+13:44<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 13 minutes 44 seconds<br>
+Okay, now again I am not making fresh slides for every day. I am just adding I mean slides to the presentation with one present with the same presentation which I was using last time. So now today our topic, as I said, is measurement. So I.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 14 minutes 3 seconds<br>
+said there are 2 type of variables. One is latin variable. These are unobserved construct and mostly it is underlying because feeling is an underlying and some be some outcomes of feeling will come out. But what is the real feeling? You cannot directly visible a concept that cannot be measured directly but inferred through multiple observed rules. See a person is happy.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 14 minutes 25 seconds<br>
+Multiple indicators or multiple expressions will he may show through those expressions we can understand the fellow is happy. Similarly, if a customer is satisfied, he may tell others, he may come again and again. So these are also or he may tell he may be I mean sharing good.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 14 minutes 45 seconds<br>
+Views about our product to or our shop to other person. So from all this we are inferring that he is happy, that&rsquo;s why he is doing. But otherwise, there is no clear equipment or a mechanism to measure the satisfaction. Non latent factors other in other words are mostly observed or manifested variable. These are little more direct.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 15 minutes 6 seconds<br>
+Capture a variable that can be directly measured or observed without any or maybe we will be using a tool but without any interference. I mean we can measure it. Now if we come across a lot of such variables, say for example, in HR there is something called employee engagement.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 15 minutes 25 seconds<br>
+There is a scale, There is a scale normally to measure this latent phenomena. Researchers have already developed scales and we I&rsquo;m also going to tell how we can develop a scale and all. So literature speaks that employee engagement is a function of something we call like vigour, dedication, and absorption.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 15 minutes 45 seconds<br>
+So these there are certain statements used to measure this in marketing brand loyalty, customer satisfaction. These are all latent in nature. Maybe a repeat purchase intention, intention to share positive word of mouth, the feeling of emotional attachment all will be used as indicators. You will be asking people to tell about this.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 16 minutes 5 seconds<br>
+Indicators and from the answers, we try to add it up or create a score and that score will be more brand loyalty score, finance, risk perceptions, operation, supply chain agility, maybe a response in a flexibility and all maybe the supply chain experts or the executives in.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 16 minutes 26 seconds<br>
+The operations department and feeling about such things can be or we can come about with clear metrics also. I will tell that in strategic management also we can have latent variables which are measured by the indicators. Now when it comes to indicators, there is something something you need to understand. One minute.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 16 minutes 45 seconds<br>
+Yeah, one more thing I need to tell in between, see when you are trying to measure a phenomena, the phenomena we call like variable or a construct in a research project. So there are 3 type of definitions we can give to that.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 5 seconds<br>
+So, first definition is a conceptual definition that is, as per theoretical outerpinnings, what is it? Say, for example, customer satisfaction is the feeling of pleasure experienced by a customer from a consumption interval. So this is general, not specific to any product, not specific to any type of customer, nothing. Contextual means you.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 25 seconds<br>
+Bringing the situation and scope to the definition, so it can be say for example, if I am conducting a banking customers experience with HDFC Bank in Kerala after COVID, it can be the feeling of pleasure from experience about Kerala post COVID. So I am bringing certain.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 17 minutes 44 seconds<br>
+Scope and situation aspect that then that will convert the definition to a contextual definition. And the 3rd way of definition is operational definition where we bring how an idea or we give an indication of how we are planning to measure the phenomena. See here the sum score of a 5 item Likert scale measure.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 18 minutes 5 seconds<br>
+In measuring or capturing say so one slash is missed, capturing different aspects of banking service experience may be like reliability, the assurance, timely service, quality service, all such things we asked on a asked to a respondent on a 5 point scale and.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 18 minutes 23 seconds<br>
+We will add it up and get a score. So here when you tell them operational definition, we are mentioning how we are planning to measure it. Also, so think to be clear about 3 type of testation. Conceptual is theoretical, contextual is research for the research how we are going to define it or for the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 18 minutes 44 seconds<br>
+Project how you are going to define it. Operation means how you are planning to measure it. That aspect you will bring in your definition. Now I said about multiple indicators will be used to measure a phenomenon. Please listen to my video. Also, today I will be just touching all the points so when in taking.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 19 minutes 3 seconds<br>
+It is are used to measure a phenomena in which indicator can be measured in 2 different ways. One a perception based measurement. Many variables are mostly measured as perception. Perception means somebody is feeling some of the affected stakeholders.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 19 minutes 24 seconds<br>
+Feeling you are kept showing on a level, maybe from one to 5 where one is strongly disagree and 5 is strongly agree or otherwise it can be non perceptional measure. We call non perceptional measures like metrics, metric based measurement, which is little more quantitative in nature.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 19 minutes 45 seconds<br>
+The other one is little more qualitative or subjective in nature. Say for collecting perception, we need to have surveys, interviews and all. But metrics are mostly obtained from reports, databases, sensors, tools maybe they will be giving. So for example, I&rsquo;m.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 5 seconds<br>
+I am using an example here. This is about job satisfaction. If I am using a perception based measurement, I will ask a question to a respondent or to an employee to give his rating on the state about the for the statement. I am satisfied with my job one to 5 scale where one will be.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 27 seconds<br>
+Or strongly disagree, 5 will be strongly agree. If a person gives 5, it&rsquo;s understood that he is very much satisfied with the job.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 39 seconds<br>
+But.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 20 minutes 41 seconds<br>
+Please keep in mind that the same employee satisfaction can be measured using metrics too. See absenteeism rate, how many days the employee is abs is not coming for duty in a month. Higher the absenteeism naturally it indicates that the employee is not satisfied absenteeism rate or a.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes<br>
+Employee choned, or employee, I mean, I mean errors committed by an employee, mistake committed by an employee, complaints raised by an employee. All this speaks that he is not very happy with the organization, but asking him directly one difficult one problem is there.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 20 seconds<br>
+He can tell you lie also, it subject to violence and emotion multiple emotions come come and pay one moment. Temporal factors can influence its decisions also. Similarly, there is something called social disabilities he having a tendency to tell what others accept. So these are all but metric based, no such errors are there but.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 21 minutes 43 seconds<br>
+The problem is mimics certain contextual factors or psychological insights and sometimes we may not have adequate records or tools to capture these measurements. Anyway, for time being, what you need to understand is.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 22 minutes 1 second<br>
+We have phenomenas which are Latin and non Latin Latin phenomena we are measuring using certain indicators and indicators can be perception based or metric based. So this is the scope of measurement topic. Now please go to my presentation.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 22 minutes 20 seconds<br>
+Videos on this topic also. Now when you are creating a model, I said to go to one model we have discussed in my initial classes also. I have explained multiple models as part of theory development classes also. So here this is a simple model here what we.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 22 minutes 40 seconds<br>
+We are trying to do employee engagement predicts organizational performance. higher the employee engagement, higher will be organizational performance. But quality of HR, how good the HR function is, that will act as a moderator. higher the quality of HR, the ability of employee engagement.<br>
+\[3:34:05 PM\] Timestamp: 13:41<br>
+\[3:34:05 PM\] Timestamp: 13:44<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 12 seconds<br>
+Healthzone and.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 16 seconds<br>
+The feeling emits out certain manifestations or reflective. It is called a reflective measurement model. We are measuring satisfaction with a hot hotel. What do you tell? You look forward to seeing the hotel. You&rsquo;ll recommend the hotel to others. You may tell positive things.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 34 seconds<br>
+He is telling because he is happy with the hotel or he is satisfied with the hotel. So feeling of satisfaction comes first.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 46 seconds<br>
+And it emits out certain.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 26 minutes 51 seconds<br>
+Indication we are outward arrows. See if you are graphically represent this type of a model, we will use outward arrows. The other one is formative. We have theory which clearly tells that service, the service general, service quality, people friendliness, and cleanliness of the rooms, these are the 3 in.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes 13 seconds<br>
+Important factors which helps in developing a satisfaction with the hotel or help in the formation.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes 30 seconds<br>
+That&rsquo;s why inward relationship is expected. If you appreciate naturally, you will have an intention to stay.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes 40 seconds<br>
+If you&rsquo;re quality may be good, that doesn&rsquo;t mean that people are that doesn&rsquo;t mean that rooms can be so one item may not be correlated to other item, so that&rsquo;s why we say formative. Similarly, one more thing related to measurement is the dimensions.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 27 minutes 59 seconds<br>
+Or the factors can exist in single dimension or multi dimension single dimension. Say here service quality 5 dimensions to further develop service quality, each measured using different state.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 28 minutes 19 seconds<br>
+Each of the dimensions are unidimensional and those items again cannot be classified, then it will be unidimensional. Same item measured using multiple items and each multi each set of items can be classified into different grooves, then it will be multi dimensional.<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+28 minutes 27 seconds<br>
+28:27<br>
+Ms Shinta Idicula - MBA - Amrita Online 28 minutes 27 seconds<br>
+Him item item.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+28 minutes 38 seconds<br>
+28:38<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 28 minutes 38 seconds<br>
+I have seen different hands I mean rise, so I will try to clarify those questions. Also, one minute voice is breaking.<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+28 minutes 39 seconds<br>
+28:39<br>
+Ms Shinta Idicula - MBA - Amrita Online 28 minutes 39 seconds<br>
+I have.<br>
+Ms Shinta Idicula - MBA - Amrita Online 28 minutes 49 seconds<br>
+Sir, your voice is breaking.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+28 minutes 54 seconds<br>
+28:54<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 28 minutes 54 seconds<br>
+I got today, one minute, one minute. Let me check my network, one minute.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 29 minutes 12 seconds<br>
+Is it okay now?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 29 minutes 17 seconds<br>
+Is it okay now?<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+29 minutes 22 seconds<br>
+29:22<br>
+Ms Shinta Idicula - MBA - Amrita Online 29 minutes 22 seconds<br>
+Its okay for me, sir. Others also please respond in the chat.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+29 minutes 23 seconds<br>
+29:23<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 29 minutes 23 seconds<br>
+Udur.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 29 minutes 28 seconds<br>
+I mean, somebody plays because I think since it is little bit of raining here, the net connectivity at home is a little bit of problem. Is it OK?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 29 minutes 41 seconds<br>
+I hope I am better now.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 29 minutes 45 seconds<br>
+I changed my there are 2 connections here. I changed the connection, another connection. Is it OK? Yeah, OK, I will continue. So anyway, I will try to repeat it once again. So can somebody, I mean, raise your hand and tell whether you are clear with measurement model and structural model?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 30 minutes 6 seconds<br>
+Measurement model and structural model. Do I need to explain it once again?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 30 minutes 17 seconds<br>
+Nothing but measure what I said, I mean any otherwise, I will tell everything in 2 minutes. So what I said, we are mostly coming across phenomena which are to be measured for understanding the relationship and all. So we develop a theory and in the.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 30 minutes 35 seconds<br>
+In theory, there are multiple variables. We need to measure the variables, then only we can understand whether we can, I mean, verify how connected they are. So measurement is an important phenomena. Many variables we use in a theory are not directly measurable, they are called Latin variables.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 30 minutes 56 seconds<br>
+Variables which are directly measurable are called as non latent variables. Now in measurement, first step is to define the constraint a variable and there are 3 type of definition. This is what I said. First is a conceptual definition, second is a contextual definition, and 3rd.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 31 minutes 17 seconds<br>
+Is an operational definition where we will try to include the strategy for measurement also in the definition. So this is again through then for measuring a phenomena, we normally use multiple indicators, indicators, items.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 31 minutes 37 seconds<br>
+Our measures are certain themes which will try to explain the phenomena under investigation.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 31 minutes 48 seconds<br>
+So multiple phenom indicators will be used and the score is taken to measure the phenomena or the variable under investigation. Now when it comes to indicators, there can be 2, there are 2 type one when it comes to measurement of indicators. Please keep clear not measurement of indicators.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 32 minutes 10 seconds<br>
+They can be perceptual based measurement or non perceptual based measurement. Perceptual based measurement. We are asking certain stakeholders who are, I mean, who are I mean eligible to comment about that phenomena and ask their views or I mean, I mean, I mean opinions.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 32 minutes 32 seconds<br>
+Whereas non perception, this called metric. Metric based measurements are normally collected from records or with certain tools. In a theory, we use mostly both the things measurement height models as well as touch.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 32 minutes 50 seconds<br>
+Model. So in this diagram, employee engagement is measured using 3 items, quality of HR is measured using 3 items, organizational performance is measured using 3 items. All these 3 in rectangles are measurement models or otherwise called outer models in a.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 33 minutes 10 seconds<br>
+I mean structure or in a theory. Similarly, relation between employee engagement to organization performance, quality of HR to the link between employee engagement and these relationship forms the inner model or the structural model, measurement models, structural models together.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 33 minutes 29 seconds<br>
+Create develops or together explains the theory behind a research. Now, I said when it comes to indicators, they can be of 2 type: one, reflective, informative. Reflective, the concept is that the feeling of feeling goes into.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 33 minutes 48 seconds<br>
+So the I mean the person for the first time and feeling emits out certain certain outcomes and these outcomes we are trying to capture and measure. The example is here the satisfaction with the hotel. If he is satisfied with the hotel, he will appreciate it, he will try to stay more times, he will tell to other people.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 34 minutes 9 seconds<br>
+And you can see that item to item correlation is also likely item 2 because when you appreciate naturally you tell others also there will be a strong correlation between the level of appreciation and the intention to recommend. But the other one is formative where.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 34 minutes 28 seconds<br>
+We theoretically find out that certain aspects are critical in formulating or forming the satisfaction. For example, here the service quality, the people quality, the cleanliness, these are 3 factors help to help in formation of satisfaction.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 34 minutes 47 seconds<br>
+But here you need to know that sometimes service quality will be good but people may not be friendly. Some days people will be friendly and service quality will be good but rooms may not be clean. So item to item correlation is not essential. Can be there but not essential too. That&rsquo;s the conceptual difference between formative and reflective similarly.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 11 seconds<br>
+Different levels may be required to conceptualise the measurement. So according to that, we can say one first order or unidimensional, second order or higher order that is called multi multidimensional multiple order, many orders together. A simple example nowhere if you are measuring tangibles.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 31 seconds<br>
+Tangibles are unidimensional things which are captured using some statements. Service quality, in fact, is a higher order thing which is captured using 5 first order things measured using different indicators. With respect to unidimensional thing, you can&rsquo;t further.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 35 minutes 49 seconds<br>
+Split or classify the items used for measurement, but for higher order or multiple dimensional fit construct. One minute, one minute. I am getting a call, one minute.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 36 minutes 28 seconds<br>
+Sorry, form came in between. So this is it. I mean now the last topic I need to explain today is a scale. What is a scale? A scale means a set of items, a set of statements, or questions, or measures used to measure a phenomena of interest or Latin construct.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 36 minutes 52 seconds<br>
+So, I mean, of course, the term scale in fact in a research research project or in measurement approach are used in 2 senses: one scale to measure a phenomenal, scale to measure customer satisfaction, sale to scale to measure employee engagement, scale to.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 37 minutes 12 seconds<br>
+Measure maybe organizational performance. Second, the level see a statement. You need to capture the opinion towards the item mentioned in the statement on a level, maybe one to 5, or one to 7, or one to 3, or yes no.<br>
+\[3:34:10 PM\] Timestamp: 28:27<br>
+\[3:34:10 PM\] Timestamp: 28:38<br>
+\[3:34:10 PM\] Timestamp: 28:39<br>
+\[3:34:10 PM\] Timestamp: 28:54<br>
+\[3:34:10 PM\] Timestamp: 29:22<br>
+\[3:34:10 PM\] Timestamp: 29:23<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 17 seconds<br>
+Investigation we are carrying out that kind of a cross checking that to normally we do with the help of certain expert. We create content validity ratio or content validity index. These are certain mathematical statistical approaches. Maybe in my literature, maybe in my video, I might have told all this things.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 37 seconds<br>
+So after content verifying with the expert about the contextual relevance of the item and content validating this item, you shortlist the items. Then you what do you do? You do a cognitive test. That means the respondent, whether they are correctly understanding it, that also you can do with a certain target audience.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 41 minutes 59 seconds<br>
+Then we will try to convert these items into statements and then we&rsquo;ll do a pilot test. We&rsquo;ll collect the data from a sample and perform certain statistical text analysis to verify the structure. Structure means dimensionality, how the groupings of the items are coming, are they coming as we.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 42 minutes 20 seconds<br>
+Expected or not, we have included statements for satisfaction, we have included statements on product quality, we have included statement of people quality. Are they coming together or not? Are there any unexpected combinations are formed or not? To do that, we can do some statistical analysis called exploratory factor analysis. This part I will explain in the subsequent.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 42 minutes 45 seconds<br>
+Interaction sessions. Meanwhile, you can always visit my video lectures. So explorer the structure, then we will check the validity and reliability. Validity speaks about whether we measured exactly the same thing we plan to measure or not. Reliability means whether the measurement will come good.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 43 minutes 5 seconds<br>
+In subsequent I mean user users also that means whether the research scale will give consistent result. This time it give one result. Next time when you apply you get a different result. You can&rsquo;t say the scale is consistent. Validity and reliability are 2 important criteria to verify the quality of a.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 43 minutes 24 seconds<br>
+Instrument used to measure instrument means scale, scale means any like you or to measure a phenomena of interest. Multiple phenomena will be relevant in your research, so there will be multiple scales. All the scales, all the scales and other details together forms your questionnaire. And finally, you prepare the document and of course collect the data and do the statistical.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 43 minutes 48 seconds<br>
+Verification to understand the insights which are useful in solving the business problem. I will tell every small example to narrate. I am not explaining the entire thing, the steps I have explained. Please go through it. I am conducting a study. Somebody is conducting a study of Fintech adoption.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 44 minutes 7 seconds<br>
+By MSME, a sample questioner. So a typical questioner will have 3 sections minimum, we can have more. Also, 3 first part will be to capture the respondent profile. There will be some questions which will give an idea about who is responding to your questions. Here may be type of enterprise, type of industry, years of operation, number of employees, annual.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 44 minutes 32 seconds<br>
+over like that, some interesting details about the industry is asked because this why we are asking all these things because, depending on for example, depending on the type, there can be differences in FinTech adoption. Similarly, depending on the industry, FinTech adoption can be different. Depending on use in operation, FinTech adoption can change.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 44 minutes 54 seconds<br>
+Depending on employee size, fintech adoption can change. And if you want to get a adoption theory among MSME, you need to control all such things other because there is a likely chance that according to type, according to industry, according to year of operation, according to number of employees, according to turnover, their adoption, fintech adoption.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 45 minutes 14 seconds<br>
+Tendencies can differ so part A, we will be capturing the respondent profile. What all questions relevant to understand the diversity or heterogeneity in the population? Here population is MSME in our country.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 45 minutes 30 seconds<br>
+Next session, what we are going to do, we will include certain exploratory or behavioral mapping systems. A behavioral mapping, I said, because if it is a retail consumer satisfaction study, how the retail customer engage in shopping, with whom he is going, how frequently he is going, what is the mode of his shopping?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 45 minutes 50 seconds<br>
+Which format you like online or offline? This type of this are behaviour. Of course, these are exploratory also. Say for example, here some of the exploratory questions can be which fintech services have you used? Similarly, who influences decisions? We can give a choice also if you want or otherwise, I can ask them to write down also what factors make you.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 46 minutes 9 seconds<br>
+Feel trust with FinDeck service provider? What concerns prevent wider usage of FinDeck? What methods do you use for your supplier payments? So these are all certain current behaviour mapping or current practices mapping. These are all exploration many times when you are not clear about.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 46 minutes 30 seconds<br>
+The research problem or a business problem, an exploratory research can give an idea or give insights about a potential problem faced by an organization or a likelihood of a future problem also. So exploratory and so in certain cases in certain type of research.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 46 minutes 49 seconds<br>
+Maybe with a good exploratory section your research ends because the purpose of your research will be served with the exploration and behaviour mapping questions itself. This is an sample one only and in the 3rd section we will include certain scale items.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 47 minutes 9 seconds<br>
+To measure the phenomena&rsquo;s we are studying as part of the research here for your easy understanding, I am using the TAM model. TAM model tells that perceived usefulness and perceived TAM means technology adoption model, perceived usefulness and perceived ease.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 47 minutes 29 seconds<br>
+Use develop fintech technology adoption. Here it is fintech adoption, but risk can or the feeling of risk can moderate the ability of usefulness or ease of use. So only 4 variables discussed and the relationship sort are perceived usefulness, predict fintech adoption, ease of use, predict fintech adoption.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 47 minutes 49 seconds<br>
+And risk can moderate the effect of perceived usefulness and easyness to predict fintech. And this relationship can be different for different type of MSMEs, different industries, different length, different employee size, etcetera. So there are a lot of inquiries and I am asking the responses on a 5 point scale one to 5 for why we strongly agree and one is strongly disagree. the statement.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 48 minutes 13 seconds<br>
+Fintech items are converted to statements. Fintech service improves efficiency, so improving efficiency improvement is the item of related to usefulness. That item is converted to a statement, and we seek the opinion of a Fintech or employee using Fintech service as financial manager of an MSMI.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 48 minutes 34 seconds<br>
+Or an entrepreneur of MSME we who is eligible to give answers to this question, we will ask them. So this is a scale and these type of scales are used in data collection. So scale are included in questioner questioner otherwise include respondent profile questions then.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 48 minutes 54 seconds<br>
+Exploratory or behaviour mapping questions depending on the context where you or context related to the business research. So, this is what I want to explain today. My purpose was to explain the measurement related theory with respect to business research.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 49 minutes 15 seconds<br>
+Now, please keep in mind we have covered major topics, we have covered how we can identify a business problem. Then we have, I mean, did, I mean, we have discussed about how to conduct a literature review and identify a recent literature gap.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 49 minutes 33 seconds<br>
+Or the variables of interest, variables discussed in other studies and all. Then we explain how we can develop a theory so that forms the next element in the research activity. And then theory includes different variables and many of them are not directly measurable, some of them are directly measurable.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 49 minutes 54 seconds<br>
+So I you don&rsquo;t need to have an approach to measure these things. So I said about measurement today and the example I used here was mostly the perception based measurement. If it is a non perception based measurement, a metric based measurement, you can find out which metric will be clearly explaining the phenomena for example.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 50 minutes 16 seconds<br>
+If I am measuring customer satisfaction, maybe the frequency of visit, duration of stay, the value of purchases, then maybe the complaints raised in shopping or the number of complaints registered by.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 50 minutes 36 seconds<br>
+The customer, all this can be indications of his satisfaction. So you can capture all this if some tools are a I related tools are already capturing it you can from that you can calculate a score and that score can be used for measuring. Now one more thing I need to tell now perceived usefulness you need to.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 50 minutes 56 seconds<br>
+Check lot of statistical verification to know whether perfect measurement has happened or not. That doesn&rsquo;t falls in today&rsquo;s scope. So I am not explaining but how the measurement logic works. So here 54 statements are the 4 statements together it will be 20 maximum 5 each.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 15 seconds<br>
+5 * 4 you can have maximum 20 mark and a constraint and a person can give say for example first he give 4, agree second also he give 43rd also he give 44th also he gave 4. So 16 out of 20. So this is the level. So like that you are asked for your sample size may be 200 or 300 people for employees or MSM E&rsquo;s.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 39 seconds<br>
+Then you can get a grand mean. That will be the level of usefulness perceived by MSME in general about fin tech adoption. Now the statistical part, I&rsquo;m not touching whether this is generalizable, whether if you predict the findings to a population, will it be wrong? Will it be correct? What will be the probability that it will be correct?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 51 minutes 58 seconds<br>
+Such things comes in statistics that I am not touching today. So any questions to me? We have around 7 minutes left.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 19 seconds<br>
+Hello.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 23 seconds<br>
+Measurement is one of the most important phenomena.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 28 seconds<br>
+With respect to research project and through your attempt to measure double of the data for your study.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 38 seconds<br>
+Each variables when measured.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 42 seconds<br>
+That&rsquo;s I mean, I mean, get that gives the data useful for analysis to draw conclusions or insights useful for solving the business problem.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 52 minutes 59 seconds<br>
+Any questions? Otherwise, shall we wind up then?<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 14 seconds<br>
+Please try to.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 17 seconds<br>
+Go through the videos.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 20 seconds<br>
+I think 4 or 5 videos are discussing about measurement related aspects. I said everything in a little fast manner. You people are supposed to skew those videos and come for interaction. So when I explain, you can raise your questions to me also, but I am under the impression that.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 40 seconds<br>
+People are not spending too much time in viewing the videos. That&rsquo;s why no doubts are coming. Measurement is a little complex thing and many people are not.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 53 minutes 52 seconds<br>
+I mean finding a difficult also in many things, many cases to come over to the clear measurement strategy.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 2 seconds<br>
+Okay, then if no more questions are there, we will conclude. Shinta.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 7 seconds<br>
+Today&rsquo;s session is cleared. Thank you.<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+54 minutes 8 seconds<br>
+54:08<br>
+Ms Shinta Idicula - MBA - Amrita Online 54 minutes 8 seconds<br>
+Okay.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+54 minutes 11 seconds<br>
+54:11<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 11 seconds<br>
+But if I get a question, I will be more happy or I will feel that you are also you are also with me. Otherwise, I will always get a feel that no I was talking to blank computer. I understand that I mean classes in online is always difficult for the students as well as for the faculty, but you have opted for that and I also have no other option.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 35 seconds<br>
+So interactions can make things little more, I mean, in qualitative analysis tools, will also be tools. Yes, I have see already. I mentioned that we have shared all the videos, right?<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+54 minutes 50 seconds<br>
+54:50<br>
+Ms Shinta Idicula - MBA - Amrita Online 54 minutes 50 seconds<br>
+Yes, sir, till 15th week it&rsquo;s uploaded.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+54 minutes 53 seconds<br>
+54:53<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 54 minutes 53 seconds<br>
+Maybe in the 12th or 11th week video enter analysis. I have given video, I mean created videos and shared and for qualitative means text mining sentiment analysis I have used to I mean what is that Google collab and.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 11 seconds<br>
+The sample analysis has been demonstrated in one of the videos, so please spend time now. Google Collab is a very useful and interesting tool because you are you are doing this project as part of your MBA project only that&rsquo;s sufficiently good enough. So if you can spend some time to understand how Google Collab.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 31 seconds<br>
+Can be used because Google can be used along with Gemini window now so you can raise your queries doubts when you get the results. Also you can ask the tool how to interpret it as slow like in ChatGPT like a ChatGPT window, it gives ready made answers so you can clarify your doubts and you can slowly slowly progress and understand the interior analysis.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 55 minutes 54 seconds<br>
+Even with I can show you I have given one video is there then again I am doing it and it doesn&rsquo;t make sense. Please try to see the video and if you have doubt then please ask me, we will have an interaction session related to that also.<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 11 seconds<br>
+Okay, then we will conclude.<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+56 minutes 18 seconds<br>
+56:18<br>
+Ms Shinta Idicula - MBA - Amrita Online 56 minutes 18 seconds<br>
+Okay, sir, shall I wind up?<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+56 minutes 20 seconds<br>
+56:20<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 20 seconds<br>
+Yeah, nobody is asking any question, so we&rsquo;ll find out.<br>
+M<br>
+Ms Shinta Idicula - MBA - Amrita Online<br>
+56 minutes 26 seconds<br>
+56:26<br>
+Ms Shinta Idicula - MBA - Amrita Online 56 minutes 26 seconds<br>
+So thank you all for joining and contributing to today&rsquo;s session. A heartful thanks to Regis for the session. Thank you.<br>
+D<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi<br>
+56 minutes 33 seconds<br>
+56:33<br>
+Dr. Rejikumar G - Amrita School of Business - Kochi 56 minutes 33 seconds<br>
+Yeah.</p>
+<p>Ms Shinta Idicula - MBA - Amrita Online<br>
+stopped transcription<br>
+\[3:34:20 PM\] Timestamp: 54:08<br>
+\[3:34:20 PM\] Timestamp: 54:11<br>
+\[3:34:20 PM\] Timestamp: 54:50<br>
+\[3:34:20 PM\] Timestamp: 54:53<br>
+\[3:34:20 PM\] Timestamp: 56:18<br>
+\[3:34:20 PM\] Timestamp: 56:20<br>
+\[3:34:20 PM\] Timestamp: 56:26<br>
+\[3:34:20 PM\] Timestamp: 56:33</p>
+<hr>
+<h1 id="exam-study-guide-appendix">Exam Study Guide Appendix</h1>
+<hr>
+<h1 id="week-5-exam-appendix-measurement-strategy-models-and-scale-development">Week 5 Exam Appendix — Measurement Strategy, Models, and Scale Development</h1>
+<h2 id="a-practical-examples-and-use-cases">A. Practical examples and use cases</h2>
+<h3 id="1-choosing-between-perception-based-and-metric-based-measurement">1. Choosing between perception-based and metric-based measurement</h3>
+<p>The same construct may be measured in two ways. The research context and data availability determine which is defensible.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Construct</th>
+<th>Perception-based measure</th>
+<th>Metric-based measure</th>
+<th>Practical use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Customer satisfaction</td>
+<td>“I am satisfied with Store X,” rated 1–5</td>
+<td>visit frequency, time in store, purchase value, complaints, review sentiment</td>
+<td>Combine both if stated feelings and actual behaviour may diverge.</td>
+</tr>
+<tr>
+<td>Employee engagement</td>
+<td>enthusiasm, inspiration, pride, vigour, dedication and absorption items</td>
+<td>voluntary overtime, discretionary initiatives, retention, participation</td>
+<td>Survey captures psychology; records capture behavioural manifestation.</td>
+</tr>
+<tr>
+<td>Customer loyalty</td>
+<td>repurchase-intention and positive-word-of-mouth items</td>
+<td>actual repurchase/renewal rate</td>
+<td>Useful for detecting intention–behaviour gaps.</td>
+</tr>
+<tr>
+<td>Service quality</td>
+<td>courteous/responsive-service ratings</td>
+<td>response time and complaint-resolution rate</td>
+<td>Perception matters to customers, while metrics diagnose process performance.</td>
+</tr>
+<tr>
+<td>Innovation capability</td>
+<td>manager rating that the firm encourages creativity</td>
+<td>number of new products launched</td>
+<td>The metric may miss novelty/quality, while ratings may contain optimism bias.</td>
+</tr>
+<tr>
+<td>Investor confidence</td>
+<td>stated confidence in portfolio returns</td>
+<td>portfolio turnover/holding behaviour</td>
+<td>Behaviour is objective but may reflect constraints besides confidence.</td>
+</tr>
+<tr>
+<td>Training effectiveness</td>
+<td>trainee/manager ratings</td>
+<td>productivity change and post-training error rate</td>
+<td>A before/after operational metric strengthens the evaluation.</td>
+</tr>
+<tr>
+<td>Supply-chain agility</td>
+<td>managers’ ratings of responsiveness/flexibility</td>
+<td>fulfilment speed and lead-time variability</td>
+<td>Useful when the construct has strategic as well as operational aspects.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Exam caution:</strong> Metric-based measurement is generally more objective and less affected by response bias, emotion and social desirability, but it can omit context and psychological meaning. Perception-based measurement captures the stakeholder’s internal experience but needs an adequate number of respondents and careful control of bias. “Objective” does not automatically mean “valid”: repeat visits may reflect lack of alternatives rather than satisfaction.</p>
+<h3 id="2-computing-a-simple-construct-score">2. Computing a simple construct score</h3>
+<p>A respondent rates three job-satisfaction items on a five-point scale:</p>
+<ul>
+<li>satisfaction with pay = 4;</li>
+<li>satisfaction with supervisor = 5;</li>
+<li>satisfaction with work–life balance = 3.</li>
+</ul>
+<p>The unweighted mean is <code>(4 + 5 + 3) / 3 = 4</code>. This places the respondent’s score at 4 on the original 1–5 scale. An average is often easier to interpret than a sum because it preserves the response scale. A sum is also possible, and differential weights may be assigned when theory justifies unequal importance. Before aggregation, reliability, validity and dimensionality must be checked; arithmetic alone does not prove that the three items form one sound scale.</p>
+<h3 id="3-measurement-model-versus-structural-model">3. Measurement model versus structural model</h3>
+<p>Suppose a study proposes:</p>
+<blockquote>
+<p>Employee engagement → organizational performance, moderated by quality of HR.</p>
+</blockquote>
+<ul>
+<li>The <strong>measurement model</strong> asks whether engagement items E1–E3 measure engagement, HR1–HR3 measure HR quality, and OP1–OP3 measure performance.</li>
+<li>The <strong>structural model</strong> estimates whether engagement predicts performance and whether HR quality changes the strength/direction of that path.</li>
+</ul>
+<p>The measurement model must be acceptable before interpreting structural paths. Otherwise a weak or incorrect measure can make an apparent relationship meaningless.</p>
+<h3 id="4-reflective-versus-formative-measurement">4. Reflective versus formative measurement</h3>
+<h4 id="reflective-use-case-hotel-satisfaction">Reflective use case: hotel satisfaction</h4>
+<p>Satisfaction exists first and produces manifestations such as:</p>
+<ul>
+<li>“I appreciate this hotel.”</li>
+<li>“I look forward to staying here again.”</li>
+<li>“I recommend this hotel to others.”</li>
+</ul>
+<p>The arrows point <strong>construct → indicators</strong>. Items should normally correlate and are partly interchangeable because each is an effect/reflection of the same underlying feeling. Removing one may not change the construct’s conceptual domain substantially, although item deletion still needs evidence.</p>
+<h4 id="formative-use-case-restaurant-experience-quality">Formative use case: restaurant experience/quality</h4>
+<p>The overall evaluation is formed by distinct components:</p>
+<ul>
+<li>food taste/quality;</li>
+<li>staff service;</li>
+<li>ambience;</li>
+<li>price/value.</li>
+</ul>
+<p>The arrows point <strong>indicators → construct</strong>. Components need not correlate: good food does not guarantee fair price or good ambience. They are not interchangeable, and removing one deletes a unique part of the meaning.</p>
+<h4 id="diagnostic-test">Diagnostic test</h4>
+<p>Ask:</p>
+<ol>
+<li>Does the construct cause the indicators, or do the indicators create the construct?</li>
+<li>If the construct changed, should all indicators change together?</li>
+<li>Are indicators expected to correlate?</li>
+<li>Can one indicator be removed without narrowing the definition?</li>
+</ol>
+<p>“Yes” to questions 2–4 generally suggests reflective measurement; unique non-interchangeable ingredients suggest formative measurement. A hybrid/mixed model contains both types.</p>
+<h3 id="5-higher-order-construct-use-case-service-quality">5. Higher-order construct use case: service quality</h3>
+<p>SERVQUAL conceptualizes perceived service quality as a higher-order construct composed of five first-order dimensions and 22 items:</p>
+<ul>
+<li><strong>Tangibles (4):</strong> modern/up-to-date equipment, visually appealing facilities, neat employee appearance, visually appealing service materials.</li>
+<li><strong>Reliability (5):</strong> promises kept on time, sincere problem solving, service right the first time, service at the promised time, error-free records.</li>
+<li><strong>Responsiveness (4):</strong> customers told when service will occur, prompt service, willingness to help, not too busy to respond.</li>
+<li><strong>Assurance (4):</strong> employee confidence-building, transaction safety, courtesy, knowledge to answer questions.</li>
+<li><strong>Empathy (5):</strong> individual attention, convenient operating hours, personal attention, customer interests at heart, understanding specific needs.</li>
+</ul>
+<p>Each dimension is measured by items; the dimensions together represent service quality. Tangibles alone can be treated as a first-order/unidimensional construct. If service quality predicts an even more abstract concept, a third order can be modeled.</p>
+<h3 id="6-turning-an-indicator-into-a-good-survey-statement">6. Turning an indicator into a good survey statement</h3>
+<p>Indicator: <strong>up-to-date equipment</strong>.</p>
+<ul>
+<li>General performance statement: “The company has up-to-date equipment.”</li>
+<li>Context-specific statement: “Bank X has up-to-date equipment.”</li>
+<li>Importance statement: “Up-to-date equipment is essential for quality service delivery.”</li>
+</ul>
+<p>The first two measure perceived performance; the third measures normative importance and may invite an idealized/socially desirable answer. If the research concerns Bank X, the specific referent focuses the respondent on actual experience. Response anchors must match the question: strongly disagree–strongly agree for an agreement statement, or least important–most important for an importance question.</p>
+<h3 id="7-fintech-adoption-questionnaire-for-msmes">7. FinTech adoption questionnaire for MSMEs</h3>
+<p>A practical questionnaire can contain at least three sections:</p>
+<ol>
+<li><strong>Respondent/enterprise profile:</strong> enterprise type, industry, years of operation, employees and turnover. These reveal population heterogeneity and may act as group/control variables.</li>
+<li><strong>Exploratory/current-behaviour mapping:</strong> services used, decision influencers, bases of trust, barriers/concerns and supplier-payment methods. For an exploratory project, this section alone may answer the problem.</li>
+<li><strong>Construct scales:</strong> Technology Acceptance Model variables such as perceived usefulness, perceived ease of use, adoption and perceived risk. Usefulness/ease predict adoption; risk may moderate those effects.</li>
+</ol>
+<p>Example usefulness item: “FinTech services improve the efficiency of my enterprise.” Eligible respondents include owners or financial managers able to judge use. With four constructs and five items each, a respondent’s construct total can be scored, but statistical checks are required before claiming perfect measurement or population generalizability.</p>
+<h3 id="8-novabank-scale-development-decision">8. NovaBank scale-development decision</h3>
+<p>NovaBank wants a service-responsiveness scale. A defensible workflow is:</p>
+<ol>
+<li>define responsiveness precisely;</li>
+<li>review established scales such as SERVQUAL;</li>
+<li>generate a broad item pool from theory, interviews/focus groups and practice;</li>
+<li>ask experts to assess relevance, clarity and domain coverage (content validity/CVR/CVI);</li>
+<li>translate items into clear statements and matching response levels;</li>
+<li>cognitively interview target respondents to detect interpretation problems;</li>
+<li>pilot the instrument;</li>
+<li>inspect item behaviour, inter-item correlations, reliability and factor structure;</li>
+<li>revise weak/ambiguous items and retest;</li>
+<li>administer the refined scale to the full sample and validate it.</li>
+</ol>
+<p>If operations wants immediate launch but the pilot reveals weak items, the recommended decision is to revise and retest. A fast, unreliable instrument contaminates every later analysis. A seven-point scale can offer greater response variation and diagnostic sensitivity than a five-point scale, but more categories do not repair unclear items.</p>
+<h2 id="b-high-yield-distinctions">B. High-yield distinctions</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Distinction</th>
+<th>Exam-ready explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Latent vs non-latent/manifest variable</td>
+<td>Latent constructs cannot be directly observed and are inferred through indicators; manifest variables can be directly measured/observed.</td>
+</tr>
+<tr>
+<td>Variable vs construct</td>
+<td>A variable merely varies; calling it a construct adds conceptual meaning, indicators and assumptions about how indicators relate to it.</td>
+</tr>
+<tr>
+<td>Conceptual vs contextual vs operational definition</td>
+<td>General theoretical meaning; meaning bounded by the present situation/scope; specification of how it will be measured.</td>
+</tr>
+<tr>
+<td>Indicator/item vs survey statement</td>
+<td>Indicator is the aspect used to represent a construct; the statement/question is the wording used to elicit its score.</td>
+</tr>
+<tr>
+<td>Scale (instrument) vs response scale</td>
+<td>A set of items measuring a construct versus the response levels attached to an item (e.g., 1–5).</td>
+</tr>
+<tr>
+<td>Measurement model vs structural model</td>
+<td>Construct–indicator relationships versus hypothesized relationships among constructs.</td>
+</tr>
+<tr>
+<td>Reflective vs formative</td>
+<td>Construct causes correlated/interchangeable manifestations versus distinct indicators jointly causing/forming the construct.</td>
+</tr>
+<tr>
+<td>Unidimensional vs multidimensional</td>
+<td>One underlying dimension versus multiple first-order dimensions forming/reflecting a higher-order construct.</td>
+</tr>
+<tr>
+<td>Perception-based vs metric-based</td>
+<td>Subjective judgments gathered through surveys/interviews versus objective records/sensors/analytics metrics.</td>
+</tr>
+<tr>
+<td>Likert vs semantic differential</td>
+<td>Agreement with statements using ordered anchors versus rating between bipolar adjectives (e.g., slow–fast).</td>
+</tr>
+<tr>
+<td>Content validity vs construct validity</td>
+<td>Expert/domain judgment that items cover the concept versus empirical evidence that the scale behaves as the intended construct.</td>
+</tr>
+<tr>
+<td>Reliability vs validity</td>
+<td>Consistency/repeatability versus measuring the intended phenomenon accurately. A measure can be reliable but invalid.</td>
+</tr>
+<tr>
+<td>Cognitive interview vs pilot test</td>
+<td>Probes how respondents understand wording versus trial administration used to evaluate the instrument and preliminary statistics.</td>
+</tr>
+<tr>
+<td>EFA vs CFA</td>
+<td>EFA discovers an underlying factor structure; CFA tests whether a prespecified measurement structure fits the data.</td>
+</tr>
+<tr>
+<td>Inter-item correlation vs item loading</td>
+<td>Association between two items versus strength with which an item represents a latent factor.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="c-likely-exam-questions-with-answer-points">C. Likely exam questions with answer points</h2>
+<h3 id="1-why-is-measurement-fundamental-in-business-research">1. Why is measurement fundamental in business research?</h3>
+<p>Explain that measurement quantifies the extent of variables, diagnoses whether improvement is required, produces analyzable data, makes relationships testable, supports comparison/generalization and ultimately links theory to a decision on the original business problem. Poor measurement invalidates later statistical precision.</p>
+<h3 id="2-define-latent-and-non-latent-variables-with-examples-from-management-domains">2. Define latent and non-latent variables with examples from management domains.</h3>
+<p>Give definitions and examples: engagement/loyalty/risk perception/supply-chain agility/dynamic capability as latent; age, salary, sales, stock price, delivery time, login time and production volume as observed. State that a latent construct is inferred from multiple observed indicators.</p>
+<h3 id="3-compare-perception-and-metric-based-measurement">3. Compare perception- and metric-based measurement.</h3>
+<p>Cover nature, sources, methods, bias/objectivity, contextual/psychological insight, examples and selection criteria. Conclude that neither is universally superior and triangulation may be valuable.</p>
+<h3 id="4-explain-measurement-and-structural-models-using-a-diagram-example">4. Explain measurement and structural models using a diagram/example.</h3>
+<p>Define both; identify the construct–item blocks and arrows among constructs; use engagement, performance and HR quality; state that measurement quality precedes structural interpretation.</p>
+<h3 id="5-distinguish-reflective-and-formative-models">5. Distinguish reflective and formative models.</h3>
+<p>Discuss causal direction, correlation, interchangeability, consequence of item deletion and examples. Mention outward arrows for reflective and inward arrows for formative. Do not classify solely from item wording; theory determines the model.</p>
+<h3 id="6-explain-first-order-and-higher-order-constructs-using-servqual">6. Explain first-order and higher-order constructs using SERVQUAL.</h3>
+<p>Define dimensionality, name all five SERVQUAL dimensions, state 22 items and explain how first-order dimensions represent higher-order service quality.</p>
+<h3 id="7-describe-the-full-scale-development-process">7. Describe the full scale-development process.</h3>
+<p>Expected flow: construct conceptualization → existing-scale/literature review → broad item generation (often 30–50 initially) → expert content validation → cognitive pretest (roughly 10–30 in the lecture’s rule of thumb) → statement/response-scale design → pilot/full administration → item analysis/EFA → reliability and validity → remove/reword weak items → retest/finalize. Mention the lecture’s rough full-administration range of 150–300 only as a thumb rule, not a universal sample-size formula.</p>
+<h3 id="8-what-are-reliability-and-validity-can-a-reliable-measure-be-invalid">8. What are reliability and validity? Can a reliable measure be invalid?</h3>
+<p>Reliability is consistent performance across items/uses; validity is accurate measurement of the intended construct. Yes: a miscalibrated scale can repeatedly give the same wrong weight. Discuss Cronbach’s alpha as internal-consistency evidence, not proof of validity or unidimensionality.</p>
+<h3 id="9-why-are-expert-review-cognitive-interviews-and-pilot-testing-all-needed">9. Why are expert review, cognitive interviews and pilot testing all needed?</h3>
+<p>They answer different questions: experts assess relevance/domain coverage, target respondents reveal interpretation/wording problems, and pilot statistics reveal item/factor/reliability behaviour. One cannot substitute fully for the others.</p>
+<h3 id="10-design-a-questionnaire-for-fintech-adoption-among-msmes">10. Design a questionnaire for FinTech adoption among MSMEs.</h3>
+<p>Include profile, behavioural/exploratory and construct sections; identify eligible respondents; state TAM relationships, risk moderation, controls/group comparisons, contextual statements, matching anchors, pilot/validation and ethical/access considerations.</p>
+<h3 id="11-discuss-common-measurement-mistakes">11. Discuss common measurement mistakes.</h3>
+<ul>
+<li>treating an observable proxy as identical to the latent construct;</li>
+<li>selecting reflective/formative form without theoretical logic;</li>
+<li>deleting formative indicators simply because correlations are low;</li>
+<li>accepting high Cronbach’s alpha as proof of validity;</li>
+<li>using normative, vague or referent-free wording;</li>
+<li>collecting data before defining constructs and intended analysis;</li>
+<li>moving from a weak pilot directly to full administration;</li>
+<li>assuming a longer or seven-point scale automatically improves quality;</li>
+<li>ignoring population/context differences when adapting an established scale.</li>
+</ul>
+<h2 id="d-rapid-revision-logic">D. Rapid revision logic</h2>
+<p>Memorize the chain:</p>
+<blockquote>
+<p>Business problem → theory and variables → conceptual/contextual/operational definitions → latent/observed classification → measurement approach → indicator direction (reflective/formative) → dimensionality → item pool → content validation → cognitive pretest → pilot → EFA/item/reliability analysis → refinement → final validation/CFA → structural testing → managerial insight.</p>
+</blockquote>
+<p>Two non-negotiable principles:</p>
+<ol>
+<li><strong>A sophisticated structural model cannot compensate for a poor measurement model.</strong></li>
+<li><strong>The conceptual definition determines what must be measured; convenient available data should not silently redefine the construct.</strong></li>
+</ol>
+<h2 id="e-source-coverage-checklist">E. Source-coverage checklist</h2>
+<ul>
+<li>[x] <strong>Video 1 — Measurement fundamentals:</strong> importance of measurement; latent/unobserved and non-latent/manifest variables; indicators/items; examples from HR, marketing, finance, operations, strategy and information systems.</li>
+<li>[x] <strong>Video 1 — Measurement approaches:</strong> perception versus metric sources, collection methods, strengths, bias/context limitations, respondent surveys versus organizational records/sensors/analytics.</li>
+<li>[x] <strong>Video 1 — Scoring/use cases:</strong> job-satisfaction mean; weighted/unweighted metric scores; HR performance, turnover, training, commitment; financial performance, liquidity, risk, leverage and dividend policy; marketing and operations metrics.</li>
+<li>[x] <strong>Video 1 — Side-by-side construct examples:</strong> engagement, loyalty, innovation, service quality, investor confidence; data/context-based selection.</li>
+<li>[x] <strong>Video 2 — Model distinction:</strong> measurement model versus structural model; engagement–performance–HR-quality moderation example.</li>
+<li>[x] <strong>Video 2 — Variable/construct distinction:</strong> construct adds indicators and assumed construct–indicator relationships; theory → constructs → indicators/data.</li>
+<li>[x] <strong>Video 2 — Indicator models:</strong> reflective, formative and hybrid; causal direction, correlation, interchangeability and deletion consequences; hotel/restaurant examples and diagram arrow direction.</li>
+<li>[x] <strong>Video 2 — Dimensionality:</strong> first-order/unidimensional and higher-order/multidimensional constructs; SERVQUAL and retail-service-quality illustrations.</li>
+<li>[x] <strong>Video 2 — Measurement combinations:</strong> perception- and metric-based reflective/formative indicators and implications for item behavior.</li>
+<li>[x] <strong>Video 3 — Scale-development stages:</strong> construct definition, literature/existing scales, broad item pool, expert content validity/CVR/CVI, pretest/cognitive interviews, administration, EFA, reliability/validity and final refinement.</li>
+<li>[x] <strong>Video 3 — Rules of thumb/caveats:</strong> initial 30–50 items, cognitive/pilot 10–30 and administration 150–300 as indicative—not universal—guidelines; principal-axis/maximum-likelihood EFA references.</li>
+<li>[x] <strong>Video 3 — Validity/reliability:</strong> content/face and internal statistical evidence; loadings, AVE and discriminant-validity ratios mentioned for later treatment; weak-item removal/rewording.</li>
+<li>[x] <strong>Video 3 — SERVQUAL:</strong> five dimensions, all dimension meanings, 22-item structure, item themes, conversion from indicators to statements, context specificity, response-anchor matching and social-desirability risk.</li>
+<li>[x] <strong>Quiz notes:</strong> latent constructs; reflective/formative comparison; objective/subjective measurement; specific referents/normative wording; engagement; CFA; common mistakes.</li>
+<li>[x] <strong>NovaBank quiz cases:</strong> conceptualization, SERVQUAL review, Likert and semantic-differential formats, item pool, content validity, cognitive interviews, inter-item correlation, Cronbach’s alpha, EFA, 5- versus 7-point choices, time–quality trade-off, revise-and-retest recommendation.</li>
+<li>[x] <strong>Live session — research recap:</strong> performance or information/knowledge-deficit problems; outcome/theory/model; literature, hypotheses, IV/DV/mediator/moderator/control variables; measurement as quantification.</li>
+<li>[x] <strong>Live session — definitions and scales:</strong> conceptual/contextual/operational definitions; construct scale versus response level; validity, reliability and questionnaire composition.</li>
+<li>[x] <strong>Live session — FinTech/MSME example:</strong> three questionnaire sections; respondent heterogeneity; behavioural mapping; TAM, perceived risk moderation, contextual statements, scoring and limits to generalizability.</li>
+<li>[x] <strong>Live session — additional emphasis:</strong> metric satisfaction proxies; need for statistical verification; measurement creates analysis data; text mining/sentiment-analysis demonstration reportedly available through Google Colab in later course videos.</li>
+</ul>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<p>Job satisfaction and turnover intention are latent constructs measured through multiple items. The review reinforces that construct/item quality and the measurement model must be validated before interpreting structural or regression relationships.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-4.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 4: Theoretical Frameworks, Variables,…</span>
+      </a>
+      <a href="week-6.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 6: Questionnaire Design, Data Collection…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

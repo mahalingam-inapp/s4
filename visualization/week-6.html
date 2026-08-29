@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en" data-sw="../sw.js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4d47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MBA S4">
+  <title>Visualization · Week 6 — MBA S4 notes</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../assets/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    
+    <button class="icon-btn hamburger" id="hamburger" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open week list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <span class="brand-kicker">Visualization</span>
+      <span class="brand-title">Week 6</span>
+    </a>
+    <div class="header-actions">
+      <button class="text-btn" id="install-btn" type="button" hidden>Install</button>
+      <span class="sw-pill" id="sw-pill" hidden>Offline ready</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  
+  <div class="shell">
+    
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-head-row">
+        <span class="sidebar-label">Navigate</span>
+        <button class="icon-btn" id="close-nav" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+        </button>
+      </div>
+      <label class="sidebar-label" for="subject-select">Subject</label>
+      <select class="subject-select" id="subject-select">
+        <option value="../adv-ml/week-1.html">Advanced ML</option>
+        <option value="../csr/week-1.html">CSR</option>
+        <option value="../dl/week-1.html">Deep Learning</option>
+        <option value="../efl/week-1.html">EFL</option>
+        <option value="../entrepreneurship/week-1.html">Entrepreneurship</option>
+        <option value="../nlp/week-1.html">NLP</option>
+        <option value="../project/week-1.html">Project</option>
+        <option value="../visualization/week-1.html" selected>Visualization</option>
+      </select>
+    </div>
+    <nav class="week-nav" aria-label="Weeks">
+      <a href="week-1.html">
+        <span class="week-num">Week 1</span>
+        Data Visualization, Visual Perception, and Preattentive Processing
+      </a>
+      <a href="week-2.html">
+        <span class="week-num">Week 2</span>
+        Visual Perception, Better Visualization, Form–Function, Tables and…
+      </a>
+      <a href="week-3.html">
+        <span class="week-num">Week 3</span>
+        Visualizing and Comparing Categories
+      </a>
+      <a href="week-4.html">
+        <span class="week-num">Week 4</span>
+        Charts That Show Change Over Time
+      </a>
+      <a href="week-5.html">
+        <span class="week-num">Week 5</span>
+        Distribution and Relationship Visualizations
+      </a>
+      <a class="is-active" href="week-6.html">
+        <span class="week-num">Week 6</span>
+        Data Visualization: Exhaustive Exam Notes
+      </a>
+      <a href="week-7.html">
+        <span class="week-num">Week 7</span>
+        Data Visualization with Python, Jupyter, Python Basics, and Chart…
+      </a>
+      <a href="week-8.html">
+        <span class="week-num">Week 8</span>
+        Python Data Visualization, Matplotlib Plotting, Interpretation, and…
+      </a>
+      <a href="week-9.html">
+        <span class="week-num">Week 9</span>
+        Data Visualization with Matplotlib, Seaborn, and Jupyter Notebook
+      </a>
+      <a href="week-10.html">
+        <span class="week-num">Week 10</span>
+        Exam-Focused Study Notes
+      </a>
+      <a href="week-11.html">
+        <span class="week-num">Week 11</span>
+        Seaborn, Matplotlib, Heatmaps, Styling, and Dashboard Design
+      </a>
+      <a href="week-12.html">
+        <span class="week-num">Week 12</span>
+        Dashboards, Dashboard Design, Grammar of Graphics, and Matplotlib
+      </a>
+      <a href="week-13.html">
+        <span class="week-num">Week 13</span>
+        Dashboard Design, Visual Encoding, Matplotlib, and Dashboard Analytics
+      </a>
+      <a href="week-14.html">
+        <span class="week-num">Week 14</span>
+        Storytelling with Data
+      </a>
+      <a href="week-15.html">
+        <span class="week-num">Week 15</span>
+        Storytelling with Data: Exam-Focused Study Notes
+      </a>
+    </nav>
+  </aside>
+
+    <main id="main" class="content">
+      <article class="article">
+        <p class="crumb">Visualization · Week 6</p>
+        <h1 class="page-title">Data Visualization: Exhaustive Exam Notes</h1>
+        <p class="page-meta">Week 6 of 15</p>
+    <details class="toc">
+      <summary>On this page</summary>
+      <ol>
+      <li><a href="#scope-of-the-week">Scope of the week</a></li>
+      <li><a href="#1-meaning-and-purpose">1. Meaning and purpose</a></li>
+      <li><a href="#2-pie-charts">2. Pie charts</a></li>
+      <li><a href="#3-the-case-against-pie-charts">3. The case against pie charts</a></li>
+      <li><a href="#4-the-case-for-pie-charts">4. The case for pie charts</a></li>
+      <li><a href="#5-doughnut-charts">5. Doughnut charts</a></li>
+      <li><a href="#6-treemaps">6. Treemaps</a></li>
+      <li><a href="#7-sunburst-diagrams">7. Sunburst diagrams</a></li>
+      <li><a href="#8-other-part-to-whole-forms-from-the-quiz-case-material">8. Other part-to-whole forms from the quiz/case material</a></li>
+      <li><a href="#9-greenaid-case-study">9. GreenAid case study</a></li>
+      <li><a href="#10-nature-and-sources-of-qualitative-data">10. Nature and sources of qualitative data</a></li>
+      <li><a href="#11-icons-and-iconography">11. Icons and iconography</a></li>
+      <li><a href="#12-word-clouds">12. Word clouds</a></li>
+      <li><a href="#13-word-trees">13. Word trees</a></li>
+      <li><a href="#14-specific-words-phrases-quotations-and-photographs">14. Specific words, phrases, quotations, and photographs</a></li>
+      <li><a href="#15-qualitative-visualization-design-principles">15. Qualitative-visualization design principles</a></li>
+      <li><a href="#16-why-tables-matter">16. Why tables matter</a></li>
+      <li><a href="#17-anatomy-of-a-table">17. Anatomy of a table</a></li>
+      <li><a href="#18-ten-guidelines-for-better-tables">18. Ten guidelines for better tables</a></li>
+      <li><a href="#19-key-line-chart-principles">19. Key line-chart principles</a></li>
+      <li><a href="#20-histograms">20. Histograms</a></li>
+      <li><a href="#21-box-and-whisker-plots">21. Box-and-whisker plots</a></li>
+      <li><a href="#22-which-form-should-be-chosen">22. Which form should be chosen?</a></li>
+      <li><a href="#23-high-probability-exam-questions">23. High-probability exam questions</a></li>
+      <li><a href="#definitions-to-memorize">Definitions to memorize</a></li>
+      <li><a href="#rules-to-memorize">Rules to memorize</a></li>
+      <li><a href="#final-mental-model">Final mental model</a></li>
+      <li><a href="#review-week-augmentation">Review-Week Augmentation</a></li>
+      </ol>
+    </details>
+
+        <div class="prose">
+<h2 id="scope-of-the-week">Scope of the week</h2>
+<p>Week 6 covers five connected areas:</p>
+<ol>
+<li><strong>Part-to-whole visualizations</strong> — pie charts, doughnut charts, treemaps, sunburst diagrams, and related alternatives.</li>
+<li><strong>Qualitative-data visualization</strong> — icons, word clouds, word trees, specific words/phrases, quotations, and photographs.</li>
+<li><strong>Tables as visualizations</strong> — table anatomy and ten guidelines for designing better tables.</li>
+<li><strong>Review of line-chart principles</strong> — especially comparison, missing data, colour, markers, and dual axes.</li>
+<li><strong>Distribution visualizations</strong> — histograms and box-and-whisker plots, including mean, median, quartiles, interquartile range, and outliers.</li>
+</ol>
+<blockquote>
+<p><strong>Instructor&rsquo;s recurring emphasis:</strong> Begin with the communication objective. The objective determines the chart, the encoding, what to highlight, what to remove, and how the audience should read the result. Creating a chart is not enough; one must be able to <strong>interpret it and state the insight</strong>.</p>
+</blockquote>
+<hr>
+<h1 id="part-i-charts-that-show-parts-of-a-whole">Part I — Charts That Show Parts of a Whole</h1>
+<h2 id="1-meaning-and-purpose">1. Meaning and purpose</h2>
+<p>A <strong>part-to-whole visualization</strong> shows how individual shares relate to a total. It helps the audience see:</p>
+<ul>
+<li>the big picture or whole;</li>
+<li>the parts making up that whole;</li>
+<li>the composition of a mixture;</li>
+<li>the relative contribution of components;</li>
+<li>where a majority, minority, or dominant share lies.</li>
+</ul>
+<p>The three principal charts introduced are:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Chart</th>
+<th>Basic form</th>
+<th>Best-known purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pie chart</td>
+<td>Circle divided into slices</td>
+<td>Simple percentage composition</td>
+</tr>
+<tr>
+<td>Treemap</td>
+<td>Nested rectangles</td>
+<td>Part-to-whole plus hierarchy, especially with many groups</td>
+</tr>
+<tr>
+<td>Sunburst chart</td>
+<td>Concentric rings divided into sectors</td>
+<td>Multiple hierarchical levels in a circular form</td>
+</tr>
+</tbody>
+</table></div>
+<p>Other relevant alternatives include bar charts, stacked bars, 100% stacked bars, slope charts, polar-area charts, and packed/nested bubble charts.</p>
+<h2 id="2-pie-charts">2. Pie charts</h2>
+<h3 id="definition">Definition</h3>
+<p>A <strong>pie chart</strong> is a circular chart divided into slices, with each slice representing a portion of the whole. Slice size corresponds to the category&rsquo;s share. It is familiar and commonly used for percentage distributions—for example, a company&rsquo;s revenue divided among product lines or exports divided among destination countries.</p>
+<h3 id="fundamental-validity-rule">Fundamental validity rule</h3>
+<ul>
+<li>All slices must constitute a genuine whole and sum to <strong>100%</strong>, or at least to a clearly defined total.</li>
+<li>Do not omit relevant segments from the total.</li>
+<li>Do not combine items that sum to more than 100% (as can happen when non-mutually-exclusive survey responses are incorrectly plotted as a pie).</li>
+<li>Values may be displayed as amounts rather than percentages only when they still form the complete total.</li>
+</ul>
+<h3 id="default-ordering-rule">Default ordering rule</h3>
+<p>Normally:</p>
+<ol>
+<li>Begin at the <strong>12 o&rsquo;clock position</strong>.</li>
+<li>Arrange slices from <strong>largest to smallest</strong>.</li>
+<li>Maintain a consistent direction around the circle.</li>
+</ol>
+<p>However, natural categorical order may be more meaningful than size order. For age groups, for example, start with the youngest group and proceed to progressively older groups. The purpose is comprehension, not mechanical obedience to the largest-first rule.</p>
+<p>If multiple pie charts are unavoidable, use the <strong>same category order, starting position, and rotational direction</strong> in every chart. Otherwise, readers must compare slices appearing at different locations, which is needlessly difficult.</p>
+<h2 id="3-the-case-against-pie-charts">3. The case against pie charts</h2>
+<h3 id="3-1-low-perceptual-accuracy">3.1 Low perceptual accuracy</h3>
+<p>Pie charts rank relatively low in perceptual effectiveness. Humans compare positions and aligned lengths more accurately than angles, areas, arcs, or differently oriented slices. Consequently:</p>
+<ul>
+<li>similar slices are hard to rank;</li>
+<li>small differences may be imperceptible;</li>
+<li>exact values are difficult to infer;</li>
+<li>the magnitude of differences between categories is unclear.</li>
+</ul>
+<p>The same data shown as a bar chart is generally faster and easier to rank because every bar shares a common baseline. If the goal is an accurate comparison of individual quantities, a bar/column chart is normally superior.</p>
+<h3 id="3-2-uncertainty-about-how-a-pie-is-perceived">3.2 Uncertainty about how a pie is perceived</h3>
+<p>It is not decisively clear which visual feature people use to judge pie-slice magnitude:</p>
+<ul>
+<li>central angle;</li>
+<li>slice area;</li>
+<li>outer angle;</li>
+<li>arc length along the circumference.</li>
+</ul>
+<p>Research discussed in the lesson suggested that <strong>area and arc length</strong> were better predictors of reading performance than central angle alone. This uncertainty is important when arguing that the pie chart is intrinsically easy to read.</p>
+<h3 id="3-3-too-many-categories">3.3 Too many categories</h3>
+<ul>
+<li>Five slices may already be too many; additional slices quickly become incomprehensible.</li>
+<li>Numerous small categories cause crowding, visual noise, difficult labelling, and ambiguous comparisons.</li>
+<li>If categories increase, use a sorted bar chart, treemap, or aggregate genuinely minor categories into an honestly labelled “Other” category—while recognising that aggregation loses granularity.</li>
+</ul>
+<h3 id="3-4-multiple-pie-charts-are-weak-for-comparison">3.4 Multiple pie charts are weak for comparison</h3>
+<p>Pairs or series of pie charts force back-and-forth visual comparison. A stacked bar, 100% stacked bar, grouped bar, or slope chart often performs better.</p>
+<ul>
+<li>A <strong>100% stacked bar</strong> supports composition comparison across groups or dates.</li>
+<li>A <strong>slope chart</strong> emphasizes change between time points, but shifts the question from part-to-whole composition to change over time.</li>
+<li>If separate pies are retained, category order and starting angles must remain constant.</li>
+</ul>
+<h3 id="3-5-other-cautions">3.5 Other cautions</h3>
+<ul>
+<li>Avoid exploded or breakout pies that pull out a slice merely for decoration.</li>
+<li>Avoid 3-D effects, shadows, excessive colours, and other decoration that distorts perceived area.</li>
+<li>A doughnut is not automatically more accurate than a pie.</li>
+<li>A bad pie remains a bad chart merely because it is colourful or familiar.</li>
+<li>Sometimes no chart is necessary: a single important number may be clearer as text in a report, article, social-media card, or slide.</li>
+</ul>
+<h2 id="4-the-case-for-pie-charts">4. The case for pie charts</h2>
+<p>Pie charts remain popular because they are familiar, easy to create, instantly recognized, and visually attractive. Research suggests people are attracted to curves, and affinity for circular forms may have deep historical/evolutionary roots. Familiarity itself reduces the learning burden.</p>
+<p>A pie chart can be effective when:</p>
+<ul>
+<li>the audience needs a <strong>general magnitude</strong>, not exact values;</li>
+<li>the message is a single dominant slice or a simple majority/minority;</li>
+<li>only about three or four slices matter;</li>
+<li>the relevant shares align with familiar fractions such as <strong>25%, 50%, or 75%</strong>;</li>
+<li>a rapid “part of the whole” impression is more important than precise ranking;</li>
+<li>selective colour can direct attention to one slice or one combined group.</li>
+</ul>
+<h3 id="familiar-angle-principle">Familiar-angle principle</h3>
+<p>Right angles and half-circles are easy to recognize. A 25% slice becomes clearer if rotated so that its boundaries form a familiar quarter-circle. Thus, rotation can improve comprehension when a target share equals a familiar fraction.</p>
+<h3 id="practical-example-nonprofit-donors">Practical example: nonprofit donors</h3>
+<p>Assume a nonprofit raises ₹100 million and wants the audience to see that the top two donors contributed more than half.</p>
+<ul>
+<li>A column chart accurately ranks all donors, but may not reveal the “more than half” message as immediately.</li>
+<li>In a pie, viewers can mentally bisect the circle and see that donors A and B together exceed 50%.</li>
+<li>Colour only the two slices of interest and turn all other slices grey.</li>
+<li>If the message concerns their combined contribution, the two slices may share one colour or be combined as “Top two contributors.”</li>
+<li>Remove nonessential labels in a presentation so the screen supports the speaker instead of competing with the speaker.</li>
+</ul>
+<p>This example demonstrates that a lower-ranked chart can outperform a perceptually stronger chart <strong>for a particular communication objective</strong>.</p>
+<h2 id="5-doughnut-charts">5. Doughnut charts</h2>
+<p>A <strong>doughnut chart</strong> is a pie chart with the centre removed.</p>
+<ul>
+<li>If central angles are essential to pie-chart perception, removing the centre may make the doughnut worse.</li>
+<li>Since perception is not decisively explained by central angle alone, one cannot simply claim that a doughnut is better or worse in every case.</li>
+<li>Its practical advantage is the empty centre, which can hold a total, key statistic, annotation, or short message.</li>
+<li>It retains the central problems of circular comparisons and should not be used merely for style.</li>
+</ul>
+<h2 id="6-treemaps">6. Treemaps</h2>
+<h3 id="definition-and-origin">Definition and origin</h3>
+<p>A <strong>treemap</strong> presents hierarchical or structured information through nested rectangles. Each rectangle&rsquo;s area corresponds to a quantitative value; colour may encode group, hierarchy, or another quantitative/qualitative variable. Treemaps were developed by <strong>Ben Shneiderman at the University of Maryland</strong>, originally to display computer file directories compactly.</p>
+<p>The instructor described a treemap as a <strong>“squarified pie chart”</strong>: both show parts of a whole, but the treemap replaces circular slices with rectangles and can support hierarchy more effectively.</p>
+<h3 id="strengths">Strengths</h3>
+<ul>
+<li>Compact: many groups and variables fit in limited space.</li>
+<li>Displays part-to-whole and hierarchy simultaneously.</li>
+<li>Parent groups can contain labelled child rectangles.</li>
+<li>Rectangles are often easier to compare and annotate than numerous pie slices.</li>
+<li>Additional encodings such as colour or saturation can add information.</li>
+<li>Useful for large datasets and nested categories.</li>
+</ul>
+<h3 id="practical-example-meals">Practical example: meals</h3>
+<p>A treemap displays breakfast, lunch, and dinner as large colour-coded groups. Within each meal, food and beverages form subdivisions; items such as sandwich, salad, cookies, pie, iced tea, soup, and coffee occupy nested rectangles sized by quantity. The same data in a many-slice pie is almost impossible to categorize into meal → type → item, whereas nesting makes the hierarchy explicit.</p>
+<h3 id="limitations">Limitations</h3>
+<ul>
+<li>Exact area comparison remains harder than comparing aligned bars.</li>
+<li>Very small rectangles become difficult to label.</li>
+<li>Colour and grouping must be deliberate to prevent clutter.</li>
+</ul>
+<h2 id="7-sunburst-diagrams">7. Sunburst diagrams</h2>
+<h3 id="definition-and-anatomy">Definition and anatomy</h3>
+<p>A <strong>sunburst diagram</strong> is a circular hierarchical visualization made of concentric rings.</p>
+<ul>
+<li>The centre/innermost ring is the top level or <strong>root</strong>.</li>
+<li>Each successive ring represents the next hierarchical level.</li>
+<li>Sectors (also called nodes) represent subgroups.</li>
+<li>Sector angle/size represents value.</li>
+<li>Child sectors align radially with their parent.</li>
+</ul>
+<p>In the meal example, breakfast, lunch, and dinner form root categories; the next ring divides these into food and beverages; the outer ring shows individual items.</p>
+<h3 id="design-guidance">Design guidance</h3>
+<ul>
+<li>Use colour to distinguish root categories.</li>
+<li>Use progressively lighter/darker saturation within a hue to communicate hierarchical depth.</li>
+<li>Apply labels and annotations strategically to guide attention.</li>
+</ul>
+<h3 id="strengths-and-weaknesses">Strengths and weaknesses</h3>
+<ul>
+<li>Shows multiple levels of hierarchy and part-to-whole relationships in one view.</li>
+<li>Can communicate category/subcategory relationships such as organization structures or family trees.</li>
+<li>Like all circular visualizations, precise comparison is difficult.</li>
+<li>Too many categories/rings create severe clutter and make patterns hard to identify.</li>
+</ul>
+<h2 id="8-other-part-to-whole-forms-from-the-quiz-case-material">8. Other part-to-whole forms from the quiz/case material</h2>
+<h3 id="8-1-100-stacked-bar-chart">8.1 100% stacked bar chart</h3>
+<p>Every bar represents 100%, subdivided into shares. It is particularly useful for comparing composition across multiple groups or dates because bars share a common total and position. Internal segments still lack a common baseline except at the ends, so precise comparison of middle segments remains imperfect.</p>
+<h3 id="8-2-polar-area-chart">8.2 Polar-area chart</h3>
+<p>In a polar-area chart, sectors generally have equal angles while radius/area varies with magnitude. In a pie, angle varies while radius is constant. Polar-area charts may create an engaging cyclical display but area judgments are difficult and can exaggerate differences. They are not a default replacement for pies or bars.</p>
+<h3 id="8-3-packed-nested-bubble-chart">8.3 Packed/nested bubble chart</h3>
+<p>Circles sized by value are packed together, sometimes with smaller circles nested in parents. It can show grouping and hierarchy in an engaging, space-efficient way. Limitations include overlap, label difficulty, and weak accuracy because people compare areas rather than aligned lengths.</p>
+<h2 id="9-greenaid-case-study">9. GreenAid case study</h2>
+<p>GreenAid&rsquo;s annual-board-meeting example involves donation sources including fundraising events, corporate sponsors, individual donors, grants, and online campaigns. The central communication goal is to show <strong>where most resources come from</strong>.</p>
+<h3 id="roles">Roles</h3>
+<ul>
+<li><strong>Raj, data analyst:</strong> prepares, verifies, and interprets the donation data.</li>
+<li><strong>Nina, graphic designer:</strong> converts the data into a readable, visually coherent form.</li>
+<li><strong>Elena, program manager:</strong> sets the communication goal and uses the result for managerial/board discussion.</li>
+</ul>
+<p>Separating these responsibilities matters: analytical correctness, graphic design, and strategic communication are related but distinct.</p>
+<h3 id="why-a-pie-can-work">Why a pie can work</h3>
+<ul>
+<li>The categories form one total.</li>
+<li>There are only about five major categories.</li>
+<li>The dominant source is immediately visible.</li>
+<li>The board needs a high-level resource-composition message, not minute differences.</li>
+</ul>
+<h3 id="risks-and-improvements">Risks and improvements</h3>
+<ul>
+<li>Similar slices are difficult to compare.</li>
+<li>Exact values require direct labels.</li>
+<li>Small slices cause visual noise.</li>
+<li>Use logical/consistent ordering, direct percentage labels, purposeful colour, and minimal decoration.</li>
+<li>If categories multiply, combine only legitimately minor sources or use a sorted bar/treemap.</li>
+<li>A strong presentation may use <strong>sequential disclosure</strong>: first show the dominant high-level composition, then reveal detailed values or strategic implications.</li>
+<li>A complementary table or bar chart preserves granularity while the pie supplies the headline.</li>
+</ul>
+<h3 id="strategic-interpretation">Strategic interpretation</h3>
+<p>A dominant fundraising-events slice may indicate a strong source but also <strong>concentration risk</strong>. Corporate sponsorship may be a strong secondary source, while online campaigns may offer growth potential. The visualization itself does not establish efficiency, trend, cost, or return on investment; those require additional measures/charts.</p>
+<blockquote>
+<p><strong>Likely exam lesson:</strong> Chart choice is evaluated against the stated objective, not by a universal ranking alone. A pie can communicate composition well but cannot answer trend, efficiency, cost, or ROI questions.</p>
+</blockquote>
+<hr>
+<h1 id="part-ii-visualizing-qualitative-data">Part II — Visualizing Qualitative Data</h1>
+<h2 id="10-nature-and-sources-of-qualitative-data">10. Nature and sources of qualitative data</h2>
+<p>Qualitative data is primarily nonnumerical information—words, phrases, experiences, opinions, ideas, and feelings—collected through observations, interviews, focus groups, surveys, speeches, documents, and similar methods.</p>
+<p>Quantitative analysis may yield more generalizable results through large datasets, regressions, and tables, but readers often connect more strongly to a story. Qualitative evidence can build narratives and personalize findings, although summarizing many interviews into a concise visual argument is difficult.</p>
+<h2 id="11-icons-and-iconography">11. Icons and iconography</h2>
+<p>Icons, images, photographs, and emojis form a visual language. They may:</p>
+<ul>
+<li>decorate a design;</li>
+<li>categorize qualitative text;</li>
+<li>represent quantities in unit/isotype charts;</li>
+<li>guide a reader from one phase to another;</li>
+<li>communicate ideas, emotions, and feelings that are hard to express in words;</li>
+<li>improve engagement and assist some readers with intellectual or cognitive disabilities.</li>
+</ul>
+<p>Microsoft Office provides reusable <strong>scalable vector graphics (SVGs)</strong> through Insert → Icons. They can be resized, rotated, and recoloured without quality loss and are grouped under themes such as business, education, and technology. Updated 3-D icons may use rounded edges, gradients, and rotatable viewpoints.</p>
+<h3 id="practical-use-case">Practical use case</h3>
+<p>Icons for men, women, and children can organize text about cardiac-disease risk. The content remains qualitative, but iconography creates recognizable categories and makes the text easier to scan.</p>
+<h2 id="12-word-clouds">12. Word clouds</h2>
+<h3 id="definition-2">Definition</h3>
+<p>A <strong>word cloud</strong> displays words with size typically proportional to frequency. Although used to visualize qualitative text, it actually relies on a quantitative transformation: counting how often each word occurs.</p>
+<h3 id="suitable-use">Suitable use</h3>
+<ul>
+<li>Reveal an overall pattern.</li>
+<li>Create an engaging summary.</li>
+<li>Emphasize one obviously dominant word.</li>
+</ul>
+<h3 id="two-major-perceptual-challenges">Two major perceptual challenges</h3>
+<ol>
+<li><strong>Exact frequency is unclear.</strong> One can see that “markets” is larger than “emerging,” but not how many more times it occurs. If exact frequency matters, use a bar chart or frequency table.</li>
+<li><strong>Appearance can mislead.</strong> Word length, font, colour, placement, and horizontal/vertical orientation affect apparent prominence. A frequently used word such as “China” may be missed because it is vertically oriented or poorly positioned.</li>
+</ol>
+<p>Word clouds normally exclude common <strong>stop words</strong> such as “the,” “at,” and “a.” Before making the cloud, the text must be quantified through word-frequency calculation. Once quantified, the same data can often be shown more accurately as a sorted bar chart.</p>
+<h2 id="13-word-trees">13. Word trees</h2>
+<p>A <strong>word tree</strong> maps the contexts in which a chosen word or phrase occurs. A central term acts as the root; associated words, phrases, and sentence continuations branch from it. Words may be sized by frequency.</p>
+<p>The form was developed in a notable version by <strong>Martin Wattenberg and Fernanda Viégas (2007)</strong>. It can expose recurring patterns, unusual patterns, strengths, and relationships in a corpus, speech, survey responses, or literary work. The transcript&rsquo;s example maps the contexts surrounding “oxygen.”</p>
+<p>Word trees are useful in qualitative research, marketing research, and social sciences because they retain context that an isolated frequency count loses.</p>
+<h2 id="14-specific-words-phrases-quotations-and-photographs">14. Specific words, phrases, quotations, and photographs</h2>
+<p>If context is crucial, individual words are insufficient. Full quotations can:</p>
+<ul>
+<li>compress complex ideas;</li>
+<li>amplify participants&rsquo; voices;</li>
+<li>connect personal experience to broader themes;</li>
+<li>inspire reflection and action;</li>
+<li>crystallize a qualitative insight in memorable language.</li>
+</ul>
+<p>Pairing quotations with respondent photographs can personalize findings, but analysts may not possess the correct images or permission to publish them. Privacy and security must be respected. A generic person image may be used if it is sufficient and not misleading; do not imply that a stock image is the actual respondent.</p>
+<h2 id="15-qualitative-visualization-design-principles">15. Qualitative-visualization design principles</h2>
+<ul>
+<li>Good organization, layout, colour, and typography can draw readers into words and codes.</li>
+<li>Highlight specific passages rather than presenting an undifferentiated wall of text.</li>
+<li>Choose the form according to whether frequency, context, narrative, emotion, or categorization is the goal.</li>
+<li>Word clouds are engaging but scenario-specific; do not treat them as precise analytical charts.</li>
+<li>Alternatives include word trees, selected phrases, quotations, codes paired with photographs, and icons around text.</li>
+<li>Practice and experimentation improve qualitative design.</li>
+</ul>
+<hr>
+<h1 id="part-iii-tables-as-data-visualizations">Part III — Tables as Data Visualizations</h1>
+<h2 id="16-why-tables-matter">16. Why tables matter</h2>
+<p>Tables transform raw numbers into structured, digestible formats. Unlike graphs, which depend on visual metaphor, tables provide exact values and are ideal when precision, lookup, and detailed analysis are paramount. They fit reports, presentations, dashboards, research, business decisions, and everyday comparisons.</p>
+<h3 id="characteristics">Characteristics</h3>
+<ul>
+<li><strong>Structured format:</strong> rows and columns make information readable.</li>
+<li><strong>Categorization:</strong> related information appears under relevant headings.</li>
+<li><strong>Numerical precision:</strong> exact values reduce ambiguity.</li>
+<li><strong>Comparability:</strong> datasets/metrics can sit side by side.</li>
+<li><strong>Conciseness:</strong> complex data is presented compactly.</li>
+<li><strong>Accessibility:</strong> a well-designed table supports quick scanning.</li>
+</ul>
+<h3 id="analytical-importance">Analytical importance</h3>
+<p>Tables support trend analysis, decision-making, summarization, comparison/evaluation, and error detection. Inconsistencies and anomalies can become visible when values are systematically aligned.</p>
+<h2 id="17-anatomy-of-a-table">17. Anatomy of a table</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Meaning/design role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Title</td>
+<td>Concise, active statement of what the table shows</td>
+</tr>
+<tr>
+<td>Subtitle</td>
+<td>Units, scope, time period, or a secondary takeaway; usually smaller or differently styled</td>
+</tr>
+<tr>
+<td>Column/stub headers</td>
+<td>Names of columns; distinguish from data using boldface, spacing, or a rule</td>
+</tr>
+<tr>
+<td>Rule</td>
+<td>Line separating table sections, especially below headers and above notes/source</td>
+</tr>
+<tr>
+<td>Border</td>
+<td>Outer lines around the table; use only if needed to separate it from surrounding content</td>
+</tr>
+<tr>
+<td>Rows/columns/cells</td>
+<td>Rows run horizontally, columns vertically, and their intersection is a cell</td>
+</tr>
+<tr>
+<td>Spanner header/rule</td>
+<td>A heading and line spanning multiple related columns; normally centred over them</td>
+</tr>
+<tr>
+<td>Grid lines</td>
+<td>Internal cell-separating lines; keep light or omit when spacing can do the work</td>
+</tr>
+<tr>
+<td>Footer</td>
+<td>Bottom total/average row; distinguish by bold, shading, or a rule</td>
+</tr>
+<tr>
+<td>Sources/notes</td>
+<td>Citations and clarifications, commonly below the table, though some styles place them above</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="18-ten-guidelines-for-better-tables">18. Ten guidelines for better tables</h2>
+<h3 id="1-make-column-titles-clear">1. Make column titles clear</h3>
+<p>Headers must be immediately distinguishable from data. Use boldface, spacing, or a subtle line. A year such as 2017 should not look like another numeric observation.</p>
+<h3 id="2-use-subtle-dividers-not-heavy-grids">2. Use subtle dividers, not heavy grids</h3>
+<p>Heavy borders around every cell create clutter. Use light lines, whitespace, boldface, or shading. If annual columns are interrupted by multi-year average columns, subtly shade the averages so readers notice that they are aggregations rather than part of the annual sequence.</p>
+<h3 id="3-right-align-numbers-and-numeric-headers">3. Right-align numbers and numeric headers</h3>
+<p>Align numbers by decimal point or comma; add trailing zeros when consistent precision is necessary. Numeric headers should follow the same alignment. This creates a common visual edge and makes comparisons easier.</p>
+<p>Choose fonts with <strong>lining figures</strong>, where all digits sit on the baseline. Old-style figures may descend below it, as in some Georgia numerals, distracting from comparison. Fonts such as Karla or Cabin may also produce less consistent comma/decimal alignment. Font choice is therefore analytical, not merely decorative.</p>
+<h3 id="4-left-align-text-and-text-headers">4. Left-align text and text headers</h3>
+<p>For left-to-right languages, left alignment creates an even starting edge and makes names/labels easier to scan. Right- or centre-aligned country names are usually slower to read.</p>
+<h3 id="5-select-an-appropriate-level-of-precision">5. Select an appropriate level of precision</h3>
+<p>Do not report unsupported detail such as GDP growth to five decimal places, but do not round so aggressively that meaningful cross-country differences disappear. Balance accuracy with a clean table.</p>
+<h3 id="6-guide-reading-with-spacing">6. Guide reading with spacing</h3>
+<p>Spacing controls reading direction:</p>
+<ul>
+<li>More space between columns than rows encourages top-to-bottom reading.</li>
+<li>More space between rows than columns encourages left-to-right reading across a row.</li>
+</ul>
+<p>Use whitespace strategically rather than treating it as unused space.</p>
+<h3 id="7-remove-repeated-units">7. Remove repeated units</h3>
+<p>If every value is a percentage or currency, state the unit in the title, subtitle, or header instead of repeating <code>%</code> or <code>₹</code> in every cell. If units vary within the table, label the differences explicitly.</p>
+<h3 id="8-highlight-outliers-important-values">8. Highlight outliers/important values</h3>
+<p>In a large table, bold text, cell fill, or a contrasting colour can guide readers to significant values. In a very small table, highlighting may be unnecessary. Highlighting should answer the audience&rsquo;s likely question, not add decoration.</p>
+<h3 id="9-group-similar-items-and-increase-whitespace">9. Group similar items and increase whitespace</h3>
+<p>Group repeated regions or labels, and use spanner headers/rules to reduce repetition. Apply clear alignment and whitespace. Web publishing/accessibility requirements may require compromises, so grouping must not destroy semantic clarity.</p>
+<h3 id="10-add-visualization-when-appropriate">10. Add visualization when appropriate</h3>
+<p>Tables may contain:</p>
+<ul>
+<li>sparklines for trends;</li>
+<li>small bars for magnitude;</li>
+<li>heat-map shading for patterns;</li>
+<li>dot plots aligned within rows;</li>
+<li>numbers positioned according to their relative magnitude.</li>
+</ul>
+<p>These additions help reveal overall patterns, but should not obscure exact data when exact lookup remains the table&rsquo;s purpose.</p>
+<blockquote>
+<p><strong>Core conclusion:</strong> A table is itself a visualization. The same principles of hierarchy, decluttering, alignment, highlighting, and audience guidance apply to tables and graphs.</p>
+</blockquote>
+<hr>
+<h1 id="part-iv-live-session-review-line-charts">Part IV — Live-Session Review: Line Charts</h1>
+<h2 id="19-key-line-chart-principles">19. Key line-chart principles</h2>
+<ul>
+<li>Line charts show change over time; the slope/rate/direction of change is central.</li>
+<li>Bar/column charts normally must start at zero because length encodes magnitude. A line chart need not always start at zero because the trend may remain valid, but truncation must not create a misleading impression.</li>
+<li>Grouped/clustered bar comparisons should stay limited (the instructor linked an approximate limit of six to rapid human subitizing/cognitive load). Multiple line series are possible, but indiscriminate colour makes trends hard to follow.</li>
+<li>Use colour judiciously; highlight the important series and mute others.</li>
+<li>Beware the <strong>line-width/difference illusion</strong>: if the desired message is the gap between exports and imports or between revenue and cost, two lines make readers estimate a vertical difference. Plot the derived quantity—trade balance or profit—directly when that is the actual subject.</li>
+<li>Use data markers and labels selectively for important points, not automatically for every observation.</li>
+<li>Never hide missing data. Use a gap, different colour, or dashed/extrapolated segment and explicitly signal that the value is missing/estimated.</li>
+<li>Avoid dual-axis charts when possible. Readers may not know which line belongs to which scale, and intersections become visually prominent even though they are mathematically meaningless when scales differ. If a dual axis is genuinely justified, annotate it unambiguously.</li>
+</ul>
+<hr>
+<h1 id="part-v-charts-that-show-distribution">Part V — Charts That Show Distribution</h1>
+<h2 id="20-histograms">20. Histograms</h2>
+<h3 id="definition-and-structure">Definition and structure</h3>
+<p>A <strong>histogram</strong> shows the distribution of numerical, usually continuous, data by dividing the value range into intervals or <strong>bins</strong> and counting how many observations fall in each bin.</p>
+<ul>
+<li>X-axis: continuous value ranges/bins, not categories.</li>
+<li>Y-axis: frequency, count, percentage, or relative frequency—label which one.</li>
+<li>Bars touch because adjacent bins represent continuous intervals.</li>
+<li>The primary insight is the <strong>shape of the distribution</strong>, not merely the number or height of bars.</li>
+</ul>
+<h3 id="histogram-versus-bar-chart">Histogram versus bar chart</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Histogram</th>
+<th>Bar chart</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Numerical continuous ranges on x-axis</td>
+<td>Discrete categories on x-axis</td>
+</tr>
+<tr>
+<td>Bars normally touch</td>
+<td>Bars normally have gaps</td>
+</tr>
+<tr>
+<td>Order follows numerical range</td>
+<td>Categories may be reordered</td>
+</tr>
+<tr>
+<td>Reveals distribution shape</td>
+<td>Compares category magnitudes</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="shapes-and-interpretation">Shapes and interpretation</h3>
+<ul>
+<li><strong>Normal/symmetric:</strong> balanced around the centre.</li>
+<li><strong>Right-skewed:</strong> long tail toward higher values.</li>
+<li><strong>Left-skewed:</strong> long tail toward lower values.</li>
+<li><strong>Uniform:</strong> frequencies broadly even.</li>
+<li><strong>Unimodal:</strong> one major peak.</li>
+<li><strong>Bimodal:</strong> two peaks.</li>
+<li><strong>Multimodal:</strong> multiple peaks.</li>
+</ul>
+<p>The <strong>mode</strong> is the most frequently occurring value or region. Multiple peaks may indicate multiple underlying groups or processes.</p>
+<h3 id="bin-size-problem">Bin-size problem</h3>
+<p>Bin selection critically changes the visible shape:</p>
+<ul>
+<li><strong>Bins too narrow / too many bins:</strong> noise is amplified, individual observations dominate, false peaks appear, and the general shape is lost.</li>
+<li><strong>Bins too wide / too few bins:</strong> the distribution is oversimplified; genuine modes merge; a bimodal distribution can appear unimodal or flat.</li>
+</ul>
+<p>Histograms are exploratory. Do not accept the first default bin size. Try several widths (for example 5, 10, 15, 20, 25) and seek a stable, meaningful shape. A possible starting heuristic is a square-root rule based on the number of observations, but it is a starting point, not an inflexible answer.</p>
+<h3 id="construction-checklist">Construction checklist</h3>
+<ol>
+<li>Understand the full data range.</li>
+<li>Choose a provisional bin width/number.</li>
+<li>Keep widths consistent (e.g., 0–10, 10–20, 20–30).</li>
+<li>Ensure the entire relevant range is covered.</li>
+<li>Label x-axis bins clearly.</li>
+<li>Label y-axis as count, percentage, or relative frequency.</li>
+<li>Try alternative bin sizes.</li>
+<li>Select the version that supports the analytical goal without hiding structure or amplifying noise.</li>
+</ol>
+<h3 id="comparing-histograms">Comparing histograms</h3>
+<p>Raw counts from datasets of different sizes or ranges can mislead. When comparing regions such as Kerala and Tamil Nadu, normalize the datasets/statistical scale as appropriate and use consistent bins/scales before comparing shapes.</p>
+<h2 id="21-box-and-whisker-plots">21. Box-and-whisker plots</h2>
+<h3 id="purpose">Purpose</h3>
+<p>A <strong>box-and-whisker plot (box plot)</strong> summarizes the spread and distribution of data through quartiles, median, range, whiskers, and possible outliers. It resembles financial candlestick graphics in form, though the meanings are different.</p>
+<h3 id="required-statistical-ideas">Required statistical ideas</h3>
+<ul>
+<li><strong>Mean:</strong> arithmetic average, calculated as total divided by number of observations.</li>
+<li><strong>Median (Q2):</strong> middle ordered value; substantively, 50% of observations lie at or below it and 50% at or above it.</li>
+<li><strong>First quartile (Q1):</strong> 25% of observations lie at/below it and 75% at/above it.</li>
+<li><strong>Third quartile (Q3):</strong> 75% lie at/below it and 25% at/above it.</li>
+<li><strong>Interquartile range:</strong> <code>IQR = Q3 − Q1</code>; it contains the middle 50% of observations.</li>
+<li><strong>Range:</strong> maximum minus minimum.</li>
+</ul>
+<h3 id="instructor-s-median-emphasis">Instructor&rsquo;s median emphasis</h3>
+<p>Do not stop at “the middle value after sorting.” State the insight. If the median exam score for 1,500 students is 85, approximately 750 scored at least/about above 85 and 750 below/about below it (subject to ties). Such a high median suggests generally high marks, potentially an easy examination or a distribution concentrated toward high scores. The exact value of the median is not the number or percentage of people above it.</p>
+<h3 id="anatomy-and-reading">Anatomy and reading</h3>
+<ul>
+<li>Bottom/lower edge of box: Q1.</li>
+<li>Line inside box: median/Q2.</li>
+<li>Upper edge of box: Q3.</li>
+<li>Box height/length: IQR, the spread of the middle 50%.</li>
+<li>Whiskers: extend toward low and high non-outlying observations under the chart&rsquo;s convention.</li>
+<li>Separate points: possible outliers.</li>
+</ul>
+<p>A large IQR means the middle half is widely dispersed; a small IQR means it is concentrated. Unequal whiskers or an off-centre median can suggest skewness.</p>
+<h3 id="outlier-rule">Outlier rule</h3>
+<p>The standard fences are:</p>
+<ul>
+<li>Lower fence: <code>Q1 − 1.5 × IQR</code></li>
+<li>Upper fence: <code>Q3 + 1.5 × IQR</code></li>
+</ul>
+<p>Observations outside the fences are plotted as potential outliers. Importantly, whiskers ordinarily reach the most extreme observations <strong>within</strong> the fences, not automatically the raw minimum and maximum. The spoken transcript briefly states the rule imprecisely using the maximum/minimum; for exam accuracy, use the Q1/Q3 fence formulas above.</p>
+<p>Example: if Q1 = 30 and Q3 = 90, then IQR = 60. The fences are <code>30 − 90 = −60</code> and <code>90 + 90 = 180</code>. Values below −60 or above 180 are potential outliers.</p>
+<h3 id="excel-practice-stressed-by-the-instructor">Excel practice stressed by the instructor</h3>
+<p>Create about 100 random observations, insert a box-and-whisker plot in Excel, add relevant labels, and interpret the median, quartiles, IQR, whisker lengths, spread, skew, and outliers. The point is not merely learning the menu command; it is explaining what the plotted values mean.</p>
+<h3 id="highlight-according-to-the-message">Highlight according to the message</h3>
+<p>Do not label and colour every component simply because the software can. If the claim concerns the median, emphasize the median and grey out/remove less relevant labels. If the claim concerns outliers, highlight those instead. Visual hierarchy must match the spoken/written argument.</p>
+<hr>
+<h1 id="part-vi-comparisons-and-exam-decision-rules">Part VI — Comparisons and Exam Decision Rules</h1>
+<h2 id="22-which-form-should-be-chosen">22. Which form should be chosen?</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Communication goal</th>
+<th>Preferred form</th>
+<th>Main caution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One simple composition with few parts</td>
+<td>Pie/doughnut</td>
+<td>Poor exact comparison; total must be valid</td>
+</tr>
+<tr>
+<td>Exact ranking of categories</td>
+<td>Sorted bar chart</td>
+<td>Start magnitude bars at zero</td>
+</tr>
+<tr>
+<td>Composition across groups/dates</td>
+<td>100% stacked bar</td>
+<td>Middle segments lack common baseline</td>
+</tr>
+<tr>
+<td>Hierarchical composition in compact space</td>
+<td>Treemap</td>
+<td>Area comparison and tiny labels</td>
+</tr>
+<tr>
+<td>Circular hierarchy with several levels</td>
+<td>Sunburst</td>
+<td>Rapid clutter and weak precise comparison</td>
+</tr>
+<tr>
+<td>Context around a recurring term</td>
+<td>Word tree</td>
+<td>Can grow complex</td>
+</tr>
+<tr>
+<td>Overall word-frequency impression</td>
+<td>Word cloud</td>
+<td>Exact frequency and salience are unreliable</td>
+</tr>
+<tr>
+<td>Exact lookup and detailed values</td>
+<td>Table</td>
+<td>Poor design can bury patterns</td>
+</tr>
+<tr>
+<td>Continuous numerical distribution</td>
+<td>Histogram</td>
+<td>Shape depends strongly on binning</td>
+</tr>
+<tr>
+<td>Compact comparison of distribution summaries</td>
+<td>Box plot</td>
+<td>Requires quartile literacy; hides detailed shape</td>
+</tr>
+<tr>
+<td>Change over time</td>
+<td>Line chart</td>
+<td>Avoid unjustified dual axes and hidden missing data</td>
+</tr>
+<tr>
+<td>A single headline value</td>
+<td>Text/annotation</td>
+<td>A chart may add no information</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="23-high-probability-exam-questions">23. High-probability exam questions</h2>
+<h3 id="build-a-case-for-and-against-pie-charts">“Build a case for and against pie charts.”</h3>
+<p>Against: weak angle/area comparison, exact values unclear, similar slices hard to rank, too many categories clutter, pairs are hard to compare, perceptual mechanism uncertain. For: familiar and engaging, rapid part-to-whole impression, excellent for simple dominant/familiar fractions, selective colour can convey a majority quickly.</p>
+<h3 id="differentiate-treemap-and-sunburst">“Differentiate treemap and sunburst.”</h3>
+<p>Both show hierarchy plus part-to-whole. Treemaps use nested rectangles and are compact/annotation-friendly. Sunbursts use concentric rings, with root in the centre and child levels outward; they make hierarchy visually explicit but become cluttered and retain circular-comparison problems.</p>
+<h3 id="why-can-a-word-cloud-mislead">“Why can a word cloud mislead?”</h3>
+<p>Exact frequencies are unavailable; word length, font, colour, orientation, and placement affect prominence. Vertical words may be overlooked. A bar chart is more accurate after calculating word counts.</p>
+<h3 id="explain-table-anatomy-and-the-ten-rules">“Explain table anatomy and the ten rules.”</h3>
+<p>Know title, subtitle, headers, rules, border, cells, spanner, grids, footer, sources/notes; then explain clear headers, subtle dividers, numeric/text alignment, precision, spacing, unit removal, outlier highlighting, grouping, and embedded visuals.</p>
+<h3 id="why-does-histogram-bin-width-matter">“Why does histogram bin width matter?”</h3>
+<p>Narrow bins amplify noise and create false peaks; wide bins conceal genuine modes and oversimplify the shape. Histograms are exploratory, so test several consistent bin widths.</p>
+<h3 id="interpret-median-and-quartiles-not-just-define-them">“Interpret median and quartiles, not just define them.”</h3>
+<p>Median/Q2 divides observations 50–50; Q1 divides 25–75; Q3 divides 75–25. IQR is Q3 − Q1 and contains the middle 50%. A high median conveys that half the observations are at least that high, not that the median percentage of observations scored above it.</p>
+<hr>
+<h1 id="rapid-revision-and-final-checklist">Rapid Revision and Final Checklist</h1>
+<h2 id="definitions-to-memorize">Definitions to memorize</h2>
+<ul>
+<li>[ ] Part-to-whole: shares/components in relation to a complete total.</li>
+<li>[ ] Pie: circular slices; must sum to a valid whole.</li>
+<li>[ ] Treemap: nested rectangles sized by value; hierarchy plus composition.</li>
+<li>[ ] Sunburst: concentric hierarchical rings; root at centre.</li>
+<li>[ ] Word cloud: word size usually encodes frequency.</li>
+<li>[ ] Word tree: root term with branching contextual continuations.</li>
+<li>[ ] Histogram: touching bars for continuous numeric bins; shows distribution shape.</li>
+<li>[ ] Box plot: quartile-based summary of centre, spread, whiskers, and outliers.</li>
+<li>[ ] IQR: Q3 − Q1; spread of middle 50%.</li>
+</ul>
+<h2 id="rules-to-memorize">Rules to memorize</h2>
+<ul>
+<li>[ ] A pie must represent a genuine 100%/whole.</li>
+<li>[ ] Prefer largest-to-smallest from 12 o&rsquo;clock unless natural category order is clearer.</li>
+<li>[ ] Keep order/start/direction consistent across multiple pies.</li>
+<li>[ ] Familiar fractions—25%, 50%, 75%—are easier to perceive.</li>
+<li>[ ] Avoid too many slices, exploded/3-D pies, and decorative clutter.</li>
+<li>[ ] Use a bar chart for exact ranking; use 100% stacked bars for comparing compositions.</li>
+<li>[ ] Use purposeful colour: emphasize the message and grey out context.</li>
+<li>[ ] Word clouds show overall frequency patterns, not exact counts.</li>
+<li>[ ] Respect respondent privacy when using photographs with quotations.</li>
+<li>[ ] In tables: right-align numbers, left-align text, use lining figures, light grids, appropriate precision, purposeful whitespace, and nonrepeated units.</li>
+<li>[ ] In line charts: mark only relevant points, signal missing data, and avoid dual axes.</li>
+<li>[ ] Histograms require continuous bins, no gaps, clear axes, consistent bin width, and experiments with bin size.</li>
+<li>[ ] Normalize appropriately before comparing distributions from different-size datasets.</li>
+<li>[ ] Median = Q2; Q1 = 25th percentile; Q3 = 75th percentile.</li>
+<li>[ ] Outlier fences: Q1 − 1.5 IQR and Q3 + 1.5 IQR.</li>
+<li>[ ] Highlight only what supports the communication objective.</li>
+</ul>
+<h2 id="final-mental-model">Final mental model</h2>
+<ol>
+<li><strong>What is the question?</strong> Composition, hierarchy, exact lookup, context, trend, or distribution?</li>
+<li><strong>What must the audience perceive?</strong> Exact values, ranking, overall pattern, majority, hierarchy, or an exception?</li>
+<li><strong>Which encoding makes that easiest?</strong> Position/length before angle/area when precision matters.</li>
+<li><strong>What can be removed?</strong> Repetition, excessive labels, grid lines, units, colours, and decoration.</li>
+<li><strong>What deserves emphasis?</strong> Only the evidence supporting the central claim.</li>
+<li><strong>Can the insight be stated in words?</strong> If not, the analysis is incomplete.</li>
+</ol>
+<hr>
+<h2 id="review-week-augmentation">Review-Week Augmentation</h2>
+<h3 id="part-to-whole-exam-rules">Part-to-whole exam rules</h3>
+<p>A pie chart is appropriate only when the values form <strong>one meaningful whole</strong>, sum to 100%, represent a single snapshot, and contain few categories—typically fewer than six as a practical guideline, not a mathematical law. It is weak for close comparisons, exact values, many small categories, or change over time. Use a line for time and a bar for precise part comparison.</p>
+<p><strong>Pie versus stacked bar:</strong> a pie shows one whole at one point; stacked bars compare multiple wholes and their composition. Stacked segments still suffer changing-baseline difficulty.</p>
+<h3 id="hierarchy-and-size-encodings">Hierarchy and size encodings</h3>
+<ul>
+<li>A <strong>treemap</strong> shows hierarchical part-to-whole structure (disk use, budget, organization), not a time series.</li>
+<li>An x–y <strong>bubble plot</strong> uses horizontal position, vertical position, and bubble area for three quantitative variables; colour may encode a fourth. A packed/nested bubble chart instead emphasizes containment or hierarchy.</li>
+<li>Area is difficult to judge precisely. Bubble area—not diameter—must scale with value, but bars or dots are preferable when exact comparison matters.</li>
+</ul>
+<h3 id="review-correction-set">Review correction set</h3>
+<p>Do not use a pie for trends, a treemap for time, or numerous colours merely to distinguish many categories. Preserve category order and semantic colours across comparable views. Direct labels can reduce legend lookup, but avoid crowded labels and decoration.</p>
+        </div>
+    <nav class="week-pager">
+      <a href="week-5.html" rel="prev">
+        <span class="pager-label">Previous</span>
+        <span class="pager-title">Week 5: Distribution and Relationship Visualizations</span>
+      </a>
+      <a href="week-7.html" rel="next">
+        <span class="pager-label">Next</span>
+        <span class="pager-title">Week 7: Data Visualization with Python, Jupyter,…</span>
+      </a>
+    </nav>
+      </article>
+    </main>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/vendor/katex/katex.min.js"></script>
+  <script defer src="../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</body>
+</html>
